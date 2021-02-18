@@ -13,7 +13,6 @@
 [![Total_lines](https://img.shields.io/tokei/lines/github/TheGoatGod/Community-Mod-Compilation)](https://github.com/TheGoatGod/Community-Mod-Compilation/graphs/code-frequency)
 [![Repo_Size](https://img.shields.io/github/repo-size/TheGoatgod/Community-Mod-Compilation)](https://github.com/TheGoatGod/Community-Mod-Compilation/graphs/code-frequency)
 [![Total_Downloads](https://img.shields.io/github/downloads/TheGoatgod/Community-Mod-Compilation/total)](https://github.com/TheGoatGod/Community-Mod-Compilation/releases)
-[![Latest_Release_Downloads](https://img.shields.io/github/downloads-pre/TheGoatgod/Community-Mod-Compilation/v0.1.4/total)](https://github.com/TheGoatGod/Community-Mod-Compilation/releases/tag/v0.1.4)
 [![Discord](https://img.shields.io/discord/682148537752223765?label=Discord)](https://discord.gg/sk8HHF6sMY)\
 [![Open_Issues](https://img.shields.io/github/issues-raw/TheGoatGod/Community-Mod-Compilation)](https://github.com/TheGoatGod/Community-Mod-Compilation/issues)
 [![Closed_Issues](https://img.shields.io/github/issues-closed-raw/TheGoatGod/Community-Mod-Compilation)](https://github.com/TheGoatGod/Community-Mod-Compilation/issues?q=is%3Aissue+is%3Aclosed)
@@ -29,7 +28,7 @@
 
 
 # Description
-Welcome to TheGoatGod's Mod Compilation. Currently contains over 250 mods, 14 maintained mods, 50 rebalance mods, 22 legacy mods, 2 tile sets(legacy working but lacks alot of new items ect...), 49 NO Mods, and 8 sound packs. It is currently, at 0.1.5, not entirely bug free, but it is undergoing constant improvements, and should soon be bug free. Many changes are planned for the future, consolidating mods to reduce the amount of excess, and cleaning up the code (even more!). 
+Welcome to TheGoatGod's Mod Compilation. Currently contains over 250 mods, 14 maintained mods, 50 rebalance mods, 22 legacy mods, 2 tile sets(legacy working but lacks alot of new items ect...), 49 NO Mods, and 8 sound packs. It is currently, at 0.1.5, not entirely bug free, but it is undergoing constant improvements, and should soon be bug free. Many changes are planned for the future, consolidating mods to reduce the amount of excess, and cleaning up the code (even more!).
 
 # Road map
 
@@ -38,4 +37,3 @@ Welcome to TheGoatGod's Mod Compilation. Currently contains over 250 mods, 14 ma
 - [ ] Make a start on mega mod
 
 I hope to start the merging process soon with a bunch of prs. goal is to bring down the amount of mods. you will see name changes to inclue other mods to make it kinda like the bionic package but not one type of item. however food will be diffrent from other mods. it might get abit confueing to begin with. alot of mods will get striped into other mods entirly or by pieces. all unwanted content will go into a "bin" type mod where you can get the stuff that doesnt fit in or im not planning on adding into there big merge into my mega mod for cdda but this will take time and i plan on adding alot of content all round i need to know what im working with to have a direction to start, i have started some addional content mods that will be included i will add more so this will work. i will need testers and will have to make a new git repo for this.
-
