@@ -10,9 +10,9 @@
 
 <!-- https://shields.io/category/build // for updating badges -->
 [![Build_Number](https://img.shields.io/badge/Build%3A-%2311458-blue)](https://github.com/CleverRaven/Cataclysm-DDA)
-[![Total_lines](https://img.shields.io/tokei/lines/github/TheGoatGod/Community-Mod-Compilation)](https://github.com/TheGoatGod/Community-Mod-Compilation/graphs/code-frequency)
-[![Repo_Size](https://img.shields.io/github/repo-size/TheGoatgod/Community-Mod-Compilation)](https://github.com/TheGoatGod/Community-Mod-Compilation/graphs/code-frequency)
-[![Total_Downloads](https://img.shields.io/github/downloads/TheGoatgod/Community-Mod-Compilation/total)](https://github.com/TheGoatGod/Community-Mod-Compilation/releases)
+[![Total_lines](https://img.shields.io/tokei/lines/github/GMC-Modding-Team/Community-Mod-Compilation-redux)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/graphs/code-frequency)
+[![Repo_Size](https://img.shields.io/github/repo-size/GMC-Modding-Team/Community-Mod-Compilation-redux)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/graphs/code-frequency)
+[![Total_Downloads](https://img.shields.io/github/downloads/GMC-Modding-Team/Community-Mod-Compilation-redux/total)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/releases)
 [![Discord](https://img.shields.io/discord/682148537752223765?label=Discord)](https://discord.gg/sk8HHF6sMY)\
 [![Open_Issues](https://img.shields.io/github/issues-raw/GMC-Modding-Team/Community-Mod-Compilation-redux)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues)
 [![Closed_Issues](https://img.shields.io/github/issues-closed-raw/GMC-Modding-Team/Community-Mod-Compilation-redux)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues?q=is%3Aissue+is%3Aclosed)
@@ -23,6 +23,7 @@
 [![TOC_Generator](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/workflows/TOC%20Generator/badge.svg)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions?query=workflow%3A%22TOC+Generator%22)
 [![Flake8_Python_Linting](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/workflows/Flake8%20Python%20linting/badge.svg)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions?query=workflow%3A%22Flake8+Python+linting%22)
 <a href="https://gitlocalize.com/repo/5745/whole_project?utm_source=badge"> <img src="https://gitlocalize.com/repo/5745/whole_project/badge.svg" /> </a>
+
 
 ![Table_Of_Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=TheGoatGod&theme=tokyonight)
 
