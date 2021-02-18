@@ -172,6 +172,10 @@ ifndef RUNTESTS
   RUNTESTS = 1
 endif
 
+ifndef PCH
+  PCH = 1
+endif
+
 # Auto-detect MSYS2
 ifdef MSYSTEM
   MSYS2 = 1
@@ -231,6 +235,12 @@ OS  = $(shell uname -s)
 # if $(OS) contains 'BSD'
 ifneq ($(findstring BSD,$(OS)),)
   BSD = 1
+endif
+
+ifeq ($(PCH), 1)
+	CCACHEBIN = CCACHE_SLOPPINESS=pch_defines,time_macros ccache
+else
+	CCACHEBIN = ccache
 endif
 
 # This sets CXX and so must be up here
@@ -383,6 +393,35 @@ endif
 
 ifeq ($(CYGWIN),1)
 WARNINGS += -Wimplicit-fallthrough=0
+endif
+
+ifeq ($(PCH), 1)
+  PCHFLAGS = -Ipch -Winvalid-pch
+  PCH_H = pch/main-pch.hpp
+
+  ifeq ($(CLANG), 0)
+    PCHFLAGS += -fpch-preprocess -include main-pch.hpp
+    PCH_P = $(PCH_H).gch
+  else
+    PCH_P = $(PCH_H).pch
+    PCHFLAGS += -include-pch $(PCH_P)
+
+    # FIXME: dirty hack ahead
+    # ccache won't wort with clang unless it supports -fno-pch-timestamp
+    ifeq ($(CCACHE), 1)
+      CLANGVER := $(shell echo 'int main(void){return 0;}'|$(CXX) -Xclang -fno-pch-timestamp -x c++ -o _clang_ver.o -c - 2>&1 || echo fail)
+      ifneq ($(CLANGVER),)
+        PCHFLAGS = ""
+        PCH_H = ""
+        PCH_P = ""
+        PCH = 0
+        $(warning your clang version does not support -fno-pch-timestamp: $(CLANGVER) ($(.SHELLSTATUS)))
+      else
+        CXXFLAGS += -Xclang -fno-pch-timestamp
+      endif
+    endif
+
+  endif
 endif
 
 CXXFLAGS += $(WARNINGS) $(DEBUG) $(DEBUGSYMS) $(PROFILE) $(OTHERS) -MMD -MP
@@ -609,7 +648,9 @@ ifeq ($(TILES), 1)
       endif
     endif
   else # not osx
-    CXXFLAGS += $(shell $(PKG_CONFIG) --cflags sdl2 SDL2_image SDL2_ttf)
+    CXXFLAGS += $(shell $(PKG_CONFIG) sdl2 --cflags)
+    CXXFLAGS += $(shell $(PKG_CONFIG) SDL2_image --cflags)
+    CXXFLAGS += $(shell $(PKG_CONFIG) SDL2_ttf --cflags)
 
     ifeq ($(STATIC), 1)
       LDFLAGS += $(shell $(PKG_CONFIG) sdl2 --static --libs)
@@ -631,7 +672,8 @@ ifeq ($(TILES), 1)
       # These differ depending on what SDL2 is configured to use.
       ifneq (,$(findstring mingw32,$(CROSS)))
         # We use pkg-config to find out which libs are needed with MXE
-        LDFLAGS += $(shell $(PKG_CONFIG) --libs SDL2_image SDL2_ttf)
+        LDFLAGS += $(shell $(PKG_CONFIG) SDL2_image --libs)
+        LDFLAGS += $(shell $(PKG_CONFIG) SDL2_ttf --libs)
       else
         ifeq ($(MSYS2),1)
           LDFLAGS += -Wl,--start-group -lharfbuzz -lfreetype -Wl,--end-group -lgraphite2 -lpng -lz -ltiff -lbz2 -lglib-2.0 -llzma -lws2_32 -lintl -liconv -lwebp -ljpeg -luuid
@@ -759,7 +801,7 @@ SOURCES := $(wildcard $(SRC_DIR)/*.cpp)
 HEADERS := $(wildcard $(SRC_DIR)/*.h)
 TESTSRC := $(wildcard tests/*.cpp)
 TESTHDR := $(wildcard tests/*.h)
-JSON_FORMATTER_SOURCES := tools/format/format.cpp tools/format/format_main.cpp src/json.cpp
+JSON_FORMATTER_SOURCES := tools/format/format.cpp src/json.cpp
 CHKJSON_SOURCES := src/chkjson/chkjson.cpp src/json.cpp
 CLANG_TIDY_PLUGIN_SOURCES := \
   $(wildcard tools/clang-tidy-plugin/*.cpp tools/clang-tidy-plugin/*/*.cpp)
@@ -849,6 +891,9 @@ ifeq ($(RELEASE), 1)
   endif
 endif
 
+$(PCH_P): $(PCH_H)
+	-$(CXX) $(CPPFLAGS) $(DEFINES) $(subst -Werror,,$(CXXFLAGS)) -c $(PCH_H) -o $(PCH_P)
+
 $(BUILD_PREFIX)$(TARGET_NAME).a: $(OBJS)
 	$(AR) rcs $(BUILD_PREFIX)$(TARGET_NAME).a $(filter-out $(ODIR)/main.o $(ODIR)/messages.o,$(OBJS))
 
@@ -863,8 +908,8 @@ version:
 # Unconditionally create the object dir on every invocation.
 $(shell mkdir -p $(ODIR))
 
-$(ODIR)/%.o: $(SRC_DIR)/%.cpp
-	$(CXX) $(CPPFLAGS) $(DEFINES) $(CXXFLAGS) -c $< -o $@
+$(ODIR)/%.o: $(SRC_DIR)/%.cpp $(PCH_P)
+	$(CXX) $(CPPFLAGS) $(DEFINES) $(CXXFLAGS) $(PCHFLAGS) -c $< -o $@
 
 $(ODIR)/%.o: $(SRC_DIR)/%.rc
 	$(RC) $(RFLAGS) $< -o $@
@@ -889,6 +934,9 @@ clean: clean-tests
 	rm -rf *$(BINDIST_DIR) *cataclysmdda-*.tar.gz *cataclysmdda-*.zip
 	rm -f $(SRC_DIR)/version.h
 	rm -f $(CHKJSON_BIN)
+	rm -f pch/*pch.hpp.gch
+	rm -f pch/*pch.hpp.pch
+	rm -f pch/*pch.hpp.d
 
 distclean:
 	rm -rf *$(BINDIST_DIR)
@@ -1072,7 +1120,7 @@ ifdef LANGUAGES
 endif
 	$(BINDIST_CMD)
 
-export ODIR _OBJS LDFLAGS CXX W32FLAGS DEFINES CXXFLAGS TARGETSYSTEM
+export ODIR _OBJS LDFLAGS CXX W32FLAGS DEFINES CXXFLAGS TARGETSYSTEM CLANG PCH PCHFLAGS
 
 ctags: $(ASTYLE_SOURCES)
 	ctags $^
