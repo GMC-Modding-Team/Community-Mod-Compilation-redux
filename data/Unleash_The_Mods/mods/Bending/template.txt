@@ -1,0 +1,48 @@
+{
+    // This spell exists in json as a template for contributors to see the possible values of the spell
+	"id": "example_template",                                 // id of the spell, used internally. not translated
+	"type": "SPELL",
+	"name": "Template Spell",                                 // name of the spell that shows in game
+	"description": "This is a template to show off all the available values",
+	"valid_targets": [ "hostile", "ground", "self", "ally" ], // if a valid target is not included, you cannot cast the spell on that target.
+	"effect": "shallow_pit",                                  // effects are coded in C++. A list will be provided below of possible effects that have been coded.
+	"effect_str": "template",                                 // special. see below
+	"extra_effects": [ { "id": "fireball", "hit_self": false, "max_level": 3 } ],	// this allows you to cast multiple spells with only one spell
+	"affected_body_parts": [ "head", "torso", "mouth", "eyes", "arm_l", "arm_r", "hand_r", "hand_l", "leg_l", "foot_l", "foot_r" ], // body parts affected by effects
+	"flags": [ "SILENT", "LOUD", "SOMATIC", "VERBAL", "NO_HANDS", "NO_LEGS", "SPAWN_GROUP" ], // see "Spell Flags" below
+  "spell_class": "NONE",                                    //
+	"base_casting_time": 100,                                 // this is the casting time (in moves)
+	"base_energy_cost": 10,                                   // the amount of energy (of the requisite type) to cast the spell
+	"energy_source": "MANA",                                  // the type of energy used to cast the spell. types are: MANA, BIONIC, HP, STAMINA, FATIGUE, NONE (none will not use mana)
+	"difficulty": 12,                                         // the difficulty to learn/cast the spell
+	"max_level": 10,                                          // maximum level you can achieve in the spell
+	"min_damage": 0,                                          // minimum damage (or "starting" damage)
+	"max_damage": 100,                                        // maximum damage the spell can achieve
+	"damage_increment": 2.5,                                  // to get damage (and any of the other below stats) multiply this by spell's level and add to minimum damage
+	"min_aoe": 0,                                             // area of effect (currently not implemented)
+	"max_aoe": 5,
+	"aoe_increment": 0.1,
+	"min_range": 1,                                           // range of the spell
+	"max_range": 10,
+	"range_increment": 2,
+	"min_dot": 0,                                             // damage over time (currently not implemented)
+	"max_dot": 2,
+	"dot_increment": 0.1,
+	"min_duration": 0,                                        // duration of spell effect (if the spell has a special effect)
+	"max_duration": 1000,
+	"duration_increment": 4,
+	"min_pierce": 0,                                          // how much of the spell pierces armor (currently not implemented)
+	"max_pierce": 1,
+	"pierce_increment": 0.1,
+	"field_id": "fd_blood",                                   // the string id of the field (currently hardcoded)
+	"field_chance": 100,                                      // one_in( field_chance ) chance of spawning a field per tile in aoe
+	"min_field_intensity": 10,                                // field intensity of fields generated
+	"max_field_intensity": 10,
+	"field_intensity_increment": 1,
+	"field_intensity_variance": 0.1                           // the field can range in intensity from -variance as a percent to +variance as a percent i.e. this spell would be 9-11
+	"sound_type": "combat",                                   // the type of sound. possible types are: background, weather, music, movement, speech, activity, destructive_activity, alarm, combat, alert, order
+	"sound_description": "a whoosh",                          // the sound description. in the form of "You hear %s" by default it is "an explosion"
+	"sound_ambient": true,                                    // whether or not this is treated as an ambient sound or not
+	"sound_id": "misc",                                       // the sound id
+	"sound_variant": "shockwave"                              // the sound variant
+  }

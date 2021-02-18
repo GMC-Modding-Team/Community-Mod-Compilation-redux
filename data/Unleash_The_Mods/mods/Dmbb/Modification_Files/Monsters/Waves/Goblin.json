@@ -1,0 +1,452 @@
+[
+  {
+    "type": "MONSTER_FACTION",
+    "name": "goblinoid",
+    "friendly": [ "worg" ]
+  },
+  {
+    "type": "SPECIES",
+    "id": "GOBLINOID",
+    "anger_triggers": [ "FRIEND_DIED" ],
+    "fear_triggers": [ "HURT", "FIRE" ]
+  },
+  {
+    "id": "mon_mtc_goblin",
+    "type": "MONSTER",
+    "name": { "str": "goblin" },
+    "description": "A short humanoid with a distinctive wrinkly yellow skin and unpleasant visage.",
+    "default_faction": "goblinoid",
+    "bodytype": "human",
+    "species": [ "GOBLINOID" ],
+    "volume": "32 L",
+    "weight": "42 kg",
+    "hp": 50,
+    "material": [ "flesh" ],
+    "symbol": "g",
+    "color": "brown",
+    "aggression": 100,
+    "morale": 100,
+    "speed": 100,
+    "melee_skill": 4,
+    "melee_dice": 1,
+    "melee_dice_sides": 2,
+    "dodge": 5,
+    "armor_bash": 3,
+    "armor_cut": 4,
+    "armor_stab": 3,
+    "armor_bullet": 3,
+    "harvest": "demihuman",
+    "vision_day": 30,
+    "vision_night": 8,
+    "death_drops": {
+      "subtype": "collection",
+      "items": [
+        { "item": "helmet_scrap", "prob": 20 },
+        { "item": "legguard_scrap", "prob": 20 },
+        { "item": "boots_scrap", "prob": 20 },
+        { "item": "armguard_scrap", "prob": 20 },
+        { "item": "cuirass_scrap", "prob": 20 }
+      ]
+    },
+    "death_function": [ "NORMAL" ],
+    "flags": [ "SEES", "HEARS", "WARM", "BASHES", "FILTHY", "PATH_AVOID_DANGER_2", "NO_BREATHE" ]
+  },
+  {
+    "id": "mon_mtc_goblin_swordsman",
+    "copy-from": "mon_mtc_goblin",
+    "type": "MONSTER",
+    "name": { "str": "goblin swordsman" },
+    "description": "A short humanoid with a distinctive wrinkly yellow skin and unpleasant visage. It wields a sword, and it does know how to use it.",
+    "melee_skill": 6,
+    "melee_dice": 1,
+    "melee_dice_sides": 4,
+    "melee_cut": 4,
+    "dodge": 5,
+    "armor_bash": 6,
+    "armor_cut": 8,
+    "armor_stab": 6,
+    "armor_bullet": 6,
+    "death_drops": {
+      "subtype": "collection",
+      "items": [
+        { "item": "helmet_scrap", "prob": 40 },
+        { "item": "legguard_scrap", "prob": 40 },
+        { "item": "boots_scrap", "prob": 40 },
+        { "item": "armguard_scrap", "prob": 40 },
+        { "item": "cuirass_scrap", "prob": 40 },
+        { "item": "longsword_rusted", "prob": 80 }
+      ]
+    }
+  },
+  {
+    "id": "mon_mtc_goblin_spearsman",
+    "copy-from": "mon_mtc_goblin",
+    "type": "MONSTER",
+    "name": { "str": "goblin spearman" },
+    "description": "A short humanoid with a distinctive wrinkly yellow skin and unpleasant visage. It wields a spear, and it does know how to use it.",
+    "melee_skill": 6,
+    "melee_dice": 2,
+    "melee_dice_sides": 4,
+    "melee_cut": 3,
+    "dodge": 5,
+    "armor_bash": 6,
+    "armor_cut": 8,
+    "armor_stab": 6,
+    "armor_bullet": 6,
+    "death_drops": {
+      "subtype": "collection",
+      "items": [
+        { "item": "helmet_scrap", "prob": 40 },
+        { "item": "legguard_scrap", "prob": 40 },
+        { "item": "boots_scrap", "prob": 40 },
+        { "item": "armguard_scrap", "prob": 40 },
+        { "item": "cuirass_scrap", "prob": 40 },
+        { "item": "spear_steel_rusted", "prob": 80 }
+      ]
+    }
+  },
+  {
+    "id": "mon_mtc_goblin_hammerman",
+    "copy-from": "mon_mtc_goblin",
+    "type": "MONSTER",
+    "name": { "str": "goblin hammerman" },
+    "description": "A short humanoid with a distinctive wrinkly yellow skin and unpleasant visage. It wields a warhammer, and it does know how to use it.",
+    "melee_skill": 6,
+    "melee_dice": 4,
+    "melee_dice_sides": 6,
+    "dodge": 5,
+    "armor_bash": 6,
+    "armor_cut": 8,
+    "armor_stab": 6,
+    "armor_bullet": 6,
+    "death_drops": {
+      "subtype": "collection",
+      "items": [
+        { "item": "helmet_scrap", "prob": 40 },
+        { "item": "legguard_scrap", "prob": 40 },
+        { "item": "boots_scrap", "prob": 40 },
+        { "item": "armguard_scrap", "prob": 40 },
+        { "item": "cuirass_scrap", "prob": 40 },
+        { "item": "warhammer_rusted", "prob": 80 }
+      ]
+    }
+  },
+  {
+    "id": "mon_mtc_goblin_marksman",
+    "copy-from": "mon_mtc_goblin",
+    "type": "MONSTER",
+    "name": { "str": "goblin marksman" },
+    "description": "A short humanoid with a distinctive wrinkly yellow skin and unpleasant visage. It wields a crossbow, and it does know how to use it.",
+    "melee_skill": 4,
+    "melee_dice": 3,
+    "melee_dice_sides": 2,
+    "dodge": 5,
+    "armor_bash": 3,
+    "armor_cut": 4,
+    "armor_stab": 3,
+    "armor_bullet": 3,
+    "death_drops": {
+      "subtype": "collection",
+      "items": [
+        { "item": "helmet_scrap", "prob": 20 },
+        { "item": "legguard_scrap", "prob": 20 },
+        { "item": "boots_scrap", "prob": 20 },
+        { "item": "armguard_scrap", "prob": 20 },
+        { "item": "cuirass_scrap", "prob": 20 },
+        { "item": "crossbow", "prob": 80, "damage": [ 2, 3 ] },
+        { "item": "bolt_crude", "count": [ 3, 9 ] }
+      ]
+    },
+    "extend": {
+      "special_attacks": [
+        {
+          "type": "gun",
+          "cooldown": 30,
+          "move_cost": 2800,
+          "gun_type": "mongun_mtc_goblin_marksman",
+          "fake_skills": [ [ "gun", 4 ], [ "rifle", 4 ] ],
+          "fake_dex": 8,
+          "fake_per": 8,
+          "require_targeting_player": false,
+          "require_targeting_npc": false,
+          "description": "The goblin marksman fires its crossbow!",
+          "ranges": [ [ 2, 15, "DEFAULT" ] ],
+          "no_ammo_sound": "grunting"
+        }
+      ],
+      "flags": [ "HIT_AND_RUN" ]
+    }
+  },
+  {
+    "id": "mon_mtc_goblin_thrower",
+    "copy-from": "mon_mtc_goblin",
+    "type": "MONSTER",
+    "name": { "str": "goblin thrower" },
+    "description": "A short humanoid with a distinctive wrinkly yellow skin and unpleasant visage. It wears a quiver full of javelins, and it does know how to use them.",
+    "melee_skill": 4,
+    "melee_dice": 2,
+    "melee_dice_sides": 3,
+    "melee_cut": 2,
+    "dodge": 5,
+    "armor_bash": 3,
+    "armor_cut": 4,
+    "armor_stab": 3,
+    "armor_bullet": 3,
+    "death_drops": {
+      "subtype": "collection",
+      "items": [
+        { "item": "helmet_scrap", "prob": 20 },
+        { "item": "legguard_scrap", "prob": 20 },
+        { "item": "boots_scrap", "prob": 20 },
+        { "item": "armguard_scrap", "prob": 20 },
+        { "item": "cuirass_scrap", "prob": 20 },
+        { "item": "cuirass_scrap", "prob": 20 },
+        { "item": "javelin", "count": [ 1, 3 ] }
+      ]
+    },
+    "extend": {
+      "special_attacks": [
+        {
+          "type": "gun",
+          "cooldown": 22,
+          "move_cost": 2000,
+          "gun_type": "mongun_mtc_goblin_thrower",
+          "fake_skills": [ [ "gun", 4 ], [ "rifle", 4 ] ],
+          "fake_dex": 8,
+          "fake_per": 8,
+          "require_targeting_player": false,
+          "require_targeting_npc": false,
+          "description": "The goblin thrower hurls its javelin!",
+          "ranges": [ [ 2, 5, "DEFAULT" ] ],
+          "no_ammo_sound": "grunting"
+        }
+      ],
+      "flags": [ "HIT_AND_RUN" ]
+    }
+  },
+  {
+    "id": "mon_mtc_goblin_immobilzer",
+    "copy-from": "mon_mtc_goblin",
+    "type": "MONSTER",
+    "name": { "str": "goblin immobilizer" },
+    "description": "A short humanoid with a distinctive wrinkly yellow skin and unpleasant visage. Several bolas hang on its waist, and will use them to ensnare its target.",
+    "melee_skill": 2,
+    "melee_dice": 2,
+    "melee_dice_sides": 2,
+    "dodge": 5,
+    "armor_bash": 3,
+    "armor_cut": 4,
+    "armor_stab": 3,
+    "armor_bullet": 3,
+    "death_drops": {
+      "subtype": "collection",
+      "items": [
+        { "item": "helmet_scrap", "prob": 20 },
+        { "item": "legguard_scrap", "prob": 20 },
+        { "item": "boots_scrap", "prob": 20 },
+        { "item": "armguard_scrap", "prob": 20 },
+        { "item": "cuirass_scrap", "prob": 20 },
+        { "item": "bolas", "count": [ 1, 4 ] }
+      ]
+    },
+    "extend": {
+      "special_attacks": [
+        {
+          "type": "gun",
+          "cooldown": 26,
+          "move_cost": 2400,
+          "gun_type": "mongun_mtc_goblin_immobilizer",
+          "fake_skills": [ [ "gun", 4 ], [ "rifle", 4 ] ],
+          "fake_dex": 8,
+          "fake_per": 8,
+          "require_targeting_player": false,
+          "require_targeting_npc": false,
+          "description": "The goblin immobilizer throws its bolas!",
+          "ranges": [ [ 2, 8, "DEFAULT" ] ],
+          "no_ammo_sound": "grunting"
+        }
+      ],
+      "flags": [ "HIT_AND_RUN" ]
+    }
+  },
+  {
+    "id": "mon_mtc_goblin_warbanner",
+    "copy-from": "mon_mtc_goblin",
+    "type": "MONSTER",
+    "name": { "str": "goblin warbanner" },
+    "description": "A short humanoid with a distinctive wrinkly yellow skin and unpleasant visage. It is holding a long pole with a large banner, which seems to encourage its fellow goblins.",
+    "melee_skill": 6,
+    "melee_dice": 3,
+    "melee_dice_sides": 3,
+    "melee_cut": 2,
+    "dodge": 5,
+    "armor_bash": 3,
+    "armor_cut": 4,
+    "armor_stab": 3,
+    "armor_bullet": 3,
+    "death_drops": {
+      "subtype": "collection",
+      "items": [
+        { "item": "helmet_scrap", "prob": 20 },
+        { "item": "legguard_scrap", "prob": 20 },
+        { "item": "boots_scrap", "prob": 20 },
+        { "item": "armguard_scrap", "prob": 20 },
+        { "item": "cuirass_scrap", "prob": 20 }
+      ]
+    },
+    "extend": {
+      "special_attacks": [
+        {
+          "type": "spell",
+          "spell_data": { "id": "mon_mtc_goblin_warbanner_target" },
+          "cooldown": 20,
+          "monster_message": "<color_light_red>%1$s waves its warbanner in their position!</color>"
+        }
+      ],
+      "flags": [ "HIT_AND_RUN" ]
+    }
+  },
+  {
+    "id": "mon_mtc_goblin_shaman",
+    "copy-from": "mon_mtc_goblin",
+    "type": "MONSTER",
+    "name": { "str": "goblin shaman" },
+    "description": "A short humanoid with a distinctive wrinkly yellow skin and unpleasant visage. It seems to have knowledge about arcane spells, and it'll not hesitate to cast them to aid its allied goblins.",
+    "melee_skill": 2,
+    "melee_dice": 1,
+    "melee_dice_sides": 1,
+    "dodge": 3,
+    "armor_bash": 3,
+    "armor_cut": 4,
+    "armor_stab": 3,
+    "armor_bullet": 3,
+    "death_drops": {
+      "subtype": "collection",
+      "items": [
+        { "item": "helmet_scrap", "prob": 20 },
+        { "item": "legguard_scrap", "prob": 20 },
+        { "item": "boots_scrap", "prob": 20 },
+        { "item": "armguard_scrap", "prob": 20 },
+        { "item": "cuirass_scrap", "prob": 20 }
+      ]
+    },
+    "extend": {
+      "special_attacks": [
+        {
+          "type": "spell",
+          "spell_data": { "id": "mon_mtc_goblin_shaman_target" },
+          "cooldown": 30,
+          "monster_message": "<color_yellow>%1$s performs a hand gesture...</color>"
+        }
+      ],
+      "flags": [ "HIT_AND_RUN" ]
+    }
+  },
+  {
+    "id": "mon_mtc_goblin_mage",
+    "copy-from": "mon_mtc_goblin",
+    "type": "MONSTER",
+    "name": { "str": "goblin mage" },
+    "description": "A short humanoid with a distinctive wrinkly yellow skin and unpleasant visage. A shaman has a greater knowledge in arcane spells, and it'll not hesitate to cast them on their foes.",
+    "melee_skill": 2,
+    "melee_dice": 1,
+    "melee_dice_sides": 1,
+    "dodge": 3,
+    "armor_bash": 3,
+    "armor_cut": 4,
+    "armor_stab": 3,
+    "armor_bullet": 3,
+    "death_drops": {
+      "subtype": "collection",
+      "items": [
+        { "item": "helmet_scrap", "prob": 20 },
+        { "item": "legguard_scrap", "prob": 20 },
+        { "item": "boots_scrap", "prob": 20 },
+        { "item": "armguard_scrap", "prob": 20 },
+        { "item": "cuirass_scrap", "prob": 20 }
+      ]
+    },
+    "extend": {
+      "special_attacks": [
+        {
+          "type": "spell",
+          "spell_data": { "id": "mon_mtc_goblin_mage_target" },
+          "cooldown": 25,
+          "monster_message": "<color_yellow>%1$s performs a hand gesture...</color>"
+        }
+      ],
+      "flags": [ "HIT_AND_RUN" ]
+    }
+  },
+  {
+    "//": "We use the entire worg data here, adding only the ability to dismount its rider.",
+    "id": "mon_mtc_goblin_mounted",
+    "type": "MONSTER",
+    "name": { "str": "worg" },
+    "description": "A large, vicious, and evil wolflike beast warped by magic long ago.  It is intelligent enough to talk and will enjoy eating you alive.  Often consorts with goblins in a mutually beneficial relationship (of eating humans). Mounted on its back is a goblin, and will dismount as soon as the worg engages in combat.",
+    "default_faction": "worg",
+    "bodytype": "dog",
+    "categories": [ "WILDLIFE" ],
+    "species": [ "MAMMAL" ],
+    "volume": "32625 ml",
+    "weight": "32625 g",
+    "hp": 80,
+    "speed": 145,
+    "material": [ "flesh" ],
+    "symbol": "g",
+    "color": "light_gray",
+    "morale": 30,
+    "aggression": 20,
+    "melee_skill": 6,
+    "melee_dice": 2,
+    "melee_dice_sides": 6,
+    "melee_cut": 8,
+    "dodge": 3,
+    "armor_bash": 3,
+    "armor_cut": 2,
+    "vision_night": 25,
+    "vision_day": 30,
+    "harvest": "mammal_fur",
+    "path_settings": { "max_dist": 12 },
+    "anger_triggers": [ "STALK", "FRIEND_ATTACKED", "FRIEND_DIED", "PLAYER_WEAK", "PLAYER_CLOSE" ],
+    "placate_triggers": [ "MEAT" ],
+    "death_function": [ "NORMAL" ],
+    "death_drops": "mon_mtc_worg_dd",
+    "special_attacks": [
+      {
+        "type": "spell",
+        "spell_data": { "id": "mon_mtc_goblin_mounted_target" },
+        "cooldown": 5,
+        "monster_message": "<color_yellow>%1$s's rider dismounts!</color>"
+      }
+    ],
+    "flags": [ "SEES", "HEARS", "SMELLS", "GOODHEARING", "PATH_AVOID_DANGER_1", "WARM", "KEENNOSE", "HIT_AND_RUN" ]
+  },
+  {
+    "id": "mon_mtc_goblin_chieftain",
+    "copy-from": "mon_mtc_goblin",
+    "type": "MONSTER",
+    "name": { "str": "goblin chieftain" },
+    "description": "A short humanoid with a distinctive wrinkly yellow skin and unpleasant visage. Fully clad in scrap armor and a sword, this one is the leader of a goblin army.",
+    "melee_skill": 8,
+    "melee_dice": 1,
+    "melee_dice_sides": 6,
+    "melee_cut": 4,
+    "dodge": 5,
+    "armor_bash": 12,
+    "armor_cut": 16,
+    "armor_stab": 12,
+    "armor_bullet": 12,
+    "death_drops": {
+      "subtype": "collection",
+      "items": [
+        { "item": "helmet_scrap", "prob": 80 },
+        { "item": "legguard_scrap", "prob": 80 },
+        { "item": "boots_scrap", "prob": 80 },
+        { "item": "armguard_scrap", "prob": 80 },
+        { "item": "cuirass_scrap", "prob": 80 },
+        { "item": "broadsword_rusted", "prob": 90 }
+      ]
+    }
+  }
+]

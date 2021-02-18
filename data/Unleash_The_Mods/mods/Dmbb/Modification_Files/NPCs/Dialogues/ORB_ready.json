@@ -1,0 +1,103 @@
+{
+  "id": "TALK_DMBB_ORB_command",
+  "type": "talk_topic",
+  "dynamic_line": "*trembles in response.",
+  "speaker_effect": [
+    {
+      "condition": {
+        "and": [
+          { "not": { "u_has_var": "dmbb_orb", "type": "sentguard", "context": "summon", "value": "yes" } },
+          { "npc_has_trait": "DMBB_ORB_sentguard" }
+        ]
+      },
+      "effect": [
+        { "u_add_var": "dmbb_orb", "type": "sentguard", "context": "summon", "value": "yes" },
+        { "mapgen_update": "dmbb_sentguard", "om_terrain": "dmbb_arena_5", "om_special": "DMBB Arena" }
+      ]
+    },
+    {
+      "condition": { "npc_has_trait": "DMBB_ORB_guild" },
+      "effect": { "mapgen_update": "dmbb_orb_warpgate_north_close", "om_terrain": "dmbb_arena_2", "om_special": "DMBB Arena" }
+    }
+  ],
+  "responses": [
+    { "text": "< - - -", "topic": "TALK_DMBB_ORB" },
+    {
+      "text": "[DEBUG] Get 10000 essence",
+      "topic": "TALK_DMBB_ORB_command",
+      "condition": { "u_has_trait": "DMBB_ORB_DEBUG" },
+      "effect": { "u_buy_item": "dmbb_essence", "count": 10000 }
+    },
+    {
+      "text": "[VIEW HELP]",
+      "topic": "TALK_DMBB_ORB_command_halp",
+      "condition": { "not": { "u_has_var": "dmbb_orb", "type": "help", "context": "idnu", "value": "yes" } }
+    },
+    {
+      "text": "[VIEW STATS]",
+      "topic": "TALK_DMBB_ORB_command_stat",
+      "condition": {
+        "or": [
+          { "u_has_var": "dmbb_orb", "type": "has_upgrade", "context": "passive", "value": "yes" },
+          { "u_has_var": "dmbb_orb", "type": "has_upgrade", "context": "active", "value": "yes" },
+          { "u_has_var": "dmbb_orb", "type": "has_upgrade", "context": "sentinel", "value": "yes" }
+        ]
+      }
+    },
+    {
+      "text": "[BUY]",
+      "topic": "TALK_DMBB_ORB_command_buy",
+      "condition": { "u_has_var": "dmbb_orb", "type": "wave5", "context": "finish", "value": "yes" }
+    },
+    {
+      "text": "[CREATE]",
+      "topic": "TALK_DMBB_ORB_command_create",
+      "condition": {
+        "or": [
+          { "npc_has_trait": "DMBB_ORB_cesheal" },
+          { "npc_has_trait": "DMBB_ORB_cespure" },
+          { "npc_has_trait": "DMBB_ORB_cesward" }
+        ]
+      }
+    },
+    {
+      "text": "[UPGRADE]",
+      "topic": "TALK_DMBB_ORB_command_upgrade",
+      "condition": { "u_has_var": "dmbb_orb", "type": "wave5", "context": "finish", "value": "yes" }
+    },
+    {
+      "text": "[RESEARCH]",
+      "topic": "TALK_DMBB_ORB_command_research",
+      "condition": {
+        "or": [
+          { "npc_has_trait": "DMBB_ORB_shockstorm" },
+          { "npc_has_trait": "DMBB_ORB_inferno" },
+          { "npc_has_trait": "DMBB_ORB_blizzard" }
+        ]
+      }
+    },
+    {
+      "text": "[BUILD]",
+      "topic": "TALK_DMBB_ORB_command_turret",
+      "condition": {
+        "or": [
+          { "u_has_var": "dmbb_orb", "type": "research", "context": "turret_shock1", "value": "yes" },
+          { "u_has_var": "dmbb_orb", "type": "research", "context": "turret_fire1", "value": "yes" },
+          { "u_has_var": "dmbb_orb", "type": "research", "context": "turret_ice1", "value": "yes" }
+        ]
+      }
+    },
+    {
+      "text": "[MERCENARY]",
+      "topic": "TALK_DMBB_ORB_command_merc",
+      "condition": { "u_has_var": "dmbb_orb", "type": "bosswave1", "context": "finish", "value": "yes" }
+    },
+    {
+      "text": "[WARPGATE]",
+      "topic": "TALK_DONE",
+      "condition": { "npc_has_trait": "DMBB_ORB_guild" },
+      "effect": { "mapgen_update": "dmbb_orb_warpgate_north_open", "om_terrain": "dmbb_arena_2", "om_special": "DMBB Arena" }
+    },
+    { "text": "[WAVES]", "topic": "TALK_DMBB_ORB_command_wave" }
+  ]
+}

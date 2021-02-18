@@ -1,0 +1,127 @@
+[
+  {
+    "id": "base_turret",
+    "type": "MONSTER",
+    "name": { "str": "automated turret" },
+    "default_faction": "defense_bot",
+    "species": [ "ROBOT" ],
+    "volume": "30000 ml",
+    "weight": "40750 g",
+    "hp": 30,
+    "speed": 100,
+    "material": [ "steel" ],
+    "symbol": "t",
+    "looks_like": "mon_turret",
+    "aggression": 100,
+    "morale": 100,
+    "armor_bash": 14,
+    "armor_cut": 16,
+    "armor_acid": 14,
+    "death_function": [ "BROKEN" ],
+    "flags": [ "SEES", "NOHEAD", "ELECTRONIC", "IMMOBILE", "NO_BREATHE" ]
+  },
+  {
+    "id": "mon_turret_shot",
+    "type": "MONSTER",
+    "copy-from": "base_turret",
+    "name": { "str": "shotgun turret" },
+    "symbol": "t",
+    "description": "A work of art and know-how of electronics, a modified standard CROWS turret with a shotgun. It's a admirable work of art and at the same quite scary to look up.",
+    "default_faction": "defense_bot",
+    "diff": 10,
+    "color": "red",
+    "revert_to_itype": "bot_turret_shot",
+    "starting_ammo": { "reloaded_shot_00": 100 },
+    "special_attacks": [
+      {
+        "type": "gun",
+        "cooldown": 2,
+        "gun_type": "robogun_shot",
+        "ammo_type": "shot",
+        "fake_skills": [ [ "gun", 2 ], [ "shotgun", 2 ] ],
+        "fake_dex": 8,
+        "no_ammo_sound": "click click!",
+        "ranges": [ [ 0, 10, "DEFAULT" ] ]
+      }
+    ],
+    "extend": { "flags": [ "DROPS_AMMO" ] }
+  },
+  {
+    "id": "mon_milturret_flame",
+    "type": "MONSTER",
+    "copy-from": "base_turret",
+    "name": { "str": "flame turret" },
+    "symbol": "t",
+    "description": "A work of art and know-how of electronics, a modified standard CROWS turret with a flamethrower. It's a admirable work of art and at the same quite scary to look up.",
+    "default_faction": "military",
+    "diff": 20,
+    "color": "red",
+    "revert_to_itype": "bot_milturret_flame",
+    "starting_ammo": { "napalm": 10000 },
+    "special_attacks": [
+      {
+        "type": "gun",
+        "cooldown": 2,
+        "gun_type": "robogun_flame",
+        "ammo_type": "napalm",
+        "fake_skills": [ [ "gun", 2 ], [ "launcher", 2 ] ],
+        "fake_dex": 8,
+        "no_ammo_sound": "hiss!",
+        "ranges": [ [ 0, 10, "DEFAULT" ] ]
+      }
+    ],
+    "extend": { "flags": [ "FIREPROOF" ] }
+  },
+  {
+    "id": "mon_advturret_rail",
+    "type": "MONSTER",
+    "copy-from": "base_turret",
+    "name": { "str": "railgun turret" },
+    "symbol": "t",
+    "description": "A work of art and know-how of electronics, a modified standard CROWS turret with a railgun. It's a admirable work of art and at the same quite scary to look up.",
+    "default_faction": "military",
+    "diff": 30,
+    "color": "magenta",
+    "revert_to_itype": "bot_advturret_rail",
+    "starting_ammo": { "steel_rail": 50 },
+    "special_attacks": [
+      {
+        "type": "gun",
+        "cooldown": 5,
+        "gun_type": "robogun_rail",
+        "ammo_type": "steel_rail",
+        "fake_skills": [ [ "gun", 5 ], [ "rifle", 5 ] ],
+        "fake_dex": 10,
+        "no_ammo_sound": "buzz!",
+        "ranges": [ [ 0, 30, "DEFAULT" ] ]
+      }
+    ],
+    "extend": { "flags": [ "DROPS_AMMO" ] }
+  },
+  {
+    "id": "mon_turret_nail",
+    "type": "MONSTER",
+    "copy-from": "base_turret",
+    "name": { "str": "nailgun turret" },
+    "symbol": "t",
+    "description": "A work of art and know-how of electronics, a modified standard CROWS turret with a nail gun. It's a admirable work of art and at the same quite scary to look up.",
+    "default_faction": "military",
+    "diff": 30,
+    "color": "magenta",
+    "revert_to_itype": "bot_turret_nail",
+    "starting_ammo": { "nail": 500 },
+    "special_attacks": [
+      {
+        "type": "gun",
+        "cooldown": 0,
+        "gun_type": "robogun_advnail",
+        "ammo_type": "nail",
+        "fake_skills": [ [ "gun", 2 ], [ "smg", 2 ] ],
+        "fake_dex": 8,
+        "no_ammo_sound": "click click!",
+        "ranges": [ [ 0, 10, "AUTO" ] ]
+      }
+    ],
+    "extend": { "flags": [ "DROPS_AMMO" ] }
+  }
+]

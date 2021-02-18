@@ -1,0 +1,71 @@
+[
+  {
+    "abstract": "robogun_base",
+    "type": "GUN",
+    "reload_noise_volume": 10,
+    "name": { "str": "base robogun" },
+    "description": "This is a pseudo item for monster attacks.  If you see this, it's a bug.",
+    "material": [ "steel", "plastic" ],
+    "symbol": "(",
+    "color": "magenta",
+    "weight": "5 kg",
+    "volume": "2500 ml",
+    "price": "0 cent",
+    "durability": 10,
+    "flags": [ "NEVER_JAMS", "TRADER_AVOID" ]
+  },
+  {
+    "id": "robogun_shot",
+    "type": "GUN",
+    "copy-from": "robogun_base",
+    "name": { "str": "integral 12 gauge shotgun" },
+    "skill": "shotgun",
+    "ammo": [ "shot" ],
+    "clip_size": 100,
+    "ranged_damage": { "damage_type": "stab", "amount": 10 },
+    "dispersion": 345,
+    "loudness": 75,
+    "modes": [ [ "DEFAULT", "semi-auto", 1 ] ]
+  },
+  {
+    "id": "robogun_flame",
+    "type": "GUN",
+    "copy-from": "robogun_base",
+    "name": { "str": "integral flamethrower" },
+    "skill": "launcher",
+    "ammo": [ "flammable" ],
+    "clip_size": 200,
+    "ammo_effects": [ "WIDE" ],
+    "range": 10,
+    "dispersion": 300,
+    "modes": [ [ "DEFAULT", "semi-auto", 1 ] ]
+  },
+  {
+    "id": "robogun_rail",
+    "type": "GUN",
+    "copy-from": "robogun_base",
+    "name": { "str": "integral railgun" },
+    "ammo": [ "metal_rail" ],
+    "clip_size": 50,
+    "skill": "rifle",
+    "range": 40,
+    "ranged_damage": { "damage_type": "stab", "amount": 40 },
+    "dispersion": 100,
+    "loudness": 34,
+    "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "BURST", "2 rd.", 2 ] ],
+    "ammo_effects": [ "INCENDIARY" ]
+  },
+  {
+    "id": "robogun_advnail",
+    "type": "GUN",
+    "copy-from": "robogun_base",
+    "name": { "str": "integral nailgun" },
+    "ammo": [ "nail" ],
+    "skill": "smg",
+    "range": 10,
+    "loudness": 5,
+    "clip_size": 500,
+    "dispersion": 100,
+    "modes": [ [ "AUTO", "auto", 3 ] ]
+  }
+]

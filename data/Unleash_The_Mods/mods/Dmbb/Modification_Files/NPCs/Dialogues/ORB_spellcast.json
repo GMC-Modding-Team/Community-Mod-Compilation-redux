@@ -1,0 +1,192 @@
+{
+  "id": "TALK_DMBB_ORB_spellcast",
+  "type": "talk_topic",
+  "dynamic_line": {
+    "and": [
+      "*lists all available spells.",
+      {
+        "npc_has_trait": "DMBB_ORB_stunner",
+        "yes": {
+          "u_has_effect": "dmbb_timelimit",
+          "yes": {
+            "u_has_effect": "dmbb_act_blindingflash_cd",
+            "no": "\n\n* Blinding Flash - Ready\nThe orb emits an extremely bright ray of light in every direction, stunning and blinding all monsters.\nCC: +++ DMG: --- CD: 90",
+            "yes": "\n\n* Blinding Flash - On Cooldown"
+          }
+        }
+      },
+      {
+        "u_has_var": "dmbb_orb",
+        "type": "research",
+        "context": "turret_shock1",
+        "value": "yes",
+        "no": {
+          "npc_has_trait": "DMBB_ORB_shockstorm",
+          "yes": {
+            "u_has_effect": "dmbb_timelimit",
+            "yes": {
+              "u_has_effect": "dmbb_act_shockstorm_cd",
+              "no": "\n\n* Shockstorm - Ready\nThe orb generates a thunderstorm that shocks all monsters.\nCC: ++- DMG: +-- CD: 40",
+              "yes": "\n\n* Shockstorm - On Cooldown"
+            }
+          }
+        }
+      },
+      {
+        "u_has_var": "dmbb_orb",
+        "type": "research",
+        "context": "turret_fire1",
+        "value": "yes",
+        "no": {
+          "npc_has_trait": "DMBB_ORB_inferno",
+          "yes": {
+            "u_has_effect": "dmbb_timelimit",
+            "yes": {
+              "u_has_effect": "dmbb_act_inferno_cd",
+              "no": "\n\n* Inferno - Ready\nThe orb scorches an area, spreading hellish flames on targeted monsters.\nCC: --- DMG: ++- CD: 100",
+              "yes": "\n\n* Inferno - On Cooldown"
+            }
+          }
+        }
+      },
+      {
+        "u_has_var": "dmbb_orb",
+        "type": "research",
+        "context": "turret_ice1",
+        "value": "yes",
+        "no": {
+          "npc_has_trait": "DMBB_ORB_blizzard",
+          "yes": {
+            "u_has_effect": "dmbb_timelimit",
+            "yes": {
+              "u_has_effect": "dmbb_act_blizzard_cd",
+              "no": "\n\n* Blizzard - Ready\nThe orb creates a hail that swoops down to all monsters, enslowing them afterwards.\nCC: ++- DMG: +-- CD: 75",
+              "yes": "\n\n* Blizzard - On Cooldown"
+            }
+          }
+        }
+      },
+      {
+        "npc_has_trait": "DMBB_ORB_barrier",
+        "yes": {
+          "u_has_effect": "dmbb_timelimit",
+          "yes": {
+            "u_has_effect": "dmbb_act_barrier_cd",
+            "no": "\n\n* Barrier - Ready\nThe orb forms force fields, slowing down anything that passes through.\nCC: ++- DMG: --- CD: 200",
+            "yes": "\n\n* Barrier - On Cooldown"
+          }
+        }
+      },
+      {
+        "npc_has_trait": "DMBB_ORB_judgment",
+        "yes": {
+          "u_has_effect": "dmbb_timelimit",
+          "yes": {
+            "u_has_effect": "dmbb_act__cd",
+            "no": "\n\n* Judgement - Ready\nThe orb channels itself to create an all-out blast of holy light, striking all monsters the same way they touch the orb.\nCC: --- DMG: +++ CD: 1000",
+            "yes": "\n\n* Judgment - On Cooldown"
+          }
+        }
+      }
+    ]
+  },
+  "responses": [
+    {
+      "text": "Activate \"Blinding Flash\"",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "npc_has_trait": "DMBB_ORB_stunner" },
+          { "u_has_effect": "dmbb_timelimit" },
+          { "not": { "u_has_effect": "dmbb_act_blindingflash_cd" } }
+        ]
+      },
+      "effect": [ { "u_buy_monster": "mon_dmbb_bless_blindingflash" }, { "u_add_effect": "dmbb_act_blindingflash_cd", "duration": 90 } ]
+    },
+    {
+      "text": "Activate \"Shockstorm\"",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "not": { "u_has_var": "dmbb_orb", "type": "research", "context": "turret_shock1", "value": "yes" } },
+          { "npc_has_trait": "DMBB_ORB_shockstorm" },
+          { "u_has_effect": "dmbb_timelimit" },
+          { "not": { "u_has_effect": "dmbb_act_shockstorm_cd" } }
+        ]
+      },
+      "effect": [ { "u_buy_monster": "mon_dmbb_bless_shockstorm" }, { "u_add_effect": "dmbb_act_shockstorm_cd", "duration": 40 } ]
+    },
+    {
+      "text": "Activate \"Inferno\"",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "not": { "u_has_var": "dmbb_orb", "type": "research", "context": "turret_fire1", "value": "yes" } },
+          { "npc_has_trait": "DMBB_ORB_inferno" },
+          { "u_has_effect": "dmbb_timelimit" },
+          { "not": { "u_has_effect": "dmbb_act_inferno_cd" } }
+        ]
+      },
+      "effect": [ { "u_buy_monster": "mon_dmbb_bless_inferno" }, { "u_add_effect": "dmbb_act_inferno_cd", "duration": 100 } ]
+    },
+    {
+      "text": "Activate \"Blizzard\"",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "not": { "u_has_var": "dmbb_orb", "type": "research", "context": "turret_ice1", "value": "yes" } },
+          { "npc_has_trait": "DMBB_ORB_blizzard" },
+          { "u_has_effect": "dmbb_timelimit" },
+          { "not": { "u_has_effect": "dmbb_act_blizzard_cd" } }
+        ]
+      },
+      "effect": [ { "u_buy_monster": "mon_dmbb_bless_blizzard" }, { "u_add_effect": "dmbb_act_blizzard_cd", "duration": 75 } ]
+    },
+    {
+      "text": "Activate \"Barrier\"",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "npc_has_trait": "DMBB_ORB_barrier" },
+          { "not": { "npc_has_trait": "DMBB_ORB_barrier_plus" } },
+          { "u_has_effect": "dmbb_timelimit" },
+          { "not": { "u_has_effect": "dmbb_act_barrier_cd" } }
+        ]
+      },
+      "effect": [
+        { "mapgen_update": "dmbb_orb_barrier", "om_terrain": "dmbb_arena_5", "om_special": "DMBB Arena" },
+        { "u_add_effect": "dmbb_act_barrier_cd", "duration": 200 }
+      ]
+    },
+    {
+      "text": "Activate \"Barrier\"",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "npc_has_trait": "DMBB_ORB_barrier" },
+          { "npc_has_trait": "DMBB_ORB_barrier_plus" },
+          { "u_has_effect": "dmbb_timelimit" },
+          { "not": { "u_has_effect": "dmbb_act_barrier_cd" } }
+        ]
+      },
+      "effect": [
+        { "mapgen_update": "dmbb_orb_barrier", "om_terrain": "dmbb_arena_5", "om_special": "DMBB Arena" },
+        { "mapgen_update": "dmbb_orb_barrier_plus", "om_terrain": "dmbb_arena_5", "om_special": "DMBB Arena" },
+        { "u_add_effect": "dmbb_act_barrier_cd", "duration": 200 }
+      ]
+    },
+    {
+      "text": "Activate \"Judgment\"",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "npc_has_trait": "DMBB_ORB_judgment" },
+          { "u_has_effect": "dmbb_timelimit" },
+          { "not": { "u_has_effect": "dmbb_act_judgment_cd" } }
+        ]
+      },
+      "effect": [ { "u_buy_monster": "mon_dmbb_bless_judgment" }, { "u_add_effect": "dmbb_act_judgment_cd", "duration": 1000 } ]
+    },
+    { "text": "< - - -", "topic": "TALK_DMBB_ORB" }
+  ]
+}

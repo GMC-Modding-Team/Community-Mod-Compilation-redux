@@ -1,0 +1,45 @@
+{
+  "id": "TALK_DMBB_ORB_GUILDSMITH_forge_finish",
+  "type": "talk_topic",
+  "dynamic_line": {
+    "and": [
+      "Forging the ",
+      {
+        "u_has_var": "dmbb_orb",
+        "type": "guildsmith_forging",
+        "context": "armamentalistsword",
+        "value": "yes",
+        "yes": "Armamentalist Sword"
+      },
+      {
+        "u_has_var": "dmbb_orb",
+        "type": "guildsmith_forging",
+        "context": "hexblade",
+        "value": "yes",
+        "yes": "Hex Blade"
+      },
+      " is done. Take it and I'll be ready to forge new equipments."
+    ]
+  },
+  "responses": [
+    {
+      "text": "[FINISH] Armamentalist Sword.",
+      "topic": "TALK_DMBB_ORB_GUILDSMITH_whatelse",
+      "condition": { "u_has_var": "dmbb_orb", "type": "guildsmith_forging", "context": "armamentalistsword", "value": "yes" },
+      "effect": [
+        { "u_buy_item": "dmbb_sword_armamentalistsword" },
+        { "u_lose_var": "dmbb_orb", "type": "guildsmith_forging", "context": "armamentalistsword", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Hex Blade.",
+      "topic": "TALK_DMBB_ORB_GUILDSMITH_whatelse",
+      "condition": { "u_has_var": "dmbb_orb", "type": "guildsmith_forging", "context": "hexblade", "value": "yes" },
+      "effect": [
+        { "u_buy_item": "dmbb_sword_hexblade" },
+        { "u_lose_var": "dmbb_orb", "type": "guildsmith_forging", "context": "hexblade", "value": "yes" }
+      ]
+    },
+    { "text": "I'll take it later.", "topic": "TALK_DMBB_ORB_GUILDSMITH_whatelse" }
+  ]
+}

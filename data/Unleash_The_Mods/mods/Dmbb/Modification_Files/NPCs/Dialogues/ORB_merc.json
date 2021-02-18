@@ -1,0 +1,203 @@
+{
+  "id": "TALK_DMBB_ORB_command_merc",
+  "type": "talk_topic",
+  "dynamic_line": {
+    "and": [
+      "*calls forth a mercenary to aid you in combat. It'll costs 2000 essence to send one per class into this arena. Special mercenaries have varied essence cost.",
+      {
+        "u_has_var": "dmbb_orb",
+        "type": "knight",
+        "context": "called",
+        "value": "yes",
+        "no": "\n\n* Knight\nA strong swordsman clad in heavy armor."
+      },
+      {
+        "u_has_var": "dmbb_orb",
+        "type": "berserker",
+        "context": "called",
+        "value": "yes",
+        "no": "\n\n* Berserker\nAn unarmed brawler skilled in striking heavy blows."
+      },
+      {
+        "u_has_var": "dmbb_orb",
+        "type": "bosswave2",
+        "context": "finish",
+        "value": "yes",
+        "yes": {
+          "u_has_var": "dmbb_orb",
+          "type": "mutant",
+          "context": "called",
+          "value": "yes",
+          "no": "\n\n* Mutant - 3750 essence\nA lupine mutant with overwhelming raw power."
+        }
+      },
+      {
+        "u_has_var": "dmbb_orb",
+        "type": "ranger",
+        "context": "called",
+        "value": "yes",
+        "no": "\n\n* Ranger\nA nimble archer that excels in ranged attacks."
+      },
+      {
+        "u_has_var": "dmbb_orb",
+        "type": "bard",
+        "context": "called",
+        "value": "yes",
+        "no": "\n\n* Bard\nA musician who supports allies by playing."
+      },
+      {
+        "u_has_var": "dmbb_orb",
+        "type": "mage",
+        "context": "called",
+        "value": "yes",
+        "no": "\n\n* Mage\nA wise conjurer who casts a variety of combat spells."
+      },
+      {
+        "u_has_var": "dmbb_orb",
+        "type": "cleric",
+        "context": "called",
+        "value": "yes",
+        "no": "\n\n* Cleric\nA divine sage who casts support spells."
+      },
+      {
+        "u_has_var": "dmbb_orb",
+        "type": "priest",
+        "context": "called",
+        "value": "yes",
+        "no": "\n\n* Priest\nA holy saint focused on casting healing spells."
+      }
+    ]
+  },
+  "responses": [
+    {
+      "text": "[RECRUIT] Knight",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_items": { "item": "dmbb_essence", "count": 2000 } },
+          { "not": { "u_has_var": "dmbb_orb", "type": "knight", "context": "called", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_sell_item": "dmbb_essence", "count": 2000 },
+        { "npc_consume_item": "dmbb_essence", "count": 2000 },
+        { "u_add_var": "dmbb_orb", "type": "knight", "context": "called", "value": "yes" },
+        { "u_buy_item": "dmbb_act_summon_merc_knight" }
+      ]
+    },
+    {
+      "text": "[RECRUIT] Berserker",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_items": { "item": "dmbb_essence", "count": 2000 } },
+          { "not": { "u_has_var": "dmbb_orb", "type": "berserker", "context": "called", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_sell_item": "dmbb_essence", "count": 2000 },
+        { "npc_consume_item": "dmbb_essence", "count": 2000 },
+        { "u_add_var": "dmbb_orb", "type": "berserker", "context": "called", "value": "yes" },
+        { "u_buy_item": "dmbb_act_summon_merc_berserker" }
+      ]
+    },
+    {
+      "text": "[RECRUIT] Mutant",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_items": { "item": "dmbb_essence", "count": 3750 } },
+          { "u_has_var": "dmbb_orb", "type": "bosswave2", "context": "finish", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "mutant", "context": "called", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_sell_item": "dmbb_essence", "count": 3750 },
+        { "npc_consume_item": "dmbb_essence", "count": 3750 },
+        { "u_add_var": "dmbb_orb", "type": "mutant", "context": "called", "value": "yes" },
+        { "u_buy_item": "dmbb_act_summon_merc_mutant" }
+      ]
+    },
+    {
+      "text": "[RECRUIT] Ranger",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_items": { "item": "dmbb_essence", "count": 2000 } },
+          { "not": { "u_has_var": "dmbb_orb", "type": "ranger", "context": "called", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_sell_item": "dmbb_essence", "count": 2000 },
+        { "npc_consume_item": "dmbb_essence", "count": 2000 },
+        { "u_add_var": "dmbb_orb", "type": "ranger", "context": "called", "value": "yes" },
+        { "u_buy_item": "dmbb_act_summon_merc_ranger" }
+      ]
+    },
+    {
+      "text": "[RECRUIT] Bard",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_items": { "item": "dmbb_essence", "count": 2000 } },
+          { "not": { "u_has_var": "dmbb_orb", "type": "bard", "context": "called", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_sell_item": "dmbb_essence", "count": 2000 },
+        { "npc_consume_item": "dmbb_essence", "count": 2000 },
+        { "u_add_var": "dmbb_orb", "type": "bard", "context": "called", "value": "yes" },
+        { "u_buy_item": "dmbb_act_summon_merc_bard" }
+      ]
+    },
+    {
+      "text": "[RECRUIT] Mage",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_items": { "item": "dmbb_essence", "count": 2000 } },
+          { "not": { "u_has_var": "dmbb_orb", "type": "mage", "context": "called", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_sell_item": "dmbb_essence", "count": 2000 },
+        { "npc_consume_item": "dmbb_essence", "count": 2000 },
+        { "u_add_var": "dmbb_orb", "type": "mage", "context": "called", "value": "yes" },
+        { "u_buy_item": "dmbb_act_summon_merc_mage" }
+      ]
+    },
+    {
+      "text": "[RECRUIT] Cleric",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_items": { "item": "dmbb_essence", "count": 2000 } },
+          { "not": { "u_has_var": "dmbb_orb", "type": "cleric", "context": "called", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_sell_item": "dmbb_essence", "count": 2000 },
+        { "npc_consume_item": "dmbb_essence", "count": 2000 },
+        { "u_add_var": "dmbb_orb", "type": "cleric", "context": "called", "value": "yes" },
+        { "u_buy_item": "dmbb_act_summon_merc_cleric" }
+      ]
+    },
+    {
+      "text": "[RECRUIT] Priest",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_items": { "item": "dmbb_essence", "count": 2000 } },
+          { "not": { "u_has_var": "dmbb_orb", "type": "priest", "context": "called", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_sell_item": "dmbb_essence", "count": 2000 },
+        { "npc_consume_item": "dmbb_essence", "count": 2000 },
+        { "u_add_var": "dmbb_orb", "type": "priest", "context": "called", "value": "yes" },
+        { "u_buy_item": "dmbb_act_summon_merc_priest" }
+      ]
+    },
+    { "text": "< - - -", "topic": "TALK_DMBB_ORB_command" }
+  ]
+}

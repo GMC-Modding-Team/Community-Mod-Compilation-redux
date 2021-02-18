@@ -1,0 +1,66 @@
+[
+  {
+    "id": "223_speedloader5",
+    "looks_like": "8x40_10_mag",
+    "type": "MAGAZINE",
+    "name": { "str": ".223 5-round speedloader" },
+    "description": "This 5-round speedloader is designed to be used with the TG2241 revolver.",
+    "weight": "92 g",
+    "volume": "250 ml",
+    "price": "50 USD",
+    "material": [ "steel", "plastic" ],
+    "symbol": "#",
+    "color": "dark_gray",
+    "ammo_type": [ "223" ],
+    "capacity": 5,
+    "flags": [ "SPEEDLOADER" ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "223": 5 } } ]
+  },
+  {
+    "id": "223_pistol",
+    "looks_like": "rm103a_pistol",
+    "copy-from": "pistol_base",
+    "type": "GUN",
+    "name": { "str": "TG2241 revolver" },
+    "description": "Independently produced and distributed as a more practical alternative to Rivtech's line of rifle-caliber pistols, this mechanized revolver uses the much more readily available 5.56 NATO rounds. While the goal was community defense in a compact package, few ever made it to distribution.",
+    "weight": "2000 g",
+    "volume": "750 ml",
+    "price": "900 USD",
+    "bashing": 15,
+    "material": [ "steel", "plastic" ],
+    "symbol": "(",
+    "color": "dark_gray",
+    "ammo": [ "223" ],
+    "skill": "pistol",
+    "proportional": { "reload": 0.6 },
+    "ranged_damage": { "damage_type": "bullet", "amount": 0 },
+    "dispersion": 280,
+    "durability": 8,
+    "blackpowder_tolerance": 56,
+    "clip_size": 5,
+    "valid_mod_locations": [
+      [ "accessories", 2 ],
+      [ "barrel", 1 ],
+      [ "bore", 1 ],
+      [ "grip", 1 ],
+      [ "mechanism", 4 ],
+      [ "muzzle", 1 ],
+      [ "rail", 1 ],
+      [ "sights", 1 ],
+      [ "stock", 1 ],
+      [ "underbarrel", 1 ]
+    ],
+    "flags": [ "RELOAD_ONE", "RELOAD_EJECT", "NEVER_JAMS" ],
+    "faults": [ "fault_gun_blackpowder", "fault_gun_dirt" ],
+    "pocket_data": [
+      {
+        "magazine_well": "250 ml",
+        "pocket_type": "MAGAZINE_WELL",
+        "holster": true,
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [ "223_speedloader5" ]
+      }
+    ]
+  }
+]

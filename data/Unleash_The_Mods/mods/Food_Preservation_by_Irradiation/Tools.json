@@ -1,0 +1,57 @@
+[
+  {
+    "id": "survivor_food_irradiator",
+    "type": "TOOL",
+    "name": { "str": "survivor food irratiator" },
+    "description": "This is a tool that can irradiate food properly prepared in a sealed plastic bag using ionising radiation such as X-Rays.  Bulky and heavy to keep the user safe.",
+    "weight": "18875 g",
+    "volume": "5 L",
+    "price": "400 USD",
+    "material": [ "steel", "lead" ],
+    "symbol": ";",
+    "color": "light_blue",
+    "ammo": [ "battery" ],
+    "max_charges": 200
+  },
+  {
+    "result": "survivor_food_irradiator",
+    "type": "recipe",
+    "category": "CC_OTHER",
+    "subcategory": "CSC_OTHER_TOOLS",
+    "//": "Need to know a lot about electronics and something about cooking/chemistry to configure it correctly.",
+    "skill_used": "fabrication",
+    "difficulty": 6,
+    "skills_required": [ [ "cooking", 3 ], [ "electronics", 6 ] ],
+    "time": "20 m",
+    "reversible": true,
+    "decomp_learn": 4,
+    "autolearn": [ [ "fabrication", 5 ], [ "cooking", 3 ], [ "electronics", 6 ] ],
+    "using": [ [ "welding_standard", 5 ] ],
+    "qualities": [ { "id": "HAMMER", "level": 1 } ],
+    "tools": [ [ [ "soldering_iron", 30 ], [ "toolset", 30 ] ] ],
+    "components": [
+      [ [ "solder_wire", 200 ] ],
+      [ [ "e_scrap", 2 ] ],
+      [ [ "lightstrip_inactive", 2 ] ],
+      [ [ "processor", 1 ] ],
+      [ [ "circuit", 3 ] ],
+      [ [ "RAM", 2 ] ],
+      [ [ "cable", 30 ] ],
+      [ [ "amplifier", 1 ], [ "power_supply", 1 ] ],
+      [ [ "lead", 5000 ] ]
+    ]
+  },
+  {
+    "result": "bag_plastic",
+    "type": "recipe",
+    "category": "CC_OTHER",
+    "subcategory": "CSC_OTHER_CONTAINERS",
+    "//": "Greatly reduced the time requirement as the code doesn't support multipliers (result_mult) on non-charged items.",
+    "skill_used": "fabrication",
+    "difficulty": 4,
+    "time": "50 s",
+    "autolearn": true,
+    "tools": [ [ [ "mold_plastic", -1 ] ], [ [ "surface_heat", 5, "LIST" ] ] ],
+    "components": [ [ [ "plastic_chunk", 1 ] ] ]
+  }
+]

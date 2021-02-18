@@ -1,0 +1,327 @@
+[
+  {
+    "id": [
+      "TALK_DMBB_ORB_command_halp",
+      "TALK_DMBB_ORB_command_halp_dmbb",
+      "TALK_DMBB_ORB_command_halp_orb",
+      "TALK_DMBB_ORB_command_halp_wave",
+      "TALK_DMBB_ORB_command_halp_essence",
+      "TALK_DMBB_ORB_command_halp_buy",
+      "TALK_DMBB_ORB_command_halp_upgrade",
+      "TALK_DMBB_ORB_command_halp_research",
+      "TALK_DMBB_ORB_command_halp_create",
+      "TALK_DMBB_ORB_command_halp_build",
+      "TALK_DMBB_ORB_command_halp_merc",
+      "TALK_DMBB_ORB_command_halp_warp",
+      "TALK_DMBB_ORB_command_halp_diff",
+      "TALK_DMBB_ORB_command_halp_diff_plus"
+    ],
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_has_var": "dmbb_orb",
+      "type": "greeted_by",
+      "context": "axema",
+      "value": "yes",
+      "yes": "*hovers at a slower pace...",
+      "no": "*hovers at a slower pace...\n\n*Someone's voice*: \"Here's some brief explanations about DMBB. New tips will appear as you take progress or if you have unlocked something. Do note that you can disable this option anytime you want.\""
+    },
+    "speaker_effect": { "effect": { "u_add_var": "dmbb_orb", "type": "greeted_by", "context": "axema", "value": "yes" } },
+    "responses": [
+      { "text": "[ARCHIVE]", "topic": "TALK_DMBB_ORB_command_halp_archive" },
+      {
+        "text": "About DMBB",
+        "topic": "TALK_DMBB_ORB_command_halp_dmbb",
+        "condition": { "not": { "u_has_var": "dmbb_orb", "type": "help", "context": "dmbb", "value": "yes" } },
+        "effect": { "u_add_var": "dmbb_orb", "type": "help", "context": "dmbb", "value": "yes" }
+      },
+      {
+        "text": "About the orb",
+        "topic": "TALK_DMBB_ORB_command_halp_orb",
+        "condition": { "not": { "u_has_var": "dmbb_orb", "type": "help", "context": "orb", "value": "yes" } },
+        "effect": { "u_add_var": "dmbb_orb", "type": "help", "context": "orb", "value": "yes" }
+      },
+      {
+        "text": "About [WAVES]",
+        "topic": "TALK_DMBB_ORB_command_halp_wave",
+        "condition": { "not": { "u_has_var": "dmbb_orb", "type": "help", "context": "wave", "value": "yes" } },
+        "effect": { "u_add_var": "dmbb_orb", "type": "help", "context": "wave", "value": "yes" }
+      },
+      {
+        "text": "About sentinel essences",
+        "topic": "TALK_DMBB_ORB_command_halp_essence",
+        "condition": { "not": { "u_has_var": "dmbb_orb", "type": "help", "context": "essence", "value": "yes" } },
+        "effect": { "u_add_var": "dmbb_orb", "type": "help", "context": "essence", "value": "yes" }
+      },
+      {
+        "text": "About [BUY]",
+        "topic": "TALK_DMBB_ORB_command_halp_buy",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "wave5", "context": "finish", "value": "yes" },
+            { "not": { "u_has_var": "dmbb_orb", "type": "help", "context": "buy", "value": "yes" } }
+          ]
+        },
+        "effect": { "u_add_var": "dmbb_orb", "type": "help", "context": "buy", "value": "yes" }
+      },
+      {
+        "text": "About [UPGRADE]",
+        "topic": "TALK_DMBB_ORB_command_halp_upgrade",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "wave5", "context": "finish", "value": "yes" },
+            { "not": { "u_has_var": "dmbb_orb", "type": "help", "context": "upgrade", "value": "yes" } }
+          ]
+        },
+        "effect": { "u_add_var": "dmbb_orb", "type": "help", "context": "upgrade", "value": "yes" }
+      },
+      {
+        "text": "About [RESEARCH]",
+        "topic": "TALK_DMBB_ORB_command_halp_research",
+        "condition": {
+          "and": [
+            {
+              "or": [
+                { "npc_has_trait": "DMBB_ORB_shockstorm" },
+                { "npc_has_trait": "DMBB_ORB_inferno" },
+                { "npc_has_trait": "DMBB_ORB_blizzard" }
+              ]
+            },
+            { "not": { "u_has_var": "dmbb_orb", "type": "help", "context": "research", "value": "yes" } }
+          ]
+        },
+        "effect": { "u_add_var": "dmbb_orb", "type": "help", "context": "research", "value": "yes" }
+      },
+      {
+        "text": "About [CREATE]",
+        "topic": "TALK_DMBB_ORB_command_halp_create",
+        "condition": {
+          "and": [
+            {
+              "or": [
+                { "npc_has_trait": "DMBB_ORB_cesheal" },
+                { "npc_has_trait": "DMBB_ORB_cespure" },
+                { "npc_has_trait": "DMBB_ORB_cesward" }
+              ]
+            },
+            { "not": { "u_has_var": "dmbb_orb", "type": "help", "context": "create", "value": "yes" } }
+          ]
+        },
+        "effect": { "u_add_var": "dmbb_orb", "type": "help", "context": "create", "value": "yes" }
+      },
+      {
+        "text": "About [BUILD]",
+        "topic": "TALK_DMBB_ORB_command_halp_build",
+        "condition": {
+          "and": [
+            {
+              "or": [
+                { "u_has_var": "dmbb_orb", "type": "research", "context": "turret_shock1", "value": "yes" },
+                { "u_has_var": "dmbb_orb", "type": "research", "context": "turret_fire1", "value": "yes" },
+                { "u_has_var": "dmbb_orb", "type": "research", "context": "turret_ice1", "value": "yes" }
+              ]
+            },
+            { "not": { "u_has_var": "dmbb_orb", "type": "help", "context": "build", "value": "yes" } }
+          ]
+        },
+        "effect": { "u_add_var": "dmbb_orb", "type": "help", "context": "build", "value": "yes" }
+      },
+      {
+        "text": "About [MERCENARY]",
+        "topic": "TALK_DMBB_ORB_command_halp_merc",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "bosswave1", "context": "finish", "value": "yes" },
+            { "not": { "u_has_var": "dmbb_orb", "type": "help", "context": "merc", "value": "yes" } }
+          ]
+        },
+        "effect": { "u_add_var": "dmbb_orb", "type": "help", "context": "merc", "value": "yes" }
+      },
+      {
+        "text": "About [WARPGATE]",
+        "topic": "TALK_DMBB_ORB_command_halp_warp",
+        "condition": {
+          "and": [
+            { "npc_has_trait": "DMBB_ORB_guild" },
+            { "not": { "u_has_var": "dmbb_orb", "type": "help", "context": "warp", "value": "yes" } }
+          ]
+        },
+        "effect": { "u_add_var": "dmbb_orb", "type": "help", "context": "warp", "value": "yes" }
+      },
+      {
+        "text": "[DIFFICULTY] Wave 20+",
+        "topic": "TALK_DMBB_ORB_command_halp_diff",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "bosswave2", "context": "finish", "value": "yes" },
+            { "not": { "u_has_var": "dmbb_orb", "type": "help", "context": "diff", "value": "yes" } }
+          ]
+        },
+        "effect": { "u_add_var": "dmbb_orb", "type": "help", "context": "diff", "value": "yes" }
+      },
+      {
+        "text": "[DIFFICULTY] Wave 50+",
+        "topic": "TALK_DMBB_ORB_command_halp_diff_plus",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "bosswave2", "context": "finish", "value": "yes" },
+            { "not": { "u_has_var": "dmbb_orb", "type": "help", "context": "diff_plus", "value": "yes" } }
+          ]
+        },
+        "effect": { "u_add_var": "dmbb_orb", "type": "help", "context": "diff_plus", "value": "yes" }
+      },
+      { "text": "*Disable [VIEW HELP]*", "topic": "TALK_DMBB_ORB_command_halp_idnu" },
+      { "text": "< - - -", "topic": "TALK_DMBB_ORB_command" }
+    ]
+  },
+  {
+    "id": "TALK_DMBB_ORB_command_halp_archive",
+    "type": "talk_topic",
+    "dynamic_line": "*hovers even slower...",
+    "responses": [
+      {
+        "text": "About DMBB",
+        "topic": "TALK_DMBB_ORB_command_halp_dmbb",
+        "condition": { "u_has_var": "dmbb_orb", "type": "help", "context": "dmbb", "value": "yes" }
+      },
+      {
+        "text": "About the orb",
+        "topic": "TALK_DMBB_ORB_command_halp_orb",
+        "condition": { "u_has_var": "dmbb_orb", "type": "help", "context": "orb", "value": "yes" }
+      },
+      {
+        "text": "About [WAVES]",
+        "topic": "TALK_DMBB_ORB_command_halp_wave",
+        "condition": { "u_has_var": "dmbb_orb", "type": "help", "context": "wave", "value": "yes" }
+      },
+      {
+        "text": "About sentinel essences",
+        "topic": "TALK_DMBB_ORB_command_halp_essence",
+        "condition": { "u_has_var": "dmbb_orb", "type": "help", "context": "essence", "value": "yes" }
+      },
+      {
+        "text": "About [BUY]",
+        "topic": "TALK_DMBB_ORB_command_halp_buy",
+        "condition": { "u_has_var": "dmbb_orb", "type": "help", "context": "buy", "value": "yes" }
+      },
+      {
+        "text": "About [UPGRADE]",
+        "topic": "TALK_DMBB_ORB_command_halp_upgrade",
+        "condition": { "u_has_var": "dmbb_orb", "type": "help", "context": "upgrade", "value": "yes" }
+      },
+      {
+        "text": "About [RESEARCH]",
+        "topic": "TALK_DMBB_ORB_command_halp_research",
+        "condition": { "u_has_var": "dmbb_orb", "type": "help", "context": "research", "value": "yes" }
+      },
+      {
+        "text": "About [CREATE]",
+        "topic": "TALK_DMBB_ORB_command_halp_create",
+        "condition": { "u_has_var": "dmbb_orb", "type": "help", "context": "create", "value": "yes" }
+      },
+      {
+        "text": "About [BUILD]",
+        "topic": "TALK_DMBB_ORB_command_halp_build",
+        "condition": { "u_has_var": "dmbb_orb", "type": "help", "context": "build", "value": "yes" }
+      },
+      {
+        "text": "About [MERCENARY]",
+        "topic": "TALK_DMBB_ORB_command_halp_merc",
+        "condition": { "u_has_var": "dmbb_orb", "type": "help", "context": "merc", "value": "yes" }
+      },
+      {
+        "text": "About [WARPGATE]",
+        "topic": "TALK_DMBB_ORB_command_halp_warp",
+        "condition": { "u_has_var": "dmbb_orb", "type": "help", "context": "warp", "value": "yes" }
+      },
+      {
+        "text": "[DIFFICULTY] Wave 20+",
+        "topic": "TALK_DMBB_ORB_command_halp_diff",
+        "condition": { "u_has_var": "dmbb_orb", "type": "help", "context": "diff", "value": "yes" }
+      },
+      {
+        "text": "[DIFFICULTY] Wave 50+",
+        "topic": "TALK_DMBB_ORB_command_halp_diff_plus",
+        "condition": { "u_has_var": "dmbb_orb", "type": "help", "context": "diff_plus", "value": "yes" }
+      },
+      { "text": "< - - -", "topic": "TALK_DMBB_ORB_command" }
+    ]
+  },
+  {
+    "id": "TALK_DMBB_ORB_command_halp_dmbb",
+    "type": "talk_topic",
+    "dynamic_line": "*- DMBB\n\nDMBB (Defense Mode but Better) is a mod imitating CDDA's defense gamemode. The rule is simple: survive."
+  },
+  {
+    "id": "TALK_DMBB_ORB_command_halp_orb",
+    "type": "talk_topic",
+    "dynamic_line": "*- The Orb\n\nThe orb is your companion in survival. It'll provide you your essential needs in living, but you'll have to work for them, by engaging in waves. It gathers malevolent aura from the portals that appears, which are then converted into sentinel's essences.\n\nThe orb is your life. If it gets destroyed, you will slowly perish. Worry not, the orb is protected by a divinity aura. This aura causes a monster that touches it to take 100 damage and only takes away 5 health points of the orb. You must prevent the monsters from touching it too much, as mending it is almost impossible."
+  },
+  {
+    "id": "TALK_DMBB_ORB_command_halp_wave",
+    "type": "talk_topic",
+    "dynamic_line": "*- [WAVES]\n\nA wave is a siege of monster that will try to kill/destroy everyone in your team. Waves gradually increases in size and strength as you advance further. There are different types of waves: normal, special and boss.\nA normal wave will always send off hordes of monsters, with portals constantly sending more and more until they vanish.\nA special wave (or bonus wave) is a siege of different species that usually don't have portals.\nA boss wave is similar to normal, but doesn't send a horde. Instead, very strong monsters and portals appear at the start.\n\nIf you have installed a wavepack mod extension, new waves will appear on the list. You can partake to these waves early on to gain additional essences."
+  },
+  {
+    "id": "TALK_DMBB_ORB_command_halp_essence",
+    "type": "talk_topic",
+    "dynamic_line": "*- sentinel essences\n\nSentinel essences are your main currency for the orb. You gain these as your reward for completing waves. Stronger waves provides more essences.\n\nThere's also different essences dropped by monsters. Collect these and you might find it useful later on."
+  },
+  {
+    "id": "TALK_DMBB_ORB_command_halp_buy",
+    "type": "talk_topic",
+    "dynamic_line": "*- [BUY]\n\n[BUY] is a command for the orb, which uses the power of sentinel's essences to pull in items. Here you can spend essences to gather supplies from a category such as consumables and weapons.\n\nUpgrading the orb's portal allows new item categories to be selected and/or makes the process more precise."
+  },
+  {
+    "id": "TALK_DMBB_ORB_command_halp_upgrade",
+    "type": "talk_topic",
+    "dynamic_line": "*- [UPGRADE]\n\n[UPGRADE] is a command for the orb and is vital in progressing in later waves. There's three kind of upgrades: PASSIVE, ACTIVE and SENTINEL. First are basic abilities of the orb, second are spells used in waves and third are upgrades on you. Mercenaries can also gain SENTINEL upgrades."
+  },
+  {
+    "id": "TALK_DMBB_ORB_command_halp_research",
+    "type": "talk_topic",
+    "dynamic_line": "*- [RESEARCH]\n\n[RESEARCH] is a command for the orb unlocked after acquiring an elemental ACTIVE ability. This allows the orb to concentrate this newly found element into building them, as turrets. The ACTIVE ability of said element becomes unusable in waves after the process."
+  },
+  {
+    "id": "TALK_DMBB_ORB_command_halp_create",
+    "type": "talk_topic",
+    "dynamic_line": "*- [CREATE]\n\n[CREATE] is a command for the orb unlocked after acquiring a Celestial PASSIVE ability. This allows you to form blessed shards made out of essences, containing a certain spell such as instant healing and purification.\n\nShards are also created in different ways."
+  },
+  {
+    "id": "TALK_DMBB_ORB_command_halp_build",
+    "type": "talk_topic",
+    "dynamic_line": "*- [BUILD]\n\n[BUILD] is a command for the orb unlocked after researching an elemental turret. Here you can spend your essences to build a turret, which will help on fending off waves. If you've researched the said elemental turret further, you can spend more essences to perform an upgrade."
+  },
+  {
+    "id": "TALK_DMBB_ORB_command_halp_merc",
+    "type": "talk_topic",
+    "dynamic_line": "*- [MERCENARY]\n\n[MERCENARY] is a command for the orb that allows recruitment of NPCs. They come with different class, some with unique abilities to aid you in combat. New mercenaries will appear in later waves."
+  },
+  {
+    "id": "TALK_DMBB_ORB_command_halp_warp",
+    "type": "talk_topic",
+    "dynamic_line": "*- [WARPGATE]\n\n[WARPGATE] is a command available only if the orb has a Warpgate PASSIVE upgrade. It opens a path that leads to the warpgate(s), in which you'll interact with to teleport towards your desired location. \n\nThe path closes each time you prepare for a wave."
+  },
+  {
+    "id": "TALK_DMBB_ORB_command_halp_diff",
+    "type": "talk_topic",
+    "dynamic_line": "*- [DIFFICULTY] Wave 20+\n\nThe difficulty above wave 20 is insane. New monsters start to appear and the portals are more persistent."
+  },
+  {
+    "id": "TALK_DMBB_ORB_command_halp_diff_plus",
+    "type": "talk_topic",
+    "dynamic_line": "*- [DIFFICULTY] Wave 50+\n\nThe difficulty above wave 50 is extreme. Newer, stronger and \"magical\" monsters start to appear, while the portals last much longer."
+  },
+  {
+    "id": "TALK_DMBB_ORB_command_halp_idnu",
+    "type": "talk_topic",
+    "dynamic_line": "*will no longer show [VIEW HELP] in preparation menu until you start a new game. Are you sure?",
+    "responses": [
+      {
+        "text": "*Disable [VIEW HELP]*",
+        "topic": "TALK_DMBB_ORB_command",
+        "effect": { "u_add_var": "dmbb_orb", "type": "help", "context": "idnu", "value": "yes" }
+      },
+      { "text": "< - - -", "topic": "TALK_DMBB_ORB_command_halp" }
+    ]
+  }
+]

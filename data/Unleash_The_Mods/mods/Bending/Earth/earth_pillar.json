@@ -1,0 +1,68 @@
+[
+  {
+    "id": "earth_pillar",
+    "type": "SPELL",
+    "name": { "str": "earth pillar" },
+    "description": "spell to raise an earth pillar",
+    "effect": "ter_transform",
+    "effect_str": "create_earth_pillar",
+    "valid_targets": [ "ground" ],
+    "flags": [ "NO_LEGS", "SILENT" ],
+    "max_level": 10,
+    "min_damage": 1,
+    "max_damage": 1,
+    "min_range": 1,
+    "max_range": 10,
+    "range_increment": 1,
+    "base_casting_time": 100,
+    "base_energy_cost": 100,
+    "energy_source": "MANA",
+    "difficulty": 1
+  },
+  {
+    "type": "ter_furn_transform",
+    "id": "create_earth_pillar",
+    "fail_message": "You mess up your form.",
+    "furniture": [ { "result": "f_pillar_earth", "valid_furniture": [ "f_null" ] } ]
+  },
+  {
+    "type": "furniture",
+    "id": "f_pillar_earth",
+    "name": "raised earth wall",
+    "description": "A pillar of solid rock, sturdy enough to support a roof with enough walls and keep out some 'visitors'.",
+    "symbol": "o",
+    "color": "brown",
+    "move_cost_mod": -2,
+    "coverage": 100,
+    "required_str": 60,
+    "flags": [ "NOITEM", "SUPPORTS_ROOF", "NO_SCENT", "MINEABLE", "BLOCK_WIND" ],
+    "connects_to": "WALL",
+    "bash": { "str_min": 50, "str_max": 200, "sound": "heavy rumbling!", "sound_fail": "thump", "ter_set": "t_null" }
+  },
+  {
+    "id": "remove_earth_pillar",
+    "type": "SPELL",
+    "name": { "str": "remove earth pillar" },
+    "description": "spell to raise an earth pillar",
+    "effect": "ter_transform",
+    "effect_str": "remove_earth_pillar",
+    "valid_targets": [ "ground" ],
+    "flags": [ "NO_LEGS", "SILENT" ],
+    "max_level": 10,
+    "min_damage": 1,
+    "max_damage": 1,
+    "min_range": 1,
+    "max_range": 10,
+    "range_increment": 1,
+    "base_casting_time": 100,
+    "base_energy_cost": 100,
+    "energy_source": "MANA",
+    "difficulty": 1
+  },
+  {
+    "type": "ter_furn_transform",
+    "id": "remove_earth_pillar",
+    "fail_message": "You mess up your form.",
+    "furniture": [ { "result": "f_null", "valid_furniture": [ "f_pillar_earth" ] } ]
+  }
+]

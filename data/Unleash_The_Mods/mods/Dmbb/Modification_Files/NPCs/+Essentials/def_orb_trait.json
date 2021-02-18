@@ -1,0 +1,325 @@
+[
+  {
+    "type": "mutation",
+    "id": "MYOPIC",
+    "name": { "str": "Near-Sighted" },
+    "points": -2,
+    "description": "Without glasses, your seeing radius is severely reduced!  However, you are guaranteed to start with a pair of glasses.",
+    "starting_trait": true,
+    "cancels": [ "URSINE_EYE", "EAGLEEYED" ],
+    "category": [ "BEAST", "TROGLOBITE" ],
+    "player_display": false
+  },
+  {
+    "type": "mutation",
+    "id": "DMBB_ORB",
+    "name": { "str": "Orb" },
+    "points": 0,
+    "description": "None shall pass!",
+    "valid": false,
+    "purifiable": false,
+    "hp_modifier_secondary": 2,
+    "mending_modifier": 2,
+    "hearing_modifier": -10,
+    "attackcost_modifier": 2.5,
+    "stamina_regen_modifier": 100,
+    "profession": true
+  },
+  {
+    "type": "mutation",
+    "id": "DMBB_ORB_START",
+    "name": { "str": "Orb Start" },
+    "points": 0,
+    "description": "Game set!",
+    "valid": false,
+    "purifiable": false
+  },
+  {
+    "type": "mutation",
+    "id": "DMBB_ORB_START_pledge",
+    "name": { "str": "Defender's Pledge" },
+    "points": 1,
+    "description": "As a defender, the orb has blessed you with divine prowess, providing permanent stat bonus.",
+    "valid": false,
+    "purifiable": false,
+    "passive_mods": { "str_mod": 3, "dex_mod": 3, "int_mod": 3, "per_mod": 3 }
+  },
+  {
+    "type": "mutation",
+    "id": "DMBB_ORB_BERSERKER_will",
+    "name": { "str": "Berserker's Will" },
+    "points": 1,
+    "description": "The berserker pumps up each time they are hit. This causes their stats to grow up while slowly regenerates health.",
+    "valid": false,
+    "purifiable": false,
+    "enchantments": [ "DMBB_ORB_BERSERKER_will_ench" ]
+  },
+  {
+    "type": "mutation",
+    "id": "DMBB_ORB_BARD_play",
+    "name": { "str": "Playing" },
+    "points": -1,
+    "description": "This mercenary is playing a song!",
+    "valid": false,
+    "purifiable": false,
+    "attackcost_modifier": 5,
+    "movecost_modifier": 5,
+    "passive_mods": { "str_mod": -2, "dex_mod": -2 }
+  },
+  {
+    "type": "mutation",
+    "id": "DMBB_ORB_BARD_interrupt",
+    "name": { "str": "Interrupted" },
+    "points": 0,
+    "description": "The bard was interrupted! Also, it is a bug to see this.",
+    "valid": false,
+    "purifiable": false,
+    "cancels": [ "DMBB_ORB_BARD_play", "DMBB_ORB_BARD_battletrance", "DMBB_ORB_BARD_allegro", "DMBB_ORB_BARD_adagio" ]
+  },
+  {
+    "type": "mutation",
+    "id": "DMBB_ORB_BARD_battletrance",
+    "name": { "str": "Battle Trance" },
+    "points": 0,
+    "description": "The bard is playing this song to all allies.\n\nIf the bard keeps on playing this without any interruptions, increases combat efficiency of all allies.",
+    "valid": false,
+    "purifiable": false,
+    "cancels": [ "DMBB_ORB_BARD_battletrance_cast" ],
+    "enchantments": [ "DMBB_ORB_BARD_interrupted_ench" ]
+  },
+  {
+    "type": "mutation",
+    "id": "DMBB_ORB_BARD_allegro",
+    "name": { "str": "Allegro" },
+    "points": 0,
+    "description": "The bard is playing this song to all allies.\n\nIf the bard keeps on playing this without any interruptions, increases speed and stamina regeneration of all allies.",
+    "valid": false,
+    "purifiable": false,
+    "cancels": [ "DMBB_ORB_BARD_allegro_cast" ],
+    "enchantments": [ "DMBB_ORB_BARD_interrupted_ench" ]
+  },
+  {
+    "type": "mutation",
+    "id": "DMBB_ORB_BARD_adagio",
+    "name": { "str": "Adagio" },
+    "points": 0,
+    "description": "The bard is playing this song to all allies.\n\nIf the bard keeps on playing this without any interruptions, slowly alleviates the pain from all allies.",
+    "valid": false,
+    "purifiable": false,
+    "cancels": [ "DMBB_ORB_BARD_adagio_cast" ],
+    "enchantments": [ "DMBB_ORB_BARD_interrupted_ench" ]
+  },
+  {
+    "type": "mutation",
+    "id": "DMBB_ORB_BARD_battletrance_cast",
+    "name": { "str": "Playing" },
+    "points": 0,
+    "description": "It is a bug to see this.",
+    "valid": false,
+    "purifiable": false,
+    "enchantments": [ "DMBB_ORB_BARD_battletrance_cast_ench" ],
+    "player_display": false
+  },
+  {
+    "type": "mutation",
+    "id": "DMBB_ORB_BARD_allegro_cast",
+    "name": { "str": "Playing" },
+    "points": 0,
+    "description": "It is a bug to see this.",
+    "valid": false,
+    "purifiable": false,
+    "enchantments": [ "DMBB_ORB_BARD_battletrance_cast_ench" ],
+    "player_display": false
+  },
+  {
+    "type": "mutation",
+    "id": "DMBB_ORB_BARD_adagio_cast",
+    "name": { "str": "Playing" },
+    "points": 0,
+    "description": "It is a bug to see this.",
+    "valid": false,
+    "purifiable": false,
+    "enchantments": [ "DMBB_ORB_BARD_battletrance_cast_ench" ],
+    "player_display": false
+  },
+  {
+    "type": "mutation",
+    "id": "DMBB_ORB_CASTER_vulnerable",
+    "name": { "str": "Spellbound" },
+    "points": -1,
+    "description": "This mercenary is casting a spell. They will be vulnerable to incoming attacks!",
+    "valid": false,
+    "purifiable": false,
+    "attackcost_modifier": 30,
+    "movecost_modifier": 30,
+    "passive_mods": { "str_mod": -5, "dex_mod": -8 }
+  },
+  {
+    "type": "mutation",
+    "id": "DMBB_ORB_MAGE_manabeam",
+    "name": { "str": "Mana Beam" },
+    "points": 0,
+    "description": "The mage is focused on casting this spell to the enemies in range.\n\nIf casted, shoots a ray if concentrated mana at an enemy target, dealing 20-40 true damage.",
+    "valid": false,
+    "purifiable": false,
+    "enchantments": [ "DMBB_ORB_MAGE_manabeam_ench" ]
+  },
+  {
+    "type": "mutation",
+    "id": "DMBB_ORB_MAGE_manaburst",
+    "name": { "str": "Mana Burst" },
+    "points": 0,
+    "description": "The mage is focused on casting this spell to the enemies in range.\n\nIf casted, blasts an enemy target with pure mana, dealing 8-16 true damage in the 3 tile radius.",
+    "valid": false,
+    "purifiable": false,
+    "enchantments": [ "DMBB_ORB_MAGE_manaburst_ench" ]
+  },
+  {
+    "type": "mutation",
+    "id": "DMBB_ORB_MAGE_stunlock",
+    "name": { "str": "Stunlock" },
+    "points": 0,
+    "description": "The mage is focused on casting this spell to the enemies in range.\n\nIf casted, renders an enemy target unconscious for 5 turns.",
+    "valid": false,
+    "purifiable": false,
+    "enchantments": [ "DMBB_ORB_MAGE_stunlock_ench" ]
+  },
+  {
+    "type": "mutation",
+    "id": "DMBB_ORB_MAGE_battle_megamagic",
+    "name": { "str": "Megamagic" },
+    "points": 0,
+    "description": "The battlemage is focused on casting this spell to the enemies in range.\n\nIf casted, blasts the target with an unimaginably strong surge of mana, dealing 500-1000 true damage in the 5 tile radius.",
+    "valid": false,
+    "purifiable": false,
+    "enchantments": [ "DMBB_ORB_MAGE_battle_megamagic_ench" ]
+  },
+  {
+    "type": "mutation",
+    "id": "DMBB_ORB_MAGE_battle_manabeam_plus",
+    "name": { "str": "Dance of the Mana Beams" },
+    "points": 0,
+    "description": "The battlemage is focused on casting this spell to the enemies in range.\n\nIf casted, randomly projects 3-6 wide beams of pure mana into the vicinity, dealing 25-50 true damage to the enemies hit.",
+    "valid": false,
+    "purifiable": false,
+    "enchantments": [ "DMBB_ORB_MAGE_battle_manabeam_plus_ench" ]
+  },
+  {
+    "type": "mutation",
+    "id": "DMBB_ORB_MAGE_battle_manaburst_plus",
+    "name": { "str": "Chaotic Obliteration" },
+    "points": 0,
+    "description": "The battlemage is focused on casting this spell to the enemies in range.\n\nIf casted, does 5-10 series of mana explosions in the vicinity, dealing 20-40 true damage to the enemies hit.",
+    "valid": false,
+    "purifiable": false,
+    "enchantments": [ "DMBB_ORB_MAGE_battle_manaburst_plus_ench" ]
+  },
+  {
+    "type": "mutation",
+    "id": "DMBB_ORB_MAGE_necro_spawn",
+    "name": { "str": "Summon Horde" },
+    "points": 0,
+    "description": "The necromancer is focused on casting this spell to the enemies in range.\n\nIf casted, surrounds the target with 4-12 zombies to fight them that lasts for 30-60 turns. These minions are hostile to everyone except for their master.",
+    "valid": false,
+    "purifiable": false,
+    "enchantments": [ "DMBB_ORB_MAGE_necro_spawn_ench" ]
+  },
+  {
+    "type": "mutation",
+    "id": "DMBB_ORB_MAGE_necro_vamp",
+    "name": { "str": "Widespread Transfusion" },
+    "points": 0,
+    "description": "The necromancer is focused on casting this spell to the enemies in range.\n\nIf casted, drains the lifeforce of the living target, dealing 30 biological damage. The lifeforce is distributed to all allies, restoring their health by 3.",
+    "valid": false,
+    "purifiable": false,
+    "enchantments": [ "DMBB_ORB_MAGE_necro_vamp_ench" ]
+  },
+  {
+    "type": "mutation",
+    "id": "DMBB_ORB_MAGE_battle",
+    "name": { "str": "Battlemage" },
+    "points": 1,
+    "description": "This mercenary is a battlemage.",
+    "valid": false,
+    "purifiable": false
+  },
+  {
+    "type": "mutation",
+    "id": "DMBB_ORB_MAGE_necro",
+    "name": { "str": "Necromancer" },
+    "points": 1,
+    "description": "This mercenary is a necromancer.",
+    "valid": false,
+    "purifiable": false,
+    "ignored_by": [ "ZOMBIE" ]
+  },
+  {
+    "type": "mutation",
+    "id": "DMBB_ORB_CLERIC_heal",
+    "name": { "str": "Heal" },
+    "points": 0,
+    "description": "The cleric is focused on casting this spell to nearby allies in combat.\n\nIf casted, heals all allied targets by 5 and removes few ailments.",
+    "valid": false,
+    "purifiable": false,
+    "enchantments": [ "DMBB_ORB_CLERIC_heal_ench" ]
+  },
+  {
+    "type": "mutation",
+    "id": "DMBB_ORB_CLERIC_buff",
+    "name": { "str": "Cleric's Blessing" },
+    "points": 0,
+    "description": "The cleric is focused on casting this spell to nearby allies in combat.\n\nIf casted, increases combat effectiveness of all allied targets for 45 turns.",
+    "valid": false,
+    "purifiable": false,
+    "enchantments": [ "DMBB_ORB_CLERIC_buff_ench" ]
+  },
+  {
+    "type": "mutation",
+    "id": "DMBB_ORB_CLERIC_debuff",
+    "name": { "str": "Scorn" },
+    "points": 0,
+    "description": "The cleric is focused on casting this spell to the enemies in range.\n\nIf casted, decreases the physical attack damage of all monsters for 60 turns.",
+    "valid": false,
+    "purifiable": false,
+    "enchantments": [ "DMBB_ORB_CLERIC_debuff_ench" ]
+  },
+  {
+    "type": "mutation",
+    "id": "DMBB_ORB_PRIEST_heal",
+    "name": { "str": "Strong Heal" },
+    "points": 0,
+    "description": "The priest is focused on casting this spell to nearby allies in combat.\n\nIf casted, heals all allied targets by 20 and removes all debuffs.",
+    "valid": false,
+    "purifiable": false,
+    "enchantments": [ "DMBB_ORB_PRIEST_heal_ench" ]
+  },
+  {
+    "type": "mutation",
+    "id": "DMBB_ORB_PRIEST_qheal",
+    "name": { "str": "Quick Heal" },
+    "points": 0,
+    "description": "The priest is focused on casting this spell to nearby allies in combat.\n\nIf casted, heals nearby allied targets by 2.",
+    "valid": false,
+    "purifiable": false,
+    "enchantments": [ "DMBB_ORB_PRIEST_qheal_ench" ]
+  },
+  {
+    "type": "mutation",
+    "id": "DMBB_ORB_PRIEST_pure",
+    "name": { "str": "Purify" },
+    "points": 0,
+    "description": "The priest is focused on casting this spell to nearby allies in combat.\n\nIf casted, removes all ailments from allied targets and provides immunity from them for 10 turns.",
+    "valid": false,
+    "purifiable": false,
+    "enchantments": [ "DMBB_ORB_PRIEST_pure_ench" ]
+  },
+  {
+    "type": "mutation",
+    "id": "DMBB_ORB_DEBUG",
+    "name": { "str": "Debug Defense" },
+    "points": 0,
+    "description": "Defend? More like... uhh..",
+    "valid": false,
+    "purifiable": false
+  }
+]

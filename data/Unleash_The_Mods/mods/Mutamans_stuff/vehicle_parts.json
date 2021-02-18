@@ -1,0 +1,29 @@
+[
+  {
+    "id": "aft",
+    "type": "vehicle_part",
+    "name": { "str": "Anti-fungal tower" },
+    "item": "v_aft_item",
+    "location": "on_roof",
+    "symbol": "T",
+    "broken_symbol": "t",
+    "color": "light_gray",
+    "durability": 200,
+    "epower": -200,
+    "bonus": 10,
+    "description": "A large mechanical tower designed to spray a fine fungicidal mist. Attached to it are six containers that contain a special synthetic strain of the blob that synthesizes and emits a fungicidal gas that the tower pumps out in operation. It's a good thing this blob seems to subsist on the moisture and varius particulates in the air and doesn't really need anything else to perform their function. Turn it on to emit a small cloud of fungicide around the tower. For some reason the switch's label says 'cooler'. Ah well.",
+    "flags": [ "EMITTER", "CTRL_ELECTRONIC", "ENABLED_DRAINS_EPOWER", "COOLER" ],
+    "emissions": [ "emit_fungicidal_cloud" ],
+    "requirements": {
+      "install": { "skills": [ [ "mechanics", 6 ], [ "electronics", 4 ] ], "time": 120000, "using": [ [ "welding_standard", 10 ] ] },
+      "removal": { "skills": [ [ "mechanics", 4 ], [ "electronics", 4 ] ], "using": "vehicle_weld_removal" },
+      "repair": {
+        "skills": [ [ "mechanics", 8 ], [ "electronics", 8 ] ],
+        "time": 30000,
+        "using": [ [ "welding_standard", 5 ], [ "adhesive", 1 ] ]
+      }
+    },
+    "breaks_into": [ { "item": "steel_lump" }, { "item": "steel_chunk", "count": [ 1, 3 ] }, { "item": "scrap", "count": [ 1, 3 ] } ],
+    "damage_reduction": { "all": 15 }
+  }
+]

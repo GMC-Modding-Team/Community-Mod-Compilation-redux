@@ -1,0 +1,50 @@
+[
+  {
+    "id": "TALK_DMBB_ORB_command_buy",
+    "type": "talk_topic",
+    "dynamic_line": "*requires sentinel essences to pull in random items from a certain category.\n\n*100 essence\n> Foods/Drinks\n\n*125 essence\n> Melee Weapon\n\n*200 essence\n> Gun/Ammo\n\n*275 essence\n> Armours",
+    "responses": [
+      {
+        "text": "[100 essence] Foods'n'Drinks",
+        "topic": "TALK_DMBB_ORB_command_buy",
+        "condition": { "u_has_items": { "item": "dmbb_essence", "count": 100 } },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 100 },
+          { "npc_consume_item": "dmbb_essence", "count": 100 },
+          { "mapgen_update": "dmbb_orb_food", "om_terrain": "dmbb_arena_5", "om_special": "DMBB Arena" }
+        ]
+      },
+      {
+        "text": "[200 essence] Melee Weapons",
+        "topic": "TALK_DMBB_ORB_command_buy",
+        "condition": { "u_has_items": { "item": "dmbb_essence", "count": 200 } },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 200 },
+          { "npc_consume_item": "dmbb_essence", "count": 200 },
+          { "mapgen_update": "dmbb_orb_food", "om_terrain": "dmbb_arena_5", "om_special": "DMBB Arena" }
+        ]
+      },
+      {
+        "text": "[200 essence] Gun'n'Ammo",
+        "topic": "TALK_DMBB_ORB_command_buy",
+        "condition": { "u_has_items": { "item": "dmbb_essence", "count": 200 } },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 200 },
+          { "npc_consume_item": "dmbb_essence", "count": 200 },
+          { "mapgen_update": "dmbb_orb_gunammo", "om_terrain": "dmbb_arena_5", "om_special": "DMBB Arena" }
+        ]
+      },
+      {
+        "text": "[300 essence] Armour",
+        "topic": "TALK_DMBB_ORB_command_buy",
+        "condition": { "u_has_items": { "item": "dmbb_essence", "count": 300 } },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 300 },
+          { "npc_consume_item": "dmbb_essence", "count": 300 },
+          { "mapgen_update": "dmbb_orb_armor", "om_terrain": "dmbb_arena_5", "om_special": "DMBB Arena" }
+        ]
+      },
+      { "text": "< - - -", "topic": "TALK_DMBB_ORB_command" }
+    ]
+  }
+]

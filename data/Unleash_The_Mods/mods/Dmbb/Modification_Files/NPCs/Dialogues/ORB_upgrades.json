@@ -1,0 +1,1832 @@
+[
+  {
+    "id": [
+      "TALK_DMBB_ORB_command_upgrade",
+      "TALK_DMBB_ORB_command_upgrade_pas",
+      "TALK_DMBB_ORB_command_upgrade_act",
+      "TALK_DMBB_ORB_command_upgrade_sen"
+    ],
+    "type": "talk_topic",
+    "dynamic_line": "*requires sentinel essences to upgrade the orb.\n\nSelect the upgrade type to show.",
+    "responses": [
+      { "text": "List available [PASSIVE]", "topic": "TALK_DMBB_ORB_command_upgrade_pas" },
+      { "text": "List available [ACTIVE]", "topic": "TALK_DMBB_ORB_command_upgrade_act" },
+      { "text": "List available [SENTINEL]", "topic": "TALK_DMBB_ORB_command_upgrade_sen" },
+      { "text": "< - - -", "topic": "TALK_DMBB_ORB_command" }
+    ]
+  },
+  {
+    "id": "TALK_DMBB_ORB_command_upgrade_pas",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "and": [
+        "*lists the information of available [PASSIVE] upgrades.",
+        {
+          "npc_has_trait": "DMBB_ORB_hpup",
+          "no": "\n\n*100 essence\n[PASSIVE] HP Up+\nIncreases maximum health points.",
+          "yes": {
+            "npc_has_trait": "DMBB_ORB_hpup_plus",
+            "no": "\n\n*400 essence\n[PASSIVE] HP Up++\nGreatly increases maximum health points.",
+            "yes": {
+              "npc_has_trait": "DMBB_ORB_hpup_plusultra",
+              "no": "\n\n*900 essence\n[PASSIVE] HP Up+++\nSignificantly increases maximum health points."
+            }
+          }
+        },
+        {
+          "npc_has_trait": "DMBB_ORB_invictime",
+          "no": "\n\n*50 essence\n[PASSIVE] Invincibility Time+\nDecreases the time between touches.",
+          "yes": {
+            "npc_has_trait": "DMBB_ORB_invictime_plus",
+            "no": "\n\n*200 essence\n[PASSIVE] Invincibility Time++\nGreatly decreases the time between touches.",
+            "yes": {
+              "npc_has_trait": "DMBB_ORB_invictime_plusultra",
+              "no": "\n\n*450 essence\n[PASSIVE] Invincibility Time+++\nSignificantly decreases the time between touches."
+            }
+          }
+        },
+        {
+          "npc_has_trait": "DMBB_ORB_perimeter",
+          "no": "\n\n*25 essence\n[PASSIVE] Perimeter+\nIncreases AOE range of the orb.",
+          "yes": {
+            "npc_has_trait": "DMBB_ORB_perimeter_plus",
+            "no": "\n\n*100 essence\n[PASSIVE] Perimeter++\nFurther expands the AOE range of the orb.",
+            "yes": {
+              "npc_has_trait": "DMBB_ORB_perimeter_plusultra",
+              "no": "\n\n*250 essence\n[PASSIVE] Perimeter+++\nExpands the AOE range of the orb to the fullest."
+            }
+          }
+        },
+        {
+          "npc_has_trait": "DMBB_ORB_cesheal",
+          "no": "\n\n*150 essence\n[PASSIVE] Celestial Healing\nAllows the orb to compress essences, and blesses it with mending effects.",
+          "yes": {
+            "npc_has_trait": "DMBB_ORB_cesheal_plus",
+            "no": "\n\n*250 essence\n[PASSIVE] Celestial Healing+\nThe orb compresses large amounts of essence, further amplifying the blessed mending effects."
+          }
+        },
+        {
+          "npc_has_trait": "DMBB_ORB_cespure",
+          "no": "\n\n*150 essence\n[PASSIVE] Celestial Purification\nAllows the orb to compress essences, and blesses it with purifying effects."
+        },
+        {
+          "npc_has_trait": "DMBB_ORB_cesward",
+          "no": "\n\n*50 essence\n[PASSIVE] Celestial Ward\nAllows the orb to compress essences, and blesses it with environmental warding effects."
+        },
+        {
+          "npc_has_trait": "DMBB_ORB_guild",
+          "no": "\n\n*1500 essence\n[PASSIVE] Sentinel's Guild Warpgate\nIntegrates a new warpgate that leads to the sentinel's guild - a gathering place for all defenders. This guild offers a plethora of new options such as trading."
+        },
+        {
+          "npc_has_trait": "DMBB_ORB_shockstorm",
+          "yes": {
+            "npc_has_trait": "DMBB_ORB_inferno",
+            "yes": {
+              "npc_has_trait": "DMBB_ORB_blizzard",
+              "yes": {
+                "npc_has_trait": "DMBB_ORB_elemsy",
+                "no": "\n\n*100 essence\n[PASSIVE] Elemental Synergy\nThe orb will perform elemental synergies using sentinel's essences, allowing high-tier turrets to be researched/built."
+              }
+            }
+          }
+        },
+        {
+          "u_has_var": "dmbb_orb",
+          "type": "bosswave1",
+          "context": "finish",
+          "value": "yes",
+          "yes": {
+            "npc_has_trait": "DMBB_ORB_darksy",
+            "no": "\n\n*500 essence\n[PASSIVE] Vorpal Synergy\nThe orb will perform vorpal synergies using void essences. This allows the orb to extract and/or use them."
+          }
+        },
+        {
+          "u_has_var": "dmbb_orb",
+          "type": "bosswave1",
+          "context": "finish",
+          "value": "yes",
+          "yes": {
+            "npc_has_trait": "DMBB_ORB_arcanasy",
+            "no": "\n\n*500 essence\n[PASSIVE] Arcane Synergy\nThe orb will perform arcane synergies using magical essences. This allows the orb to extract and/or use them."
+          }
+        },
+        {
+          "u_has_var": "dmbb_orb",
+          "type": "bosswave2",
+          "context": "finish",
+          "value": "yes",
+          "yes": {
+            "npc_has_trait": "DMBB_ORB_penitence",
+            "no": "\n\n*1250 essence\n[PASSIVE] Penitence\nMonsters who touched the orb has a 1/2 chance to get struck by holy light, delivering an insta-kill while leaving a divine shade."
+          }
+        },
+        {
+          "u_has_var": "dmbb_orb",
+          "type": "bosswave2",
+          "context": "finish",
+          "value": "yes",
+          "yes": {
+            "npc_has_trait": "DMBB_ORB_cleanse",
+            "no": "\n\n*1300 essence\n[PASSIVE] Cleanse\nThe orb has a chance to increase a portal's decay rate."
+          }
+        },
+        {
+          "u_has_var": "dmbb_orb",
+          "type": "bosswave2",
+          "context": "finish",
+          "value": "yes",
+          "yes": {
+            "npc_has_trait": "DMBB_ORB_sentguard",
+            "no": "\n\n*3000 essence\n[PASSIVE] Sentinel's Guard\nWhen preparing for a wave, the orb calls forth ethereal guards in four directions."
+          }
+        }
+      ]
+    },
+    "responses": [
+      {
+        "text": "[100 essence] HP Up+",
+        "topic": "TALK_DMBB_ORB_command_upgrade_pas",
+        "condition": {
+          "and": [ { "not": { "npc_has_trait": "DMBB_ORB_hpup" } }, { "u_has_items": { "item": "dmbb_essence", "count": 100 } } ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 100 },
+          { "npc_consume_item": "dmbb_essence", "count": 100 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "passive", "value": "yes" },
+          { "npc_add_trait": "DMBB_ORB_hpup" }
+        ]
+      },
+      {
+        "text": "[400 essence] HP Up++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_pas",
+        "condition": {
+          "and": [
+            { "npc_has_trait": "DMBB_ORB_hpup" },
+            { "not": { "npc_has_trait": "DMBB_ORB_hpup_plus" } },
+            { "u_has_items": { "item": "dmbb_essence", "count": 400 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 400 },
+          { "npc_consume_item": "dmbb_essence", "count": 400 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "passive", "value": "yes" },
+          { "npc_add_trait": "DMBB_ORB_hpup_plus" }
+        ]
+      },
+      {
+        "text": "[900 essence] HP Up+++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_pas",
+        "condition": {
+          "and": [
+            { "npc_has_trait": "DMBB_ORB_hpup_plus" },
+            { "not": { "npc_has_trait": "DMBB_ORB_hpup_plusultra" } },
+            { "u_has_items": { "item": "dmbb_essence", "count": 900 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 900 },
+          { "npc_consume_item": "dmbb_essence", "count": 900 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "passive", "value": "yes" },
+          { "npc_add_trait": "DMBB_ORB_hpup_plusultra" }
+        ]
+      },
+      {
+        "text": "[50 essence] Invincibility Time+",
+        "topic": "TALK_DMBB_ORB_command_upgrade_pas",
+        "condition": {
+          "and": [ { "not": { "npc_has_trait": "DMBB_ORB_invictime" } }, { "u_has_items": { "item": "dmbb_essence", "count": 50 } } ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 50 },
+          { "npc_consume_item": "dmbb_essence", "count": 50 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "passive", "value": "yes" },
+          { "npc_add_trait": "DMBB_ORB_invictime" }
+        ]
+      },
+      {
+        "text": "[200 essence] Invincibility Time++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_pas",
+        "condition": {
+          "and": [
+            { "npc_has_trait": "DMBB_ORB_invictime" },
+            { "not": { "npc_has_trait": "DMBB_ORB_invictime_plus" } },
+            { "u_has_items": { "item": "dmbb_essence", "count": 200 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 200 },
+          { "npc_consume_item": "dmbb_essence", "count": 200 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "passive", "value": "yes" },
+          { "npc_add_trait": "DMBB_ORB_invictime_plus" }
+        ]
+      },
+      {
+        "text": "[450 essence] Invincibility Time+++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_pas",
+        "condition": {
+          "and": [
+            { "npc_has_trait": "DMBB_ORB_invictime_plus" },
+            { "not": { "npc_has_trait": "DMBB_ORB_invictime_plusultra" } },
+            { "u_has_items": { "item": "dmbb_essence", "count": 450 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 450 },
+          { "npc_consume_item": "dmbb_essence", "count": 450 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "passive", "value": "yes" },
+          { "npc_add_trait": "DMBB_ORB_invictime_plusultra" }
+        ]
+      },
+      {
+        "text": "[25 essence] Perimeter+",
+        "topic": "TALK_DMBB_ORB_command_upgrade_pas",
+        "condition": {
+          "and": [ { "not": { "npc_has_trait": "DMBB_ORB_perimeter" } }, { "u_has_items": { "item": "dmbb_essence", "count": 25 } } ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 25 },
+          { "npc_consume_item": "dmbb_essence", "count": 25 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "passive", "value": "yes" },
+          { "npc_add_trait": "DMBB_ORB_perimeter" },
+          { "mapgen_update": "dmbb_perimeter", "om_terrain": "dmbb_arena_5", "om_special": "DMBB Arena" }
+        ]
+      },
+      {
+        "text": "[100 essence] Perimeter++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_pas",
+        "condition": {
+          "and": [
+            { "npc_has_trait": "DMBB_ORB_perimeter" },
+            { "not": { "npc_has_trait": "DMBB_ORB_perimeter_plus" } },
+            { "u_has_items": { "item": "dmbb_essence", "count": 100 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 100 },
+          { "npc_consume_item": "dmbb_essence", "count": 100 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "passive", "value": "yes" },
+          { "npc_add_trait": "DMBB_ORB_perimeter_plus" },
+          { "mapgen_update": "dmbb_perimeter_plus", "om_terrain": "dmbb_arena_5", "om_special": "DMBB Arena" }
+        ]
+      },
+      {
+        "text": "[250 essence] Perimeter+++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_pas",
+        "condition": {
+          "and": [
+            { "npc_has_trait": "DMBB_ORB_perimeter_plus" },
+            { "not": { "npc_has_trait": "DMBB_ORB_perimeter_plusultra" } },
+            { "u_has_items": { "item": "dmbb_essence", "count": 250 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 250 },
+          { "npc_consume_item": "dmbb_essence", "count": 250 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "passive", "value": "yes" },
+          { "npc_add_trait": "DMBB_ORB_perimeter_plusultra" },
+          { "mapgen_update": "dmbb_perimeter_plusultra", "om_terrain": "dmbb_arena_5", "om_special": "DMBB Arena" }
+        ]
+      },
+      {
+        "text": "[150 essence] Celestial Healing",
+        "topic": "TALK_DMBB_ORB_command_upgrade_pas",
+        "condition": {
+          "and": [ { "not": { "npc_has_trait": "DMBB_ORB_cesheal" } }, { "u_has_items": { "item": "dmbb_essence", "count": 150 } } ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 150 },
+          { "npc_consume_item": "dmbb_essence", "count": 150 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "passive", "value": "yes" },
+          { "npc_add_trait": "DMBB_ORB_cesheal" }
+        ]
+      },
+      {
+        "text": "[250 essence] Celestial Healing+",
+        "topic": "TALK_DMBB_ORB_command_upgrade_pas",
+        "condition": {
+          "and": [
+            { "npc_has_trait": "DMBB_ORB_cesheal" },
+            { "not": { "npc_has_trait": "DMBB_ORB_cesheal_plus" } },
+            { "u_has_items": { "item": "dmbb_essence", "count": 250 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 250 },
+          { "npc_consume_item": "dmbb_essence", "count": 250 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "passive", "value": "yes" },
+          { "npc_add_trait": "DMBB_ORB_cesheal_plus" }
+        ]
+      },
+      {
+        "text": "[150 essence] Celestial Purification",
+        "topic": "TALK_DMBB_ORB_command_upgrade_pas",
+        "condition": {
+          "and": [ { "not": { "npc_has_trait": "DMBB_ORB_cespure" } }, { "u_has_items": { "item": "dmbb_essence", "count": 150 } } ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 150 },
+          { "npc_consume_item": "dmbb_essence", "count": 150 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "passive", "value": "yes" },
+          { "npc_add_trait": "DMBB_ORB_cespure" }
+        ]
+      },
+      {
+        "text": "[50 essence] Celestial Ward",
+        "topic": "TALK_DMBB_ORB_command_upgrade_pas",
+        "condition": {
+          "and": [ { "not": { "npc_has_trait": "DMBB_ORB_cesward" } }, { "u_has_items": { "item": "dmbb_essence", "count": 50 } } ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 50 },
+          { "npc_consume_item": "dmbb_essence", "count": 50 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "passive", "value": "yes" },
+          { "npc_add_trait": "DMBB_ORB_cesward" }
+        ]
+      },
+      {
+        "text": "[1500 essence] Sentinel's Guild Warpgate",
+        "topic": "TALK_DMBB_ORB_command_upgrade_pas",
+        "condition": {
+          "and": [ { "not": { "npc_has_trait": "DMBB_ORB_guild" } }, { "u_has_items": { "item": "dmbb_essence", "count": 1500 } } ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 1500 },
+          { "npc_consume_item": "dmbb_essence", "count": 1500 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "passive", "value": "yes" },
+          { "npc_add_trait": "DMBB_ORB_guild" },
+          { "mapgen_update": "dmbb_orb_warpgate_guild", "origin_npc": true, "offset_z": 2, "offset_y": -2 }
+        ]
+      },
+      {
+        "text": "[100 essence] Elemental Synergy",
+        "topic": "TALK_DMBB_ORB_command_upgrade_pas",
+        "condition": {
+          "and": [
+            { "npc_has_trait": "DMBB_ORB_shockstorm" },
+            { "npc_has_trait": "DMBB_ORB_inferno" },
+            { "npc_has_trait": "DMBB_ORB_blizzard" },
+            { "not": { "npc_has_trait": "DMBB_ORB_elemsy" } },
+            { "u_has_items": { "item": "dmbb_essence", "count": 100 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 100 },
+          { "npc_consume_item": "dmbb_essence", "count": 100 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "passive", "value": "yes" },
+          { "npc_add_trait": "DMBB_ORB_elemsy" }
+        ]
+      },
+      {
+        "text": "[500 essence] Vorpal Synergy",
+        "topic": "TALK_DMBB_ORB_command_upgrade_pas",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "bosswave1", "context": "finish", "value": "yes" },
+            { "not": { "npc_has_trait": "DMBB_ORB_darksy" } },
+            { "u_has_items": { "item": "dmbb_essence", "count": 500 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 500 },
+          { "npc_consume_item": "dmbb_essence", "count": 500 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "passive", "value": "yes" },
+          { "npc_add_trait": "DMBB_ORB_darksy" }
+        ]
+      },
+      {
+        "text": "[500 essence] Arcane Synergy",
+        "topic": "TALK_DMBB_ORB_command_upgrade_pas",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "bosswave1", "context": "finish", "value": "yes" },
+            { "not": { "npc_has_trait": "DMBB_ORB_arcanasy" } },
+            { "u_has_items": { "item": "dmbb_essence", "count": 500 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 500 },
+          { "npc_consume_item": "dmbb_essence", "count": 500 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "passive", "value": "yes" },
+          { "u_add_var": "dmbb_orb", "type": "has_passive", "context": "arcanasy", "value": "yes" },
+          { "npc_add_trait": "DMBB_ORB_arcanasy" }
+        ]
+      },
+      {
+        "text": "[1250 essence] Penitence",
+        "topic": "TALK_DMBB_ORB_command_upgrade_pas",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "bosswave2", "context": "finish", "value": "yes" },
+            { "not": { "npc_has_trait": "DMBB_ORB_penitence" } },
+            { "u_has_items": { "item": "dmbb_essence", "count": 1250 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 1250 },
+          { "npc_consume_item": "dmbb_essence", "count": 1250 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "passive", "value": "yes" },
+          { "npc_add_trait": "DMBB_ORB_penitence" }
+        ]
+      },
+      {
+        "text": "[1300 essence] Cleanse",
+        "topic": "TALK_DMBB_ORB_command_upgrade_pas",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "bosswave2", "context": "finish", "value": "yes" },
+            { "not": { "npc_has_trait": "DMBB_ORB_cleanse" } },
+            { "u_has_items": { "item": "dmbb_essence", "count": 1300 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 1300 },
+          { "npc_consume_item": "dmbb_essence", "count": 1300 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "passive", "value": "yes" },
+          { "npc_add_trait": "DMBB_ORB_cleanse" }
+        ]
+      },
+      {
+        "text": "[3000 essence] Sentinel's Guard",
+        "topic": "TALK_DMBB_ORB_command_upgrade_pas",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "bosswave2", "context": "finish", "value": "yes" },
+            { "not": { "npc_has_trait": "DMBB_ORB_sentguard" } },
+            { "u_has_items": { "item": "dmbb_essence", "count": 3000 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 3000 },
+          { "npc_consume_item": "dmbb_essence", "count": 3000 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "passive", "value": "yes" },
+          { "npc_add_trait": "DMBB_ORB_sentguard" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "TALK_DMBB_ORB_command_upgrade_act",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "and": [
+        "*lists the information of available [ACTIVE] upgrades.",
+        {
+          "npc_has_trait": "DMBB_ORB_stunner",
+          "no": "\n\n*100 essence\n[ACTIVE] Blinding Flash\nThe orb emits an extremely bright ray of light in every direction, stunning and blinding all monsters.\nCC: +++ DMG: --- CD: 90"
+        },
+        {
+          "npc_has_trait": "DMBB_ORB_shockstorm",
+          "no": "\n\n*225 essence\n[ACTIVE] Shockstorm\nThe orb generates a thunderstorm that shocks all monsters.\nCC: +-- DMG: +-- CD: 40"
+        },
+        {
+          "npc_has_trait": "DMBB_ORB_inferno",
+          "no": "\n\n*225 essence\n[ACTIVE] Inferno\nThe orb scorches an area, spreading hellish flames on targeted monsters.\nCC: --- DMG: +++ CD: 100"
+        },
+        {
+          "npc_has_trait": "DMBB_ORB_blizzard",
+          "no": "\n\n*225 essence\n[ACTIVE] Blizzard\nThe orb creates a hail that swoops down to all monsters, enslowing them afterwards.\nCC: ++- DMG: +-- CD: 75"
+        },
+        {
+          "npc_has_trait": "DMBB_ORB_barrier",
+          "no": "\n\n*125 essence\n[ACTIVE] Barrier\nThe orb forms a force field in the inner layer, slowing down anything that passes through.\nCC: ++- DMG: --- CD: 200",
+          "yes": {
+            "npc_has_trait": "DMBB_ORB_barrier_plus",
+            "no": "\n\n*300 essence\n[ACTIVE] Barrier+\nThe orb forms a force field in the outer layer, slowing down anything that passes through.\nCC: ++- DMG: --- CD: 200"
+          }
+        },
+        {
+          "u_has_var": "dmbb_orb",
+          "type": "bosswave2",
+          "context": "finish",
+          "value": "yes",
+          "yes": {
+            "npc_has_trait": "DMBB_ORB_judgment",
+            "no": "\n\n*5000 essence\n[ACTIVE] Judgement\nThe orb channels itself to create an all-out blast of holy light, striking all monsters the same way they touch the orb.\nCC: --- DMG: +++ CD: 500"
+          }
+        }
+      ]
+    },
+    "responses": [
+      {
+        "text": "[100 essence] Blinding Flash",
+        "topic": "TALK_DMBB_ORB_command_upgrade_act",
+        "condition": {
+          "and": [ { "not": { "npc_has_trait": "DMBB_ORB_stunner" } }, { "u_has_items": { "item": "dmbb_essence", "count": 100 } } ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 100 },
+          { "npc_consume_item": "dmbb_essence", "count": 100 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "active", "value": "yes" },
+          { "npc_add_trait": "DMBB_ORB_stunner" }
+        ]
+      },
+      {
+        "text": "[225 essence] Shockstorm",
+        "topic": "TALK_DMBB_ORB_command_upgrade_act",
+        "condition": {
+          "and": [ { "not": { "npc_has_trait": "DMBB_ORB_shockstorm" } }, { "u_has_items": { "item": "dmbb_essence", "count": 225 } } ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 225 },
+          { "npc_consume_item": "dmbb_essence", "count": 225 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "active", "value": "yes" },
+          { "npc_add_trait": "DMBB_ORB_shockstorm" }
+        ]
+      },
+      {
+        "text": "[225 essence] Inferno",
+        "topic": "TALK_DMBB_ORB_command_upgrade_act",
+        "condition": {
+          "and": [ { "not": { "npc_has_trait": "DMBB_ORB_inferno" } }, { "u_has_items": { "item": "dmbb_essence", "count": 225 } } ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 225 },
+          { "npc_consume_item": "dmbb_essence", "count": 225 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "active", "value": "yes" },
+          { "npc_add_trait": "DMBB_ORB_inferno" }
+        ]
+      },
+      {
+        "text": "[225 essence] Blizzard",
+        "topic": "TALK_DMBB_ORB_command_upgrade_act",
+        "condition": {
+          "and": [ { "not": { "npc_has_trait": "DMBB_ORB_blizzard" } }, { "u_has_items": { "item": "dmbb_essence", "count": 225 } } ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 225 },
+          { "npc_consume_item": "dmbb_essence", "count": 225 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "active", "value": "yes" },
+          { "npc_add_trait": "DMBB_ORB_blizzard" }
+        ]
+      },
+      {
+        "text": "[100 essence] Barrier (Inner)",
+        "topic": "TALK_DMBB_ORB_command_upgrade_act",
+        "condition": {
+          "and": [
+            { "npc_has_trait": "DMBB_ORB_perimeter" },
+            { "not": { "npc_has_trait": "DMBB_ORB_barrier" } },
+            { "u_has_items": { "item": "dmbb_essence", "count": 100 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 100 },
+          { "npc_consume_item": "dmbb_essence", "count": 100 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "active", "value": "yes" },
+          { "npc_add_trait": "DMBB_ORB_barrier" }
+        ]
+      },
+      {
+        "text": "[300 essence] Barrier (Outer)",
+        "topic": "TALK_DMBB_ORB_command_upgrade_act",
+        "condition": {
+          "and": [
+            { "npc_has_trait": "DMBB_ORB_perimeter_plusultra" },
+            { "npc_has_trait": "DMBB_ORB_barrier" },
+            { "not": { "npc_has_trait": "DMBB_ORB_barrier_plus" } },
+            { "u_has_items": { "item": "dmbb_essence", "count": 300 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 300 },
+          { "npc_consume_item": "dmbb_essence", "count": 300 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "active", "value": "yes" },
+          { "npc_add_trait": "DMBB_ORB_barrier_plus" }
+        ]
+      },
+      {
+        "text": "[5000 essence] Judgment",
+        "topic": "TALK_DMBB_ORB_command_upgrade_act",
+        "condition": {
+          "and": [ { "not": { "npc_has_trait": "DMBB_ORB_judgment" } }, { "u_has_items": { "item": "dmbb_essence", "count": 5000 } } ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 5000 },
+          { "npc_consume_item": "dmbb_essence", "count": 5000 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "active", "value": "yes" },
+          { "npc_add_trait": "DMBB_ORB_judgment" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "TALK_DMBB_ORB_command_upgrade_sen",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "and": [
+        "*lists the information of available [SENTINEL] upgrades.",
+        {
+          "npc_has_trait": "DMBB_ORB_arcanasy",
+          "yes": {
+            "u_has_trait": "DMBB_ORB_PC_str",
+            "no": "\n\n*50 blood essence\n[SENTINEL] Strength+\nPermanently increases STR by 1.",
+            "yes": {
+              "u_has_trait": "DMBB_ORB_PC_str_plus",
+              "no": "\n\n*100 blood essence\n[SENTINEL] Strength++\nPermanently increases STR by 1.",
+              "yes": {
+                "u_has_trait": "DMBB_ORB_PC_str_plusultra",
+                "no": "\n\n*200 blood essence\n[SENTINEL] Strength+++\nPermanently increases STR by 2."
+              }
+            }
+          }
+        },
+        {
+          "npc_has_trait": "DMBB_ORB_arcanasy",
+          "yes": {
+            "u_has_trait": "DMBB_ORB_PC_dex",
+            "no": "\n\n*50 blood essence\n[SENTINEL] Dexterity+\nPermanently increases DEX by 1.",
+            "yes": {
+              "u_has_trait": "DMBB_ORB_PC_dex_plus",
+              "no": "\n\n*100 blood essence\n[SENTINEL] Dexterity++\nPermanently increases DEX by 1.",
+              "yes": {
+                "u_has_trait": "DMBB_ORB_PC_dex_plusultra",
+                "no": "\n\n*200 blood essence\n[SENTINEL] Dexterity+++\nPermanently increases DEX by 2."
+              }
+            }
+          }
+        },
+        {
+          "npc_has_trait": "DMBB_ORB_arcanasy",
+          "yes": {
+            "u_has_trait": "DMBB_ORB_PC_int",
+            "no": "\n\n*50 blood essence\n[SENTINEL] Intelligence+\nPermanently increases INT by 1.",
+            "yes": {
+              "u_has_trait": "DMBB_ORB_PC_int_plus",
+              "no": "\n\n*100 blood essence\n[SENTINEL] Intelligence++\nPermanently increases INT by 1.",
+              "yes": {
+                "u_has_trait": "DMBB_ORB_PC_int_plusultra",
+                "no": "\n\n*200 blood essence\n[SENTINEL] Intelligence+++\nPermanently increases INT by 2."
+              }
+            }
+          }
+        },
+        {
+          "npc_has_trait": "DMBB_ORB_arcanasy",
+          "yes": {
+            "u_has_trait": "DMBB_ORB_PC_per",
+            "no": "\n\n*50 blood essence\n[SENTINEL] Perception+\nPermanently increases PER by 1.",
+            "yes": {
+              "u_has_trait": "DMBB_ORB_PC_per_plus",
+              "no": "\n\n*100 blood essence\n[SENTINEL] Perception++\nPermanently increases PER by 1.",
+              "yes": {
+                "u_has_trait": "DMBB_ORB_PC_per_plusultra",
+                "no": "\n\n*200 blood essence\n[SENTINEL] Perception+++\nPermanently increases PER by 2."
+              }
+            }
+          }
+        },
+        {
+          "u_has_trait": "DMBB_ORB_PC_speed",
+          "no": "\n\n*400 essence\n[SENTINEL] Speed+\nIncreases movement and attack speed.",
+          "yes": {
+            "u_has_trait": "DMBB_ORB_PC_speed_plus",
+            "no": "\n\n*1200 essence\n[SENTINEL] Speed++\nGreatly increases movement and attack speed.",
+            "yes": {
+              "u_has_trait": "DMBB_ORB_PC_speed_plusultra",
+              "no": "\n\n*2400 essence\n[SENTINEL] Speed+++\nSignificantly increases movement and attack speed."
+            }
+          }
+        },
+        {
+          "u_has_trait": "DMBB_ORB_PC_hp",
+          "no": "\n\n*100 essence\n[SENTINEL] HP+\nIncreases maximum health points.",
+          "yes": {
+            "u_has_trait": "DMBB_ORB_PC_hp_plus",
+            "no": "\n\n*300 essence\n[SENTINEL] HP++\nGreatly increases maximum health points.",
+            "yes": {
+              "u_has_trait": "DMBB_ORB_PC_hp_plusultra",
+              "no": "\n\n*600 essence\n[SENTINEL] HP+++\nSignificantly increases maximum health points."
+            }
+          }
+        },
+        {
+          "u_has_trait": "DMBB_ORB_PC_endurance",
+          "no": "\n\n*225 essence\n[SENTINEL] Endurance+\nIncreases maximum and regen rate of stamina.",
+          "yes": {
+            "u_has_trait": "DMBB_ORB_PC_endurance_plus",
+            "no": "\n\n*675 essence\n[SENTINEL] Endurance++\nGreatly increases maximum and regen rate of stamina.",
+            "yes": {
+              "u_has_trait": "DMBB_ORB_PC_endurance_plusultra",
+              "no": "\n\n*1350 essence\n[SENTINEL] Endurance+++\nSignificantly increases maximum and regen rate of stamina."
+            }
+          }
+        },
+        {
+          "u_has_trait": "DMBB_ORB_PC_phyres",
+          "no": "\n\n*375 essence\n[SENTINEL] Physical Resistance+\nDecreases physical damage dealt to you.",
+          "yes": {
+            "u_has_trait": "DMBB_ORB_PC_phyres_plus",
+            "no": "\n\n*1125 essence\n[SENTINEL] Physical Resistance++\nGreatly decreases physical damage dealt to you.",
+            "yes": {
+              "u_has_trait": "DMBB_ORB_PC_phyres_plusultra",
+              "no": "\n\n*2250 essence\n[SENTINEL] Physical Resistance+++\nSignificantly decreases physical damage dealt to you."
+            }
+          }
+        },
+        {
+          "u_has_trait": "DMBB_ORB_PC_elemres",
+          "no": "\n\n*375 essence\n[SENTINEL] Elemental Resistance+\nDecreases elemental damage dealt to you.",
+          "yes": {
+            "u_has_trait": "DMBB_ORB_PC_elemres_plus",
+            "no": "\n\n*1125 essence\n[SENTINEL] Elemental Resistance++\nGreatly decreases elemental damage dealt to you.",
+            "yes": {
+              "u_has_trait": "DMBB_ORB_PC_elemres_plusultra",
+              "no": "\n\n*2250 essence\n[SENTINEL] Elemental Resistance+++\nSignificantly decreases elemental damage dealt to you."
+            }
+          }
+        },
+        {
+          "u_has_trait": "DMBB_ORB_PC_hevpro",
+          "no": "\n\n*3000 essence\n[SENTINEL] Heavenly Protection\nEnshrouds you in a thin divinity aura. This aura has a 1/2 chance to stun the monster who hits you for a few turns."
+        },
+        {
+          "u_has_trait": "DMBB_ORB_PC_consecrate",
+          "no": "\n\n*2500 essence\n[SENTINEL] Consecrate\nThe orb blesses your weapon of choice in combat. Your attacks has a 1/3 chance to deal 30 true damage."
+        }
+      ]
+    },
+    "responses": [
+      {
+        "text": "[50 blood essence] Strength+",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "has_passive", "context": "arcanasy", "value": "yes" },
+            { "npc_has_trait": "DMBB_ORB_arcanasy" },
+            { "not": { "u_has_trait": "DMBB_ORB_PC_str" } },
+            { "u_has_items": { "item": "essence_blood", "count": 50 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "essence_blood", "count": 50 },
+          { "npc_consume_item": "essence_blood", "count": 50 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "sentinel", "value": "yes" },
+          { "u_add_trait": "DMBB_ORB_PC_str" }
+        ]
+      },
+      {
+        "text": "[100 blood essence] Strength++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "has_passive", "context": "arcanasy", "value": "yes" },
+            { "u_has_trait": "DMBB_ORB_PC_str" },
+            { "not": { "u_has_trait": "DMBB_ORB_PC_str_plus" } },
+            { "u_has_items": { "item": "essence_blood", "count": 100 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "essence_blood", "count": 100 },
+          { "npc_consume_item": "essence_blood", "count": 100 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "sentinel", "value": "yes" },
+          { "u_add_trait": "DMBB_ORB_PC_str_plus" }
+        ]
+      },
+      {
+        "text": "[200 blood essence] Strength+++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "has_passive", "context": "arcanasy", "value": "yes" },
+            { "u_has_trait": "DMBB_ORB_PC_str_plus" },
+            { "not": { "u_has_trait": "DMBB_ORB_PC_str_plusultra" } },
+            { "u_has_items": { "item": "essence_blood", "count": 200 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "essence_blood", "count": 200 },
+          { "npc_consume_item": "essence_blood", "count": 200 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "sentinel", "value": "yes" },
+          { "u_add_trait": "DMBB_ORB_PC_str_plusultra" }
+        ]
+      },
+      {
+        "text": "[50 blood essence] Dexterity+",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "has_passive", "context": "arcanasy", "value": "yes" },
+            { "npc_has_trait": "DMBB_ORB_arcanasy" },
+            { "not": { "u_has_trait": "DMBB_ORB_PC_dex" } },
+            { "u_has_items": { "item": "essence_blood", "count": 50 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "essence_blood", "count": 50 },
+          { "npc_consume_item": "essence_blood", "count": 50 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "sentinel", "value": "yes" },
+          { "u_add_trait": "DMBB_ORB_PC_dex" }
+        ]
+      },
+      {
+        "text": "[100 blood essence] Dexterity++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "has_passive", "context": "arcanasy", "value": "yes" },
+            { "u_has_trait": "DMBB_ORB_PC_dex" },
+            { "not": { "u_has_trait": "DMBB_ORB_PC_dex_plus" } },
+            { "u_has_items": { "item": "essence_blood", "count": 100 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "essence_blood", "count": 100 },
+          { "npc_consume_item": "essence_blood", "count": 100 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "sentinel", "value": "yes" },
+          { "u_add_trait": "DMBB_ORB_PC_dex_plus" }
+        ]
+      },
+      {
+        "text": "[200 blood essence] Dexterity+++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "has_passive", "context": "arcanasy", "value": "yes" },
+            { "u_has_trait": "DMBB_ORB_PC_dex_plus" },
+            { "not": { "u_has_trait": "DMBB_ORB_PC_dex_plusultra" } },
+            { "u_has_items": { "item": "essence_blood", "count": 200 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "essence_blood", "count": 200 },
+          { "npc_consume_item": "essence_blood", "count": 200 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "sentinel", "value": "yes" },
+          { "u_add_trait": "DMBB_ORB_PC_dex_plusultra" }
+        ]
+      },
+      {
+        "text": "[50 blood essence] Intelligence+",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "has_passive", "context": "arcanasy", "value": "yes" },
+            { "npc_has_trait": "DMBB_ORB_arcanasy" },
+            { "not": { "u_has_trait": "DMBB_ORB_PC_int" } },
+            { "u_has_items": { "item": "essence_blood", "count": 50 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "essence_blood", "count": 50 },
+          { "npc_consume_item": "essence_blood", "count": 50 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "sentinel", "value": "yes" },
+          { "u_add_trait": "DMBB_ORB_PC_int" }
+        ]
+      },
+      {
+        "text": "[100 blood essence] Intelligence++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "has_passive", "context": "arcanasy", "value": "yes" },
+            { "u_has_trait": "DMBB_ORB_PC_int" },
+            { "not": { "u_has_trait": "DMBB_ORB_PC_int_plus" } },
+            { "u_has_items": { "item": "essence_blood", "count": 100 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "essence_blood", "count": 100 },
+          { "npc_consume_item": "essence_blood", "count": 100 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "sentinel", "value": "yes" },
+          { "u_add_trait": "DMBB_ORB_PC_int_plus" }
+        ]
+      },
+      {
+        "text": "[200 blood essence] Intelligence+++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "has_passive", "context": "arcanasy", "value": "yes" },
+            { "u_has_trait": "DMBB_ORB_PC_int_plus" },
+            { "not": { "u_has_trait": "DMBB_ORB_PC_int_plusultra" } },
+            { "u_has_items": { "item": "essence_blood", "count": 200 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "essence_blood", "count": 200 },
+          { "npc_consume_item": "essence_blood", "count": 200 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "sentinel", "value": "yes" },
+          { "u_add_trait": "DMBB_ORB_PC_int_plusultra" }
+        ]
+      },
+      {
+        "text": "[50 blood essence] Perception+",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "has_passive", "context": "arcanasy", "value": "yes" },
+            { "npc_has_trait": "DMBB_ORB_arcanasy" },
+            { "not": { "u_has_trait": "DMBB_ORB_PC_per" } },
+            { "u_has_items": { "item": "essence_blood", "count": 50 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "essence_blood", "count": 50 },
+          { "npc_consume_item": "essence_blood", "count": 50 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "sentinel", "value": "yes" },
+          { "u_add_trait": "DMBB_ORB_PC_per" }
+        ]
+      },
+      {
+        "text": "[100 blood essence] Perception++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "has_passive", "context": "arcanasy", "value": "yes" },
+            { "u_has_trait": "DMBB_ORB_PC_per" },
+            { "not": { "u_has_trait": "DMBB_ORB_PC_per_plus" } },
+            { "u_has_items": { "item": "essence_blood", "count": 100 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "essence_blood", "count": 100 },
+          { "npc_consume_item": "essence_blood", "count": 100 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "sentinel", "value": "yes" },
+          { "u_add_trait": "DMBB_ORB_PC_per_plus" }
+        ]
+      },
+      {
+        "text": "[200 blood essence] Perception+++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "has_passive", "context": "arcanasy", "value": "yes" },
+            { "u_has_trait": "DMBB_ORB_PC_per_plus" },
+            { "not": { "u_has_trait": "DMBB_ORB_PC_per_plusultra" } },
+            { "u_has_items": { "item": "essence_blood", "count": 200 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "essence_blood", "count": 200 },
+          { "npc_consume_item": "essence_blood", "count": 200 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "sentinel", "value": "yes" },
+          { "u_add_trait": "DMBB_ORB_PC_per_plusultra" }
+        ]
+      },
+      {
+        "text": "[400 essence] Speed+",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen",
+        "condition": {
+          "and": [ { "not": { "u_has_trait": "DMBB_ORB_PC_speed" } }, { "u_has_items": { "item": "dmbb_essence", "count": 400 } } ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 400 },
+          { "npc_consume_item": "dmbb_essence", "count": 400 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "sentinel", "value": "yes" },
+          { "u_add_trait": "DMBB_ORB_PC_speed" }
+        ]
+      },
+      {
+        "text": "[1200 essence] Speed++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen",
+        "condition": {
+          "and": [
+            { "u_has_trait": "DMBB_ORB_PC_speed" },
+            { "not": { "u_has_trait": "DMBB_ORB_PC_speed_plus" } },
+            { "u_has_items": { "item": "dmbb_essence", "count": 1200 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 1200 },
+          { "npc_consume_item": "dmbb_essence", "count": 1200 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "sentinel", "value": "yes" },
+          { "u_add_trait": "DMBB_ORB_PC_speed_plus" }
+        ]
+      },
+      {
+        "text": "[2400 essence] Speed+++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen",
+        "condition": {
+          "and": [
+            { "u_has_trait": "DMBB_ORB_PC_speed_plus" },
+            { "not": { "u_has_trait": "DMBB_ORB_PC_speed_plusultra" } },
+            { "u_has_items": { "item": "dmbb_essence", "count": 2400 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 2400 },
+          { "npc_consume_item": "dmbb_essence", "count": 2400 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "sentinel", "value": "yes" },
+          { "u_add_trait": "DMBB_ORB_PC_speed_plusultra" }
+        ]
+      },
+      {
+        "text": "[100 essence] HP+",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen",
+        "condition": {
+          "and": [ { "not": { "u_has_trait": "DMBB_ORB_PC_hp" } }, { "u_has_items": { "item": "dmbb_essence", "count": 100 } } ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 100 },
+          { "npc_consume_item": "dmbb_essence", "count": 100 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "sentinel", "value": "yes" },
+          { "u_add_trait": "DMBB_ORB_PC_hp" }
+        ]
+      },
+      {
+        "text": "[300 essence] HP++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen",
+        "condition": {
+          "and": [
+            { "u_has_trait": "DMBB_ORB_PC_hp" },
+            { "not": { "u_has_trait": "DMBB_ORB_PC_hp_plus" } },
+            { "u_has_items": { "item": "dmbb_essence", "count": 300 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 300 },
+          { "npc_consume_item": "dmbb_essence", "count": 300 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "sentinel", "value": "yes" },
+          { "u_add_trait": "DMBB_ORB_PC_hp_plus" }
+        ]
+      },
+      {
+        "text": "[600 essence] HP+++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen",
+        "condition": {
+          "and": [
+            { "u_has_trait": "DMBB_ORB_PC_hp_plus" },
+            { "not": { "u_has_trait": "DMBB_ORB_PC_hp_plusultra" } },
+            { "u_has_items": { "item": "dmbb_essence", "count": 600 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 600 },
+          { "npc_consume_item": "dmbb_essence", "count": 600 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "sentinel", "value": "yes" },
+          { "u_add_trait": "DMBB_ORB_PC_hp_plusultra" }
+        ]
+      },
+      {
+        "text": "[225 essence] Endurance+",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen",
+        "condition": {
+          "and": [ { "not": { "u_has_trait": "DMBB_ORB_PC_endurance" } }, { "u_has_items": { "item": "dmbb_essence", "count": 225 } } ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 225 },
+          { "npc_consume_item": "dmbb_essence", "count": 225 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "sentinel", "value": "yes" },
+          { "u_add_trait": "DMBB_ORB_PC_endurance" }
+        ]
+      },
+      {
+        "text": "[675 essence] Endurance++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen",
+        "condition": {
+          "and": [
+            { "u_has_trait": "DMBB_ORB_PC_endurance" },
+            { "not": { "u_has_trait": "DMBB_ORB_PC_endurance_plus" } },
+            { "u_has_items": { "item": "dmbb_essence", "count": 675 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 675 },
+          { "npc_consume_item": "dmbb_essence", "count": 675 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "sentinel", "value": "yes" },
+          { "u_add_trait": "DMBB_ORB_PC_endurance_plus" }
+        ]
+      },
+      {
+        "text": "[1350 essence] Endurance+++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen",
+        "condition": {
+          "and": [
+            { "u_has_trait": "DMBB_ORB_PC_endurance_plus" },
+            { "not": { "u_has_trait": "DMBB_ORB_PC_endurance_plusultra" } },
+            { "u_has_items": { "item": "dmbb_essence", "count": 1350 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 1350 },
+          { "npc_consume_item": "dmbb_essence", "count": 1350 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "sentinel", "value": "yes" },
+          { "u_add_trait": "DMBB_ORB_PC_endurance_plusultra" }
+        ]
+      },
+      {
+        "text": "[375 essence] Physical Resistance+",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen",
+        "condition": {
+          "and": [ { "not": { "u_has_trait": "DMBB_ORB_PC_phyres" } }, { "u_has_items": { "item": "dmbb_essence", "count": 375 } } ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 375 },
+          { "npc_consume_item": "dmbb_essence", "count": 375 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "sentinel", "value": "yes" },
+          { "u_add_trait": "DMBB_ORB_PC_phyres" }
+        ]
+      },
+      {
+        "text": "[1125 essence] Physical Resistance++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen",
+        "condition": {
+          "and": [
+            { "u_has_trait": "DMBB_ORB_PC_phyres" },
+            { "not": { "u_has_trait": "DMBB_ORB_PC_phyres_plus" } },
+            { "u_has_items": { "item": "dmbb_essence", "count": 1125 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 1125 },
+          { "npc_consume_item": "dmbb_essence", "count": 1125 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "sentinel", "value": "yes" },
+          { "u_add_trait": "DMBB_ORB_PC_phyres_plus" }
+        ]
+      },
+      {
+        "text": "[2250 essence] Physical Resistance+++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen",
+        "condition": {
+          "and": [
+            { "u_has_trait": "DMBB_ORB_PC_phyres_plus" },
+            { "not": { "u_has_trait": "DMBB_ORB_PC_phyres_plusultra" } },
+            { "u_has_items": { "item": "dmbb_essence", "count": 2250 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 2250 },
+          { "npc_consume_item": "dmbb_essence", "count": 2250 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "sentinel", "value": "yes" },
+          { "u_add_trait": "DMBB_ORB_PC_phyres_plusultra" }
+        ]
+      },
+      {
+        "text": "[375 essence] Elemental Resistance+",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen",
+        "condition": {
+          "and": [ { "not": { "u_has_trait": "DMBB_ORB_PC_elemres" } }, { "u_has_items": { "item": "dmbb_essence", "count": 375 } } ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 375 },
+          { "npc_consume_item": "dmbb_essence", "count": 375 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "sentinel", "value": "yes" },
+          { "u_add_trait": "DMBB_ORB_PC_elemres" }
+        ]
+      },
+      {
+        "text": "[1125 essence] Elemental Resistance++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen",
+        "condition": {
+          "and": [
+            { "u_has_trait": "DMBB_ORB_PC_elemres" },
+            { "not": { "u_has_trait": "DMBB_ORB_PC_elemres_plus" } },
+            { "u_has_items": { "item": "dmbb_essence", "count": 1125 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 1125 },
+          { "npc_consume_item": "dmbb_essence", "count": 1125 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "sentinel", "value": "yes" },
+          { "u_add_trait": "DMBB_ORB_PC_elemres_plus" }
+        ]
+      },
+      {
+        "text": "[2250 essence] Elemental Resistance+++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen",
+        "condition": {
+          "and": [
+            { "u_has_trait": "DMBB_ORB_PC_elemres_plus" },
+            { "not": { "u_has_trait": "DMBB_ORB_PC_elemres_plusultra" } },
+            { "u_has_items": { "item": "dmbb_essence", "count": 2250 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 2250 },
+          { "npc_consume_item": "dmbb_essence", "count": 2250 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "sentinel", "value": "yes" },
+          { "u_add_trait": "DMBB_ORB_PC_elemres_plusultra" }
+        ]
+      },
+      {
+        "text": "[3000 essence] Heavenly Protection",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen",
+        "condition": {
+          "and": [ { "not": { "u_has_trait": "DMBB_ORB_PC_hevpro" } }, { "u_has_items": { "item": "dmbb_essence", "count": 3000 } } ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 3000 },
+          { "npc_consume_item": "dmbb_essence", "count": 3000 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "sentinel", "value": "yes" },
+          { "u_add_trait": "DMBB_ORB_PC_hevpro" }
+        ]
+      },
+      {
+        "text": "[2500 essence] Consecrate",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen",
+        "condition": {
+          "and": [ { "not": { "u_has_trait": "DMBB_ORB_PC_consecrate" } }, { "u_has_items": { "item": "dmbb_essence", "count": 2500 } } ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 2500 },
+          { "npc_consume_item": "dmbb_essence", "count": 2500 },
+          { "u_add_var": "dmbb_orb", "type": "has_upgrade", "context": "sentinel", "value": "yes" },
+          { "u_add_trait": "DMBB_ORB_PC_consecrate" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "TALK_DMBB_ORB_command_upgrade_sen_merc",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "and": [
+        "*\"What SENTINEL upgrade will I get?\"",
+        {
+          "u_has_var": "dmbb_orb",
+          "type": "has_passive",
+          "context": "arcanasy",
+          "value": "yes",
+          "yes": {
+            "npc_has_trait": "DMBB_ORB_PC_str",
+            "no": "\n\n*50 blood essence\n[SENTINEL] Strength+\nPermanently increases STR by 1.",
+            "yes": {
+              "npc_has_trait": "DMBB_ORB_PC_str_plus",
+              "no": "\n\n*100 blood essence\n[SENTINEL] Strength++\nPermanently increases STR by 1.",
+              "yes": {
+                "npc_has_trait": "DMBB_ORB_PC_str_plusultra",
+                "no": "\n\n*200 blood essence\n[SENTINEL] Strength+++\nPermanently increases STR by 2."
+              }
+            }
+          }
+        },
+        {
+          "u_has_var": "dmbb_orb",
+          "type": "has_passive",
+          "context": "arcanasy",
+          "value": "yes",
+          "yes": {
+            "npc_has_trait": "DMBB_ORB_PC_dex",
+            "no": "\n\n*50 blood essence\n[SENTINEL] Dexterity+\nPermanently increases DEX by 1.",
+            "yes": {
+              "npc_has_trait": "DMBB_ORB_PC_dex_plus",
+              "no": "\n\n*100 blood essence\n[SENTINEL] Dexterity++\nPermanently increases DEX by 1.",
+              "yes": {
+                "npc_has_trait": "DMBB_ORB_PC_dex_plusultra",
+                "no": "\n\n*200 blood essence\n[SENTINEL] Dexterity+++\nPermanently increases DEX by 2."
+              }
+            }
+          }
+        },
+        {
+          "u_has_var": "dmbb_orb",
+          "type": "has_passive",
+          "context": "arcanasy",
+          "value": "yes",
+          "yes": {
+            "npc_has_trait": "DMBB_ORB_PC_int",
+            "no": "\n\n*50 blood essence\n[SENTINEL] Intelligence+\nPermanently increases INT by 1.",
+            "yes": {
+              "npc_has_trait": "DMBB_ORB_PC_int_plus",
+              "no": "\n\n*100 blood essence\n[SENTINEL] Intelligence++\nPermanently increases INT by 1.",
+              "yes": {
+                "npc_has_trait": "DMBB_ORB_PC_int_plusultra",
+                "no": "\n\n*200 blood essence\n[SENTINEL] Intelligence+++\nPermanently increases INT by 2."
+              }
+            }
+          }
+        },
+        {
+          "u_has_var": "dmbb_orb",
+          "type": "has_passive",
+          "context": "arcanasy",
+          "value": "yes",
+          "yes": {
+            "npc_has_trait": "DMBB_ORB_PC_per",
+            "no": "\n\n*50 blood essence\n[SENTINEL] Perception+\nPermanently increases PER by 1.",
+            "yes": {
+              "npc_has_trait": "DMBB_ORB_PC_per_plus",
+              "no": "\n\n*100 blood essence\n[SENTINEL] Perception++\nPermanently increases PER by 1.",
+              "yes": {
+                "npc_has_trait": "DMBB_ORB_PC_per_plusultra",
+                "no": "\n\n*200 blood essence\n[SENTINEL] Perception+++\nPermanently increases PER by 2."
+              }
+            }
+          }
+        },
+        {
+          "npc_has_trait": "DMBB_ORB_PC_speed",
+          "no": "\n\n*400 essence\n[SENTINEL] Speed+\nIncreases movement and attack speed.",
+          "yes": {
+            "npc_has_trait": "DMBB_ORB_PC_speed_plus",
+            "no": "\n\n*1200 essence\n[SENTINEL] Speed++\nGreatly increases movement and attack speed.",
+            "yes": {
+              "npc_has_trait": "DMBB_ORB_PC_speed_plusultra",
+              "no": "\n\n*2400 essence\n[SENTINEL] Speed+++\nSignificantly increases movement and attack speed."
+            }
+          }
+        },
+        {
+          "npc_has_trait": "DMBB_ORB_PC_hp",
+          "no": "\n\n*100 essence\n[SENTINEL] HP+\nIncreases maximum health points.",
+          "yes": {
+            "npc_has_trait": "DMBB_ORB_PC_hp_plus",
+            "no": "\n\n*300 essence\n[SENTINEL] HP++\nGreatly increases maximum health points.",
+            "yes": {
+              "npc_has_trait": "DMBB_ORB_PC_hp_plusultra",
+              "no": "\n\n*600 essence\n[SENTINEL] HP+++\nSignificantly increases maximum health points."
+            }
+          }
+        },
+        {
+          "npc_has_trait": "DMBB_ORB_PC_endurance",
+          "no": "\n\n*225 essence\n[SENTINEL] Endurance+\nIncreases maximum and regen rate of stamina.",
+          "yes": {
+            "npc_has_trait": "DMBB_ORB_PC_endurance_plus",
+            "no": "\n\n*675 essence\n[SENTINEL] Endurance++\nGreatly increases maximum and regen rate of stamina.",
+            "yes": {
+              "npc_has_trait": "DMBB_ORB_PC_endurance_plusultra",
+              "no": "\n\n*1350 essence\n[SENTINEL] Endurance+++\nSignificantly increases maximum and regen rate of stamina."
+            }
+          }
+        },
+        {
+          "npc_has_trait": "DMBB_ORB_PC_phyres",
+          "no": "\n\n*375 essence\n[SENTINEL] Physical Resistance+\nDecreases physical damage dealt to you.",
+          "yes": {
+            "npc_has_trait": "DMBB_ORB_PC_phyres_plus",
+            "no": "\n\n*1125 essence\n[SENTINEL] Physical Resistance++\nGreatly decreases physical damage dealt to you.",
+            "yes": {
+              "npc_has_trait": "DMBB_ORB_PC_phyres_plusultra",
+              "no": "\n\n*2250 essence\n[SENTINEL] Physical Resistance+++\nSignificantly decreases physical damage dealt to you."
+            }
+          }
+        },
+        {
+          "npc_has_trait": "DMBB_ORB_PC_elemres",
+          "no": "\n\n*375 essence\n[SENTINEL] Elemental Resistance+\nDecreases elemental damage dealt to you.",
+          "yes": {
+            "npc_has_trait": "DMBB_ORB_PC_elemres_plus",
+            "no": "\n\n*1125 essence\n[SENTINEL] Elemental Resistance++\nGreatly decreases elemental damage dealt to you.",
+            "yes": {
+              "npc_has_trait": "DMBB_ORB_PC_elemres_plusultra",
+              "no": "\n\n*2250 essence\n[SENTINEL] Elemental Resistance+++\nSignificantly decreases elemental damage dealt to you."
+            }
+          }
+        },
+        {
+          "npc_has_trait": "DMBB_ORB_PC_hevpro",
+          "no": "\n\n*3000 essence\n[SENTINEL] Heavenly Protection\nEnshrouds you in a thin divinity aura. This aura has a 1/2 chance to stun the monster who hits you for a few turns."
+        },
+        {
+          "npc_has_trait": "DMBB_ORB_PC_consecrate",
+          "no": "\n\n*2500 essence\n[SENTINEL] Consecrate\nThe orb blesses your weapon of choice in combat. Your attacks has a 1/3 chance to deal 30 true damage."
+        }
+      ]
+    },
+    "responses": [
+      {
+        "text": "[50 blood essence] Strength+",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen_merc",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "has_passive", "context": "arcanasy", "value": "yes" },
+            { "npc_has_trait": "DMBB_ORB_arcanasy" },
+            { "not": { "npc_has_trait": "DMBB_ORB_PC_str" } },
+            { "u_has_items": { "item": "essence_blood", "count": 50 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "essence_blood", "count": 50 },
+          { "npc_consume_item": "essence_blood", "count": 50 },
+          { "npc_add_trait": "DMBB_ORB_PC_str" }
+        ]
+      },
+      {
+        "text": "[100 blood essence] Strength++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen_merc",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "has_passive", "context": "arcanasy", "value": "yes" },
+            { "npc_has_trait": "DMBB_ORB_PC_str" },
+            { "not": { "npc_has_trait": "DMBB_ORB_PC_str_plus" } },
+            { "u_has_items": { "item": "essence_blood", "count": 100 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "essence_blood", "count": 100 },
+          { "npc_consume_item": "essence_blood", "count": 100 },
+          { "npc_add_trait": "DMBB_ORB_PC_str_plus" }
+        ]
+      },
+      {
+        "text": "[200 blood essence] Strength+++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen_merc",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "has_passive", "context": "arcanasy", "value": "yes" },
+            { "npc_has_trait": "DMBB_ORB_PC_str_plus" },
+            { "not": { "npc_has_trait": "DMBB_ORB_PC_str_plusultra" } },
+            { "u_has_items": { "item": "essence_blood", "count": 200 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "essence_blood", "count": 200 },
+          { "npc_consume_item": "essence_blood", "count": 200 },
+          { "npc_add_trait": "DMBB_ORB_PC_str_plusultra" }
+        ]
+      },
+      {
+        "text": "[50 blood essence] Dexterity+",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen_merc",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "has_passive", "context": "arcanasy", "value": "yes" },
+            { "npc_has_trait": "DMBB_ORB_arcanasy" },
+            { "not": { "npc_has_trait": "DMBB_ORB_PC_dex" } },
+            { "u_has_items": { "item": "essence_blood", "count": 50 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "essence_blood", "count": 50 },
+          { "npc_consume_item": "essence_blood", "count": 50 },
+          { "npc_add_trait": "DMBB_ORB_PC_dex" }
+        ]
+      },
+      {
+        "text": "[100 blood essence] Dexterity++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen_merc",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "has_passive", "context": "arcanasy", "value": "yes" },
+            { "npc_has_trait": "DMBB_ORB_PC_dex" },
+            { "not": { "npc_has_trait": "DMBB_ORB_PC_dex_plus" } },
+            { "u_has_items": { "item": "essence_blood", "count": 100 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "essence_blood", "count": 100 },
+          { "npc_consume_item": "essence_blood", "count": 100 },
+          { "npc_add_trait": "DMBB_ORB_PC_dex_plus" }
+        ]
+      },
+      {
+        "text": "[200 blood essence] Dexterity+++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen_merc",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "has_passive", "context": "arcanasy", "value": "yes" },
+            { "npc_has_trait": "DMBB_ORB_PC_dex_plus" },
+            { "not": { "npc_has_trait": "DMBB_ORB_PC_dex_plusultra" } },
+            { "u_has_items": { "item": "essence_blood", "count": 200 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "essence_blood", "count": 200 },
+          { "npc_consume_item": "essence_blood", "count": 200 },
+          { "npc_add_trait": "DMBB_ORB_PC_dex_plusultra" }
+        ]
+      },
+      {
+        "text": "[50 blood essence] Intelligence+",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen_merc",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "has_passive", "context": "arcanasy", "value": "yes" },
+            { "npc_has_trait": "DMBB_ORB_arcanasy" },
+            { "not": { "npc_has_trait": "DMBB_ORB_PC_int" } },
+            { "u_has_items": { "item": "essence_blood", "count": 50 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "essence_blood", "count": 50 },
+          { "npc_consume_item": "essence_blood", "count": 50 },
+          { "npc_add_trait": "DMBB_ORB_PC_int" }
+        ]
+      },
+      {
+        "text": "[100 blood essence] Intelligence++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen_merc",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "has_passive", "context": "arcanasy", "value": "yes" },
+            { "npc_has_trait": "DMBB_ORB_PC_int" },
+            { "not": { "npc_has_trait": "DMBB_ORB_PC_int_plus" } },
+            { "u_has_items": { "item": "essence_blood", "count": 100 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "essence_blood", "count": 100 },
+          { "npc_consume_item": "essence_blood", "count": 100 },
+          { "npc_add_trait": "DMBB_ORB_PC_int_plus" }
+        ]
+      },
+      {
+        "text": "[200 blood essence] Intelligence+++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen_merc",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "has_passive", "context": "arcanasy", "value": "yes" },
+            { "npc_has_trait": "DMBB_ORB_PC_int_plus" },
+            { "not": { "npc_has_trait": "DMBB_ORB_PC_int_plusultra" } },
+            { "u_has_items": { "item": "essence_blood", "count": 200 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "essence_blood", "count": 200 },
+          { "npc_consume_item": "essence_blood", "count": 200 },
+          { "npc_add_trait": "DMBB_ORB_PC_int_plusultra" }
+        ]
+      },
+      {
+        "text": "[50 blood essence] Perception+",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen_merc",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "has_passive", "context": "arcanasy", "value": "yes" },
+            { "npc_has_trait": "DMBB_ORB_arcanasy" },
+            { "not": { "npc_has_trait": "DMBB_ORB_PC_per" } },
+            { "u_has_items": { "item": "essence_blood", "count": 50 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "essence_blood", "count": 50 },
+          { "npc_consume_item": "essence_blood", "count": 50 },
+          { "npc_add_trait": "DMBB_ORB_PC_per" }
+        ]
+      },
+      {
+        "text": "[100 blood essence] Perception++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen_merc",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "has_passive", "context": "arcanasy", "value": "yes" },
+            { "npc_has_trait": "DMBB_ORB_PC_per" },
+            { "not": { "npc_has_trait": "DMBB_ORB_PC_per_plus" } },
+            { "u_has_items": { "item": "essence_blood", "count": 100 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "essence_blood", "count": 100 },
+          { "npc_consume_item": "essence_blood", "count": 100 },
+          { "npc_add_trait": "DMBB_ORB_PC_per_plus" }
+        ]
+      },
+      {
+        "text": "[200 blood essence] Perception+++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen_merc",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "has_passive", "context": "arcanasy", "value": "yes" },
+            { "npc_has_trait": "DMBB_ORB_PC_per_plus" },
+            { "not": { "npc_has_trait": "DMBB_ORB_PC_per_plusultra" } },
+            { "u_has_items": { "item": "essence_blood", "count": 200 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "essence_blood", "count": 200 },
+          { "npc_consume_item": "essence_blood", "count": 200 },
+          { "npc_add_trait": "DMBB_ORB_PC_per_plusultra" }
+        ]
+      },
+      {
+        "text": "[400 essence] Speed+",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen_merc",
+        "condition": {
+          "and": [ { "not": { "npc_has_trait": "DMBB_ORB_PC_speed" } }, { "u_has_items": { "item": "dmbb_essence", "count": 400 } } ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 400 },
+          { "npc_consume_item": "dmbb_essence", "count": 400 },
+          { "npc_add_trait": "DMBB_ORB_PC_speed" }
+        ]
+      },
+      {
+        "text": "[1200 essence] Speed++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen_merc",
+        "condition": {
+          "and": [
+            { "npc_has_trait": "DMBB_ORB_PC_speed" },
+            { "not": { "npc_has_trait": "DMBB_ORB_PC_speed_plus" } },
+            { "u_has_items": { "item": "dmbb_essence", "count": 1200 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 1200 },
+          { "npc_consume_item": "dmbb_essence", "count": 1200 },
+          { "npc_add_trait": "DMBB_ORB_PC_speed_plus" }
+        ]
+      },
+      {
+        "text": "[2400 essence] Speed+++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen_merc",
+        "condition": {
+          "and": [
+            { "npc_has_trait": "DMBB_ORB_PC_speed_plus" },
+            { "not": { "npc_has_trait": "DMBB_ORB_PC_speed_plusultra" } },
+            { "u_has_items": { "item": "dmbb_essence", "count": 2400 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 2400 },
+          { "npc_consume_item": "dmbb_essence", "count": 2400 },
+          { "npc_add_trait": "DMBB_ORB_PC_speed_plusultra" }
+        ]
+      },
+      {
+        "text": "[100 essence] HP+",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen_merc",
+        "condition": {
+          "and": [ { "not": { "npc_has_trait": "DMBB_ORB_PC_hp" } }, { "u_has_items": { "item": "dmbb_essence", "count": 100 } } ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 100 },
+          { "npc_consume_item": "dmbb_essence", "count": 100 },
+          { "npc_add_trait": "DMBB_ORB_PC_hp" }
+        ]
+      },
+      {
+        "text": "[300 essence] HP++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen_merc",
+        "condition": {
+          "and": [
+            { "npc_has_trait": "DMBB_ORB_PC_hp" },
+            { "not": { "npc_has_trait": "DMBB_ORB_PC_hp_plus" } },
+            { "u_has_items": { "item": "dmbb_essence", "count": 300 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 300 },
+          { "npc_consume_item": "dmbb_essence", "count": 300 },
+          { "npc_add_trait": "DMBB_ORB_PC_hp_plus" }
+        ]
+      },
+      {
+        "text": "[600 essence] HP+++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen_merc",
+        "condition": {
+          "and": [
+            { "npc_has_trait": "DMBB_ORB_PC_hp_plus" },
+            { "not": { "npc_has_trait": "DMBB_ORB_PC_hp_plusultra" } },
+            { "u_has_items": { "item": "dmbb_essence", "count": 600 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 600 },
+          { "npc_consume_item": "dmbb_essence", "count": 600 },
+          { "npc_add_trait": "DMBB_ORB_PC_hp_plusultra" }
+        ]
+      },
+      {
+        "text": "[225 essence] Endurance+",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen_merc",
+        "condition": {
+          "and": [ { "not": { "npc_has_trait": "DMBB_ORB_PC_endurance" } }, { "u_has_items": { "item": "dmbb_essence", "count": 225 } } ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 225 },
+          { "npc_consume_item": "dmbb_essence", "count": 225 },
+          { "npc_add_trait": "DMBB_ORB_PC_endurance" }
+        ]
+      },
+      {
+        "text": "[675 essence] Endurance++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen_merc",
+        "condition": {
+          "and": [
+            { "npc_has_trait": "DMBB_ORB_PC_endurance" },
+            { "not": { "npc_has_trait": "DMBB_ORB_PC_endurance_plus" } },
+            { "u_has_items": { "item": "dmbb_essence", "count": 675 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 675 },
+          { "npc_consume_item": "dmbb_essence", "count": 675 },
+          { "npc_add_trait": "DMBB_ORB_PC_endurance_plus" }
+        ]
+      },
+      {
+        "text": "[1350 essence] Endurance+++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen_merc",
+        "condition": {
+          "and": [
+            { "npc_has_trait": "DMBB_ORB_PC_endurance_plus" },
+            { "not": { "npc_has_trait": "DMBB_ORB_PC_endurance_plusultra" } },
+            { "u_has_items": { "item": "dmbb_essence", "count": 1350 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 1350 },
+          { "npc_consume_item": "dmbb_essence", "count": 1350 },
+          { "npc_add_trait": "DMBB_ORB_PC_endurance_plusultra" }
+        ]
+      },
+      {
+        "text": "[375 essence] Physical Resistance+",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen_merc",
+        "condition": {
+          "and": [ { "not": { "npc_has_trait": "DMBB_ORB_PC_phyres" } }, { "u_has_items": { "item": "dmbb_essence", "count": 375 } } ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 375 },
+          { "npc_consume_item": "dmbb_essence", "count": 375 },
+          { "npc_add_trait": "DMBB_ORB_PC_phyres" }
+        ]
+      },
+      {
+        "text": "[1125 essence] Physical Resistance++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen_merc",
+        "condition": {
+          "and": [
+            { "npc_has_trait": "DMBB_ORB_PC_phyres" },
+            { "not": { "npc_has_trait": "DMBB_ORB_PC_phyres_plus" } },
+            { "u_has_items": { "item": "dmbb_essence", "count": 1125 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 1125 },
+          { "npc_consume_item": "dmbb_essence", "count": 1125 },
+          { "npc_add_trait": "DMBB_ORB_PC_phyres_plus" }
+        ]
+      },
+      {
+        "text": "[2250 essence] Physical Resistance+++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen_merc",
+        "condition": {
+          "and": [
+            { "npc_has_trait": "DMBB_ORB_PC_phyres_plus" },
+            { "not": { "npc_has_trait": "DMBB_ORB_PC_phyres_plusultra" } },
+            { "u_has_items": { "item": "dmbb_essence", "count": 2250 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 2250 },
+          { "npc_consume_item": "dmbb_essence", "count": 2250 },
+          { "npc_add_trait": "DMBB_ORB_PC_phyres_plusultra" }
+        ]
+      },
+      {
+        "text": "[375 essence] Elemental Resistance+",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen_merc",
+        "condition": {
+          "and": [ { "not": { "npc_has_trait": "DMBB_ORB_PC_elemres" } }, { "u_has_items": { "item": "dmbb_essence", "count": 375 } } ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 375 },
+          { "npc_consume_item": "dmbb_essence", "count": 375 },
+          { "npc_add_trait": "DMBB_ORB_PC_elemres" }
+        ]
+      },
+      {
+        "text": "[1125 essence] Elemental Resistance++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen_merc",
+        "condition": {
+          "and": [
+            { "npc_has_trait": "DMBB_ORB_PC_elemres" },
+            { "not": { "npc_has_trait": "DMBB_ORB_PC_elemres_plus" } },
+            { "u_has_items": { "item": "dmbb_essence", "count": 1125 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 1125 },
+          { "npc_consume_item": "dmbb_essence", "count": 1125 },
+          { "npc_add_trait": "DMBB_ORB_PC_elemres_plus" }
+        ]
+      },
+      {
+        "text": "[2250 essence] Elemental Resistance+++",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen_merc",
+        "condition": {
+          "and": [
+            { "npc_has_trait": "DMBB_ORB_PC_elemres_plus" },
+            { "not": { "npc_has_trait": "DMBB_ORB_PC_elemres_plusultra" } },
+            { "u_has_items": { "item": "dmbb_essence", "count": 2250 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 2250 },
+          { "npc_consume_item": "dmbb_essence", "count": 2250 },
+          { "npc_add_trait": "DMBB_ORB_PC_elemres_plusultra" }
+        ]
+      },
+      {
+        "text": "[3000 essence] Heavenly Protection",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen_merc",
+        "condition": {
+          "and": [ { "not": { "npc_has_trait": "DMBB_ORB_PC_hevpro" } }, { "u_has_items": { "item": "dmbb_essence", "count": 3000 } } ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 3000 },
+          { "npc_consume_item": "dmbb_essence", "count": 3000 },
+          { "npc_add_trait": "DMBB_ORB_PC_hevpro" }
+        ]
+      },
+      {
+        "text": "[2500 essence] Consecrate",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen_merc",
+        "condition": {
+          "and": [
+            { "not": { "npc_has_trait": "DMBB_ORB_PC_consecrate" } },
+            { "u_has_items": { "item": "dmbb_essence", "count": 2500 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_essence", "count": 2500 },
+          { "npc_consume_item": "dmbb_essence", "count": 2500 },
+          { "npc_add_trait": "DMBB_ORB_PC_consecrate" }
+        ]
+      },
+      { "text": "Nevermind...", "topic": "TALK_FRIEND_DMBB_MERC_sentinel" },
+      { "text": "Bye.", "topic": "TALK_DONE" }
+    ]
+  }
+]

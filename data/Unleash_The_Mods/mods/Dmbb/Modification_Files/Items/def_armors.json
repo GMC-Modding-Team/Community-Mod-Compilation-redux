@@ -1,0 +1,61 @@
+[
+  {
+    "id": "dmbb_death",
+    "type": "TOOL_ARMOR",
+    "name": { "str": "orb's light" },
+    "description": "Proof of the orb's healthy state.",
+    "volume": "1 ml",
+    "weight": "1 g",
+    "price": "0 cent",
+    "covers": [ "torso", "arm_l", "arm_r", "hand_l", "hand_r", "leg_l", "leg_r", "foot_l", "foot_r", "head", "mouth", "eyes" ],
+    "coverage": 0,
+    "encumbrance": 0,
+    "material_thickness": 1,
+    "environmental_protection": 15,
+    "to_hit": -50,
+    "material": [ "stone" ],
+    "symbol": "0",
+    "color": "white",
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "69 L",
+        "max_contains_weight": "420 kg",
+        "max_item_length": "666 cm",
+        "moves": 300
+      }
+    ],
+    "relic_data": { "passive_effects": [ { "id": "DMBB_ORB_bu_ench" } ] },
+    "drop_action": { "target": "dmbb_death_act", "target_charges": 1, "active": true, "type": "transform" }
+  },
+  {
+    "id": "dmbb_death_act",
+    "type": "TOOL",
+    "name": { "str": "fading orb" },
+    "description": "You fail to defend the orb...",
+    "volume": "1 ml",
+    "weight": "1 g",
+    "price": "0 cent",
+    "to_hit": -2,
+    "bashing": 1,
+    "material": [ "stone" ],
+    "symbol": "0",
+    "color": "dark_gray",
+    "countdown_interval": 1,
+    "countdown_destroy": true,
+    "countdown_action": { "type": "cast_spell", "spell_id": "DMBB_ORB_death", "no_fail": true, "level": 0 }
+  },
+  {
+    "id": "dmbb_envward",
+    "type": "ARMOR",
+    "name": { "str": "celestial ward" },
+    "description": "An invisible field of holy light that wards off harmful environmental hazards. ",
+    "weight": "1 g",
+    "volume": "1 ml",
+    "symbol": "O",
+    "color": "white",
+    "environmental_protection": 15,
+    "covers": [ "leg_l", "leg_r", "torso", "arm_l", "arm_r", "hand_l", "hand_r", "head", "foot_l", "foot_r", "mouth", "eyes" ],
+    "flags": [ "AURA", "SEMITANGIBLE", "OVERSIZE", "ONLY_ONE", "TRADER_AVOID", "NO_TAKEOFF", "NONCONDUCTIVE" ]
+  }
+]

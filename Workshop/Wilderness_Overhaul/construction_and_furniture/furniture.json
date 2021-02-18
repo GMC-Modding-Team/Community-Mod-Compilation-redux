@@ -1,0 +1,75 @@
+[
+  {
+    "type": "furniture",
+    "id": "f_firepit",
+    "name": "fire pit",
+    "description": "This is a fire pit, typically used for light and heat.",
+    "symbol": "0",
+    "bgcolor": "brown",
+    "move_cost_mod": 0,
+    "required_str": -1,
+    "flags": [ "TRANSPARENT", "CONTAINER", "FIRE_CONTAINER", "PLACE_ITEM" ],
+    "deconstruct": { "items": [ { "item": "rock", "amount": 8 } ] },
+    "bash": { "str_min": 1, "str_max": 1, "sound": "crash!", "sound_fail": "whump!", "items": [ { "item": "rock", "amount": 8 } ] }
+  },
+  {
+    "type": "furniture",
+    "id": "f_cookfirepit",
+    "name": "cooking pit",
+    "description": "This is a fire pit with a rock pot, typically used for light, heat and cooking.",
+    "symbol": "0",
+    "bgcolor": "brown",
+    "move_cost_mod": 2,
+    "required_str": -1,
+    "flags": [ "TRANSPARENT", "CONTAINER", "FIRE_CONTAINER", "SUPPRESS_SMOKE", "PLACE_ITEM" ],
+    "crafting_pseudo_item": "rock_pot",
+    "deconstruct": { "items": [ { "item": "rock", "amount": 8 }, { "item": "stick", "amount": 4 }, { "item": "rock_pot", "amount": 1 } ] },
+    "bash": {
+      "str_min": 1,
+      "str_max": 1,
+      "sound": "crash!",
+      "sound_fail": "whump!",
+      "items": [ { "item": "rock", "amount": 8 }, { "item": "stick", "amount": 4 }, { "item": "rock_pot", "amount": 1 } ]
+    }
+  },
+  {
+    "type": "furniture",
+    "id": "f_makeshift_fence",
+    "name": "makeshift fence",
+    "description": "This is a makeshift fence",
+    "symbol": "=",
+    "bgcolor": "brown",
+    "move_cost_mod": 2,
+    "coverage": 50,
+    "required_str": -1,
+    "flags": [ "TRANSPARENT", "NOITEM", "FLAMMABLE_ASH", "THIN_OBSTACLE", "MOUNTABLE", "EASY_DECONSTRUCT", "WALL" ],
+    "deconstruct": { "items": [ { "item": "2x4", "amount": 8, "minamount": 8 } ] },
+    "bash": {
+      "str_min": 4,
+      "str_max": 20,
+      "sound": "crack.",
+      "sound_fail": "wham.",
+      "items": [ { "item": "2x4", "amount": 6, "minamount": 2 } ]
+    }
+  },
+  {
+    "type": "furniture",
+    "id": "f_makeshift_gate",
+    "name": "makeshift gate",
+    "description": "This is a makeshift gate",
+    "symbol": "=",
+    "bgcolor": "brown",
+    "move_cost_mod": 2,
+    "coverage": 50,
+    "required_str": -1,
+    "flags": [ "TRANSPARENT", "NOITEM", "FLAMMABLE_ASH", "THIN_OBSTACLE", "EASY_DECONSTRUCT", "DOOR", "CONNECT_TO_WALL" ],
+    "deconstruct": { "items": [ { "item": "2x4", "amount": 8, "minamount": 8 } ] },
+    "bash": {
+      "str_min": 4,
+      "str_max": 20,
+      "sound": "crack.",
+      "sound_fail": "wham.",
+      "items": [ { "item": "2x4", "amount": 6, "minamount": 2 } ]
+    }
+  }
+]

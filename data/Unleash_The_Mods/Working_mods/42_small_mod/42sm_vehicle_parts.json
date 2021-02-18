@@ -1,0 +1,116 @@
+[
+  {
+    "id": "headlight_atomic",
+    "type": "vehicle_part",
+    "name": { "str": "atomic headlight" },
+    "item": "headlight_atomic",
+    "symbol": "*",
+    "broken_symbol": "*",
+    "color": "light_blue",
+    "broken_color": "green",
+    "durability": 20,
+    "description": "A bright light that illuminates a narrow cone outside the vehicle when turned on, self-powered by an atomic decay reaction that never stops.  During installation, you can choose what direction to point the light, so multiple headlights can illuminate the sides or rear, as well as the front.",
+    "bonus": 8000,
+    "damage_modifier": 10,
+    "folded_volume": "500 ml",
+    "breaks_into": [ { "item": "cable", "charges": [ 1, 4 ] }, { "item": "scrap", "count": [ 2, 4 ] } ],
+    "requirements": {
+      "install": { "skills": [ [ "mechanics", 1 ] ], "time": "200 s", "using": [ [ "vehicle_screw", 1 ] ] },
+      "removal": { "skills": [ [ "mechanics", 1 ] ], "time": "200 s", "using": [ [ "vehicle_screw", 1 ] ] },
+      "repair": { "skills": [ [ "mechanics", 1 ] ], "time": "20 s", "using": [ [ "adhesive", 1 ] ] }
+    },
+    "flags": [ "LEAK_DAM", "RADIOACTIVE", "CONE_LIGHT", "FOLDABLE" ]
+  },
+  {
+    "id": "wide_headlight_atomic",
+    "type": "vehicle_part",
+    "name": { "str": "wide angle atomic headlight" },
+    "item": "wide_headlight_atomic",
+    "copy-from": "headlight_atomic",
+    "looks_like": "headlight_atomic",
+    "description": "A bright light that illuminates a wide cone outside the vehicle when turned on, self-powered by an atomic decay reaction that never stops.  During installation, you can choose what direction to point the light, so multiple headlights can illuminate the sides or rear, as well as the front.",
+    "flags": [ "LEAK_DAM", "RADIOACTIVE", "WIDE_CONE_LIGHT", "FOLDABLE" ]
+  },
+  {
+    "id": "headlight_reinforced_atomic",
+    "copy-from": "headlight_atomic",
+    "type": "vehicle_part",
+    "name": { "str": "reinforced atomic headlight" },
+    "item": "headlight_reinforced_atomic",
+    "color": "blue",
+    "proportional": { "durability": 4 },
+    "damage_reduction": { "all": 12 }
+  },
+  {
+    "id": "wide_headlight_reinforced_atomic",
+    "copy-from": "wide_headlight_atomic",
+    "type": "vehicle_part",
+    "name": { "str": "reinforced wide-angle atomic headlight" },
+    "item": "wide_headlight_reinforced_atomic",
+    "color": "blue",
+    "proportional": { "durability": 4 },
+    "damage_reduction": { "all": 12 }
+  },
+  {
+    "type": "vehicle_part",
+    "id": "megafridge",
+    "name": { "str": "megafridge" },
+    "symbol": "H",
+    "color": "light_blue",
+    "broken_symbol": "#",
+    "broken_color": "light_blue",
+    "looks_like": "minifridge",
+    "damage_modifier": 80,
+    "durability": 100,
+    "description": "A larger fridge.  When turned on, it will cool the food inside, extended the time until the food spoils.",
+    "//": "Use average consumption, not the max on the appliance rating plate. 30W ~ 260kWh per annum",
+    "epower": -45,
+    "size": 600,
+    "item": "megafridge",
+    "location": "center",
+    "requirements": {
+      "install": { "skills": [ [ "mechanics", 3 ] ], "time": "60 m", "using": [ [ "vehicle_wrench_2", 1 ] ] },
+      "removal": { "skills": [ [ "mechanics", 2 ] ], "time": "30 m", "using": [ [ "vehicle_wrench_2", 1 ] ] },
+      "repair": { "skills": [ [ "mechanics", 4 ] ], "time": "60 m", "using": [ [ "welding_standard", 5 ] ] }
+    },
+    "flags": [ "CARGO", "OBSTACLE", "FRIDGE", "COVERED", "ENABLED_DRAINS_EPOWER" ],
+    "breaks_into": [
+      { "item": "steel_lump", "count": [ 16, 26 ] },
+      { "item": "steel_chunk", "count": [ 16, 26 ] },
+      { "item": "scrap", "count": [ 16, 26 ] },
+      { "item": "hose", "prob": 50 },
+      { "item": "motor_tiny", "prob": 25 }
+    ],
+    "damage_reduction": { "all": 32 }
+  },
+  {
+    "type": "vehicle_part",
+    "id": "megafreezer",
+    "name": { "str": "megafreezer" },
+    "symbol": "H",
+    "color": "light_blue",
+    "broken_symbol": "#",
+    "broken_color": "blue",
+    "looks_like": "minifreezer",
+    "damage_modifier": 80,
+    "durability": 100,
+    "epower": -45,
+    "size": 600,
+    "item": "megafreezer",
+    "location": "center",
+    "requirements": {
+      "install": { "skills": [ [ "mechanics", 3 ] ], "time": "60 m", "using": [ [ "vehicle_wrench_2", 1 ] ] },
+      "removal": { "skills": [ [ "mechanics", 2 ] ], "time": "30 m", "using": [ [ "vehicle_wrench_2", 1 ] ] },
+      "repair": { "skills": [ [ "mechanics", 4 ] ], "time": "60 m", "using": [ [ "welding_standard", 5 ] ] }
+    },
+    "flags": [ "CARGO", "OBSTACLE", "FREEZER", "COVERED", "ENABLED_DRAINS_EPOWER" ],
+    "breaks_into": [
+      { "item": "steel_lump", "count": [ 16, 26 ] },
+      { "item": "steel_chunk", "count": [ 16, 26 ] },
+      { "item": "scrap", "count": [ 16, 26 ] },
+      { "item": "hose", "prob": 50 },
+      { "item": "motor_tiny", "prob": 25 }
+    ],
+    "damage_reduction": { "all": 32 }
+  }
+]

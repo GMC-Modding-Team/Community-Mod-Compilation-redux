@@ -1,0 +1,89 @@
+[
+  {
+    "id": "TALK_DMBB_ORB_GUILDMASTER_quest_list",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "and": [
+        "Pick the quest you want to engage.\"\n",
+        {
+          "u_has_var": "dmbb_orb",
+          "type": "guildmaster_quest_selected",
+          "context": "goblinsiege",
+          "value": "yes",
+          "no": "\n* Goblin Siege!"
+        },
+        {
+          "u_has_var": "dmbb_orb",
+          "type": "guildmaster_quest_selected",
+          "context": "firenice",
+          "value": "yes",
+          "no": "\n* Fire and Ice"
+        },
+        "\n\n\"You can only partake on one quest at a time."
+      ]
+    },
+    "responses": [
+      {
+        "text": "[INFO] Goblin Siege!",
+        "topic": "TALK_DMBB_ORB_GUILDMASTER_quest_goblinsiege",
+        "condition": { "not": { "u_has_var": "dmbb_orb", "type": "guildmaster_quest_selected", "context": "goblinsiege", "value": "yes" } }
+      },
+      {
+        "text": "[INFO] Fire and Ice",
+        "topic": "TALK_DMBB_ORB_GUILDMASTER_quest_firenice",
+        "condition": { "not": { "u_has_var": "dmbb_orb", "type": "guildmaster_quest_selected", "context": "firenice", "value": "yes" } }
+      },
+      { "text": "Nevermind.", "topic": "TALK_DMBB_ORB_GUILDMASTER" }
+    ]
+  },
+  {
+    "id": "TALK_DMBB_ORB_GUILDMASTER_quest_goblinsiege",
+    "type": "talk_topic",
+    "dynamic_line": "In this quest, you will fight against the goblins. Don't underestimate their frail body, as they are known to wield crude, yet deadly weapons.\"\n\nDifficulty   - Hard\nWave Count   - 5\nRequirements - 20 essence\nReward       - 100 coins\n\n\"Upon selection, new waves will appear in the CLASSIC wavepack.",
+    "responses": [
+      {
+        "text": "*[SELECT] Goblin Siege!*",
+        "topic": "TALK_DMBB_ORB_GUILDMASTER_quest_selected",
+        "effect": { "u_add_var": "dmbb_orb", "type": "guildmaster_quest_selected", "context": "goblinsiege", "value": "yes" }
+      },
+      { "text": "[QUESTS]", "topic": "TALK_DMBB_ORB_GUILDMASTER_quest_list" },
+      { "text": "Nevermind.", "topic": "TALK_DMBB_ORB_GUILDMASTER" }
+    ]
+  },
+  {
+    "id": "TALK_DMBB_ORB_GUILDMASTER_quest_firenice",
+    "type": "talk_topic",
+    "dynamic_line": "Show off your skills by attempting to slay these two elemental dragons! Do note that they are extremely formidable, so make sure you have everything in line before partaking to this hellish waves.\"\n\nDifficulty   - Extreme\nWave Count   - 2\nRequirements - 150 essence\nReward       - 450 coins\n             - dragon slayer (weapon)\n\n\"Upon selection, new waves will appear in the CLASSIC wavepack.",
+    "responses": [
+      {
+        "text": "*[SELECT] Fire and Ice*",
+        "topic": "TALK_DMBB_ORB_GUILDMASTER_quest_selected",
+        "effect": { "u_add_var": "dmbb_orb", "type": "guildmaster_quest_selected", "context": "firenice", "value": "yes" }
+      },
+      { "text": "[VIEW REWARD] dragonslayer", "topic": "TALK_DMBB_ORB_GUILDMASTER_show_dragonslayer" },
+      { "text": "[QUESTS]", "topic": "TALK_DMBB_ORB_GUILDMASTER_quest_list" },
+      { "text": "Nevermind.", "topic": "TALK_DMBB_ORB_GUILDMASTER" }
+    ]
+  },
+  {
+    "id": "TALK_DMBB_ORB_GUILDMASTER_show_dragonslayer",
+    "type": "talk_topic",
+    "dynamic_line": "This item is exclusively given to those who are successful in slaying the fire and ice dragons in this quest.\"\n\nShowing basic information for \"Dragonslayer\":\n* bash - 16\n* cut - 36\n\nAbilities:\n* Dragon's Bane - each attack has a 1/3 chance to deal 45-60 cutting damage to dragon-type monsters\n\n\"(Obtained immediately after completing \"Fire and Ice\" quest)",
+    "responses": [
+      { "text": "[INFO] Fire and Ice", "topic": "TALK_DMBB_ORB_GUILDMASTER_quest_firenice" },
+      { "text": "Nevermind.", "topic": "TALK_DMBB_ORB_GUILDMASTER" }
+    ]
+  },
+  {
+    "id": "TALK_DMBB_ORB_GUILDMASTER_quest_selected",
+    "type": "talk_topic",
+    "dynamic_line": "Finish this quest and you shall earn your rewards.",
+    "responses": [
+      {
+        "text": "I will!",
+        "topic": "TALK_DONE",
+        "effect": { "u_add_var": "dmbb_orb", "type": "guildmaster", "context": "has_quest", "value": "yes" }
+      }
+    ]
+  }
+]

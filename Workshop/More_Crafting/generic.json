@@ -1,0 +1,39 @@
+[
+  {
+    "id": "kaolinite_jar",
+    "type": "GENERIC",
+    "symbol": "%",
+    "color": "white",
+    "name": { "str": "kaolinite jar" },
+    "description": "A sealed jar holding a solution that will crystallize into kaolinite after four days, a useful blood clotting agent.",
+    "price": 10,
+    "material": [ "glass", "powder" ],
+    "weight": "300 g",
+    "volume": "500 ml",
+    "bashing": 4,
+    "category": "spare_parts",
+    "use_action": {
+      "type": "delayed_transform",
+      "transform_age": 57600,
+      "//": "4 days",
+      "not_ready_msg": "The kaolinite hasn't crystallized yet.",
+      "msg": "The jar looks done, you can disassemble it and harvest the hemostatic powder.",
+      "moves": 50,
+      "target": "kaolinite_jar_done"
+    }
+  },
+  {
+    "id": "kaolinite_jar_done",
+    "type": "GENERIC",
+    "symbol": "%",
+    "color": "white",
+    "name": { "str": "kaolinite jar" },
+    "description": "A sealed jar holding crystallized kaolinite, a useful blood clotting agent, ready for disassembling.",
+    "price": 10,
+    "material": [ "glass", "powder" ],
+    "weight": "300 g",
+    "volume": "500 ml",
+    "bashing": 4,
+    "category": "spare_parts"
+  }
+]

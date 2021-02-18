@@ -1,0 +1,88 @@
+[
+  {
+    "type": "GENERIC",
+    "id": "engine_horse",
+    "symbol": ",",
+    "color": "brown",
+    "name": { "str": "carriage horses" },
+    "category": "veh_parts",
+    "description": "A powerful and lonely horse suitable for riding horse-drawn horses.",
+    "price": "10 USD",
+    "material": [ "flesh", "bone" ],
+    "weight": "220213 g",
+    "volume": "136250 ml",
+    "bashing": 1,
+    "cutting": 0,
+    "to_hit": -3,
+    "flags": [ "TRADER_AVOID" ]
+  },
+  {
+    "type": "GENERIC",
+    "id": "nosferatu_engine_horse",
+    "symbol": ",",
+    "color": "brown",
+    "name": { "str": "zombie horses" },
+    "category": "veh_parts",
+    "description": "It is a synthetic beast that has reached the same horsepower as a car engine. He synthesized blobs and overcame sunlight, the vampire's weak point, but he became deformed and was no longer a horse.",
+    "price": "10 USD",
+    "material": [ "flesh", "bone" ],
+    "weight": "220213 g",
+    "volume": "136250 ml",
+    "bashing": 1,
+    "cutting": 0,
+    "to_hit": -3,
+    "flags": [ "TRADER_AVOID" ]
+  },
+  {
+    "id": "engine_horse",
+    "type": "vehicle_part",
+    "name": { "str": "Two horses" },
+    "item": "engine_horse",
+    "durability": 1400,
+    "power": 40,
+    "epower": 0,
+    "damage_modifier": 250,
+    "fuel_type": "battery",
+    "symbol": "H",
+    "color": "brown",
+    "broken_color": "red",
+    "location": "engine_block",
+    "flags": [ "TOOL_NONE", "ENGINE" ],
+    "breaks_into": "break_engine_horse",
+    "requirements": {
+      "install": { "time": 30000, "skills": [ [ "survival", 2 ] ], "components": [ [ [ "water", 6 ], [ "water_clean", 6 ] ] ] },
+      "repair": { "time": 15000, "skills": [ [ "tailor", 1 ] ], "using": [ [ "sewing_standard", 50 ], [ "fabric_standard", 1 ] ] }
+    }
+  },
+  {
+    "id": "nosferatu_engine_horse",
+    "type": "vehicle_part",
+    "name": { "str": "Two zombie horses" },
+    "item": "nosferatu_engine_horse",
+    "durability": 3000,
+    "power": 240,
+    "epower": 0,
+    "damage_modifier": 550,
+    "fuel_type": "battery",
+    "symbol": "H",
+    "color": "green",
+    "broken_color": "red",
+    "location": "engine_block",
+    "flags": [ "TOOL_NONE", "ENGINE" ],
+    "breaks_into": "break_engine_horse",
+    "requirements": {
+      "install": { "time": 30000, "skills": [ [ "survival", 2 ] ], "components": [ [ [ "water", 6 ], [ "water_clean", 6 ] ] ] },
+      "repair": { "time": 15000, "skills": [ [ "tailor", 1 ] ], "using": [ [ "sewing_standard", 50 ], [ "fabric_standard", 1 ] ] }
+    }
+  },
+  {
+    "type": "item_group",
+    "id": "break_engine_horse",
+    "subtype": "collection",
+    "entries": [
+      { "item": "meat", "count": [ 3, 12 ] },
+      { "item": "bone", "count": [ 3, 15 ] },
+      { "item": "offal", "count": [ 2, 3 ] }
+    ]
+  }
+]

@@ -1,0 +1,60 @@
+[
+  {
+    "id": "TALK_DMBB_ORB_GUILDMASTER_quest_inquire",
+    "type": "talk_topic",
+    "dynamic_line": "Any reports?",
+    "responses": [
+      {
+        "text": "[FINISH] Goblin Siege!",
+        "topic": "TALK_DMBB_ORB_GUILDMASTER_quest_done",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "gqgobsie1", "context": "finish", "value": "yes" },
+            { "u_has_var": "dmbb_orb", "type": "gqgobsie2", "context": "finish", "value": "yes" },
+            { "u_has_var": "dmbb_orb", "type": "gqgobsie3", "context": "finish", "value": "yes" },
+            { "u_has_var": "dmbb_orb", "type": "gqgobsie4", "context": "finish", "value": "yes" },
+            { "u_has_var": "dmbb_orb", "type": "gqgobsie5", "context": "finish", "value": "yes" },
+            {
+              "not": { "u_has_var": "dmbb_orb", "type": "guildmaster_quest_done", "context": "goblinsiege", "value": "yes" }
+            }
+          ]
+        },
+        "effect": [
+          { "u_buy_item": "dmbb_coin", "count": 100 },
+          { "u_add_var": "dmbb_orb", "type": "guildmaster_quest_done", "context": "goblinsiege", "value": "yes" }
+        ]
+      },
+      {
+        "text": "[FINISH] Fire and Ice",
+        "topic": "TALK_DMBB_ORB_GUILDMASTER_quest_done",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "gqfirenice_fire", "context": "finish", "value": "yes" },
+            { "u_has_var": "dmbb_orb", "type": "gqfirenice_ice", "context": "finish", "value": "yes" },
+            {
+              "not": { "u_has_var": "dmbb_orb", "type": "guildmaster_quest_done", "context": "firenice", "value": "yes" }
+            }
+          ]
+        },
+        "effect": [
+          { "u_buy_item": "dmbb_coin", "count": 450 },
+          { "u_buy_item": "dmbb_sword_dragonslayer" },
+          { "u_add_var": "dmbb_orb", "type": "guildmaster_quest_done", "context": "firenice", "value": "yes" }
+        ]
+      },
+      { "text": "Nevermind.", "topic": "TALK_DMBB_ORB_GUILDMASTER" }
+    ]
+  },
+  {
+    "id": "TALK_DMBB_ORB_GUILDMASTER_quest_done",
+    "type": "talk_topic",
+    "dynamic_line": "Good job, sentinel! Here's your rewards for the quest completion.\n\nIf you're up for more quests, just notify me.",
+    "responses": [
+      {
+        "text": "Okay.",
+        "topic": "TALK_DMBB_ORB_GUILDMASTER",
+        "effect": { "u_lose_var": "dmbb_orb", "type": "guildmaster", "context": "has_quest", "value": "yes" }
+      }
+    ]
+  }
+]

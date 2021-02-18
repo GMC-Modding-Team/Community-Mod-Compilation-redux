@@ -1,0 +1,145 @@
+[
+  {
+    "id": "TALK_DMBB_ORB_GUILDSMITH_forge_list",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "and": [
+        "Here's what I can forge.\"\n",
+        { "u_has_item": "dmbb_hexsteel_chunk", "yes": "\n* Armamentalist Sword" },
+        { "u_has_item": "dmbb_hexsteel_chunk", "yes": "\n* Hex Blade" },
+        { "u_has_item": "dmbb_hexsteel_chunk", "yes": "\n* Hex Dagger" },
+        { "u_has_item": "dmbb_hexsteel_chunk", "yes": "\n* Hex Hammer" },
+        "\n\n\"Missing something on the list? Maybe you don't have the main material in your space."
+      ]
+    },
+    "responses": [
+      {
+        "text": "[SELECT] Armamentalist Sword",
+        "topic": "TALK_DMBB_ORB_GUILDSMITH_forge_armamentalistsword",
+        "condition": { "u_has_item": "dmbb_hexsteel_chunk" }
+      },
+      {
+        "text": "[SELECT] Hex Blade",
+        "topic": "TALK_DMBB_ORB_GUILDSMITH_forge_hexblade",
+        "condition": { "u_has_item": "dmbb_hexsteel_chunk" }
+      },
+      { "text": "Later.", "topic": "TALK_DMBB_ORB_GUILDSMITH_whatelse" }
+    ]
+  },
+  {
+    "id": "TALK_DMBB_ORB_GUILDSMITH_forge_armamentalistsword",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "and": [
+        "Armamentalist Sword? It'll cost you ",
+        {
+          "u_has_items": { "item": "dmbb_coin", "count": 100 },
+          "yes": "100 sentinel's coins",
+          "no": "100 sentinel's coins (insufficient amount)"
+        },
+        " and the following materials to create.\"\n",
+        {
+          "u_has_items": { "item": "dmbb_hexsteel_chunk", "count": 4 },
+          "yes": "\n* 4 chunks of hexsteel",
+          "no": "\n* 4 chunks of hexsteel (insufficient amount)"
+        },
+        {
+          "u_has_items": { "item": "leather", "count": 2 },
+          "yes": "\n* 2 leather patches",
+          "no": "\n* 2 leather patches (insufficient amount)"
+        },
+        {
+          "u_has_items": { "item": "fur", "count": 2 },
+          "yes": "\n* 2 fur pelts",
+          "no": "\n* 2 fur pelts (insufficient amount)"
+        },
+        "\n\n\"It'll take some time to forge an equipment."
+      ]
+    },
+    "responses": [
+      {
+        "text": "[FORGE] Armamentalist Sword",
+        "topic": "TALK_DMBB_ORB_GUILDSMITH_forge_now",
+        "condition": {
+          "and": [
+            { "u_has_items": { "item": "dmbb_coin", "count": 100 } },
+            { "u_has_items": { "item": "dmbb_hexsteel_chunk", "count": 4 } },
+            { "u_has_items": { "item": "leather", "count": 2 } },
+            { "u_has_items": { "item": "fur", "count": 2 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_coin", "count": 100 },
+          { "npc_consume_item": "dmbb_coin", "count": 100 },
+          { "u_sell_item": "dmbb_hexsteel_chunk", "count": 4 },
+          { "npc_consume_item": "dmbb_hexsteel_chunk", "count": 4 },
+          { "u_sell_item": "leather", "count": 2 },
+          { "npc_consume_item": "leather", "count": 2 },
+          { "u_sell_item": "fur", "count": 2 },
+          { "npc_consume_item": "fur", "count": 2 },
+          { "u_add_var": "dmbb_orb", "type": "guildsmith", "context": "forging", "value": "yes" },
+          { "u_add_var": "dmbb_orb", "type": "guildsmith_forging", "context": "armamentalistsword", "value": "yes" }
+        ]
+      },
+      { "text": "I'd like to pick something else.", "topic": "TALK_DMBB_ORB_GUILDSMITH_forge_list" }
+    ]
+  },
+  {
+    "id": "TALK_DMBB_ORB_GUILDSMITH_forge_hexblade",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "and": [
+        "Hex Blade? It'll cost you ",
+        {
+          "u_has_items": { "item": "dmbb_coin", "count": 80 },
+          "yes": "80 sentinel's coins",
+          "no": "80 sentinel's coins (insufficient amount)"
+        },
+        " and the following materials to create.\"\n",
+        {
+          "u_has_items": { "item": "dmbb_hexsteel_chunk", "count": 5 },
+          "yes": "\n* 5 chunks of hexsteel",
+          "no": "\n* 5 chunks of hexsteel (insufficient amount)"
+        },
+        {
+          "u_has_items": { "item": "leather", "count": 2 },
+          "yes": "\n* 2 leather patches",
+          "no": "\n* 2 leather patches (insufficient amount)"
+        },
+        {
+          "u_has_items": { "item": "fur", "count": 2 },
+          "yes": "\n* 2 fur pelts",
+          "no": "\n* 2 fur pelts (insufficient amount)"
+        },
+        "\n\n\"It'll take some time to forge an equipment."
+      ]
+    },
+    "responses": [
+      {
+        "text": "[FORGE] Hex Blade",
+        "topic": "TALK_DMBB_ORB_GUILDSMITH_forge_now",
+        "condition": {
+          "and": [
+            { "u_has_items": { "item": "dmbb_coin", "count": 80 } },
+            { "u_has_items": { "item": "dmbb_hexsteel_chunk", "count": 5 } },
+            { "u_has_items": { "item": "leather", "count": 2 } },
+            { "u_has_items": { "item": "fur", "count": 2 } }
+          ]
+        },
+        "effect": [
+          { "u_sell_item": "dmbb_coin", "count": 80 },
+          { "npc_consume_item": "dmbb_coin", "count": 80 },
+          { "u_sell_item": "dmbb_hexsteel_chunk", "count": 5 },
+          { "npc_consume_item": "dmbb_hexsteel_chunk", "count": 5 },
+          { "u_sell_item": "leather", "count": 2 },
+          { "npc_consume_item": "leather", "count": 2 },
+          { "u_sell_item": "fur", "count": 2 },
+          { "npc_consume_item": "fur", "count": 2 },
+          { "u_add_var": "dmbb_orb", "type": "guildsmith", "context": "forging", "value": "yes" },
+          { "u_add_var": "dmbb_orb", "type": "guildsmith_forging", "context": "hexblade", "value": "yes" }
+        ]
+      },
+      { "text": "I'd like to pick something else.", "topic": "TALK_DMBB_ORB_GUILDSMITH_forge_list" }
+    ]
+  }
+]

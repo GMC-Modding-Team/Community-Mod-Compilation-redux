@@ -1,0 +1,226 @@
+[
+  {
+    "id": [
+      "TALK_DMBB_ORB_command_stat",
+      "TALK_DMBB_ORB_command_stat_pas",
+      "TALK_DMBB_ORB_command_stat_act",
+      "TALK_DMBB_ORB_command_stat_sen"
+    ],
+    "type": "talk_topic",
+    "dynamic_line": {
+      "and": [
+        "*will view the current upgrades in what category?",
+        {
+          "u_has_var": "dmbb_orb",
+          "type": "has_upgrade",
+          "context": "passive",
+          "value": "yes",
+          "yes": "\n\n* PASSIVE"
+        },
+        { "u_has_var": "dmbb_orb", "type": "has_upgrade", "context": "active", "value": "yes", "yes": "\n\n* ACTIVE" },
+        {
+          "u_has_var": "dmbb_orb",
+          "type": "has_upgrade",
+          "context": "sentinel",
+          "value": "yes",
+          "yes": "\n\n* SENTINEL"
+        }
+      ]
+    },
+    "responses": [
+      {
+        "text": "View \"PASSIVE\" upgrades",
+        "topic": "TALK_DMBB_ORB_command_stat_pas",
+        "condition": { "u_has_var": "dmbb_orb", "type": "has_upgrade", "context": "passive", "value": "yes" }
+      },
+      {
+        "text": "View \"ACTIVE\" upgrades",
+        "topic": "TALK_DMBB_ORB_command_stat_act",
+        "condition": { "u_has_var": "dmbb_orb", "type": "has_upgrade", "context": "active", "value": "yes" }
+      },
+      {
+        "text": "View \"SENTINEL\" upgrades",
+        "topic": "TALK_DMBB_ORB_command_stat_sen",
+        "condition": { "u_has_var": "dmbb_orb", "type": "has_upgrade", "context": "sentinel", "value": "yes" }
+      },
+      { "text": "< - - -", "topic": "TALK_DMBB_ORB_command" }
+    ]
+  },
+  {
+    "id": "TALK_DMBB_ORB_command_stat_pas",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "and": [
+        "*lists all PASSIVE upgrades.\n",
+        {
+          "npc_has_trait": "DMBB_ORB_hpup",
+          "yes": {
+            "npc_has_trait": "DMBB_ORB_hpup_plus",
+            "no": "\n* PASSIVE - HP Up+",
+            "yes": { "npc_has_trait": "DMBB_ORB_hpup_plusultra", "no": "\n* PASSIVE - HP Up++", "yes": "\n* PASSIVE - HP Up+++" }
+          }
+        },
+        {
+          "npc_has_trait": "DMBB_ORB_invictime",
+          "yes": {
+            "npc_has_trait": "DMBB_ORB_invictime_plus",
+            "no": "\n* PASSIVE - Invincibility Time+",
+            "yes": {
+              "npc_has_trait": "DMBB_ORB_invictime_plusultra",
+              "no": "\n* PASSIVE - Invincibility Time++",
+              "yes": "\n* PASSIVE - Invincibility Time+++"
+            }
+          }
+        },
+        {
+          "npc_has_trait": "DMBB_ORB_perimeter",
+          "yes": {
+            "npc_has_trait": "DMBB_ORB_perimeter_plus",
+            "no": "\n* PASSIVE - Perimeter+",
+            "yes": {
+              "npc_has_trait": "DMBB_ORB_perimeter_plusultra",
+              "no": "\n* PASSIVE - Perimeter++",
+              "yes": "\n* PASSIVE - Perimeter+++"
+            }
+          }
+        },
+        {
+          "npc_has_trait": "DMBB_ORB_cesheal",
+          "yes": {
+            "npc_has_trait": "DMBB_ORB_cesheal_plus",
+            "no": "\n* PASSIVE - Celestial Healing",
+            "yes": "\n* PASSIVE - Celestial Healing+"
+          }
+        },
+        { "npc_has_trait": "DMBB_ORB_cespure", "yes": "\n* PASSIVE - Celestial Purification" },
+        { "npc_has_trait": "DMBB_ORB_cesward", "yes": "\n* PASSIVE - Celestial Ward" },
+        { "npc_has_trait": "DMBB_ORB_guild", "yes": "\n* PASSIVE - Sentinel's Guild Warpgate" },
+        { "npc_has_trait": "DMBB_ORB_elemsy", "yes": "\n* PASSIVE - Elemental Synergy" },
+        { "npc_has_trait": "DMBB_ORB_darksy", "yes": "\n* PASSIVE - Vorpal Synergy" },
+        { "npc_has_trait": "DMBB_ORB_arcanasy", "yes": "\n* PASSIVE - Arcane Synergy" },
+        { "npc_has_trait": "DMBB_ORB_penitence", "yes": "\n* PASSIVE - Penitence" },
+        { "npc_has_trait": "DMBB_ORB_cleanse", "yes": "\n* PASSIVE - Cleanse" },
+        { "npc_has_trait": "DMBB_ORB_sentguard", "yes": "\n* PASSIVE - Sentinel's Guard" }
+      ]
+    }
+  },
+  {
+    "id": "TALK_DMBB_ORB_command_stat_act",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "and": [
+        "*lists all ACTIVE upgrades.\n",
+        { "npc_has_trait": "DMBB_ORB_stunner", "yes": "\n* ACTIVE - Blinding Flash" },
+        { "npc_has_trait": "DMBB_ORB_shockstorm", "yes": "\n* ACTIVE - Shockstorm" },
+        { "npc_has_trait": "DMBB_ORB_inferno", "yes": "\n* ACTIVE - Inferno" },
+        { "npc_has_trait": "DMBB_ORB_blizzard", "yes": "\n* ACTIVE - Blizzard" },
+        { "npc_has_trait": "DMBB_ORB_barrier", "yes": "\n* ACTIVE - Barrier (Inner)" },
+        { "npc_has_trait": "DMBB_ORB_barrier_plus", "yes": "\n         - Barrier (Outer)" },
+        { "npc_has_trait": "DMBB_ORB_judgment", "yes": "\n* ACTIVE - Judgment" }
+      ]
+    }
+  },
+  {
+    "id": "TALK_DMBB_ORB_command_stat_sen",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "and": [
+        "*lists all SENTINEL upgrades.\n",
+        {
+          "u_has_trait": "DMBB_ORB_PC_str",
+          "yes": {
+            "u_has_trait": "DMBB_ORB_PC_str_plus",
+            "no": "\n* SENTINEL - Strength+",
+            "yes": { "u_has_trait": "DMBB_ORB_PC_str_plusultra", "no": "\n* SENTINEL - Strength++", "yes": "\n* SENTINEL - Strength+++" }
+          }
+        },
+        {
+          "u_has_trait": "DMBB_ORB_PC_dex",
+          "yes": {
+            "u_has_trait": "DMBB_ORB_PC_dex_plus",
+            "no": "\n* SENTINEL - Dexterity+",
+            "yes": { "u_has_trait": "DMBB_ORB_PC_dex_plusultra", "no": "\n* SENTINEL - Dexterity++", "yes": "\n* SENTINEL - Dexterity+++" }
+          }
+        },
+        {
+          "u_has_trait": "DMBB_ORB_PC_int",
+          "yes": {
+            "u_has_trait": "DMBB_ORB_PC_int_plus",
+            "no": "\n* SENTINEL - Intelligence+",
+            "yes": {
+              "u_has_trait": "DMBB_ORB_PC_int_plusultra",
+              "no": "\n* SENTINEL - Intelligence++",
+              "yes": "\n* SENTINEL - Intelligence+++"
+            }
+          }
+        },
+        {
+          "u_has_trait": "DMBB_ORB_PC_per",
+          "yes": {
+            "u_has_trait": "DMBB_ORB_PC_per_plus",
+            "no": "\n* SENTINEL - Perception+",
+            "yes": {
+              "u_has_trait": "DMBB_ORB_PC_per_plusultra",
+              "no": "\n* SENTINEL - Perception++",
+              "yes": "\n* SENTINEL - Perception+++"
+            }
+          }
+        },
+        {
+          "u_has_trait": "DMBB_ORB_PC_speed",
+          "yes": {
+            "u_has_trait": "DMBB_ORB_PC_speed_plus",
+            "no": "\n* SENTINEL - Speed+",
+            "yes": { "u_has_trait": "DMBB_ORB_PC_speed_plusultra", "no": "\n* SENTINEL - Speed++", "yes": "\n* SENTINEL - Speed+++" }
+          }
+        },
+        {
+          "u_has_trait": "DMBB_ORB_PC_hp",
+          "yes": {
+            "u_has_trait": "DMBB_ORB_PC_hp_plus",
+            "no": "\n* SENTINEL - HP+",
+            "yes": { "u_has_trait": "DMBB_ORB_PC_hp_plusultra", "no": "\n* SENTINEL - HP++", "yes": "\n* SENTINEL - HP+++" }
+          }
+        },
+        {
+          "u_has_trait": "DMBB_ORB_PC_endurance",
+          "yes": {
+            "u_has_trait": "DMBB_ORB_PC_endurance_plus",
+            "no": "\n* SENTINEL - Endurance+",
+            "yes": {
+              "u_has_trait": "DMBB_ORB_PC_endurance_plusultra",
+              "no": "\n* SENTINEL - Endurance++",
+              "yes": "\n* SENTINEL - Endurance+++"
+            }
+          }
+        },
+        {
+          "u_has_trait": "DMBB_ORB_PC_phyres",
+          "yes": {
+            "u_has_trait": "DMBB_ORB_PC_phyres_plus",
+            "no": "\n* SENTINEL - Physical Resistance+",
+            "yes": {
+              "u_has_trait": "DMBB_ORB_PC_phyres_plusultra",
+              "no": "\n* SENTINEL - Physical Resistance++",
+              "yes": "\n* SENTINEL - Physical Resistance+++"
+            }
+          }
+        },
+        {
+          "u_has_trait": "DMBB_ORB_PC_elemres",
+          "yes": {
+            "u_has_trait": "DMBB_ORB_PC_elemres",
+            "no": "\n* SENTINEL - Elemental Resistance+",
+            "yes": {
+              "u_has_trait": "DMBB_ORB_PC_elemres",
+              "no": "\n* SENTINEL - Elemental Resistance++",
+              "yes": "\n* SENTINEL - Elemental Resistance+++"
+            }
+          }
+        },
+        { "u_has_trait": "DMBB_ORB_PC_hevpro", "yes": "\n* SENTINEL - Heavenly Protection" },
+        { "u_has_trait": "DMBB_ORB_PC_consecrate", "yes": "\n* SENTINEL - Consecrate" }
+      ]
+    }
+  }
+]

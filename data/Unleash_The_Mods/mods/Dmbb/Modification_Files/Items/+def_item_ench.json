@@ -1,0 +1,362 @@
+[
+  {
+    "type": "enchantment",
+    "id": "DMBB_ORB_bu_ench",
+    "ench_effects": [
+      { "effect": "mon_dmbb_orb_immune", "intensity": 1 },
+      { "effect": "webbed", "intensity": 3 },
+      { "effect": "blind", "intensity": 1 },
+      { "effect": "deaf", "intensity": 3 }
+    ],
+    "hit_you_effect": [
+      {
+        "id": "DMBB_ORB_atk",
+        "hit_self": false,
+        "message": "<color_light_red>You were touched by %2$s!</color>",
+        "npc_message": "<color_light_red>%1$s were touched by %2$s!</color>"
+      }
+    ],
+    "intermittent_activation": {
+      "effects": [
+        { "frequency": "1 seconds", "spell_effects": [ { "id": "DMBB_ORB_atk_oofed" } ] },
+        { "frequency": "30 seconds", "spell_effects": [ { "id": "DMBB_ORB_check_target2" } ] },
+        { "frequency": "200 seconds", "spell_effects": [ { "id": "DMBB_ORB_clear_barrier" } ] }
+      ]
+    }
+  },
+  {
+    "type": "enchantment",
+    "id": "dmbb_dragon_fire_armor_smol_ench",
+    "has": "WORN",
+    "condition": "ALWAYS",
+    "values": [ { "value": "ITEM_ARMOR_HEAT", "add": -3 } ]
+  },
+  {
+    "type": "enchantment",
+    "id": "dmbb_dragon_fire_armor_ench",
+    "has": "WORN",
+    "condition": "ALWAYS",
+    "values": [ { "value": "ITEM_ARMOR_HEAT", "add": -6 } ]
+  },
+  {
+    "type": "enchantment",
+    "id": "dmbb_dragon_fire_armor_ench",
+    "has": "WORN",
+    "condition": "ALWAYS",
+    "values": [ { "value": "ITEM_ARMOR_HEAT", "add": -12 } ]
+  },
+  {
+    "type": "enchantment",
+    "id": "dmbb_dragon_ice_armor_smol_ench",
+    "has": "WORN",
+    "condition": "ALWAYS",
+    "values": [ { "value": "ITEM_ARMOR_COLD", "add": -3 } ]
+  },
+  {
+    "type": "enchantment",
+    "id": "dmbb_dragon_ice_armor_ench",
+    "has": "WORN",
+    "condition": "ALWAYS",
+    "values": [ { "value": "ITEM_ARMOR_COLD", "add": -6 } ]
+  },
+  {
+    "type": "enchantment",
+    "id": "dmbb_dragon_ice_armor_ench",
+    "has": "WORN",
+    "condition": "ALWAYS",
+    "values": [ { "value": "ITEM_ARMOR_COLD", "add": -12 } ]
+  },
+  {
+    "type": "enchantment",
+    "id": "dmbb_dragon_storm_armor_smol_ench",
+    "has": "WORN",
+    "condition": "ALWAYS",
+    "values": [ { "value": "ITEM_ARMOR_ELEC", "add": -3 } ]
+  },
+  {
+    "type": "enchantment",
+    "id": "dmbb_dragon_storm_armor_ench",
+    "has": "WORN",
+    "condition": "ALWAYS",
+    "values": [ { "value": "ITEM_ARMOR_ELEC", "add": -6 } ]
+  },
+  {
+    "type": "enchantment",
+    "id": "dmbb_dragon_storm_armor_ench",
+    "has": "WORN",
+    "condition": "ALWAYS",
+    "values": [ { "value": "ITEM_ARMOR_ELEC", "add": -12 } ]
+  },
+  {
+    "type": "enchantment",
+    "id": "dmbb_rune_wield_strength_ench",
+    "has": "WIELD",
+    "condition": "ALWAYS",
+    "ench_effects": [ { "effect": "mabuff:dmbb_buff_effs_rune_strength", "intensity": 1 } ]
+  },
+  {
+    "type": "enchantment",
+    "id": "dmbb_rune_wield_dexterity_ench",
+    "has": "WIELD",
+    "condition": "ALWAYS",
+    "values": [ { "value": "SPEED", "add": 3 }, { "value": "ATTACK_SPEED", "add": 3 } ]
+  },
+  {
+    "type": "enchantment",
+    "id": "dmbb_rune_wield_intelligence_ench",
+    "has": "WIELD",
+    "condition": "ALWAYS",
+    "values": [ { "value": "INTELLIGENCE", "add": 1 }, { "value": "MAX_MANA", "add": 250 } ]
+  },
+  {
+    "type": "enchantment",
+    "id": "dmbb_rune_wield_perception_ench",
+    "values": [ { "value": "PERCEPTION", "add": 1 } ],
+    "has": "WIELD",
+    "condition": "ALWAYS",
+    "ench_effects": [ { "effect": "mabuff:dmbb_buff_effs_rune_perception", "intensity": 1 } ]
+  },
+  {
+    "type": "enchantment",
+    "id": "dmbb_rune_wield_fire_ench",
+    "hit_you_effect": [
+      {
+        "id": "dmbb_rune_fire_act",
+        "hit_self": false,
+        "once_in": 2,
+        "message": "<color_light_green>Your rune blazes %2$s!</color>",
+        "npc_message": "<color_light_green>%1$s's rune blazes %2$s!</color>"
+      }
+    ],
+    "has": "WIELD",
+    "condition": "ALWAYS"
+  },
+  {
+    "type": "enchantment",
+    "id": "dmbb_rune_wield_ice_ench",
+    "hit_you_effect": [
+      {
+        "id": "dmbb_rune_ice_act",
+        "hit_self": false,
+        "once_in": 2,
+        "message": "<color_light_green>Your rune freezes %2$s!</color>",
+        "npc_message": "<color_light_green>%1$s's rune freezes %2$s!</color>"
+      }
+    ],
+    "has": "WIELD",
+    "condition": "ALWAYS"
+  },
+  {
+    "type": "enchantment",
+    "id": "dmbb_rune_wield_electric_ench",
+    "hit_you_effect": [
+      {
+        "id": "dmbb_rune_electric_act",
+        "hit_self": false,
+        "once_in": 2,
+        "message": "<color_light_green>Your rune shocks %2$s!</color>",
+        "npc_message": "<color_light_green>%1$s's rune shocks %2$s!</color>"
+      }
+    ],
+    "has": "WIELD",
+    "condition": "ALWAYS"
+  },
+  {
+    "type": "enchantment",
+    "id": "dmbb_rune_wield_acid_ench",
+    "hit_you_effect": [
+      {
+        "id": "dmbb_rune_acid_act",
+        "hit_self": false,
+        "once_in": 2,
+        "message": "<color_light_green>Your rune coats %2$s in acid!</color>",
+        "npc_message": "<color_light_green>%1$s's rune coats %2$s in acid!</color>"
+      }
+    ],
+    "has": "WIELD",
+    "condition": "ALWAYS"
+  },
+  {
+    "type": "enchantment",
+    "id": "dmbb_rune_wield_shockwave_cut_ench",
+    "hit_you_effect": [
+      {
+        "id": "dmbb_rune_shockwave_cut_act",
+        "hit_self": false,
+        "once_in": 5,
+        "message": "<color_light_green>Your rune arcs a sonic wave at %2$s!</color>",
+        "npc_message": "<color_light_green>%1$s's rune arcs a sonic wave at %2$s!</color>"
+      }
+    ],
+    "has": "WIELD",
+    "condition": "ALWAYS"
+  },
+  {
+    "type": "enchantment",
+    "id": "dmbb_rune_wield_shockwave_bash_ench",
+    "hit_you_effect": [
+      {
+        "id": "dmbb_rune_shockwave_bash_act",
+        "hit_self": false,
+        "once_in": 5,
+        "message": "<color_light_green>Your rune releases a shockwave at %2$s!</color>",
+        "npc_message": "<color_light_green>%1$s's rune releases a shockwave at %2$s!</color>"
+      }
+    ],
+    "has": "WIELD",
+    "condition": "ALWAYS"
+  },
+  {
+    "type": "enchantment",
+    "id": "dmbb_rune_wield_shockwave_stab_ench",
+    "hit_you_effect": [
+      {
+        "id": "dmbb_rune_shockwave_stab_act",
+        "hit_self": false,
+        "once_in": 5,
+        "message": "<color_light_green>Your rune lances a shockwave through %2$s!</color>",
+        "npc_message": "<color_light_green>%1$s's rune lances a shockwave through %2$s!</color>"
+      }
+    ],
+    "has": "WIELD",
+    "condition": "ALWAYS"
+  },
+  {
+    "type": "enchantment",
+    "id": "dmbb_rune_wield_feeble_ench",
+    "hit_you_effect": [
+      {
+        "id": "dmbb_rune_feeble_act",
+        "hit_self": false,
+        "once_in": 2,
+        "message": "<color_light_green>Your rune weakens %2$s!</color>",
+        "npc_message": "<color_light_green>%1$s's rune weakens %2$s!</color>"
+      }
+    ],
+    "has": "WIELD",
+    "condition": "ALWAYS"
+  },
+  {
+    "type": "enchantment",
+    "id": "dmbb_rune_wield_empower_ench",
+    "hit_you_effect": [
+      {
+        "id": "dmbb_rune_empower_act",
+        "hit_self": true,
+        "once_in": 2,
+        "message": "<color_light_green>Your rune boosts your raw power!</color>",
+        "npc_message": "<color_light_green>%1$s's rune boosted their raw power!</color>"
+      }
+    ],
+    "has": "WIELD",
+    "condition": "ALWAYS"
+  },
+  {
+    "type": "enchantment",
+    "id": "dmbb_rune_wield_arcanebinding_ench",
+    "hit_you_effect": [
+      {
+        "id": "dmbb_rune_arcanebinding_act",
+        "hit_self": true,
+        "once_in": 5,
+        "message": "<color_light_green>Your rune binds %2$s!</color>",
+        "npc_message": "<color_light_green>%1$s's rune binds %2$s!</color>"
+      }
+    ],
+    "has": "WIELD",
+    "condition": "ALWAYS"
+  },
+  {
+    "type": "enchantment",
+    "id": "dmbb_rune_wield_chronostasis_ench",
+    "hit_you_effect": [
+      {
+        "id": "dmbb_rune_chronostasis_act1",
+        "hit_self": true,
+        "once_in": 15,
+        "message": "<color_light_green>Your rune initiates a chronostasis field!</color>",
+        "npc_message": "<color_light_green>%1$s's initiates a chronostasis field!</color>"
+      }
+    ],
+    "has": "WIELD",
+    "condition": "ALWAYS"
+  },
+  {
+    "type": "enchantment",
+    "id": "dmbb_rune_wield_etherealphase_ench",
+    "hit_you_effect": [
+      {
+        "id": "dmbb_rune_etherealphase_act1",
+        "hit_self": true,
+        "once_in": 25,
+        "message": "<color_yellow>Your rune glimmers as it changes you to your ethereal state!</color>",
+        "npc_message": "<color_yellow>%1$s's rune glimmers as it changes them to their ethereal state!</color>"
+      }
+    ],
+    "has": "WIELD",
+    "condition": "ALWAYS"
+  },
+  {
+    "type": "enchantment",
+    "id": "dmbb_rune_worn_strength_ench",
+    "has": "WORN",
+    "condition": "ALWAYS",
+    "values": [
+      { "value": "STRENGTH", "add": 1 },
+      { "value": "ITEM_ARMOR_BASH", "add": -1 },
+      { "value": "ITEM_ARMOR_CUT", "add": -1 },
+      { "value": "ITEM_ARMOR_STAB", "add": -1 }
+    ],
+    "ench_effects": [ { "effect": "mabuff:dmbb_buff_effs_rune_strength", "intensity": 1 } ]
+  },
+  {
+    "type": "enchantment",
+    "id": "dmbb_rune_worn_dexterity_ench",
+    "has": "WORN",
+    "condition": "ALWAYS",
+    "values": [ { "value": "DEXTERITY", "add": 1 }, { "value": "SPEED", "add": 3 }, { "value": "ATTACK_SPEED", "add": 3 } ]
+  },
+  {
+    "type": "enchantment",
+    "id": "dmbb_rune_worn_intelligence_ench",
+    "has": "WORN",
+    "condition": "ALWAYS",
+    "values": [ { "value": "INTELLIGENCE", "add": 1 }, { "value": "MAX_MANA", "add": 250 } ]
+  },
+  {
+    "type": "enchantment",
+    "id": "dmbb_rune_worn_perception_ench",
+    "values": [ { "value": "PERCEPTION", "add": 1 } ],
+    "has": "WORN",
+    "condition": "ALWAYS",
+    "ench_effects": [ { "effect": "mabuff:dmbb_buff_effs_rune_perception", "intensity": 1 } ]
+  },
+  {
+    "type": "enchantment",
+    "id": "dmbb_rune_worn_fire_ench",
+    "values": [ { "value": "ITEM_ARMOR_HEAT", "add": -4 } ],
+    "has": "WORN",
+    "condition": "ALWAYS"
+  },
+  {
+    "type": "enchantment",
+    "id": "dmbb_rune_worn_ice_ench",
+    "values": [ { "value": "ITEM_ARMOR_COLD", "add": -4 } ],
+    "has": "WORN",
+    "condition": "ALWAYS"
+  },
+  {
+    "type": "enchantment",
+    "id": "dmbb_rune_worn_electric_ench",
+    "values": [ { "value": "ITEM_ARMOR_ELEC", "add": -4 } ],
+    "has": "WORN",
+    "condition": "ALWAYS"
+  },
+  {
+    "type": "enchantment",
+    "id": "dmbb_rune_worn_acid_ench",
+    "values": [ { "value": "ITEM_ARMOR_ACID", "add": -4 } ],
+    "has": "WORN",
+    "condition": "ALWAYS"
+  }
+]

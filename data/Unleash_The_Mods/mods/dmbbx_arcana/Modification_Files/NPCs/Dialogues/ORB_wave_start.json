@@ -1,0 +1,176 @@
+[
+  {
+    "id": "TALK_DMBB_ORB_command_wave",
+    "type": "talk_topic",
+    "responses": [
+      {
+        "text": "[SELECT WAVEPACK] Arcana",
+        "topic": "TALK_DMBB_ORB_command_wave",
+        "condition": { "not": { "u_has_var": "dmbb_orb", "type": "wavepack", "context": "has_selected", "value": "yes" } },
+        "effect": [
+          { "u_add_var": "dmbb_orb", "type": "wavepack", "context": "arcana", "value": "yes" },
+          { "u_add_var": "dmbb_orb", "type": "wavepack", "context": "has_selected", "value": "yes" }
+        ]
+      },
+      {
+        "text": "[START] Special Wave - Anomalies 1",
+        "topic": "TALK_DONE",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "wavepack", "context": "arcana", "value": "yes" },
+            { "u_has_var": "dmbb_orb", "type": "wave5", "context": "finish", "value": "yes" },
+            { "not": { "u_has_var": "dmbb_orb", "type": "specarcanaano1", "context": "finish", "value": "yes" } }
+          ]
+        },
+        "effect": [
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_1", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_2", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_3", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_4", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_5", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_6", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_7", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_8", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_9", "om_special": "DMBB Arena" },
+          { "u_add_effect": "dmbb_timelimit", "duration": 150 },
+          { "u_add_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+          { "u_add_var": "dmbb_orb", "type": "specarcanaano1", "context": "in_combat", "value": "yes" },
+          { "mapgen_update": "dmbb_orb_wave_arcana_ano1", "om_terrain": "dmbb_arena_2", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_wave_arcana_ano1", "om_terrain": "dmbb_arena_4", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_wave_arcana_ano1", "om_terrain": "dmbb_arena_6", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_wave_arcana_ano1", "om_terrain": "dmbb_arena_8", "om_special": "DMBB Arena" }
+        ]
+      },
+      {
+        "text": "[START] Special Wave - Moruburu 1",
+        "topic": "TALK_DONE",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "wavepack", "context": "arcana", "value": "yes" },
+            { "u_has_var": "dmbb_orb", "type": "wave5", "context": "finish", "value": "yes" },
+            { "not": { "u_has_var": "dmbb_orb", "type": "specarcanamor1", "context": "finish", "value": "yes" } }
+          ]
+        },
+        "effect": [
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_1", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_2", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_3", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_4", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_5", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_6", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_7", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_8", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_9", "om_special": "DMBB Arena" },
+          { "u_add_effect": "dmbb_timelimit", "duration": 50 },
+          { "u_add_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+          { "u_add_var": "dmbb_orb", "type": "specarcanamor1", "context": "in_combat", "value": "yes" },
+          { "mapgen_update": "dmbb_orb_wave_arcana_mor1", "om_terrain": "dmbb_arena_8", "om_special": "DMBB Arena" }
+        ]
+      },
+      {
+        "text": "[START] Special Wave - Spirit of Fire 1",
+        "topic": "TALK_DONE",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "wavepack", "context": "arcana", "value": "yes" },
+            { "u_has_var": "dmbb_orb", "type": "wave10", "context": "finish", "value": "yes" },
+            { "not": { "u_has_var": "dmbb_orb", "type": "specarcanasof1", "context": "finish", "value": "yes" } }
+          ]
+        },
+        "effect": [
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_1", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_2", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_3", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_4", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_5", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_6", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_7", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_8", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_9", "om_special": "DMBB Arena" },
+          { "u_add_effect": "dmbb_timelimit", "duration": 50 },
+          { "u_add_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+          { "u_add_var": "dmbb_orb", "type": "specarcanasof1", "context": "in_combat", "value": "yes" },
+          { "mapgen_update": "dmbb_orb_wave_arcana_sof1", "om_terrain": "dmbb_arena_8", "om_special": "DMBB Arena" }
+        ]
+      },
+      {
+        "text": "[START] Special Wave - Archon 1",
+        "topic": "TALK_DONE",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "wavepack", "context": "arcana", "value": "yes" },
+            { "u_has_var": "dmbb_orb", "type": "wave10", "context": "finish", "value": "yes" },
+            { "not": { "u_has_var": "dmbb_orb", "type": "specarcanaarc1", "context": "finish", "value": "yes" } }
+          ]
+        },
+        "effect": [
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_1", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_2", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_3", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_4", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_5", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_6", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_7", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_8", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_9", "om_special": "DMBB Arena" },
+          { "u_add_effect": "dmbb_timelimit", "duration": 50 },
+          { "u_add_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+          { "u_add_var": "dmbb_orb", "type": "specarcanaarc1", "context": "in_combat", "value": "yes" },
+          { "mapgen_update": "dmbb_orb_wave_arcana_arc1", "om_terrain": "dmbb_arena_8", "om_special": "DMBB Arena" }
+        ]
+      },
+      {
+        "text": "[START] Special Wave - Dracolich 1",
+        "topic": "TALK_DONE",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "wavepack", "context": "arcana", "value": "yes" },
+            { "u_has_var": "dmbb_orb", "type": "wave15", "context": "finish", "value": "yes" },
+            { "not": { "u_has_var": "dmbb_orb", "type": "specarcanadra1", "context": "finish", "value": "yes" } }
+          ]
+        },
+        "effect": [
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_1", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_2", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_3", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_4", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_5", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_6", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_7", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_8", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_9", "om_special": "DMBB Arena" },
+          { "u_add_effect": "dmbb_timelimit", "duration": 50 },
+          { "u_add_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+          { "u_add_var": "dmbb_orb", "type": "specarcanadra1", "context": "in_combat", "value": "yes" },
+          { "mapgen_update": "dmbb_orb_wave_arcana_dra1", "om_terrain": "dmbb_arena_8", "om_special": "DMBB Arena" }
+        ]
+      },
+      {
+        "text": "[START] Special Wave - Seraphic Shade 1",
+        "topic": "TALK_DONE",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "wavepack", "context": "arcana", "value": "yes" },
+            { "u_has_var": "dmbb_orb", "type": "wave20", "context": "finish", "value": "yes" },
+            { "not": { "u_has_var": "dmbb_orb", "type": "specarcanaser1", "context": "finish", "value": "yes" } }
+          ]
+        },
+        "effect": [
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_1", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_2", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_3", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_4", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_5", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_6", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_7", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_8", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_9", "om_special": "DMBB Arena" },
+          { "u_add_effect": "dmbb_timelimit", "duration": 50 },
+          { "u_add_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+          { "u_add_var": "dmbb_orb", "type": "specarcanaser1", "context": "in_combat", "value": "yes" },
+          { "mapgen_update": "dmbb_orb_wave_arcana_ser1", "om_terrain": "dmbb_arena_8", "om_special": "DMBB Arena" }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,60 @@
+[
+  {
+    "id": "disinfectant_crude",
+    "type": "COMESTIBLE",
+    "name": "crude antiseptic",
+    "price_postapoc": "250 cent",
+    "copy-from": "disinfectant",
+    "description": "crude antiseptic made from whatever was on hand.  Can be used to disinfect a wound.",
+    "flags": [ "NO_INGEST" ],
+    "use_action": { "type": "heal", "disinfectant_power": 1, "bite": 0.6, "move_cost": 100 }
+  },
+  {
+    "type": "COMESTIBLE",
+    "id": "caffeine_caramel",
+    "name": "caffeinated caramel",
+    "weight": "77 g",
+    "color": "brown",
+    "addiction_type": "caffeine",
+    "fatigue_mod": 36,
+    "stim": 12,
+    "comestible_type": "FOOD",
+    "symbol": "%",
+    "quench": -2,
+    "healthy": -2,
+    "addiction_potential": 2,
+    "calories": 267,
+    "description": "homemade caramel with caffeine added",
+    "price": "150 cent",
+    "price_postapoc": "6 USD",
+    "material": [ "junk" ],
+    "volume": "30 ml",
+    "charges": 1,
+    "fun": -2,
+    "use_action": { "type": "consume_drug", "activation_message": "You eat some caffeinated caramel." }
+  },
+  {
+    "type": "COMESTIBLE",
+    "id": "aspirin_tea",
+    "name": { "str_sp": "salicin tea" },
+    "weight": "268 g",
+    "color": "light_green",
+    "comestible_type": "DRINK",
+    "symbol": "~",
+    "quench": 40,
+    "healthy": 0,
+    "description": "A tea made from willow bark giving it minor painkilling properties.",
+    "price": "0 cent",
+    "price_postapoc": "25 cent",
+    "volume": "250 ml",
+    "material": [ "water" ],
+    "phase": "liquid",
+    "flags": [ "EATEN_HOT", "NUTRIENT_OVERRIDE" ],
+    "fun": 0,
+    "use_action": {
+      "type": "consume_drug",
+      "activation_message": "You drink some salicin tea.",
+      "effects": [ { "id": "pkill1", "duration": 720 } ]
+    }
+  }
+]

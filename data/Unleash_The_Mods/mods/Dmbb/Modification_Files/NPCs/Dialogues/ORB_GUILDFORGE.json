@@ -1,0 +1,112 @@
+[
+  {
+    "id": [
+      "TALK_DMBB_ORB_GUILDSMITH",
+      "TALK_DMBB_ORB_GUILDSMITH_me",
+      "TALK_DMBB_ORB_GUILDSMITH_tradelol",
+      "TALK_DMBB_ORB_GUILDSMITH_forge",
+      "TALK_DMBB_ORB_GUILDSMITH_whatelse",
+      "TALK_DMBB_ORB_GUILDSMITH_forge_now"
+    ],
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_has_var": "dmbb_orb",
+      "type": "guildsmith",
+      "context": "intro",
+      "value": "yes",
+      "no": "Welcome to my forge, sentinel!",
+      "yes": [ "What?", "Anything you want?" ]
+    },
+    "speaker_effect": {
+      "condition": { "not": { "u_has_var": "dmbb_orb", "type": "guildsmith", "context": "intro", "value": "yes" } },
+      "effect": { "u_add_var": "dmbb_orb", "type": "guildsmith", "context": "intro", "value": "yes" }
+    },
+    "responses": [
+      {
+        "text": "Who are you?",
+        "topic": "TALK_DMBB_ORB_GUILDSMITH_me",
+        "condition": { "not": { "u_has_var": "dmbb_orb", "type": "guildsmith", "context": "whoisu", "value": "yes" } },
+        "effect": { "u_add_var": "dmbb_orb", "type": "guildsmith", "context": "whoisu", "value": "yes" }
+      },
+      {
+        "text": "Let's trade!",
+        "topic": "TALK_DMBB_ORB_GUILDSMITH_tradelol",
+        "condition": { "not": { "u_has_var": "dmbb_orb", "type": "guildsmith", "context": "tradelol", "value": "yes" } },
+        "effect": { "u_add_var": "dmbb_orb", "type": "guildsmith", "context": "tradelol", "value": "yes" }
+      },
+      {
+        "text": "Forge?",
+        "topic": "TALK_DMBB_ORB_GUILDSMITH_forge",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "guildsmith", "context": "tradelol", "value": "yes" },
+            { "not": { "u_has_var": "dmbb_orb", "type": "guildsmith", "context": "forge", "value": "yes" } }
+          ]
+        },
+        "effect": { "u_add_var": "dmbb_orb", "type": "guildsmith", "context": "forge", "value": "yes" }
+      },
+      {
+        "text": "About the forging...",
+        "topic": "TALK_DMBB_ORB_GUILDSMITH_forge_finish",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "guildsmith", "context": "forge", "value": "yes" },
+            { "not": { "u_has_var": "dmbb_orb", "type": "guildsmith", "context": "forging", "value": "yes" } },
+            {
+              "or": [
+                { "u_has_var": "dmbb_orb", "type": "guildsmith_forging", "context": "armamentalistsword", "value": "yes" },
+                { "u_has_var": "dmbb_orb", "type": "guildsmith_forging", "context": "hexblade", "value": "yes" }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "text": "I'd like you to forge something.",
+        "topic": "TALK_DMBB_ORB_GUILDSMITH_forge_list",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "guildsmith", "context": "forge", "value": "yes" },
+            { "not": { "u_has_var": "dmbb_orb", "type": "guildsmith", "context": "forging", "value": "yes" } },
+            {
+              "not": { "u_has_var": "dmbb_orb", "type": "guildsmith_forging", "context": "armamentalistsword", "value": "yes" }
+            },
+            {
+              "not": { "u_has_var": "dmbb_orb", "type": "guildsmith_forging", "context": "hexblade", "value": "yes" }
+            }
+          ]
+        }
+      },
+      {
+        "text": "Bye.",
+        "topic": "TALK_DONE",
+        "condition": { "u_has_var": "dmbb_orb", "type": "guildsmith", "context": "forge", "value": "yes" }
+      }
+    ]
+  },
+  {
+    "id": "TALK_DMBB_ORB_GUILDSMITH_me",
+    "type": "talk_topic",
+    "dynamic_line": "I am the forgesmith. If you want to forge new weapons and armours, ask me and I'll make it for you, with just a low price."
+  },
+  {
+    "id": "TALK_DMBB_ORB_GUILDSMITH_tradelol",
+    "type": "talk_topic",
+    "dynamic_line": "You asked the wrong person."
+  },
+  {
+    "id": "TALK_DMBB_ORB_GUILDSMITH_forge",
+    "type": "talk_topic",
+    "dynamic_line": "You heard it. I can forge new items from the materials you will bring to me."
+  },
+  {
+    "id": "TALK_DMBB_ORB_GUILDSMITH_whatelse",
+    "type": "talk_topic",
+    "dynamic_line": [ "Anything else?", "What else?" ]
+  },
+  {
+    "id": "TALK_DMBB_ORB_GUILDSMITH_forge_now",
+    "type": "talk_topic",
+    "dynamic_line": [ "Alright. Come back later.", "Engage on some waves while I'm at it." ]
+  }
+]

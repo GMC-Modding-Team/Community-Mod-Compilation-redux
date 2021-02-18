@@ -1,0 +1,327 @@
+{
+  "id": "TALK_DMBB_ORB_command_research",
+  "type": "talk_topic",
+  "dynamic_line": {
+    "and": [
+      "*can research in forming new turrets using essences and its elemental reconstruction capability. This will cause the orb to disable its [ACTIVE] upgrade's spellcasting prowess depending on the element used. It is advisable to pick a single elemental turret type.",
+      {
+        "u_has_var": "dmbb_orb",
+        "type": "research",
+        "context": "turret_shock1",
+        "value": "yes",
+        "no": "\n\nTurret - Electric\nFast-firing turret with low damage. Will also hamper the target's movement.",
+        "yes": {
+          "npc_has_trait": "DMBB_ORB_elemsy",
+          "yes": {
+            "u_has_var": "dmbb_orb",
+            "type": "research",
+            "context": "turret_shock2",
+            "value": "yes",
+            "no": "\n\n*25 essence\nTurret - Electric+\nDoubles the maximum health and damage of the turret, with slight gain in physical resistance.",
+            "yes": {
+              "u_has_var": "dmbb_orb",
+              "type": "bosswave2",
+              "context": "finish",
+              "value": "yes",
+              "yes": {
+                "and": [
+                  {
+                    "u_has_var": "dmbb_orb",
+                    "type": "research",
+                    "context": "turret_shock_er",
+                    "value": "yes",
+                    "no": "\n\n*100 essence\nTurret - Electric (shock)\nSignificantly increases damage and range. Slightly increases maximum health and armor."
+                  },
+                  {
+                    "u_has_var": "dmbb_orb",
+                    "type": "research",
+                    "context": "turret_shock_tesla",
+                    "value": "yes",
+                    "no": "\n\n*100 essence\nTurret - Electric (tesla)\nDecreased damage, range and fire rate, but does a radial AOE. Slightly increases maximum health and armor."
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      {
+        "u_has_var": "dmbb_orb",
+        "type": "research",
+        "context": "turret_fire1",
+        "value": "yes",
+        "no": "\n\nTurret - Fire\nSlow but deals high damage, in addition to its continuous fire damage.",
+        "yes": {
+          "npc_has_trait": "DMBB_ORB_elemsy",
+          "yes": {
+            "u_has_var": "dmbb_orb",
+            "type": "research",
+            "context": "turret_fire2",
+            "value": "yes",
+            "no": "\n\n*25 essence\nTurret - Fire+\nDoubles the maximum health and damage of the turret, with slight gain in physical resistance.",
+            "yes": {
+              "u_has_var": "dmbb_orb",
+              "type": "bosswave2",
+              "context": "finish",
+              "value": "yes",
+              "yes": {
+                "and": [
+                  {
+                    "u_has_var": "dmbb_orb",
+                    "type": "research",
+                    "context": "turret_fire_pyro",
+                    "value": "yes",
+                    "no": "\n\n*100 essence\nTurret - Fire (pyro)\nSignificantly increases damage and range. Projectile does a small explosion on impact. Slightly increases maximum health and armor."
+                  },
+                  {
+                    "u_has_var": "dmbb_orb",
+                    "type": "research",
+                    "context": "turret_fire_scorch",
+                    "value": "yes",
+                    "no": "\n\n*100 essence\nTurret - Fire (scorch)\nDoes a lingering fire damage on the targets in a cone. Slightly increases maximum health and armor."
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      {
+        "u_has_var": "dmbb_orb",
+        "type": "research",
+        "context": "turret_ice1",
+        "value": "yes",
+        "no": "\n\nTurret - Ice\nHas very low fire rate and damage, but shoots in wide AOE that greatly enslows affected creatures.",
+        "yes": {
+          "npc_has_trait": "DMBB_ORB_elemsy",
+          "yes": {
+            "u_has_var": "dmbb_orb",
+            "type": "research",
+            "context": "turret_ice2",
+            "value": "yes",
+            "no": "\n\n*25 essence\nTurret - Ice+\nDoubles the maximum health and damage of the turret, with slight gain in physical resistance.",
+            "yes": {
+              "u_has_var": "dmbb_orb",
+              "type": "bosswave2",
+              "context": "finish",
+              "value": "yes",
+              "yes": {
+                "and": [
+                  {
+                    "u_has_var": "dmbb_orb",
+                    "type": "research",
+                    "context": "turret_ice_frost",
+                    "value": "yes",
+                    "no": "\n\n*100 essence\nTurret - Ice (frost)\nSignificantly increases AOE and slow duration. Slightly increases damage, maximum health and armor."
+                  },
+                  {
+                    "u_has_var": "dmbb_orb",
+                    "type": "research",
+                    "context": "turret_ice_icicle",
+                    "value": "yes",
+                    "no": "\n\n*100 essence\nTurret - Electric (tesla)\nFires icicle spikes in rapid succession, with great range, damage output and slowness duration. Slightly increases maximum health and armor."
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "responses": [
+    {
+      "text": "[Research] Turret - Electric",
+      "topic": "TALK_DMBB_ORB_command_research",
+      "condition": {
+        "and": [
+          { "npc_has_trait": "DMBB_ORB_shockstorm" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "research", "context": "turret_shock1", "value": "yes" } }
+        ]
+      },
+      "effect": { "u_add_var": "dmbb_orb", "type": "research", "context": "turret_shock1", "value": "yes" }
+    },
+    {
+      "text": "[Research] Turret - Electric+",
+      "topic": "TALK_DMBB_ORB_command_research",
+      "condition": {
+        "and": [
+          { "npc_has_trait": "DMBB_ORB_elemsy" },
+          { "u_has_var": "dmbb_orb", "type": "research", "context": "turret_shock1", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "research", "context": "turret_shock2", "value": "yes" } },
+          { "u_has_items": { "item": "dmbb_essence", "count": 25 } }
+        ]
+      },
+      "effect": [
+        { "u_sell_item": "dmbb_essence", "count": 25 },
+        { "npc_consume_item": "dmbb_essence", "count": 25 },
+        { "u_add_var": "dmbb_orb", "type": "research", "context": "turret_shock2", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[Research] Turret - Electric (shock)",
+      "topic": "TALK_DMBB_ORB_command_research",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "bosswave2", "context": "finish", "value": "yes" },
+          { "npc_has_trait": "DMBB_ORB_elemsy" },
+          { "u_has_var": "dmbb_orb", "type": "research", "context": "turret_shock2", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "research", "context": "turret_shock_er", "value": "yes" } },
+          { "u_has_items": { "item": "dmbb_essence", "count": 100 } }
+        ]
+      },
+      "effect": [
+        { "u_sell_item": "dmbb_essence", "count": 100 },
+        { "npc_consume_item": "dmbb_essence", "count": 100 },
+        { "u_add_var": "dmbb_orb", "type": "research", "context": "turret_shock_er", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[Research] Turret - Electric (tesla)",
+      "topic": "TALK_DMBB_ORB_command_research",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "bosswave2", "context": "finish", "value": "yes" },
+          { "npc_has_trait": "DMBB_ORB_elemsy" },
+          { "u_has_var": "dmbb_orb", "type": "research", "context": "turret_shock2", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "research", "context": "turret_shock_tesla", "value": "yes" } },
+          { "u_has_items": { "item": "dmbb_essence", "count": 100 } }
+        ]
+      },
+      "effect": [
+        { "u_sell_item": "dmbb_essence", "count": 100 },
+        { "npc_consume_item": "dmbb_essence", "count": 100 },
+        { "u_add_var": "dmbb_orb", "type": "research", "context": "turret_shock_tesla", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[Research] Turret - Fire",
+      "topic": "TALK_DMBB_ORB_command_research",
+      "condition": {
+        "and": [
+          { "npc_has_trait": "DMBB_ORB_inferno" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "research", "context": "turret_fire1", "value": "yes" } }
+        ]
+      },
+      "effect": { "u_add_var": "dmbb_orb", "type": "research", "context": "turret_fire1", "value": "yes" }
+    },
+    {
+      "text": "[Research] Turret - Fire+",
+      "topic": "TALK_DMBB_ORB_command_research",
+      "condition": {
+        "and": [
+          { "npc_has_trait": "DMBB_ORB_elemsy" },
+          { "u_has_var": "dmbb_orb", "type": "research", "context": "turret_fire1", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "research", "context": "turret_fire2", "value": "yes" } },
+          { "u_has_items": { "item": "dmbb_essence", "count": 25 } }
+        ]
+      },
+      "effect": [
+        { "u_sell_item": "dmbb_essence", "count": 25 },
+        { "npc_consume_item": "dmbb_essence", "count": 25 },
+        { "u_add_var": "dmbb_orb", "type": "research", "context": "turret_fire2", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[Research] Turret - Fire (pyro)",
+      "topic": "TALK_DMBB_ORB_command_research",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "bosswave2", "context": "finish", "value": "yes" },
+          { "npc_has_trait": "DMBB_ORB_elemsy" },
+          { "u_has_var": "dmbb_orb", "type": "research", "context": "turret_fire2", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "research", "context": "turret_fire_pyro", "value": "yes" } },
+          { "u_has_items": { "item": "dmbb_essence", "count": 100 } }
+        ]
+      },
+      "effect": [
+        { "u_sell_item": "dmbb_essence", "count": 100 },
+        { "npc_consume_item": "dmbb_essence", "count": 100 },
+        { "u_add_var": "dmbb_orb", "type": "research", "context": "turret_fire_pyro", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[Research] Turret - Fire (scorch)",
+      "topic": "TALK_DMBB_ORB_command_research",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "bosswave2", "context": "finish", "value": "yes" },
+          { "npc_has_trait": "DMBB_ORB_elemsy" },
+          { "u_has_var": "dmbb_orb", "type": "research", "context": "turret_fire2", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "research", "context": "turret_fire_scorch", "value": "yes" } },
+          { "u_has_items": { "item": "dmbb_essence", "count": 100 } }
+        ]
+      },
+      "effect": [
+        { "u_sell_item": "dmbb_essence", "count": 100 },
+        { "npc_consume_item": "dmbb_essence", "count": 100 },
+        { "u_add_var": "dmbb_orb", "type": "research", "context": "turret_fire_scorch", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[Research] Turret - Ice",
+      "topic": "TALK_DMBB_ORB_command_research",
+      "condition": {
+        "and": [
+          { "npc_has_trait": "DMBB_ORB_blizzard" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "research", "context": "turret_ice1", "value": "yes" } }
+        ]
+      },
+      "effect": { "u_add_var": "dmbb_orb", "type": "research", "context": "turret_ice1", "value": "yes" }
+    },
+    {
+      "text": "[Research] Turret - Ice+",
+      "topic": "TALK_DMBB_ORB_command_research",
+      "condition": {
+        "and": [
+          { "npc_has_trait": "DMBB_ORB_elemsy" },
+          { "u_has_var": "dmbb_orb", "type": "research", "context": "turret_ice1", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "research", "context": "turret_ice2", "value": "yes" } },
+          { "u_has_items": { "item": "dmbb_essence", "count": 25 } }
+        ]
+      },
+      "effect": [
+        { "u_sell_item": "dmbb_essence", "count": 25 },
+        { "npc_consume_item": "dmbb_essence", "count": 25 },
+        { "u_add_var": "dmbb_orb", "type": "research", "context": "turret_ice2", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[Research] Turret - Ice (frost)",
+      "topic": "TALK_DMBB_ORB_command_research",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "bosswave2", "context": "finish", "value": "yes" },
+          { "npc_has_trait": "DMBB_ORB_elemsy" },
+          { "u_has_var": "dmbb_orb", "type": "research", "context": "turret_ice2", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "research", "context": "turret_ice_frost", "value": "yes" } },
+          { "u_has_items": { "item": "dmbb_essence", "count": 100 } }
+        ]
+      },
+      "effect": [
+        { "u_sell_item": "dmbb_essence", "count": 100 },
+        { "npc_consume_item": "dmbb_essence", "count": 100 },
+        { "u_add_var": "dmbb_orb", "type": "research", "context": "turret_ice_frost", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[Research] Turret - Ice (icicle)",
+      "topic": "TALK_DMBB_ORB_command_research",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "bosswave2", "context": "finish", "value": "yes" },
+          { "npc_has_trait": "DMBB_ORB_elemsy" },
+          { "u_has_var": "dmbb_orb", "type": "research", "context": "turret_ice2", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "research", "context": "turret_ice_icicle", "value": "yes" } },
+          { "u_has_items": { "item": "dmbb_essence", "count": 100 } }
+        ]
+      },
+      "effect": [
+        { "u_sell_item": "dmbb_essence", "count": 100 },
+        { "npc_consume_item": "dmbb_essence", "count": 100 },
+        { "u_add_var": "dmbb_orb", "type": "research", "context": "turret_ice_icicle", "value": "yes" }
+      ]
+    },
+    { "text": "< - - -", "topic": "TALK_DMBB_ORB_command" }
+  ]
+}

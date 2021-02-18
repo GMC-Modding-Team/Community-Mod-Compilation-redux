@@ -1,0 +1,141 @@
+[
+  {
+    "type": "SPECIES",
+    "id": "UNDEAD",
+    "description": "an undead",
+    "footsteps": "shuffling."
+  },
+  {
+    "id": "mon_mtc_skeleton",
+    "type": "MONSTER",
+    "name": { "str": "skeleton" },
+    "looks_like": "mon_skeleton",
+    "description": "A ressurected and seemingly bewitched skeleton of a long forgotten decease. It does a rattling sound as it moves.",
+    "default_faction": "zombie",
+    "bodytype": "human",
+    "species": [ "UNDEAD", "HUMAN" ],
+    "volume": "62500 ml",
+    "weight": "81500 g",
+    "hp": 40,
+    "speed": 70,
+    "material": [ "bone" ],
+    "symbol": "Z",
+    "color": "white",
+    "aggression": 100,
+    "morale": 100,
+    "melee_skill": 4,
+    "melee_dice": 2,
+    "melee_dice_sides": 4,
+    "melee_bash": 3,
+    "dodge": 2,
+    "armor_cut": 5,
+    "armor_bullet": 10,
+    "armor_stab": 10,
+    "armor_acid": 3,
+    "vision_day": 30,
+    "vision_night": 3,
+    "harvest": "mr_bones",
+    "special_attacks": [ [ "scratch", 10 ] ],
+    "death_drops": "default_zombie_clothes",
+    "death_function": [ "NORMAL" ],
+    "flags": [ "SEES", "HEARS", "HARDTOSHOOT", "NO_BREATHE", "BASHES" ]
+  },
+  {
+    "id": "mon_mtc_skeleton_warrior_cut",
+    "copy-from": "mon_mtc_skeleton",
+    "type": "MONSTER",
+    "name": { "str": "skeletal warrior" },
+    "description": "A ressurected and seemingly bewitched skeleton of a long forgotten decease. It takes hold of an edged weapon, so beware.",
+    "melee_skill": 6,
+    "melee_dice": 1,
+    "melee_dice_sides": 6,
+    "melee_cut": 5,
+    "dodge": 3,
+    "death_drops": {
+      "subtype": "distribution",
+      "items": [
+        { "item": "longsword_rusted", "prob": 20 },
+        { "item": "machete_rusted", "prob": 20 },
+        { "item": "cavalry_sabre_rusted", "prob": 20 },
+        { "item": "kris_rusted", "prob": 20 },
+        { "item": "scimitar_rusted", "prob": 20 }
+      ]
+    }
+  },
+  {
+    "id": "mon_mtc_skeleton_warrior_bash",
+    "copy-from": "mon_mtc_skeleton",
+    "type": "MONSTER",
+    "name": { "str": "skeletal warrior" },
+    "description": "A ressurected and seemingly bewitched skeleton of a long forgotten decease. It takes hold of a blunt weapon, so beware.",
+    "melee_skill": 6,
+    "melee_dice": 4,
+    "melee_dice_sides": 6,
+    "dodge": 3,
+    "death_drops": {
+      "subtype": "distribution",
+      "items": [
+        { "item": "q_staff_moldy", "prob": 30 },
+        { "item": "cudgel_moldy", "prob": 40 },
+        { "item": "bokken_moldy", "prob": 30 }
+      ]
+    }
+  },
+  {
+    "id": "mon_mtc_skeleton_warrior_stab",
+    "copy-from": "mon_mtc_skeleton",
+    "type": "MONSTER",
+    "name": { "str": "skeletal warrior" },
+    "description": "A ressurected and seemingly bewitched skeleton of a long forgotten decease. It takes hold of a polearm, so beware.",
+    "melee_skill": 6,
+    "melee_dice": 3,
+    "melee_dice_sides": 6,
+    "melee_cut": 3,
+    "dodge": 3,
+    "death_drops": {
+      "subtype": "distribution",
+      "items": [
+        { "item": "halberd_rusted", "prob": 30 },
+        { "item": "spear_steel_rusted", "prob": 40 },
+        { "item": "pike_rusted", "prob": 30 }
+      ]
+    }
+  },
+  {
+    "id": "mon_mtc_skeleton_warrior_range",
+    "copy-from": "mon_mtc_skeleton",
+    "type": "MONSTER",
+    "name": { "str": "skeletal archer" },
+    "description": "A ressurected and seemingly bewitched skeleton of a long forgotten decease. It has a bow and a quiver full of arrows, so beware.",
+    "melee_skill": 2,
+    "melee_dice": 2,
+    "melee_dice_sides": 2,
+    "dodge": 3,
+    "death_drops": {
+      "subtype": "collection",
+      "items": [
+        { "item": "shortbow", "prob": 80, "damave": [ 2, 3 ] },
+        { "item": "arrow_fire_hardened_fletched", "count": [ 3, 6 ] }
+      ]
+    },
+    "extend": {
+      "special_attacks": [
+        {
+          "type": "gun",
+          "cooldown": 10,
+          "move_cost": 800,
+          "gun_type": "mongun_mtc_skeleton_range",
+          "fake_skills": [ [ "gun", 4 ], [ "rifle", 4 ] ],
+          "fake_dex": 8,
+          "fake_per": 8,
+          "require_targeting_player": false,
+          "require_targeting_npc": false,
+          "description": "The goblin thrower hurls its javelin!",
+          "ranges": [ [ 2, 10, "DEFAULT" ] ],
+          "no_ammo_sound": "angry dooting"
+        }
+      ],
+      "flags": [ "HIT_AND_RUN" ]
+    }
+  }
+]

@@ -1,0 +1,112 @@
+[
+  {
+    "id": [
+      "TALK_DMBB_ORB_GUILDMASTER",
+      "TALK_DMBB_ORB_GUILDMASTER_me",
+      "TALK_DMBB_ORB_GUILDMASTER_place",
+      "TALK_DMBB_ORB_GUILDMASTER_tradelol",
+      "TALK_DMBB_ORB_GUILDMASTER_quest",
+      "TALK_DMBB_ORB_GUILDMASTER_quest_info"
+    ],
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_has_var": "dmbb_orb",
+      "type": "guildmaster",
+      "context": "intro",
+      "value": "yes",
+      "no": "Ah! Welcome, my fellow sentinel!",
+      "yes": [ "Need anything?", "Speak up, sentinel." ]
+    },
+    "speaker_effect": {
+      "condition": { "not": { "u_has_var": "dmbb_orb", "type": "guildmaster", "context": "intro", "value": "yes" } },
+      "effect": { "u_add_var": "dmbb_orb", "type": "guildmaster", "context": "intro", "value": "yes" }
+    },
+    "responses": [
+      {
+        "text": "Who are you?",
+        "topic": "TALK_DMBB_ORB_GUILDMASTER_me",
+        "condition": { "not": { "u_has_var": "dmbb_orb", "type": "guildmaster", "context": "whoisu", "value": "yes" } },
+        "effect": { "u_add_var": "dmbb_orb", "type": "guildmaster", "context": "whoisu", "value": "yes" }
+      },
+      {
+        "text": "What's this place?",
+        "topic": "TALK_DMBB_ORB_GUILDMASTER_place",
+        "condition": { "not": { "u_has_var": "dmbb_orb", "type": "guildmaster", "context": "whereisme", "value": "yes" } },
+        "effect": { "u_add_var": "dmbb_orb", "type": "guildmaster", "context": "whereisme", "value": "yes" }
+      },
+      {
+        "text": "Let's trade!",
+        "topic": "TALK_DMBB_ORB_GUILDMASTER_tradelol",
+        "condition": { "not": { "u_has_var": "dmbb_orb", "type": "guildmaster", "context": "tradelol", "value": "yes" } },
+        "effect": { "u_add_var": "dmbb_orb", "type": "guildmaster", "context": "tradelol", "value": "yes" }
+      },
+      {
+        "text": "Is there anything you can do?",
+        "topic": "TALK_DMBB_ORB_GUILDMASTER_quest",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "guildmaster", "context": "tradelol", "value": "yes" },
+            { "not": { "u_has_var": "dmbb_orb", "type": "guildmaster", "context": "quests", "value": "yes" } }
+          ]
+        },
+        "effect": { "u_add_var": "dmbb_orb", "type": "guildmaster", "context": "quests", "value": "yes" }
+      },
+      {
+        "text": "How does this work? Are these just like the normal waves?",
+        "topic": "TALK_DMBB_ORB_GUILDMASTER_quest_info",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "guildmaster", "context": "quests", "value": "yes" },
+            { "not": { "u_has_var": "dmbb_orb", "type": "guildmaster", "context": "quests_info", "value": "yes" } }
+          ]
+        },
+        "effect": { "u_add_var": "dmbb_orb", "type": "guildmaster", "context": "quests_info", "value": "yes" }
+      },
+      {
+        "text": "Show me the available quests.",
+        "topic": "TALK_DMBB_ORB_GUILDMASTER_quest_list",
+        "condition": {
+          "and": [
+            { "u_has_var": "dmbb_orb", "type": "guildmaster", "context": "quests_info", "value": "yes" },
+            { "not": { "u_has_var": "dmbb_orb", "type": "guildmaster", "context": "has_quest", "value": "yes" } }
+          ]
+        }
+      },
+      {
+        "text": "About my quest...",
+        "topic": "TALK_DMBB_ORB_GUILDMASTER_quest_inquire",
+        "condition": { "u_has_var": "dmbb_orb", "type": "guildmaster", "context": "has_quest", "value": "yes" }
+      },
+      {
+        "text": "Bye.",
+        "topic": "TALK_DONE",
+        "condition": { "u_has_var": "dmbb_orb", "type": "guildmaster", "context": "quests_info", "value": "yes" }
+      }
+    ]
+  },
+  {
+    "id": "TALK_DMBB_ORB_GUILDMASTER_me",
+    "type": "talk_topic",
+    "dynamic_line": "Let's say I'm the boss around here."
+  },
+  {
+    "id": "TALK_DMBB_ORB_GUILDMASTER_place",
+    "type": "talk_topic",
+    "dynamic_line": "You're in the Sentinel's Guild, where defenders from different realms come and gather around to tell their tales and such."
+  },
+  {
+    "id": "TALK_DMBB_ORB_GUILDMASTER_tradelol",
+    "type": "talk_topic",
+    "dynamic_line": "Unfortunately, I have nothing to trade you with."
+  },
+  {
+    "id": "TALK_DMBB_ORB_GUILDMASTER_quest",
+    "type": "talk_topic",
+    "dynamic_line": "Yes. As the guildmaster, I can give you new challenges to engage in your realm; a set of waves for you to fend off and gain rewards."
+  },
+  {
+    "id": "TALK_DMBB_ORB_GUILDMASTER_quest_info",
+    "type": "talk_topic",
+    "dynamic_line": "The wave progression is still the same, but to engage in these type of waves, you must have the required items and give them to the orb.\n\nOnce you're ready, just ask me and I'll let you pick a quest."
+  }
+]

@@ -1,0 +1,1158 @@
+{
+  "id": "TALK_DMBB_ORB_command_endwave",
+  "type": "talk_topic",
+  "dynamic_line": "*blasts beams of light rays, radiating into the vicinity.\n\nIts powerful explosion dropped some sentinel's essences.",
+  "speaker_effect": [
+    {
+      "effect": [
+        { "u_add_effect": "blind", "duration": 3 },
+        { "u_add_effect": "deaf", "duration": 1 },
+        { "u_add_effect": "deaf", "duration": 1 },
+        { "u_add_effect": "deaf", "duration": 1 },
+        { "u_lose_var": "dmbb_orb", "type": "guildsmith", "context": "forging", "value": "yes" }
+      ]
+    },
+    {
+      "condition": { "npc_has_trait": "DMBB_ORB_sentguard" },
+      "effect": [
+        { "u_lose_var": "dmbb_orb", "type": "sentguard", "context": "summon", "value": "yes" },
+        { "u_buy_monster": "mon_dmbb_bless_sentguard_despawn" }
+      ]
+    },
+    {
+      "effect": [
+        { "mapgen_update": "dmbb_orb_arenacolor_remove", "om_terrain": "dmbb_arena_1", "om_special": "DMBB Arena" },
+        { "mapgen_update": "dmbb_orb_arenacolor_remove", "om_terrain": "dmbb_arena_2", "om_special": "DMBB Arena" },
+        { "mapgen_update": "dmbb_orb_arenacolor_remove", "om_terrain": "dmbb_arena_3", "om_special": "DMBB Arena" },
+        { "mapgen_update": "dmbb_orb_arenacolor_remove", "om_terrain": "dmbb_arena_4", "om_special": "DMBB Arena" },
+        { "mapgen_update": "dmbb_orb_arenacolor_remove", "om_terrain": "dmbb_arena_5", "om_special": "DMBB Arena" },
+        { "mapgen_update": "dmbb_orb_arenacolor_remove", "om_terrain": "dmbb_arena_6", "om_special": "DMBB Arena" },
+        { "mapgen_update": "dmbb_orb_arenacolor_remove", "om_terrain": "dmbb_arena_7", "om_special": "DMBB Arena" },
+        { "mapgen_update": "dmbb_orb_arenacolor_remove", "om_terrain": "dmbb_arena_8", "om_special": "DMBB Arena" },
+        { "mapgen_update": "dmbb_orb_arenacolor_remove", "om_terrain": "dmbb_arena_9", "om_special": "DMBB Arena" }
+      ]
+    }
+  ],
+  "responses": [
+    {
+      "text": "[FINISH] Wave 1",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave1", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave1", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 2 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave1", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 2",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave2", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave2", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 6 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave2", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 3",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave3", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave3", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 12 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave3", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 4",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave4", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave4", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 22 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave4", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 5",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave5", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave5", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 30 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave5", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Special Wave - Plague Bearers 1",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "specroa1", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "specroa1", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 75 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "specroa1", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 6",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave6", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave6", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 37 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave6", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 7",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave7", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave7", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 43 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave7", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 8",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave8", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave8", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 48 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave8", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 9",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave9", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave9", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 54 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave9", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 10",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave10", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave10", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 60 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave10", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Boss Wave",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "bosswave1", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "bosswave1", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 100 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "bosswave1", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Special Wave - Nether Siege 1",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "specnetwave1", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "specnetwave1", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 125 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "specnetwave1", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 11",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave11", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave11", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 69 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave11", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 12",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave12", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave12", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 74 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave12", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 13",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave13", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave13", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 80 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave13", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 14",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave14", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave14", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 86 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave14", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 15",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave15", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave15", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 90 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave15", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Special Wave - Dark Slimes 1",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "specblowave1", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "specblowave1", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 75 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "specblowave1", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 16",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave16", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave16", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 96 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave16", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 17",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave17", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave17", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 101 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave17", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 18",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave18", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave18", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 107 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave18", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 19",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave19", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave19", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 113 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave19", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 20",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave20", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave20", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 120 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave20", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Boss Wave",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "bosswave2", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "bosswave2", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 200 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "bosswave2", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Special Wave - Mi-go Raiders 1",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "specmig1", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "specmig1", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 225 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "specmig1", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Survival (Easy)",
+      "topic": "TALK_DONE",
+      "condition": { "u_has_var": "dmbb_orb", "type": "survival1", "context": "in_combat", "value": "yes" },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 750 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_lose_var": "dmbb_orb", "type": "survival1", "context": "in_combat", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 21",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave21", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave21", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 126 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave21", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 22",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave22", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave22", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 132 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave22", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 23",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave23", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave23", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 138 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave23", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 24",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave24", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave24", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 144 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave24", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 25",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave25", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave25", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 150 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave25", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Special Wave - Plague Bearers 2",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "specroa2", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "specroa2", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 150 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "specroa2", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 26",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave26", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave26", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 156 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave26", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 27",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave27", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave27", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 161 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave27", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 28",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave28", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave28", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 167 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave28", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 29",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave29", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave29", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 172 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave29", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 30",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave30", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave30", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 180 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave30", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Boss Wave",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "bosswave3", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "bosswave3", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 300 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "bosswave3", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Special Wave - Nether Siege 2",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "specnetwave2", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "specnetwave2", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 250 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "specnetwave2", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 31",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave31", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave31", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 186 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave31", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 32",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave32", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave32", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 191 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave32", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 33",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave33", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave33", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 197 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave33", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 34",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave34", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave34", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 201 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave34", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 35",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave35", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave35", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 210 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave35", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Special Wave - Dark Slimes 2",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "specblowave2", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "specblowave2", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 150 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "specblowave2", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 36",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave36", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave36", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 215 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave36", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 37",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave37", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave37", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 222 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave37", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 38",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave38", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave38", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 228 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave38", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 39",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave39", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave39", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 234 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave39", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 40",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave40", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave40", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 240 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave40", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Boss Wave",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "bosswave4", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "bosswave4", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 400 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "bosswave4", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Special Wave - Mi-go Raiders 2",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "specmig2", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "specmig2", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 450 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "specmig2", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 41",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave41", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave41", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 247 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave41", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 42",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave42", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave42", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 252 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave42", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 43",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave43", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave43", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 258 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave43", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 44",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave44", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave44", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 264 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave44", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 45",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave45", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave45", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 270 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave45", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Special Wave - Plague Bearers 3",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "specroa3", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "specroa3", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 300 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "specroa3", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Special Wave - Nether Siege 3",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "specnetwave3", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "specnetwave3", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 500 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "specnetwave3", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 46",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave46", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave46", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 276 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave46", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 47",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave47", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave47", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 282 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave47", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 48",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave48", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave48", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 288 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave48", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 49",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave49", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave49", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 293 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave49", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Wave 50",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "wave50", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "wave50", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 300 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "wave50", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Boss Wave",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "bosswave5", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "bosswave5", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 500 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "bosswave5", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Special Wave - Dark Slimes 3",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "specblowave3", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "specblowave3", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 300 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "specblowave3", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Special Wave - Mi-go Raiders 3",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "specmig3", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "specmig3", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 900 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "specmig3", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Goblin Siege! 1/5",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "gqgobsie1", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "gqgobsie1", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 10 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "gqgobsie1", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Goblin Siege! 2/5",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "gqgobsie2", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "gqgobsie2", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 10 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "gqgobsie2", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Goblin Siege! 3/5",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "gqgobsie3", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "gqgobsie3", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 10 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "gqgobsie3", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Goblin Siege! 4/5",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "gqgobsie4", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "gqgobsie4", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 10 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "gqgobsie4", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Goblin Siege! 5/5",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "gqgobsie5", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "gqgobsie5", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 10 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "gqgobsie5", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Fire and Ice (Fire)",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "gqfirenice_fire", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "gqfirenice_fire", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 75 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "gqfirenice_fire", "context": "finish", "value": "yes" }
+      ]
+    },
+    {
+      "text": "[FINISH] Fire and Ice (Ice)",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "u_has_var": "dmbb_orb", "type": "gqfirenice_ice", "context": "in_combat", "value": "yes" },
+          { "not": { "u_has_var": "dmbb_orb", "type": "gqfirenice_ice", "context": "finish", "value": "yes" } }
+        ]
+      },
+      "effect": [
+        { "u_buy_item": "dmbb_essence", "count": 75 },
+        { "u_lose_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+        { "u_add_var": "dmbb_orb", "type": "gqfirenice_ice", "context": "finish", "value": "yes" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+[
+  {
+    "type": "terrain",
+    "id": "t_cvdmachine",
+    "name": "CVD control panel",
+    "description": "A CVD control panel",
+    "symbol": "&",
+    "color": "cyan",
+    "move_cost": 0,
+    "flags": [ "TRANSPARENT", "NOITEM", "PERMEABLE" ],
+    "examine_action": "cvdmachine",
+    "deconstruct": {
+      "ter_set": "t_concrete",
+      "items": [
+        { "item": "processor", "prob": 75 },
+        { "item": "RAM", "prob": 80 },
+        { "item": "power_supply", "prob": 70 },
+        { "item": "amplifier", "prob": 90 },
+        { "item": "steel_chunk", "count": [ 1, 4 ] },
+        { "item": "steel_lump", "prob": 60 },
+        { "item": "sheet_metal", "prob": 50 },
+        { "item": "plastic_chunk", "count": [ 2, 5 ] },
+        { "item": "circuit", "count": [ 1, 2 ] },
+        { "item": "small_lcd_screen", "prob": 50 },
+        { "item": "cable", "count": [ 2, 10 ] },
+        { "item": "steel_plate", "prob": 80 },
+        { "item": "aaf_cvd_module", "prob": 100 }
+      ]
+    },
+    "bash": {
+      "str_min": 8,
+      "str_max": 150,
+      "sound": "crunch!",
+      "sound_fail": "whack!",
+      "ter_set": "t_console_broken",
+      "items": [
+        { "item": "processor", "prob": 25 },
+        { "item": "RAM", "count": [ 0, 2 ], "prob": 50 },
+        { "item": "cable", "charges": [ 1, 2 ], "prob": 50 },
+        { "item": "small_lcd_screen", "prob": 25 },
+        { "item": "e_scrap", "count": [ 1, 4 ], "prob": 50 },
+        { "item": "circuit", "count": [ 0, 2 ], "prob": 50 },
+        { "item": "power_supply", "prob": 25 },
+        { "item": "amplifier", "prob": 25 },
+        { "item": "plastic_chunk", "count": [ 4, 10 ], "prob": 50 },
+        { "item": "scrap", "count": [ 2, 6 ], "prob": 50 },
+        { "item": "aaf_cvd_module", "prob": 60 }
+      ]
+    }
+  }
+]

@@ -1,0 +1,53 @@
+[
+  {
+    "id": "410shot_flech",
+    "copy-from": "410shot_000",
+    "type": "AMMO",
+    "name": { "str": ".410 flechette" },
+    "description": "A .410 shell with 5 tiny steel darts. The spread makes it extremely accurate at short ranges. An alternative to firing .45 FMJ from a carbine which is easier to score hits with but has more recoil.",
+    "price": "250 cent",
+    "price_postapoc": "9 USD",
+    "relative": { "damage": { "damage_type": "stab", "amount": -4, "armor_penetration": 10 } },
+    "looks_like": "410shot_000",
+    "loudness": 95
+  },
+  {
+    "id": "410shot_doorbuster",
+    "copy-from": "410shot_000",
+    "type": "AMMO",
+    "name": { "str": ".410 OCG Sledgehammer" },
+    "//": "Shotgun loads designed specifically to break locks open exist, but implementing them would require source code changes and that ain't worth it. This is a more brute force alternative to such loads.",
+    "description": "A concussive .410 slug capable of quickly clearing through locks, doors or barriers by blunt force. This load was not designed for use against moving targets and loses muzzle energy very quickly.",
+    "weight": "17 g",
+    "price": "3 USD",
+    "price_postapoc": "2 USD",
+    "range": 3,
+    "dispersion": 900,
+    "damage": { "damage_type": "bash", "amount": 35 },
+    "recoil": 1400,
+    "loudness": 82,
+    "looks_like": "410shot_000",
+    "delete": { "effects": [ "SHOT" ] }
+  },
+  {
+    "id": "reloaded_410shot_flech",
+    "copy-from": "410shot_flech",
+    "type": "AMMO",
+    "name": { "str": ".410 flechette, reloaded" },
+    "looks_like": "reloaded_410shot_000",
+    "proportional": { "price": 0.7, "damage": { "damage_type": "stab", "amount": 0.9 }, "dispersion": 1.1 },
+    "extend": { "effects": [ "RECYCLED" ] },
+    "delete": { "effects": [ "NEVER_MISFIRES" ], "flags": [ "IRREPLACEABLE_CONSUMABLE" ] }
+  },
+  {
+    "id": "reloaded_410shot_doorbuster",
+    "copy-from": "410shot_doorbuster",
+    "type": "AMMO",
+    "name": { "str": ".410 OCG Sledgehammer, reloaded" },
+    "looks_like": "reloaded_410shot_000",
+    "damage": { "damage_type": "bash", "amount": 32 },
+    "proportional": { "price": 0.7, "dispersion": 1.1 },
+    "extend": { "effects": [ "RECYCLED" ] },
+    "delete": { "effects": [ "NEVER_MISFIRES" ], "flags": [ "IRREPLACEABLE_CONSUMABLE" ] }
+  }
+]

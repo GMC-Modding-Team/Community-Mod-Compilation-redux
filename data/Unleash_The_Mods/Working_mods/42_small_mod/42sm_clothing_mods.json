@@ -1,0 +1,66 @@
+[
+  {
+    "id": "tailors_kit",
+    "type": "TOOL",
+    "name": { "str": "tailor's kit" },
+    "copy-from": "tailors_kit",
+    "use_action": [
+      {
+        "type": "repair_item",
+        "item_action_type": "repair_fabric",
+        "materials": [ "cotton", "leather", "lycra", "nylon", "wool", "fur", "faux_fur", "nomex", "kevlar", "neoprene", "gutskin" ],
+        "skill": "tailor",
+        "tool_quality": 1,
+        "cost_scaling": 0.1,
+        "move_cost": 800
+      },
+      {
+        "type": "sew_advanced",
+        "materials": [
+          "cotton",
+          "leather",
+          "lycra",
+          "nylon",
+          "wool",
+          "fur",
+          "faux_fur",
+          "nomex",
+          "kevlar",
+          "neoprene",
+          "gutskin",
+          "plastic",
+          "kevlar_rigid"
+        ],
+        "skill": "tailor",
+        "clothing_mods": [ "leather_padded", "steel_padded", "kevlar_padded", "furred", "wooled", "chitin_insert", "acidchitin_insert" ]
+      }
+    ]
+  },
+  {
+    "type": "clothing_mod",
+    "id": "chitin_insert",
+    "flag": "chitin_insert",
+    "item": "chitin_piece",
+    "implement_prompt": "Insert chitin pieces",
+    "destroy_prompt": "Remove chitin pieces",
+    "mod_value": [
+      { "type": "bash", "value": 1, "proportion": [ "thickness", "coverage" ] },
+      { "type": "cut", "value": 2, "proportion": [ "thickness", "coverage" ] },
+      { "type": "encumbrance", "value": 2, "round_up": true, "proportion": [ "thickness", "coverage" ] }
+    ]
+  },
+  {
+    "type": "clothing_mod",
+    "id": "acidchitin_insert",
+    "flag": "acidchitin_insert",
+    "item": "acidchitin_piece",
+    "implement_prompt": "Insert biosilicified chitin pieces",
+    "destroy_prompt": "Remove biosilicified chitin pieces",
+    "mod_value": [
+      { "type": "bash", "value": 1.5, "round_up": true, "proportion": [ "thickness", "coverage" ] },
+      { "type": "cut", "value": 2.5, "round_up": true, "proportion": [ "thickness", "coverage" ] },
+      { "type": "acid", "value": 1.5, "round_up": true, "proportion": [ "thickness", "coverage" ] },
+      { "type": "encumbrance", "value": 2.5, "round_up": true, "proportion": [ "thickness", "coverage" ] }
+    ]
+  }
+]
