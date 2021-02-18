@@ -187,7 +187,6 @@ And what it should look like under `type: AMMO`:
 ```
 what it can be
 ```JSON
-"damage": { "damage_type": "bullet", "amount": 0, "pierce": 0 },
 "damage": { "damage_type": "bullet", "amount": 0, "armor_penetration": 0 },
 ```
 
@@ -202,7 +201,7 @@ replace:
 ```REGEX
 "damage": { "damage_type": "bullet", "amount": $1 },
 or
-"damage": { "damage_type": "bullet", "amount": $1, "pierce": $2 },
+"damage": { "damage_type": "bullet", "amount": $1, "armor_penetration": $2 },
 ```
 
 ---
