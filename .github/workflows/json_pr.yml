@@ -12,13 +12,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
-        with:
-          fetch-depth: 10
-      - name: install astyle
-        run: sudo apt-get install -y astyle
-      - name: JSON style check
-        run: make style-json
-      - name: Display Corrections
-        if: failure()
-        run: git diff
+    - uses: actions/checkout@v1
+      with:
+        fetch-depth: 10
+    - name: install astyle
+      run: sudo apt-get install -y astyle
+    - name: JSON style check
+      run: make style-json
+    - name: Display Corrections
+      if: failure()
+      run: git diff
