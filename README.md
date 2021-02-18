@@ -1,4 +1,4 @@
-# **TheGoatGod's Mod Compilation VERSION 0.1.5**
+# **TheGoatGod's Mod Compilation VERSION 0.1.6**
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
