@@ -98,11 +98,11 @@ When I provide regex it will always be in the format find entry, empty line, rep
 
 ---
 ## Python
-Python is a programming language. For the purposes of updating obsolete JSON, it is used to parse and modify text. Don't worry if this makes no sense to you - you don;t actually have to understand what python is to use it. First, install python from [here](https://www.python.org/). Make sure to click 'add python to PATH' in the installer options! 
+Python is a programming language. For the purposes of updating obsolete JSON, it is used to parse and modify text. Don't worry if this makes no sense to you - you don;t actually have to understand what python is to use it. First, install python from [here](https://www.python.org/). Make sure to click 'add python to PATH' in the installer options!
 
 **Windows**
-Go to the Tools folder using Windows Explorer. 
-Type 'cmd' into the address bar. 
+Go to the Tools folder using Windows Explorer.
+Type 'cmd' into the address bar.
 In cmd, type 'python `<script name>`, replacing <> with the name of the script. Make sure to include '.py'
 Respond to the prompt.
 
@@ -187,7 +187,6 @@ And what it should look like under `type: AMMO`:
 ```
 what it can be
 ```JSON
-"damage": { "damage_type": "bullet", "amount": 0, "pierce": 0 },
 "damage": { "damage_type": "bullet", "amount": 0, "armor_penetration": 0 },
 ```
 
@@ -202,7 +201,7 @@ replace:
 ```REGEX
 "damage": { "damage_type": "bullet", "amount": $1 },
 or
-"damage": { "damage_type": "bullet", "amount": $1, "pierce": $2 },
+"damage": { "damage_type": "bullet", "amount": $1, "armor_penetration": $2 },
 ```
 
 ---
@@ -314,7 +313,7 @@ A good guide as to whether it should be the above code instead of the code below
 "name_pl": "pairs of socks"
 ```
 
-Due to the complexities of replacing the name with regex, I suggest that you use `name.py`, a python script in the Tools folder of this modpack. 
+Due to the complexities of replacing the name with regex, I suggest that you use `name.py`, a python script in the Tools folder of this modpack.
 
 ---
 # picklock
@@ -336,9 +335,9 @@ A very notable addition to the 0.E experimental is pocket data. Instead of the p
 
 ---
 ## Container Pocket data
-In the past, storage used to be determined by a singlar `storage: number` pair. The volume that could be stored, like many things, was the `number` multiplied by `250 ml`. 
+In the past, storage used to be determined by a singlar `storage: number` pair. The volume that could be stored, like many things, was the `number` multiplied by `250 ml`.
 ```JSON
-"storage": 0, 
+"storage": 0,
 "storage": 5
 ```
 Now `pocket_data` looks like this:
@@ -355,7 +354,7 @@ Now `pocket_data` looks like this:
 ```
 Updating `pocket_data` is fairly time consuming, as each item must be done by manually. The description of the item and similar items are good places to start. If the item has `"storage": 0`, then simply delete `storage`. Following is an example of replacing `storage` with `pocket_data`.
 
-Here's our obsolete JSON (with some fields omitted for brevity). 
+Here's our obsolete JSON (with some fields omitted for brevity).
 ```JSON
 "type": "ARMOR",
 "description": "A suit of armor to be used by dirt bikers and motorcyclists.  It has a small pocket intended for you to put your keys and your wallet, if you had some.",
@@ -471,7 +470,7 @@ Note: I recommend using `barrellength_volume.py`, a python script found in the T
 "folded_volume": "1250 ml"
 ```
 
-Other: 
+Other:
 `"type": "GUNMOD"`
 `integral_volume` and `integral_weight` are:
 ```JSON
@@ -506,7 +505,7 @@ Unfortunately, updating weight is not as simple as replacing all weight values w
 "weight": "$1 g",
 ```
 
-Note: I once again reccommend using a python script, `weight_update.py` to do this. 
+Note: I once again reccommend using a python script, `weight_update.py` to do this.
 
 ---
 # Effect
