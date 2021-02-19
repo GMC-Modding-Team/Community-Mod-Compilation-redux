@@ -1,15 +1,15 @@
 [
   {
+    "type": "TOOL",
     "id": "afs_solderers_item",
     "copy-from": "fake_item",
-    "type": "TOOL",
     "name": { "str": "precision solderers" },
     "flags": "TRADER_AVOID",
     "qualities": [ [ "SAW_M_FINE", 1 ], [ "SCREW_FINE", 1 ], [ "CUT_FINE", 2 ] ]
   },
   {
-    "id": "afs_basin",
     "type": "GENERIC",
+    "id": "afs_basin",
     "name": { "str": "basin" },
     "description": "A wide, shallow basin used to hold liquid, hammered from a piece of sheet metal.  Ideal for collecting water.",
     "weight": "5000 g",
@@ -33,8 +33,8 @@
     ]
   },
   {
-    "id": "afs_fridge",
     "type": "GENERIC",
+    "id": "afs_fridge",
     "name": { "str": "vehicle refrigerator" },
     "description": "A household refrigerator with impressive capacity.  Its power connection has been refurbished, and it can be mounted onto a vehicle to draw from its power.",
     "symbol": "{",
@@ -50,16 +50,16 @@
     "looks_like": "minifridge"
   },
   {
-    "id": "afs_freezer",
     "type": "GENERIC",
+    "id": "afs_freezer",
     "name": { "str": "vehicle freezer" },
     "copy-from": "afs_fridge",
     "description": "This refurbished refrigerator has been stripped of much of its internal components and converted to run at a much lower temperature, causing it to serve as a freezer for more power.  Like its predecessor, it runs on vehicle power.",
     "color": "light_blue"
   },
   {
-    "id": "rolling_pin",
     "type": "GENERIC",
+    "id": "rolling_pin",
     "name": { "str": "rolling pin" },
     "description": "A light wooden rolling pin used to flatten dough.",
     "symbol": "[",
@@ -128,23 +128,74 @@
     "description": "Skillet, pot, hotplate, and chemistry set; everything you need to cook food and chemicals.  Includes proper fume vents and a separator, so you don't contaminate your food with toxic chemicals."
   },
   {
-    "id": "large_storage_battery",
-    "type": "MAGAZINE",
+    "type": "GENERIC",
+    "id": "afs_hauling_space",
+    "name": { "str": "hauling space" },
+    "description": "A huge metal space used in conjunction with extension of a vehicle's roof to create a very large amount of space for transporting goods.",
+    "weight": "120000 g",
+    "to_hit": -6,
+    "color": "cyan",
+    "symbol": "]",
+    "material": [ "steel" ],
+    "volume": "100 L",
+    "bashing": 2,
     "category": "veh_parts",
-    "name": { "str": "large storage battery", "str_pl": "large storage batteries" },
-    "description": "A huge lithium ion storage battery, weighing easily 600 pounds.  Holds a tremendous amount of energy.",
-    "weight": "300000 g",
-    "volume": "20 L",
-    "price": 400000,
-    "price_postapoc": 50000,
-    "to_hit": -2,
-    "bashing": 40,
+    "price": 50000
+  },
+  {
+    "type": "GENERIC",
+    "id": "afs_control_station",
+    "name": { "str": "control station" },
+    "description": "A large and complex piloting station from a military vehicle, including a camera station, steering tools, and electronics controls.",
+    "weight": "9000 g",
+    "to_hit": -4,
+    "color": "red",
+    "symbol": "$",
     "material": [ "plastic", "steel" ],
-    "symbol": ":",
-    "color": "light_cyan",
-    "ammo_type": [ "battery" ],
-    "capacity": 100000,
-    "flags": [ "NO_SALVAGE", "NO_UNLOAD", "NO_RELOAD", "RECHARGE" ],
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "battery": 100000 } } ]
+    "volume": "6 L",
+    "bashing": 2,
+    "category": "veh_parts",
+    "price": 60000
+  },
+  {
+    "type": "GENERIC",
+    "id": "afs_hydraulic_gauntlet",
+    "name": { "str": "hydraulic gauntlet" },
+    "description": "A huge, heavy metal gauntlet lined with tubing and gauges.  Slow and unwieldy, it uses internal pressure to deliver devastating blows, but takes tremendous strength to use effectively.  Thanks to an internal microreactor, it doesn't require power of its own.",
+    "weight": "3778 g",
+    "volume": "2 L",
+    "price": 10000000,
+    "price_postapoc": 20000,
+    "material": [ "hardsteel" ],
+    "symbol": "[",
+    "color": "light_gray",
+    "bashing": 50,
+    "to_hit": -2,
+    "flags": [ "NO_REPAIR", "NONCONDUCTIVE", "SLOW_WIELD", "DURABLE_MELEE", "LEAK_DAM", "UNARMED_WEAPON" ],
+    "techniques": [ "BRUTAL", "AFS_PRESSURE_CRUNCH" ]
+  },
+  {
+    "type": "GENERIC",
+    "id": "afs_rolling_pin_barbed_wire",
+    "copy-from": "rolling_pin",
+    "name": { "str": "barbed-wire rolling pin" },
+    "description": "Typically used to flatten dough, this rolling pin has been repurposed as a weapon, with barbed wire adding some extra power and weight to its swing.  It has some real heft to it; perfect for the bakers of the apocalypse.",
+    "weight": "923 g",
+    "volume": "1500 ml",
+    "price_postapoc": 1500,
+    "material": [ "steel", "wood" ],
+    "to_hit": 1,
+    "bashing": 14,
+    "cutting": 6,
+    "flags": [ "DURABLE_MELEE", "FIREWOOD", "NONCONDUCTIVE" ],
+    "techniques": [ "WBLOCK_1", "RAPID" ],
+    "looks_like": "bwirebat"
+  },
+  {
+    "type": "GENERIC",
+    "id": "afs_golf_club",
+    "name": { "str": "golf club" },
+    "copy-from": "golf_club",
+    "material": [ "aluminum", "titanium" ]
   }
 ]
