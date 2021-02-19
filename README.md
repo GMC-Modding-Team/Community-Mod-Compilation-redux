@@ -36,7 +36,7 @@ Welcome to TheGoatGod's Mod Compilation. Currently contains over 250 mods, 14 ma
 
 - [ ] Fix all the mods
 - [ ] start merging mods together
-- [ ] Make more mods story mod, more tools, more factions ect...
+- [ ] Make more mods story mod, more tools, more factions etc...
 - [ ] merge content together to make mega mod
 
 I hope to start the merging process soon with a bunch of prs. goal is to bring down the amount of mods. you will see name changes to inclue other mods to make it kinda like the bionic package but not one type of item. however food will be diffrent from other mods. it might get abit confueing to begin with. alot of mods will get striped into other mods entirly or by pieces. all unwanted content will go into a "bin" type mod where you can get the stuff that doesnt fit in or im not planning on adding into there big merge into my mega mod for cdda but this will take time and i plan on adding alot of content all round i need to know what im working with to have a direction to start, i have started some addional content mods that will be included i will add more so this will work. i will need testers and will have to make a new git repo for this.
