@@ -1,0 +1,14 @@
+name: JSON linter
+
+on:
+  push:
+    paths:
+    - '**.json'
+
+jobs:
+  linting:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: json-lint
+      uses: ./
