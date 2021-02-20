@@ -27,7 +27,7 @@
 
 
 # Description
-Welcome to TheGoatGod's Mod Compilation. Currently contains over 250 mods, 14 maintained mods, 50 rebalance mods, 22 legacy mods, 2 tile sets(legacy working but lacks alot of new items ect...), 49 NO Mods, and 8 sound packs. It is currently, at 0.1.5, not entirely bug free, but it is undergoing constant improvements, and should soon be bug free. Many changes are planned for the future, consolidating mods to reduce the amount of excess, and cleaning up the code (even more!).
+Welcome to TheGoatGod's Mod Compilation. Currently contains just under 400 mods not including mainline mods, 14 maintained mods, 50 rebalance mods, 22 legacy mods, 2 tile sets(legacy working but lacks alot of new items ect...), 49 NO Mods, and 8 sound packs. It is currently, at 0.1.5, not entirely bug free, but it is undergoing constant improvements, and should soon be bug free. Many changes are planned for the future, consolidating mods to reduce the amount of excess, and cleaning up the code (even more!).
 
 # Road map
 
