@@ -5,7 +5,7 @@
 
 **Table of Contents**
 
-* [Setup](setup)
+* [Setup](#setup)
 
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
