@@ -18,12 +18,12 @@
 ## To-do
 
 
-  [x] - add more [Cereal](#cereal) from https://www.tesco.com/groceries/en-GB/shop/food-cupboard/cereals/all to md
-  [x] - add more [Cereal bars](#cereal_bars) from https://www.tesco.com/groceries/en-GB/search?query=cereal%20bars to md
-  [x] - add more [Cereal Drinks](#cereal_drinks) from https://www.tesco.com/groceries/en-GB/search?query=Cereal%20Drinks to md
-  [x] - add more [Granola](#granola) from https://www.tesco.com/groceries/en-GB/search?query=Granola to md
-  [x] - add more [Porridge](#Porridge) from https://www.tesco.com/groceries/en-GB/search?query=Porridge to md
-  [x] - add more [Porridge pots](#Porridge_pots) from https://www.tesco.com/groceries/en-GB/search?query=Porridge%20pots to md
+  [x] - add more [Cereal](#cereal)
+  [x] - add more [Cereal bars](#cereal_bars)
+  [x] - add more [Cereal Drinks](#cereal_drinks)
+  [x] - add more [Granola](#granola)
+  [x] - add more [Porridge](#Porridge)
+  [x] - add more [Porridge pots](#Porridge_pots)
   [x] - create abstract for [Cereal](#cereal)
   [x] - create cereal boxs [Cereal](#cereal)
   [x] - implement [Cereal](#cereal)
