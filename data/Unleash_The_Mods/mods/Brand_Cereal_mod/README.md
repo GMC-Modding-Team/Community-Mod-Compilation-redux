@@ -38,7 +38,7 @@
   [x] - implement [Porridge](#porridge)
   [x] - create abstract for [Porridge pots](#porridge_pots)
   [x] - create porridge pots [Porridge pots](#porridge_pots)
-  [ ] - implement [Porridge pots](#porridge_pots)
+  [x] - implement [Porridge pots](#porridge_pots)
 
 #### Part 2
 
@@ -230,12 +230,12 @@
 [x] - Oomf Protein Oats And Biological Culture Golden Syrup Flavour Pot 65G
 [x] - Oomf Protein Oats And Biological Culture Salted Caramel Flavoured Pot 65G
 [x] - Pronto Cinnamon Pot Porridge Mix Pot 60G
-[ ] - Quaker Oat So Simple Apple And Blueberry Porridge Pot 57G
-[ ] - Quaker Oat So Simple Golden Syrup Porridge Pot 57G
-[ ] - Quaker Oat So Simple Original Porridge Pot 45G
-[ ] - Quaker Oat So Simple Protein Original Porridge Pot 49G
-[ ] - Quaker Oat So Simple Sweet Cinnamon Porridge Pot 57G
-[ ] - Quaker Protein Golden Syrup Porridge pot 63G
+[x] - Quaker Oat So Simple Apple And Blueberry Porridge Pot 57G
+[x] - Quaker Oat So Simple Golden Syrup Porridge Pot 57G
+[x] - Quaker Oat So Simple Original Porridge Pot 45G
+[x] - Quaker Oat So Simple Protein Original Porridge Pot 49G
+[x] - Quaker Oat So Simple Sweet Cinnamon Porridge Pot 57G
+[x] - Quaker Protein Golden Syrup Porridge pot 63G
 [x] - Store-Brand Free From Gluten Syrup Porridge Pot 55G
 [x] - Store-Brand Free From Original Porridge Pot 55G
 [x] - Store-Brand Instant Oats Berry Cherry Porridge 55G
