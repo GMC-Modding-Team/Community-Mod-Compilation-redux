@@ -224,9 +224,9 @@
 [x] - Fuel 10K Toffee Apple Oat Muffin Pot 60G
 [x] - Fuel 10k Double Chocolate Oat Muffin 60G
 [x] - Fuel 10k Salted Caramel Porridge Pot 70G
-[ ] - Moma Coconut And Chia Porridge Pot 55G
-[ ] - Moma Jumbo Oat Porridge Plain Pot 65G
-[ ] - Moma Porridge Cacao And Hazelnut Pot 65G
+[x] - Moma Coconut And Chia Porridge Pot 55G
+[x] - Moma Jumbo Oat Porridge Plain Pot 65G
+[x] - Moma Porridge Cacao And Hazelnut Pot 65G
 [ ] - Oomf Protein Oats And Biological Culture Golden Syrup Flavour Pot 65G
 [ ] - Oomf Protein Oats And Biological Culture Salted Caramel Flavoured Pot 65G
 [ ] - Pronto Cinnamon Pot Porridge Mix Pot 60G
