@@ -32,3 +32,23 @@
 `"id": "drone_op",`
 `"id": "razorgirl",`
 ```
+
+## More classes scenarios
+```Regex
+"more_classes_scenarios"
+```
+
+#### Professions
+```Json
+`"id": "specops",`
+`"id": "soldier",`
+`"id": "pri-sur",`
+`"id": "welder",`
+`"id": "bio_cyclist",`
+`"id": "waken",`
+`"id": "prep_student",`
+`"id": "linebacker",`
+`"id": "batter",`
+`"id": "goalie",`
+`"id": "elementary_student",`
+```
