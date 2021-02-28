@@ -227,9 +227,9 @@
 [x] - Moma Coconut And Chia Porridge Pot 55G
 [x] - Moma Jumbo Oat Porridge Plain Pot 65G
 [x] - Moma Porridge Cacao And Hazelnut Pot 65G
-[ ] - Oomf Protein Oats And Biological Culture Golden Syrup Flavour Pot 65G
-[ ] - Oomf Protein Oats And Biological Culture Salted Caramel Flavoured Pot 65G
 [ ] - Pronto Cinnamon Pot Porridge Mix Pot 60G
+[x] - Oomf Protein Oats And Biological Culture Golden Syrup Flavour Pot 65G
+[x] - Oomf Protein Oats And Biological Culture Salted Caramel Flavoured Pot 65G
 [ ] - Quaker Oat So Simple Apple And Blueberry Porridge Pot 57G
 [ ] - Quaker Oat So Simple Golden Syrup Porridge Pot 57G
 [ ] - Quaker Oat So Simple Original Porridge Pot 45G
