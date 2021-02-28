@@ -243,7 +243,7 @@
 [ ] - Store-Brand Instant Oats Cinnamon Porridge 55G
 [ ] - Store-Brand Instant Oats Golden Syrup Porridge 55G
 [ ] - Store-Brand Instant Oats Original Porridge 55G
-[ ] - Wicked Kitchen Superseeded Porridge Pot 70G
+[x] - Wicked Kitchen Superseeded Porridge Pot 70G
 
 
 ## Pop tarts
