@@ -219,11 +219,11 @@
 ## Porridge pots
 
 
-[ ] - Fuel 10K Chocolate Porridge Pot 70G
-[ ] - Fuel 10K Golden Syrup Porridge Pot 70G
-[ ] - Fuel 10K Toffee Apple Oat Muffin Pot 60G
-[ ] - Fuel 10k Double Chocolate Oat Muffin 60G
-[ ] - Fuel 10k Salted Caramel Porridge Pot 70G
+[x] - Fuel 10K Chocolate Porridge Pot 70G
+[x] - Fuel 10K Golden Syrup Porridge Pot 70G
+[x] - Fuel 10K Toffee Apple Oat Muffin Pot 60G
+[x] - Fuel 10k Double Chocolate Oat Muffin 60G
+[x] - Fuel 10k Salted Caramel Porridge Pot 70G
 [ ] - Moma Coconut And Chia Porridge Pot 55G
 [ ] - Moma Jumbo Oat Porridge Plain Pot 65G
 [ ] - Moma Porridge Cacao And Hazelnut Pot 65G
