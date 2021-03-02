@@ -3,6 +3,7 @@
 "package_bionic_professions"
 ```
 
+
 #### Professions
 ```Json
 `"id": "quiver_bionic_prepper",`
@@ -33,10 +34,12 @@
 `"id": "razorgirl",`
 ```
 
+
 ## More classes scenarios
 ```Regex
 "more_classes_scenarios"
 ```
+
 
 #### Professions
 ```Json
