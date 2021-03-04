@@ -1,10 +1,10 @@
 # Updating Legacy JSON
 
-
 Use the `home` key to get to the top.
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**
+
+#### **Table of Contents**
 
 - [Introduction](#introduction)
   * [Tools Required](#tools-required)
@@ -46,7 +46,7 @@ Use the `home` key to get to the top.
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 ---
-# Introduction
+## Introduction
 Welcome to Updating Legacy JSON.md. This document aims to guide you through the process of replacing obsolete code with modern JSON.
 
 Before you go any further, I highly recommend you read the [Manual of Style](https://github.com/CleverRaven/Cataclysm-DDA/blob/master/doc/MANUAL_OF_STYLE.md), the [Guide to adding new content to CDDA for first time contributors](https://github.com/CleverRaven/Cataclysm-DDA/wiki/Guide-to-adding-new-content-to-CDDA-for-first-time-contributors), and the [JSON Style Guide](https://github.com/CleverRaven/Cataclysm-DDA/blob/master/doc/JSON_STYLE.md). These three documents provide necessary knowledge to understand CDDA's code.
