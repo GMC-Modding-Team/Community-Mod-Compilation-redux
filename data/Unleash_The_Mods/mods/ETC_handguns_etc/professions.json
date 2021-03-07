@@ -2,6 +2,28 @@
   {
     "type": "item_group",
     "subtype": "collection",
+    "id": "army_mags_m2010_ext",
+    "entries": [
+      { "item": "smc300mag", "ammo-item": "300_winmag", "charges": 10 },
+      { "item": "smc300mag", "ammo-item": "300_winmag", "charges": 10 },
+      { "item": "smc300mag", "ammo-item": "300_winmag", "charges": 10 },
+      { "item": "smc300mag", "ammo-item": "300_winmag", "charges": 10 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "collection",
+    "id": "ocgl_cybercop2_mags",
+    "entries": [
+      { "item": "glockbigmag", "ammo-item": "9mmP", "charges": 30 },
+      { "item": "glockbigmag", "ammo-item": "9mmP", "charges": 30 },
+      { "item": "glockbigmag", "ammo-item": "9mmP", "charges": 30 },
+      { "item": "glockbigmag", "ammo-item": "9mmP", "charges": 30 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "collection",
     "id": "bandolier_shotgun_flech",
     "entries": [ { "item": "shot_flechette", "charges": 12 } ]
   },
@@ -66,6 +88,12 @@
   {
     "type": "item_group",
     "subtype": "collection",
+    "id": "rivtech_kill_it_with_fire1",
+    "entries": [ { "item": "rm4502", "charges": 2000 } ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "collection",
     "id": "silent_deel",
     "entries": [ { "item": "etc_deel", "ammo-item": "9etcsap", "charges": 10, "contents-item": "suppressor_compact" } ]
   },
@@ -87,6 +115,102 @@
     "subtype": "collection",
     "id": "v29_sharpshooter",
     "entries": [ { "item": "v29", "contents-item": [ "high_density_capacitor", "pistol_scope", "rail_laser_sight", "laser_sight" ] } ]
+  },
+  {
+    "type": "profession",
+    "id": "bionic_cop",
+    "copy-from": "bionic_cop",
+    "items": {
+      "both": {
+        "items": [
+          "tac_fullhelmet",
+          "police_belt",
+          "pants_cargo",
+          "under_armor",
+          "socks",
+          "boots",
+          "badge_cybercop",
+          "smart_phone",
+          "wristwatch"
+        ],
+        "entries": [
+          { "group": "charged_two_way_radio" },
+          { "item": "ocgl_923", "ammo-item": "9mmP", "charges": 30, "container-item": "holster" },
+          { "item": "tacvest", "contents-group": "ocgl_cybercop2_mags" }
+        ]
+      },
+      "male": [ "boxer_shorts" ],
+      "female": [ "sports_bra", "boxer_shorts" ]
+    }
+  },
+  {
+    "type": "profession",
+    "id": "sniper_police",
+    "copy-from": "sniper_police",
+    "items": {
+      "both": {
+        "items": [
+          "socks",
+          "pants_army",
+          "police_belt",
+          "sheriffshirt",
+          "sweatshirt",
+          "sneakers",
+          "gloves_tactical",
+          "glasses_bal",
+          "hat_ball",
+          "badge_deputy",
+          "wristwatch",
+          "powered_earmuffs",
+          "tacvest"
+        ],
+        "entries": [
+          { "group": "charged_two_way_radio" },
+          { "item": "ocg_smc308", "ammo-item": "762_51", "charges": 4, "container-item": "XL_holster" },
+          { "item": "smc308_tubeloader", "ammo-item": "762_51", "charges": 4 },
+          { "item": "smc308_tubeloader", "ammo-item": "762_51", "charges": 4 },
+          { "item": "762_51", "charges": 80 },
+          { "item": "M24", "ammo-item": "762_51", "charges": 5, "container-item": "back_holster" }
+        ]
+      },
+      "male": [ "boxer_shorts" ],
+      "female": [ "bra", "boy_shorts" ]
+    }
+  },
+  {
+    "type": "profession",
+    "id": "bio_soldier",
+    "copy-from": "bio_soldier",
+    "items": {
+      "both": {
+        "items": [
+          "winter_pants_army",
+          "winter_jacket_army",
+          "winter_gloves_army",
+          "mask_ski",
+          "tac_helmet",
+          "socks",
+          "boots_combat",
+          "wristwatch"
+        ],
+        "entries": [
+          { "group": "charged_two_way_radio" },
+          { "item": "ear_plugs", "custom-flags": [ "no_auto_equip" ] },
+          { "item": "sheath", "contents-item": "knife_combat" },
+          { "item": "ocgl_smc223", "charges": 20, "container-item": "XL_holster" },
+          { "item": "stanag20", "charges": 20 },
+          {
+            "item": "h&k416a5",
+            "ammo-item": "556",
+            "charges": 30,
+            "contents-item": [ "shoulder_strap", "acog_scope" ]
+          },
+          { "item": "modularvestceramic", "contents-group": "army_mags_m4" }
+        ]
+      },
+      "male": [ "boxer_shorts" ],
+      "female": [ "sports_bra", "boxer_shorts" ]
+    }
   },
   {
     "type": "profession",
@@ -138,12 +262,58 @@
   },
   {
     "type": "profession",
+    "id": "bio_sniper",
+    "copy-from": "bio_sniper",
+    "items": {
+      "both": {
+        "items": [
+          "winter_pants_army",
+          "army_top",
+          "winter_jacket_army",
+          "gloves_tactical",
+          "rucksack",
+          "cloak",
+          "mask_ski",
+          "socks",
+          "boots_combat",
+          "canteen",
+          "wristwatch",
+          "tent_kit",
+          "rollmat",
+          "e_tool",
+          "knife_hunting"
+        ],
+        "entries": [
+          { "item": "medium_plus_battery_cell", "ammo-item": "battery", "charges": 600, "container-item": "mil_mess_kit" },
+          { "group": "charged_two_way_radio" },
+          { "item": "ear_plugs", "custom-flags": [ "no_auto_equip" ] },
+          { "item": "hat_boonie", "custom-flags": [ "no_auto_equip" ] },
+          {
+            "item": "m2010",
+            "ammo-item": "300_winmag",
+            "charges": 10,
+            "contents-item": [ "shoulder_strap", "rifle_scope", "bipod" ]
+          },
+          { "item": "ocg_smc300", "ammo-item": "300_winmag", "charges": 5, "container-item": "XL_holster" },
+          { "item": "m2010mag", "ammo-item": "300_winmag", "charges": 5, "container-item": "legpouch" },
+          { "item": "m2010mag", "ammo-item": "300_winmag", "charges": 5, "container-item": "legpouch" },
+          { "item": "300_winmag", "charges": 50 },
+          { "item": "tacvest", "contents-group": [ "army_mags_m2010_ext" ] }
+        ]
+      },
+      "male": [ "boxer_shorts" ],
+      "female": [ "sports_bra", "boxer_shorts" ]
+    }
+  },
+  {
+    "type": "profession",
     "id": "omnicorp_exec",
     "name": "OmniCorp Executive",
     "description": "You were a VIP at OmniCorp attending a formal party when one of the guests tore the face of another executive off. You survived, used your status to \"borrow\" some useful products and are determined to not give up.",
     "points": 8,
-    "//": "Mostly useless skills but very useful starting tools, two relatively silent guns, a spare sidearm for common 9mm rounds, good accessories and rare subsonic bullets.",
+    "//": "Mostly useless skills but very useful starting tools, two relatively silent guns, a spare sidearm for common 9mm rounds, good accessories and rare subsonic bullets. And now a vehicle with a an acid cannon too.",
     "skills": [ { "level": 7, "name": "barter" }, { "level": 5, "name": "speech" } ],
+    "vehicle": "car_omnicorp",
     "items": {
       "both": {
         "items": [ "briefcase", "knit_scarf", "diveknife", "multitool", "1st_aid", "red_dot_sight", "energy_drink", "aspirin" ],
@@ -169,8 +339,7 @@
         "items": [ "barrette_pick", "bra", "tights", "gown", "long_glove_white", "silver_ear" ],
         "entries": [ { "item": "heels", "custom-flags": "no_auto_equip" } ]
       }
-    },
-    "//": "The red dot sight starts detached from the QR555 to allow STR 8 characters to wield it one-handed until a better means of storage than the starting briefcase is found."
+    }
   },
   {
     "type": "profession",
@@ -180,6 +349,7 @@
     "description": "You were a VIP at Rivtech attending a formal party when one of the guests tore the face of another executive off. You survived, used your status to \"borrow\" some useful products and are determined to not give up.",
     "points": 8,
     "skills": [ { "level": 7, "name": "barter" }, { "level": 5, "name": "speech" } ],
+    "vehicle": "suv_rivtech",
     "items": {
       "both": {
         "items": [
@@ -223,9 +393,10 @@
     "id": "leadworks_exec",
     "name": "Leadworks Executive",
     "description": "You were a VIP at Leadworks who survived its downsizing and ongoing incorporation within OmniCorp, attending a formal party when one of the guests tore the face of another executive off. You survived once again, used your status to \"borrow\" some of the newest post-merger products and are determined to not give up.",
-    "//": "Could have just deleted this or something, but instead went with another approach.",
+    "//": "Could have just deleted this or something, but instead went with another approach. Now also includes a proto-deathmobile with front shredders already installed.",
     "points": 8,
     "skills": [ { "level": 7, "name": "barter" }, { "level": 5, "name": "speech" } ],
+    "vehicle": "suv_leadworks",
     "items": {
       "both": {
         "items": [
@@ -242,14 +413,15 @@
         "entries": [
           { "item": "smart_phone", "charges": 120 },
           {
-            "item": "ocgl_12c_stormbolter",
-            "ammo-item": "shot_flechette",
-            "charges": 4,
-            "contents-item": "shoulder_strap"
+            "item": "ocgl_combox912",
+            "ammo-item": "9mmP2",
+            "charges": 30,
+            "contents-item": [ "shoulder_strap", "light_grip" ]
           },
+          { "item": "shot_flechette", "charges": 4 },
           { "item": "bandolier_shotgun", "contents-group": "bandolier_swat_cqc2" },
           { "item": "bandolier_shotgun", "contents-group": "bandolier_shotgun_flech" },
-          { "item": "ocgl_923", "ammo-item": "9mmP2", "charges": 30, "container-item": "holster" },
+          { "item": "glockbigmag", "ammo-item": "9mmP2", "charges": 30, "container-item": "legpouch_large" },
           { "item": "glockbigmag", "ammo-item": "9mmP2", "charges": 30, "container-item": "legpouch_large" },
           { "item": "ocgl_quad9", "ammo-item": "9mmP2", "charges": 4, "container-item": "bootstrap" },
           { "item": "ocgl_t9", "ammo-item": "9mmP2", "charges": 9, "container-item": "bootstrap" },
@@ -276,6 +448,7 @@
     "points": 9,
     "//": "It might look like an absolutely OP start, but these energy guns consume a lot of power and will drain that UPS dry very quickly considering the average density of zombies and other monsters in the game.",
     "skills": [ { "level": 7, "name": "barter" }, { "level": 5, "name": "speech" } ],
+    "vehicle": "suv_aeriallabs",
     "items": {
       "both": {
         "items": [ "briefcase", "knit_scarf", "knife_swissarmy", "picklocks", "energy_drink", "aspirin" ],
@@ -313,6 +486,7 @@
       { "level": 5, "name": "speech" },
       { "level": 4, "name": "barter" }
     ],
+    "vehicle": "car_spymaster",
     "//": "Wide array of guns with one fit for almost every situation, but like the execs, no combat skills. Instead, great starting skills for talking, bribing, hacking or lockpicking a way in then out as expected from such background.",
     "items": {
       "both": {
@@ -355,6 +529,82 @@
       },
       "male": [ "briefs", "socks", "tieclip_pick", "tie_skinny", "pants_leather", "dress_shoes", "sf_watch" ],
       "female": [ "barrette_pick", "bra", "tights", "thigh_high_boots", "skirt", "garnet_gold_earring" ]
+    }
+  },
+  {
+    "type": "profession",
+    "id": "ocg_doom",
+    "name": { "male": "Doomed Marine", "female": "Alice McGee" },
+    "//": "Different starting weapons to reflect one of the two games this refers to being more focused on melee action than the other. The Marine arsenal is a close match except the plasma shotgun is not a BFG9k. And of course a pet rabbit.",
+    "description": "You are packing... a lot of weaponry. Through the depths of Hell or down the rabbit hole, neither spider mastermind or queen of hearts could stop you. After crossing a portal, there is more slaughter ahead. Such is life in the Wonderland.",
+    "points": 10,
+    "skills": [ { "level": 4, "name": "gun" }, { "level": 4, "name": "melee" } ],
+    "traits": [ "KILLER", "SCHIZOPHRENIC" ],
+    "pets": [ { "name": "mon_rabbit", "amount": 1 } ],
+    "items": {
+      "both": {
+        "items": [ "diveknife", "matches", "rx12_injector", "rx11_stimpack", "multitool" ],
+        "entries": [
+          { "item": "bandolier_shotgun", "contents-group": "bandolier_swat_cqc1" },
+          { "item": "shot_00", "charges": 50 },
+          { "item": "10mm", "charges": 200 },
+          { "item": "UPS_off", "contents-group": "charged_ups_highcap" },
+          { "item": "XL_holster", "contents-group": "exotic_shotgun_prototype" },
+          { "item": "ocg_id10", "ammo-item": "10mm", "charges": 6, "container-item": "bootstrap" },
+          { "item": "powered_earmuffs", "charges": 200, "contents-item": "battery_ups" }
+        ]
+      },
+      "male": {
+        "items": [
+          "nomex_suit",
+          "nomex_socks",
+          "nomex_gloves",
+          "gloves_tactical",
+          "knuckle_brass",
+          "boots_combat",
+          "lsurvivor_armor",
+          "pants_army",
+          "tac_fullhelmet",
+          "molle_pack"
+        ],
+        "entries": [
+          { "item": "combatsaw_off", "charges": 450 },
+          { "item": "ocg_id10mag", "ammo-item": "10mm", "charges": 6, "container-item": "legpouch" },
+          { "item": "belt10mm", "charges": 690 },
+          { "item": "ocg_n10chaingun", "charges": 0, "custom-flags": [ "auto_wield" ] },
+          { "item": "84x246mm_he", "charges": 2 },
+          { "item": "m3_carlgustav", "charges": 1 },
+          { "item": "plasma_rifle", "charges": 25, "container-item": "survivor_vest" },
+          { "item": "ocg_plasma_shotgun", "charges": 5 }
+        ]
+      },
+      "female": {
+        "items": [
+          "bra",
+          "panties",
+          "socks",
+          "scissors",
+          "deck_of_cards",
+          "shillelagh_weighted",
+          "dress_shoes",
+          "back_holster",
+          "legrig",
+          "legrig",
+          "fanny",
+          "grenade_inc",
+          "dress",
+          "long_glove_white",
+          "barrette"
+        ],
+        "entries": [
+          { "item": "plasma", "charges": 2 },
+          { "item": "ocg_xnu_laser", "charges": 4000, "custom-flags": [ "auto_wield" ] },
+          { "item": "creepy_doll", "contents-group": "charged_earmuffs_highcap" },
+          { "item": "scabbard", "contents-group": "poor_mans_chainsword" },
+          { "item": "knife_combat", "container-item": "bootsheath" },
+          { "item": "survivor_machete", "container-item": "survivor_belt_notools" }
+        ]
+      }
     }
   }
 ]
