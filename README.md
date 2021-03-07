@@ -1,14 +1,20 @@
-# **TheGoatGod's Mod Compilation**
-
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**
 
-- [Description](#Description)
+- [**TheGoatGod's Mod Compilation**](#thegoatgods-mod-compilation)
+- [Description](#description)
 - [Road map](#road-map)
+
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-<!-- https://shields.io/category/build // for updating badges -->
+# **TheGoatGod's Mod Compilation**
+
+**Table of Contents**
+
+- [Description](#Description)
+- [Road map](#road-map)
+
 [![Build_Number](https://img.shields.io/badge/CDDA_Build%3A-%2311458-blue)](https://github.com/CleverRaven/Cataclysm-DDA)
 [![version](https://img.shields.io/badge/GMC_version-0.1.6-blue)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/releases/tag/v0.1.6)
 [![Total_lines](https://img.shields.io/tokei/lines/github/GMC-Modding-Team/Community-Mod-Compilation-redux)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/graphs/code-frequency)
@@ -19,11 +25,12 @@
 [![Closed_Issues](https://img.shields.io/github/issues-closed-raw/GMC-Modding-Team/Community-Mod-Compilation-redux)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues?q=is%3Aissue+is%3Aclosed)
 [![Open_PR](https://img.shields.io/github/issues-pr-raw/GMC-Modding-Team/Community-Mod-Compilation-redux)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pulls)
 [![Closed_PR](https://img.shields.io/github/issues-pr-closed-raw/GMC-Modding-Team/Community-Mod-Compilation-redux)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pulls?q=is%3Apr+is%3Aclosed)
-[![Contributors_Status](https://img.shields.io/github/contributors-anon/GMC-Modding-Team/Community-Mod-Compilation-redux)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/graphs/contributors)\
-[![JSON_Style_Check](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/workflows/JSON%20style%20check/badge.svg)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions?query=workflow%3A%22JSON+style+check%22)
-[![TOC_Generator](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/workflows/TOC%20Generator/badge.svg)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions?query=workflow%3A%22TOC+Generator%22)
-[![Flake8_Python_Linting](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/workflows/Flake8%20Python%20linting/badge.svg)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions?query=workflow%3A%22Flake8+Python+linting%22)
-<a href="https://gitlocalize.com/repo/5745/whole_project?utm_source=badge"> <img src="https://gitlocalize.com/repo/5745/whole_project/badge.svg" /> </a>
+[![Contributors_Status](https://img.shields.io/github/contributors-anon/GMC-Modding-Team/Community-Mod-Compilation-redux)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/graphs/contributors)
+<a href="https://gitlocalize.com/repo/5745/whole_project?utm_source=badge"> <img src="https://gitlocalize.com/repo/5745/whole_project/badge.svg" /> </a>\
+[![JSON style check](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions/workflows/json_push.yml/badge.svg)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions/workflows/json_push.yml)
+[![TOC Generator](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions/workflows/toc.yml/badge.svg)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions/workflows/toc.yml)
+[![Flake8 Python linting](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions/workflows/flake8.yml/badge.svg)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions/workflows/flake8.yml)
+[![Check Markdown links](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions/workflows/Check_Markdown_links.yml/badge.svg)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions/workflows/Check_Markdown_links.yml)
 
 
 # Description
