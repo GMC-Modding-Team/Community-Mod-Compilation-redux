@@ -1,11 +1,12 @@
 # Electrothermal-chemical Handguns etc mod for Cataclysm:Dark Days Ahead
 Perhaps a bridge between electromagnetic and chemically-propelled guns, which might leave prototype stage sooner than railguns in the near future, or not.
 
-Researched as an alternative to larger tank gun calibers for defeating tank armor, something achieved through muzzle velocity above what a conventional gun could manage. Not as high as a railgun, 
-but with better energy efficiency. Likewise, these fictional guns are rare but valuable options to deal with heavily armored threats like the chicken walker, skeletal juggernaut or tank drone. It is 
-sort of like the difference between the coilgun and the nail rifle, but more drastic sometimes and with heavier recoil. Some other misc guns and items are included. 
+Researched as an alternative to larger tank gun calibers for defeating tank armor, something achieved through muzzle velocity above what a conventional gun could manage. Not as high as a railgun,
+but with better energy efficiency. Likewise, these fictional guns are rare but valuable options to deal with heavily armored threats like the kevlar hulk or skeletal juggernaut. It is
+sort of like the difference between the coilgun and the nail rifle, but more drastic sometimes and with heavier recoil. Some other misc guns and items are included.
 
-New Professions were added so you can try some of them from the very game start if you wish to and more, plus two new Scenarios and scarier shoggoths as well.
+New Professions were added and some existing ones modified, so you can try some of them from the very game start if you wish to and more, plus two new Scenarios, custom starting vehicles for most
+of these new professions and scarier shoggoths.
 
 ## Some info on this:
 
@@ -22,7 +23,7 @@ New Professions were added so you can try some of them from the very game start 
 
 * Comparatively louder than same caliber conventional firearms but most can be fitted with suppressors while some already have their own integrated suppressors.
 
-* Were developed earlier than the 12mm railgun, plasma, fusion and energy guns, thus easier to find but still rare, but not that rare.
+* Were developed earlier than the 12mm railgun, plasma and energy guns, thus easier to find but still rare, but not that rare.
 
 ### "New" ammo types
 * .22, 9mm, 5.56 and 7.62 ETC.
@@ -36,7 +37,7 @@ New Professions were added so you can try some of them from the very game start 
 
 * Among military .22 guns are several "silenced" models. Mostly found in labs, bunkers, military bases and maybe on the remnants of dead military personell.
 
-* Basic ammo types close to 5.7mm and 4.6mm conventional rounds in performance, with better armor penetration and worse stopping power.
+* Default ammo close to 5.7mm and 4.6mm conventional rounds in performance, with better armor penetration and worse stopping power.
 
 * Plasma primer cannot be separated from the casing. Requires an unused .22 ETC casing to be hand-loaded. Such can be crafted from unused .22 LR casings with high enough skills(Fabrication and Cooking lvl 5, Electronics lvl 4 and Marksmanship lvl 3).
 
@@ -52,7 +53,7 @@ New Professions were added so you can try some of them from the very game start 
 ###### 5.56x45mm
 * Guns chambered for it and ammo are found almost exclusively in labs, military bases, bunkers, or near a dead soldier if you're lucky. A line of them can be converted to several configurations, UPS-free, modified action for conventional .223 included.
 
-* "Drone-Killer" rounds: slightly lower stopping power than 5.56 NATO due to overpenetration but longer range, accuracy and drastically better armor penetration.
+* "Drone-Killer" rounds: hypervelocity rounds equivalent to 6.5 Grendel and 6.8 Remington SPC in stopping power, very accurate and amazing in armor penetration.
 
 * Subsonic Armor Piercing rounds using depleted uranium to reduce muzzle energy loss from much lower round velocity and improve penetration. Can't be hand-loaded.
 
@@ -63,7 +64,7 @@ New Professions were added so you can try some of them from the very game start 
 ###### 7.62x51mm
 * Each round is electrically charged with a very small plutonium cell where the gun action activates it and discharges its energy to the gun capacitors before firing. This is less efficient than an UPS.
 
-* Very rare and powerful caliber, perhaps will be found in labs, the odd military bunker or base. Perhaps the holy grail of handguns awaits after hundreds of irradiated wanderers too, which is: 
+* Very rare and powerful caliber, perhaps will be found in labs, the odd military bunker or base. Perhaps the holy grail of handguns awaits after hundreds of irradiated wanderers too, which is:
 
 * The 4-shooter Anti-Materiel Revolver, made as a 'sidearm' for troops in power armor. Shooting it without wearing one or being a super strong cyborg or mutant is utterly mad.
 
@@ -78,11 +79,21 @@ New Professions were added so you can try some of them from the very game start 
 
 * 9mm Baby Eel, like its ETC counterpart, it is small and lightweight enough to fit inside an ankle holster while loaded with a compact suppressor attached.
 
-* QR555 .223 modular weapon system with integrated suppressors, created to operate with new, reduced power subsonic loads for 5.56 NATO. Interchangeable with the 5.56 ETC ER555, it shares most components with it through conversion kits.
+* QR555 .223 modular weapon system with integrated suppressors, created to operate with new, reduced power subsonic loads for 5.56 NATO. Interchangeable with the 5.56 ETC ER555, it shares most components with it through conversion kits. And a 9mm SMG model.
 
 * Gauss guns. The GC166 is an endgame-tier coilgun which can shoot nails, flechettes or optimal rare magpins. The GG285 is even more powerful but its 1.06mm magnetic metal glass ammo is very rare.
 
-* 3 spawned 12 ga. Shotguns. The OCG12 Excidia, an automatic double barrel shotgun based upon the Gilboa Snake like the Saiga-12 is based upon the AK-47, its OCG12-S Scuta semi-auto variant and the 12C, kind of a double barrel Super-Shorty Mini-Shotgun. 
+* XNU near-ultraviolet laser that consumes a lot more power than the A7 laser rifle but hits harder, powered by its unique rechargeable hydrogen fuel cell instead of an UPS that can be reloaded with hydrogen canisters. One canister fully recharges it.
+
+* XE50 Ion Mace, a handheld scatter electrolaser that both stuns organics and deals EMP damage. Will bypass any armor but is useless against shocker type zombies and anything else immune to electricity, very short ranged and a huge drain on medium batteries.
+
+* X12P plasma shotgun, possibly the ultimate weapon against tightly packed hordes and it hits harder than .300 WM, but consumes 200 UPS charges per shot in addition to requiring rare hydrogen canisters.
+
+* Light Guided Weapon, a compact fire-and-forget 4-tube rocket launcher made in the same caliber as the LAW, which can be loaded 50/50 with anti-tank, white phosphorus to burn any being in its radius, or even rocket propelled nuclear grenades.
+
+* OCGES Biorifle, exclusive for the OmniCorp Executive profession. A man-portable cannon capable of shooting concentrated acid. Uses liquids from tanks if mounted on a vehicle. Not even the dystopian firemen in Fahrenheit 451 had something like this.
+
+* 3 spawned 12 ga. Shotguns. The OCG12 Excidia, an automatic double barrel shotgun based upon the Gilboa Snake like the Saiga-12 is based upon the AK-47, its OCG12-S Scuta semi-auto variant and the 12C, kind of a double barrel Super-Shorty Mini-Shotgun.
 
 * 1 non-spawned, profession-exclusive 12 ga. shotgun: The OCG12D Slam Dunk. A quite loony prototype "borrowed" from a Skunkworks by the corporate spymaster that can only slam fire - works like a bow in game, with loading and firing combined as a single move.
 
@@ -90,26 +101,52 @@ New Professions were added so you can try some of them from the very game start 
 
 * 3 10mm Auto guns also compatible with .40 S&W: a rotary submachinegun, a 6-round backup pistol and a carbine PDW.
 
+* A .357 magnum hand cannon also incredibly compatible with .357 SIG and .38, the American Eagle .357, and its rifle counterpart: the American Bear .357. These guns are subtle like a monster truck.
+
+* Special Sniper Rifle .300 BLK "Wisp", sort of like a VSS Vintorez of the West.
+
 * Some Leadworks guns that were scrapped in mainline and not completely redundant got reimagined, from the "Lookout" as a 9mm 4 barrel derringer that fires everything at once among others. See Changelog for more details.
 
 ## Other ammo
 * Subsonic loads for 5.56 NATO: .223 OCG Umbra and 5.56 OCG Noctis. They don't use a larger diameter like .300 Whisper/AAC Blackout but use tungsten and uranium respectively to pack more mass into the same volume and mitigate muzzle energy loss.
 
+* Craftable subsonic hand load imitation of .223 OCG Umbra. Very low powered, weaker than 9mm JHP yet a bit better than the real 5.45x39mm 7U1 would be if added to the game without deviating too much from balance guidelines.
+
 * Some custom 12 gauge magnum handloads reusing tungsten or depleted uranium projectiles extracted from previously mentioned rounds for increased armor penetration.
 
 * New flechette and door-breaching loads for .410 shot.
 
-* More STANAG compatible magazines. Can be used with all 5.56 NATO guns featured in vanilla (as of now) and naturally with the QR555 guns as well.
+* 5.56 ETC magazines are STANAG compatible. Can be used with all 5.56 NATO guns featured in vanilla (as of now) and naturally with the QR555 guns as well.
 
 ## Other stuff
 * New scenarios: Hostile Takeover, a start in the middle of an Office Tower with an upper floor Lab, surrounded by zombies. The Vault Newcomer challenge happens in a very special and dangerous location and is exclusive for the new professions.
 
 * The Chainsword, which is a very expensive and glorified electric carver with diamond serrated edges, a genuine weapon using far more advanced technology than what was employed the last time serious research and development of swords was a thing.
 
+* Nuclear grenade. Fusion-boosted fission. 10 grams of uranium-233, very tiny amount of deuterium and tritium. 94.8 tons blast. Not designed in a certain hard sci-fi videogame like the coilguns. WARNING: Never field tested as a hand grenade.
+
+* Some of the new guns can be installed in vehicle turret mounts.
+
 * New professions: Aerial Labs, Leadworks, OmniCorp and Rivtech Executives, who start with some gear from their respective companies(reimagined in the case of the Leadworks one) and Corporate Spymaster, who starts with a mix of gear from all of them.
 
+* New exclusive custom starting vehicles for the professions above, from a sports car with a .22 ETC minigun to a modified luxury SUV with a steam engine and superalloy rams.
+
 * Now also in: Gunslinger of the Future, another new profession that is all set to hand load ETC rounds as soon as a hand press among other tools are scavenged, armed with one 9mm ETC revolver and one .45 Colt and .410 shot backup one.
+
+* Edited a few vanilla professions to include some of the new guns when appropriate. Bionic Police officer in particular got something closer to the Leadworks not Beretta 93R.
+
+* For !FUN! only: Doomed Marine/Alice McGee profession. Starts with a pet rabbit, Killer Drive and Psychosis traits and an absurd starting arsenal for both. Mostly matching replica of Alice's melee arsenal not yet included. Not tested with PK's Doom mod.
 
 * Increased shoggoth's HP pool to 1500 hit points and doubled its natural armor while giving it the same cut and bash resistance(60). Delete mountains_of_madness.json if you'd rather have easier shoggoths.
 
 * A locksmith set disguised as barrette plus another one disguised as tie clip. And atomic Irish coffee plus recipe, which is just Irish coffee with the power of the atom.
+
+* Battery tool mods can be activated to be "switched" into gun mods for the loading port. The XNU Laser Rifle and XE50 Ion Mace support the installation of such gun mods.
+
+## Optional Extras in the modmods folder
+
+* 4.6mm to 4.73mm caseless and H&K G11 override minimod. Alternate history goodness where 4.6mm was never invented and the G11 saw use among special forces. Replaces OTL MP7 with stronger 4.73mm version and re-adds the UCP as caseless hand cannon.
+
+* Optional modinception - that minimod has its own setting that replaces all 8x40mm Rivtech guns, magazines and ammo with 4.73x33mm caseless. Extract the zipped file to enable, then rename the .json to .txt or something to switch it on/off.
+
+* SFX settings for @'s soundpack. Extract it if you have the soundpack installed.
