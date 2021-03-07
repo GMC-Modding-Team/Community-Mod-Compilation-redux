@@ -24,7 +24,7 @@
 [![JSON style check](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions/workflows/json_push.yml/badge.svg)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions/workflows/json_push.yml)
 [![TOC Generator](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions/workflows/toc.yml/badge.svg)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions/workflows/toc.yml)
 [![Flake8 Python linting](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions/workflows/flake8.yml/badge.svg)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions/workflows/flake8.yml)
-[![Check Markdown links](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions/workflows/Check_Markdown_links.yml/badge.svg)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions/workflows/Check_Markdown_links.yml)\
+[![Check Markdown links](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions/workflows/Check_Markdown_links.yml/badge.svg)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions/workflows/Check_Markdown_links.yml)
 
 
 # Description
