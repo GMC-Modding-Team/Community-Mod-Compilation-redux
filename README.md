@@ -1,14 +1,20 @@
-# **TheGoatGod's Mod Compilation**
-
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**
 
-- [Description](#Description)
+- [**TheGoatGod's Mod Compilation**](#thegoatgods-mod-compilation)
+- [Description](#description)
 - [Road map](#road-map)
+
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-<!-- https://shields.io/category/build // for updating badges -->
+# **TheGoatGod's Mod Compilation**
+
+**Table of Contents**
+
+- [Description](#Description)
+- [Road map](#road-map)
+
 [![Build_Number](https://img.shields.io/badge/CDDA_Build%3A-%2311458-blue)](https://github.com/CleverRaven/Cataclysm-DDA)
 [![version](https://img.shields.io/badge/GMC_version-0.1.6-blue)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/releases/tag/v0.1.6)
 [![Total_lines](https://img.shields.io/tokei/lines/github/GMC-Modding-Team/Community-Mod-Compilation-redux)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/graphs/code-frequency)
