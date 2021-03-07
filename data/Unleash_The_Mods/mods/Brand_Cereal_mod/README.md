@@ -17,31 +17,40 @@
 
 ## To-do
 
-#### Part 1
+## **Part 1** First instance
+- [ ] First instance and abstracts
+  - [x] Add extra cereal recipes
+  - [x] Add Cereal
+  - [x] Add Drinks
+  - [x] Add Cereal bars
+  - [x] Add Granola
+  - [x] Add Porridge
+  - [x] Add Porridge pots
+  - [ ]  Add Pop tarts
 
-  [x] - add more [Cereal](#cereal)
-  [x] - add more [Cereal bars](#cereal_bars)
-  [x] - add more [Cereal Drinks](#cereal_drinks)
-  [x] - add more [Granola](#granola)
-  [x] - add more [Porridge](#Porridge)
-  [x] - add more [Porridge pots](#Porridge_pots)
-  [x] - create abstract for [Cereal](#cereal)
-  [x] - create cereal boxs [Cereal](#cereal)
-  [x] - implement [Cereal](#cereal)
-  [x] - create abstract for [Cereal Bars](#cereal_bars)
-  [x] - implement [Cereal Bars](#cereal_bars)
-  [x] - create abstract for [Cereal Drinks](#drinks)
-  [x] - implement [Cereal Drinks](#drinks)
-  [x] - create abstract for [Granola](#granola)
-  [x] - implement [Granola](#granola)
-  [x] - create abstract for [Porridge](#porridge)
-  [x] - implement [Porridge](#porridge)
-  [x] - create abstract for [Porridge pots](#porridge_pots)
-  [x] - create porridge pots [Porridge pots](#porridge_pots)
-  [x] - implement [Porridge pots](#porridge_pots)
-  [ ] - create abstract for [Pop tarts](#pop_tarts)
-  [ ] - create porridge pots [Pop tarts](#pop_tarts)
-  [ ] - implement [Pop tarts](#pop_tarts)
+## **Part 2** Making things unique
+- [ ] Add more code to individual items
+  - [ ] Add better descriptions
+  - [ ] Fix weight and volume
+  - [ ] Better postapoc_price and price
+  - [ ] Improve fun (most likely a lesser value)
+- [ ] Better abstracts
+  - [ ] Better values for all
+
+## **Part 3** Finishing touches
+- [ ] Add a way to make cereal less abstracted on result
+  - [ ] Add other types of food that can be added to Breakfast (Comestibles like nuts, fruit ect.. on to the recipe)
+  - [ ] Add Comestibles
+  - [ ] Make new recipes for adding fruit or nuts
+- [ ] Add a way to add water/milk to porridge and requiring a container (recipes, more)
+  - [ ] Add Salted and sugar recipe
+  - [ ] Add Standalone salt and sugar recipe
+  - [ ] Add plain variant
+- [ ] Write a new `readme.md` before merge
+  - [ ] Explain the mod
+  - [ ] add new content
+- [ ] Rename mod
+
 
 ## Cereal
 
