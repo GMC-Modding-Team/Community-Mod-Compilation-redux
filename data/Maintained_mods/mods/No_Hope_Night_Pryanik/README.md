@@ -31,8 +31,6 @@ Despite I'm standing for realism side in "realism vs. gamism" debate in vanilla,
 
 - Made zombies don't revive by default. Reviving has some serious issues that can't be easy fixed, so until these issues are to be resolved, I'm disabling zombie resurrection in my mod.
 
-- Made zombies don't bleed. Zombies' hearts ain't pumping blood, so there shouldn't be any blood loss.
-
 - Removed all one-tile puddles of infinite water in all forest types.
 
 - Made all gas stations have 0 - 5000 units of fuel instead of vanilla 40000 - 50000 units. Also made almost all locations in mapgen have the same 0 - 5000 units of fuel, including avgas. Also made almost all cars have zero fuel. There are places and cars where you could still find fuel, they are just very rare.
