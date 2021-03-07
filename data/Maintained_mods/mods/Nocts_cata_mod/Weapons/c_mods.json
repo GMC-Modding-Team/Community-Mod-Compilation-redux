@@ -8,7 +8,6 @@
     "volume": "1 L",
     "price": "850 USD",
     "price_postapoc": "850 cent",
-    "install_time": "30 m",
     "material": [ "steel" ],
     "dispersion_modifier": 10,
     "symbol": ":",
@@ -23,10 +22,20 @@
       "range": 2,
       "durability": 7,
       "reload": 500,
-      "clip_size": 250
+      "clip_size": 250,
+      "ammo_to_fire": 50
     },
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE",
+        "rigid": true,
+        "watertight": true,
+        "ammo_restriction": { "diesel": 250, "gasoline": 250, "flammable": 250, "lamp_oil": 250, "motor_oil": 250, "jp8": 250, "avgas": 250 }
+      }
+    ],
     "min_skills": [ [ "weapon", 2 ], [ "launcher", 1 ] ],
-    "flags": [ "STR_RELOAD", "PUMP_RAIL_COMPATIBLE", "NON_FOULING" ]
+    "install_time": "30 m",
+    "flags": [ "STR_RELOAD", "PUMP_RAIL_COMPATIBLE", "NON-FOULING" ]
   },
   {
     "type": "GUNMOD",
@@ -50,13 +59,14 @@
     "gun_data": {
       "skill": "pistol",
       "ammo": [ "22" ],
-      "ranged_damage": { "damage_type": "stab", "amount": -1 },
+      "ranged_damage": { "damage_type": "bullet", "amount": -1 },
       "dispersion": 530,
       "min_cycle_recoil": 39,
       "durability": 6,
       "reload": 200
     },
     "min_skills": [ [ "weapon", 2 ], [ "pistol", 1 ] ],
+    "install_time": "20 m",
     "pocket_data": [
       {
         "magazine_well": "250 ml",
@@ -80,7 +90,6 @@
     "to_hit": -2,
     "price": "120 USD",
     "price_postapoc": "12 USD",
-    "install_time": "30 m",
     "description": "A common 9x19mm semi-automatic pistol, modified to attach to another firearm under the barrel at the expense of the base weapon's handling.  Its magazine well has been permanently, almost crudely altered to allow it to use various magazines from similar weapons, at the expense of accuracy and ease of reloading, plus its purpose makes some high-capacity magazines unusable.",
     "symbol": ":",
     "material": [ "steel", "plastic" ],
@@ -88,14 +97,15 @@
     "bashing": 8,
     "gun_data": {
       "skill": "pistol",
-      "ammo": [ "9mm" ],
-      "ranged_damage": { "damage_type": "stab", "amount": -1 },
+      "ammo": "9mm",
+      "ranged_damage": { "damage_type": "bullet", "amount": -1 },
       "dispersion": 530,
       "min_cycle_recoil": 450,
       "durability": 5,
       "reload": 200
     },
     "min_skills": [ [ "weapon", 2 ], [ "pistol", 1 ] ],
+    "install_time": "20 m",
     "pocket_data": [
       {
         "magazine_well": "250 ml",
@@ -119,7 +129,6 @@
     "to_hit": -2,
     "price": "120 USD",
     "price_postapoc": "12 USD",
-    "install_time": "30 m",
     "description": "A common .45 ACP semi-automatic pistol, modified to attach to another firearm under the barrel at the expense of the base weapon's handling.  Its magazine well has been permanently, almost crudely altered to allow it to use various magazines from similar weapons, at the expense of accuracy and ease of reloading.",
     "symbol": ":",
     "material": [ "steel", "plastic" ],
@@ -128,13 +137,14 @@
     "gun_data": {
       "skill": "pistol",
       "ammo": [ "45" ],
-      "ranged_damage": { "damage_type": "stab", "amount": -1 },
+      "ranged_damage": { "damage_type": "bullet", "amount": -1 },
       "dispersion": 530,
       "min_cycle_recoil": 540,
       "durability": 6,
       "reload": 200
     },
     "min_skills": [ [ "weapon", 2 ], [ "pistol", 1 ] ],
+    "install_time": "20 m",
     "pocket_data": [
       {
         "magazine_well": "250 ml",
@@ -188,5 +198,30 @@
     "install_time": "20 m",
     "min_skills": [ [ "weapon", 2 ], [ "gun", 1 ] ],
     "flags": [ "DISABLE_SIGHTS" ]
+  },
+  {
+    "id": "shot_crafted_suppressor",
+    "type": "GUNMOD",
+    "name": { "str": "makeshift shotgun suppressor" },
+    "description": "A homemade suppressor made from a pipe and improvised baffles.  It's a lot more complex than a suppressor for a pistol or rifle, and will deteriorate quickly with use.  This suppressor is large and, when attached, will interfere with your ability to aim down the base sights of the gun.",
+    "weight": "920 g",
+    "volume": "750 ml",
+    "price": 900,
+    "price_postapoc": 350,
+    "install_time": "30 s",
+    "to_hit": 1,
+    "bashing": 3,
+    "material": [ "steel" ],
+    "symbol": ":",
+    "color": "dark_gray",
+    "location": "muzzle",
+    "mod_targets": [ "shotgun" ],
+    "consume_chance": 15,
+    "consume_divisor": 80,
+    "damage_modifier": { "damage_type": "bullet", "amount": -5 },
+    "dispersion_modifier": 40,
+    "handling_modifier": 2,
+    "loudness_modifier": -20,
+    "flags": [ "DISABLE_SIGHTS", "CONSUMABLE" ]
   }
 ]
