@@ -4,7 +4,7 @@
 
 - [**TheGoatGod's Mod Compilation**](#thegoatgods-mod-compilation)
 - [Description](#description)
-- [Road map](#road-map)  
+- [Road map](#road-map)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
