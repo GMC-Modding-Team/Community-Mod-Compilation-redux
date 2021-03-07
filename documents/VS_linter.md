@@ -3,14 +3,12 @@
 Use the `home` key to get to the top.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 **Table of Contents**
 
 * [Setup](#setup)
 
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 ## Setup
 
@@ -49,3 +47,4 @@ commands to format all of the JSON in the project.
    * enter `Set-ExecutionPolicy -Scope CurrentUser` 
    * And enter `remotesigned`
 
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
