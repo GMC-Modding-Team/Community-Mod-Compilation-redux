@@ -3,15 +3,14 @@
 
 Use the `home` key to get to the top.
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**
 
 - [Vanilla Locations](#vanilla-locations)
 - [Modded locations and new times](#Modded-locations-and-new-times)
 - [Others](#Others)
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
----
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 # Vanilla locations
 
 
@@ -114,3 +113,5 @@ launchers - "install_time": "15 m",`
 ```
 
 ---
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
