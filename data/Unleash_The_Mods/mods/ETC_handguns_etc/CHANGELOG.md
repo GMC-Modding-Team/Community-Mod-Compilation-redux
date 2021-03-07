@@ -1,55 +1,54 @@
-# Release 3 - Feb/2021 for Bright Nights
-
-## Hotfix 1
-
-- Added BLIND_EASY flag to "disassembly" recipes for recharging the XNU laser hydrogen fuel cells so it can be done in the dark.
-
-- Removed NO_UNLOAD flag from XNU laser after finding out a battery loaded as magazine in a gun cannot be recharged by a vehicle recharging station or battery charger.
+# Release 4 - Mar/2021 for Bright Nights
 
 ## JSON fixes and compatibility
 
-- Fixed extension of compatibility for new .223 STANAG magazines to vanilla guns and included a few missed ones like the M16A4, handmade carbine and AR "pistols".
+- Fixed switchable battery tool or loading port gun mods to be truly irremovable once installed in a gun.
 
-- Decreased mass of superalloy 30-round STANAG and 5.56 ETC magazines to make them somewhat lighter than the the steel STANAG one as stated in description.
+- Fixed range modifier for SMC223.
 
-- Fixed missing armor penetration bonuses to overcharged electrothermal guns (Nanogun, Anti-Drone Revolver and ER555 rifle in ADS and UDD configurations) .
+- Added lightweight replacement furniture to the Combo X912 of the Leadworks Executive so it can be wielded one-handed by a STR 8 character.
 
-- Pruned multiple "//" lines to avoid game-stopping loading errors, preserving the more relevant comments for each item as merged single lines whenever possible.
-
-- A few other small fixes.
+- Updated contents of ER555 pattern conversion packs previously using obsolete 40mm grenade ids.
 
 ## Balance
 
-- QR555 integrated suppressor no longer has a damage penalty but the base model damage modifier was altered so with integrated mods it still results in 0 (like the M16), while the carbine and SMG deal slightly more damage.
+- Changed 7.62 EC orbital to have the same armor penetration of as 7.62 ECHV, except that it is applied over only 25% of a target's armor, completely bypassing the rest.
 
-- Changed maximum range of the .223 Stockless Marksman Carbine to 18 because 11, the result from a direct copy-from range debuff of the 7.62mm version, was too little.
+- Buffed 5.56 ETC damage by 20% thus 5.56 DK now deals about as much damage as a 6.5 Grendel or 6.8 Remington SPC round would if they were added to the base game while making the advantage of 5.56 SAP over its 5.56 NATO counterpart more significant.
 
-- Added SMC223 as a sidearm for the Bionic Soldier profession, plus a spare 20-round STANAG magazine. Stored in a XL holster of course. Did not change points cost as the bionics are a much bigger deal.
+- Redefined damage and armor penetration values of ETC rounds to be calculated relative to base game ammo values through copy-from, ensuring they will automatically match any changes to game balance and adjust to any differences between BN and DDA.
 
-- Replaced the Police Sniper sidearm with a SMC308 plus two speedloaders for it and more loose 7.62x51mm rounds. A major tradeoff of magazine capacity for firepower.
+- Increased the ranges of 9mm ETC HAPM, 5.56 DK, 7.62 ECHV, 1.06mm magmg and orbital rounds to 100, 120, 125 and 200 respectively.
 
-- Replaced the Bionic Sniper sidearm with the SMC300, plus two ankle ammo pouches with M2010 ESR magazines and the bionic sniper M2010 ESR had the magazines meant for it replaced with the 10-round SMC300 ones so the starting guns remain useful a bit longer.
+- Changed armor penetration progression in non subsonic 9mm ETC ammo types to 0 - 19 - 28 - 47 and made HVHP always deal 25% more damage vs. unarmored compared to FMJ.
 
-- Replaced Glock 18C from the Bionic Police Officer with a OCG-Leadworks 923, plus 30-round magazines instead of 17-round ones to bring back the not-Robocop pistol now bigger and therefore better.
+- Removed distinction between 5.56 ETC and 5.56 NATO STANAG magazines. Now all of them, including real ones, support both ammo types in addition to .300 BLK, furthermore 5.56 ETC rifles are STANAG-compatible.
 
-- Replaced 12C Storm Bolter and 923 machine pistol from the Leadworks Executive with a Combo X912 and added an extra 30-round magazine and leg ammo pouch.
+- Adjusted dimensions or capacity of some of the new 5.56 magazines to be close enough to real ones while remaining better in volume efficiency.
 
-- Changed the used skill by vanilla AR-15 based "pistols" from rifles to handguns like in the AK-47 based Draco (this change may become redundant in future BN and/or DDA releases)
+- Fixed overpriced ETC rounds, except for 7.62mm EC. $15 per shot is still dirt cheap for something that includes a very tiny plutonium cell.
 
-- Added rifle caliber "pistols" to one more spawn list where they are appropriate. Still should be very rare regardless of this.
+- Replaced FLARE ammo effect from plasma shotgun with new and much more !FUN! WOOLYPETER_SHOT effect, which will really turn up the heat all over in the air, as expected from something with stellar temperatures.
 
-- Changed battery tool mods so they can be switched between mods for tools or loading port mods for any gun that uses batteries as ammo, except for the UPS conversion mod. Only the new XNU laser supports such battery mods as gunmods.
 
 ## New Content
 
-- QSMG-9, a bullpup, integrally suppressed 9mm submachinegun that is nothing more than a rechambered QR555 with a new receiver using MR9 DMSMG casket magazines.
+- XE50 Ion Mace, a power hungry scatter electrolaser pistol fed by medium batteries which completely ignores most armor by dealing electric damage with both stun and EMP effects, but useless vs. electric-immune foes. High DPS but weak "single" shot damage.
 
-- Combo 912, the really big modern stepbrother of the LeMat revolver, a combination of a 9mm pistol with 12 gauge underbarrel double barrel shotgun that can shoot both barrels at once. Can be "illegally" converted to a 9mm machine pistol with shotgun.
+- Light Guided Weapon, a very accurate rocket launcher with four tubes that can be loaded with two different rocket types at once, including a new white phosphorus rocket with an unique AOE and even a rocket propelled version of what is mentioned right below.
 
-- American Eagle and American Bear .357, very flexible gas-operated pistol and rifle that can use .357 magnum, .357 SIG or .38 special but are big, bulky, heavy and limited in magazine capacity.
+- Nuclear Grenade so the children of a dead Earth can make it even more dead. Unfortunately the Cataclysm happened before its field testing as a thrown grenade. Could also be set up in a RC car for the world's tiniest and most dangerous car bomb ever.
 
-- XNU near-ultraviolet laser, a very powerful energy weapon with its own rechargeable hydrogen fuel cell that uses replaceable solid hydrogen canisters. The cell recharging process is currently a bit hacky and uniquely features clean water as byproduct.
+- OCGES Biorifle, a profession-exclusive man-portable "water" cannon that is acidproof and can shoot concentrated acid instead, which type was converted from comestible to ammo for this to become possible.
 
-- X12P plasma shotgun, which instead of having explosions features a "bounce" effect(chain reaction of spontaneous combustions), making it a very powerful anti-horde gun if incinerating loot is not a problem. However, it guzzles 200 UPS charges per shot.
+- Added option to install any of the ETC and new conventional guns that can be loaded with ammo belts, the XNU laser, the coilguns, the OCGES, the Excidia automatic shotgun or the plasma shotgun into a vehicle turret mount.
 
-- Doomed Marine / Alice McGee asymmetric profession. The latter has more melee weapons while both have the Killer Drive and Psychosis traits and carry more than enough weaponry to protect or avenge the pet rabbit even when knee-deep in the dead.
+- Added unique custom starting vehicles for all the executives and corporate spymaster professions. Two sports cars and three SUVs respectively, deathmobile starter packs in skilled hands with the right tools.
+
+- Added handloaded subsonic 5.56 NATO recipes. Really weak though, better to get an American-180 and put a suppressor in it or the new gun mentioned below. Still could be useful in some what-ifs involving procedural spawns and a lot of bad luck.
+
+- SSR300 Wisp, a bulky and integrally suppressed .300 BLK gun designed to be used as sniper rifle for covert night operations, based upon the MR9SD. Direct equivalent to the VSS Vintorez.
+
+- Optional, toggleable G11 override minimod, which converts 4.6mm to 4.73mm caseless, including the MP7, and adds the H&K G11 and a 4.73mm UCP. In it there is a toggleable setting to replace all 8x40mm Rivtech guns, mags and ammo with 4.73mm too.
+
+- Included SFX configuration of the new guns for @'s soundpack in the modmods folder.
