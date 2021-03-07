@@ -39,7 +39,7 @@
 
 ## **Part 3** Finishing touches
 - [ ] Add a way to make cereal less abstracted on result
-  - [ ] Add other types of food that can be added to Breakfast (Comestibles like nuts, fruit ect.. on to the recipe)
+  - [ ] Add other types of food that can be added to Breakfast (Comestibles like nuts, fruit etc.. on to the recipe)
   - [ ] Add Comestibles
   - [ ] Make new recipes for adding fruit or nuts
 - [ ] Add a way to add water/milk to porridge and requiring a container (recipes, more)
