@@ -39,9 +39,6 @@
   [x] - create abstract for [Porridge pots](#porridge_pots)
   [x] - create porridge pots [Porridge pots](#porridge_pots)
   [x] - implement [Porridge pots](#porridge_pots)
-
-#### Part 2
-
   [ ] - create abstract for [Pop tarts](#pop_tarts)
   [ ] - create porridge pots [Pop tarts](#pop_tarts)
   [ ] - implement [Pop tarts](#pop_tarts)
