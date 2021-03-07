@@ -3,7 +3,6 @@
 
 Use the `home` key to get to the top.
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**
 
 - [How to Install - CDDA and the launcher](#how-to-install---cdda-and-the-launcher)
@@ -11,8 +10,7 @@ Use the `home` key to get to the top.
 - [How to Install - The mods - Experimental](#how-to-install---experimental)
 - [Short FAQ](#short-faq)
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
----
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 # How to Install - CDDA and the launcher
 
@@ -63,3 +61,5 @@ the `"mods"` goes to `cdda` or `cdda\"data"` folder to go  inside the mods folde
 **A:** [Goats Discord Channel](https://discord.gg/gG6qpjZ)
 
 ---
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
