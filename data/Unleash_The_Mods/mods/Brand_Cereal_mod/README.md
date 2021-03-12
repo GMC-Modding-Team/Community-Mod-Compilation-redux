@@ -27,6 +27,7 @@
   - [x] Add Porridge
   - [x] Add Porridge pots
 
+
 ## **Part 2** Making things unique
 - [ ] Add more code to individual items
   - [ ] Add better descriptions
@@ -35,6 +36,7 @@
   - [ ] Improve fun (most likely a lesser value)
 - [ ] Better abstracts
   - [ ] Better values for all
+
 
 ## **Part 3** Finishing touches
 - [ ] Add a way to make cereal less abstracted on result

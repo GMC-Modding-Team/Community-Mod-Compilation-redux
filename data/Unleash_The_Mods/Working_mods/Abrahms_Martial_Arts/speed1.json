@@ -1,12 +1,11 @@
 [
   {
     "type": "martial_art",
-    "id": "style_flatmovecost",
-    "name": { "str": "Move Cost Test 4 - Flat Bonuses" },
-    "description": "Every buff gives a movecost reduction of either -0.01 (for permanent buffs), or -1, -10, or -100 for short-term buffs. I want to see what happens when it goes below zero.",
+    "id": "style_speed1",
+    "name": { "str": "Speed Boost Test 1" },
+    "description": "Testing stacking speed buffs. Every action should give a small stacking speed bonus.",
     "initiate": [ "You brandish your weapon.", "%s gets ready to defend the realm." ],
-    "autolearn": [ [ "melee", "1" ] ],
-    "primary skill": "melee",
+    "autolearn": [ [ "cutting", "1" ] ],
     "allow_melee": true,
     "static_buffs": [
       {
@@ -17,6 +16,7 @@
         "bonus_dodges": 1,
         "bonus_blocks": 2,
         "mult_bonuses": [
+          { "stat": "speed", "scale": 1.1 },
           { "stat": "dodge", "scale": 2 },
           { "stat": "damage", "type": "cut", "scale": 3 },
           { "stat": "damage", "type": "bash", "scale": 3 },
@@ -30,7 +30,7 @@
           { "stat": "armor", "type": "heat", "scaling-stat": "str", "scale": 2 },
           { "stat": "armor", "type": "acid", "scaling-stat": "str", "scale": 2 }
         ],
-        "flat_bonuses": [ { "stat": "movecost", "scale": -10 }, { "stat": "block", "scale": 0.5 }, { "stat": "dodge", "scale": 2 } ]
+        "flat_bonuses": [ { "stat": "block", "scale": 0.5 }, { "stat": "dodge", "scale": 2 } ]
       }
     ],
     "onhit_buffs": [
@@ -42,6 +42,7 @@
         "max_stacks": 99999,
         "buff_duration": 3,
         "mult_bonuses": [
+          { "stat": "speed", "scale": 1.01 },
           { "stat": "dodge", "scale": 2 },
           { "stat": "damage", "type": "cut", "scale": 3 },
           { "stat": "damage", "type": "bash", "scale": 3 },
@@ -55,7 +56,7 @@
           { "stat": "armor", "type": "heat", "scaling-stat": "str", "scale": 2 },
           { "stat": "armor", "type": "acid", "scaling-stat": "str", "scale": 2 }
         ],
-        "flat_bonuses": [ { "stat": "movecost", "scale": -0.01 }, { "stat": "block", "scale": 0.5 }, { "stat": "dodge", "scale": 2 } ]
+        "flat_bonuses": [ { "stat": "block", "scale": 0.5 }, { "stat": "dodge", "scale": 2 } ]
       },
       {
         "id": "buff_bestdefense_onhit",
@@ -64,6 +65,7 @@
         "unarmed_allowed": true,
         "melee_allowed": true,
         "mult_bonuses": [
+          { "stat": "speed", "scale": 1.1 },
           { "stat": "dodge", "scale": 2 },
           { "stat": "damage", "type": "cut", "scale": 3 },
           { "stat": "damage", "type": "bash", "scale": 3 },
@@ -77,7 +79,7 @@
           { "stat": "armor", "type": "heat", "scaling-stat": "str", "scale": 2 },
           { "stat": "armor", "type": "acid", "scaling-stat": "str", "scale": 2 }
         ],
-        "flat_bonuses": [ { "stat": "movecost", "scale": -1 }, { "stat": "block", "scale": 0.5 }, { "stat": "dodge", "scale": 2 } ],
+        "flat_bonuses": [ { "stat": "block", "scale": 0.5 }, { "stat": "dodge", "scale": 2 } ],
         "bonus_dodges": 1,
         "bonus_blocks": 2,
         "max_stacks": 10,
@@ -92,6 +94,7 @@
         "unarmed_allowed": true,
         "melee_allowed": true,
         "mult_bonuses": [
+          { "stat": "speed", "scale": 1.1 },
           { "stat": "dodge", "scale": 2 },
           { "stat": "damage", "type": "cut", "scale": 3 },
           { "stat": "damage", "type": "bash", "scale": 3 },
@@ -105,7 +108,7 @@
           { "stat": "armor", "type": "heat", "scaling-stat": "str", "scale": 2 },
           { "stat": "armor", "type": "acid", "scaling-stat": "str", "scale": 2 }
         ],
-        "flat_bonuses": [ { "stat": "movecost", "scale": -1 }, { "stat": "block", "scale": 0.5 }, { "stat": "dodge", "scale": 2 } ],
+        "flat_bonuses": [ { "stat": "block", "scale": 0.5 }, { "stat": "dodge", "scale": 2 } ],
         "bonus_dodges": 1,
         "bonus_blocks": 2,
         "max_stacks": 10,
@@ -122,6 +125,7 @@
         "max_stacks": 99999,
         "buff_duration": 3,
         "mult_bonuses": [
+          { "stat": "speed", "scale": 1.01 },
           { "stat": "dodge", "scale": 2 },
           { "stat": "damage", "type": "cut", "scale": 3 },
           { "stat": "damage", "type": "bash", "scale": 3 },
@@ -135,7 +139,7 @@
           { "stat": "armor", "type": "heat", "scaling-stat": "str", "scale": 2 },
           { "stat": "armor", "type": "acid", "scaling-stat": "str", "scale": 2 }
         ],
-        "flat_bonuses": [ { "stat": "movecost", "scale": -0.01 }, { "stat": "block", "scale": 0.5 }, { "stat": "dodge", "scale": 2 } ]
+        "flat_bonuses": [ { "stat": "block", "scale": 0.5 }, { "stat": "dodge", "scale": 2 } ]
       }
     ],
     "onblock_buffs": [
@@ -148,6 +152,7 @@
         "max_stacks": 99999,
         "buff_duration": 4,
         "mult_bonuses": [
+          { "stat": "speed", "scale": 1.1 },
           { "stat": "dodge", "scale": 2 },
           { "stat": "damage", "type": "cut", "scale": 3 },
           { "stat": "damage", "type": "bash", "scale": 3 },
@@ -161,7 +166,7 @@
           { "stat": "armor", "type": "heat", "scaling-stat": "str", "scale": 2 },
           { "stat": "armor", "type": "acid", "scaling-stat": "str", "scale": 2 }
         ],
-        "flat_bonuses": [ { "stat": "movecost", "scale": -0.01 }, { "stat": "block", "scale": 0.5 }, { "stat": "dodge", "scale": 2 } ]
+        "flat_bonuses": [ { "stat": "block", "scale": 0.5 }, { "stat": "dodge", "scale": 2 } ]
       }
     ],
     "onpause_buffs": [
@@ -172,6 +177,7 @@
         "unarmed_allowed": true,
         "melee_allowed": true,
         "mult_bonuses": [
+          { "stat": "speed", "scale": 1.25 },
           { "stat": "dodge", "scale": 2 },
           { "stat": "damage", "type": "cut", "scale": 3 },
           { "stat": "damage", "type": "bash", "scale": 3 },
@@ -185,7 +191,7 @@
           { "stat": "armor", "type": "heat", "scaling-stat": "str", "scale": 2 },
           { "stat": "armor", "type": "acid", "scaling-stat": "str", "scale": 2 }
         ],
-        "flat_bonuses": [ { "stat": "movecost", "scale": -1 }, { "stat": "block", "scale": 0.5 }, { "stat": "dodge", "scale": 2 } ],
+        "flat_bonuses": [ { "stat": "block", "scale": 0.5 }, { "stat": "dodge", "scale": 2 } ],
         "bonus_blocks": 5,
         "bonus_dodges": 5,
         "max_stacks": 25,
@@ -200,6 +206,7 @@
         "unarmed_allowed": true,
         "melee_allowed": true,
         "mult_bonuses": [
+          { "stat": "speed", "scale": 4 },
           { "stat": "dodge", "scale": 2 },
           { "stat": "damage", "type": "cut", "scale": 3 },
           { "stat": "damage", "type": "bash", "scale": 3 },
@@ -213,7 +220,7 @@
           { "stat": "armor", "type": "heat", "scaling-stat": "str", "scale": 2 },
           { "stat": "armor", "type": "acid", "scaling-stat": "str", "scale": 2 }
         ],
-        "flat_bonuses": [ { "stat": "movecost", "scale": -1 }, { "stat": "block", "scale": 0.5 }, { "stat": "dodge", "scale": 2 } ],
+        "flat_bonuses": [ { "stat": "block", "scale": 0.5 }, { "stat": "dodge", "scale": 2 } ],
         "bonus_dodges": 1,
         "bonus_blocks": 2,
         "max_stacks": 10,
@@ -227,6 +234,7 @@
         "max_stacks": 99999,
         "buff_duration": 4,
         "mult_bonuses": [
+          { "stat": "speed", "scale": 1.01 },
           { "stat": "dodge", "scale": 2 },
           { "stat": "damage", "type": "cut", "scale": 3 },
           { "stat": "damage", "type": "bash", "scale": 3 },
@@ -240,7 +248,7 @@
           { "stat": "armor", "type": "heat", "scaling-stat": "str", "scale": 2 },
           { "stat": "armor", "type": "acid", "scaling-stat": "str", "scale": 2 }
         ],
-        "flat_bonuses": [ { "stat": "movecost", "scale": -0.01 }, { "stat": "block", "scale": 0.5 }, { "stat": "dodge", "scale": 2 } ]
+        "flat_bonuses": [ { "stat": "block", "scale": 0.5 }, { "stat": "dodge", "scale": 2 } ]
       }
     ],
     "onkill_buffs": [
@@ -251,6 +259,7 @@
         "unarmed_allowed": true,
         "melee_allowed": true,
         "mult_bonuses": [
+          { "stat": "speed", "scale": 2 },
           { "stat": "dodge", "scale": 2 },
           { "stat": "damage", "type": "cut", "scale": 3 },
           { "stat": "damage", "type": "bash", "scale": 3 },
@@ -264,7 +273,7 @@
           { "stat": "armor", "type": "heat", "scaling-stat": "str", "scale": 2 },
           { "stat": "armor", "type": "acid", "scaling-stat": "str", "scale": 2 }
         ],
-        "flat_bonuses": [ { "stat": "movecost", "scale": -1 }, { "stat": "block", "scale": 0.5 }, { "stat": "dodge", "scale": 2 } ],
+        "flat_bonuses": [ { "stat": "block", "scale": 0.5 }, { "stat": "dodge", "scale": 2 } ],
         "bonus_dodges": 1,
         "bonus_blocks": 2,
         "buff_duration": 5
@@ -277,6 +286,7 @@
         "max_stacks": 99999,
         "buff_duration": 5,
         "mult_bonuses": [
+          { "stat": "speed", "scale": 1.1 },
           { "stat": "dodge", "scale": 2 },
           { "stat": "damage", "type": "cut", "scale": 3 },
           { "stat": "damage", "type": "bash", "scale": 3 },
@@ -290,7 +300,7 @@
           { "stat": "armor", "type": "heat", "scaling-stat": "str", "scale": 2 },
           { "stat": "armor", "type": "acid", "scaling-stat": "str", "scale": 2 }
         ],
-        "flat_bonuses": [ { "stat": "movecost", "scale": -0.01 }, { "stat": "block", "scale": 0.5 }, { "stat": "dodge", "scale": 2 } ]
+        "flat_bonuses": [ { "stat": "block", "scale": 0.5 }, { "stat": "dodge", "scale": 2 } ]
       }
     ],
     "onmove_buffs": [
@@ -301,6 +311,7 @@
         "unarmed_allowed": true,
         "melee_allowed": true,
         "mult_bonuses": [
+          { "stat": "speed", "scale": 1.1 },
           { "stat": "dodge", "scale": 2 },
           { "stat": "damage", "type": "cut", "scale": 3 },
           { "stat": "damage", "type": "bash", "scale": 3 },
@@ -314,7 +325,7 @@
           { "stat": "armor", "type": "heat", "scaling-stat": "str", "scale": 2 },
           { "stat": "armor", "type": "acid", "scaling-stat": "str", "scale": 2 }
         ],
-        "flat_bonuses": [ { "stat": "movecost", "scale": -1 }, { "stat": "block", "scale": 0.5 }, { "stat": "dodge", "scale": 2 } ],
+        "flat_bonuses": [ { "stat": "block", "scale": 0.5 }, { "stat": "dodge", "scale": 2 } ],
         "bonus_dodges": 1,
         "bonus_blocks": 2,
         "max_stacks": 99999,
@@ -328,12 +339,13 @@
         "description": "You fight like a dairy farmer!",
         "unarmed_allowed": true,
         "mult_bonuses": [
+          { "stat": "speed", "scale": 100 },
           { "stat": "damage", "type": "cut", "scaling-stat": "str", "scale": 1.5 },
           { "stat": "damage", "type": "bash", "scaling-stat": "str", "scale": 1.5 },
           { "stat": "damage", "type": "stab", "scaling-stat": "str", "scale": 1.5 },
           { "stat": "hit", "scale": 2 }
         ],
-        "flat_bonuses": [ { "stat": "movecost", "scale": -100 }, { "stat": "block", "scale": 0.5 }, { "stat": "dodge", "scale": 2 } ],
+        "flat_bonuses": [ { "stat": "block", "scale": 0.5 }, { "stat": "dodge", "scale": 2 } ],
         "bonus_dodges": 1,
         "bonus_blocks": 2,
         "buff_duration": 2
