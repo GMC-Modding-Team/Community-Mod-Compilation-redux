@@ -26,7 +26,6 @@
   - [x] Add Granola
   - [x] Add Porridge
   - [x] Add Porridge pots
-  - [ ]  Add Pop tarts
 
 ## **Part 2** Making things unique
 - [ ] Add more code to individual items
@@ -250,8 +249,3 @@
 [x] - Store-Brand Instant Oats Golden Syrup Porridge 55G
 [x] - Store-Brand Instant Oats Original Porridge 55G
 [x] - Wicked Kitchen Superseeded Porridge Pot 70G
-
-
-## Pop tarts
-
-[ ] - Kellogg's Pop Tarts https://www.kelloggs.com/en_US/brands/pop-tarts-consumer-brand.html 8X48g
