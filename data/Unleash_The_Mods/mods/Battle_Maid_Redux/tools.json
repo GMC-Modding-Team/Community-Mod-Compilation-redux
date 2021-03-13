@@ -128,7 +128,7 @@
     "flags": [ "NO_UNLOAD", "NO_RELOAD" ],
     "max_charges": 48,
     "initial_charges": 48,
-    "artifact_data": { "charge_type": "ARTC_TIME" }
+    "relic_data": { "passive_effects": [ { "has": "WORN", "condition": "ALWAYS", "mutations": [ "ARTC_TIME" ] } ] }
   },
   {
     "type": "GENERIC",
@@ -191,7 +191,17 @@
       "target": "master_doll_vibe_off",
       "need_charges": 0
     },
-    "artifact_data": { "charge_type": "ARTC_HP", "effects_activated": [ "AEA_ADRENALINE", "AEA_PARALYZE" ] }
+    "relic_data": {
+      "passive_effects": [
+        {
+          "has": "WIELD",
+          "condition": "ALWAYS",
+          "intermittent_activation": {
+            "effects": [ { "frequency": "2 minutes", "spell_effects": [ { "id": "AEA_ADRENALINE" }, { "id": "AEA_PARALYZE" } ] } ]
+          }
+        }
+      ]
+    }
   },
   {
     "id": "summon_little_maid",
