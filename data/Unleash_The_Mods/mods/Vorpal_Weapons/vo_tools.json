@@ -104,7 +104,15 @@
     "ammo": [ "blood_clearn_vo" ],
     "revert_to": "blood_transfusion_off_vo",
     "use_action": [ { "type": "transform", "msg": "I pulled out the blood collector.", "target": "blood_transfusion_off_vo" } ],
-    "artifact_data": { "charge_type": "ARTC_HP" }
+    "relic_data": {
+      "passive_effects": [
+        {
+          "has": "WIELD",
+          "condition": "ALWAYS",
+          "hit_you_effect": [ { "id": "ARTC_HP", "once_in": 3 } ],
+        }
+      ]
+    }
   },
   {
     "id": "brainwash_off_vo",
@@ -129,7 +137,15 @@
         "need_charges": 1
       }
     ],
-    "artifact_data": { "charge_type": "ARTC_SOLAR" }
+    "relic_data": {
+      "passive_effects": [
+        {
+          "has": "WIELD",
+          "condition": "ALWAYS",
+          "hit_you_effect": [ { "id": "ARTC_SOLAR", "once_in": 3 } ],
+        }
+      ]
+    }
   },
   {
     "id": "brainwash_on_vo",
@@ -146,6 +162,18 @@
     "turns_per_charge": 201,
     "revert_to": "brainwash_off_vo",
     "use_action": { "type": "artifact" },
-    "artifact_data": { "charge_type": "ARTC_SOLAR", "effects_activated": [ "AEA_ENTRANCE" ], "effects_carried": [ "AEP_SCHIZO" ] }
+    "relic_data": {
+      "passive_effects": [
+        {
+          "has": "WIELD",
+          "condition": "ALWAYS",
+          "hit_you_effect": [ { "id": "ARTC_SOLAR", "once_in": 3 } ],
+          "mutations": [ "AEP_SCHIZO" ] } ] },
+          "intermittent_activation": {
+            "effects": [ { "frequency": "2 minutes", "spell_effects": [ { "id": "AEA_ENTRANCE" } ] } ]
+          }
+        }
+      ]
+    }
   }
 ]
