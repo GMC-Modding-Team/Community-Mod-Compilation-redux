@@ -8,11 +8,26 @@
     "name": { "str": "GP-5 gas mask" },
     "description": "The GP-5. Most mass-produced gas mask in history, and had become a pop culture legend even before the Cataclysm.",
     "snippet_category": [
-      "Surplus latex gas mask. Commonly found inside prepper's bunkers. This one is a pristine gray-white.",
-      "Classic gas mask, seen from old photos of Chernobyl NPP.",
-      "The GP-5. Most mass-produced gas mask in history, and had been a pop culture legend even before the Cataclysm.",
-      "An old Russian civil defense mask, manufactured when they were still Soviet Union until mid 1990's.",
-      "This gas mask looks like it was left too long on Pripyat ferris wheel. The sun has stained it a dirty brown and it has started to dry rot."
+      {
+        "id": "mask description",
+        "text": "Surplus latex gas mask. Commonly found inside prepper's bunkers. This one is a pristine gray-white."
+      },
+      {
+        "id": "classic",
+        "text": "Classic gas mask, seen from old photos of Chernobyl NPP."
+      },
+      {
+        "id": "history",
+        "text": "The GP-5. Most mass-produced gas mask in history, and had been a pop culture legend even before the Cataclysm."
+      },
+      {
+        "id": "military",
+        "text": "An old Russian civil defense mask, manufactured when they were still Soviet Union until mid 1990's."
+      },
+      {
+        "id": "worn",
+        "text": "This gas mask looks like it was left too long on Pripyat ferris wheel. The sun has stained it a dirty brown and it has started to dry rot."
+      }
     ],
     "flags": [ "WATERPROOF", "SKINTIGHT", "FRAGILE", "OVERSIZE" ],
     "price": "60 USD",
@@ -77,7 +92,7 @@
     "use_action": {
       "type": "transform",
       "target": "mask_gp5",
-      "non_interactive_msg": "The filter is active and can't be resealed, why waste it?",
+
       "msg": "It's getting hard to breathe, this filter is used up."
     },
     "covers": [ "eyes", "mouth" ],
@@ -96,48 +111,32 @@
     "name": { "str": "SchM-41 gas mask" },
     "description": "Military version of the GP-5 gas mask, should come with large filter adapter hose. Put a filter on it quick, before you turn into a snork.",
     "snippet_category": [
-      "Military version of GP-5 gas mask, normally found with adapter hose for large filters. Put a filter on it quick, before you turn into a snork.",
-      "Black synthetic rubber gas mask, seems more sturdy than the normal GP-5. Could've been used as bondage equipment at one time. You shudder at the thought."
+      {
+        "id": "gas mash description",
+        "text": "Military version of GP-5 gas mask, normally found with adapter hose for large filters. Put a filter on it quick, before you turn into a snork."
+      },
+      {
+        "id": "thought",
+        "text": "Black synthetic rubber gas mask, seems more sturdy than the normal GP-5. Could've been used as bondage equipment at one time.  You shudder at the thought."
+      }
     ],
     "flags": [ "WATERPROOF", "SKINTIGHT", "STURDY", "OVERSIZE" ],
     "price": "50 USD",
     "material": [ "plastic", "cotton" ],
     "weight": "1260 g",
     "volume": "1500 ml",
-    "bashing": 0,
-    "cutting": 0,
     "to_hit": -3,
-    "max_charges": 1000,
-    "initial_charges": 0,
-    "charges_per_use": 0,
-    "turns_per_charge": 0,
-    "default_mods": [ "heavy_filter_mod_b", 1 ],
-    "ammo": [ "filter_open_1" ],
-    "revert_to": "mask_hosed",
-    "use_action": {
-      "type": "transform",
-      "msg": "You are breathing through mask now. Don't sneeze.",
-      "target": "mask_hosed_act",
-      "active": true,
-      "need_charges": 1,
-      "need_charges_msg": "The %s needs a filter, it's useless without it."
-    },
-    "covers": [ "eyes", "mouth" ],
     "warmth": 30,
-    "environmental_protection": 3,
     "encumbrance": 3,
     "coverage": 100,
     "material_thickness": 1,
-    "pocket_data": [
-      {
-        "magazine_well": "250 ml",
-        "pocket_type": "MAGAZINE_WELL",
-        "holster": true,
-        "max_contains_volume": "20 L",
-        "max_contains_weight": "20 kg",
-        "item_restriction": [ "sm_filter_1a" ]
-      }
-    ]
+    "environmental_protection": 3,
+    "environmental_protection_with_filter": 10,
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "filter_open_1": 100 } } ],
+    "ammo": [ "filter_open_1" ],
+    "revert_to": "mask_hosed",
+    "use_action": [ "GASMASK" ],
+    "covers": [ "eyes", "mouth" ]
   },
   {
     "id": "mask_hosed_act",
@@ -163,7 +162,7 @@
     "use_action": {
       "type": "transform",
       "target": "mask_hosed",
-      "non_interactive_msg": "The filter is active and can't be resealed, why waste it?",
+
       "msg": "The filter has expired and will no longer protect against airborne contaminants."
     },
     "covers": [ "eyes", "mouth" ],
@@ -244,7 +243,7 @@
     "use_action": {
       "type": "transform",
       "target": "mask_pbf_exp",
-      "non_interactive_msg": "The filters are active and can't be repackaged, why waste them?",
+
       "msg": "The filters have expired and will no longer protect against airborne contaminants."
     },
     "covers": [ "eyes", "mouth" ],
@@ -348,7 +347,7 @@
     "use_action": {
       "type": "transform",
       "target": "mask_4a",
-      "non_interactive_msg": "The filter is active and can't be resealed, why waste it?",
+
       "msg": "The filter has expired and will no longer protect against airborne contaminants."
     },
     "covers": [ "eyes", "mouth" ],
@@ -429,7 +428,7 @@
     "use_action": {
       "type": "transform",
       "target": "mask_m40",
-      "non_interactive_msg": "The filter is active and can't be resealed, why waste it?",
+
       "msg": "The filter has expired and will no longer protect against airborne contaminants."
     },
     "covers": [ "eyes", "mouth" ],
@@ -483,6 +482,12 @@
     "bashing": 5,
     "flags": [ "WATERPROOF", "RAINPROOF", "STURDY", "OVERSIZE", "VARSIZE", "RAD_RESIST", "ACID_RESIST", "OUTER" ],
     "coverage": 100,
+    "pocket_data": [
+      { "pocket_type": "CONTAINER", "max_contains_volume": "1250 ml", "max_contains_weight": "1250 kg", "moves": 80 },
+      { "pocket_type": "CONTAINER", "max_contains_volume": "1250 ml", "max_contains_weight": "1250 kg", "moves": 80 },
+      { "pocket_type": "CONTAINER", "max_contains_volume": "1250 ml", "max_contains_weight": "1250 kg", "moves": 80 },
+      { "pocket_type": "CONTAINER", "max_contains_volume": "1250 ml", "max_contains_weight": "1250 kg", "moves": 80 }
+    ],
     "material_thickness": 1
   },
   {
@@ -506,6 +511,12 @@
     "bashing": 5,
     "flags": [ "WATERPROOF", "RAINPROOF", "STURDY", "OVERSIZE", "VARSIZE", "RAD_PROOF", "ACIDPROOF", "OUTER" ],
     "coverage": 100,
+    "pocket_data": [
+      { "pocket_type": "CONTAINER", "max_contains_volume": "1250 ml", "max_contains_weight": "2500 kg", "moves": 80 },
+      { "pocket_type": "CONTAINER", "max_contains_volume": "1250 ml", "max_contains_weight": "2500 kg", "moves": 80 },
+      { "pocket_type": "CONTAINER", "max_contains_volume": "1250 ml", "max_contains_weight": "2500 kg", "moves": 80 },
+      { "pocket_type": "CONTAINER", "max_contains_volume": "1250 ml", "max_contains_weight": "2500 kg", "moves": 80 }
+    ],
     "material_thickness": 2
   },
   {
@@ -529,6 +540,9 @@
     "bashing": 1,
     "coverage": 10,
     "flags": [ "BELTED" ],
+    "pocket_data": [
+      { "pocket_type": "CONTAINER", "max_contains_volume": "2000 ml", "max_contains_weight": "2500 kg", "moves": 80 }
+    ],
     "material_thickness": 1
   },
   {
@@ -552,6 +566,10 @@
     "bashing": 1,
     "coverage": 10,
     "flags": [ "BELTED" ],
+    "pocket_data": [
+      { "pocket_type": "CONTAINER", "max_contains_volume": "2000 ml", "max_contains_weight": "2500 kg", "moves": 80 },
+      { "pocket_type": "CONTAINER", "max_contains_volume": "2000 ml", "max_contains_weight": "2500 kg", "moves": 80 }
+    ],
     "material_thickness": 1
   },
   {
