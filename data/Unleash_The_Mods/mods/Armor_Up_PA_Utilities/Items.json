@@ -14,7 +14,11 @@
     "coverage": 5,
     "encumbrance": 2,
     "material_thickness": 1,
-    "use_action": { "type": "holster", "max_volume": 20, "draw_cost": 150, "skills": [ "smg", "shotgun", "rifle", "launcher" ] },
+    "use_action": { "type": "holster", "holster_prompt": "Stash item", "holster_msg": "You stash your %s." },
+    "pocket_data": [
+      { "pocket_type": "CONTAINER", "max_contains_volume": "1 L", "max_contains_weight": "2500 g", "moves": 30 },
+      { "pocket_type": "CONTAINER", "max_contains_volume": "1 L", "max_contains_weight": "2500 g", "moves": 30 }
+    ],
     "flags": [ "STURDY", "BELTED", "OVERSIZE", "NO_QUICKDRAW" ]
   },
   {
@@ -32,7 +36,17 @@
     "coverage": 5,
     "encumbrance": 1,
     "material_thickness": 1,
-    "use_action": { "type": "holster", "max_volume": 6, "min_volume": 2, "skills": [ "pistol", "smg", "shotgun" ] },
+    "use_action": { "type": "holster" },
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "holster": true,
+        "max_contains_volume": "9 L",
+        "max_contains_weight": "10 kg",
+        "max_item_length": "60 cm",
+        "moves": 150
+      }
+    ],
     "flags": [ "WAIST", "OVERSIZE", "STURDY" ]
   },
   {
@@ -43,7 +57,6 @@
     "weight": "600 g",
     "volume": "1250 ml",
     "price": "100 USD",
-    "rigid": false,
     "material": [ "cotton" ],
     "symbol": "[",
     "power_armor": true,
@@ -51,16 +64,18 @@
     "coverage": 5,
     "encumbrance": 2,
     "material_thickness": 2,
-    "use_action": {
-      "type": "holster",
-      "holster_prompt": "Stash ammo",
-      "holster_msg": "You stash your %s.",
-      "multi": 4,
-      "max_volume": 3,
-      "draw_cost": 40,
-      "flags": [ "MAG_COMPACT" ]
-    },
-    "flags": [ "BELTED", "WAIST" ]
+    "use_action": { "type": "holster", "holster_prompt": "Stash ammo", "holster_msg": "You stash your %s." },
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "holster": true,
+        "max_contains_volume": "9 L",
+        "max_contains_weight": "10 kg",
+        "max_item_length": "60 cm",
+        "moves": 150
+      }
+    ],
+    "flags": [ "BELTED", "WAIST", "MAG_COMPACT" ]
   },
   {
     "id": "pa_bscabbard",
@@ -78,15 +93,18 @@
     "coverage": 5,
     "encumbrance": 3,
     "material_thickness": 1,
-    "use_action": {
-      "type": "holster",
-      "holster_prompt": "Sheath sword",
-      "holster_msg": "You sheath your %s",
-      "max_volume": 20,
-      "draw_cost": 5,
-      "flags": [ "SHEATH_SWORD" ]
-    },
-    "flags": [ "STURDY", "BELTED", "OVERSIZE" ]
+    "use_action": { "type": "holster", "holster_prompt": "Sheath sword", "holster_msg": "You sheath your %s" },
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "holster": true,
+        "max_contains_volume": "9 L",
+        "max_contains_weight": "5 kg",
+        "max_item_length": "60 cm",
+        "moves": 150
+      }
+    ],
+    "flags": [ "STURDY", "BELTED", "OVERSIZE", "SHEATH_SWORD" ]
   },
   {
     "id": "pa_scabbard",
@@ -104,14 +122,18 @@
     "coverage": 3,
     "encumbrance": 2,
     "material_thickness": 1,
-    "use_action": {
-      "type": "holster",
-      "holster_prompt": "Sheath sword",
-      "holster_msg": "You sheath your %s",
-      "max_volume": 10,
-      "flags": [ "SHEATH_SWORD" ]
-    },
-    "flags": [ "WAIST", "OVERSIZE", "STURDY" ]
+    "use_action": { "type": "holster", "holster_prompt": "Sheath sword", "holster_msg": "You sheath your %s" },
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "holster": true,
+        "max_contains_volume": "9 L",
+        "max_contains_weight": "2500 g",
+        "max_item_length": "60 cm",
+        "moves": 150
+      }
+    ],
+    "flags": [ "WAIST", "OVERSIZE", "STURDY", "SHEATH_SWORD" ]
   },
   {
     "id": "pa_sheath",
@@ -127,14 +149,17 @@
     "power_armor": true,
     "coverage": 5,
     "material_thickness": 1,
-    "use_action": {
-      "type": "holster",
-      "holster_prompt": "Sheath knife",
-      "holster_msg": "You sheath your %s",
-      "max_volume": 3,
-      "draw_cost": 3,
-      "flags": [ "SHEATH_KNIFE" ]
-    },
-    "flags": [ "WAIST", "OVERSIZE" ]
+    "use_action": { "type": "holster", "holster_prompt": "Sheath knife", "holster_msg": "You sheath your %s" },
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "holster": true,
+        "max_contains_volume": "9 L",
+        "max_contains_weight": "1250 g",
+        "max_item_length": "60 cm",
+        "moves": 150
+      }
+    ],
+    "flags": [ "WAIST", "OVERSIZE", "SHEATH_KNIFE" ]
   }
 ]
