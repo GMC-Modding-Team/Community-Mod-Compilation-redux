@@ -25,7 +25,7 @@ jobs:
 
       - name: Commit files
         env:
-          CI_USER: ${{ secrets.TheGoatGod }}
+          CI_USER: "TheGoatGod"
           CI_EMAIL: "TheGoatGod@users.noreply.github.com"
         run: |
           git config --local user.email "$CI_EMAIL"
@@ -35,7 +35,7 @@ jobs:
       - name: Push changes
         if: env.push == 'true'
         env:
-          CI_USER: ${{ secrets.TheGoatGod }}
+          CI_USER: "TheGoatGod"
           CI_TOKEN: ${{ secrets.WORKFLOW_CREDENTIALS }}
         run: |
           git push "https://$CI_USER:$CI_TOKEN@github.com/$GITHUB_REPOSITORY.git" HEAD:master
