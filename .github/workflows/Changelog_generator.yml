@@ -14,19 +14,19 @@ on:
 jobs:
   generate_changelog:
     runs-on: ubuntu-latest
-    name: Generate changelog for master branch
+    name: Generate changelog
     steps:
       - uses: actions/checkout@v1
 
       - name: Generate changelog
         uses: charmixer/auto-changelog-action@v1
         with:
-          token: ${{ secrets.6002483 }}
+          token: ${{ secrets.WORKFLOW_CREDENTIALS }}
 
       - name: Commit files
         env:
           CI_USER: ${{ secrets.TheGoatGod }}
-          CI_EMAIL: ${{ secrets.thegoatgodgit@gmail.com }}
+          CI_EMAIL: ${{ secrets.56883303+TheGoatGod@users.noreply.github.com }}
         run: |
           git config --local user.email "$CI_EMAIL"
           git config --local user.name "$CI_USER"
@@ -36,6 +36,6 @@ jobs:
         if: env.push == 'true'
         env:
           CI_USER: ${{ secrets.TheGoatGod }}
-          CI_TOKEN: ${{ secrets.6002483 }}
+          CI_TOKEN: ${{ secrets.WORKFLOW_CREDENTIALS }}
         run: |
           git push "https://$CI_USER:$CI_TOKEN@github.com/$GITHUB_REPOSITORY.git" HEAD:master
