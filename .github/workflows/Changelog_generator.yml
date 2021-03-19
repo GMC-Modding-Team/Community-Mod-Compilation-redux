@@ -12,14 +12,13 @@ on:
 
 
 jobs:
-  Generate Changelog:
-    name: Automatic Changelog Generator
-
+  generate_changelog:
     runs-on: ubuntu-latest
-
+    name: Generate changelog for master branch
     steps:
-      - uses: charmixer/auto-changelog-action@v1
-    output:
-      - description: 'Output file. To print to STDOUT instead, use blank as path. (required, default: CHANGELOG.md)'
-      - required: false
-      - default: 'CHANGELOG.md'
+      - uses: actions/checkout@v1
+
+      - name: Generate changelog
+        uses: charmixer/auto-changelog-action@v1
+        with:
+          token: ${{ secrets.23-975097sajkh10298 }}
