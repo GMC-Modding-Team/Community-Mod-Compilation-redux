@@ -10,5 +10,45 @@
     "material": [ "steel", "plastic" ],
     "volume": "650000 ml",
     "copy-from": "v_scoop_item"
+  },
+  {
+    "id": "broken_antifungus_hack",
+    "type": "GENERIC",
+    "symbol": ",",
+    "color": "dark_gray",
+    "name": { "str": "broken antifungal hack" },
+    "category": "other",
+    "description": "A broken antifungal hack. It seems intact, only shutdown from lack of a new gas canister. Maybe if the spent canister were replaced, it would work again.",
+    "price": "90 USD",
+    "price_postapoc": "10 USD",
+    "material": [ "aluminum", "plastic" ],
+    "weight": "5360 g",
+    "volume": "750 ml",
+    "bashing": 6,
+    "cutting": 6,
+    "to_hit": -3,
+    "flags": [ "TRADER_AVOID" ]
+  },
+  {
+    "id": "fungicidal_bomb",
+    "copy-from": "grenade_canister",
+    "type": "GENERIC",
+    "name": { "str": "fungicide gas hand grenade", "str_pl": "fungicide gas hand grenades" },
+    "description": "A hand grenade filled with fungicidal gas. Use to pull the pin and ignite. It takes 5 turns to gas spout.",
+    "price": "18 USD",
+    "looks_like": "gasbomb",
+    "countdown_action": { "type": "transform", "target": "fungicidal_bomb_act" }
+  },
+  {
+    "id": "fungicidal_bomb_act",
+    "copy-from": "fungicidal_bomb",
+    "type": "GENERIC",
+    "name": { "str": "fungicide gas hand grenade (active)", "str_pl": "fungicide gas hand grenades (active)" },
+    "description": "A hand grenade filled with fungicidal gas. The pin is already pulled and is releasing gas.",
+    "looks_like": "gasbomb_act",
+    "emits": [ "emit_fungicidal_stream" ],
+    "countdown_interval": 50,
+    "countdown_action": { "type": "transform", "target": "canister_empty" },
+    "flags": [ "TRADER_AVOID" ]
   }
 ]
