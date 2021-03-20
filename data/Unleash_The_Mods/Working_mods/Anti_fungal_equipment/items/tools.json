@@ -10,17 +10,18 @@
     "price": "5 USD",
     "to_hit": -1,
     "bashing": 6,
-    "material": [ "steel" ],
+    "material": [ "steel", "plastic" ],
     "symbol": "*",
     "color": "dark_gray",
     "use_action": {
       "target": "fungus_bomb_act",
-      "msg": "You arm the fungicidal grenade.",
-      "target_charges": 10,
+      "msg": "You pull the pin on the fungicidal grenade.",
+      "target_charges": 5,
       "active": true,
+      "menu_text": "Pull pin",
       "type": "transform"
     },
-    "flags": [ "RADIO_MODABLE", "RADIO_INVOKE_PROC", "BOMB" ]
+    "flags": [ "RADIO_MODABLE", "RADIO_INVOKE_PROC", "BOMB", "GRENADE" ]
   },
   {
     "id": "fungus_bomb_act",
@@ -33,19 +34,20 @@
     "price": "0 cent",
     "to_hit": -1,
     "bashing": 6,
-    "material": [ "steel" ],
+    "material": [ "steel", "plastic" ],
     "symbol": "*",
     "color": "dark_gray",
-    "initial_charges": 3,
-    "max_charges": 3,
+    "initial_charges": 5,
+    "max_charges": 5,
     "turns_per_charge": 1,
     "use_action": {
       "type": "explosion",
       "fields_type": "fd_fungicidal_gas",
-      "fields_radius": 4,
+      "fields_radius": 5,
       "sound_volume": 1,
       "sound_msg": "Hiss.",
-      "no_deactivate_msg": "You've already armed the %s, try throwing it instead."
+      "no_deactivate_msg": "You've already pulled the %s's pin; try throwing it instead.",
+      "explosion": { "power": 200, "shrapnel": { "casing_mass": 200, "fragment_mass": 0.15 } }
     },
     "flags": [ "TRADER_AVOID", "BOMB" ]
   },
@@ -65,13 +67,14 @@
     "color": "red",
     "explode_in_fire": false,
     "use_action": {
-      "target": "fungus_nuke_act",
-      "msg": "You arm the fungus bomb. You better run.",
+      "target": "fungus_bomb_act",
+      "msg": "You pull the pin on the fungicidal grenade.",
       "target_charges": 10,
       "active": true,
+      "menu_text": "Pull pin",
       "type": "transform"
     },
-    "flags": [ "RADIO_MODABLE", "RADIO_INVOKE_PROC", "BOMB" ]
+    "flags": [ "RADIO_MODABLE", "RADIO_INVOKE_PROC", "BOMB", "GRENADE" ]
   },
   {
     "id": "fungus_nuke_act",
@@ -97,9 +100,10 @@
       "fields_radius": 12,
       "sound_volume": 2,
       "sound_msg": "Hiss.",
-      "no_deactivate_msg": "You've already armed the %s, you better run."
+      "no_deactivate_msg": "You've already pulled the %s's pin; try throwing it instead.",
+      "explosion": { "power": 200, "shrapnel": { "casing_mass": 200, "fragment_mass": 0.15 } }
     },
-    "flags": [ "BOMB", "TRADER_AVOID" ]
+    "flags": [ "TRADER_AVOID", "BOMB" ]
   },
   {
     "id": "bot_antifungus_hack",
