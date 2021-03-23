@@ -1,0 +1,72 @@
+[
+  {
+    "id": "bot_anti_fungicidal_hack",
+    "type": "TOOL",
+    "name": { "str": "inactive anti-fungicidal hack" },
+    "description": "This is an inactive anti-fungicidal hack. It is a bootleg device, made by disabling and replacing the grenade in any grenade containing hack, with a handmade gas grenade deadly to fungus. Use this item to reprogram and activate the anti-fungicidal hack.  Electronics and computer skill determines if the targeting matrix is reprogrammed successfully.",
+    "weight": "5360 g",
+    "volume": "750 ml",
+    "price": "90 USD",
+    "to_hit": -3,
+    "bashing": 6,
+    "cutting": 6,
+    "material": [ "aluminum", "plastic" ],
+    "symbol": ",",
+    "color": "dark_gray",
+    "use_action": {
+      "type": "place_monster",
+      "monster_id": "mon_anti_fungicidal_hack",
+      "friendly_msg": "The anti-fungicidal hack flies from your hand and surveys the area, looking for fungus to destroy!",
+      "hostile_msg": "You misprogram the anti-fungicidal hack; put on a mask!",
+      "difficulty": 4,
+      "moves": 60,
+      "place_randomly": true,
+      "skills": [ "electronics", "computer" ]
+    }
+  },
+  {
+    "id": "mon_anti_fungicidal_hack",
+    "copy-from": "base_drone",
+    "type": "MONSTER",
+    "name": { "str": "anti-fungicidal hack" },
+    "description": "An automated kamikaze drone, this fist-sized robot appears to have a homemade anti-fungicidal grenade inside.",
+    "diff": 10,
+    "speed": 250,
+    "color": "dark_gray",
+    "armor_cut": 4,
+    "revert_to_itype": "bot_anti_fungicidal_hack",
+    "starting_ammo": { "anti_fungicidal_bomb": 10 },
+    "special_attacks": [ [ "KAMIKAZE", 0 ] ]
+  },
+  {
+    "id": "broken_anti_fungicidal_hack",
+    "type": "GENERIC",
+    "symbol": ",",
+    "color": "dark_gray",
+    "name": { "str": "Broken anti-fungicidal hack" },
+    "category": "other",
+    "description": "A broken anti-fungicidal hack. It seems intact, only shutdown from lack of a new gas canister. Maybe if the spent canister were replaced, it would work again.",
+    "price": "90 USD",
+    "price_postapoc": "10 USD",
+    "material": [ "aluminum", "plastic" ],
+    "weight": "5360 g",
+    "volume": "750 ml",
+    "bashing": 6,
+    "cutting": 6,
+    "to_hit": -3,
+    "flags": [ "TRADER_AVOID" ]
+  },
+  {
+    "type": "recipe",
+    "result": "bot_anti_fungicidal_hack",
+    "category": "CC_OTHER",
+    "subcategory": "CSC_OTHER_OTHER",
+    "skill_used": "electronics",
+    "skills_required": [ [ "mechanics", 4 ], [ "computer", 5 ] ],
+    "difficulty": 6,
+    "time": "25 m",
+    "reversible": false,
+    "autolearn": true,
+    "components": [ [ [ "broken_anti_fungicidal_hack", 1 ] ], [ [ "duct_tape", 10 ] ], [ [ "anti_fungicidal_bomb", 10 ] ] ]
+  }
+]
