@@ -182,8 +182,8 @@ Feel free to create a CAD file using this template:
 
 ```JSON
   {
-    "type": "GENERIC",
     "id": "example_cad",
+    "type": "GENERIC",
     "copy-from": "cad",
     "name": "plastic knife CAD file",
     "description": "CAD file for a plastic knife. You can use it to print it if you have a 3D printer.",
@@ -211,8 +211,8 @@ If you have multiple sources, it may be reasonable to create an item group of th
 
 ```JSON
   {
-    "type": "item_group",
     "id": "example_cad_files",
+    "type": "item_group",
     "items": [
       [ "example_cad",      60 ],
       [ "example_cad_new",  40 ],
@@ -225,8 +225,8 @@ You can now add the group into existing spawn lists. For example, this would spa
 
 ```JSON
   {
-    "type": "item_group",
     "id": "bedroom",
+    "type": "item_group",
     "groups": [ [ "example_cad_files", 5 ] ]
   }
 ```

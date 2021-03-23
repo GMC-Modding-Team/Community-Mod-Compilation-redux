@@ -1,7 +1,7 @@
 [
   {
-    "type": "GENERIC",
     "id": "boxing_gloves_vo",
+    "type": "GENERIC",
     "name": { "str": "Boxing gloves with stone", "str_pl": "Boxing gloves with stone" },
     "weight": "1110 g",
     "color": "red",
@@ -17,8 +17,8 @@
     "category": "weapons"
   },
   {
-    "type": "GENERIC",
     "id": "unbio_claws_weapon_vo",
+    "type": "GENERIC",
     "name": { "str": "bionic claws", "str_pl": "bionic claws" },
     "description": "Short and sharp claws made from a high-tech metal.",
     "weight": "1650 g",
@@ -35,8 +35,8 @@
     "qualities": [ [ "CUT", 1 ], [ "BUTCHER", 12 ] ]
   },
   {
-    "type": "GENERIC",
     "id": "unbio_blade_weapon_vo",
+    "type": "GENERIC",
     "name": { "str": "monomolecular blade" },
     "description": "A foot-long blade made from high-tech alloy and edged with bonded nanocrystals.",
     "weight": "100 g",
@@ -53,8 +53,8 @@
     "qualities": [ [ "CUT", 1 ], [ "BUTCHER", 22 ] ]
   },
   {
-    "type": "GENERIC",
     "id": "pata_vo",
+    "type": "GENERIC",
     "name": { "str": "Pata" },
     "description": "It is a long sword with a structure resembling Jamadahar, which is fitted with swords in armor of a shape like a gauntlet covering the forearm, the outside of the fist. Although it is a powerful weapon, you can not pick up objects because the arms are fixed.",
     "weight": "1500 g",
@@ -73,8 +73,8 @@
     "qualities": [ [ "CUT", 1 ], [ "BUTCHER", -12 ] ]
   },
   {
-    "type": "GENERIC",
     "id": "battlehook_vo",
+    "type": "GENERIC",
     "name": { "str": "Battle Hook" },
     "description": "It is a simple weapon just having a claw attached to the long handle. I can only pull it down, but it may be tossed off as much as a rotten head.",
     "weight": "1200 g",
@@ -94,8 +94,8 @@
     "price": "3 USD"
   },
   {
-    "type": "TOOL",
     "id": "laser_sword_off_vo",
+    "type": "TOOL",
     "name": { "str": "Laser sword (off)" },
     "description": "It is my original lightsaber that is supposed to work with UPS. Although it is possible to irradiate an illegal output laser and burn enemies, it is a drawback that electric power is applied too much. It is also a substitute for acetylene lamp.",
     "weight": "1200 g",
@@ -177,11 +177,16 @@
     "charges_per_use": 1,
     "category": "weapons",
     "use_action": { "type": "artifact" },
-    "artifact_data": {
-      "charge_type": "ARTC_TIME",
-      "effects_activated": [ "AEA_RADIATION", "AEA_MAP" ],
-      "effects_wielded": [ "AEP_RADIOACTIVE", "AEP_SUPER_CLAIRVOYANCE" ],
-      "effects_carried": [ "AEP_CLAIRVOYANCE" ]
-    }
+    "relic_data": {
+      "passive_effects": [
+        {
+          "has": "WIELD",
+          "condition": "ALWAYS",
+          "hit_you_effect": [ { "id": "ARTC_TIME", "once_in": 3 } ],
+          "mutations": [ "AEP_RADIOACTIVE", "AEP_SUPER_CLAIRVOYANCE", "AEP_CLAIRVOYANCE" ]
+        }
+      ]
+    },
+    "intermittent_activation": { "effects": [ { "frequency": "2 minutes", "spell_effects": [ { "id": "AEA_RADIATION" }, { "id": "AEA_MAP" } ] } ] }
   }
 ]
