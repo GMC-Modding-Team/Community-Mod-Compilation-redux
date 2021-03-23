@@ -29,6 +29,7 @@
 
 
 ## **Part 2** Making things unique
+- [x] Fix bugs
 - [ ] Add more code to individual items
   - [ ] Add better descriptions
   - [ ] Fix weight and volume
