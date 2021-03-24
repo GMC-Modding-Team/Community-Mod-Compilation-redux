@@ -84,7 +84,7 @@ Fallout New Vegas: Dead Money Steam page: https://store.steampowered.com/app/727
 
 Cataclysm DDA website: https://cataclysmdda.org/
 
-Cataclysm DDA reddit: https://www.reddit.com/r/cataclysmdda/
+Cataclysm DDA reddit: https://www.reddit.com/r/cdda/
 
 Cataclysm DDA repository: https://github.com/CleverRaven/Cataclysm-DDA
 
