@@ -374,7 +374,7 @@ A very notable addition to the 0.E experimental is pocket data. Instead of the p
 
 ---
 ## Container Pocket data
-In the past, storage used to be determined by a singlar `storage: number` pair. The volume that could be stored, like many things, was the `number` multiplied by `250 ml`.
+In the past, storage used to be determined by a singular `storage: number` pair. The volume that could be stored, like many things, was the `number` multiplied by `250 ml`.
 ```JSON
 "storage": 0,
 "storage": 5
