@@ -1,0 +1,163 @@
+[
+  {
+    "type": "mutation",
+    "id": "WINGS_BAT",
+	"copy-from": "WINGS_BAT",
+    "name": { "str": "Deformed Wings" },
+    "description": "You have a pair of large, leathery wings.  You can move them a little, but they are useless, and in fact put you off balance, reducing your ability to dodge slightly.",
+    "types": [ "WINGS" ],
+    "prereqs": [ "WINGS_STUB" ],
+    "dodge_modifier": -3
+  },
+    {
+    "type": "mutation",
+    "id": "BAT_EARS",
+    "name": { "str": "Bat Ears" },
+    "points": 1,
+    "visibility": 6,
+    "ugliness": 2,
+    "description": "Your ears are longer than usual and help you hear from a much greater distance.",
+    "valid": false,
+    "types": [ "EARS" ],
+    "category": [ "BAT" ],
+    "hearing_modifier": 4.0
+  },
+  {
+    "type": "mutation",
+    "id": "FLIMSY",
+	"copy-from": "FLIMSY",
+    "extend": {"category": [ "BAT" ]}
+  },
+  {
+    "type": "mutation",
+    "id": "BENDY1",
+	"copy-from": "BENDY1",
+    "extend": {"category": [ "BAT" ], "threshreq": [ "THRESH_BAT" ]}
+  },
+  {
+    "type": "mutation",
+    "id": "EASYSLEEPER",
+	"copy-from": "EASYSLEEPER",
+    "extend": {"category": [ "BAT" ]}
+  },
+  {
+    "type": "mutation",
+    "id": "ECHOLOCATION",
+    "name": { "str": "Echolocation" },
+    "points": 1,
+    "visibility": 0,
+    "ugliness": 0,
+    "description": "Your ears have caught up with your brain.  They now allow you to detect the presence of monsters up to a few tiles away, even if you can't see them.",
+    "types": [ "HORNS" ],
+    "prereqs": [ "BAT_EARS" ],
+    "category": [ "BAT" ],
+    "active": true,
+    "starts_active": true
+  },
+  {
+    "type": "mutation",
+    "id": "THRESH_BAT",
+    "name": { "str": "Listener" },
+    "points": 1,
+    "description": "Your sight is no longer as useful as it was, but your ears have replaced it anyway.",
+    "valid": false,
+    "purifiable": false,
+    "threshold": true
+  },
+   {
+    "type": "mutation",
+    "id": "SNOUT",
+    "copy-from": "SNOUT",
+    "extend": {"category": [ "BAT" ]}
+  },
+  {
+    "type": "mutation",
+    "id": "DEFORMED2",
+	"copy-from": "DEFORMED2",
+    "extend": {"category": [ "BAT" ]}
+  },
+  {
+    "type": "mutation",
+    "id": "LIGHTFUR",
+	"copy-from": "LIGHTFUR",
+    "extend": {"category": [ "BAT" ]}
+  },
+  {
+    "type": "mutation",
+    "id": "DEX_UP",
+	"copy-from": "DEX_UP",
+    "extend": {"category": [ "BAT" ]}
+  },
+  {
+    "type": "mutation",
+    "id": "DISRESISTANT",
+    "copy-from": "DISRESISTANT",
+    "extend": {"category": [ "BAT" ]}
+  },
+  {
+    "type": "mutation",
+    "id": "PER_UP_4",
+	"copy-from": "PER_UP_4",
+    "threshreq": [ "THRESH_BIRD", "THRESH_BAT" ],
+    "extend": {"category": [ "BAT" ], "threshreq": [ "THRESH_BAT" ]}
+  },
+  {
+    "type": "mutation",
+    "id": "MYOPIC",
+    "copy-from": "MYOPIC",
+    "extend": {"category": [ "BAT" ]}
+  },
+    {
+    "type": "mutation",
+    "id": "HERBIVORE",
+    "copy-from": "HERBIVORE",
+    "extend": {"category": [ "BAT" ]}
+  },
+  {
+    "type": "mutation",
+    "id": "CARNIVORE",
+	"copy-from": "CARNIVORE",
+    "extend": {"category": [ "BAT" ]}
+  },
+  {
+    "type": "mutation",
+    "id": "NECTAR_SUCC",
+    "name": { "str": "Elongated Tongue" },
+    "points": -2,
+    "visibility": 10,
+    "ugliness": 5,
+    "consume_time_modifier": 1.2,
+    "description": "Your tongue and snout have become longer, this lets you suck nectar from flowers but restricts what you can wear in your mouth. Examine the flowers to feed.",
+    "valid": false,
+    "purifiable": false,
+    "types": [ "TEETH", "MUZZLE" ],
+    "cancels": [ "MOUTH_TENTACLES" ],
+    "prereqs": [ "SNOUT" ],
+    "threshreq": [ "THRESH_BAT" ],
+    "category": [ "BAT" ],
+    "active": true,
+    "restricts_gear": [ "mouth" ],
+    "destroys_gear": true
+  },
+  {
+    "type": "mutation",
+    "id": "LIGHT_BONES",
+    "copy-from": "LIGHT_BONES",
+    "extend": {"category": [ "BAT" ]}
+  },
+  {
+    "type": "mutation",
+    "id": "BENDY1",
+    "copy-from": "BENDY1",
+    "extend": {"category": [ "BAT" ], "threshreq": [ "THRESH_BAT" ]}
+  },
+  {
+    "type": "mutation",
+    "id": "WINGS_BAT_MOD",
+    "copy-from": "WINGS_BIRD",
+	"description": "You have a pair of fleshy wings under your arms.  Your body is too heavy to be able to fly, but you can use them to slow your descent during a fall, and will not take falling damage under any circumstances. They cause slight encumbrance in your arms.",
+	"encumbrance_always": [ [ "arm_l", 2 ], [ "arm_r", 2 ] ],
+	"name": { "str": "Bat Wings" },
+    "category": [ "BAT" ]
+  }
+]
