@@ -1,4 +1,4 @@
-name: Changelog
+name: Changelog Generator
 
 on:
   pull_request:
@@ -10,25 +10,31 @@ on:
   issues:
     types: [closed, edited]
 
+
 jobs:
-  test:
+  generate_changelog:
     runs-on: ubuntu-latest
+    name: Generate changelog
     steps:
-      # To use this repository's private action, you must check out the repository
-      - name: Checkout
-        uses: actions/checkout@v1
-      - name: Generate changelog=
-        uses: metcalfc/changelog-generator@main
+      - uses: actions/checkout@v1
+
+      - name: Generate changelog
+        uses: charmixer/auto-changelog-action@v1
         with:
-          myToken: ${{ secrets.WORKFLOW }}
-          head-ref: 'v0.0.2'
-          base-ref: 'v0.0.1'
-      - name: Get the changelog
-        run: echo "${{ steps.changelog.outputs.changelog }}"
-      - name: Generate changelog from release
-        id: release
-        uses: metcalfc/changelog-generator@main
-        with:
-          myToken: ${{ secrets.WORKFLOW }}
-      - name: Get the changelog
-        run: echo "${{ steps.release.outputs.changelog }}"
+          token: ${{ secrets.WORKFLOW }}
+
+      - name: Commit files
+        env:
+          CI_USER: TheGoatGod
+          CI_EMAIL: "TheGoatGod@users.noreply.github.com"
+        run: |
+          git config --local user.email "$CI_EMAIL"
+          git config --local user.name "$CI_USER"
+          git add CHANGELOG.md && git commit -m 'Updated CHANGELOG.md' && echo "push=true" >> $GITHUB_ENV || echo "No changes to CHANGELOG.md"
+      - name: Push changes
+        if: env.push == 'true'
+        env:
+          CI_USER: TheGoatGod
+          CI_TOKEN: ${{ secrets.WORKFLOW }}
+        run: |
+          git push "https://$CI_USER:$CI_TOKEN@github.com/$GITHUB_REPOSITORY.git" HEAD:master
