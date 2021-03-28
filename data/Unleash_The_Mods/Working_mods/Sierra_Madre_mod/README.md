@@ -84,8 +84,6 @@ Fallout New Vegas: Dead Money Steam page: https://store.steampowered.com/app/727
 
 Cataclysm DDA website: https://cataclysmdda.org/
 
-Cataclysm DDA reddit: https://www.reddit.com/r/cataclysmdda/
-
 Cataclysm DDA repository: https://github.com/CleverRaven/Cataclysm-DDA
 
 Cataclysm: Bright Nights (awesome sci-fi focused fork of CDDA) repository: https://github.com/cataclysmbnteam/Cataclysm-BN
