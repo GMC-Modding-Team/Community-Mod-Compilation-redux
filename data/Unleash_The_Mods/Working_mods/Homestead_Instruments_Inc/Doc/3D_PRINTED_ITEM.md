@@ -91,8 +91,8 @@ To use this to your advantage, create a `"type": "UNCRAFT"` recipe. The `"result
 
 ```JSON
   {
-    "type": "UNCRAFT",
     "result": "example_finished_polyknife_printer",
+    "type": "UNCRAFT",
     "skill_used": "fabrication",
     "difficulty": 0,
     "time": "10 s",
@@ -113,8 +113,8 @@ Finish with creating the recipe for the `IN_PROGRESS` item itself. There's a han
 
 ```JSON
   {
-    "type": "RECIPE",
     "result": "example_printing_polyknife_printer",
+    "type": "RECIPE",
     "category": "CC_WEAPON",
     "subcategory": "CSC_WEAPON_MELEE",
     "skill_used": "fabrication",
