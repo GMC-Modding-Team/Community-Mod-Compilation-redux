@@ -15,7 +15,7 @@ Use the `home` key to get to the top.
 - [Ammo](#ammo)
   * [Ammo Type](#ammo-type)
   * [damage](#damage)
-- [Artifacts](#artifacts)
+- [Artifacts/relic_data](#artifacts/relic_data)
 - [barrel_length](#barrel_length)
 - [Bleeding](#bleeding)
 - [blob and slime](#blob-and-slime)
@@ -181,6 +181,7 @@ It is practically impossible to replace all at once, due to the similarities bet
 ## damage
 The current JSON standards for `key` `"damage"` look like this:
 And what it should look like under `type: AMMO`:
+
 ```JSON
 "damage": { "damage_type": "bullet", "amount": 0 },
 ```
@@ -204,8 +205,47 @@ or
 ```
 
 ---
-# Artifacts
-Artifacts are currently undergoing a massive change. Nothing too important has changed yet, so this is simply a placeholder section.
+# Artifacts/relic_data
+The current JSON standards for `key` `"artifact_data"` **(obsolete)** look like this:
+
+```json
+"artifact_data": { "effects_worn": [ "AEP_SUPER_CLAIRVOYANCE" ] }
+```
+
+It has been superseded by `key` `"relic_data"` and should look like this now
+
+```json
+"relic_data": { "passive_effects": [ { "has": "WORN", "condition": "ALWAYS", "mutations": [ "AEP_SUPER_CLAIRVOYANCE" ] } ] }
+```
+
+
+
+Example
+
+```json
+"artifact_data": { "charge_type": "ARTC_HP", "effects_activated": [ "AEA_ADRENALINE", "AEA_PARALYZE" ] }
+```
+
+into
+
+```json
+"relic_data": {
+      "passive_effects": [
+        {
+          "has": "WIELD",
+          "condition": "ALWAYS",
+          "hit_you_effect": [ { "id": "ARTC_HP", "once_in": 3 } ],
+          "intermittent_activation": {
+            "effects": [ { "frequency": "2 minutes", "spell_effects": [ { "id": "AEA_ADRENALINE" }, { "id": "AEA_PARALYZE" } ] } ]
+          }
+        }
+      ]
+    }
+```
+
+
+
+
 
 ---
 # barrel_length
@@ -334,7 +374,7 @@ A very notable addition to the 0.E experimental is pocket data. Instead of the p
 
 ---
 ## Container Pocket data
-In the past, storage used to be determined by a singlar `storage: number` pair. The volume that could be stored, like many things, was the `number` multiplied by `250 ml`.
+In the past, storage used to be determined by a singular `storage: number` pair. The volume that could be stored, like many things, was the `number` multiplied by `250 ml`.
 ```JSON
 "storage": 0,
 "storage": 5
