@@ -38,7 +38,7 @@ Welcome to TheGoatGod's Mod Compilation. Currently contains just under 400 mods,
 # Road map
 
 - [ ] Fix all the mods
-- [ ] start merging mods together
+- [x] start merging mods together
 - [ ] Make more mods story mod, more tools, more factions etc...
 - [ ] merge content together to make mega mod
 
