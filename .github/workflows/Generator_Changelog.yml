@@ -21,7 +21,7 @@ jobs:
       - name: Generate changelog
         uses: charmixer/auto-changelog-action@v1
         with:
-          token: ${{ secrets.WORKFLOW_CREDENTIALS }}
+          token: ${{ 7272078d443e19738184f6a3a4240b9a6cc18ee9 }}
 
       - name: Commit files
         env:
@@ -36,6 +36,6 @@ jobs:
         if: env.push == 'true'
         env:
           CI_USER: TheGoatGod
-          CI_TOKEN: ${{ 3ffa106417625b9d68b8b59f39953ac37f04460f }}
+          CI_TOKEN: ${{ 40cc314094689ac95c328d7c725fc96bb1c13209 }}
         run: |
           git push "https://$CI_USER:$CI_TOKEN@github.com/$GITHUB_REPOSITORY.git" HEAD:master
