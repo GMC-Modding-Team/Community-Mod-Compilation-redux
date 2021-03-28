@@ -17,7 +17,6 @@
 
 [![Build_Number](https://img.shields.io/badge/CDDA_Build%3A-%2311458-blue)](https://github.com/CleverRaven/Cataclysm-DDA)
 [![version](https://img.shields.io/badge/GMC_version-0.1.6-blue)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/releases/tag/v0.1.6)
-[![Total_lines](https://img.shields.io/tokei/lines/github/GMC-Modding-Team/Community-Mod-Compilation-redux)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/graphs/code-frequency)
 [![Repo_Size](https://img.shields.io/github/repo-size/GMC-Modding-Team/Community-Mod-Compilation-redux)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/graphs/code-frequency)
 [![Total_Downloads](https://img.shields.io/github/downloads/GMC-Modding-Team/Community-Mod-Compilation-redux/total)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/releases)
 [![Discord](https://img.shields.io/discord/682148537752223765?label=Discord)](https://discord.gg/sk8HHF6sMY)\
@@ -39,7 +38,7 @@ Welcome to TheGoatGod's Mod Compilation. Currently contains just under 400 mods,
 # Road map
 
 - [ ] Fix all the mods
-- [ ] start merging mods together
+- [x] start merging mods together
 - [ ] Make more mods story mod, more tools, more factions etc...
 - [ ] merge content together to make mega mod
 
