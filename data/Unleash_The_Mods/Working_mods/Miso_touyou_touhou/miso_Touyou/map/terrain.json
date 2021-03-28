@@ -1,0 +1,111 @@
+[
+  {
+    "id": "t_tree_pomegranate",
+    "type": "terrain",
+    "name": "pomegranate tree",
+    "description": "Pomegranate is a kind of deciduous small tall tree of the genus Pomegranate, and its fruits. It is grown for ornamental purposes such as garden trees and is edible.",
+    "symbol": "7",
+    "color": [ "light_green", "light_green", "green_red", "brown" ],
+    "//": "barren in winter, fruits in autumn",
+    "move_cost": 0,
+    "flags": [ "FLAMMABLE_ASH", "NOITEM", "SUPPORTS_ROOF", "TREE", "REDUCE_SCENT" ],
+    "transforms_into": "t_tree_pomegranate_harvested",
+    "examine_action": "harvest_ter_nectar",
+    "harvest_by_season": [ { "seasons": [ "autumn" ], "id": "pomegranate" } ],
+    "bash": {
+      "str_min": 80,
+      "str_max": 180,
+      "sound": "crunch!",
+      "sound_fail": "whack!",
+      "ter_set": "t_dirt",
+      "items": [ { "item": "stick", "count": [ 3, 10 ] }, { "item": "splinter", "count": [ 10, 25 ] } ]
+    }
+  },
+  {
+    "id": "t_tree_pomegranate_harvested",
+    "type": "terrain",
+    "name": "pomegranate tree",
+    "description": "It is a pomegranate after it has been harvested. You can wait until next year to harvest again, or you can cut it into wood.",
+    "symbol": "7",
+    "color": [ "light_green", "light_green", "light_green", "brown" ],
+    "//": "barren in winter, no fruits anymore",
+    "move_cost": 0,
+    "flags": [ "FLAMMABLE_ASH", "NOITEM", "SUPPORTS_ROOF", "TREE", "REDUCE_SCENT", "HARVESTED" ],
+    "examine_action": "harvested_plant",
+    "transforms_into": "t_tree_pomegranate",
+    "bash": {
+      "str_min": 80,
+      "str_max": 180,
+      "sound": "crunch!",
+      "sound_fail": "whack!",
+      "ter_set": "t_dirt",
+      "items": [ { "item": "stick", "count": [ 3, 10 ] }, { "item": "splinter", "count": [ 10, 25 ] } ]
+    }
+  },
+  {
+    "id": "t_tree_take",
+    "type": "terrain",
+    "name": "bamboo",
+    "description": "Bamboo is, in a broad sense, a generic name for species of which the stem is woody, such as woody (Thu), of the Gramineae and Gramineae subfamily.",
+    "symbol": "7",
+    "color": [ "yellow_white", "green_yellow", "green_yellow", "green_yellow" ],
+    "//": "Bamboo is available all year round. Bamboo shoots are also available in the spring.",
+    "move_cost": 0,
+    "flags": [ "TRANSPARENT", "FLAMMABLE_ASH", "NOITEM", "SUPPORTS_ROOF", "REDUCE_SCENT" ],
+    "transforms_into": "t_tree_take_harvested",
+    "examine_action": "harvest_ter",
+    "harvest_by_season": [
+      { "seasons": [ "spring" ], "id": "takenoko_kawa" },
+      { "seasons": [ "spring" ], "id": "take_log" },
+      { "seasons": [ "summer", "autumn", "winter" ], "id": "take_log" }
+    ],
+    "bash": {
+      "str_min": 80,
+      "str_max": 180,
+      "sound": "crunch!",
+      "sound_fail": "whack!",
+      "ter_set": "t_dirt",
+      "items": [ { "item": "take_tutu", "count": [ 3, 10 ] }, { "item": "splinter", "count": [ 10, 25 ] } ]
+    }
+  },
+  {
+    "id": "t_tree_take_harvested",
+    "type": "terrain",
+    "name": "bamboo",
+    "description": "Although it is immature bamboo, bamboo is known to grow very quickly. It will soon be bamboo trees.",
+    "symbol": "1",
+    "color": [ "light_green", "light_green", "light_green", "brown" ],
+    "//": "Amazing child growing after one season",
+    "move_cost": 3,
+    "flags": [ "TRANSPARENT", "FLAMMABLE_ASH", "NOITEM", "YOUNG", "REDUCE_SCENT", "FLAT", "HARVESTED" ],
+    "examine_action": "harvested_plant",
+    "transforms_into": "t_tree_take",
+    "bash": {
+      "str_min": 4,
+      "str_max": 50,
+      "sound": "crunch!",
+      "sound_fail": "whack!",
+      "ter_set": "t_dirt",
+      "items": [ { "item": "take_tutu", "count": [ 1, 5 ] }, { "item": "splinter", "count": [ 5, 8 ] } ]
+    }
+  },
+  {
+    "id": "t_torii",
+    "type": "terrain",
+    "name": "torii",
+    "description": "A kind of sacred gate found in Japan, built at the boundary of the place where God lives and the place where humans live, it has a role to connect the two.",
+    "symbol": "LINE_OXOX",
+    "color": "brown",
+    "move_cost": 2,
+    "flags": [ "TRANSPARENT", "NOITEM", "THIN_OBSTACLE", "MOUNTABLE", "SHORT", "AUTO_WALL_SYMBOL" ],
+    "connects_to": "WOODFENCE",
+    "bash": {
+      "str_min": 40,
+      "str_max": 80,
+      "sound": "crack.",
+      "sound_fail": "wham.",
+      "ter_set": "t_null",
+      "items": [ { "item": "log", "count": [ 8, 14 ] }, { "item": "splinter", "count": [ 10, 24 ] } ]
+    }
+  }
+]
