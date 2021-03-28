@@ -23,13 +23,17 @@
     "bonus_per": { "rng": [ 1, 2 ] },
     "worn_override": "boxer_johnny_worn",
     "weapon_override": "EMPTY_GROUP",
+    "skills": [
+      { "name": "melee", "bonus": { "rng": [ 2, 4 ] } },
+      { "name": "dodge", "bonus": { "rng": [ 2, 4 ] } },
+      { "name": "unarmed", "bonus": { "rng": [ 2, 4 ] } }
+    ],
     "traits": [
       { "group": "NPC_starting_traits" },
       { "group": "Appearance_African" },
       { "trait": "PAINRESIST" },
       { "trait": "PROF_BOXER" }
-    ],
-    "skills": [ { "skill": "melee", "level": 4 }, { "skill": "dodge", "level": 4 }, { "skill": "unarmed", "level": 4 } ]
+    ]
   },
   {
     "id": "boxer_johnny_worn",
@@ -147,7 +151,7 @@
     "value": 1000,
     "start": {
       "effect": [ "follow_only" ],
-      "assign_mission_target": { "om_terrain": "gym" },
+      "assign_mission_target": { "om_terrain": "gym", "om_special": "gym", "reveal_radius": 3, "search_range": 360 },
       "update_mapgen": {
         "place_npcs": [
           { "class": "bandit", "x": [ 5, 20 ], "y": [ 5, 20 ], "target": true },
@@ -182,11 +186,8 @@
     "item": "moneylender_head",
     "difficulty": 0,
     "value": 1000,
-    "deadline_low": 31,
-    "deadline_high": 31,
     "start": {
-      "assign_mission_target": { "om_terrain": "moneylender_hub" },
-      "reveal_om_ter": "moneylender_hub",
+      "assign_mission_target": { "om_terrain": "moneylender_hub", "om_special": "moneylender_hub", "reveal_radius": 3, "search_range": 360 },
       "effect": [
         { "npc_first_topic": "bjohnny_busy" },
         { "u_add_var": "bj_debt", "type": "flag", "context": "meeting", "value": "yes" }
