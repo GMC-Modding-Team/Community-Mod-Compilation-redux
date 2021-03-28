@@ -1,0 +1,116 @@
+[
+  {
+    "id": "crystal_heart",
+    "name": { "str": "Crystal heart" },
+    "type": "TOOL",
+    "symbol": "*",
+    "weight": "420 g",
+    "volume": "780 ml",
+    "description": "A gem that fits in your hand and resembles a heart, covered in silver and gold decoration and pulsating with an odd warmth. Its open veins eternally bleed a shimmering liquid that evaporates quickly. 'Only by drinking from the crystal heart shall you be one with the earth and its treasures.' - Excerpt from the strange gem-covered journal. Trying it as is won't get you anywhere though, the book doesn't say anything obvious about how to stabilize the liquid and now the strange liquid evaporates too quickly to be drank. You'll have to find another way if you want to do anything with it.",
+    "color": "light_blue"
+  },
+  {
+    "id": "mutagen_crystal",
+    "copy-from": "mutagen_flavor",
+    "type": "COMESTIBLE",
+    "name": { "str": "Shimmering water" },
+    "description": "A watery measure of the crystalline blood you've managed to stabilize and collect from the crystal heart. Drinking this is sure to change you.",
+    "color": "light_blue",
+    "use_action": { "type": "mutagen", "mutation_category": "CRYSTAL" }
+  },
+  {
+    "id": "iv_mutagen_crystal",
+    "copy-from": "iv_mutagen_flavor",
+    "type": "COMESTIBLE",
+    "name": { "str": "Crystal blood" },
+    "description": "A thick and glittering measure of the crystalline blood you've managed to stabilize and collect from the crystal heart. Injecting this straight into your bloodstream is sure to change you.",
+    "color": "light_blue",
+    "use_action": { "type": "mutagen_iv", "mutation_category": "CRYSTAL" }
+  },
+  {
+    "id": "mineral_glue",
+    "name": { "str": "Mineral glue" },
+    "description": "Crushed diamond mixed with superglue to make a suitable substance to fill in and patch up the cracks in crystalline objects. A mineral being might have use of this.",
+    "type": "COMESTIBLE",
+    "comestible_type": "MED",
+    "weight": "375 g",
+    "volume": "250 ml",
+    "price": "6 USD",
+    "material": [ "stone" ],
+    "symbol": "~",
+    "color": "white",
+    "charges": 3,
+    "stack_size": 15,
+    "flags": [ "NO_INGEST", "CANT_HEAL_EVERYONE" ],
+    "use_action": { "type": "cast_spell", "spell_id": "mineral_glue_heal", "no_fail": true, "level": 1 }
+  },
+  {
+    "id": "gem_covered_book",
+    "type": "BOOK",
+    "name": { "str": "The Crystal Heart", "str_pl": "copies of The Crystal Heart" },
+    "description": "A odd book whose misshapen covers are both covered and partly made of various gemstones. Stranger still, it details the creation of an item known as a crystal heart as part of a story. Perhaps actually trying to make one could lead to something.",
+    "weight": "1620 g",
+    "volume": "1250 ml",
+    "price": "45 USD",
+    "price_postapoc": "250 cent",
+    "bashing": 5,
+    "material": [ "paper" ],
+    "symbol": "?",
+    "color": "light_blue",
+    "skill": "fabrication",
+    "required_level": 6,
+    "max_level": 8,
+    "intelligence": 8,
+    "time": "30 m"
+  },
+  {
+    "copy-from": "sharp_rock",
+    "type": "COMESTIBLE",
+    "name": { "str": "sharp rock" },
+    "material": [ "stone" ],
+    "calories": 1060,
+    "quench": -1,
+    "healthy": 0,
+    "comestible_type": "FOOD",
+    "flags": [ "EDIBLE_FROZEN" ],
+    "use_action": {
+      "type": "consume_drug",
+      "activation_message": "You eat your sharp rock.",
+      "effects": [ { "id": "rockgut", "duration": 3600 } ]
+    }
+  },
+  {
+    "copy-from": "rock",
+    "type": "COMESTIBLE",
+    "name": { "str": "rock" },
+    "material": [ "stone" ],
+    "calories": 1060,
+    "quench": -1,
+    "healthy": 0,
+    "comestible_type": "FOOD",
+    "flags": [ "EDIBLE_FROZEN", "NUTRIENT_OVERRIDE" ],
+    "use_action": {
+      "type": "consume_drug",
+      "activation_message": "You eat your rock.",
+      "effects": [ { "id": "rockgut", "duration": 3600 } ]
+    }
+  },
+  {
+    "copy-from": "water",
+    "type": "COMESTIBLE",
+    "name": { "str": "water" },
+    "material": [ "water" ]
+  },
+  {
+    "copy-from": "salt_water",
+    "type": "COMESTIBLE",
+    "name": { "str": "salt water" },
+    "material": [ "water" ]
+  },
+  {
+    "copy-from": "water_clean",
+    "type": "COMESTIBLE",
+    "name": { "str": "clean water" },
+    "material": [ "water" ]
+  }
+]

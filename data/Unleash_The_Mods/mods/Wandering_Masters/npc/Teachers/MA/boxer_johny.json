@@ -1,8 +1,8 @@
 [
   {
     "//": "TODO check text, maybe balance him a bit ",
-    "type": "npc",
     "id": "boxer_johnny",
+    "type": "npc",
     "name_unique": "Boxer Johnny",
     "gender": "male",
     "class": "boxer_johnny",
@@ -12,8 +12,8 @@
     "faction": "boxer_johnny_gym"
   },
   {
-    "type": "npc_class",
     "id": "boxer_johnny",
+    "type": "npc_class",
     "name": { "str": "Boxer Johnny" },
     "job_description": "Boxer Johnny.",
     "common": false,
@@ -23,17 +23,21 @@
     "bonus_per": { "rng": [ 1, 2 ] },
     "worn_override": "boxer_johnny_worn",
     "weapon_override": "EMPTY_GROUP",
+    "skills": [
+      { "name": "melee", "bonus": { "rng": [ 2, 4 ] } },
+      { "name": "dodge", "bonus": { "rng": [ 2, 4 ] } },
+      { "name": "unarmed", "bonus": { "rng": [ 2, 4 ] } }
+    ],
     "traits": [
       { "group": "NPC_starting_traits" },
       { "group": "Appearance_African" },
       { "trait": "PAINRESIST" },
       { "trait": "PROF_BOXER" }
-    ],
-    "skills": [ { "skill": "melee", "level": 4 }, { "skill": "dodge", "level": 4 }, { "skill": "unarmed", "level": 4 } ]
+    ]
   },
   {
-    "type": "item_group",
     "id": "boxer_johnny_worn",
+    "type": "item_group",
     "subtype": "collection",
     "entries": [
       { "item": "under_armor_shorts" },
@@ -49,8 +53,8 @@
     ]
   },
   {
-    "type": "talk_topic",
     "id": "boxer_johnny_1",
+    "type": "talk_topic",
     "dynamic_line": {
       "u_has_var": "bj_debt_repaid",
       "type": "flag",
@@ -73,20 +77,20 @@
     ]
   },
   {
-    "type": "talk_topic",
     "id": "boxer_johnny_moneylender",
+    "type": "talk_topic",
     "dynamic_line": "There, in his bar.",
     "responses": [ { "text": "Thanks.", "topic": "TALK_DONE" } ]
   },
   {
-    "type": "talk_topic",
     "id": "boxer_johnny_Background",
+    "type": "talk_topic",
     "dynamic_line": "Well I’m just a regular boxer, really. I worked here before <the_cataclysm>, but now I live here, I suppose.",
     "responses": [ { "text": "<done_conversation_section>", "topic": "TALK_NONE" } ]
   },
   {
-    "type": "talk_topic",
     "id": "boxer_johnny_teach_check",
+    "type": "talk_topic",
     "dynamic_line": "I'll teach you, for sure, but only after I'll deal with all my problems.",
     "responses": [
       {
@@ -109,20 +113,20 @@
     ]
   },
   {
-    "type": "talk_topic",
     "id": "boxer_johnny_teach",
+    "type": "talk_topic",
     "dynamic_line": "Yeah, I guess they are. Here, you can take it.",
     "responses": [ { "text": "Thanks, Johnny.", "topic": "TALK_DONE" } ]
   },
   {
-    "type": "talk_topic",
     "id": "boxer_johnny_teach_done",
+    "type": "talk_topic",
     "dynamic_line": "I already taught you all I knew.",
     "responses": [ { "text": "Thanks again, Johnny.", "topic": "TALK_DONE" } ]
   },
   {
-    "type": "talk_topic",
     "id": "bjohnny_busy",
+    "type": "talk_topic",
     "dynamic_line": "*looks busy.",
     "responses": [
       { "text": "Ahem!", "topic": "boxer_johnny_1", "condition": "mission_complete" },
@@ -147,7 +151,7 @@
     "value": 1000,
     "start": {
       "effect": [ "follow_only" ],
-      "assign_mission_target": { "om_terrain": "gym" },
+      "assign_mission_target": { "om_terrain": "gym", "om_special": "gym", "reveal_radius": 3, "search_range": 360 },
       "update_mapgen": {
         "place_npcs": [
           { "class": "bandit", "x": [ 5, 20 ], "y": [ 5, 20 ], "target": true },
@@ -182,11 +186,8 @@
     "item": "moneylender_head",
     "difficulty": 0,
     "value": 1000,
-    "deadline_low": 31,
-    "deadline_high": 31,
     "start": {
-      "assign_mission_target": { "om_terrain": "moneylender_hub" },
-      "reveal_om_ter": "moneylender_hub",
+      "assign_mission_target": { "om_terrain": "moneylender_hub", "om_special": "moneylender_hub", "reveal_radius": 3, "search_range": 360 },
       "effect": [
         { "npc_first_topic": "bjohnny_busy" },
         { "u_add_var": "bj_debt", "type": "flag", "context": "meeting", "value": "yes" }
