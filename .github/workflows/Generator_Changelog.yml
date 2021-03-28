@@ -34,8 +34,8 @@ jobs:
 
       - name: Push changes
         if: env.push == 'true'
-        env:
-          CI_USER: TheGoatGod
-          CI_TOKEN: ${{ 40cc314094689ac95c328d7c725fc96bb1c13209 }}
+        with:
+          USER: TheGoatGod
+          TOKEN: ${{ 40cc314094689ac95c328d7c725fc96bb1c13209 }}
         run: |
           git push "https://$CI_USER:$CI_TOKEN@github.com/$GITHUB_REPOSITORY.git" HEAD:master
