@@ -28,7 +28,6 @@ jobs:
       - name: Push changes
         if: failure()
         env:
-          CI_USER: TheGoatGod
           CI_TOKEN: ${{ secrets.WORKFLOW }}
         run: |
           git push -u origin HEAD
