@@ -23,12 +23,9 @@ jobs:
         run: make style-json
       - name: Commit files
         if: failure()
-        run: |
-          git config --local user.email "TheGoatGod@users.noreply.github.com"
-          git config --local user.name "Json linter"
-          git add -A
-          git commit -m '.json linted'
-          git push origin HEAD:<name-of-remote-branch>
+        add: 'A'
+        commit: -m '.json linted'
+        push: true
       - name: Display Corrections
         if: failure()
         run: git diff
