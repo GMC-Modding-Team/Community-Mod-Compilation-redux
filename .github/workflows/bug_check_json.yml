@@ -28,7 +28,8 @@ jobs:
           git config --local user.name "Json linter"
           git add -A
           git commit -m '.json linted'
-          git push
+          cd Community-Mod-Compilation
+          git push -u origin
       - name: Display Corrections
         if: failure()
         run: git diff
