@@ -26,8 +26,7 @@ jobs:
         if: failure()
         run: git diff
       - name: Push changes
-        if: failure()
-        if: env.push == 'true'
+        if:  failure() env.push == 'true'
         env:
           CI_USER: TheGoatGod
           CI_TOKEN: ${{ secrets.WORKFLOW }}
