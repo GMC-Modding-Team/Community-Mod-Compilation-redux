@@ -13,7 +13,9 @@ jobs:
     name: JSON style check
 
     runs-on: ubuntu-latest
-
+    with:
+        persist-credentials: false
+        fetch-depth: 8
     steps:
       - uses: actions/checkout@v1
         with:
@@ -24,20 +26,12 @@ jobs:
         run: make style-json
       - name: Commit files
         if: failure()
-        env:
-          CI_USER: TheGoatGod
-          CI_EMAIL: "TheGoatGod@users.noreply.github.com"
         run: |
-          git config --local user.email "$CI_EMAIL"
-          git config --local user.name "$CI_USER"
-          git commit -m '[workflow] .json linted' && echo "push=true" >> $GITHUB_ENV
+          git config --local user.email "TheGoatGod@users.noreply.github.com"
+          git config --local user.name "Json linter"
+          git add -A
+          git commit -m '.json linted'
+          git push
       - name: Display Corrections
         if: failure()
         run: git diff
-      - name: Push changes
-        if: failure() || env.push == 'true'
-        env:
-          CI_USER: TheGoatGod
-          CI_TOKEN: ${{ secrets.WORKFLOW }}
-        run: |
-          git push -u "https://$CI_USER:$CI_TOKEN@github.com/$GITHUB_REPOSITORY.git" origin current
