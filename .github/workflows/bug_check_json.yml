@@ -26,9 +26,10 @@ jobs:
         if: failure()
         run: git diff
       - name: Push changes
-        if:  failure() env.push == 'true'
+        if: failure()
         env:
           CI_USER: TheGoatGod
           CI_TOKEN: ${{ secrets.WORKFLOW }}
+          push: true
         run: |
           git push "https://$CI_USER:$CI_TOKEN@github.com/$GITHUB_REPOSITORY.git"
