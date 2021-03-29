@@ -27,7 +27,6 @@ jobs:
         run: git diff
       - name: Push changes
         if: failure()
-        env:
-          CI_TOKEN: ${{ secrets.WORKFLOW }}
+        TOKEN: ${{ secrets.WORKFLOW }}
         run: |
           git push -u origin HEAD
