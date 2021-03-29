@@ -30,7 +30,7 @@ jobs:
         run: |
           git config --local user.email "$CI_EMAIL"
           git config --local user.name "$CI_USER"
-          git git commit -m '[workflow] .json linted' && echo "push=true" >> $GITHUB_ENV
+          git commit -m '[workflow] .json linted' && echo "push=true" >> $GITHUB_ENV
       - name: Display Corrections
         if: failure()
         run: git diff
