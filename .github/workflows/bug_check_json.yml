@@ -1,4 +1,4 @@
-name: bug check .json 
+name: bug check .json
 
 on:
   push:
@@ -21,6 +21,8 @@ jobs:
         run: sudo apt-get install -y astyle
       - name: JSON style check
         run: make style-json
+        with:
+          push: true
       - name: Display Corrections
         if: failure()
         run: git diff
