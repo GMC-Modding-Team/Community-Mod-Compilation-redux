@@ -21,8 +21,6 @@ jobs:
         run: sudo apt-get install -y astyle
       - name: JSON style check
         run: make style-json
-      - name: Commit files
-        if: failure()
         add: 'A'
         commit: -m '.json linted'
         push: true
