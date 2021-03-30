@@ -20,8 +20,7 @@ jobs:
       - name: install astyle
         run: sudo apt-get install -y astyle
       - name: JSON style check
-        run: make style-json
-        push: true
+        run: make style-json push: true
       - name: Display Corrections
         if: failure()
         run: git diff
