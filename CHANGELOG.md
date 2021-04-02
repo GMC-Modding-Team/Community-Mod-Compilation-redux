@@ -6,11 +6,13 @@
 
 **Implemented enhancements:**
 
+- \[Experimental\] brand cereal mod [\#88](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/88) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] standardise recipes [\#83](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/83) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] Cereal mod revamp \[Part 2\] [\#66](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/66) ([TheGoatGod](https://github.com/TheGoatGod))
 
 **Fixed bugs:**
 
+- \[Experimental\] Brand cereal mod - Fix weights and volumes [\#87](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/87)
 - \[Experimental\] mod merge with dependencies [\#82](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/82)
 - \[Experimental\] anti fungal equipment expansion  [\#76](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/76)
 - \[Experimental\] tileset for xotto cosmetics [\#55](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/55)
