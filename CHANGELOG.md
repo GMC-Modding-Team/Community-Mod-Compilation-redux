@@ -29,6 +29,7 @@
 
 **Merged pull requests:**
 
+- \[Experimental\] working mods fixes [\#90](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/90) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Github\] workflows [\#85](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/85) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Github\] changes to workflows [\#84](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/84) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] unleash the mods updates [\#78](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/78) ([TheGoatGod](https://github.com/TheGoatGod))
