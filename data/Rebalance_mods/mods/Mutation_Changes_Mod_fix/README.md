@@ -6,3 +6,14 @@ Its basically Mutation Changes Mod from Peeved Penguin but fixed, so it can run 
 -Also there are still a bit of problems with the mod, But i personally think it isn't that bad... Oh well here it is. The mod won't download itself from cdda launcher because... Of things... Don't look at me like that it's the first time i do these things, and i don't know everything, But going back to the point... You can do a manual download to the mod, if you don't know how to do that (which is very unlikely...) it's very easy just create a folder in the "mods" folder, (if the mod's contents aren't in a folder already) name it with the mod's name, and put the content of the mod there, if the mod is compressed and its already in a folder just drag it to the "mods" folder which its inside the "data" folder and boom there you have it, just create a new world load it aaaand... i realized that you may already know this and i am just losing my time Yay! ... Nah! Just kidding ;3.
 
 Reply me in the discourse to share your opinions and suggestions,or if you want me to change something or keep the mod updated. ;)
+
+>Hey, new bugfixer here. Fixed
+the lab start bug by deleting
+the scenarios JSON in here
+and rebalanced, reformatted, and 
+generally unfucked the tortoise
+mutation. Contact me on the discord at @SnoTheLeopard#0621 for more questions.
+
+>Please help me get this mainlined <3 <3 <3
+
+Hello there, updated to the new version, mutations should work, there is maybe left some bugs, tell me about them, will try my best to fix them.
