@@ -6,9 +6,11 @@
 
 **Implemented enhancements:**
 
+- \[Experimental\] Cereal mod revamp \[Part 1\] [\#1](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/1) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] brand cereal mod [\#88](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/88) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] standardise recipes [\#83](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/83) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] Cereal mod revamp \[Part 2\] [\#66](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/66) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Experimental\] standardise json [\#71](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/71) ([TheGoatGod](https://github.com/TheGoatGod))
 
 **Fixed bugs:**
 
@@ -25,35 +27,35 @@
 - \[Experimental\] kingsman rework [\#70](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/70) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] unleash the mods updates [\#69](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/69) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] working mods update [\#68](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/68) ([TheGoatGod](https://github.com/TheGoatGod))
-- \[Experimental\] abrahms mods [\#65](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/65) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Experimental\] abrahms mods [\#65](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/65) ([TheGoatGod](https://github.com/TheGoatGod)) 
+- \[Experimental\] mainline mods [\#99](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/99) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Experimental\] add new mods [\#98](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/98) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Experimental\] standardise json [\#71](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/71) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Experimental\] Rebalance mods [\#94](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/94) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Experimental\] working mods fixes [\#90](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/90) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Experimental\] unleash the mods updates [\#78](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/78) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Experimental\] Anti-fungicidal equipment update [\#77](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/77) ([TheGoatGod](https://github.com/TheGoatGod))
 
 **Closed issues:**
 
 - \[Github\] automate push feature for json check workflow [\#86](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/86)
 - \[GitHub\] No push to master [\#63](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/63)
 
-**Merged pull requests:**
+**GitHub Changes:**
 
 - \[Github\] workflow name changes [\#103](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/103) ([TheGoatGod](https://github.com/TheGoatGod))
-- \[Experimental\] Workflow changes [\#101](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/101) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Github\] Workflow changes [\#101](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/101) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[GitHub\] Workflow changes [\#100](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/100) ([TheGoatGod](https://github.com/TheGoatGod))
-- \[Experimental\] mainline mods [\#99](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/99) ([TheGoatGod](https://github.com/TheGoatGod))
-- \[Experimental\] add new mods [\#98](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/98) ([TheGoatGod](https://github.com/TheGoatGod))
 - Remove mods [\#95](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/95) ([TheGoatGod](https://github.com/TheGoatGod))
-- \[Experimental\] Rebalance mods [\#94](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/94) ([TheGoatGod](https://github.com/TheGoatGod))
-- \[Experimental\] working mods fixes [\#90](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/90) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Github\] workflows [\#85](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/85) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Github\] changes to workflows [\#84](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/84) ([TheGoatGod](https://github.com/TheGoatGod))
-- \[Experimental\] unleash the mods updates [\#78](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/78) ([TheGoatGod](https://github.com/TheGoatGod))
-- \[Experimental\] Anti-fungicidal equipment update [\#77](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/77) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Github\] Changelog\_generator.yml [\#75](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/75) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Github\] Changelog\_generator.yml [\#74](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/74) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[GitHub\] workflows [\#73](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/73) ([TheGoatGod](https://github.com/TheGoatGod))
-- \[Experimental\] standardise json [\#71](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/71) ([TheGoatGod](https://github.com/TheGoatGod))
-- Create CIB-horizon Wiki.url [\#64](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/64) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[GitHub\] Create CIB-horizon Wiki.url [\#64](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/64) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[GitHub\] Workflows updates [\#62](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/62) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[GitHub\] update doc toc [\#61](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/61) ([TheGoatGod](https://github.com/TheGoatGod))
-- \[Experimental\] Cereal mod revamp \[Part 1\] [\#1](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/1) ([TheGoatGod](https://github.com/TheGoatGod))
+
 
 ## [V0.1.7](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/tree/V0.1.7) (2021-03-07)
 
