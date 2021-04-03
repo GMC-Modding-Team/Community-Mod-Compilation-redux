@@ -1,12 +1,9 @@
-name: .Md linter
+name: linter .Md
 
 on:
   pull_request:
     paths:
-      - "**/*.md"
-      - ".markdownlint.json"
-      - ".github/workflows/markdownlint.yml"
-      - ".github/workflows/markdownlint-problem-matcher.json"
+      - "**.md"
 
 jobs:
   lint:
@@ -19,8 +16,8 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 12.x
-    - name: Run Markdownlint
+    - name: Run Markdown linter
       run: |
         echo "::add-matcher::.github/workflows/markdownlint-problem-matcher.json"
         npm i -g markdownlint-cli
-        markdownlint "**/*.md"
+        markdownlint "**.md"
