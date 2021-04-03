@@ -12,6 +12,7 @@
 
 **Fixed bugs:**
 
+- \[Experimental\] Duplicate profession  [\#92](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/92)
 - \[Experimental\] Brand cereal mod - Fix weights and volumes [\#87](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/87)
 - \[Experimental\] mod merge with dependencies [\#82](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/82)
 - \[Experimental\] anti fungal equipment expansion  [\#76](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/76)
