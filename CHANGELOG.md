@@ -32,6 +32,7 @@
 
 **Merged pull requests:**
 
+- \[Experimental\] add new mods [\#98](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/98) ([TheGoatGod](https://github.com/TheGoatGod))
 - Remove mods [\#95](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/95) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] Rebalance mods [\#94](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/94) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] working mods fixes [\#90](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/90) ([TheGoatGod](https://github.com/TheGoatGod))
