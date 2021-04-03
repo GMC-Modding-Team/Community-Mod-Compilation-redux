@@ -6,14 +6,19 @@
 
 **Implemented enhancements:**
 
+- \[Experimental\] brand cereal mod [\#88](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/88) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] standardise recipes [\#83](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/83) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] Cereal mod revamp \[Part 2\] [\#66](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/66) ([TheGoatGod](https://github.com/TheGoatGod))
 
 **Fixed bugs:**
 
+- \[Experimental\] Duplicate profession  [\#92](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/92)
+- \[Experimental\] Brand cereal mod - Fix weights and volumes [\#87](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/87)
 - \[Experimental\] mod merge with dependencies [\#82](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/82)
 - \[Experimental\] anti fungal equipment expansion  [\#76](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/76)
 - \[Experimental\] tileset for xotto cosmetics [\#55](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/55)
+- \[Experimental\] Working mods [\#97](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/97) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Experimental\] maintained mod [\#96](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/96) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Mod merge\] miso touyou toyhou merge [\#81](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/81) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] update unleash the mods [\#79](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/79) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] kingsman rework [\#70](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/70) ([TheGoatGod](https://github.com/TheGoatGod))
@@ -27,6 +32,12 @@
 
 **Merged pull requests:**
 
+- \[GitHub\] Workflow changes [\#100](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/100) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Experimental\] mainline mods [\#99](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/99) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Experimental\] add new mods [\#98](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/98) ([TheGoatGod](https://github.com/TheGoatGod))
+- Remove mods [\#95](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/95) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Experimental\] Rebalance mods [\#94](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/94) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Experimental\] working mods fixes [\#90](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/90) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Github\] workflows [\#85](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/85) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Github\] changes to workflows [\#84](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/84) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] unleash the mods updates [\#78](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/78) ([TheGoatGod](https://github.com/TheGoatGod))
