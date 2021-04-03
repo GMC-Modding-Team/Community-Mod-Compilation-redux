@@ -17,6 +17,7 @@
 - \[Experimental\] mod merge with dependencies [\#82](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/82)
 - \[Experimental\] anti fungal equipment expansion  [\#76](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/76)
 - \[Experimental\] tileset for xotto cosmetics [\#55](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/55)
+- \[Experimental\] Mutation\_Changes\_Snofielf\_Patch Duplicate entries [\#12](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/12)
 - \[Experimental\] Working mods [\#97](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/97) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] maintained mod [\#96](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/96) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Mod merge\] miso touyou toyhou merge [\#81](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/81) ([TheGoatGod](https://github.com/TheGoatGod))
@@ -28,6 +29,7 @@
 
 **Closed issues:**
 
+- \[Github\] automate push feature for json check workflow [\#86](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/86)
 - \[GitHub\] No push to master [\#63](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/63)
 
 **Merged pull requests:**
