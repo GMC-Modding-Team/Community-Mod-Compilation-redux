@@ -34,6 +34,7 @@
 
 **Merged pull requests:**
 
+- \[Github\] workflow name changes [\#103](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/103) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] Workflow changes [\#101](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/101) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[GitHub\] Workflow changes [\#100](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/100) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] mainline mods [\#99](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/99) ([TheGoatGod](https://github.com/TheGoatGod))
