@@ -17,6 +17,7 @@
 - \[Experimental\] mod merge with dependencies [\#82](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/82)
 - \[Experimental\] anti fungal equipment expansion  [\#76](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/76)
 - \[Experimental\] tileset for xotto cosmetics [\#55](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/55)
+- \[Experimental\] maintained mod [\#96](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/96) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Mod merge\] miso touyou toyhou merge [\#81](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/81) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] update unleash the mods [\#79](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/79) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] kingsman rework [\#70](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/70) ([TheGoatGod](https://github.com/TheGoatGod))
