@@ -1,0 +1,24 @@
+name: Python linter
+
+on:
+  pull_request:
+    paths:
+    - '**.py'
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: checkout repository
+      uses: actions/checkout@v1
+      with:
+        fetch-depth: 10
+    - name: install dependencies
+      run: sudo apt-get install flake8
+    - name: install astyle
+      run: sudo apt-get install -y astyle
+    - name: Enable flake8 problem matcher
+      run: echo "::add-matcher::build-scripts/problem-matchers/flake8.json"
+    - name: run Flake8
+      run: make python-check
