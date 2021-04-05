@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- \[Experimental\] Tow mod update [\#106](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/106) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] rope tow [\#104](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/104) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] unleash the mods [\#102](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/102) ([TheGoatGod](https://github.com/TheGoatGod))
 
