@@ -4,6 +4,11 @@
 
 [Full Changelog](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/compare/0.1.8...HEAD)
 
+**Fixed bugs:**
+
+- \[Github\] Template fixes and update [\#110](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/110)
+- Pr requests md [\#111](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/111) ([TheGoatGod](https://github.com/TheGoatGod))
+
 **Merged pull requests:**
 
 - \[Experimental\] Tow mod update [\#106](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/106) ([TheGoatGod](https://github.com/TheGoatGod))
@@ -54,6 +59,7 @@
 - \[Experimental\] working mods fixes [\#90](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/90) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Github\] workflows [\#85](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/85) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Github\] changes to workflows [\#84](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/84) ([TheGoatGod](https://github.com/TheGoatGod))
+- move type under result for standardisation [\#80](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/80) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] unleash the mods updates [\#78](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/78) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] Anti-fungicidal equipment update [\#77](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/77) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Github\] Changelog\_generator.yml [\#75](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/75) ([TheGoatGod](https://github.com/TheGoatGod))
