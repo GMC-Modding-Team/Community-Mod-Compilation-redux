@@ -22,8 +22,6 @@ assignees: TheGoatGod
 Put the name of the mod(s) that you have added here.
 
 1. [mod name]
-2. [mod name]
-3. [mod name]
 
 **fixes and tweeks.**
 add all the mods you fixed here, with there fixes and tweaks.
@@ -32,6 +30,3 @@ add all the mods you fixed here, with there fixes and tweaks.
 a. [what did you fix]
 b. [what did you fix]
 c. [what did you fix]
-
-**for other updates.**
-cant think of anything else ATM

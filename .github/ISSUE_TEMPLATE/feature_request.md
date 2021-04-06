@@ -20,12 +20,10 @@ assignees: TheGoatGod
 
 **Mod Name**
 Put the name of the mod(s) that you would like to be improved here.
-Or
 Put the idea or mod that you would like to see happen.
 
 **Describe what you would like to see**
 A clear and concise description of what you want to happen.
-eg. like i improved `id`
 
 **Additional context**
 
