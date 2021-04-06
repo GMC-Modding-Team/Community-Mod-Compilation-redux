@@ -1,3 +1,12 @@
+---
+name: Feature request
+about: Create a feature request to help us make more content for mods
+title: "[Experimental]"
+labels: Experimental F
+assignees: TheGoatGod
+
+---
+
 <!---
 **Tags**
 `put one of these in the title`

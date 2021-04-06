@@ -1,3 +1,12 @@
+---
+name: Pull request template
+about: Create a pull request template.
+title: "[Experimental]"
+labels: Experimental F, bug
+assignees: TheGoatGod
+
+---
+
 <!---
 **Tags**
 `put one of these in the title`
