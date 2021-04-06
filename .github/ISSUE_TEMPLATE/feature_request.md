@@ -10,15 +10,16 @@
 [Documentation] - only for Documentation
 --->
 
-**Mod Name.**
+**Mod Name**
 Put the name of the mod(s) that you would like to be improved here.
 Or
 Put the idea or mod that you would like to see happen.
 
-**Describe what you improved.**
+**Describe what you would like to see**
 A clear and concise description of what you want to happen.
 eg. like i improved `id`
 
-**Additional context.**
+**Additional context**
+
 Add any other context or screenshots about the feature request here.
 You can add more section/category/titles with two ** at the start and end
