@@ -13,7 +13,6 @@ put one of these in the title
 [E-3] - only for E Stable
 [BrightNights] - only for Bright nights
 [SoundPacks] - only for Sound Packs
-[TileSets] - only for Tile Set
 [Fonts] - only for Fonts
 
 **Describe the bug**

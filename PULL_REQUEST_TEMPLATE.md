@@ -14,7 +14,6 @@ assignees: TheGoatGod
 [E-3] - only for E Stable
 [BrightNights] - only for Bright nights
 [SoundPacks] - only for Sound Packs
-[TileSets] - only for Tile Set
 [Fonts] - only for Fonts
 [Documentation] - only for Documentation
 --->
