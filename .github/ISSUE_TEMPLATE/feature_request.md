@@ -28,4 +28,5 @@ A clear and concise description of what you want to happen.
 **Additional context**
 
 Add any other context or screenshots about the feature request here.
-You can add more section/category/titles with two ** at the start and end
+give me an idea of what you want.
+You can add more section/category/titles with two ** at the start and end.

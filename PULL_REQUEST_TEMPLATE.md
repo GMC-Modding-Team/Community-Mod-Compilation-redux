@@ -19,12 +19,12 @@ assignees: TheGoatGod
 --->
 
 **Name the mod added to the compilation or fixed.**
-Put the name of the mod(s) that you have added here.
+Put the name of the mod(s) that you have added here and continue the number.
 
 1. [mod name]
 
 **fixes and tweeks.**
-add all the mods you fixed here, with there fixes and tweaks.
+add all the mods you fixed here, with there fixes and tweaks. generalized.
 
 1. [mod name]
 a. [what did you fix]
