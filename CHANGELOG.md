@@ -121,6 +121,7 @@
 - \[GitHub\] Update README.md [\#24](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/24) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[GitHub\] Update README.md [\#22](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/22) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] documents fix [\#20](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/20) ([TheGoatGod](https://github.com/TheGoatGod))
+- Update README.md [\#14](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/14) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] add tileset for xotto cosmetics [\#3](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/3) ([TheGoatGod](https://github.com/TheGoatGod))
 
 ## [v0.1.6](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/tree/v0.1.6) (2021-02-18)
@@ -133,7 +134,6 @@
 
 **Merged pull requests:**
 
-- Update README.md [\#14](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/14) ([TheGoatGod](https://github.com/TheGoatGod))
 - Update LICENSE.TXT [\#10](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/10) ([TheGoatGod](https://github.com/TheGoatGod))
 - Create LICENSE.TXT [\#9](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/9) ([TheGoatGod](https://github.com/TheGoatGod))
 - Delete LICENSE [\#8](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/8) ([TheGoatGod](https://github.com/TheGoatGod))
