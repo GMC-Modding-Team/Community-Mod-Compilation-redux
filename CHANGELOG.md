@@ -39,7 +39,6 @@
 - \[Experimental\] update unleash the mods [\#79](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/79) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] kingsman rework [\#70](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/70) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] unleash the mods updates [\#69](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/69) ([TheGoatGod](https://github.com/TheGoatGod))
-- \[Experimental\] working mods update [\#68](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/68) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] abrahms mods [\#65](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/65) ([TheGoatGod](https://github.com/TheGoatGod))
 
 **Closed issues:**
@@ -81,6 +80,7 @@
 **Fixed bugs:**
 
 - \[Tilesets\] Better template [\#11](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/11)
+- \[Experimental\] working mods update [\#68](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/68) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] Expanded tefnut update [\#58](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/58) ([TheGoatGod](https://github.com/TheGoatGod))
 - Pr update maintained mods [\#57](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/57) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] Update blazemod W.I.P [\#49](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/49) ([Kenan2000](https://github.com/Kenan2000))
@@ -121,7 +121,6 @@
 - \[GitHub\] Update README.md [\#24](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/24) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[GitHub\] Update README.md [\#22](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/22) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] documents fix [\#20](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/20) ([TheGoatGod](https://github.com/TheGoatGod))
-- Update README.md [\#14](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/14) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] add tileset for xotto cosmetics [\#3](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/3) ([TheGoatGod](https://github.com/TheGoatGod))
 
 ## [v0.1.6](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/tree/v0.1.6) (2021-02-18)
@@ -134,6 +133,7 @@
 
 **Merged pull requests:**
 
+- Update README.md [\#14](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/14) ([TheGoatGod](https://github.com/TheGoatGod))
 - Update LICENSE.TXT [\#10](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/10) ([TheGoatGod](https://github.com/TheGoatGod))
 - Create LICENSE.TXT [\#9](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/9) ([TheGoatGod](https://github.com/TheGoatGod))
 - Delete LICENSE [\#8](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/8) ([TheGoatGod](https://github.com/TheGoatGod))
