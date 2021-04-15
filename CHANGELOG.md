@@ -39,6 +39,7 @@
 - \[Experimental\] update unleash the mods [\#79](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/79) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] kingsman rework [\#70](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/70) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] unleash the mods updates [\#69](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/69) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Experimental\] working mods update [\#68](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/68) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] abrahms mods [\#65](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/65) ([TheGoatGod](https://github.com/TheGoatGod))
 
 **Closed issues:**
@@ -80,7 +81,6 @@
 **Fixed bugs:**
 
 - \[Tilesets\] Better template [\#11](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/11)
-- \[Experimental\] working mods update [\#68](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/68) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] Expanded tefnut update [\#58](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/58) ([TheGoatGod](https://github.com/TheGoatGod))
 - Pr update maintained mods [\#57](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/57) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] Update blazemod W.I.P [\#49](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/49) ([Kenan2000](https://github.com/Kenan2000))
