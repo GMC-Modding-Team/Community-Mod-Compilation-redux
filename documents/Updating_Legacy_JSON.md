@@ -728,5 +728,3 @@ This regex will find all non-ascii (unicode) characters, excluding the ellipsis 
 ```
 
 ---
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
