@@ -1,6 +1,5 @@
 # Override a variable
 
-
 Use the `home` key to get to the top.
 
 **Table of Contents**

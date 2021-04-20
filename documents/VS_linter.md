@@ -18,7 +18,7 @@ commands to format all of the JSON in the project.
 1. Build the JsonFormatter project by either building the entire solution or
    just that project. This will create a `tools/format/json_formatter.exe`
    binary.
-   
+
 2. Add a new external tool entry ( `Tools` > `External Tools..` > `Add` ) and
    configure it as follows:
 
@@ -36,7 +36,6 @@ commands to format all of the JSON in the project.
    position of your command in the list (e.g. `Tools.ExternalCommand1` if it's the
    top item in the list) and then assign shortcut keys to it.
 
-   
 
 3. If you get errors witch contain `style-json.ps1 cannot be loaded because running scripts is disabled on this system. For more information, see about_Execution_Policies at http://go.microsoft.com/fwlink/?LinkID=135170` 
 
