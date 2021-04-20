@@ -4,7 +4,7 @@ Use the `home` key to get to the top.
 
 Currently a copy+paste of http://cddawiki.chezzo.com/cdda_wiki/index.php?title=Controls
 
-with puncuation updates and removed descriptions, untill update.
+with punctuation updates and removed descriptions, until update.
 
 todo
 
