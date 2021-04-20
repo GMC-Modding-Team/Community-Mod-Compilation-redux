@@ -8,6 +8,10 @@
 
 - \[Documentation\] Mod cataloging ids [\#50](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/50)
 
+**Closed issues:**
+
+- \[github\] readme update [\#112](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/112)
+
 **Merged pull requests:**
 
 - \[Github\] Readme changes [\#113](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/113) ([TheGoatGod](https://github.com/TheGoatGod))
