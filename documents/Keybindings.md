@@ -6,17 +6,14 @@ Currently a copy+paste of http://cddawiki.chezzo.com/cdda_wiki/index.php?title=C
 
 with punctuation updates and removed descriptions, until update.
 
-todo
-
-- [ ] add descriptions
-- [ ] fix keys
-- [ ] easier to understand
-- [ ] better tables
-
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
-[TOC]
+**Table of contents**
+- [Controls](#controls)
+  - [Default key bindings](#default_key_bindings)
+    - [Movement](#movement)
+    - [Shift view](#shift_view)
+    - [Environment interaction](#environment_interaction)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 # Controls
@@ -316,20 +313,20 @@ To enable this menu, you will need to edit the Controls. Go to the main menu by 
 
 Looking at an NPC with this debug feature shows the name, class, destination, internal values (Trust, Fear, Anger, Owed, Aggression, Bravery, Collector, Altruism, and the needs of the NPC.
 
-| Keys | Command                                        |
-| ---- | ---------------------------------------------- |
-| s    | Edit skills.                                   |
-| t    | Edit Stats.                                    |
-| i    | Grant items.                                   |
-| d    | Delete all items.                              |
-| w    | Wear/Wield an item from NPC/Player's inventory.|
-| h    | Set hit points.                                |
-| p    | Cause pain.                                    |
-| a    | Set health.                                    |
-| n    | Set needs.                                     |
-| u    | Mutate.                                        |
-| @    | Status Window.                                 |
-| e    | teleport.                                      |
-| m    | Add mission.                                   |
-| c    | Randomize with class.                          |
-| q    | quit.                                          |
+| Keys | Command                                         |
+| ---- | ----------------------------------------------- |
+| s    | Edit skills.                                    |
+| t    | Edit Stats.                                     |
+| i    | Grant items.                                    |
+| d    | Delete all items.                               |
+| w    | Wear/Wield an item from NPC/Player's inventory. |
+| h    | Set hit points.                                 |
+| p    | Cause pain.                                     |
+| a    | Set health.                                     |
+| n    | Set needs.                                      |
+| u    | Mutate.                                         |
+| @    | Status Window.                                  |
+| e    | teleport.                                       |
+| m    | Add mission.                                    |
+| c    | Randomize with class.                           |
+| q    | quit.                                           |
