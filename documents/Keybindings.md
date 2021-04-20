@@ -12,13 +12,13 @@ todo
 - [ ] fix keys
 - [ ] easier to understand
 - [ ] better tables
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of contents**
 - [Controls](#controls)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # Controls
 
 Controls can be customized in Main Menu `(ESC)`, Keybindings submenu (1). The current key bindings are stored in the `config/keybindings.json` file. To revert back to defaults just delete it.
