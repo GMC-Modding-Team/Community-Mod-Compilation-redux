@@ -18,6 +18,10 @@ jobs:
       with:
         node-version: 12.x
     - name: Run Markdown linter
+      line-length:
+      # Allow longer lines for code blocks since account ids are 64 characters long
+      # by themselves.
+      code_block_line_length: 400
       run: |
         echo "::add-matcher::.github/workflows/markdownlint-problem-matcher.json"
         npm i -g markdownlint-cli
