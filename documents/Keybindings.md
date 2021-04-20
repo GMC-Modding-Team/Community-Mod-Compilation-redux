@@ -15,12 +15,8 @@ todo
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of contents**
-- [Controls](#controls)
-  - [Default key bindings](#default_key_bindings)
-    - [Movement](#movement)
-    - [Shift view](#shift_view)
-    - [Environment interaction](#environment_interaction)
+
+[TOC]
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 # Controls
