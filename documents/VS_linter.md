@@ -1,4 +1,4 @@
-## VS linter
+# VS linter
 
 Use the `home` key to get to the top.
 
@@ -8,7 +8,7 @@ Use the `home` key to get to the top.
 * [Setup](#setup)
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## Setup
+# Setup
 
 The formatting tool can be invoked via the Makefile, directly as `tools/format/json_formatter.cgi` (built via `make style-json`), or via cgi at http://dev.narc.ro/cataclysm/format.html
 
@@ -37,11 +37,12 @@ commands to format all of the JSON in the project.
    top item in the list) and then assign shortcut keys to it.
 
 
-3. If you get errors witch contain `style-json.ps1 cannot be loaded because running scripts is disabled on this system. For more information, see about_Execution_Policies at http://go.microsoft.com/fwlink/?LinkID=135170` 
 
-   * change the executionpolicy to `remotesigned` 
-   * run `Windows PowerShell` 
-   * enter `Set-ExecutionPolicy -Scope CurrentUser` 
+3. If you get errors witch contain `style-json.ps1 cannot be loaded because running scripts is disabled on this system. For more information, see about_Execution_Policies at http://go.microsoft.com/fwlink/?LinkID=135170`
+
+   * change the executionpolicy to `remotesigned`
+   * run `Windows PowerShell`
+   * enter `Set-ExecutionPolicy -Scope CurrentUser`
    * And enter `remotesigned`
 
 ---

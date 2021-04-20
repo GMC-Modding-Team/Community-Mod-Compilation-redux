@@ -30,3 +30,4 @@ Use the `home` key to get to the top.
 [Learn JavaScript - Full Course for Beginners](https://www.youtube.com/watch?v=PkZNo7MFNFg)\
 [JavaScript Programming All-in-One Tutorial Series](https://www.youtube.com/watch?v=9M4XKi25I2M)
 
+---
