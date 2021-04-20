@@ -3,8 +3,12 @@
 **Table of Contents**
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-- [Description](#Description)
+**Table of Contents**
+
+- [Description](#description)
 - [Road map](#road-map)
+  - [Goats - Dark Days](#goats---dark-days)
+
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 [![Build_Number](https://img.shields.io/badge/CDDA_Build%3A-%2311458-blue)](https://github.com/CleverRaven/Cataclysm-DDA)
 [![version](https://img.shields.io/badge/GMC_version-0.1.8-blue)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/releases/tag/V0.1.8)
