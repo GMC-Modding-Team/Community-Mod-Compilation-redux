@@ -11,6 +11,7 @@ todo
 - [ ] add descriptions
 - [ ] fix keys
 - [ ] easier to understand
+- [ ] better tables
 
 **Table of contents**
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
