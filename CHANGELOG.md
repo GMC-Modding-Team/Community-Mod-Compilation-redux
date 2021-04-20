@@ -4,16 +4,13 @@
 
 [Full Changelog](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/compare/V0.1.8...HEAD)
 
-**Fixed bugs:**
-
-- \[Documentation\] Mod cataloging ids [\#50](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/50)
-
 **Closed issues:**
 
 - \[github\] readme update [\#112](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/112)
 
 **Merged pull requests:**
 
+- \[Github\] remove md workflows [\#117](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/117) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Github\] Readme changes [\#113](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/113) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Documentation\] Documentation update [\#52](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/52) ([TheGoatGod](https://github.com/TheGoatGod))
 
