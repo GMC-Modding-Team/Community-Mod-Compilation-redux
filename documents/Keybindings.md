@@ -1,4 +1,4 @@
-# Keybindings
+# Key bindings
 
 Use the `home` key to get to the top.
 
