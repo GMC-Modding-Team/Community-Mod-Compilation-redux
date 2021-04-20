@@ -2,7 +2,15 @@
 
 ## [Unreleased](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/tree/HEAD)
 
-[Full Changelog](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/compare/0.1.8...HEAD)
+[Full Changelog](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/compare/V0.1.8...HEAD)
+
+**Merged pull requests:**
+
+- \[Github\] Readme changes [\#113](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/113) ([TheGoatGod](https://github.com/TheGoatGod))
+
+## [V0.1.8](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/tree/V0.1.8) (2021-04-15)
+
+[Full Changelog](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/compare/0.1.8...V0.1.8)
 
 **Fixed bugs:**
 
