@@ -75,29 +75,29 @@ You can permanently shift the centering of the viewport by using these keys:
 ###  Inventory and quasi-inventory interaction
 
 | Key       | Command                                 |
-| :-------- | --------------------------------------- |
-| i         | Open your inventory.                    |
-| I         | Compare two items.                      |
-| =         | Swap inventory letters.                 |
-| a         | Apply or use an item.                   |
-| A         | Apply or use currently wielded item.    |
-| W         | Wear item.                              |
-| T         | Take off worn item.                     |
-| E         | Eat/Drink/Consume item.                 |
-| R         | Read a book or a magazine.              |
-| w         | Wield item.                             |
-| _         | Select unarmed style.                   |
-| r         | Reload wielded item.                    |
-| U         | Unload or empty wielded or nearby item. |
-| t         | Throw item.                             |
-| f         | Fire wielded item.                      |
-| <Unbound> | Burst.                                  |
-| F         | Toggle attack mode of wielded item.     |
-| d         | Drop item.                              |
-| D         | Drop item to adjacent tile.             |
-| p         | View/Activate bionics.                  |
-| +         | Re-layer armour/clothing.               |
-| {         | View/Activate mutations.                |
+| :---- | --------------------------------------- |
+| i     | Open your inventory.                    |
+| I     | Compare two items.                      |
+| =     | Swap inventory letters.                 |
+| a     | Apply or use an item.                   |
+| A     | Apply or use currently wielded item.    |
+| W     | Wear item.                              |
+| T     | Take off worn item.                     |
+| E     | Eat/Drink/Consume item.                 |
+| R     | Read a book or a magazine.              |
+| w     | Wield item.                             |
+| _     | Select unarmed style.                   |
+| r     | Reload wielded item.                    |
+| U     | Unload or empty wielded or nearby item. |
+| t     | Throw item.                             |
+| f     | Fire wielded item.                      |
+|       | Burst.                                  |
+| F     | Toggle attack mode of wielded item.     |
+| d     | Drop item.                              |
+| D     | Drop item to adjacent tile.             |
+| p     | View/Activate bionics.                  |
+| +     | Re-layer armour/clothing.               |
+| {     | View/Activate mutations.                |
 
 ### Item action menu
 
@@ -109,43 +109,43 @@ You can permanently shift the centering of the viewport by using these keys:
 
 ### Long term and special actions
 
-| Key       | Command                       |
-| --------- | ----------------------------- |
-| \|        | Wait for several minutes      |
-| &         | Craft items                   |
-| -         | Re-craft last recipe          |
-| <Unbound> | Craft for as long as possible |
-| *         | Construct terrain             |
-| (         | Disassemble items             |
-| $         | Sleep                         |
-| ^         | Control vehicle               |
-| !         | Toggle Safemode               |
-| "         | Toggle Auto-Safemode          |
-| '         | Ignore nearby enemy           |
-| S         | Save and quit                 |
-| <Unbound> | Quicksave                     |
-| Q         | Commit suicide                |
+| Key  | Command                        |
+| ---- | ------------------------------ |
+| \    | Wait for several minutes.      |
+| &    | Craft items.                   |
+| -    | Re-craft last recipe.          |
+|      | Craft for as long as possible. |
+| *    | Construct terrain.             |
+| (    | Disassemble items.             |
+| $    | Sleep.                         |
+| ^    | Control vehicle.               |
+| !    | Toggle Safemode.               |
+| "    | Toggle Auto-Safemode.          |
+| '    | Ignore nearby enemy.           |
+| S    | Save and quit.                 |
+|      | Quicksave.                     |
+| Q    | Commit suicide.                |
 
 ### Info screens
 
-| Keys | Command          |
-| ---- | ---------------- |
-| @    | View player info |
-| m    | View map         |
-| M    | View missions    |
-| #    | View factions    |
-| )    | View kill count  |
-| v    | View morale      |
-| P    | View message log |
-| ?    | View help        |
+| Keys | Command           |
+| ---- | ----------------- |
+| @    | View player info. |
+| m    | View map.         |
+| M    | View missions.    |
+| #    | View factions.    |
+| )    | View kill count.  |
+| v    | View morale.      |
+| P    | View message log. |
+| ?    | View help.        |
 
 ### Debug functions
 
-| Keys      | Command               |
-| --------- | --------------------- |
-| <Unbound> | Debug menu            |
-| <Unbound> | View scentmap         |
-| ~         | Toggle debug messages |
+| Keys | Command                |
+| :--: | ---------------------- |
+|      | Debug menu.            |
+|      | View scentmap.         |
+|  ~   | Toggle debug messages. |
 
 ## Advanced Controls
 
@@ -153,33 +153,33 @@ All controls in the game as of June 7, 2019. Not up to date.
 
 ### Advanced Inventory
 
-| Keys              | Command                           |
-| ----------------- | --------------------------------- |
-| /                 | Enter advanced inventory          |
-| s/S               | Change sorting mode               |
-| e/E               | Examine item                      |
-| RETURN            | Move a single item                |
-| ,                 | Move all items                    |
-| m                 | Move an amount of an item         |
-| M                 | Move item stack                   |
-| >                 | Page down                         |
-| <                 | Page up                           |
-| DOWN,j,JOY_DOWN   | Pan down                          |
-| UP,k,JOY_UP       | Pan up                            |
-| <unbound>         | Restore default layout            |
-| <unbound>         | Save default layout               |
-| w/W               | Select items currently worn       |
-| c/C               | Select items in container         |
-| d/D               | Select items in dragged container |
-| 0/i/I             | Select items in inventory         |
-| LEFT,h,JOY_LEFT   | Select left inventory             |
-| RIGHT,l,JOY_RIGHT | Select right inventory            |
-| a/A               | Select all items                  |
-| p                 | Toggle auto-pickup for item       |
-| t                 | Toggle category selection mode    |
-| *                 | Toggle item as favorite           |
-| TAB               | Toggle tab                        |
-| v/V               | Toggle vehicle                    |
+| Keys              | Command                            |
+| ---- | ---------------------------------- |
+| /                 | Enter advanced inventory.          |
+| s/S               | Change sorting mode.               |
+| e/E               | Examine item.                      |
+| RETURN            | Move a single item.                |
+| ,                 | Move all items.                    |
+| m                 | Move an amount of an item.         |
+| M                 | Move item stack.                   |
+| >                 | Page down.                         |
+| <                 | Page up.                           |
+| DOWN,j,JOY_DOWN   | Pan down.                          |
+| UP,k,JOY_UP       | Pan up.                            |
+| <unbound>         | Restore default layout.            |
+| <unbound>         | Save default layout.               |
+| w/W               | Select items currently worn.       |
+| c/C               | Select items in container.         |
+| d/D               | Select items in dragged container. |
+| 0/i/I             | Select items in inventory.         |
+| LEFT,h,JOY_LEFT   | Select left inventory.             |
+| RIGHT,l,JOY_RIGHT | Select right inventory.            |
+| a/A               | Select all items.                  |
+| p                 | Toggle auto-pickup for item.       |
+| t                 | Toggle category selection mode.    |
+| *                 | Toggle item as favorite.           |
+| TAB               | Toggle tab.                        |
+| v/V               | Toggle vehicle.                    |
 
 ### Advanced Inventory Directional Controls
 
@@ -193,7 +193,7 @@ All controls in the game as of June 7, 2019. Not up to date.
 
 | Keys | Command                      |
 | ---- | ---------------------------- |
-| a/A  | Select items at all 9 fields |
+| a/A  | Select items at all 9 fields.|
 
 
 
@@ -201,16 +201,16 @@ All controls in the game as of June 7, 2019. Not up to date.
 
 | Keys | Command                        |
 | ---- | ------------------------------ |
-| a/A  | Add rule                       |
-| c/C  | Copy rule                      |
-| d/D  | Disable rule                   |
-| s/S  | Enable auto pickup option      |
-| e/E  | Enable rule                    |
-| -    | Move rule down                 |
-| m/M  | Move rule global <-> character |
-| +    | Move rule up                   |
-| r/R  | Remove rule                    |
-| t/T  | Test rule                      |
+| a/A  | Add rule.                      |
+| c/C  | Copy rule.                     |
+| d/D  | Disable rule.                  |
+| s/S  | Enable auto pickup option.     |
+| e/E  | Enable rule.                   |
+| -    | Move rule down.                |
+| m/M  | Move rule global <-> character.|
+| +    | Move rule up.                  |
+| r/R  | Remove rule.                   |
+| t/T  | Test rule.                     |
 
 ## Unlisted key bindings
 
@@ -275,39 +275,39 @@ There is also the debug menu.
 
 To enable this menu, you will need to edit the Controls. Go to the main menu by pressing Esc followed by the keybindings list by pressing 1. Close to the bottom of the list will be the Debug Menu which should be in red and unbound. Press `+` followed by the appropriate letter to assign a key of your choice. Note: many keys are already bound to other features, using the `` ` key is a good option as it's unbound by defaultVerify (Not by keybindings.json...) and is in the same place as the Debug messages and Console Commands present in many PC games.
 
-| Keys       | Command                       |
-| ---------- | ----------------------------- |
-| Unassigned | *Debug menu.*                 |
-| 1          | Wish for an item.             |
-| 2          | Teleport - Short Range        |
-| 3          | Teleport - Long Range         |
-| 4          | Reveal map                    |
-| 5          | Spawn NPC                     |
-| 6          | Spawn Monster                 |
-| 7          | Check game state...           |
-| 8          | Kill NPCs.                    |
-| 9          | Mutate.                       |
-| 0          | Spawn a vehicle               |
-| a          | Change all skills             |
-| b          | Learn all melee styles        |
-| c          | Unlock all recipes            |
-| d          | Edit player/NPC               |
-| e          | Spawn Artifact                |
-| f          | Spawn Clairvoyance Artifact   |
-| g          | Map Editor                    |
-| h          | Change weather                |
-| i          | Kill all monsters             |
-| j          | Display hordes                |
-| k          | Test Item Group               |
-| l          | Damage self                   |
-| m          | Show Sound Clustering         |
-| o          | Display weather               |
-| p          | Display overmap scents        |
-| q          | Change time                   |
-| r          | Set automove route            |
-| m          | Show mutation category levels |
-| t          | Overmap editor                |
-| u          | Cancel                        |
+| Keys | Command                       |
+| ---- | ----------------------------- |
+|      | *Debug menu.*                 |
+| 1    | Wish for an item.             |
+| 2    | Teleport - Short Range.       |
+| 3    | Teleport - Long Range.        |
+| 4    | Reveal map.                   |
+| 5    | Spawn NPC.                    |
+| 6    | Spawn Monster.                |
+| 7    | Check game state...           |
+| 8    | Kill NPCs.                    |
+| 9    | Mutate.                       |
+| 0    | Spawn a vehicle.              |
+| a    | Change all skills.            |
+| b    | Learn all melee styles.       |
+| c    | Unlock all recipes.           |
+| d    | Edit player/NPC.              |
+| e    | Spawn Artifact.               |
+| f    | Spawn Clairvoyance Artifact.  |
+| g    | Map Editor.                   |
+| h    | Change weather.               |
+| i    | Kill all monsters.            |
+| j    | Display hordes.               |
+| k    | Test Item Group.              |
+| l    | Damage self.                  |
+| m    | Show Sound Clustering.        |
+| o    | Display weather.              |
+| p    | Display overmap scents.       |
+| q    | Change time.                  |
+| r    | Set automove route.           |
+| m    | Show mutation category levels.|
+| t    | Overmap editor.               |
+| u    | Cancel.                       |
 
 
 
@@ -317,19 +317,18 @@ Looking at an NPC with this debug feature shows the name, class, destination, in
 
 | Keys | Command                                        |
 | ---- | ---------------------------------------------- |
-| s    | Edit skills                                    |
-| t    | Edit Stats                                     |
-| i    | Grant items                                    |
-| d    | Delete all items                               |
-| w    | Wear/Wield an item from NPC/Player's inventory |
-| h    | Set hit points                                 |
-| p    | Cause pain                                     |
-| a    | Set health                                     |
-| n    | Set needs                                      |
-| u    | Mutate                                         |
-| @    | Status Window                                  |
-| e    | teleport                                       |
-| m    | Add mission                                    |
+| s    | Edit skills.                                   |
+| t    | Edit Stats.                                    |
+| i    | Grant items.                                   |
+| d    | Delete all items.                              |
+| w    | Wear/Wield an item from NPC/Player's inventory.|
+| h    | Set hit points.                                |
+| p    | Cause pain.                                    |
+| a    | Set health.                                    |
+| n    | Set needs.                                     |
+| u    | Mutate.                                        |
+| @    | Status Window.                                 |
+| e    | teleport.                                      |
+| m    | Add mission.                                   |
 | c    | Randomize with class.                          |
 | q    | quit.                                          |
-
