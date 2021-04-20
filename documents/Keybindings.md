@@ -12,10 +12,10 @@ todo
 - [ ] fix keys
 - [ ] easier to understand
 - [ ] better tables
-
-**Table of contents**
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of contents**
+- [Controls](#controls)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
