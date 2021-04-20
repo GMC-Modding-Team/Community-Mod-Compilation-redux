@@ -1,14 +1,15 @@
 # Learning Code
 
 Use the `home` key to get to the top.
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-**Table of Contents**
 
+**Table of Contents**
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 - [C++](#c)
 - [Python](#python)
 - [Java Script](#java-script)
 
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 # C++
 
@@ -29,4 +30,3 @@ Use the `home` key to get to the top.
 [Learn JavaScript - Full Course for Beginners](https://www.youtube.com/watch?v=PkZNo7MFNFg)\
 [JavaScript Programming All-in-One Tutorial Series](https://www.youtube.com/watch?v=9M4XKi25I2M)
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
