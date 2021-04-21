@@ -35,11 +35,11 @@ Welcome to TheGoatGod's Mod Compilation. Currently contains just under 400 mods,
 - [ ] fix mods again
 - [ ] merge content together to make smaller packages/directional mods that make sence
 
-I hope to start the merging process soon with a bunch of prs. goal is to bring down the amount of mods. you will see name changes to inclue other mods to make it kinda like the bionic package but not one type of item. however food will be diffrent from other mods. it might get abit confueing to begin with. alot of mods will get striped into other mods entirly or by pieces. all unwanted content will go into a "bin" type mod where you can get the stuff that doesnt fit in or im not planning on adding into there big merge into my mega mod for cdda but this will take time and i plan on adding alot of content all round i need to know what im working with to have a direction to start, i have started some addional content mods that will be included i will add more so this will work. i will need testers and will have to make a new git repo for this
+I hope to start the merging process soon with a bunch of prs. the goal is to bring down the number of mods. you will see name changes to include other mods to make it kinda like the bionic package but not one type of item. however, food will be different from other mods. it might get a bit confusing, to begin with. a lot of mods will get striped into other mods entirely or by pieces. all unwanted content will go into a "bin" type mod where you can get the stuff that doesn't fit in or I'm not planning on adding into their big merge into my mega mod for cdda but this will take time and I plan on adding a lot of content all round I need to know what I'm working with to have a direction to start, I have started some additional content mods that will be included I will add more so this will work. I will need testers and will have to make a new git repo for this
 
 ## Goats - Dark Days
 
-The idea is to make a massive overhaul of cdda and maintain it, this will be CDDA - Exapanded, but im going to name it Goats - Days ahead might change in future, here are some of the areas i will mod in and expect there to be a ton of mods weither small or large will be implemented.
+The idea is to make a massive overhaul of cdda and maintain it, this will be CDDA - Expanded, but I'm going to name it Goats - Days ahead might change in future, here are some of the areas I will mod in and expect there to be a ton of mods whether small or large will be implemented.
 
 
 - [ ] Main Goals
@@ -51,7 +51,7 @@ The idea is to make a massive overhaul of cdda and maintain it, this will be CDD
   - [ ] vehicles (shopping trolly varients and more)
   - [ ] supernatural (monsters and scary encounters)
   - [ ] Dangerous animals (mutated and sci-fy)
-- [ ] before inisial modding
+- [ ] before modding
   - [ ] merge mods
   - [ ] overhaul mods before inclusion
   - [ ] decide if i want to add pk and/or aftershock (or parial implementation)
