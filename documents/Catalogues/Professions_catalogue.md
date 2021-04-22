@@ -51,6 +51,7 @@ Mod id
 `"id": "razorgirl",`
 ```
 
+---
 
 # More classes scenarios
 
@@ -75,4 +76,5 @@ Mod id
 `"id": "elementary_student",`
 ```
 
+---
 
