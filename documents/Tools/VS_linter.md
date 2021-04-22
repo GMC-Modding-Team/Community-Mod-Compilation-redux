@@ -5,8 +5,17 @@ Use the `home` key to get to the top.
 **Table of Contents**
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+* [Description](#description)
 * [Setup](#setup)
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+
+
+# Description
+
+Linting is a coding term for formatting to a certain style, and is a very important part of bringing JSON up to date. The simplest way to lint JSON is to paste it into the [JSON formatter](http://dev.narc.ro/cataclysm/format.html), click 'Lint', and then paste the resulting code back into the original file. If it doesn't work, use the debug steps at [JSONLint](https://jsonlint.com/), to check for errors in the code. If it comes up with the error 'Linter currently unavailable', see the [blueprint](#blueprint) section of this document.
+
+It is also possible to use the JSON formatter that comes with CDDA, see the [JSON Style Guide](https://github.com/CleverRaven/Cataclysm-DDA/blob/master/doc/JSON_STYLE.md) for information on how to use it.
 
 # Setup
 
