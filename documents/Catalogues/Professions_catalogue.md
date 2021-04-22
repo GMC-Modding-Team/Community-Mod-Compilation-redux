@@ -13,9 +13,11 @@ Use the `home` key to get to the top.
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-### Package bionic professions
-```Regex
-"package_bionic_professions"
+# Package bionic professions
+
+```json
+Mod id
+"id": "package_bionic_professions"
 ```
 
 
@@ -50,9 +52,11 @@ Use the `home` key to get to the top.
 ```
 
 
-## More classes scenarios
-```Regex
-"more_classes_scenarios"
+# More classes scenarios
+
+```json
+Mod id
+"id": "more_classes_scenarios"
 ```
 
 #### Professions MCS
