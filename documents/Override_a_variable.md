@@ -11,9 +11,7 @@ Use the `home` key to get to the top.
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 # Links
-
 #### Head-Category - [links](#links)
-
 
 **Sub-Category's:**
 
