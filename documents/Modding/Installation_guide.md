@@ -15,6 +15,7 @@ Use the `home` key to get to the top.
 
 ---
 1. CDDA Launcher you can download mods, tile sets and sound sets as well as CDDA's official and experimental releases
+
 * A. [Download the launcher](https://github.com/remyroy/CDDA-Game-Launcher/releases)
 * B. [Forum link](https://discourse.cataclysmdda.org/t/cdda-game-launcher-automatic-updates-and-more/11168)
 

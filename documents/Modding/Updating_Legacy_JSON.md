@@ -5,6 +5,7 @@ Use the `home` key to get to the top.
 **Table of Contents**
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 - [Introduction](#introduction)
   * [Tools Required](#tools-required)
   * [Regex](#regex)
@@ -495,6 +496,7 @@ Note: I recommend using `barrellength_volume.py`, a python script found in the T
 
 ## Folded_volume
 `key` `vehicle_part`:
+
 ```JSON
 "folded_volume": 5
 
@@ -504,6 +506,7 @@ Note: I recommend using `barrellength_volume.py`, a python script found in the T
 Other:
 `"type": "GUNMOD"`
 `integral_volume` and `integral_weight` are:
+
 ```JSON
 "integral_volume": 5,
 "integral_weight": 500
@@ -637,6 +640,7 @@ Every mod requires that they have a `modinfo.json` file at the beginning. Severa
 
 ---
 # Time
+
 Outdated:
 ```JSON
 "type": "construction",
@@ -718,6 +722,7 @@ This regex will find all non-ascii (unicode) characters, excluding the ellipsis 
 ---
 # Price
 `key` `price` should have a `value` `string`
+
 ```C++
 "price": 100,
 "price_postapoc": 1000
