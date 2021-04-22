@@ -614,19 +614,25 @@ The current JSON standards for `key` `"activity_level"` look like this:
 # Modinfo
 Every mod requires that they have a `modinfo.json` file at the beginning. Several commonly seen issues and their replacements are:
 ```json
-"mod-type": "SUPPLEMENTAL"
+"mod-type": "SUPPLEMENTAL",
 
-"category": "SUPPLEMENTAL"
+"category": "SUPPLEMENTAL",
 ```
 ```json
 "ident": "mod_id",
 
-"id": "mod_id"
+"id": "mod_id",
 ```
 ```json
-"author": "Author1"
+"author": "Author",
 
-"authors": [ "Author1" ],
+"authors": [ "Author" ],
+```
+
+```JSON
+"maintainer": "maintainer",
+
+"maintainers": [ "Maintainer" ],
 ```
 
 ---
