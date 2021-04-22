@@ -13,7 +13,6 @@ Use the `home` key to get to the top.
 
 # How to Install - CDDA and the launcher
 
----
 1. CDDA Launcher you can download mods, tile sets and sound sets as well as CDDA's official and experimental releases
 
 * A. [Download the launcher](https://github.com/remyroy/CDDA-Game-Launcher/releases)
@@ -23,7 +22,6 @@ Use the `home` key to get to the top.
 
 # How to Install - Stable Ellison-3
 
----
 the  `"mods"`  goes to  `cdda`  or  `cdda\"data"`  folder to go inside the mods folder
 
 1. place `Unlesh_The_Mods\"mods"` folder inside your `cdda\"data"`
@@ -33,7 +31,6 @@ the  `"mods"`  goes to  `cdda`  or  `cdda\"data"`  folder to go inside the mods 
 
 # How to Install - Experimental
 
----
 the `"mods"` goes to `cdda` or `cdda\"data"` folder to go  inside the mods folder
 
 1. place `Unlesh_The_Mods\"mods"` folder inside your `cdda\"data"`
@@ -46,7 +43,6 @@ the `"mods"` goes to `cdda` or `cdda\"data"` folder to go  inside the mods folde
 
 # Short FAQ
 
----
 **Q: I'm getting errors!**\
 **A:** `Report the error either on my discord or as an issue on github.`\
 \

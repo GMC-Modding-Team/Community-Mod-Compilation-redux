@@ -638,7 +638,6 @@ Every mod requires that they have a `modinfo.json` file at the beginning. Severa
 "maintainers": [ "Maintainer" ],
 ```
 
----
 # Time
 
 Outdated:

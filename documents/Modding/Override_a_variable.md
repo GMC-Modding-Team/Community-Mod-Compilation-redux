@@ -18,7 +18,6 @@ Use the `home` key to get to the top.
 [Description](#description)\
 [Examples](#examples)
 
----
 ## Description #
 #### Head-Category  - [links](#links)
 #### Sub-Category - [Description](#description)
