@@ -2,7 +2,37 @@
 
 ## [Unreleased](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/tree/HEAD)
 
-[Full Changelog](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/compare/V0.1.7...HEAD)
+[Full Changelog](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/compare/V0.1.8...HEAD)
+
+**Closed issues:**
+
+- \[github\] readme update [\#112](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/112)
+
+**Merged pull requests:**
+
+- \[Github\] Readme spelling fixes [\#118](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/118) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Github\] remove md workflows [\#117](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/117) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Github\] Readme changes [\#113](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/113) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Documentation\] Documentation update [\#52](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/52) ([TheGoatGod](https://github.com/TheGoatGod))
+
+## [V0.1.8](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/tree/V0.1.8) (2021-04-15)
+
+[Full Changelog](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/compare/0.1.8...V0.1.8)
+
+**Fixed bugs:**
+
+- \[Github\] Template fixes and update [\#110](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/110)
+- Pr requests md [\#111](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/111) ([TheGoatGod](https://github.com/TheGoatGod))
+
+**Merged pull requests:**
+
+- \[Experimental\] Tow mod update [\#106](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/106) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Experimental\] rope tow [\#104](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/104) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Experimental\] unleash the mods [\#102](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/102) ([TheGoatGod](https://github.com/TheGoatGod))
+
+## [0.1.8](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/tree/0.1.8) (2021-04-03)
+
+[Full Changelog](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/compare/V0.1.7...0.1.8)
 
 **Implemented enhancements:**
 
@@ -17,6 +47,7 @@
 - \[Experimental\] mod merge with dependencies [\#82](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/82)
 - \[Experimental\] anti fungal equipment expansion  [\#76](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/76)
 - \[Experimental\] tileset for xotto cosmetics [\#55](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/55)
+- \[Experimental\] Mutation\_Changes\_Snofielf\_Patch Duplicate entries [\#12](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/12)
 - \[Experimental\] Working mods [\#97](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/97) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] maintained mod [\#96](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/96) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Mod merge\] miso touyou toyhou merge [\#81](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/81) ([TheGoatGod](https://github.com/TheGoatGod))
@@ -28,10 +59,12 @@
 
 **Closed issues:**
 
+- \[Github\] automate push feature for json check workflow [\#86](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/86)
 - \[GitHub\] No push to master [\#63](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/63)
 
 **Merged pull requests:**
 
+- \[Github\] workflow name changes [\#103](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/103) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] Workflow changes [\#101](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/101) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[GitHub\] Workflow changes [\#100](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/100) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] mainline mods [\#99](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/99) ([TheGoatGod](https://github.com/TheGoatGod))

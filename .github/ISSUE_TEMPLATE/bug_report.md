@@ -7,19 +7,21 @@ assignees: TheGoatGod
 
 ---
 
+<!---
 **Tags**
-put one of these in the title
+`put one of these in the title`
 [Experimental] - normal tags
 [E-3] - only for E Stable
 [BrightNights] - only for Bright nights
 [SoundPacks] - only for Sound Packs
-[TileSets] - only for Tile Set
 [Fonts] - only for Fonts
+[Documentation] - only for Documentation
+--->
 
 **Describe the bug**
 A clear and concise description of what the bug is.
 
-**Expected behavior**
+**Expected behaviour**
 A clear and concise description of what you expected to happen.
 
 **Screenshots**
