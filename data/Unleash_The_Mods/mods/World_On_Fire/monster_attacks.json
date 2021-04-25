@@ -29,33 +29,6 @@
   {
     "type": "monster_attack",
     "attack_type": "melee",
-    "id": "spark",
-    "cooldown": 20,
-    "move_cost": 150,
-    "damage_max_instance": [ { "damage_type": "cut", "amount": 1 } ],
-    "ammo_effects": [ "FLARE", "NEVER_MISFIRES", "NO_DAMAGE_SCALING" ],
-    "body_parts": [
-      [ "head", 3 ],
-      [ "eyes", 2 ],
-      [ "mouth", 1 ],
-      [ "torso", 4 ],
-      [ "arm_l", 3 ],
-      [ "arm_r", 3 ],
-      [ "hand_l", 2 ],
-      [ "hand_r", 2 ],
-      [ "leg_l", 3 ],
-      [ "leg_r", 3 ],
-      [ "foot_l", 2 ],
-      [ "foot_r", 2 ]
-    ],
-    "hit_dmg_u": "The %1$s sets you on fire!",
-    "hit_dmg_npc": "The %1$s sets <npcname> on fire!",
-    "no_dmg_msg_u": "The %1$s tries to set you on fire, but fails to.",
-    "no_dmg_msg_npc": "The %1$s tries to set <npcname> on fire, but fails to."
-  },
-  {
-    "type": "monster_attack",
-    "attack_type": "melee",
     "id": "slam",
     "cooldown": 20,
     "move_cost": 180,
@@ -78,6 +51,20 @@
     "hit_dmg_npc": "The %1$s slams into <npcname>!",
     "no_dmg_msg_u": "The %1$s tries to slam into you, but stumbles aside.",
     "no_dmg_msg_npc": "The %1$s tries to slam into <npcname>, but fails to."
+  },
+  {
+    "id": "spark",
+    "type": "GUN",
+    "copy-from": "fake_item",
+    "name": { "str_sp": "Sparkler gun" },
+    "description": "Fake gun that sparks.",
+    "ranged_damage": [ { "damage_type": "cut", "amount": 1 } ],
+    "flags": [ "NEVER_JAMS" ],
+    "skill": "rifle",
+    "durability": 10,
+    "range": 4,
+    "dispersion": 90,
+    "ammo_effects": [ "FLARE", "NEVER_MISFIRES", "NO_DAMAGE_SCALING" ]
   },
   {
     "id": "napalm_spit",
