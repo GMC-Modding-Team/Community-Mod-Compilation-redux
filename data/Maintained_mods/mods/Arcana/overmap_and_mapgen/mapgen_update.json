@@ -1,7 +1,7 @@
 [
   {
-    "id": "arcana_plants",
     "type": "ter_furn_transform",
+    "id": "arcana_plants",
     "fail_message": "Life fails to take hold in this place.",
     "terrain": [
       {
@@ -17,13 +17,13 @@
     ]
   },
   {
-    "id": "arcana_pestilence",
     "type": "ter_furn_transform",
+    "id": "arcana_pestilence",
     "terrain": [ { "result": [ [ "t_dirt", 75 ], [ "t_dirt_mound", 25 ] ], "valid_flags": [ "FLAT", "SHRUB" ] } ]
   },
   {
-    "id": "arcana_fire_dragonblood3",
     "type": "ter_furn_transform",
+    "id": "arcana_fire_dragonblood3",
     "fail_message": "Nothing remains to be marked by flame.",
     "terrain": [
       {
@@ -69,8 +69,8 @@
     ]
   },
   {
-    "id": "arcana_open_lock",
     "type": "ter_furn_transform",
+    "id": "arcana_open_lock",
     "fail_message": "You fail to find any obstacles to clear.",
     "terrain": [
       {
@@ -197,21 +197,21 @@
     ]
   },
   {
-    "id": "arcana_pulse",
     "type": "ter_furn_transform",
+    "id": "arcana_pulse",
     "fail_message": "The ground weathers the blast unscathed.",
     "terrain": [ { "result": "t_dirt", "valid_flags": [ "BLOCK_WIND", "WALL" ] } ],
     "furniture": [ { "result": "f_null", "valid_flags": [ "BLOCK_WIND", "WALL" ] } ]
   },
   {
-    "id": "arcana_barrier",
     "type": "ter_furn_transform",
+    "id": "arcana_barrier",
     "fail_message": "The barrier flickers out of existence.",
     "furniture": [ { "result": "f_force_barrier", "valid_furniture": [ "f_null" ] } ]
   },
   {
-    "id": "arcana_consecrate",
     "type": "ter_furn_transform",
+    "id": "arcana_consecrate",
     "fail_message": "Reality fails to impose itself on this place.",
     "terrain": [
       {
@@ -277,8 +277,8 @@
     ]
   },
   {
-    "id": "arcana_sundering_quake",
     "type": "ter_furn_transform",
+    "id": "arcana_sundering_quake",
     "fail_message": "The earth remains still.",
     "terrain": [
       {
@@ -2111,6 +2111,106 @@
         "  |    "
       ],
       "terrain": { "|": [ [ "t_rock_smooth", 70 ], [ "t_wall_resin", 15 ], [ "t_wall_resin_cage", 10 ], [ "t_rock_floor", 5 ] ] }
+    }
+  },
+  {
+    "type": "mapgen",
+    "update_mapgen_id": "arcane_lab_map_regen_1",
+    "method": "json",
+    "object": { "place_nested": [ { "chunks": [ "arcane_lab_map_regen_1" ], "x": 9, "y": 0 } ] }
+  },
+  {
+    "type": "mapgen",
+    "method": "json",
+    "nested_mapgen_id": "arcane_lab_map_regen_1",
+    "object": {
+      "mapgensize": [ 14, 14 ],
+      "rows": [
+        "    0000000   ",
+        "    0     0   ",
+        " 0000     0000",
+        " 0           0",
+        " 0           0",
+        ".0           0",
+        ".0           0",
+        ".0           0",
+        " 0           0",
+        " 0           0",
+        " 0000000000000",
+        "              ",
+        "              ",
+        "              "
+      ],
+      "terrain": { ".": "t_thconc_floor" },
+      "traps": { "0": "tr_null" }
+    }
+  },
+  {
+    "type": "mapgen",
+    "update_mapgen_id": "arcane_lab_map_regen_2",
+    "method": "json",
+    "object": { "place_nested": [ { "chunks": [ "arcane_lab_map_regen_2" ], "x": 2, "y": 12 } ] }
+  },
+  {
+    "type": "mapgen",
+    "method": "json",
+    "nested_mapgen_id": "arcane_lab_map_regen_2",
+    "object": {
+      "mapgensize": [ 21, 21 ],
+      "rows": [
+        "    .................",
+        ".....................",
+        ".....................",
+        ".....3...............",
+        ".....................",
+        "..........~..........",
+        " ................  ..",
+        " ................  ..",
+        "  ...............  ..",
+        " ........   .........",
+        "                     ",
+        "                     ",
+        "                     ",
+        "                     ",
+        "                     ",
+        "                     ",
+        "                     ",
+        "                     ",
+        "                     ",
+        "                     ",
+        "                     "
+      ],
+      "terrain": { ".": "t_strconc_floor", "~": "t_strconc_floor", "3": "t_strconc_floor" },
+      "traps": { "3": "tr_null", "~": "tr_null" },
+      "place_loot": [
+        { "item": "dimensional_focus_lens", "x": 10, "y": 5 },
+        { "item": "scrap", "x": [ 8, 12 ], "y": [ 1, 3 ], "repeat": [ 8, 16 ] },
+        { "item": "sheet_metal", "x": [ 8, 12 ], "y": [ 1, 3 ], "repeat": [ 5, 10 ] },
+        { "item": "alloy_sheet", "x": [ 8, 12 ], "y": [ 1, 3 ], "repeat": [ 12, 18 ] },
+        { "item": "large_lcd_screen", "x": [ 8, 12 ], "y": [ 7, 8 ] },
+        { "item": "e_scrap", "x": [ 8, 12 ], "y": [ 7, 8 ], "repeat": [ 10, 16 ] },
+        { "item": "wire", "x": [ 1, 8 ], "y": [ 1, 9 ], "repeat": 3 },
+        { "item": "pipe", "x": [ 1, 8 ], "y": [ 1, 9 ], "repeat": 3 },
+        { "item": "chain", "x": [ 1, 8 ], "y": [ 1, 9 ], "chance": 20, "repeat": 3 },
+        { "item": "steel_lump", "x": [ 1, 8 ], "y": [ 1, 9 ], "repeat": 3 },
+        { "item": "scrap", "x": [ 1, 8 ], "y": [ 1, 9 ], "repeat": [ 3, 15 ] },
+        { "item": "sheet_metal", "x": [ 1, 8 ], "y": [ 1, 9 ], "repeat": 6 },
+        { "item": "steel_chunk", "x": [ 1, 8 ], "y": [ 1, 9 ], "repeat": [ 3, 6 ] },
+        { "item": "frame", "x": [ 1, 8 ], "y": [ 1, 9 ], "chance": 30, "repeat": 3 },
+        { "item": "motor", "x": [ 1, 8 ], "y": [ 1, 9 ], "chance": 10, "repeat": 3 },
+        { "item": "metal_tank", "x": [ 1, 8 ], "y": [ 1, 9 ], "chance": 20, "repeat": 3 },
+        { "item": "motor_large", "x": [ 1, 8 ], "y": [ 1, 9 ], "chance": 5, "repeat": 3 },
+        { "item": "wire", "x": [ 12, 18 ], "y": [ 1, 9 ], "chance": 40, "repeat": 3 },
+        { "item": "pipe", "x": [ 12, 18 ], "y": [ 1, 9 ], "chance": 40, "repeat": 3 },
+        { "item": "steel_chunk", "x": [ 12, 18 ], "y": [ 1, 9 ], "chance": 40, "repeat": 3 },
+        { "item": "motor", "x": [ 12, 18 ], "y": [ 1, 9 ], "chance": 10, "repeat": 3 },
+        { "item": "processor", "x": [ 12, 18 ], "y": [ 1, 9 ], "chance": 40, "repeat": 3 },
+        { "item": "RAM", "x": [ 12, 18 ], "y": [ 1, 9 ], "repeat": [ 3, 6 ] },
+        { "item": "small_lcd_screen", "x": [ 12, 18 ], "y": [ 1, 9 ], "chance": 40, "repeat": 3 },
+        { "item": "amplifier", "x": [ 12, 18 ], "y": [ 1, 9 ], "chance": 40, "repeat": 3 },
+        { "item": "plastic_chunk", "x": [ 12, 18 ], "y": [ 1, 9 ], "repeat": [ 6, 24 ] },
+        { "item": "scrap", "x": [ 12, 18 ], "y": [ 1, 9 ], "repeat": [ 9, 24 ] }
+      ]
     }
   }
 ]

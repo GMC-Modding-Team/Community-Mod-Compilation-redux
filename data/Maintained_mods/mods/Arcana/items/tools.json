@@ -101,7 +101,7 @@
     "price_postapoc": 2000,
     "max_charges": 600,
     "charges_per_use": 100,
-    "ammo": [ "primitive_magic_item_ammo_type" ],
+    "ammo": "primitive_magic_item_ammo_type",
     "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "primitive_magic_item_ammo_type": 600 } } ],
     "flags": [ "MAGIC_FOCUS", "NO_RELOAD", "NO_UNLOAD", "TARDIS" ],
     "relic_data": { "charge_info": { "recharge_type": "periodic", "time": "1 h", "regenerate_ammo": true } },
@@ -122,7 +122,7 @@
     "price_postapoc": 2500,
     "max_charges": 600,
     "charges_per_use": 100,
-    "ammo": [ "primitive_magic_item_ammo_type" ],
+    "ammo": "primitive_magic_item_ammo_type",
     "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "primitive_magic_item_ammo_type": 600 } } ],
     "flags": [ "MAGIC_FOCUS", "NO_RELOAD", "NO_UNLOAD", "TARDIS" ],
     "relic_data": { "charge_info": { "recharge_type": "periodic", "time": "1 h", "regenerate_ammo": true } },
@@ -217,7 +217,7 @@
     "color": "yellow",
     "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "essence_dull_type": 20 } } ],
     "max_charges": 20,
-    "ammo": [ "essence_dull_type" ],
+    "ammo": "essence_dull_type",
     "qualities": [ [ "CUT", 1 ], [ "BUTCHER", 8 ] ],
     "techniques": [ "WBLOCK_2" ],
     "use_action": [
@@ -266,7 +266,7 @@
     "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "essence_dull_type": 3 } } ],
     "max_charges": 3,
     "charges_per_use": 3,
-    "ammo": [ "essence_dull_type" ],
+    "ammo": "essence_dull_type",
     "use_action": { "type": "cast_spell", "spell_id": "arcana_item_hammerzeit", "no_fail": true, "need_wielding": true, "level": 0 },
     "relative": { "weight": "360 g", "bashing": 2 },
     "extend": { "flags": [ "NO_SALVAGE" ] }
@@ -284,7 +284,7 @@
     "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "essence_type": 9 } } ],
     "max_charges": 9,
     "charges_per_use": 1,
-    "ammo": [ "essence_type" ],
+    "ammo": "essence_type",
     "relic_data": {
       "passive_effects": [
         {
@@ -888,7 +888,7 @@
     "color": "brown",
     "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "essence_blood_type": 3 } } ],
     "max_charges": 3,
-    "ammo": [ "essence_blood_type" ],
+    "ammo": "essence_blood_type",
     "weight": "707 g",
     "volume": "750 ml",
     "longest_side": "45 cm",
@@ -930,7 +930,7 @@
     "max_charges": 3,
     "turns_per_charge": 1,
     "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "essence_blood_type": 3 } } ],
-    "ammo": [ "essence_blood_type" ],
+    "ammo": "essence_blood_type",
     "revert_to": "bloodaxe",
     "use_action": {
       "type": "explosion",
@@ -1429,7 +1429,7 @@
     "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "essence_pure_type": 1 } } ],
     "max_charges": 1,
     "charges_per_use": 1,
-    "ammo": [ "essence_pure_type" ],
+    "ammo": "essence_pure_type",
     "relic_data": {
       "passive_effects": [
         {
@@ -1465,7 +1465,7 @@
     "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "essence_dull_type": 300 } } ],
     "max_charges": 300,
     "charges_per_use": 1,
-    "ammo": [ "essence_dull_type" ],
+    "ammo": "essence_dull_type",
     "use_action": [
       {
         "type": "repair_item",
@@ -1486,8 +1486,8 @@
     "flags": [ "NO_SALVAGE", "MAGIC_FOCUS", "TRADER_KEEP_EQUIPPED" ]
   },
   {
-    "id": "coalescent_converter",
     "type": "TOOL",
+    "id": "coalescent_converter",
     "name": { "str": "coalescent converter" },
     "description": "A device modified from an exotic compact reactor, inverting its original function entirely.  Using a large surge of power by from any battery able to hold enough charge, it can generate crystallized essence.  The process is rather inefficient, and poses a high risk of damaging the fabric of reality.",
     "weight": "11 kg",
@@ -1565,6 +1565,29 @@
     "use_action": [ { "type": "cast_spell", "spell_id": "arcana_item_spatial_displacement", "no_fail": true, "level": 0 } ]
   },
   {
+    "id": "bot_mech_arcana",
+    "type": "TOOL",
+    "name": { "str": "inactive anomaly recon mech" },
+    "description": "A hulking mass of parts running off anomalous technology, with an exotic laser weapon and advanced defensive tools.  With a completely bespoke power cell fueled by magical essence installed, use it to deploy and set up the mech for use, consuming a random amount of charges from its power cell to restore it to life.",
+    "volume": "500 L",
+    "weight": "750 kg",
+    "price_postapoc": 7500,
+    "to_hit": -3,
+    "bashing": 8,
+    "material": [ "steel" ],
+    "symbol": ",",
+    "color": "cyan",
+    "flags": [ "ALLOWS_REMOTE_USE" ],
+    "looks_like": "broken_mech_recon",
+    "use_action": {
+      "type": "place_monster",
+      "monster_id": "mon_mech_arcana",
+      "is_pet": true,
+      "friendly_msg": "You set up the mech and start powering it up, a surge of essence bringing flickering energy fields to life and animating spindly limbs.",
+      "moves": 1000
+    }
+  },
+  {
     "id": "verge_meteoric",
     "type": "TOOL",
     "category": "weapons",
@@ -1585,7 +1608,7 @@
     "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "essence_type": 10 } } ],
     "max_charges": 10,
     "charges_per_use": 2,
-    "ammo": [ "essence_type" ],
+    "ammo": "essence_type",
     "relic_data": {
       "passive_effects": [
         {
@@ -1630,7 +1653,7 @@
     "cutting": 21,
     "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "essence_blood_type": 24 } } ],
     "max_charges": 24,
-    "ammo": [ "essence_blood_type" ],
+    "ammo": "essence_blood_type",
     "relic_data": {
       "passive_effects": [ { "has": "WIELD", "condition": "ACTIVE", "hit_you_effect": [ { "id": "arcana_react_drain_life", "once_in": 5 } ] } ]
     },
@@ -1683,7 +1706,7 @@
     "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "essence_type": 8 } } ],
     "max_charges": 8,
     "charges_per_use": 1,
-    "ammo": [ "essence_type" ],
+    "ammo": "essence_type",
     "techniques": [ "RAPID", "DEF_DISARM" ],
     "qualities": [ [ "BUTCHER", 6 ] ],
     "relic_data": {
@@ -1733,7 +1756,7 @@
     "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "essence_pure_type": 10 } } ],
     "max_charges": 10,
     "charges_per_use": 1,
-    "ammo": [ "essence_pure_type" ],
+    "ammo": "essence_pure_type",
     "use_action": { "type": "mutagen_iv", "mutation_category": "VEIL" },
     "relic_data": {
       "passive_effects": [
@@ -1766,7 +1789,7 @@
     "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "essence_blood_type": 10 } } ],
     "max_charges": 10,
     "charges_per_use": 10,
-    "ammo": [ "essence_blood_type" ],
+    "ammo": "essence_blood_type",
     "use_action": { "type": "mutagen_iv", "mutation_category": "DRAGONBLOOD" }
   },
   {
@@ -1785,7 +1808,7 @@
     "color": "dark_gray",
     "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "essence_blood_type": 9 } } ],
     "max_charges": 9,
-    "ammo": [ "essence_blood_type" ],
+    "ammo": "essence_blood_type",
     "relic_data": {
       "passive_effects": [
         {
@@ -1824,7 +1847,7 @@
     "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "essence_blood_type": 9 } } ],
     "max_charges": 9,
     "turns_per_charge": 800,
-    "ammo": [ "essence_blood_type" ],
+    "ammo": "essence_blood_type",
     "revert_to": "stormbringer",
     "revert_msg": "The malevolent energy fades from the cursed blade, returning it to normal.",
     "weight": "2267 g",
