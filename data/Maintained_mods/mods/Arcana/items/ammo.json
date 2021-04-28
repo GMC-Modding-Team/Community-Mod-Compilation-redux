@@ -70,8 +70,20 @@
     "flags": [ "ZERO_WEIGHT" ]
   },
   {
-    "id": "arrow_arcana_unpowered",
+    "id": "essence_fake",
     "type": "AMMO",
+    "name": { "str_sp": "displacement surge power" },
+    "description": "Seeing this is a bug.",
+    "material": [ "essencemat" ],
+    "flags": [ "PSEUDO", "PERPETUAL" ],
+    "symbol": "?",
+    "color": "cyan",
+    "count": 1,
+    "ammo_type": "essence_fake_type"
+  },
+  {
+    "type": "AMMO",
+    "id": "arrow_arcana_unpowered",
     "name": { "str": "exotic arrow" },
     "symbol": "=",
     "color": "green",
@@ -93,8 +105,8 @@
     "effects": [ "RECOVER_50" ]
   },
   {
-    "id": "bolt_arcana_unpowered",
     "type": "AMMO",
+    "id": "bolt_arcana_unpowered",
     "name": { "str": "exotic bolt" },
     "symbol": "=",
     "color": "green",
@@ -116,8 +128,8 @@
     "effects": [ "RECOVER_50" ]
   },
   {
-    "id": "arrow_arcana_flame",
     "type": "AMMO",
+    "id": "arrow_arcana_flame",
     "name": { "str": "searing exotic arrow" },
     "symbol": "=",
     "color": "green",
@@ -140,8 +152,8 @@
     "effects": [ "RECOVER_40", "INCENDIARY", "AMMO_ARCANA_FIRE_EFFECT", "NO_EMBED" ]
   },
   {
-    "id": "bolt_arcana_flame",
     "type": "AMMO",
+    "id": "bolt_arcana_flame",
     "name": { "str": "searing exotic bolt" },
     "symbol": "=",
     "color": "green",
@@ -163,8 +175,8 @@
     "effects": [ "RECOVER_40", "INCENDIARY", "AMMO_ARCANA_FIRE_EFFECT", "NO_EMBED" ]
   },
   {
-    "id": "arrow_arcana_water",
     "type": "AMMO",
+    "id": "arrow_arcana_water",
     "name": { "str": "wintry exotic arrow" },
     "symbol": "=",
     "color": "green",
@@ -187,8 +199,8 @@
     "effects": [ "RECOVER_30", "BEANBAG", "AMMO_ARCANA_WATER_EFFECT", "NO_EMBED" ]
   },
   {
-    "id": "bolt_arcana_water",
     "type": "AMMO",
+    "id": "bolt_arcana_water",
     "name": { "str": "wintry exotic bolt" },
     "symbol": "=",
     "color": "green",
@@ -210,8 +222,8 @@
     "effects": [ "RECOVER_30", "BEANBAG", "AMMO_ARCANA_WATER_EFFECT", "NO_EMBED" ]
   },
   {
-    "id": "arrow_arcana_earth",
     "type": "AMMO",
+    "id": "arrow_arcana_earth",
     "name": { "str": "earthen exotic arrow" },
     "symbol": "=",
     "color": "green",
@@ -234,8 +246,8 @@
     "effects": [ "RECOVER_20", "PARALYZEPOISON", "AMMO_ARCANA_EARTH_EFFECT", "NO_EMBED" ]
   },
   {
-    "id": "bolt_arcana_earth",
     "type": "AMMO",
+    "id": "bolt_arcana_earth",
     "name": { "str": "earthen exotic bolt" },
     "symbol": "=",
     "color": "green",
@@ -257,8 +269,8 @@
     "effects": [ "RECOVER_20", "PARALYZEPOISON", "AMMO_ARCANA_EARTH_EFFECT", "NO_EMBED" ]
   },
   {
-    "id": "arrow_arcana_air",
     "type": "AMMO",
+    "id": "arrow_arcana_air",
     "name": { "str": "thunderous exotic arrow" },
     "symbol": "=",
     "color": "green",
@@ -281,8 +293,8 @@
     "effects": [ "RECOVER_10", "BLINDS_EYES", "WIDE", "AMMO_ARCANA_AIR_EFFECT", "NO_EMBED" ]
   },
   {
-    "id": "bolt_arcana_air",
     "type": "AMMO",
+    "id": "bolt_arcana_air",
     "name": { "str": "thunderous exotic bolt" },
     "symbol": "=",
     "color": "green",
@@ -304,8 +316,8 @@
     "effects": [ "RECOVER_10", "BLINDS_EYES", "WIDE", "AMMO_ARCANA_AIR_EFFECT", "NO_EMBED" ]
   },
   {
-    "id": "primitive_magic_item_ammo",
     "type": "AMMO",
+    "id": "primitive_magic_item_ammo",
     "name": { "str_sp": "recharge" },
     "symbol": "=",
     "color": "white",
@@ -321,7 +333,7 @@
     "description": "A handloaded shotgun shell, loaded with silver pellets and blessed with salt.  The addition of consecrated essence enhances its impact and turns each pellet into a mote of white-hot light when fired.  Immolates targets on impact and bypasses mundane armor, while leaving behind a dazzling glow.",
     "price": 0,
     "price_postapoc": 900,
-    "damage": { "damage_type": "heat", "amount": 45 },
+    "damage": { "damage_type": "heat", "amount": 45, "armor_penetration": 10 },
     "extend": { "effects": [ "INCENDIARY", "ARCANA_DAZZLE_SHOT" ] }
   },
   {
@@ -333,7 +345,7 @@
     "//": "Likely rare to non-existent before the cataclysm.",
     "price": 0,
     "price_postapoc": 1500,
-    "damage": { "damage_type": "heat", "amount": 45 },
+    "damage": { "damage_type": "heat", "amount": 45, "armor_penetration": 10 },
     "extend": { "effects": [ "INCENDIARY", "ARCANA_DAZZLE_SHOT" ] }
   },
   {
@@ -344,7 +356,7 @@
     "description": "A prepared blunderbuss shot, loaded with silver pellets and blessed with salt.  The addition of consecrated essence enhances its impact and turns each pellet into a mote of white-hot light when fired.  Immolates targets on impact and bypasses mundane armor, while leaving behind a dazzling glow.",
     "price": 0,
     "price_postapoc": 100,
-    "damage": { "damage_type": "heat", "amount": 60 },
+    "damage": { "damage_type": "heat", "amount": 60, "armor_penetration": 10 },
     "extend": { "effects": [ "INCENDIARY", "ARCANA_DAZZLE_SHOT" ] }
   }
 ]
