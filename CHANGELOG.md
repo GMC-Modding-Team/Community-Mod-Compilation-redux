@@ -4,6 +4,10 @@
 
 [Full Changelog](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/compare/V0.1.8...HEAD)
 
+**Fixed bugs:**
+
+- \[Experimental\] routine mod updates \#1 [\#119](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/119) ([TheGoatGod](https://github.com/TheGoatGod))
+
 **Closed issues:**
 
 - \[github\] readme update [\#112](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/112)
