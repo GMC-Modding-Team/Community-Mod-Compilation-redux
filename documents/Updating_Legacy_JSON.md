@@ -1,10 +1,10 @@
 # Updating Legacy JSON
 
 Use the `home` key to get to the top.
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
 
 **Table of Contents**
-
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 - [Introduction](#introduction)
   * [Tools Required](#tools-required)
   * [Regex](#regex)
@@ -42,8 +42,7 @@ Use the `home` key to get to the top.
 - [Modinfo](#modinfo)
 - [Time](#time)
 - [Unicode Characters](#unicode-characters)
-
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 # Introduction
 
@@ -374,7 +373,7 @@ A very notable addition to the 0.E experimental is pocket data. Instead of the p
 
 ---
 ## Container Pocket data
-In the past, storage used to be determined by a singlar `storage: number` pair. The volume that could be stored, like many things, was the `number` multiplied by `250 ml`.
+In the past, storage used to be determined by a singular `storage: number` pair. The volume that could be stored, like many things, was the `number` multiplied by `250 ml`.
 ```JSON
 "storage": 0,
 "storage": 5
@@ -729,5 +728,3 @@ This regex will find all non-ascii (unicode) characters, excluding the ellipsis 
 ```
 
 ---
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->

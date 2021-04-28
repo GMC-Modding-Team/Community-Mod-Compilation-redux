@@ -1,7 +1,7 @@
 [
   {
-    "id": "NC_HERMIT",
     "type": "npc_class",
+    "id": "NC_HERMIT",
     "name": { "str": "Hermit" },
     "job_description": "I'm just an old man.",
     "common": false,
@@ -40,8 +40,8 @@
     ]
   },
   {
-    "id": "NC_CF_DEACON",
     "type": "npc_class",
+    "id": "NC_CF_DEACON",
     "name": { "str": "Deacon" },
     "job_description": "I am a cleric visiting the refugee center.",
     "common": false,
@@ -65,8 +65,8 @@
     "traits": [ { "group": "Appearance_demographics" }, [ "CF_DEACON", 100 ], [ "SPIRITUAL", 100 ], [ "PACIFIST", 100 ] ]
   },
   {
-    "id": "NC_CF_REP",
     "type": "npc_class",
+    "id": "NC_CF_REP",
     "name": { "str": "Thane" },
     "job_description": "I am a founder of the Cleansing Flame.",
     "common": false,
@@ -106,8 +106,8 @@
     ]
   },
   {
-    "id": "NC_CF_GM",
     "type": "npc_class",
+    "id": "NC_CF_GM",
     "name": { "str": "Grandmaster" },
     "job_description": "I am a founder of the Cleansing Flame.",
     "common": false,
@@ -154,8 +154,8 @@
     ]
   },
   {
-    "id": "NC_CF_SEEKER",
     "type": "npc_class",
+    "id": "NC_CF_SEEKER",
     "name": { "str": "Seeker" },
     "job_description": "I am a founder of the Cleansing Flame.",
     "common": false,
@@ -196,8 +196,8 @@
     ]
   },
   {
-    "id": "NC_MAGE_HUNTER",
     "type": "npc_class",
+    "id": "NC_MAGE_HUNTER",
     "name": { "str": "Mage Hunter" },
     "job_description": "I am a hunter of otherworldly monsters and dangerous magic.",
     "common": false,
@@ -228,8 +228,8 @@
     ]
   },
   {
-    "id": "NC_BLOOD_MAGE_APPRENTICE",
     "type": "npc_class",
+    "id": "NC_BLOOD_MAGE_APPRENTICE",
     "name": { "str": "Apprentice" },
     "job_description": "I aspire to follow The Path.",
     "common": false,
@@ -260,8 +260,8 @@
     ]
   },
   {
-    "id": "NC_BLOOD_MAGE_SHRIKE",
     "type": "npc_class",
+    "id": "NC_BLOOD_MAGE_SHRIKE",
     "name": { "str": "Sanguine Shrike" },
     "job_description": "I'm a hunter of hunters.",
     "common": false,
@@ -301,8 +301,8 @@
     ]
   },
   {
-    "id": "NC_BLOOD_MAGE_SHRIKE_GENERIC",
     "type": "npc_class",
+    "id": "NC_BLOOD_MAGE_SHRIKE_GENERIC",
     "name": { "str": "Sanguine Shrike" },
     "job_description": "I'm a hunter of hunters.",
     "common": false,
@@ -327,8 +327,8 @@
     "traits": [ { "group": "Appearance_demographics" }, { "group": "Arcanist_starting_traits" }, [ "PROF_SANGUINE", 100 ] ]
   },
   {
-    "id": "NC_BLOOD_MAGE_SHRIKE_HUNTMASTER",
     "type": "npc_class",
+    "id": "NC_BLOOD_MAGE_SHRIKE_HUNTMASTER",
     "name": { "str": "Shrike Huntmaster" },
     "job_description": "I lead this group of Shrikes.",
     "common": false,
@@ -359,8 +359,8 @@
     ]
   },
   {
-    "id": "NC_BLOOD_MAGE_SHRIKE_MERCHANT",
     "type": "npc_class",
+    "id": "NC_BLOOD_MAGE_SHRIKE_MERCHANT",
     "name": { "str": "Shrike" },
     "job_description": "I'm just here to survive.",
     "common": false,
@@ -394,8 +394,8 @@
     ]
   },
   {
-    "id": "NC_BLOOD_MAGE_MAGUS",
     "type": "npc_class",
+    "id": "NC_BLOOD_MAGE_MAGUS",
     "//": "Only used by a specific blood mage continuing Dragonblood research.",
     "name": { "str": "Blood Mage" },
     "job_description": "I follow The Path.",
@@ -431,8 +431,8 @@
     ]
   },
   {
-    "id": "NC_CF_AUX_MAGE",
     "type": "npc_class",
+    "id": "NC_CF_AUX_MAGE",
     "name": { "str": "Arcanist" },
     "job_description": "I'm a scholar of the Beyond.",
     "common": false,
@@ -468,8 +468,8 @@
     "spells": [ { "id": "arcana_magic_conjure_flame", "level": 6 }, { "id": "arcana_magic_dampening", "level": 3 } ]
   },
   {
-    "id": "NC_CF_AUX_MERC",
     "type": "npc_class",
+    "id": "NC_CF_AUX_MERC",
     "name": { "str": "Gunslinger" },
     "job_description": "I'm a hired gun.",
     "common": false,
@@ -525,6 +525,30 @@
     ]
   },
   {
+    "type": "npc_class",
+    "id": "NC_BANDIT_PURIFIER_AMBUSHER",
+    "name": { "str": "Ambusher" },
+    "common": false,
+    "job_description": "I kill people.  Duh.",
+    "traits": [
+      { "group": "BG_survival_story_EVACUEE" },
+      { "group": "Arcanist_starting_traits" },
+      { "group": "Appearance_demographics" }
+    ],
+    "bonus_str": { "rng": [ -2, 3 ] },
+    "bonus_dex": { "rng": [ -1, 1 ] },
+    "bonus_int": { "rng": [ -1, 1 ] },
+    "bonus_per": { "rng": [ 1, 4 ] },
+    "skills": [
+      { "skill": "ALL", "level": { "sum": [ { "dice": [ 3, 2 ] }, { "constant": -3 } ] } },
+      { "skill": "gun", "bonus": { "rng": [ 2, 4 ] } },
+      { "skill": "shotgun", "bonus": { "rng": [ 2, 5 ] } }
+    ],
+    "worn_override": "NC_BANDIT_PURIFIER_AMBUSHER_worn",
+    "carry_override": "NC_BANDIT_PURIFIER_AMBUSHER_misc",
+    "weapon_override": "NC_BANDIT_PURIFIER_AMBUSHER_weapon"
+  },
+  {
     "id": "NC_HERMIT_worn",
     "type": "item_group",
     "subtype": "collection",
@@ -543,8 +567,8 @@
     ]
   },
   {
-    "id": "NC_HERMIT_weapon",
     "type": "item_group",
+    "id": "NC_HERMIT_weapon",
     "items": [ [ "q_staff", 30 ], [ "i_staff", 20 ], [ "spear_steel", 40 ], [ "qiang", 10 ] ]
   },
   {
@@ -784,8 +808,8 @@
     ]
   },
   {
-    "id": "NC_MAGE_HUNTER_weapon",
     "type": "item_group",
+    "id": "NC_MAGE_HUNTER_weapon",
     "ammo": 100,
     "items": [
       [ "warhammer", 10 ],
@@ -837,8 +861,8 @@
     ]
   },
   {
-    "id": "NC_BLOOD_MAGE_APPRENTICE_weapon",
     "type": "item_group",
+    "id": "NC_BLOOD_MAGE_APPRENTICE_weapon",
     "ammo": 100,
     "magazine": 100,
     "items": [
@@ -917,8 +941,8 @@
     ]
   },
   {
-    "id": "NC_BLOOD_MAGE_SHRIKE_weapon",
     "type": "item_group",
+    "id": "NC_BLOOD_MAGE_SHRIKE_weapon",
     "ammo": 100,
     "items": [
       [ "pistol_flintlock", 50 ],
@@ -1053,8 +1077,8 @@
     ]
   },
   {
-    "id": "NC_CF_AUX_MERC_worn",
     "type": "item_group",
+    "id": "NC_CF_AUX_MERC_worn",
     "subtype": "collection",
     "entries": [
       { "item": "boxer_shorts" },
@@ -1072,8 +1096,8 @@
     ]
   },
   {
-    "id": "NC_CF_AUX_MERC_weapon",
     "type": "item_group",
+    "id": "NC_CF_AUX_MERC_weapon",
     "subtype": "collection",
     "entries": [ { "item": "1895sbl", "ammo-item": "reloaded_4570_pen", "charges": 7, "contents-item": "shoulder_strap" } ]
   },
@@ -1087,6 +1111,39 @@
       { "item": "bandages" },
       { "item": "reloaded_45colt_jhp", "charges": [ 40, 60 ] },
       { "item": "reloaded_4570_pen", "charges": [ 30, 50 ] }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_BANDIT_PURIFIER_AMBUSHER_misc",
+    "subtype": "collection",
+    "entries": [ { "item": "ref_lighter", "charges": 50 }, { "group": "cleansing_flame_gear_consumables" } ]
+  },
+  {
+    "id": "NC_BANDIT_PURIFIER_AMBUSHER_worn",
+    "type": "item_group",
+    "subtype": "collection",
+    "entries": [
+      { "item": "kevlar" },
+      { "item": "jersey" },
+      { "item": "jacket_leather_mod" },
+      { "item": "bandolier_shotgun", "charges": 25, "contents-item": "reloaded_shot_00_arcana" },
+      { "item": "boxer_shorts" },
+      { "item": "jeans" },
+      { "item": "gloves_fingerless_mod" },
+      { "item": "socks" },
+      { "item": "boots_combat" },
+      { "item": "tac_helmet" },
+      { "item": "glasses_bal" },
+      { "item": "bandana" }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_BANDIT_PURIFIER_AMBUSHER_weapon",
+    "subtype": "collection",
+    "entries": [
+      { "item": "winchester_1897", "ammo-item": "reloaded_shot_00_arcana", "charges": 6, "contents-item": "shoulder_strap" }
     ]
   },
   {
