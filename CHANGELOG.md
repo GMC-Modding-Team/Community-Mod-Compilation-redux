@@ -14,6 +14,7 @@
 
 **Merged pull requests:**
 
+- \[Experimental\] Line ending changes to LF [\#126](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/126) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Github\] Readme spelling fixes [\#118](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/118) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Github\] remove md workflows [\#117](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/117) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Github\] Readme changes [\#113](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/113) ([TheGoatGod](https://github.com/TheGoatGod))
