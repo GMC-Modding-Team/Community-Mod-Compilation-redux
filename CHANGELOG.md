@@ -1,8 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/tree/HEAD)
+## [V0.1.9](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/tree/V0.1.9) (2021-05-14)
 
-[Full Changelog](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/compare/V0.1.8...HEAD)
+[Full Changelog](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/compare/V0.1.8...V0.1.9)
 
 **Fixed bugs:**
 
@@ -14,6 +14,7 @@
 
 **Merged pull requests:**
 
+- \[Experimental\] Line ending changes to LF [\#126](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/126) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Github\] Readme spelling fixes [\#118](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/118) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Github\] remove md workflows [\#117](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/117) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Github\] Readme changes [\#113](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/113) ([TheGoatGod](https://github.com/TheGoatGod))
