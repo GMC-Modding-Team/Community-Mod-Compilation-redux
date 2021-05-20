@@ -1,0 +1,124 @@
+[{
+    "type": "effect_type",
+    "id": "herbantidote_eff",
+    "name": ["Antidote Herb"],
+    "desc": ["The antidote herb washed away the poison tracts, but weakens you."],
+    "apply_message": "The effects of poison fades, but you succumb to its bitterness...",
+    "rating": "neutral",
+    "removes_effects": [ "poison","badpoison" ],
+	"blocks_effects": [ "poison","badpoison" ],
+    "base_mods": {
+		"str_mod": [ -2 ],
+      "speed_mod": [ -10 ]
+    }
+  },
+  {
+    "type": "effect_type",
+    "id": "herbmed_eff",
+    "name": ["Herbal Medicine"],
+    "desc": ["The herbal medicine nullifies the traces of poison."],
+    "apply_message": "The effects of poison start to fade away...",
+    "rating": "good",
+    "removes_effects": [ "poison","badpoison" ],
+	"blocks_effects": [ "poison","badpoison" ]
+  },
+  {
+    "type": "effect_type",
+    "id": "powerseed_eff",
+    "name": ["Power Seed"],
+    "desc": ["The power seed effect lingers within you!"],
+    "apply_message": "You've felt a sudden surge of immensive strength!",
+    "rating": "good",
+    "removes_effects": [ "demondrug_eff","demondrug_mega_eff" ],
+    "base_mods": {
+      "str_mod": [ 5 ]
+    }
+  },
+  {
+    "type": "effect_type",
+    "id": "demondrug_eff",
+    "name": ["Demondrug"],
+    "desc": ["The demondrug effect lingers within you!"],
+    "apply_message": "You've felt a sudden surge of strength!",
+    "rating": "good",
+    "removes_effects": [ "demondrug_mega_eff","powerseed_eff" ],
+    "base_mods": {
+      "str_mod": [ 2 ]
+    }
+  },
+  {
+    "type": "effect_type",
+    "id": "demondrug_mega_eff",
+    "name": ["Mega Demondrug"],
+    "desc": ["The mega demondrug effect lingers within you!"],
+    "apply_message": "You've felt a sudden surge of immensive strength!",
+    "rating": "good",
+    "removes_effects": [ "demondrug_eff","powerseed_eff" ],
+    "base_mods": {
+      "str_mod": [ 5 ]
+    }
+  },
+  {
+    "type": "effect_type",
+    "id": "armorseed_eff",
+    "name": ["Armor Seed"],
+    "desc": ["The armor seed effect lingers within you!"],
+    "apply_message": "You've felt your body withdraw from great pain!",
+    "rating": "good",
+    "removes_effects": [ "armorskin_eff", "armorskin_mega_eff" ],
+    "base_mods": {
+      "pain_min": [ -6 ],
+      "pain_max": [ -10 ],
+	  "pain_tick": [ 6 ]
+    }
+  },
+  {
+    "type": "effect_type",
+    "id": "armorskin_eff",
+    "name": ["Armorskin"],
+    "desc": ["The armorskin effect lingers within you!"],
+    "apply_message": "You've felt your body withdraw from pain!",
+    "rating": "good",
+    "removes_effects": [ "armorskin_mega_eff","armorseed_eff" ],
+    "base_mods": {
+      "pain_min": [ -1 ],
+      "pain_max": [ -5 ],
+	  "pain_tick": [ 6 ]
+    }
+  },
+  {
+    "type": "effect_type",
+    "id": "armorskin_mega_eff",
+    "name": ["Mega Armorskin"],
+    "desc": ["The mega armorskin effect lingers within you!"],
+    "apply_message": "You've felt your body withdraw from great pain!",
+    "rating": "good",
+    "removes_effects": [ "armorskin_eff","armorseed_eff" ],
+    "base_mods": {
+      "pain_min": [ -6 ],
+      "pain_max": [ -10 ],
+	  "pain_tick": [ 6 ]
+    }
+  },
+  {
+	"//": "Stackable effects.",
+    "type": "effect_type",
+    "id": "hdrink_eff",
+    "name": ["Hot Drink"],
+    "desc": ["The hot drink effect wards you from the frigid air."],
+    "apply_message": "Its taste brings warmth to your body!",
+    "rating": "good",
+    "removes_effects": [ "cold" ],
+	"blocks_effects": [ "cold" ]
+  },
+  {
+    "type": "effect_type",
+    "id": "cdrink_eff",
+    "name": ["Cold Drink"],
+    "desc": ["The cold drink effect wards you from extreme heat."],
+    "apply_message": "Its taste brought a frosty feeling to your body!",
+    "rating": "good",
+    "removes_effects": [ "hot" ],
+	"blocks_effects": [ "hot" ]
+  }
+]

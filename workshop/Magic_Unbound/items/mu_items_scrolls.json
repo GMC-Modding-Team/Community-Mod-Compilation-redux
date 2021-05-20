@@ -1,0 +1,70 @@
+[
+  {
+    "abstract": "scroll_case",
+    "type": "TOOL",
+    "category": "tools",
+    "name": "scroll case",
+    "description": "A small ornate metallic octagon that fits into the palm of your hand, there is a button on the top you press to have it conjure the contents.",
+    "weight": "150 g",
+    "volume": "100 ml",
+    "price": 2000000,
+    "to_hit": -1,
+    "bashing": 2,
+    "material": "steel",
+    "symbol": "*",
+    "color": "light_blue",
+    "initial_charges": 1,
+    "max_charges": 1,
+    "charges_per_use": 1
+  },
+  {
+    "copy-from": "scroll_case",
+    "type": "TOOL",
+	"id": "scroll_case_flamespray",
+    "category": "tools",
+    "name": "scroll case of flamespray",
+    "description": "A small ornate metallic octagon that fits into the palm of your hand, there is a button on the top you press to have it conjure the contents.  It contains flamespray.",
+	"initial_charges": 1,
+    "max_charges": 1,
+    "charges_per_use": 1,
+	"use_action": { "type": "cast_spell", "spell_id": "conj_scroll_flamespray", "no_fail": true, "level": 1 }
+   },
+   {
+    "id": "conj_scroll_flamespray",
+	"type": "SPELL",
+	"name": "Conjure Flamespray Scroll",
+	"description": "This is an item spell that conjures a temporary scroll of Flamespray",
+	"valid_targets": [ "self" ],
+	"effect": "spawn_item",
+	"effect_str": "scroll_spell_flamespray",
+	"max_level": 1,
+	"min_damage": 1,
+	"max_damage": 1,
+	"min_duration": 360000,
+	"max_duration": 360000
+   },
+   {
+    "abstract": "scroll_spell",
+    "name": "Scroll",
+    "type": "GENERIC",
+    "weight": "10 g",
+    "volume": "50 ml",
+    "price": 400000,
+    "symbol": "?",
+    "color": "light_blue"
+  },
+  {
+    "type": "GENERIC",
+    "copy-from": "scroll_spell",
+    "id": "scroll_spell_flamespray",
+    "name": { "str": "Scroll of flamespray", "str_pl": "Scrolls of flamespray" },
+    "description": "A conjured phantom object that should stick around just long enough for you to learn the spell contained within, maybe a little more.",
+    "use_action": { "type": "learn_spell", "spells": [ "flamespray" ] }
+  }
+   
+  
+
+
+
+
+]

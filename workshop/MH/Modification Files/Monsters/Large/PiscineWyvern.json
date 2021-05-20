@@ -1,0 +1,103 @@
+{
+	"id": "mon_plesioth",
+	"type": "MONSTER",
+	"name": "plesioth",
+	"description": "An enormous, flightless, aquatic wyvern with wings that have evolved into fins for swimming. Although superficially fish-like, they can move on land as well.",
+	"default_faction": "wyvern",
+	"species": [
+		"WYVERN"
+	],
+	"volume": "875000 ml",
+	"weight": 200000,
+	"hp": 1775,
+	"speed": 70,
+	"harvest": "plesioth_carve",
+	"material": [
+		"flesh",
+		"plesioth"
+	],
+	"symbol": "W",
+	"dodge": 1,
+	"color": "light_blue",
+	"aggression": 0,
+	"morale": 20,
+	"melee_skill": 10,
+	"melee_dice": 6,
+	"melee_dice_sides": 6,
+	"melee_cut": 2,
+	"attack_cost": 125,
+	"melee_damage": [
+		{
+			"damage_type": "bash",
+			"amount": 10
+		},
+		{
+			"damage_type": "cut",
+			"amount": 4
+		}
+	],
+	"armor_bash": 11,
+	"armor_cut": 14,
+	"armor_acid": 9,
+	"armor_fire": 0,
+	"armor_elec": 0,
+	"anger_triggers": [
+		"SOUND",
+		"HURT"
+	],
+	"death_function": [
+		"NORMAL"
+	],
+	"vision_day": 30,
+	"vision_night": 10,
+	"starting_ammo": {
+		"plesioth_waterspit": 1000
+	},
+	"special_attacks": [
+		{
+			"type": "gun",
+			"cooldown": 120,
+			"move_cost": 200,
+			"gun_type": "plesioth_mouth",
+			"ammo_type": "plesioth_waterspit",
+			"fake_dex": 8,
+			"fake_skills": [
+				[
+					"gun",
+					4
+				],
+				[
+					"rifle",
+					4
+				]
+			],
+			"fake_per": 8,
+			"targeting_cost": 250,
+			"max_ammo": 1000,
+			"require_targeting_player": false,
+			"require_targeting_npc": false,
+			"require_targeting_monster": false,
+			"description": "The plesioth spits a water spout!",
+			"ranges": [
+				[
+					1,
+					15,
+					"DEFAULT"
+				]
+			]
+		}
+	],
+	"//": "Fishable in MH, but not in CDDA.",
+	"flags": [
+		"SEES",
+		"HEARS",
+		"SWIMS",
+		"LOUDMOVES",
+		"SMELLS",
+		"ANIMAL",
+		"WARM",
+		"BASHES",
+		"BONES",
+		"PATH_AVOID_DANGER_2"
+	]
+}

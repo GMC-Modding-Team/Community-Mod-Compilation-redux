@@ -1,0 +1,261 @@
+[
+	{
+		"id": "mon_vespoid",
+		"type": "MONSTER",
+		"name": "vespoid",
+		"description": "An enormous, wasp-like insectoid with a poisonous stinger that paralyzes prey. Easily damaged, there are rarely any usable materials left to harvest from them once killed.",
+		"default_faction": "neopteron",
+		"species": [
+			"NEOPTERON"
+		],
+		"volume": "30000 ml",
+		"weight": 40750,
+		"hp": 25,
+		"speed": 95,
+		"harvest": "vespoid_carve",
+		"material": [
+			"iflesh",
+			"vespoid"
+		],
+		"dodge": 3,
+		"symbol": "N",
+		"color": "yellow",
+		"aggression": 50,
+		"morale": 100,
+		"attack_effs": [
+      { "id": "paralyzepoison", "duration": 50, "chance": 5 }
+    ],
+		"melee_skill": 2,
+		"melee_dice": 2,
+		"melee_dice_sides": 2,
+		"melee_cut": 2,
+		"melee_damage": [
+			{
+				"damage_type": "stab",
+				"amount": 10
+			}
+		],
+		"armor_bash": 0,
+		"armor_cut": 0,
+		"armor_acid": 0,
+		"armor_fire": 0,
+		"armor_elec": 0,
+		"death_function": [
+			"NORMAL"
+		],
+		"vision_day": 10,
+		"flags": [
+			"SEES",
+			"HEARS",
+			"FLIES",
+			"SMELLS","ANIMAL",
+			"PATH_AVOID_DANGER_1"
+		]
+	},
+	{
+		"id": "mon_vespoidqueen",
+		"type": "MONSTER",
+		"name": "vespoid queen",
+		"description": "A massive thorax and brilliant gigantic wings mark the vespoid queen. It commands its subjects through unique flight patterns, and will stab any intruders with a poisonous stinger that also causes paralysis. It also spits acidic bodily fluids at its prey.",
+		"default_faction": "neopteron",
+		"species": [
+			"NEOPTERON"
+		],
+		"volume": "92500 ml",
+    "weight": 120000,
+		"hp": 980,
+		"speed": 80,
+		"harvest": "vespoidqueen_carve",
+		"material": [
+			"iflesh",
+			"vespoid"
+		],
+		"dodge": 3,
+		"symbol": "N",
+		"color": "yellow_red",
+		"aggression": 50,
+		"morale": 100,
+		"melee_skill": 10,
+		"melee_dice": 4,
+		"melee_dice_sides": 4,
+		"melee_cut": 6,
+		"attack_effs": [
+      { "id": "paralyzepoison", "duration": 50, "chance": 15 }
+    ],
+		"melee_damage": [
+			{
+				"damage_type": "stab",
+				"amount": 18
+			}
+		],
+		"armor_bash": 0,
+		"armor_cut": 0,
+		"armor_acid": 0,
+		"armor_fire": 0,
+		"armor_elec": 0,
+		"death_function": [
+			"NORMAL"
+		],
+		"vision_day": 10,
+		"starting_ammo": {
+			"vespoid_acid": 1000
+		},
+		"special_attacks": [
+			{
+				"type": "gun",
+				"cooldown": 35,
+				"move_cost": 200,
+				"gun_type": "vespoid_stinger",
+				"ammo_type": "vespoid_acid",
+				"fake_dex": 8,
+				"fake_skills": [
+					[
+						"gun",
+						4
+					],
+					[
+						"rifle",
+						4
+					]
+				],
+				"fake_per": 8,
+				"targeting_cost": 250,
+				"max_ammo": 1000,
+				"require_targeting_player": false,
+				"require_targeting_npc": false,
+				"require_targeting_monster": false,
+				"description": "The vespoid queen sprays an acid!",
+				"ranges": [
+					[
+						0,
+						4,
+						"DEFAULT"
+					]
+				]
+			}
+		],
+		"flags": [
+			"QUEEN",
+			"SEES",
+			"HEARS",
+			"FLIES",
+			"SMELLS","ANIMAL",
+			"BLEED",
+			"PATH_AVOID_DANGER_1"
+		]
+	},
+	{
+		"id": "mon_hornetaur",
+		"type": "MONSTER",
+		"name": "hornetaur",
+		"description": "A vespoid-like monster with a thicker shell. Easily damaged, there are rarely any usable materials left to harvest from them once killed.",
+		"default_faction": "neopteron",
+		"species": [
+			"NEOPTERON"
+		],
+		"volume": "30000 ml",
+		"weight": 40750,
+		"hp": 55,
+		"speed": 75,
+		"harvest": "hornetaur_carve",
+		"material": [
+			"iflesh",
+			"hornetaur"
+		],
+		"symbol": "N",
+		"dodge": 2,
+		"color": "dark_gray",
+		"aggression": 50,
+		"morale": 100,
+		"melee_skill": 4,
+		"melee_dice": 2,
+		"melee_dice_sides": 4,
+		"melee_cut": 2,
+		"melee_damage": [
+			{
+				"damage_type": "bash",
+				"amount": 3
+			},
+			{
+				"damage_type": "stab",
+				"amount": 8
+			}
+		],
+		"armor_bash": 0,
+		"armor_cut": 0,
+		"armor_acid": 0,
+		"armor_fire": 0,
+		"armor_elec": 0,
+		"death_function": [
+			"NORMAL"
+		],
+		"vision_day": 12,
+		"flags": [
+			"SEES",
+			"HEARS",
+			"FLIES",
+			"SMELLS","ANIMAL",
+			"BLEED",
+			"PATH_AVOID_DANGER_1"
+		]
+	},
+	{
+		"id": "mon_thunderbug",
+		"type": "MONSTER",
+		"name": "great thunderbug",
+		"description": "An abnormally large thunderbug raised inside the body of an elder dragon and known to inhabit the same areas as its former host, its electrical attack is deadly. This bug has various uses as material for crafting weapons and items.",
+		"default_faction": "neopteron",
+		"species": [
+			"NEOPTERON"
+		],
+		"volume": "30000 ml",
+		"weight": 40750,
+		"hp": 65,
+		"speed": 90,
+		"harvest": "exempt",
+		"material": [
+			"iflesh"
+		],
+		"symbol": "N",
+		"dodge": 5,
+		"color": "light_blue",
+		"aggression": 50,
+		"morale": 100,
+		"melee_skill": 4,
+		"melee_dice": 4,
+		"melee_dice_sides": 4,
+		"melee_cut": 0,
+		"attack_effs": [
+      { "id": "zapped", "duration": 2, "chance": 10 }
+    ],
+		"melee_damage": [
+			{
+				"damage_type": "electric",
+				"amount": 10
+			},
+			{
+				"damage_type": "bash",
+				"amount": 4
+			}
+		],
+		"armor_bash": 0,
+		"armor_cut": 0,
+		"armor_acid": 0,
+		"armor_fire": 0,
+		"armor_elec": 0,
+		"death_function": [
+			"DISINTEGRATE"
+		],
+		"vision_day": 15,
+		"death_drops": "mh_thunderbug_drops",
+		"flags": [
+			"SEES",
+			"HEARS",
+			"FLIES",
+			"SMELLS","ANIMAL",
+			"ELECTRIC",
+			"HARDTOSHOOT",
+			"PATH_AVOID_DANGER_1"
+		]
+	}
+]

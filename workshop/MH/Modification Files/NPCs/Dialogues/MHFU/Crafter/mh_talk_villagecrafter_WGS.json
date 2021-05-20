@@ -1,0 +1,1671 @@
+[
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS",
+		"dynamic_line": "Select the Great Sword you want to craft.",
+		"responses": [
+			{
+				"text": "Later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "buster sword",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS_ironlv1_gs"
+			},
+			{
+				"text": "bone blade",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS_bonelv1_gs1"
+			},
+			{
+				"text": "ravager blade",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS_ravagerlv1_gs"
+			},
+			{
+				"text": "golem blade",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS_bonelv1_gs2"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuavailcraft_giaprey"
+				},
+				"text": "white serpentblade",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS_giapreylv1_gs"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuavailcraft_hermitaur"
+				},
+				"text": "red stripe",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS_hermitaurlv1_gs"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuavailcraft_khezu"
+				},
+				"text": "khezu shock sword",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS_khezulv1_gs"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuavailcraft_kut-ku"
+				},
+				"text": "barbaroi blade",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS_barbaroilv1_gs"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuavailcraft_rath"
+				},
+				"text": "valkyrie blade",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS_rathianlv1_gs1"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuavailcraft_rath"
+				},
+				"text": "red wing",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS_rathaloslv1_gs1"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuavailcraft_garuga"
+				},
+				"text": "sentoryu raven",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS_garuga_gs"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuavailcraft_kirin"
+				},
+				"text": "kirin thundersword",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS_kirin_gs"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuavailcraft_gaoren"
+				},
+				"text": "bronze coin",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS_gaoren_gs"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuavailcraft_tigrex"
+				},
+				"text": "tiger agito",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS_tigrex_gs"
+			},
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_trait": "mhfuavailcraft_tigrex"
+						},
+						{
+							"u_has_trait": "mhfuavailcraft_daora"
+						},
+						{
+							"u_has_trait": "mhfuavailcraft_lunastra"
+						},
+						{
+							"u_has_trait": "mhfuavailcraft_teostra"
+						},
+						{
+							"u_has_trait": "mhfuavailcraft_lao-shan"
+						}
+					]
+				},
+				"text": "dragonslayer",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS_dragonslayer_gs"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS_ironlv1_gs",
+		"dynamic_line": {
+			"and": [
+				"The buster sword costs 500z and these materials:\n- 3 iron ores\nIt can deal damage by:\n*bash: 8 *cut: 10\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 500
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "mh_ironore",
+							"count": 3
+						},
+						"yes": "You are able to craft this weapon!",
+						"no": "Requirements are not met!"
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 500
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_ironore",
+								"count": 3
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 500
+					},
+					{
+						"u_sell_item": "mh_ironore",
+						"count": 3
+					},
+					{
+						"u_buy_item": "ironlv1_gs"
+					}
+				],
+				"text": "Create the buster sword!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS_bonelv1_gs1",
+		"dynamic_line": {
+			"and": [
+				"The bone blade costs 500z and these materials:\n- 3 small monster bones\nIt can deal damage by:\n*bash: 8 *cut: 11\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 500
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "monbone_s",
+							"count": 3
+						},
+						"yes": "You are able to craft this weapon!",
+						"no": "Requirements are not met!"
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 500
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "monbone_s",
+								"count": 3
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 500
+					},
+					{
+						"u_sell_item": "monbone_s",
+						"count": 3
+					},
+					{
+						"u_buy_item": "bonelv1_gs1"
+					}
+				],
+				"text": "Create the bone blade!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS_ravagerlv1_gs",
+		"dynamic_line": {
+			"and": [
+				"The ravager blade costs 2150z and these materials:\n- 15 earth crystals\n- 15 iron ores\n- 15 ice crystals\nIt can deal damage by:\n*bash: 8 *cut: 19\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 2150
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "mh_earthcrystal",
+							"count": 15
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "mh_ironore",
+								"count": 15
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "mh_icecrystal",
+									"count": 15
+								},
+								"yes": "You are able to craft this weapon!",
+								"no": "Requirements are not met!"
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 2150
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_earthcrystal",
+								"count": 15
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_ironore",
+								"count": 15
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_icecrystal",
+								"count": 15
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 2150
+					},
+					{
+						"u_sell_item": "mh_earthcrystal",
+						"count": 15
+					},
+					{
+						"u_sell_item": "mh_ironore",
+						"count": 15
+					},
+					{
+						"u_sell_item": "mh_icecrystal",
+						"count": 15
+					},
+					{
+						"u_buy_item": "ravagerlv1_gs"
+					}
+				],
+				"text": "Create the ravager blade!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS_bonelv1_gs2",
+		"dynamic_line": {
+			"and": [
+				"The golem blade costs 1750z and these materials:\n- 3 large monster bones\n- 8 brute bones\n- 6 sharp claws\n- 10 carpenterbugs\nIt can deal damage by:\n*bash: 8 *cut: 18\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 1750
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "monbone_l",
+							"count": 3
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "monbone_brute",
+								"count": 8
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "sharp_claw",
+									"count": 6
+								},
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_items": {
+										"item": "mh_carpenterbug",
+										"count": 10
+									},
+									"yes": "You are able to craft this weapon!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 1750
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "monbone_l",
+								"count": 3
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "monbone_brute",
+								"count": 8
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "sharp_claw",
+								"count": 6
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_carpenterbug",
+								"count": 10
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 1750
+					},
+					{
+						"u_sell_item": "monbone_l",
+						"count": 3
+					},
+					{
+						"u_sell_item": "monbone_brute",
+						"count": 8
+					},
+					{
+						"u_sell_item": "sharp_claw",
+						"count": 6
+					},
+					{
+						"u_sell_item": "mh_carpenterbug",
+						"count": 10
+					},
+					{
+						"u_buy_item": "bonelv1_gs2"
+					}
+				],
+				"text": "Create the golem blade!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS_giapreylv1_gs",
+		"dynamic_line": {
+			"and": [
+				"The white serpentblade costs 1100z and these materials:\n- 6 giaprey hides\n- 4 sharp claws\n- 5 iron ores\n- 3 brute bones\nIt can deal damage by:\n*bash: 8 *cut: 15\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 1100
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "giaprey_hide",
+							"count": 6
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "sharp_claw",
+								"count": 4
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "mh_ironore",
+									"count": 5
+								},
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_items": {
+										"item": "monbone_brute",
+										"count": 3
+									},
+									"yes": "You are able to craft this weapon!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 1100
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "giaprey_hide",
+								"count": 6
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "sharp_claw",
+								"count": 4
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_ironore",
+								"count": 5
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "monbone_brute",
+								"count": 3
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 1100
+					},
+					{
+						"u_sell_item": "giaprey_hide",
+						"count": 6
+					},
+					{
+						"u_sell_item": "sharp_claw",
+						"count": 4
+					},
+					{
+						"u_sell_item": "mh_ironore",
+						"count": 5
+					},
+					{
+						"u_sell_item": "monbone_brute",
+						"count": 3
+					},
+					{
+						"u_buy_item": "giapreylv1_gs"
+					}
+				],
+				"text": "Create the white serpentblade!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS_hermitaurlv1_gs",
+		"dynamic_line": {
+			"and": [
+				"The red stripe costs 2150z and these materials:\n- 5 small hermitaur shells\n- 2 brute bones\n- 3 sharp claws\n- 1 black pearl\nIt can deal damage by:\n*bash: 8 *cut: 21\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 2150
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "hermitaur_shell_small",
+							"count": 5
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "monbone_brute",
+								"count": 2
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "sharp_claw",
+									"count": 3
+								},
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_item": "black_pearl",
+									"yes": "You are able to craft this weapon!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 2150
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "hermitaur_shell_small",
+								"count": 5
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "monbone_brute",
+								"count": 2
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "sharp_claw",
+								"count": 3
+							}
+						},
+						{
+							"u_has_item": "black_pearl"
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 2150
+					},
+					{
+						"u_sell_item": "hermitaur_shell_small",
+						"count": 5
+					},
+					{
+						"u_sell_item": "monbone_brute",
+						"count": 2
+					},
+					{
+						"u_sell_item": "sharp_claw",
+						"count": 3
+					},
+					{
+						"u_sell_item": "black_pearl"
+					},
+					{
+						"u_buy_item": "hermitaurlv1_gs"
+					}
+				],
+				"text": "Create the red stripe!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS_khezulv1_gs",
+		"dynamic_line": {
+			"and": [
+				"The khezu shock sword costs 3100z and these materials:\n- 5 flabby hides\n- 15 thunderbugs\n- 8 machalite ores\n- 5 rubbery hides\nIt can deal damage by:\n*bash: 8 *cut: 25\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 3100
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "khezu_hide",
+							"count": 5
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "mh_thunderbug",
+								"count": 15
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "mh_machaliteore",
+									"count": 8
+								},
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_items": {
+										"item": "gypceros_hide",
+										"count": 5
+									},
+									"yes": "You are able to craft this weapon!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 3100
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "khezu_hide",
+								"count": 5
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_thunderbug",
+								"count": 15
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_machaliteore",
+								"count": 8
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "gypceros_hide",
+								"count": 5
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 3100
+					},
+					{
+						"u_sell_item": "khezu_hide",
+						"count": 5
+					},
+					{
+						"u_sell_item": "mh_thunderbug",
+						"count": 15
+					},
+					{
+						"u_sell_item": "mh_machaliteore",
+						"count": 8
+					},
+					{
+						"u_sell_item": "gypceros_hide",
+						"count": 5
+					},
+					{
+						"u_buy_item": "khezulv1_gs"
+					}
+				],
+				"text": "Create the khezu shock sword!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS_barbaroilv1_gs",
+		"dynamic_line": {
+			"and": [
+				"The barbaroi blade costs 2150z and these materials:\n- 4 flame sacs\n- 30 iron ores\n- 8 carpenterbugs\n- 1 unknown skull\nIt can deal damage by:\n*bash: 8 *cut: 21\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 2150
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "flame_sac",
+							"count": 4
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "mh_ironore",
+								"count": 30
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "mh_carpenterbug",
+									"count": 8
+								},
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_item": "monbone_unknown",
+									"yes": "You are able to craft this weapon!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 2150
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "flame_sac",
+								"count": 4
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_ironore",
+								"count": 30
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_carpenterbug",
+								"count": 8
+							}
+						},
+						{
+							"u_has_item": "monbone_unknown"
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 2150
+					},
+					{
+						"u_sell_item": "flame_sac",
+						"count": 4
+					},
+					{
+						"u_sell_item": "mh_ironore",
+						"count": 30
+					},
+					{
+						"u_sell_item": "mh_carpenterbug",
+						"count": 8
+					},
+					{
+						"u_sell_item": "monbone_unknown"
+					},
+					{
+						"u_buy_item": "barbaroilv1_gs"
+					}
+				],
+				"text": "Create the barbaroi blade!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS_rathianlv1_gs1",
+		"dynamic_line": {
+			"and": [
+				"The valkyrie blade costs 3100z and these materials:\n- 4 rathian scales\n- 3 rathian shells\n- 4 fire wyvern fluids\n- 1 mega demondrug\nIt can deal damage by:\n*bash: 8 *cut: 21\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 3100
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "rathian_scale",
+							"count": 4
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "rathian_shell",
+								"count": 3
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "fwyvern_fluid",
+									"count": 4
+								},
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_item": "mh_demondrug_mega",
+									"yes": "You are able to craft this weapon!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 3100
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "rathian_scale",
+								"count": 4
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "rathian_shell",
+								"count": 3
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "fwyvern_fluid",
+								"count": 4
+							}
+						},
+						{
+							"u_has_item": "mh_demondrug_mega"
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 3100
+					},
+					{
+						"u_sell_item": "rathian_scale",
+						"count": 4
+					},
+					{
+						"u_sell_item": "rathian_shell",
+						"count": 3
+					},
+					{
+						"u_sell_item": "fwyvern_fluid",
+						"count": 4
+					},
+					{
+						"u_sell_item": "mh_demondrug_mega"
+					},
+					{
+						"u_buy_item": "rathianlv1_gs1"
+					}
+				],
+				"text": "Create the valkyrie blade!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS_rathaloslv1_gs1",
+		"dynamic_line": {
+			"and": [
+				"The red wing costs 2150z and these materials:\n- 2 rathalos scales\n- 2 fire wyvern claws\n- 4 fire wyvern fluids\n- 4 flame sacs\nIt can deal damage by:\n*bash: 8 *cut: 21\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 2150
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "rathalos_scale",
+							"count": 2
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "fwyvern_claw",
+								"count": 2
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "fwyvern_fluid",
+									"count": 4
+								},
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_items": {
+										"item": "flame_sac",
+										"count": 4
+									},
+									"yes": "You are able to craft this weapon!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 2150
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "rathalos_scale",
+								"count": 2
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "fwyvern_claw",
+								"count": 2
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "fwyvern_fluid",
+								"count": 4
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "flame_sac",
+								"count": 4
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 2150
+					},
+					{
+						"u_sell_item": "rathalos_scale",
+						"count": 2
+					},
+					{
+						"u_sell_item": "fwyvern_claw",
+						"count": 2
+					},
+					{
+						"u_sell_item": "fwyvern_fluid",
+						"count": 4
+					},
+					{
+						"u_sell_item": "flame_sac",
+						"count": 4
+					},
+					{
+						"u_buy_item": "rathaloslv1_gs1"
+					}
+				],
+				"text": "Create the red wing!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS_garuga_gs",
+		"dynamic_line": {
+			"and": [
+				"The sentoryu raven costs 10000z and these materials:\n- 2 garuga wings\n- 3 garuga shells\n- 2 garuga tails\n- 2 giant bones\nIt can deal damage by:\n*bash: 8 *cut: 22\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 10000
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "garuga_wing",
+							"count": 2
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "garuga_shell",
+								"count": 3
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "garuga_tail",
+									"count": 2
+								},
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_items": {
+										"item": "monbone_giant",
+										"count": 2
+									},
+									"yes": "You are able to craft this weapon!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 4100
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "garuga_wing",
+								"count": 2
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "garuga_shell",
+								"count": 3
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "garuga_tail",
+								"count": 2
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "monbone_giant",
+								"count": 2
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 4100
+					},
+					{
+						"u_sell_item": "garuga_wing",
+						"count": 2
+					},
+					{
+						"u_sell_item": "garuga_shell",
+						"count": 3
+					},
+					{
+						"u_sell_item": "garuga_tail",
+						"count": 2
+					},
+					{
+						"u_sell_item": "monbone_giant",
+						"count": 2
+					},
+					{
+						"u_buy_item": "garuga_gs"
+					}
+				],
+				"text": "Create the sentoryu raven!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS_kirin_gs",
+		"dynamic_line": {
+			"and": [
+				"The kirin thundersword costs 20000z and these materials:\n- 7 kirin horns\n- 2 kirin manes\n- 2 rubbery hides\n- 3 lightcrystals\nIt can deal damage by:\n*bash: 8 *cut: 32\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 20000
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "kirin_horn",
+							"count": 7
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "kirin_mane",
+								"count": 2
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "gypceros_hide",
+									"count": 2
+								},
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_items": {
+										"item": "mh_lightcrystal",
+										"count": 3
+									},
+									"yes": "You are able to craft this weapon!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 20000
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "kirin_horn",
+								"count": 7
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "kirin_mane",
+								"count": 2
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "gypceros_hide",
+								"count": 2
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_lightcrystal",
+								"count": 3
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 20000
+					},
+					{
+						"u_sell_item": "kirin_horn",
+						"count": 7
+					},
+					{
+						"u_sell_item": "kirin_mane",
+						"count": 2
+					},
+					{
+						"u_sell_item": "gypceros_hide",
+						"count": 2
+					},
+					{
+						"u_sell_item": "mh_lightcrystal",
+						"count": 3
+					},
+					{
+						"u_buy_item": "kirin_gs"
+					}
+				],
+				"text": "Create the kirin thundersword!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS_gaoren_gs",
+		"dynamic_line": {
+			"and": [
+				"The bronze coin costs 35000z and these materials:\n- 3 gaoren pincers\n- 5 gaoren spines\n- 1 gaoren claw\n- 20 black pearls\nIt can deal damage by:\n*bash: 8 *cut: 29\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 35000
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "gaoren_pincer",
+							"count": 3
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "gaoren_spine",
+								"count": 5
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_item": "gaoren_claw",
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_items": {
+										"item": "black_pearl",
+										"count": 20
+									},
+									"yes": "You are able to craft this weapon!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 35000
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "gaoren_pincer",
+								"count": 3
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "gaoren_spine",
+								"count": 5
+							}
+						},
+						{
+							"u_has_item": "gaoren_claw"
+						},
+						{
+							"u_has_items": {
+								"item": "black_pearl",
+								"count": 20
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 35000
+					},
+					{
+						"u_sell_item": "gaoren_pincer",
+						"count": 3
+					},
+					{
+						"u_sell_item": "gaoren_spine",
+						"count": 5
+					},
+					{
+						"u_sell_item": "gaoren_claw"
+					},
+					{
+						"u_sell_item": "black_pearl",
+						"count": 20
+					},
+					{
+						"u_buy_item": "gaoren_gs"
+					}
+				],
+				"text": "Create the bronze coin!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS_tigrex_gs",
+		"dynamic_line": {
+			"and": [
+				"The tiger agito costs 35000z and these materials:\n- 5 tigrex fangs\n- 4 tigrex scales\n- 1 tigrex skull\n- 1 pokke ticket\nIt can deal damage by:\n*bash: 8 *cut: 27\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 35000
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "tigrex_fang",
+							"count": 5
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "tigrex_scale",
+								"count": 4
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_item": "tigrex_skullshell",
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_item": "pokke_ticket",
+									"yes": "You are able to craft this weapon!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 35000
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "tigrex_fang",
+								"count": 5
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "tigrex_scale",
+								"count": 4
+							}
+						},
+						{
+							"u_has_item": "tigrex_skullshell"
+						},
+						{
+							"u_has_item": "pokke_ticket"
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 35000
+					},
+					{
+						"u_sell_item": "tigrex_fang",
+						"count": 5
+					},
+					{
+						"u_sell_item": "tigrex_scale",
+						"count": 4
+					},
+					{
+						"u_sell_item": "tigrex_skullshell"
+					},
+					{
+						"u_sell_item": "pokke_ticket"
+					},
+					{
+						"u_buy_item": "tigrex_gs"
+					}
+				],
+				"text": "Create the tiger agito!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS_dragonslayer_gs",
+		"dynamic_line": {
+			"and": [
+				"The dragonslayer costs 5600z and these materials:\n- 8 lao-shan's scales\n- 8 daora dragon scales\n- 8 fire dragon scales\n- 8 tigrex scales\nIt can deal damage by:\n*bash: 8 *cut: 30\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 5600
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "lao-shan_scale",
+							"count": 8
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "daora_dragonscale",
+								"count": 8
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "fdragon_scale",
+									"count": 8
+								},
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_items": {
+										"item": "tigrex_scale",
+										"count": 8
+									},
+									"yes": "You are able to craft this weapon!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 5600
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "lao-shan_scale",
+								"count": 8
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "daora_dragonscale",
+								"count": 8
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "fdragon_scale",
+								"count": 8
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "tigrex_scale",
+								"count": 8
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 5600
+					},
+					{
+						"u_sell_item": "lao-shan_scale",
+						"count": 8
+					},
+					{
+						"u_sell_item": "daora_dragonscale",
+						"count": 8
+					},
+					{
+						"u_sell_item": "fdragon_scale",
+						"count": 8
+					},
+					{
+						"u_sell_item": "tigrex_scale",
+						"count": 8
+					},
+					{
+						"u_buy_item": "dragonslayer_gs"
+					}
+				],
+				"text": "Create the dragonslayer!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS"
+			}
+		]
+	}
+]

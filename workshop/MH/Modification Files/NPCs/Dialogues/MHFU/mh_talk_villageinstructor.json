@@ -1,0 +1,75 @@
+[
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGEINSTRUCTOR_intro1",
+		"dynamic_line": {"u_has_trait": "mhfuinstructortalkedjob", "yes": "You're back, huh? So you want to train more?!", "no": "Welcome! I am your instructor this day onwards! Heed my words, hunter!"},
+		"responses": [
+			{
+				"effect": {
+					"u_add_trait": "mhfuinstructortalkedjob"
+				},
+				"text": "Tell me how my job works.",
+				"topic": "MHFU_VILLAGEINSTRUCTOR_intro2"
+			},
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_trait": "mhfuinstructortalkedjob"
+						},
+						{
+							"not": "has_assigned_mission"
+						}
+					]
+				},
+				"text": "Hunting exercise.",
+				"topic": "MHFU_VILLAGEINSTRUCTOR_train"
+			},
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_trait": "mhfuinstructortalkedjob"
+						},
+						"has_assigned_mission"
+					]
+				},
+				"text": "About my training...",
+				"topic": "TALK_MISSION_INQUIRE"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuinstructortalkedjob"
+				},
+				"text": "Bye!",
+				"topic": "TALK_DONE"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGEINSTRUCTOR_intro2",
+		"dynamic_line": "\nI * Hunters train forever, not just a day!\nAlways sharpen your skills to extend your limits!\n\nII * Departing on a Quest allows hunter to hunt!\nBefore departing on a Quest, you must first initiate it. To initiate a Quest, you must pay a contract fee! Fee... That means money! Got it?\n\nIII * Victory is fun! Losing... It means death.\nWhen clearing a Quest, you earn your reward. But failure means you absolutely lost your life!\n\nIV * First, try various Quests that have no contract fee.\nThere are Quests that require no contract fee. For instance, my esteemed Exercises!\n\nV * Achieve the goal condition!\nSlaying the target monster means you have completed the quest!\n\nVI * Practice is everything! Now let's get hunting!\nThe best way to learn the details of hunting is to try it all yourself. Let's go and take the first step in your hunting life! I've got high hopes!",
+		"responses": [
+			{
+				"text": "Done!",
+				"topic": "MHFU_VILLAGEINSTRUCTOR_intro1"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGEINSTRUCTOR_train",
+		"dynamic_line": "In a hunting exercise, you will face a doppleganger of monsters set in the wilderness. Don't worry, their strength is far lower than the original one, but they are a bit tougher! Your pain from facing them earns no reward and their body just \"pops\" out of nowhere... This is good only if you want to train your skills!",
+		"responses": [
+			{
+				"text": "I'm am ready!",
+				"topic": "TALK_MISSION_LIST"
+			},
+			{
+				"text": "Maybe later!",
+				"topic": "TALK_DONE"
+			}
+		]
+	}
+]

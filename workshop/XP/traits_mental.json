@@ -1,0 +1,250 @@
+[
+  {
+    "type": "mutation",
+    "id": "XP_CANNIBAL",
+    "name": { "str": "XP - Cannibalism" },
+    "description": "Face it, postapocalyptic life is pretty brutal and hard, you've grown tired of being such a squeamish little wuss and now don't mind indulging in long pig now and again.",
+    "points": 1,
+	"valid": false,
+    "flags": [ "CANNIBAL", "PRED1" ]
+  },
+  {
+    "type": "mutation",
+    "id": "XP_NOVICE_PARKOUR",
+    "name": { "str": "Parkour Novice" },
+    "points": 1,
+    "description": "You're skilled at clearing obstacles; terrain like railings or counters are as easy for you to move on as solid ground.",
+    "starting_trait": false,
+    "valid": false,
+    "movecost_obstacle_modifier": 0.85
+  },
+  {
+    "type": "mutation",
+    "id": "XP_FASTREADER",
+    "name": { "str": "XP - Fast Reader" },
+    "points": 1,
+    "description": "You're a quick reader, and can get through books a lot faster than most.",
+    "reading_speed_multiplier": 0.9,
+    "starting_trait": false,
+    "valid": false
+  },
+  {
+    "id": "XP_ORGANIZED_CATEGORY",
+    "type": "mutation_category",
+    "category": "XP_ORGANIZED_CATEGORY",
+    "threshold_mut": "THRESH_XP_ORGANIZED",
+    "name": "Dummy Mutation Category",
+    "iv_message": "Seeing this is probably a bug.",
+    "mutagen_message": "Seeing this is probably a bug.",
+    "memorial_message": "Honed their nature as a survivor in the harsh apocalypse."
+  },
+  {
+    "type": "mutation",
+    "id": "THRESH_XP_ORGANIZED",
+    "name": { "str": "Dummy Threshold" },
+    "description": "This only exists to enable evolving experience reward traits to function.",
+    "points": 0,
+    "valid": false,
+    "purifiable": false,
+    "threshold": true
+  },
+  {
+    "type": "mutation",
+    "id": "XP_ORGANIZED_1",
+    "name": { "str": "Organized I" },
+    "points": 1,
+    "description": "You pack things very efficiently!  You can retrieve things from containers 15% faster.",
+    "obtain_cost_multiplier": 0.85,
+    "starting_trait": false,
+    "valid": false,
+    "category": [ "XP_ORGANIZED_CATEGORY" ],
+    "changes_to": [ "XP_ORGANIZED_2" ],
+    "flags": [ "NON_THRESH" ]
+  },
+  {
+    "type": "mutation",
+    "id": "XP_ORGANIZED_2",
+    "name": { "str": "Organized II" },
+    "points": 1,
+    "description": "You pack things very efficiently!  You can retrieve things from containers 30% faster.",
+    "obtain_cost_multiplier": 0.70,
+    "starting_trait": false,
+    "valid": false,
+    "category": [ "XP_ORGANIZED_CATEGORY" ],
+    "prereqs": [ "XP_ORGANIZED_1" ],
+    "flags": [ "NON_THRESH" ]
+  },
+  {
+    "id": "XP_SLEEPLESS_CATEGORY",
+    "type": "mutation_category",
+    "category": "XP_SLEEPLESS_CATEGORY",
+    "threshold_mut": "THRESH_XP_SLEEPLESS",
+    "name": "Dummy Mutation Category",
+    "iv_message": "Seeing this is probably a bug.",
+    "mutagen_message": "Seeing this is probably a bug.",
+    "memorial_message": "Honed their nature as a survivor in the harsh apocalypse."
+  },
+  {
+    "type": "mutation",
+    "id": "THRESH_XP_SLEEPLESS",
+    "name": { "str": "Dummy Threshold" },
+    "description": "This only exists to enable evolving experience reward traits to function.",
+    "points": 0,
+    "valid": false,
+    "purifiable": false,
+    "threshold": true
+  },
+  {
+    "type": "mutation",
+    "id": "XP_SLEEPLESS_1",
+    "name": { "str": "Sleep Adaptation I" },
+    "points": 1,
+    "description": "You have adapted to a more dangerous life in the apocalypse, you now need less sleep than the average person.",
+    "types": [ "SLEEP" ],
+    "starting_trait": false,
+    "fatigue_modifier": -0.10,
+    "category": [ "XP_SLEEPLESS_CATEGORY" ],
+    "changes_to": [ "XP_SLEEPLESS_2" ],
+    "flags": [ "NON_THRESH" ]
+  },
+  {
+    "type": "mutation",
+    "id": "XP_SLEEPLESS_2",
+    "name": { "str": "Sleep Adaptation II" },
+    "points": 1,
+    "description": "You have adapted to a more dangerous life in the apocalypse, you now need a lot less sleep than the average person.",
+    "types": [ "SLEEP" ],
+    "starting_trait": false,
+    "fatigue_modifier": -0.20,
+    "category": [ "XP_SLEEPLESS_CATEGORY" ],
+    "prereqs": [ "XP_SLEEPLESS_1" ],
+    "changes_to": [ "XP_SLEEPLESS_3" ],
+    "flags": [ "NON_THRESH" ]
+  },
+  {
+    "type": "mutation",
+    "id": "XP_SLEEPLESS_3",
+    "name": { "str": "Sleep Adaptation III" },
+    "points": 1,
+    "description": "You have adapted to a more dangerous life in the apocalypse, you now need a lot less sleep than the average person.",
+    "types": [ "SLEEP" ],
+    "starting_trait": false,
+    "fatigue_modifier": -0.30,
+    "category": [ "XP_SLEEPLESS_CATEGORY" ],
+    "prereqs": [ "XP_SLEEPLESS_2" ],
+    "flags": [ "NON_THRESH" ]
+  },
+  {
+    "id": "XP_INT_UP_CATEGORY",
+    "type": "mutation_category",
+    "category": "XP_INT_UP_CATEGORY",
+    "threshold_mut": "THRESH_XP_INT_UP",
+    "name": "Dummy Mutation Category",
+    "iv_message": "Seeing this is probably a bug.",
+    "mutagen_message": "Seeing this is probably a bug.",
+    "memorial_message": "Honed their nature as a survivor in the harsh apocalypse."
+  },
+  {
+    "type": "mutation",
+    "id": "THRESH_XP_INT_UP",
+    "name": { "str": "Dummy Threshold" },
+    "description": "This only exists to enable evolving experience reward traits to function.",
+    "points": 0,
+    "valid": false,
+    "purifiable": false,
+    "threshold": true
+  },
+  {
+    "type": "mutation",
+    "id": "XP_INT_UP_1",
+    "name": { "str": "Intelligent" },
+    "points": 1,
+    "description": "You now brain better.  Intelligence + 1",
+    "passive_mods": { "int_mod": 1 },
+    "category": [ "XP_INT_UP_CATEGORY" ],
+    "changes_to": [ "XP_INT_UP_2" ],
+    "flags": [ "NON_THRESH" ]
+  },
+  {
+    "type": "mutation",
+    "id": "XP_INT_UP_2",
+    "name": { "str": "Very Intelligent" },
+    "points": 2,
+    "description": "You now brain even better.  Intelligence + 2",
+    "passive_mods": { "int_mod": 2 },
+    "category": [ "XP_INT_UP_CATEGORY" ],
+    "prereqs": [ "XP_INT_UP_1" ],
+    "changes_to": [ "XP_INT_UP_3" ],
+    "flags": [ "NON_THRESH" ]
+  },
+  {
+    "type": "mutation",
+    "id": "XP_INT_UP_3",
+    "name": { "str": "Extremely Intelligent" },
+    "points": 4,
+    "visibility": 1,
+    "description": "You now brain much harder.  Intelligence + 3",
+    "passive_mods": { "int_mod": 3 },
+    "category": [ "XP_INT_UP_CATEGORY" ],
+    "prereqs": [ "XP_INT_UP_2" ],
+    "flags": [ "NON_THRESH" ]
+  },
+  {
+    "id": "XP_PER_UP_CATEGORY",
+    "type": "mutation_category",
+    "category": "XP_PER_UP_CATEGORY",
+    "threshold_mut": "THRESH_XP_PER_UP",
+    "name": "Dummy Mutation Category",
+    "iv_message": "Seeing this is probably a bug.",
+    "mutagen_message": "Seeing this is probably a bug.",
+    "memorial_message": "Honed their nature as a survivor in the harsh apocalypse."
+  },
+  {
+    "type": "mutation",
+    "id": "THRESH_XP_PER_UP",
+    "name": { "str": "Dummy Threshold" },
+    "description": "This only exists to enable evolving experience reward traits to function.",
+    "points": 0,
+    "valid": false,
+    "purifiable": false,
+    "threshold": true
+  },
+  {
+    "type": "mutation",
+    "id": "XP_PER_UP_1",
+    "name": { "str": "Perceptive" },
+    "points": 1,
+    "description": "You now observe things better.  Perception + 1",
+    "passive_mods": { "per_mod": 1 },
+    "category": [ "XP_PER_UP_CATEGORY" ],
+    "changes_to": [ "XP_PER_UP_2" ],
+    "flags": [ "NON_THRESH" ]
+  },
+  {
+    "type": "mutation",
+    "id": "XP_PER_UP_2",
+    "name": { "str": "Very Perceptive" },
+    "points": 2,
+    "description": "You now observe thingseven better.  Perception + 2",
+    "passive_mods": { "per_mod": 2 },
+    "category": [ "XP_PER_UP_CATEGORY" ],
+    "prereqs": [ "XP_PER_UP_1" ],
+    "changes_to": [ "XP_PER_UP_3" ],
+    "flags": [ "NON_THRESH" ]
+  },
+  {
+    "type": "mutation",
+    "id": "XP_PER_UP_3",
+    "name": { "str": "Extremely Perceptive" },
+    "points": 4,
+    "visibility": 1,
+    "description": "You now observe things much harder.  Perception + 3",
+    "passive_mods": { "per_mod": 3 },
+    "category": [ "XP_PER_UP_CATEGORY" ],
+    "prereqs": [ "XP_PER_UP_2" ],
+    "flags": [ "NON_THRESH" ]
+  }
+  
+
+
+]

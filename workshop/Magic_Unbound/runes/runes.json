@@ -1,0 +1,155 @@
+
+[
+  {
+    "id": "rune_heart",
+    "type": "bionic",
+    "name": { "str": "Heart Rune" },
+    "description": "Inscribed over your heart is the center of your rune power, it ties to your life itself and stores energy for the rest of your rune tattoos.",
+    "occupied_bodyparts": [ [ "torso", 2 ] ],
+    "capacity": "500 kJ",
+	"fuel_options": [ "muscle" ],
+    "fuel_efficiency": 1.0,
+	"passive_fuel_efficiency": 10.0,
+    "time": 1,
+    "flags": [ "BIONIC_POWER_SOURCE" ]
+  },
+  {
+    "id": "rune_spell_create_blade",
+	"type": "SPELL",
+	"name": "Shield",
+	"description": "this spell creates a forcefield around you",
+	"message": "you cast %s",
+	"valid_targets": [ "self" ],
+	"effect": "spawn_item",
+	"effect_str": "longsword",
+	"flags": [ "VERBAL", "SOMATIC", "NO_HANDS", "NO_LEGS", "NO_FAIL" ],
+	"difficulty": 1,
+	"max_level": 10,
+	"base_casting_time": 100,
+	"casting_time_increment": -1,
+    "final_casting_time": 80,
+	"base_energy_cost": 100,
+	"energy_increment": -1,
+    "final_energy_cost": 80,
+	"min_damage": 1,
+	"max_damage": 1,
+	"min_duration": 60000,
+	"max_duration": 120000,
+	"duration_increment": 1000
+  },
+  {
+    "id": "rune_dragon_scales",
+    "type": "bionic",
+    "name": { "str": "Dragon Scale Runes" },
+    "description": "A dragon scale rune is bound to your body, one on each body part, providing you with protection from harm.",
+    "occupied_bodyparts": [
+      [ "torso", 1 ],
+      [ "head", 1 ],
+      [ "arm_l", 1 ],
+      [ "arm_r", 1 ],
+      [ "hand_l", 1 ],
+      [ "hand_r", 1 ],
+      [ "leg_l", 1 ],
+      [ "leg_r", 1 ],
+      [ "foot_l", 1 ],
+      [ "foot_r", 1 ]
+    ],
+    "bash_protec": [
+      [ "torso", 2 ],
+      [ "head", 2 ],
+      [ "arm_l", 2 ],
+      [ "arm_r", 2 ],
+      [ "hand_l", 2 ],
+      [ "hand_r", 2 ],
+      [ "leg_l", 2 ],
+      [ "leg_r", 2 ],
+      [ "foot_l", 2 ],
+      [ "foot_r", 2 ]
+    ],
+    "cut_protec": [
+      [ "torso", 4 ],
+      [ "head", 4 ],
+      [ "arm_l", 4 ],
+      [ "arm_r", 4 ],
+      [ "hand_l", 4 ],
+      [ "hand_r", 4 ],
+      [ "leg_l", 4 ],
+      [ "leg_r", 4 ],
+      [ "foot_l", 4 ],
+      [ "foot_r", 4 ]
+    ],
+    "flags": [ "BIONIC_NPC_USABLE", "BIONIC_SHOCKPROOF" ]
+  },
+  {
+    "type": "bionic",
+    "id": "rune_create_blade",
+    "name": { "str": "Create Blade" },
+    "description": "A rune tattoo of a glowing sword.",
+    "occupied_bodyparts": [ [ "torso", 1 ] ],
+    "act_cost": "35 kJ",
+    "spell_on_activation": { "id": "rune_spell_create_blade", "hit_self": true }
+  },
+  {
+    "id": "rune_flamebolt",
+    "type": "bionic",
+    "name": { "str": "Flamebolt" },
+    "description": "This highly experimental unit folds space over short distances, instantly transporting your body up to 25 feet at the cost of much power.  Note that prolonged or frequent use may have dangerous side effects.",
+    "occupied_bodyparts": [ [ "torso", 1 ], [ "arm_l", 1 ], [ "arm_r", 1 ], [ "leg_l", 1 ], [ "leg_r", 1 ] ],
+    "act_cost": "25 kJ",
+	"spell_on_activation": { "id": "mu_spell_flamebolt" }
+  },
+  {
+    "id": "bio_teleport",
+    "type": "bionic",
+    "name": { "str": "Teleport Rune" },
+    "description": "This highly experimental unit folds space over short distances, instantly transporting your body up to 25 feet at the cost of much power.  Note that prolonged or frequent use may have dangerous side effects.",
+    "occupied_bodyparts": [ [ "torso", 16 ], [ "arm_l", 3 ], [ "arm_r", 3 ], [ "leg_l", 4 ], [ "leg_r", 4 ] ],
+    "act_cost": "25 kJ"
+  },
+  {
+    "id": "bio_time_freeze",
+    "type": "bionic",
+    "name": { "str": "Time Rune" },
+    "description": "At the cost of all stored bionic power, you may increase your body speed and reactions dramatically, essentially freezing time.  You are still delicate, however, and violent or rapid movements may damage you due to friction.",
+    "occupied_bodyparts": [
+      [ "torso", 12 ],
+      [ "head", 3 ],
+      [ "arm_l", 3 ],
+      [ "arm_r", 3 ],
+      [ "hand_l", 1 ],
+      [ "hand_r", 1 ],
+      [ "leg_l", 4 ],
+      [ "leg_r", 4 ],
+      [ "foot_l", 1 ],
+      [ "foot_r", 1 ]
+    ],
+    "act_cost": "50 kJ"
+  },
+  {
+    "type": "effect_type",
+    "id": "incorporeal",
+    "name": [ "incorporeal" ],
+    "desc": [ "You are incorporeal." ],
+    "flags": [ "EFFECT_INCORPOREAL" ]
+  },
+  {
+    "type": "enchantment",
+    "id": "ENCH_INCORPOREAL",
+    "condition": "ALWAYS",
+    "ench_effects": [ { "effect": "incorporeal", "intensity": 1 } ]
+  },
+  {
+    "id": "bio_night",
+    "type": "bionic",
+    "name": { "str": "Wraith Rune" },
+    "description": "When active, this bionic eliminates all light within a 2 tile radius through destructive interference.",
+    "occupied_bodyparts": [ [ "torso", 16 ] ],
+    "flags": [ "BIONIC_TOGGLED" ],
+    "enchantments": [ "ENCH_INCORPOREAL" ],
+    "act_cost": "9 kJ",
+    "react_cost": "9 kJ",
+    "time": 2
+  }
+
+
+]

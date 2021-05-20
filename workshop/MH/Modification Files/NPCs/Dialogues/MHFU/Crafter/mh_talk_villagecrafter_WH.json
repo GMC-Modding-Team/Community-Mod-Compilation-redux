@@ -1,0 +1,1295 @@
+[
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_H",
+		"dynamic_line": "Select the Hammer you want to craft.",
+		"responses": [
+			{
+				"text": "Later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "war hammer",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_H_ironlv1_h"
+			},
+			{
+				"text": "bone club",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_H_bonelv1_h"
+			},
+			{
+				"text": "iron striker",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_H_strikerlv1_h"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuavailcraft_bulldrome"
+				},
+				"text": "bull hammer",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_H_bonelv2_h3"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuavailcraft_kut-ku"
+				},
+				"text": "gunhammer prototype",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_H_gunlv1_h"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuavailcraft_blangonga"
+				},
+				"text": "crystal hammer",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_H_crystallv1_h"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuavailcraft_kut-ku"
+				},
+				"text": "kut-ku jaw",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_H_kut-ku_h"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuavailcraft_hermitaur"
+				},
+				"text": "dragonhead hammer",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_H_dragonheadlv1_h"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuavailcraft_garuga"
+				},
+				"text": "raven torrent",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_H_garuga_h"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuavailcraft_basarios"
+				},
+				"text": "shell hammer",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_H_basarios_h2"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuavailcraft_tigrex"
+				},
+				"text": "striped stirker",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_H_tigrex_h"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuavailcraft_lao-shan"
+				},
+				"text": "dragon destroyer",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_H_lao-shan_h"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_H_ironlv1_h",
+		"dynamic_line": {
+			"and": [
+				"The war hammer costs 500z and these materials:\n- 3 iron ores\n- 1 disk stone\nIt can deal damage by:\n*bash: 12\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 500
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "mh_ironore",
+							"count": 3
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_item": "mh_diskstone",
+							"yes": "You are able to craft this weapon!",
+							"no": "Requirements are not met!"
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 500
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_ironore",
+								"count": 3
+							}
+						},
+						{
+							"u_has_item": "mh_diskstone"
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 500
+					},
+					{
+						"u_sell_item": "mh_ironore",
+						"count": 3
+					},
+					{
+						"u_sell_item": "mh_diskstone"
+					},
+					{
+						"u_buy_item": "ironlv1_h"
+					}
+				],
+				"text": "Create the war hammer!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_H"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_H_bonelv1_h",
+		"dynamic_line": {
+			"and": [
+				"The bone club costs 400z and these materials:\n- 3 mystery bones\nIt can deal damage by:\n*bash: 14\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 400
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "monbone_mystery",
+							"count": 3
+						},
+						"yes": "You are able to craft this weapon!",
+						"no": "Requirements are not met!"
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 400
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "monbone_mystery",
+								"count": 3
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 400
+					},
+					{
+						"u_sell_item": "monbone_mystery",
+						"count": 3
+					},
+					{
+						"u_buy_item": "bonelv1_h"
+					}
+				],
+				"text": "Create the bone club!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_H"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_H_strikerlv1_h",
+		"dynamic_line": {
+			"and": [
+				"The iron striker costs 2150z and these materials:\n- 10 earth crystals\n- 20 iron ores\n- 20 disk stones\nIt can deal damage by:\n*bash: 23\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 2150
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "mh_earthcrystal",
+							"count": 10
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "mh_ironore",
+								"count": 20
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "mh_diskstone",
+									"count": 20
+								},
+								"yes": "You are able to craft this weapon!",
+								"no": "Requirements are not met!"
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 2150
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_earthcrystal",
+								"count": 10
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_ironore",
+								"count": 20
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_diskstone",
+								"count": 20
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 2150
+					},
+					{
+						"u_sell_item": "mh_earthcrystal",
+						"count": 10
+					},
+					{
+						"u_sell_item": "mh_ironore",
+						"count": 20
+					},
+					{
+						"u_sell_item": "mh_diskstone",
+						"count": 20
+					},
+					{
+						"u_buy_item": "strikerlv1_h"
+					}
+				],
+				"text": "Create the iron striker!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_H"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_H_bonelv2_h3",
+		"dynamic_line": {
+			"and": [
+				"The bull hammer costs 1400z and these materials:\n- 4 bullfango pelts\n- 1 bullfango head\n- 5 brute bones\n- 2 carpenterbugs\nIt can deal damage by:\n*bash: 19\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 1400
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "bullfango_pelt",
+							"count": 4
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_item": "bullfango_head",
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "monbone_brute",
+									"count": 5
+								},
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_items": {
+										"item": "mh_carpenterbug",
+										"count": 2
+									},
+									"yes": "You are able to craft this weapon!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 1400
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "bullfango_pelt",
+								"count": 4
+							}
+						},
+						{
+							"u_has_item": "bullfango_head"
+						},
+						{
+							"u_has_items": {
+								"item": "monbone_brute",
+								"count": 5
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_carpenterbug",
+								"count": 2
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 1400
+					},
+					{
+						"u_sell_item": "bullfango_pelt",
+						"count": 4
+					},
+					{
+						"u_sell_item": "bullfango_head"
+					},
+					{
+						"u_sell_item": "monbone_brute",
+						"count": 5
+					},
+					{
+						"u_sell_item": "mh_carpenterbug",
+						"count": 2
+					},
+					{
+						"u_buy_item": "bonelv2_h3"
+					}
+				],
+				"text": "Create the bull hammer!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_H"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_H_gunlv1_h",
+		"dynamic_line": {
+			"and": [
+				"The gunhammer prototype costs 3100z and these materials:\n- 4 fire wyvern fluids\n- 20 machalite ores\n- 1 flame sac\n- 20 gunpowders\nIt can deal damage by:\n*bash: 27\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 3100
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "fwyvern_fluid",
+							"count": 4
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "mh_machaliteore",
+								"count": 20
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_item": "flame_sac",
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_items": {
+										"item": "mh_gunpowder",
+										"count": 20
+									},
+									"yes": "You are able to craft this weapon!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 3100
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "fwyvern_fluid",
+								"count": 4
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_machaliteore",
+								"count": 20
+							}
+						},
+						{
+							"u_has_item": "flame_sac"
+						},
+						{
+							"u_has_items": {
+								"item": "mh_gunpowder",
+								"count": 20
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 3100
+					},
+					{
+						"u_sell_item": "fwyvern_fluid",
+						"count": 4
+					},
+					{
+						"u_sell_item": "mh_machaliteore",
+						"count": 20
+					},
+					{
+						"u_sell_item": "flame_sac"
+					},
+					{
+						"u_sell_item": "mh_gunpowder",
+						"count": 20
+					},
+					{
+						"u_buy_item": "gunlv1_h"
+					}
+				],
+				"text": "Create the gunhammer prototype!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_H"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_H_crystallv1_h",
+		"dynamic_line": {
+			"and": [
+				"The crystal hammer costs 2600z and these materials:\n- 2 light crystals\n- 25 iron ores\n- 7 ice crystals\n- 10 carpenterbugs\nIt can deal damage by:\n*bash: 25\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 2600
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "mh_lightcrystal",
+							"count": 2
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "mh_ironore",
+								"count": 25
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "mh_icecrystal",
+									"count": 7
+								},
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_items": {
+										"item": "mh_carpenterbug",
+										"count": 10
+									},
+									"yes": "You are able to craft this weapon!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 2600
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_lightcrystal",
+								"count": 2
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_ironore",
+								"count": 25
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_icecrystal",
+								"count": 7
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_carpenterbug",
+								"count": 10
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 2600
+					},
+					{
+						"u_sell_item": "mh_lightcrystal",
+						"count": 2
+					},
+					{
+						"u_sell_item": "mh_ironore",
+						"count": 25
+					},
+					{
+						"u_sell_item": "mh_icecrystal",
+						"count": 7
+					},
+					{
+						"u_sell_item": "mh_carpenterbug",
+						"count": 10
+					},
+					{
+						"u_buy_item": "crystallv1_h"
+					}
+				],
+				"text": "Create the crystal hammer!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_H"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_H_kut-ku_h",
+		"dynamic_line": {
+			"and": [
+				"The kut-ku jaw costs 2600z and these materials:\n- 1 giant beak\n- 5 piscine fangs\n- 5 kut-ku scales\n- 1 mega demondrug\nIt can deal damage by:\n*bash: 25\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 2600
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_item": "kut-ku_beak",
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "piscine_fang",
+								"count": 5
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "kut-ku_scale",
+									"count": 5
+								},
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_item": "mh_demondrug_mega",
+									"yes": "You are able to craft this weapon!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 2600
+							}
+						},
+						{
+							"u_has_item": "kut-ku_beak"
+						},
+						{
+							"u_has_items": {
+								"item": "piscine_fang",
+								"count": 5
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "kut-ku_scale",
+								"count": 5
+							}
+						},
+						{
+							"u_has_item": "mh_demondrug_mega"
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 2600
+					},
+					{
+						"u_sell_item": "kut-ku_beak"
+					},
+					{
+						"u_sell_item": "piscine_fang",
+						"count": 5
+					},
+					{
+						"u_sell_item": "kut-ku_scale",
+						"count": 5
+					},
+					{
+						"u_sell_item": "mh_demondrug_mega"
+					},
+					{
+						"u_buy_item": "kut-ku_h"
+					}
+				],
+				"text": "Create the kut-ku jaw!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_H"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_H_garuga_h",
+		"dynamic_line": {
+			"and": [
+				"The raven torrent costs 10000z and these materials:\n- 2 sharpened beaks\n- 4 garuga manes\n- 8 garuga scales\n- 3 large monster bones\nIt can deal damage by:\n*bash: 26\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 10000
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "garuga_beak",
+							"count": 2
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "garuga_mane",
+								"count": 4
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "garuga_scale",
+									"count": 8
+								},
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_items": {
+										"item": "monbone_l",
+										"count": 3
+									},
+									"yes": "You are able to craft this weapon!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 10000
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "garuga_beak",
+								"count": 2
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "garuga_mane",
+								"count": 4
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "garuga_scale",
+								"count": 8
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "monbone_l",
+								"count": 3
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 10000
+					},
+					{
+						"u_sell_item": "garuga_beak",
+						"count": 2
+					},
+					{
+						"u_sell_item": "garuga_mane",
+						"count": 4
+					},
+					{
+						"u_sell_item": "garuga_scale",
+						"count": 8
+					},
+					{
+						"u_sell_item": "monbone_l",
+						"count": 3
+					},
+					{
+						"u_buy_item": "garuga_h"
+					}
+				],
+				"text": "Create the raven torrent!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_H"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_H_dragonheadlv1_h",
+		"dynamic_line": {
+			"and": [
+				"The dragonhead hammer costs 2600z and these materials:\n- 2 wyvern skull shels\n- 3 large monster bones\n- 5 unknown skulls\n- 10 killer beetles\nIt can deal damage by:\n*bash: 25\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 2600
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "wyvern_skullshell",
+							"count": 2
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "monbone_l",
+								"count": 3
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "monbone_unknown",
+									"count": 5
+								},
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_items": {
+										"item": "mh_kbeetle",
+										"count": 10
+									},
+									"yes": "You are able to craft this weapon!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 2600
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "wyvern_skullshell",
+								"count": 2
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "monbone_l",
+								"count": 3
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "monbone_unknown",
+								"count": 5
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_kbeetle",
+								"count": 10
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 2600
+					},
+					{
+						"u_sell_item": "wyvern_skullshell",
+						"count": 2
+					},
+					{
+						"u_sell_item": "monbone_l",
+						"count": 3
+					},
+					{
+						"u_sell_item": "monbone_unknown",
+						"count": 5
+					},
+					{
+						"u_sell_item": "mh_kbeetle",
+						"count": 10
+					},
+					{
+						"u_buy_item": "dragonheadlv1_h"
+					}
+				],
+				"text": "Create the dragonhead hammer!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_H"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_H_basarios_h2",
+		"dynamic_line": {
+			"and": [
+				"The shell hammer costs 4250z and these materials:\n- 8 basarios shells\n- 5 machalite ores\n- 18 ioprey fangs\n- 3 hercudromes\nIt can deal damage by:\n*bash: 28\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 4250
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "basarios_shell",
+							"count": 8
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "mh_machaliteore",
+								"count": 5
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "ioprey_fang",
+									"count": 18
+								},
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_items": {
+										"item": "mh_hercudrome",
+										"count": 3
+									},
+									"yes": "You are able to craft this weapon!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 4250
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "basarios_shell",
+								"count": 8
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_machaliteore",
+								"count": 5
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "ioprey_fang",
+								"count": 18
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_hercudrome",
+								"count": 3
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 4250
+					},
+					{
+						"u_sell_item": "basarios_shell",
+						"count": 8
+					},
+					{
+						"u_sell_item": "mh_machaliteore",
+						"count": 5
+					},
+					{
+						"u_sell_item": "ioprey_fang",
+						"count": 18
+					},
+					{
+						"u_sell_item": "mh_hercudrome",
+						"count": 3
+					},
+					{
+						"u_buy_item": "basarios_h2"
+					}
+				],
+				"text": "Create the shell hammer!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_H"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_H_tigrex_h",
+		"dynamic_line": {
+			"and": [
+				"The striped striker costs 35000z and these materials:\n- 3 tigrex claws\n- 5 tigrex scales\n- 5 tigrex shells\n- 1 pokke ticket\nIt can deal damage by:\n*bash: 31\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 35000
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "tigrex_claw",
+							"count": 3
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "tigrex_scale",
+								"count": 5
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "tigrex_shell",
+									"count": 5
+								},
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_item": "pokke_ticket",
+									"yes": "You are able to craft this weapon!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 35000
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "tigrex_claw",
+								"count": 3
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "tigrex_scale",
+								"count": 5
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "tigrex_shell",
+								"count": 5
+							}
+						},
+						{
+							"u_has_item": "pokke_ticket"
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 35000
+					},
+					{
+						"u_sell_item": "tigrex_claw",
+						"count": 3
+					},
+					{
+						"u_sell_item": "tigrex_scale",
+						"count": 5
+					},
+					{
+						"u_sell_item": "tigrex_shell",
+						"count": 5
+					},
+					{
+						"u_sell_item": "pokke_ticket"
+					},
+					{
+						"u_buy_item": "tigrex_h"
+					}
+				],
+				"text": "Create the striped striker!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_H"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_H_lao-shan_h",
+		"dynamic_line": {
+			"and": [
+				"The dragon destroyer costs 5600z and these materials:\n- 2 lao-shan's claws\n- 5 lao-shan's shells\n- 5 monster bones+\nIt can deal damage by:\n*bash: 33\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 5600
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "lao-shan_claw",
+							"count": 2
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "lao-shan_shell",
+								"count": 5
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "monbone_plus",
+									"count": 5
+								},
+								"yes": "You are able to craft this weapon!",
+								"no": "Requirements are not met!"
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 5600
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "lao-shan_claw",
+								"count": 2
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "lao-shan_shell",
+								"count": 5
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "monbone_plus",
+								"count": 5
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 5600
+					},
+					{
+						"u_sell_item": "lao-shan_claw",
+						"count": 2
+					},
+					{
+						"u_sell_item": "lao-shan_shell",
+						"count": 5
+					},
+					{
+						"u_sell_item": "monbone_plus",
+						"count": 5
+					},
+					{
+						"u_buy_item": "lao-shan_h"
+					}
+				],
+				"text": "Create the dragon destroyer!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_H"
+			}
+		]
+	}
+]

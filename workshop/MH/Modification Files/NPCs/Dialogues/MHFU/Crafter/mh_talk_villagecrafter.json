@@ -1,0 +1,191 @@
+[
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_intro1",
+		"dynamic_line": [
+			{
+				"u_has_trait": "mhfuvillagecraftertalkedintro",
+				"yes": [
+					"Yo yo and hello! Carving up materials is easy! Bring a trusty blade and you're all set for my business!",
+					"Yo yo and hello! Monsters have different materials in them! Popos have brute bones and those giapreys have small monster bones in them!",
+					"Yo yo and hello! A hunter must know how to butcher the prey! Either skin them or do the whole process!",
+					"Yo yo and hello! A skilled hunter is able to cope with their mistakes!",
+					"Yo yo and hello! Materials are found anywhere! May it be in bushes or mushrooms at the swamps!",
+					"Yo yo and hello! Bugs love to spend their whole lifetime in one spot!",
+					"Yo yo and hello! Aiming for the BEST WEAPON isn't always the BEST SOLUTION!",
+					"Yo yo and hello! Don't underestimate weaker weapons! By upgrading them, their potentiality arises!",
+					"Yo yo and hello! Weapons grow by upgrading them and the results are absolutely fascinating!"
+				],
+				"no": {
+					"u_has_trait": "mhfu_hunter",
+					"yes": "Yo yo and hello! You're the new hunter, aren't you? I'll look forward to working with you in the future!",
+					"no": "Yo yo and hello! Your face looks new to this village... Nevermind, I'll look forward to work with you in the future!"
+				}
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"not": {
+						"u_has_trait": "mhfuvillagecraftertalkedintro"
+					}
+				},
+				"text": "Wait, what is this stand for?",
+				"topic": "MHFU_VILLAGECRAFTSMAN_intro2"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuvillagecraftertalkedintro"
+				},
+				"text": "Create Weapon",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuvillagecraftertalkedintro"
+				},
+				"text": "Create Armor",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMORPIECES"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuvillagecraftertalkedintro"
+				},
+				"text": "Improve Weapon",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_UPGRADEW"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuvillagecraftertalkedintro"
+				},
+				"text": "Maybe later...",
+				"topic": "TALK_DONE"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_intro2",
+		"dynamic_line": "This is the equipment shop. Well, the weapon shop - where already crafted equipments are sold - is unavailable here, but the crafting shop is open anytime!",
+		"responses": [
+			{
+				"text": "Oh, okay.",
+				"topic": "MHFU_VILLAGECRAFTSMAN_intro3"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_intro3",
+		"dynamic_line": "If you got some materials and want to make new equipments, I'm your man! All you need is materials and money... I can make anything.",
+		"responses": [
+			{
+				"text": "Great!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_intro4"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_intro4",
+		"dynamic_line": "To be honest, it's not a stretch to say that hunters wouldn't be able to continue their vocation without my skills.",
+		"responses": [
+			{
+				"text": "Okay...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_intro5"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_intro5",
+		"dynamic_line": "Anyways, if you happen across any new materials, you know where to come.",
+		"responses": [
+			{
+				"effect": {
+					"u_add_trait": "mhfuvillagecraftertalkedintro"
+				},
+				"text": "I know now, and thanks for your service.",
+				"topic": "MHFU_VILLAGECRAFTSMAN_intro1"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES",
+		"dynamic_line": "Create which weapon type?",
+		"responses": [
+			{
+				"text": "Not interested.",
+				"topic": "MHFU_VILLAGECRAFTSMAN_intro1"
+			},
+			{
+				"text": "Let's make some later!",
+				"topic": "TALK_DONE"
+			},
+			{
+				"text": "Great Sword",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_GS"
+			},
+			{
+				"text": "Sword and Shield",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_SS"
+			},
+			{
+				"text": "Dual Blades",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_DS"
+			},
+			{
+				"text": "Hammer",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_H"
+			},
+			{
+				"text": "Lance",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_L"
+			},
+			{
+				"text": "Light Bowgun",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_LBG"
+			},
+			{
+				"text": "Heavy Bowgun",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_HBG"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMORPIECES",
+		"dynamic_line": "Create which armor piece?",
+		"responses": [
+			{
+				"text": "Not interested.",
+				"topic": "MHFU_VILLAGECRAFTSMAN_intro1"
+			},
+			{
+				"text": "Let's make some later!",
+				"topic": "TALK_DONE"
+			},
+			{
+				"text": "Helmet",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMOR_HELMET"
+			},
+			{
+				"text": "Mail",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMOR_MAIL"
+			},
+			{
+				"text": "Gauntlets",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMOR_GAUNTLETS"
+			},
+			{
+				"text": "Tasset",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMOR_TASSET"
+			},
+			{
+				"text": "Greaves",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMOR_GREAVES"
+			}
+		]
+	}
+]

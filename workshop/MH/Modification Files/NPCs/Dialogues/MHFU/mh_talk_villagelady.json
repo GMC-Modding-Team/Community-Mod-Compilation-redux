@@ -1,0 +1,110 @@
+[
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGELADY_intro1",
+		"dynamic_line": [
+			{
+				"u_has_trait": "mhfuvillageladytalkedintro",
+				"yes": "Oh, hello again! Remember to take a break after a Quest! Our body is a vessel that never gets replaced by anything else.",
+				"no": {
+					"u_has_trait": "mhfu_hunter",
+					"yes": "Hello and good day to you. It seems that you've fully recovered.",
+					"no": "Hello, stranger! Welcome to our peaceful village."
+				}
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"not": {
+								"u_has_trait": "mhfuvillageladytalkedintro"
+							}
+						},
+						{
+							"u_has_trait": "mhfu_hunter"
+						}
+					]
+				},
+				"text": "I am.",
+				"topic": "MHFU_VILLAGELADY_intro2"
+			},
+			{
+				"condition": {
+					"and": [
+						{
+							"not": {
+								"u_has_trait": "mhfuvillageladytalkedintro"
+							}
+						},
+						{
+							"not": {
+								"u_has_trait": "mhfu_hunter"
+							}
+						}
+					]
+				},
+				"text": "Hello.",
+				"topic": "MHFU_VILLAGELADY_introoutsider1"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuvillageladytalkedintro"
+				},
+				"text": "Okay, thanks.",
+				"topic": "TALK_DONE"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGELADY_introoutsider1",
+		"dynamic_line": "Maybe you're visiting this place for a rest? Whatever the reason, you are always welcome in here.",
+		"responses": [
+			{
+				"effect": {
+					"u_add_trait": "mhfuvillageladytalkedintro"
+				},
+				"text": "Okay, thanks.",
+				"topic": "TALK_DONE"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGELADY_intro2",
+		"dynamic_line": "You know, we used quite a few mountain herbs on your wounds. Mountain herbs are the specialty of the the snowy mountains.",
+		"responses": [
+			{
+				"text": "Oh, okay.",
+				"topic": "MHFU_VILLAGELADY_intro3"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGELADY_intro3",
+		"dynamic_line": "Mountain herbs are quite nutritious, but you can't just eat them off the ground. Traders will buy them for a reasonable price.",
+		"responses": [
+			{
+				"text": "Hmm... Okay.",
+				"topic": "MHFU_VILLAGELADY_intro4"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGELADY_intro4",
+		"dynamic_line": "If you ever found one, you're lucky since they appear to be lesser than other herbs.",
+		"responses": [
+			{
+				"effect": {
+					"u_add_trait": "mhfuvillageladytalkedintro"
+				},
+				"text": "Mere luck, I guess...",
+				"topic": "TALK_DONE"
+			}
+		]
+	}
+]

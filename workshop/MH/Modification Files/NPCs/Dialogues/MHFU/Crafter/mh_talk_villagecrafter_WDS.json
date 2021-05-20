@@ -1,0 +1,996 @@
+[
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_DS",
+		"dynamic_line": "Select the Dual Sword you want to craft.",
+		"responses": [
+			{
+				"text": "Later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "twin dagger",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_DS_ironlv1_ds"
+			},
+			{
+				"text": "bone scythe",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_DS_bonelv1_ds"
+			},
+			{
+				"condition": {"u_has_trait": "mhfuavailcraft_giaprey"},
+				"text": "giaprey claws",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_DS_giapreylv1_ds"
+			},
+			{
+				"condition": {"u_has_trait": "mhfuavailcraft_kut-ku"},
+				"text": "twin kut-ku",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_DS_kut-ku_ds"
+			},
+			{
+				"condition": {"u_has_trait": "mhfuavailcraft_plesioth"},
+				"text": "order rapier",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_DS_rapierlv1_ds"
+			},
+			{
+				"condition": {"u_has_trait": "mhfuavailcraft_blangonga"},
+				"text": "freezing daggers",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_DS_frostlv1_ds"
+			},
+			{
+				"condition": {"u_has_trait": "mhfuavailcraft_ceanataur"},
+				"text": "bladed edge",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_DS_ceanataurlv1_ds"
+			},
+			{	
+				"condition": {"u_has_trait": "mhfuavailcraft_garuga"},
+				"text": "raven tessen",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_DS_garugalv1_ds"
+			},
+			{
+				"condition": {"u_has_trait": "mhfuavailcraft_tigrex"},
+				"text": "rex slicers",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_DS_tigrex_ds"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_DS_ironlv1_ds",
+		"dynamic_line": {
+			"and": [
+				"The twin dagger costs 680z and these materials:\n- 2 machalite ores\n- 5 iron ores\n- 2 earth crystals\nIt can deal damage by:\n*cut: 7\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 680
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "mh_machaliteore",
+							"count": 2
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "mh_ironore",
+								"count": 5
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "mh_earthcrystal",
+									"count": 2
+								},
+								"yes": "You are able to craft this weapon!",
+								"no": "Requirements are not met!"
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 680
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_machaliteore",
+								"count": 2
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_ironore",
+								"count": 5
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_earthcrystal",
+								"count": 2
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 680
+					},
+					{
+						"u_sell_item": "mh_machaliteore",
+						"count": 2
+					},
+					{
+						"u_sell_item": "mh_ironore",
+						"count": 5
+					},
+					{
+						"u_sell_item": "mh_earthcrystal",
+						"count": 2
+					},
+					{
+						"u_buy_item": "ironlv1_ds"
+					}
+				],
+				"text": "Create the twin dagger!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_DS"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_DS_bonelv1_ds",
+		"dynamic_line": {
+			"and": [
+				"The bone scythe costs 680z and these materials:\n- 1 brute bone\n- 1 bone\n- 1 sharp claw\nIt can deal damage by:\n*cut: 7\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 680
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_item": "monbone_brute",
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_item": "monbone",
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_item": "sharp_claw",
+								"yes": "You are able to craft this weapon!",
+								"no": "Requirements are not met!"
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 680
+							}
+						},
+						{
+							"u_has_item": "monbone_brute"
+						},
+						{
+							"u_has_item": "monbone"
+						},
+						{
+							"u_has_item": "sharp_claw"
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 680
+					},
+					{
+						"u_sell_item": "monbone_brute"
+					},
+					{
+						"u_sell_item": "monbone"
+					},
+					{
+						"u_sell_item": "sharp_claw"
+					},
+					{
+						"u_buy_item": "bonelv1_ds"
+					}
+				],
+				"text": "Create the bone scythe!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_DS"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_DS_giapreylv1_ds",
+		"dynamic_line": {
+			"and": [
+				"The giaprey claws costs 880z and these materials:\n- 3 giaprey scales\n- 3 giaprey hides\n- 2 small monster bones\nIt can deal damage by:\n*cut: 10\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 880
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "giaprey_scale",
+							"count": 3
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "giaprey_hide",
+								"count": 3
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "monbone_s",
+									"count": 2
+								},
+								"yes": "You are able to craft this weapon!",
+								"no": "Requirements are not met!"
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 880
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "giaprey_scale",
+								"count": 3
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "giaprey_hide",
+								"count": 3
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "monbone_s",
+								"count": 2
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 880
+					},
+					{
+						"u_sell_item": "giaprey_scale",
+						"count": 3
+					},
+					{
+						"u_sell_item": "giaprey_hide",
+						"count": 3
+					},
+					{
+						"u_sell_item": "monbone_s",
+						"count": 2
+					},
+					{
+						"u_buy_item": "giaprey_ds"
+					}
+				],
+				"text": "Create the giaprey claws!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_DS"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_DS_kut-ku_ds",
+		"dynamic_line": {
+			"and": [
+				"The twin kut-ku costs 1720z and these materials:\n- 2 kut-ku ears\n- 2 unknown skulls\n- 6 brute bones\n- 1 giant beak\nIt can deal damage by:\n*cut: 12\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 1720
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "kut-ku_ear",
+							"count": 2
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "monbone_unknown",
+								"count": 2
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "monbone_brute",
+									"count": 6
+								},
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_item": "kut-ku_beak",
+									"yes": "You are able to craft this weapon!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 1720
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "kut-ku_ear",
+								"count": 2
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "monbone_unknown",
+								"count": 2
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "monbone_brute",
+								"count": 6
+							}
+						},
+						{
+							"u_has_item": "kut-ku_beak"
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 1720
+					},
+					{
+						"u_sell_item": "kut-ku_ear",
+						"count": 2
+					},
+					{
+						"u_sell_item": "monbone_unknown",
+						"count": 2
+					},
+					{
+						"u_sell_item": "monbone_brute",
+						"count": 6
+					},
+					{
+						"u_sell_item": "kut-ku_beak"
+					},
+					{
+						"u_buy_item": "kut-ku_ds"
+					}
+				],
+				"text": "Create the twin kut-ku!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_DS"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_DS_rapierlv1_ds",
+		"dynamic_line": {
+			"and": [
+				"The order rapier costs 2480z and these materials:\n- 4 lightcrystals\n- 5 black pearls\n- 8 machalite ores\n- 10 small goldenfish\nIt can deal damage by:\n*cut: 15\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 2480
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "mh_lightcrystal",
+							"count": 4
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "black_pearl",
+								"count": 5
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "mh_machaliteore",
+									"count": 8
+								},
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_items": {
+										"item": "mh_sgoldfish",
+										"count": 10
+									},
+									"yes": "You are able to craft this weapon!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 2480
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_lightcrystal",
+								"count": 4
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "black_pearl",
+								"count": 5
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_machaliteore",
+								"count": 8
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_sgoldfish",
+								"count": 10
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 2480
+					},
+					{
+						"u_sell_item": "mh_lightcrystal",
+						"count": 4
+					},
+					{
+						"u_sell_item": "black_pearl",
+						"count": 5
+					},
+					{
+						"u_sell_item": "mh_machaliteore",
+						"count": 8
+					},
+					{
+						"u_sell_item": "mh_sgoldfish",
+						"count": 10
+					},
+					{
+						"u_buy_item": "rapierlv1_ds"
+					}
+				],
+				"text": "Create the order rapier!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_DS"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_DS_frostlv1_ds",
+		"dynamic_line": {
+			"and": [
+				"The freezing daggers costs 3400z and these materials:\n- 2 daora dragon scales\n- 20 ice crystals\n- 10 iron ores\n- 5 earth crystals\nIt can deal damage by:\n*cut: 19\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 3400
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "daora_dragonscale",
+							"count": 2
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "mh_icecrystal",
+								"count": 20
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "mh_ironore",
+									"count": 10
+								},
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_items": {
+										"item": "mh_earthcrystal",
+										"count": 5
+									},
+									"yes": "You are able to craft this weapon!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 3400
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "daora_dragonscale",
+								"count": 2
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_icecrystal",
+								"count": 20
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_ironore",
+								"count": 10
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_earthcrystal",
+								"count": 5
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 3400
+					},
+					{
+						"u_sell_item": "daora_dragonscale",
+						"count": 2
+					},
+					{
+						"u_sell_item": "mh_icecrystal",
+						"count": 20
+					},
+					{
+						"u_sell_item": "mh_ironore",
+						"count": 10
+					},
+					{
+						"u_sell_item": "mh_earthcrystal",
+						"count": 5
+					},
+					{
+						"u_buy_item": "frostlv1_ds"
+					}
+				],
+				"text": "Create the freezing daggers!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_DS"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_DS_ceanataurlv1_ds",
+		"dynamic_line": {
+			"and": [
+				"The bladed edge costs 3400z and these materials:\n- 2 ceanataur claws\n- 4 ceanataur shells\n- 6 small ceanataur shells\n- 8 carpenterbugs\nIt can deal damage by:\n*cut: 14\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 3400
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "ceanataur_claw",
+							"count": 2
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "ceanataur_shell",
+								"count": 4
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "ceanataur_shell_small",
+									"count": 6
+								},
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_items": {
+										"item": "mh_carpenterbug",
+										"count": 8
+									},
+									"yes": "You are able to craft this weapon!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 3400
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "ceanataur_claw",
+								"count": 2
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "ceanataur_shell",
+								"count": 4
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "ceanataur_shell_small",
+								"count": 6
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_carpenterbug",
+								"count": 8
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 3400
+					},
+					{
+						"u_sell_item": "ceanataur_claw",
+						"count": 2
+					},
+					{
+						"u_sell_item": "ceanataur_shell",
+						"count": 4
+					},
+					{
+						"u_sell_item": "ceanataur_shell_small",
+						"count": 6
+					},
+					{
+						"u_sell_item": "mh_carpenterbug",
+						"count": 8
+					},
+					{
+						"u_buy_item": "ceanataurlv1_ds"
+					}
+				],
+				"text": "Create the bladed edge!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_DS"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_DS_garugalv1_ds",
+		"dynamic_line": {
+			"and": [
+				"The raven tessen costs 10000z and these materials:\n- 2 garuga manes\n- 2 garuga ears\n- 10 garuga scales\n- 4 medium monster bones\nIt can deal damage by:\n*cut: 13\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 10000
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "garuga_mane",
+							"count": 2
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "garuga_ear",
+								"count": 2
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "garuga_scale",
+									"count": 10
+								},
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_items": {
+										"item": "monbone_m",
+										"count": 4
+									},
+									"yes": "You are able to craft this weapon!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 10000
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "garuga_mane",
+								"count": 2
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "garuga_ear",
+								"count": 2
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "garuga_scale",
+								"count": 10
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "monbone_m",
+								"count": 4
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 10000
+					},
+					{
+						"u_sell_item": "garuga_mane",
+						"count": 2
+					},
+					{
+						"u_sell_item": "garuga_ear",
+						"count": 2
+					},
+					{
+						"u_sell_item": "garuga_scale",
+						"count": 10
+					},
+					{
+						"u_sell_item": "monbone_m",
+						"count": 4
+					},
+					{
+						"u_buy_item": "garugalv1_ds"
+					}
+				],
+				"text": "Create the raven tessen!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_DS"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_DS_tigrex_ds",
+		"dynamic_line": {
+			"and": [
+				"The rex slicers costs 35000z and these materials:\n- 6 tigrex claws\n- 2 tigrex fangs\n- 2 tigrex scales\n- 1 pokke ticket\nIt can deal damage by:\n*cut: 16\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 35000
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "tigrex_claw",
+							"count": 6
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "tigrex_fang",
+								"count": 2
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "tigrex_scale",
+									"count": 2
+								},
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_item": "pokke_ticket",
+									"yes": "You are able to craft this weapon!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 35000
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "tigrex_claw",
+								"count": 6
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "tigrex_fang",
+								"count": 2
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "tigrex_scale",
+								"count": 2
+							}
+						},
+						{
+							"u_has_item": "pokke_ticket"
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 35000
+					},
+					{
+						"u_sell_item": "tigrex_claw",
+						"count": 6
+					},
+					{
+						"u_sell_item": "tigrex_fang",
+						"count": 2
+					},
+					{
+						"u_sell_item": "tigrex_scale",
+						"count": 2
+					},
+					{
+						"u_sell_item": "pokke_ticket"
+					},
+					{
+						"u_buy_item": "tigrex_ds"
+					}
+				],
+				"text": "Create the rex slicers!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_DS"
+			}
+		]
+	}
+]

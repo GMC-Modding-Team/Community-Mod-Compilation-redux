@@ -1,0 +1,1189 @@
+[
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMOR_MAIL",
+		"dynamic_line": "Select the mail you want to craft.",
+		"responses": [
+			{
+				"text": "Later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMORPIECES"
+			},
+			{
+				"text": "bone mail",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMOR_MAIL_bone"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuavailcraft_giaprey"
+				},
+				"text": "giaprey mail",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMOR_MAIL_giaprey"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuavailcraft_velociprey"
+				},
+				"text": "velociprey mail",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMOR_MAIL_velociprey"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuavailcraft_vespoid"
+				},
+				"text": "vespoid mail",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMOR_MAIL_vespoid"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuavailcraft_hornetaur"
+				},
+				"text": "hornet mail",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMOR_MAIL_hornetaur"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuavailcraft_genprey"
+				},
+				"text": "genprey mail",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMOR_MAIL_genprey"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuavailcraft_ioprey"
+				},
+				"text": "ioprey mail",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMOR_MAIL_ioprey"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuavailcraft_kut-ku"
+				},
+				"text": "kut-ku mail",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMOR_MAIL_kut-ku"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuavailcraft_cephalos"
+				},
+				"text": "cephalos mail",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMOR_MAIL_cephalos"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuavailcraft_congalala"
+				},
+				"text": "conga mail",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMOR_MAIL_congalala"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuavailcraft_gypceros"
+				},
+				"text": "gypceros mail",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMOR_MAIL_gypceros"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMOR_MAIL_giaprey",
+		"dynamic_line": {
+			"and": [
+				"The giaprey mail costs 750z and these materials are needed to craft:\n- 1 giadrome hide\n- 3 earth crystals\n- 3 giaprey scales\nIt provides the following defenses:\n*bash: 15 *cut: 17\n*acid: 6 *fire: 0 *elec: 2\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 750
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_item": "giadrome_hide",
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "mh_earthcrystal",
+								"count": 3
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "giaprey_scale",
+									"count": 3
+								},
+								"yes": "You are able to craft this armor!",
+								"no": "Requirements are not met!"
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 750
+							}
+						},
+						{
+							"u_has_item": "giadrome_hide"
+						},
+						{
+							"u_has_items": {
+								"item": "mh_earthcrystal",
+								"count": 3
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "giaprey_scale",
+								"count": 3
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 750
+					},
+					{
+						"u_sell_item": "giadrome_hide"
+					},
+					{
+						"u_sell_item": "mh_earthcrystal",
+						"count": 3
+					},
+					{
+						"u_sell_item": "giaprey_scale",
+						"count": 3
+					},
+					{
+						"u_buy_item": "giaprey_mail"
+					}
+				],
+				"text": "Create the giaprey mail",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMORPIECES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMOR_MAIL"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMOR_MAIL_velociprey",
+		"dynamic_line": {
+			"and": [
+				"The velociprey mail costs 1150z and these materials are needed to craft:\n- 2 velociprey hides\n- 3 velociprey scales\n- 5 iron ores\n- 1 bullfango pelt\nIt provides the following defenses:\n*bash: 16 *cut: 18\n*acid: 2 *fire: 2 *elec: 2\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 1150
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "velociprey_hide",
+							"count": 2
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "velociprey_scale",
+								"count": 3
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "mh_ironore",
+									"count": 5
+								},
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_item": "bullfango_pelt",
+									"yes": "You are able to craft this armor!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 1150
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "velociprey_hide",
+								"count": 2
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "velociprey_scale",
+								"count": 3
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_ironore",
+								"count": 5
+							}
+						},
+						{
+							"u_has_item": "bullfango_pelt"
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 1150
+					},
+					{
+						"u_sell_item": "velociprey_hide",
+						"count": 2
+					},
+					{
+						"u_sell_item": "velociprey_scale",
+						"count": 3
+					},
+					{
+						"u_sell_item": "mh_ironore",
+						"count": 5
+					},
+					{
+						"u_sell_item": "bullfango_pelt"
+					},
+					{
+						"u_buy_item": "velociprey_mail"
+					}
+				],
+				"text": "Create the velociprey mail",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMORPIECES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMOR_MAIL"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMOR_MAIL_genprey",
+		"dynamic_line": {
+			"and": [
+				"The genprey mail costs 1350z and these materials are needed to craft:\n- 2 genprey hides\n- 4 genprey scales\n- 3 iron ores\n- 2 bullfango pelts\nIt provides the following defenses:\n*bash: 17 *cut: 19\n*acid: 0 *fire: 4 *elec: 5\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 1350
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "genprey_hide",
+							"count": 3
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "genprey_scale",
+								"count": 4
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "mh_ironore",
+									"count": 3
+								},
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_items": {
+										"item": "bullfango_pelt",
+										"count": 2
+									},
+									"yes": "You are able to craft this armor!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 1350
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "genprey_hide",
+								"count": 3
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "genprey_scale",
+								"count": 4
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_ironore",
+								"count": 3
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "bullfango_pelt",
+								"count": 2
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 1350
+					},
+					{
+						"u_sell_item": "genprey_hide",
+						"count": 3
+					},
+					{
+						"u_sell_item": "genprey_scale",
+						"count": 4
+					},
+					{
+						"u_sell_item": "mh_ironore",
+						"count": 3
+					},
+					{
+						"u_sell_item": "bullfango_pelt",
+						"count": 2
+					},
+					{
+						"u_buy_item": "genprey_mail"
+					}
+				],
+				"text": "Create the genprey mail",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMORPIECES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMOR_MAIL"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMOR_MAIL_ioprey",
+		"dynamic_line": {
+			"and": [
+				"The ioprey mail costs 1650z and these materials are needed to craft:\n- 3 poison sacs\n- 2 ioprey hides\n- 2 ioprey scales\n- 1 machalite ore\nIt provides the following defenses:\n*bash: 18 *cut: 20\n*acid: 5 *fire: 5 *elec: 0\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 1650
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "poison_sac",
+							"count": 3
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "ioprey_hide",
+								"count": 2
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "ioprey_scale",
+									"count": 2
+								},
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_item": "mh_machaliteore",
+									"yes": "You are able to craft this armor!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 1650
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "poison_sac",
+								"count": 3
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "ioprey_hide",
+								"count": 2
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "ioprey_scale",
+								"count": 2
+							}
+						},
+						{
+							"u_has_item": "mh_machaliteore"
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 1650
+					},
+					{
+						"u_sell_item": "poison_sac",
+						"count": 3
+					},
+					{
+						"u_sell_item": "ioprey_hide",
+						"count": 2
+					},
+					{
+						"u_sell_item": "ioprey_scale",
+						"count": 2
+					},
+					{
+						"u_sell_item": "mh_machaliteore"
+					},
+					{
+						"u_buy_item": "ioprey_mail"
+					}
+				],
+				"text": "Create the ioprey mail",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMORPIECES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMOR_MAIL"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMOR_MAIL_bone",
+		"dynamic_line": {
+			"and": [
+				"The bone mail costs 650z and these materials are needed to craft:\n- 3 brute bones\n- 1 bullfango pelt\n- 1 giaprey hide\nIt provides the following defenses:\n*bash: 14 *cut: 16\n*acid: 0 *fire: 4 *elec: 0\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 650
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "monbone_brute",
+							"count": 3
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_item": "bullfango_pelt",
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_item": "giaprey_hide",
+								"yes": "You are able to craft this armor!",
+								"no": "Requirements are not met!"
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 650
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "monbone_brute",
+								"count": 3
+							}
+						},
+						{
+							"u_has_item": "bullfango_pelt"
+						},
+						{
+							"u_has_item": "giaprey_hide"
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 650
+					},
+					{
+						"u_sell_item": "monbone_brute",
+						"count": 3
+					},
+					{
+						"u_sell_item": "bullfango_pelt"
+					},
+					{
+						"u_sell_item": "giaprey_hide"
+					},
+					{
+						"u_buy_item": "bone_mail"
+					}
+				],
+				"text": "Create the bone mail",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMORPIECES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMOR_MAIL"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMOR_MAIL_vespoid",
+		"dynamic_line": {
+			"and": [
+				"The vespoid mail costs 1150z and these materials are needed to craft:\n- 5 vespoid wings\n- 1 machalite ore\n- 3 carpenterbugs\nIt provides the following defenses:\n*bash: 16 *cut: 18\n*acid: 0 *fire: 0 *elec: 4\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 1150
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "vespoid_wing",
+							"count": 5
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_item": "mh_machaliteore",
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "mh_carpenterbug",
+									"count": 3
+								},
+								"yes": "You are able to craft this armor!",
+								"no": "Requirements are not met!"
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 1150
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "vespoid_wing",
+								"count": 5
+							}
+						},
+						{
+							"u_has_item": "mh_machaliteore"
+						},
+						{
+							"u_has_items": {
+								"item": "mh_carpenterbug",
+								"count": 3
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 1150
+					},
+					{
+						"u_sell_item": "vespoid_wing",
+						"count": 5
+					},
+					{
+						"u_sell_item": "mh_machaliteore"
+					},
+					{
+						"u_sell_item": "mh_carpenterbug",
+						"count": 3
+					},
+					{
+						"u_buy_item": "vespoid_mail"
+					}
+				],
+				"text": "Create the vespoid mail",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMORPIECES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMOR_MAIL"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMOR_MAIL_hornetaur",
+		"dynamic_line": {
+			"and": [
+				"The hornet mail costs 1350z and these materials are needed to craft:\n- 2 hornetaur wings\n- 4 hornetaur shells\n- 3 disk stones\n- 1 killer beetle\nIt provides the following defenses:\n*bash: 17 *cut: 19\n*acid: 0 *fire: 0 *elec: 0\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 1350
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "hornetaur_wing",
+							"count": 2
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "hornetaur_shell",
+								"count": 4
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "mh_diskstone",
+									"count": 3
+								},
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_item": "mh_kbeetle",
+									"yes": "You are able to craft this armor!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 1350
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "hornetaur_wing",
+								"count": 2
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "hornetaur_shell",
+								"count": 4
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_diskstone",
+								"count": 3
+							}
+						},
+						{
+							"u_has_item": "mh_kbeetle"
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 1350
+					},
+					{
+						"u_sell_item": "hornetaur_wing",
+						"count": 2
+					},
+					{
+						"u_sell_item": "hornetaur_shell",
+						"count": 4
+					},
+					{
+						"u_sell_item": "mh_carpenterbug",
+						"count": 3
+					},
+					{
+						"u_sell_item": "mh_kbeetle"
+					},
+					{
+						"u_buy_item": "hornetaur_mail"
+					}
+				],
+				"text": "Create the hornetaur mail",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMORPIECES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMOR_MAIL"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMOR_MAIL_kut-ku",
+		"dynamic_line": {
+			"and": [
+				"The kut-ku mail costs 1650z and these materials are needed to craft:\n- 2 kut-ku scales\n- 3 kut-ku shells\n- 1 kut-ku webbing\n- 3 small monster bones\nIt provides the following defenses:\n*bash: 18 *cut: 20\n*acid: 0 *fire: 4 *elec: 0\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 1650
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "kut-ku_scale",
+							"count": 2
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "kut-ku_shell",
+								"count": 3
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_item": "kut-ku_webbing",
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_items": {
+										"item": "monbone_s",
+										"count": 3
+									},
+									"yes": "You are able to craft this armor!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 1650
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "kut-ku_scale",
+								"count": 2
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "kut-ku_shell",
+								"count": 3
+							}
+						},
+						{
+							"u_has_item": "kut-ku_webbing"
+						},
+						{
+							"u_has_items": {
+								"item": "monbone_s",
+								"count": 3
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 1650
+					},
+					{
+						"u_sell_item": "kut-ku_scale",
+						"count": 2
+					},
+					{
+						"u_sell_item": "kut-ku_shell",
+						"count": 3
+					},
+					{
+						"u_sell_item": "kut-ku_webbing"
+					},
+					{
+						"u_sell_item": "monbone_s",
+						"count": 3
+					},
+					{
+						"u_buy_item": "kut-ku_mail"
+					}
+				],
+				"text": "Create the kut-ku mail",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMORPIECES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMOR_MAIL"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMOR_MAIL_cephalos",
+		"dynamic_line": {
+			"and": [
+				"The cephalos mail costs 2350z and these materials are needed to craft:\n- 1 cephalos fin\n- 3 cephalos scales\n- 1 machalite ore\nIt provides the following defenses:\n*bash: 19 *cut: 22\n*acid: 6 *fire: 0 *elec: 0\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 2350
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_item": "cephalos_fin",
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "cephalos_scale",
+								"count": 3
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_item": "mh_machaliteore",
+								"yes": "You are able to craft this armor!",
+								"no": "Requirements are not met!"
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 2350
+							}
+						},
+						{
+							"u_has_item": "cephalos_fin"
+						},
+						{
+							"u_has_items": {
+								"item": "cephalos_scale",
+								"count": 3
+							}
+						},
+						{
+							"u_has_item": "mh_machaliteore"
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 2350
+					},
+					{
+						"u_sell_item": "cephalos_fin"
+					},
+					{
+						"u_sell_item": "cephalos_scale",
+						"count": 3
+					},
+					{
+						"u_sell_item": "mh_machaliteore"
+					},
+					{
+						"u_buy_item": "cephalos_mail"
+					}
+				],
+				"text": "Create the cephalos mail",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMORPIECES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMOR_MAIL"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMOR_MAIL_congalala",
+		"dynamic_line": {
+			"and": [
+				"The conga mail costs 2350z and these materials are needed to craft:\n- 2 congalala pelts\n- 4 conga pelts\n- 2 brute bones\n- 3 carpenterbugs\nIt provides the following defenses:\n*bash: 19 *cut: 22\n*acid: 2 *fire: 0 *elec: 4\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 2350
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "congalala_pelt",
+							"count": 2
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "conga_pelt",
+								"count": 4
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "monbone_brute",
+									"count": 2
+								},
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_items": {
+										"item": "mh_carpenterbug",
+										"count": 3
+									},
+									"yes": "You are able to craft this armor!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 2350
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "congalala_pelt",
+								"count": 2
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "conga_pelt",
+								"count": 4
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "monbone_brute",
+								"count": 2
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_carpenterbug",
+								"count": 3
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 2350
+					},
+					{
+						"u_sell_item": "congalala_pelt",
+						"count": 2
+					},
+					{
+						"u_sell_item": "conga_pelt",
+						"count": 4
+					},
+					{
+						"u_sell_item": "monbone_brute",
+						"count": 2
+					},
+					{
+						"u_sell_item": "mh_carpenterbug",
+						"count": 3
+					},
+					{
+						"u_buy_item": "congalala_mail"
+					}
+				],
+				"text": "Create the conga mail",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMORPIECES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMOR_MAIL"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMOR_MAIL_gypceros",
+		"dynamic_line": {
+			"and": [
+				"The gypceros mail costs 2850z and these materials are needed to craft:\n- 1 poison sac\n- 1 antiseptic stone\n- 2 rubbery hides\n- 2 machalite ores\nIt provides the following defenses:\n*bash: 19 *cut: 23\n*acid: 3 *fire: 0 *elec: 7\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 2850
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_item": "poison_sac",
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_item": "mh_astone",
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "gypceros_hide",
+									"count": 2
+								},
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_items": {
+										"item": "mh_machaliteore",
+										"count": 2
+									},
+									"yes": "You are able to craft this armor!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 2850
+							}
+						},
+						{
+							"u_has_item": "poison_sac"
+						},
+						{
+							"u_has_item": "mh_astone"
+						},
+						{
+							"u_has_items": {
+								"item": "gypceros_hide",
+								"count": 2
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_machaliteore",
+								"count": 2
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 2850
+					},
+					{
+						"u_sell_item": "poison_sac"
+					},
+					{
+						"u_sell_item": "mh_astone"
+					},
+					{
+						"u_sell_item": "gypceros_hide",
+						"count": 2
+					},
+					{
+						"u_sell_item": "mh_machaliteore",
+						"count": 2
+					},
+					{
+						"u_buy_item": "gypceros_mail"
+					}
+				],
+				"text": "Create the gypceros mail",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMORPIECES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_ARMOR_MAIL"
+			}
+		]
+	}
+]

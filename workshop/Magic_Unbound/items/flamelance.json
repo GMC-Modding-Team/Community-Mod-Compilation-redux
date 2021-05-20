@@ -1,0 +1,86 @@
+[
+  {
+    "id": "flamelance",
+    "looks_like": "m79",
+    "type": "GUN",
+    "name": { "str": "flamelance" },
+    "description": "A short lance with the traditional conical base where the firing mechanism is located.  The shaft of the lance opens up at the bottom where a plasma-like magical projectile emerges, and continues on to make a point for melee use.",
+    "skill": "launcher",
+	"weight": "1320 g",
+    "volume": "3500 ml",
+    "longest_side": "100 cm",
+    "price": 970000,
+    "price_postapoc": 10000,
+    "to_hit": 0,
+    "bashing": 8,
+	"cutting": 20,
+    "material": [ "ceramic" ],
+    "range": 15,
+    "ranged_damage": [ { "damage_type": "bash", "amount": 20 }, { "damage_type": "heat", "amount": 20, "armor_penetration": 15 }, { "damage_type": "stab", "amount": 10, "armor_penetration": 5 } ],
+	"ammo": [ "fl-plasma" ],
+    "reload": 4,
+    "dispersion": 220,
+    "durability": 9,
+    "modes": [ [ "DEFAULT", "semi-auto", 1 ] ],
+    "valid_mod_locations": [ [ "accessories", 4 ], [ "sling", 1 ] ],
+    "flags": [ "NON-FOULING", "NEVER_JAMS", "NEVER_MISFIRES" ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "holster": true,
+        "max_contains_volume": "2 L",
+        "max_contains_weight": "2 kg",
+        "item_restriction": [ "fl-canister" ]
+      }
+    ]
+    
+  },
+  {
+    "id": "fl-canister",
+    "looks_like": "pressurized_tank",
+    "type": "MAGAZINE",
+    "name": { "str": "flamelance fuel canister" },
+    "description": "A 1.5L canister made of a tough resin-like substance, a transparent window along the top shows how much fuel it contains.",
+    "weight": "700 g",
+    "volume": "1 L",
+    "price": 15000,
+    "price_postapoc": 500,
+    "material": [ "ceramic" ],
+    "symbol": "c",
+    "color": "light_gray",
+    "ammo_type": [ "fl-plasma" ],
+    "capacity": 20,
+    "reload_time": 3,
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "fl-plasma": 200 }, "watertight": true } ]
+  },
+  {
+    "type": "ammunition_type",
+    "id": "fl-plasma",
+    "name": "glowing liquid",
+    "default": "fl-plasma"
+  },
+  {
+    "id": "fl-plasma",
+    "type": "AMMO",
+    "name": { "str_sp": "flamelance plasma" },
+    "description": "This is faintly glowing flamelance liquid.  You have no idea what it's made of.",
+    "category": "fuel",
+    "weight": "1 g",
+    "volume": "200ml",
+    "price": 8000,
+    "price_postapoc": 1000,
+    "count": 200,
+    "stack_size": 200,
+    "phase": "liquid",
+    "container": "fl-canister",
+    "material": [ "hydrocarbons" ],
+    "symbol": "=",
+    "color": "light_red",
+    "ammo_type": "fl-plasma",
+    "damage": { "damage_type": "heat", "amount": 10, "armor_penetration": 10 },
+    "range": 6,
+    "effects": [ "NEVER_MISFIRES" ]
+  }
+
+
+]

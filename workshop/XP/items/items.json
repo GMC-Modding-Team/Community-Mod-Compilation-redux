@@ -1,0 +1,213 @@
+[
+  {
+    "id": "xp_xps",
+    "type": "GENERIC",
+    "category": "spare_parts",
+	"symbol": "X",
+    "color": "red",
+    "name": "XP",
+    "description": "An experience point.",
+    "volume": "1 ml",
+    "flags": [ "TRADER_AVOID", "NO_SALVAGE", "NO_REPAIR", "ZERO_WEIGHT" ]
+  },
+  {
+    "id": "xp_give_random",
+	"type": "SPELL",
+	"name": "Template Spell",
+	"description": "This is a template to show off all the available values",
+	"valid_targets": [ "self" ],
+	"effect": "spawn_item",
+	"effect_str": "xp_xps",
+	"flags": [ "SILENT", "NO_HANDS", "NO_LEGS", "PERMANENT", "RANDOM_DAMAGE" ],
+	"min_damage": 1,
+	"max_damage": 5,
+	"damage_increment": 1
+  },
+  {
+    "id": "xp_giver",
+    "type": "TOOL_ARMOR",
+    "name": { "str": "EXP" },
+    "description": "A pseudo item to give the player xps simply for staying alive over time.",
+    "symbol": "X",
+    "color": "red",
+	"volume": "1 ml",
+    "relic_data": {
+      "passive_effects": [
+        {
+          "has": "WORN",
+          "condition": "ALWAYS",
+          "intermittent_activation": { "effects": [ { "frequency": "2 days", "spell_effects": [ { "id": "xp_give_random" } ] } ] }
+        }
+      ]
+    },
+    "flags": [ "ONLY_ONE", "NO_TAKEOFF", "ZERO_WEIGHT" ]
+  },
+  {
+    "abstract": "xp_upgrade",
+    "type": "GENERIC",
+    "category": "drugs",
+    "name": "XP Package",
+    "description": "A sadly required meta item, activate to unpack into materials to handle upgrading your character.",
+    "volume": "1 ml",
+	"weight": "1 g",
+    "symbol": "!",
+    "color": "blue",
+    "use_action": "DISASSEMBLE",
+    "flags": [ "NO_REPAIR" ]
+  },
+  {
+    "id": "xp_upgrade_tough_kit",
+    "type": "GENERIC",
+    "copy-from": "xp_upgrade",
+    "category": "drugs",
+    "name": "XP - Toughness Upgrade",
+    "description": "A sadly required meta item, activate to unpack into materials to handle upgrading your character with a tougher body."
+  },
+  {
+    "id": "xp_upgrade_tough_item",
+    "copy-from": "xp_upgrade",
+    "name": "XP Trait - Toughness Series",
+    "description": "A sadly required meta item, activate to handle upgrading your character with a tougher body, up to three times.",
+    "use_action": { "type": "cast_spell", "spell_id": "xp_upgrade_spell_toughness", "no_fail": true, "level": 1 },
+    "type": "COMESTIBLE",
+    "comestible_type": "MED",
+    "flags": [ "TRADER_AVOID", "INEDIBLE", "NUTRIENT_OVERRIDE" ]
+  }, 
+  {
+    "id": "xp_upgrade_cannibal_item",
+    "copy-from": "xp_upgrade",
+    "name": "XP Trait - Cannibalism",
+    "description": "A sadly required meta item, activate to handle upgrading your character to not mind the long pig.",
+    "use_action": { "type": "cast_spell", "spell_id": "xp_upgrade_spell_cannibalism", "no_fail": true, "level": 1 },
+    "type": "COMESTIBLE",
+    "comestible_type": "MED",
+    "flags": [ "TRADER_AVOID", "INEDIBLE", "NUTRIENT_OVERRIDE" ]
+  },  
+  {
+    "id": "xp_upgrade_thickskin_item",
+    "copy-from": "xp_upgrade",
+    "name": "XP Trait - Thick Skin",
+    "description": "A sadly required meta item, activate to handle upgrading your character to better endure scratches and scrapes.",
+    "use_action": { "type": "cast_spell", "spell_id": "xp_upgrade_spell_thickskin", "no_fail": true, "level": 1 },
+    "type": "COMESTIBLE",
+    "comestible_type": "MED",
+    "flags": [ "TRADER_AVOID", "INEDIBLE", "NUTRIENT_OVERRIDE" ]
+  },
+  {
+    "id": "xp_upgrade_strongerback_item",
+    "copy-from": "xp_upgrade",
+    "name": "XP Trait - Stronger Back",
+    "description": "A sadly required meta item, activate to handle upgrading your character to endure heavier equipment loads.",
+    "use_action": { "type": "cast_spell", "spell_id": "xp_upgrade_spell_strongerback", "no_fail": true, "level": 1 },
+    "type": "COMESTIBLE",
+    "comestible_type": "MED",
+    "flags": [ "TRADER_AVOID", "INEDIBLE", "NUTRIENT_OVERRIDE" ]
+  },
+  {
+    "result": "xp_upgrade_tough_kit",
+    "type": "uncraft",
+    "time": "6 s",
+    "components": [ [ [ "xp_upgrade_tough_item", 1 ] ] ],
+    "flags": [ "BLIND_EASY" ]
+  },
+  {
+    "id": "xp_upgrade_sneaky1_item",
+    "copy-from": "xp_upgrade",
+    "name": "XP Trait - Sneaky 1",
+    "description": "A sadly required meta item, activate to handle upgrading your character to be more sneaky.",
+    "use_action": { "type": "cast_spell", "spell_id": "xp_upgrade_spell_sneaky_1", "no_fail": true, "level": 1 },
+    "type": "COMESTIBLE",
+    "comestible_type": "MED",
+    "flags": [ "TRADER_AVOID", "INEDIBLE", "NUTRIENT_OVERRIDE" ]
+  },
+  {
+    "id": "xp_upgrade_roughing_item",
+    "copy-from": "xp_upgrade",
+    "name": "XP Trait - Roughing It",
+    "description": "A sadly required meta item, activate to handle upgrading your character to enjoy the rain and nature.",
+    "use_action": { "type": "cast_spell", "spell_id": "xp_upgrade_spell_roughingit", "no_fail": true, "level": 1 },
+    "type": "COMESTIBLE",
+    "comestible_type": "MED",
+    "flags": [ "TRADER_AVOID", "INEDIBLE", "NUTRIENT_OVERRIDE" ]
+  },
+  {
+    "id": "xp_upgrade_endurance1_item",
+    "copy-from": "xp_upgrade",
+    "name": "XP Trait - Endurance 1",
+    "description": "A sadly required meta item, activate to handle upgrading your character to have greater endurance.",
+    "use_action": { "type": "cast_spell", "spell_id": "xp_upgrade_spell_endurance_1", "no_fail": true, "level": 1 },
+    "type": "COMESTIBLE",
+    "comestible_type": "MED",
+    "flags": [ "TRADER_AVOID", "INEDIBLE", "NUTRIENT_OVERRIDE" ]
+  },
+  {
+    "id": "xp_upgrade_noviceparkour_item",
+    "copy-from": "xp_upgrade",
+    "name": "XP Trait - Novice Parkour",
+    "description": "A sadly required meta item, activate to handle upgrading your character to be a parkour novice.",
+    "use_action": { "type": "cast_spell", "spell_id": "xp_upgrade_spell_noviceparkour", "no_fail": true, "level": 1 },
+    "type": "COMESTIBLE",
+    "comestible_type": "MED",
+    "flags": [ "TRADER_AVOID", "INEDIBLE", "NUTRIENT_OVERRIDE" ]
+  },
+  {
+    "id": "xp_upgrade_str_up_1_item",
+    "copy-from": "xp_upgrade",
+    "name": "XP Trait - Str Up Series",
+    "description": "A sadly required meta item, activate to handle upgrading your character to be stronger, up to three times.",
+    "use_action": { "type": "cast_spell", "spell_id": "xp_upgrade_spell_str_up", "no_fail": true, "level": 1 },
+    "type": "COMESTIBLE",
+    "comestible_type": "MED",
+    "flags": [ "TRADER_AVOID", "INEDIBLE", "NUTRIENT_OVERRIDE" ]
+  },
+  {
+    "id": "xp_upgrade_dex_up_1_item",
+    "copy-from": "xp_upgrade",
+    "name": "XP Trait - Dex Up Series",
+    "description": "A sadly required meta item, activate to handle upgrading your character to be more dexterous, up to three times.",
+    "use_action": { "type": "cast_spell", "spell_id": "xp_upgrade_spell_dex_up", "no_fail": true, "level": 1 },
+    "type": "COMESTIBLE",
+    "comestible_type": "MED",
+    "flags": [ "TRADER_AVOID", "INEDIBLE", "NUTRIENT_OVERRIDE" ]
+  },
+  {
+    "id": "xp_upgrade_int_up_1_item",
+    "copy-from": "xp_upgrade",
+    "name": "XP Trait - Int Up Series",
+    "description": "A sadly required meta item, activate to handle upgrading your character to be smarter.",
+    "use_action": { "type": "cast_spell", "spell_id": "xp_upgrade_spell_int_up", "no_fail": true, "level": 1 },
+    "type": "COMESTIBLE",
+    "comestible_type": "MED",
+    "flags": [ "TRADER_AVOID", "INEDIBLE", "NUTRIENT_OVERRIDE" ]
+  },
+  {
+    "id": "xp_upgrade_per_up_1_item",
+    "copy-from": "xp_upgrade",
+    "name": "XP Trait - Per Up Series",
+    "description": "A sadly required meta item, activate to handle upgrading your character to be more perceptive, up to three times.",
+    "use_action": { "type": "cast_spell", "spell_id": "xp_upgrade_spell_per_up", "no_fail": true, "level": 1 },
+    "type": "COMESTIBLE",
+    "comestible_type": "MED",
+    "flags": [ "TRADER_AVOID", "INEDIBLE", "NUTRIENT_OVERRIDE" ]
+  },
+  {
+    "id": "xp_upgrade_sleepless_1_item",
+    "copy-from": "xp_upgrade",
+    "name": "XP Trait - Sleepless Series",
+    "description": "A sadly required meta item, activate to handle upgrading your character to need less sleep, up to three times.",
+    "use_action": { "type": "cast_spell", "spell_id": "xp_upgrade_spell_sleepless", "no_fail": true, "level": 1 },
+    "type": "COMESTIBLE",
+    "comestible_type": "MED",
+    "flags": [ "TRADER_AVOID", "INEDIBLE", "NUTRIENT_OVERRIDE" ]
+  },
+  {
+    "id": "xp_upgrade_levelup_1_item",
+    "copy-from": "xp_upgrade",
+    "name": "XP Trait - Level Up",
+    "description": "A sadly required meta item, activate to handle upgrading your character to the next level, up to 20 times.",
+    "use_action": { "type": "cast_spell", "spell_id": "xp_upgrade_spell_levelup", "no_fail": true, "level": 1 },
+    "type": "COMESTIBLE",
+    "comestible_type": "MED",
+    "flags": [ "TRADER_AVOID", "INEDIBLE", "NUTRIENT_OVERRIDE" ]
+  }
+]

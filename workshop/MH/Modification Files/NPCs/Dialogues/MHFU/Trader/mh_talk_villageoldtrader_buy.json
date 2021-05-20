@@ -1,0 +1,4171 @@
+[
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER1_BUY",
+		"dynamic_line": "Please select an item to purchase.",
+		"responses": [
+			{
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER_intro1"
+			},
+			{
+				"text": "I'll buy later!",
+				"topic": "TALK_DONE"
+			},
+			{
+				"text": "antidote herb - 20z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_herbantidote"
+			},
+			{
+				"text": "sleep herb - 50z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_sleepherb"
+			},
+			{
+				"text": "fire herb - 44z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_fireherb"
+			},
+			{
+				"text": "sap plant - 24z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_sapplant"
+			},
+			{
+				"text": "needleberry - 22z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_needleberry"
+			},
+			{
+				"text": "bomberry - 120z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_bomberry"
+			},
+			{
+				"text": "power seed - 280z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_powerseed"
+			},
+			{
+				"text": "armor seed - 220z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_armorseed"
+			},
+			{
+				"text": "blue mushroom - 24z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_mush_blue"
+			},
+			{
+				"text": "nitroshroom - 60z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_nitroshroom"
+			},
+			{
+				"text": "toadstool - 75z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_toadstool"
+			},
+			{
+				"text": "scatterfish - 300z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_scatterfish"
+			},
+			{
+				"text": "burst arowana - 90z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_buarrowana"
+			},
+			{
+				"text": "bomb arowana - 270z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_boarrowana"
+			},
+			{
+				"text": "knife mackerel - 135z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_kmackerel"
+			},
+			{
+				"text": "pin tuna - 190z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_pintuna"
+			},
+			{
+				"text": "rumblefish - 38z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_rumblefish"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER1_BUY_mh_herbantidote",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_herbantidote"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 20z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_herbantidote"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 100
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_herbantidote",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 100
+					}
+				],
+				"text": "Buy 5 - 100z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_herbantidote"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 200
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_herbantidote",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 200
+					}
+				],
+				"text": "Buy 10 - 200z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_herbantidote"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER1_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER1_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER1_BUY_mh_sleepherb",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_sleepherb"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 50z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_sleepherb"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 250
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_sleepherb",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 250
+					}
+				],
+				"text": "Buy 5 - 250z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_sleepherb"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 500
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_sleepherb",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 500
+					}
+				],
+				"text": "Buy 10 - 500z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_sleepherb"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER1_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER1_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER1_BUY_mh_fireherb",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_fireherb"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 44z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_fireherb"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 220
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_fireherb",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 220
+					}
+				],
+				"text": "Buy 5 - 220z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_fireherb"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 440
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_fireherb",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 440
+					}
+				],
+				"text": "Buy 10 - 440z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_fireherb"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER1_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER1_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER1_BUY_mh_sapplant",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_sapplant"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 24z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_sapplant"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 120
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_sapplant",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 120
+					}
+				],
+				"text": "Buy 5 - 120z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_sapplant"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 240
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_sapplant",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 240
+					}
+				],
+				"text": "Buy 10 - 240z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_sapplant"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER1_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER1_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER1_BUY_mh_needleberry",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_needleberry"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 22z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_needleberry"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 110
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_needleberry",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 110
+					}
+				],
+				"text": "Buy 5 - 110z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_needleberry"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 220
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_needleberry",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 220
+					}
+				],
+				"text": "Buy 10 - 220z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_needleberry"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER1_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER1_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER1_BUY_mh_bomberry",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_bomberry"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 120z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_bomberry"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 600
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_bomberry",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 600
+					}
+				],
+				"text": "Buy 5 - 600z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_bomberry"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 1200
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_bomberry",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 1200
+					}
+				],
+				"text": "Buy 10 - 1200z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_bomberry"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER1_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER1_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER1_BUY_mh_powerseed",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_powerseed"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 280z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_powerseed"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 1400
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_powerseed",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 1400
+					}
+				],
+				"text": "Buy 5 - 1400z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_powerseed"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 2800
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_powerseed",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 2800
+					}
+				],
+				"text": "Buy 10 - 2800z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_powerseed"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER1_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER1_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER1_BUY_mh_armorseed",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_armorseed"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 220z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_armorseed"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 1100
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_armorseed",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 1100
+					}
+				],
+				"text": "Buy 5 - 1100z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_armorseed"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 2200
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_armorseed",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 2200
+					}
+				],
+				"text": "Buy 10 - 2200z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_armorseed"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER1_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER1_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER1_BUY_mh_mush_blue",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_mush_blue"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 24z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_mush_blue"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 120
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_mush_blue",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 120
+					}
+				],
+				"text": "Buy 5 - 120z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_mush_blue"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 240
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_mush_blue",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 240
+					}
+				],
+				"text": "Buy 10 - 240z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_mush_blue"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER1_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER1_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER1_BUY_mh_nitroshroom",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_nitroshroom"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 60z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_nitroshroom"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 300
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_nitroshroom",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 300
+					}
+				],
+				"text": "Buy 5 - 300z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_nitroshroom"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 600
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_nitroshroom",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 600
+					}
+				],
+				"text": "Buy 10 - 600z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_nitroshroom"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER1_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER1_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER1_BUY_mh_toadstool",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_toadstool"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 75z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_toadstool"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 375
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_toadstool",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 375
+					}
+				],
+				"text": "Buy 5 - 375z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_toadstool"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 750
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_toadstool",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 750
+					}
+				],
+				"text": "Buy 10 - 750z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_toadstool"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER1_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER1_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER1_BUY_mh_scatterfish",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_scatterfish"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 300z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_scatterfish"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 1500
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_scatterfish",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 1500
+					}
+				],
+				"text": "Buy 5 - 1500z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_scatterfish"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 3000
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_scatterfish",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 3000
+					}
+				],
+				"text": "Buy 10 - 3000z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_scatterfish"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER1_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER1_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER1_BUY_mh_buarrowana",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_buarrowana"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 90z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_buarrowana"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 450
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_buarrowana",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 450
+					}
+				],
+				"text": "Buy 5 - 450z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_buarrowana"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 900
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_buarrowana",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 900
+					}
+				],
+				"text": "Buy 10 - 900z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_buarrowana"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER1_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER1_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER1_BUY_mh_boarrowana",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_boarrowana"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 270z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_boarrowana"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 1350
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_boarrowana",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 1350
+					}
+				],
+				"text": "Buy 5 - 1350z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_boarrowana"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 2700
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_boarrowana",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 2700
+					}
+				],
+				"text": "Buy 10 - 2700z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_boarrowana"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER1_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER1_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER1_BUY_mh_kmackerel",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_kmackerel"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 135z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_kmackerel"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 675
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_kmackerel",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 675
+					}
+				],
+				"text": "Buy 5 - 675z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_kmackerel"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 1350
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_kmackerel",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 1350
+					}
+				],
+				"text": "Buy 10 - 1350z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_kmackerel"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER1_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER1_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER1_BUY_mh_pintuna",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_pintuna"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 190z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_pintuna"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 900
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_pintuna",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 900
+					}
+				],
+				"text": "Buy 5 - 900z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_pintuna"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 1900
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_pintuna",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 1900
+					}
+				],
+				"text": "Buy 10 - 1900z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_pintuna"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER1_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER1_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER1_BUY_mh_rumblefish",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_rumblefish"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 38z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_rumblefish"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 190
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_rumblefish",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 190
+					}
+				],
+				"text": "Buy 5 - 190z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_rumblefish"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 380
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_rumblefish",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 380
+					}
+				],
+				"text": "Buy 10 - 380z",
+				"topic": "MHFU_VOLDTRADER1_BUY_mh_rumblefish"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER1_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER1_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER2_BUY",
+		"dynamic_line": "Please select an item to purchase.",
+		"responses": [
+			{
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER_intro1"
+			},
+			{
+				"text": "I'll buy later!",
+				"topic": "TALK_DONE"
+			},
+			{
+				"text": "herb - 10z",
+				"topic": "MHFU_VOLDTRADER2_BUY_mh_herb"
+			},
+			{
+				"text": "sleep herb - 50z",
+				"topic": "MHFU_VOLDTRADER2_BUY_mh_sleepherb"
+			},
+			{
+				"text": "antidote herb - 20z",
+				"topic": "MHFU_VOLDTRADER2_BUY_mh_herbantidote"
+			},
+			{
+				"text": "fire herb - 44z",
+				"topic": "MHFU_VOLDTRADER2_BUY_mh_fireherb"
+			},
+			{
+				"text": "sap plant - 24z",
+				"topic": "MHFU_VOLDTRADER2_BUY_mh_sapplant"
+			},
+			{
+				"text": "needleberry - 22z",
+				"topic": "MHFU_VOLDTRADER2_BUY_mh_needleberry"
+			},
+			{
+				"text": "bomberry - 120z",
+				"topic": "MHFU_VOLDTRADER2_BUY_mh_bomberry"
+			},
+			{
+				"text": "knife mackerel - 135z",
+				"topic": "MHFU_VOLDTRADER2_BUY_mh_kmackerel"
+			},
+			{
+				"text": "pin tuna - 190z",
+				"topic": "MHFU_VOLDTRADER2_BUY_mh_pintuna"
+			},
+			{
+				"text": "rumblefish - 38z",
+				"topic": "MHFU_VOLDTRADER2_BUY_mh_rumblefish"
+			},
+			{
+				"text": "velociprey fang - 41z",
+				"topic": "MHFU_VOLDTRADER2_BUY_velociprey_fang"
+			},
+			{
+				"text": "genprey fang - 40z",
+				"topic": "MHFU_VOLDTRADER2_BUY_genprey_fang"
+			},
+			{
+				"text": "ioprey fang - 25z",
+				"topic": "MHFU_VOLDTRADER2_BUY_ioprey_fang"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER2_BUY_mh_herbantidote",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_herbantidote"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 20z",
+				"topic": "MHFU_VOLDTRADER2_BUY_mh_herbantidote"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 100
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_herbantidote",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 100
+					}
+				],
+				"text": "Buy 5 - 100z",
+				"topic": "MHFU_VOLDTRADER2_BUY_mh_herbantidote"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 200
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_herbantidote",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 200
+					}
+				],
+				"text": "Buy 10 - 200z",
+				"topic": "MHFU_VOLDTRADER2_BUY_mh_herbantidote"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER2_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER2_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER2_BUY_mh_sleepherb",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_sleepherb"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 50z",
+				"topic": "MHFU_VOLDTRADER2_BUY_mh_sleepherb"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 250
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_sleepherb",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 250
+					}
+				],
+				"text": "Buy 5 - 250z",
+				"topic": "MHFU_VOLDTRADER2_BUY_mh_sleepherb"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 500
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_sleepherb",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 500
+					}
+				],
+				"text": "Buy 10 - 500z",
+				"topic": "MHFU_VOLDTRADER2_BUY_mh_sleepherb"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER2_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER2_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER2_BUY_mh_fireherb",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_fireherb"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 44z",
+				"topic": "MHFU_VOLDTRADER2_BUY_mh_fireherb"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 220
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_fireherb",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 220
+					}
+				],
+				"text": "Buy 5 - 220z",
+				"topic": "MHFU_VOLDTRADER2_BUY_mh_fireherb"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 440
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_fireherb",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 440
+					}
+				],
+				"text": "Buy 10 - 440z",
+				"topic": "MHFU_VOLDTRADER2_BUY_mh_fireherb"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER2_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER2_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER2_BUY_mh_sapplant",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_sapplant"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 24z",
+				"topic": "MHFU_VOLDTRADER2_BUY_mh_sapplant"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 120
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_sapplant",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 120
+					}
+				],
+				"text": "Buy 5 - 120z",
+				"topic": "MHFU_VOLDTRADER2_BUY_mh_sapplant"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 240
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_sapplant",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 240
+					}
+				],
+				"text": "Buy 10 - 240z",
+				"topic": "MHFU_VOLDTRADER2_BUY_mh_sapplant"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER2_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER2_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER2_BUY_mh_needleberry",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_needleberry"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 22z",
+				"topic": "MHFU_VOLDTRADER2_BUY_mh_needleberry"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 110
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_needleberry",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 110
+					}
+				],
+				"text": "Buy 5 - 110z",
+				"topic": "MHFU_VOLDTRADER2_BUY_mh_needleberry"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 220
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_needleberry",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 220
+					}
+				],
+				"text": "Buy 10 - 220z",
+				"topic": "MHFU_VOLDTRADER2_BUY_mh_needleberry"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER2_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER2_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER2_BUY_mh_bomberry",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_bomberry"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 120z",
+				"topic": "MHFU_VOLDTRADER2_BUY_mh_bomberry"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 600
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_bomberry",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 600
+					}
+				],
+				"text": "Buy 5 - 600z",
+				"topic": "MHFU_VOLDTRADER2_BUY_mh_bomberry"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 1200
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_bomberry",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 1200
+					}
+				],
+				"text": "Buy 10 - 1200z",
+				"topic": "MHFU_VOLDTRADER2_BUY_mh_bomberry"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER2_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER2_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER2_BUY_mh_kmackerel",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_kmackerel"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 135z",
+				"topic": "MHFU_VOLDTRADER2_BUY_mh_kmackerel"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 675
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_kmackerel",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 675
+					}
+				],
+				"text": "Buy 5 - 675z",
+				"topic": "MHFU_VOLDTRADER2_BUY_mh_kmackerel"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 1350
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_kmackerel",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 1350
+					}
+				],
+				"text": "Buy 10 - 1350z",
+				"topic": "MHFU_VOLDTRADER2_BUY_mh_kmackerel"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER2_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER2_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER2_BUY_mh_pintuna",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_pintuna"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 190z",
+				"topic": "MHFU_VOLDTRADER2_BUY_mh_pintuna"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 900
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_pintuna",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 900
+					}
+				],
+				"text": "Buy 5 - 900z",
+				"topic": "MHFU_VOLDTRADER2_BUY_mh_pintuna"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 1900
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_pintuna",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 1900
+					}
+				],
+				"text": "Buy 10 - 1900z",
+				"topic": "MHFU_VOLDTRADER2_BUY_mh_pintuna"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER2_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER2_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER2_BUY_mh_rumblefish",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_rumblefish"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 38z",
+				"topic": "MHFU_VOLDTRADER2_BUY_mh_rumblefish"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 190
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_rumblefish",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 190
+					}
+				],
+				"text": "Buy 5 - 190z",
+				"topic": "MHFU_VOLDTRADER2_BUY_mh_rumblefish"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 380
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_rumblefish",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 380
+					}
+				],
+				"text": "Buy 10 - 380z",
+				"topic": "MHFU_VOLDTRADER2_BUY_mh_rumblefish"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER2_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER2_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER2_BUY_velociprey_fang",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "velociprey_fang"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 41z",
+				"topic": "MHFU_VOLDTRADER2_BUY_velociprey_fang"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 205
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "velociprey_fang",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 205
+					}
+				],
+				"text": "Buy 5 - 205z",
+				"topic": "MHFU_VOLDTRADER2_BUY_velociprey_fang"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 410
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "velociprey_fang",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 410
+					}
+				],
+				"text": "Buy 10 - 410z",
+				"topic": "MHFU_VOLDTRADER2_BUY_velociprey_fang"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER2_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER2_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER2_BUY_genprey_fang",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "genprey_fang"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 40z",
+				"topic": "MHFU_VOLDTRADER2_BUY_genprey_fang"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 200
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "genprey_fang",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 200
+					}
+				],
+				"text": "Buy 5 - 200z",
+				"topic": "MHFU_VOLDTRADER2_BUY_genprey_fang"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 400
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "genprey_fang",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 400
+					}
+				],
+				"text": "Buy 10 - 400z",
+				"topic": "MHFU_VOLDTRADER2_BUY_genprey_fang"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER2_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER2_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER2_BUY_ioprey_fang",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "ioprey_fang"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 25z",
+				"topic": "MHFU_VOLDTRADER2_BUY_ioprey_fang"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 125
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "ioprey_fang",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 125
+					}
+				],
+				"text": "Buy 5 - 125z",
+				"topic": "MHFU_VOLDTRADER2_BUY_ioprey_fang"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 250
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "ioprey_fang",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 250
+					}
+				],
+				"text": "Buy 10 - 250z",
+				"topic": "MHFU_VOLDTRADER2_BUY_ioprey_fang"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER2_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER2_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER3_BUY",
+		"dynamic_line": "Please select an item to purchase.",
+		"responses": [
+			{
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER_intro1"
+			},
+			{
+				"text": "I'll buy later!",
+				"topic": "TALK_DONE"
+			},
+			{
+				"text": "monster fluid - 5000z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mon_fluid"
+			},
+			{
+				"text": "antidote herb - 20z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mh_herbantidote"
+			},
+			{
+				"text": "fire herb - 44z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mh_fireherb"
+			},
+			{
+				"text": "sap plant - 24z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mh_sapplant"
+			},
+			{
+				"text": "godbug - 420z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mh_sapplant"
+			},
+			{
+				"text": "herbal medicine - 250z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mh_herbmed"
+			},
+			{
+				"text": "gunpowder - 222z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mh_gunpowder"
+			},
+			{
+				"text": "small bone husk - 30z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mh_bonehusk_s"
+			},
+			{
+				"text": "small monster bone - 100z",
+				"topic": "MHFU_VOLDTRADER3_BUY_monbone_s"
+			},
+			{
+				"text": "wyvern fang - 58z",
+				"topic": "MHFU_VOLDTRADER3_BUY_wyvern_fang"
+			},
+			{
+				"text": "wyvern claw - 180z",
+				"topic": "MHFU_VOLDTRADER3_BUY_wyvern_claw"
+			},
+			{
+				"text": "velociprey fang - 41z",
+				"topic": "MHFU_VOLDTRADER3_BUY_velociprey_fang"
+			},
+			{
+				"text": "genprey fang - 40z",
+				"topic": "MHFU_VOLDTRADER3_BUY_genprey_fang"
+			},
+			{
+				"text": "ioprey fang - 25z",
+				"topic": "MHFU_VOLDTRADER3_BUY_ioprey_fang"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER3_BUY_mh_herbantidote",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_herbantidote"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 20z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mh_herbantidote"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 100
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_herbantidote",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 100
+					}
+				],
+				"text": "Buy 5 - 100z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mh_herbantidote"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 200
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_herbantidote",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 200
+					}
+				],
+				"text": "Buy 10 - 200z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mh_herbantidote"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER3_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER3_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER3_BUY_mh_sleepherb",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_sleepherb"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 50z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mh_sleepherb"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 250
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_sleepherb",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 250
+					}
+				],
+				"text": "Buy 5 - 250z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mh_sleepherb"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 500
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_sleepherb",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 500
+					}
+				],
+				"text": "Buy 10 - 500z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mh_sleepherb"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER3_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER3_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER3_BUY_mh_fireherb",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_fireherb"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 44z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mh_fireherb"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 220
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_fireherb",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 220
+					}
+				],
+				"text": "Buy 5 - 220z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mh_fireherb"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 440
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_fireherb",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 440
+					}
+				],
+				"text": "Buy 10 - 440z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mh_fireherb"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER3_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER3_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER3_BUY_mh_sapplant",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_sapplant"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 24z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mh_sapplant"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 120
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_sapplant",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 120
+					}
+				],
+				"text": "Buy 5 - 120z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mh_sapplant"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 240
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_sapplant",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 240
+					}
+				],
+				"text": "Buy 10 - 240z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mh_sapplant"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER3_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER3_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER3_BUY_mh_kmackerel",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_kmackerel"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 135z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mh_kmackerel"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 675
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_kmackerel",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 675
+					}
+				],
+				"text": "Buy 5 - 675z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mh_kmackerel"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 1350
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_kmackerel",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 1350
+					}
+				],
+				"text": "Buy 10 - 1350z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mh_kmackerel"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER3_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER3_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER3_BUY_mh_pintuna",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_pintuna"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 190z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mh_pintuna"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 900
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_pintuna",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 900
+					}
+				],
+				"text": "Buy 5 - 900z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mh_pintuna"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 1900
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_pintuna",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 1900
+					}
+				],
+				"text": "Buy 10 - 1900z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mh_pintuna"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER3_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER3_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER3_BUY_mh_rumblefish",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_rumblefish"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 38z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mh_rumblefish"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 190
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_rumblefish",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 190
+					}
+				],
+				"text": "Buy 5 - 190z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mh_rumblefish"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 380
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_rumblefish",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 380
+					}
+				],
+				"text": "Buy 10 - 380z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mh_rumblefish"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER3_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER3_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER3_BUY_velociprey_fang",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "velociprey_fang"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 41z",
+				"topic": "MHFU_VOLDTRADER3_BUY_velociprey_fang"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 205
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "velociprey_fang",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 205
+					}
+				],
+				"text": "Buy 5 - 205z",
+				"topic": "MHFU_VOLDTRADER3_BUY_velociprey_fang"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 410
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "velociprey_fang",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 410
+					}
+				],
+				"text": "Buy 10 - 410z",
+				"topic": "MHFU_VOLDTRADER3_BUY_velociprey_fang"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER3_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER3_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER3_BUY_genprey_fang",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "genprey_fang"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 40z",
+				"topic": "MHFU_VOLDTRADER3_BUY_genprey_fang"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 200
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "genprey_fang",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 200
+					}
+				],
+				"text": "Buy 5 - 200z",
+				"topic": "MHFU_VOLDTRADER3_BUY_genprey_fang"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 400
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "genprey_fang",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 400
+					}
+				],
+				"text": "Buy 10 - 400z",
+				"topic": "MHFU_VOLDTRADER3_BUY_genprey_fang"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER3_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER3_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER3_BUY_ioprey_fang",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "ioprey_fang"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 25z",
+				"topic": "MHFU_VOLDTRADER3_BUY_ioprey_fang"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 125
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "ioprey_fang",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 125
+					}
+				],
+				"text": "Buy 5 - 125z",
+				"topic": "MHFU_VOLDTRADER3_BUY_ioprey_fang"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 250
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "ioprey_fang",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 250
+					}
+				],
+				"text": "Buy 10 - 250z",
+				"topic": "MHFU_VOLDTRADER3_BUY_ioprey_fang"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER3_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER3_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER3_BUY_mon_fluid",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "mon_fluid"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 5000z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mon_fluid"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 25000
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mon_fluid",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 25000
+					}
+				],
+				"text": "Buy 5 - 25000z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mon_fluid"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 50000
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mon_fluid",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 50000
+					}
+				],
+				"text": "Buy 10 - 50000z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mon_fluid"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER3_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER3_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER3_BUY_mh_godbug",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_godbug"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 420z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mh_godbug"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 2100
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_godbug",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 2100
+					}
+				],
+				"text": "Buy 5 - 2100z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mh_godbug"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 4200
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_godbug",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 4200
+					}
+				],
+				"text": "Buy 10 - 4200z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mh_godbug"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER3_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER3_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER3_BUY_mh_herbmed",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_herbmed"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 250z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mh_herbmed"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 1250
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_herbmed",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 1250
+					}
+				],
+				"text": "Buy 5 - 1250z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mh_herbmed"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 2500
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_herbmed",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 2500
+					}
+				],
+				"text": "Buy 10 - 2500z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mh_herbmed"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER3_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER3_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER3_BUY_mh_gunpowder",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_gunpowder"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 222z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mh_gunpowder"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 1110
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_gunpowder",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 1110
+					}
+				],
+				"text": "Buy 5 - 1110z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mh_gunpowder"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 2220
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_gunpowder",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 2220
+					}
+				],
+				"text": "Buy 10 - 2220z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mh_gunpowder"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER3_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER3_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER3_BUY_mh_bonehusk_s",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_bonehusk_s"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 30z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mh_bonehusk_s"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 150
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_bonehusk_s",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 150
+					}
+				],
+				"text": "Buy 5 - 150z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mh_bonehusk_s"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 300
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "mh_bonehusk_s",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 300
+					}
+				],
+				"text": "Buy 10 - 300z",
+				"topic": "MHFU_VOLDTRADER3_BUY_mh_bonehusk_s"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER3_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER3_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER3_BUY_monbone_s",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "monbone_s"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 100z",
+				"topic": "MHFU_VOLDTRADER3_BUY_monbone_s"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 500
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "monbone_s",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 500
+					}
+				],
+				"text": "Buy 5 - 500z",
+				"topic": "MHFU_VOLDTRADER3_BUY_monbone_s"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 1000
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "monbone_s",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 1000
+					}
+				],
+				"text": "Buy 10 - 1000z",
+				"topic": "MHFU_VOLDTRADER3_BUY_monbone_s"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER3_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER3_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER3_BUY_wyvern_fang",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "wyvern_fang"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 58z",
+				"topic": "MHFU_VOLDTRADER3_BUY_wyvern_fang"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 290
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "wyvern_fang",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 290
+					}
+				],
+				"text": "Buy 5 - 290z",
+				"topic": "MHFU_VOLDTRADER3_BUY_wyvern_fang"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 580
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "wyvern_fang",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 580
+					}
+				],
+				"text": "Buy 10 - 580z",
+				"topic": "MHFU_VOLDTRADER3_BUY_wyvern_fang"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER3_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER3_BUY"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER3_BUY_wyvern_claw",
+		"dynamic_line": [
+			{
+				"u_has_item": "moneyz",
+				"yes": "How many will you buy?",
+				"no": "You don't have enough \"z\"s to buy one."
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"effect": [
+					{
+						"u_buy_item": "wyvern_claw"
+					},
+					{
+						"u_sell_item": "moneyz"
+					}
+				],
+				"text": "Buy 1 - 180z",
+				"topic": "MHFU_VOLDTRADER3_BUY_wyvern_claw"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 900
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "wyvern_claw",
+						"count": 5
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 900
+					}
+				],
+				"text": "Buy 5 - 900z",
+				"topic": "MHFU_VOLDTRADER3_BUY_wyvern_claw"
+			},
+			{
+				"condition": {
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 1800
+					}
+				},
+				"effect": [
+					{
+						"u_buy_item": "wyvern_claw",
+						"count": 10
+					},
+					{
+						"u_sell_item": "moneyz",
+						"count": 1800
+					}
+				],
+				"text": "Buy 10 - 1800z",
+				"topic": "MHFU_VOLDTRADER3_BUY_wyvern_claw"
+			},
+			{
+				"condition": {
+					"u_has_item": "moneyz"
+				},
+				"text": "Not interested.",
+				"topic": "MHFU_VOLDTRADER3_BUY"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_item": "moneyz"
+					}
+				},
+				"text": "Okay...",
+				"topic": "MHFU_VOLDTRADER3_BUY"
+			}
+		]
+	}
+]

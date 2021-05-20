@@ -1,0 +1,283 @@
+[
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGEHUNTER_intro1",
+		"dynamic_line": [
+			{
+				"u_has_trait": "mhfuvillagehuntertalkedeasyquests",
+				"yes": "Be extremely careful heading to your destinations. You may want to stay alive before going there!.",
+				"no": {
+					"u_has_trait": "mhfuvillagehuntertalkedintro",
+					"yes": "Taking care of yourself? You look alright to me, careful not to overdo it. You've almost mastered all of the easy Quests, I guess.",
+					"no": {
+						"u_has_trait": "mhfu_hunter",
+						"yes": "Ahh... You're awake? How are you? Still in pain? Hmm... It seems you are alright...",
+						"no": "I don't seem to know you but... Welcome to our village."
+					}
+				}
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_trait": "mhfu_hunter"
+						},
+						{
+							"not": {
+								"u_has_trait": "mhfuvillagehuntertalkedintro"
+							}
+						}
+					]
+				},
+				"text": "Yeah, I am.",
+				"topic": "MHFU_VILLAGEHUNTER_intro2"
+			},
+			{
+				"condition": {
+					"and": [
+						{
+							"not": {
+								"u_has_trait": "mhfuvillagehuntertalkedintro"
+							}
+						},
+						{
+							"not": {
+								"u_has_trait": "mhfu_hunter"
+							}
+						}
+					]
+				},
+				"text": "And you are?",
+				"topic": "MHFU_VILLAGEHUNTER_intro3"
+			},
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_trait": "mhfuvillagehuntertalkedintro"
+						},
+						{
+							"not": {
+								"u_has_trait": "mhfuvillagehuntertalkedeasyquests"
+							}
+						}
+					]
+				},
+				"text": "I guess so...",
+				"topic": "MHFU_VILLAGEHUNTER_easyquests1"
+			},
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_trait": "mhfuvillagehuntertalkedintro"
+						},
+						{
+							"u_has_trait": "mhfuvillagehuntertalkedeasyquests"
+						}
+					]
+				},
+				"text": "Okay!",
+				"topic": "TALK_DONE"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGEHUNTER_intro2",
+		"dynamic_line": "I found you collapsed on a cliff in the snowy mountains. If I would have left you there, you'd be nothing but an ice cube by now. Thank me later...",
+		"responses": [
+			{
+				"text": "Umm... Okay.",
+				"topic": "MHFU_VILLAGEHUNTER_intro3"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGEHUNTER_intro3",
+		"dynamic_line": "Oh! How rude of me! Allow me to introduce myself. I am the hunter attached to this village... Or atleast I used to be.",
+		"responses": [
+			{
+				"condition": {
+					"u_has_trait": "mhfu_hunter"
+				},
+				"text": "Oh, Okay.",
+				"topic": "MHFU_VILLAGEHUNTER_intro4"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_trait": "mhfu_hunter"
+					}
+				},
+				"text": "Oh, Okay.",
+				"topic": "MHFU_VILLAGEHUNTER_intro6"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGEHUNTER_intro4",
+		"dynamic_line": "A wyvern attacked and injured me, forcing me into retirement. That is why we sent for you. You were to become my replacement.",
+		"responses": [
+			{
+				"text": "Great...",
+				"topic": "MHFU_VILLAGEHUNTER_intro5"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGEHUNTER_intro5",
+		"dynamic_line": "Which left me in a jam when you collapsed up in the snowy mountains. I had no idea what should I do...",
+		"responses": [
+			{
+				"text": "Okay.",
+				"topic": "MHFU_VILLAGEHUNTER_intro6"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGEHUNTER_intro6",
+		"dynamic_line": "I know you have plenty of questions to ask. I'm here to answer as many as I can.",
+		"responses": [
+			{
+				"text": "Thanks.",
+				"topic": "MHFU_VILLAGEHUNTER_intro7"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGEHUNTER_intro7",
+		"dynamic_line": "I know it isn't much, but I'd like to give you a present. The old equipment I used when I was a hunter. Take a look inside the box when you go to the house behind me.",
+		"responses": [
+			{
+				"text": "Okay. Thanks for that!",
+				"topic": "MHFU_VILLAGEHUNTER_intro8"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGEHUNTER_intro8",
+		"dynamic_line": "They're great against all odds, so don't forget them if you go and venture into the world.",
+		"responses": [
+			{
+				"effect": {
+					"u_add_trait": "mhfuvillagehuntertalkedintro"
+				},
+				"text": "Okay. I will.",
+				"topic": "TALK_DONE"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGEHUNTER_easyquests1",
+		"dynamic_line": {
+			"u_has_trait": "mhfu_hunter",
+			"yes": "You wouldn't happen to know the name of the kind of monster attacked you on the way to this village, would you?",
+			"no": "I know, I know. Those quests will sharpen your skills."
+		},
+		"responses": [
+			{
+				"condition": {
+					"u_has_trait": "mhfu_hunter"
+				},
+				"text": "Umm... No.",
+				"topic": "MHFU_VILLAGEHUNTER_easyquests2"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_trait": "mhfu_hunter"
+					}
+				},
+				"text": "Yeah, I know. Right?",
+				"topic": "MHFU_VILLAGEHUNTER_easyquests2"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGEHUNTER_easyquests2",
+		"dynamic_line": {
+			"u_has_trait": "mhfu_hunter",
+			"yes": "I didn't think you did! I don't even think the guild  has much information about that beast. I just found out about it recently.",
+			"no": "Don't underestimate them. Someday, you may want to compete with the old Quests rather than die in more difficult ones."
+		},
+		"responses": [
+			{
+				"condition": {
+					"u_has_trait": "mhfu_hunter"
+				},
+				"text": "Hmm... That beast...",
+				"topic": "MHFU_VILLAGEHUNTER_easyquests3"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_trait": "mhfu_hunter"
+					}
+				},
+				"text": "Thanks for your advice, I guess...",
+				"topic": "TALK_DONE",
+				"effect": {
+					"u_add_trait": "mhfuvillagehuntertalkedeasyquests"
+				}
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGEHUNTER_easyquests3",
+		"dynamic_line": "Apparently the wyvern is known as a Tigrex. It doesn't appear to live in the snowy mountains, but has just been visiting them to prey on Popos.",
+		"responses": [
+			{
+				"text": "So, it's a Tigrex!",
+				"topic": "MHFU_VILLAGEHUNTER_easyquests4"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGEHUNTER_easyquests4",
+		"dynamic_line": "Its legendary tiger-like roar and tyrannical behavior earned the Tigrex its fearsome name.",
+		"responses": [
+			{
+				"text": "Hmm...",
+				"topic": "MHFU_VILLAGEHUNTER_easyquests5"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGEHUNTER_easyquests5",
+		"dynamic_line": "Be careful. There may be many mysteries surrounding the Tigrex, but its brutality is without question. You know, I once...",
+		"responses": [
+			{
+				"text": "...?",
+				"topic": "MHFU_VILLAGEHUNTER_easyquests6"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGEHUNTER_easyquests6",
+		"dynamic_line": "... Forget it. Anyways, be extremely careful heading to your destinations. You may want to stay alive before going there!",
+		"responses": [
+			{
+				"text": "Okay! I will!",
+				"topic": "TALK_DONE",
+				"effect": {
+					"u_add_trait": "mhfuvillagehuntertalkedeasyquests"
+				}
+			}
+		]
+	}
+]

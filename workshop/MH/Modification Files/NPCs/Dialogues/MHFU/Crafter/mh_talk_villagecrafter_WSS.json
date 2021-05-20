@@ -1,0 +1,1308 @@
+[
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_SS",
+		"dynamic_line": "Select the Sword and Shield you want to craft.",
+		"responses": [
+			{
+				"text": "Later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "hunter's dagger",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_SS_ironlv1_ss"
+			},
+			{
+				"text": "bone kris",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_SS_bonelv1_ss"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuavailcraft_velociprey"
+				},
+				"text": "velocidrome bite",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_SS_velocipreylv1_ss"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuavailcraft_giaprey"
+				},
+				"text": "snake bite",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_SS_giapreylv1_ss"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuavailcraft_bulldrome"
+				},
+				"text": "frost edge",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_SS_frostlv1_ss"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuavailcraft_monoblos"
+				},
+				"text": "crimson club",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_SS_monoblos_ss"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuavailcraft_ioprey"
+				},
+				"text": "hydra bite",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_SS_iopreylv1_ss"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuavailcraft_rath"
+				},
+				"text": "red saber",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_SS_rathaloslv1_ss1"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuavailcraft_garuga"
+				},
+				"text": "raven blade",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_SS_garugalv1_ss"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuavailcraft_daora"
+				},
+				"text": "ninja sword",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_SS_ninjalv1_ss"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuavailcraft_kirin"
+				},
+				"text": "kirin bolt",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_SS_kirin_ss"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuavailcraft_tigrex"
+				},
+				"text": "rex talon",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_SS_tigrex_ss"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_SS_ironlv1_ss",
+		"dynamic_line": {
+			"and": [
+				"The hunter's dagger costs 300z and these materials:\n- 1 iron ore\n- 1 disk stone\nIt can deal damage by:\n*bash: 4 *cut: 4\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 300
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_item": "mh_diskstone",
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_item": "mh_ironore",
+							"yes": "You are able to craft this weapon!",
+							"no": "Requirements are not met!"
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 300
+							}
+						},
+						{
+							"u_has_item": "mh_diskstone"
+						},
+						{
+							"u_has_item": "mh_ironore"
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 300
+					},
+					{
+						"u_sell_item": "mh_diskstone"
+					},
+					{
+						"u_sell_item": "mh_ironore"
+					},
+					{
+						"u_buy_item": "ironlv1_ss"
+					}
+				],
+				"text": "Create the hunter's dagger!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_SS"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_SS_bonelv1_ss",
+		"dynamic_line": {
+			"and": [
+				"The bone kris costs 390z and these materials:\n- 2 small monster bones\nIt can deal damage by:\n*bash: 4 *cut: 5\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 390
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "monbone_s",
+							"count": 2
+						},
+						"yes": "You are able to craft this weapon!",
+						"no": "Requirements are not met!"
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 390
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "monbone_s",
+								"count": 2
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 390
+					},
+					{
+						"u_sell_item": "monbone_s",
+						"count": 2
+					},
+					{
+						"u_buy_item": "bonelv1_ss"
+					}
+				],
+				"text": "Create the bone kris!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_SS"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_SS_velocipreylv1_ss",
+		"dynamic_line": {
+			"and": [
+				"The velocidrome bite costs 1290z and these materials:\n- 6 velocidrome claw\n- 1 velocidrome head\n- 4 medium monster bones\n- 6 conga pelts\nIt can deal damage by:\n*bash: 4 *cut: 8\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 1290
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "velocidrome_claw",
+							"count": 6
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_item": "velocidrome_head",
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "monbone_m",
+									"count": 4
+								},
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_items": {
+										"item": "conga_pelt",
+										"count": 6
+									},
+									"yes": "You are able to craft this weapon!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 1290
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "velocidrome_claw",
+								"count": 6
+							}
+						},
+						{
+							"u_has_item": "velocidrome_head"
+						},
+						{
+							"u_has_items": {
+								"item": "monbone_m",
+								"count": 4
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "conga_pelt",
+								"count": 6
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 1290
+					},
+					{
+						"u_sell_item": "velocidrome_claw",
+						"count": 6
+					},
+					{
+						"u_sell_item": "velocidrome_head"
+					},
+					{
+						"u_sell_item": "monbone_m",
+						"count": 4
+					},
+					{
+						"u_sell_item": "conga_pelt",
+						"count": 6
+					},
+					{
+						"u_buy_item": "velocipreylv1_ss"
+					}
+				],
+				"text": "Create the velocidrome bite!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_SS"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_SS_giapreylv1_ss",
+		"dynamic_line": {
+			"and": [
+				"The snake bite costs 660z and these materials:\n- 4 giaprey scales\n- 4 giaprey hides\n- 2 sharp claws\nIt can deal damage by:\n*bash: 4 *cut: 6\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 660
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "giaprey_scale",
+							"count": 4
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "giaprey_hide",
+								"count": 4
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "sharp_claw",
+									"count": 2
+								},
+								"yes": "You are able to craft this weapon!",
+								"no": "Requirements are not met!"
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 660
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "giaprey_scale",
+								"count": 4
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "giaprey_hide",
+								"count": 4
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "sharp_claw",
+								"count": 2
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 660
+					},
+					{
+						"u_sell_item": "giaprey_scale",
+						"count": 4
+					},
+					{
+						"u_sell_item": "giaprey_hide",
+						"count": 4
+					},
+					{
+						"u_sell_item": "sharp_claw",
+						"count": 2
+					},
+					{
+						"u_buy_item": "giapreylv1_ss"
+					}
+				],
+				"text": "Create the snake bite!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_SS"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_SS_frostlv1_ss",
+		"dynamic_line": {
+			"and": [
+				"The frost edge costs 840z and these materials:\n- 8 ice crystals\n- 8 iron ores\n- 5 giaprey scales\n- 3 knife mackerel\nIt can deal damage by:\n*bash: 4 *cut: 10\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 840
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "mh_icecrystal",
+							"count": 8
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "mh_ironore",
+								"count": 8
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "giaprey_scale",
+									"count": 5
+								},
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_items": {
+										"item": "mh_kmackerel",
+										"count": 3
+									},
+									"yes": "You are able to craft this weapon!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 840
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_icecrystal",
+								"count": 8
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_ironore",
+								"count": 8
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "giaprey_scale",
+								"count": 5
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "mh_kmackerel",
+								"count": 3
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 840
+					},
+					{
+						"u_sell_item": "mh_icecrystal",
+						"count": 8
+					},
+					{
+						"u_sell_item": "mh_ironore",
+						"count": 8
+					},
+					{
+						"u_sell_item": "giaprey_scale",
+						"count": 5
+					},
+					{
+						"u_sell_item": "mh_kmackerel",
+						"count": 3
+					},
+					{
+						"u_buy_item": "frostlv1_ss"
+					}
+				],
+				"text": "Create the frost edge!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_SS"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_SS_monoblos_ss",
+		"dynamic_line": {
+			"and": [
+				"The crimson club costs 1860z and these materials:\n- 1 blood red horn\n- 3 hermitaur shell\n- 3 piscine fang\n- 2 medium monster bones\nIt can deal damage by:\n*bash: 4 *cut: 10\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 1860
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_item": "monoblos_horn",
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "hermitaur_shell",
+								"count": 3
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "piscine_fang",
+									"count": 3
+								},
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_items": {
+										"item": "monbone_m",
+										"count": 2
+									},
+									"yes": "You are able to craft this weapon!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 1860
+							}
+						},
+						{
+							"u_has_item": "monoblos_horn"
+						},
+						{
+							"u_has_items": {
+								"item": "hermitaur_shell",
+								"count": 3
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "piscine_fang",
+								"count": 3
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "monbone_m",
+								"count": 2
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 1860
+					},
+					{
+						"u_sell_item": "monoblos_horn"
+					},
+					{
+						"u_sell_item": "hermitaur_shell",
+						"count": 3
+					},
+					{
+						"u_sell_item": "piscine_fang",
+						"count": 3
+					},
+					{
+						"u_sell_item": "monbone_m",
+						"count": 2
+					},
+					{
+						"u_buy_item": "monoblos_ss"
+					}
+				],
+				"text": "Create the crimson club!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_SS"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_SS_iopreylv1_ss",
+		"dynamic_line": {
+			"and": [
+				"The hydra bite costs 1290z and these materials:\n- 3 iodrome hides\n- 7 ioprey scales\n- 4 poison sacs\n- 4 small monster bones\nIt can deal damage by:\n*bash: 4 *cut: 10\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 1290
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "iodrome_hide",
+							"count": 3
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "ioprey_scale",
+								"count": 7
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "poison_sac",
+									"count": 4
+								},
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_items": {
+										"item": "monbone_s",
+										"count": 4
+									},
+									"yes": "You are able to craft this weapon!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 1290
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "iodrome_hide",
+								"count": 3
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "ioprey_scale",
+								"count": 7
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "poison_sac",
+								"count": 4
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "monbone_s",
+								"count": 4
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 1290
+					},
+					{
+						"u_sell_item": "iodrome_hide",
+						"count": 3
+					},
+					{
+						"u_sell_item": "ioprey_scale",
+						"count": 7
+					},
+					{
+						"u_sell_item": "poison_sac",
+						"count": 4
+					},
+					{
+						"u_sell_item": "monbone_s",
+						"count": 4
+					},
+					{
+						"u_buy_item": "iopreylv1_ss"
+					}
+				],
+				"text": "Create the hydra bite!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_SS"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_SS_rathaloslv1_ss1",
+		"dynamic_line": {
+			"and": [
+				"The red saber costs 1560z and these materials:\n- 4 fire wyvern fluids\n- 2 flame sacs\n- 2 wyvern fangs\n- 10 small monster bones\nIt can deal damage by:\n*bash: 4 *cut: 11\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 1560
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "fwyvern_fluid",
+							"count": 4
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "flame_sac",
+								"count": 2
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "wyvern_fang",
+									"count": 2
+								},
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_items": {
+										"item": "monbone_s",
+										"count": 10
+									},
+									"yes": "You are able to craft this weapon!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 1560
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "fwyvern_fluid",
+								"count": 4
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "flame_sac",
+								"count": 2
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "wyvern_fang",
+								"count": 2
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "monbone_s",
+								"count": 10
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 1560
+					},
+					{
+						"u_sell_item": "fwyvern_fluid",
+						"count": 4
+					},
+					{
+						"u_sell_item": "flame_sac",
+						"count": 2
+					},
+					{
+						"u_sell_item": "wyvern_fang",
+						"count": 2
+					},
+					{
+						"u_sell_item": "monbone_s",
+						"count": 10
+					},
+					{
+						"u_buy_item": "rathaloslv1_ss1"
+					}
+				],
+				"text": "Create the red saber!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_SS"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_SS_garugalv1_ss",
+		"dynamic_line": {
+			"and": [
+				"The raven blade costs 10000z and these materials:\n- 1 garuga tail\n- 2 garuga wings\n- 3 garuga scales\n- 3 medium monster bones\nIt can deal damage by:\n*bash: 4 *cut: 11\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 10000
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_item": "garuga_tail",
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "garuga_wing",
+								"count": 2
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "garuga_scale",
+									"count": 3
+								},
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_items": {
+										"item": "monbone_m",
+										"count": 3
+									},
+									"yes": "You are able to craft this weapon!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 10000
+							}
+						},
+						{
+							"u_has_item": "garuga_tail"
+						},
+						{
+							"u_has_items": {
+								"item": "garuga_wing",
+								"count": 2
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "garuga_scale",
+								"count": 3
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "monbone_m",
+								"count": 3
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 10000
+					},
+					{
+						"u_sell_item": "garuga_tail"
+					},
+					{
+						"u_sell_item": "garuga_wing",
+						"count": 2
+					},
+					{
+						"u_sell_item": "garuga_scale",
+						"count": 3
+					},
+					{
+						"u_sell_item": "monbone_m",
+						"count": 3
+					},
+					{
+						"u_buy_item": "garugalv1_ss"
+					}
+				],
+				"text": "Create the raven blade!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_SS"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_SS_ninjalv1_ss",
+		"dynamic_line": {
+			"and": [
+				"The ninja sword costs 15000z and these materials:\n- 4 daora webbings\n- 4 chameleos webbings\n- 4 fire dragon webbings\n- 10 remobra skins\nIt can deal damage by:\n*bash: 4 *cut: 11\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 15000
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "daora_webbing",
+							"count": 4
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "chameleos_webbing",
+								"count": 4
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "fdragon_webbing",
+									"count": 4
+								},
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_items": {
+										"item": "remobra_skin",
+										"count": 10
+									},
+									"yes": "You are able to craft this weapon!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 15000
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "daora_webbing",
+								"count": 4
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "chameleos_webbing",
+								"count": 4
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "fdragon_webbing",
+								"count": 4
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "remobra_skin",
+								"count": 10
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 15000
+					},
+					{
+						"u_sell_item": "daora_webbing",
+						"count": 4
+					},
+					{
+						"u_sell_item": "chameleos_webbing",
+						"count": 4
+					},
+					{
+						"u_sell_item": "fdragon_webbing",
+						"count": 4
+					},
+					{
+						"u_sell_item": "remobra_skin",
+						"count": 10
+					},
+					{
+						"u_buy_item": "ninjalv1_ss"
+					}
+				],
+				"text": "Create the ninja sword!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_SS"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_SS_kirin_ss",
+		"dynamic_line": {
+			"and": [
+				"The kirin bolt costs 1860z and these materials:\n- 1 kirin horn\n- 5 kirin manes\n- 8 wyvern fangs\n- 4 rubbery fangs\nIt can deal damage by:\n*bash: 4 *cut: 13\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 1860
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_item": "kirin_horn",
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "kirin_mane",
+								"count": 5
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "wyvern_fang",
+									"count": 8
+								},
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_items": {
+										"item": "gypceros_hide",
+										"count": 4
+									},
+									"yes": "You are able to craft this weapon!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 1860
+							}
+						},
+						{
+							"u_has_item": "kirin_horn"
+						},
+						{
+							"u_has_items": {
+								"item": "kirin_mane",
+								"count": 5
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "wyvern_fang",
+								"count": 8
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "gypceros_hide",
+								"count": 4
+							}
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 1860
+					},
+					{
+						"u_sell_item": "kirin_horn"
+					},
+					{
+						"u_sell_item": "kirin_mane",
+						"count": 5
+					},
+					{
+						"u_sell_item": "wyvern_fang",
+						"count": 8
+					},
+					{
+						"u_sell_item": "gypceros_hide",
+						"count": 4
+					},
+					{
+						"u_buy_item": "kirin_ss"
+					}
+				],
+				"text": "Create the kirin bolt!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_SS"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_SS_tigrex_ss",
+		"dynamic_line": {
+			"and": [
+				"The rex talon costs 35000z and these materials:\n- 4 tigrex claw\n- 4 tigrex fang\n- 3 tigrex shell\n- 1 pokke ticket\nIt can deal damage by:\n*bash: 4 *cut: 12\n",
+				{
+					"u_has_items": {
+						"item": "moneyz",
+						"count": 35000
+					},
+					"no": "Requirements are not met!",
+					"yes": {
+						"u_has_items": {
+							"item": "tigrex_claw",
+							"count": 4
+						},
+						"no": "Requirements are not met!",
+						"yes": {
+							"u_has_items": {
+								"item": "tigrex_fang",
+								"count": 4
+							},
+							"no": "Requirements are not met!",
+							"yes": {
+								"u_has_items": {
+									"item": "tigrex_shell",
+									"count": 8
+								},
+								"no": "Requirements are not met!",
+								"yes": {
+									"u_has_item": "pokke_ticket",
+									"yes": "You are able to craft this weapon!",
+									"no": "Requirements are not met!"
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_items": {
+								"item": "moneyz",
+								"count": 35000
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "tigrex_claw",
+								"count": 4
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "tigrex_fang",
+								"count": 4
+							}
+						},
+						{
+							"u_has_items": {
+								"item": "tigrex_shell",
+								"count": 3
+							}
+						},
+						{
+							"u_has_item": "pokke_ticket"
+						}
+					]
+				},
+				"effect": [
+					{
+						"u_sell_item": "moneyz",
+						"count": 35000
+					},
+					{
+						"u_sell_item": "tigrex_claw",
+						"count": 4
+					},
+					{
+						"u_sell_item": "tigrex_fang",
+						"count": 4
+					},
+					{
+						"u_sell_item": "tigrex_shell",
+						"count": 3
+					},
+					{
+						"u_sell_item": "pokke_ticket"
+					},
+					{
+						"u_buy_item": "tigrex_ss"
+					}
+				],
+				"text": "Create the rex talon!",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPONTYPES"
+			},
+			{
+				"text": "We'll do this later...",
+				"topic": "MHFU_VILLAGECRAFTSMAN_CRAFT_WEAPON_SS"
+			}
+		]
+	}
+]

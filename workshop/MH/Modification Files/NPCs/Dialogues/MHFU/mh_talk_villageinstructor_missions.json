@@ -1,0 +1,51 @@
+{
+		"id": "MH_TRAIN_SLAY_GIAPREY",
+		"type": "mission_definition",
+		"name": "[TRAIN] Slay 5 giaprey",
+		"goal": "MGOAL_KILL_MONSTER",
+		"difficulty": 0,
+		"value": 0,
+		"start": {
+			"assign_mission_target": {
+				"om_terrain": "forest_thick",
+				"random": true,
+				"reveal_radius": 1,
+				"search_range": 5
+			},
+			"update_mapgen": {
+				"place_monster": [
+					{
+						"monster": "mon_train_giaprey",
+						"x": [
+							0,
+							23
+						],
+						"y": [
+							0,
+							23
+						],
+						"repeat": [
+							5,
+							5
+						],
+						"target": true
+					}
+				]
+			}
+		},
+		"origins": [
+			"ORIGIN_SECONDARY"
+		],
+		"followup": "MH_TRAIN_SLAY_GIAPREY",
+		"dialogue": {
+			"describe": "IF YOU SEE THIS SH*T, THEN IT'S A BUG!",
+			"offer": "\n* Slay 5 giaprey\nIn this training, you will face the fast raptor-like monsters - the giapreys!",
+			"accepted": "Know your place, now git!",
+			"rejected": "Huh? Now you're turning back?",
+			"advice": "Pick your weapon and armor of your choice!",
+			"inquire": "Slain those monsters?",
+			"success": "Quest Completed",
+			"success_lie": "Hah! You failed this baby quest?!",
+			"failure": "Hah! You failed this baby quest?!"
+		}
+	}

@@ -1,0 +1,78 @@
+[
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGEGUY_intro1",
+		"dynamic_line": [
+			{
+				"u_has_trait": "mhfuvillageguytalkedintro",
+				"yes": "Don't run for too long! Total exhaustion will leave you body vulnerable from endless attacks!",
+				"no": "Oh, wait until you hear this story! You should learn important lessons from others, because this girl in front of me here obviously needs to!"
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"not": {
+						"u_has_trait": "mhfuvillageguytalkedintro"
+					}
+				},
+				"text": "About what?",
+				"topic": "MHFU_VILLAGEGUY_intro2"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuvillageguytalkedintro"
+				},
+				"text": "I know, right!",
+				"topic": "TALK_DONE"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGEGUY_intro2",
+		"dynamic_line": "She went out to find some mountain herb by herself, but ran into a brutal monster called a Giadrome instead! Now what would you do?",
+		"responses": [
+			{
+				"text": "Umm...",
+				"topic": "MHFU_VILLAGEGUY_intro3"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGEGUY_intro3",
+		"dynamic_line": "Any ideas? A Giadrome can spit icy liquid, freezing its prey and allowing it to attack at will, you know!",
+		"responses": [
+			{
+				"text": "That's seems bad...",
+				"topic": "MHFU_VILLAGEGUY_intro4"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGEGUY_intro4",
+		"dynamic_line": "Well, if I were you, I would be really careful. Since you aren't at full strength, I'd recommend you run away as fast as you can!",
+		"responses": [
+			{
+				"text": "I'll try...",
+				"topic": "MHFU_VILLAGEGUY_intro5"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGEGUY_intro5",
+		"dynamic_line": "But remember! Running consumes alot of stamina! Monsters will outrun you if you're not careful in every steps you make!",
+		"responses": [
+			{
+				"effect": {
+					"u_add_trait": "mhfuvillageguytalkedintro"
+				},
+				"text": "Thanks for that advice!",
+				"topic": "TALK_DONE"
+			}
+		]
+	}
+]

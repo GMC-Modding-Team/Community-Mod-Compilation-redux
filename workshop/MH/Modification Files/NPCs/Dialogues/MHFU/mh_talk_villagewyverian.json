@@ -1,0 +1,140 @@
+[
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGEWYVERIAN_intro1",
+		"dynamic_line": [
+			{
+				"u_has_trait": "mhfuvillagewyveriantalkedintro",
+				"yes": "How are you doing today my hunting friend? Ho ho... I think it might be a little too soon for you to take on an elder dragon.",
+				"no": {
+					"u_has_trait": "mhfu_hunter",
+					"yes": "Ho ho... You must be the hunter that was found collapsed on the snowy mountains. Ho ho ho...",
+					"no": "Ho ho... You seem to wear an unfamiliar face, a complete stranger in our village. Ho ho ho..."
+				}
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_trait": "mhfu_hunter"
+						},
+						{
+							"not": {
+								"u_has_trait": "mhfuvillagewyveriantalkedintro"
+							}
+						}
+					]
+				},
+				"text": "Yes, I am.",
+				"topic": "MHFU_VILLAGEWYVERIAN_intro2"
+			},
+			{
+				"condition": {
+					"and": [
+						{
+							"not": {
+								"u_has_trait": "mhfu_hunter"
+							}
+						},
+						{
+							"not": {
+								"u_has_trait": "mhfuvillagewyveriantalkedintro"
+							}
+						}
+					]
+				},
+				"text": "And you are?",
+				"topic": "MHFU_VILLAGEWYVERIAN_intro3"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuvillagewyveriantalkedintro"
+				},
+				"text": "I know right?",
+				"topic": "MHFU_VILLAGEWYVERIAN_notready1"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGEWYVERIAN_intro2",
+		"dynamic_line": "Hmm... You don't look that beat up. Ho ho... I guess we can be expecting great things from you after all!",
+		"responses": [
+			{
+				"text": "Well, okay... And you are?",
+				"topic": "MHFU_VILLAGEWYVERIAN_intro3"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGEWYVERIAN_intro3",
+		"dynamic_line": "Me? You want to know about me? I'm just an old retiree. The village chief is the old lady over there.",
+		"responses": [
+			{
+				"text": "I see.",
+				"topic": "MHFU_VILLAGEWYVERIAN_intro4"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGEWYVERIAN_intro4",
+		"dynamic_line": "Hey! Wait! Don't be in such a hurry there youngin'! Even tough I'm just an old retiree, I might be of use to you!",
+		"responses": [
+			{
+				"text": "What?",
+				"topic": "MHFU_VILLAGEWYVERIAN_intro5"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGEWYVERIAN_intro5",
+		"dynamic_line": "Before I retired, I spent many years studying elder dragons as a member of the Observation Center. I am an expert on the subject, ho ho!",
+		"responses": [
+			{
+				"text": "You know lots about them...",
+				"topic": "MHFU_VILLAGEWYVERIAN_intro6"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGEWYVERIAN_intro6",
+		"dynamic_line": "You don't have to worry about fighting any elder dragons in the near future, but if you need any information come and talk to me!",
+		"responses": [
+			{
+				"effect": {
+					"u_add_trait": "mhfuvillagewyveriantalkedintro"
+				},
+				"text": "I'm off then!",
+				"topic": "TALK_DONE"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGEWYVERIAN_notready1",
+		"dynamic_line": "The most important thing for a hunter is live up to their potential. You should spend time embarking on Quests and building up your power.",
+		"responses": [
+			{
+				"text": "Okay.",
+				"topic": "MHFU_VILLAGEWYVERIAN_notready2"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VILLAGEWYVERIAN_notready2",
+		"dynamic_line": "You can't just gain power through your equipment. You must be a master of weapons, bullets, items, resistances, and all special condition.",
+		"responses": [
+			{
+				"text": "That seems to help me... Bye!",
+				"topic": "TALK_DONE"
+			}
+		]
+	}
+]

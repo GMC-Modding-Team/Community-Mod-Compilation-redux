@@ -1,0 +1,122 @@
+[
+  {
+    "type": "effect_type",
+    "id": "adrenaline",
+    "name": [ "Adrenaline Comedown", "Adrenaline Rush" ],
+    "desc": [ "You feel completely drained.", "You feel the rush of adrenaline in your body!" ],
+    "apply_message": "You feel a surge of adrenaline!",
+    "rating": "good",
+    "decay_messages": [ [ "Your adrenaline rush wears off.  You feel AWFUL!", "bad" ] ],
+    "miss_messages": [ [ "Your comedown throws you off.", 1 ] ],
+    "max_intensity": 2,
+    "int_dur_factor": "150 s",
+    "removes_effects": [ "winded" ],
+    "base_mods": {
+      "speed_mod": [ -10 ],
+      "str_mod": [ -2 ],
+      "dex_mod": [ -2 ],
+      "int_mod": [ -1 ],
+      "per_mod": [ -1 ],
+      "stamina_min": [ -2 ]
+    },
+    "scaling_mods": { "speed_mod": [ 30 ], "str_mod": [ 5 ], "dex_mod": [ 4 ], "int_mod": [ -7 ], "per_mod": [ 2 ], "stamina_min": [ 4 ] }
+  },
+  {
+    "type": "effect_type",
+    "id": "meth",
+    "name": [ "Meth comedown", "High on Meth" ],
+    "max_intensity": 2,
+    "int_dur_factor": "200 s",
+    "base_mods": {
+      "speed_mod": [ -20 ],
+      "str_mod": [ -3 ],
+      "dex_mod": [ -2 ],
+      "int_mod": [ -1 ],
+      "per_mod": [ -2 ],
+      "vomit_chance": [ 2000 ],
+      "stamina_min": [ -4 ]
+    },
+    "scaling_mods": {
+      "speed_mod": [ 30 ],
+      "str_mod": [ 4 ],
+      "dex_mod": [ 4 ],
+      "int_mod": [ 3 ],
+      "per_mod": [ 5 ],
+      "fatigue_min": [ 1 ],
+      "stamina_min": [ 8 ]
+    }
+  },
+  {
+    "type": "effect_type",
+    "id": "cig",
+    "name": [ "Nicotine" ],
+    "desc": [ "You had a puff or two.", "You smoked too much." ],
+    "max_intensity": 2,
+    "int_dur_factor": "10 m",
+    "base_mods": { "int_mod": [ 1 ], "per_mod": [ 1 ] },
+    "scaling_mods": { "str_mod": [ -1 ], "dex_mod": [ -1 ], "int_mod": [ -1 ], "per_mod": [ -1 ], "vomit_chance": [ 500 ] }
+  },
+  {
+    "type": "effect_type",
+    "id": "weed_high",
+    "apply_message": "You feel lightheaded.",
+    "miss_messages": [ [ "That critter's jumping around like a jitterbug!  It needs to mellow out.", 1 ] ],
+    "base_mods": { "str_mod": [ -1 ], "dex_mod": [ -1 ], "per_mod": [ -1 ] }
+  },
+  {
+    "type": "effect_type",
+    "id": "drunk",
+    "name": [ "Tipsy", "Drunk", "Trashed", "Wasted", "Dead Drunk" ],
+    "desc": [
+      "You drank some alcohol.  You feel warm inside.",
+      "You drank alcohol.  Party on!",
+      "You drank lots of alcohol.  Are those white mice?",
+      "You drank unholy amounts of alcohol.  It's the end of the world, what do you care?",
+      "You embalmed yourself alive with so much alcohol, that even zombies will leave your dead body alone."
+    ],
+    "max_intensity": 5,
+    "apply_message": "You feel lightheaded.",
+    "int_dur_factor": "100 m",
+    "miss_messages": [ [ "You feel woozy.", 1 ] ],
+    "base_mods": {
+      "str_mod": [ 1 ],
+      "vomit_chance": [ -43 ],
+      "sleep_chance": [ -1003 ],
+      "sleep_min": [ 15000 ],
+      "sleep_max": [ 21000 ],
+      "pkill_amount": [ 3 ],
+      "pkill_max_val": [ 3 ],
+      "pkill_min": [ 1 ],
+      "pkill_tick": [ 45 ]
+    },
+    "scaling_mods": {
+      "str_mod": [ -0.67 ],
+      "per_mod": [ -1 ],
+      "dex_mod": [ -1 ],
+      "int_mod": [ -1.42 ],
+      "vomit_chance": [ 21 ],
+      "pkill_max_val": [ 10 ],
+      "pkill_tick": [ -10 ],
+      "sleep_chance": [ 501 ]
+    }
+  },
+  {
+    "type": "effect_type",
+    "id": "stim",
+    "name": [ "Stimulants" ],
+    "desc": [ "You're very jittery and pumped up, probably from some stimulants." ],
+    "max_intensity": 1000,
+    "int_dur_factor": "1 s",
+    "scaling_mods": { "speed_mod": [ 0.33 ], "dex_mod": [ 0.05 ], "int_mod": [ 0.08 ], "per_mod": [ 0.07 ] }
+  },
+  {
+    "type": "effect_type",
+    "id": "depressants",
+    "name": [ "Depressants" ],
+    "desc": [ "You are under the influence of depressants, and in a bit of a daze." ],
+    "max_intensity": 1000,
+    "int_dur_factor": "1 s",
+    "scaling_mods": { "speed_mod": [ -0.1 ], "dex_mod": [ -0.05 ], "int_mod": [ -0.05 ], "per_mod": [ -0.05 ] },
+    "miss_messages": [ [ "You feel woozy.", 1 ] ]
+  }
+]

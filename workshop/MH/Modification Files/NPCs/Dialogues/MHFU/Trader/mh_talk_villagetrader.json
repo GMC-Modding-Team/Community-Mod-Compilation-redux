@@ -1,0 +1,85 @@
+[
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VTRADER_intro1",
+		"dynamic_line": [
+			{
+				"u_has_trait": "mhfuvillagetradertalkedintro",
+				"yes": "Welcome! What can I do for you today? From everyday items to items essential to your hunt, we have everything you need!",
+				"no": {
+					"u_has_trait": "mhfu_hunter",
+					"yes": "Well, hello there. You're the new hunter, right? This general store should have all of the various items you need.",
+					"no": "Well, hello there. I don't seem to remember your face, but it doesn't matter at all. This general store should have all of the various items you need."
+				}
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"not": {
+						"u_has_trait": "mhfuvillagetradertalkedintro"
+					}
+				},
+				"text": "So you sell the stuff I need...",
+				"topic": "MHFU_VTRADER_intro2"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuvillagetradertalkedintro"
+				},
+				"text": "Buy Items",
+				"topic": "MHFU_VTRADER_BUY"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuvillagetradertalkedintro"
+				},
+				"text": "Sell Items",
+				"topic": "MHFU_VTRADER_SELL"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuvillagetradertalkedintro"
+				},
+				"text": "Maybe later!",
+				"topic": "TALK_DONE"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VTRADER_intro2",
+		"dynamic_line": "We carry everything from daily necessities like herbs to the various specialty items needed from a hunter's life. Let us know what you need.",
+		"responses": [
+			{
+				"text": "Okay.",
+				"topic": "MHFU_VTRADER_intro3"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VTRADER_intro3",
+		"dynamic_line": "Unfortunately ever since the last hunter retired, our normal supply routes have dried up... So we don't have our full compliment of stock.",
+		"responses": [
+			{
+				"text": "Hmm...",
+				"topic": "MHFU_VTRADER_intro4"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VTRADER_intro4",
+		"dynamic_line": "That's why we've been looking forward to your arrival for so long. Your success will mean we will be able to return our stock to normal!",
+		"responses": [
+			{
+				"effect": {
+					"u_add_trait": "mhfuvillagetradertalkedintro"
+				},
+				"text": "Well, okay. I'll do my best!",
+				"topic": "MHFU_VTRADER_intro1"
+			}
+		]
+	}
+]

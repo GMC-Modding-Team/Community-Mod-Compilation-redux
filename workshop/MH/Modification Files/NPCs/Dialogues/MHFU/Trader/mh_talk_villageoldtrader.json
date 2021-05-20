@@ -1,0 +1,314 @@
+[
+	{
+		"//": "She will cycle through the traded goods every 2 days... If you live for more than a month, all items are sold simultaneously, keeping original goods in-place.",
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER_intro1",
+		"dynamic_line": {
+			"u_has_trait": "mhfuvillageoldtradertalkedintro",
+			"yes": "Today I'm stockin' up on ev'ryones unwanted items. If ya got anything you be wanting, speak up.",
+			"no": "Greetin's! I jus' happen to be a travelin' purveyor of fine goods. Some insist on sayin' I'm a peddler."
+		},
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"or": [
+								{
+									"and": [
+										{
+											"days_since_cataclysm": 0
+										},
+										{
+											"not": {
+												"days_since_cataclysm": 1
+											}
+										}
+									]
+								},
+								{
+									"and": [
+										{
+											"days_since_cataclysm": 6
+										},
+										{
+											"not": {
+												"days_since_cataclysm": 7
+											}
+										}
+									]
+								},
+								{
+									"and": [
+										{
+											"days_since_cataclysm": 12
+										},
+										{
+											"not": {
+												"days_since_cataclysm": 13
+											}
+										}
+									]
+								},
+								{
+									"and": [
+										{
+											"days_since_cataclysm": 18
+										},
+										{
+											"not": {
+												"days_since_cataclysm": 19
+											}
+										}
+									]
+								},
+								{
+									"and": [
+										{
+											"days_since_cataclysm": 24
+										},
+										{
+											"not": {
+												"days_since_cataclysm": 25
+											}
+										}
+									]
+								},
+								{
+									"days_since_cataclysm": 30
+								}
+							]
+						},
+						{
+							"u_has_trait": "mhfuvillageoldtradertalkedintro"
+						}
+					]
+				},
+				 "truefalsetext": {
+          "condition": { "days_since_cataclysm": 30 },
+          "true": "Buy Items - Ware 1",
+          "false": "Buy Items"
+        },
+				"topic": "MHFU_VOLDTRADER1_BUY"
+			},
+			{
+				"condition": {
+					"and": [
+						{
+							"or": [
+								{
+									"and": [
+										{
+											"days_since_cataclysm": 2
+										},
+										{
+											"not": {
+												"days_since_cataclysm": 3
+											}
+										}
+									]
+								},
+								{
+									"and": [
+										{
+											"days_since_cataclysm": 8
+										},
+										{
+											"not": {
+												"days_since_cataclysm": 9
+											}
+										}
+									]
+								},
+								{
+									"and": [
+										{
+											"days_since_cataclysm": 14
+										},
+										{
+											"not": {
+												"days_since_cataclysm": 15
+											}
+										}
+									]
+								},
+								{
+									"and": [
+										{
+											"days_since_cataclysm": 20
+										},
+										{
+											"not": {
+												"days_since_cataclysm": 21
+											}
+										}
+									]
+								},
+								{
+									"and": [
+										{
+											"days_since_cataclysm": 26
+										},
+										{
+											"not": {
+												"days_since_cataclysm": 27
+											}
+										}
+									]
+								},
+								{
+									"days_since_cataclysm": 32
+								}
+							]
+						},
+						{
+							"u_has_trait": "mhfuvillageoldtradertalkedintro"
+						}
+					]
+				},
+				"truefalsetext": {
+          "condition": { "days_since_cataclysm": 32 },
+          "true": "Buy Items - Ware 2",
+          "false": "Buy Items"
+        },
+				"topic": "MHFU_VOLDTRADER2_BUY"
+			},
+			{
+				"condition": {
+					"and": [
+						{
+							"or": [
+								{
+									"and": [
+										{
+											"days_since_cataclysm": 4
+										},
+										{
+											"not": {
+												"days_since_cataclysm": 5
+											}
+										}
+									]
+								},
+								{
+									"and": [
+										{
+											"days_since_cataclysm": 10
+										},
+										{
+											"not": {
+												"days_since_cataclysm": 11
+											}
+										}
+									]
+								},
+								{
+									"and": [
+										{
+											"days_since_cataclysm": 16
+										},
+										{
+											"not": {
+												"days_since_cataclysm": 17
+											}
+										}
+									]
+								},
+								{
+									"and": [
+										{
+											"days_since_cataclysm": 22
+										},
+										{
+											"not": {
+												"days_since_cataclysm": 23
+											}
+										}
+									]
+								},
+								{
+									"and": [
+										{
+											"days_since_cataclysm": 28
+										},
+										{
+											"not": {
+												"days_since_cataclysm": 29
+											}
+										}
+									]
+								},
+								{
+									"days_since_cataclysm": 34
+								}
+							]
+						},
+						{
+							"u_has_trait": "mhfuvillageoldtradertalkedintro"
+						}
+					]
+				},
+				"truefalsetext": {
+          "condition": { "days_since_cataclysm": 34 },
+          "true": "Buy Items - Ware 3",
+          "false": "Buy Items"
+        },
+				"topic": "MHFU_VOLDTRADER3_BUY"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuvillageoldtradertalkedintro"
+				},
+				"effect": {
+					"u_add_trait": "mhfuvillageoldtraderubuy"
+				},
+				"text": "Sell Items",
+				"topic": "MHFU_VTRADER_SELL"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuvillageoldtradertalkedintro"
+				},
+				"effect": {
+					"u_lose_trait": "mhfuvillageoldtraderubuy"
+				},
+				"text": "Maybe later!",
+				"topic": "TALK_DONE"
+			},
+			{
+				"condition": {
+					"not": {
+						"u_has_trait": "mhfuvillageoldtradertalkedintro"
+					}
+				},
+				"text": "Peddler?",
+				"topic": "MHFU_VOLDTRADER_intro2"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER_intro2",
+		"dynamic_line": "I'm stockin' up on ev'ryones unwanted items. If ya got anything you be wanting, speak up. I'll sell it to ya cheap.",
+		"responses": [
+			{
+				"text": "Seems nice...",
+				"topic": "MHFU_VOLDTRADER_intro3"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_VOLDTRADER_intro3",
+		"dynamic_line": "Sometimes, I acquire me some goods righ' cheap, so I sell 'em right cheap. Care to peruse my fine collection?",
+		"responses": [
+			{
+				"effect": {
+					"u_add_trait": "mhfuvillageoldtradertalkedintro"
+				},
+				"text": "Sure!",
+				"topic": "MHFU_VOLDTRADER_intro1"
+			}
+		]
+	}
+]

@@ -1,0 +1,241 @@
+[
+  {
+    "id": "XP_TOUGH_CATEGORY",
+    "type": "mutation_category",
+    "category": "XP_TOUGH_CATEGORY",
+    "threshold_mut": "THRESH_XP_TOUGH",
+    "name": "Dummy Mutation Category",
+    "iv_message": "Seeing this is probably a bug.",
+    "mutagen_message": "Seeing this is probably a bug.",
+    "memorial_message": "Honed their nature as a survivor in the harsh apocalypse."
+  },
+  {
+    "type": "mutation",
+    "id": "THRESH_XP_TOUGH",
+    "name": { "str": "Dummy Threshold" },
+    "description": "This only exists to enable evolving experience reward traits to function.",
+    "points": 0,
+    "valid": false,
+    "purifiable": false,
+    "threshold": true
+  },
+  {
+    "type": "mutation",
+    "id": "XP_TOUGH",
+    "name": { "str": "Toughness 1" },
+    "points": 1,
+    "description": "You're not sure if it's the junk food or radiation, but all of this post apocalyptic survival stuff has really toughened you up!  You get a 10% bonus to all hit points.",
+    "starting_trait": false,
+    "valid": false,
+    "social_modifiers": { "intimidate": 1 },
+    "hp_modifier": 0.1,
+    "category": [ "XP_TOUGH_CATEGORY" ],
+    "changes_to": [ "XP_TOUGH_2" ],
+    "flags": [ "NON_THRESH" ]
+  },
+  {
+    "type": "mutation",
+    "id": "XP_TOUGH_2",
+    "name": { "str": "Toughness 2" },
+    "points": 1,
+    "description": "You're not sure if it's the junk food or radiation, but all of this post apocalyptic survival stuff has really toughened you up!  You get a 20% bonus to all hit points.",
+    "starting_trait": false,
+    "valid": false,
+    "social_modifiers": { "intimidate": 2 },
+    "hp_modifier": 0.2,
+    "category": [ "XP_TOUGH_CATEGORY" ],
+    "prereqs": [ "XP_TOUGH" ],
+    "changes_to": [ "XP_TOUGH_3" ],
+    "flags": [ "NON_THRESH" ]
+  },
+  {
+    "type": "mutation",
+    "id": "XP_TOUGH_3",
+    "name": { "str": "Toughness 3" },
+    "points": 1,
+    "description": "You're not sure if it's the junk food or radiation, but all of this post apocalyptic survival stuff has really toughened you up!  You get a 30% bonus to all hit points.",
+    "starting_trait": false,
+    "valid": false,
+    "social_modifiers": { "intimidate": 3 },
+    "hp_modifier": 0.3,
+    "category": [ "XP_TOUGH_CATEGORY" ],
+    "prereqs": [ "XP_TOUGH_2" ],
+    "flags": [ "NON_THRESH" ]
+  },
+  {
+    "type": "mutation",
+    "id": "XP_THICKSKIN",
+    "name": { "str": "Thick-Skinned" },
+    "points": 1,
+    "description": "Your skin has grown tougher from all the hard living.  Cutting and bash damage is slightly reduced for you.",
+    "cancels": [ "THINSKIN" ],
+    "armor": [
+      {
+        "parts": [ "torso", "arm_l", "arm_r", "hand_l", "hand_r", "leg_l", "leg_r", "foot_l", "foot_r", "mouth", "eyes" ],
+        "cut": 1,
+        "bash": 1
+      }
+    ]
+  },
+  {
+    "type": "mutation",
+    "id": "XP_STRONGERBACK",
+    "name": { "str": "Stronger Back" },
+    "description": "Hauling around all this junk like a nomadic hoarder has really given you a workout. You are now capable of carrying more than someone with similar strength could.  Your maximum weight carried is increased by 15%.",
+    "points": 1,
+	"valid": false,
+    "cancels": [ "BADBACK" ],
+    "weight_capacity_modifier": 1.15
+  },
+  {
+    "type": "mutation",
+    "id": "XP_SNEAKY_1",
+    "name": { "str": "Sneaky" },
+    "description": "You have learned to be a lot more quiet from all this sneaking around, you now make less noise while walking.",
+    "points": 1,
+    "noise_modifier": 0.6
+  },
+  {
+    "type": "mutation",
+    "id": "XP_ROUGHING",
+    "name": { "str": "Roughing It" },
+    "points": 1,
+    "description": "You are accustomed to being exposed to the elements.  This decreases morale penalties for being wet.",
+    "starting_trait": false,
+    "valid": false,
+    "wet_protection": [
+      { "part": "head", "neutral": 6 },
+      { "part": "leg_l", "neutral": 8 },
+      { "part": "leg_r", "neutral": 8 },
+      { "part": "foot_l", "neutral": 2 },
+      { "part": "foot_r", "neutral": 2 },
+      { "part": "arm_l", "neutral": 8 },
+      { "part": "arm_r", "neutral": 8 },
+      { "part": "hand_l", "neutral": 12 },
+      { "part": "hand_r", "neutral": 12 },
+      { "part": "torso", "neutral": 10 }
+    ]
+  },
+  {
+    "type": "mutation",
+    "id": "XP_ENDURANCE_1",
+    "name": { "str": "Increased Endurance" },
+    "points": 1,
+    "description": "Whether due to exercise and good diet, or due to a natural propensity to physical endurance, you tire due to physical exertion much less readily than others.  Your maximum stamina is 15% higher than usual.",
+    "starting_trait": false,
+    "valid": false,
+    "max_stamina_modifier": 1.15
+  },
+  {
+    "id": "XP_STR_UP_CATEGORY",
+    "type": "mutation_category",
+    "category": "XP_STR_UP_CATEGORY",
+    "threshold_mut": "THRESH_XP_STR_UP",
+    "name": "Dummy Mutation Category",
+    "iv_message": "Seeing this is probably a bug.",
+    "mutagen_message": "Seeing this is probably a bug.",
+    "memorial_message": "Honed their nature as a survivor in the harsh apocalypse."
+  },
+  {
+    "type": "mutation",
+    "id": "THRESH_XP_STR_UP",
+    "name": { "str": "Dummy Threshold" },
+    "description": "This only exists to enable evolving experience reward traits to function.",
+    "points": 0,
+    "valid": false,
+    "purifiable": false,
+    "threshold": true
+  },
+  {
+    "type": "mutation",
+    "id": "XP_STR_UP_1",
+    "name": { "str": "Stronger" },
+    "points": 1,
+    "description": "Your muscles are a little stronger.  Strength + 1",
+    "passive_mods": { "str_mod": 1 },
+    "category": [ "XP_STR_UP_CATEGORY" ],
+    "changes_to": [ "XP_STR_UP_2" ],
+    "flags": [ "NON_THRESH" ]
+  },
+  {
+    "type": "mutation",
+    "id": "XP_STR_UP_2",
+    "name": { "str": "Very Strong" },
+    "points": 2,
+    "description": "Your muscles are even stronger.  Strength + 2",
+    "passive_mods": { "str_mod": 2 },
+    "category": [ "XP_STR_UP_CATEGORY" ],
+    "prereqs": [ "XP_STR_UP_1" ],
+    "changes_to": [ "XP_STR_UP_3" ],
+    "flags": [ "NON_THRESH" ]
+  },
+  {
+    "type": "mutation",
+    "id": "XP_STR_UP_3",
+    "name": { "str": "Extremely Strong" },
+    "points": 3,
+    "visibility": 1,
+    "description": "Your muscles are much stronger.  Strength + 3",
+    "passive_mods": { "str_mod": 3 },
+    "category": [ "XP_STR_UP_CATEGORY" ],
+    "prereqs": [ "XP_STR_UP_2" ],
+    "flags": [ "NON_THRESH" ]
+  },
+  {
+    "id": "XP_DEX_UP_CATEGORY",
+    "type": "mutation_category",
+    "category": "XP_DEX_UP_CATEGORY",
+    "threshold_mut": "THRESH_XP_DEX_UP",
+    "name": "Dummy Mutation Category",
+    "iv_message": "Seeing this is probably a bug.",
+    "mutagen_message": "Seeing this is probably a bug.",
+    "memorial_message": "Honed their nature as a survivor in the harsh apocalypse."
+  },
+  {
+    "type": "mutation",
+    "id": "THRESH_XP_DEX_UP",
+    "name": { "str": "Dummy Threshold" },
+    "description": "This only exists to enable evolving experience reward traits to function.",
+    "points": 0,
+    "valid": false,
+    "purifiable": false,
+    "threshold": true
+  },
+  {
+    "type": "mutation",
+    "id": "XP_DEX_UP_1",
+    "name": { "str": "Dextrous" },
+    "points": 1,
+    "description": "Your reflexes have improved.  Dexterity + 1",
+    "passive_mods": { "dex_mod": 1 },
+    "category": [ "XP_DEX_UP_CATEGORY" ],
+    "changes_to": [ "XP_DEX_UP_2" ],
+    "flags": [ "NON_THRESH" ]
+  },
+  {
+    "type": "mutation",
+    "id": "XP_DEX_UP_2",
+    "name": { "str": "Very Dextrous" },
+    "points": 2,
+    "description": "Your reflexes have improved even more.  Dexterity + 2",
+    "passive_mods": { "dex_mod": 2 },
+    "category": [ "XP_DEX_UP_CATEGORY" ],
+    "prereqs": [ "XP_DEX_UP_1" ],
+    "changes_to": [ "XP_DEX_UP_3" ],
+    "flags": [ "NON_THRESH" ]
+  },
+  {
+    "type": "mutation",
+    "id": "XP_DEX_UP_3",
+    "name": { "str": "Extremely Dextrous" },
+    "points": 4,
+    "visibility": 1,
+    "description": "Your reflexes have vastly improved.  Dexterity + 3",
+    "passive_mods": { "dex_mod": 3 },
+    "category": [ "XP_DEX_UP_CATEGORY" ],
+    "prereqs": [ "XP_DEX_UP_2" ],
+    "flags": [ "NON_THRESH" ]
+  }
+
+
+]

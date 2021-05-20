@@ -1,0 +1,785 @@
+[
+	{
+		"//": "Your trusty chest! Its max capacity allow you to put every materials - or even the equipments you have!",
+		"type": "furniture",
+		"id": "f_mh_chest",
+		"name": "chest",
+		"description": "A chest, with astounding details around it.",
+		"symbol": "O",
+		"bgcolor": "brown",
+		"move_cost_mod": -1,
+		"coverage": 60,
+		"required_str": 10,
+		"flags": [
+			"TRANSPARENT",
+			"CONTAINER",
+			"FLAMMABLE",
+			"PLACE_ITEM",
+			"ORGANIC",
+			"MOUNTABLE",
+			"SHORT"
+		],
+		"deconstruct": {
+			"items": [
+				{
+					"item": "2x4",
+					"count": 4
+				},
+				{
+					"item": "nail",
+					"charges": [
+						6,
+						10
+					]
+				}
+			]
+		},
+		"max_volume": 10000,
+		"bash": {
+			"str_min": 12,
+			"str_max": 40,
+			"sound": "smash!",
+			"sound_fail": "wham!",
+			"items": [
+				{
+					"item": "2x4",
+					"count": [
+						1,
+						5
+					]
+				},
+				{
+					"item": "nail",
+					"charges": [
+						2,
+						10
+					]
+				}
+			]
+		}
+	},
+	{
+		"type": "furniture",
+		"id": "f_mush_blue_mh",
+		"name": "blue mushroom",
+		"description": "Rare mushroom with a power-enhancing effect.",
+		"symbol": "i",
+		"color": [
+			"blue",
+			"light_blue",
+			"blue",
+			"white"
+		],
+		"move_cost_mod": 1,
+		"required_str": -1,
+		"flags": [
+			"TRANSPARENT",
+			"TINY",
+			"NOCOLLIDE"
+		],
+		"examine_action": "harvest_furn",
+		"harvest_by_season": [
+			{
+				"seasons": [
+					"spring",
+					"summer",
+					"autumn"
+				],
+				"entries": [
+					{
+						"drop": "mh_mush_blue",
+						"base_num": [
+							1,
+							1
+						]
+					}
+				]
+			}
+		],
+		"bash": {
+			"str_min": 4,
+			"str_max": 60,
+			"sound": "splat.",
+			"sound_fail": "brush.",
+			"ter_set": "t_dirt"
+		}
+	},
+	{
+		"type": "furniture",
+		"id": "f_mush_nitro_mh",
+		"name": "nitroshroom",
+		"description": "Rare mushroom with the power to generate heat.",
+		"symbol": "i",
+		"color": [
+			"red",
+			"light_red",
+			"red",
+			"white"
+		],
+		"move_cost_mod": 1,
+		"required_str": -1,
+		"flags": [
+			"TRANSPARENT",
+			"TINY",
+			"NOCOLLIDE"
+		],
+		"examine_action": "harvest_furn",
+		"harvest_by_season": [
+			{
+				"seasons": [
+					"spring",
+					"summer",
+					"autumn"
+				],
+				"entries": [
+					{
+						"drop": "mh_nitroshroom",
+						"base_num": [
+							1,
+							1
+						]
+					}
+				]
+			}
+		],
+		"bash": {
+			"str_min": 4,
+			"str_max": 60,
+			"sound": "splat.",
+			"sound_fail": "brush.",
+			"ter_set": "t_dirt"
+		}
+	},
+	{
+		"type": "furniture",
+		"id": "f_mush_toad_mh",
+		"name": "toadstool",
+		"description": "A poisonous fungus. Perhaps it has other effects as well...",
+		"symbol": "i",
+		"color": [
+			"blue",
+			"light_blue",
+			"blue",
+			"white"
+		],
+		"move_cost_mod": 1,
+		"required_str": -1,
+		"flags": [
+			"TRANSPARENT",
+			"TINY",
+			"NOCOLLIDE"
+		],
+		"examine_action": "harvest_furn",
+		"harvest_by_season": [
+			{
+				"seasons": [
+					"spring",
+					"summer",
+					"autumn"
+				],
+				"entries": [
+					{
+						"drop": "mh_toadstool",
+						"base_num": [
+							1,
+							1
+						]
+					}
+				]
+			}
+		],
+		"bash": {
+			"str_min": 4,
+			"str_max": 60,
+			"sound": "splat.",
+			"sound_fail": "brush.",
+			"ter_set": "t_dirt"
+		}
+	},
+	{
+		"type": "furniture",
+		"id": "f_mush_chaos_mh",
+		"name": "chaos mushroom",
+		"description": "Said to cause chaos. Its spores cause monsters to hallucinate.",
+		"symbol": "i",
+		"color": [
+			"blue",
+			"light_blue",
+			"blue",
+			"white"
+		],
+		"move_cost_mod": 1,
+		"required_str": -1,
+		"flags": [
+			"TRANSPARENT",
+			"TINY",
+			"NOCOLLIDE"
+		],
+		"examine_action": "harvest_furn",
+		"harvest_by_season": [
+			{
+				"seasons": [
+					"spring",
+					"summer",
+					"autumn"
+				],
+				"entries": [
+					{
+						"drop": "mh_chaosmushroom",
+						"base_num": [
+							1,
+							1
+						]
+					}
+				]
+			}
+		],
+		"bash": {
+			"str_min": 4,
+			"str_max": 60,
+			"sound": "splat.",
+			"sound_fail": "brush.",
+			"ter_set": "t_dirt"
+		}
+	},
+	{
+		"type": "furniture",
+		"id": "f_miningpoint_small",
+		"name": "small boulder",
+		"description": "A small, mineable earthen mineral.",
+		"symbol": "o",
+		"color": "dark_gray",
+		"move_cost_mod": 3,
+		"required_str": 10,
+		"flags": [
+			"TRANSPARENT",
+			"MINEABLE",
+			"UNSTABLE",
+			"MOUNTABLE",
+			"TINY"
+		],
+		"bash": {
+			"str_min": 16,
+			"str_max": 40,
+			"sound": "smash!",
+			"sound_fail": "thump.",
+			"items": [
+				{
+					"item": "mh_stone",
+					"count": [
+						0,
+						8
+					],
+					"prob": 75
+				},
+				{
+					"item": "mh_diskstone",
+					"count": [
+						0,
+						2
+					],
+					"prob": 70
+				},
+				{
+					"item": "mh_ironore",
+					"count": [
+						0,
+						4
+					],
+					"prob": 60
+				},
+				{
+					"item": "mh_earthcrystal",
+					"count": [
+						0,
+						2
+					],
+					"prob": 55
+				},
+				{
+					"item": "mh_machaliteore",
+					"count": [
+						0,
+						2
+					],
+					"prob": 40
+				},
+				{
+					"item": "mh_icecrytal",
+					"count": [
+						0,
+						2
+					],
+					"prob": 35
+				},
+				{
+					"item": "mh_lightcrystal",
+					"count": [
+						0,
+						1
+					],
+					"prob": 30
+				}
+			]
+		}
+	},
+	{
+		"type": "furniture",
+		"id": "f_miningpoint_medium",
+		"name": "medium boulder",
+		"description": "A medium, mineable earthen mineral.",
+		"symbol": "0",
+		"color": "dark_gray",
+		"move_cost_mod": 6,
+		"required_str": 16,
+		"flags": [
+			"NOITEM",
+			"TRANSPARENT",
+			"MINEABLE",
+			"UNSTABLE",
+			"MOUNTABLE",
+			"SHORT",
+			"BASHABLE"
+		],
+		"bash": {
+			"str_min": 32,
+			"str_max": 80,
+			"sound": "smash!",
+			"sound_fail": "thump.",
+			"items": [
+				{
+					"item": "mh_stone",
+					"count": [
+						0,
+						10
+					],
+					"prob": 80
+				},
+				{
+					"item": "mh_diskstone",
+					"count": [
+						0,
+						4
+					],
+					"prob": 80
+				},
+				{
+					"item": "mh_ironore",
+					"count": [
+						0,
+						6
+					],
+					"prob": 70
+				},
+				{
+					"item": "mh_earthcrystal",
+					"count": [
+						0,
+						4
+					],
+					"prob": 65
+				},
+				{
+					"item": "mh_machaliteore",
+					"count": [
+						0,
+						3
+					],
+					"prob": 50
+				},
+				{
+					"item": "mh_icecrytal",
+					"count": [
+						0,
+						4
+					],
+					"prob": 45
+				},
+				{
+					"item": "mh_lightcrystal",
+					"count": [
+						0,
+						2
+					],
+					"prob": 40
+				}
+			]
+		}
+	},
+	{
+		"type": "furniture",
+		"id": "f_miningpoint_large",
+		"name": "large boulder",
+		"description": "A large mineable earthen mineral.",
+		"symbol": "O",
+		"color": "dark_gray",
+		"move_cost_mod": -1,
+		"required_str": 32,
+		"flags": [
+			"NOITEM",
+			"MINEABLE",
+			"BASHABLE",
+			"BLOCK_WIND"
+		],
+		"bash": {
+			"str_min": 64,
+			"str_max": 160,
+			"sound": "smash!",
+			"sound_fail": "thump.",
+			"items": [
+				{
+					"item": "mh_stone",
+					"count": [
+						0,
+						14
+					],
+					"prob": 85
+				},
+				{
+					"item": "mh_diskstone",
+					"count": [
+						0,
+						8
+					],
+					"prob": 90
+				},
+				{
+					"item": "mh_ironore",
+					"count": [
+						0,
+						14
+					],
+					"prob": 80
+				},
+				{
+					"item": "mh_earthcrystal",
+					"count": [
+						0,
+						6
+					],
+					"prob": 75
+				},
+				{
+					"item": "mh_machaliteore",
+					"count": [
+						0,
+						5
+					],
+					"prob": 60
+				},
+				{
+					"item": "mh_icecrytal",
+					"count": [
+						0,
+						6
+					],
+					"prob": 55
+				},
+				{
+					"item": "mh_lightcrystal",
+					"count": [
+						0,
+						4
+					],
+					"prob": 50
+				}
+			]
+		}
+	},
+	{
+		"type": "furniture",
+		"id": "f_bugs_common_mh",
+		"name": "swarm of bugs",
+		"description": "Bugs of unknown origins. They remain circling relentlessly, unless disturbed.",
+		"symbol": "'",
+		"color": [
+			"white",
+			"white",
+			"white",
+			"gray"
+		],
+		"move_cost_mod": 1,
+		"required_str": -1,
+		"flags": [
+			"TRANSPARENT",
+			"TINY",
+			"FLAMMABLE_ASH",
+			"NOCOLLIDE"
+		],
+		"examine_action": "harvest_furn",
+		"harvest_by_season": [
+			{
+				"seasons": [
+					"spring",
+					"summer",
+					"autumn"
+				],
+				"entries": [
+					{
+						"drop": "mh_godbug",
+						"base_num": [
+							0,
+							1
+						],
+						"scaled_num": [
+							0,
+							-1
+						]
+					},
+					{
+						"drop": "mh_carpenterbug",
+						"base_num": [
+							0,
+							1
+						]
+					},
+					{
+						"drop": "mh_thunderbug",
+						"base_num": [
+							0,
+							1
+						],
+						"scaled_num": [
+							0,
+							-0.5
+						]
+					},
+					{
+						"drop": "mh_flashbug",
+						"base_num": [
+							0,
+							1
+						],
+						"scaled_num": [
+							0,
+							-2.25
+						]
+					}
+				]
+			}
+		],
+		"bash": {
+			"str_min": 5,
+			"str_max": 10,
+			"sound": "skitter of bugs.",
+			"sound_fail": "bizz."
+		}
+	},
+	{
+		"type": "furniture",
+		"id": "f_bugs_rare_mh",
+		"name": "swarm of bugs",
+		"description": "Bugs of unknown origins. They remain circling relentlessly, unless disturbed.",
+		"symbol": "'",
+		"color": [
+			"white",
+			"white",
+			"white",
+			"gray"
+		],
+		"move_cost_mod": 1,
+		"required_str": -1,
+		"flags": [
+			"TRANSPARENT",
+			"TINY",
+			"FLAMMABLE_ASH",
+			"NOCOLLIDE"
+		],
+		"examine_action": "harvest_furn",
+		"harvest_by_season": [
+			{
+				"seasons": [
+					"spring",
+					"summer",
+					"autumn"
+				],
+				"entries": [
+					{
+						"drop": "mh_hornfly",
+						"base_num": [
+							0,
+							1
+						],
+						"scaled_num": [
+							0,
+							-5
+						]
+					},
+					{
+						"drop": "mh_ladybug",
+						"base_num": [
+							0,
+							1
+						],
+						"scaled_num": [
+							0,
+							-5
+						]
+					},
+					{
+						"drop": "mh_godbug",
+						"base_num": [
+							0,
+							1
+						],
+						"scaled_num": [
+							0,
+							-1
+						]
+					},
+					{
+						"drop": "mh_flashbug",
+						"base_num": [
+							0,
+							2
+						],
+						"scaled_num": [
+							0,
+							-2.25
+						]
+					}
+				]
+			}
+		],
+		"bash": {
+			"str_min": 5,
+			"str_max": 10,
+			"sound": "skitter of bugs.",
+			"sound_fail": "bizz."
+		}
+	},
+	{
+		"type": "furniture",
+		"id": "f_bone_ammu_mh",
+		"name": "bone pile",
+		"description": "A pile of monster bones.",
+		"symbol": "%",
+		"color": "white",
+		"move_cost_mod": 1,
+		"required_str": -1,
+		"flags": [
+			"TRANSPARENT",
+			"TINY",
+			"NOCOLLIDE"
+		],
+		"examine_action": "harvest_furn",
+		"harvest_by_season": [
+			{
+				"seasons": [
+					"spring",
+					"summer",
+					"autumn",
+					"winter"
+				],
+				"entries": [
+					{
+						"drop": "monbone",
+						"base_num": [
+							0,
+							3
+						],
+						"scaled_num": [
+							0,
+							-2.25
+						]
+					},
+					{
+						"drop": "mh_bonehusk_s",
+						"base_num": [
+							0,
+							4
+						],
+						"scaled_num": [
+							0,
+							-1
+						]
+					},
+					{
+						"drop": "mh_bonehusk_l",
+						"base_num": [
+							0,
+							1
+						],
+						"scaled_num": [
+							0,
+							-5
+						]
+					}
+				]
+			}
+		],
+		"bash": {
+			"str_min": 3,
+			"str_max": 9,
+			"sound": "clatter.",
+			"sound_fail": "clack."
+		}
+	},
+	{
+		"type": "furniture",
+		"id": "f_bone_ammu_misc",
+		"name": "bone pile",
+		"description": "A pile of monster bones.",
+		"symbol": "%",
+		"color": "white",
+		"move_cost_mod": 1,
+		"required_str": -1,
+		"flags": [
+			"TRANSPARENT",
+			"TINY",
+			"NOCOLLIDE"
+		],
+		"examine_action": "harvest_furn",
+		"harvest_by_season": [
+			{
+				"seasons": [
+					"spring",
+					"summer",
+					"autumn",
+					"winter"
+				],
+				"entries": [
+					{
+						"drop": "monbone",
+						"base_num": [
+							0,
+							3
+						],
+						"scaled_num": [
+							0,
+							-2.25
+						]
+					},
+					{
+						"drop": "monbone_mystery",
+						"base_num": [
+							0,
+							2
+						],
+						"scaled_num": [
+							0,
+							-2.5
+						]
+					},
+					{
+						"drop": "monbone_unknown",
+						"base_num": [
+							0,
+							1
+						],
+						"scaled_num": [
+							0,
+							-5
+						]
+					}
+				]
+			}
+		],
+		"bash": {
+			"str_min": 3,
+			"str_max": 9,
+			"sound": "clatter.",
+			"sound_fail": "clack."
+		}
+	}
+]

@@ -1,0 +1,200 @@
+[
+  {
+    "type": "tool_quality",
+    "id": "WM",
+    "name": "Warmagi"
+  },
+  {
+    "id": "warmagi_marker",
+    "type": "TOOL_ARMOR",
+    "symbol": "*",
+    "color": "red",
+    "name": "Warmagi Marker",
+    "description": "This is a placeholder object to determine what class you are for crafting purposes.  You can't drop it.",
+    "volume": "1 ml",
+    "qualities": [ [ "WM", 1 ] ],
+    "flags": [ "PERSONAL", "TRADER_AVOID", "NO_SALVAGE", "PSEUDO", "NO_TAKEOFF", "NO_REPAIR" ]
+  },
+  {
+    "id": "mage_marker",
+    "type": "TOOL_ARMOR",
+    "symbol": "*",
+    "color": "red",
+    "name": "Mage Marker",
+    "description": "This is a placeholder object to determine what class you are for crafting purposes.  You can't drop it.",
+    "volume": "1 ml",
+    "weight": "1 g",
+    "qualities": [ [ "MAGE", 1 ] ],
+    "flags": [ "PERSONAL", "TRADER_AVOID", "NO_SALVAGE", "PSEUDO", "NO_TAKEOFF", "NO_REPAIR" ]
+  },
+  {
+    "id": "wm_mageblade_std",
+    "type": "TOOL",
+    "category": "weapons",
+    "name": { "str": "mageblade" },
+    "description": "The standard weapon of the Warmagi.  This sword is 38 inches of enchanted government-issued high-carbon alloyed steel.",
+    "looks_like": "broadsword",
+	"weight": "1033 g",
+    "volume": "1550 ml",
+    "longest_side": "100 cm",
+    "price": 1200000,
+    "price_postapoc": 500000,
+    "to_hit": 3,
+    "bashing": 8,
+    "cutting": 25,
+    "material": "steel",
+    "symbol": "/",
+    "color": "light_gray",
+    "techniques": [ "WBLOCK_2" ],
+    "qualities": [ [ "CUT", 1 ], [ "BUTCHER", 9 ] ],
+    "flags": [ "DURABLE_MELEE", "SHEATH_SWORD" ]
+  },
+  {
+    "id": "wm_magelight_item",
+    "type": "TOOL_ARMOR",
+    "category": "tools",
+    "name": "magelight",
+    "description": "A small manifestation of magical power, it is a sphere of force that compresses and agitates air molecules within it with magical power, thereby creating light.  It will hover above your head, or you can also throw it.",
+	"weight": "1 g",
+    "volume": "1 ml",
+    "price": 0,
+	"bashing": 0,
+    "symbol": "*",
+    "color": "light_green",
+    "covers": [ "HEAD" ],
+    "flags": [ "LIGHT_20", "AURA", "SEMITANGIBLE" ]
+  },
+  {
+    "type": "TOOL",
+    "id": "irionite_tiny",
+    "price": 2000000,
+    "price_postapoc": 500000,
+    "name": { "str": "tiny irionite chip" },
+    "symbol": "=",
+    "color": "light_green",
+    "looks_like": "pebble",
+    "description": "A sliver of a translucent green amber of incredible potency.  Irionite, or witchstone, can magnify the expression of a mage's power by several orders of magnitude.",
+    "material": "glass",
+    "volume": "1 ml",
+    "weight": "1 g",
+	"relic_data": {
+      "passive_effects": [ { "has": "HELD", "condition": "ALWAYS", "values": [ { "value": "MAX_MANA", "multiply": 2 }, { "value": "REGEN_MANA", "multiply": 3 } ] } ]
+    },
+	"use_action": [
+      {
+        "type": "cast_spell",
+        "spell_id": "spm_gather_mana",
+        "no_fail": true,
+        "need_wielding": false,
+        "level": 10
+      }
+    ]
+  },
+  {
+    "type": "TOOL_ARMOR",
+    "id": "spm_spell_container_novice",
+    "name": { "str": "hung spell container" },
+    "description": "This holds spells that are hung for later casting.",
+    "symbol": "O",
+    "color": "light_gray",
+    "volume": "1 ml",
+    "weight": "1 g",
+    "price": "3000 USD",
+    "flags": [ "TARDIS", "AURA", "NO_TAKEOFF", "NO_SALVAGE", "NO_TRADE" ],
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "moves": 1,
+        "max_contains_volume": "10 ml",
+        "max_contains_weight": "1 kg",
+        "max_item_volume": "500 L",
+        "max_item_length": "12 meter",
+        "spoil_multiplier": 0,
+        "weight_multiplier": 0.0,
+        "volume_multiplier": 0.0,
+        "rigid": false,
+		"item_restriction": [ "spm_hung_force_bolt", "spm_hung_str_boost", "spm_hung_fire_bolt", "spm_hung_shock_bolt", "spm_hung_force_bolt_spray", "spm_hung_blackfire_bolt" ]
+      }
+    ]
+  },
+  {
+    "abstract": "spm_hung_spell",
+    "type": "COMESTIBLE",
+    "name": "hung spell template",
+    "category": "TOOL",
+	"comestible_type": "FOOD",
+    "volume": "1 ml",
+	"calories" : 0,
+	"spoils_in": "1 m",
+	"rot_spawn_chance": 100,
+    "rot_spawn": "GROUP_EGG_CHICKEN",
+	"symbol": "h",
+	"color": "pink",
+	"phase": "solid",
+    "flags": [ "NO_SALVAGE", "TRADER_AVOID", "NUTRIENT_OVERRIDE", "INEDIBLE" ]
+  },
+  {
+    "id": "spm_hung_str_boost",
+    "copy-from": "spm_hung_spell",
+    "type": "COMESTIBLE",
+	"name": { "str": "hung spell - Strength Boost" },
+    "description": "A hung spell of Strength Boost.",
+    "color": "white",
+    "use_action": { "type": "cast_spell", "spell_id": "spm_str_boost_hung", "no_fail": true, "level": 10, "moves": 200 }
+  },
+  {
+    "id": "spm_hung_force_bolt",
+    "copy-from": "spm_hung_spell",
+    "type": "COMESTIBLE",
+	"name": { "str": "hung spell - force bolt" },
+    "description": "A hung spell of force bolt.",
+    "color": "white",
+    "use_action": { "type": "cast_spell", "spell_id": "spm_force_bolt_hung", "no_fail": true, "level": 10, "moves": 100 }
+  },
+  {
+    "id": "spm_hung_fire_bolt",
+    "copy-from": "spm_hung_spell",
+    "type": "COMESTIBLE",
+	"name": { "str": "hung spell - fire bolt" },
+    "description": "A hung spell of fire bolt.",
+    "color": "white",
+    "use_action": { "type": "cast_spell", "spell_id": "spm_fire_bolt_hung", "no_fail": true, "level": 10, "moves": 100 }
+  },
+  {
+    "id": "spm_hung_shock_bolt",
+    "copy-from": "spm_hung_spell",
+    "type": "COMESTIBLE",
+	"name": { "str": "hung spell - shock bolt" },
+    "description": "A hung spell of shock bolt.",
+    "color": "white",
+    "use_action": { "type": "cast_spell", "spell_id": "spm_shock_bolt_hung", "no_fail": true, "level": 10, "moves": 100 }
+  },
+  {
+    "id": "spm_hung_force_bolt_spray",
+    "copy-from": "spm_hung_spell",
+    "type": "COMESTIBLE",
+	"name": { "str": "hung spell - force bolt spray" },
+    "description": "A hung spell of force bolt spray.",
+    "color": "white",
+    "use_action": { "type": "cast_spell", "spell_id": "spm_force_bolt_spray_hung", "no_fail": true, "level": 10, "moves": 100 }
+  },
+  {
+    "id": "spm_hung_blackfire_bolt",
+    "copy-from": "spm_hung_spell",
+    "type": "COMESTIBLE",
+	"name": { "str": "hung spell - blackfire bolt" },
+    "description": "A hung spell of blackfire bolt.",
+    "color": "white",
+    "use_action": { "type": "cast_spell", "spell_id": "spm_blackfire_bolt_hung", "no_fail": true, "level": 10, "moves": 100 }
+  },
+  {
+    "id": "spm_hung_ward_cutting",
+    "copy-from": "spm_hung_spell",
+    "type": "COMESTIBLE",
+	"name": { "str": "hung spell - ward against cutting" },
+    "description": "A hung spell of ward against cutting.",
+    "color": "white",
+    "use_action": { "type": "cast_spell", "spell_id": "spm_ward_cutting_hung", "no_fail": true, "level": 10, "moves": 100 }
+  }
+  
+]

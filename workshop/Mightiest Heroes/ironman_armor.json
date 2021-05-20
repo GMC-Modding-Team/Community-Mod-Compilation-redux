@@ -1,0 +1,42 @@
+[
+ {
+    "type" : "ARMOR",
+    "id" : "iron_man_armor",
+    "category" : "armor",
+    "name" : "Mk.CIII Armor",
+    "description" : "A suit of red and gold-painted power armor. Wearing it with the helmet will give you maximum protection.",
+    "weight" : "85 kg",
+    "color" : "red",
+    "symbol" : "[",
+    "material" : ["superalloy", "steel"],
+    "covers" : ["torso", "arm_l", "arm_r", "hand_l", "hand_r", "leg_l", "leg_r", "foot_l", "foot_r"],
+	"coverage" : 100,
+    "price" : 300000000,
+    "volume" : "110 L",
+    "to_hit" : 1,
+    "power_armor" : true,
+    "storage" : 0,
+    "warmth" : 40,
+    "encumbrance" : 40,
+    "bashing" : 1,
+    "material_thickness" : 11
+	"environmental_protection" : 15,
+	"ammo": "battery",       
+    "use_action": { "type": "transform", "msg": "The %s engages.", "target": "iron_man_armor_on", "active": true },
+    "flags" : ["WATERPROOF", "STURDY", "ELECTRIC_IMMUNE"],
+ },
+ {
+    "id": "iron_man_armor_on",
+    "copy-from": "iron_man_armor",
+    "repairs_like": "iron_man_armor",
+    "looks_like": "iron_man_armor",
+    "type": "ARMOR",
+    "name": { "str": "Mk.CIII Armor (on)", "str_pl": "Mk.CIII Armors (on)" },
+    "description": "A suit of red and gold-painted power armor. Wearing it with the helmet will give you maximum protection. It is turned on and continually drawing power.  Use it to turn it off.",
+    "flags": [ "USE_UPS", "WATERPROOF", "STURDY", "ELECTRIC_IMMUNE", "TRADER_AVOID", "CLIMATE_CONTROL" ],
+    "power_draw": 3500000,
+    "revert_to": "iron_man_armor",
+    "use_action": { "type": "transform", "menu_text": "Turn off", "msg": "The %s armor disengages.", "target": "iron_man_armor" },
+    "covers": [ "torso", "arm_l", "arm_r", "hand_l", "hand_r", "leg_l", "leg_r", "foot_l", "foot_r" ]
+ }
+]      

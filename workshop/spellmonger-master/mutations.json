@@ -1,0 +1,53 @@
+[
+  {
+    "type": "mutation",
+    "id": "SPM_MUT_STEALTH",
+    "name": { "str": "Optical Blending" },
+    "points": 1,
+    "description": "Disguised by photomancy to appear nondescript, you are harder to notice at a distance.",
+    "starting_trait": false,
+    "stealth_modifier": 60,
+	"anger_relations": [ [ "ZOMBIE", -100 ] ]
+  },
+  {
+    "id": "spm_concealment_item",
+    "type": "ARMOR",
+    "description": "You wear it.",
+    "volume": "1 ml",
+    "symbol": "*",
+    "color": "light_gray",
+    "name": { "str": "stealth field", "str_pl": "stealth fields" },
+    "relic_data": {
+      "passive_effects": [
+        { "has": "WORN", "condition": "ALWAYS", "mutations": [ "SPM_MUT_STEALTH" ] }
+      ]
+    },
+	"flags": [ "TRADER_AVOID", "AURA", "NO_SALVAGE" ]
+  },
+  {
+    "id": "spm_concealment",
+    "type": "SPELL",
+    "name": "Concealment",
+    "description": "This is the first spell any mage learns, designed to teach them to manipulate magic to accomplish many minor tasks with a minimum of effort.  Eventually this becomes reflexive and you can simply do things at will with no spell casting required, just using background mana.",
+    "valid_targets": [ "self" ],
+    "effect": "spawn_item",
+    "effect_str": "spm_concealment_item",
+    "flags": [ "SILENT", "NO_HANDS", "NO_LEGS", "NO_FAIL" ],
+    "energy_source": "MANA",
+	"skill": "photomancy",
+    "base_casting_time": 500,
+    "final_casting_time": 500,
+    "base_energy_cost": 600,
+    "final_energy_cost": 600,
+    "difficulty": 3,
+    "max_level": 5,
+    "min_damage": 1,
+    "max_damage": 1,
+    "min_duration": 36000,
+    "max_duration": 36000
+  }
+
+
+
+
+]

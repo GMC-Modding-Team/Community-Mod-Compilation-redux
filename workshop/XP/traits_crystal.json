@@ -1,0 +1,141 @@
+[
+	{
+    "type": "mutation",
+    "id": "HARD",
+    "name": { "str": "Hard" },
+    "points": 1,
+    "description": "Your skin and flesh have lost most of their softness, making them feel hard and inflexible. While this does offer a bash and cut protection of 2, your movement is slowed by 5%.",
+    "starting_trait": false,
+	"valid": false,
+	"changes_to": [ "GLITTERING" ],
+    "movecost_modifier": 1.05,
+	"armor": [
+      {
+        "parts": [ "torso", "arm_l", "arm_r", "hand_l", "hand_r", "leg_l", "leg_r", "foot_l", "foot_r", "mouth", "head" ],
+        "cut": 2,
+		"bash": 2
+      }
+    ]
+	},
+  {
+    "type": "mutation",
+    "id": "GLITTERING",
+    "name": { "str": "Glittering" },
+    "points": 1,
+    "description": "Your skin is covered in tiny rhinestones, increasing the overall protection of all relevant body areas by 5 but slowing your movement by 10%.",
+    "starting_trait": false,
+	"valid": false,
+    "prereqs": [ "HARD" ],
+	"changes_to": [ "CRYSTALLIZED" ],
+    "movecost_modifier": 1.1,
+	"armor": [
+      {
+        "parts": [ "torso", "arm_l", "arm_r", "hand_l", "hand_r", "leg_l", "leg_r", "foot_l", "foot_r", "mouth", "head" ],
+        "cut": 5,
+		"pierce": 5,
+		"bash": 5,
+		"ballistic": 5,
+		"fire": 5,
+		"acid": 5,
+		"electricity": 5
+      }
+    ]
+  },
+  {
+    "type": "mutation",
+    "id": "CRYSTALLIZED",
+    "name": { "str": "Crystallized" },
+    "points": 1,
+    "description": "Your flesh has crystallized but can still move and heal, albeit the movement is 40% slower and the healing is 90% slower. Not to worry, your crystal flesh and skin offers great protection against almost everything, so unless you're hit by a cannon or attempt to catch a swinging mace you shouldn't need to heal much anyway.",
+    "starting_trait": false,
+	"valid": false,
+	"mixed_effect": true,
+	"prereqs": [ "GLITTERING" ],
+    "movecost_modifier": 1.5,
+	"healing_resting": -0.9,
+	"mending_modifier": 0.1,
+    "bleed_resist": 1000,
+	"fat_to_max_hp": 10.0,
+	"movecost_swim_modifier": 10.0,
+	"weight_capacity_modifier": 1.15,
+	"can_only_heal_with": [ "mineral_glue" ],
+	"flags": [ "NO_DISEASE", "NO_INFECTION", "NO_POISON", "NO_RADIATION", "NO_PARASITE" ],
+	"armor": [
+      {
+        "parts": [ "torso", "arm_l", "arm_r", "hand_l", "hand_r", "leg_l", "leg_r", "foot_l", "foot_r", "mouth", "eyes", "head" ],
+        	"cut": 30,
+		"pierce": 30,
+		"bash": 15,
+		"ballistic": 15,
+		"fire": 30,
+		"acid": 30,
+		"electricity": 30
+      }
+    ]
+  },
+  {
+    "type": "mutation",
+    "id": "HARDTEETH",
+    "name": { "str": "Hardened teeth" },
+    "points": 1,
+    "description": "Your teeth are harder than most, increasing eating speed by 50% due to basically no concern or risk of breakage.",
+    "starting_trait": false,
+	"valid": false,
+    "consume_time_modifier": 0.5
+  },
+  {
+    "type": "mutation",
+    "id": "STONECHEWER",
+    "name": { "str": "Stone chewer" },
+    "points": 1,
+    "description": "Your teeth and jaw muscles are tough enough to break and chew through stones. Not that you would though, they taste terrible in your mouth. Increases eating speed by 90%",
+    "starting_trait": false,
+	"valid": false,
+	"prereqs": [ "HARDTEETH" ],
+    "consume_time_modifier": 0.1
+  },
+  {
+    "type": "mutation",
+    "id": "CRYSTALEYE",
+    "name": { "str": "Crystalline eyes" },
+    "points": 1,
+    "description": "Your eyes have become crystalline, harder to damage with perfect lenses for light that have improved your long-range sight and increases perception by 2.",
+    "starting_trait": false,
+	"valid": false,
+	"overmap_sight": 5,
+	"passive_mods": { "per_mod": 2 },
+	"armor": [
+      {
+        "parts": [ "eyes" ],
+        "cut": 15,
+		"pierce": 15,
+		"bash": 5
+      }
+    ]
+  },
+  {
+    "type": "mutation",
+    "id": "CRYSTALCLAWS",
+    "name": { "str": "Crystal claws" },
+    "points": 1,
+	"cut_dmg_bonus": 3,
+    "pierce_dmg_bonus": 12,
+    "butchering_quality": 3,
+	"encumbrance_always": [ [ "hand_l", 5 ], [ "hand_r", 5 ] ],
+    "description": "The tips of your fingers have turned into pointy crystal claws. While they hinder manual manipulation somewhat, you've found that they make good implements of hand to hand combat and pierce flesh easily.",
+    "starting_trait": false,
+	"valid": false,
+	"prereqs": [ "CRYSTALLIZED" ]
+  },
+  {
+    "type": "mutation",
+    "id": "CLAWMINER",
+    "name": { "str": "Claw miner" },
+    "points": 1,
+    "description": "You've learned how to use your claws to dig through earth and stone.",
+    "starting_trait": false,
+	"valid": false,
+	"prereqs": [ "CRYSTALCLAWS" ],
+	"spells_learned": [ [ "clawminer_dig", 1 ] ]
+  }
+]

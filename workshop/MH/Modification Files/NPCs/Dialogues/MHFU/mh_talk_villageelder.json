@@ -1,0 +1,307 @@
+[
+	{
+		"type": "talk_topic",
+		"id": "MHFU_ELDERTALK_intro1",
+		"dynamic_line": [
+			{
+				"has_assigned_mission": true,
+				"yes": "Oh, you're back. What it is then?",
+				"no": {
+					"u_has_trait": "mhfuelderdonetalkedinstructor",
+					"yes": "I think you're warmed up by now, so let's take it easy. What level of quest shall you go for?",
+					"no": {
+						"u_has_trait": "mhfuelderdoneintro",
+						"yes": "So you went to the training school, huh? If you're not sure what to do or Quests are getting too hard, head over there as often as you like!",
+						"no": {
+							"u_has_trait": "mhfu_hunter",
+							"yes": "Well, well! It looks like you're all fixed up!",
+							"no": "Oh, it looks like you've came out of nowhere..."
+						}
+					}
+				}
+			}
+		],
+		"responses": [
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_trait": "mhfu_hunter"
+						},
+						{
+							"not": {
+								"u_has_trait": "mhfuelderdoneintro"
+							}
+						}
+					]
+				},
+				"text": "Yeah... And you are?",
+				"topic": "MHFU_ELDERTALK_intro2"
+			},
+			{
+				"condition": {
+					"and": [
+						{
+							"not": {
+								"u_has_trait": "mhfuelderdoneintro"
+							}
+						},
+						{
+							"not": {
+								"u_has_trait": "mhfu_hunter"
+							}
+						}
+					]
+				},
+				"text": "Umm... Who are you?",
+				"topic": "MHFU_ELDERTALK_introoutsider1"
+			},
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_trait": "mhfuelderdoneintro"
+						},
+						{
+							"not": {
+								"u_has_trait": "mhfuelderdonetalkedinstructor"
+							}
+						}
+					]
+				},
+				"text": "Sure thing!",
+				"topic": "MHFU_ELDERTALK_talkedinstructor1"
+			},
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_trait": "mhfuelderdonetalkedinstructor"
+						},
+						"has_assigned_mission"
+					]
+				},
+				"text": "Report about that quest...",
+				"topic": "TALK_MISSION_INQUIRE"
+			},
+			{
+				"condition": {
+					"and": [
+						{
+							"u_has_trait": "mhfuelderdonetalkedinstructor"
+						},
+						{
+							"not": "has_assigned_mission"
+						}
+					]
+				},
+				"text": "LV *",
+				"topic": "MHFU_ELDERTALK_initiate"
+			},
+			{
+				"condition": {
+					"u_has_trait": "mhfuelderdonetalkedinstructor"
+				},
+				"text": "Maybe later.",
+				"topic": "TALK_DONE"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_ELDERTALK_introoutsider1",
+		"dynamic_line": "Hmm... This old lady right infront of you is the chief of this village.",
+		"responses": [
+			{
+				"text": "Okay. So, what can I do for you?",
+				"topic": "MHFU_ELDERTALK_introoutsider2"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_ELDERTALK_introoutsider2",
+		"dynamic_line": "In our village, we need a hunter, a monster hunter. I see you're interested with this job, but will you take this role for us?",
+		"responses": [
+			{
+				"text": "Sounds great to me!",
+				"topic": "MHFU_ELDERTALK_introoutsider3"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_ELDERTALK_introoutsider3",
+		"dynamic_line": "I am glad to hear that from a stranger I just met! You see that old house far down this road, you can settle down there as long as you'd like.",
+		"responses": [
+			{
+				"text": "Oh, okay. Thanks!",
+				"topic": "MHFU_ELDERTALK_intro4"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_ELDERTALK_intro2",
+		"dynamic_line": "Oh my... I haven't introduced myself! I'm the chief of this village. Can you believe an old lady like me can be a village chief!?",
+		"responses": [
+			{
+				"text": "I guess so...",
+				"topic": "MHFU_ELDERTALK_intro3"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_ELDERTALK_intro3",
+		"dynamic_line": "I'm hoping I can convince you to settle down as a hunter in this village. You know the house you woke up in? You can stay there as long as you'd like.",
+		"responses": [
+			{
+				"text": "Thanks about that!",
+				"topic": "MHFU_ELDERTALK_intro4"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_ELDERTALK_intro4",
+		"dynamic_line": "Anyways... I suppose you're not used to a hunter's work here yet, so would you mind heading off to the training school first?",
+		"responses": [
+			{
+				"text": "Training?",
+				"topic": "MHFU_ELDERTALK_intro5"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_ELDERTALK_intro5",
+		"dynamic_line": "See the huge building on the left? That is the gathering hall. If you take the road to the left of that, it will lead you to the training school.",
+		"responses": [
+			{
+				"text": "I see...",
+				"topic": "MHFU_ELDERTALK_intro6"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_ELDERTALK_intro6",
+		"dynamic_line": "Please talk with the instructor there. Everyone holds him with high esteem.",
+		"responses": [
+			{
+				"effect": {
+					"u_add_trait": "mhfuelderdoneintro"
+				},
+				"text": "Okay.",
+				"topic": "TALK_DONE"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_ELDERTALK_talkedinstructor1",
+		"dynamic_line": "Oh yes... I suppose it's time I give you details about your job. As one of our hunters, you will settle down here in our village.",
+		"responses": [
+			{
+				"text": "Okay.",
+				"topic": "MHFU_ELDERTALK_talkedinstructor2"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_ELDERTALK_talkedinstructor2",
+		"dynamic_line": "I think it is time you has some real-life training under your belt, so try one of the easy quests that take place nearby.",
+		"responses": [
+			{
+				"text": "Sounds nice.",
+				"topic": "MHFU_ELDERTALK_talkedinstructor3"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_ELDERTALK_talkedinstructor3",
+		"dynamic_line": "Once you're ready, you should warm up a bit.",
+		"responses": [
+			{
+				"text": "I will.",
+				"topic": "MHFU_ELDERTALK_talkedinstructor4"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_ELDERTALK_talkedinstructor4",
+		"dynamic_line": "That reminds me... If you head to the guild counter, you can sign up for various Quests. There is a branch inside the gathering hall.",
+		"responses": [
+			{
+				"text": "Oh, I see...",
+				"topic": "MHFU_ELDERTALK_talkedinstructor5"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_ELDERTALK_talkedinstructor5",
+		"dynamic_line": "Oh! I forgot to give some money for your contracts! It's not much, but it's enough to get started.",
+		"responses": [
+			{
+				"effect": [
+					{
+						"u_buy_item": "moneyz",
+						"count": 1500
+					}
+				],
+				"text": "Thanks for the \"z\"s!",
+				"topic": "MHFU_ELDERTALK_talkedinstructor6"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_ELDERTALK_talkedinstructor6",
+		"dynamic_line": "On the right you will find a general store that sells many great items. Next to that is a shop selling armor and weapons. Go there for equipment needs.",
+		"responses": [
+			{
+				"text": "Oh, I see...",
+				"topic": "MHFU_ELDERTALK_talkedinstructor7"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_ELDERTALK_talkedinstructor7",
+		"dynamic_line": "Hmm... Well then... Good luck out there! Don't overdo it, OK!? I'm looking forward to watch your progress!",
+		"responses": [
+			{
+				"effect": {
+					"u_add_trait": "mhfuelderdonetalkedinstructor"
+				},
+				"opinion": {
+					"value": 0,
+					"trust": -99999
+				},
+				"//": "Her trust level drops to this point. This is intended to prevent you from lying. BUT PLS! Don't try to lie, or you'll suffer from bugs!",
+				"text": "OKAY!",
+				"topic": "TALK_DONE"
+			}
+		]
+	},
+	{
+		"type": "talk_topic",
+		"id": "MHFU_ELDERTALK_initiate",
+		"dynamic_line": "I suppose you can handle like that, can't you?",
+		"responses": [
+			{
+				"text": "OKAY!",
+				"topic": "TALK_MISSION_LIST"
+			},
+			{
+				"text": "I can't do it right now...",
+				"topic": "MHFU_ELDERTALK_intro1"
+			}
+		]
+	}
+]
