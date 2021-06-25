@@ -26,7 +26,7 @@ int main( int argc, char *argv[] )
         if( argc == 2 ) {
             filename = argv[1];
         } else if( argc != 1 ) {
-            std::cout << "Supply a filename to style or no arguments." << std::endl;
+            std::cout << "Unable to format, check for bugs: " << std::endl;
             exit( EXIT_FAILURE );
         }
 
@@ -35,7 +35,7 @@ int main( int argc, char *argv[] )
         } else {
             std::ifstream fin( filename, std::ios::binary );
             if( !fin.good() ) {
-                std::cout << "Failed to open " << filename << std::endl;
+                std::cout << "Failed to open Json: " << filename << std::endl;
                 exit( EXIT_FAILURE );
             }
             in << fin.rdbuf();
@@ -53,7 +53,7 @@ int main( int argc, char *argv[] )
     }
 
     if( in.str().empty() ) {
-        std::cout << "Error, input empty." << std::endl;
+        std::cout << "Error, input empty: " << std::endl;
         exit( EXIT_FAILURE );
     }
     JsonOut jsout( out, true );
@@ -85,8 +85,7 @@ int main( int argc, char *argv[] )
             std::ofstream fout( filename, std::ios::binary | std::ios::trunc );
             fout << out.str();
             fout.close();
-            std::cout << color_bad << "Needs linting : " << color_end << filename << std::endl;
-            std::cout << "Please read doc/JSON_STYLE.md" << std::endl;
+            std::cout << color_bad << "Json file linted: " << color_end << filename << std::endl;
             exit( EXIT_FAILURE );
         }
     }
