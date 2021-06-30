@@ -7,4 +7,4 @@ for root, directories, filenames in os.walk("..\\data"):
         path = os.path.join(root, filename)
         if path.endswith("vehicles.json"):
             os.system("python vehicle_reformatter.py {0}".format(path))
-            os.system(".\\json_formatter.exe {0}".format(path))
+            os.system(".\\format\json_formatter.exe {0}".format(path))
