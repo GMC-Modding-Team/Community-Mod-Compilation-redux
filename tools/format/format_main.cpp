@@ -26,7 +26,7 @@ int main( int argc, char *argv[] )
         if( argc == 2 ) {
             filename = argv[1];
         } else if( argc != 1 ) {
-            std::cout << "Unable to format, check for bugs: " << std::endl;
+            std::cout << "Unable to format, check for bugs: " << filename  << std::endl;
             exit( EXIT_FAILURE );
         }
 
@@ -53,7 +53,7 @@ int main( int argc, char *argv[] )
     }
 
     if( in.str().empty() ) {
-        std::cout << "Error, input empty: " << std::endl;
+        std::cout << "Error, input empty: " << filename << std::endl;
         exit( EXIT_FAILURE );
     }
     JsonOut jsout( out, true );
