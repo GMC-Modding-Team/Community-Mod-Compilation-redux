@@ -231,7 +231,7 @@ int main( int argc, char *argv[] )
             std::ofstream fout( filename, std::ios::binary | std::ios::trunc );
             fout << out.str();
             fout.close();
-            std::cout << color_bad << "Json file linted: " << color_end << filename << std::endl;
+            std::cout << color_bad << "Linted file: " << color_end << filename << std::endl;
             exit( EXIT_FAILURE );
         }
     }
