@@ -1,0 +1,43 @@
+[
+  {
+    "id": "mon_light_hack",
+    "copy-from": "base_drone",
+    "type": "MONSTER",
+    "name": "floating lantern",
+    "looks_like": "bot_manhack",
+    "description": "A salvaged drone repurposed into a mobile lightsource.",
+    "speed": 250,
+    "color": "yellow",
+    "luminance": 100,
+    "aggression": 0,
+    "morale": 50,
+    "dodge": 8,
+    "armor_cut": 4,
+    "revert_to_itype": "bot_light_hack",
+    "extend": { "flags": [ "STUMBLES", "HARDTOSHOOT" ] }
+  },
+  {
+    "id": "mon_bloodhound_drone",
+    "copy-from": "base_drone",
+    "type": "MONSTER",
+    "name": { "str": "bloodhound drone" },
+    "description": "A small, spiked quadcopter robot equipped with a high-power spotlight.  This automated seeker drone was originally designed to harry and harass fugitives while maintaining visual contact for other pursuers.",
+    "diff": 2,
+    "default_faction": "science",
+    "speed": 190,
+    "color": "light_gray",
+    "melee_skill": 2,
+    "melee_dice": 1,
+    "melee_dice_sides": 4,
+    "special_attacks": [ [ "SEARCHLIGHT", 1 ] ],
+    "luminance": 60,
+    "melee_cut": 12,
+    "armor_bash": 2,
+    "armor_cut": 8,
+    "armor_bullet": 6,
+    "revert_to_itype": "bot_bloodhound_drone",
+    "death_drops": { "groups": [ [ "robots", 4 ], [ "manhack", 1 ], [ "turret_searchlight", 1 ] ] },
+    "death_function": [ "BROKEN" ],
+    "extend": { "flags": [ "HIT_AND_RUN" ] }
+  }
+]
