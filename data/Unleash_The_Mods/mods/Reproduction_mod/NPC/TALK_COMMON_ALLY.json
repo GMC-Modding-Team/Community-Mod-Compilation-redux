@@ -9,7 +9,8 @@
     "responses": [
       {
         "text": "Do you think our relationship is ready for the next level?",
-        "effect": { "npc_add_effect": "recent_romance_proposal", "duration": 60000 },
+        "topic": "SEX_CONSENSUAL",
+        "effect": {  "npc_add_effect": "recent_sex_activity", "duration": 60000 },
         "trial": { "type": "PERSUADE", "difficulty": 30 },
         "success": { "topic": "RELATIONSHIP_START_1", "opinion": { "trust": 1, "anger": -1, "value": 1 } },
         "failure": { "topic": "RELATIONSHIP_DENIED" },
@@ -23,7 +24,7 @@
       {
         "text": "Would you like to have some fun?",
         "topic": "TALK_ALLY_FLIRT",
-        "effect": { "npc_add_effect": "recent_sex_activity", "duration": 6000 },
+        "effect": {  "npc_add_effect": "recent_sex_activity", "duration": 60000 },
         "condition": {
           "and": [
             { "not": { "npc_has_var": "ROMANCED", "type": "general", "context": "relationship", "value": "yes" } },
@@ -37,7 +38,7 @@
       {
         "text": "Babe?",
         "topic": "TALK_ALLY_ROMANTIC",
-        "effect": { "npc_add_effect": "recent_romance_activity", "duration": 600 },
+        "effect": {  "npc_add_effect": "recent_romance_activity", "duration": 60000 },
         "opinion": { "trust": 1, "anger": -1, "value": 1 },
         "condition": {
           "and": [
