@@ -87,10 +87,8 @@
           "10mm": 2000,
           "44": 2000,
           "45": 2000,
-          "42000": 2000,
           "454": 2000,
           "45colt": 2000,
-          "2000": 2000,
           "57": 2000,
           "46": 2000,
           "762": 2000,
@@ -136,9 +134,8 @@
     "thrown_damage": [ { "damage_type": "bash", "amount": 13 } ],
     "ammo_type": "thrown",
     "count": 5,
-    "effects": [ "BEANBAG" ],
+    "effects": [ "BEANBAG", "NEVER_MISFIRES" ],
     "qualities": [ [ "HAMMER", 1 ] ],
-    "ammo_effects": [ "NEVER_MISFIRES" ],
     "flags": [ "UNARMED_WEAPON", "NOGIB", "TRADER_AVOID", "NO_REPAIR" ]
   },
   {
@@ -365,7 +362,7 @@
       "type": "explosion",
       "fields_type": "fd_toxic_gas",
       "fields_radius": 2,
-      "fields_min_density": 14,
+      "fields_min_intensity": 14,
       "sound_volume": 0,
       "sound_msg": "Hiss.",
       "no_deactivate_msg": "You've already armed the %s, try throwing it instead."
@@ -391,7 +388,7 @@
       "do_flashbang": true,
       "fields_type": "fd_electricity",
       "fields_radius": 4,
-      "fields_min_density": 200,
+      "fields_min_intensity": 200,
       "sound_volume": -20
     },
     "flags": [ "BOMB", "GRENADE", "ACT_ON_RANGED_HIT", "TRADER_AVOID", "NO_REPAIR" ]
@@ -475,11 +472,10 @@
     "color": "green",
     "use_action": {
       "type": "explosion",
-      "distance_factor": 0.1,
       "sound_volume": 0,
       "sound_msg": "Tick.",
       "no_deactivate_msg": "You've already pulled the %s's pin, try throwing it instead.",
-      "explosion": { "power": 10, "shrapnel": { "casing_mass": 35, "fragment_mass": 1.0 } }
+      "explosion": { "power": 10, "shrapnel": { "casing_mass": 35, "fragment_mass": 1.0 }, "distance_factor": 0.1 }
     },
     "flags": [ "BOMB", "GRENADE", "ACT_ON_RANGED_HIT", "TRADER_AVOID", "NO_REPAIR" ]
   },
@@ -499,11 +495,10 @@
     "color": "green",
     "use_action": {
       "type": "explosion",
-      "distance_factor": 0.2,
       "sound_volume": 0,
       "sound_msg": "Tick.",
       "no_deactivate_msg": "You've already pulled the %s's pin, try throwing it instead.",
-      "explosion": { "power": 20, "shrapnel": { "casing_mass": 30, "fragment_mass": 5.0 } }
+      "explosion": { "power": 20, "shrapnel": { "casing_mass": 30, "fragment_mass": 5.0 }, "distance_factor": 0.2 }
     },
     "flags": [ "BOMB", "GRENADE", "ACT_ON_RANGED_HIT", "TRADER_AVOID", "NO_REPAIR" ]
   },
