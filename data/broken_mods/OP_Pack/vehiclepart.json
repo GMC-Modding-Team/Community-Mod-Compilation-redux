@@ -3,15 +3,15 @@
     "id": "omni_battery",
     "type": "vehicle_part",
     "name": { "str": "Omni Corp. vehicle battery" },
-    "item": "battery_car",
+    "item": "omni_battery_car",
     "fuel_type": "battery",
     "symbol": "o",
     "color": "yellow",
     "broken_color": "red",
     "durability": 9999999,
-    "description": "A battery for storing electrical power, and discharging it to power electrical devices built into the vehicle.",
+    "description": "A battery for storing electrical power, and discharging it to power electrical devices built into the vehicle. Made by Omni Corp.",
     "folded_volume": "1 ml",
-    "breaks_into": [ { "item": "omni_alloy", "count": [ 6, 9 ] } ],
+    "breaks_into": [ { "item": "omni_scrap", "count": [ 6, 9 ] } ],
     "requirements": {
       "install": { "skills": [ [ "mechanics", 1 ] ], "time": "1 m", "using": [ [ "vehicle_wrench_2", 1 ] ] },
       "removal": { "skills": [ [ "mechanics", 1 ] ], "time": "1 m", "using": [ [ "vehicle_wrench_2", 1 ] ] },
@@ -21,23 +21,40 @@
   },
   {
     "id": "omni_battery_car",
-    "copy-from": "battery_car",
-    "type": "vehicle_part",
-    "name": { "str": "Omni Corp. vehicle battery" },
-    "item": "battery_motorbike",
-    "description": "A battery made by Omni Corp.",
-    "broken_color": "red",
-    "fuel_type": "battery",
-    "durability": 120,
-    "folded_volume": "6 ml",
-    "breaks_into": [ { "item": "omni_alloy", "count": [ 6, 9 ] } ]
+    "type": "MAGAZINE",
+    "name": { "str": "Omni Corp. vehicle battery", "str_pl": "Omni Corp. vehicle batteries" },
+    "description": "A battery for storing electrical power, and discharging it to power electrical devices built into the vehicle. Made by Omni Corp.",
+    "weight": "1 g",
+    "volume": "1 ml",
+    "price": "1750 USD",
+    "material": [ "omni_alloy" ],
+    "symbol": ":",
+    "color": "light_cyan",
+    "ammo_type": [ "battery" ],
+    "capacity": 2500,
+    "flags": [ "NO_SALVAGE", "NO_UNLOAD", "NO_RELOAD", "RECHARGE" ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "battery": 100000 } } ]
+  },
+  {
+    "type": "GENERIC",
+    "id": "omni_motor",
+    "name": { "str": "Omni Corp. vehicle motor" },
+    "description": "An incredibly powerful electric motor.  Made by Omni Corp.",
+    "weight": "1 g",
+    "volume": "1 ml",
+    "color": "light_cyan",
+    "symbol": ",",
+    "material": [ "omni_alloy" ],
+    "bashing": 4,
+    "category": "veh_parts",
+    "price": 12000
   },
   {
     "id": "omni_engine",
     "copy-from": "engine_motor",
     "type": "vehicle_part",
     "name": { "str": "Omni Corp. vehicle motor" },
-    "item": "motor",
+    "item": "omni_motor",
     "looks_like": "motor_small",
     "durability": 9999999,
     "power": 9999999,
@@ -51,7 +68,7 @@
       "removal": { "skills": [ [ "mechanics", 1 ] ], "time": "1 m", "using": [ [ "vehicle_wrench_2", 1 ] ] },
       "repair": { "skills": [ [ "mechanics", 1 ] ], "time": "1 m", "using": [ [ "vehicle_wrench_2", 1 ] ] }
     },
-    "breaks_into": [ { "item": "omni_alloy", "count": [ 6, 9 ] } ],
+    "breaks_into": [ { "item": "omni_scrap", "count": [ 6, 9 ] } ],
     "extend": { "flags": [ "E_ALTERNATOR", "FOLDABLE" ] }
   },
   {
@@ -86,7 +103,7 @@
     "price": "750 cent",
     "to_hit": -1,
     "bashing": 6,
-    "breaks_into": [ { "item": "omni_alloy", "count": [ 6, 9 ] } ],
+    "material": [ "omni_alloy" ],
     "symbol": "]",
     "color": "light_cyan"
   },
@@ -104,20 +121,43 @@
     "description": "A massive storage space for holding fuel, made by Omni Corp.",
     "size": 10000,
     "damage_modifier": 80,
-    "breaks_into": [ { "item": "omni_alloy", "count": [ 6, 9 ] } ],
+    "breaks_into": [ { "item": "omni_scrap", "count": [ 6, 9 ] } ],
     "requirements": {
       "install": { "skills": [ [ "mechanics", 1 ] ], "time": "1 m", "using": [ [ "vehicle_wrench_2", 1 ] ] },
       "removal": { "skills": [ [ "mechanics", 1 ] ], "time": "1 m", "using": [ [ "vehicle_wrench_2", 1 ] ] },
       "repair": { "skills": [ [ "mechanics", 1 ] ], "time": "1 m", "using": [ [ "vehicle_wrench_2", 1 ] ] }
     },
     "flags": [ "FLUIDTANK", "FOLDABLE", "TARDIS" ],
+    "folded_volume": "1 ml",
     "damage_reduction": { "all": 9999999, "stab": 9999999 }
+  },
+  {
+    "id": "omni_drum",
+    "type": "GENERIC",
+    "name": { "str": "Omni Corp. drum" },
+    "symbol": "0",
+    "weight": "1 g",
+    "volume": "1 ml",
+    "price": "1750 USD",
+    "material": [ "omni_alloy" ],
+    "color": "dark_gray",
+    "looks_like": "afs_roof_external_tank",
+    "description": "A massive steel barrel with a resealable lid. Made by Omni Corp.",
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "max_item_volume": "10000 L",
+        "max_contains_volume": "10000 L",
+        "max_contains_weight": "10000 kg",
+        "max_item_length": "10000 cm"
+    }
+  ]
   },
   {
     "id": "omni_drum",
     "type": "vehicle_part",
     "name": { "str": "Omni Corp. drum" },
-    "item": "30gal_drum",
+    "item": "omni_drum",
     "location": "structure",
     "symbol": "O",
     "color": "dark_gray",
@@ -195,7 +235,7 @@
     "to_hit": -3,
     "color": "light_gray",
     "symbol": "]",
-    "breaks_into": [ { "item": "omni_alloy", "count": [ 6, 9 ] } ],
+    "material": [ "omni_alloy" ],
     "techniques": [ "DEF_DISARM" ],
     "volume": "1 ml",
     "bashing": 15,
@@ -233,7 +273,7 @@
     "price": "1750 USD",
     "to_hit": -2,
     "bashing": 8,
-    "breaks_into": [ { "item": "omni_alloy", "count": [ 6, 9 ] } ],
+    "material": [ "omni_alloy" ],
     "symbol": ",",
     "color": "light_green",
     "flags": [ "LIGHT_1000", "DURABLE_MELEE", "ALLOWS_REMOTE_USE" ]
@@ -269,7 +309,7 @@
     "to_hit": -4,
     "color": "yellow",
     "symbol": "]",
-    "breaks_into": [ { "item": "omni_alloy", "count": [ 6, 9 ] } ],
+    "material": [ "omni_alloy" ],
     "volume": "1 ml",
     "bashing": 1,
     "category": "veh_parts",
@@ -285,7 +325,7 @@
     "to_hit": 1,
     "color": "light_blue",
     "symbol": "-",
-    "breaks_into": [ { "item": "omni_alloy", "count": [ 6, 9 ] } ],
+    "material": [ "omni_alloy" ],
     "volume": "3 ml",
     "bashing": 5,
     "category": "veh_parts",
@@ -317,6 +357,26 @@
     "damage_reduction": { "all": 9999999 }
   },
   {
+    "id": "omni_basket",
+    "type": "GENERIC",
+    "category": "veh_parts",
+    "name": { "str":"Omni Corp. storage bin" },
+    "symbol": "o",
+    "looks_like": "basketsm",
+    "color": "brown",
+    "material": [ "omni_alloy" ],
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "watertight": true,
+        "rigid": true,
+        "max_contains_volume": "10000 L",
+        "max_item_volume": "10000 L",
+        "max_contains_weight": "10000 kg"
+      }
+    ]
+  },
+  {
     "id": "omni_baskets",
     "type": "vehicle_part",
     "name": { "str": "Omni Corp. storage bin" },
@@ -328,16 +388,6 @@
     "damage_modifier": 60,
     "durability": 9999999,
     "folded_volume": "1 ml",
-    "pocket_data": [
-      {
-        "pocket_type": "CONTAINER",
-        "watertight": true,
-        "rigid": true,
-        "max_contains_volume": "10000 L",
-        "max_item_volume": "32 ml",
-        "max_contains_weight": "7 kg"
-      }
-    ],
     "item": "omni_basket",
     "location": "center",
     "requirements": {
@@ -359,7 +409,7 @@
     "to_hit": -5,
     "color": "cyan",
     "symbol": "]",
-    "breaks_into": [ { "item": "omni_alloy", "count": [ 6, 9 ] } ],
+    "material": [ "omni_alloy" ],
     "techniques": [ "DEF_DISARM" ],
     "bashing": 20,
     "category": "veh_parts",
@@ -378,17 +428,7 @@
     "durability": 100,
     "description": "A small fridge made by Omni Corp.",
     "epower": 0,
-    "pocket_data": [
-      {
-        "pocket_type": "CONTAINER",
-        "watertight": true,
-        "rigid": true,
-        "max_contains_volume": "10000 L",
-        "max_item_volume": "32 ml",
-        "max_contains_weight": "7 kg"
-      }
-    ],
-    "item": "omni_fridge",
+    "item": "omni_mini_fridge",
     "location": "center",
     "requirements": {
       "install": { "skills": [ [ "mechanics", 1 ] ], "time": "1 m", "using": [ [ "vehicle_wrench_2", 1 ] ] },
@@ -410,15 +450,15 @@
     "weight": "3 kg",
     "volume": "2 L",
     "to_hit": -8,
-    "breaks_into": [ { "item": "omni_alloy", "count": [ 6, 9 ] } ],
+    "material": [ "omni_alloy" ],
     "pocket_data": [
       {
         "pocket_type": "CONTAINER",
         "watertight": true,
         "rigid": true,
         "max_contains_volume": "10000 L",
-        "max_item_volume": "32 ml",
-        "max_contains_weight": "7 kg"
+        "max_item_volume": "10000 L",
+        "max_contains_weight": "10000 kg"
       }
     ],
     "bashing": 8,
@@ -452,16 +492,6 @@
     "damage_modifier": 80,
     "durability": 9999999,
     "epower": 0,
-    "pocket_data": [
-      {
-        "pocket_type": "CONTAINER",
-        "watertight": true,
-        "rigid": true,
-        "max_contains_volume": "10000 L",
-        "max_item_volume": "32 ml",
-        "max_contains_weight": "7 kg"
-      }
-    ],
     "item": "minifreezer",
     "location": "center",
     "requirements": {
