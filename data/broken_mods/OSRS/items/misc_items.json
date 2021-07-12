@@ -17,12 +17,11 @@
   },
   {
     "id": "osrs_money_pouch",
-    "type": "ARMOR",
+    "type": "GENERIC",
     "name": { "str": "money pouch", "str_pl": "money pouches" },
     "description": "A small pouch that can be used to store your precious gold!",
     "weight": "3 g",
     "volume": "200 ml",
-    "rigid": true,
     "price": "0 cent",
     "to_hit": 1,
     "bashing": 1,
@@ -30,21 +29,22 @@
     "symbol": "[",
     "looks_like": "leather_pouch",
     "color": "brown",
-    "covers": [ "torso" ],
-    "coverage": 1,
-    "encumbrance": 0,
-    "material_thickness": 1,
-    "pocket_data": [ { "ammo_restriction": { "osrs_gp": 9999999 }, "moves": 0 } ],
-    "flags": [ "WAIST", "OVERSIZE", "WATER_FRIENDLY" ]
+    "pocket_data": [ { "pocket_type": "CONTAINER", "ammo_restriction": { "osrs_gp": 9999999 }, "moves": 0, "rigid": true }  ],
+    "armor_data": {
+      "covers": [ "torso" ],
+      "encumbrance": 0,
+      "material_thickness": 1,
+      "coverage": 1
+    },
+    "flags": [ "WAIST", "OVERSIZE", "WATER_FRIENDLY", "TARDIS" ]
   },
   {
     "id": "osrs_bolt_box",
-    "type": "ARMOR",
+    "type": "GENERIC",
     "name": { "str": "bolt box", "str_pl": "bolt boxes" },
     "description": "A leather box that can be used to store your bolts!",
     "weight": "3 g",
     "volume": "250 ml",
-    "rigid": true,
     "price": "0 cent",
     "to_hit": 1,
     "bashing": 1,
@@ -52,12 +52,14 @@
     "symbol": "[",
     "looks_like": "leather_pouch",
     "color": "brown",
-    "covers": [ "torso" ],
-    "coverage": 1,
-    "encumbrance": 0,
-    "material_thickness": 1,
-    "pocket_data": [ { "ammo_restriction": { "osrs_bolt": 250 }, "moves": 50 } ],
-    "flags": [ "WAIST", "OVERSIZE" ]
+    "pocket_data": [ { "pocket_type": "CONTAINER", "ammo_restriction": { "osrs_bolt": 250 }, "moves": 50, "rigid": true } ],
+    "armor_data": {
+      "covers": [ "torso" ],
+      "coverage": 1,
+      "encumbrance": 0,
+      "material_thickness": 1
+    },
+    "flags": [ "WAIST", "OVERSIZE", "TARDIS" ]
   },
   {
     "id": "osrs_crossbow_string",
