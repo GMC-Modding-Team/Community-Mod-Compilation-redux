@@ -10,11 +10,12 @@
 - [x] remove OS spawner everything to do with it
 - [x] make a proper adult
 - [x] does it need to bee in-depth or can it be male female
-- [ ] add more items for children, toddlers and teens.
+- [ ] add more items for children, toddlers and teens. like alot!
 - [ ] add mutations for marking toddlers, teens and adult. (born in the cata theme)
 - [ ] add mutations for marking parent (parents in the cata theme)
 - [ ] make sure the names are generated randomly and not just your kid 
-- [ ] add missions
+- [ ] Add menu for entertainment, cleaning, feeding and shh
+- [ ] add missions to take care of your kid
 - [ ] add more TALK
     - [ ] add talk for kids future
         - [ ] add apocalypses talk for kids and adults
@@ -27,9 +28,9 @@
         - [ ] add talk for building turrets defenses
         - [ ] add talk for making windows safe
         - [ ] add talk for making door safe
-    - [ ] add talk for vehicle devolpment
-        - [ ] add talk for kids vehicle_parts
-            - [ ] add talk for kid seats
-        - [ ] add talk for crashing
-        - [ ] add talk for housing
+    - [ ] add talk for vehicle safty
+        - [ ] add talk for veicle safty (yeah when im driving fast buckle up, if i hit something we could end up on the other side of the windshield)
+        - [ ] add talk for zombie safty (yeah emm see the scarry monsters out side... just pretend there dead.)
+        - [ ] add talk for general safty (ahhh dont touch this or that... hmm just dont touch anything)
+  	- [ ] add talk for housing
 ```
