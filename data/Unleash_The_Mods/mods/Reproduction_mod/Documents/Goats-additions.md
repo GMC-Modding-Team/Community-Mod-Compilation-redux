@@ -2,6 +2,9 @@
 ## The real reproduction mod
 
 
+# Sources
+https://www.verywellfamily.com/bare-necessities-basic-baby-needs-293962
+
 
 # Todo
 ```Markdown
@@ -11,6 +14,49 @@
 - [x] make a proper adult
 - [x] does it need to bee in-depth or can it be male female
 - [ ] add more items for children, toddlers and teens. like alot!
+  - [ ] comestibles
+    - [ ] baby formula
+  - [ ] tool armor
+    - [x] pacifier
+    - [ ] diapers & disposable diapers
+    - [ ] cloth diapers
+  - [ ] tools
+    - [ ] disposable wipes
+    - [ ] cloth wipes
+    - [ ] diaper rash cream
+    - [ ] changing mat
+    - [ ] diaper rash cream
+    - [ ] receptacle
+    - [ ] baby washcloths
+    - [ ] hooded towels
+    - [ ] baby sponge
+    - [ ] baby bath wash
+    - [ ] baby lotion
+    - [ ] baby bath tub
+    - [ ] Baby nail clippers
+    - [ ] Digital thermometer
+    - [ ] Medicine dropper
+    - [ ] Bulb syringe/nasal aspirator
+    - [ ] baby bottle
+  - [ ] vehicle parts
+    -  [ ] car seat
+  - [ ] clothes
+    - [ ] baby sleepers
+    - [ ] sleep sacks
+    - [ ] onesies
+    - [ ] bib
+    - [ ] baby socks
+    - [ ] new born hats
+    - [ ] bibs
+    - [ ] clothes for diffrent ages
+  - [ ] furniture
+    - [ ] Crib
+    - [ ] cradle
+    - [ ] bassinet
+    - [ ] travel cot
+    - [ ] co-sleeper
+    - [ ] Crib mattresses eg cradle, bassinet, travel cot or co-sleeper
+    - [ ] changing mat
 - [ ] add mutations for marking toddlers, teens and adult. (born in the cata theme)
 - [ ] add mutations for marking parent (parents in the cata theme)
 - [ ] make sure the names are generated randomly and not just your kid
