@@ -7,7 +7,6 @@ https://www.verywellfamily.com/bare-necessities-basic-baby-needs-293962
 
 
 # Todo
-```Markdown
 - [x] make reproduction more pg
 - [x] remove sperm
 - [x] remove OS spawner everything to do with it
@@ -33,22 +32,48 @@ https://www.verywellfamily.com/bare-necessities-basic-baby-needs-293962
     - [ ] baby bath wash
     - [ ] baby lotion
     - [ ] baby bath tub
+    - [ ] Baby cream
+    - [ ] plastic infant tub
     - [ ] Baby nail clippers
     - [ ] Digital thermometer
+    - [ ] Petroleum jelly
+    - [ ] Infant Tylenol
+    - [ ] Nasal aspirator
+    - [ ] Electrolyte drink, such as Pedialyte, to treat dehydration
+    - [ ] Antigas medicine
     - [ ] Medicine dropper
     - [ ] Bulb syringe/nasal aspirator
     - [ ] baby bottle
+    - [ ] Laundry detergent for children
+    - [ ] Baby soap
+    - [ ] Baby soft-bristled hair brush
+    - [ ] Diaper bag
+    - [ ] Rattles, Soft books, board book, Soft blocks, Activity gym/play mat, Crib mirror, Something plush that crinkles, rattles, and squeaks, Baskets to store toys in all the key places, like your baby's room, the living room, and the kitchen
+    - [ ] Moses basket
+    - [ ] Infant feeding spoons
+    - [ ] Infant bowl
   - [ ] vehicle parts
-    -  [ ] car seat
+    - [ ] car seat
+    - [ ] Sun shade for car windows?
   - [ ] clothes
     - [ ] baby sleepers
     - [ ] sleep sacks
     - [ ] onesies
-    - [ ] bib
+    - [ ] plastic, cloth and any other material bib
     - [ ] baby socks
     - [ ] new born hats
     - [ ] bibs
     - [ ] clothes for diffrent ages
+    - [ ] baby vest long and short sleeve
+    - [ ] nightgowns
+    - [ ] one-piece stretchy sleepers
+    - [ ] baby pants
+    - [ ] mittens
+    - [ ] cardigans or jackets
+    - [ ] Bunting bag or snowsuit
+    - [ ] dresses and costumes eg princess, prince, king, queen, super heroes and some cartoon characters
+    - [ ] large cotton blankets
+    - [ ] baby quilt
   - [ ] furniture
     - [ ] Crib
     - [ ] cradle
@@ -57,10 +82,27 @@ https://www.verywellfamily.com/bare-necessities-basic-baby-needs-293962
     - [ ] co-sleeper
     - [ ] Crib mattresses eg cradle, bassinet, travel cot or co-sleeper
     - [ ] changing mat
+    - [ ] Change table (or just use change pad on top of dresser or bed)
+    - [ ] Rocking chair for feeding and swaddling
+    - [ ] Playpen
+    - [ ] Night light
+    - [ ] Changing table
+    - [ ] Rocking chair
+    - [ ] glider
+    - [ ] Dresser/chest
+    - [ ] Hamper
+    - [ ] Baby monitor
+    - [ ] Gates
+    - [ ] Dry formula dispenser
+    - [ ] Bottle sterilizer
+    - [ ] High chair
+    - [ ] Swing
+    - [ ] Portable play yard
+
 - [ ] add mutations for marking toddlers, teens and adult. (born in the cata theme)
 - [ ] add mutations for marking parent (parents in the cata theme)
 - [ ] make sure the names are generated randomly and not just your kid
-- [ ] Add menu for entertainment, cleaning, feeding and shh
+- [ ] add menu for entertainment, cleaning, feeding and shh
 - [ ] add missions to take care of your kid
 - [ ] add more TALK
     - [ ] add talk for kids future
@@ -79,4 +121,3 @@ https://www.verywellfamily.com/bare-necessities-basic-baby-needs-293962
         - [ ] add talk for zombie safty (yeah emm see the scarry monsters out side... just pretend there dead.)
         - [ ] add talk for general safty (ahhh dont touch this or that... hmm just dont touch anything)
   	- [ ] add talk for housing
-```
