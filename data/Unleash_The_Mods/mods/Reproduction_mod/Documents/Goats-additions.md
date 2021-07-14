@@ -1,10 +1,10 @@
 # Goats Reproduction additions and updates
 ## The real reproduction mod
 
- 
+
 
 # Todo
-```Markdown 
+```Markdown
 - [x] make reproduction more pg
 - [x] remove sperm
 - [x] remove OS spawner everything to do with it
@@ -13,7 +13,7 @@
 - [ ] add more items for children, toddlers and teens. like alot!
 - [ ] add mutations for marking toddlers, teens and adult. (born in the cata theme)
 - [ ] add mutations for marking parent (parents in the cata theme)
-- [ ] make sure the names are generated randomly and not just your kid 
+- [ ] make sure the names are generated randomly and not just your kid
 - [ ] Add menu for entertainment, cleaning, feeding and shh
 - [ ] add missions to take care of your kid
 - [ ] add more TALK
