@@ -24,7 +24,8 @@
     "use_action": {
       "type": "place_monster",
       "monster_id": "mon_turret_disarmed",
-      "use_message": "Error. No weapon systems found.",
+      "hostile_msg": "Error. No weapon systems found.",
+      "friendly_msg": "Error. No weapon systems found.",
       "difficulty": 4,
       "moves": 100,
       "skills": [ "electronics", "computer" ]
@@ -220,13 +221,16 @@
       },
       { "type": "place_monster", "monster_id": "mon_craftbuddy", "moves": 100 }
     ],
-    "magazines": [
-      [
-        "battery",
-        [ "medium_battery_cell", "medium_plus_battery_cell", "medium_atomic_battery_cell", "medium_disposable_cell" ]
-      ]
-    ],
-    "magazine_well": 2
+    "pocket_data": [
+      {
+        "magazine_well": "500 ml",
+        "pocket_type": "MAGAZINE_WELL",
+        "holster": true,
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [ "medium_battery_cell", "medium_plus_battery_cell", "medium_atomic_battery_cell", "medium_disposable_cell" ]
+      }
+    ]
   },
   {
     "id": "bot_autoarmor_light",
