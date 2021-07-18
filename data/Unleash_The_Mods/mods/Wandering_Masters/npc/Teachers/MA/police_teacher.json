@@ -1,17 +1,17 @@
 [
   {
     "//": "TODO check text, write something not lame, balance him a bit maybe?",
-    "id": "police_teacher",
+    "id": "NPC_police_teacher",
     "type": "npc",
     "name_suffix": "Officer",
-    "class": "police_teacher",
+    "class": "NC_police_teacher",
     "attitude": 0,
     "mission": 8,
-    "chat": "police_teacher_1",
+    "chat": "TALK_police_teacher_1",
     "faction": "no_faction"
   },
   {
-    "id": "police_teacher",
+    "id": "NC_police_teacher",
     "type": "npc_class",
     "name": { "str": "Police Teacher" },
     "job_description": "Police Teacher.",
@@ -20,8 +20,8 @@
     "bonus_dex": { "rng": [ 1, 5 ] },
     "bonus_int": { "rng": [ 1, 2 ] },
     "bonus_per": { "rng": [ 1, 2 ] },
-    "worn_override": "police_teacher_worn",
-    "carry_override": "police_teacher_carried",
+    "worn_override": "NC_police_teacher_worn",
+    "carry_override": "NC_police_teacher_carried",
     "weapon_override": "EMPTY_GROUP",
     "traits": [
       { "group": "NPC_starting_traits" },
@@ -30,16 +30,16 @@
       { "trait": "PAINRESIST" }
     ],
     "skills": [
-      { "skill": "gun", "level": 3 },
-      { "skill": "shotgun", "level": 3 },
-      { "skill": "pistol", "level": 2 },
-      { "skill": "melee", "level": 2 },
-      { "skill": "bashing", "level": 2 },
-      { "skill": "unarmed", "level": 2 }
+      { "skill": "gun", "bonus": { "rng": [ 1, 5 ] } },
+      { "skill": "shotgun", "bonus": { "rng": [ 1, 5 ] } },
+      { "skill": "pistol", "bonus": { "rng": [ 1, 3 ] } },
+      { "skill": "melee", "bonus": { "rng": [ 1, 3 ] } },
+      { "skill": "bashing", "bonus": { "rng": [ 1, 3 ] } },
+      { "skill": "unarmed", "bonus": { "rng": [ 1, 3 ] } }
     ]
   },
   {
-    "id": "police_teacher_worn",
+    "id": "NC_police_teacher_worn",
     "type": "item_group",
     "subtype": "collection",
     "entries": [
@@ -59,13 +59,13 @@
     ]
   },
   {
-    "id": "police_teacher_carried",
+    "id": "NC_police_teacher_carried",
     "type": "item_group",
     "subtype": "collection",
     "entries": [ { "group": "charged_two_way_radio" }, { "item": "ear_plugs", "custom-flags": [ "no_auto_equip" ] } ]
   },
   {
-    "id": [ "police_teacher_1" ],
+    "id": [ "TALK_police_teacher_1" ],
     "type": "talk_topic",
     "dynamic_line": {
       "u_is_wearing": "badge_marshal",
@@ -83,32 +83,32 @@
         "condition": { "and": [ "mission_complete", "has_many_assigned_missions" ] },
         "topic": "TALK_MISSION_INQUIRE"
       },
-      { "text": "<BGSS_intro_question>", "topic": "police_teacher_Background" },
+      { "text": "<BGSS_intro_question>", "topic": "TALK_police_teacher_Background" },
       { "text": "Do you need any help?", "topic": "TALK_MISSION_LIST" },
-      { "text": "Can you teach me something?", "topic": "police_teacher_teach_check" },
+      { "text": "Can you teach me something?", "topic": "TALK_police_teacher_teach_check" },
       { "text": "Goodbye.", "topic": "TALK_DONE" }
     ]
   },
   {
     "//": "TODO WRITE SOMETHING!!!",
-    "id": "police_teacher_Background",
+    "id": "TALK_police_teacher_Background",
     "type": "talk_topic",
-    "dynamic_line": "Well, I was in this cell, minding my own business, but when the lights went out, the emergency system locked the entire PD and I kind of got stuck here. ",
+    "dynamic_line": "Well, I was in this cell, minding my own business, but when the lights went out, the emergency system locked the entire PD and I kind of got stuck here.",
     "responses": [
       { "text": "<done_conversation_section>", "topic": "TALK_NONE" },
       {
         "text": "Are you sure you telling me the truth?",
         "condition": { "not": { "npc_has_var": "police_teacher_background", "type": "general", "context": "meeting", "value": "yes" } },
         "trial": { "type": "PERSUADE", "difficulty": 8 },
-        "success": { "topic": "police_teacher_truth" },
-        "failure": { "topic": "police_teacher_lie" }
+        "success": { "topic": "TALK_police_teacher_truth" },
+        "failure": { "topic": "TALK_police_teacher_lie" }
       }
     ]
   },
   {
-    "id": "police_teacher_teach_check",
+    "id": "TALK_police_teacher_teach_check",
     "type": "talk_topic",
-    "dynamic_line": "Look, right now I can only think about one thing, and that's definitely not about teaching, ok?",
+    "dynamic_line": "Look, right now I can only think about one thing, and that's definitely not about teaching, OK?",
     "responses": [
       {
         "text": "So, what about now?",
@@ -120,35 +120,35 @@
         "success": {
           "effect": [
             { "u_buy_item": "manual_swordsmanship" },
-            { "npc_add_var": "police_teacher_teach", "type": "general", "context": "meeting", "value": "no" }
+            { "npc_lose_var": "police_teacher_teach", "type": "general", "context": "meeting" }
           ],
-          "topic": "police_teacher_teach"
+          "topic": "TALK_police_teacher_teach"
         },
-        "failure": { "topic": "police_teacher_teach_done" }
+        "failure": { "topic": "TALK_police_teacher_teach_done" }
       },
       { "text": "Maybe later.", "topic": "TALK_NONE" }
     ]
   },
   {
-    "id": "police_teacher_teach",
+    "id": "TALK_police_teacher_teach",
     "type": "talk_topic",
     "dynamic_line": "I learned all from this book. You can take it. Good luck.",
     "responses": [ { "text": "Thank you, officer.", "topic": "TALK_DONE" } ]
   },
   {
-    "id": "police_teacher_teach_done",
+    "id": "TALK_police_teacher_teach_done",
     "type": "talk_topic",
     "dynamic_line": "I already taught you all I knew.",
     "responses": [ { "text": "Thanks again, officer.", "topic": "TALK_DONE" } ]
   },
   {
-    "id": "police_teacher_truth",
+    "id": "TALK_police_teacher_truth",
     "type": "talk_topic",
-    "dynamic_line": "Ok, ok, I'll tell you. The truth is, I was afraid when first <zombies> tried to enter our department, and didn't even notice how I got myself locked up here, in this cell. Maybe I panicked, and instead of running away, or helping my fellow co-workers, I thought, maybe, this metal bars would protect me. I'm so ashamed of myself, really. Officers should be calm in emergencies like this, to help civilians with anything they need, to protect them, but… What done is done.",
+    "dynamic_line": "OK, OK, I'll tell you.  The truth is, I was afraid when first <zombies> tried to enter our department, and didn't even notice how I got myself locked up here, in this cell.  Maybe I panicked, and instead of running away, or helping my fellow co-workers, I thought, maybe, this metal bars would protect me.  I'm so ashamed of myself, really.  Officers should be calm in emergencies like this, to help civilians with anything they need, to protect them, but… What done is done.",
     "responses": [
       {
-        "text": "Oh, uh, well, ok, then?",
-        "topic": "police_teacher_1",
+        "text": "Oh, uh, well, OK then?",
+        "topic": "TALK_police_teacher_1",
         "effect": [
           { "npc_add_var": "police_teacher_background", "type": "general", "context": "meeting", "value": "yes" },
           {
@@ -162,7 +162,7 @@
     ]
   },
   {
-    "id": "police_teacher_working",
+    "id": "TALK_police_teacher_working",
     "type": "talk_topic",
     "dynamic_line": {
       "npc_compare_time_since_var": "police_teacher_work",
@@ -170,12 +170,12 @@
       "context": "flag",
       "op": ">",
       "time": "2 days",
-      "yes": "I'm DONE!",
-      "no": "I'm WORKING!"
+      "yes": "I'm done.",
+      "no": "I'm still working on it, <name_g>."
     },
     "responses": [
       {
-        "text": "Ok bro, I’m waiting",
+        "text": "OK, <name_g>, take your time.",
         "topic": "TALK_DONE",
         "condition": {
           "not": {
@@ -188,8 +188,8 @@
         }
       },
       {
-        "text": "Good for you bro!",
-        "topic": "police_teacher_1",
+        "text": "Good for you, <name_g>.",
+        "topic": "TALK_police_teacher_1",
         "condition": {
           "npc_compare_time_since_var": "police_teacher_work",
           "type": "test",
@@ -197,13 +197,13 @@
           "op": ">",
           "time": "2 days"
         },
-        "effect": [ { "npc_first_topic": "police_teacher_1" } ]
+        "effect": [ { "npc_first_topic": "TALK_police_teacher_1" } ]
       }
     ]
   },
   {
     "//": "TODO WRITE SOMETHING!!!",
-    "id": "police_teacher_lie",
+    "id": "TALK_police_teacher_lie",
     "type": "talk_topic",
     "dynamic_line": "No, ha-ha, it's an accident, really.",
     "responses": [
@@ -215,43 +215,37 @@
     ]
   },
   {
-    "//": "TODO WRITE SOMETHING!!!",
-    "id": "police_teacher_wait",
+    "id": "TALK_police_teacher_wait",
     "type": "talk_topic",
     "dynamic_line": "…",
     "responses": [
-      { "text": "I'm back.", "topic": "police_teacher_1" },
+      { "text": "I'm back.", "topic": "TALK_police_teacher_1" },
       {
-        "text": "So, looking for secret room, aren't you?",
-        "topic": "police_teacher_basement",
+        "text": "So, looking for a secret room, aren't you?",
+        "topic": "TALK_police_teacher_basement",
         "condition": { "u_has_var": "bill_the_assassin_basement", "type": "general", "context": "meeting", "value": "yes" }
       }
     ]
   },
   {
-    "//": "TODO WRITE SOMETHING!!!",
-    "id": "police_teacher_basement",
+    "id": "TALK_police_teacher_basement",
     "type": "talk_topic",
-    "dynamic_line": "What? What secret room? I don't know what you're talking about!",
+    "dynamic_line": "What? What secret room?  I don't know what you're talking about!",
     "responses": [
       {
-        "text": "Bill told me everything. Want to screw me over and got all neat stuff from Billy's secret stash all by yourself? Not this time. Ha-Ha!",
-        "topic": "police_teacher_basement1"
+        "text": "Bill told me everything.  You want to screw me over and got all neat stuff from Billy's secret stash all by yourself? Not this time.  Ha-Ha on You!",
+        "topic": "TALK_police_teacher_basement1"
       }
     ]
   },
   {
     "//": "TODO WRITE SOMETHING!!!",
-    "id": "police_teacher_basement",
+    "id": "TALK_police_teacher_basement",
     "type": "talk_topic",
-    "dynamic_line": "Bro did you actually believed that scum? Man, I don't hide anything from you! Kill him please and please don't kill me!",
+    "dynamic_line": "<name_g> did you actually believed that <name_b>?  I don't hide anything from you!  Kill him please and please don't kill me!",
     "responses": [
-      { "text": "I'll think about that.", "topic": "police_teacher_basement1" },
-      {
-        "text": "Nah.",
-        "topic": "TALK_DONE",
-        "effect": [ "insult_combat", { "u_add_var": "police_teacher_dead", "type": "general", "context": "meeting", "value": "yes" } ]
-      }
+      { "text": "I'll think about that.", "topic": "TALK_police_teacher_basement1" },
+      { "text": "Nah.", "topic": "TALK_DONE", "effect": "insult_combat" }
     ]
   },
   {
@@ -280,12 +274,12 @@
     "followup": "MISSION_police_teacher_2",
     "dialogue": {
       "describe": "-",
-      "offer": "Before <the_cataclysm>, I was in a secret police search party that was formed to track an assassin, who worked for a famous kingpin. They called him 'Bill The Assassin'. Somehow, we managed to track him, and even put him behind bars for a long time. But you see, the situation changed drastically outside, and I know the guy like him wouldn't hesitate to use it as a chance to break free. And, um, I think that guy like him would definitely try to take his revenge, so… I just want to know for sure if the guy is alive or turned into <zombie>. Find police records, so I can learn where did they locked him, and maybe learn what happened to him there.",
-      "accepted": "Whew, thank you. I'll wait.",
+      "offer": "Before <the_cataclysm>,  I was in a secret police search party that was formed to track an assassin, who worked for a famous kingpin.  They called him 'Bill The Assassin'.  Somehow, we managed to track him, and even put him behind bars for a <very> long time.  But you see, the situation changed drastically outside, and I know the guy like him wouldn't hesitate to use it as a chance to break free.  And, um, I think the guy like him would definitely try to take his revenge, so… I just want to know for sure if the guy is alive or turned into <zombie>.  Find police records, so I can learn where did they locked him, and maybe learn what happened to him there.",
+      "accepted": "Whew, thank you.  I'll wait.",
       "rejected": "Why?",
-      "advice": "Well, I'm not sure where it may be, to be honest. Try to search all the building.",
+      "advice": "Well, I'm not sure where it may be, to be honest.  Try to search all the building.",
       "inquire": "So?",
-      "success": "Good, thank you. I just need some time to…Oh, it's right on the top, ha-ha. Let's see… So, now I know where to find him.",
+      "success": "Good, thank you.  I just need some time to… Oh, it's right on the top, ha-ha.  Let's see… So, now I know where to find him.",
       "success_lie": "-",
       "failure": "-"
     }
@@ -316,12 +310,12 @@
     "followup": "MISSION_police_teacher_3",
     "dialogue": {
       "describe": "-",
-      "offer": "So, now I know where he's been serving sentence, and I want to just check what happened to him…What? Why don't I just go there and look for myself? Well, ha-ha, I'm kind of busy with… Defending my PD, ha! So, if you want to help me, please find Bill. If he's there, kill him and bring his head as poof. He have a tattoo on his face that looks like a dragon, so you can’t mistake him for anyone.",
-      "accepted": "Thank you. I'll wait.",
+      "offer": "So, now I know where he's been serving sentence, and I want to just check what happened to him… What?  Why don't I just go there and look for myself?  Well, ha-ha, I'm kind of busy with… Defending my PD, ha!  So, if you want to help me, please find Bill.  If he's there, kill him and bring his head as poof.  He have a tattoo on his face that looks like a dragon, so you can’t mistake him for anyone.",
+      "accepted": "Thank you.  I'll wait.",
       "rejected": "Why?",
-      "advice": "Be <very> careful with your approach. Prisons are guarder by police bots and turrets, and they are a <very> dangerous.",
+      "advice": "Be <very> careful with your approach.  Prisons are guarder by police bots and turrets, and they are a <very> dangerous.",
       "inquire": "So?",
-      "success": "Good. Show it to me. So, here you are, you dirty bastard. Who's laughing now, huh? Ha-ha! Hah…wait a minute. Green eyes, potato nose, scar under left eye, dental print looks like his, but…it's a wyrm, not a dragon! Argh, what a trickster! So, now we know that he's alive, and maybe even escaped from prison. That's bad news, indeed. I need to think about it.",
+      "success": "Good.  Show it to me.  So, here you are, you dirty bastard.  Who's laughing now, huh?  Ha-ha! Hah… Wait a minute.  Green eyes, potato nose, scar under left eye, dental print looks like his, but… It's a wyrm, not a dragon!  ARGH, what a trickster!  So, now we know that we put behind bars someone else, and there's the chance he's still alive.  That's bad news, indeed.  I need to think about it.",
       "success_lie": "-",
       "failure": "What a shame."
     }
@@ -352,19 +346,19 @@
       "effect": [
         "stop_following",
         { "npc_add_var": "police_teacher_work", "type": "general", "context": "flag", "time": true },
-        { "npc_first_topic": "police_teacher_working" }
+        { "npc_first_topic": "TALK_police_teacher_working" }
       ]
     },
     "origins": [ "ORIGIN_SECONDARY" ],
     "followup": "MISSION_police_teacher_4",
     "dialogue": {
-      "describe": "Police",
-      "offer": "OK, I have some ideas how to deal with this situation. We need to track down that bastard and deal with him before he deal with us! Lead me to Bill's house. I'm 100% sure he would visit it. We can get more information there.",
+      "describe": "-",
+      "offer": "OK, I have some ideas how to deal with this situation.  We need to track down that bastard and deal with him before he deal with us!  Lead me to his house.  I'm 100% sure he would visit it.  We can get more information there about his location.",
       "accepted": "Let's go. Lead the way.",
       "rejected": "Why?",
-      "advice": "Yes.",
+      "advice": "You'll cover my back, I'll cover yours.  That way, we have more chances to survive.",
       "inquire": "I'm waiting.",
-      "success": "Good. Wait for a while, I need some time to look around and find something that may lead us to him…",
+      "success": "Good.  Wait for a while, I need some time to look around and find something that may lead us to him…",
       "success_lie": "-",
       "failure": "What a shame."
     }
@@ -378,9 +372,8 @@
     "goal": "MGOAL_ASSASSINATE",
     "difficulty": 0,
     "value": 100,
-    "//": "TODO CHANGE",
     "start": {
-      "effect": { "npc_first_topic": "police_teacher_wait" },
+      "effect": { "npc_first_topic": "TALK_police_teacher_wait" },
       "assign_mission_target": {
         "om_terrain": "forest",
         "om_terrain_replace": "field",
@@ -390,7 +383,7 @@
         "min_distance": 30,
         "random": true
       },
-      "update_mapgen": { "place_npc": [ { "class": "bill_the_assassin", "x": 10, "y": 10, "target": true } ] }
+      "update_mapgen": { "place_npcs": [ { "class": "NPC_bill_the_assassin", "x": 10, "y": 10, "target": true } ] }
     },
     "end": {
       "effect": [
@@ -401,12 +394,12 @@
     "origins": [ "ORIGIN_SECONDARY" ],
     "dialogue": {
       "describe": "-",
-      "offer": "OK, I might know where to find him. Kill the real Bill.",
-      "accepted": "I'll wait. Be careful.",
+      "offer": "OK, I might know where to find him.  I'll give you approximate location of the real Bill.  Find that bastard and kill him.",
+      "accepted": "I'll wait.  Be careful.",
       "rejected": "Why?",
-      "advice": "Good luck.",
+      "advice": "He's <very> dangerous, so you might want not to approach him directly.  The more distance you have between you and him, the better.",
       "inquire": "I'm waiting.",
-      "success": "Good. Now I can teach you.",
+      "success": "Whew, what a relief!  Now I can sleep at night calmly.  Thank you!",
       "success_lie": "-",
       "failure": "What a shame."
     }
@@ -432,6 +425,11 @@
       "success_lie": "-",
       "failure": "-"
     },
-    "fail": { "effect": { "u_buy_item": "pt_head" } }
+    "fail": {
+      "effect": [
+        { "u_buy_item": "pt_head" },
+        { "u_add_var": "police_teacher_dead", "type": "general", "context": "meeting", "value": "yes" }
+      ]
+    }
   }
 ]
