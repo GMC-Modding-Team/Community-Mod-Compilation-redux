@@ -116,8 +116,8 @@ https://www.verywellfamily.com/bare-necessities-basic-baby-needs-293962
         - [ ] add talk for building turrets defenses
         - [ ] add talk for making windows safe
         - [ ] add talk for making door safe
-    - [ ] add talk for vehicle safty
-        - [ ] add talk for veicle safty (yeah when im driving fast buckle up, if i hit something we could end up on the other side of the windshield)
-        - [ ] add talk for zombie safty (yeah emm see the scarry monsters out side... just pretend there dead.)
-        - [ ] add talk for general safty (ahhh dont touch this or that... hmm just dont touch anything)
+    - [ ] add talk for vehicle safety
+        - [ ] add talk for vehicle safety (yeah when im driving fast buckle up, if i hit something we could end up on the other side of the windshield)
+        - [ ] add talk for zombie safety (yeah emm see the scarry monsters out side... just pretend there dead.)
+        - [ ] add talk for general safety (ahhh dont touch this or that... hmm just dont touch anything)
   	- [ ] add talk for housing
