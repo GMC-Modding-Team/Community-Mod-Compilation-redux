@@ -2,12 +2,23 @@ name: Generator - TOC
 
 on:
   pull_request:
+    types: [opened, synchronize, reopened, closed]
+    TARGET_PATHS: '**.md'
     paths:
-    - '**.md'
+    - '*.md'
+    - '*/*.md'
+    - '*/*/*.md'
+    - '*/*/*/*.md'
+    - '*/*/*/*/*.md'
+    - '*/*/*/*/*/*.md'
+    - '*/*/*/*/*/*/*.md'
+    - '*/*/*/*/*/*/*/*.md'
+    - '*/*/*/*/*/*/*/*/*.md'
+    - '*/*/*/*/*/*/*/*/*/*.md'
 
 jobs:
   generateTOC:
     name: TOC Generator
     runs-on: ubuntu-latest
     steps:
-      - uses: technote-space/toc-generator@v3
+      - uses: TheGoatGod/toc-generator@v4.0.0

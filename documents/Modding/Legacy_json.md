@@ -5,25 +5,25 @@ Use the `home` key to get to the top.
 **Table of Contents**
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 - [Introduction](#introduction)
   * [Tools Required](#tools-required)
   * [Regex](#regex)
   * [What is JSON?](#what-is-json)
   * [Terminology in this Document](#terminology-in-this-document)
   * [Python](#python)
-- [abstract, ident, and id](#abstract-ident-and-id)
+- [Abstract, Ident and Id](#abstract-ident-and-id)
 - [Ammo](#ammo)
   * [Ammo Type](#ammo-type)
-  * [damage](#damage)
+  * [Damage](#damage)
 - [Artifacts/relic_data](#artifacts/relic_data)
-- [barrel_length](#barrel_length)
+- [Barrel_length](#barrel_length)
 - [Bleeding](#bleeding)
-- [blob and slime](#blob-and-slime)
-- [blueprint](#blueprint)
-- [bullet_resist](#bullet_resist)
+- [Blob and Slime](#blob-and-slime)
+- [Blueprint](#blueprint)
+- [Bullet_resist](#bullet_resist)
 - [Color](#color)
-- [copy-from and looks_like](#copy-from-and-looks_like)
-- [Linting](#linting)
+- [Copy-from and Looks_like](#copy-from-and-looks_like)
 - [Materials](#materials)
 - [Name](#name)
 - [picklock](#picklock)
@@ -118,7 +118,7 @@ I don't use filthy macs. You're on your own.
 If you're using linux, you're probably already familiar with the terminal. Use [this](https://en.wikibooks.org/wiki/Python_Programming/Creating_Python_Programs)
 
 ---
-# abstract, ident, and id
+# Abstract, Ident and Id
 `abstract` and `id`, are a specific type of `key` that tells the game the unique identifier of the item. Almost every top-level JSON `object` contains an an identifier and a `type`. `type` is an incredibly important `key` that tells the game how to handle the specific `key: value` pairs in the `object`.
 
 `abstract` can only be used on `type: TOOL`, `type: GENERIC`, `type: GUN`, `type: COMESTIBLE`, `type: BOOK`, `type: AMMO`, `type: PET_ARMOR`, `type: vehicle_part`, `type: BIONIC_ITEM`, `type: ARMOR`, `type: TOOLMOD`, `type: ENGINE`, `type: MONSTER`, `type: uncraft`,  `type: overmap_terrain`, and `"type": "recipe",`.
@@ -177,7 +177,7 @@ It is practically impossible to replace all at once, due to the similarities bet
 ```
 
 ---
-## damage
+## Damage
 The current JSON standards for `key` `"damage"` look like this:
 And what it should look like under `type: AMMO`:
 
@@ -204,7 +204,7 @@ or
 ```
 
 ---
-# Artifacts/relic_data
+# Artifacts/Relic_data
 The current JSON standards for `key` `"artifact_data"` **(obsolete)** look like this:
 
 ```json
@@ -247,7 +247,7 @@ into
 
 
 ---
-# barrel_length
+# Barrel_length
 Very recently, the `barrel_length` `key` for `type: GUN` has been replaced by `barrel_volume`. Fortunately this is a rather easy fix:
 
 ```REGEX
@@ -278,15 +278,15 @@ I recommend using `barrellength_volume.py` to convert these values.
 I have no idea where to start with this. If you have any information, please feel free to comment.
 
 ---
-# blob and slime
+# Blob and Slime
 It turns out that THE BLOB is not the same as the blobs you see around all the time. Check out [blobs are slimes](https://github.com/CleverRaven/Cataclysm-DDA/pull/42287) for more info. Mentions to blob may have to be updated to slime.
 
 ---
-# blueprint
+# Blueprint
 If you've been directed here from the linting section, it is because you have the parameter "blueprint": "", when it should be "blueprint": [ " " ], - A blueprint must always be enclosed in an array. Since this doesn't actually effect the game in any way (blueprint is exclusively used in the code), adding it just for the purpose of linting should be enough.
 
 ---
-# bullet_resist
+# Bullet_resist
 `bullet_resist` is a new mandatory `key: value` pair for `type: material`. If it does not contain `bullet_resist`, it will cause the game to be unable to run. The only way to fix this is to manually add:
 
 ```JSON
@@ -298,7 +298,7 @@ If you've been directed here from the linting section, it is because you have th
 Color has gone through updates and there are many variants of it. The currently allowed colours can be found in [Cataclysm-DDA/doc/COLOR.md](https://github.com/CleverRaven/Cataclysm-DDA/blob/master/doc/COLOR.md). Colours other than those allowed should be replaced.
 
 ---
-# copy-from and looks_like
+# Copy-from and Looks_like
 These are both simple type errors. They should look like:
 
 ```JSON
@@ -311,12 +311,6 @@ But can also be typed:
 "looks-like": "example_item"
 ```
 Running a basic find and replace for each will clean the code of any errors caused by these.
-
----
-# Linting
-Linting is a coding term for formatting to a certain style, and is a very important part of bringing JSON up to date. The simplest way to lint JSON is to paste it into the [JSON formatter](http://dev.narc.ro/cataclysm/format.html), click 'Lint', and then paste the resulting code back into the original file. If it doesn't work, use the debug steps at [JSONLint](https://jsonlint.com/), to check for errors in the code. If it comes up with the error 'Linter currently unavailable', see the [blueprint](#blueprint) section of this document.
-
-It is also possible to use the JSON formatter that comes with CDDA, see the [JSON Style Guide](https://github.com/CleverRaven/Cataclysm-DDA/blob/master/doc/JSON_STYLE.md) for information on how to use it.
 
 ---
 # Materials
@@ -354,7 +348,7 @@ A good guide as to whether it should be the above code instead of the code below
 Due to the complexities of replacing the name with regex, I suggest that you use `name.py`, a python script in the Tools folder of this modpack.
 
 ---
-# picklock
+# Picklock
 It is very possible that you will see the `use_action` `picklock`. This has been rendered obsolete by the addition of the `quality` `LOCKPICK`. You may see:
 
 ```JSON
@@ -461,7 +455,7 @@ or if you want to include ammo as well as magazines- maybe
 
 
 ---
-## CONTAINER
+## Container
 The current JSON standards for the `type` `"CONTAINER"` look like this:
 `type: CONTAINER` has been obsolete for a while now, and having it in JSON causes error messages. The following should easily remove any problems with `type: CONTAINER`:
 
@@ -500,8 +494,9 @@ And repeat for every individual volume value.
 
 Note: I recommend using `barrellength_volume.py`, a python script found in the Tools folder of this modpack.
 
-## folded_volume
+## Folded_volume
 `key` `vehicle_part`:
+
 ```JSON
 "folded_volume": 5
 
@@ -511,6 +506,7 @@ Note: I recommend using `barrellength_volume.py`, a python script found in the T
 Other:
 `"type": "GUNMOD"`
 `integral_volume` and `integral_weight` are:
+
 ```JSON
 "integral_volume": 5,
 "integral_weight": 500
@@ -621,23 +617,29 @@ The current JSON standards for `key` `"activity_level"` look like this:
 # Modinfo
 Every mod requires that they have a `modinfo.json` file at the beginning. Several commonly seen issues and their replacements are:
 ```json
-"mod-type": "SUPPLEMENTAL"
+"mod-type": "SUPPLEMENTAL",
 
-"category": "SUPPLEMENTAL"
+"category": "SUPPLEMENTAL",
 ```
 ```json
 "ident": "mod_id",
 
-"id": "mod_id"
+"id": "mod_id",
 ```
 ```json
-"author": "Author1"
+"author": "Author",
 
-"authors": [ "Author1" ],
+"authors": [ "Author" ],
 ```
 
----
+```JSON
+"maintainer": "maintainer",
+
+"maintainers": [ "Maintainer" ],
+```
+
 # Time
+
 Outdated:
 ```JSON
 "type": "construction",
@@ -688,7 +690,7 @@ If the value of `min_unarmed` or `min_melee` is 0, just delete it.
 ```
 
 ---
-# item_group
+# Item_group
 Item groups should use `prob` instead of `chance`
 ```JSON
 "type": "item_group",
@@ -699,7 +701,7 @@ Item groups should use `prob` instead of `chance`
 ```
 
 ---
-# vehicle_part
+# Vehicle_part
 Vehicle Parts should not have the `key` `range`.
 ```C++
 "type": "vehicle_part",
@@ -719,6 +721,7 @@ This regex will find all non-ascii (unicode) characters, excluding the ellipsis 
 ---
 # Price
 `key` `price` should have a `value` `string`
+
 ```C++
 "price": 100,
 "price_postapoc": 1000

@@ -1,10 +1,27 @@
-### Package bionic professions
-```Regex
-"package_bionic_professions"
+# Professions catalogue
+
+Use the `home` key to get to the top.
+
+**Table of Contents**
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Package bionic professions](#package-bionic-professions)
+  - [Professions](#professions-pbp)
+- [More classes scenarios](#more-classes-scenarios)
+  * [Professions](#professions-mcs)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+# Package bionic professions
+
+```json
+Mod id
+"id": "package_bionic_professions"
 ```
 
 
-#### Professions
+#### Professions PBP
 ```Json
 `"id": "quiver_bionic_prepper",`
 `"id": "bionic_athlete",`
@@ -34,14 +51,17 @@
 `"id": "razorgirl",`
 ```
 
+---
 
-## More classes scenarios
-```Regex
-"more_classes_scenarios"
+# More classes scenarios
+
+```json
+Mod id
+"id": "more_classes_scenarios"
 ```
 
+#### Professions MCS
 
-#### Professions
 ```Json
 `"id": "specops",`
 `"id": "soldier",`
@@ -55,3 +75,6 @@
 `"id": "goalie",`
 `"id": "elementary_student",`
 ```
+
+---
+
