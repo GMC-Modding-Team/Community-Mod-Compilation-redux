@@ -453,10 +453,9 @@ add these to "type": `Magazine` **needs updating**
 ```JSON
 "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "Ammo_example": 30 } } ]
 ```
-or if you want to include ammo as well as magazines- maybe
+or if you want to include more ammo
 ```JSON
-"magazines": [ [ "ammo_type", [ "ammo_id_1", "ammo_id_2", "ammo_id_3" ] ] ]
-"magazine_well": 1
+"pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "Ammo_example_1": 120, "Ammo_example_2": 120 } } ]
 ```
 
 
