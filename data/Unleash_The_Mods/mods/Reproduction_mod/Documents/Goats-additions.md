@@ -103,7 +103,6 @@ https://www.verywellfamily.com/bare-necessities-basic-baby-needs-293962
 - [ ] add mutations for marking parent (parents in the cata theme)
 - [ ] make sure the names are generated randomly and not just your kid
 - [ ] add menu for entertainment, cleaning, feeding and shh
-- [ ] add missions to take care of your kid
 - [ ] add more TALK
     - [ ] add talk for kids future
         - [ ] add apocalypses talk for kids and adults
