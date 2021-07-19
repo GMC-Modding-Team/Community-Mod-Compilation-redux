@@ -1,4 +1,4 @@
-# Goats Reproduction additions and updates
+# Goats Reproduction additions and updates - Baby mod
 ## The real reproduction mod
 
 
@@ -24,7 +24,6 @@ https://www.verywellfamily.com/bare-necessities-basic-baby-needs-293962
     - [ ] cloth wipes
     - [ ] diaper rash cream
     - [ ] changing mat
-    - [ ] diaper rash cream
     - [ ] receptacle
     - [ ] baby washcloths
     - [ ] hooded towels
@@ -81,7 +80,7 @@ https://www.verywellfamily.com/bare-necessities-basic-baby-needs-293962
     - [ ] travel cot
     - [ ] co-sleeper
     - [ ] Crib mattresses eg cradle, bassinet, travel cot or co-sleeper
-    - [ ] changing mat
+    - [ ] Changing mat
     - [ ] Change table (or just use change pad on top of dresser or bed)
     - [ ] Rocking chair for feeding and swaddling
     - [ ] Playpen
@@ -92,7 +91,7 @@ https://www.verywellfamily.com/bare-necessities-basic-baby-needs-293962
     - [ ] Dresser/chest
     - [ ] Hamper
     - [ ] Baby monitor
-    - [ ] Gates
+    - [ ] Baby Gates
     - [ ] Dry formula dispenser
     - [ ] Bottle sterilizer
     - [ ] High chair
