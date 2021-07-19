@@ -84,7 +84,7 @@ Use the `home` key to get to the top.
 
 
 ```JSON
-"location": "barrel", -"install_time": "10 m",
+"location": "barrel", - "install_time": "10 m",
 
 "location": "receiver", - "install_time": "10 m",
 
