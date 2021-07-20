@@ -1,8 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/tree/HEAD)
+## [v0.2.0-beta](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/tree/v0.2.0-beta) (2021-07-19)
 
-[Full Changelog](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/compare/V0.1.9...HEAD)
+[Full Changelog](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/compare/V0.1.9...v0.2.0-beta)
 
 **Fixed bugs:**
 
@@ -10,6 +10,7 @@
 
 **Merged pull requests:**
 
+- Pr routine updates 3 [\#135](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/135) ([TheGoatGod](https://github.com/TheGoatGod))
 - Clean up `.gitignore` [\#134](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/134) ([UmbralReaper](https://github.com/UmbralReaper))
 - Rearrange vehicle order to correct part load errors [\#133](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/133) ([UmbralReaper](https://github.com/UmbralReaper))
 - Prepare for 0.F \(part 1\) [\#132](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/132) ([UmbralReaper](https://github.com/UmbralReaper))
