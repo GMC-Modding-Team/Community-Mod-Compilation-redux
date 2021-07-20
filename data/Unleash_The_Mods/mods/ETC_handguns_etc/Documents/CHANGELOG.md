@@ -1,77 +1,54 @@
-# Release 2 - Jan/2021 for Bright Nights (not tested in mainline 0.E but should work too)
+# Release 4 - Mar/2021 for Bright Nights
 
 ## JSON fixes and compatibility
 
-- Adjusted syntax and content of all .json files for compatibility.
+- Fixed switchable battery tool or loading port gun mods to be truly irremovable once installed in a gun.
 
-- Fixed Corporate Spymaster profession to properly carry a .22 ETC stealth pistol.
+- Fixed range modifier for SMC223.
 
-- Fixed Vault Newcomer challenge starting location which should never mismatch now, just one level further undeground because keeping it in the same Z-level as before won't work. Guaranteed !FUN! increase.
+- Added lightweight replacement furniture to the Combo X912 of the Leadworks Executive so it can be wielded one-handed by a STR 8 character.
 
-- Set up new migration settings for Leadworks guns removed from vanilla to the "reimagined" versions for the 1 in one billion odds of someone trying this mod and having a save that will benefit from this.
+- Updated contents of ER555 pattern conversion packs previously using obsolete 40mm grenade ids.
 
 ## Balance
 
-- Removed all non-exclusive gun mods, replaced with vanilla ones. Gyroscopic stabilizers in rifle caliber "pistols" were replaced with folding wire stocks.
+- Changed 7.62 EC orbital to have the same armor penetration of as 7.62 ECHV, except that it is applied over only 25% of a target's armor, completely bypassing the rest.
 
-- Adjusted rate of fire of automatic weapons to match changes in the vanilla weapons autofire specs and remain balanced in relation to them.
+- Buffed 5.56 ETC damage by 20% thus 5.56 DK now deals about as much damage as a 6.5 Grendel or 6.8 Remington SPC round would if they were added to the base game while making the advantage of 5.56 SAP over its 5.56 NATO counterpart more significant.
 
-- Added folding wire stocks to some guns which recoil and rate of fire really makes having no stock at all in them madness.
+- Redefined damage and armor penetration values of ETC rounds to be calculated relative to base game ammo values through copy-from, ensuring they will automatically match any changes to game balance and adjust to any differences between BN and DDA.
 
-- Adjusted firearms dimensions to a balanced match between realism and fun, also to fit properly with the new maximum volume restrictions of holsters according to their intended purposes(backup pistol, fast draw main pistol, big main pistol, etc).
+- Increased the ranges of 9mm ETC HAPM, 5.56 DK, 7.62 ECHV, 1.06mm magmg and orbital rounds to 100, 120, 125 and 200 respectively.
 
-- Reduced capacity of the O9 electromagnum and doublemag to only 4 rounds, matching the bigger 5.56 ADR and 7.62 AMR and allowing the same speedloader to also be used by a new 9mm derringer. Reduced their volume accordingly to also fit in fast draw holsters.
+- Changed armor penetration progression in non subsonic 9mm ETC ammo types to 0 - 19 - 28 - 47 and made HVHP always deal 25% more damage vs. unarmored compared to FMJ.
 
-- Migrated damage that should be from the rounds to the rounds JSON instead of having the total damage value split between rounds and guns for noise reduction and defined specific loudness values for all pistol caliber ETC bullets.
+- Removed distinction between 5.56 ETC and 5.56 NATO STANAG magazines. Now all of them, including real ones, support both ammo types in addition to .300 BLK, furthermore 5.56 ETC rifles are STANAG-compatible.
 
-- Rebalanced several .22 ETC and 9mm ETC rounds specs with a more drastic gradient in stopping power vs. armor penetration among different ammo types. IE: .22 ETC microflechette - 9 dmg and 60 AP vs. .22 ETC TB - 27 dmg and 0 AP.
+- Adjusted dimensions or capacity of some of the new 5.56 magazines to be close enough to real ones while remaining better in volume efficiency.
 
-- Buffed base stopping power of .22 ETC by 20%  to match the rebalance of .22 in Bright Nights. Damage value for default APM rounds increased to 18 (2 points above .22 LR).
+- Fixed overpriced ETC rounds, except for 7.62mm EC. $15 per shot is still dirt cheap for something that includes a very tiny plutonium cell.
 
-- Changed .308 SMC from being compatible with only M14 magazines to using its own non-detachable tubular magazine.
+- Replaced FLARE ammo effect from plasma shotgun with new and much more !FUN! WOOLYPETER_SHOT effect, which will really turn up the heat all over in the air, as expected from something with stellar temperatures.
 
-- Changed starting weapons for the corporate spymaster profession. EMP Projector was replaced with a YM14 PDW loaded with 10mm Auto plus 2 spare magazines while the 12C Storm Bolter shotgun was replaced with a modded and scoped V29 laser pistol.
-
-- Gave the corporate spymaster a new and completely exclusive, never spawned anywhere starting gun: a crazy slam fire only shotgun prototype.
-
-- Some small adjustments to spawn distribution and the new stuff added to spawns of course.
 
 ## New Content
 
-- Added tube loaders for the new guns with magazine tubes, speedloaders for the new revolvers and alike.
+- XE50 Ion Mace, a power hungry scatter electrolaser pistol fed by medium batteries which completely ignores most armor by dealing electric damage with both stun and EMP effects, but useless vs. electric-immune foes. High DPS but weak "single" shot damage.
 
-- One magazine fed triple barrel .410 shotgun, the OCG410 Triarii, to put the nuts in gun nuts.
+- Light Guided Weapon, a very accurate rocket launcher with four tubes that can be loaded with two different rocket types at once, including a new white phosphorus rocket with an unique AOE and even a rocket propelled version of what is mentioned right below.
 
-- One automatic, SMG-like .410 shotgun, the OCG410A SBMP, because there is no spray and pray like loading a magazine in a shotgun similarly to how one is loaded in a MAC-10 then trying to control the muzzle climb once buckshot starts flying.
+- Nuclear Grenade so the children of a dead Earth can make it even more dead. Unfortunately the Cataclysm happened before its field testing as a thrown grenade. Could also be set up in a RC car for the world's tiniest and most dangerous car bomb ever.
 
-- One theoretically possible if not necessarily practical compact .410 shotgun vaguely resembling a Micro-Uzi with an integral suppressor for "silent" breaching or madmen who want a "silenced" shotgun instead of a SMG; The OCG-410S Sicarius.
+- OCGES Biorifle, a profession-exclusive man-portable "water" cannon that is acidproof and can shoot concentrated acid instead, which type was converted from comestible to ammo for this to become possible.
 
-- OCG 12D Slam Dunk as an exclusive starting gun for the Corporate Spymaster profession, a prototype that was not yet put into production when the cataclysm happened, perhaps for a good reason, but quite powerful, with a higher sustained rate of fire than most shotguns.
+- Added option to install any of the ETC and new conventional guns that can be loaded with ammo belts, the XNU laser, the coilguns, the OCGES, the Excidia automatic shotgun or the plasma shotgun into a vehicle turret mount.
 
-- YM14 Carbine PDW, a pistol caliber carbine designed to emulate the stopping power and range of the M1 carbine with 10mm auto, also compatible with .40 S&W. Plus a 6-round backup pistol and a variant of the chaingun rechambered for these calibers too.
+- Added unique custom starting vehicles for all the executives and corporate spymaster professions. Two sports cars and three SUVs respectively, deathmobile starter packs in skilled hands with the right tools.
 
-- "Restored" the Enforcer autorevolver as the OCG-Leadworks 460 with some changes: ammo capacity reduced from 6 to 5, uses vanilla holographic sight and a detachable laser sight and is compatible with more gun mods if becoming too big for a normal holster isn't a problem.
+- Added handloaded subsonic 5.56 NATO recipes. Really weak though, better to get an American-180 and put a suppressor in it or the new gun mentioned below. Still could be useful in some what-ifs involving procedural spawns and a lot of bad luck.
 
-- Added .45 colt and .410 shot variant of the Leadworks Enforcer as OCG-Leadworks 45 Sixpack. Sixpack of Colt45 not included. Don't load it with blackpowder rounds.
+- SSR300 Wisp, a bulky and integrally suppressed .300 BLK gun designed to be used as sniper rifle for covert night operations, based upon the MR9SD. Direct equivalent to the VSS Vintorez.
 
-- Reimagined the L12 Defender as the OCG-Leadworks 12C Storm Bolter. Sort of like a double barrel Serbu Firearms Super-Shorty Mini-Shotgun. While a bootleg Winchester 1887 has a larger magazine, this one has among other advantages a preposterous origin story, for it was crowdfunded by big fans of the Cataclysm universe equivalent to Warhammer 40k."
+- Optional, toggleable G11 override minimod, which converts 4.6mm to 4.73mm caseless, including the MP7, and adds the H&K G11 and a 4.73mm UCP. In it there is a toggleable setting to replace all 8x40mm Rivtech guns, mags and ammo with 4.73mm too.
 
-- Reimagined the 9mm Leadworks L9 Lookout revolver as the OCG-Leadworks Quad9 holdout derringer. Small enough for any holster, it fires all its four barrels simultaneously and is compatible with the same speedloader used by the O9 electromagnum. For those moments when 4 9mm bullets make the difference between YASD and survival.
-
-- OCG-Leadworks T9, a heavyweight 9mm backup pistol made mostly of tungsten and other high density materials to reduce felt recoil while still being easily concealable.
-
-- Reimagined the L39B as the OCG-Leadworks 923, which is closer to a Steyr TMP in dimensions than to a Beretta 93R but serves the same purpose, minus built-in accessories.
-
-- In the grim darkness of the Cataclysm, diamond edged chainswords are real now also thanks to crowdfunding by not-Warhammer40k fans. They can replace electric carvers in a kitchen and while not folded 1000 times, cut a lot better than katanas.
-
-- Atomic Irish coffee, which is the same as the default one, but made with atomic coffee instead of plain coffee or coffee syrup.
-
-- Added Gunslinger of the Future profession, which starts with one OCG-L 45, one O9 Electromagnum, some ammo for both, some aluminum powder and knowledge plus skills to hand load ETC pistol ammo.
-
-## New Fluff
-
-- OmniCorp incorporated Leadworks when their original designs were still being prototyped. Take this with the grain of salt any fanon deserves.
-
-- Renamed the O0238 submachinegun to 02020 so it is not inherently contradicting any retcon of mainline canon regarding timeline of the Cataclysm unless it gets even more retcons. Also Cyberpunk 2020.
-
-- Redefined the vanilla description of plutonium cells in a more sci-fi way that doesn't contradict the explanation in the description for the self-charged 7.62mm electrothermal round, or the mad science to create smaller liquid core nanoreactors out of plutonium cells and complete disregard for radiation poisoning risks.
+- Included SFX configuration of the new guns for @'s soundpack in the modmods folder.

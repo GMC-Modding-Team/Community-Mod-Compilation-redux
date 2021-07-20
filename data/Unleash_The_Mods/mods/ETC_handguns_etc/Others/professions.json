@@ -2,6 +2,28 @@
   {
     "type": "item_group",
     "subtype": "collection",
+    "id": "army_mags_m2010_ext",
+    "entries": [
+      { "item": "smc300mag", "ammo-item": "300_winmag", "charges": 10 },
+      { "item": "smc300mag", "ammo-item": "300_winmag", "charges": 10 },
+      { "item": "smc300mag", "ammo-item": "300_winmag", "charges": 10 },
+      { "item": "smc300mag", "ammo-item": "300_winmag", "charges": 10 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "collection",
+    "id": "ocgl_cybercop2_mags",
+    "entries": [
+      { "item": "glockbigmag", "ammo-item": "9mmP", "charges": 30 },
+      { "item": "glockbigmag", "ammo-item": "9mmP", "charges": 30 },
+      { "item": "glockbigmag", "ammo-item": "9mmP", "charges": 30 },
+      { "item": "glockbigmag", "ammo-item": "9mmP", "charges": 30 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "collection",
     "id": "bandolier_shotgun_flech",
     "entries": [ { "item": "shot_flechette", "charges": 12 } ]
   },
@@ -61,13 +83,23 @@
     "type": "item_group",
     "subtype": "collection",
     "id": "poor_mans_chainsword",
-    "entries": [ { "item": "ocg_chainsword_off", "charges": 500 } ]
+    "entries": [ { "item": "ocg_chainsword", "charges": 500 } ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "collection",
+    "id": "rivtech_kill_it_with_fire1",
+    "entries": [ { "item": "rm4502", "charges": 2000 } ]
   },
   {
     "type": "item_group",
     "subtype": "collection",
     "id": "silent_deel",
-    "entries": [ { "item": "etc_deel", "ammo-item": "9etcsap", "charges": 10, "contents-item": "suppressor_compact" } ]
+    "entries": [
+      { "item": "etc_deel", "charges": 1 },
+      { "item": "deelmag", "ammo-item": "9etc", "charges": 10 },
+      { "item": "suppressor_compact", "charges": 1 }
+    ]
   },
   {
     "type": "item_group",
@@ -144,6 +176,7 @@
     "points": 8,
     "//0": "Mostly useless skills but very useful starting tools, two relatively silent guns, a spare sidearm for common 9mm rounds, good accessories and rare subsonic bullets.",
     "skills": [ { "level": 7, "name": "barter" }, { "level": 5, "name": "speech" } ],
+    "vehicle": "car_omnicorp",
     "items": {
       "both": {
         "items": [ "briefcase", "knit_scarf", "diveknife", "multitool", "1st_aid", "red_dot_sight", "energy_drink", "aspirin" ],
@@ -156,11 +189,11 @@
             "charges": 24,
             "contents-item": [ "shoulder_strap", "light_grip", "rail_laser_sight" ]
           },
-          { "item": "bootstrap", "contents-group": "silent_deel" },
+          { "item": "briefcase", "contents-group": "silent_deel" },
           { "item": "legpouch_large", "contents-group": "ocg_mags_qr555_pdw" },
           { "item": "scabbard", "contents-group": "poor_mans_chainsword" },
           { "item": "ocg_beel", "ammo-item": "9mmP2", "charges": 10, "container-item": "bootstrap" },
-          { "item": "deelmag", "ammo-item": "9etcsap", "charges": 10, "container-item": "legpouch" },
+          { "item": "deelmag", "ammo-item": "9etc", "charges": 10, "container-item": "legpouch" },
           { "item": "UPS_off", "contents-group": "charged_ups_highcap" }
         ]
       },
@@ -176,10 +209,11 @@
     "id": "rivtech_exec",
     "type": "profession",
     "name": "Rivtech Executive",
-    "//2": "Different flavors of the same start. This one doesn't sacrifice firepower for silence, but depending on RNG all starting guns may become useless due to lack of enough ammo. Packed lots of it due to rarity.",
+    "//0": "Different flavors of the same start. This one doesn't sacrifice firepower for silence, but depending on RNG all starting guns may become useless due to lack of enough ammo. Packed lots of it due to rarity.",
     "description": "You were a VIP at Rivtech attending a formal party when one of the guests tore the face of another executive off. You survived, used your status to \"borrow\" some useful products and are determined to not give up.",
     "points": 8,
     "skills": [ { "level": 7, "name": "barter" }, { "level": 5, "name": "speech" } ],
+    "vehicle": "suv_rivtech",
     "items": {
       "both": {
         "items": [
@@ -206,7 +240,7 @@
           { "item": "5x50heavy", "charges": 200 },
           { "item": "bandolier_shotgun", "contents-group": "bandolier_rivtech_shotgun_inc" },
           { "item": "bandolier_shotgun", "contents-group": "bandolier_rivtech_shotgun_flech" },
-          { "item": "XL_holster", "contents-group": "ultimate_holdout_needlegun" },
+          { "item": "box_medium", "contents-group": "ultimate_holdout_needlegun" },
           { "item": "powered_earmuffs", "contents-group": "charged_earmuffs_highcap" },
           { "item": "knife_rm42", "container-item": "sheath" }
         ]
@@ -223,9 +257,10 @@
     "type": "profession",
     "name": "Leadworks Executive",
     "description": "You were a VIP at Leadworks who survived its downsizing and ongoing incorporation within OmniCorp, attending a formal party when one of the guests tore the face of another executive off. You survived once again, used your status to \"borrow\" some of the newest post-merger products and are determined to not give up.",
-    "//3": "Could have just deleted this or something, but instead went with another approach.",
+    "//0": "Could have just deleted this or something, but instead went with another approach.",
     "points": 8,
     "skills": [ { "level": 7, "name": "barter" }, { "level": 5, "name": "speech" } ],
+    "vehicle": "suv_leadworks",
     "items": {
       "both": {
         "items": [
@@ -242,17 +277,18 @@
         "entries": [
           { "item": "smart_phone", "charges": 120 },
           {
-            "item": "ocgl_12c_stormbolter",
-            "ammo-item": "shot_flechette",
-            "charges": 4,
-            "contents-item": "shoulder_strap"
+            "item": "ocgl_combox912",
+            "ammo-item": "9mmP2",
+            "charges": 30,
+            "contents-item": [ "shoulder_strap", "light_grip" ]
           },
+          { "item": "shot_flechette", "charges": 4 },
           { "item": "bandolier_shotgun", "contents-group": "bandolier_swat_cqc2" },
           { "item": "bandolier_shotgun", "contents-group": "bandolier_shotgun_flech" },
-          { "item": "ocgl_923", "ammo-item": "9mmP2", "charges": 30, "container-item": "holster" },
           { "item": "glockbigmag", "ammo-item": "9mmP2", "charges": 30, "container-item": "legpouch_large" },
-          { "item": "ocgl_quad9", "ammo-item": "9mmP2", "charges": 4, "container-item": "bootstrap" },
-          { "item": "ocgl_t9", "ammo-item": "9mmP2", "charges": 9, "container-item": "bootstrap" },
+          { "item": "glockbigmag", "ammo-item": "9mmP2", "charges": 30, "container-item": "legpouch_large" },
+          { "item": "ocgl_quad9", "ammo-item": "9mmP2", "charges": 4 },
+          { "item": "ocgl_t9", "ammo-item": "9mmP2", "charges": 9 },
           { "item": "9etc_speedloader", "ammo-item": "9mmP2", "charges": 4 },
           { "item": "9etc_speedloader", "ammo-item": "9mmP2", "charges": 4 },
           { "item": "ocg_t9mag", "ammo-item": "9mmP2", "charges": 9 },
@@ -274,8 +310,9 @@
     "name": "Aerial Labs Executive",
     "description": "You were a VIP at Aerial Labs attending a formal party when one of the guests tore the face of another executive off. You survived, used your status to \"borrow\" some useful products and are determined to not give up.",
     "points": 9,
-    "//4": "It might look like an absolutely OP start, but these energy guns consume a lot of power and will drain that UPS dry very quickly considering the average density of zombies and other monsters in the game.",
+    "//0": "It might look like an absolutely OP start, but these energy guns consume a lot of power and will drain that UPS dry very quickly considering the average density of zombies and other monsters in the game.",
     "skills": [ { "level": 7, "name": "barter" }, { "level": 5, "name": "speech" } ],
+    "vehicle": "suv_aeriallabs",
     "items": {
       "both": {
         "items": [ "briefcase", "knit_scarf", "knife_swissarmy", "picklocks", "energy_drink", "aspirin" ],
@@ -313,7 +350,8 @@
       { "level": 5, "name": "speech" },
       { "level": 4, "name": "barter" }
     ],
-    "//5": "Wide array of guns with one fit for almost every situation, but like the execs, no combat skills. Instead, great starting skills for talking, bribing, hacking or lockpicking a way in then out as expected from such background.",
+    "vehicle": "car_spymaster",
+    "//0": "Wide array of guns with one fit for almost every situation, but like the execs, no combat skills. Instead, great starting skills for talking, bribing, hacking or lockpicking a way in then out as expected from such background.",
     "items": {
       "both": {
         "items": [
@@ -349,12 +387,88 @@
           { "item": "spistol_mag", "ammo-item": "22etc_apt", "charges": 7 },
           { "item": "spistol_mag", "ammo-item": "22etc_apt", "charges": 7 },
           { "item": "spistol_mag", "ammo-item": "22etc_apt", "charges": 7, "container-item": "legpouch" },
-          { "item": "bootstrap", "contents-group": "futuretech_spy_pistol" },
+          { "item": "briefcase", "contents-group": "futuretech_spy_pistol" },
           { "item": "powered_earmuffs", "charges": 200, "contents-item": "battery_ups" }
         ]
       },
       "male": [ "briefs", "socks", "tieclip_pick", "tie_skinny", "pants_leather", "dress_shoes", "sf_watch" ],
       "female": [ "barrette_pick", "bra", "tights", "thigh_high_boots", "skirt", "garnet_gold_earring" ]
+    }
+  },
+  {
+    "type": "profession",
+    "id": "ocg_doom",
+    "name": { "male": "Doomed Marine", "female": "Alice McGee" },
+    "//0": "Different starting weapons to reflect one of the two games this refers to being more focused on melee action than the other. The Marine arsenal is a close match except the plasma shotgun is not a BFG9k. And of course a pet rabbit.",
+    "description": "You are packing... a lot of weaponry. Through the depths of Hell or down the rabbit hole, neither spider mastermind or queen of hearts could stop you. After crossing a portal, there is more slaughter ahead. Such is life in the Wonderland.",
+    "points": 10,
+    "skills": [ { "level": 4, "name": "gun" }, { "level": 4, "name": "melee" } ],
+    "traits": [ "KILLER", "SCHIZOPHRENIC" ],
+    "pets": [ { "name": "mon_rabbit", "amount": 1 } ],
+    "items": {
+      "both": {
+        "items": [ "diveknife", "matches", "rx12_injector", "rx11_stimpack", "multitool" ],
+        "entries": [
+          { "item": "bandolier_shotgun", "contents-group": "bandolier_swat_cqc1" },
+          { "item": "shot_00", "charges": 50 },
+          { "item": "10mm", "charges": 200 },
+          { "item": "UPS_off", "contents-group": "charged_ups_highcap" },
+          { "item": "XL_holster", "contents-group": "exotic_shotgun_prototype" },
+          { "item": "ocg_id10", "ammo-item": "10mm", "charges": 6, "container-item": "bootstrap" },
+          { "item": "powered_earmuffs", "charges": 200, "contents-item": "battery_ups" }
+        ]
+      },
+      "male": {
+        "items": [
+          "nomex_suit",
+          "nomex_socks",
+          "nomex_gloves",
+          "gloves_tactical",
+          "knuckle_brass",
+          "boots_combat",
+          "lsurvivor_armor",
+          "pants_army",
+          "tac_fullhelmet",
+          "molle_pack"
+        ],
+        "entries": [
+          { "item": "combatsaw_off", "charges": 450 },
+          { "item": "ocg_id10mag", "ammo-item": "10mm", "charges": 6, "container-item": "legpouch" },
+          { "item": "belt10mm", "charges": 690 },
+          { "item": "ocg_n10chaingun", "charges": 0, "custom-flags": [ "auto_wield" ] },
+          { "item": "84x246mm_he", "charges": 2 },
+          { "item": "m3_carlgustav", "charges": 1 },
+          { "item": "plasma_rifle", "charges": 25 },
+          { "item": "ocg_plasma_shotgun", "charges": 5 }
+        ]
+      },
+      "female": {
+        "items": [
+          "bra",
+          "panties",
+          "socks",
+          "scissors",
+          "deck_of_cards",
+          "shillelagh_weighted",
+          "dress_shoes",
+          "back_holster",
+          "legrig",
+          "legrig",
+          "fanny",
+          "grenade_inc",
+          "dress",
+          "long_glove_white",
+          "barrette"
+        ],
+        "entries": [
+          { "item": "plasma", "charges": 2 },
+          { "item": "ocg_xnu_laser", "charges": 4000, "custom-flags": [ "auto_wield" ] },
+          { "item": "creepy_doll", "contents-group": "charged_earmuffs_highcap" },
+          { "item": "scabbard", "contents-group": "poor_mans_chainsword" },
+          { "item": "knife_combat", "container-item": "bootsheath" },
+          { "item": "survivor_machete", "container-item": "baldric" }
+        ]
+      }
     }
   }
 ]

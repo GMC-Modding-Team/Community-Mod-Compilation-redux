@@ -15,8 +15,6 @@
     "material": [ "superalloy", "steel", "plastic" ],
     "dispersion": 620,
     "durability": 7,
-    "recoil_shots": 2,
-    "delay_percent": 100,
     "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "DOUBLE", "double", 2, "SIMULTANEOUS" ] ],
     "ranged_damage": { "damage_type": "stab", "amount": -6 },
     "reload": 85,
@@ -31,7 +29,8 @@
       [ "underbarrel", 1 ],
       [ "rail mount", 1 ],
       [ "brass catcher", 1 ]
-    ]
+    ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "ammo_restriction": { "shot": 4 } } ]
   },
   {
     "id": "ocg_12d_slamdunk",
@@ -54,20 +53,22 @@
     "extend": { "flags": [ "RELOAD_AND_SHOOT" ] },
     "valid_mod_locations": [
       [ "accessories", 4 ],
+      [ "stock", 1 ],
       [ "grip", 1 ],
       [ "sling", 1 ],
       [ "sights", 1 ],
       [ "underbarrel", 1 ],
       [ "rail mount", 1 ],
       [ "brass catcher", 1 ]
-    ]
+    ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "ammo_restriction": { "shot": 1 } } ]
   },
   {
     "id": "ocg12_excidia",
     "type": "GUN",
     "copy-from": "shotgun_base",
     "name": { "str_sp": "OCG12 Excidia" },
-    "//": "Shared gas port is as long as the barrels in this one, can't be sawn off. Same thing on the two gas ports of the 12-S.",
+    "//": "Feed system and action inspired by the Gilboa Snake assault rifle. Shared gas port is as long as the barrels in this one, can't be sawn off. Same thing on the two gas ports of the 12-S",
     "description": "Perhaps the pinnacle of overkill, OmniCorp Excidia is an automatic double barrel shotgun. Contains two improved chokes, magazines and mirrored ejection ports, but only one trigger: fire modes are set through a selector lever. Its action only supports double shots or full auto. Uses two stacked Saiga-12 or proprietary magazines.",
     "weight": "4 kg",
     "volume": "2700 ml",
@@ -78,13 +79,9 @@
     "material": [ "superalloy", "steel", "plastic" ],
     "dispersion": 350,
     "durability": 8,
-    "recoil_shots": 2,
-    "delay_percent": 100,
     "reload": 150,
     "modes": [ [ "DEFAULT", "double", 2, "SIMULTANEOUS" ], [ "FAUTO", "auto", 4 ] ],
     "built_in_mods": [ "ocg_grippod_fg", "ocg_grippod_bipod", "stabilizer", "recoil_stock", "barrel_ported" ],
-    "magazine_well": 2,
-    "magazines": [ [ "shot", [ "excidia20mags12", "excidia40mag" ] ], [ "410shot", [ "triarii_saiga410mag_30rd", "triarii36mags" ] ] ],
     "looks_like": "saiga_12",
     "valid_mod_locations": [
       [ "accessories", 4 ],
@@ -99,6 +96,15 @@
       [ "sling", 1 ],
       [ "stock", 1 ],
       [ "underbarrel", 1 ]
+    ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "magazine_well": "500 ml",
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [ "excidia20mags12", "excidia40mag", "triarii_saiga410mag_30rd", "triarii36mags" ]
+      }
     ]
   },
   {

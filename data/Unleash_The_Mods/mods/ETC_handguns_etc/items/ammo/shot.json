@@ -6,8 +6,7 @@
     "name": { "str": "anti-materiel slug, black powder" },
     "description": "A custom armor-piercing incendiary slug with an extracted 262gr 9x19mm ETC SAP depleted uranium projectile as its tip, enveloped by a lead outer core which in turn is covered by a copper jacket. Statistically smokeless powder is far more common than the other components this requires, so making this anachronism is very situational (read: almost always useless).",
     "proportional": { "price": 0.9, "damage": { "damage_type": "stab", "amount": 0.9 }, "dispersion": 1.1 },
-    "extend": { "effects": [ "RECYCLED", "MUZZLE_SMOKE", "BLACKPOWDER" ] },
-    "delete": { "effects": [ "NEVER_MISFIRES" ], "flags": [ "IRREPLACEABLE_CONSUMABLE" ] }
+    "extend": { "effects": [ "MUZZLE_SMOKE", "BLACKPOWDER" ] }
   },
   {
     "id": "bp_shot_microflechette",
@@ -16,8 +15,7 @@
     "name": { "str": "micro-flechette shell, black powder" },
     "description": "A shell filled with very tiny tungsten darts, this is a custom hand load for hunting prey made of metal rather than flesh and bones. Statistically smokeless powder is far more common than the other components this requires, so making this anachronism is very situational (read: almost always useless).",
     "proportional": { "price": 0.9, "damage": { "damage_type": "stab", "amount": 0.9 }, "dispersion": 1.1 },
-    "extend": { "effects": [ "RECYCLED", "MUZZLE_SMOKE", "BLACKPOWDER" ] },
-    "delete": { "effects": [ "NEVER_MISFIRES" ], "flags": [ "IRREPLACEABLE_CONSUMABLE" ] }
+    "extend": { "effects": [ "MUZZLE_SMOKE", "BLACKPOWDER" ] }
   },
   {
     "id": "bp_shot_tungsten",
@@ -26,8 +24,7 @@
     "name": { "str": "hardcore slug, black powder" },
     "description": "A custom armor-piercing slug with an extracted 100gr .22 ETC tungsten ball converted into its tip, enveloped by a lead outer core which in turn is covered by a copper jacket. Statistically smokeless powder is far more common than the other components this requires, so making this anachronism is very situational (read: almost always useless).",
     "proportional": { "price": 0.9, "damage": { "damage_type": "stab", "amount": 0.9 }, "dispersion": 1.1 },
-    "extend": { "effects": [ "RECYCLED", "MUZZLE_SMOKE", "BLACKPOWDER" ] },
-    "delete": { "effects": [ "NEVER_MISFIRES" ], "flags": [ "IRREPLACEABLE_CONSUMABLE" ] }
+    "extend": { "effects": [ "MUZZLE_SMOKE", "BLACKPOWDER" ] }
   },
   {
     "id": "reloaded_shot_antimateriel",
@@ -46,23 +43,14 @@
   {
     "id": "reloaded_shot_microflechette",
     "type": "AMMO",
+    "copy-from": "shot_00",
     "name": { "str": "micro-flechette shell" },
     "description": "A shell filled with very tiny tungsten darts, this is a custom hand load for hunting prey made of metal rather than flesh and bones.",
-    "weight": "32 g",
-    "volume": "250 ml",
     "price": "20 USD",
     "material": [ "plastic", "powder", "tungsten" ],
-    "symbol": "=",
-    "color": "red",
-    "count": 20,
-    "stack_size": 20,
-    "ammo_type": "shot",
-    "casing": "shot_hull",
-    "range": 12,
-    "damage": { "damage_type": "stab", "amount": 38, "armor_penetration": 50 },
-    "recoil": 2750,
-    "loudness": 160,
-    "effects": [ "COOKOFF", "SHOT", "RECYCLED" ]
+    "relative": { "damage": { "damage_type": "stab", "amount": -12, "armor_penetration": 50 }, "recoil": 250 },
+    "extend": { "effects": [ "RECYCLED" ] },
+    "delete": { "effects": [ "NEVER_MISFIRES" ], "flags": [ "IRREPLACEABLE_CONSUMABLE" ] }
   },
   {
     "id": "reloaded_shot_tungsten",

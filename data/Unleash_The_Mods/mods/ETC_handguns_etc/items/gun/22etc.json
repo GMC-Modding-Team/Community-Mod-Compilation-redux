@@ -12,13 +12,13 @@
     "to_hit": -3,
     "bashing": 12,
     "material": [ "superalloy" ],
-    "ammo": "22etc",
-    "ranged_damage": { "armor_penetration": 5 },
+    "ranged_damage": { "damage_type": "stab", "amount": 10, "armor_penetration": 5 },
+    "ammo": [ "22etc" ],
     "recoil": 22,
     "dispersion": 250,
     "durability": 9,
     "built_in_mods": "nanogun_capacitor",
-    "//": "faster cyclical RoF than the M134 minigun, can put down skeletal juggernauts given a large enough supply of micro-flechette rounds",
+    "//": "Somewhat inefficient, faster cyclical RoF than the M134 minigun, can put down skeletal juggernauts given a large enough supply of micro-flechette rounds.",
     "looks_like": "m134",
     "reload": 600,
     "modes": [ [ "DEFAULT", "6 rd.", 6 ], [ "EBURST", "low auto", 8 ], [ "FAUTO", "high auto", 23 ] ],
@@ -33,13 +33,30 @@
       [ "stock", 1 ],
       [ "underbarrel", 1 ]
     ],
-    "magazines": [
-      [ "22etc", [ "nanogun_240_mag", "nanogun_480_mag", "belt22etc" ] ],
-      [ "9etc", [ "belt9etc", "ocgchaingun_mag", "ocg9emag", "ocg9emagbig", "ocg9emagdrum", "deelmag" ] ],
-      [ "10mm", [ "belt10mm", "ocg_10mmchaingun_mag", "ocg_10mmchaingun_magext" ] ],
-      [ "40", [ "belt40sw", "ocg_10mmchaingun_mag", "ocg_10mmchaingun_magext" ] ]
-    ],
-    "flags": [ "WATERPROOF_GUN", "NEVER_JAMS" ]
+    "flags": [ "WATERPROOF_GUN", "NEVER_JAMS" ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "magazine_well": "500 ml",
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [
+          "nanogun_240_mag",
+          "nanogun_480_mag",
+          "belt22etc",
+          "belt9etc",
+          "ocgchaingun_mag",
+          "ocg9emag",
+          "ocg9emagbig",
+          "ocg9emagdrum",
+          "deelmag",
+          "belt10mm",
+          "ocg_10mmchaingun_mag",
+          "ocg_10mmchaingun_magext",
+          "belt40sw"
+        ]
+      }
+    ]
   },
   {
     "id": "etc_nanogunsd",
@@ -78,11 +95,9 @@
     "bashing": 10,
     "material": [ "superalloy", "plastic" ],
     "color": "dark_gray",
-    "ammo": "22etc",
+    "ammo": [ "22etc" ],
     "dispersion": 230,
     "durability": 8,
-    "recoil_shots": 4,
-    "delay_percent": 80,
     "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "EBURST", "4 rd.", 4, [ "SIMULTANEOUS" ] ], [ "FAUTO", "auto", 8 ] ],
     "valid_mod_locations": [
       [ "accessories", 3 ],
@@ -96,10 +111,17 @@
       [ "sights", 1 ],
       [ "underbarrel", 1 ]
     ],
-    "magazine_well": 2,
     "looks_like": "fn_p90",
-    "magazines": [ [ "22etc", [ "o2020_100_mag" ] ], [ "9etc", [ "o2020h_56_mag" ] ] ],
-    "flags": [ "WATERPROOF_GUN" ]
+    "flags": [ "WATERPROOF_GUN" ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "magazine_well": "500 ml",
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [ "o2020_100_mag", "o2020h_56_mag" ]
+      }
+    ]
   },
   {
     "id": "etc_o2020sd",
@@ -137,15 +159,23 @@
     "bashing": 9,
     "material": [ "steel", "superalloy", "plastic" ],
     "color": "dark_gray",
-    "ammo": "22etc",
+    "ammo": [ "22etc" ],
     "ranged_damage": { "damage_type": "stab", "amount": 3 },
     "range": 5,
     "dispersion": 90,
     "durability": 9,
     "clip_size": 20,
     "looks_like": "cx4",
-    "magazines": [ [ "22etc", [ "22etc_tubeloader" ] ] ],
-    "flags": [ "RELOAD_ONE" ]
+    "flags": [ "RELOAD_ONE" ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "magazine_well": "500 ml",
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [ "22etc_tubeloader" ]
+      }
+    ]
   },
   {
     "id": "etc_ocg_dbr",
@@ -161,16 +191,22 @@
     "bashing": 8,
     "material": [ "superalloy", "aluminum", "plastic" ],
     "color": "dark_gray",
-    "ammo": "22etc",
+    "ammo": [ "22etc" ],
     "ranged_damage": { "damage_type": "stab", "amount": -2 },
     "dispersion": 410,
     "durability": 8,
-    "recoil_shots": 2,
-    "delay_percent": 100,
     "clip_size": 12,
     "looks_like": "sw_619",
-    "magazines": [ [ "22etc", [ "22etc_speedloader" ] ] ],
-    "modes": [ [ "DEFAULT", "double", 2, [ "SIMULTANEOUS" ] ] ]
+    "modes": [ [ "DEFAULT", "double", 2, [ "SIMULTANEOUS" ] ] ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "magazine_well": "500 ml",
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [ "22etc_tubeloader" ]
+      }
+    ]
   },
   {
     "id": "etc_ocg_smp",
@@ -186,12 +222,10 @@
     "bashing": 9,
     "material": [ "steel", "superalloy" ],
     "color": "dark_gray",
-    "ammo": "22etc",
+    "ammo": [ "22etc" ],
     "dispersion": 300,
     "durability": 9,
-    "magazine_well": 1,
     "looks_like": "90two",
-    "magazines": [ [ "22etc", [ "smp_30_mag", "smp_60_mag" ] ] ],
     "valid_mod_locations": [
       [ "accessories", 2 ],
       [ "brass catcher", 1 ],
@@ -206,14 +240,23 @@
     ],
     "built_in_mods": [ "smp_suppressor" ],
     "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "EBURST", "3 rd.", 3 ], [ "FAUTO", "auto", 4 ] ],
-    "flags": [ "WATERPROOF_GUN" ]
+    "flags": [ "WATERPROOF_GUN" ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "magazine_well": "250 ml",
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [ "smp_30_mag", "smp_60_mag" ]
+      }
+    ]
   },
   {
     "id": "etc_ocg_spistol",
     "type": "GUN",
     "copy-from": "etc_pistol_base",
     "name": { "str": "OCG Stealth Pistol" },
-    "//": "The Russian PSM pistol would be the closest lookalike",
+    "//": "This is vaguely inspired by the stealth pistol from the first Deus Ex game, except smaller and chambered for .22 LR sized bullets instead of 10mm. The Russian PSM pistol would be the closest lookalike",
     "description": "OmniCorp Stealth Pistol is surprisingly small even with an integrated suppressor. Made only with composite ceramics and polymers to bypass metal detectors when unloaded at the expense of reliability, a now useless feature.",
     "weight": "400 g",
     "volume": "240 ml",
@@ -223,13 +266,11 @@
     "bashing": 9,
     "material": [ "ceramic", "plastic" ],
     "color": "dark_gray",
-    "ammo": "22etc",
+    "ammo": [ "22etc" ],
     "ranged_damage": { "damage_type": "stab", "amount": -2 },
     "dispersion": 580,
     "durability": 7,
-    "magazine_well": "80 ml",
     "looks_like": "sig_mosquito",
-    "magazines": [ [ "22etc", [ "spistol_mag" ] ] ],
     "valid_mod_locations": [
       [ "accessories", 2 ],
       [ "brass catcher", 1 ],
@@ -243,6 +284,15 @@
       [ "underbarrel", 1 ]
     ],
     "built_in_mods": [ "spistol_suppressor" ],
-    "flags": [ "WATERPROOF_GUN" ]
+    "flags": [ "WATERPROOF_GUN" ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "magazine_well": "500 ml",
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [ "spistol_mag" ]
+      }
+    ]
   }
 ]

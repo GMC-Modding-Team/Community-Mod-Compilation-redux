@@ -10,7 +10,16 @@
     "price": "700 USD",
     "price_postapoc": "27 USD",
     "ups_charges": 0,
-    "ammo": "9mm"
+    "ammo": "9mm",
+    "pocket_data": [
+      {
+        "magazine_well": "125 ml",
+        "pocket_type": "MAGAZINE_WELL",
+        "max_contains_volume": "5 L",
+        "max_contains_weight": "5 kg",
+        "item_restriction": [ "beelmag" ]
+      }
+    ]
   },
   {
     "id": "ocgl_t9",
@@ -24,15 +33,22 @@
     "price_postapoc": "25 USD",
     "to_hit": -1,
     "bashing": 11,
-    "material": [ "tungsten", "ceramic", "superalloy" ],
+    "material": [ "tungsten", "carbide", "superalloy" ],
     "color": "dark_gray",
-    "magazine_well": "110 ml",
     "dispersion": 580,
     "durability": 10,
-    "ammo": "9mm",
-    "magazines": [ [ "9mm", [ "ocg_t9mag" ] ] ],
+    "ammo": [ "9mm" ],
     "looks_like": "makarov",
-    "flags": [ "WATERPROOF_GUN", "DURABLE_MELEE" ]
+    "flags": [ "WATERPROOF_GUN", "DURABLE_MELEE" ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "magazine_well": "250 ml",
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [ "ocg_t9mag" ]
+      }
+    ]
   },
   {
     "id": "ocgl_923",
@@ -43,10 +59,54 @@
     "weight": "1500 g",
     "price": "800 USD",
     "price_postapoc": "50 USD",
-    "ammo": "9mm",
+    "ammo": [ "9mm" ],
     "ranged_damage": { "damage_type": "stab", "amount": 2 },
     "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "EBURST", "2 rd.", 2 ], [ "FAUTO", "3 rd.", 3 ] ],
-    "ups_charges": 0
+    "ups_charges": 0,
+    "pocket_data": [
+      {
+        "magazine_well": "500 ml",
+        "pocket_type": "MAGAZINE_WELL",
+        "max_contains_volume": "5 L",
+        "max_contains_weight": "5 kg",
+        "item_restriction": [ "glockbigmag", "glockmag", "glock17_17", "glock17_22", "glock_drum_50rd" ]
+      }
+    ]
+  },
+  {
+    "id": "ocgl_combo912",
+    "copy-from": "ocgl_923",
+    "type": "GUN",
+    "name": { "str": "OCG-Leadworks C-912" },
+    "description": "A modern and really big stepbrother to the LeMat revolver, this is a 9mm \"pistol\" compatible with Glock magazines over a tube fed 12 ga. double barrel shotgun. It became infamous for the ease of converting its 9mm operation to automatic firing.",
+    "price": 50000,
+    "price_postapoc": 3000,
+    "valid_mod_locations": [
+      [ "accessories", 2 ],
+      [ "sling", 1 ],
+      [ "barrel", 1 ],
+      [ "grip", 1 ],
+      [ "brass catcher", 1 ],
+      [ "mechanism", 4 ],
+      [ "magazine", 1 ],
+      [ "muzzle", 1 ],
+      [ "rail", 1 ],
+      [ "sights", 1 ],
+      [ "stock", 1 ],
+      [ "underbarrel", 2 ]
+    ],
+    "built_in_mods": [ "wire_stock", "ocgl_combo912_shotgun" ],
+    "modes": [ [ "DEFAULT", "semi-auto", 1 ] ]
+  },
+  {
+    "id": "ocgl_combox912",
+    "copy-from": "ocgl_combo912",
+    "type": "GUN",
+    "name": { "str": "OCG-Leadworks C-X912" },
+    "description": "A modern and really big stepbrother to the LeMat revolver, this is a 9mm machine pistol compatible with Glock magazines over a tube fed 12 ga. double barrel shotgun, which, being either a prototype or \"unlawful\" conversion, is capable of automatic firing unlike the C-912 available in gun stores.",
+    "price": 90000,
+    "price_postapoc": 5000,
+    "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "EAUTO", "auto", 4 ] ]
   },
   {
     "id": "ocgl_quad9",
@@ -57,11 +117,9 @@
     "weight": "940 g",
     "price": "350 USD",
     "price_postapoc": "20 USD",
-    "ammo": "9mm",
+    "ammo": [ "9mm" ],
     "ranged_damage": { "damage_type": "stab", "amount": -2 },
     "dispersion": 650,
-    "recoil_shots": 4,
-    "delay_percent": 100,
     "valid_mod_locations": [
       [ "accessories", 2 ],
       [ "barrel", 1 ],
@@ -72,14 +130,23 @@
       [ "stock mount", 1 ],
       [ "underbarrel mount", 1 ]
     ],
-    "modes": [ [ "DEFAULT", "quad", 4 ] ],
+    "modes": [ [ "DEFAULT", "quad", 4, "SIMULTANEOUS" ] ],
     "looks_like": "cop_38",
-    "ups_charges": 0
+    "ups_charges": 0,
+    "pocket_data": [
+      {
+        "magazine_well": "500 ml",
+        "pocket_type": "MAGAZINE_WELL",
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [ "9etc_speedloader" ]
+      }
+    ]
   },
   {
     "id": "ocg_dmsmg",
     "type": "GUN",
-    "copy-from": "etc_rifle_base",
+    "copy-from": "rifle_auto",
     "//": "Cx4 Storm meets Colt 9mm SMG on steroids.",
     "name": { "str_sp": "OCG MR9 DMSMG" },
     "description": "OmniCorp MR9 is called a Designated Marksman Submachinegun. It has a very long, match grade, long-twist barrel and a highly accurate action. Technically a submachinegun, it resembles and is handled like a rifle from the AR-15 family.",
@@ -91,14 +158,22 @@
     "bashing": 10,
     "material": [ "steel", "superalloy" ],
     "color": "dark_gray",
-    "ammo": "9mm",
+    "ammo": [ "9mm" ],
     "ranged_damage": { "damage_type": "stab", "amount": 5 },
     "range": 20,
     "dispersion": 140,
     "durability": 9,
     "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "FAUTO", "auto", 4 ] ],
-    "magazines": [ [ "9mm", [ "minirifle_mag", "minirifle_magext" ] ] ],
-    "looks_like": "ar15"
+    "looks_like": "ar15",
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "magazine_well": "500 ml",
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [ "minirifle_mag", "minirifle_magext" ]
+      }
+    ]
   },
   {
     "id": "ocg_minirifle",
@@ -123,6 +198,7 @@
       [ "sling", 1 ],
       [ "brass catcher", 1 ],
       [ "barrel", 1 ],
+      [ "bore", 1 ],
       [ "grip", 1 ],
       [ "mechanism", 4 ],
       [ "magazine", 1 ],
@@ -132,5 +208,41 @@
       [ "underbarrel", 1 ]
     ],
     "built_in_mods": [ "mr9sd_suppressor" ]
+  },
+  {
+    "id": "qsmg9",
+    "copy-from": "qr555",
+    "type": "GUN",
+    "name": { "str_sp": "OCG QSMG-9" },
+    "description": "A shortened OmniCorp QR555 chambered to fire 9x19mm rounds in a bullpup configuration as \"quietly\" as possible without loss of muzzle energy. Best used with 9mm JHP against unarmored threats or as a sidearm.",
+    "skill": "smg",
+    "price": 800000,
+    "price_postapoc": 10000,
+    "ammo": "9mm",
+    "range": 3,
+    "relative": { "dispersion": 90, "ranged_damage": { "damage_type": "stab", "amount": 4 }, "volume": "150 ml", "weight": "-200 g" },
+    "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "EBURST", "2 rd.", 2, [ "SIMULTANEOUS" ] ], [ "FAUTO", "auto", 4 ] ],
+    "valid_mod_locations": [
+      [ "accessories", 4 ],
+      [ "brass catcher", 1 ],
+      [ "sling", 1 ],
+      [ "barrel", 1 ],
+      [ "grip", 1 ],
+      [ "mechanism", 4 ],
+      [ "rail", 1 ],
+      [ "sights", 1 ],
+      [ "underbarrel", 1 ]
+    ],
+    "looks_like": "steyr_aug",
+    "built_in_mods": [ "qr555_suppressor" ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "magazine_well": "500 ml",
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [ "minirifle_mag", "minirifle_magext" ]
+      }
+    ]
   }
 ]

@@ -5,7 +5,7 @@
     "copy-from": "etc_pistol_revolver",
     "name": { "str_sp": "OCG AMR" },
     "description": "OmniCorp's Anti-Materiel Revolver might be the most powerful handgun ever made. It can destroy almost anything within four shots, but its recoil is so heavy its manual forbids shooting it without wearing power armor.",
-    "//": "255 mm/10 in barrel",
+    "//": "255 mm/10 in barrel. This and the ADR are inspired by this fictional hand cannon: https://eyedivinecybermancy.fandom.com/wiki/444_Bear_Killer",
     "weight": "2300 g",
     "volume": "1 L",
     "price": "5 kUSD",
@@ -14,7 +14,7 @@
     "bashing": 9,
     "material": [ "superalloy", "ceramic", "wood" ],
     "color": "dark_gray",
-    "ammo": "762ec",
+    "ammo": [ "762etc" ],
     "ranged_damage": { "damage_type": "stab", "amount": -5 },
     "dispersion": 195,
     "range": -12,
@@ -22,7 +22,15 @@
     "default_mods": "pistol_scope",
     "clip_size": 4,
     "looks_like": "raging_bull",
-    "magazines": [ [ "762ec", [ "762ec_speedloader" ] ] ]
+    "pocket_data": [
+      {
+        "magazine_well": "250 ml",
+        "pocket_type": "MAGAZINE_WELL",
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [ "762etc_speedloader" ]
+      }
+    ]
   },
   {
     "id": "etc_dwom",
@@ -38,16 +46,22 @@
     "bashing": 12,
     "material": [ "superalloy", "steel", "ceramic" ],
     "color": "dark_gray",
-    "ammo": "762ec",
+    "ammo": [ "762etc" ],
     "built_in_mods": [ "ocg_grippod_fg", "ocg_grippod_bipod", "stabilizer", "ocg_telescopic_stock" ],
     "default_mods": "rifle_scope",
     "dispersion": 105,
     "durability": 9,
-    "recoil_shots": 2,
-    "delay_percent": 70,
     "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "EBURST", "2 rd.", 2, [ "SIMULTANEOUS" ] ] ],
     "looks_like": "hk417_13",
-    "magazines": [ [ "762ec", [ "ocg762e_7", "ocg762e_20", "ocg762e_30", "ocg762e_40", "ocg762e_50", "ocg762e_66" ] ] ]
+    "pocket_data": [
+      {
+        "magazine_well": "500 ml",
+        "pocket_type": "MAGAZINE_WELL",
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [ "ocg762e_7", "ocg762e_20", "ocg762e_30", "ocg762e_40", "ocg762e_50", "ocg762e_66" ]
+      }
+    ]
   },
   {
     "id": "etc_mar7k",
@@ -55,7 +69,7 @@
     "type": "GUN",
     "name": { "str_sp": "OCG MAR7k" },
     "description": "Considered an overkill among overkills, the bullpup Mega Assault Rifle is the most powerful fully automatic rifle of OmniCorp. Even with fixed foregrip and bipod, it is very compact due to a \"CQB\" barrel, a receiver shortened through a vertically sliding bolt and a magazine well right next to its buttplate.",
-    "//": "Not really, just going for closest lookalikes",
+    "//": "This is pretty much a CQB optimized gun, the only among these, but it still got a very long effective range. It's more or less inspired by the TKB-022 Korobov in the features needed to make it as short as possible. Ergonomics may suffer.",
     "weight": "3500 g",
     "volume": "1 L",
     "price": "7 kUSD",
@@ -63,18 +77,24 @@
     "bashing": 12,
     "material": [ "superalloy", "steel", "ceramic" ],
     "color": "dark_gray",
-    "ammo": "762ec",
+    "ammo": [ "762etc" ],
     "ranged_damage": { "damage_type": "stab", "amount": -5 },
     "built_in_mods": [ "ocg_grippod_fg", "ocg_grippod_bipod", "recoil_stock", "barrel_ported" ],
     "default_mods": "holo_sight",
     "dispersion": 165,
     "range": -18,
     "durability": 9,
-    "recoil_shots": 2,
-    "delay_percent": 30,
     "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "EBURST", "2 rd.", 2 ], [ "FAUTO", "auto", 4 ] ],
     "looks_like": "steyr_aug",
-    "magazines": [ [ "762ec", [ "ocg762e_7", "ocg762e_20", "ocg762e_30", "ocg762e_40", "ocg762e_50", "ocg762e_66" ] ] ]
+    "pocket_data": [
+      {
+        "magazine_well": "500 ml",
+        "pocket_type": "MAGAZINE_WELL",
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [ "ocg762e_7", "ocg762e_20", "ocg762e_30", "ocg762e_40", "ocg762e_50", "ocg762e_66" ]
+      }
+    ]
   },
   {
     "id": "etc_hydrogen_gun",
@@ -82,7 +102,7 @@
     "copy-from": "etc_rifle_base",
     "name": { "str": "OCG OFG16k" },
     "description": "The Orbital Force Gun is an anti-materiel light-gas rifle with a detachable, vacuum-sealable barrel which can be connected to a hydrogen canister yet works without one with drastically reduced muzzle energy. Its manual recommends avoiding hydrogen despite that due to reliability issues a future OFG16kA1 model would solve.",
-    "//": "It shouldn't really be able to fire with its barrel detached.",
+    "//": "Visual reference for damage under optimal muzzle velocities: https://en.wikipedia.org/wiki/File:SDIO_KEW_Lexan_projectile.jpg  . Should be less powerful than that because it uses projectiles with lighter masses, but it is almost an anti-tank rifle.",
     "weight": "2100 g",
     "volume": "1 L",
     "price": "95 kUSD",
@@ -91,7 +111,7 @@
     "bashing": 12,
     "material": [ "superalloy", "steel", "diamond" ],
     "color": "dark_gray",
-    "ammo": "762ec",
+    "ammo": [ "762etc" ],
     "ranged_damage": { "damage_type": "stab", "amount": -20 },
     "range": -40,
     "built_in_mods": [ "rifle_scope", "cheek_pad", "stabilizer", "barrel_ported" ],
@@ -101,7 +121,8 @@
     "durability": 3,
     "clip_size": 7,
     "looks_like": "hk_g80",
-    "flags": [ "RELOAD_ONE", "WATERPROOF_GUN" ]
+    "flags": [ "RELOAD_ONE", "WATERPROOF_GUN" ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "ammo_restriction": { "762etc": 7 } } ]
   },
   {
     "id": "etc_seven7",
@@ -116,12 +137,20 @@
     "bashing": 12,
     "material": [ "superalloy", "steel", "ceramic" ],
     "color": "dark_gray",
-    "ammo": "762ec",
+    "ammo": [ "762etc" ],
     "ranged_damage": { "damage_type": "stab", "amount": 2 },
     "built_in_mods": [ "rifle_scope", "cheek_pad", "ocg_grippod_fg", "ocg_grippod_bipod", "stabilizer" ],
     "dispersion": 70,
     "durability": 10,
-    "magazines": [ [ "762ec", [ "ocg762e_7" ] ] ],
-    "looks_like": "m2010"
+    "looks_like": "m2010",
+    "pocket_data": [
+      {
+        "magazine_well": "500 ml",
+        "pocket_type": "MAGAZINE_WELL",
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [ "ocg762e_7", "ocg762e_20", "ocg762e_30", "ocg762e_40", "ocg762e_50", "ocg762e_66" ]
+      }
+    ]
   }
 ]

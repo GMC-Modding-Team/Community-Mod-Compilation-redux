@@ -5,7 +5,7 @@
     "copy-from": "etc_pistol_revolver_2ups",
     "name": { "str_sp": "OCG ADR" },
     "description": "The Anti-Drone Revolver is an OmniCorp \"sidearm\" with a carbine length barrel and overcharged electrothermal action, designed to defeat the heaviest among armored drones. Comes with a classic finish in wood.",
-    "//": "very inefficient but can take down tank drones with about 8 shots.",
+    "//": "330 mm/13 in barrel. This and specially the AMR are inspired by this fictional hand cannon: https://eyedivinecybermancy.fandom.com/wiki/444_Bear_Killer ",
     "weight": "1900 g",
     "volume": "1 L",
     "price": "3 kUSD",
@@ -14,7 +14,7 @@
     "bashing": 9,
     "material": [ "superalloy", "aluminum", "wood" ],
     "color": "dark_gray",
-    "ammo": "556etc",
+    "ammo": [ "223" ],
     "ranged_damage": { "damage_type": "stab", "amount": -3, "armor_penetration": 15 },
     "recoil": 1080,
     "dispersion": 240,
@@ -24,7 +24,15 @@
     "default_mods": "pistol_scope",
     "clip_size": 4,
     "looks_like": "raging_bull",
-    "magazines": [ [ "556etc", [ "556etc_speedloader" ] ] ]
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "magazine_well": "500 ml",
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [ "556etc_speedloader" ]
+      }
+    ]
   },
   {
     "id": "etc_er555",
@@ -40,14 +48,12 @@
     "bashing": 12,
     "material": [ "superalloy", "steel", "plastic" ],
     "color": "dark_gray",
-    "ammo": "556etc",
+    "ammo": [ "223" ],
     "ranged_damage": { "damage_type": "stab", "amount": 1 },
     "built_in_mods": "ocg_er555_barrel",
     "recoil": 0,
     "dispersion": 135,
     "durability": 8,
-    "recoil_shots": 2,
-    "delay_percent": 75,
     "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "EBURST", "2 rd.", 2, [ "SIMULTANEOUS" ] ] ],
     "valid_mod_locations": [
       [ "accessories", 4 ],
@@ -63,7 +69,35 @@
       [ "underbarrel", 1 ]
     ],
     "looks_like": "famas",
-    "magazines": [ [ "556etc", [ "ocg556e_30", "ocg556e_14", "ocg556e_50", "ocg556e_24", "ocg556e_60", "ocg556e_100" ] ] ]
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "magazine_well": "500 ml",
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [
+          "ocg556e_30",
+          "ocg556e_14",
+          "ocg556e_50",
+          "ocg556e_20",
+          "ocg556e_60",
+          "ocg556e_100",
+          "stanag30",
+          "stanag10",
+          "stanag5",
+          "stanag20",
+          "stanag40",
+          "stanag50",
+          "stanag60",
+          "stanag60drum",
+          "stanag90",
+          "stanag100",
+          "stanag100drum",
+          "stanag150",
+          "survivor223mag"
+        ]
+      }
+    ]
   },
   {
     "id": "etc_er555_ads",
@@ -72,7 +106,7 @@
     "name": { "str_sp": "OCG ER555-ADS" },
     "description": "OmniCorp bullpup ER555 platform uses hypervelocity 5.56 ETC rounds in several roles. The Anti-Drone Sniper features an overcharged electrothermal action. Comes with integrated forward grip/bipod unit, gyroscopic stabilizer and cheek pad.",
     "price": "7500 USD",
-    "relative": { "weight": "200 g", "ranged_damage": { "armor_penetration": 15 }, "recoil": 1080 },
+    "relative": { "weight": "200 g", "ranged_damage": { "damage_type": "stab", "amount": 1, "armor_penetration": 15 }, "recoil": 1080 },
     "built_in_mods": [ "ocg_er555_barrel", "ad_capacitor", "ocg_grippod_fg", "ocg_grippod_bipod", "stabilizer", "cheek_pad" ]
   },
   {
@@ -85,7 +119,36 @@
     "price": "5300 USD",
     "relative": { "weight": "300 g" },
     "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "EBURST", "2 rd.", 2, [ "SIMULTANEOUS" ] ], [ "FAUTO", "auto", 4 ] ],
-    "built_in_mods": [ "ocg_er555_carbarrel", "recoil_stock", "grip" ]
+    "built_in_mods": [ "ocg_er555_carbarrel", "recoil_stock", "grip" ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "magazine_well": "500 ml",
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [
+          "ocg556e_20",
+          "ocg556e_30",
+          "ocg556e_14",
+          "ocg556e_50",
+          "ocg556e_60",
+          "ocg556e_100",
+          "stanag30",
+          "stanag10",
+          "stanag5",
+          "stanag20",
+          "stanag40",
+          "stanag50",
+          "stanag60",
+          "stanag60drum",
+          "stanag90",
+          "stanag100",
+          "stanag100drum",
+          "stanag150",
+          "survivor223mag"
+        ]
+      }
+    ]
   },
   {
     "id": "etc_er555_cqb",
@@ -98,7 +161,36 @@
     "relative": { "weight": "50 g", "bashing": 4 },
     "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "EBURST", "2 rd.", 2, [ "SIMULTANEOUS" ] ], [ "FAUTO", "auto", 4 ] ],
     "built_in_mods": [ "ocg_er555_cqbbarrel", "recoil_stock", "int_rm42i_bayonet", "laser_sight" ],
-    "flags": [ "DURABLE_MELEE" ]
+    "flags": [ "DURABLE_MELEE" ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "magazine_well": "500 ml",
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [
+          "ocg556e_20",
+          "ocg556e_30",
+          "ocg556e_14",
+          "ocg556e_50",
+          "ocg556e_60",
+          "ocg556e_100",
+          "stanag30",
+          "stanag10",
+          "stanag5",
+          "stanag20",
+          "stanag40",
+          "stanag50",
+          "stanag60",
+          "stanag60drum",
+          "stanag90",
+          "stanag100",
+          "stanag100drum",
+          "stanag150",
+          "survivor223mag"
+        ]
+      }
+    ]
   },
   {
     "id": "etc_er555_saw",
@@ -111,7 +203,36 @@
     "relative": { "weight": "1100 g" },
     "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "EBURST", "2 rd.", 2, [ "SIMULTANEOUS" ] ], [ "FAUTO", "auto", 7 ] ],
     "built_in_mods": [ "ocg_er555_lmgbarrel", "ocg_grippod_fg", "ocg_grippod_bipod", "recoil_stock", "barrel_ported", "stabilizer" ],
-    "magazines": [ [ "556etc", [ "belt556etc", "ocg556e_30", "ocg556e_14", "ocg556e_50", "ocg556e_24", "ocg556e_60", "ocg556e_100" ] ] ]
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "magazine_well": "500 ml",
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [
+          "belt556etc",
+          "ocg556e_20",
+          "ocg556e_30",
+          "ocg556e_14",
+          "ocg556e_50",
+          "ocg556e_60",
+          "ocg556e_100",
+          "stanag30",
+          "stanag10",
+          "stanag5",
+          "stanag20",
+          "stanag40",
+          "stanag50",
+          "stanag60",
+          "stanag60drum",
+          "stanag90",
+          "stanag100",
+          "stanag100drum",
+          "stanag150",
+          "survivor223mag"
+        ]
+      }
+    ]
   },
   {
     "id": "etc_er555_sr",
@@ -137,7 +258,36 @@
       [ "stock", 1 ],
       [ "underbarrel", 1 ]
     ],
-    "built_in_mods": [ "ocg_er555_barrel", "ocg_grippod_fg", "ocg_grippod_bipod", "stabilizer", "cheek_pad" ]
+    "built_in_mods": [ "ocg_er555_barrel", "ocg_grippod_fg", "ocg_grippod_bipod", "stabilizer", "cheek_pad" ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "magazine_well": "500 ml",
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [
+          "ocg556e_14",
+          "ocg556e_30",
+          "ocg556e_50",
+          "ocg556e_20",
+          "ocg556e_60",
+          "ocg556e_100",
+          "stanag30",
+          "stanag10",
+          "stanag5",
+          "stanag20",
+          "stanag40",
+          "stanag50",
+          "stanag60",
+          "stanag60drum",
+          "stanag90",
+          "stanag100",
+          "stanag100drum",
+          "stanag150",
+          "survivor223mag"
+        ]
+      }
+    ]
   },
   {
     "id": "etc_er555_udd",
@@ -146,8 +296,37 @@
     "name": { "str_sp": "OCG ER555-UDD" },
     "description": "OmniCorp bullpup ER555 platform uses hypervelocity 5.56 ETC rounds in several roles. The Urban Drone Destroyer is very powerful, fast firing but difficult to control in full auto. Comes with integrated recoil stock, ported barrel and gyroscopic stabilizer.",
     "price": "7 kUSD",
-    "relative": { "weight": "350 g", "ranged_damage": { "armor_penetration": 15 }, "recoil": 1080 },
+    "relative": { "weight": "350 g", "ranged_damage": { "damage_type": "stab", "amount": 1 }, "recoil": 1080 },
     "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "EBURST", "2 rd.", 2, [ "SIMULTANEOUS" ] ], [ "FAUTO", "auto", 7 ] ],
-    "built_in_mods": [ "ad_capacitor", "ocg_er555_cqbbarrel", "recoil_stock", "barrel_ported", "stabilizer" ]
+    "built_in_mods": [ "ad_capacitor", "ocg_er555_cqbbarrel", "recoil_stock", "barrel_ported", "stabilizer" ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "magazine_well": "500 ml",
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [
+          "ocg556e_20",
+          "ocg556e_30",
+          "ocg556e_14",
+          "ocg556e_50",
+          "ocg556e_60",
+          "ocg556e_100",
+          "stanag30",
+          "stanag10",
+          "stanag5",
+          "stanag20",
+          "stanag40",
+          "stanag50",
+          "stanag60",
+          "stanag60drum",
+          "stanag90",
+          "stanag100",
+          "stanag100drum",
+          "stanag150",
+          "survivor223mag"
+        ]
+      }
+    ]
   }
 ]
