@@ -1,13 +1,27 @@
 name: Generator - TOC
 
 on:
-  pull_request:
+  push:
+    branches:
+    - master
     paths:
     - '**/*.md'
 
 jobs:
   generateTOC:
-    name: TOC Generator
+    if: github.repository == 'GMC-Modding-Team/Community-Mod-Compilation-redux'
+    name: Update the table of contents
     runs-on: ubuntu-latest
     steps:
       - uses: technote-space/toc-generator@v3
+      - run: npx doctoc **/*.md --github
+      - name: Create Pull Request
+        uses: TheGoatGod/create-pull-request@v3
+        with:
+          commit-message: Update the table of contents
+          branch: Update-toc
+          title: Update the table of contents in documents
+          body: |
+            ```sh
+            npx doctoc **/*.md --github
+            ```
