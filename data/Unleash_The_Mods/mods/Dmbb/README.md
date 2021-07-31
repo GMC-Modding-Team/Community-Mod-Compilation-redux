@@ -1,3 +1,14 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Defense Mode but Better (DMBB)](#defense-mode-but-better-dmbb)
+    - [How to install the mod:](#how-to-install-the-mod)
+    - [DMBB Dependecies](#dmbb-dependecies)
+      - [What's in the .zip files?](#whats-in-the-zip-files)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Defense Mode but Better (DMBB)
 
 ### How to install the mod:

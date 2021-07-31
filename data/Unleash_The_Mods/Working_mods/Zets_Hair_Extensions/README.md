@@ -1,3 +1,19 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Zetsukaze's Hair Extensions](#zetsukazes-hair-extensions)
+- [Dependencies](#dependencies)
+- [Usage Guide](#usage-guide)
+  - [Optional Steps](#optional-steps)
+  - [Info](#info)
+  - [List of Supported Mods](#list-of-supported-mods)
+    - [Issues](#issues)
+    - [Changelog](#changelog)
+- [My CDDA Mods](#my-cdda-mods)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Zetsukaze's Hair Extensions
 Hehe pun intended. Created to fix the Hairs+ mod for DeadPeopleTileset. Also, the terrible formatting was bugging me :man_shrugging:
 

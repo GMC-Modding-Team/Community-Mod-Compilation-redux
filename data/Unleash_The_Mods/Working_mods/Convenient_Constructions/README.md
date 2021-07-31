@@ -1,3 +1,16 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Convenient Constructions](#convenient-constructions)
+- [Overview](#overview)
+  - [ATM Recycler and more](#atm-recycler-and-more)
+  - [Autodocs are movable](#autodocs-are-movable)
+  - [CVD machines are movable](#cvd-machines-are-movable)
+- [About this mod](#about-this-mod)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Convenient Constructions
 Construct large machines and move rare ones.
 

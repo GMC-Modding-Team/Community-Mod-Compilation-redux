@@ -1,3 +1,37 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Wild-Living](#wild-living)
+  - [Features](#features)
+  - [Tools](#tools)
+    - [Bone Pickaxe](#bone-pickaxe)
+    - [Flint Hand Drill](#flint-hand-drill)
+    - [Wooden Fish Trap](#wooden-fish-trap)
+    - [Wooden Dog Whistle](#wooden-dog-whistle)
+    - [Natural cordage screwdriver](#natural-cordage-screwdriver)
+  - [Materials](#materials)
+    - [Oilcloth](#oilcloth)
+  - [Clothing](#clothing)
+    - [Fur Backpack](#fur-backpack)
+    - [Fur Pelt Tanning](#fur-pelt-tanning)
+  - [Food & Food Preservation](#food--food-preservation)
+    - [Tea Bags](#tea-bags)
+    - [Cattail Rhizome processing](#cattail-rhizome-processing)
+    - [Harvestable Acorns](#harvestable-acorns)
+    - [Salt & Starch Extraction](#salt--starch-extraction)
+    - [Digestive Tracts](#digestive-tracts)
+  - [Early Game Help](#early-game-help)
+  - [More Cordage](#more-cordage)
+  - [Clay Changes](#clay-changes)
+  - [Constructables](#constructables)
+    - [Wooden Work Mat](#wooden-work-mat)
+    - [Makeshift Fence](#makeshift-fence)
+    - [Woven Fence](#woven-fence)
+    - [Plantable Fruit + Coffee Trees](#plantable-fruit--coffee-trees)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Wild-Living
 A mod to bring a little more life and variety to the wilds of Cataclysm: Dark Days Ahead.
 

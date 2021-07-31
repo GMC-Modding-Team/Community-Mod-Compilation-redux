@@ -1,3 +1,12 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [About](#about)
+- [File names](#file-names)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # About
 
 This is a [Cataclysm: Dark Days Ahead](https://github.com/CleverRaven/Cataclysm-DDA) mod, which aims to expand appearance traits in the game while supporting [SomeDeadGuy](https://github.com/somedeadguy)'s [tileset](https://discourse.cataclysmdda.org/t/32x32-msx-dead-people-tileset/18775). It also introduces changes to group behaviour, so NPCs can spawn with all the new traits.

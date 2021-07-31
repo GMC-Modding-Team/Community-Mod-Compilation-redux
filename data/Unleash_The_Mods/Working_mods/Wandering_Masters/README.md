@@ -1,3 +1,14 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Progress so far:](#progress-so-far)
+  - [Regular NPC:](#regular-npc)
+  - [MA teachers:](#ma-teachers)
+  - [Credits:](#credits)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 My Wandering Masters mod that adds new NPCs with quest lines. Currently WIP. Most content works, but needs additional testing, dialogues needs proofreading etc. I'm open for suggestions and ideas of any kind! Some stuff works only on latest experimental versions!
 
 The idea of the mod is to add "Wandering Masters", NPCs that can 'teach' player martial arts after completing their quest line.

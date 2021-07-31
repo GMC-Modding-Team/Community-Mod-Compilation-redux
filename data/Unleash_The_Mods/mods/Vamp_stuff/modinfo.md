@@ -1,3 +1,31 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Items](#items)
+      - [Books](#books)
+      - [Armour](#armour)
+      - [Weapons](#weapons)
+      - [Ammunition](#ammunition)
+- [Monsters](#monsters)
+      - [Leeches](#leeches)
+      - [Elder Zombies](#elder-zombies)
+      - [Vampire Bats](#vampire-bats)
+      - [Infected Vampires](#infected-vampires)
+- [Locations](#locations)
+      - [Crypt](#crypt)
+      - [Vampire Cove](#vampire-cove)
+      - [Wasteland Outskirts](#wasteland-outskirts)
+      - [Ghost Towns](#ghost-towns)
+      - [Misc](#misc)
+- [NPCs](#npcs)
+  - [Missions](#missions)
+- [Scenarios](#scenarios)
+      - [Vampire Wannabe](#vampire-wannabe)
+- [Magic Spells](#magic-spells)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 This **.md** file tells a subtle information about the contents of the mod.
 
 ## Items
