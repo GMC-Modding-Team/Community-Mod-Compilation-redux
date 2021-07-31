@@ -6,8 +6,15 @@ Use the `home` key to get to the top.
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 - [Links](#links)
-  * [Description](#description)
-  * [Examples](#examples)
+
+- [Links](#links)
+      - [Head-Category - links](#head-category---links)
+  - [Description](#description)
+      - [Head-Category  - links](#head-category----links)
+      - [Sub-Category - Description](#sub-category---description)
+  - [Examples](#examples)
+      - [Head-Category - links](#head-category---links-1)
+      - [Sub-Category - Examples](#sub-category---examples)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

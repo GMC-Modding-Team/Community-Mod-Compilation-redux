@@ -9,12 +9,31 @@ with punctuation updates and removed descriptions, until update.
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-**Table of contents**
 - [Controls](#controls)
-  - [Default key bindings](#default_key_bindings)
+  - [Default key bindings](#default-key-bindings)
     - [Movement](#movement)
-    - [Shift view](#shift_view)
-    - [Environment interaction](#environment_interaction)
+    - [Shift view](#shift-view)
+    - [Environment interaction](#environment-interaction)
+    - [Inventory and quasi-inventory interaction](#inventory-and-quasi-inventory-interaction)
+    - [Item action menu](#item-action-menu)
+    - [Long term and special actions](#long-term-and-special-actions)
+    - [Info screens](#info-screens)
+    - [Debug functions](#debug-functions)
+  - [Advanced Controls](#advanced-controls)
+    - [Advanced Inventory](#advanced-inventory)
+    - [Advanced Inventory Directional Controls](#advanced-inventory-directional-controls)
+    - [Auto Pickup](#auto-pickup)
+  - [Unlisted key bindings](#unlisted-key-bindings)
+  - [Further controls and procedures](#further-controls-and-procedures)
+    - [Remove wielded item](#remove-wielded-item)
+    - [Dropping Items](#dropping-items)
+      - [Single items](#single-items)
+      - [Dropping Partial Stacks](#dropping-partial-stacks)
+    - [Picking up Items](#picking-up-items)
+    - [Controlling Skill Gain](#controlling-skill-gain)
+    - [Talking to NPC's or Yelling](#talking-to-npcs-or-yelling)
+  - [Debug keys](#debug-keys)
+    - [Edit player/NPCs](#edit-playernpcs)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 # Controls
