@@ -104,7 +104,6 @@ class colony : private element_allocator_type
         friend class colony_reverse_iterator<true>;
 
     private:
-
         struct group; // forward declaration for typedefs below
 
         using aligned_element_allocator_type = typename
@@ -191,7 +190,6 @@ class colony : private element_allocator_type
         };
 
     public:
-
         // Iterators:
         template <bool is_const> class colony_iterator
         {
@@ -311,7 +309,6 @@ class colony : private element_allocator_type
                 }
 
             public:
-
                 colony_iterator &operator--() {
                     assert( group_pointer != nullptr );
                     assert( !( element_pointer == group_pointer->elements &&
@@ -389,7 +386,6 @@ class colony : private element_allocator_type
                     element_pointer( element_p ), skipfield_pointer( skipfield_p ) {}
 
             public:
-
                 inline colony_iterator( const colony_iterator &source ) noexcept:
                     group_pointer( source.group_pointer ),
                     element_pointer( source.element_pointer ),
@@ -571,7 +567,6 @@ class colony : private element_allocator_type
                     it( group_p, element_p, skipfield_p ) {}
 
             public:
-
                 // move constructors
                 colony_reverse_iterator( colony_reverse_iterator &&source ) noexcept:
                     it( std::move( source.it ) ) {}
@@ -582,7 +577,6 @@ class colony : private element_allocator_type
         }; // colony_reverse_iterator
 
     private:
-
         // Used to prevent fill-insert/constructor calls being mistakenly resolved to range-insert/constructor calls
         template <bool condition, class T = void>
         struct enable_if_c {
@@ -613,7 +607,6 @@ class colony : private element_allocator_type
         } group_allocator_pair;
 
     public:
-
         /**
          * Default constructor:
          * default minimum group size is 8, default maximum group size is
@@ -695,7 +688,6 @@ class colony : private element_allocator_type
         }
 
     private:
-
         inline void blank() noexcept {
             // if all pointer types are trivial, we can just nuke it from orbit with memset (NULL is always 0 in C++):
             if COLONY_CONSTEXPR( std::is_trivial<group_pointer_type>::value &&
@@ -716,7 +708,6 @@ class colony : private element_allocator_type
         }
 
     public:
-
         /**
          * Move constructor:
          * Move all contents from source colony, does not remove any erased element locations or
@@ -873,7 +864,6 @@ class colony : private element_allocator_type
         }
 
     private:
-
         void destroy_all_data() noexcept {
             // Amusingly enough, these changes from && to logical & actually do make a significant difference in debug mode
             if( ( total_number_of_elements != 0 ) & !( std::is_trivially_destructible<element_type>::value ) ) {
@@ -936,7 +926,6 @@ class colony : private element_allocator_type
         }
 
     public:
-
         /**
          * Inserts the element supplied to the colony, using the object's copy-constructor. Will
          * insert the element into a previously erased element slot if one exists, otherwise will
@@ -1392,7 +1381,6 @@ class colony : private element_allocator_type
         }
 
     private:
-
         // Internal functions for fill insert:
         void group_create( const skipfield_type number_of_elements ) {
             const group_pointer_type next_group = end_iterator.group_pointer->next_group = COLONY_ALLOCATE(
@@ -1515,7 +1503,6 @@ class colony : private element_allocator_type
         }
 
     public:
-
         /**
          * Fill insert:
          * Inserts n copies of val into the colony. Will insert the element into a previously erased
@@ -1679,7 +1666,6 @@ class colony : private element_allocator_type
         }
 
     private:
-
         inline COLONY_FORCE_INLINE void update_subsequent_group_numbers( group_pointer_type current_group )
         noexcept {
             do {
@@ -1729,7 +1715,6 @@ class colony : private element_allocator_type
         }
 
     public:
-
         /**
          * Removes the element pointed to by the supplied iterator, from the colony. Returns an
          * iterator pointing to the next non-erased element in the colony (or to end() if no more
@@ -3209,7 +3194,6 @@ class colony : private element_allocator_type
         }
 
     private:
-
         struct less {
             bool operator()( const element_type &a, const element_type &b ) const noexcept {
                 return a < b;
@@ -3233,7 +3217,6 @@ class colony : private element_allocator_type
         };
 
     public:
-
         /**
          * Sort the content of the colony. By default this compares the colony content using a
          * less-than operator, unless the user supplies a comparison function (ie. same conditions
@@ -3485,8 +3468,7 @@ class colony : private element_allocator_type
                 source.group_allocator_pair.max_elements_per_group = swap_max_elements_per_group;
             }
         }
-
-};  // colony
+}; // colony
 
 /**
  * Swaps colony A's contents with that of colony B.
