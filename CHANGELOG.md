@@ -1,5 +1,17 @@
 # Changelog
 
+## [Unreleased](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/tree/HEAD)
+
+[Full Changelog](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/compare/v0.2.0-beta-experimental...HEAD)
+
+**Closed issues:**
+
+- \[Documentation\] Keybindings.md [\#115](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/115)
+
+**Merged pull requests:**
+
+- \[Documentation\] Keybindings.md [\#116](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/116) ([TheGoatGod](https://github.com/TheGoatGod))
+
 ## [v0.2.0-beta-experimental](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/tree/v0.2.0-beta-experimental) (2021-07-19)
 
 [Full Changelog](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/compare/V0.1.9...v0.2.0-beta-experimental)
