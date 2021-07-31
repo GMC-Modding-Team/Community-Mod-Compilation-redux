@@ -1,3 +1,20 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [What](#what)
+- [Why](#why)
+- [Tools](#tools)
+  - [Production & Manufacture](#production--manufacture)
+  - [Medical](#medical)
+  - [Computers & Network](#computers--network)
+  - [Tools Requiring Research](#tools-requiring-research)
+- [Issues](#issues)
+- [Lore](#lore)
+- [License](#license)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # What
 
 Homestead Instruments Inc. (`homestead`) is a [*Cataclysm: Dark Days Ahead*](http://github.com/cleverRaven/Cataclysm-DDA) mod that adds several buildable tools for use in other mods. It has no use on its own: its goal is to serve as a shared platform for other mods that add recipes but don't have the required tools to accomplish those.

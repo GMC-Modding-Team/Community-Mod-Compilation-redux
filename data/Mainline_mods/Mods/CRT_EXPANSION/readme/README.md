@@ -1,3 +1,14 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [C.R.T Expansion mod pack](#crt-expansion-mod-pack)
+- [Extended Techniques](#extended-techniques)
+- [For those curious about stat scaling:](#for-those-curious-about-stat-scaling)
+- [Dead Space](#dead-space)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # C.R.T Expansion mod pack
 The core mod of the CRT Expansion mod pack, it currently adds an armor set, mildly OP gas mask and transforming vest, some gun mods, a new melee/tool and a new material. The items also use a lot of higher end materials such as superalloy, rubber (the "new" material), the lesser used hardsteel and also neoprene.
 

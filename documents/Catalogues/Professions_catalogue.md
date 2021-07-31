@@ -11,7 +11,6 @@ Use the `home` key to get to the top.
 - [More classes scenarios](#more-classes-scenarios)
   - [Professions](#professions-1)
 
-
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 

@@ -1,3 +1,24 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Requirements](#requirements)
+  - [A Note on IDs](#a-note-on-ids)
+- [Creating the Item](#creating-the-item)
+  - [Item Itself](#item-itself)
+  - [`IN_PROGRESS` Printer](#in_progress-printer)
+  - [`FINISHED` Printer](#finished-printer)
+  - [Disassembly Recipe](#disassembly-recipe)
+  - [Crafting Recipe](#crafting-recipe)
+  - [Repeat for Every Platform](#repeat-for-every-platform)
+- [Distributing the Item in the World](#distributing-the-item-in-the-world)
+  - [Creating Sources](#creating-sources)
+    - [CAD file](#cad-file)
+    - [Books and Other Sources](#books-and-other-sources)
+  - [Adding Sources to Spawn Lists](#adding-sources-to-spawn-lists)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Requirements
 
 In order to create 3D-printed items using Homestead, you're going to need to also create a support network of intermediary items.
