@@ -1,6 +1,6 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+**Table of Contents**  
 
 - [Expansion mod for Cataclysm, Dark Days Ahead version](#expansion-mod-for-cataclysm-dark-days-ahead-version)
   - [Special Thanks](#special-thanks)
