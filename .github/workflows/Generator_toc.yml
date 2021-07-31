@@ -4,6 +4,9 @@ on:
     - master
     paths:
     - '**/*.md'
+    - '**/**/*.md'
+    - '**/**/**/**/*.md'
+    - '**/**/**/**/**/*.md'
 
 name: Generator - TOC
 jobs:
@@ -12,14 +15,14 @@ jobs:
     name: Update the table of contents
     runs-on: ubuntu-latest
     steps:
-      - uses: technote-space/toc-generator@v3
-      - run: npx doctoc **/*.md --github
+      - uses: actions/checkout@v2
+      - run: npx doctoc **.md --github | npx doctoc **/*.md --github | npx doctoc **/**/*.md --github | npx doctoc **/**/**/**/*.md --github | npx doctoc **/**/**/**/**/*.md --github
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
           commit-message: Update the table of contents
-          branch: Update-toc
-          title: Update the table of contents in documents
+          branch: "[Github]Update-toc"
+          title: Update TOC
           body: |
             ```sh
             npx doctoc **/*.md --github
