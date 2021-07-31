@@ -1,3 +1,13 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  
+
+- [Dark Skies Above](#dark-skies-above)
+- [Takeaway Features](#takeaway-features)
+- [Meta](#meta)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Dark Skies Above
 A partial conversion mod for Cataclysm: DDA, taking inspiration from XCOM 2, Half Life 2, and similar 'alien invasion' media to present a game of survival against an alien occupation force. WIP, but will feature new quests, NPCs, locations, and enemies.
 

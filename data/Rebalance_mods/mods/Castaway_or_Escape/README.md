@@ -1,3 +1,11 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  
+
+- [Castaway-or-Escape-scenario-Mod](#castaway-or-escape-scenario-mod)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Castaway-or-Escape-scenario-Mod
 
 Do you want to be on a island with no prison or escape a cabin while being followed by hungry zombies like in 28 weeks later? Then this mod is for you!.

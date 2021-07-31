@@ -1,3 +1,15 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  
+
+- [Song of Shinigami](#song-of-shinigami)
+  - [New Martial Art Style - Shinigami Song](#new-martial-art-style---shinigami-song)
+  - [New book additions](#new-book-additions)
+  - [New Professions - both start with martial style](#new-professions---both-start-with-martial-style)
+  - [Weapons usable with Shinigami Song](#weapons-usable-with-shinigami-song)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Song of Shinigami
 
 Adds a Shinigami / Grim Reaper martial style usable with all scythe weapons.

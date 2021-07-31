@@ -3,6 +3,7 @@ on:
     branches:
     - master
     paths:
+    - '*.md'
     - '**/*.md'
     - '**/**/*.md'
     - '**/**/**/**/*.md'
@@ -20,10 +21,10 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
-          commit-message: Update the table of contents
-          branch: "[Github]Update-toc"
-          title: Update TOC
+          commit-message: "[Github] Update-toc"
+          branch: "[Github] Update-toc"
+          title: "[Github] Update-toc"
           body: |
-            ```sh
-            npx doctoc **/*.md --github
+            ```md
+            - [x] Update TOC
             ```
