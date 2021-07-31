@@ -7,19 +7,7 @@ on:
 
 jobs:
   generateTOC:
-    if: github.repository == 'GMC-Modding-Team/Community-Mod-Compilation-redux'
-    name: Update the table of contents
+    name: TOC Generator
     runs-on: ubuntu-latest
     steps:
       - uses: technote-space/toc-generator@v3
-      - run: npx doctoc **/*.md --github
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
-        with:
-          commit-message: Update the table of contents
-          branch: Update-toc
-          title: Update the table of contents in documents
-          body: |
-            ```sh
-            npx doctoc **/*.md --github
-            ```
