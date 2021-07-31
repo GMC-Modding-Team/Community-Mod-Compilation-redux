@@ -42,6 +42,7 @@ Use the `home` key to get to the top.
 - [Modinfo](#modinfo)
 - [Time](#time)
 - [Unicode Characters](#unicode-characters)
+
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 # Introduction
