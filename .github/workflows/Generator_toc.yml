@@ -3,7 +3,14 @@ on:
     branches:
     - master
     paths:
+    - '*.md'
     - '**/*.md'
+    - '**/*/*.md'
+  pull_request:
+    paths:
+    - '*.md'
+    - '**/*.md'
+    - '**/*/*.md'
 
 name: Generator - TOC
 jobs:
@@ -17,10 +24,10 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
-          commit-message: Update the table of contents
+          commit-message: Update TOC
           branch: Update-toc
-          title: Update the table of contents in documents
+          title: [GitHub] Update TOC
           body: |
-            ```sh
-            npx doctoc **/*.md --github
+            ```md
+            - [x] Update TOC
             ```
