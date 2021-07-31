@@ -9,6 +9,7 @@ Use the `home` key to get to the top.
 - [How to Install - Stable Ellison-3](#how-to-install---the-mods---stable--0e-2-ellison-2-)
 - [How to Install - The mods - Experimental](#how-to-install---experimental)
 - [Short FAQ](#short-faq)
+
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 # How to Install - CDDA and the launcher

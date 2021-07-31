@@ -8,6 +8,7 @@ Use the `home` key to get to the top.
 - [Vanilla Locations](#vanilla-locations)
 - [Modded locations and new times](#Modded-locations-and-new-times)
 - [Others](#Others)
+
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 # Vanilla locations
