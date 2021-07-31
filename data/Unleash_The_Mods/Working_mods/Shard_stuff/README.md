@@ -1,6 +1,6 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+**Table of Contents**  
 
 - [Shardstuff-CDDA-Mod](#shardstuff-cdda-mod)
 - [This mod is basically abandoned and only edited for bugfixes, and even then not always.  Anyone who wants to take it over is free to do so, and do anything with it.](#this-mod-is-basically-abandoned-and-only-edited-for-bugfixes-and-even-then-not-always--anyone-who-wants-to-take-it-over-is-free-to-do-so-and-do-anything-with-it)

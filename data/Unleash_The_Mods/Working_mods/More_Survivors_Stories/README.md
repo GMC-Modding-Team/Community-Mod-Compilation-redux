@@ -1,6 +1,6 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+**Table of Contents**  
 
 - [Not everyone turned into zombies. Some still struggling to live...](#not-everyone-turned-into-zombies-some-still-struggling-to-live)
   - [How to get to Hell's Raiders story line:](#how-to-get-to-hells-raiders-story-line)
