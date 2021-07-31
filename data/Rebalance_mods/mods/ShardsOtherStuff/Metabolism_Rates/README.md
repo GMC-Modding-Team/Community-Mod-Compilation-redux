@@ -1,3 +1,11 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Metabolism Rates-CDDA-Mod](#metabolism-rates-cdda-mod)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Metabolism Rates-CDDA-Mod
 Adds several mutations that alter hunger and thirst rates by reducing them to 1/2, 1/4, or 1/10th.
 
