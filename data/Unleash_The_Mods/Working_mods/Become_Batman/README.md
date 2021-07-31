@@ -1,3 +1,14 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Bat-Mutations](#bat-mutations)
+  - [Overview](#overview)
+  - [Mutations](#mutations)
+  - [Recipes](#recipes)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Bat-Mutations
   A mod for cataclysm which adds a bat mutation category, working as of 0.E-7938  
   There are currently 2 branches available, the main one and another with a pseudo humming bird beak mutation as well as both herbivore and carnivore in the pool.

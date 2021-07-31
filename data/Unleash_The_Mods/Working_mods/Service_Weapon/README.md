@@ -1,3 +1,25 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [What](#what)
+- [Why](#why)
+- [Using the Service Weapon](#using-the-service-weapon)
+  - [Finding It](#finding-it)
+  - [Changing It](#changing-it)
+  - [Loading It](#loading-it)
+- [Potential Development](#potential-development)
+  - [Mods](#mods)
+  - [Conceptual Resources](#conceptual-resources)
+    - [Gaining Conceptual Resources](#gaining-conceptual-resources)
+  - [Expanded System of Conceptual Crafting](#expanded-system-of-conceptual-crafting)
+    - [Approaches to Conceptual Modding](#approaches-to-conceptual-modding)
+  - [Extending the Service Weapon](#extending-the-service-weapon)
+  - [Content Pack](#content-pack)
+- [License](#license)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # What
 
 Service Weapon (`service_weapon`) is a [*Cataclysm: Dark Days Ahead*](http://github.com/cleverRaven/Cataclysm-DDA) mod that adds the Service Weapon morphing firearm from the game *Control*.

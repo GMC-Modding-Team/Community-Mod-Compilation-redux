@@ -1,3 +1,15 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [CDDA Beam Sword Construction](#cdda-beam-sword-construction)
+  - [Constructing the weapon](#constructing-the-weapon)
+  - [Finding the recipe](#finding-the-recipe)
+  - [Finding the beam crystal](#finding-the-beam-crystal)
+  - [TO DO](#to-do)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # CDDA Beam Sword Construction
 Adds the beam sword, a powerful and difficult to make endgame weapon made from a crystalized portal shard.
 

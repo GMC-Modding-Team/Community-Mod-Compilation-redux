@@ -5,12 +5,9 @@ on:
     paths:
     - '*.md'
     - '**/*.md'
-    - '**/*/*.md'
-  pull_request:
-    paths:
-    - '*.md'
-    - '**/*.md'
-    - '**/*/*.md'
+    - '**/**/*.md'
+    - '**/**/**/*.md'
+    - '**/**/**/**/*.md'
 
 name: Generator - TOC
 jobs:
@@ -20,13 +17,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: npx doctoc **/*.md --github
+      - run: npx doctoc **.md --github | npx doctoc **/*.md --github | npx doctoc **/**/*.md --github | npx doctoc **/**/**/*.md --github  | npx doctoc **/**/**/**/*.md --github
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
           commit-message: Update TOC
           branch: Update-toc
-          title: [GitHub] Update TOC
+          title: Update TOC
           body: |
             ```md
             - [x] Update TOC

@@ -1,3 +1,12 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Not everyone turned into zombies. Some still struggling to live...](#not-everyone-turned-into-zombies-some-still-struggling-to-live)
+  - [How to get to Hell's Raiders story line:](#how-to-get-to-hells-raiders-story-line)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Not everyone turned into zombies. Some still struggling to live...
 
 Adds 5 new side stories (1 WIP), 1 mission for random NPCs and a story line for Hell's Raiders faction (in early stage of development, fully playable, currently have a decent amount of content).

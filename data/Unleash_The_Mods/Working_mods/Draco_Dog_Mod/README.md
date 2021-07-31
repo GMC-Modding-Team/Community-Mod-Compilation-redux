@@ -1,3 +1,23 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [DG_Mods](#dg_mods)
+    - [Armoring:](#armoring)
+    - [Training:](#training)
+    - [Morale:](#morale)
+      - [0.6](#06)
+      - [0.5](#05)
+      - [0.4c](#04c)
+      - [0.4b](#04b)
+      - [0.4a](#04a)
+      - [0.4](#04)
+      - [0.3](#03)
+      - [0.2](#02)
+      - [0.1](#01)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # DG_Mods
 Collection of Mods for Cataclysm: Dark Days Ahead
 

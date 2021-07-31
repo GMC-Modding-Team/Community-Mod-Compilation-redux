@@ -1,3 +1,17 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Monstergirl Professions](#monstergirl-professions)
+      - [Catgirl](#catgirl)
+      - [Wolfgirl](#wolfgirl)
+      - [Birdgirl](#birdgirl)
+      - [Scylla](#scylla)
+      - [Dryad](#dryad)
+      - [Satyr](#satyr)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Monstergirl Professions
 This mod adds various monstergirls (or boys) as professions. I've also added a few add-on mutations to buff some underwhelming or negative mutations, they are only available via these professions.
 

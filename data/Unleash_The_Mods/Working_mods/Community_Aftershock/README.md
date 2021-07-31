@@ -1,3 +1,17 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Here be dragons!](#here-be-dragons)
+    - [items](#items)
+    - [maps](#maps)
+    - [mobs](#mobs)
+    - [player](#player)
+    - [recipes](#recipes)
+    - [vehicles](#vehicles)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Here be dragons!
 
 These are the files for Aftershock. Whatever you're looking for has been sorted into subfolders for ease of access:
