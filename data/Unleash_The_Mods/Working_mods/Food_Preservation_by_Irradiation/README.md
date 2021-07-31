@@ -1,3 +1,17 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  
+
+- [Food Preservation by Irradiation](#food-preservation-by-irradiation)
+  - [Whats new to Cataclysm-DDA via this mod:](#whats-new-to-cataclysm-dda-via-this-mod)
+  - [Future plans:](#future-plans)
+  - [Suggested mods:](#suggested-mods)
+  - [Feedback/thoughts](#feedbackthoughts)
+    - [Further work consideration:](#further-work-consideration)
+    - [Issues](#issues)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Food Preservation by Irradiation
 Basically adds in the ability to preserve food via ionizing radiation.
 

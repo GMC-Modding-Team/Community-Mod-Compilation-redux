@@ -1,3 +1,11 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  
+
+- [Mutation-Changes-Mod-Fix-](#mutation-changes-mod-fix-)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Mutation-Changes-Mod-Fix-
 Its basically Mutation Changes Mod from Peeved Penguin but fixed, so it can run without problems in the newer versions. I Don't intend to steal anyone's project and will remove the link if the author wish it so. Also this is the first thing i have modded for cataclysm and i did it with the best intentions so... Please dun' kill me... :(
 

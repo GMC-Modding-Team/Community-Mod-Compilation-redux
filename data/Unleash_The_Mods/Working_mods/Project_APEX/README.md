@@ -1,3 +1,20 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  
+
+- [What](#what)
+- [Why](#why)
+- [Design Considerations](#design-considerations)
+- [Roadmap](#roadmap)
+  - [Stage 0](#stage-0)
+  - [Stage I](#stage-i)
+  - [Stage II](#stage-ii)
+  - [Stage III](#stage-iii)
+- [Installation](#installation)
+- [License](#license)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ﻿# What
 
 Project APEX (`apex`) is a [*Cataclysm: Dark Days Ahead*](http://github.com/cleverRaven/Cataclysm-DDA) mod that adds high-end, advanced suits of armor and military equipment. It also expands on the lore of the game in an unofficial manner. All parts of the mod seek to be lore-friendly, at least within the confines of the official sci-fi mod, Aftershock.

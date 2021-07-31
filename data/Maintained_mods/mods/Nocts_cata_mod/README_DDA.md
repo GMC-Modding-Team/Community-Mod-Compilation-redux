@@ -1,3 +1,23 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  
+
+- [Expansion mod for Cataclysm, Dark Days Ahead version](#expansion-mod-for-cataclysm-dark-days-ahead-version)
+  - [Special Thanks](#special-thanks)
+  - [Frequently Asked Questions](#frequently-asked-questions)
+      - ["The zombie super scout (insert event where it killed your char)!"](#the-zombie-super-scout-insert-event-where-it-killed-your-char)
+      - [Why do you have books that level you up from 0-10? Isn't that a bit broken?](#why-do-you-have-books-that-level-you-up-from-0-10-isnt-that-a-bit-broken)
+  - [Here is my github for this project](#here-is-my-github-for-this-project)
+  - [Contributing](#contributing)
+      - [Suggestions](#suggestions)
+      - [Reporting bugs](#reporting-bugs)
+      - [Modifying the code](#modifying-the-code)
+      - [Github Rules](#github-rules)
+- [Warning: Spoilers Ahead!](#warning-spoilers-ahead)
+      - [To do](#to-do)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Expansion mod for Cataclysm, Dark Days Ahead version
 
 The version of this mod in this folder is is for Cataclysm: Dark Days Ahead. Copy the folder containing this content into data/mods if you are using that version of Cataclysm. Use the other folder, nocts_cata_mod_BN if you are playing with Cataclysm: Bright Nights.

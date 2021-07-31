@@ -1,3 +1,18 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  
+
+- [Changelog](#changelog)
+  - [Unreleased](#unreleased)
+  - [v0.2.0-beta-experimental (2021-07-19)](#v020-beta-experimental-2021-07-19)
+  - [V0.1.9 (2021-05-14)](#v019-2021-05-14)
+  - [V0.1.8 (2021-04-15)](#v018-2021-04-15)
+  - [0.1.8 (2021-04-03)](#018-2021-04-03)
+  - [V0.1.7 (2021-03-07)](#v017-2021-03-07)
+  - [v0.1.6 (2021-02-18)](#v016-2021-02-18)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Changelog
 
 ## [Unreleased](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/tree/HEAD)

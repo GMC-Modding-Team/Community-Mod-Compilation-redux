@@ -1,3 +1,11 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  
+
+- [VermilionMod](#vermilionmod)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # VermilionMod
 Adds a random assortment of wildly different things into C:DDA
 
