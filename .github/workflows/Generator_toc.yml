@@ -12,15 +12,15 @@ jobs:
     name: Update the table of contents
     runs-on: ubuntu-latest
     steps:
-      - uses: technote-space/toc-generator@v3
+      - uses: actions/checkout@v2
       - run: npx doctoc **/*.md --github
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
-          commit-message: Update the table of contents
+          commit-message: Update TOC
           branch: Update-toc
-          title: Update the table of contents in documents
+          title: Update TOC
           body: |
-            ```sh
-            npx doctoc **/*.md --github
+            ```md
+            - [x] Update TOC
             ```
