@@ -573,7 +573,6 @@ class colony : private element_allocator_type
 
                 colony_reverse_iterator( typename colony::iterator &&source ) noexcept:
                     it( std::move( source ) ) {}
-
         }; // colony_reverse_iterator
 
     private:
