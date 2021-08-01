@@ -39,7 +39,7 @@ I hope to start the merging process soon with a bunch of prs. the goal is to bri
 
 ## Cataclysm: Goats Dark Horizons
 
-The idea is to make a massive overhaul of cdda and maintain it, this will be Cataclysm: Goats Dark Horizons (this still might change in future), i want to make this sligtly more terrifying in terms of visuals not being able to see as far, same with guns, this will give the game a harder approach right away, add achivements and give the game A LOAD of content and some features alot more will be added but atm it is a content overhaul. this is CDDA extended and will never make change the base game
+The idea is to make a massive overhaul of cdda and maintain it, this will be Cataclysm: Goats Dark Horizons (this still might change in future), i want to make this sligtly more terrifying in terms of visuals not being able to see as far, same with guns, this will give the game a harder approach right away, add achivements and give the game A LOAD of content and some features alot more will be added but atm it is a content overhaul. this is CDDA extended and this wont become stand alone, might include over_writes but not exclustions. 
 
 
 - [ ] Main Goals
