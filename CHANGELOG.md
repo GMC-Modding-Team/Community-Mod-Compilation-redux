@@ -1,4 +1,48 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  
+
+- [Changelog](#changelog)
+  - [Unreleased](#unreleased)
+  - [v0.2.0-beta-experimental (2021-07-19)](#v020-beta-experimental-2021-07-19)
+  - [V0.1.9 (2021-05-14)](#v019-2021-05-14)
+  - [V0.1.8 (2021-04-15)](#v018-2021-04-15)
+  - [0.1.8 (2021-04-03)](#018-2021-04-03)
+  - [V0.1.7 (2021-03-07)](#v017-2021-03-07)
+  - [v0.1.6 (2021-02-18)](#v016-2021-02-18)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Changelog
+
+## [Unreleased](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/tree/HEAD)
+
+[Full Changelog](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/compare/v0.2.0-beta-experimental...HEAD)
+
+**Closed issues:**
+
+- \[Documentation\] Keybindings.md [\#115](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/115)
+
+**Merged pull requests:**
+
+- \[Documentation\] Keybindings.md [\#116](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/116) ([TheGoatGod](https://github.com/TheGoatGod))
+
+## [v0.2.0-beta-experimental](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/tree/v0.2.0-beta-experimental) (2021-07-19)
+
+[Full Changelog](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/compare/V0.1.9...v0.2.0-beta-experimental)
+
+**Fixed bugs:**
+
+- \[Experimental\] routine update 2 [\#127](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/127) ([TheGoatGod](https://github.com/TheGoatGod))
+
+**Merged pull requests:**
+
+- Pr routine updates 3 [\#135](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/135) ([TheGoatGod](https://github.com/TheGoatGod))
+- Clean up `.gitignore` [\#134](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/134) ([UmbralReaper](https://github.com/UmbralReaper))
+- Rearrange vehicle order to correct part load errors [\#133](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/133) ([UmbralReaper](https://github.com/UmbralReaper))
+- Prepare for 0.F \(part 1\) [\#132](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/132) ([UmbralReaper](https://github.com/UmbralReaper))
+- Fix erroneously added members due to misuse of a script [\#131](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/131) ([UmbralReaper](https://github.com/UmbralReaper))
+- Routine modernisation updates [\#130](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/130) ([UmbralReaper](https://github.com/UmbralReaper))
 
 ## [V0.1.9](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/tree/V0.1.9) (2021-05-14)
 

@@ -5,9 +5,11 @@ Use the `home` key to get to the top.
 **Table of Contents**
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-- [Vanilla Locations](#vanilla-locations)
-- [Modded locations and new times](#Modded-locations-and-new-times)
-- [Others](#Others)
+
+- [Vanilla locations](#vanilla-locations)
+- [Modded locations and new times](#modded-locations-and-new-times)
+- [Others](#others)
+
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 # Vanilla locations
@@ -84,7 +86,7 @@ Use the `home` key to get to the top.
 
 
 ```JSON
-"location": "barrel", -"install_time": "10 m",
+"location": "barrel", - "install_time": "10 m",
 
 "location": "receiver", - "install_time": "10 m",
 

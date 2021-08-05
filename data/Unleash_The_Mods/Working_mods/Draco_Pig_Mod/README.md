@@ -1,3 +1,13 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  
+
+- [DG_Mods](#dg_mods)
+    - [What does this mod add/do?](#what-does-this-mod-adddo)
+      - [0.1](#01)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # DG_Mods
 Collection of Mods for Cataclysm: Dark Days Ahead
 

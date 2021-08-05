@@ -1,3 +1,11 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  
+
+- [oa_early_game_mutations_mod](#oa_early_game_mutations_mod)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # oa_early_game_mutations_mod
 
 This mod adds the "body modification clinic". A two Z-level building that allows characters to access mutagen in the early game.

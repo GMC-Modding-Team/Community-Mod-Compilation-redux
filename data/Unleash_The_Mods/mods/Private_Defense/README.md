@@ -1,3 +1,25 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  
+
+- [What](#what)
+- [Why](#why)
+- [Models](#models)
+  - [Pistols](#pistols)
+  - [SMGs](#smgs)
+  - [Rifles](#rifles)
+  - [Shotguns](#shotguns)
+  - [Magazines](#magazines)
+    - [Rifles](#rifles-1)
+    - [SMGs](#smgs-1)
+    - [Pistols](#pistols-1)
+    - [Pistols (printing only)](#pistols-printing-only)
+  - [Mods](#mods)
+- [Lore](#lore)
+- [License](#license)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # What
 
 Private Defense (`private_defense`) is a [*Cataclysm: Dark Days Ahead*](http://github.com/cleverRaven/Cataclysm-DDA) mod that adds 3D-printable plastic firearms into the game.
