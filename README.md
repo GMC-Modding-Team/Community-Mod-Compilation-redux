@@ -6,7 +6,7 @@
 
 - [Description](#description)
 - [Road map](#road-map)
-  - [Goats - Dark Days](#goats---dark-days)
+  - [Cataclysm: Goats Dark Horizons](#cataclysm-goats-dark-horizons)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 [![Build_Number](https://img.shields.io/badge/CDDA_Build%3A-%2311458-blue)](https://github.com/CleverRaven/Cataclysm-DDA)
