@@ -1,0 +1,12 @@
+on:
+  push:
+    tags:
+      - v[0-9]+.[0-9]+.[0-9]+
+
+name: Version bump
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: vweevers/additional-tags-action@v1
