@@ -1,21 +1,22 @@
 # Updating Legacy JSON
 
 Use the `home` key to get to the top.
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
 
 **Table of Contents**
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 - [Introduction](#introduction)
-  * [Tools Required](#tools-required)
-  * [Regex](#regex)
-  * [What is JSON?](#what-is-json)
-  * [Terminology in this Document](#terminology-in-this-document)
-  * [Python](#python)
+  - [Tools Required](#tools-required)
+  - [Regex](#regex)
+  - [What is JSON?](#what-is-json)
+  - [Terminology in this Document](#terminology-in-this-document)
+  - [Python](#python)
 - [abstract, ident, and id](#abstract-ident-and-id)
 - [Ammo](#ammo)
-  * [Ammo Type](#ammo-type)
-  * [damage](#damage)
-- [Artifacts/relic_data](#artifacts/relic_data)
+  - [Ammo Type](#ammo-type)
+  - [damage](#damage)
+- [Artifacts/relic_data](#artifactsrelic_data)
 - [barrel_length](#barrel_length)
 - [Bleeding](#bleeding)
 - [blob and slime](#blob-and-slime)
@@ -28,22 +29,28 @@ Use the `home` key to get to the top.
 - [Name](#name)
 - [picklock](#picklock)
 - [Pocket Data](#pocket-data)
-  * [Gun Pocket data](#gun-Pocket-data)
-  * [Magazine Pocket data](#magazine-Pocket-data)
-  * [CONTAINER](#container)
+  - [Container Pocket data](#container-pocket-data)
+  - [Gun Pocket Data](#gun-pocket-data)
+  - [Magazine Pocket Data](#magazine-pocket-data)
+  - [CONTAINER](#container)
 - [Volume](#volume)
-  * [folded_volume](#folded_volume)
+  - [folded_volume](#folded_volume)
 - [Weight](#weight)
 - [Effect](#effect)
 - [Shape](#shape)
 - [Construction group](#construction-group)
-  * [Group](#group)
+  - [Group](#group)
 - [Activity level](#activity-level)
 - [Modinfo](#modinfo)
 - [Time](#time)
+- [Martial Arts](#martial-arts)
+- [Note](#note)
+- [item_group](#item_group)
+- [vehicle_part](#vehicle_part)
 - [Unicode Characters](#unicode-characters)
+- [Price](#price)
 
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 # Introduction
 
@@ -454,10 +461,9 @@ add these to "type": `Magazine` **needs updating**
 ```JSON
 "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "Ammo_example": 30 } } ]
 ```
-or if you want to include ammo as well as magazines- maybe
+or if you want to include more ammo
 ```JSON
-"magazines": [ [ "ammo_type", [ "ammo_id_1", "ammo_id_2", "ammo_id_3" ] ] ]
-"magazine_well": 1
+"pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "Ammo_example_1": 120, "Ammo_example_2": 120 } } ]
 ```
 
 
@@ -729,5 +735,3 @@ This regex will find all non-ascii (unicode) characters, excluding the ellipsis 
 ```
 
 ---
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->

@@ -3,14 +3,53 @@
     "//": "old name do not use",
     "id": "rc_spawn_moneycorpse",
     "type": "TOOL",
-    "name": "summon money fungus",
+    "name": { "str": "summon money fungus" },
     "description": "Some kind of puffball. Throw it on the ground to summon a fungus with a cash card.",
     "weight": "1 g",
     "volume": "10 ml",
-    "price": 20000,
-    "price_postapoc": 1000,
+    "price": "200 USD",
+    "price_postapoc": "10 USD",
     "material": [ "veggy" ],
     "symbol": "$",
     "use_action": { "type": "place_monster", "monster_id": "rc_money_fungus", "moves": 50, "difficulty": 100 }
+  },
+  {
+    "id": "rc_oxyacetylene_solid",
+    "type": "AMMO",
+    "copy-from": "oxyacetylene",
+    "name": { "str": "oxyacetylene fruit" },
+    "description": "A fruit filled with oxyacetylene.",
+    "color": "white",
+    "symbol": "w",
+    "looks_like": "weldtank",
+    "phase": "solid",
+    "count": 100
+  },
+  {
+    "type": "item_group",
+    "subtype": "distribution",
+    "id": "rc_drop_oxyacetylene",
+    "items": [ { "item": "rc_oxyacetylene_solid" } ]
+  },
+  {
+    "id": "rc_oxyacetylene_fungus",
+    "type": "MONSTER",
+    "name": { "str": "oxyacetylene fungus" },
+    "description": "A fungaloid that supposedly has oxyacetylene in its body.",
+    "copy-from": "rc_money_fungus",
+    "death_drops": "rc_drop_oxyacetylene"
+  },
+  {
+    "id": "rc_spawn_oxyacetylenefungus",
+    "type": "TOOL",
+    "name": { "str": "summon oxyacetylene fungus" },
+    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with oxyacetylene in its body.",
+    "weight": "1 g",
+    "volume": "10 ml",
+    "price": "200 USD",
+    "price_postapoc": "10 USD",
+    "material": [ "veggy" ],
+    "symbol": "$",
+    "use_action": { "type": "place_monster", "monster_id": "rc_oxyacetylene_fungus", "moves": 50, "difficulty": 100 }
   }
 ]

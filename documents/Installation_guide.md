@@ -1,16 +1,17 @@
 # Installation Guide
 
-
 Use the `home` key to get to the top.
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+
 **Table of Contents**
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 - [How to Install - CDDA and the launcher](#how-to-install---cdda-and-the-launcher)
-- [How to Install - Stable Ellison-3](#how-to-install---the-mods---stable--0e-2-ellison-2-)
-- [How to Install - The mods - Experimental](#how-to-install---experimental)
+- [How to Install - Stable Ellison-3](#how-to-install---stable-ellison-3)
+- [How to Install - Experimental](#how-to-install---experimental)
 - [Short FAQ](#short-faq)
 
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 # How to Install - CDDA and the launcher
 
@@ -61,5 +62,3 @@ the `"mods"` goes to `cdda` or `cdda\"data"` folder to go  inside the mods folde
 **A:** [Goats Discord Channel](https://discord.gg/gG6qpjZ)
 
 ---
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->

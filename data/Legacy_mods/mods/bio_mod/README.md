@@ -1,3 +1,13 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  
+
+- [BioCo](#bioco)
+- [Getting Started](#getting-started)
+- [The Assembly Machine](#the-assembly-machine)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # BioCo
 
 BioCo is a mod created for Cataclysm; Dark Days ahead with the goal of reintroducing CBM creation and manipulation, along with new tools/machinery to accomplish this.

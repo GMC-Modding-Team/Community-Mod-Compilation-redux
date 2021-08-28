@@ -1,3 +1,15 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  
+
+- [Incinerator](#incinerator)
+- [Creating an Incinerator](#creating-an-incinerator)
+- [Placing or Dismantling the Incinerator](#placing-or-dismantling-the-incinerator)
+- [How it Works](#how-it-works)
+- [About this mod:](#about-this-mod)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 Incinerator
 ===
 This mod introduces a player-made incinerator which can quickly and easily destroy any unwanted items.

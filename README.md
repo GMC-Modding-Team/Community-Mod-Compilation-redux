@@ -1,22 +1,16 @@
+# TheGoatGod's Mod Compilation
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**
 
-- [**TheGoatGod's Mod Compilation**](#thegoatgods-mod-compilation)
 - [Description](#description)
 - [Road map](#road-map)
+  - [Cataclysm: Goats Dark Horizons](#cataclysm-goats-dark-horizons)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-# **TheGoatGod's Mod Compilation**
-
-**Table of Contents**
-
-- [Description](#Description)
-- [Road map](#road-map)
-
 [![Build_Number](https://img.shields.io/badge/CDDA_Build%3A-%2311458-blue)](https://github.com/CleverRaven/Cataclysm-DDA)
-[![version](https://img.shields.io/badge/GMC_version-0.1.6-blue)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/releases/tag/v0.1.6)
+[![version](https://img.shields.io/badge/GMC_version-0.1.8-blue)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/releases/tag/V0.1.8)
 [![Repo_Size](https://img.shields.io/github/repo-size/GMC-Modding-Team/Community-Mod-Compilation-redux)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/graphs/code-frequency)
 [![Total_Downloads](https://img.shields.io/github/downloads/GMC-Modding-Team/Community-Mod-Compilation-redux/total)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/releases)
 [![Discord](https://img.shields.io/discord/682148537752223765?label=Discord)](https://discord.gg/sk8HHF6sMY)\
@@ -26,10 +20,9 @@
 [![Closed_PR](https://img.shields.io/github/issues-pr-closed-raw/GMC-Modding-Team/Community-Mod-Compilation-redux)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pulls?q=is%3Apr+is%3Aclosed)
 [![Contributors_Status](https://img.shields.io/github/contributors-anon/GMC-Modding-Team/Community-Mod-Compilation-redux)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/graphs/contributors)
 <a href="https://gitlocalize.com/repo/5745/whole_project?utm_source=badge"> <img src="https://gitlocalize.com/repo/5745/whole_project/badge.svg" /> </a>\
-[![JSON style check](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions/workflows/json_push.yml/badge.svg)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions/workflows/json_push.yml)
-[![TOC Generator](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions/workflows/toc.yml/badge.svg)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions/workflows/toc.yml)
-[![Flake8 Python linting](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions/workflows/flake8.yml/badge.svg)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions/workflows/flake8.yml)
-[![Check Markdown links](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions/workflows/Check_Markdown_links.yml/badge.svg)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions/workflows/Check_Markdown_links.yml)
+[![style check - JSON](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions/workflows/style_check_json.yml/badge.svg)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions/workflows/style_check_json.yml)
+[![Generator - TOC](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions/workflows/Generator_toc.yml/badge.svg)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions/workflows/Generator_toc.yml)
+[![Generator - Changelog](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions/workflows/Generator_Changelog.yml/badge.svg)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions/workflows/Generator_Changelog.yml)
 
 
 # Description
@@ -37,9 +30,29 @@ Welcome to TheGoatGod's Mod Compilation. Currently contains just under 400 mods,
 
 # Road map
 
-- [ ] Fix all the mods
-- [x] start merging mods together
-- [ ] Make more mods story mod, more tools, more factions etc...
-- [ ] merge content together to make mega mod
+- [ ] fix unleash the mods
+- [ ] bump build verion up to next release/experimental
+- [ ] fix mods again
+- [ ] merge content together to make smaller packages/directional mods that make sence
 
-I hope to start the merging process soon with a bunch of prs. goal is to bring down the amount of mods. you will see name changes to inclue other mods to make it kinda like the bionic package but not one type of item. however food will be diffrent from other mods. it might get abit confueing to begin with. alot of mods will get striped into other mods entirly or by pieces. all unwanted content will go into a "bin" type mod where you can get the stuff that doesnt fit in or im not planning on adding into there big merge into my mega mod for cdda but this will take time and i plan on adding alot of content all round i need to know what im working with to have a direction to start, i have started some addional content mods that will be included i will add more so this will work. i will need testers and will have to make a new git repo for this.
+I hope to start the merging process soon with a bunch of prs. the goal is to bring down the number of mods. you will see name changes to include other mods to make it kinda like the bionic package but not one type of item. however, food will be different from other mods. it might get a bit confusing, to begin with. a lot of mods will get striped into other mods entirely or by pieces. all unwanted content will go into a "bin" type mod where you can get the stuff that doesn't fit in or I'm not planning on adding into their big merge into my mega mod for cdda but this will take time and I plan on adding a lot of content all round I need to know what I'm working with to have a direction to start, I have started some additional content mods that will be included I will add more so this will work. I will need testers and will have to make a new git repo for this
+
+## Cataclysm: Goats Dark Horizons
+
+The idea is to make a massive overhaul of cdda and maintain it, this will be Cataclysm: Goats Dark Horizons (this still might change in future), i want to make this sligtly more terrifying in terms of visuals not being able to see as far, same with guns, this will give the game a harder approach right away, add achivements and give the game A LOAD of content and some features alot more will be added but atm it is a content overhaul. this is CDDA extended and this wont become stand alone, might include over_writes but not exclustions. 
+
+
+- [ ] Main Goals
+  - [ ] main story
+  - [ ] quests
+  - [ ] maps ( faction bases and more)
+  - [ ] more - compilation
+  - [ ] my mods (early survival ect...)
+  - [ ] vehicles (shopping trolly varients and more)
+  - [ ] supernatural (monsters and scary encounters) maybe feature
+  - [ ] Dangerous animals (mutated and sci-fy)
+  - [ ] make a ton of little addons (dark days, qol stuff)
+  - [ ] overhaul/merge mods before inclusion and finish them (to an extent or fully implement them)
+  - [ ] decide if i want to use pk content (parial implementation might include both)
+  - [ ] decide if i want to use aftershock content or a base for the dev
+  - [ ] rework mods before inclusion to be in a better style in json (less janky ids no {HMS_MOD_CONTENT_EXAMPLE -> MOD_CONTENT} ) and output to the game (names and descriptions are professional 
