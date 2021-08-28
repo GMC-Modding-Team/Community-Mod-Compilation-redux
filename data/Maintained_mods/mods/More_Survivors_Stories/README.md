@@ -1,6 +1,6 @@
 # Not everyone turned into zombies. Some still struggling to live...
 
-Adds 5 new side stories (1 WIP), 1 mission for random NPCs and a story line for Hell's Raiders faction (in early stage of development, fully playable, currently have a decent amount of content).
+Adds 7 new side stories (1 WIP), 1 mission for random NPCs and a story line for Hell's Raiders faction (in early stage of development).
 
 ## How to get to Hell's Raiders story line:
 
