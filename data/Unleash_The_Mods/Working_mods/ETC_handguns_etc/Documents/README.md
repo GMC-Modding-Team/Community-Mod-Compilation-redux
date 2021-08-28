@@ -1,3 +1,22 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  
+
+- [Electrothermal-chemical Handguns etc mod for Cataclysm:Dark Days Ahead](#electrothermal-chemical-handguns-etc-mod-for-cataclysmdark-days-ahead)
+  - [Some info on this:](#some-info-on-this)
+  - [Electrothermal guns](#electrothermal-guns)
+    - [Overview](#overview)
+    - ["New" ammo types](#new-ammo-types)
+          - [.22](#22)
+          - [9x19mm](#9x19mm)
+          - [5.56x45mm](#556x45mm)
+          - [7.62x51mm](#762x51mm)
+  - [Other guns](#other-guns)
+  - [Other ammo](#other-ammo)
+  - [Other stuff](#other-stuff)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Electrothermal-chemical Handguns etc mod for Cataclysm:Dark Days Ahead
 Perhaps a bridge between electromagnetic and chemically-propelled guns, which might leave prototype stage sooner than railguns in the near future, or not.
 

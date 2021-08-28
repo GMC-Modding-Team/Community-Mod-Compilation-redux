@@ -1,3 +1,11 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  
+
+- [NO! Mod Starter Kit](#no-mod-starter-kit)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # NO! Mod Starter Kit
 Have something you want to remove from the game? Perhaps the katana feels particularly overpowered, or the acid zombies just don't sit right with you. And, of course, you can't just settle for one of the already created mods. They don't have the right combination of features, remove too much, remove too little, and just generally are a nuisance to maintain. So, you want to create your own. 
 

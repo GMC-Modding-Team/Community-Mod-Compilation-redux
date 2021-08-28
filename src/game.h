@@ -904,7 +904,6 @@ class game
         // Draws the pixel minimap based on the player's current location
         void draw_pixel_minimap( const catacurses::window &w );
     private:
-
         //  int autosave_timeout();  // If autosave enabled, how long we should wait for user inaction before saving.
         void autosave();         // automatic quicksaves - Performs some checks before calling quicksave()
     public:
@@ -972,7 +971,6 @@ class game
         achievements_tracker &achievements();
         memorial_logger &memorial();
     public:
-
         spell_events &spell_events_subscriber();
 
         pimpl<Creature_tracker> critter_tracker;
