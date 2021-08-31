@@ -1,13 +1,16 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+* [Updating Legacy JSON](Community-Mod-Compilation-redux/docs/Updating_Legacy_JSON.md)
 
-- [Welcome to GitHub Pages](#welcome-to-github-pages)
-  - [Markdown](#markdown)
-  - [Jekyll Themes](#jekyll-themes)
-  - [Support or Contact](#support-or-contact)
+* [VS linter](Community-Mod-Compilation-redux/docs/VS_linter.md)
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+* [Override a variable](Community-Mod-Compilation-redux/docs/Override_a_variable.md)
+
+* [Installation Times for Gun Mods](Community-Mod-Compilation-redux/docs/Installation_Times_for_Gun_Mods.md)
+
+* [Examine_actions](Community-Mod-Compilation-redux/docs/Examine_actions.md)
+
+
+
+
 
 ## Welcome to GitHub Pages
 
