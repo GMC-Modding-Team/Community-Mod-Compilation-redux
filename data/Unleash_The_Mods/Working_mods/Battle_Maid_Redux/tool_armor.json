@@ -63,7 +63,6 @@
     "name": { "str": "human-sized carry bag" },
     "weight": "1000 g",
     "color": "brown",
-    "covers": [ "torso", "head", "mouth", "arm_l", "arm_r", "hand_l", "hand_r", "leg_l", "leg_r", "foot_l", "foot_r" ],
     "symbol": "[",
     "description": "A large bag that could fit a person inside. The zipper running across it provides ventilation and you can open and close it from the inside. It can be used as a sleeping bag, as well.",
     "price": "205 USD",
@@ -71,12 +70,15 @@
     "volume": "5 L",
     "warmth": 80,
     "environmental_protection": 1,
-    "encumbrance": 80,
-    "coverage": 100,
     "flags": [ "OVERSIZE", "OUTER" ],
     "use_action": "CAPTURE_MONSTER_ACT",
     "properties": [ [ "monster_size_capacity", "MEDIUM" ] ],
-    "material_thickness": 4
+    "material_thickness": 4,
+    "armor": {
+      "coverage": 100,
+      "covers": [ "torso", "head", "mouth", "arm_l", "arm_r", "hand_l", "hand_r", "leg_l", "leg_r", "foot_l", "foot_r" ],
+      "encumbrance": 80
+    }
   },
   {
     "type": "TOOL_ARMOR",
@@ -85,7 +87,6 @@
     "name": { "str": "maid cloak (off)" },
     "weight": "1175 g",
     "color": "green",
-    "covers": [ "torso", "head", "arm_l", "arm_r", "leg_l", "leg_r" ],
     "symbol": "[",
     "description": "An elegant mantle to keep you warm when going outside. Use it to turn invisible. Consumes maid points.",
     "price": "107 USD",
@@ -93,8 +94,6 @@
     "volume": "3000 ml",
     "warmth": 30,
     "environmental_protection": 3,
-    "encumbrance": 10,
-    "coverage": 65,
     "flags": [ "OVERSIZE", "HOOD", "OUTER", "VARSIZE" ],
     "material_thickness": 2,
     "max_charges": 100,
@@ -108,7 +107,8 @@
       "active": true,
       "need_charges": 100,
       "need_charges_msg": "Not enough maid points!"
-    }
+    },
+    "armor": { "coverage": 65, "covers": [ "torso", "head", "arm_l", "arm_r", "leg_l", "leg_r" ], "encumbrance": 10 }
   },
   {
     "type": "TOOL_ARMOR",
@@ -117,7 +117,6 @@
     "name": { "str": "maid cloak (on)" },
     "weight": "1175 g",
     "color": "green",
-    "covers": [ "torso", "head", "arm_l", "arm_r", "leg_l", "leg_r" ],
     "symbol": "[",
     "description": "An elegant mantle to keep you warm when going outside. Use it to turn visible. It is currently on and consuming maid points.",
     "price": "107 USD",
@@ -125,8 +124,6 @@
     "volume": "3000 ml",
     "warmth": 30,
     "environmental_protection": 3,
-    "encumbrance": 10,
-    "coverage": 65,
     "flags": [ "OVERSIZE", "HOOD", "OUTER", "VARSIZE", "NO_RELOAD" ],
     "material_thickness": 2,
     "max_charges": 100,
@@ -140,7 +137,8 @@
       "target": "maid_cloak_off",
       "need_charges": 0
     },
-    "relic_data": { "passive_effects": [ { "has": "WORN", "condition": "ALWAYS", "mutations": [ "AEP_INVISIBLE", "AEP_STEALTH" ] } ] }
+    "relic_data": { "passive_effects": [ { "has": "WORN", "condition": "ALWAYS", "mutations": [ "AEP_INVISIBLE", "AEP_STEALTH" ] } ] },
+    "armor": { "coverage": 65, "covers": [ "torso", "head", "arm_l", "arm_r", "leg_l", "leg_r" ], "encumbrance": 10 }
   },
   {
     "type": "TOOL_ARMOR",
@@ -149,7 +147,6 @@
     "name": { "str": "white brim with veil", "str_pl": "white brims with veils" },
     "weight": "150 g",
     "color": "white",
-    "covers": [ "eyes" ],
     "symbol": "[",
     "description": "A regular maid's white brim with an elegant veil sewn into it, decorated with silver frills. Although it covers your eyes and blocks your vision quite harshly, you can use maid points to turn it on and gain otherwordly sight.",
     "price": "80 USD",
@@ -157,7 +154,6 @@
     "volume": "250 ml",
     "warmth": 10,
     "environmental_protection": 6,
-    "coverage": 100,
     "flags": [ "SUN_GLASSES", "FANCY" ],
     "qualities": [ [ "GLARE", 1 ] ],
     "material_thickness": 4,
@@ -172,7 +168,8 @@
       "active": true,
       "need_charges": 100,
       "need_charges_msg": "Not enough maid points!"
-    }
+    },
+    "armor": { "coverage": 100, "covers": [ "eyes" ] }
   },
   {
     "type": "TOOL_ARMOR",
@@ -181,7 +178,6 @@
     "name": { "str": "white brim with veil (clairvoyant)", "str_pl": "white brims with veils (clairvoyant)" },
     "weight": "150 g",
     "color": "white",
-    "covers": [ "eyes" ],
     "symbol": "[",
     "description": "A regular maid's white brim with an elegant veil sewn into it, decorated with silver frills. It is currently see-through.",
     "price": "80 USD",
@@ -189,7 +185,6 @@
     "volume": "250 ml",
     "warmth": 10,
     "environmental_protection": 6,
-    "coverage": 100,
     "flags": [ "SUN_GLASSES", "FANCY", "NO_RELOAD" ],
     "qualities": [ [ "GLARE", 1 ] ],
     "material_thickness": 4,
@@ -204,6 +199,7 @@
       "target": "maidguy_mask_off",
       "need_charges": 0
     },
-    "relic_data": { "passive_effects": [ { "has": "WORN", "condition": "ALWAYS", "mutations": [ "AEP_SUPER_CLAIRVOYANCE" ] } ] }
+    "relic_data": { "passive_effects": [ { "has": "WORN", "condition": "ALWAYS", "mutations": [ "AEP_SUPER_CLAIRVOYANCE" ] } ] },
+    "armor": { "coverage": 100, "covers": [ "eyes" ] }
   }
 ]
