@@ -212,11 +212,12 @@
       }
     ],
     "material_thickness": 2,
-    "flags": [ "BELTED", "WATER_FRIENDLY" ]
+    "flags": [ "BELTED", "WATER_FRIENDLY" ],
+    "armor": [ { "encumbrance": 12, "coverage": 30, "covers": [ "torso" ] } ]
   },
   {
-    "result": "pack_basket",
     "type": "recipe",
+    "result": "pack_basket",
     "obsolete": true
   },
   {
@@ -238,5 +239,17 @@
     "result": "cattail_rhizome_cooked",
     "type": "recipe",
     "obsolete": true
+    "//": "INDOORS and BLOCK_WIND are used to ensure it doesn't go out.  Doesn't let you move onto it to prevent exploiting that.",
+    "flags": [ "PLACE_ITEM", "TRANSPARENT", "FIRE_CONTAINER", "EASY_DECONSTRUCT", "INDOORS", "BLOCK_WIND" ],
+    "deployed_item": "hobo_stove",
+    "examine_action": "fireplace",
+    "max_volume": "1 L",
+    "bash": {
+      "str_min": 4,
+      "str_max": 10,
+      "sound": "clatter!",
+      "sound_fail": "clang!",
+      "items": [ { "item": "hobo_stove", "count": 1 } ]
+    }
   }
 ]
