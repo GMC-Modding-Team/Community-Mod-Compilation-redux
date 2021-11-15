@@ -14,6 +14,7 @@
   - [Other guns](#other-guns)
   - [Other ammo](#other-ammo)
   - [Other stuff](#other-stuff)
+  - [Optional Extras in the modmods folder](#optional-extras-in-the-modmods-folder)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
