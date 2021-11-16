@@ -1,3 +1,14 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Release 4 - Mar/2021 for Bright Nights](#release-4---mar2021-for-bright-nights)
+  - [JSON fixes and compatibility](#json-fixes-and-compatibility)
+  - [Balance](#balance)
+  - [New Content](#new-content)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Release 4 - Mar/2021 for Bright Nights
 
 ## JSON fixes and compatibility
