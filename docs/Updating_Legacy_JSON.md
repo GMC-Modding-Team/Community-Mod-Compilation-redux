@@ -179,9 +179,9 @@ And what it should look like under `type: AMMO`:
 
 It is practically impossible to replace all at once, due to the similarities between `type: GUN` and `type: AMMO`. However, if you exclude all `type: AMMO` from the search (manually or otherwise), this will work:
 ```regex
-"ammo": "([^\s]+)"
+"ammo": "([a -z A -Z]+)",\r
 
-"ammo": [ "$1" ]
+"ammo": "[ "$1" ],
 ```
 
 ---
@@ -340,9 +340,9 @@ However, this did not used to be required, so it was specified instead as:
 ```
 This is easily fixed with a regex search:
 ```regex
-"material": "([a-z]+)"
+"material": "([a-z]+)",\r
 
-"material": [ "$1" ]
+"material": [ "$1" ],
 ```
 
 ---
@@ -545,7 +545,7 @@ The conversion from `number` to `string` is:
 
 Unfortunately, updating weight is not as simple as replacing all weight values with their modern version, as weight is quite frequently used to determine the probability of a specific piece of terrain spawning in mapgen. Once you have determined that there are no mapgen files in the area you wish to change, you can use this:
 ```regex
-"weight": ([0-9]+),
+"weight": ([0-9]+),\r
 
 "weight": "$1 g",
 ```
@@ -731,7 +731,8 @@ This regex will find all non-ascii (unicode) characters, excluding the ellipsis 
 "price_postapoc": 1000
 
 "price": "100 cent"
-"price_postapoc": "10 USD" // Can be cent, USD, or kUSD
+"price_postapoc": "10 USD" 
+"price_postapoc": "10 kUSD"    // Can be cent, USD, or kUSD
 ```
 
 ---
