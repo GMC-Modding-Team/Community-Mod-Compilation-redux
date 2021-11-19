@@ -26,7 +26,6 @@
     "vision_day": 5,
     "vision_night": 5,
     "harvest": "arachnid",
-    "death_function": [ "NORMAL" ],
     "flags": [ "SEES", "HEARS", "SMELLS" ]
   },
   {
@@ -60,7 +59,6 @@
     "harvest": "arachnid",
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN" ],
     "biosignature": { "biosig_item": "feces_roach", "biosig_timer": 3 },
-    "death_function": [ "NORMAL" ],
     "flags": [ "SEES", "HEARS", "SMELLS" ]
   },
   {
@@ -94,7 +92,6 @@
     "harvest": "arachnid",
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN" ],
     "biosignature": { "biosig_item": "feces_roach", "biosig_timer": 3 },
-    "death_function": [ "NORMAL" ],
     "flags": [ "SEES", "SMELLS", "HEARS" ]
   },
   {
@@ -128,7 +125,6 @@
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN" ],
     "biosignature": { "biosig_item": "feces_roach", "biosig_timer": 3 },
     "harvest": "arachnid",
-    "death_function": [ "NORMAL" ],
     "flags": [ "SEES", "SMELLS", "HEARS" ]
   },
   {
@@ -155,7 +151,6 @@
     "melee_cut": 1,
     "biosignature": { "biosig_item": "feces_roach", "biosig_timer": 3 },
     "harvest": "meatslug",
-    "death_function": [ "NORMAL" ],
     "flags": [ "SMELLS", "LARVA", "PET_WONT_FOLLOW" ]
   },
   {
@@ -181,7 +176,6 @@
     "melee_cut": 0,
     "biosignature": { "biosig_item": "feces_roach", "biosig_timer": 3 },
     "harvest": "meatslug",
-    "death_function": [ "NORMAL" ],
     "flags": [ "SMELLS", "LARVA", "PET_WONT_FOLLOW" ]
   },
   {
@@ -202,7 +196,7 @@
     "special_attacks": [ [ "ACID", 23 ], [ "EAT_FOOD", 30 ] ],
     "biosignature": { "biosig_item": "acid_free", "biosig_timer": 10 },
     "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT", "PLAYER_CLOSE" ],
-    "death_function": [ "ACID", "NORMAL" ],
+    "death_function": { "message": "The %s's body leaks acid.", "effect": { "id": "death_acid", "hit_self": true } },
     "harvest": "arachnid_acid",
     "flags": [ "ACIDPROOF", "CLIMBS", "HEARS", "POISON", "SEES", "SMELLS", "PET_MOUNTABLE" ]
   },
@@ -226,7 +220,7 @@
     "biosignature": { "biosig_item": "acid_free", "biosig_timer": 10 },
     "special_attacks": [ [ "EAT_FOOD", 30 ] ],
     "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT", "PLAYER_CLOSE" ],
-    "death_function": [ "ACID", "NORMAL" ],
+    "death_function": { "message": "The %s's body leaks acid.", "effect": { "id": "death_acid", "hit_self": true } },
     "harvest": "arachnid_acid",
     "flags": [ "ACIDPROOF", "HEARS", "POISON", "SEES", "SMELLS" ]
   },
@@ -251,7 +245,7 @@
     "special_attacks": [ [ "ACID", 15 ] ],
     "biosignature": { "biosig_item": "acid_free", "biosig_timer": 10 },
     "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT", "PLAYER_CLOSE" ],
-    "death_function": [ "ACID", "NORMAL" ],
+    "death_function": { "message": "The %s's body leaks acid.", "effect": { "id": "death_acid", "hit_self": true } },
     "harvest": "arachnid_acid",
     "flags": [ "ACIDPROOF", "SHORTACIDTRAIL", "CLIMBS", "HEARS", "POISON", "SEES", "SMELLS", "PET_MOUNTABLE" ]
   },
@@ -274,7 +268,7 @@
     "special_attacks": [ [ "ACID", 15 ] ],
     "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT", "PLAYER_CLOSE" ],
     "biosignature": { "biosig_item": "acid_free", "biosig_timer": 10 },
-    "death_function": [ "ACID", "NORMAL" ],
+    "death_function": { "message": "The %s's body leaks acid.", "effect": { "id": "death_acid", "hit_self": true } },
     "harvest": "arachnid_acid",
     "flags": [ "ACIDPROOF", "SHORTACIDTRAIL", "CLIMBS", "HEARS", "POISON", "SEES", "SMELLS", "PET_MOUNTABLE" ]
   },
@@ -360,7 +354,7 @@
     "upgrades": { "half_life": 364, "into": "mon_mega_ant" },
     "biosignature": { "biosig_item": "feces_roach", "biosig_timer": 99 },
     "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT", "PLAYER_CLOSE" ],
-    "death_function": [ "ACID", "NORMAL" ],
+    "death_function": { "message": "The %s's body leaks acid.", "effect": { "id": "death_acid", "hit_self": true } },
     "flags": [ "CLIMBS", "HEARS", "SEES", "SMELLS", "PET_MOUNTABLE" ]
   },
   {
@@ -777,7 +771,6 @@
     "dodge": 8,
     "special_attacks": [ [ "DERMATIK", 25 ] ],
     "anger_triggers": [ "FRIEND_ATTACKED", "PLAYER_WEAK" ],
-    "death_function": [ "NORMAL" ],
     "flags": [ "HEARS", "SMELLS", "STUMBLES", "POISON", "FLIES", "HARDTOSHOOT" ]
   },
   {

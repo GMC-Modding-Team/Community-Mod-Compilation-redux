@@ -4,10 +4,15 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  
 
-- [Release 2 - Jan/2021 for Bright Nights (not tested in mainline 0.E but should work too)](#release-2---jan2021-for-bright-nights-not-tested-in-mainline-0e-but-should-work-too)
+- [Release 3 - Feb/2021 for Bright Nights](#release-3---feb2021-for-bright-nights)
+  - [Hotfix 1](#hotfix-1)
   - [JSON fixes and compatibility](#json-fixes-and-compatibility)
   - [Balance](#balance)
   - [New Content](#new-content)
+- [Release 2 - Jan/2021 for Bright Nights (not tested in mainline 0.E but should work too)](#release-2---jan2021-for-bright-nights-not-tested-in-mainline-0e-but-should-work-too)
+  - [JSON fixes and compatibility](#json-fixes-and-compatibility-1)
+  - [Balance](#balance-1)
+  - [New Content](#new-content-1)
   - [New Fluff](#new-fluff)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->

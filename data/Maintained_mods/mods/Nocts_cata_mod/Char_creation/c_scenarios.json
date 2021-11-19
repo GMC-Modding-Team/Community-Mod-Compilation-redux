@@ -3,7 +3,8 @@
     "type": "scenario",
     "name": "Bio-Weapon Lab",
     "description": "You woke up, where are you?  Who are you?  What are you?!  That doesn't matter right now... you have a bad feeling...",
-    "flags": [ "LONE_START", "SUR_START", "SUM_START" ],
+    "flags": [ "LONE_START", "SUR_START" ],
+    "custom_initial_date": { "season": "summer" },
     "id": "bio_weapon_lab",
     "points": 0,
     "start_name": "Bio-Weapon Lab",
@@ -13,7 +14,6 @@
       "GOURMAND",
       "MARTIAL_ARTS",
       "MARTIAL_ARTS5",
-      "PARKOUR",
       "MARTIAL_ARTS2",
       "MARTIAL_ARTS3",
       "SPIRITUAL",
@@ -33,7 +33,8 @@
     "type": "scenario",
     "name": "Mycus B.W.M.D",
     "description": "After mycus assimilation was successful, our local system was instructed to claim more territory for the mycus. Hostile organisms are near, proceed with caution.",
-    "flags": [ "LONE_START", "SUR_START", "AUT_START" ],
+    "flags": [ "LONE_START", "SUR_START" ],
+    "custom_initial_date": { "season": "autumn" },
     "id": "mycus_bwmd",
     "points": 2,
     "start_name": "Fungal Territory",
@@ -43,7 +44,6 @@
       "GOURMAND",
       "MARTIAL_ARTS",
       "MARTIAL_ARTS5",
-      "PARKOUR",
       "MARTIAL_ARTS2",
       "MARTIAL_ARTS3",
       "SPIRITUAL",
@@ -67,7 +67,7 @@
     "points": 2,
     "start_name": "Boarded Up House",
     "allowed_locs": [ "sloc_house_boarded" ],
-    "professions": [ "survivalist", "jr_survivalist", "bionic_prepper", "prepper" ]
+    "professions": [ "survivalist", "jr_survivalist", "prepper" ]
   },
   {
     "type": "scenario",
@@ -107,10 +107,10 @@
   {
     "type": "scenario",
     "name": "Experimental Soldier Start",
-    "description": "You were part of a an advanced infantry unit, deployed to one of several 'priority sites' as part of a last-ditch effort to get the situation under control.  Delays and casualties led to you being the only one left by the time you reached the objective, and things aren't looking any better.",
+    "description": "You were part of a an advanced infantry unit, deployed to one of several 'priority sites' as part of a last-ditch effort to get the situation under control.  Delays, casualties and having to fight your way through the chaos led to you being the only one left by the time you reached the objective, and with you being so hurt, things aren't looking any better.",
     "id": "experiment_soldier_start",
-    "points": -2,
-    "flags": [ "LONE_START", "CITY_START" ],
+    "points": -4,
+    "flags": [ "LONE_START", "CITY_START", "HELI_CRASH" ],
     "start_name": "Priority Site",
     "allowed_locs": [
       "lab_surface_brick_blockC0",
@@ -123,29 +123,33 @@
   },
   {
     "copy-from": "alone",
-    "id": "alone",
     "type": "scenario",
-    "traits": [ "MARTIAL_ARTS_SURV_COM", "MARTIAL_ARTS_BIOJUTSU" ]
+    "id": "alone",
+    "extend": { "traits": [ "MARTIAL_ARTS_SURV_COM", "MARTIAL_ARTS_BIOJUTSU" ] }
   },
   {
     "copy-from": "summer_advanced_start",
-    "id": "summer_advanced_start",
     "type": "scenario",
-    "traits": [ "MARTIAL_ARTS_SURV_COM", "MARTIAL_ARTS_BIOJUTSU" ],
-    "extend": { "professions": [ "bio_infantry", "bio_scout", "bio_knight", "bio_tool" ] }
+    "id": "summer_advanced_start",
+    "extend": {
+      "traits": [ "MARTIAL_ARTS_SURV_COM", "MARTIAL_ARTS_BIOJUTSU" ],
+      "professions": [ "bio_infantry", "bio_scout", "bio_knight", "bio_tool" ]
+    }
   },
   {
     "copy-from": "ambushed",
-    "id": "ambushed",
     "type": "scenario",
-    "traits": [ "MARTIAL_ARTS_SURV_COM", "MARTIAL_ARTS_BIOJUTSU" ],
-    "extend": { "professions": [ "bio_infantry", "bio_scout", "bio_knight", "bio_tool" ] }
+    "id": "ambushed",
+    "extend": {
+      "traits": [ "MARTIAL_ARTS_SURV_COM", "MARTIAL_ARTS_BIOJUTSU" ],
+      "professions": [ "bio_infantry", "bio_scout", "bio_knight", "bio_tool" ]
+    }
   },
   {
     "copy-from": "cyberpunk",
-    "id": "cyberpunk",
     "type": "scenario",
-    "traits": [ "MARTIAL_ARTS_BIOJUTSU" ]
+    "id": "cyberpunk",
+    "extend": { "traits": [ "MARTIAL_ARTS_BIOJUTSU" ] }
   },
   {
     "copy-from": "wilderness",
@@ -155,32 +159,32 @@
   },
   {
     "copy-from": "mutant",
-    "id": "mutant",
     "type": "scenario",
+    "id": "mutant",
     "extend": { "professions": [ "failed_weapon" ] }
   },
   {
     "copy-from": "lab_chal",
-    "id": "lab_chal",
     "type": "scenario",
+    "id": "lab_chal",
     "extend": { "professions": [ "failed_weapon" ] }
   },
   {
     "copy-from": "lab_staff",
-    "id": "lab_staff",
     "type": "scenario",
+    "id": "lab_staff",
     "extend": { "professions": [ "bio_infantry", "bio_scout", "bio_knight", "bio_tool" ] }
   },
   {
     "copy-from": "heli_crash",
-    "id": "heli_crash",
     "type": "scenario",
+    "id": "heli_crash",
     "extend": { "professions": [ "bio_infantry", "bio_scout", "bio_knight", "bio_tool" ] }
   },
   {
     "copy-from": "overrun",
-    "id": "overrun",
     "type": "scenario",
+    "id": "overrun",
     "extend": { "professions": [ "bio_infantry", "bio_scout", "bio_knight", "bio_tool" ] }
   }
 ]
