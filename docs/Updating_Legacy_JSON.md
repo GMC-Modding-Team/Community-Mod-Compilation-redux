@@ -468,7 +468,42 @@ or if you want to include more ammo
 
 
 ---
+## Armor Data
+
+New code for Armor data
+
+Old code example
+
+```json
+"coverage": 10,
+"encumbrance": 4,
+"cover_melee": 95,
+"cover_ranged": 50,
+"cover_vitals": 5,
+"covers": [ "torso" ]
+```
+
+New code example
+
+```json
+"armor": [
+  {
+    "encumbrance": [ 2, 8 ],
+    "coverage": 95,
+    "cover_melee": 95,
+    "cover_ranged": 50,
+    "cover_vitals": 5,
+    "covers": [ "torso" ]
+  }
+]
+```
+
+
+
+---
+
 ## CONTAINER
+
 The current JSON standards for the `type` `"CONTAINER"` look like this:
 `type: CONTAINER` has been obsolete for a while now, and having it in JSON causes error messages. The following should easily remove any problems with `type: CONTAINER`:
 
@@ -731,7 +766,7 @@ This regex will find all non-ascii (unicode) characters, excluding the ellipsis 
 "price_postapoc": 1000
 
 "price": "100 cent"
-"price_postapoc": "10 USD" 
+"price_postapoc": "10 USD"
 "price_postapoc": "10 kUSD"    // Can be cent, USD, or kUSD
 ```
 
