@@ -1,5 +1,23 @@
 [
   {
+    "type": "item_group",
+    "subtype": "collection",
+    "id": "full_lmil_helm",
+    "entries": [ { "item": "lmil_helm", "ammo-item": "gasfilter_m", "charges": 100 } ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "collection",
+    "id": "full_mil_helm",
+    "entries": [ { "item": "mil_helm", "ammo-item": "gasfilter_m", "charges": 100 } ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "collection",
+    "id": "full_hmil_helm",
+    "entries": [ { "item": "hmil_helm", "ammo-item": "gasfilter_m", "charges": 100 } ]
+  },
+  {
     "id": "failed_weapon",
     "type": "profession",
     "name": "Failed Bio-Weapon",
@@ -164,7 +182,7 @@
       "bio_str_enhancer",
       "bio_adrenaline",
       "bio_carbon",
-      "bio_scent_vision",
+      "bio_hazard_shield",
       "bio_ears",
       "bio_cqb",
       "bio_claws",
@@ -183,7 +201,7 @@
       "bio_power_storage_mkII",
       "bio_power_storage_mkII"
     ],
-    "items": { "both": [ "badge_bio_weapon", "subsuit_xl", "footrags" ], "male": [ "briefs" ], "female": [ "bra", "panties" ] },
+    "items": { "both": [ "badge_bio_weapon", "subsuit_xl" ], "male": [ "briefs" ], "female": [ "bra", "panties" ] },
     "flags": [ "SCEN_ONLY" ]
   },
   {
@@ -197,7 +215,6 @@
       "NIGHTVISION",
       "WAKEFUL",
       "WEAKSCENT",
-      "TRIGGERHAPPY",
       "BADCARDIO",
       "OUTDOORSMAN",
       "LIAR",
@@ -223,7 +240,7 @@
       "bio_atomic_battery",
       "bio_int_enhancer",
       "bio_eye_enhancer",
-      "bio_eye_optic",
+      "bio_animal_empathy",
       "bio_night_vision",
       "bio_targeting",
       "bio_tools",
@@ -267,7 +284,6 @@
       "POISRESIST",
       "BADKNEES",
       "CLUMSY",
-      "TRIGGERHAPPY",
       "BADCARDIO",
       "SLOWRUNNER",
       "PONDEROUS1",
@@ -333,7 +349,7 @@
       "bio_int_enhancer",
       "bio_carbon",
       "bio_chain_lightning",
-      "bio_emp",
+      "bio_emp_armgun",
       "bio_magnet",
       "bio_nanobots",
       "bio_painkiller",
@@ -344,7 +360,7 @@
       "bio_railgun",
       "bio_remote",
       "bio_resonator",
-      "bio_shock",
+      "bio_cutting_torch",
       "bio_batteries",
       "bio_cable",
       "bio_tools",
@@ -360,7 +376,7 @@
     "type": "profession",
     "name": "Super Soldier",
     "description": "The infantry of the Super Soldier project.  You are one of many augmented soldiers to be deployed into a battle field to ensure victory.  With range and melee capabilities, you engage enemies en masse.",
-    "points": 12,
+    "points": 16,
     "CBMs": [
       "bio_adrenaline",
       "bio_blade",
@@ -373,8 +389,7 @@
       "bio_shock",
       "bio_targeting",
       "bio_ups",
-      "bio_power_storage_mkII",
-      "bio_power_storage_mkII",
+      "bio_power_storage_sentinel",
       "bio_str_enhancer",
       "bio_dex_enhancer",
       "bio_eye_enhancer",
@@ -403,6 +418,8 @@
       "both": {
         "items": [ "helmet_liner", "thermal_shirt", "gloves_liner", "under_armor_shorts", "socks", "mil_armor", "molle_pack" ],
         "entries": [
+          { "group": "full_mil_helm" },
+          { "item": "two_way_radio", "contents-item": [ "battery_ups" ] },
           { "item": "arc_laser_rifle", "ammo-item": "battery", "charges": 5000, "contents-item": "shoulder_strap" },
           { "item": "knife_combat", "container-item": "sheath" },
           { "item": "neo_laser_pistol_ups", "container-item": "XL_holster" }
@@ -416,7 +433,7 @@
     "type": "profession",
     "name": "Super Scout",
     "description": "The sniper of the Super Soldier project.  You are one of a few augmented soldiers to be used for reconnaissance and V.I.P assassinations.  With your weapons and skills, you can eliminate key targets after living for weeks in enemy territory.",
-    "points": 12,
+    "points": 16,
     "CBMs": [
       "bio_climate",
       "bio_evap",
@@ -429,8 +446,7 @@
       "bio_targeting",
       "bio_torsionratchet",
       "bio_ups",
-      "bio_power_storage_mkII",
-      "bio_power_storage_mkII",
+      "bio_power_storage_sentinel",
       "bio_eye_enhancer",
       "bio_dex_enhancer"
     ],
@@ -459,7 +475,6 @@
           "rucksack",
           "dump_pouch",
           "2lcanteen",
-          "mil_mess_kit",
           "e_tool",
           "mre_beef_box",
           "militarymap",
@@ -467,6 +482,9 @@
           "rollmat"
         ],
         "entries": [
+          { "group": "full_lmil_helm" },
+          { "item": "two_way_radio", "contents-item": [ "battery_ups" ] },
+          { "item": "mil_mess_kit", "contents-item": [ "battery_ups" ] },
           { "item": "mx_laser_sniper", "ammo-item": "battery", "charges": 5000, "contents-item": "shoulder_strap" },
           { "item": "neo_laser_pistol_ups", "container-item": "XL_holster" },
           { "item": "knife_combat", "container-item": "sheath" }
@@ -480,12 +498,11 @@
     "type": "profession",
     "name": "Super Bio-engineer",
     "description": "Biological and mechanical repair unit, the combat engineer of the Super Soldier project.  You are one of many augmented military mechanics to be used as a repair module.  With repair, medical and general electronic capabilities, you can maybe fix the world.",
-    "points": 12,
+    "points": 16,
     "CBMs": [
-      "bio_batteries",
+      "bio_torsionratchet",
       "bio_emp_armgun",
       "bio_flashlight",
-      "bio_int_enhancer",
       "bio_memory",
       "bio_nanobots",
       "bio_painkiller",
@@ -493,8 +510,7 @@
       "bio_tools",
       "bio_ups",
       "bio_watch",
-      "bio_power_storage_mkII",
-      "bio_power_storage_mkII",
+      "bio_power_storage_sentinel",
       "bio_eye_enhancer",
       "bio_int_enhancer"
     ],
@@ -521,10 +537,12 @@
           "socks",
           "lmil_armor",
           "molle_pack",
-          "id_science",
-          "chemistry_set"
+          "id_science"
         ],
         "entries": [
+          { "group": "full_lmil_helm" },
+          { "item": "chemistry_set", "contents-item": [ "battery_ups" ] },
+          { "item": "two_way_radio", "contents-item": [ "battery_ups" ] },
           { "item": "akro_laser_smg", "ammo-item": "battery", "charges": 1000, "contents-item": "shoulder_strap" },
           { "item": "knife_combat", "container-item": "sheath" },
           { "item": "neo_laser_pistol_ups", "container-item": "XL_holster" }
@@ -538,14 +556,14 @@
     "type": "profession",
     "name": "Super Juggernaut",
     "description": "The tank of the Super Soldier project.  You are one of a few augmented soldiers to be used as a heavy support to infantry.  With ranged, armor and regenerative capabilities, you can endure heavy damage and return it in kind.",
-    "points": 12,
+    "points": 16,
     "CBMs": [
       "bio_armor_eyes",
       "bio_armor_head",
       "bio_armor_torso",
       "bio_armor_arms",
       "bio_armor_legs",
-      "bio_fuel_cell_gasoline",
+      "bio_metabolics",
       "bio_nanobots",
       "bio_painkiller",
       "bio_power_armor_interface_mkII",
@@ -556,8 +574,7 @@
       "bio_sword",
       "bio_targeting",
       "bio_ups",
-      "bio_power_storage_mkII",
-      "bio_power_storage_mkII",
+      "bio_power_storage_sentinel",
       "bio_str_enhancer",
       "bio_dex_enhancer"
     ],
@@ -575,7 +592,10 @@
       "both": {
         "items": [ "helmet_liner", "thermal_shirt", "gloves_liner", "under_armor_shorts", "socks", "hmil_armor" ],
         "entries": [
+          { "group": "full_hmil_helm" },
+          { "item": "two_way_radio", "contents-item": "battery_ups" },
           { "item": "krx_laser_lmg", "ammo-item": "battery", "charges": 10000, "contents-item": "shoulder_strap" },
+          { "item": "xarm_laser_shotgun_ups", "contents-item": "shoulder_strap" },
           { "item": "knife_combat", "container-item": "sheath" }
         ]
       }

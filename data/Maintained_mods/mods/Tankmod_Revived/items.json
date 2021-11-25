@@ -83,7 +83,7 @@
   {
     "id": "25mm_slug",
     "type": "AMMO",
-    "price_postapoc": "1550 cent",
+    "price_postapoc": "10 USD",
     "name": { "str_sp": "reloaded 25x137mm" },
     "symbol": "=",
     "color": "dark_gray",
@@ -107,19 +107,39 @@
     "copy-from": "25mm_slug",
     "type": "AMMO",
     "name": { "str_sp": "reloaded 25x137mm, black powder" },
+    "proportional": { "damage": { "damage_type": "bullet", "amount": 0.76, "armor_penetration": 0.5 }, "recoil": 0.76, "dispersion": 1.2 },
+    "extend": { "effects": [ "BLACKPOWDER", "MUZZLE_SMOKE" ] }
+  },
+  {
+    "id": "25mm_he_reloaded",
+    "copy-from": "25mm_slug",
+    "type": "AMMO",
+    "name": { "str_sp": "reloaded 25x137mm HE" },
+    "description": "A 25x137mm autocannon round with its primer replaced, loaded with a homemade explosive round.  Useful against lightly armored targets, though not as effective as the real thing.",
     "proportional": {
-      "price": 0.3,
-      "damage": { "damage_type": "bullet", "amount": 0.76, "armor_penetration": 0.5 },
-      "recoil": 0.76,
-      "dispersion": 1.2
+      "price_postapoc": 1.25,
+      "weight": 0.9,
+      "damage": { "damage_type": "bullet", "amount": 0.75, "armor_penetration": 0.75 },
+      "recoil": 0.75,
+      "dispersion": 0.75
     },
+    "extend": { "effects": [ "CUSTOM_EXPLOSION" ] },
+    "explode_in_fire": true,
+    "explosion": { "power": 20 }
+  },
+  {
+    "id": "bp_25mm_he_reloaded",
+    "copy-from": "25mm_he_reloaded",
+    "type": "AMMO",
+    "name": { "str_sp": "reloaded 25x137mm HE, black powder" },
+    "proportional": { "damage": { "damage_type": "bullet", "amount": 0.76, "armor_penetration": 0.5 }, "recoil": 0.76, "dispersion": 1.2 },
     "extend": { "effects": [ "BLACKPOWDER", "MUZZLE_SMOKE" ] }
   },
   {
     "id": "105mm_heat",
     "type": "AMMO",
     "looks_like": "120mm_usable_heat",
-    "price": "1 kUSD",
+    "price": "1000 USD",
     "price_postapoc": "20 USD",
     "name": { "str_sp": "M456 105mm HEAT" },
     "symbol": "=",
@@ -140,7 +160,7 @@
     "flags": [ "IRREPLACEABLE_CONSUMABLE" ],
     "effects": [ "CUSTOM_EXPLOSION" ],
     "explode_in_fire": true,
-    "explosion": { "power": 2500, "distance_factor": 0.4 }
+    "explosion": { "power": 1250, "distance_factor": 0.4 }
   },
   {
     "id": "105mm_ap",
@@ -194,18 +214,38 @@
     "copy-from": "105mm_slug",
     "type": "AMMO",
     "name": { "str_sp": "makeshift 105mm slug, black powder" },
+    "proportional": { "damage": { "damage_type": "bullet", "amount": 0.76, "armor_penetration": 0.5 }, "recoil": 0.76, "dispersion": 1.2 },
+    "extend": { "effects": [ "BLACKPOWDER", "MUZZLE_SMOKE" ] }
+  },
+  {
+    "id": "105mm_he_reloaded",
+    "copy-from": "105mm_slug",
+    "type": "AMMO",
+    "name": { "str_sp": "reloaded 105mm HE" },
+    "description": "A 105mm shell with a new electric primer installed, loaded with a homemade explosive round.  Obsolete or not, it packs quite a punch.",
     "proportional": {
-      "price": 0.3,
-      "damage": { "damage_type": "bullet", "amount": 0.76, "armor_penetration": 0.5 },
-      "recoil": 0.76,
-      "dispersion": 1.2
+      "price_postapoc": 1.25,
+      "weight": 0.9,
+      "damage": { "damage_type": "bullet", "amount": 0.75, "armor_penetration": 0.75 },
+      "recoil": 0.75,
+      "dispersion": 0.75
     },
+    "extend": { "effects": [ "CUSTOM_EXPLOSION" ] },
+    "explode_in_fire": true,
+    "explosion": { "power": 1000 }
+  },
+  {
+    "id": "bp_105mm_he_reloaded",
+    "copy-from": "105mm_he_reloaded",
+    "type": "AMMO",
+    "name": { "str_sp": "reloaded 105mm HE, black powder" },
+    "proportional": { "damage": { "damage_type": "bullet", "amount": 0.76, "armor_penetration": 0.5 }, "recoil": 0.76, "dispersion": 1.2 },
     "extend": { "effects": [ "BLACKPOWDER", "MUZZLE_SMOKE" ] }
   },
   {
     "id": "120mm_usable_heat",
     "type": "AMMO",
-    "price": "1 kUSD",
+    "price": "1000 USD",
     "price_postapoc": "20 USD",
     "name": { "str_sp": "M830A1 120mm HEAT" },
     "symbol": "=",
@@ -226,7 +266,7 @@
     "flags": [ "IRREPLACEABLE_CONSUMABLE" ],
     "effects": [ "CUSTOM_EXPLOSION" ],
     "explode_in_fire": true,
-    "explosion": { "power": 3000, "distance_factor": 0.4 }
+    "explosion": { "power": 2500, "distance_factor": 0.4 }
   },
   {
     "id": "120mm_usable_ap",
@@ -279,12 +319,7 @@
     "copy-from": "120mm_usable_shot",
     "type": "AMMO",
     "name": { "str_sp": "makeshift 120mm shot, black powder" },
-    "proportional": {
-      "price": 0.3,
-      "damage": { "damage_type": "bullet", "amount": 0.76, "armor_penetration": 0.5 },
-      "recoil": 0.76,
-      "dispersion": 1.2
-    },
+    "proportional": { "damage": { "damage_type": "bullet", "amount": 0.76, "armor_penetration": 0.5 }, "recoil": 0.76, "dispersion": 1.2 },
     "extend": { "effects": [ "BLACKPOWDER", "MUZZLE_SMOKE" ] }
   },
   {
@@ -314,12 +349,32 @@
     "copy-from": "120mm_usable_slug",
     "type": "AMMO",
     "name": { "str_sp": "makeshift 120mm slug, black powder" },
+    "proportional": { "damage": { "damage_type": "bullet", "amount": 0.76, "armor_penetration": 0.5 }, "recoil": 0.76, "dispersion": 1.2 },
+    "extend": { "effects": [ "BLACKPOWDER", "MUZZLE_SMOKE" ] }
+  },
+  {
+    "id": "120mm_usable_he_reloaded",
+    "copy-from": "120mm_usable_slug",
+    "type": "AMMO",
+    "name": { "str_sp": "reloaded 120mm HE" },
+    "description": "A makeshift, rebuilt 120mm shell with a new electric primer installed, loaded with a homemade explosive round.  Packs an explosive punch that could ruin anyone's whole day.",
     "proportional": {
-      "price": 0.3,
-      "damage": { "damage_type": "bullet", "amount": 0.76, "armor_penetration": 0.5 },
-      "recoil": 0.76,
-      "dispersion": 1.2
+      "price_postapoc": 1.25,
+      "weight": 0.9,
+      "damage": { "damage_type": "bullet", "amount": 0.75, "armor_penetration": 0.75 },
+      "recoil": 0.75,
+      "dispersion": 0.75
     },
+    "extend": { "effects": [ "CUSTOM_EXPLOSION" ] },
+    "explode_in_fire": true,
+    "explosion": { "power": 2000 }
+  },
+  {
+    "id": "bp_120mm_usable_he_reloaded",
+    "copy-from": "120mm_usable_he_reloaded",
+    "type": "AMMO",
+    "name": { "str_sp": "reloaded 120mm HE, black powder" },
+    "proportional": { "damage": { "damage_type": "bullet", "amount": 0.76, "armor_penetration": 0.5 }, "recoil": 0.76, "dispersion": 1.2 },
     "extend": { "effects": [ "BLACKPOWDER", "MUZZLE_SMOKE" ] }
   },
   {
@@ -344,7 +399,7 @@
     "flags": [ "IRREPLACEABLE_CONSUMABLE" ],
     "effects": [ "CUSTOM_EXPLOSION" ],
     "explode_in_fire": true,
-    "explosion": { "power": 2500, "distance_factor": 0.4 }
+    "explosion": { "power": 7500, "distance_factor": 0.4 }
   },
   {
     "id": "155mm_frag",
@@ -366,13 +421,8 @@
     "recoil": 1050000,
     "count": 1,
     "flags": [ "IRREPLACEABLE_CONSUMABLE" ],
-    "effects": [ "CUSTOM_EXPLOSION" ],
-    "explode_in_fire": true,
-    "explosion": {
-      "power": 3000,
-      "distance_factor": 0.8,
-      "shrapnel": { "casing_mass": 4000, "fragment_mass": 5, "recovery": 1, "drop": "shrapnel" }
-    }
+    "effects": [ "AMMO_155MM_FRAG" ],
+    "explode_in_fire": true
   },
   {
     "id": "155mm_shot",
@@ -399,12 +449,7 @@
     "copy-from": "155mm_shot",
     "type": "AMMO",
     "name": { "str_sp": "makeshift 155mm shot, black powder" },
-    "proportional": {
-      "price": 0.3,
-      "damage": { "damage_type": "bullet", "amount": 0.76, "armor_penetration": 0.5 },
-      "recoil": 0.76,
-      "dispersion": 1.2
-    },
+    "proportional": { "damage": { "damage_type": "bullet", "amount": 0.76, "armor_penetration": 0.5 }, "recoil": 0.76, "dispersion": 1.2 },
     "extend": { "effects": [ "BLACKPOWDER", "MUZZLE_SMOKE" ] }
   },
   {
@@ -432,12 +477,32 @@
     "copy-from": "155mm_slug",
     "type": "AMMO",
     "name": { "str_sp": "makeshift 155mm slug, black powder" },
+    "proportional": { "damage": { "damage_type": "bullet", "amount": 0.76, "armor_penetration": 0.5 }, "recoil": 0.76, "dispersion": 1.2 },
+    "extend": { "effects": [ "BLACKPOWDER", "MUZZLE_SMOKE" ] }
+  },
+  {
+    "id": "155mm_he_reloaded",
+    "copy-from": "155mm_slug",
+    "type": "AMMO",
+    "name": { "str_sp": "reloaded 155mm HE" },
+    "description": "A makeshift separate-loading HE round for 155mm.  Consists of a homemade explosive shell with fuze installed, a bag of propellant, and a replacement primer.  Using it for direct-fire isn't ideal, but it should be more than enough to ruin anyone's day.",
     "proportional": {
-      "price": 0.3,
-      "damage": { "damage_type": "bullet", "amount": 0.76, "armor_penetration": 0.5 },
-      "recoil": 0.76,
-      "dispersion": 1.2
+      "price_postapoc": 1.25,
+      "weight": 0.9,
+      "damage": { "damage_type": "bullet", "amount": 0.75, "armor_penetration": 0.75 },
+      "recoil": 0.75,
+      "dispersion": 0.75
     },
+    "extend": { "effects": [ "CUSTOM_EXPLOSION" ] },
+    "explode_in_fire": true,
+    "explosion": { "power": 6000 }
+  },
+  {
+    "id": "bp_155mm_he_reloaded",
+    "copy-from": "155mm_he_reloaded",
+    "type": "AMMO",
+    "name": { "str_sp": "reloaded 155mm HE, black powder" },
+    "proportional": { "damage": { "damage_type": "bullet", "amount": 0.76, "armor_penetration": 0.5 }, "recoil": 0.76, "dispersion": 1.2 },
     "extend": { "effects": [ "BLACKPOWDER", "MUZZLE_SMOKE" ] }
   },
   {
@@ -946,6 +1011,7 @@
     "weight": "95968 g",
     "volume": "75 L",
     "price": "455 USD",
+    "price_postapoc": 1000,
     "to_hit": -3,
     "bashing": 30,
     "material": [ "steel" ],
@@ -961,8 +1027,8 @@
     "name": { "str": "Reinforced Caterpillar Track" },
     "description": "A short, interlocking set of shaped steel tracks held in place by a set of smaller wheels.  Similar with what you might see used on APCs and armored vehicles.  It's significantly stronger than regular tires due to not being at risk of bursting; but is extremely heavy.",
     "weight": "287824 g",
-    "volume": "87500 ml",
-    "price": "755 USD",
+    "volume": "80 L",
+    "price": 75500,
     "to_hit": -3,
     "bashing": 30,
     "material": [ "hardsteel", "steel" ],

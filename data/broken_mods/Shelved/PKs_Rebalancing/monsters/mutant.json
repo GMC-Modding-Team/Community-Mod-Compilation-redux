@@ -117,7 +117,7 @@
     "armor_bash": 8,
     "vision_day": 10,
     "vision_night": 30,
-    "death_function": [ "MELT" ],
+    "death_function": { "corpse_type": "NO_CORPSE", "message": "The %s melts away." },
     "regenerates": 1,
     "flags": [ "NOHEAD", "SEES", "POISON", "HEARS", "SMELLS", "SLUDGEPROOF", "SWIMS", "FLAMMABLE", "NOGIB", "HARDTOSHOOT" ]
   },
@@ -242,7 +242,7 @@
     "dodge": 2,
     "vision_night": 15,
     "special_attacks": [ [ "GRAB", 15 ], [ "TENTACLE", 5 ], [ "VINE", 10 ] ],
-    "death_function": [ "MELT" ],
+    "death_function": { "corpse_type": "NO_CORPSE", "message": "The %s melts away." },
     "flags": [ "SEES", "SMELLS", "HEARS" ]
   },
   {
@@ -274,7 +274,7 @@
     "dodge": 2,
     "vision_night": 10,
     "special_attacks": [ [ "LUNGE", 60 ], [ "VINE", 10 ], { "type": "leap", "cooldown": 7, "max_range": 2 } ],
-    "death_function": [ "MELT" ],
+    "death_function": { "corpse_type": "NO_CORPSE", "message": "The %s melts away." },
     "flags": [ "SEES", "SMELLS", "HEARS" ]
   },
   {
@@ -523,7 +523,6 @@
     "anger_triggers": [ "PLAYER_WEAK", "FIRE", "SOUND" ],
     "fear_triggers": [ "FRIEND_DIED", "PLAYER_CLOSE", "FRIEND_ATTACKED" ],
     "placate_triggers": [ "SOUND" ],
-    "death_function": [ "NORMAL" ],
     "flags": [
       "SEES",
       "SMELLS",
@@ -587,7 +586,6 @@
     "anger_triggers": [ "FRIEND_ATTACKED", "PLAYER_WEAK", "PLAYER_CLOSE" ],
     "fear_triggers": [ "FRIEND_DIED", "HURT" ],
     "placate_triggers": [ "MEAT" ],
-    "death_function": [ "NORMAL" ],
     "flags": [
       "SEES",
       "HEARS",
@@ -653,7 +651,6 @@
       { "type": "leap", "cooldown": 15, "max_range": 2 }
     ],
     "death_drops": "mon_zombie_hulk_death_drops",
-    "death_function": [ "NORMAL" ],
     "regen_morale": true,
     "flags": [
       "SEES",
@@ -861,7 +858,6 @@
       { "type": "leap", "cooldown": 20, "max_range": 3 }
     ],
     "death_drops": "default_zombie_death_drops",
-    "death_function": [ "NORMAL" ],
     "regen_morale": true,
     "flags": [
       "SEES",
@@ -919,7 +915,6 @@
         "effects": [ { "id": "grabbed", "duration": 1000, "bp": "torso" } ]
       }
     ],
-    "death_function": [ "NORMAL" ],
     "flags": [ "SMELLS", "HEARS", "SEES", "CHITIN", "SWIMS", "GRABS", "FAT", "ARTHROPOD_BLOOD" ],
     "anger_triggers": [ "PLAYER_CLOSE", "HURT" ],
     "fear_triggers": [ "FIRE" ]
@@ -1017,7 +1012,6 @@
     "attack_effs": [ { "id": "rad_tenths", "duration": 10 } ],
     "armor_bash": 2,
     "harvest": "mutant_meatslug",
-    "death_function": [ "NORMAL" ],
     "upgrades": { "half_life": 3, "into_group": "GROUP_WORM" },
     "regenerates": 1,
     "regen_morale": true,
