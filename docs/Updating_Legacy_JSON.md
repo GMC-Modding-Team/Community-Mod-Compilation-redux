@@ -33,6 +33,7 @@ Use the `home` key to get to the top.
   - [Gun Pocket Data](#gun-pocket-data)
   - [Magazine Pocket Data](#magazine-pocket-data)
   - [CONTAINER](#container)
+- [Armor Data](#Armor Data)
 - [Volume](#volume)
   - [folded_volume](#folded_volume)
 - [Weight](#weight)
@@ -468,7 +469,19 @@ or if you want to include more ammo
 
 
 ---
-## Armor Data
+## CONTAINER
+
+The current JSON standards for the `type` `"CONTAINER"` look like this:
+`type: CONTAINER` has been obsolete for a while now, and having it in JSON causes error messages. The following should easily remove any problems with `type: CONTAINER`:
+
+```regex
+"type": "CONTAINER"
+
+"type": "GENERIC"
+```
+
+---
+# Armor Data
 
 New code for Armor data
 
@@ -498,23 +511,10 @@ New code example
 ]
 ```
 
-
-
 ---
 
-## CONTAINER
-
-The current JSON standards for the `type` `"CONTAINER"` look like this:
-`type: CONTAINER` has been obsolete for a while now, and having it in JSON causes error messages. The following should easily remove any problems with `type: CONTAINER`:
-
-```regex
-"type": "CONTAINER"
-
-"type": "GENERIC"
-```
-
----
 # Volume
+
 The current JSON standards for the `key` `"volume"` look like this:
 
 ```JSON
