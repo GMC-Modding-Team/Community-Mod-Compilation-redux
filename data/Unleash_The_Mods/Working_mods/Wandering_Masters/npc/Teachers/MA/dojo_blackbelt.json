@@ -102,7 +102,7 @@
           { "npc_change_faction": "flame_knuckle" },
           { "u_faction_rep": 100 },
           { "npc_change_faction": "no_faction" },
-          { "u_buy_item": "flyer_fk" },
+          { "u_buy_item": "flyer_fk", "cost": 500 },
           { "npc_lose_var": "bbm_flame_knuckle", "type": "general", "context": "flag" }
         ]
       },
@@ -138,7 +138,7 @@
         },
         "success": {
           "effect": [
-            { "u_buy_item": "manual_karate" },
+            { "u_buy_item": "manual_karate", "cost": 500 },
             { "npc_lose_var": "blackbelt_coach_teach", "type": "general", "context": "meeting" }
           ],
           "topic": "TALK_blackbelt_coach_teach"
@@ -243,7 +243,7 @@
     "difficulty": 0,
     "value": 1000,
     "start": {
-      "effect": [ { "npc_first_topic": "blackbelt_coach_wu" }, { "u_buy_item": "judo_belt_white" } ],
+      "effect": [ { "npc_first_topic": "blackbelt_coach_wu" }, { "u_buy_item": "judo_belt_white", "cost": 500 } ],
       "assign_mission_target": {
         "om_terrain": "forest",
         "om_terrain_replace": "field",
@@ -257,7 +257,7 @@
     "end": {
       "effect": [
         { "u_consume_item": "judo_belt_white" },
-        { "u_buy_item": "judo_belt_yellow" },
+        { "u_buy_item": "judo_belt_yellow", "cost": 500 },
         { "npc_first_topic": "TALK_blackbelt_coach_1" }
       ]
     },
@@ -314,7 +314,7 @@
         ]
       }
     },
-    "end": { "effect": [ { "u_consume_item": "judo_belt_yellow" }, { "u_buy_item": "judo_belt_green" } ] },
+    "end": { "effect": [ { "u_consume_item": "judo_belt_yellow" }, { "u_buy_item": "judo_belt_green", "cost": 500 } ] },
     "origins": [ "ORIGIN_SECONDARY" ],
     "followup": "MISSION_blackbelt_coach_3",
     "dialogue": {
@@ -355,7 +355,7 @@
       },
       "update_mapgen": { "place_npcs": [ { "class": "NPC_flame_knuckle_leader", "x": 2, "y": 11, "target": true } ] }
     },
-    "end": { "effect": [ { "u_consume_item": "judo_belt_green" }, { "u_buy_item": "judo_belt_blue" } ] },
+    "end": { "effect": [ { "u_consume_item": "judo_belt_green" }, { "u_buy_item": "judo_belt_blue", "cost": 500 } ] },
     "origins": [ "ORIGIN_SECONDARY" ],
     "followup": "MISSION_blackbelt_coach_4",
     "dialogue": {
@@ -390,7 +390,7 @@
     "end": {
       "effect": [
         { "u_consume_item": "judo_belt_blue" },
-        { "u_buy_item": "judo_belt_black" },
+        { "u_buy_item": "judo_belt_black", "cost": 500 },
         { "npc_add_var": "u_helped_blackbelt_coach", "type": "general", "context": "meeting", "value": "yes" },
         { "npc_add_var": "blackbelt_coach_teach", "type": "general", "context": "meeting", "value": "yes" },
         { "u_lose_var": "ally_transfer_ip", "type": "flag", "context": "transfer" },
@@ -437,6 +437,6 @@
       "success_lie": "-",
       "failure": "-"
     },
-    "fail": { "effect": { "u_buy_item": "ip_leader_head" } }
+    "fail": { "effect": { "u_buy_item": "ip_leader_head", "cost": 500 } }
   }
 ]
