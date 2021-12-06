@@ -12,9 +12,9 @@
     "id": "MANA_REGEN"
   },
   {
-    "id": "MANA_ADD1",
     "type": "mutation",
-    "name": { "str": "Lesser Mana Efficiency" },
+    "id": "MANA_ADD1",
+    "name": "Lesser Mana Efficiency",
     "points": 1,
     "description": "You are able to store a little more mana in your body than usual.",
     "cancels": [ "MANA_SUB1", "MANA_SUB2", "MANA_SUB3" ],
@@ -25,10 +25,10 @@
     "mana_modifier": 500
   },
   {
-    "id": "MANA_ADD2",
     "type": "mutation",
-    "name": { "str": "Mana Efficiency" },
-    "points": 2,
+    "id": "MANA_ADD2",
+    "name": "Mana Efficiency",
+    "points": 3,
     "description": "You are able to store more mana in your body than usual.",
     "cancels": [ "MANA_SUB1", "MANA_SUB2", "MANA_SUB3" ],
     "changes_to": [ "MANA_ADD3" ],
@@ -39,23 +39,23 @@
     "mana_modifier": 1000
   },
   {
-    "id": "MANA_ADD3",
     "type": "mutation",
-    "name": { "str": "Greater Mana Efficiency" },
-    "points": 4,
+    "id": "MANA_ADD3",
+    "name": "Greater Mana Efficiency",
+    "points": 8,
     "description": "You are able to store a lot more mana in your body than usual.",
     "cancels": [ "MANA_SUB1", "MANA_SUB2", "MANA_SUB3" ],
     "types": [ "MANA_ADD" ],
-    "starting_trait": true,
+    "category": [ "DRAGON_BLACK" ],
     "changes_to": [ "MANA_ADD_MANATOUCHED" ],
     "prereqs": [ "MANA_ADD2" ],
     "flags": [ "NON_THRESH" ],
     "mana_modifier": 2000
   },
   {
-    "id": "MANA_SUB1",
     "type": "mutation",
-    "name": { "str": "Lesser Mana Inefficiency" },
+    "id": "MANA_SUB1",
+    "name": "Lesser Mana Inefficiency",
     "points": -1,
     "description": "You are able to store a little less mana in your body than usual.",
     "cancels": [ "MANA_ADD1", "MANA_ADD2", "MANA_ADD3" ],
@@ -65,9 +65,9 @@
     "mana_modifier": -500
   },
   {
-    "id": "MANA_SUB2",
     "type": "mutation",
-    "name": { "str": "Mana Inefficiency" },
+    "id": "MANA_SUB2",
+    "name": "Mana Inefficiency",
     "points": -2,
     "description": "You are able to store less mana in your body than usual.",
     "cancels": [ "MANA_ADD1", "MANA_ADD2", "MANA_ADD3" ],
@@ -78,9 +78,9 @@
     "mana_modifier": -1000
   },
   {
-    "id": "MANA_SUB3",
     "type": "mutation",
-    "name": { "str": "Greater Mana Inefficiency" },
+    "id": "MANA_SUB3",
+    "name": "Greater Mana Inefficiency",
     "points": -3,
     "description": "You are able to store a lot less mana in your body than usual.",
     "cancels": [ "MANA_ADD1", "MANA_ADD2", "MANA_ADD3" ],
@@ -90,9 +90,9 @@
     "mana_modifier": -2000
   },
   {
-    "id": "MANA_REGEN1",
     "type": "mutation",
-    "name": { "str": "Lesser Mana Regeneration" },
+    "id": "MANA_REGEN1",
+    "name": "Lesser Mana Regeneration",
     "points": 1,
     "description": "Your natural mana regeneration is slightly faster than normal.",
     "cancels": [ "BAD_MANA_REGEN1", "BAD_MANA_REGEN2", "BAD_MANA_REGEN3" ],
@@ -104,9 +104,9 @@
     "mana_regen_multiplier": 1.1
   },
   {
-    "id": "MANA_REGEN2",
     "type": "mutation",
-    "name": { "str": "Mana Regeneration" },
+    "id": "MANA_REGEN2",
+    "name": "Mana Regeneration",
     "points": 3,
     "description": "Your natural mana regeneration is faster than normal.",
     "prereqs": [ "MANA_REGEN1" ],
@@ -114,27 +114,28 @@
     "changes_to": [ "MANA_REGEN3", "MANA_REGEN_MANATOUCHED" ],
     "types": [ "MANA_REGEN" ],
     "category": [ "FISH", "ELFA", "PLANT", "MANATOUCHED" ],
+    "starting_trait": true,
     "flags": [ "NON_THRESH" ],
     "mana_regen_multiplier": 1.25
   },
   {
-    "id": "MANA_REGEN3",
     "type": "mutation",
-    "name": { "str": "Greater Mana Regeneration" },
+    "id": "MANA_REGEN3",
+    "name": "Greater Mana Regeneration",
     "points": 8,
     "description": "Your natural mana regeneration is much faster than normal.",
     "prereqs": [ "MANA_REGEN2" ],
     "cancels": [ "BAD_MANA_REGEN1", "BAD_MANA_REGEN2", "BAD_MANA_REGEN3" ],
     "types": [ "MANA_REGEN" ],
-    "threshreq": [ "THRESH_PLANT", "THRESH_MANA" ],
-    "category": [ "PLANT" ],
+    "threshreq": [ "THRESH_PLANT", "THRESH_MANA", "THRESH_DRAGON_BLACK" ],
+    "category": [ "PLANT", "DRAGON_BLACK" ],
     "flags": [ "NON_THRESH" ],
     "mana_regen_multiplier": 1.5
   },
   {
-    "id": "BAD_MANA_REGEN1",
     "type": "mutation",
-    "name": { "str": "Poor Mana Regeneration" },
+    "id": "BAD_MANA_REGEN1",
+    "name": "Poor Mana Regeneration",
     "points": -1,
     "description": "Your natural mana regeneration is slightly slower than normal.",
     "cancels": [ "MANA_REGEN1", "MANA_REGEN2", "MANA_REGEN3" ],
@@ -146,9 +147,9 @@
     "mana_regen_multiplier": 0.9
   },
   {
-    "id": "BAD_MANA_REGEN2",
     "type": "mutation",
-    "name": { "str": "Very Poor Mana Regeneration" },
+    "id": "BAD_MANA_REGEN2",
+    "name": "Very Poor Mana Regeneration",
     "points": -3,
     "description": "Your natural mana regeneration is slower than normal.",
     "prereqs": [ "BAD_MANA_REGEN1" ],
@@ -160,8 +161,8 @@
     "mana_regen_multiplier": 0.75
   },
   {
-    "id": "BAD_MANA_REGEN3",
     "type": "mutation",
+    "id": "BAD_MANA_REGEN3",
     "name": { "str": "Abysmal Mana Regeneration" },
     "points": -6,
     "description": "Your natural mana regeneration is much slower than normal.",
@@ -173,9 +174,9 @@
     "mana_regen_multiplier": 0.5
   },
   {
-    "id": "MANA_MULT1",
     "type": "mutation",
-    "name": { "str": "Lesser Mana Sensitivity" },
+    "id": "MANA_MULT1",
+    "name": "Lesser Mana Sensitivity",
     "points": 1,
     "description": "You can sense the mana in your body slightly better than normal, allowing you to tap into more of your reserves.",
     "cancels": [ "BAD_MANA_MULT1", "BAD_MANA_MULT2", "BAD_MANA_MULT3" ],
@@ -187,9 +188,9 @@
     "mana_multiplier": 1.25
   },
   {
-    "id": "MANA_MULT2",
     "type": "mutation",
-    "name": { "str": "Mana Sensitivity" },
+    "id": "MANA_MULT2",
+    "name": "Mana Sensitivity",
     "points": 3,
     "description": "You can sense the mana in your body better than normal, allowing you to tap into more of your reserves.",
     "cancels": [ "BAD_MANA_MULT1", "BAD_MANA_MULT2", "BAD_MANA_MULT3" ],
@@ -197,13 +198,14 @@
     "types": [ "MANA_MULT" ],
     "category": [ "BIRD", "SLIME", "CATTLE", "PLANT", "CEPHALOPOD", "ELFA" ],
     "prereqs": [ "MANA_MULT1" ],
+    "starting_trait": true,
     "flags": [ "NON_THRESH" ],
     "mana_multiplier": 1.9
   },
   {
-    "id": "MANA_MULT3",
     "type": "mutation",
-    "name": { "str": "Greater Mana Sensitivity" },
+    "id": "MANA_MULT3",
+    "name": "Greater Mana Sensitivity",
     "points": 8,
     "description": "You can sense the mana in your body much better than normal, allowing you to tap into more of your reserves.",
     "cancels": [ "BAD_MANA_MULT1", "BAD_MANA_MULT2", "BAD_MANA_MULT3" ],
@@ -215,9 +217,9 @@
     "mana_multiplier": 2.5
   },
   {
-    "id": "BAD_MANA_MULT1",
     "type": "mutation",
-    "name": { "str": "Poor Mana Sensitivity" },
+    "id": "BAD_MANA_MULT1",
+    "name": "Poor Mana Sensitivity",
     "points": -1,
     "description": "You have a hard time sensing the mana in your body, making less of your reserves available for use.",
     "cancels": [ "MANA_MULT1", "MANA_MULT2", "MANA_MULT3" ],
@@ -229,9 +231,9 @@
     "mana_multiplier": 0.85
   },
   {
-    "id": "BAD_MANA_MULT2",
     "type": "mutation",
-    "name": { "str": "Very Poor Mana Sensitivity" },
+    "id": "BAD_MANA_MULT2",
+    "name": "Very Poor Mana Sensitivity",
     "points": -3,
     "description": "You have a hard time sensing the mana in your body, making less of your reserves available for use.",
     "cancels": [ "MANA_MULT1", "MANA_MULT2", "MANA_MULT3" ],
@@ -243,8 +245,8 @@
     "mana_multiplier": 0.65
   },
   {
-    "id": "BAD_MANA_MULT3",
     "type": "mutation",
+    "id": "BAD_MANA_MULT3",
     "name": { "str": "Abysmal Mana Sensitivity" },
     "points": -6,
     "description": "You have a hard time sensing the mana in your body, making less of your reserves available for use.",
@@ -256,9 +258,28 @@
     "mana_multiplier": 0.35
   },
   {
-    "id": "DEBUG_spell_mutation",
     "type": "mutation",
-    "name": { "str": "Debug Spell Mutation" },
+    "id": "SLIME_BREATH",
+    "name": { "str": "Slime Breath" },
+    "points": 0,
+    "description": "Your breath is sticky and slimy somehow.  This won't damage your interactions with people but it's definitely noticeable.",
+    "//": "This is a stub mutation that others can expand upon and also solves Magiclysm's thresh test problem for Slime.",
+    "category": [ "SLIME" ]
+  },
+  {
+    "type": "mutation",
+    "id": "CHIMERIC_BREATH",
+    "name": { "str": "Chimeric Breath" },
+    "points": -3,
+    "description": "Your breath could metaphorically melt lead.  It's horrible.  It's so bad that it can actually distract from your attempts to intimidate someone.",
+    "social_modifiers": { "lie": -5, "persuade": -5, "intimidate": -5 },
+    "//": "This is a stub mutation that others can expand upon and also solves Magiclysm's thresh test problem for Chimera and Slime.",
+    "category": [ "CHIMERA", "SLIME" ]
+  },
+  {
+    "type": "mutation",
+    "id": "DEBUG_spell_mutation",
+    "name": "Debug Spell Mutation",
     "points": 20,
     "valid": false,
     "description": "Gives all of the debug spells at max level.",
@@ -266,8 +287,8 @@
     "spells_learned": [ [ "example_template", 10 ], [ "debug_stamina", 0 ], [ "debug_hp", 0 ], [ "debug_bionic", 0 ], [ "debug_effect", 0 ] ]
   },
   {
-    "id": "WILDSHAPE:FISH",
     "type": "mutation",
+    "id": "WILDSHAPE:FISH",
     "name": { "str": "Wildshape: Fish" },
     "points": 0,
     "valid": false,
@@ -275,8 +296,8 @@
     "encumbrance_always": [ [ "hand_r", 50 ], [ "hand_l", 50 ], [ "arm_r", 50 ], [ "arm_l", 50 ] ]
   },
   {
-    "id": "WILDSHAPE:BEAR",
     "type": "mutation",
+    "id": "WILDSHAPE:BEAR",
     "name": { "str": "Wildshape: Bear" },
     "points": 0,
     "valid": false,
@@ -284,13 +305,23 @@
     "encumbrance_always": [ [ "eyes", 200 ] ]
   },
   {
-    "id": "WILDSHAPE:DEER",
     "type": "mutation",
+    "id": "WILDSHAPE:DEER",
     "name": { "str": "Wildshape: Deer" },
     "points": 0,
     "valid": false,
     "description": "You are deer-like, giving you the ability to move quickly and escape danger.  However, this takes a great toll on your body, and you don't think you should maintain this form for long.",
     "encumbrance_always": [ [ "hand_r", 50 ], [ "hand_l", 50 ], [ "arm_r", 50 ], [ "arm_l", 50 ] ],
     "healing_awake": -500.0
+  },
+  {
+    "type": "mutation",
+    "id": "MIRROR_DISPLACEMENT",
+    "name": { "str": "Mirror Displacement" },
+    "points": 9,
+    "description": "You aren't where you seem to be.",
+    "starting_trait": false,
+    "category": [ "CHIMERA" ],
+    "flags": [ "UNCANNY_DODGE" ]
   }
 ]

@@ -69,7 +69,7 @@
   {
     "id": "mon_dragon_black_wyrmling",
     "type": "MONSTER",
-    "name": { "str": "black dragon wyrmling" },
+    "name": "black dragon wyrmling",
     "description": "This is a small black dragon, less than five years old.  Its scales are glossy, and its horns barely peek out of its head.  Even from one so young, you see the glint of sadism in its eyes.",
     "default_faction": "dragon_black",
     "bodytype": "angel",
@@ -94,19 +94,19 @@
     "armor_acid": 600,
     "vision_day": 30,
     "vision_night": 20,
-    "path_settings": { "//min_dist": 8 },
+    "path_settings": { "//min_dist": 8, "avoid_traps": true, "avoid_sharp": true },
     "harvest": "dragon_black",
     "special_attacks": [
       { "type": "bite", "cooldown": 10 },
       [ "scratch", 7 ],
       { "type": "spell", "spell_data": { "id": "dragon_breath_black", "min_level": 4 }, "cooldown": 20 }
     ],
-    "flags": [ "SEES", "HEARS", "SMELLS", "KEENNOSE", "PATH_AVOID_DANGER_2", "WARM", "SWIMS", "ACIDPROOF", "PUSH_MON", "FLIES" ]
+    "flags": [ "SEES", "HEARS", "SMELLS", "KEENNOSE", "PATH_AVOID_DANGER_1", "WARM", "SWIMS", "ACIDPROOF", "PUSH_MON", "FLIES" ]
   },
   {
     "id": "mon_dragon_black_young",
     "type": "MONSTER",
-    "name": { "str": "young black dragon" },
+    "name": "young black dragon",
     "description": "This black dragon appears to still be in the early stages of life.  Its eyes have just started to sink in its sockets, and its curved, segmented horns have just begun to darken at the tips.  You can tell just by looking at it, this creature is evil to its very core.  Even though this dragon is not fully grown, it is the size of a full-grown bull.",
     "copy-from": "mon_dragon_black_wyrmling",
     "//": "should be roughly 4000 L, as that's the size of a large cow.",
@@ -129,7 +129,7 @@
   {
     "id": "mon_dragon_black_adult",
     "type": "MONSTER",
-    "name": { "str": "adult black dragon" },
+    "name": "adult black dragon",
     "description": "A black-scaled monstrosity with deep-set eye sockets glowing green with evil.  Its face and skull appear skeletal, and acid drips from its dagger-like jaws.",
     "copy-from": "mon_dragon_black_young",
     "//": "If it were possible, the adult would be about double the size of a young version or so.",
@@ -144,7 +144,7 @@
     "dodge": 3,
     "//2": "Large means powerful, but it does not mean fast.",
     "speed": 100,
-    "delete": { "flags": [ "PATH_AVOID_DANGER_2" ] },
+    "delete": { "flags": [ "PATH_AVOID_DANGER_1" ] },
     "emit_fields": [ { "emit_id": "emit_dragon_adult_fright", "delay": "1 s" } ],
     "special_attacks": [
       { "type": "bite", "cooldown": 10 },
