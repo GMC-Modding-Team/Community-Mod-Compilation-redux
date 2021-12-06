@@ -1,24 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  
-
-- [Design Document](#design-document)
-    - [Areas seeking contributors](#areas-seeking-contributors)
-- [Here be dragons!](#here-be-dragons)
-    - [itemgroups](#itemgroups)
-    - [items](#items)
-    - [maps](#maps)
-    - [mobs](#mobs)
-    - [monsterdrops](#monsterdrops)
-    - [mutations](#mutations)
-    - [player](#player)
-    - [recipes](#recipes)
-    - [vehicles](#vehicles)
-    - [npcs](#npcs)
-    - [spells](#spells)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # Design Document
 * Aftershock is being developed into a full conversion mod set in a mostly-abandoned extrasolar colony named Salus IV.  The player has arrived on Salus for various reasons (depending on their profession).  Eventually, we hope to have multiple potential end game situations, ranging from finding what you came here for and leaving the planet with enough money to retire, to more-secret endings.  There will no longer be zombies; instead, there are a variety of alien and human-based enemies.  Toe-to-toe combat will likely be more deadly in Aftershock, with more emphasis on picking your battles and only fighting when absolutely necessary.  Special locations may have a different combat aesthetic; for example, you may enter a dungeon-like zone with hordes of small weak enemies that can't be avoided.  As part of this concept, in which different situations require different solutions, we have implemented bionic slots but made the process of changing out CBMs much easier with less chance of failure.  This is to encourage players to change their loadout based on where they are going and what they are doing.
 * As it becomes a total conversion mod, it will look very different from the base game of Cataclysm: Dark Days Ahead and may not interact kindly with other mods.  If you've been away for a while, you may wonder where some parts of Aftershock have gone.  In the process of becoming a total conversion mod, we are eliminating items that no longer fit the theme.  For example, all the Mad Max aesthetics have been removed.  Any additions must either fit the general theme or have story-driven reasons for the divergence, such as NPC quests to special locations.
@@ -30,6 +9,7 @@
 4. Missions, locations, and lore snippets.  We want this to feel like a world just as real as Cataclysm Prime.  Please feel free to reach out to us about ideas and implementations.
 5. Alien world basics would be especially desirable at this time.  Flora, fauna, terrain, and furniture that make it clear we are no longer on earth.
 
+# Size as of 0.F Stable :  31,084 Lines
 
 # Here be dragons!
 
@@ -78,3 +58,15 @@ Contains json data for npcs and factions; the second is about the new factions P
 ### spells
 
 Contains json data for all spells that are used to create unique effects in game.
+
+# Abbreviations and Translation notes
+
+| Abbreviation                  | Description
+|---                            |---
+| `UICA`                        | "United Interstellar Coordination Agency" Imagine the International Court only handled property disputes and had an army and navy to enforce their
+|---                            | judgements.
+| `UASTA`                       | UICA Standard.  Equipment that was designed to UICA specifications for interstellar use.  
+| `Moxphore`                    | A lifeform suffering from the advanced stages of the disease Moxphoria. Moxphoria is almost always fatal but exclusively found on Salus IV.
+|Uplift                         | Animals that have been given intelligence and often a humanoid bipedal body type.   Considered distinct from mutated humans and often treated as second   |---                            | class citizens in human dominated space.  
+|Vatgrown                       | Adjective. Describes any being or object that was birthed from an artificial womb whether it's made from unmodded human DNA all the way to                |---                            | chimeric monstrosities.
+|Humaniform                     |A robot resembling a human.
