@@ -1,0 +1,31 @@
+[
+  {
+    "id": "min_water_item_stun",
+    "type": "SPELL",
+    "name": { "str": "Magical mineral water stun" },
+    "description": "Magical mineral water puts you in a state of trance!",
+    "flags": [ "SILENT" ],
+    "valid_targets": [ "self" ],
+    "effect": "attack",
+    "shape": "blast",
+    "effect_str": "min_water_stun",
+    "min_duration": 6375,
+    "max_duration": 6375
+  },
+  {
+    "id": "min_water_item_rejuv",
+    "type": "SPELL",
+    "name": { "str": "Magical mineral water slight healing" },
+    "description": "Very slight healing thanks to the Magical mineral water",
+    "message": "You consume the magical mineral water and you feel a slight rejuvenation!",
+    "valid_targets": [ "self" ],
+    "flags": [ "SILENT", "NO_HANDS", "NO_LEGS" ],
+    "min_damage": -2,
+    "max_damage": -2,
+    "effect": "attack",
+    "shape": "blast",
+    "extra_effects": [ { "id": "min_water_item_stun", "hit_self": true } ],
+    "min_duration": 1,
+    "max_duration": 1
+  }
+]
