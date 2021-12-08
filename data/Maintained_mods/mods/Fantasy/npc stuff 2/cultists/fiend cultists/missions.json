@@ -1,0 +1,83 @@
+[
+{
+    "id": "MISSION_JOIN_CULT_FIEND",
+    "type": "mission_definition",
+    "name": "Mysterious Grove",
+    "description": "You have discovered knwoledge of a cult within the woods. Their sanctum is hidden in a grove.",
+    "goal": "MGOAL_GO_TO_TYPE",
+    "difficulty": 1,
+    "value": 10,
+    "destination": "demon_cult_enter",
+    "start": {
+      "assign_mission_target": { "om_terrain": "demon_cult_enter", "om_special": "fiend_cult_sanctuary", "reveal_radius": 1 }
+    },
+    "origins": [ "ORIGIN_OPENER_NPC" ],
+    "dialogue": {
+      "describe": "A cult is within the woodlands, and here are the directions.",
+      "offer": "What if I told you I can provide directions to them, and I know how to join. If you're interested, they keep a sanctuary within the woods.",
+      "accepted": "Good luck.",
+      "rejected": "Okay.",
+      "advice": "What advice? Just go to where I told.",
+      "inquire": "How goes to journey?",
+      "success": "Welcome.",
+      "success_lie": "Goodbye.",
+      "failure": "Dang."
+    }
+   },
+{
+    "id": "MISSION_RITUAL_FIEND",
+    "type": "mission_definition",
+    "name": "The Ritual",
+    "description": "Get some raw meat.",
+    "goal": "MGOAL_FIND_ITEM",
+     "followup": "MISSION_RITUAL_FIEND_II",
+	"item": "meat",
+	"count": 10,
+    "difficulty": 1,
+    "value": 1,
+	"origins": [ "ORIGIN_OPENER_NPC" ],
+	"end": { "effect": [
+		{ "u_spawn_item": "copper_coin", "count": 15 }
+		] },
+	"has_generic_rewards": false,
+	"dialogue": {
+      "describe": "We need a sacrifice for the upcoming ritual. Get some meat.",
+	  "offer": "We need a sacrifice for the upcoming ritual. I lack only meat, and I need you to get it.",
+	  "advice": "The woods are full of animals.",
+      "accepted": "Good.",
+      "rejected": "Ah, well. Some other time.",
+      "inquire": "Do you have my meat?",
+      "success": "Wonderful.",
+      "success_lie": "Where is it?",
+      "failure": "Ah, well. Some other time."
+    }
+  },
+{
+    "id": "MISSION_RITUAL_FIEND_II",
+    "type": "mission_definition",
+    "name": "The Ritual Pt. II",
+    "description": "Get some incense.",
+    "goal": "MGOAL_FIND_ITEM",
+     "followup": "MISSION_RITUAL_FIEND",
+	"item": "incense",
+	"count": 2,
+    "difficulty": 1,
+    "value": 1,
+	"origins": [ "ORIGIN_OPENER_NPC" ],
+	"end": { "effect": [
+		{ "u_spawn_item": "copper_coin", "count": 20 }
+		] },
+	"has_generic_rewards": false,
+	"dialogue": {
+      "describe": "We need a sacrifice for the upcoming ritual. Get some incense.",
+	  "offer": "I lost my incense for our ritual. Could you get some for me? Two sticks should do.",
+	  "advice": "Any old merchant should have some.",
+      "accepted": "Good.",
+      "rejected": "Ah, well. Some other time.",
+      "inquire": "Do you have my incense?",
+      "success": "Wonderful.",
+      "success_lie": "Where is it?",
+      "failure": "Ah, well. Some other time."
+    }
+  }
+]

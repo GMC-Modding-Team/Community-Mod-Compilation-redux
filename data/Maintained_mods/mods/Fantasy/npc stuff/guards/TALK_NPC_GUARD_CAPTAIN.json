@@ -1,0 +1,94 @@
+[
+  {
+    "type": "talk_topic",
+    "id": "TALK_NPC_GUARD_CAPTIAN",
+    "dynamic_line": [ "Hello there. What brings you here?" ],
+    "responses": [
+          {
+		"text": "Nothin.",
+		"topic": "TALK_DONE"
+	  },
+          {
+		"text": "Who are you?",
+		"topic": "TALK_NPC_GUARD_CAPTIAN_WHO"
+	  },
+          {
+		"text": "Is there any new trouble?",
+		"topic": "TALK_CULT_JOBS",
+                "condition": { "npc_has_var": "u_hired", "type": "general", "context": "mission", "value": "yes" } 	  	  
+	  }
+    ]
+  },
+{
+    "type": "talk_topic",
+    "id": "TALK_NPC_GUARD_CAPTIAN_WHO",
+    "dynamic_line": [ "Oh, I'm the captian of the guard here. When somethin' comes up, I take myself and the officers to deal with it." ],
+    "responses": [
+          {
+		"text": "I should be going.",
+		"topic": "TALK_DONE"
+	  },
+          {
+		"text": "How large is the city watch?",
+		"topic": "TALK_NPC_GUARD_CAPTIAN_WATCH"
+	  },
+          {
+		"text": "Do you think I could join?",
+		"topic": "TALK_NPC_GUARD_CAPTIAN_HIRE_NOEXP"
+	  },
+          {
+		"text": "I was a guardsman myself once.",
+		"topic": "TALK_NPC_GUARD_CAPTIAN_HIRE",
+                "condition": { "and": [ { "u_has_trait": "MTC_CITY_WATCH" }, { "not": { "npc_has_var": "u_hired", "type": "general", "context": "mission", "value": "yes" } } ] }
+	  }
+    ]
+  },
+{
+    "type": "talk_topic",
+    "id": "TALK_NPC_GUARD_CAPTIAN_HIRE_NOEXP",
+    "dynamic_line": [ "Well, its a hard life. I should mention there is a risk of you dyin', too. Besides, you'll need some armor, and a weapon too. If you want, I'll let you on." ],
+    "responses": [
+          {
+		"text": "Nah.",
+		"topic": "TALK_DONE"
+	  },
+          {
+		"text": "I know. I was a guardsman myself once.",
+		"topic": "TALK_DONE",          
+                "condition": { "u_has_trait": "MTC_CITY_WATCH" }
+	  },
+          {
+		"text": "Alright, I'll take it.",
+		"topic": "TALK_DONE",
+                "effect": [ { "add_mission": "MISSION_GUARD_TEST" } ] 
+	  }
+    ]
+  },
+{
+    "type": "talk_topic",
+    "id": "TALK_NPC_GUARD_CAPTIAN_HIRE",
+    "dynamic_line": [ "Really now? If ya miss it, we could add another member to the city watch." ],
+    "responses": [
+          {
+		"text": "Nah.",
+		"topic": "TALK_DONE"
+	  },
+          {
+		"text": "Sure.",
+		"topic": "TALK_DONE",
+                "effect": [ { "npc_add_var": "u_hired", "type": "general", "context": "mission", "value": "yes" } ]
+	  }
+    ]
+  },
+{
+    "type": "talk_topic",
+    "id": "TALK_NPC_GUARD_CAPTIAN_WATCH",
+    "dynamic_line": [ "There's more officers than what you see here, but they're out on duty at the moment. I'd say about 10 live here. We generally de-escalate tavern brawls, and stop horse theives. Occaisionally, a few bandits stalk the roads, or some slimes come a bit close, so we fight them off. The larger stuff we leave to the army." ],
+    "responses": [
+          {
+		"text": "Hmm.",
+		"topic": "TALK_DONE"
+	  }
+    ]
+  }
+]

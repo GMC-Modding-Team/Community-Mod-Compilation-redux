@@ -1,0 +1,93 @@
+[
+  {
+    "id": "TALK_HOMAGE", 
+    "type": "talk_topic",
+    "dynamic_line": [ "<greet>" ],
+    "responses": [ { "text": "<greet> How are you?", "topic": "TALK_INQUIRY3" } ]
+  },
+  {
+    "id": "TALK_INQUIRY3",
+    "type": "talk_topic",
+    "dynamic_line": [ "Oh, feeling <good>." ],
+    "responses": [ { "text": "That is wonderful.", "topic": "TALK_TOPICS3" },
+                   { "text": "Humph.", "topic": "TALK_INSULT" },
+                   { "text": "See ya.", "topic": "TALK_DONE" } ]
+  },
+  {
+    "id": "TALK_TOPICS3",
+    "type": "talk_topic",
+    "dynamic_line": [ "So, what can I do for you?" ],
+    "responses": [
+                   { "text": "I noticed your robes are decorated. What do you do?", "topic": "TALK_JOB2" },
+                   { "text": "What is your opinion upon this place?", "topic": "TALK_THOUGHTS3" },
+                   {
+		      "text": "Is there another ritual to perform?",
+		      "topic": "TALK_HOMAGE_RECURRING_RITUAL",
+                      "condition": { "and": [ { "u_has_var": "ONOCTI", "type": "general", "context": "mission", "value": "yes" }, { "npc_has_var": "has_notes", "type": "general", "context": "mission", "value": "yes" } ] }  
+	           },
+                   {
+		      "text": "Can you make any more of those potions for me?",
+		      "topic": "TALK_HOMAGE_ELDRITCH_POTION",
+                      "condition": { "and": [ { "u_has_var": "ONOCTI", "type": "general", "context": "mission", "value": "yes" }, { "npc_has_var": "sells_epotion", "type": "general", "context": "mission", "value": "yes" } ] }  
+	           },
+                   { "text": "Nothing, really.", "topic": "TALK_DONE" } ]
+  },
+  {
+    "id": "TALK_THOUGHTS3",
+    "type": "talk_topic",
+    "dynamic_line": [ "Well, I joined, advanced to the position of Homage, and learned the rites and rituals. I have not decided, actually." ],
+    "responses": [ { "text": "Hmmm.", "topic": "TALK_NONE" },
+                   { "text": "Rituals?", "topic": "TALK_JOB2" } ]
+  },
+  {
+    "id": "TALK_JOB2",
+    "type": "talk_topic",
+    "dynamic_line": [ "Oh, I am a Homage, you see. We are resonpisble for leading most of the cult in ritual sacrifice to the Elder Ones. The Onocti aid me, preparing the altar and whatnot." ],
+    "responses": [ { "text": "Interesting.", "topic": "TALK_TOPICS3" },
+                   { "text": "Sacrifice?", "topic": "TALK_SACRIFICE_HOMAGE" },
+                   { "text": "With your position, is there anything I can do for you?", "topic": "TALK_CULT_JOBS" } ]
+  },
+  {
+    "id": "TALK_SACRIFICE_HOMAGE",
+    "type": "talk_topic",
+    "dynamic_line": [ "Yes. We sacrifice the butchered remains of animals in exchange for The Blood, a magical substance gifted to us by the Elder Ones as reward." ],
+    "responses": [ { "text": "Hmmm.", "topic": "TALK_TOPICS3" },
+                   { "text": "Elder Ones?", "topic": "TALK_ELDERONES" } ]
+  },
+  {
+    "id": "TALK_ELDERONES",
+    "type": "talk_topic",
+    "dynamic_line": [ "The Elder Ones are our patrons. They gifted our founder with otherworldly knowledge, contained within a tome. They spread such unto us." ],
+    "responses": [ { "text": "Interesting.", "topic": "TALK_TOPICS3" },
+                   { "text": "What is this, tome?", "topic": "TALK_BOOK" } ]
+  },
+  {
+    "id": "TALK_BOOK",
+    "type": "talk_topic",
+    "dynamic_line": [ "The Archaesth. It contains all knowledge of the breathren. Perhaps you should speak to the Lorevessel, they should be within the Hall of Artifacts, you can't miss it." ],
+    "responses": [ { "text": "Thank you.", "topic": "TALK_TOPICS3" } ]
+  },
+  {
+    "id": "TALK_HOMAGE_RECURRING_RITUAL",
+    "type": "talk_topic",
+    "dynamic_line": [ "Yes, it is time for another ritual. I just need some meat now, if you could get that for me." ],
+    "responses": [ { "text": "Thank you.", "topic": "TALK_DONE", "effect": [ { "add_mission": "MISSION_RITUAL_RECURRING" } ] } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_HOMAGE_ELDRITCH_POTION",
+    "dynamic_line": "Yes, I can make more for you. 50 silver should be a good price.",
+    "responses": [
+		{
+		"text": "I'll take one.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "silver_coin", "count": 50 } },
+		"effect": [ { "u_spawn_item": "potion_eldritch_power", "count": 1 }, { "u_sell_item": "silver_coin", "count": 50 } ]
+		},
+		{
+		"text": "No, thank you.",
+		"topic": "TALK_DONE"
+		}                 
+    ]
+  }
+]

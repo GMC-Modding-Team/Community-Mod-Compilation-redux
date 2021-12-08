@@ -1,0 +1,49 @@
+[
+ {
+    "id": "TALK_CULT_JOBS",
+    "//": "Not just for cult members, can apply to anyone using grammar or educated.",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "has_no_available_mission": {
+        "has_no_assigned_mission": "There is nothing I need done.",
+        "no": { "has_many_assigned_missions": "You've got enough to worry about. Do that first.", "no": "That is all for now." }
+      },
+      "no": {
+        "has_many_available_missions": {
+          "has_no_assigned_mission": "There's a few things I need. Want to take them on?",
+          "no": {
+            "has_many_assigned_missions": "Are ya achin' for more work?",
+            "no": "I have other things I need done, if you want."
+          }
+        },
+        "no": {
+          "has_no_assigned_mission": "There's something I need done.",
+          "no": {
+            "has_many_assigned_missions": "There is more work, if you'd like.",
+            "no": "I know of a certain thing someone could do, if yer interested."
+          }
+        }
+      }
+    },
+    "responses": [
+      { "text": "I see.", "topic": "TALK_NONE", "condition": "has_no_available_mission" },
+      {
+        "text": "I'm listening.",
+        "topic": "TALK_MISSION_OFFER",
+        "condition": { "not": "has_no_available_mission" }
+      },
+      {
+        "text": "Perhaps another time.",
+        "topic": "TALK_JOB_REJECTED"
+      }
+    ]
+  },
+  {
+    "id": "TALK_JOB_REJECTED",
+    "type": "talk_topic",
+    "dynamic_line": "It's fine, I can probably find someone else to do it.",
+    "responses": [
+      { "text": "See ya.", "topic": "TALK_DONE" }
+    ]
+  }
+]

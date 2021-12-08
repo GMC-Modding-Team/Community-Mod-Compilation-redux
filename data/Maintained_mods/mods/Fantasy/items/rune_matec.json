@@ -1,0 +1,88 @@
+[
+  {
+    "type": "martial_art",
+    "id": "mtc_style_effs",
+    "name": { "str": "<color_black>If you see this, then you're bugged</color" },
+    "description": "This is a placeholder for buff effects used in weapons.",
+    "initiate": [ "You are bugged.", "%s is bugged." ],
+    "learn_difficulty": 0,
+    "primary_skill": "bashing",
+    "strictly_melee": true,
+    "static_buffs": [
+      {
+        "id": "mtc_buff_effs_rune_strength",
+        "name": "Runic Strength",
+        "description": "Gain 10% physical damage.",
+        "melee_allowed": true,
+        "unarmed_allowed": true,
+        "unarmed_weapons_allowed": true,
+        "flat_bonuses": [
+          { "stat": "damage", "type": "bash", "scale": 0.1 },
+          { "stat": "damage", "type": "cut", "scale": 0.1 },
+          { "stat": "damage", "type": "stab", "scale": 0.1 }
+        ]
+      },
+      {
+        "id": "mtc_buff_effs_rune_perception",
+        "name": "Runic Perception",
+        "description": "Attack accuracy increased by 20%.",
+        "melee_allowed": true,
+        "unarmed_allowed": true,
+        "unarmed_weapons_allowed": true,
+        "flat_bonuses": [ { "stat": "hit", "scale": 0.2 } ]
+      },
+      {
+        "id": "mtc_buff_effs_rune_chronostasis",
+        "name": "Runic Chronostasis",
+        "description": "Provides a chance to negate the attack cost of a strike.",
+        "melee_allowed": true,
+        "unarmed_allowed": true,
+        "unarmed_weapons_allowed": true
+      },
+      {
+        "id": "mtc_buff_effs_rune_etherealphase",
+        "name": "Runic Ethereal Phase",
+        "description": "+300 speed and +5 dodge bonus\n\nYour basic attacks deal no damage, but other means of attack can.",
+        "melee_allowed": true,
+        "unarmed_allowed": true,
+        "unarmed_weapons_allowed": true,
+        "bonus_dodges": 5,
+        "flat_bonuses": [ { "stat": "speed", "scale": 200 } ]
+      }
+    ]
+  },
+  {
+    "type": "technique",
+    "id": "tec_mtc_chronostasis",
+    "name": "Chronostasis Strike",
+    "messages": [ "Time bends back as you strike %s", "Time bends back as <npcname> strikes %s" ],
+    "req_buffs_all": [ "mtc_buff_effs_rune_chronostasis" ],
+    "melee_allowed": true,
+    "unarmed_allowed": true,
+    "unarmed_weapons_allowed": true,
+    "weighting": 2,
+    "mult_bonuses": [
+      { "stat": "movecost", "scale": 0.0 },
+      { "stat": "damage", "type": "stab", "scale": 1.0 },
+      { "stat": "damage", "type": "cut", "scale": 1.0 },
+      { "stat": "damage", "type": "bash", "scale": 1.0 }
+    ]
+  },
+  {
+    "type": "technique",
+    "id": "tec_mtc_etherealphase",
+    "name": "Ethereal Strike",
+    "messages": [ "You attack %s", "<npcname> attacks %s" ],
+    "req_buffs_all": [ "mtc_buff_effs_rune_etherealphase" ],
+    "melee_allowed": true,
+    "unarmed_allowed": true,
+    "unarmed_weapons_allowed": true,
+    "weighting": 100,
+    "mult_bonuses": [
+      { "stat": "movecost", "scale": 1.0 },
+      { "stat": "damage", "type": "stab", "scale": 0.0 },
+      { "stat": "damage", "type": "cut", "scale": 0.0 },
+      { "stat": "damage", "type": "bash", "scale": 0.0 }
+    ]
+  }
+]

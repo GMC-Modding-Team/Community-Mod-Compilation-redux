@@ -1,0 +1,143 @@
+[
+{
+    "type": "talk_topic",
+    "id": "TALK_NPC_ACADEMY_TATOO_ARTIST",
+    "dynamic_line": [ "Hello there. Can I help you with anything?" ],
+    "responses": [
+      { 
+         "text": "No.", 
+         "topic": "TALK_DONE"
+	  
+      },
+      { 
+         "text": "Who are you?", 
+         "topic": "TALK_NPC_ACADEMY_TATOO_ARTIST_WHO",       
+         "condition": { "not": { "npc_has_var": "known", "type": "dialogue", "context": "mage", "value": "yes" } }
+	  
+      },
+      { 
+         "text": "I'm here to purchase some of your work.", 
+         "topic": "TALK_NPC_ACADEMY_TATOO_ARTIST_PRODUCTS",        
+         "condition": { "npc_has_var": "known", "type": "dialogue", "context": "mage", "value": "yes" }
+	  
+      },
+      { 
+         "text": "Is there anything I can do for you?", 
+         "topic": "TALK_CULT_JOBS",        
+         "condition": { "npc_has_var": "known", "type": "dialogue", "context": "mage", "value": "yes" }
+	  
+      }
+    ]
+  },
+{
+    "type": "talk_topic",
+    "id": "TALK_NPC_ACADEMY_TATOO_ARTIST_WHO",
+    "dynamic_line": [ "Me? I'm a student here. I occaisionally use this space to practice my work. I'm taking the runecraft classes, you see. I find it very interesting. I'd highly recommend it." ],
+    "responses": [
+      { 
+         "text": "Wow.", 
+         "topic": "TALK_DONE"
+	  
+      },
+      { 
+         "text": "What can you do?", 
+         "topic": "TALK_NPC_ACADEMY_TATOO_ARTIST_SKILL"
+	  
+      }
+    ]
+  },
+{
+    "type": "talk_topic",
+    "id": "TALK_NPC_ACADEMY_TATOO_ARTIST_SKILL",
+    "dynamic_line": [ "Oh, I can do a few things. Make sigils, tatoos, that sort of thing." ],
+    "responses": [
+      { 
+         "text": "Interesting.", 
+         "topic": "TALK_DONE"
+	  
+      },
+      { 
+         "text": "Would you be willing to sell your work?", 
+         "topic": "TALK_NPC_ACADEMY_TATOO_ARTIST_SELL"
+	  
+      }
+    ]
+  },
+{
+    "type": "talk_topic",
+    "id": "TALK_NPC_ACADEMY_TATOO_ARTIST_SELL",
+    "dynamic_line": [ "Well, I'm not the best at it. But, I could make something for you, if you're willing to help me out." ],
+    "responses": [
+      { 
+         "text": "Nah.", 
+         "topic": "TALK_DONE"
+	  
+      },
+      { 
+         "text": "Sure, I'll help.", 
+         "topic": "TALK_CULT_JOBS"
+	  
+      }
+    ]
+  },
+{
+    "type": "talk_topic",
+    "id": "TALK_NPC_ACADEMY_TATOO_ARTIST_PRODUCTS",
+    "dynamic_line": [ "Alright, I think I can do something for you. I can only get you the basics, but each tatoo is 50 gold apeice." ],
+    "responses": [
+      { 
+         "text": "I've changed my mind.", 
+         "topic": "TALK_DONE"
+	  
+      },
+      {
+		"text": "I'd like the first rune of longevity.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "gold_coin", "count": 50 } },
+		"effect": [ { "u_spawn_item": "ench_tat_hp_1", "count": 1 }, { "u_sell_item": "gold_coin", "count": 50 } ]
+      },
+      {
+		"text": "I'd like the first rune of mana.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "gold_coin", "count": 50 } },
+		"effect": [ { "u_spawn_item": "ench_tat_mana_1", "count": 1 }, { "u_sell_item": "gold_coin", "count": 50 } ]
+      },
+      {
+		"text": "I'd like the first rune of stamina.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "gold_coin", "count": 50 } },
+		"effect": [ { "u_spawn_item": "ench_tat_stamina_1", "count": 1 }, { "u_sell_item": "gold_coin", "count": 50 } ]
+      },
+      {
+		"text": "I'd like the first rune of haste.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "gold_coin", "count": 50 } },
+		"effect": [ { "u_spawn_item": "ench_tat_speed_1", "count": 1 }, { "u_sell_item": "gold_coin", "count": 50 } ]
+      },
+      {
+		"text": "I'd like the first rune of body.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "gold_coin", "count": 50 } },
+		"effect": [ { "u_spawn_item": "ench_tat_str_1", "count": 1 }, { "u_sell_item": "gold_coin", "count": 50 } ]
+      },
+      {
+		"text": "I'd like the first rune of mind.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "gold_coin", "count": 50 } },
+		"effect": [ { "u_spawn_item": "ench_tat_int_1", "count": 1 }, { "u_sell_item": "gold_coin", "count": 50 } ]
+      },
+      {
+		"text": "I'd like the first rune of flexibility.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "gold_coin", "count": 50 } },
+		"effect": [ { "u_spawn_item": "ench_tat_dex_1", "count": 1 }, { "u_sell_item": "gold_coin", "count": 50 } ]
+      },
+      {
+		"text": "I'd like the first rune of senses.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "gold_coin", "count": 50 } },
+		"effect": [ { "u_spawn_item": "ench_tat_per_1", "count": 1 }, { "u_sell_item": "gold_coin", "count": 50 } ]
+      }
+    ]
+  }    
+]

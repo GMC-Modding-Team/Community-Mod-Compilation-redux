@@ -1,0 +1,70 @@
+[
+{
+    "id": "TALK_CULT_SACRIFICER_FIEND", 
+    "type": "talk_topic",
+    "dynamic_line": [ "Hello there. How can I help you?" ],
+    "responses": [ 
+                   { 
+                     "text": "Who are you?", 
+                     "topic": "TALK_CULT_SACRIFICER_FIEND_WHO" 
+                   },
+                   { 
+                     "text": "Could you help me with something?", 
+                     "condition": { "npc_has_var": "u_hired", "type": "general", "context": "mission", "value": "yes" },
+                     "topic": "TALK_CULT_SACRIFICER_FIEND_MENU" 
+                   },
+                   { 
+                     "text": "I gotta go.", 
+                     "topic": "TALK_DONE" 
+                   } 
+                 ]
+  },
+{
+    "id": "TALK_CULT_SACRIFICER_FIEND_WHO", 
+    "type": "talk_topic",
+    "dynamic_line": [ "Oh, me? I just send messages." ],
+    "responses": [ { "text": "What sort of messages?", "topic": "TALK_CULT_SACRIFICER_FIEND_MESSAGES" } ]
+  },
+{
+    "id": "TALK_CULT_SACRIFICER_FIEND_MESSAGES", 
+    "type": "talk_topic",
+    "dynamic_line": [ "Why messages to the beyond, of course. To deep places, with requests, favors, that sort of thing." ],
+    "responses": [ 
+                 { 
+                   "text": "Oh.", "topic": "TALK_DONE" 
+                 },
+                 { 
+                   "text": "Could you teach me how to send these?",
+                   "condition": { "not": { "npc_has_var": "u_hired", "type": "general", "context": "mission", "value": "yes" } },
+                   "topic": "TALK_CULT_SACRIFICER_FIEND_RECRUIT" 
+                 } 
+                 ]
+  },
+{
+    "id": "TALK_CULT_SACRIFICER_FIEND_RECRUIT", 
+    "type": "talk_topic",
+    "dynamic_line": [ "Well, seeing as you have an intrest in this, I suppose." ],
+    "responses": [ 
+                    { 
+                     "text": "All right.", 
+                     "effect": [ { "npc_add_var": "u_hired", "type": "general", "context": "mission", "value": "yes" } ],
+                     "topic": "TALK_DONE" 
+                    } 
+                 ]
+  },
+{
+    "id": "TALK_CULT_SACRIFICER_FIEND_MENU", 
+    "type": "talk_topic",
+    "dynamic_line": [ "Why, certianly. What is it?" ],
+    "responses": [ 
+                   { 
+                     "text": "Nothing.", 
+                     "topic": "TALK_DONE" 
+                   },
+                   { 
+                     "text": "Is there any work to be done?",
+                     "topic": "TALK_CULT_JOBS" 
+                   } 
+                 ]
+  } 
+]

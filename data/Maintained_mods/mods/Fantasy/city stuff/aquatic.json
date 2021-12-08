@@ -1,0 +1,131 @@
+[
+{
+    "type": "mapgen",
+    "method": "json",
+    "om_terrain": [ "wharf_mtc" ],
+    "weight": 100,
+    "object": {
+      "fill_ter": "t_dock_deep",
+	  "faction_owner": [
+		{ "id": "kingdom", "x": [ 0, 23 ], "y": [ 0, 23 ] }				
+      ],
+      "rows": [
+            "~~~~~~~~~~~...~~~~~~~~~~",
+            "~~~~~~~~~~~...~~~~~~~~~~",
+            "~~~~~~~~~~~...~~~~~~~~~~",
+            "~~~~~~~~~~~...~~~~~~~~~~",
+            "~~~~~~~~~~~...~~~~~~~~~~",
+            "~~~~~~~~~~~...~~~~~~~~~~",
+            "~~~~~~~~~~~...~~~~~~~~~~",
+            "~~~~~~~~~~~...~~~~~~~~~~",
+            "ff~~~~~~~~~...~~~~~~~~ff",
+            "fffff~~~~~~DDD~~~~~~ffff",
+            "fffffffffffDDDffffffffff",
+            "fffffffffffDDDffffffffff",
+            "fffffffffffDDDffffffffff",
+            "fffffffffffDTDffffffffff",
+            "fffffffffffDDDffffffffff",
+            "fffffffffffDDDffffffffff",
+            "ffffDDDDDDDDDDDDDDDDffff",
+            "ffffDDDDDDDDDDDDDDDDffff",
+            "ffffDDTDDDDDTDDDDTDDffff",
+            "ffffDDDDDDDDDDDDDDDDffff",
+            "ffffffffffffffffffffffff",
+            "ffffffffffffffffffffffff",
+            "ffffffffffffffffffffffff",
+            "ffffffffffffffffffffffff"
+      ],
+      "palettes": [ "mtc_wharf" ]
+    }
+  },
+{
+    "type": "mapgen",
+    "method": "json",
+    "om_terrain": [ "wharf_forefront_mtc" ],
+    "//": "Exists simply to make sure the wharf connects to the river/lake.",
+    "weight": 100,
+    "object": {
+      "fill_ter": "t_dock_deep",
+	  "faction_owner": [
+		{ "id": "kingdom", "x": [ 0, 23 ], "y": [ 0, 23 ] }				
+      ],
+      "rows": [
+            "ffffffffffffffffffffffff",
+            "ffffffffffffffffffffffff",
+            "ffffffffffffffffffffffff",
+            "ffffffffffffffffffffffff",
+            "ffffffffffffffffffffffff",
+            "ffffffffffffffffffffffff",
+            "ffffffffffffffffffffffff",
+            "ffffffffffffffffffffffff",
+            "ffffffffffffffffffffffff",
+            "ffffffffffffffffffffffff",
+            "ffffffffffffffffffffffff",
+            "ffffffffffffffffffffffff",
+            "ffffffffffffffffffffffff",
+            "ffffffffffffffffffffffff",
+            "ffffffffffffffffffffffff",
+            "ffffffffffffffffffffffff",
+            "ffffffffffffffffffffffff",
+            "ffffffffffffffffffffffff",
+            "ffffffffffffffffffffffff",
+            "ffffffffffffffffffffffff",
+            "ffffffffffffffffffffffff",
+            "ffffffffffffffffffffffff",
+            "ffffffffffffffffffffffff",
+            "ffffffffffffffffffffffff"
+      ],
+      "palettes": [ "mtc_wharf" ]
+    }
+  },
+{
+    "type": "mapgen",
+    "method": "json",
+    "om_terrain": [ "dry_dock" ],
+    "weight": 100,
+    "object": {
+      "fill_ter": "t_dirt",
+	  "faction_owner": [
+		{ "id": "kingdom", "x": [ 0, 23 ], "y": [ 0, 23 ] }				
+      ],
+      "rows": [
+            "                        ",
+            " !UUUUU                 ",
+            "  U                     ",
+            "  UUUUU                 ",
+            "!                       ",
+            "           1            ",
+            "~~~~~~~~~...~~~~~~~~~~~~",
+            "~~~~~~~~~...~~~~~~~~~~~~",
+            "ff~~~~~~~...~~~~~~~~~~~~",
+            "fffff~~~~DDDffffffffffff",
+            "fffffffffDTDffffffffffff",
+            "fffffffffDDDffffffffffff",
+            "fffffffffDDDffffffffffff",
+            "fffffffffDDDffffffffffff",
+            "fffffffffDTDffffffffffff",
+            "fffffffffDDDffffffffffff",
+            "ffffDDDDDDDDffffffffffff",
+            "ffffDTDDDDTDffffffffffff",
+            "ffffDDDDDDDDffffffffffff",
+            "ffffffffffffffffffffffff",
+            "ffffffffffffffffffffffff",
+            "ffffffffffffffffffffffff",
+            "ffffffffffffffffffffffff",
+            "ffffffffffffffffffffffff"
+      ],
+      "palettes": [ "mtc_wharf" ],      
+      "furniture": { "U": "f_crate_o" },
+      "npcs": {
+                "!": [ { "class": "generic_male_citizen" }, { "class": "generic_female_citizen" } ],
+                "1": { "class": "dry_dock_manager" }
+	},     
+      "items": {
+          "U": [ { "item": "stash_wood", "chance": 70, "repeat": [ 2, 5 ] }, { "item": "tools_general", "chance": 70, "repeat": [ 1, 2 ] } ]
+    },
+    "place_vehicles": [
+        { "vehicle": "skiff", "x": 15, "y": 5, "chance": 70, "rotation": 270, "status": 1 }
+      ]
+    }
+  }
+]

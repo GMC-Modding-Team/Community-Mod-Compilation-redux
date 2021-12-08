@@ -1,0 +1,165 @@
+[
+{
+    "type": "talk_topic",
+    "id": "TALK_ALCHEMY_INSTRUCTOR",
+    "dynamic_line": [ "Greetings. Can I help you with anything?" ],
+    "responses": [
+      { 
+         "text": "No, thanks.", 
+         "topic": "TALK_DONE"	  
+      },
+      { 
+         "text": "Who are you?", 
+         "topic": "TALK_ALCHEMY_INSTRUCTOR_WHO"	  
+      },
+      { 
+         "text": "Don't we have lessons today?", 
+         "topic": "TALK_CULT_JOBS",
+         "condition": { "npc_has_var": "u_in_class", "type": "general", "context": "mission", "value": "yes" } 	  
+      },
+      { 
+         "text": "What's our first lesson?", 
+         "topic": "TALK_ALCHEMY_LESSON_1",
+         "condition": { "and": [ { "npc_has_var": "u_in_class", "type": "general", "context": "mission", "value": "yes" }, { "u_has_skill": { "skill": "spellcraft", "level": 1 } } ] }	  
+      },
+      { 
+         "text": "What's our next lesson?", 
+         "topic": "TALK_ALCHEMY_LESSON_2",
+         "condition": { "and": [ { "npc_has_var": "u_in_class", "type": "general", "context": "mission", "value": "yes" }, { "npc_has_var": "magic_lesson_1", "type": "general", "context": "mission", "value": "yes" }, { "u_has_skill": { "skill": "spellcraft", "level": 1 } } ] }	  
+      },
+      { 
+         "text": "What's our next lesson?", 
+         "topic": "TALK_ALCHEMY_LESSON_3",
+         "condition": { "and": [ { "npc_has_var": "u_in_class", "type": "general", "context": "mission", "value": "yes" }, { "npc_has_var": "magic_lesson_2", "type": "general", "context": "mission", "value": "yes" }, { "u_has_skill": { "skill": "spellcraft", "level": 1 } } ] }	  
+      },
+      { 
+         "text": "What's our next lesson?", 
+         "topic": "TALK_ALCHEMY_LESSON_4",
+         "condition": { "and": [ { "npc_has_var": "u_in_class", "type": "general", "context": "mission", "value": "yes" }, { "npc_has_var": "magic_lesson_3", "type": "general", "context": "mission", "value": "yes" }, { "u_has_skill": { "skill": "spellcraft", "level": 1 } } ] }	  
+      },
+      { 
+         "text": "What's our next lesson?", 
+         "topic": "TALK_ALCHEMY_LESSON_5",
+         "condition": { "and": [ { "npc_has_var": "u_in_class", "type": "general", "context": "mission", "value": "yes" }, { "npc_has_var": "magic_lesson_4", "type": "general", "context": "mission", "value": "yes" }, { "u_has_skill": { "skill": "spellcraft", "level": 1 } } ] }	  
+      },
+      { 
+         "text": "What's our next lesson?", 
+         "topic": "TALK_ALCHEMY_LESSON_6",
+         "condition": { "and": [ { "npc_has_var": "u_in_class", "type": "general", "context": "mission", "value": "yes" }, { "npc_has_var": "magic_lesson_5", "type": "general", "context": "mission", "value": "yes" }, { "u_has_skill": { "skill": "spellcraft", "level": 1 } } ] }	  
+      }
+    ]
+  },
+{
+    "type": "talk_topic",
+    "id": "TALK_ALCHEMY_INSTRUCTOR_WHO",
+    "dynamic_line": [ "Oh, I'm the alchemist here. If you need a potion, just come see me." ],
+    "responses": [
+      { 
+         "text": "Thanks.", 
+         "topic": "TALK_DONE"	  
+      },
+      { 
+         "text": "I think I'm in your class.", 
+         "topic": "TALK_CLASS",
+         "condition": { "u_has_items": { "item": "alchemy_enrollment_slip", "count": 1 } },  
+         "effect": [ { "u_sell_item": "alchemy_enrollment_slip", "count": 1 } ] 	  
+      }
+    ]
+  },
+{
+    "type": "talk_topic",
+    "id": "TALK_ALCHEMY_LESSON_1",
+    "dynamic_line": [ "For our first lesson, I'm gonna give you something simple. Take this phamplet, and make a potion of water breathing. I've got tons of ingredients here, so don't worry about getting any." ],
+    "responses": [
+      { 
+         "text": "I'm ready.", 
+         "topic": "TALK_DONE",
+         "effect": [ { "add_mission": "MISSION_ALCHEMY_LESSON_1" } ]   	  
+      },
+      { 
+         "text": "Nah.", 
+         "topic": "TALK_ALCHEMY_INSTRUCTOR" 	  
+      }
+    ]
+  },   
+{
+    "type": "talk_topic",
+    "id": "TALK_ALCHEMY_LESSON_2",
+    "dynamic_line": [ "Now, I'd like for you to try your hand at something of elemental fire. Brew a potion of fire protection, and bring it to me." ],
+    "responses": [
+      { 
+         "text": "I'm ready.", 
+         "topic": "TALK_DONE",
+         "effect": [ { "add_mission": "MISSION_ALCHEMY_LESSON_2" } ]   	  
+      },
+      { 
+         "text": "Nah.", 
+         "topic": "TALK_ALCHEMY_INSTRUCTOR" 	  
+      }
+    ]
+  },   
+{
+    "type": "talk_topic",
+    "id": "TALK_ALCHEMY_LESSON_3",
+    "dynamic_line": [ "Now, I'd like for you to try your hand at something of elemental earth. Brew a potion of speed, and bring it to me." ],
+    "responses": [
+      { 
+         "text": "I'm ready.", 
+         "topic": "TALK_DONE",
+         "effect": [ { "add_mission": "MISSION_ALCHEMY_LESSON_3" } ]   	  
+      },
+      { 
+         "text": "Nah.", 
+         "topic": "TALK_ALCHEMY_INSTRUCTOR" 	  
+      }
+    ]
+  },   
+{
+    "type": "talk_topic",
+    "id": "TALK_ALCHEMY_LESSON_4",
+    "dynamic_line": [ "Now, I'd like for you to try your hand at something of elemental earth. Brew a potion of speed, and bring it to me." ],
+    "responses": [
+      { 
+         "text": "I'm ready.", 
+         "topic": "TALK_DONE",
+         "effect": [ { "add_mission": "MISSION_ALCHEMY_LESSON_4" } ]   	  
+      },
+      { 
+         "text": "Nah.", 
+         "topic": "TALK_ALCHEMY_INSTRUCTOR" 	  
+      }
+    ]
+  },   
+{
+    "type": "talk_topic",
+    "id": "TALK_ALCHEMY_LESSON_5",
+    "dynamic_line": [ "You've come far as an alchemist, and I want you to try something more advanced now. Take this book, and brew me a concentrated potion of speed." ],
+    "responses": [
+      { 
+         "text": "I'm ready.", 
+         "topic": "TALK_DONE",
+         "effect": [ { "add_mission": "MISSION_ALCHEMY_LESSON_5" } ]   	  
+      },
+      { 
+         "text": "Nah.", 
+         "topic": "TALK_ALCHEMY_INSTRUCTOR" 	  
+      }
+    ]
+  },   
+{
+    "type": "talk_topic",
+    "id": "TALK_ALCHEMY_LESSON_6",
+    "dynamic_line": [ "Now we're at our final lesson. Make me three concentrated potions of fire resistance, and I'll pass you." ],
+    "responses": [
+      { 
+         "text": "I'm ready.", 
+         "topic": "TALK_DONE",
+         "effect": [ { "add_mission": "MISSION_ALCHEMY_LESSON_6" } ]   	  
+      },
+      { 
+         "text": "Nah.", 
+         "topic": "TALK_ALCHEMY_INSTRUCTOR" 	  
+      }
+    ]
+  }
+]

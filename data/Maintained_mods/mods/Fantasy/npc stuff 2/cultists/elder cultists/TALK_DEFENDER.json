@@ -1,0 +1,35 @@
+[
+ {
+    "id": "TALK_DEFENDER",
+    "type": "talk_topic",
+    "dynamic_line": [
+      { "u_is_wearing": "cult_robes_ritual", "yes": "Greetings breathren. How goes the ritual?", "no": "<greet>" },
+      { "u_is_wearing": "cult_robes_priest", "yes": "Ah, Homage.", "no": "<greet>" },
+      { "u_is_wearing": "cult_robes_commune", "yes": "Communer... my honor.", "no": "<greet>" },
+      { "u_is_wearing": "cult_robes_elder", "yes": "Elder. *bows* How may I serve?", "no": "<greet>" },
+      { "u_is_wearing": "cult_robes_defender", "yes": "How art thou, fellow one-of-arms?", "no": "<greet>" }
+    ],
+    "responses": [ { "text": "<greet>", "topic": "TALK_DONE" } ]
+  },
+
+
+  {
+    "id": "TALK_DEFENDER_GATE",
+    "//": "Custom dialouge for the gatekeeper.",
+    "type": "talk_topic",
+    "dynamic_line": [ { "u_has_var": "joined_cult", "type": "dialogue", "context": "cult", "value": "yes", "no": "This is private property, may you leave?", "yes": "<greet>" } ],
+    "responses": [ { "text": "Okay.", "topic": "TALK_DONE" },
+                   { "text": "Ahch' unto c' halls, ng kadishtu mgkadishtu.", 
+                     "topic": "TALK_ENTER",
+                     "condition": { "u_has_mission": "MISSION_JOIN_CULT" } } ]
+  },
+  {
+    "id": "TALK_ENTER",
+    "type": "talk_topic",
+    "dynamic_line": [ "Welcome, through the doors. Vulgtmah!" ],
+    "responses": [ { "text": "Vulgtmah!", 
+                     "topic": "TALK_DONE", 
+                     "effect": [ { "u_add_var": "joined_cult", "type": "dialogue", "context": "cult", "value": "yes" },
+                                 { "u_spawn_item": "cult_robes" } ] } ]
+  }
+]

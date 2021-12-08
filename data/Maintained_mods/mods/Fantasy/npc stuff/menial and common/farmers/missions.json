@@ -1,0 +1,35 @@
+[
+{
+    "id": "MISSION_FARMER_TEST",
+    "type": "mission_definition",
+    "name": "Workman's Trial",
+    "description": "Get some wood (15 logs).",
+    "goal": "MGOAL_FIND_ITEM",
+	"item": "log",
+	"count": 15,
+    "difficulty": 1,
+    "value": 1,
+    "deadline_low": 3,
+    "deadline_high": 3,
+	"origins": [ "ORIGIN_OPENER_NPC" ],
+        "start": { "effect": [
+		{ "u_spawn_item": "ax" }
+		] },
+	"end": { "effect": [
+		{ "npc_add_var": "u_hired", "type": "general", "context": "mission", "value": "yes" },
+                { "u_sell_item": "ax" }
+		] },
+	"has_generic_rewards": false,
+	"dialogue": {
+      "describe": "Go get some logs.",
+	  "offer": "This'll see if you've got the stuff for me. Take this axe, and go chop me 15 logs. You've got three days to do it.",
+	  "advice": "Don't lose that axe.",
+      "accepted": "Good.",
+      "rejected": "Guess you don't got the stuff, eh?",
+      "inquire": "Where's it?",
+      "success": "Good job. Welcome to the team. I'll need my ax back, by the way.",
+      "success_lie": "",
+      "failure": "I guess you couldn't do it. Better luck next time."
+    }
+  }
+]

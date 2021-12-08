@@ -1,0 +1,371 @@
+[
+ {
+  "type": "talk_topic",
+    "id": "TALK_NPC_TELLER",
+    "dynamic_line": "Greetings, what can I do for you today?",
+    "responses": [
+                {
+		"text": "What do you do?",
+		"topic": "TALK_NPC_TELLER_JOB"
+		},    
+                {
+		"text": "I need some platinum weighed.",
+		"topic": "TALK_NPC_TELLER_PCON",
+                "condition": { "u_has_items": { "item": "platinum_coin", "count": 1 } }
+		},
+                {
+		"text": "I need some gold weighed.",
+		"topic": "TALK_NPC_TELLER_GCON_OR",
+                "condition": { "u_has_items": { "item": "gold_coin", "count": 1 } }
+		}, 
+		{
+		"text": "I need some silver weighed.",
+		"topic": "TALK_NPC_TELLER_SCON_OR",
+                "condition": { "u_has_items": { "item": "silver_coin", "count": 1 } }
+		},
+		{
+		"text": "I need some copper weighed.",
+		"topic": "TALK_NPC_TELLER_CCON",
+                "condition": { "u_has_items": { "item": "copper_coin", "count": 10 } }
+		},
+		{
+		"text": "Nothing.",
+		"topic": "TALK_DONE"
+		}                 
+    ]
+  },
+  {
+  "type": "talk_topic",
+    "id": "TALK_NPC_TELLER_JOB",
+    "dynamic_line": "I'm a bank teller. Mainly, I handle the exchange of currency into different forms.",
+    "responses": [
+                {
+		"text": "What are the exchange rates?",
+		"topic": "TALK_NPC_TELLER_ERATES"
+		}               
+    ]
+  },
+  {
+  "type": "talk_topic",
+    "id": "TALK_NPC_TELLER_GCON_OR",
+    "dynamic_line": "What do you need it converted to?",
+    "responses": [
+                {
+		"text": "Platinum.",
+		"topic": "TALK_NPC_TELLER_GCON_UP"
+		}, 
+                {
+		"text": "Silver.",
+		"topic": "TALK_NPC_TELLER_GCON"
+		}              
+    ]
+  },
+  {
+  "type": "talk_topic",
+    "id": "TALK_NPC_TELLER_SCON_OR",
+    "dynamic_line": "What do you need it converted to?",
+    "responses": [
+                {
+		"text": "Gold.",
+		"topic": "TALK_NPC_TELLER_SCON_UP"
+		}, 
+                {
+		"text": "Copper.",
+		"topic": "TALK_NPC_TELLER_SCON"
+		}              
+    ]
+  },
+  {
+  "type": "talk_topic",
+    "id": "TALK_NPC_TELLER_ERATES",
+    "dynamic_line": "Our currency operates on measures of ten. For example, ten copper pieces is the equivalent of one silver piece, and so on.",
+    "responses": [
+                {
+		"text": "Thank you.",
+		"topic": "TALK_NPC_TELLER"
+		}               
+    ]
+  },
+  {
+  "type": "talk_topic",
+    "id": "TALK_NPC_TELLER_PCON",
+    "dynamic_line": "What do you need it changed to?",
+    "responses": [
+                {
+		"text": "Just a bit of gold.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "platinum_coin", "count": 1 } },
+		"effect": [ { "u_sell_item": "platinum_coin", "count": 1 }, { "u_spawn_item": "gold_coin", "count": 10 } ]
+		},
+                {
+		"text": "Some gold.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "platinum_coin", "count": 5 } },
+		"effect": [ { "u_sell_item": "platinum_coin", "count": 5 }, { "u_spawn_item": "gold_coin", "count": 50 } ]
+		},
+                {
+		"text": "A good deal of gold.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "platinum_coin", "count": 10 } },
+		"effect": [ { "u_sell_item": "platinum_coin", "count": 10 }, { "u_spawn_item": "gold_coin", "count": 100 } ]
+		},
+                {
+		"text": "A lot of gold.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "platinum_coin", "count": 20 } },
+		"effect": [ { "u_sell_item": "platinum_coin", "count": 20 }, { "u_spawn_item": "gold_coin", "count": 200 } ]
+		},
+                {
+		"text": "A sack of gold.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "platinum_coin", "count": 50 } },
+		"effect": [ { "u_sell_item": "platinum_coin", "count": 50 }, { "u_spawn_item": "gold_coin", "count": 500 } ]
+		},
+                {
+		"text": "A big sack of gold.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "platinum_coin", "count": 100 } },
+		"effect": [ { "u_sell_item": "platinum_coin", "count": 100 }, { "u_spawn_item": "gold_coin", "count": 1000 } ]
+		},
+                {
+		"text": "I don't need it changed.",
+		"topic": "TALK_DONE"
+		}            
+    ]
+  },
+  {
+  "type": "talk_topic",
+    "id": "TALK_NPC_TELLER_GCON",
+    "dynamic_line": "What do you need it changed to?",
+    "responses": [
+                {
+		"text": "Just a bit of silver.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "gold_coin", "count": 1 } },
+		"effect": [ { "u_sell_item": "gold_coin", "count": 1 }, { "u_spawn_item": "silver_coin", "count": 10 } ]
+		},
+                {
+		"text": "Some silver.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "gold_coin", "count": 5 } },
+		"effect": [ { "u_sell_item": "gold_coin", "count": 5 }, { "u_spawn_item": "silver_coin", "count": 50 } ]
+		},
+                {
+		"text": "A good deal of silver.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "gold_coin", "count": 10 } },
+		"effect": [ { "u_sell_item": "gold_coin", "count": 10 }, { "u_spawn_item": "silver_coin", "count": 100 } ]
+		},
+                {
+		"text": "A lot of silver.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "gold_coin", "count": 20 } },
+		"effect": [ { "u_sell_item": "gold_coin", "count": 20 }, { "u_spawn_item": "silver_coin", "count": 200 } ]
+		},
+                {
+		"text": "A sack of silver.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "gold_coin", "count": 50 } },
+		"effect": [ { "u_sell_item": "gold_coin", "count": 50 }, { "u_spawn_item": "silver_coin", "count": 500 } ]
+		},
+                {
+		"text": "A big sack of silver.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "gold_coin", "count": 100 } },
+		"effect": [ { "u_sell_item": "gold_coin", "count": 100 }, { "u_spawn_item": "silver_coin", "count": 1000 } ]
+		},
+                {
+		"text": "I don't need it changed.",
+		"topic": "TALK_DONE"
+		}            
+    ]
+  },
+  {
+  "type": "talk_topic",
+    "id": "TALK_NPC_TELLER_GCON_UP",
+    "dynamic_line": "What do you need it changed to?",
+    "responses": [
+                {
+		"text": "Just a bit of platinum.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "gold_coin", "count": 10 } },
+		"effect": [ { "u_spawn_item": "platinum_coin", "count": 1 }, { "u_sell_item": "gold_coin", "count": 10 } ]
+		},
+                {
+		"text": "Some platinum.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "gold_coin", "count": 50 } },
+		"effect": [ { "u_spawn_item": "platinum_coin", "count": 5 }, { "u_sell_item": "gold_coin", "count": 50 } ]
+		},
+                {
+		"text": "A good deal of platinum.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "gold_coin", "count": 100 } },
+		"effect": [ { "u_spawn_item": "platinum_coin", "count": 10 }, { "u_sell_item": "gold_coin", "count": 100 } ]
+		},
+                {
+		"text": "A lot of platinum.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "gold_coin", "count": 200 } },
+		"effect": [ { "u_spawn_item": "platinum_coin", "count": 20 }, { "u_sell_item": "gold_coin", "count": 200 } ]
+		},
+                {
+		"text": "A sack of platinum.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "gold_coin", "count": 500 } },
+		"effect": [ { "u_spawn_item": "platinum_coin", "count": 50 }, { "u_sell_item": "gold_coin", "count": 500 } ]
+		},
+                {
+		"text": "A big sack of platinum.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "gold_coin", "count": 1000 } },
+		"effect": [ { "u_spawn_item": "platinum_coin", "count": 100 }, { "u_sell_item": "gold_coin", "count": 1000 } ]
+		},
+                {
+		"text": "I don't need it changed.",
+		"topic": "TALK_DONE"
+		}            
+    ]
+  },
+  {
+  "type": "talk_topic",
+    "id": "TALK_NPC_TELLER_SCON",
+    "dynamic_line": "What do you need it changed to?",
+    "responses": [
+                {
+		"text": "Just a bit of copper.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "silver_coin", "count": 1 } },
+		"effect": [ { "u_sell_item": "silver_coin", "count": 1 }, { "u_spawn_item": "copper_coin", "count": 10 } ]
+		},
+                {
+		"text": "Some copper.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "silver_coin", "count": 5 } },
+		"effect": [ { "u_sell_item": "silver_coin", "count": 5 }, { "u_spawn_item": "copper_coin", "count": 50 } ]
+		},
+                {
+		"text": "A good deal of copper.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "silver_coin", "count": 10 } },
+		"effect": [ { "u_sell_item": "silver_coin", "count": 10 }, { "u_spawn_item": "copper_coin", "count": 100 } ]
+		},
+                {
+		"text": "A lot of copper.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "silver_coin", "count": 20 } },
+		"effect": [ { "u_sell_item": "silver_coin", "count": 20 }, { "u_spawn_item": "copper_coin", "count": 200 } ]
+		},
+                {
+		"text": "A sack of copper.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "silver_coin", "count": 50 } },
+		"effect": [ { "u_sell_item": "silver_coin", "count": 50 }, { "u_spawn_item": "copper_coin", "count": 500 } ]
+		},
+                {
+		"text": "A big sack of copper.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "silver_coin", "count": 100 } },
+		"effect": [ { "u_sell_item": "silver_coin", "count": 100 }, { "u_spawn_item": "copper_coin", "count": 1000 } ]
+		},
+                {
+		"text": "I don't need it changed.",
+		"topic": "TALK_DONE"
+		}            
+    ]
+  },
+  {
+  "type": "talk_topic",
+    "id": "TALK_NPC_TELLER_SCON_UP",
+    "dynamic_line": "What do you need it changed to?",
+    "responses": [
+                {
+		"text": "Just a bit of gold.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "silver_coin", "count": 10 } },
+		"effect": [ { "u_spawn_item": "gold_coin", "count": 1 }, { "u_sell_item": "silver_coin", "count": 10 } ]
+		},
+                {
+		"text": "Some gold.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "silver_coin", "count": 50 } },
+		"effect": [ { "u_spawn_item": "gold_coin", "count": 5 }, { "u_sell_item": "silver_coin", "count": 50 } ]
+		},
+                {
+		"text": "A good deal of gold.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "silver_coin", "count": 100 } },
+		"effect": [ { "u_spawn_item": "gold_coin", "count": 10 }, { "u_sell_item": "silver_coin", "count": 100 } ]
+		},
+                {
+		"text": "A lot of gold.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "silver_coin", "count": 200 } },
+		"effect": [ { "u_spawn_item": "gold_coin", "count": 20 }, { "u_sell_item": "silver_coin", "count": 200 } ]
+		},
+                {
+		"text": "A sack of gold.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "silver_coin", "count": 500 } },
+		"effect": [ { "u_spawn_item": "gold_coin", "count": 50 }, { "u_sell_item": "silver_coin", "count": 500 } ]
+		},
+                {
+		"text": "A big sack of gold.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "silver_coin", "count": 1000 } },
+		"effect": [ { "u_spawn_item": "gold_coin", "count": 100 }, { "u_sell_item": "silver_coin", "count": 1000 } ]
+		},
+                {
+		"text": "I don't need it changed.",
+		"topic": "TALK_DONE"
+		}            
+    ]
+  },
+  {
+  "type": "talk_topic",
+    "id": "TALK_NPC_TELLER_CCON",
+    "dynamic_line": "What do you need it changed to?",
+    "responses": [
+                {
+		"text": "Just a bit of silver.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "copper_coin", "count": 10 } },
+		"effect": [ { "u_spawn_item": "silver_coin", "count": 1 }, { "u_sell_item": "copper_coin", "count": 10 } ]
+		},
+                {
+		"text": "Some silver.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "copper_coin", "count": 50 } },
+		"effect": [ { "u_spawn_item": "silver_coin", "count": 5 }, { "u_sell_item": "copper_coin", "count": 50 } ]
+		},
+                {
+		"text": "A good deal of silver.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "copper_coin", "count": 100 } },
+		"effect": [ { "u_spawn_item": "silver_coin", "count": 10 }, { "u_sell_item": "copper_coin", "count": 100 } ]
+		},
+                {
+		"text": "A lot of silver.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "copper_coin", "count": 200 } },
+		"effect": [ { "u_spawn_item": "silver_coin", "count": 20 }, { "u_sell_item": "copper_coin", "count": 200 } ]
+		},
+                {
+		"text": "A sack of silver.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "copper_coin", "count": 500 } },
+		"effect": [ { "u_spawn_item": "silver_coin", "count": 50 }, { "u_sell_item": "copper_coin", "count": 500 } ]
+		},
+                {
+		"text": "A big sack of silver.",
+		"topic": "TALK_SOLD",
+                "condition": { "u_has_items": { "item": "copper_coin", "count": 1000 } },
+		"effect": [ { "u_spawn_item": "silver_coin", "count": 100 }, { "u_sell_item": "copper_coin", "count": 1000 } ]
+		},
+                {
+		"text": "I don't need it changed.",
+		"topic": "TALK_DONE"
+		}            
+    ]
+  }   
+]

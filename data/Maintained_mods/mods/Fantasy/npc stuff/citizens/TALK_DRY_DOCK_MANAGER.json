@@ -1,0 +1,51 @@
+[
+{
+    "type": "talk_topic",
+    "id": "TALK_NPC_DRY_DOCK_MANAGER",
+    "dynamic_line": [ "Hello there. Can I help you with anything?" ],
+    "responses": [
+                {
+		"text": "Who are you?",
+		"topic": "TALK_NPC_DRY_DOCK_MANAGER_WHO",
+                "effect": { "npc_add_var": "known", "type": "dialogue", "context": "npc_boat_maker", "value": "yes" }
+		},
+                {
+		"text": "I'll take a skiff (363 gold).",
+		"topic": "TALK_SOLD",
+                "condition": { "and": [ { "npc_has_var": "known", "type": "dialogue", "context": "npc_boat_maker", "value": "yes" }, { "u_has_items": { "item": "gold_coin", "count": 363 } } ] },
+                "effect": [ { "add_mission": "MISSION_BUY_SKIFF" } ] 
+		},
+		{
+		"text": "No.",
+		"topic": "TALK_DONE"
+		}
+    ]
+  },
+{
+    "type": "talk_topic",
+    "id": "TALK_NPC_DRY_DOCK_MANAGER_WHO",
+    "dynamic_line": [ "I'm a carpenter, and I make boats. If you need any craft to sail on, we can make it." ],
+    "responses": [
+		{
+		"text": "Okay, thanks for the info.",
+		"topic": "TALK_DONE"
+		},
+                {
+		"text": "What are your prices?",
+		"topic": "TALK_NPC_DRY_DOCK_MANAGER_PRICES"
+		}
+    ]
+  },
+{
+    "type": "talk_topic",
+    "id": "TALK_NPC_DRY_DOCK_MANAGER_PRICES",
+    "//": "To calculate the price, I added the total cost of parts used within the vehicle's template, applied a 0.15% labor cost, divided the value by 5.00 (one silver coin), and adjusted the result for transactiona simplicity. Yes, these are extremeley expensive, as it's the medieval equivalent of getting a new car.",
+    "dynamic_line": [ "Well, a skiff is 363 gold; its good for getting somewhere fast, but don't get it close to land." ],
+    "responses": [
+		{
+		"text": "Thank you.",
+		"topic": "TALK_NPC_DRY_DOCK_MANAGER"
+		}
+    ]
+  } 
+]

@@ -1,0 +1,32 @@
+[
+	{
+    "id": "MISSION_FISH",
+    "type": "mission_definition",
+    "name": "Fishing",
+    "description": "Help the fisher with their haul.",
+    "goal": "MGOAL_FIND_ITEM",
+	"item": "fish",
+	"count": 6,
+    "difficulty": 1,
+    "value": 1,
+	"origins": [ "ORIGIN_OPENER_NPC" ],
+	"followup": "MISSION_FISH",
+    "start": {
+       "assign_mission_target": { "om_terrain": "river", "reveal_radius": 1, "random": true, "search_range": 5, "min_distance": 1 },
+	   "update_mapgen": { "place_monster": [ { "monster": "mon_fish_sbass", "pack_size": [ 1, 2 ], "x": 8, "y": 8, "target": true } ] }
+    },
+	"end": { "effect": [ { "u_spawn_item": "silver_coin", "count": 3 } ] },
+	"has_generic_rewards": false,
+	"dialogue": {
+      "describe": "",
+	  "offer": "If you help me with the fishing I'll see to it that you're paid for the work. Job's done once you're finished cutting them up and bring me their fillets. 6 fillets should be enough.",
+	  "advice": "It's up to you how you're going to get their meat. If you want my advice for getting them without being one of them fish fellars though you're going to need a fishing rod and some bait.",
+      "accepted": "I'll be here when you come back.",
+      "rejected": "No skin off my nose. The fish aren't going anywhere.",
+      "inquire": "Ya have those fillets?",
+      "success": "Good going. Here's your pay.",
+      "success_lie": "",
+      "failure": ""
+    }
+  }
+]

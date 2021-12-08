@@ -1,0 +1,131 @@
+[
+{
+    "type": "talk_topic",
+    "id": "TALK_ACADEMY_DEAN",
+    "dynamic_line": [ "Hello there. What can I do for you?" ],
+    "responses": [
+      { 
+         "text": "Who are you?", 
+         "topic": "TALK_ACADEMY_DEAN_WHO" 
+      },
+      { 
+         "text": "Can I help you with anything?", 
+         "topic": "TALK_ACADEMY_DEAN_HELP",	
+         "condition": { "not": { "npc_has_var": "u_hired", "type": "general", "context": "mission", "value": "yes" } }     
+      },
+      { 
+         "text": "What do you need done?", 
+         "topic": "TALK_CULT_JOBS",
+         "condition": { "npc_has_var": "u_hired", "type": "general", "context": "mission", "value": "yes" }     
+      }
+    ]
+  },
+{
+    "type": "talk_topic",
+    "id": "TALK_ACADEMY_DEAN_WHO",
+    "dynamic_line": [ "I'm the dean of this school, simply. Any and all affairs, I handle." ],
+    "responses": [
+      { 
+         "text": "Thanks.", 
+         "topic": "TALK_DONE"  
+      }
+    ]
+  },
+{
+    "type": "talk_topic",
+    "id": "TALK_ACADEMY_DEAN_HELP",
+    "dynamic_line": [ "That depends. I have a lot of different things someone could do for me, and a lot of people who need help from me. What sort of arcane skill do you have?" ],
+    "responses": [
+      { 
+         "text": "I should be going.", 
+         "topic": "TALK_DONE"  
+      },
+      {
+        "switch": true,
+        "default": true,
+        "text": "I know a bit.",
+        "trial": { "type": "PERSUADE", "difficulty": -10 },
+        "success": { "topic": "TALK_ACADEMY_DEAN_HIRED" },
+        "failure": { "topic": "TALK_ACADEMY_DEAN_NO_HELP" },   
+        "condition": { "u_has_skill": { "skill": "spellcraft", "level": 1 } } 
+      },
+      {
+        "switch": true,
+        "default": true,
+        "text": "I've taken a few courses here.",
+        "trial": { "type": "PERSUADE", "difficulty": 0 },
+        "success": { "topic": "TALK_ACADEMY_DEAN_HIRED" },
+        "failure": { "topic": "TALK_ACADEMY_DEAN_NO_HELP" },   
+        "condition": { "u_has_skill": { "skill": "spellcraft", "level": 2 } } 
+      },
+      {
+        "switch": true,
+        "default": true,
+        "text": "I'm good with magic.",
+        "trial": { "type": "PERSUADE", "difficulty": 20 },
+        "success": { "topic": "TALK_ACADEMY_DEAN_HIRED" },
+        "failure": { "topic": "TALK_ACADEMY_DEAN_NO_HELP" },   
+        "condition": { "u_has_skill": { "skill": "spellcraft", "level": 3 } } 
+      },
+      {
+        "switch": true,
+        "default": true,
+        "text": "I'm proficient at the art.",
+        "trial": { "type": "PERSUADE", "difficulty": 60 },
+        "success": { "topic": "TALK_ACADEMY_DEAN_HIRED" },
+        "failure": { "topic": "TALK_ACADEMY_DEAN_NO_HELP" },   
+        "condition": { "u_has_skill": { "skill": "spellcraft", "level": 4 } } 
+      },
+      {
+        "switch": true,
+        "default": true,
+        "text": "I can teach an apprentice.",
+        "trial": { "type": "PERSUADE", "difficulty": 80 },
+        "success": { "topic": "TALK_ACADEMY_DEAN_HIRED" },
+        "failure": { "topic": "TALK_ACADEMY_DEAN_NO_HELP" },   
+        "condition": { "u_has_skill": { "skill": "spellcraft", "level": 5 } }
+      },
+      {
+        "switch": true,
+        "default": true,
+        "text": "I know several powerful spells.",
+        "trial": { "type": "PERSUADE", "difficulty": 90 },
+        "success": { "topic": "TALK_ACADEMY_DEAN_HIRED" },
+        "failure": { "topic": "TALK_ACADEMY_DEAN_NO_HELP" },   
+        "condition": { "u_has_skill": { "skill": "spellcraft", "level": 6 } }
+      },
+      {
+        "switch": true,
+        "default": true,
+        "text": "I can teach the in and out of magic.",
+        "trial": { "type": "PERSUADE", "difficulty": 100 },
+        "success": { "topic": "TALK_ACADEMY_DEAN_HIRED" },
+        "failure": { "topic": "TALK_ACADEMY_DEAN_NO_HELP" },   
+        "condition": { "u_has_skill": { "skill": "spellcraft", "level": 7 } } 
+      }
+    ]
+  },
+{
+    "type": "talk_topic",
+    "id": "TALK_ACADEMY_DEAN_NO_HELP",
+    "dynamic_line": [ "I don't think you'd be much for what I need. If you have any other buisness with me, I'll see you later." ],
+    "responses": [
+      { 
+         "text": "Bye.", 
+         "topic": "TALK_DONE"  
+      }
+    ]
+  },
+{
+    "type": "talk_topic",
+    "id": "TALK_ACADEMY_DEAN_HIRED",
+    "dynamic_line": [ "Alright, I think you're good for the job. Come back to me when you want to start." ],
+    "responses": [
+      { 
+         "text": "Bye.", 
+         "topic": "TALK_DONE",
+         "effect": [ { "npc_add_var": "u_hired", "type": "general", "context": "mission", "value": "yes" } ]   
+      }
+    ]
+  }        
+]

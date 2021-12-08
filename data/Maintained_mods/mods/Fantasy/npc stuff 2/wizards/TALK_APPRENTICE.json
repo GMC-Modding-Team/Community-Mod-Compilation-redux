@@ -1,0 +1,66 @@
+[
+  {
+    "type": "talk_topic",
+    "id": "TALK_NPC_APPRENTICE_MAGE",
+    "dynamic_line": [ "Hello there." ],
+    "responses": [
+      { 
+         "text": "Hello.", 
+         "topic": "TALK_NEED"
+	  
+      }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_NEED",
+    "dynamic_line": [ "What do you need?" ],
+    "responses": [
+      { 
+         "text": "Who are you?", 
+         "topic": "TALK_MAGE"
+	  
+      },
+      { 
+         "text": "Is there anything I can do for you?", 
+         "topic": "TALK_CULT_JOBS",
+         "condition": { "npc_has_var": "known", "type": "dialogue", "context": "mage", "value": "yes" }
+  
+      },
+      { 
+         "text": "Can you teach me anything?", 
+         "topic": "TALK_TRAIN",
+         "condition": { "npc_has_var": "MAGE_APPRENTICE", "type": "general", "context": "mission", "value": "yes" }
+  
+      },
+      {
+		"text": "Is that a finished golem I see?",
+		"topic": "TALK_NPC_APPRENTICE_MAGE_GOLEM",
+                "condition": { "npc_has_var": "busy_with_something", "type": "general", "context": "mission", "value": "yes" }
+		},
+      { 
+         "text": "I gotta go.", 
+         "topic": "TALK_DONE"
+      }
+    ]
+  },
+ {
+    "id": "TALK_MAGE",
+    "type": "talk_topic",
+    "dynamic_line": [ "Oh, I'm an apprentice. I'm just learning magic, but one day I hope to delve deep into the arcane. Oh, how exciting!" ],
+    "responses": [ { "text": "Hmm.", "topic": "TALK_NEED", "effect": { "npc_add_var": "known", "type": "dialogue", "context": "mage", "value": "yes" } },
+                   { "text": "Could I help you?", "topic": "TALK_CULT_JOBS", "effect": { "npc_add_var": "known", "type": "dialogue", "context": "mage", "value": "yes" } } ]
+  },
+{
+    "id": "TALK_NPC_APPRENTICE_MAGE_GOLEM",
+    "type": "talk_topic",
+    "dynamic_line": [ "I've done it! I've done it! I've done it! Finally, I have my clay golem! How can I possibly thank you?! Oh, I know! Take this, please. It's the least I can do." ],
+    "responses": [ 
+                   {
+		"text": "Thank you",
+		"topic": "TALK_DONE",
+		"effect": [ { "u_buy_monster": "mon_clay_golem", "pacified": false }, { "u_spawn_item": "gold_coin", "count": 15 }, { "npc_lose_var": "busy_with_something", "type": "general", "context": "mission", "value": "yes" } ]
+		  }
+                 ]
+  }
+]

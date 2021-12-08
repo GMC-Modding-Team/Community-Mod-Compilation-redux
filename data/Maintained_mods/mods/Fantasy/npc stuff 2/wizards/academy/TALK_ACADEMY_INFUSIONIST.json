@@ -1,0 +1,48 @@
+[
+{
+    "type": "talk_topic",
+    "id": "TALK_NPC_ACADEMY_INFUSIONIST",
+    "dynamic_line": [ "Hello there. Can I help you with anything?" ],
+    "responses": [
+      { 
+         "text": "No.", 
+         "topic": "TALK_DONE"
+	  
+      },
+      { 
+         "text": "Who are you?", 
+         "topic": "TALK_NPC_ACADEMY_INFUSIONIST_WHO",      
+         "condition": { "not": { "npc_has_var": "known", "type": "dialogue", "context": "mage", "value": "yes" } }
+	  
+      },
+      { 
+         "text": "I'd like to but something.", 
+         "topic": "TALK_SOLD",        
+         "effect": "start_trade",
+         "condition": { "npc_has_var": "known", "type": "dialogue", "context": "mage", "value": "yes" }
+	  
+      },
+      { 
+         "text": "Is there anything I can do for you?", 
+         "topic": "TALK_CULT_JOBS",        
+         "condition": { "npc_has_var": "known", "type": "dialogue", "context": "mage", "value": "yes" }
+	  
+      }
+    ]
+  },
+{
+    "type": "talk_topic",
+    "id": "TALK_NPC_ACADEMY_INFUSIONIST_WHO",
+    "dynamic_line": [ "Oh, I'm just a student here. I've been taking courses of infusion, and I've got a lot of leftovers from my work. The teacher told me I could use this room to sell off the products for some profit; it helps fund our classes, you see." ],
+    "responses": [
+      { 
+         "text": "Hmm.", 
+         "topic": "TALK_DONE",
+         "effect": [
+                { "npc_add_var": "known", "type": "dialogue", "context": "mage", "value": "yes" }
+		]
+	  
+      }
+    ]
+  }
+]

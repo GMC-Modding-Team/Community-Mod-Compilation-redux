@@ -1,0 +1,101 @@
+[
+{
+    "id": "TALK_LOREVESSEL", 
+    "type": "talk_topic",
+    "dynamic_line": [ { "u_has_var": "known", 
+                        "type": "dialogue", 
+                        "context": "lorevessel", 
+                        "value": "yes", 
+                        "no": "<greet> Who are you?", "yes": "<greet>" } ],
+    "responses": [ { 
+                     "text": "<greet>, I came to see you.",  
+                     "topic": "TALK_INTRO2",
+                     "effect": { "u_add_var": "known", "type": "dialogue", "context": "lorevessel", "value": "yes" } },
+                   { 
+                     "text": "I heard you have the Homage's reference notes.",  
+                     "topic": "TALK_DONE",
+                     "condition": { "u_has_mission": "MISSION_RITUAL2" },
+                     "effect": { "u_spawn_item": "spell_scroll_sacrifice" } } ]
+   },
+{
+    "id": "TALK_INTRO2",
+    "type": "talk_topic",
+    "dynamic_line": [ { "u_has_var": "known", 
+                        "type": "dialogue", 
+                        "context": "elder", 
+                        "value": "yes", 
+                        "no": "Oh, a pleasure to meet you. Welcome to the Hall of Artifacts, <name_g>.", "yes": "How have you been?" } ],
+    "responses": [ { "text": "Thank you.", "topic": "TALK_DESIRE" },
+                   { "text": "I gotta go.", "topic": "TALK_DONE" } ]
+  },
+  {
+    "id": "TALK_DESIRE",
+    "type": "talk_topic",
+    "dynamic_line": [ "So, what is it you desire?" ],
+    "responses": [
+                   { "text": "What is this place?", "topic": "TALK_HALL" },
+                   { "text": "Nothing.", "topic": "TALK_DONE" } ]
+  }, 
+{
+    "id": "TALK_HALL",
+    "type": "talk_topic",
+    "dynamic_line": [ "This is the Hall of Artifacts, where our most prized possessions are kept. I am responsible for their care. As you can see, they are kept under heavy guard." ],
+    "responses": [ { "text": "Hmmm.", "topic": "TALK_NONE" },
+                   { "text": "What are these, 'most prized possessions'?", "topic": "TALK_ARTIFACTS" } ]
+  },
+{
+    "id": "TALK_ARTIFACTS",
+    "type": "talk_topic",
+    "dynamic_line": [ "Oh, the artifacts? You see, they were gifts unto us from our patron. They hold powerful magic within them. All but two came from our communers." ],
+    "responses": [ { "text": "Nice to know.", "topic": "TALK_DONE" },
+                   { "text": "Could you tell me more about one?", "topic": "TALK_LEARN_MORE" },
+                   { "text": "How did the 'communers' obtain them?", "topic": "TALK_WORSHIP" } ]
+  },
+{
+    "id": "TALK_WORSHIP",
+    "type": "talk_topic",
+    "dynamic_line": [ "They spend long hours alone, reaching out to our patron. Occaisionally, a gift shall be brought to them. The most powerful of these, we keep here." ],
+    "responses": [ { "text": "Hmmm.", "topic": "TALK_NONE" } ]
+  },
+{
+    "id": "TALK_LEARN_MORE",
+    "type": "talk_topic",
+    "dynamic_line": [ "Okay, which one? It is my duty as Lorevessel." ],
+    "responses": [ { "text": "What about that book?", "topic": "TALK_ARCHAESTH" },
+                   { "text": "What about that sword?", "topic": "TALK_SWORD" },
+                   { "text": "What's that bone for?", "topic": "TALK_FEMUR" },
+                   { "text": "What about that ring?", "topic": "TALK_RING" },
+                   { "text": "What's that mask?", "topic": "TALK_MASK" },
+                   { "text": "Nice to know.", "topic": "TALK_DONE" } ]
+  },
+{
+    "id": "TALK_ARCHAESTH",
+    "type": "talk_topic",
+    "dynamic_line": [ "Ah, the Archae Aesthetica. It is the first thing we ever put here. Our founder recieved this directly from the Elder Ones. It is written within their language, only of which the cult is literate." ],
+    "responses": [ { "text": "What else is there?", "topic": "TALK_NONE" } ]
+  },
+{
+    "id": "TALK_FEMUR",
+    "type": "talk_topic",
+    "dynamic_line": [ "Oh, the Candlelight Femur. Its rather strange; the only bit of pyromancy we possess. It accepts crystal magic, the spell it casts similar to one of our own, though it erupts on fire. Somewhat fitting; the one who recieved it had a fondness for flame." ],
+    "responses": [ { "text": "What else is there?", "topic": "TALK_NONE" } ]
+  },
+{
+    "id": "TALK_SWORD",
+    "type": "talk_topic",
+    "dynamic_line": [ "The Longsword? That is one of two artifacts our founder recieved, the other being the Archae Aesthetica. They bore it during their time as our leader, dying with it in their hands. It is said that the sword steals the life of any it strikes, and transfers it to the wielder." ],
+    "responses": [ { "text": "What else is there?", "topic": "TALK_NONE" } ]
+  },
+{
+    "id": "TALK_RING",
+    "type": "talk_topic",
+    "dynamic_line": [ "Don't touch that! That ring is extremely dangerous. We know not if to consider it a blessing or curse, and rightly so. To anyone who wears it, they are transformed into a monster. That happened to the one who recieved it, they lost their mind. It didn't end well..." ],
+    "responses": [ { "text": "What else is there?", "topic": "TALK_NONE" } ]
+  },
+{
+    "id": "TALK_MASK",
+    "type": "talk_topic",
+    "dynamic_line": [ "Like the ring, that mask is extremely dangerous. It is said to grant magical powers from the beyond, at the cost of your sanity. It makes you never want to take it off, either. The one who recieved it put it on a squirrel, and they nearly died because of it. I'd keep away, if I were you." ],
+    "responses": [ { "text": "What else is there?", "topic": "TALK_NONE" } ]
+  }
+]

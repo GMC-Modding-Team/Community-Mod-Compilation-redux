@@ -1,0 +1,69 @@
+[
+{
+    "type": "talk_topic",
+    "id": "TALK_NPC_CLERIC",
+    "dynamic_line": [ "Hello. What is it you need?" ],
+    "responses": [
+                {
+		"text": "Who are you?",
+		"topic": "TALK_NPC_CLERIC_WHO"
+		},
+                {
+		"text": "What are we doing today?",
+		"topic": "TALK_CULT_JOBS",
+                "condition": { "npc_has_var": "u_hired", "type": "general", "context": "mission", "value": "yes" }
+		},
+		{
+		"text": "Goodbye.",
+		"topic": "TALK_DONE"
+		}
+    ]
+  },
+{
+    "type": "talk_topic",
+    "id": "TALK_NPC_CLERIC_WHO",
+    "dynamic_line": [ "I'm a cleric, really. I oversee this cathedral which you stand in, and the acolytes are my associates. Here, we give praise to our gods." ],
+    "responses": [
+                {
+		"text": "How would somebody go about becoming an acolyte?",
+		"topic": "TALK_NPC_CLERIC_CHURCH",
+                "condition": { "not": { "npc_has_var": "u_hired", "type": "general", "context": "mission", "value": "yes" } }
+		},
+                {
+		"text": "Who are the gods?",
+		"topic": "TALK_GODS"
+		},
+		{
+		"text": "Thanks for the info.",
+		"topic": "TALK_DONE"
+		}
+    ]
+  },
+{
+    "type": "talk_topic",
+    "id": "TALK_NPC_CLERIC_CHURCH",
+    "dynamic_line": [ "Well, some people we take as apprentices at an early age, others are long-time parish members, and so on. Everyone here has a story of some sort." ],
+    "responses": [
+                {
+		"text": "Do you think I could join?",
+		"topic": "TALK_NPC_CLERIC_RECRUIT"
+		},
+		{
+		"text": "Thanks for the info.",
+		"topic": "TALK_DONE"
+		}
+    ]
+  },
+{
+    "type": "talk_topic",
+    "id": "TALK_NPC_CLERIC_RECRUIT",
+    "dynamic_line": [ "I guess you could. If you don't know anything about the gods or what we do, I can teach you." ],
+    "responses": [
+		{
+		"text": "Thanks.",
+		"topic": "TALK_DONE",
+                "effect": [ { "npc_add_var": "u_hired", "type": "general", "context": "mission", "value": "yes" } ]
+		}
+    ]
+  }      
+]

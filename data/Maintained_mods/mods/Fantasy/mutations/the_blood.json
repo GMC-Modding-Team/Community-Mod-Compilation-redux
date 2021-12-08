@@ -1,0 +1,66 @@
+[ 
+ {
+    "type": "mutation_category",
+    "id": "BLOOD",
+    "name": "Eldritch Bloodline",
+    "threshold_mut": "THRESH_BLOOD",
+    "mutagen_message": "You vision turns red...",
+    "iv_message": "Blood flows within you...",
+    "memorial_message": "Became a thing which should not be."
+  },
+  {
+    "type": "mutation",
+    "id": "THRESH_BLOOD",
+    "name": { "str": "Eldritch Alterations" },
+    "points": 1,
+    "description": "Your body has been radically altered due to an overutilization of The Blood. Whilst ye may have abandoned your humanity, one may find some means for your physiology.",
+    "valid": false,
+    "purifiable": false,
+    "threshold": true
+  },
+  {
+    "type": "mutation",
+    "id": "TB_Bleed",
+    "name": "Altered Excretions",
+    "points": 2,
+    "description": "Your body now generates The Blood, allowing you to extract it with mental focus.",
+    "category": [ "BLOOD" ],
+    "flags": [ "NON_THRESH" ],
+    "spells_learned": [ [ "extract_blood", 0 ] ]
+  },
+  {
+    "type": "mutation",
+    "id": "EKNOW",
+    "name": "Otherworldly Knowledge",
+    "points": 2,
+    "description": "The knowledge of the elder one has touched you.",
+    "category": [ "BLOOD" ],
+    "changes_to": [ "EKNOW2" ],
+    "reading_speed_multiplier": 0.6,
+    "passive_mods": { "int_mod": 1 }
+  },
+  {
+    "type": "mutation",
+    "id": "EKNOW2",
+    "name": "Mental Murmurs",
+    "points": 4,
+    "description": "The knowledge of the elder one has laid its hands.",
+    "category": [ "BLOOD" ],
+    "prereqs": [ "EKNOW" ],
+    "changes_to": [ "EKNOW3" ],
+    "reading_speed_multiplier": 0.5,
+    "passive_mods": { "int_mod": 2 }
+  },
+  {
+    "type": "mutation",
+    "id": "EKNOW3",
+    "name": "Eldritch Minds",
+    "points": 6,
+    "description": "The knowledge of the elder one has grasped you firmly, providing an expansion of your mind.",
+    "category": [ "BLOOD" ],
+    "prereqs": [ "EKNOW2" ],
+    "threshreq": [ "THRESH_BLOOD" ],
+    "reading_speed_multiplier": 0.4,
+    "passive_mods": { "int_mod": 4 }
+  }
+]

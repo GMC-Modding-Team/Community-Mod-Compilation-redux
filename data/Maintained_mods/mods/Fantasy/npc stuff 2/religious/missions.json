@@ -1,0 +1,289 @@
+[
+{
+    "id": "MISSION_SAINT_BENEVOLENCE",
+    "type": "mission_definition",
+    "name": "Benevolence of a Saint",
+    "description": "Get some salt (20 pieces)",
+    "goal": "MGOAL_FIND_ITEM",
+	"item": "salt",
+	"count": 20,
+    "difficulty": 1,
+    "value": 1,
+    "followup": "MISSION_SAINT_BENEVOLENCE", 
+	"origins": [ "ORIGIN_OPENER_NPC" ],
+	"end": { "effect": [
+		{ "u_spawn_item": "copper_coin", "count": 15 }
+		] },
+	"has_generic_rewards": false,
+	"dialogue": {
+      "describe": "Bring me some salt.",
+	  "offer": "I need some salt, for a blessing, but I'm out. Can you get me some?",
+	  "advice": "Boiling some salt water should get you some.",
+      "accepted": "Good.",
+      "rejected": "Someone must do it.",
+      "inquire": "Do you have what I need?",
+      "success": "Good. Here, for your trouble.",
+      "success_lie": "Where is it?",
+      "failure": "Ah, well."
+    }
+  },
+{
+    "id": "MISSION_HOLY_SYMBOL",
+    "type": "mission_definition",
+    "name": "Symbology",
+    "description": "Get holy symbols. (10 handmade holy symbols)",
+    "goal": "MGOAL_FIND_ITEM",
+	"item": "holy_symbol_wood",
+	"count": 10,
+    "difficulty": 1,
+    "value": 1,
+    "followup": "MISSION_HOLY_SYMBOL",
+	"origins": [ "ORIGIN_OPENER_NPC" ],
+	"end": { "effect": [
+		{ "u_spawn_item": "copper_coin", "count": 35 }
+		] },
+	"has_generic_rewards": false,
+	"dialogue": {
+      "describe": "Bring me holy symbols.",
+	  "offer": "I tend to sell holy symbols to passerbys; it helps fund us. I was wondering if you could get me some. I'll give you a portion of the profit.",
+	  "advice": "It just takes some sticks and grass, nothin' to it.",
+      "accepted": "Good.",
+      "rejected": "Someone must do it.",
+      "inquire": "Do you have what I need?",
+      "success": "Good. Here, for your trouble.",
+      "success_lie": "Where are they?",
+      "failure": "Ah, well."
+    }
+  },
+{
+    "id": "MISSION_CLERIC_1",
+    "type": "mission_definition",
+    "name": "Symbology",
+    "description": "Get holy symbols. (10 handmade holy symbols)",
+    "goal": "MGOAL_FIND_ITEM",
+	"item": "holy_symbol_wood",
+	"count": 10,
+    "difficulty": 1,
+    "value": 1,
+    "followup": "MISSION_CLERIC_2",
+	"origins": [ "ORIGIN_OPENER_NPC" ],
+	"end": { "effect": [
+		{ "u_spawn_item": "copper_coin", "count": 35 },
+		{ "u_spawn_item": "gods_and_godesses" }
+		] },
+	"has_generic_rewards": false,
+	"dialogue": {
+      "describe": "Bring me holy symbols.",
+	  "offer": "I tend to sell holy symbols to passerbys; it helps fund us. I was wondering if you could get me some. I'll give you a portion of the profit.",
+	  "advice": "It just takes some sticks and grass, nothin' to it.",
+      "accepted": "Good.",
+      "rejected": "Someone must do it.",
+      "inquire": "Do you have what I need?",
+      "success": "Good. Here, for your trouble.",
+      "success_lie": "Where are they?",
+      "failure": "Ah, well."
+    }
+  },
+{
+    "id": "MISSION_CLERIC_2",
+    "type": "mission_definition",
+    "name": "Beginnings of Divinity",
+    "description": "Craft a runed holy symbol.",
+    "goal": "MGOAL_FIND_ITEM",
+	"item": "runed_holy_symbol",
+	"count": 1,
+    "difficulty": 1,
+    "value": 1,
+    "followup": "MISSION_CLERIC_3",
+	"origins": [ "ORIGIN_OPENER_NPC" ],
+	"start": { "effect": [
+		{ "u_spawn_item": "holy_symbol_wood" },
+                { "u_add_var": "church_member", "type": "dialogue", "context": "mission", "value": "yes" }
+		] },
+	"has_generic_rewards": true,
+	"dialogue": {
+      "describe": "Bring me holy symbols.",
+	  "offer": "Now, I want you to show me what you learned. Craft a runed holy symbol, and bring it to me. You can use the altar in the church if you like.",
+	  "advice": "Just follow the recipe.",
+      "accepted": "Good.",
+      "rejected": "Someone must do it.",
+      "inquire": "Do you have what I need?",
+      "success": "Good. Here, for your trouble.",
+      "success_lie": "Where are they?",
+      "failure": "Ah, well."
+    }
+  },
+{
+    "id": "MISSION_CLERIC_3",
+    "type": "mission_definition",
+    "name": "Beginnings of Divinity Pt. II",
+    "description": "Craft a holy symbol of medicine.",
+    "goal": "MGOAL_FIND_ITEM",
+	"item": "holy_symbol_medicine",
+	"count": 1,
+    "difficulty": 1,
+    "value": 1,
+    "followup": "MISSION_CLERIC_4",
+	"origins": [ "ORIGIN_OPENER_NPC" ],
+	"start": { "effect": [
+		{ "u_spawn_item": "holy_symbol_wood" },
+		{ "u_spawn_item": "divinity_general" }
+		] },
+	"has_generic_rewards": true,
+	"dialogue": {
+      "describe": "Bring me holy symbols.",
+	  "offer": "You have learned quite a bit. Now, make a holy symbol of medicine, and bring me it. You can use the altar in the church if you like.",
+	  "advice": "Just follow the recipe.",
+      "accepted": "Good.",
+      "rejected": "Someone must do it.",
+      "inquire": "Do you have what I need?",
+      "success": "Good. Here, for your trouble.",
+      "success_lie": "Where are they?",
+      "failure": "Ah, well."
+    }
+  },
+{
+    "id": "MISSION_CLERIC_4",
+    "type": "mission_definition",
+    "name": "Beginnings of Divinity Pt. III",
+    "description": "Craft three holy symbols of medicine.",
+    "goal": "MGOAL_FIND_ITEM",
+	"item": "holy_symbol_medicine",
+	"count": 3,
+    "difficulty": 1,
+    "value": 1,
+    "followup": "MISSION_CLERIC_5",
+	"origins": [ "ORIGIN_OPENER_NPC" ],
+	"start": { "effect": [
+		{ "u_spawn_item": "holy_symbol_wood", "count": 3 }
+		] },
+	"has_generic_rewards": true,
+	"dialogue": {
+      "describe": "Bring me holy symbols.",
+	  "offer": "You've done well in your studies. Make three holy symbols of medicine, and give them to me. You can use the altar in the church if you like.",
+	  "advice": "Just follow the recipe.",
+      "accepted": "Good.",
+      "rejected": "Someone must do it.",
+      "inquire": "Do you have what I need?",
+      "success": "Good. Here, for your trouble.",
+      "success_lie": "Where are they?",
+      "failure": "Ah, well."
+    }
+  },
+{
+    "id": "MISSION_CLERIC_5",
+    "type": "mission_definition",
+    "name": "Denominations: Life",
+    "description": "Craft a holy symbol of mercy.",
+    "goal": "MGOAL_FIND_ITEM",
+	"item": "holy_symbol_spare_dying",
+	"count": 3,
+    "difficulty": 1,
+    "value": 1,
+    "followup": "MISSION_CLERIC_6",
+	"origins": [ "ORIGIN_OPENER_NPC" ],
+	"start": { "effect": [
+		{ "u_spawn_item": "holy_symbol_wood" },              
+		{ "u_spawn_item": "divinity_life" }
+		] },
+	"has_generic_rewards": true,
+	"dialogue": {
+      "describe": "Bring me holy symbols.",
+	  "offer": "Now, I'm going to teach you about specific denominations. Take this book, and make a holy symbol of mercy. Give it to me when you're done.",
+	  "advice": "Just follow the recipe.",
+      "accepted": "Good.",
+      "rejected": "Someone must do it.",
+      "inquire": "Do you have what I need?",
+      "success": "Good. Here, for your trouble.",
+      "success_lie": "Where are they?",
+      "failure": "Ah, well."
+    }
+  },
+{
+    "id": "MISSION_CLERIC_6",
+    "type": "mission_definition",
+    "name": "Denominations: War",
+    "description": "Craft a holy symbol of cleaving.",
+    "goal": "MGOAL_FIND_ITEM",
+	"item": "holy_symbol_cleave",
+	"count": 3,
+    "difficulty": 1,
+    "value": 1,
+    "followup": "MISSION_CLERIC_7",
+	"origins": [ "ORIGIN_OPENER_NPC" ],
+	"start": { "effect": [
+		{ "u_spawn_item": "holy_symbol_wood" },              
+		{ "u_spawn_item": "divinity_war" }
+		] },
+	"has_generic_rewards": true,
+	"dialogue": {
+      "describe": "Bring me holy symbols.",
+	  "offer": "We're continuing our denominal studies. Take this book, and make a holy symbol of cleaving. Give it to me when you're done.",
+	  "advice": "Just follow the recipe.",
+      "accepted": "Good.",
+      "rejected": "Someone must do it.",
+      "inquire": "Do you have what I need?",
+      "success": "Good. Here, for your trouble.",
+      "success_lie": "Where are they?",
+      "failure": "Ah, well."
+    }
+  },
+{
+    "id": "MISSION_CLERIC_7",
+    "type": "mission_definition",
+    "name": "Denominations: Light",
+    "description": "Craft a holy symbol of flame.",
+    "goal": "MGOAL_FIND_ITEM",
+	"item": "holy_symbol_sacred_flame",
+	"count": 3,
+    "difficulty": 1,
+    "value": 1,
+    "followup": "MISSION_CLERIC_8",
+	"origins": [ "ORIGIN_OPENER_NPC" ],
+	"start": { "effect": [
+		{ "u_spawn_item": "holy_symbol_wood" },              
+		{ "u_spawn_item": "divinity_light" }
+		] },
+	"has_generic_rewards": true,
+	"dialogue": {
+      "describe": "Bring me holy symbols.",
+	  "offer": "We're continuing our denominal studies. Take this book, and make a holy symbol of flame. Give it to me when you're done.",
+	  "advice": "Just follow the recipe.",
+      "accepted": "Good.",
+      "rejected": "Someone must do it.",
+      "inquire": "Do you have what I need?",
+      "success": "Good. Here, for your trouble.",
+      "success_lie": "Where are they?",
+      "failure": "Ah, well."
+    }
+  },
+{
+    "id": "MISSION_CLERIC_8",
+    "type": "mission_definition",
+    "name": "Denominations: Twilight",
+    "description": "Craft a holy symbol of starlight.",
+    "goal": "MGOAL_FIND_ITEM",
+	"item": "holy_symbol_star_beam",
+	"count": 3,
+    "difficulty": 1,
+    "value": 1,
+    "followup": "MISSION_HOLY_SYMBOL",
+	"origins": [ "ORIGIN_OPENER_NPC" ],
+	"start": { "effect": [
+		{ "u_spawn_item": "holy_symbol_wood" },              
+		{ "u_spawn_item": "divinity_twilight" }
+		] },
+	"has_generic_rewards": true,
+	"dialogue": {
+      "describe": "Bring me holy symbols.",
+	  "offer": "We're continuing our denominal studies. Take this book, and make a holy symbol of cleaving. Give it to me when you're done.",
+	  "advice": "Just follow the recipe.",
+      "accepted": "Good.",
+      "rejected": "Someone must do it.",
+      "inquire": "Do you have what I need?",
+      "success": "Good. Here, for your trouble.",
+      "success_lie": "Where are they?",
+      "failure": "Ah, well."
+    }
+  }
+]

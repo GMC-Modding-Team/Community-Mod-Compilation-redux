@@ -1,0 +1,36 @@
+[
+  {
+    "type": "talk_topic",
+    "id": "TALK_INFIRMARY_HEAD",
+    "dynamic_line": [ "Hello." ],
+    "responses": [
+    { "text": "What is this place?",
+      "topic": "TALK_INFO"
+		}
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_INFO",
+    "dynamic_line": [ "This is an clinic, and I run it. Do you need something?" ],
+    "responses": [
+    { "text": "No, thank you.",
+      "topic": "TALK_DONE"
+		},
+   { "text": "Actually, I need medical attention.",
+      "topic": "TALK_HEAL"
+		}
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_HEAL",
+    "dynamic_line": [ "Okay, I'll have a medic treat ya. One moment..." ],
+    "responses": [
+    { "text": "Okay.",
+      "effect": "give_aid",
+      "topic": "TALK_DONE"
+		}
+    ]
+  }
+]

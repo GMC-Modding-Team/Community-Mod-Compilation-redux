@@ -1,0 +1,64 @@
+[
+{
+    "type": "talk_topic",
+    "id": "TALK_NPC_CLERIC_SCROLLKEEPER",
+    "dynamic_line": [ "Hello there. Can I help you with anything?" ],
+    "responses": [
+                {
+		"text": "Who are you?",
+		"topic": "TALK_NPC_CLERIC_SCROLLKEEPER_WHO"
+		},
+                {
+		"text": "May I purchase some of your texts?",
+                "effect": "start_trade",
+		"topic": "TALK_SOLD",                
+                "condition": { "u_has_var": "church_member", "type": "dialogue", "context": "mission", "value": "yes" }
+		},
+		{
+		"text": "Goodbye.",
+		"topic": "TALK_DONE"
+		}
+    ]
+  },
+{
+    "type": "talk_topic",
+    "id": "TALK_NPC_CLERIC_SCROLLKEEPER_WHO",
+    "dynamic_line": [ "I'm the scribe of this church. I keep our books intact, handle artifacts, you know." ],
+    "responses": [
+                {
+		"text": "What about those scrolls over there. Do you think I could have any?",
+		"topic": "TALK_NPC_CLERIC_SCROLLKEEPER_SELL"
+		},
+		{
+		"text": "Thanks for the info.",
+		"topic": "TALK_DONE"
+		}
+    ]
+  },
+{
+    "type": "talk_topic",
+    "id": "TALK_NPC_CLERIC_SCROLLKEEPER_SELL",
+    "dynamic_line": [ "Well; if you are a member of the church, I'd lend you some." ],
+    "responses": [
+                {
+		"text": "How do you propose I join?",
+		"topic": "TALK_NPC_CLERIC_SCROLLKEEPER_JOIN"
+		},
+		{
+		"text": "Thanks.",
+		"topic": "TALK_DONE"
+		}
+    ]
+  },
+{
+    "type": "talk_topic",
+    "id": "TALK_NPC_CLERIC_SCROLLKEEPER_JOIN",
+    "dynamic_line": [ "Why don't you go see the priest. They might have some jobs for you to do, and you can get in that way." ],
+    "responses": [
+		{
+		"text": "Thanks.",
+		"topic": "TALK_DONE"
+		}
+    ]
+  } 
+]

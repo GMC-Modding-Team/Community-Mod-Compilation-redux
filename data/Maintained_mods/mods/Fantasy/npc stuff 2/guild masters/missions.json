@@ -1,0 +1,29 @@
+[
+{
+    "id": "MISSION_JOIN_GUILD",    
+    "type": "mission_definition",
+    "name": "Membership",
+    "description": "Provide the entry fee to the guild master. (25 silver)",
+    "goal": "MGOAL_FIND_ITEM",
+	"item": "silver_coin",
+	"count": 25,
+    "difficulty": 1,
+    "value": 1,
+	"origins": [ "ORIGIN_OPENER_NPC" ],
+        "end": { "effect": [
+		{ "npc_add_var": "u_joined_guild_chapter", "type": "general", "context": "mission", "value": "yes" }
+		] },
+	"has_generic_rewards": false,
+	"dialogue": {
+      "describe": "Go get some paper.",
+	  "offer": "I need more paper. Bring me some, I'll pay you for your troubles.",
+	  "advice": "Just buy paper, and bring it here.",
+      "accepted": "Good.",
+      "rejected": "Someone must do it.",
+      "inquire": "Do you have what I need?",
+      "success": "Thank you. Just sign here.",
+      "success_lie": "Where's the money?",
+      "failure": "Ah well."
+    }
+  } 
+]

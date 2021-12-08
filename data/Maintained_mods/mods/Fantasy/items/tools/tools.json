@@ -1,0 +1,41 @@
+[
+{
+    "id": "lantern",
+    "type": "TOOL",
+    "name": { "str": "lantern", "str_pl": "lanterns" },
+    "description": "This is a small lantern, with a central wick saturated with oil. It can burn for quite some time, though is unlit at the moment.",
+    "//": "Is smaller, gives off more light, and weighs less than an oil lamp, but has a lower fuel bank and is more expensive",
+    "weight": "1000 g",
+    "volume": "650 ml",
+    "price": 3000,
+    "to_hit": 2,
+    "bashing": 1,
+    "material": [ "glass", "iron" ],
+    "symbol": ";",
+    "color": "yellow",
+    "ammo": [ "lamp_oil" ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "watertight": true, "ammo_restriction": { "lamp_oil": 500 } } ],
+    "charges_per_use": 1,
+    "use_action": {
+      "target": "lantern_on",
+      "msg": "You strike the wick.",
+      "active": true,
+      "need_fire": 1,
+      "need_charges": 1,
+      "need_charges_msg": "The lamp is empty.",
+      "type": "transform"
+    },
+    "flags": [ "ALLOWS_REMOTE_USE" ]
+  },
+ {
+    "id": "lantern_on",
+    "copy-from": "lantern",
+    "type": "TOOL",
+    "name": { "str": "burning lantern", "str_pl": "burning lanterns" },
+    "description": "This is a small lantern, with a central wick saturated with oil. It can burn for quite some time, and the wick is lit.",
+    "turns_per_charge": 60,
+    "revert_to": "lantern",
+    "use_action": { "target": "lantern", "msg": "The lantern is extinguished.", "menu_text": "Blow out", "type": "transform" },
+    "flags": [ "LIGHT_30", "TRADER_AVOID", "ALLOWS_REMOTE_USE" ]
+  } 
+]

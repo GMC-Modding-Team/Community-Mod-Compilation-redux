@@ -1,0 +1,91 @@
+[
+  {
+    "id": "mon_mtc_zombie",
+    "type": "MONSTER",
+    "name": { "str": "zombie" },
+    "description": "A ressurected and seemingly bewitched rotten body of a long forgotten decease. Mindless as it looks, it will chase down living things on sight.",
+    "default_faction": "zombie",
+    "bodytype": "human",
+	"categories": [ "MONSTERS" ],
+    "species": [ "UNDEAD", "HUMAN" ],
+    "volume": "62500 ml",
+    "weight": "81500 g",
+    "hp": 80,
+    "speed": 70,
+    "material": [ "flesh" ],
+    "symbol": "Z",
+    "color": "light_green",
+    "aggression": 100,
+    "morale": 100,
+    "melee_skill": 4,
+    "melee_dice": 1,
+    "melee_dice_sides": 4,
+    "melee_damage": [ { "amount": 2, "damage_type": "cut" }, { "amount": 4, "damage_type": "bash" } ],
+    "vision_night": 10,
+    "harvest": "zombie",
+    "flags": [
+      "SEES",
+      "HEARS",
+      "STUMBLES",
+      "BASHES",
+      "GROUP_BASH",
+      "NO_BREATHE",
+      "PUSH_MON",
+      "FILTHY",
+	  "GRABS",
+	  "CLIMBS"
+    ]
+  },
+  {
+    "id": "mon_mtc_zombie_warrior_cut",
+    "copy-from": "mon_mtc_zombie",
+    "type": "MONSTER",
+    "name": { "str": "zombie warrior" },
+    "description": "A ressurected and seemingly bewitched rotten body of a long forgotten decease. Mindless as it looks, it somehow wields an edged weapon. Worst, it does know how to swing it.",
+    "melee_skill": 6,
+    "melee_damage": [ { "amount": 8, "damage_type": "cut" }, { "amount": 1, "damage_type": "bash" } ],
+    "death_drops": {
+      "subtype": "distribution",
+      "items": [
+        { "item": "longsword_rusted", "prob": 20 },
+        { "item": "machete_rusted", "prob": 20 },
+        { "item": "cavalry_sabre_rusted", "prob": 20 },
+        { "item": "kris_rusted", "prob": 20 },
+        { "group": "shields_all", "prob": 20, "damage": [ 2, 3 ] },
+        { "item": "scimitar_rusted", "prob": 20 }
+      ]
+    },
+    "delete": {
+      "flags": [ "GRABS" ]
+    }
+  },
+  {
+    "id": "mon_mtc_zombie_warrior_bash",
+    "copy-from": "mon_mtc_zombie",
+    "type": "MONSTER",
+    "name": { "str": "zombie warrior" },
+    "description": "A ressurected and seemingly bewitched rotten body of a long forgotten decease. Mindless as it looks, it somehow wields a blunt weapon. Worst, it does know how to swing it.",
+    "melee_skill": 4,
+    "melee_damage": [ { "amount": 10, "damage_type": "bash" } ],
+    "death_drops": {
+      "subtype": "distribution",
+      "items": [
+        { "item": "q_staff_moldy", "prob": 30 },
+        { "group": "shields_all", "prob": 20, "damage": [ 2, 3 ] },
+        { "item": "cudgel_moldy", "prob": 40 },
+        { "item": "bokken_moldy", "prob": 30 }
+      ]
+    },
+    "delete": {
+      "flags": [ "GRABS" ]
+    }
+  },
+  {
+    "id": "mon_mtc_goblin_zombie",
+    "//": "Special undead, so goblin necromancers can control their summons.",
+    "copy-from": "mon_mtc_zombie",
+    "type": "MONSTER",
+    "name": { "str": "zombie" },
+    "default_faction": "goblinoid"
+  }
+]

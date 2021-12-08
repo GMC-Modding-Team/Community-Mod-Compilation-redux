@@ -1,0 +1,257 @@
+[
+{
+    "//": "Nested group for regular caves.",
+    "type": "mapgen",
+    "method": "json",
+    "nested_mapgen_id": "cave_nested",
+    "object": {
+      "mapgensize": [ 8, 8 ],
+      "place_nested": [
+        { "chunks": [ [ "pillar", 75 ], [ "cave_none", 75 ], [ "giant_mushrooms", 65 ], [ "underground_pond", 45 ], [ "bats", 20 ], [ "rats", 20 ], [ "cave_plant_patch", 20 ], [ "goblin_camp", 10 ], [ "snails", 10 ], [ "ore_veins", 5 ] ], "x": 0, "y": 0 }
+      ]
+    }
+  },
+{
+    "type": "mapgen",
+    "method": "json",
+    "nested_mapgen_id": "underground_pond",
+    "object": {
+      "mapgensize": [ 8, 8 ],
+      "rows": [
+        " ~~~~~~ ",
+        "~~~~~~~~",
+        "~~~~~~~~",
+        "~~~~~~~~",
+        "~~~~~~~~",
+        "~~~~~~~~",
+        " ~~~~~~ ",
+        "        "
+      ],
+      "palettes": [ "caves" ]
+    }
+    },
+{
+    "type": "mapgen",
+    "method": "json",
+    "nested_mapgen_id": "underground_pond",
+    "//": "With deep water",
+    "object": {
+      "mapgensize": [ 8, 8 ],
+      "rows": [
+        " ~~~~~~ ",
+        "~~////~~",
+        "~//////~",
+        "~//////~",
+        "~//////~",
+        "~~////~~",
+        " ~~~~~~ ",
+        "        "
+      ],
+      "palettes": [ "caves" ],
+      "terrain": { "/": "t_water_dp_underground" },
+      "place_monster": [
+        { "monster": "mon_fish_cavefish", "x": [ 0, 4 ], "y": [ 0, 4 ], "repeat": [ 1, 2 ] },
+        { "monster": "mon_fish_small_cavefish", "x": [ 0, 4 ], "y": [ 0, 4 ], "chance": 85, "repeat": [ 1, 3 ] },
+        { "monster": "mon_fish_cave_grouper", "x": [ 0, 4 ], "y": [ 0, 4 ], "chance": 65, "repeat": [ 1, 3 ] },
+        { "monster": "mon_fish_cave_hunter", "x": [ 0, 4 ], "y": [ 0, 4 ], "chance": 45, "repeat": [ 1, 2 ] }
+      ]
+    }
+    },
+{
+    "type": "mapgen",
+    "method": "json",
+    "nested_mapgen_id": "bats",
+    "object": {
+      "mapgensize": [ 8, 8 ],
+      "rows": [
+        "   x    ",
+        "        ",
+        "    x   ",
+        " x      ",
+        "     x  ",
+        "   x    ",
+        "     x  ",
+        "        "
+      ],
+      "palettes": [ "caves" ],
+      "monster": { "x": { "monster": "mon_bat", "chance": 85 } }
+    }
+    },
+{
+    "type": "mapgen",
+    "method": "json",
+    "nested_mapgen_id": "rats",
+    "object": {
+      "mapgensize": [ 8, 8 ],
+      "rows": [
+        "   x    ",
+        "        ",
+        "    x   ",
+        " x      ",
+        "     x  ",
+        "   x    ",
+        "     x  ",
+        "        "
+      ],
+      "palettes": [ "caves" ],
+      "monster": { "x": { "monster": "mon_black_rat", "chance": 85 } }
+    }
+    },
+{
+    "type": "mapgen",
+    "method": "json",
+    "nested_mapgen_id": "snails",
+    "object": {
+      "mapgensize": [ 8, 8 ],
+      "rows": [
+        "   x    ",
+        "        ",
+        "    x   ",
+        " x      ",
+        "     x  ",
+        "   x    ",
+        "     x  ",
+        "        "
+      ],
+      "palettes": [ "caves" ],
+      "monster": { "x": { "monster": "mon_snail_giant", "chance": 85 } }
+    }
+    },
+{
+    "type": "mapgen",
+    "method": "json",
+    "nested_mapgen_id": "goblin_camp",
+    "object": {
+      "mapgensize": [ 8, 8 ],
+      "rows": [
+        "        ",
+        "   x    ",
+        "        ",
+        " x 0    ",
+        "    x   ",
+        "        ",
+        "        ",
+        "        "
+      ],
+      "palettes": [ "caves" ],
+      "furniture": { "0": "f_firering", "x": "f_logstool" },
+      "monster": { "x": { "monster": "mon_mtc_goblin", "chance": 70 } },
+      "items": {
+      "0": { "item": "oven", "chance": 100, "repeat": [ 3, 5 ] }
+    }
+    }
+    },
+{
+    "type": "mapgen",
+    "method": "json",
+    "nested_mapgen_id": "goblin_camp",
+    "//": "With hobgoblins",
+    "object": {
+      "mapgensize": [ 8, 8 ],
+      "rows": [
+        "        ",
+        "   x    ",
+        "        ",
+        " x 0    ",
+        "    x   ",
+        "        ",
+        "        ",
+        "        "
+      ],
+      "palettes": [ "caves" ],
+      "furniture": { "0": "f_firering", "x": "f_logstool" },
+      "monster": { "x": { "monster": "mon_mtc_hobgoblin", "chance": 70 } },
+      "items": {
+      "0": { "item": "oven", "chance": 100, "repeat": [ 3, 5 ] }
+    }
+    }
+    },
+{
+    "type": "mapgen",
+    "method": "json",
+    "nested_mapgen_id": "goblin_camp",
+    "//": "vacant",
+    "object": {
+      "mapgensize": [ 8, 8 ],
+      "rows": [
+        "        ",
+        "   x    ",
+        "        ",
+        " x 0    ",
+        "    x   ",
+        "        ",
+        "        ",
+        "        "
+      ],
+      "palettes": [ "caves" ],
+      "furniture": { "0": "f_firering", "x": "f_logstool" },
+      "items": {
+      "0": { "item": "oven", "chance": 20, "repeat": [ 1, 2 ] }
+    }
+    }
+    },
+{
+    "type": "mapgen",
+    "method": "json",
+    "nested_mapgen_id": "cave_plant_patch",
+    "//": "Fire flowers.",
+    "object": {
+      "mapgensize": [ 8, 8 ],
+      "rows": [
+        "  0 0   ",
+        "0     0 ",
+        "        ",
+        "   ~    ",
+        "        ",
+        "        ",
+        "0      0",
+        "  0  0  "
+      ],
+      "palettes": [ "caves" ],
+      "furniture": { "0": "f_fire_flower" },
+      "terrain": { "~": "t_lava" }
+    }
+    },
+{
+    "type": "mapgen",
+    "method": "json",
+    "nested_mapgen_id": "cave_plant_patch",
+    "//": "Ash creep.",
+    "object": {
+      "mapgensize": [ 8, 8 ],
+      "rows": [
+        "  0 0   ",
+        "0     0 ",
+        "        ",
+        "   ~    ",
+        "        ",
+        "        ",
+        "0      0",
+        "  0  0  "
+      ],
+      "palettes": [ "caves" ],
+      "furniture": { "0": "f_ash_vine" },
+      "terrain": { "~": "t_lava" }
+    }
+    },
+{
+    "type": "mapgen",
+    "method": "json",
+    "nested_mapgen_id": "giant_mushrooms",
+    "object": {
+      "mapgensize": [ 8, 8 ],
+      "rows": [
+        "      0 ",
+        "0  0    ",
+        "        ",
+        "     0  ",
+        "0       ",
+        "   0    ",
+        "      0 ",
+        " 0      "
+      ],
+      "palettes": [ "caves" ],
+      "terrain": { "0": "t_redcap_mushroom" }
+    }
+    }
+]

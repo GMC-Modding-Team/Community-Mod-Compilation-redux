@@ -1,0 +1,147 @@
+[
+ {
+    "id": "mon_shyleggah",
+     "type": "MONSTER",
+    "name": { "str": "shyleggah" },
+    "description": "An abominable, fleshy arachnid, which moves upot upon five legs. A whip-like tentacle juts from the top. Gazing upon it fills you with dread.",
+    "default_faction": "demon",
+    "bodytype": "spider",
+    "species": [ "DEMON" ],
+    "categories": [ "MONSTERS" ],
+    "diff": 2,
+    "volume": "30 L",
+    "weight": "4075 g",
+    "hp": 45,
+    "speed": 150,
+    "material": [ "iflesh" ],
+    "symbol": "s",
+    "color": "red",
+    "aggression": 100,
+    "morale": 100,
+    "melee_skill": 4,
+    "melee_dice": 2,
+    "melee_dice_sides": 6,
+    "melee_cut": 4,
+    "dodge": 3,
+    "vision_day": 20,
+    "vision_night": 10,
+    "harvest": "mutant_mammal_small_nofur",
+    "special_attacks": [ { "id": "scratch", "damage_max_instance": [ { "damage_type": "cut", "amount": 12, "armor_multiplier": 0.6 } ] } ],
+    "flags": [ "SMELLS", "SEES", "HEARS", "WARM", "PATH_AVOID_DANGER_2", "PRIORITIZE_TARGETS", "HARDTOSHOOT" ]
+  },
+  {
+    "id": "mon_flesh_egg",
+    "type": "MONSTER",
+    "name": { "str": "flesh egg" },
+    "description": "A large, white egg; seemingly composed of flesh. Every so often, a spider-like creature emerges from it. A snesory organ of some sort grows from the back. Gazing upon it fills you with dread.",
+    "default_faction": "demon",
+    "species": [ "DEMON" ],
+    "categories": [ "MONSTERS" ],
+    "volume": "62500 ml",
+    "weight": "81500 g",
+    "hp": 80,
+    "speed": 0,
+    "material": [ "flesh" ],
+    "symbol": "0",
+    "color": "white",
+    "aggression": 100,
+    "morale": 100,
+    "melee_cut": 0,
+    "vision_night": 20,
+    "harvest": "mutant_mammal_small_nofur",
+      "special_attacks": [
+        {
+          "type": "spell",
+          "spell_data": { "id": "flesh_egg_spawn" },
+          "cooldown": 20,
+          "monster_message": "<color_red>%1$s hatches...</color>"
+        }
+      ],
+    "flags": [ "IMMOBILE", "WARM" ]
+  },
+{
+    "id": "mon_quellagna",
+    "type": "MONSTER",
+    "name": { "str": "quellagn'a" },
+    "description": "An athropromorphic fish, seemingly the size of a man. It emits chittering sounds, which it seems to communicate with.",
+    "default_faction": "demon",
+    "bodytype": "crab",
+    "species": [ "DEMON" ],
+    "categories": [ "MONSTERS" ],
+    "volume": "62500 ml",
+    "weight": "81500 g",
+    "hp": 80,
+    "speed": 85,
+    "material": [ "flesh" ],
+    "symbol": "Y",
+    "color": "magenta",
+    "aggression": 4,
+    "morale": 100,
+    "melee_skill": 3,
+    "melee_dice": 2,
+    "melee_dice_sides": 6,
+    "melee_cut": 7,
+    "dodge": 2,
+    "armor_bash": 5,
+    "armor_cut": 9,
+    "armor_bullet": 7,
+    "vision_day": 30,
+    "vision_night": 15,
+    "harvest": "shellfish",
+    "special_attacks": [ [ "SHRIEK_ALERT", 6 ] ],
+    "anger_triggers": [ "PLAYER_CLOSE", "FRIEND_DIED", "FRIEND_ATTACKED", "HURT" ],
+    "fear_triggers": [ "FIRE" ],
+    "flags": [ "SMELLS", "HEARS", "SEES", "SWIMS", "GRABS", "ARTHROPOD_BLOOD", "PATH_AVOID_DANGER_2" ]
+  },
+{
+    "id": "mon_quellagna_fisher",
+    "copy-from": "mon_quellagna",
+    "type": "MONSTER",
+    "name": { "str": "quellagn'a fisher" },
+    "description": "An athropromorphic fish, seemingly the size of a man. It emits chittering sounds, which it seems to communicate with. This one holds a wooden spear, which bears the remains of a fish.",
+    "melee_skill": 5,
+    "melee_dice": 4,
+    "melee_dice_sides": 6,
+    "melee_cut": 9,
+    "dodge": 3,
+    "death_drops": {
+      "subtype": "collection",
+      "items": [
+        { "item": "pointy_stick", "prob": 80 }
+      ]
+    }
+  },
+{
+    "id": "mon_quellagna_shaman",
+    "copy-from": "mon_quellagna",
+    "type": "MONSTER",
+    "name": { "str": "quellagn'a shaman" },
+    "description": "An athropromorphic fish, seemingly the size of a man. It emits chittering sounds, which it seems to communicate with. It seems to have knowledge about arcane spells, and it'll not hesitate to cast them on you or others.",
+    "melee_skill": 3,
+    "melee_dice": 2,
+    "melee_dice_sides": 6,
+    "melee_cut": 7,
+    "dodge": 2,
+    "armor_bash": 5,
+    "armor_cut": 9,
+    "armor_bullet": 7,
+    "death_drops": {
+      "subtype": "collection",
+      "items": [
+        { "item": "spell_scroll_hex", "prob": 20 },
+        { "item": "spell_scroll_bloodshot", "prob": 20 }
+      ]
+    },
+    "extend": {
+      "special_attacks": [
+        {
+          "type": "spell",
+          "spell_data": { "id": "mon_quellagna_shaman_target" },
+          "cooldown": 30,
+          "monster_message": "<color_blue>%1$s performs a hand gesture...</color>"
+        }
+      ],
+      "flags": [ "HIT_AND_RUN" ]
+    }
+  }
+]

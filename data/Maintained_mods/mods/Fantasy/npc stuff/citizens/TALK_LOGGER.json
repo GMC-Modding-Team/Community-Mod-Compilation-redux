@@ -1,0 +1,63 @@
+[
+{
+    "type": "talk_topic",
+    "id": "TALK_NPC_LOGGER",
+    "dynamic_line": [ "Hello there. Can I help you with anything?" ],
+    "responses": [
+                {
+		"text": "Who are you?",
+		"topic": "TALK_NPC_LOGGER_WHO",
+                "effect": { "npc_add_var": "known", "type": "dialogue", "context": "npc_logger", "value": "yes" }
+		},
+                {
+		"text": "Are you willing to buy anything at the moment?",
+		"topic": "TALK_NPC_LOGGER_MASSTRADE",
+                "condition": { "npc_has_var": "known", "type": "dialogue", "context": "npc_logger", "value": "yes" }
+		},
+		{
+		"text": "No.",
+		"topic": "TALK_DONE"
+		}
+    ]
+  },
+{
+    "type": "talk_topic",
+    "id": "TALK_NPC_LOGGER_WHO",
+    "dynamic_line": [ "Oh, I'm just a logger. It's a rather profitable industry; everyone needs firewood. We're always in need of help these days, though." ],
+    "responses": [
+                {
+		"text": "You think I could help?",
+		"topic": "TALK_NPC_LOGGER_HELP"
+		},
+		{
+		"text": "Thanks for the info.",
+		"topic": "TALK_DONE"
+		}
+    ]
+  },
+{
+    "type": "talk_topic",
+    "id": "TALK_NPC_LOGGER_HELP",
+    "dynamic_line": [ "Tell ya what; if you bring me any logs, I'll pay you a fair price for them. Sound good to you?" ],
+    "responses": [
+		{
+		"text": "Thank you.",
+		"topic": "TALK_DONE"
+		}
+    ]
+  },
+{
+    "type": "talk_topic",
+    "id": "TALK_NPC_LOGGER_MASSTRADE",
+    "dynamic_line": "Yes, I'm willing to buy. What do you have?",
+    "repeat_responses": {
+      "for_item": [
+        "log"
+      ],
+      "response": { "text": "I have <topic_item>.", "topic": "TALK_DELIVER_ASK" }
+    },
+    "responses": [
+      { "text": "I have nothing.  I'd best get going.", "topic": "TALK_DONE" }
+    ]
+  }    
+]

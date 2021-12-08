@@ -1,0 +1,102 @@
+[
+{
+    "id": "BGSS_ANTHRO_STORY1",
+    "type": "talk_topic",
+    "dynamic_line": "I was an anthropologist, studying lost civilizations and whatnot, traveling the world for my work.",
+    "responses": [
+      { "text": "<done_conversation_section>", "topic": "TALK_FRIEND" },
+      { "text": "Go on.", "topic": "BGSS_ANTHRO_MIDDLE1" },
+      { "text": "<end_talking>", "topic": "TALK_DONE" }
+    ]
+  },
+{
+    "id": "BGSS_ANTHRO_MIDDLE1",
+    "type": "talk_topic",
+    "dynamic_line": "Eventually, funds ran short. Our sponsors dropped the bottom out on us, those <name_b>. I had to quit, though I never lost my research papers.",
+    "responses": [
+      { "text": "<done_conversation_section>", "topic": "TALK_FRIEND" },
+      { "text": "Go on.", "topic": "BGSS_ANTHRO_END1", "condition": { "not": { "npc_has_var": "ANTHRO_MISSION_1", "type": "general", "context": "mission", "value": "yes" } } },
+      { "text": "<end_talking>", "topic": "TALK_DONE" }
+    ]
+  },
+{
+    "id": "BGSS_ANTHRO_END1",
+    "type": "talk_topic",
+    "dynamic_line": "Say, I never finished them. Maps of old tombs, ruins, whatnot. Would you help me? I think we could make great discoveries together, with your spunk and my knowledge, we'd be unstopable!",
+    "responses": [
+      { "text": "No, thanks.", "topic": "TALK_FRIEND" },
+      { "text": "Let's do it.", "topic": "TALK_DONE",
+        "effect": { "add_mission": "MISSION_FIND_DIGSITE" } }
+    ]
+  },
+{
+    "id": "BGSS_ANTHRO_STORY2",
+    "type": "talk_topic",
+    "dynamic_line": "I was an anthropologist, studying lost civilizations and whatnot, traveling the world for my work.",
+    "responses": [
+      { "text": "<done_conversation_section>", "topic": "TALK_FRIEND" },
+      { "text": "Go on.", "topic": "BGSS_ANTHRO_MIDDLE2" },
+      { "text": "<end_talking>", "topic": "TALK_DONE" }
+    ]
+  },
+{
+    "id": "BGSS_ANTHRO_MIDDLE2",
+    "type": "talk_topic",
+    "dynamic_line": "Eventually, funds ran short. Our sponsors dropped the bottom out on us, those <name_b>. I had to quit, and I retired.",
+    "responses": [
+      { "text": "<done_conversation_section>", "topic": "TALK_FRIEND" },
+      { "text": "<end_talking>", "topic": "TALK_DONE" }
+    ]
+  },
+{
+    "id": "TALK_FRIEND",
+    "type": "talk_topic",
+    "responses": [
+      { "text": "Where to now?", "topic": "ANTHRO_MISSION", "condition": { "npc_has_var": "ANTHRO_MISSION_1", "type": "general", "context": "mission", "value": "yes" } }
+    ]
+  },
+{
+    "id": "TALK_FRIEND",
+    "type": "talk_topic",
+    "responses": [
+      { "text": "Where to now?", "topic": "ANTHRO_MISSION2", "condition": { "npc_has_var": "ANTHRO_MISSION_2", "type": "general", "context": "mission", "value": "yes" } }
+    ]
+  },
+{
+    "id": "TALK_FRIEND",
+    "type": "talk_topic",
+    "responses": [
+      { "text": "What now?", "topic": "ANTHRO_MISSION3", "condition": { "npc_has_var": "ANTHRO_MISSION_3", "type": "general", "context": "mission", "value": "yes" } }
+    ]
+  },
+{
+    "id": "ANTHRO_MISSION",
+    "type": "talk_topic",
+    "dynamic_line": "Now we'll have to fight our way to the center of town, that's where we began excavations. You ready?",
+    "responses": [
+      { "text": "No, thanks.", "topic": "TALK_FRIEND" },
+      { "text": "Let's do it.", "topic": "TALK_DONE",
+        "effect": { "add_mission": "MISSION_FIND_TOWN_CENTER" } }
+    ]
+  },
+{
+    "id": "ANTHRO_MISSION2",
+    "type": "talk_topic",
+    "dynamic_line": "I told some buddies of mine about this, and they should be here soon. They're well armed and trained, a big help to us. I'll hang back, and make sure nothing happens to our camp. You ready?",
+    "responses": [
+      { "text": "No, thanks.", "topic": "TALK_FRIEND" },
+      { "text": "Let's do it.", "topic": "TALK_DONE",
+        "effect": { "add_mission": "MISSION_RECRUIT_MERCS" } }
+    ]
+  },
+{
+    "id": "ANTHRO_MISSION3",
+    "type": "talk_topic",
+    "dynamic_line": "Now, we comb out the caves and kick some ass. Ready?",
+    "responses": [
+      { "text": "No, thanks.", "topic": "TALK_FRIEND" },
+      { "text": "Let's do it.", "topic": "TALK_DONE",
+        "effect": { "add_mission": "MISSION_DESTROY_CAMP" } }
+    ]
+  }
+]

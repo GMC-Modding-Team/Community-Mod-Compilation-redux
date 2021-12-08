@@ -1,0 +1,104 @@
+[
+  {
+    "type": "talk_topic",
+    "id": "TALK_GAMBLER",
+    "dynamic_line": {
+      "u_has_var": "talked_to_npc",
+      "type": "dialogue",
+      "context": "npc",
+      "value": "yes",
+      "no": "Why, hello there...",
+      "yes": "Greetings."
+    },
+    "responses": [
+      {
+        "text": "Hello.",
+        "topic": "TALK_GAMBLER_INTRO",
+        "effect": { "u_add_var": "talked_to_npc", "type": "dialogue", "context": "npc", "value": "yes" }
+      },
+      { "text": "Goodbye.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_GAMBLER_INTRO",
+    "dynamic_line": "Say, ye looks like ya got some coin on ya. Feel like playn' a little game?",
+    "responses": [
+      { "text": "Yes, actually. What are the terms?", "topic": "TALK_GAME" },
+      { "text": "I'm sorry, I gotta go.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_GAME",
+    "dynamic_line": "Tell ya what, I roll this dice. On a 10 or higher, ya win. Whataya say?",
+    "responses": [
+      { "text": "How much to bet?", "topic": "TALK_BET" },
+      { "text": "No, perhaps not.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_BET",
+    "dynamic_line": "Hmm... lets say, 5 copper.",
+    "responses": [
+      { "text": "No, thank you.", "topic": "TALK_NONE" },
+      { "text": "How about a silver?",
+        "effect": [ { "u_add_var": "gamble_100", "type": "dialogue", "context": "npc", "value": "yes" }, { "u_sell_item": "silver_coin", "count": 1 } ],
+        "topic": "TALK_GAMBLE", "condition": { "u_has_items": { "item": "silver_coin", "count": 1 } } },
+      { "text": "50 copper?",
+        "effect": [ { "u_add_var": "gamble_50", "type": "dialogue", "context": "npc", "value": "yes" }, { "u_sell_item": "copper_coin", "count": 50 } ],
+        "topic": "TALK_GAMBLE", "condition": { "u_has_items": { "item": "copper_coin", "count": 50 } } },
+      { "text": "I accept",
+        "effect": [ { "u_add_var": "gamble_5", "type": "dialogue", "context": "npc", "value": "yes" }, { "u_sell_item": "copper_coin", "count": 50 } ],
+        "topic": "TALK_GAMBLE", "condition": { "u_has_items": { "item": "copper_coin", "count": 5 } } }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_GAMBLE",
+    "dynamic_line": "Okay. So, I roll a...",
+    "responses": [
+      {
+        "switch": true,
+        "default": true,
+        "text": "...",
+        "trial": { "type": "PERSUADE", "difficulty": 5 },
+        "success": { "topic": "TALK_WIN" },
+        "failure": { "topic": "TALK_LOSS" }
+      }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_WIN",
+    "dynamic_line": "I win!",
+    "responses": [
+      { "text": "Ah.", "topic": "TALK_GAMBLER_INTRO" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_LOSS",
+    "dynamic_line": "You win!",
+    "responses": [
+      { "text": "Yes!", "topic": "TALK_WINNINGS" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_WINNINGS",
+    "dynamic_line": "Well, here's your money.",
+    "responses": [
+      { "condition": { "u_has_var": "gamble_100", "type": "dialogue", "context": "npc", "value": "yes" },
+        "topic": "TALK_DONE",
+        "effect": [ { "u_spawn_item": "silver_coin", "count": 2 }, { "u_lose_effect": "gamble_100" } ] },
+      { "condition": { "u_has_var": "gamble_50", "type": "dialogue", "context": "npc", "value": "yes" },
+        "topic": "TALK_DONE",
+        "effect": [ { "u_spawn_item": "copper_coin", "count": 100 }, { "u_lose_effect": "gamble_50" } ] },
+      { "condition": { "u_has_var": "gamble_5", "type": "dialogue", "context": "npc", "value": "yes" },
+        "topic": "TALK_DONE",
+        "effect": [ { "u_spawn_item": "copper_coin", "count": 10 }, { "u_lose_effect": "gamble_5" } ] }
+    ]
+  }
+]

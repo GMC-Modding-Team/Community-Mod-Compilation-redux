@@ -1,0 +1,343 @@
+[
+  {
+    "type": "talk_topic",
+    "id": "TALK_NPC_LONE_BLACKSMITH",
+    "dynamic_line": "Welcome to my forge. If you need steel, you know where to find me.",
+    "responses": [
+      { "text": "Show me your wares.",
+	  "effect": "start_trade",
+	  "topic": "NPC_LONE_BLACKSMITH_TRADE_EXIT" },
+	  {
+		"text": "Bye.",
+		"topic": "TALK_DONE"
+	  },
+          {
+		"text": "Is there anything you need?",
+		"topic": "TALK_NPC_GENERIC_TAVERNKEEP_JOBS"
+		},
+          {
+		"text": "Can I have something reforged?",
+		"topic": "TALK_NPC_LONE_BLACKSMITH_REPAIR"
+	  },
+          {
+		"text": "Do you need any help around here?",
+		"topic": "TALK_NPC_LONE_BLACKSMITH_HELP",
+                "condition": { "not": { "npc_has_var": "u_hired", "type": "general", "context": "mission", "value": "yes" } } 
+	  },
+          {
+		"text": "Is there any work today?",
+		"topic": "TALK_NPC_LONE_BLACKSMITH_ORDERS",
+                "condition": { "npc_has_var": "u_hired", "type": "general", "context": "mission", "value": "yes" }  
+	  }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "NPC_LONE_BLACKSMITH_TRADE_EXIT",
+    "dynamic_line": "Anything else you need?",
+    "responses": [
+      { "text": "Yes, actually.",
+	  "effect": "start_trade",
+	  "topic": "TALK_NPC_LONE_BLACKSMITH_TRADE_EXIT" },
+          { "text": "Yes, actually. I've got some repairs.",
+	  "topic": "TALK_NPC_LONE_BLACKSMITH_REPAIR" },
+	  {
+		"text": "I'm good, thanks.",
+		"topic": "TALK_DONE"
+	  }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_NPC_LONE_BLACKSMITH_REPAIR",
+    "dynamic_line": "Sure, then. What is it you need? It's 75 silver per repair, though.",
+    "responses": [
+	  {
+		"text": "I've got this longsword that needs fixed.",
+                "condition": { "and": [ { "u_has_items": { "item": "longsword_rusted", "count": 1 } }, { "u_has_items": { "item": "silver_coin", "count": 75 } } ] },  
+                "effect": [ { "u_sell_item": "silver_coin", "count": 75 }, { "u_sell_item": "longsword_rusted", "count": 1 }, { "u_spawn_item": "longsword" } ], 	   
+		"topic": "NPC_LONE_BLACKSMITH_TRADE_EXIT"
+	  },
+          {
+		"text": "I've got this makeshift knife that needs fixed.",
+                "condition": { "and": [ { "u_has_items": { "item": "makeshift_knife_rusted", "count": 1 } }, { "u_has_items": { "item": "silver_coin", "count": 75 } } ] },  
+                "effect": [ { "u_sell_item": "silver_coin", "count": 75 }, { "u_sell_item": "makeshift_knife_rusted", "count": 1 }, { "u_spawn_item": "makeshift_knife" } ], 	   
+		"topic": "NPC_LONE_BLACKSMITH_TRADE_EXIT"
+	  },
+          {
+		"text": "I've got this baselard knife that needs fixed.",
+                "condition": { "and": [ { "u_has_items": { "item": "knife_baselard_rusted", "count": 1 } }, { "u_has_items": { "item": "silver_coin", "count": 75 } } ] },  
+                "effect": [ { "u_sell_item": "silver_coin", "count": 75 }, { "u_sell_item": "knife_baselard_rusted", "count": 1 }, { "u_spawn_item": "knife_baselard" } ], 	   
+		"topic": "NPC_LONE_BLACKSMITH_TRADE_EXIT"
+	  },
+          {
+		"text": "I've got this machete that needs fixed.",
+                "condition": { "and": [ { "u_has_items": { "item": "machete_rusted", "count": 1 } }, { "u_has_items": { "item": "silver_coin", "count": 75 } } ] },  
+                "effect": [ { "u_sell_item": "silver_coin", "count": 75 }, { "u_sell_item": "machete_rusted", "count": 1 }, { "u_spawn_item": "machete" } ], 	   
+		"topic": "NPC_LONE_BLACKSMITH_TRADE_EXIT"
+	  },
+          {
+		"text": "I've got this calvary sabre that needs fixed.",
+                "condition": { "and": [ { "u_has_items": { "item": "cavalry_sabre_rusted", "count": 1 } }, { "u_has_items": { "item": "silver_coin", "count": 75 } } ] },  
+                "effect": [ { "u_sell_item": "silver_coin", "count": 75 }, { "u_sell_item": "cavalry_sabre_rusted", "count": 1 }, { "u_spawn_item": "cavalry_sabre" } ], 	   
+		"topic": "NPC_LONE_BLACKSMITH_TRADE_EXIT"
+	  },
+          {
+		"text": "I've got this kris that needs fixed.",
+                "condition": { "and": [ { "u_has_items": { "item": "kris_rusted", "count": 1 } }, { "u_has_items": { "item": "silver_coin", "count": 75 } } ] },  
+                "effect": [ { "u_sell_item": "silver_coin", "count": 75 }, { "u_sell_item": "kris_rusted", "count": 1 }, { "u_spawn_item": "kris" } ], 	   
+		"topic": "NPC_LONE_BLACKSMITH_TRADE_EXIT"
+	  },
+          {
+		"text": "I've got this kukri that needs fixed.",
+                "condition": { "and": [ { "u_has_items": { "item": "kukri_rusted", "count": 1 } }, { "u_has_items": { "item": "silver_coin", "count": 75 } } ] },  
+                "effect": [ { "u_sell_item": "silver_coin", "count": 75 }, { "u_sell_item": "kukri_rusted", "count": 1 }, { "u_spawn_item": "kukri" } ], 	   
+		"topic": "NPC_LONE_BLACKSMITH_TRADE_EXIT"
+	  },
+          {
+		"text": "I've got this jian that needs fixed.",
+                "condition": { "and": [ { "u_has_items": { "item": "jian_rusted", "count": 1 } }, { "u_has_items": { "item": "silver_coin", "count": 75 } } ] },  
+                "effect": [ { "u_sell_item": "silver_coin", "count": 75 }, { "u_sell_item": "jian_rusted", "count": 1 }, { "u_spawn_item": "jian" } ], 	   
+		"topic": "NPC_LONE_BLACKSMITH_TRADE_EXIT"
+	  },
+          {
+		"text": "I've got this scimitar that needs fixed.",
+                "condition": { "and": [ { "u_has_items": { "item": "scimitar_rusted", "count": 1 } }, { "u_has_items": { "item": "silver_coin", "count": 75 } } ] },  
+                "effect": [ { "u_sell_item": "silver_coin", "count": 75 }, { "u_sell_item": "scimitar_rusted", "count": 1 }, { "u_spawn_item": "scimitar" } ], 	   
+		"topic": "NPC_LONE_BLACKSMITH_TRADE_EXIT"
+	  },
+          {
+		"text": "I've got this estoc that needs fixed.",
+                "condition": { "and": [ { "u_has_items": { "item": "estoc_rusted", "count": 1 } }, { "u_has_items": { "item": "silver_coin", "count": 75 } } ] },  
+                "effect": [ { "u_sell_item": "silver_coin", "count": 75 }, { "u_sell_item": "estoc_rusted", "count": 1 }, { "u_spawn_item": "estoc" } ], 	   
+		"topic": "NPC_LONE_BLACKSMITH_TRADE_EXIT"
+	  },
+          {
+		"text": "I've got this arming sword that needs fixed.",
+                "condition": { "and": [ { "u_has_items": { "item": "arming_sword_rusted", "count": 1 } }, { "u_has_items": { "item": "silver_coin", "count": 75 } } ] },  
+                "effect": [ { "u_sell_item": "silver_coin", "count": 75 }, { "u_sell_item": "arming_sword_rusted", "count": 1 }, { "u_spawn_item": "arming_sword" } ], 	   
+		"topic": "NPC_LONE_BLACKSMITH_TRADE_EXIT"
+	  },
+          {
+		"text": "I've got this tanto that needs fixed.",
+                "condition": { "and": [ { "u_has_items": { "item": "tanto_rusted", "count": 1 } }, { "u_has_items": { "item": "silver_coin", "count": 75 } } ] },  
+                "effect": [ { "u_sell_item": "silver_coin", "count": 75 }, { "u_sell_item": "tanto_rusted", "count": 1 }, { "u_spawn_item": "tanto" } ], 	   
+		"topic": "NPC_LONE_BLACKSMITH_TRADE_EXIT"
+	  },
+          {
+		"text": "I've got this wakizashi that needs fixed.",
+                "condition": { "and": [ { "u_has_items": { "item": "wakizashi_rusted", "count": 1 } }, { "u_has_items": { "item": "silver_coin", "count": 75 } } ] },  
+                "effect": [ { "u_sell_item": "silver_coin", "count": 75 }, { "u_sell_item": "wakizashi_rusted", "count": 1 }, { "u_spawn_item": "wakizashi" } ], 	   
+		"topic": "NPC_LONE_BLACKSMITH_TRADE_EXIT"
+	  },
+          {
+		"text": "I've got this zweihander that needs fixed.",
+                "condition": { "and": [ { "u_has_items": { "item": "zweihander_rusted", "count": 1 } }, { "u_has_items": { "item": "silver_coin", "count": 75 } } ] },  
+                "effect": [ { "u_sell_item": "silver_coin", "count": 75 }, { "u_sell_item": "zweihander_rusted", "count": 1 }, { "u_spawn_item": "zweihander" } ], 	   
+		"topic": "NPC_LONE_BLACKSMITH_TRADE_EXIT"
+	  },
+          {
+		"text": "I've got this nodachi that needs fixed.",
+                "condition": { "and": [ { "u_has_items": { "item": "nodachi_rusted", "count": 1 } }, { "u_has_items": { "item": "silver_coin", "count": 75 } } ] },  
+                "effect": [ { "u_sell_item": "silver_coin", "count": 75 }, { "u_sell_item": "nodachi_rusted", "count": 1 }, { "u_spawn_item": "nodachi" } ], 	   
+		"topic": "NPC_LONE_BLACKSMITH_TRADE_EXIT"
+	  },
+          {
+		"text": "I've got this broadsword that needs fixed.",
+                "condition": { "and": [ { "u_has_items": { "item": "broadsword_rusted", "count": 1 } }, { "u_has_items": { "item": "silver_coin", "count": 75 } } ] },  
+                "effect": [ { "u_sell_item": "silver_coin", "count": 75 }, { "u_sell_item": "broadsword_rusted", "count": 1 }, { "u_spawn_item": "broadsword" } ], 	   
+		"topic": "NPC_LONE_BLACKSMITH_TRADE_EXIT"
+	  },
+          {
+		"text": "I've got this rapier that needs fixed.",
+                "condition": { "and": [ { "u_has_items": { "item": "rapier_rusted", "count": 1 } }, { "u_has_items": { "item": "silver_coin", "count": 75 } } ] },  
+                "effect": [ { "u_sell_item": "silver_coin", "count": 75 }, { "u_sell_item": "rapier_rusted", "count": 1 }, { "u_spawn_item": "rapier" } ], 	   
+		"topic": "NPC_LONE_BLACKSMITH_TRADE_EXIT"
+	  },
+          {
+		"text": "I've got this katana that needs fixed.",
+                "condition": { "and": [ { "u_has_items": { "item": "katana_rusted", "count": 1 } }, { "u_has_items": { "item": "silver_coin", "count": 75 } } ] },  
+                "effect": [ { "u_sell_item": "silver_coin", "count": 75 }, { "u_sell_item": "katana_rusted", "count": 1 }, { "u_spawn_item": "katana" } ], 	   
+		"topic": "NPC_LONE_BLACKSMITH_TRADE_EXIT"
+	  },
+          {
+		"text": "I've got these butterfly swords that need fixed.",
+                "condition": { "and": [ { "u_has_items": { "item": "butterfly_swords_rusted", "count": 1 } }, { "u_has_items": { "item": "silver_coin", "count": 75 } } ] },  
+                "effect": [ { "u_sell_item": "silver_coin", "count": 75 }, { "u_sell_item": "butterfly_swords_rusted", "count": 1 }, { "u_spawn_item": "butterfly_swords" } ], 	   
+		"topic": "NPC_LONE_BLACKSMITH_TRADE_EXIT"
+	  },
+          {
+		"text": "I've got this cutlass that needs fixed.",
+                "condition": { "and": [ { "u_has_items": { "item": "cutlass_rusted", "count": 1 } }, { "u_has_items": { "item": "silver_coin", "count": 75 } } ] },  
+                "effect": [ { "u_sell_item": "silver_coin", "count": 75 }, { "u_sell_item": "cutlass_rusted", "count": 1 }, { "u_spawn_item": "cutlass" } ], 	   
+		"topic": "NPC_LONE_BLACKSMITH_TRADE_EXIT"
+	  },
+          {
+		"text": "I've got this war flail that needs fixed.",
+                "condition": { "and": [ { "u_has_items": { "item": "war_flail_rusted", "count": 1 } }, { "u_has_items": { "item": "silver_coin", "count": 75 } } ] },  
+                "effect": [ { "u_sell_item": "silver_coin", "count": 75 }, { "u_sell_item": "war_flail_rusted", "count": 1 }, { "u_spawn_item": "2h_flail_steel" } ], 	   
+		"topic": "NPC_LONE_BLACKSMITH_TRADE_EXIT"
+	  },
+          {
+		"text": "I've got this lajatang that needs fixed.",
+                "condition": { "and": [ { "u_has_items": { "item": "lajatang_rusted_moldy", "count": 1 } }, { "u_has_items": { "item": "silver_coin", "count": 75 } } ] },  
+                "effect": [ { "u_sell_item": "silver_coin", "count": 75 }, { "u_sell_item": "lajatang_rusted_moldy", "count": 1 }, { "u_spawn_item": "lajatang" } ], 	   
+		"topic": "NPC_LONE_BLACKSMITH_TRADE_EXIT"
+	  },
+          {
+		"text": "I've got this battleaxe that needs fixed.",
+                "condition": { "and": [ { "u_has_items": { "item": "battleaxe_rusted_moldy", "count": 1 } }, { "u_has_items": { "item": "silver_coin", "count": 75 } } ] },  
+                "effect": [ { "u_sell_item": "silver_coin", "count": 75 }, { "u_sell_item": "battleaxe_rusted_moldy", "count": 1 }, { "u_spawn_item": "battleaxe" } ], 	   
+		"topic": "NPC_LONE_BLACKSMITH_TRADE_EXIT"
+	  },
+          {
+		"text": "I've got this sledge hammer that needs fixed.",
+                "condition": { "and": [ { "u_has_items": { "item": "hammer_sledge_rusted", "count": 1 } }, { "u_has_items": { "item": "silver_coin", "count": 75 } } ] },  
+                "effect": [ { "u_sell_item": "silver_coin", "count": 75 }, { "u_sell_item": "hammer_sledge_rusted", "count": 1 }, { "u_spawn_item": "hammer_sledge" } ], 	   
+		"topic": "NPC_LONE_BLACKSMITH_TRADE_EXIT"
+	  },
+          {
+		"text": "I've got this lucern hammer that needs fixed.",
+                "condition": { "and": [ { "u_has_items": { "item": "lucern_hammer_rusted", "count": 1 } }, { "u_has_items": { "item": "silver_coin", "count": 75 } } ] },  
+                "effect": [ { "u_sell_item": "silver_coin", "count": 75 }, { "u_sell_item": "lucern_hammer_rusted", "count": 1 }, { "u_spawn_item": "lucern_hammer" } ], 	   
+		"topic": "NPC_LONE_BLACKSMITH_TRADE_EXIT"
+	  },
+          {
+		"text": "I've got this mace that needs fixed.",
+                "condition": { "and": [ { "u_has_items": { "item": "mace_rusted", "count": 1 } }, { "u_has_items": { "item": "silver_coin", "count": 75 } } ] },  
+                "effect": [ { "u_sell_item": "silver_coin", "count": 75 }, { "u_sell_item": "mace_rusted", "count": 1 }, { "u_spawn_item": "mace" } ], 	   
+		"topic": "NPC_LONE_BLACKSMITH_TRADE_EXIT"
+	  },
+          {
+		"text": "I've got this morningstar that needs fixed.",
+                "condition": { "and": [ { "u_has_items": { "item": "morningstar_rusted", "count": 1 } }, { "u_has_items": { "item": "silver_coin", "count": 75 } } ] },  
+                "effect": [ { "u_sell_item": "silver_coin", "count": 75 }, { "u_sell_item": "morningstar_rusted", "count": 1 }, { "u_spawn_item": "morningstar" } ], 	   
+		"topic": "NPC_LONE_BLACKSMITH_TRADE_EXIT"
+	  },
+          {
+		"text": "I've got this wakizashi that needs fixed.",
+                "condition": { "and": [ { "u_has_items": { "item": "wakizashi_rusted", "count": 1 } }, { "u_has_items": { "item": "silver_coin", "count": 75 } } ] },  
+                "effect": [ { "u_sell_item": "silver_coin", "count": 75 }, { "u_sell_item": "wakizashi_rusted", "count": 1 }, { "u_spawn_item": "wakizashi" } ], 	   
+		"topic": "NPC_LONE_BLACKSMITH_TRADE_EXIT"
+	  },
+          {
+		"text": "I've got this warhammer that needs fixed.",
+                "condition": { "and": [ { "u_has_items": { "item": "warhammer_rusted", "count": 1 } }, { "u_has_items": { "item": "silver_coin", "count": 75 } } ] },  
+                "effect": [ { "u_sell_item": "silver_coin", "count": 75 }, { "u_sell_item": "warhammer_rusted", "count": 1 }, { "u_spawn_item": "warhammer" } ], 	   
+		"topic": "NPC_LONE_BLACKSMITH_TRADE_EXIT"
+	  },
+          {
+		"text": "I've got this pitchfork that needs fixed.",
+                "condition": { "and": [ { "u_has_items": { "item": "pitchfork_rusted", "count": 1 } }, { "u_has_items": { "item": "silver_coin", "count": 75 } } ] },  
+                "effect": [ { "u_sell_item": "silver_coin", "count": 75 }, { "u_sell_item": "pitchfork_rusted", "count": 1 }, { "u_spawn_item": "pitchfork" } ], 	   
+		"topic": "NPC_LONE_BLACKSMITH_TRADE_EXIT"
+	  },
+          {
+		"text": "I've got this spear that needs fixed.",
+                "condition": { "and": [ { "u_has_items": { "item": "spear_steel_rusted", "count": 1 } }, { "u_has_items": { "item": "silver_coin", "count": 75 } } ] },  
+                "effect": [ { "u_sell_item": "silver_coin", "count": 75 }, { "u_sell_item": "spear_steel_rusted", "count": 1 }, { "u_spawn_item": "spear_steel" } ], 	   
+		"topic": "NPC_LONE_BLACKSMITH_TRADE_EXIT"
+	  },
+          {
+		"text": "I've got this qiang that needs fixed.",
+                "condition": { "and": [ { "u_has_items": { "item": "qiang_rusted", "count": 1 } }, { "u_has_items": { "item": "silver_coin", "count": 75 } } ] },  
+                "effect": [ { "u_sell_item": "silver_coin", "count": 75 }, { "u_sell_item": "qiang_rusted", "count": 1 }, { "u_spawn_item": "qiang" } ], 	   
+		"topic": "NPC_LONE_BLACKSMITH_TRADE_EXIT"
+	  },
+          {
+		"text": "I've got this halberd that needs fixed.",
+                "condition": { "and": [ { "u_has_items": { "item": "halberd_rusted", "count": 1 } }, { "u_has_items": { "item": "silver_coin", "count": 75 } } ] },  
+                "effect": [ { "u_sell_item": "silver_coin", "count": 75 }, { "u_sell_item": "halberd_rusted", "count": 1 }, { "u_spawn_item": "halberd" } ], 	   
+		"topic": "NPC_LONE_BLACKSMITH_TRADE_EXIT"
+	  },
+          {
+		"text": "I've got this glaive that needs fixed.",
+                "condition": { "and": [ { "u_has_items": { "item": "glaive_rusted", "count": 1 } }, { "u_has_items": { "item": "silver_coin", "count": 75 } } ] },  
+                "effect": [ { "u_sell_item": "silver_coin", "count": 75 }, { "u_sell_item": "glaive_rusted", "count": 1 }, { "u_spawn_item": "glaive" } ], 	   
+		"topic": "NPC_LONE_BLACKSMITH_TRADE_EXIT"
+	  },
+          {
+		"text": "I've got this metal buckler that needs fixed.",
+                "condition": { "and": [ { "u_has_items": { "item": "metal_buckler_rusted", "count": 1 } }, { "u_has_items": { "item": "silver_coin", "count": 75 } } ] },  
+                "effect": [ { "u_sell_item": "silver_coin", "count": 75 }, { "u_sell_item": "metal_buckler_rusted", "count": 1 }, { "u_spawn_item": "metal_buckler" } ], 	   
+		"topic": "NPC_LONE_BLACKSMITH_TRADE_EXIT"
+	  },
+          {
+		"text": "I've got this metal shield that needs fixed.",
+                "condition": { "and": [ { "u_has_items": { "item": "metal_shield_rusted", "count": 1 } }, { "u_has_items": { "item": "silver_coin", "count": 75 } } ] },  
+                "effect": [ { "u_sell_item": "silver_coin", "count": 75 }, { "u_sell_item": "metal_shield_rusted", "count": 1 }, { "u_spawn_item": "metal_shield" } ], 	   
+		"topic": "NPC_LONE_BLACKSMITH_TRADE_EXIT"
+	  },
+          {
+		"text": "I've got this metal tower shield that needs fixed.",
+                "condition": { "and": [ { "u_has_items": { "item": "metal_shield_tower_rusted", "count": 1 } }, { "u_has_items": { "item": "silver_coin", "count": 75 } } ] },  
+                "effect": [ { "u_sell_item": "silver_coin", "count": 75 }, { "u_sell_item": "metal_shield_tower_rusted", "count": 1 }, { "u_spawn_item": "metal_shield_tower" } ], 	   
+		"topic": "NPC_LONE_BLACKSMITH_TRADE_EXIT"
+	  },
+          {
+		"text": "I'm good, thanks.",
+		"topic": "NPC_LONE_BLACKSMITH_TRADE_EXIT"
+	  }
+    ]
+  },
+{
+    "type": "talk_topic",
+    "id": "TALK_NPC_LONE_BLACKSMITH_HELP",
+    "dynamic_line": "Well, I could use some help around here. Do you have any prior experience?",
+    "responses": [
+          {
+		"text": "Yes, actually. I studied the dwarven craft.",
+		"topic": "TALK_NPC_LONE_BLACKSMITH_HIREXP",
+                "condition": { "u_has_trait": "DWARF_CRAFTER" }
+	  },
+          {
+		"text": "No, I do not.",
+		"topic": "TALK_NPC_LONE_BLACKSMITH_HIRENXP"
+	  }
+    ]
+  },
+{
+    "type": "talk_topic",
+    "id": "TALK_NPC_LONE_BLACKSMITH_HIREXP",
+    "dynamic_line": "Well, it'd be a wonder to have you on.",
+    "responses": [
+          {
+		"text": "I accept.",
+		"topic": "TALK_DONE",
+                "effect": [ { "npc_add_var": "u_hired", "type": "general", "context": "mission", "value": "yes" } ] 
+	  },
+          {
+		"text": "Nah.",
+		"topic": "TALK_DONE"
+	  }
+    ]
+  },
+{
+    "type": "talk_topic",
+    "id": "TALK_NPC_LONE_BLACKSMITH_HIRENXP",
+    "dynamic_line": "Hmm...I'd have to teach it to ya, its not simple. If ya can pass me test, I'll do it.",
+    "responses": [
+          {
+		"text": "I accept.",
+		"topic": "TALK_DONE",
+                "effect": [ { "add_mission": "MISSION_SMITH_TEST" } ] 
+	  },
+          {
+		"text": "Nah.",
+		"topic": "TALK_DONE"
+	  }
+    ]
+  },
+{
+    "type": "talk_topic",
+    "id": "TALK_NPC_LONE_BLACKSMITH_ORDERS",
+    "dynamic_line": "I've got new orders I need done. Here's one.",
+    "responses": [
+	  {
+		"text": "Thanks.",
+		"topic": "TALK_DONE",
+                "effect": [ { "add_mission": "MISSION_FORGE_SWORD" } ] 
+	  }
+    ]
+  }
+]

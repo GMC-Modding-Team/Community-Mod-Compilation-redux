@@ -1,0 +1,43 @@
+[
+  {
+    "id": "TALK_ONOCTI", 
+    "type": "talk_topic",
+    "dynamic_line": [ "<greet>" ],
+    "responses": [ { "text": "<greet> How are you?", "topic": "TALK_INQUIRY2" } ]
+  },
+  {
+    "id": "TALK_INQUIRY2",
+    "type": "talk_topic",
+    "dynamic_line": [ "Oh, feeling <good>." ],
+    "responses": [ { "text": "That is wonderful.", "topic": "TALK_TOPICS2" } ]
+  },
+  {
+    "id": "TALK_TOPICS2",
+    "type": "talk_topic",
+    "dynamic_line": [ "So, what can I do for you?" ],
+    "responses": [
+                   { "text": "I noticed your robes are decorated. What do you do?", "topic": "TALK_JOB" },
+                   { "text": "<end_talking>", "topic": "TALK_DONE" },
+                   { "text": "What is your opinion upon this place?", "topic": "TALK_OPINION2" } ]
+  },
+  {
+    "id": "TALK_OPINION2",
+    "type": "talk_topic",
+    "dynamic_line": [ "It seems quite nice. I have been a memeber for some time now, and everyone here is absolutley wonderful. I feel like I belong. Besides, I even aid within our rituals." ],
+    "responses": [ { "text": "Hmmm.", "topic": "TALK_NONE" },
+                   { "text": "Rituals?", "topic": "TALK_JOB" } ]
+  },
+  {
+    "id": "TALK_JOB",
+    "type": "talk_topic",
+    "dynamic_line": [ "I am responsible for aiding the Homages in sacrificing to the elder ones. I prepare the altar and sacrifice beforehand, gather The Blood, and clean afterwards." ],
+    "responses": [ { "text": "Interesting.", "topic": "TALK_TOPICS2" },
+                   { "text": "What sort of sacrifice?", "topic": "TALK_ONOCTI_SACRIFICE" } ]
+  },
+  {
+    "id": "TALK_ONOCTI_SACRIFICE",
+    "type": "talk_topic",
+    "dynamic_line": [ "That's all I know. You should talk to the Homage." ],
+    "responses": [ { "text": "Thank you.", "topic": "TALK_TOPICS2" }, { "text": "<end_talking>", "topic": "TALK_DONE" } ]
+  }
+]
