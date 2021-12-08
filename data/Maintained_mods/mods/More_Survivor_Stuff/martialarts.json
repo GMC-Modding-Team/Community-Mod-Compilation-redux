@@ -1,20 +1,122 @@
 [
   {
+    "id": "style_swordsmanship",
+    "copy-from": "style_swordsmanship",
+    "type": "martial_art",
+    "name": "Medieval Swordsmanship",
+    "extend": { "weapons": [ "mss_survivor_claymore" ] }
+  },
+  {
+    "id": "style_medievalpole",
+    "copy-from": "style_medievalpole",
+    "type": "martial_art",
+    "name": "Fior Di Battaglia",
+    "extend": { "weapons": [ "mss_survivor_sledge" ] }
+  },
+  {
+    "id": "mss_style_mace",
+    "type": "martial_art",
+    "name": "Survivor Mace-Fu",
+    "description": "You've gotten the hang of knocking zombies around. Survivor Mace-Fu makes sure you can knock them right out of your way if they get in it.",
+    "initiate": [
+      "You itch to get somewhere and smack anything that tries to stop you.",
+      "%s raises their weapon and takes up an agile stance."
+    ],
+    "autolearn": [ [ "bashing", 4 ] ],
+    "strictly_melee": true,
+    "onmove_buffs": [
+      {
+        "id": "mss_buff_mace_onmove",
+        "name": "On The Move",
+        "description": "Survivor, moving out! \n\nDodge skill increased by 15% of Strength.\nLasts 1 turn.",
+        "melee_allowed": true,
+        "skill_requirements": [ { "name": "melee", "level": 0 } ],
+        "buff_duration": 1,
+        "flat_bonuses": [ { "stat": "dodge", "scaling-stat": "str", "scale": 0.15 } ]
+      }
+    ],
+    "onpause_buffs": [
+      {
+        "id": "mss_buff_mace_onpause",
+        "name": "Obstacle",
+        "description": "This one won't get out of the way without a fight. \nEnables stronger knockback moves, +5% critical hit chance.\nLasts 2 turns.",
+        "melee_allowed": true,
+        "buff_duration": 2,
+        "max_stacks": 1,
+        "flat_bonuses": [ { "stat": "crit_chance", "scale": 5.0 } ]
+      }
+    ],
+    "oncrit_buffs": [
+      {
+        "id": "mss_buff_mace_oncrit",
+        "name": "Way Through",
+        "description": "That should have done it - now go! \n\n+1 Block attempt.\n-15%% movecost, -5% damage, enables 'And Don't Come Back'. \nLasts 2 turns. Stacks 2 times.",
+        "melee_allowed": true,
+        "skill_requirements": [ { "name": "melee", "level": 0 } ],
+        "buff_duration": 1,
+        "max_stacks": 2,
+        "bonus_blocks": 1,
+        "mult_bonuses": [
+          { "stat": "movecost", "scale": 0.85 },
+          { "stat": "damage", "type": "bash", "scale": 0.95 },
+          { "stat": "damage", "type": "cut", "scale": 0.95 },
+          { "stat": "damage", "type": "stab", "scale": 0.95 }
+        ]
+      }
+    ],
+    "techniques": [
+      "mss_tec_mace_break",
+      "mss_tec_mace_discombobulate",
+      "mss_tec_mace_hammer",
+      "mss_tec_mace_waymaker",
+      "mss_tec_mace_impatience",
+      "mss_tec_mace_kingsparade",
+      "mss_tec_mace_anddontcomeback",
+      "mss_tec_mace_imeanit"
+    ],
+    "weapons": [
+      "baton-extended",
+      "blackjack",
+      "bowling_axe",
+      "bowling_pin",
+      "cane",
+      "cudgel",
+      "mace",
+      "mace_fake",
+      "mace_inferior",
+      "mace_simple",
+      "mace_trench",
+      "makeshift_sap",
+      "morningstar",
+      "morningstar_fake",
+      "morningstar_inferior",
+      "PR24-extended",
+      "shillelagh",
+      "shillelagh_weighted",
+      "shillelagh_fake",
+      "shocktonfa_off",
+      "shocktonfa_on",
+      "tonfa",
+      "tonfa_wood",
+      "warhammer"
+    ]
+  },
+  {
     "id": "mss_style_sledge",
     "type": "martial_art",
-    "name": { "str": "Survivor Sledge-Fu" },
-    "description": "You have started to become rather proficient in handling heavy weaponry. Sledge-Fu allows you to bully an opponent using your strength until the right moment presents itself to swing your weapon properly for a killing blow.",
-    "initiate": [ "You roll your neck and get ready to shatter your enemies.", "%s rolls their neck menacingly." ],
+    "name": "Survivor Sledge-Fu",
+    "description": "You have started to become rather proficient in handling heavy weaponry. Sledge-Fu allows you to bully several opponents using your strength until the right moment presents itself to swing your weapon properly for a killing blow.",
+    "initiate": [ "You hold your weapon close and watch for weaklings come to challenge you.", "%s holds their weapon close." ],
     "autolearn": [ [ "bashing", 5 ] ],
     "strictly_melee": true,
     "static_buffs": [
       {
         "id": "mss_buff_sledge_stonewall",
         "name": "Intimidating Figure",
-        "description": "No man, machine or monstrosity can get through you and your strength. \n\n+2 Block attempts, -3.0 Dodge skill, blocked damage reduced by 70%% of Strength.",
+        "description": "No man, machine or monstrosity can get through you and your strength. \n\n -3.0 Dodge skill, blocked damage reduced by 70%% of Strength.",
         "melee_allowed": true,
-        "skill_requirements": [ { "name": "melee", "level": 1 } ],
-        "bonus_blocks": 2,
+        "skill_requirements": [ { "name": "melee", "level": 0 } ],
+        "bonus_blocks": 1,
         "flat_bonuses": [ { "stat": "block", "scaling-stat": "str", "scale": 0.7 }, { "stat": "dodge", "scale": -3.0 } ]
       }
     ],
@@ -22,11 +124,10 @@
       {
         "id": "mss_buff_sledge_onmove",
         "name": "Moving Bulk",
-        "description": "Moving your weight around makes it hard to take hits strategically, but it does prove useful for extra swing speed. \n\n-2 Block attempts, blocked damage increased by 70%% of Strength.\n+10%% bonus to bashing damage.\nLasts 1 turn.",
+        "description": "Moving your weight around makes it hard to take hits strategically, but it does prove useful for extra swing speed. \n\nBlocked damage increased by 70%% of Strength.\n+10%% bonus to bashing damage.\nLasts 1 turn.",
         "melee_allowed": true,
-        "skill_requirements": [ { "name": "melee", "level": 1 } ],
+        "skill_requirements": [ { "name": "melee", "level": 0 } ],
         "buff_duration": 1,
-        "bonus_blocks": -2,
         "flat_bonuses": [ { "stat": "block", "scaling-stat": "str", "scale": -0.7 } ],
         "mult_bonuses": [ { "stat": "damage", "type": "bash", "scale": 1.1 } ]
       }
@@ -35,7 +136,7 @@
       {
         "id": "mss_buff_sledge_onmiss",
         "name": "Swinging Big",
-        "description": "That's it! Now direct it towards them! \n\n+20%% bonus to bashing damage.\nEnables \"Flying Blow\" technique.\nEnables \"Violent Shove\" technique.\nLasts 2 turns. Stacks 3 times.",
+        "description": "That's it! Now direct it towards them! \n\n+20%% bonus to bashing damage.\nEnables \"Flying Blow\" technique.\nLasts 2 turns. Stacks 3 times.",
         "melee_allowed": true,
         "skill_requirements": [ { "name": "melee", "level": 4 } ],
         "buff_duration": 2,
@@ -43,27 +144,39 @@
         "mult_bonuses": [ { "stat": "damage", "type": "bash", "scale": 1.2 } ]
       }
     ],
+    "onpause_buffs": [
+      {
+        "id": "mss_buff_sledge_onpause",
+        "name": "Toying",
+        "description": "Whatever they have in store won't be enough to stop you./n+1 Block attempts, +2 blocking effectiveness\nLasts 1 turn.  Stacks 2 times.",
+        "melee_allowed": true,
+        "buff_duration": 1,
+        "max_stacks": 2,
+        "bonus_blocks": 1,
+        "flat_bonuses": [ { "stat": "block_effectiveness", "scale": 2.0 } ]
+      }
+    ],
     "onattack_buffs": [
       {
         "id": "mss_buff_sledge_onhit",
         "name": "Tiring Control",
-        "description": "Directing your enemy with your strikes proves useful to make them predictable, but you grow inefficient with every new move. Take a break. \n\n+1 Block attempt.\n+15%% movecost.\nLasts 2 turns. Stacks 3 times.",
+        "description": "Directing your enemy with your strikes proves useful to make them predictable, but you grow inefficient with every new move. Take a break. \n\n+1 Block attempt.\n+10%% movecost.\nLasts 2 turns. Stacks 3 times.",
         "melee_allowed": true,
-        "skill_requirements": [ { "name": "melee", "level": 1 } ],
+        "skill_requirements": [ { "name": "melee", "level": 0 } ],
         "buff_duration": 2,
         "max_stacks": 3,
         "bonus_blocks": 1,
-        "mult_bonuses": [ { "stat": "movecost", "scale": 1.15 } ]
+        "mult_bonuses": [ { "stat": "movecost", "scale": 1.1 } ]
       }
     ],
     "onblock_buffs": [
       {
         "id": "mss_buff_sledge_onblock",
         "name": "Riled Up",
-        "description": "Like a little fly, buzzing around harmlessly... \n\n+10%% bonus to bashing damage.\n-10%% movecost.\nEnables \"Violent Shove\" technique.\nLasts 1 turn.  Stacks 3 times.",
+        "description": "Like a little fly, buzzing around harmlessly... \n\n+10%% bonus to bashing damage.\n-10%% movecost.\n\nLasts 1 turn.  Stacks 3 times.",
         "melee_allowed": true,
         "skill_requirements": [ { "name": "melee", "level": 1 } ],
-        "buff_duration": 1,
+        "buff_duration": 2,
         "max_stacks": 3,
         "mult_bonuses": [ { "stat": "damage", "type": "bash", "scale": 1.1 }, { "stat": "movecost", "scale": 0.9 } ]
       }
@@ -74,23 +187,21 @@
         "name": "Eager For Contact",
         "description": "You dodged. Next time, you'll take the hit and make them pay properly. \n\n-3.0 Dodge skill\nLasts 3 turns.  Stacks 3 times.",
         "melee_allowed": true,
-        "skill_requirements": [ { "name": "melee", "level": 1 } ],
+        "skill_requirements": [ { "name": "melee", "level": 0 } ],
         "buff_duration": 3,
         "max_stacks": 3,
         "flat_bonuses": [ { "stat": "dodge", "scale": -3.0 } ]
       }
     ],
     "techniques": [
-      "mss_tec_sledge_counter",
-      "mss_tec_sledge_shove",
       "mss_tec_sledge_feint",
-      "mss_tec_sledge_deathblow",
       "mss_tec_sledge_deathblowstun",
+      "mss_tec_sledge_superiordeathblowstun",
+      "mss_tec_sledge_deathblowmiss",
       "mss_tec_sledge_break",
       "mss_tec_sledge_jab",
       "mss_tec_sledge_gutbuster",
-      "mss_tec_sledge_tap",
-      "mss_tec_sledge_shoveonmiss"
+      "mss_tec_sledge_tap"
     ],
     "weapons": [
       "ax",
@@ -117,7 +228,7 @@
   {
     "id": "mss_style_flail",
     "type": "martial_art",
-    "name": { "str": "Survivor Flail-Fu" },
+    "name": "Survivor Flail-Fu",
     "description": "You have started to become very proficient in handling heavy weaponry. Flail-Fu lets you redirect opponents as the chain wishes, or whirl the head for a heavy blow.",
     "initiate": [ "You grip your flail confidently and start swaying the chain.", "%s grips their flail and sways the chain idly." ],
     "autolearn": [ [ "bashing", 6 ] ],
@@ -128,7 +239,7 @@
         "name": "Metal Must Flow",
         "description": "Your flail must keep spinning at all costs. \n\n+1.0 Dodge skill",
         "melee_allowed": true,
-        "skill_requirements": [ { "name": "melee", "level": 1 } ],
+        "skill_requirements": [ { "name": "melee", "level": 0 } ],
         "flat_bonuses": [ { "stat": "dodge", "scale": 1.0 } ]
       }
     ],
@@ -150,7 +261,7 @@
         "name": "Missed",
         "description": "Getting the flail back into proper control is quite the ordeal. \n\n-10%% bashing damage.\nLasts 1 turn. Stacks 2 times.",
         "melee_allowed": true,
-        "skill_requirements": [ { "name": "melee", "level": 1 } ],
+        "skill_requirements": [ { "name": "melee", "level": 0 } ],
         "buff_duration": 1,
         "max_stacks": 2,
         "mult_bonuses": [ { "stat": "damage", "type": "bash", "scale": 0.8 } ]
@@ -162,7 +273,7 @@
         "name": "Slowing Mass",
         "description": "Every strike takes from the speed you've built, but perhaps you have enough to keep going still.\n-20%% bashing damage.\nLasts 2 turns. Stacks 5 times.",
         "melee_allowed": true,
-        "skill_requirements": [ { "name": "melee", "level": 1 } ],
+        "skill_requirements": [ { "name": "melee", "level": 0 } ],
         "buff_duration": 2,
         "max_stacks": 5,
         "mult_bonuses": [ { "stat": "damage", "type": "bash", "scale": 0.8 } ]
@@ -174,7 +285,7 @@
         "name": "Swift Mass",
         "description": "Dodging an attack only quickens your weapon!\n\n+10%% bashing damage.\nEnables \"Stunning Blow\" technique.\nLasts 1 turns.  Stacks 3 times.",
         "melee_allowed": true,
-        "skill_requirements": [ { "name": "melee", "level": 1 } ],
+        "skill_requirements": [ { "name": "melee", "level": 0 } ],
         "buff_duration": 1,
         "max_stacks": 3,
         "flat_bonuses": [ { "stat": "damage", "type": "bash", "scale": 1.1 } ]
@@ -196,8 +307,8 @@
   {
     "id": "mss_style_glove",
     "type": "martial_art",
-    "name": { "str": "Survivor Glove-Fu" },
-    "description": "You're not unused to the concept of killing things with your own hands. Glove-Fu lets you show the Zs the real definition of a smackdown with unrelenting, heavy hitting powercombos.",
+    "name": "Survivor Glove-Fu",
+    "description": "You're not unused to the concept of killing things with your own hands. Glove-Fu lets you show the Zs the real definition of a smackdown with unrelenting, heavy hitting powercombos after an intial counter.",
     "initiate": [
       "You assume a sturdy stance and keep one arm cocked and loaded.",
       "%s assumes a sturdy stance and keeps an arm ready."
@@ -208,10 +319,10 @@
       {
         "id": "mss_buff_glove_ready",
         "name": "Ready",
-        "description": "You're ready. Your fighting implements are ready. They always will be. \n\n+2 Block attempts, -1.0 Dodge skill, blocked damage reduced by 50%% of Strength.",
+        "description": "You're ready. Your fighting implements are ready. They always will be. \n\n+1 Block attempt, -1.0 Dodge skill, blocked damage reduced by 50%% of Strength.",
         "unarmed_allowed": true,
-        "skill_requirements": [ { "name": "melee", "level": 1 } ],
-        "bonus_blocks": 2,
+        "skill_requirements": [ { "name": "melee", "level": 0 } ],
+        "bonus_blocks": 1,
         "flat_bonuses": [ { "stat": "block", "scaling-stat": "str", "scale": 0.5 }, { "stat": "dodge", "scale": -1.0 } ]
       }
     ],
@@ -219,24 +330,25 @@
       {
         "id": "mss_buff_glove_onpause",
         "name": "Waiting",
-        "description": "You're watching. You're waiting. Your fist aches for action.\n\n+10% bonus to bashing damage./n+1 Block attempts.\nLasts 1 turn.  Stacks 2 times.",
+        "description": "You're watching. You're waiting. Your fist aches for action.\n\n+10% bonus to bashing damage./n+1 Blocking effectiveness.\nLasts 1 turn.  Stacks 2 times.",
         "unarmed_allowed": true,
         "buff_duration": 1,
         "max_stacks": 2,
         "bonus_blocks": 1,
-        "mult_bonuses": [ { "stat": "damage", "type": "bash", "scale": 1.1 } ]
+        "mult_bonuses": [ { "stat": "damage", "type": "bash", "scale": 1.1 } ],
+        "flat_bonuses": [ { "stat": "block_effectiveness", "scale": 2.0 } ]
       }
     ],
     "onattack_buffs": [
       {
         "id": "mss_buff_glove_onhit",
         "name": "Smackdown",
-        "description": "There's nothing that can stop a smackdown once it starts!\n+10%% bashing damage./n+1 Block attempts.\nLasts 2 turns. Stacks 2 times.",
+        "description": "There's nothing that can stop a smackdown once it starts!\n+10%% bashing damage./n+1 Blocking effectiveness.\nLasts 2 turns. Stacks 2 times.",
         "unarmed_allowed": true,
         "skill_requirements": [ { "name": "melee", "level": 1 } ],
         "buff_duration": 2,
         "max_stacks": 2,
-        "bonus_blocks": 1,
+        "flat_bonuses": [ { "stat": "block_effectiveness", "scale": 1.0 } ],
         "mult_bonuses": [ { "stat": "damage", "type": "bash", "scale": 1.1 } ]
       }
     ],
@@ -257,7 +369,7 @@
         "name": "Eager For Smackdown",
         "description": "You dodged. Next time, you'll take the hit so you can begin the smackdown. \n\n-3.0 Dodge skill\nLasts 3 turns.  Stacks 3 times.",
         "unarmed_allowed": true,
-        "skill_requirements": [ { "name": "melee", "level": 1 } ],
+        "skill_requirements": [ { "name": "melee", "level": 0 } ],
         "buff_duration": 3,
         "max_stacks": 3,
         "flat_bonuses": [ { "stat": "dodge", "scale": -3.0 } ]

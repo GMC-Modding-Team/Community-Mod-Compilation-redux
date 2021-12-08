@@ -1,5 +1,120 @@
 [
   {
+    "id": "mss_tec_mace_discombobulate",
+    "type": "technique",
+    "name": "Discombobulate",
+    "messages": [ "You sweep across %s and switch your stance", "<npcname> sweeps across %s" ],
+    "skill_requirements": [ { "name": "melee", "level": 0 } ],
+    "melee_allowed": true,
+    "crit_ok": false,
+    "mult_bonuses": [
+      { "stat": "movecost", "scale": 0.5 },
+      { "stat": "damage", "type": "bash", "scale": 0.66 },
+      { "stat": "damage", "type": "cut", "scale": 0.66 },
+      { "stat": "damage", "type": "stab", "scale": 0.66 }
+    ]
+  },
+  {
+    "id": "mss_tec_mace_hammer",
+    "type": "technique",
+    "name": "Hammer",
+    "messages": [ "You whack across %s", "<npcname> whacks across %s" ],
+    "skill_requirements": [ { "name": "melee", "level": 0 } ],
+    "melee_allowed": true,
+    "crit_ok": false
+  },
+  {
+    "id": "mss_tec_mace_waymaker",
+    "type": "technique",
+    "name": "Waymaker",
+    "messages": [ "You send %s twirling away", "<npcname> sends %s twirling away" ],
+    "skill_requirements": [ { "name": "melee", "level": 1 } ],
+    "weighting": 2,
+    "melee_allowed": true,
+    "forbidden_buffs_all": [ "mss_buff_mace_onpause" ],
+    "crit_tec": true,
+    "stun_dur": 1,
+    "knockback_dist": 1,
+    "knockback_spread": 1
+  },
+  {
+    "id": "mss_tec_mace_impatience",
+    "type": "technique",
+    "name": "Impatience",
+    "messages": [ "You strike and shoulder-check %s in one swift move", "<npcname> strikes and shoulder-checks %s in one swift move" ],
+    "skill_requirements": [ { "name": "melee", "level": 3 } ],
+    "melee_allowed": true,
+    "required_buffs_all": "mss_buff_mace_onpause",
+    "crit_tec": true,
+    "weighting": 4,
+    "stun_dur": 1,
+    "knockback_dist": 2,
+    "knockback_spread": 1
+  },
+  {
+    "id": "mss_tec_mace_kingsparade",
+    "type": "technique",
+    "name": "King's Parade",
+    "messages": [
+      "You rear back and clear a path forward, pummeling %s and those nearby",
+      "<npcname> rears back and clears a path forward, pummeling %s and those nearby"
+    ],
+    "skill_requirements": [ { "name": "melee", "level": 4 } ],
+    "melee_allowed": true,
+    "required_buffs_all": "mss_buff_mace_onpause",
+    "crit_tec": true,
+    "weighting": 4,
+    "stun_dur": 1,
+    "aoe": "wide",
+    "knockback_dist": 2,
+    "knockback_spread": 1
+  },
+  {
+    "id": "mss_tec_mace_anddontcomeback",
+    "type": "technique",
+    "name": "And Don't Come Back",
+    "messages": [ "You grab and yank %s behind yourself", "<npcname> grabs and yanks %s behind themselves" ],
+    "skill_requirements": [ { "name": "melee", "level": 3 } ],
+    "melee_allowed": true,
+    "required_buffs_all": "mss_buff_mace_oncrit",
+    "crit_tec": true,
+    "weighting": 6,
+    "down_dur": 2,
+    "side_switch": true,
+    "mult_bonuses": [
+      { "stat": "movecost", "scale": 0.5 },
+      { "stat": "damage", "type": "bash", "scale": 1.0 },
+      { "stat": "damage", "type": "cut", "scale": 0.2 },
+      { "stat": "damage", "type": "stab", "scale": 0.2 }
+    ]
+  },
+  {
+    "id": "mss_tec_mace_imeanit",
+    "type": "technique",
+    "name": "I Mean It",
+    "messages": [
+      "Just to make sure, you ruthlessly bring your weapon down on %s",
+      "<npcname> ruthlessly brings their weapon down on %s"
+    ],
+    "skill_requirements": [ { "name": "melee", "level": 4 } ],
+    "melee_allowed": true,
+    "downed_target": true,
+    "crit_tec": true,
+    "weighting": 10,
+    "stun_dur": 2,
+    "mult_bonuses": [ { "stat": "damage", "type": "bash", "scale": 1.5 } ]
+  },
+  {
+    "id": "mss_tec_mace_break",
+    "type": "technique",
+    "name": "Grab Break",
+    "messages": [ "The %s tries to grab you, but you keep them at bay!", "The %s tries to grab <npcname>, but they keep them at bay!" ],
+    "skill_requirements": [ { "name": "melee", "level": 6 } ],
+    "melee_allowed": true,
+    "defensive": true,
+    "grab_break": true
+  },
+  {
     "id": "mss_tec_sledge_tap",
     "type": "technique",
     "name": "Lovetap",
@@ -34,6 +149,7 @@
     ],
     "skill_requirements": [ { "name": "melee", "level": 1 } ],
     "weighting": 4,
+    "required_buffs_all": "mss_buff_sledge_onpause",
     "melee_allowed": true,
     "crit_tec": true,
     "stun_dur": 2,
@@ -41,59 +157,7 @@
     "knockback_follow": true
   },
   {
-    "id": "mss_tec_sledge_counter",
-    "type": "technique",
-    "name": "Block And Bash",
-    "messages": [ "You parry and headbutt %s", "<npcname> parries and headbutts %s" ],
-    "skill_requirements": [ { "name": "melee", "level": 3 } ],
-    "melee_allowed": true,
-    "block_counter": true,
-    "crit_ok": true,
-    "mult_bonuses": [
-      { "stat": "movecost", "scale": 0 },
-      { "stat": "damage", "type": "bash", "scale": 0.3 },
-      { "stat": "damage", "type": "cut", "scale": 0 },
-      { "stat": "damage", "type": "stab", "scale": 0 }
-    ]
-  },
-  {
-    "id": "mss_tec_sledge_shove",
-    "type": "technique",
-    "name": "Violent Shove",
-    "messages": [ "You violently shove at %s, sending them staggering", "<npcname> violently shoves at %s, sending them staggering" ],
-    "skill_requirements": [ { "name": "melee", "level": 2 } ],
-    "melee_allowed": true,
-    "req_buffs": "mss_buff_sledge_onblock",
-    "crit_ok": true,
-    "weighting": 8,
-    "stun_dur": 3,
-    "knockback_dist": 3,
-    "mult_bonuses": [
-      { "stat": "damage", "type": "bash", "scale": 0.5 },
-      { "stat": "damage", "type": "cut", "scale": 0 },
-      { "stat": "damage", "type": "stab", "scale": 0 }
-    ]
-  },
-  {
-    "id": "mss_tec_sledge_shoveonmiss",
-    "type": "technique",
-    "name": "Violent Shove",
-    "messages": [ "You violently shove at %s, sending them staggering", "<npcname> violently shoves at %s, sending them staggering" ],
-    "skill_requirements": [ { "name": "melee", "level": 2 } ],
-    "melee_allowed": true,
-    "req_buffs": "mss_buff_sledge_onmiss",
-    "crit_ok": true,
-    "weighting": 2,
-    "stun_dur": 3,
-    "knockback_dist": 2,
-    "mult_bonuses": [
-      { "stat": "damage", "type": "bash", "scale": 0.5 },
-      { "stat": "damage", "type": "cut", "scale": 0 },
-      { "stat": "damage", "type": "stab", "scale": 0 }
-    ]
-  },
-  {
-    "id": "mss_tec_sledge_deathblow",
+    "id": "mss_tec_sledge_deathblowmiss",
     "type": "technique",
     "name": "Flying Blow",
     "messages": [
@@ -102,41 +166,54 @@
     ],
     "skill_requirements": [ { "name": "melee", "level": 5 } ],
     "melee_allowed": true,
-    "req_buffs": "mss_buff_sledge_onmiss",
+    "required_buffs_all": "mss_buff_sledge_onmiss",
     "crit_tec": true,
     "weighting": 10,
     "stun_dur": 2,
     "down_dur": 2,
-    "knockback_dist": 5,
+    "knockback_dist": 4,
     "knockback_spread": 1,
     "mult_bonuses": [ { "stat": "damage", "type": "bash", "scale": 1.8 } ]
   },
   {
     "id": "mss_tec_sledge_deathblowstun",
     "type": "technique",
-    "name": "Flying Blow",
-    "messages": [
-      "You swing directly into %s, making them soar through the air",
-      "<npcname> swings directly into %s, making them soar through the air"
-    ],
+    "name": "Enough",
+    "messages": [ "You wind up and strike %s away", "<npcname> winds up and strikes %s away" ],
     "skill_requirements": [ { "name": "melee", "level": 4 } ],
+    "melee_allowed": true,
+    "stunned_target": true,
+    "crit_ok": false,
+    "weighting": 10,
+    "stun_dur": 1,
+    "down_dur": 2,
+    "knockback_dist": 3,
+    "knockback_spread": 1,
+    "mult_bonuses": [ { "stat": "damage", "type": "bash", "scale": 1.5 } ]
+  },
+  {
+    "id": "mss_tec_sledge_superiordeathblowstun",
+    "type": "technique",
+    "name": "Begone",
+    "messages": [ "You wind up and strike %s far outside your jurisdiction", "<npcname> winds up and strikes %s away" ],
+    "skill_requirements": [ { "name": "melee", "level": 5 } ],
     "melee_allowed": true,
     "stunned_target": true,
     "crit_tec": true,
     "weighting": 10,
     "stun_dur": 2,
-    "down_dur": 2,
+    "down_dur": 4,
     "knockback_dist": 5,
     "knockback_spread": 1,
-    "mult_bonuses": [ { "stat": "movecost", "scale": 1.3 }, { "stat": "damage", "type": "bash", "scale": 1.8 } ]
+    "mult_bonuses": [ { "stat": "damage", "type": "bash", "scale": 1.8 } ]
   },
   {
     "id": "mss_tec_sledge_break",
     "type": "technique",
     "name": "Grab Break",
     "messages": [
-      "The %s tries to grab you, but you shove their grasp away!",
-      "The %s tries to grab <npcname>, but they shove their grasp away!"
+      "The %s tries to grab you, but you wrench their grasp away!",
+      "The %s tries to grab <npcname>, but they wrench their grasp away!"
     ],
     "skill_requirements": [ { "name": "melee", "level": 3 } ],
     "melee_allowed": true,
@@ -151,8 +228,7 @@
     "skill_requirements": [ { "name": "melee", "level": 2 } ],
     "melee_allowed": true,
     "defensive": true,
-    "miss_recovery": true,
-    "mult_bonuses": [ { "stat": "movecost", "scale": 1.3 } ]
+    "miss_recovery": true
   },
   {
     "id": "mss_tec_flail_direct",
@@ -169,7 +245,7 @@
     "name": "Stunning Blow",
     "messages": [ "You stun %s with a deft blow", "<npcname> stuns %s with a deft blow" ],
     "skill_requirements": [ { "name": "bashing", "level": 6 } ],
-    "req_buffs": "mss_buff_flail_ondodge",
+    "required_buffs_all": "mss_buff_flail_ondodge",
     "melee_allowed": true,
     "weighting": 4,
     "crit_ok": false,
@@ -181,7 +257,7 @@
     "name": "Heavy Blow",
     "messages": [ "You overwhelm and concuss %s with a heavy blow", "<npcname> hits %s with a heavy blow" ],
     "skill_requirements": [ { "name": "bashing", "level": 6 } ],
-    "req_buffs": "mss_buff_flail_ondodge",
+    "required_buffs_all": "mss_buff_flail_ondodge",
     "melee_allowed": true,
     "weighting": 8,
     "crit_tec": true,
@@ -212,8 +288,8 @@
     "crit_tec": true,
     "side_switch": true,
     "weighting": 10,
-    "stun_dur": 4,
-    "down_dur": 2,
+    "stun_dur": 2,
+    "down_dur": 4,
     "knockback_dist": 2,
     "knockback_spread": 1,
     "mult_bonuses": [ { "stat": "damage", "type": "bash", "scale": 0.6 } ]
@@ -276,6 +352,7 @@
     "name": "Stop And Smack",
     "messages": [ "You stop %s's attack and throw a violent haymaker", "<npcname> stops %s's attack and throws a violent haymaker" ],
     "skill_requirements": [ { "name": "melee", "level": 3 } ],
+    "required_buffs_all": "mss_buff_glove_onpause",
     "unarmed_allowed": true,
     "block_counter": true,
     "crit_ok": false,
@@ -293,7 +370,7 @@
     "name": "Stop And Smackdown",
     "messages": [ "You stop %s's attack and knock them into next week", "<npcname> stops %s's attack and knocks them into next week" ],
     "skill_requirements": [ { "name": "melee", "level": 4 } ],
-    "req_buffs": "mss_buff_glove_onpause",
+    "required_buffs_all": "mss_buff_glove_onpause",
     "unarmed_allowed": true,
     "block_counter": true,
     "crit_ok": true,
@@ -314,7 +391,7 @@
       "You throw a breath-robbing bodyshot at %s and follow through",
       "<npcname> throws a breath-robbing bodyshot at %s and follows through"
     ],
-    "req_buffs": "mss_buff_glove_onblock",
+    "required_buffs_all": "mss_buff_glove_onblock",
     "skill_requirements": [ { "name": "melee", "level": 2 } ],
     "weighting": 2,
     "unarmed_allowed": true,
@@ -330,7 +407,7 @@
       "You throw a breath-robbing bodyshot at %s, and run after them as they stumble",
       "<npcname> throws a breath-robbing bodyshot at %s and runs after them as they stumble"
     ],
-    "req_buffs": "mss_buff_glove_onblock",
+    "required_buffs_all": "mss_buff_glove_onblock",
     "skill_requirements": [ { "name": "melee", "level": 3 } ],
     "weighting": 4,
     "unarmed_allowed": true,
@@ -366,7 +443,7 @@
     "weighting": 2,
     "unarmed_allowed": true,
     "crit_tec": true,
-    "stun_dur": 2,
+    "stun_dur": 1,
     "mult_bonuses": [
       { "stat": "damage", "type": "bash", "scale": 1.3 },
       { "stat": "damage", "type": "cut", "scale": 1.3 },
@@ -387,7 +464,7 @@
     "unarmed_allowed": true,
     "crit_tec": true,
     "stun_dur": 1,
-    "down_dur": 2
+    "down_dur": 1
   },
   {
     "id": "mss_tec_glove_smackdown",
