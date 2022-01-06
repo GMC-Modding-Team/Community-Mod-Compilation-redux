@@ -1,3 +1,13 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [TropiCataclysm](#tropicataclysm)
+  - [What is TropiCataclysm?](#what-is-tropicataclysm)
+  - [Features](#features)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # TropiCataclysm
 
 a mod for the game Cataclysm: Dark Days Ahead (and possibly Cataclysm: Bright Nights in the future). At the moment the mod is a fork of "Desert Region" but the plan is to grow it into a proper content mod.

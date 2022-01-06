@@ -5,7 +5,7 @@
 - [C.R.T Expansion mod pack](#crt-expansion-mod-pack)
 - [Extended Techniques](#extended-techniques)
 - [For those curious about stat scaling:](#for-those-curious-about-stat-scaling)
-- [Dead Space](#dead-space)
+- [Lore](#lore)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
