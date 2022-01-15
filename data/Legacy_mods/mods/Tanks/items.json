@@ -390,7 +390,8 @@
     "sight_dispersion": 10,
     "durability": 9,
     "clip_size": 1,
-    "loudness": 300
+    "loudness": 300,
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "120mm_usable": 1 } } ]
   },
   {
     "id": "tank_gun_auto",
@@ -413,7 +414,8 @@
     "durability": 9,
     "clip_size": 5,
     "loudness": 300,
-    "flags": [ "NO_RELOAD", "MOUNTED_GUN" ]
+    "flags": [ "NO_RELOAD", "MOUNTED_GUN" ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "120mm_usable": 5 } } ]
   },
   {
     "id": "tank_gun_rws",
@@ -436,7 +438,8 @@
     "durability": 8,
     "clip_size": 5,
     "loudness": 300,
-    "flags": [ "NO_RELOAD", "MOUNTED_GUN" ]
+    "flags": [ "NO_RELOAD", "MOUNTED_GUN" ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "120mm_usable": 5 } } ]
   },
   {
     "id": "howitzer_gun",
@@ -459,7 +462,8 @@
     "sight_dispersion": 10,
     "durability": 9,
     "clip_size": 1,
-    "loudness": 400
+    "loudness": 400,
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "155mm": 1 } } ]
   },
   {
     "id": "atgm_turret",
@@ -481,7 +485,8 @@
     "durability": 9,
     "clip_size": 2,
     "loudness": 200,
-    "flags": [ "NO_RELOAD", "MOUNTED_GUN" ]
+    "flags": [ "NO_RELOAD", "MOUNTED_GUN" ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "atgm": 2 } } ]
   },
   {
     "id": "textbook_launcher",
@@ -552,5 +557,48 @@
     "color": "white",
     "diameter": 60,
     "width": 30
+  },
+  {
+    "id": "bot_tankbot",
+    "looks_like": "broken_tankbot",
+    "type": "TOOL",
+    "name": { "str": "inactive tank drone" },
+    "description": "This is an inactive Beagle Mini-Tank UGV.  Using this item involves placing it on the ground, loading the unit with the factory-loaded 5.56 rounds and 40mm cartridge grenades in your inventory (if you wish to divide your ammunition, set aside whatever ammunition you do NOT want to give the robot) and turning it on.  If reprogrammed and rewired successfully the tank drone will then identify you as a friendly, roam around or follow you, and attack all enemies with a built-in firearm and grenade launcher.",
+    "weight": "200000 g",
+    "//": "cheating a bit with the volume due to lack of proper vehicle storage options",
+    "volume": "250 L",
+    "price": 100000000,
+    "to_hit": -3,
+    "bashing": 8,
+    "material": [ "steel" ],
+    "symbol": ";",
+    "color": "light_green",
+    "use_action": {
+      "type": "place_monster",
+      "monster_id": "mon_tankbot",
+      "friendly_msg": "The tank drone rolls out and begins acquiring targets.",
+      "hostile_msg": "The tank drone swivels its turret and aims directly at you.  Don your brown pants!",
+      "//": "Milspec, clearly designed with little concern for collateral damage. What did you expect of a robo-tank?",
+      "difficulty": 10,
+      "moves": 500,
+      "skills": [ "electronics", "computer" ]
+    }
+  },
+  {
+    "type": "GENERIC",
+    "id": "broken_tankbot",
+    "symbol": ",",
+    "color": "green",
+    "name": { "str": "broken tank drone" },
+    "category": "other",
+    "description": "A broken tank drone.  Still looks intimidating despite being permanently inoperative, possibly due to the sheer size and mass.  Could be gutted for parts.",
+    "price": 1000,
+    "material": [ "steel", "plastic" ],
+    "weight": "1223850 g",
+    "volume": "875 L",
+    "bashing": 20,
+    "cutting": 15,
+    "to_hit": -3,
+    "flags": [ "TRADER_AVOID", "NO_REPAIR" ]
   }
 ]
