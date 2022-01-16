@@ -49,7 +49,7 @@ Consider the Magellan exosuit, which has the following definition:
     "symbol": "[",
     "looks_like": "robofac_enviro_suit",
     "color": "light_gray",
-    "ammo": "[ "battery" ],
+    "ammo": [ "battery" ],
     "charges_per_use": 1,
     "use_action": {
       "type": "transform",
