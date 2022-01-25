@@ -397,7 +397,7 @@ Now `pocket_data` looks like this:
     "max_contains_weight": "30 kg",
     "moves": 200
   }
-],
+]
 ```
 Updating `pocket_data` is fairly time consuming, as each item must be done by manually. The description of the item and similar items are good places to start. If the item has `"storage": 0`, then simply delete `storage`. Following is an example of replacing `storage` with `pocket_data`.
 
