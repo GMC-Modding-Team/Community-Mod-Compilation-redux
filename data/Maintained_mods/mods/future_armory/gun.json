@@ -203,7 +203,6 @@
     "ranged_damage": { "damage_type": "stab", "amount": 5 },
     "dispersion": 240,
     "durability": 8,
-    "burst": 5,
     "loudness": 20,
     "flags": [ "NEVER_JAMS" ],
     "pocket_data": [
@@ -237,7 +236,6 @@
     "ranged_damage": { "damage_type": "stab", "amount": 2 },
     "dispersion": 80,
     "durability": 9,
-    "burst": 10,
     "loudness": 10,
     "flags": [ "NEVER_JAMS" ],
     "pocket_data": [
@@ -250,7 +248,7 @@
         "item_restriction": [ "armgunmag" ]
       }
     ],
-    "armor_data": { "covers": [ "arm_l", "arm_r" ], "warmth": 10, "encumbrance": 10, "coverage": 20 }
+    "armor_data": { "warmth": 10, "armor": [ { "covers": [ "arm_l", "arm_r" ], "encumbrance": 10, "coverage": 20 } ] }
   },
   {
     "id": "vss_vintorez",
@@ -364,7 +362,8 @@
     "clip_size": 5,
     "reload": 100,
     "valid_mod_locations": [ [ "sights", 1 ] ],
-    "flags": [ "RELOAD_ONE", "NEVER_JAMS" ]
+    "flags": [ "RELOAD_ONE", "NEVER_JAMS" ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "shot": 5 } } ]
   },
   {
     "id": "emr1",
@@ -392,7 +391,8 @@
     "clip_size": 2,
     "reload": 100,
     "built_in_mods": [ "rifle_scope", "muzzle_brake", "recoil_stock" ],
-    "flags": [ "RELOAD_ONE", "NEVER_JAMS" ]
+    "flags": [ "RELOAD_ONE", "NEVER_JAMS" ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "50": 2 } } ]
   },
   {
     "id": "egarand",
@@ -419,8 +419,17 @@
     "ups_charges": 50,
     "reload": 100,
     "built_in_mods": [ "rifle_scope", "muzzle_brake", "recoil_stock" ],
-    "magazines": [ [ "3006", [ "egarandmag" ] ] ],
-    "flags": [ "NEVER_JAMS" ]
+    "flags": [ "NEVER_JAMS" ],
+    "pocket_data": [
+  {
+    "magazine_well": "250 ml",
+    "pocket_type": "MAGAZINE_WELL",
+    "holster": true,
+    "max_contains_volume": "20 L",
+    "max_contains_weight": "20 kg",
+    "item_restriction": [ "egarandmag" ]
+  }
+]
   },
   {
     "id": "k98k",
@@ -446,7 +455,7 @@
     "loudness": 15,
     "ups_charges": 50,
     "clip_size": 5,
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "shot": 5 } } ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "762x25": 5 } } ],
     "reload": 100,
     "flags": [ "RELOAD_ONE", "NEVER_JAMS" ]
   }
