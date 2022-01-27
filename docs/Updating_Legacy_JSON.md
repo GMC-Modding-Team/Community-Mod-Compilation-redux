@@ -33,7 +33,7 @@ Use the `home` key to get to the top.
   - [Gun Pocket Data](#gun-pocket-data)
   - [Magazine Pocket Data](#magazine-pocket-data)
   - [CONTAINER](#container)
-- [Armor Data](#Armor Data)
+- [Armor Data](#armor-data)
 - [Volume](#volume)
   - [folded_volume](#folded_volume)
 - [Weight](#weight)
