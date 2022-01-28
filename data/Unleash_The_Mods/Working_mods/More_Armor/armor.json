@@ -14,9 +14,13 @@
     "symbol": "[",
     "color": "light_gray",
     "looks_like": "armor_lightplate",
-    "covers": [ "torso", "head", "arm_l", "arm_r", "hand_l", "hand_r", "leg_l", "leg_r", "foot_l", "foot_r" ],
-    "coverage": 95,
-    "encumbrance": 20,
+    "armor": [
+      {
+        "encumbrance": 20,
+        "coverage": 95,
+        "covers": [ "torso", "head", "arm_l", "arm_r", "hand_l", "hand_r", "leg_l", "leg_r", "foot_l", "foot_r" ]
+      }
+    ],
     "warmth": 20,
     "material_thickness": 4,
     "flags": [ "VARSIZE", "OUTER", "STURDY", "ELECTRIC_IMMUNE" ]
@@ -34,9 +38,7 @@
     "symbol": "[",
     "color": "dark_gray",
     "looks_like": "touring_suit",
-    "covers": [ "leg_l", "leg_r", "arm_l", "arm_r", "torso" ],
-    "coverage": 95,
-    "encumbrance": 8,
+    "armor": [ { "encumbrance": 8, "coverage": 95, "covers": [ "leg_l", "leg_r", "arm_l", "arm_r", "torso" ] } ],
     "warmth": 15,
     "material_thickness": 3,
     "flags": [ "VARSIZE", "POCKETS" ]
@@ -54,9 +56,7 @@
     "symbol": "[",
     "color": "dark_gray",
     "looks_like": "touring_suit",
-    "covers": [ "leg_l", "leg_r", "arm_l", "arm_r", "torso" ],
-    "coverage": 95,
-    "encumbrance": 8,
+    "armor": [ { "encumbrance": 8, "coverage": 95, "covers": [ "leg_l", "leg_r", "arm_l", "arm_r", "torso" ] } ],
     "warmth": 15,
     "material_thickness": 2,
     "flags": [ "POCKETS", "OVERSIZE" ]
@@ -74,9 +74,7 @@
     "symbol": "[",
     "color": "dark_gray",
     "looks_like": "touring_suit",
-    "covers": [ "leg_l", "leg_r", "arm_l", "arm_r", "torso" ],
-    "coverage": 95,
-    "encumbrance": 12,
+    "armor": [ { "encumbrance": 12, "coverage": 95, "covers": [ "leg_l", "leg_r", "arm_l", "arm_r", "torso" ] } ],
     "warmth": 15,
     "material_thickness": 3,
     "flags": [ "VARSIZE", "POCKETS" ]
@@ -94,9 +92,7 @@
     "symbol": "[",
     "color": "dark_gray",
     "looks_like": "touring_suit",
-    "covers": [ "leg_l", "leg_r", "arm_l", "arm_r", "torso" ],
-    "coverage": 95,
-    "encumbrance": 12,
+    "armor": [ { "encumbrance": 12, "coverage": 95, "covers": [ "leg_l", "leg_r", "arm_l", "arm_r", "torso" ] } ],
     "warmth": 15,
     "material_thickness": 2,
     "flags": [ "POCKETS", "OVERSIZE" ]
@@ -108,7 +104,6 @@
     "name": { "str": "pair of XL leather arm guards" },
     "description": "A pair of massive tough leather arm guards.  Fairly light and comfortable.",
     "proportional": { "weight": 1.8, "volume": 1.5, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -118,7 +113,6 @@
     "name": { "str": "pair of XL leather armor gauntlets" },
     "description": "Heavy and massive fingerless leather gloves.  Very flexible and comfortable.",
     "proportional": { "weight": 2.1, "volume": 2, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -137,7 +131,6 @@
     "name": { "str": "XL leather armor helmet" },
     "description": "A massive and thick leather helmet that provides excellent protection for the head.",
     "proportional": { "weight": 2.15, "volume": 2.4, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -147,7 +140,6 @@
     "name": { "str": "XL scrap suit" },
     "description": "A massive suit of armor made from scraps of metal secured by simple strings; provides decent protection, but the loose collection of plates doesn't make for the most convenient protection.",
     "proportional": { "weight": 1.8, "volume": 1.5, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -157,7 +149,6 @@
     "name": { "str": "pair of XL metal arm guards" },
     "description": "A massive pair of arm guards hammered out from metal.  Perfect for the Post-Apocalyptic Warrior look.",
     "proportional": { "weight": 1.8, "volume": 1.5, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -167,7 +158,6 @@
     "name": { "str": "pair of XL iron greaves" },
     "description": "A massive pair of iron leg guards with a simple leather lining.",
     "proportional": { "weight": 1.8, "volume": 1.5, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -177,7 +167,6 @@
     "name": { "str": "pair of XL chitinous gauntlets" },
     "description": "Massive gauntlets made from the exoskeletons of insects.  Very light and durable.",
     "proportional": { "weight": 2.1, "volume": 2, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -187,7 +176,6 @@
     "name": { "str": "pair of XL biosilicified chitin gauntlets" },
     "description": "Massive gauntlets crafted from the carefully cleaned and pruned biosilicified exoskeletons of acidic ants.  Acid-resistant and very durable.",
     "proportional": { "weight": 2.1, "volume": 2, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -197,7 +185,6 @@
     "name": { "str": "XL chitinous helmet" },
     "description": "A massive helmet made from the exoskeletons of insects.  Covers the entire HEAD; very light and durable.",
     "proportional": { "weight": 2.15, "volume": 2.4, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -207,7 +194,6 @@
     "name": { "str": "XL biosilicified chitin helmet" },
     "description": "A massive helmet crafted from the carefully cleaned and pruned biosilicified exoskeletons of acidic ants.  Covers the entire HEAD; acid-resistant and very durable.",
     "proportional": { "weight": 2.15, "volume": 2.4, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -217,7 +203,6 @@
     "name": { "str": "pair of XL chitin arm guards" },
     "description": "A pair of massive arm guards made from the exoskeletons of insects.  Light and durable.",
     "proportional": { "weight": 1.8, "volume": 1.5, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -227,7 +212,6 @@
     "name": { "str": "pair of XL biosilicified chitin arm guards" },
     "description": "A pair of massive arm guards crafted from the carefully cleaned and pruned biosilicified exoskeletons of acidic ants.  Acid-resistant and very durable.",
     "proportional": { "weight": 1.8, "volume": 1.5, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -237,7 +221,6 @@
     "name": { "str": "XL chitinous armor" },
     "description": "Massive leg and body armor made from the exoskeletons of insects.  Light and durable.",
     "proportional": { "weight": 1.8, "volume": 1.5, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -247,7 +230,6 @@
     "name": { "str": "XL biosilicified chitin armor" },
     "description": "Massive leg and body armor crafted from the carefully cleaned and pruned biosilicified exoskeletons of acidic ants.  Acid-resistant and very durable.",
     "proportional": { "weight": 1.8, "volume": 1.5, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -257,7 +239,6 @@
     "name": { "str": "pair of XL flame-resistant gloves" },
     "description": "A massive, snug fitting pair of gloves made from thin and lightweight Nomex fire-resistant fabric.  Tough yet breathable, they are light and comfortable to wear under clothing.",
     "proportional": { "weight": 2.1, "volume": 2, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -267,7 +248,6 @@
     "name": { "str": "XL flame-resistant hood" },
     "description": "A massive, snug fitting garment that protects your head and neck, made from lightweight Nomex fire-resistant fabric.  Tough yet breathable, it is light and comfortable to wear under clothing.",
     "proportional": { "weight": 2.15, "volume": 2.4, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -277,7 +257,6 @@
     "name": { "str": "pair of XL flame-resistant socks" },
     "description": "A massive, snug fitting pair of stockings made from thin and lightweight Nomex fire-resistant fabric.  Tough yet breathable, they are light and comfortable to wear under clothing.",
     "proportional": { "weight": 1.85, "volume": 2, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -287,7 +266,6 @@
     "name": { "str": "flame-resistant suit" },
     "description": "A massive, snug body suit made from thin and lightweight Nomex fire-resistant fabric.  Tough yet breathable, it is light and comfortable to wear under clothing.",
     "proportional": { "weight": 1.8, "volume": 1.5, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -297,7 +275,6 @@
     "name": { "str": "XL sleeveless trenchcoat" },
     "description": "A massive cotton trenchcoat that leaves your arms unencumbered.  Has plenty of storage space due to its many pockets.",
     "proportional": { "weight": 1.8, "volume": 1.5, "encumbrance": 1.5, "storage": 1.25 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -307,7 +284,6 @@
     "name": { "str": "XL sleeveless leather trenchcoat" },
     "description": "A massive leather trenchcoat without sleeves, leaving your arms unencumbered.  Has plenty of storage space due to its many pockets.",
     "proportional": { "weight": 1.8, "volume": 1.5, "encumbrance": 1.5, "storage": 1.25 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -317,7 +293,6 @@
     "name": { "str": "XL trenchcoat" },
     "description": "A massive cotton trenchcoat, lined with pockets.  Great for storage.",
     "proportional": { "weight": 1.8, "volume": 1.5, "encumbrance": 1.5, "storage": 1.25 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -327,7 +302,6 @@
     "name": { "str": "XL leather trenchcoat" },
     "description": "A massive leather trenchcoat, lined with pockets.  Great for storage.",
     "proportional": { "weight": 1.8, "volume": 1.5, "encumbrance": 1.5, "storage": 1.25 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -337,7 +311,6 @@
     "name": { "str": "XL duster" },
     "description": "A massive full-length duster coat.  Has many pockets for storage.",
     "proportional": { "weight": 1.8, "volume": 1.5, "encumbrance": 1.5, "storage": 1.25 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -347,7 +320,6 @@
     "name": { "str": "XL leather duster" },
     "description": "A massive leather full-length duster.  Has many pockets for storage.",
     "proportional": { "weight": 1.8, "volume": 1.5, "encumbrance": 1.5, "storage": 1.25 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -357,7 +329,6 @@
     "name": { "str": "XL sleeveless duster" },
     "description": "A massive full-length duster that leaves your arms unencumbered.  Has plenty of storage space due to its many pockets.",
     "proportional": { "weight": 1.8, "volume": 1.5, "encumbrance": 1.5, "storage": 1.25 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -367,7 +338,6 @@
     "name": { "str": "XL sleeveless leather duster" },
     "description": "A massive leather full-length duster without sleeves, leaving your arms unencumbered.  Has plenty of storage space due to its many pockets.",
     "proportional": { "weight": 1.8, "volume": 1.5, "encumbrance": 1.5, "storage": 1.25 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -377,7 +347,6 @@
     "name": { "str": "XL cargo pants" },
     "description": "A massive pair of pants lined with pockets, offering lots of storage.",
     "proportional": { "weight": 1.8, "volume": 1.5, "encumbrance": 1.5, "storage": 1.25 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -387,7 +356,6 @@
     "name": { "str": "XL cargo shorts" },
     "description": "A massive pair of shorts lined with pockets, offering decent storage.",
     "proportional": { "weight": 1.8, "volume": 1.5, "encumbrance": 1.5, "storage": 1.25 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -397,7 +365,6 @@
     "name": { "str": "XL plate armor" },
     "description": "A massive suit of Gothic plate armor.",
     "proportional": { "weight": 1.8, "volume": 1.5, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -407,7 +374,6 @@
     "name": { "str": "pair of XL armored gauntlets" },
     "description": "An extremely heavy set of massive armor-plated leather gloves.",
     "proportional": { "weight": 2.1, "volume": 2, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -417,7 +383,6 @@
     "name": { "str": "XL barbute helm" },
     "description": "A massive medieval helmet that provides excellent protection for the head, with a Y shaped opening for the face.",
     "proportional": { "weight": 2.15, "volume": 2.4, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -427,7 +392,6 @@
     "name": { "str": "XL great helm" },
     "description": "A massive medieval helmet that provides excellent protection to the entire head, at the cost of great encumbrance.",
     "proportional": { "weight": 2.15, "volume": 2.4, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -437,7 +401,6 @@
     "name": { "str": "XL O-yoroi" },
     "description": "A massive ornamental suit of Japanese samurai armor.",
     "proportional": { "weight": 1.8, "volume": 1.5, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -447,7 +410,6 @@
     "name": { "str": "XL kabuto" },
     "description": "A massive medieval Japanese helmet with a scowling facemask that provides excellent protection to the entire head and face.",
     "proportional": { "weight": 2.15, "volume": 2.4, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -459,7 +421,6 @@
     "weight": "28081 g",
     "volume": "41750 ml",
     "proportional": { "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -469,7 +430,6 @@
     "name": { "str": "pair of XL steel arm guards" },
     "description": "A massive full assembly of medieval arm protection.  Rerebraces, couters, and vambraces, with leather straps to secure each piece and connect it as part of a set.",
     "proportional": { "weight": 1.8, "volume": 1.5, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -479,7 +439,6 @@
     "name": { "str": "XL cuirass" },
     "description": "A massive steel breastplate, and a vital part of plate armor.  Even as full armor went into decline, cuirasses remained in use among cavalry in Europe.",
     "proportional": { "weight": 1.8, "volume": 1.5, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -489,7 +448,6 @@
     "name": { "str": "pair of XL steel leg guards" },
     "description": "A masive full assembly of medieval leg protection.  Cuisses, poleyns, and greaves, with leather straps to secure each piece and connect it as part of a set.",
     "proportional": { "weight": 1.8, "volume": 1.5, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -501,7 +459,6 @@
     "weight": "35226 g",
     "volume": "15500 ml",
     "proportional": { "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -513,7 +470,6 @@
     "weight": "29472 g",
     "volume": "6 L",
     "proportional": { "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -523,7 +479,6 @@
     "name": { "str": "pair of XL chainmail sleeves" },
     "description": "Massive customized chainmail arms.  Each sleeve has leather straps to connect them with each other.  The lack of fingers makes them less cumbersome and allows them to be used with gloves.",
     "proportional": { "weight": 1.8, "volume": 1.5, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -533,7 +488,6 @@
     "name": { "str": "XL chainmail coif" },
     "description": "A massive customized chainmail hood.  Can be worn comfortably under helmets.",
     "proportional": { "weight": 2.15, "volume": 2.4, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -543,7 +497,6 @@
     "name": { "str": "XL chainmail leggings" },
     "description": "Massive customized chainmail legs.  Their leather straps keep everything in place, and the lack of toes and heels allows them to work perfectly well with footwear.",
     "proportional": { "weight": 1.8, "volume": 1.5, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -553,7 +506,6 @@
     "name": { "str": "chainmail vest" },
     "description": "A customized chainmail vest.  It's a sleeveless piece of chainmail with small leather straps designed to better distribute the weight.",
     "proportional": { "weight": 1.8, "volume": 1.5, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -563,7 +515,6 @@
     "name": { "str": "pair of XL boots" },
     "description": "Massive leather boots.  Very durable.",
     "proportional": { "weight": 1.85, "volume": 2, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -573,7 +524,6 @@
     "name": { "str": "pair of XL leather armor boots" },
     "description": "Massive leather boots made specifically to protect the feet.  Light and tough.",
     "proportional": { "weight": 1.85, "volume": 2, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -583,7 +533,6 @@
     "name": { "str": "pair of XL armored boots" },
     "description": "An extremely heavy set of massive armor plated boots.",
     "proportional": { "weight": 1.85, "volume": 2, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -593,7 +542,6 @@
     "name": { "str": "pair of XL chitinous boots" },
     "description": "Massive boots made from the exoskeletons of insects.  Light and durable.",
     "proportional": { "weight": 1.85, "volume": 2, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -603,7 +551,6 @@
     "name": { "str": "pair of XL biosilicified chitin boots" },
     "description": "Massive boots crafted from carefully cleaned and pruned biosilicified exoskeletons of acidic ants.  Acid-resistant and very durable.",
     "proportional": { "weight": 1.85, "volume": 2, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -613,7 +560,6 @@
     "name": { "str": "XL backpack" },
     "description": "A large backpack.  Good storage for a little encumbrance.",
     "proportional": { "weight": 1.8, "volume": 1.5, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -623,7 +569,6 @@
     "name": { "str": "XL leather backpack" },
     "description": "A large leather backpack.  Good storage for a little encumbrance.",
     "proportional": { "weight": 1.8, "volume": 1.5, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -633,7 +578,6 @@
     "name": { "str": "XL duffel bag" },
     "description": "A massive duffel bag.  Provides plenty of storage, but is severely encumbering.",
     "proportional": { "weight": 1.8, "volume": 1.5, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -643,7 +587,6 @@
     "name": { "str": "XL tool belt" },
     "description": "A massive belt with pockets and four small belt loops.  Widely used by handymen and electricians if handymen and electricians were bears.",
     "proportional": { "weight": 1.8, "volume": 1.5, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -653,7 +596,6 @@
     "name": { "str": "XL chest rig" },
     "description": "A massive vest covered in webbing, pockets and straps.  This variety is favored by the military, as it is capable of holding four magazines close at hand.",
     "proportional": { "weight": 1.8, "volume": 1.5, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -663,7 +605,6 @@
     "name": { "str": "pair of XL drop leg pouches" },
     "description": "A massive set of pouches that can be worn on the thighs using buckled straps.  This variety is favored by the military.",
     "proportional": { "weight": 1.8, "volume": 1.5, "encumbrance": 1.5 },
-    "relative": { "material_thickness": -1 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -681,9 +622,7 @@
     "symbol": "[",
     "color": "dark_gray",
     "looks_like": "cuirass_lightplate",
-    "covers": [ "torso", "arm_l", "arm_r" ],
-    "coverage": 80,
-    "encumbrance": 30,
+    "armor": [ { "encumbrance": 30, "coverage": 80, "covers": [ "torso", "arm_l", "arm_r" ] } ],
     "warmth": 5,
     "material_thickness": 10,
     "flags": [ "BELTED" ]
@@ -696,7 +635,8 @@
     "description": "Massive makeshift armor made from parts of cut up tires.  Incredibly thick and tough but just as encumbering.",
     "weight": "22600 g",
     "volume": "17500 ml",
-    "proportional": { "encumbrance": 1.5, "material_thickness": 2 },
+    "material_thickness": 2,
+    "proportional": { "encumbrance": 1.5 },
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
@@ -713,9 +653,7 @@
     "symbol": "[",
     "color": "dark_gray",
     "looks_like": "cuirass_lightplate",
-    "covers": [ "torso" ],
-    "coverage": 80,
-    "encumbrance": 10,
+    "armor": [ { "encumbrance": 10, "coverage": 80, "covers": [ "torso" ] } ],
     "warmth": 20,
     "material_thickness": 4,
     "environmental_protection": 1,
@@ -734,9 +672,13 @@
     "symbol": "[",
     "color": "light_gray",
     "looks_like": "chainmail_suit",
-    "covers": [ "torso", "head", "mouth", "arm_l", "arm_r", "hand_l", "hand_r", "leg_l", "leg_r" ],
-    "coverage": 100,
-    "encumbrance": 15,
+    "armor": [
+      {
+        "encumbrance": 15,
+        "coverage": 100,
+        "covers": [ "torso", "head", "mouth", "arm_l", "arm_r", "hand_l", "hand_r", "leg_l", "leg_r" ]
+      }
+    ],
     "warmth": 15,
     "material_thickness": 1,
     "flags": [ "VARSIZE", "POCKETS", "OUTER", "HELMET_COMPAT", "ELECTRIC_IMMUNE" ]
@@ -749,7 +691,7 @@
     "description": "A small backpack with a special rail system designed to reduce the load felt by the wearer when moving up and down.  Good storage for very little encumbrance.",
     "weight": "833 g",
     "price": "78 USD",
-    "encumbrance": 7
+    "armor": [ { "encumbrance": 7 } ]
   },
   {
     "id": "rucksack_floating",
@@ -759,6 +701,6 @@
     "description": "A huge military rucksack with a special rail system designed to reduce the load felt by the wearer when moving up and down, provides a lot of storage for moderate encumbrance.",
     "weight": "1440 g",
     "price": "184 USD",
-    "encumbrance": 14
+    "armor": [ { "encumbrance": 14 } ]
   }
 ]

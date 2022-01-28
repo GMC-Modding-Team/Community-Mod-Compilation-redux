@@ -95,24 +95,28 @@
       [ "22aux", 1 ],
       [ "9mmaux", 1 ],
       [ "45aux", 1 ],
-      [ "lmil_armor", 1 ],
-      [ "mil_armor", 1 ],
-      [ "hmil_armor", 1 ],
-      { "group": "ammo_atomic_batteries", "prob": 25 }
+      { "group": "lmil_armor_collection", "prob": 1 },
+      { "group": "mil_armor_collection", "prob": 1 },
+      { "group": "hmil_armor_collection", "prob": 1 },
+      { "group": "ammo_atomic_batteries", "prob": 10 }
     ]
   },
   {
     "id": "mil_hw",
     "type": "item_group",
-    "items": [ [ "lmil_armor", 2 ], [ "mil_armor", 2 ], [ "hmil_armor", 2 ] ]
+    "items": [
+      { "group": "lmil_armor_collection", "prob": 2 },
+      { "group": "mil_armor_collection", "prob": 2 },
+      { "group": "hmil_armor_collection", "prob": 2 }
+    ]
   },
   {
     "id": "military",
     "type": "item_group",
     "items": [
-      [ "lmil_armor", 1 ],
-      [ "mil_armor", 1 ],
-      [ "hmil_armor", 1 ],
+      { "group": "lmil_armor_collection", "prob": 1 },
+      { "group": "mil_armor_collection", "prob": 1 },
+      { "group": "hmil_armor_collection", "prob": 1 },
       [ "neo_laser_pistol", 2 ],
       [ "akro_laser_smg", 2 ],
       [ "arc_laser_rifle", 2 ],
@@ -124,8 +128,7 @@
       [ "megamap", 5 ],
       [ "stim", 5 ],
       [ "boots_stealth", 3 ],
-      [ "acs_74_stealth_cloak_on", 3 ],
-      { "group": "ammo_atomic_batteries", "prob": 5 }
+      [ "acs_74_stealth_cloak_on", 3 ]
     ]
   },
   {
@@ -152,8 +155,7 @@
       [ "surv_sniper", 2 ],
       [ "elc_bld", 2 ],
       [ "recipe_surv", 2 ],
-      [ "manual_surv_com", 1 ],
-      [ "manual_biojutsu", 1 ]
+      { "group": "survivor_combative_books", "prob": 2 }
     ]
   },
   {
@@ -161,6 +163,11 @@
     "type": "item_group",
     "subtype": "collection",
     "groups": [ [ "encylopedias_rare", 5 ] ]
+  },
+  {
+    "id": "survivor_combative_books",
+    "type": "item_group",
+    "items": [ [ "manual_surv_com", 75 ], [ "manual_biojutsu", 20 ], [ "manual_mut_com", 5 ] ]
   },
   {
     "id": "encylopedias_common",
@@ -231,8 +238,7 @@
     "type": "item_group",
     "items": [
       [ "recipe_surv", 1 ],
-      [ "manual_surv_com", 1 ],
-      [ "manual_biojutsu", 1 ],
+      { "group": "survivor_combative_books", "prob": 1 },
       { "group": "encylopedias_common", "prob": 1 }
     ]
   },
@@ -241,8 +247,7 @@
     "type": "item_group",
     "items": [
       [ "recipe_surv", 1 ],
-      [ "manual_surv_com", 1 ],
-      [ "manual_biojutsu", 1 ],
+      { "group": "survivor_combative_books", "prob": 1 },
       { "group": "encylopedias_common", "prob": 1 }
     ]
   },
@@ -251,8 +256,7 @@
     "type": "item_group",
     "items": [
       [ "recipe_surv", 2 ],
-      [ "manual_surv_com", 1 ],
-      [ "manual_biojutsu", 1 ],
+      { "group": "survivor_combative_books", "prob": 3 },
       { "group": "encylopedias_common", "prob": 5 }
     ]
   },
@@ -261,8 +265,7 @@
     "type": "item_group",
     "items": [
       [ "recipe_surv", 1 ],
-      [ "manual_surv_com", 1 ],
-      [ "manual_biojutsu", 1 ],
+      { "group": "survivor_combative_books", "prob": 1 },
       { "group": "encylopedias_common", "prob": 1 },
       [ "biomap", 1 ]
     ]
@@ -272,8 +275,7 @@
     "type": "item_group",
     "items": [
       [ "recipe_surv", 2 ],
-      [ "manual_surv_com", 1 ],
-      [ "manual_biojutsu", 1 ],
+      { "group": "survivor_combative_books", "prob": 1 },
       { "group": "encylopedias_common", "prob": 1 }
     ]
   },
@@ -294,8 +296,7 @@
       [ "xarm_laser_shotgun", 2 ],
       [ "br_bolt_rifle_elec", 2 ],
       [ "mk_ionic_cannon", 2 ],
-      [ "cbm_rtg_inductor", 1 ],
-      { "group": "ammo_atomic_batteries_full", "prob": 5 }
+      [ "cbm_rtg_inductor", 1 ]
     ]
   },
   {
@@ -324,7 +325,8 @@
       [ "blood_m", 2 ],
       [ "blood_p", 2 ],
       [ "anesthetic_kit", 2 ],
-      { "group": "ammo_atomic_batteries", "prob": 10 }
+      { "group": "ammo_atomic_batteries", "prob": 10 },
+      { "group": "ammo_atomic_batteries_full", "prob": 5 }
     ]
   },
   {
@@ -368,7 +370,14 @@
   {
     "id": "traveler",
     "type": "item_group",
-    "items": [ [ "biomap", 1 ], [ "dress_skirt", 75 ], [ "microskirt", 10 ], [ "fancy_bra", 30 ], [ "thong", 30 ] ]
+    "items": [
+      [ "biomap", 1 ],
+      [ "dress_skirt", 25 ],
+      [ "microskirt", 10 ],
+      [ "fancy_bra", 10 ],
+      [ "fancy_panties", 10 ],
+      [ "thong", 5 ]
+    ]
   },
   {
     "id": "bionics",
@@ -378,7 +387,10 @@
       [ "bio_sword", 5 ],
       [ "bio_flamethrower", 5 ],
       [ "bio_plasma_cell", 5 ],
-      [ "bio_atomic_battery", 10 ]
+      [ "bio_atomic_battery", 10 ],
+      [ "bio_hazard_shield", 5 ],
+      [ "bio_animal_empathy", 5 ],
+      [ "bio_cutting_torch", 10 ]
     ]
   },
   {
@@ -389,49 +401,116 @@
       [ "bio_sword", 2 ],
       [ "bio_flamethrower", 5 ],
       [ "bio_plasma_cell", 10 ],
-      [ "bio_atomic_battery", 5 ]
+      [ "bio_atomic_battery", 5 ],
+      [ "bio_hazard_shield", 10 ],
+      [ "bio_animal_empathy", 5 ],
+      [ "bio_cutting_torch", 5 ]
     ]
   },
   {
     "id": "bionics_op",
     "type": "item_group",
+    "subtype": "distribution",
+    "//": "What the commandos get.",
     "items": [
       [ "bio_laser_armgun", 5 ],
       [ "bio_sword", 5 ],
       [ "bio_flamethrower", 5 ],
       [ "bio_plasma_cell", 20 ],
-      [ "bio_atomic_battery", 5 ]
+      [ "bio_atomic_battery", 5 ],
+      [ "bio_hazard_shield", 5 ],
+      [ "bio_animal_empathy", 10 ],
+      [ "bio_cutting_torch", 5 ]
     ]
   },
   {
-    "id": "bionics_sub",
+    "id": "bionics_tech",
     "type": "item_group",
-    "items": [ [ "bio_atomic_battery", 5 ] ]
+    "subtype": "distribution",
+    "//": "Bionics used by technicians.",
+    "items": [ [ "bio_atomic_battery", 10 ], [ "bio_cutting_torch", 20 ] ]
+  },
+  {
+    "id": "bionics_subs",
+    "type": "item_group",
+    "subtype": "distribution",
+    "//": "Bionics dropped by substation mini-boss.",
+    "items": [ [ "bio_atomic_battery", 5 ], [ "bio_plasma_cell", 5 ], [ "bio_hazard_shield", 5 ], [ "bio_cutting_torch", 10 ] ]
   },
   {
     "id": "female_underwear_top",
     "type": "item_group",
-    "items": [ [ "bra", 90 ], [ "fancy_bra", 90 ] ]
+    "items": [ [ "fancy_bra", 10 ] ]
   },
   {
     "id": "female_underwear_bottom",
     "type": "item_group",
-    "items": [ [ "panties", 70 ], [ "boy_shorts", 50 ], [ "thong", 70 ] ]
+    "items": [ [ "fancy_panties", 20 ], [ "thong", 10 ], [ "bikini_bottom_fur", 3 ], [ "bikini_bottom_leather", 3 ] ]
+  },
+  {
+    "id": "male_underwear_bottom",
+    "type": "item_group",
+    "items": [ [ "fancy_boxer_shorts", 10 ], [ "fancy_briefs", 10 ], [ "fancy_boxer_briefs", 10 ] ]
   },
   {
     "id": "allclothes",
     "type": "item_group",
-    "items": [ [ "dress_skirt", 75 ], [ "microskirt", 10 ], [ "fancy_bra", 30 ], [ "thong", 30 ] ]
+    "items": [
+      [ "dress_skirt", 25 ],
+      [ "microskirt", 10 ],
+      [ "fancy_bra", 10 ],
+      [ "fancy_panties", 10 ],
+      [ "thong", 10 ],
+      { "item": "fancy_briefs", "prob": 5 },
+      { "item": "fancy_boxer_briefs", "prob": 10 },
+      { "item": "fancy_panties", "prob": 10 },
+      { "item": "fancy_house_coat", "prob": 10 }
+    ]
+  },
+  {
+    "id": "swimmer_torso",
+    "type": "item_group",
+    "items": [ [ "bikini_top_fur", 10 ], [ "bikini_top_leather", 10 ] ]
+  },
+  {
+    "id": "swimmer_pants",
+    "type": "item_group",
+    "items": [ [ "bikini_bottom_fur", 10 ], [ "bikini_bottom_leather", 10 ] ]
+  },
+  {
+    "id": "underwear_womens",
+    "type": "item_group",
+    "//": "womens underwear.",
+    "subtype": "distribution",
+    "items": [
+      { "item": "bikini_bottom", "prob": 15 },
+      { "item": "bikini_bottom_fur", "prob": 5 },
+      { "item": "bikini_bottom_leather", "prob": 5 },
+      { "item": "fancy_bra", "prob": 30 },
+      { "item": "fancy_panties", "prob": 30 },
+      { "item": "thong", "prob": 20 }
+    ]
+  },
+  {
+    "id": "underwear_mens",
+    "type": "item_group",
+    "//": "mens underwear.",
+    "subtype": "distribution",
+    "items": [
+      { "item": "fancy_boxer_briefs", "prob": 10 },
+      { "item": "fancy_boxer_shorts", "prob": 10 },
+      { "item": "fancy_briefs", "prob": 10 }
+    ]
   },
   {
     "id": "pawn",
     "type": "item_group",
-    "items": [ [ "dress_skirt", 75 ], [ "microskirt", 10 ] ]
+    "items": [ [ "dress_skirt", 25 ], [ "microskirt", 10 ] ]
   },
   {
     "id": "pants",
     "type": "item_group",
-    "items": [ [ "dress_skirt", 75 ], [ "microskirt", 10 ] ]
+    "items": [ [ "dress_skirt", 25 ], [ "microskirt", 10 ] ]
   },
   {
     "id": "dead_slave_fighters",
@@ -445,9 +524,14 @@
     ]
   },
   {
-    "type": "item_group",
     "id": "ambulance_equipment",
+    "type": "item_group",
     "items": [ [ "anesthetic_kit", 5 ] ]
+  },
+  {
+    "id": "survivor_cutting",
+    "type": "item_group",
+    "items": [ [ "greatsword_makeshift", 5 ] ]
   },
   {
     "id": "sketchy_cabin_weapons",
@@ -532,8 +616,8 @@
     ]
   },
   {
-    "type": "item_group",
     "id": "bionics_failed_bio",
+    "type": "item_group",
     "subtype": "distribution",
     "//": "Intact bionics from failed bio-weapons, excluding broken bionics.  Weight is inverse of install difficulty, capped at 10.  Any CBMs of difficulty 11+ will use a weight of 1.  Additionally includes potentially having power-generation CBMs specific to the successful bio-weapons, rather than just what the profession version starts with.",
     "items": [
@@ -559,8 +643,8 @@
     ]
   },
   {
-    "type": "item_group",
     "id": "bionics_apophis",
+    "type": "item_group",
     "subtype": "distribution",
     "//": "Bionics for Bio-Weapon Apophis.  Roughly mocked up from what bionics might fit his in-game properties.",
     "items": [
@@ -569,11 +653,12 @@
       [ "bio_armor_head", 6 ],
       [ "bio_armor_legs", 8 ],
       [ "bio_armor_torso", 6 ],
-      [ "bio_blaster", 8 ],
+      [ "bio_laser_armgun", 7 ],
       [ "bio_carbon", 7 ],
       [ "bio_chain_lightning", 7 ],
       [ "bio_cqb", 3 ],
       [ "bio_faraday", 6 ],
+      [ "bio_hazard_shield", 1 ],
       [ "bio_heatsink", 8 ],
       [ "bio_hydraulics", 3 ],
       [ "bio_metabolics", 7 ],
@@ -589,8 +674,8 @@
     ]
   },
   {
-    "type": "item_group",
     "id": "bionics_soldat_zombie",
+    "type": "item_group",
     "subtype": "distribution",
     "//": "Bionics for zombie super soldiers.  First instance of CBMs with weight of 1 due to higher-than-10 difficulty.",
     "items": [
@@ -608,8 +693,8 @@
     ]
   },
   {
-    "type": "item_group",
     "id": "bionics_soldat_knight_zombie",
+    "type": "item_group",
     "subtype": "distribution",
     "//": "Bionics for zombie super juggernauts.",
     "items": [
@@ -633,8 +718,8 @@
     ]
   },
   {
-    "type": "item_group",
     "id": "bionics_soldat_sniper_zombie",
+    "type": "item_group",
     "subtype": "distribution",
     "//": "Bionics for zombie super scouts.",
     "items": [
@@ -653,8 +738,8 @@
     ]
   },
   {
-    "type": "item_group",
     "id": "bionics_soldat_tool_zombie",
+    "type": "item_group",
     "subtype": "distribution",
     "//": "Bionics for zombie super B.A.M.R.U.",
     "items": [
@@ -674,8 +759,8 @@
     ]
   },
   {
-    "type": "item_group",
     "id": "bionics_soldat_zombie_generic",
+    "type": "item_group",
     "subtype": "distribution",
     "//": "Bionics for unevolved zombie super soldiers and knife boys, random smattering of bionics shared by two or more super soldiers, and also adds their powergen options.",
     "items": [
@@ -695,33 +780,23 @@
     ]
   },
   {
-    "id": "electronics",
-    "type": "item_group",
-    "items": [ { "group": "ammo_atomic_batteries", "prob": 1 } ]
-  },
-  {
-    "id": "tools_science",
-    "type": "item_group",
-    "items": [ { "group": "ammo_atomic_batteries_full", "prob": 10 } ]
-  },
-  {
     "id": "ammo_atomic_batteries",
     "type": "item_group",
     "items": [
-      { "item": "light_battery_cell", "prob": 4, "charges-min": 0, "charges-max": 1000 },
-      { "item": "light_minus_atomic_battery_cell", "prob": 3, "charges-min": 0, "charges-max": 500 },
-      { "item": "medium_battery_cell", "prob": 2, "charges-min": 0, "charges-max": 5000 },
-      { "item": "heavy_battery_cell", "prob": 1, "charges-min": 0, "charges-max": 10000 }
+      { "item": "light_atomic_battery_cell", "prob": 4, "charges": [ 500, 1000 ] },
+      { "item": "light_minus_atomic_battery_cell", "prob": 3, "charges": [ 250, 500 ] },
+      { "item": "medium_atomic_battery_cell", "prob": 2, "charges": [ 2500, 5000 ] },
+      { "item": "heavy_atomic_battery_cell", "prob": 1, "charges": [ 5000, 10000 ] }
     ]
   },
   {
     "id": "ammo_atomic_batteries_full",
     "type": "item_group",
     "items": [
-      { "item": "light_battery_cell", "prob": 4, "charges-min": 1000, "charges-max": 1000 },
-      { "item": "light_minus_atomic_battery_cell", "prob": 3, "charges-min": 500, "charges-max": 500 },
-      { "item": "medium_battery_cell", "prob": 2, "charges-min": 5000, "charges-max": 5000 },
-      { "item": "heavy_battery_cell", "prob": 1, "charges-min": 10000, "charges-max": 10000 }
+      { "item": "light_atomic_battery_cell", "prob": 4, "charges": 1000 },
+      { "item": "light_minus_atomic_battery_cell", "prob": 3, "charges": 500 },
+      { "item": "medium_atomic_battery_cell", "prob": 2, "charges": 5000 },
+      { "item": "heavy_atomic_battery_cell", "prob": 1, "charges": 10000 }
     ]
   },
   {
@@ -734,13 +809,116 @@
     ]
   },
   {
-    "type": "item_group",
     "id": "guns_launcher_improvised",
+    "type": "item_group",
     "items": [ { "item": "flamethrower_surv", "prob": 15 } ]
   },
   {
     "id": "drugdealer",
     "type": "item_group",
     "items": [ [ "auto_case", 50 ] ]
+  },
+  {
+    "id": "cyborg_harvest",
+    "type": "item_group",
+    "subtype": "distribution",
+    "entries": [ { "group": "bionics_experimental_cataplus", "prob": 1 } ]
+  },
+  {
+    "id": "bionics_experimental_cataplus",
+    "type": "item_group",
+    "items": [
+      [ "bio_laser_armgun", 10 ],
+      [ "bio_sword", 15 ],
+      [ "bio_flamethrower", 10 ],
+      [ "bio_plasma_cell", 25 ],
+      [ "bio_atomic_battery", 20 ],
+      [ "bio_hazard_shield", 5 ],
+      [ "bio_animal_empathy", 5 ],
+      [ "bio_cutting_torch", 10 ]
+    ]
+  },
+  {
+    "id": "lmil_armor_collection",
+    "type": "item_group",
+    "subtype": "collection",
+    "entries": [ { "item": "lmil_armor" }, { "item": "lmil_helm", "prob": 90, "charges": [ 0, 100 ] } ]
+  },
+  {
+    "id": "mil_armor_collection",
+    "type": "item_group",
+    "subtype": "collection",
+    "entries": [ { "item": "mil_armor" }, { "item": "mil_helm", "prob": 90, "charges": [ 0, 100 ] } ]
+  },
+  {
+    "id": "robofac_basic_trade",
+    "type": "item_group",
+    "subtype": "distribution",
+    "items": [ { "group": "ammo_atomic_batteries_full", "prob": 100 } ]
+  },
+  {
+    "id": "spider",
+    "type": "item_group",
+    "subtype": "distribution",
+    "items": [ { "group": "ammo_atomic_batteries", "prob": 5 } ]
+  },
+  {
+    "id": "teleport",
+    "type": "item_group",
+    "subtype": "distribution",
+    "items": [ { "group": "ammo_atomic_batteries", "prob": 10 }, { "group": "ammo_atomic_batteries_full", "prob": 10 } ]
+  },
+  {
+    "id": "hmil_armor_collection",
+    "type": "item_group",
+    "subtype": "collection",
+    "entries": [ { "item": "hmil_armor" }, { "item": "hmil_helm", "prob": 90, "charges": [ 0, 100 ] } ]
+  },
+  {
+    "id": "c_mi_go_advanced_dissection_guard",
+    "type": "item_group",
+    "subtype": "distribution",
+    "items": [ [ "c_mi_go_carapace_broken", 2 ], [ "c_mi_go_beam_broken", 1 ] ]
+  },
+  {
+    "id": "c_mi_go_advanced_dissection_myrmidon",
+    "type": "item_group",
+    "subtype": "distribution",
+    "items": [ [ "c_mi_go_carapace_broken", 3 ], [ "c_mi_go_beam_broken", 1 ], [ "c_mi_go_claw_broken", 1 ] ]
+  },
+  {
+    "id": "sewer",
+    "type": "item_group",
+    "items": [ [ "manual_mut_com", 1 ] ]
+  },
+  {
+    "id": "sewage_plant",
+    "type": "item_group",
+    "items": [ [ "manual_mut_com", 1 ] ]
+  },
+  {
+    "id": "toxic_dump_equipment",
+    "type": "item_group",
+    "items": [ [ "manual_mut_com", 1 ] ]
+  },
+  {
+    "id": "trash",
+    "type": "item_group",
+    "items": [ [ "manual_mut_com", 1 ] ]
+  },
+  {
+    "id": "book_martial",
+    "type": "item_group",
+    "items": [ { "group": "survivor_combative_books", "prob": 5 } ]
+  },
+  {
+    "id": "book_military",
+    "type": "item_group",
+    "items": [ { "group": "survivor_combative_books", "prob": 10 } ]
+  },
+  {
+    "id": "rare_martial_arts_books",
+    "type": "item_group",
+    "items": [ { "group": "survivor_combative_books", "prob": 1 } ]
   }
 ]

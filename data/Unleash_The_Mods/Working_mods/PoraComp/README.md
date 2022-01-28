@@ -1,3 +1,20 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  
+
+- [PoraComp](#poracomp)
+- [Version 1.5.1](#version-151)
+- [Version 1.5 Corprate Take-Over (11/10/2018)](#version-15-corprate-take-over-11102018)
+- [!Expected Error! Upon first load after updating "Synthetic Base" recipie will pop an error. After a save and exist issue with be resolved.](#expected-error-upon-first-load-after-updating-synthetic-base-recipie-will-pop-an-error-after-a-save-and-exist-issue-with-be-resolved)
+- [Version 1.4 The refactoring (10/5/2018)](#version-14-the-refactoring-1052018)
+- [Version 1.3.3 (9/9/2018)](#version-133-992018)
+- [Version 1.3 (8/24/2018)](#version-13-8242018)
+- [Version 1.2 (5/1/2018)](#version-12-512018)
+- [Version 1.1 (3/15/2018)](#version-11-3152018)
+- [Version 1.0 (3/14/2018)](#version-10-3142018)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # PoraComp
 The PoraComp mod is a json only endeavour that aims to complile all my mods into one place, plus a few extra tidbits aimed at an intuitive gameplay experience. 
 Ideas, suggestions and other such mentions are more than welcome and I can be reached by email at poragonplays@gmail.com

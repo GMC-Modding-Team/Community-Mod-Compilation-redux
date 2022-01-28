@@ -1,3 +1,11 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  
+
+- [Visible-Scary-Shadies-CDDA-Mod](#visible-scary-shadies-cdda-mod)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Visible-Scary-Shadies-CDDA-Mod
 Makes shady zombies visible at night, increases speed, makes them harder to hit, and likely to cause you to get swarmed.
 

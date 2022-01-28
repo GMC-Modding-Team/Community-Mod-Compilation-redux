@@ -32,7 +32,6 @@
     "dodge": 4,
     "harvest": "bird_tiny",
     "biosignature": { "biosig_item": "feces_bird", "biosig_timer": 3 },
-    "death_function": [ "NORMAL" ],
     "flags": [ "SEES", "HEARS", "SMELLS", "ANIMAL", "PATH_AVOID_DANGER_1", "WARM", "FLIES" ]
   },
   {
@@ -58,7 +57,6 @@
     "melee_cut": 1,
     "dodge": 1,
     "harvest": "bird_tiny",
-    "death_function": [ "NORMAL" ],
     "flags": [ "SEES", "HEARS", "SMELLS", "ANIMAL", "PATH_AVOID_DANGER_1", "WARM" ]
   },
   {
@@ -161,7 +159,7 @@
     "vision_night": 10,
     "anger_triggers": [ "PLAYER_CLOSE" ],
     "fear_triggers": [ "HURT" ],
-    "death_function": [ "MELT" ],
+    "death_function": { "corpse_type": "NO_CORPSE", "message": "The %s melts away." },
     "death_drops": "bird_death_drops",
     "extend": { "flags": [ "GRABS", "NO_BREED", "NOGIB" ] }
   },
@@ -182,16 +180,14 @@
     "melee_dice_sides": 3,
     "melee_cut": 2,
     "fear_triggers": [ "HURT", "PLAYER_CLOSE" ],
-    "reproduction": { "baby_egg": "egg_bird_mutant_iridescent", "baby_count": 1, "baby_timer": 10 },
-    "extend": { "flags": [ "BIRDFOOD" ] }
+    "reproduction": { "baby_egg": "egg_bird_mutant_iridescent", "baby_count": 1, "baby_timer": 10 }
   },
   {
     "id": "mon_bird_mutant_iridescent_chick",
     "type": "MONSTER",
     "copy-from": "mon_bird_mutant_chick",
     "name": { "str": "deformed bird chick" },
-    "upgrades": { "age_grow": 12, "into": "mon_bird_mutant_iridescent" },
-    "extend": { "flags": [ "BIRDFOOD" ] }
+    "upgrades": { "age_grow": 12, "into": "mon_bird_mutant_iridescent" }
   },
   {
     "id": "mon_bird_mutant_ghoul",

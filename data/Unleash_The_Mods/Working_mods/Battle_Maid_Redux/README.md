@@ -1,3 +1,11 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  
+
+- [Battle Maid Redux Redux](#battle-maid-redux-redux)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Battle Maid Redux Redux
 
 A semi-comprehensive rebuild of the Battle Maid Redux mod, which itself is a retranslation of a machine translation of a Japanese mod.

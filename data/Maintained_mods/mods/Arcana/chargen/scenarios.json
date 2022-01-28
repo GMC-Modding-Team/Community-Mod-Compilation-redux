@@ -32,6 +32,7 @@
       "SPELL_FIRE",
       "SPELL_DAMPENING",
       "SPELL_SUMMONDOG",
+      "MARTIAL_ARTS_SANGUINE",
       "MARTIAL_ARTS_CF"
     ]
   },
@@ -42,7 +43,7 @@
     "id": "arcane_urban",
     "points": 1,
     "start_name": "Hidden In Plain Sight",
-    "allowed_locs": [ "arcanist_basement", "cathedral_basement" ],
+    "allowed_locs": [ "arcanist_basement", "cathedral_basement", "necropolis_basement" ],
     "professions": [
       "unemployed",
       "priest",
@@ -59,7 +60,8 @@
       "arcanist_alchemist",
       "arcanist_scribe",
       "arcanist_shrike",
-      "arcanist_purifier"
+      "arcanist_purifier",
+      "arcanist_operator"
     ],
     "traits": [
       "SPELL_CLAIRVOYANCE",
@@ -72,23 +74,24 @@
       "SPELL_DAYLIGHT",
       "SPELL_LOCKPICK",
       "SPELL_POISONARMOR",
+      "MARTIAL_ARTS_SANGUINE",
       "MARTIAL_ARTS_CF"
     ],
     "flags": [ "CITY_START", "LONE_START" ]
   },
   {
-    "type": "scenario",
     "id": "surrounded",
+    "type": "scenario",
     "copy-from": "surrounded",
     "add_professions": true,
     "extend": {
-      "professions": [ "arcanist_alchemist", "arcanist_scribe", "arcanist_shrike", "arcanist_purifier" ],
-      "traits": [ "MARTIAL_ARTS_CF" ]
+      "professions": [ "arcanist_alchemist", "arcanist_scribe", "arcanist_shrike", "arcanist_purifier", "arcanist_operator" ],
+      "traits": [ "MARTIAL_ARTS_SANGUINE", "MARTIAL_ARTS_CF" ]
     }
   },
   {
-    "type": "scenario",
     "id": "isolationist",
+    "type": "scenario",
     "copy-from": "isolationist",
     "add_professions": true,
     "extend": {
@@ -100,42 +103,56 @@
         "arcanist_oathkeeper",
         "arcanist_summoner"
       ],
-      "traits": [ "MARTIAL_ARTS_CF" ]
+      "traits": [ "MARTIAL_ARTS_SANGUINE", "MARTIAL_ARTS_CF" ]
     }
   },
   {
-    "type": "scenario",
     "id": "lab_chal",
+    "type": "scenario",
     "copy-from": "lab_chal",
     "extend": { "traits": [ "ARCANA_SCALYPATCHES", "ARCANA_INNERHEAT" ] }
   },
   {
-    "type": "scenario",
     "id": "mutant",
+    "type": "scenario",
     "copy-from": "mutant",
     "extend": { "traits": [ "ARCANA_SCALYPATCHES", "ARCANA_INNERHEAT" ] }
   },
   {
-    "type": "scenario",
     "id": "ambushed",
+    "type": "scenario",
     "copy-from": "ambushed",
     "extend": {
-      "professions": [ "arcanist_bloodmage", "arcanist_magehunter", "arcanist_oathkeeper", "arcanist_shrike", "arcanist_purifier" ],
-      "traits": [ "MARTIAL_ARTS_CF" ]
+      "professions": [
+        "arcanist_bloodmage",
+        "arcanist_magehunter",
+        "arcanist_oathkeeper",
+        "arcanist_shrike",
+        "arcanist_purifier",
+        "arcanist_operator"
+      ],
+      "traits": [ "MARTIAL_ARTS_SANGUINE", "MARTIAL_ARTS_CF" ]
     }
   },
   {
-    "type": "scenario",
     "id": "summer_advanced_start",
+    "type": "scenario",
     "copy-from": "summer_advanced_start",
     "extend": {
-      "professions": [ "arcanist_bloodmage", "arcanist_magehunter", "arcanist_oathkeeper", "arcanist_shrike", "arcanist_purifier" ],
-      "traits": [ "MARTIAL_ARTS_CF" ]
+      "professions": [
+        "arcanist_bloodmage",
+        "arcanist_magehunter",
+        "arcanist_oathkeeper",
+        "arcanist_shrike",
+        "arcanist_purifier",
+        "arcanist_operator"
+      ],
+      "traits": [ "MARTIAL_ARTS_SANGUINE", "MARTIAL_ARTS_CF" ]
     }
   },
   {
-    "type": "scenario",
     "id": "wilderness",
+    "type": "scenario",
     "copy-from": "wilderness",
     "add_professions": true,
     "extend": {
@@ -147,13 +164,16 @@
         "arcanist_oathkeeper",
         "arcanist_summoner"
       ],
-      "traits": [ "MARTIAL_ARTS_CF" ]
+      "traits": [ "MARTIAL_ARTS_SANGUINE", "MARTIAL_ARTS_CF" ]
     }
   },
   {
-    "type": "scenario",
     "id": "cyberpunk",
+    "type": "scenario",
     "copy-from": "cyberpunk",
-    "extend": { "professions": [ "arcanist_purifier" ], "traits": [ "MARTIAL_ARTS_CF" ] }
+    "extend": {
+      "professions": [ "arcanist_purifier", "arcanist_operator" ],
+      "traits": [ "MARTIAL_ARTS_SANGUINE", "MARTIAL_ARTS_CF" ]
+    }
   }
 ]

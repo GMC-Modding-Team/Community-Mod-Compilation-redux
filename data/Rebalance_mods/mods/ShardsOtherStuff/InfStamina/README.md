@@ -1,3 +1,11 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  
+
+- [InfStamina-CDDA-Mod](#infstamina-cdda-mod)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # InfStamina-CDDA-Mod
 Simple mod that adds a mutation setting stamina regen to absurd levels to practically disable the stamina system.
 

@@ -1,0 +1,140 @@
+[
+  {
+    "id": "f_primitive_still",
+    "type": "furniture",
+    "name": "makeshift still",
+    "symbol": "#",
+    "looks_like": "bottle_glass",
+    "description": "Little more than two bottles buried in dirt with a bent metal sheet to condense evaporated liquids. Will serve as a still in a pinch.",
+    "color": "brown",
+    "move_cost_mod": -1,
+    "required_str": -1,
+    "crafting_pseudo_item": "mound_distillation",
+    "flags": [ "PLACE_ITEM", "TRANSPARENT", "EASY_DECONSTRUCT" ],
+    "deconstruct": { "items": [ { "item": "bottle_glass", "count": 2 }, { "item": "sheet_metal", "count": 1 } ] },
+    "max_volume": "20 L",
+    "bash": {
+      "str_min": 12,
+      "str_max": 40,
+      "sound": "crunch!",
+      "sound_fail": "whump.",
+      "items": [ { "item": "glass_shard", "count": [ 1, 2 ] } ]
+    }
+  },
+  {
+    "id": "f_makeshift_fence",
+    "type": "furniture",
+    "name": "makeshift fence",
+    "description": "This is a makeshift fence",
+    "symbol": "=",
+    "bgcolor": "brown",
+    "move_cost_mod": 2,
+    "coverage": 50,
+    "required_str": -1,
+    "flags": [ "TRANSPARENT", "NOITEM", "FLAMMABLE_ASH", "THIN_OBSTACLE", "MOUNTABLE", "EASY_DECONSTRUCT", "WALL" ],
+    "deconstruct": { "items": [ { "item": "2x4", "amount": 8, "minamount": 8 } ] },
+    "bash": {
+      "str_min": 4,
+      "str_max": 20,
+      "sound": "crack.",
+      "sound_fail": "wham.",
+      "items": [ { "item": "2x4", "amount": 6, "minamount": 2 } ]
+    }
+  },
+  {
+    "id": "f_makeshift_gate",
+    "type": "furniture",
+    "name": "makeshift gate",
+    "description": "This is a makeshift gate",
+    "symbol": "=",
+    "bgcolor": "brown",
+    "move_cost_mod": 2,
+    "coverage": 50,
+    "required_str": -1,
+    "flags": [ "TRANSPARENT", "NOITEM", "FLAMMABLE_ASH", "THIN_OBSTACLE", "EASY_DECONSTRUCT", "DOOR", "CONNECT_TO_WALL" ],
+    "deconstruct": { "items": [ { "item": "2x4", "amount": 8, "minamount": 8 } ] },
+    "bash": {
+      "str_min": 4,
+      "str_max": 20,
+      "sound": "crack.",
+      "sound_fail": "wham.",
+      "items": [ { "item": "2x4", "amount": 6, "minamount": 2 } ]
+    }
+  },
+  {
+    "id": "f_woven_fence",
+    "type": "furniture",
+    "name": "woven fence",
+    "looks_like": "t_fence",
+    "move_cost_mod": 3,
+    "required_str": -1,
+    "symbol": "LINE_OXOX",
+    "description": "A fence made from simple fence posts and branches woven between the posts.",
+    "color": "brown",
+    "move_cost": 3,
+    "flags": [ "TRANSPARENT", "DIGGABLE", "FLAMMABLE_ASH", "NOITEM", "PERMEABLE", "MOUNTABLE", "AUTO_WALL_SYMBOL" ],
+    "connects_to": "WOODFENCE",
+    "deconstruct": { "items": [ { "item": "stick", "amount": 8, "minamount": 8 } ] },
+    "bash": {
+      "str_min": 4,
+      "str_max": 20,
+      "sound": "crack.",
+      "sound_fail": "wham.",
+      "items": [ { "item": "stick", "amount": 6, "minamount": 2 } ]
+    }
+  },
+  {
+    "id": "f_wooden_rollmat",
+    "type": "furniture",
+    "name": "wooden workmat",
+    "description": "A collection of fairly flat sticks bound together with cordage, makes a passable butchery aid. ",
+    "symbol": "D",
+    "bgcolor": "brown",
+    "move_cost_mod": 0,
+    "required_str": 3,
+    "deployed_item": "wooden_rollmat",
+    "examine_action": "deployed_furniture",
+    "flags": [ "TRANSPARENT", "SHORT", "FLAT_SURF" ],
+    "deconstruct": { "items": [ { "item": "wooden_rollmat", "count": 1 } ] },
+    "bash": {
+      "str_min": 5,
+      "str_max": 10,
+      "sound": "smash!",
+      "sound_fail": "whump.",
+      "items": [ { "item": "wooden_rollmat", "count": [ 1, 1 ] } ]
+    }
+  },
+  {
+    "id": "f_firepit",
+    "type": "furniture",
+    "name": "fire pit",
+    "description": "This is a fire pit, typically used for light and heat.",
+    "symbol": "0",
+    "bgcolor": "brown",
+    "move_cost_mod": 0,
+    "required_str": -1,
+    "flags": [ "TRANSPARENT", "CONTAINER", "FIRE_CONTAINER", "PLACE_ITEM" ],
+    "deconstruct": { "items": [ { "item": "rock", "amount": 8 } ] },
+    "bash": { "str_min": 1, "str_max": 1, "sound": "crash!", "sound_fail": "whump!", "items": [ { "item": "rock", "amount": 8 } ] }
+  },
+  {
+    "id": "f_cookfirepit",
+    "type": "furniture",
+    "name": "cooking pit",
+    "description": "This is a fire pit with a rock pot, typically used for light, heat and cooking.",
+    "symbol": "0",
+    "bgcolor": "brown",
+    "move_cost_mod": 2,
+    "required_str": -1,
+    "flags": [ "TRANSPARENT", "CONTAINER", "FIRE_CONTAINER", "SUPPRESS_SMOKE", "PLACE_ITEM" ],
+    "crafting_pseudo_item": "rock_pot",
+    "deconstruct": { "items": [ { "item": "rock", "amount": 8 }, { "item": "stick", "amount": 4 }, { "item": "rock_pot", "amount": 1 } ] },
+    "bash": {
+      "str_min": 1,
+      "str_max": 1,
+      "sound": "crash!",
+      "sound_fail": "whump!",
+      "items": [ { "item": "rock", "amount": 8 }, { "item": "stick", "amount": 4 }, { "item": "rock_pot", "amount": 1 } ]
+    }
+  }
+]

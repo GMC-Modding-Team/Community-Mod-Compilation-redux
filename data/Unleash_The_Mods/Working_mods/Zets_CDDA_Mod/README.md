@@ -1,3 +1,46 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  
+
+- [Zetsukaze's CDDA Tweaks!](#zetsukazes-cdda-tweaks)
+- [Usage Guide](#usage-guide)
+- [List of Changes](#list-of-changes)
+  - [Base Game](#base-game)
+    - [Armor](#armor)
+        - [Ankle Sheathe](#ankle-sheathe)
+    - [Tool Armor](#tool-armor)
+        - [Survivor Utility Belt](#survivor-utility-belt)
+    - [Vehicle Parts](#vehicle-parts)
+        - [Minifreezer](#minifreezer)
+        - [Minifridge](#minifridge)
+        - [Internal Boom Crane](#internal-boom-crane)
+    - [Comestibles](#comestibles)
+        - [Prepper pemmican](#prepper-pemmican)
+  - [Blazemod](#blazemod)
+    - [Vehicle Parts](#vehicle-parts-1)
+        - [Cargo dimensions!!!](#cargo-dimensions)
+        - [Boreal dimension](#boreal-dimension)
+        - [Gelidus dimension](#gelidus-dimension)
+  - [Cataclysm++](#cataclysm)
+    - [Armor](#armor-1)
+        - [Survivor's Archer Backpack](#survivors-archer-backpack)
+        - [Survivor's Scout Suit & Survivor's Armored Scout Suit](#survivors-scout-suit--survivors-armored-scout-suit)
+    - [Vehicle Parts](#vehicle-parts-2)
+        - [DC Fridge](#dc-fridge)
+        - [Survivor's Station](#survivors-station)
+  - [Advanced Gear](#advanced-gear)
+    - [Equipment](#equipment)
+        - [Nanotech 'mini-shoggoth' storage](#nanotech-mini-shoggoth-storage)
+        - [Nanotech liquid compressor](#nanotech-liquid-compressor)
+        - [Small nanotech liquid compressor](#small-nanotech-liquid-compressor)
+        - [Nanosuit](#nanosuit)
+    - [Vehicle Parts](#vehicle-parts-3)
+        - [Nanotech 'shoggoth' storage node](#nanotech-shoggoth-storage-node)
+        - [Nanotech crafting node](#nanotech-crafting-node)
+- [My CDDA Mods](#my-cdda-mods)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Zetsukaze's CDDA Tweaks!
 Minor tweaks to make the game more to my liking, some of the changes are OP, but this is a play your way game!
 

@@ -1,3 +1,18 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  
+
+- [Cataclysm: Dark Days Ahead Sierra Madre mod](#cataclysm-dark-days-ahead-sierra-madre-mod)
+- [Content and Features](#content-and-features)
+- [Difficulty](#difficulty)
+- [Tips](#tips)
+- [Installation](#installation)
+- [IMPORTANT NOTE](#important-note)
+- [Credits](#credits)
+- [Links](#links)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Cataclysm: Dark Days Ahead Sierra Madre mod
 
 A mod for the Cataclysm: Dark Days Ahead roguelike adding Sierra Madre location from Fallout New Vegas add-on Dead Money, serving as a tribute to the best Fallout DLC ever made.
