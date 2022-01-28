@@ -4,14 +4,13 @@
     "type": "effect_type",
     "name": [ "Magic Sign Exertion" ],
     "desc": [ "Overuse of Magic Signs increases fatigue gain." ],
-    "resist_effects": [ "potion_incense" ],
     "apply_message": "You feel a slight sense of exertion from casting the spell.",
     "remove_message": "The exertion of spellcasting fades from your mind.",
     "rating": "bad",
-    "max_duration": "24 h",
-    "max_intensity": 1440,
+    "max_duration": "200 m",
+    "max_intensity": 200,
     "int_dur_factor": "1 m",
-    "base_mods": { "fatigue_min": [ 1 ], "fatigue_tick": [ 250, 500 ] }
+    "base_mods": { "fatigue_min": [ 1 ], "fatigue_tick": [ 25 ] }
   },
   {
     "id": "triffid_garland_buff",
@@ -126,7 +125,18 @@
     "resist_effects": [ "talisman_warding" ],
     "desc": [ "Not immortality, but it still feels nice." ],
     "remove_message": "The healing effect fades.",
-    "removes_effects": [ "infected", "fungus", "bleed", "common_cold", "flu", "tetanus", "redcells_anemia", "hypovolemia" ],
+    "removes_effects": [
+      "poison",
+      "badpoison",
+      "infected",
+      "fungus",
+      "bleed",
+      "common_cold",
+      "flu",
+      "tetanus",
+      "redcells_anemia",
+      "hypovolemia"
+    ],
     "decay_messages": [ [ "The soothing effect of your potion is starting to fade.", "bad" ] ],
     "rating": "good",
     "max_duration": "30 m",
@@ -542,7 +552,7 @@
       "int_mod": [ -4 ],
       "per_mod": [ 4 ],
       "speed_mod": [ 30 ],
-      "stamina_min": [ 100 ],
+      "stamina_min": [ 20 ],
       "fatigue_min": [ 1 ],
       "fatigue_tick": [ 300 ]
     }
@@ -607,6 +617,8 @@
       "poison",
       "badpoison",
       "foodpoison",
+      "dermatik",
+      "formication",
       "bloodworms",
       "paincysts",
       "brainworms",
@@ -628,7 +640,7 @@
       "thirst_chance": [ 18, 36 ],
       "fatigue_min": [ 1 ],
       "fatigue_chance": [ 36, 12 ],
-      "stamina_min": [ 100 ],
+      "stamina_min": [ 30 ],
       "health_min": [ 1 ],
       "health_chance": [ 12 ],
       "h_mod_min": [ 1 ],
@@ -744,12 +756,20 @@
     "rating": "good"
   },
   {
+    "id": "drain_life_mending",
+    "type": "effect_type",
+    "removes_effects": [ "bleed", "winded", "redcells_anemia", "hypovolemia" ],
+    "rating": "good",
+    "max_duration": "15 s",
+    "base_mods": { "pain_min": [ -3 ], "stamina_min": [ 30 ] }
+  },
+  {
     "id": "sword_mending",
     "type": "effect_type",
     "removes_effects": [ "bleed", "winded", "redcells_anemia", "hypovolemia" ],
     "rating": "good",
     "max_duration": "15 s",
-    "base_mods": { "pain_min": [ -5 ], "stamina_min": [ 500 ] }
+    "base_mods": { "pain_min": [ -6 ], "stamina_min": [ 60 ] }
   },
   {
     "id": "arcana_invis",
@@ -795,7 +815,7 @@
   {
     "id": "lightning_ward",
     "type": "effect_type",
-    "name": [ "Ward Against Lightning" ],
+    "name": [ "Lightning Ward" ],
     "desc": [ "Complete immunity to lightning, reduced speed." ],
     "remove_message": "You feel an electric tingle as your protective magic fades.",
     "removes_effects": [ "zapped" ],
@@ -810,7 +830,7 @@
   {
     "id": "lightning_ward_true",
     "type": "effect_type",
-    "name": [ "Greater Ward Against Lightning" ],
+    "name": [ "Greater Lightning Ward" ],
     "desc": [ "Complete immunity to lightning." ],
     "remove_message": "You feel an electric tingle as your protective magic fades.",
     "removes_effects": [ "zapped" ],
@@ -972,7 +992,7 @@
     "type": "effect_type",
     "//": "Explicitly punish Mycus players who will be immune to mutation, that's what you get for channeling a rival interloper's nature magic.",
     "resist_traits": [ "THRESH_MARLOSS", "THRESH_MYCUS" ],
-    "blocks_effects": [
+    "removes_effects": [
       "blind",
       "deaf",
       "infected",
@@ -1016,7 +1036,7 @@
       "dex_mod": [ -0.2 ],
       "int_mod": [ -0.24 ],
       "per_mod": [ -0.2 ],
-      "stamina_min": [ 25 ],
+      "stamina_min": [ 2.5 ],
       "fatigue_min": [ 0.25 ]
     }
   },
