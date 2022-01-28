@@ -459,5 +459,84 @@
       [ "bio_increased_bionics_space_mkI", 1 ],
       [ "bio_increased_bionics_space_mkII", 1 ]
     ]
+  },
+  {
+    "id": "bio_furnace",
+    "copy-from": "bionic_general",
+    "type": "BIONIC_ITEM",
+    "name": { "str": "Internal Furnace CBM" },
+    "description": "You can use this bionic to burn energy dense organic material as fuel (use 'E'), recharging your power level.  Some materials will produce more power than others.",
+    "price": "45 kUSD",
+    "difficulty": 4
+  },
+  {
+    "id": "bio_storage",
+    "copy-from": "bionic_general_npc_usable",
+    "type": "BIONIC_ITEM",
+    "name": { "str": "Internal Storage CBM" },
+    "description": "Space inside your chest cavity has been converted into a storage area.  You may carry an extra 2 liters of volume.",
+    "price": "40 kUSD",
+    "difficulty": 7
+  },
+  {
+    "id": "bio_scent_vision",
+    "copy-from": "bionic_general",
+    "type": "BIONIC_ITEM",
+    "name": { "str": "Scent Vision CBM" },
+    "looks_like": "bio_int_enhancer",
+    "description": "This system lets the user visually sense their own scent, making it possible for them to recognize their surroundings even in complete darkness.",
+    "price": "45 kUSD",
+    "weight": "100 g",
+    "difficulty": 8
+  },
+  {
+    "id": "bio_blaster",
+    "copy-from": "bionic_general",
+    "type": "BIONIC_ITEM",
+    "name": { "str": "Fusion Blaster Arm CBM" },
+    "description": "Your left arm has been replaced by a heavy-duty fusion blaster!  You may use your energy banks to fire a damaging heat ray.  However, you are unable to use or carry two-handed items, and your strength limits what you can use with your one hand.",
+    "price": "22 kUSD",
+    "difficulty": 3
+  },
+  {
+    "id": "bio_scent_vision",
+    "type": "bionic",
+    "name": { "str": "Scent Vision" },
+    "description": "While this system is powered, you're able to visually sense your own scent, making it possible for you to recognize your surroundings even in complete darkness.",
+    "occupied_bodyparts": [ [ "head", 3 ] ],
+    "flags": [ "BIONIC_TOGGLED" ],
+    "act_cost": "2 J",
+    "react_cost": "2 J",
+    "time": 1
+  },
+  {
+    "id": "bio_furnace",
+    "type": "bionic",
+    "name": { "str": "Internal Furnace" },
+    "description": "You can use this bionic to burn energy dense organic material as fuel (use 'E'), recharging your power level.  Some materials will produce more power than others.",
+    "occupied_bodyparts": [ [ "torso", 40 ] ],
+    "fuel_options": [ "wood", "alcohol", "diesel", "jp8", "avgas", "biodiesel", "gasoline", "lamp_oil", "motor_oil", "charcoal", "coal" ],
+    "fuel_efficiency": 0.25,
+    "fuel_capacity": 1500,
+    "time": 1,
+    "flags": [ "BIONIC_POWER_SOURCE", "BIONIC_TOGGLED", "BIONIC_NPC_USABLE" ]
+  },
+  {
+    "id": "bio_blaster",
+    "type": "bionic",
+    "name": { "str": "Fusion Blaster Arm" },
+    "description": "Your left arm has been surgically replaced by a heavy-duty fusion blaster!  You may use your energy banks to fire a damaging heat ray.  However, you are unable to use or carry two-handed items, and your strength limits what you can use with your one hand.",
+    "occupied_bodyparts": [ [ "arm_l", 20 ], [ "hand_l", 5 ] ],
+    "act_cost": "50 kJ",
+    "fake_weapon": "bio_blaster_gun",
+    "flags": [ "BIONIC_GUN" ]
+  },
+  {
+    "id": "bio_storage",
+    "type": "bionic",
+    "name": { "str": "Internal Storage" },
+    "description": "Space inside your chest cavity has been surgically converted into a storage area.  You may carry an extra 2 liters of volume.",
+    "occupied_bodyparts": [ [ "torso", 32 ] ],
+    "flags": [ "BIONIC_NPC_USABLE", "BIONIC_SHOCKPROOF" ]
   }
 ]
