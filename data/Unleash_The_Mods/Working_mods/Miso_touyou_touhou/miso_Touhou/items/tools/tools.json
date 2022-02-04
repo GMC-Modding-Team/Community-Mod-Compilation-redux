@@ -63,7 +63,7 @@
     "material": [ "cotton", "steel", "wood" ],
     "symbol": ",",
     "color": "dark_gray",
-    "armor_data": { "coverage": 5, "encumbrance": 5, "material_thickness": 1 },
+    "armor_data": { "armor": [ { "coverage": 5, "encumbrance": 5 } ], "material_thickness": 1 },
     "use_action": {
       "type": "place_monster",
       "monster_id": "mon_golyat",
@@ -89,7 +89,7 @@
     "material": [ "cotton", "steel", "wood" ],
     "symbol": ",",
     "color": "dark_gray",
-    "armor_data": { "coverage": 5, "encumbrance": 5, "material_thickness": 1 },
+    "armor_data": { "armor": [ { "coverage": 5, "encumbrance": 5 } ], "material_thickness": 1 },
     "use_action": {
       "type": "place_monster",
       "monster_id": "mon_golyat2",
@@ -115,7 +115,7 @@
     "material": [ "cotton", "steel", "wood" ],
     "symbol": ",",
     "color": "dark_gray",
-    "armor_data": { "coverage": 5, "encumbrance": 5, "material_thickness": 1 },
+    "armor_data": { "armor": [ { "coverage": 5, "encumbrance": 5 } ], "material_thickness": 1 },
     "use_action": {
       "type": "place_monster",
       "monster_id": "mon_golyat2l",
@@ -139,10 +139,9 @@
     "symbol": "@",
     "color": "white_red",
     "ammo": [ "battery" ],
-    "initial_charges": 100,
-    "max_charges": 100,
     "use_action": "VIBE",
-    "flags": [ "SLEEP_AID", "TRADER_AVOID" ]
+    "flags": [ "SLEEP_AID", "TRADER_AVOID" ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "battery": 100 } } ]
   },
   {
     "id": "bot_mon_milk_mima",
@@ -554,9 +553,6 @@
     "symbol": "v",
     "color": "blue_white",
     "ammo": [ "battery" ],
-    "initial_charges": 300,
-    "max_charges": 300,
-    "turns_per_charge": 10,
     "qualities": [
       [ "COOK", 3 ],
       [ "BOIL", 2 ],
@@ -569,7 +565,8 @@
     ],
     "revert_to": "multi_cooker",
     "use_action": "MULTICOOKER",
-    "flags": [ "SLEEP_AID", "TRADER_AVOID" ]
+    "flags": [ "SLEEP_AID", "TRADER_AVOID" ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "battery": 300 } } ]
   },
   {
     "id": "bot_nosferatu_remilia_scarlet",
