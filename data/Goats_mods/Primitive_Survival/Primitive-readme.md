@@ -3,7 +3,7 @@
 Use the `home` key to get to the top.
 
 
-# Table of contents
+# <u>Table of contents</u>
 
 * [To-do](#to-do)
 * [Primitive Survival Sources](#primitive-survival-sources)
@@ -717,15 +717,15 @@ t_shrub_raspberry - Raspberry bush
 - [x] Black-currant Seed - Black-currant
 - [x] Goji seed - Goji berries
 - [x] Acai seed - Acai berries
-- [ ] Breadfruit Seed - Breadfruit
-- [ ] Cashew Seed - Cashew Nut
-- [ ] Rice Seed - Rice
-- [ ] Rubber Seed - Rubber
-- [ ] Turnip seed - Turnip
-- [ ] Swede seed - Swede
-- [ ] Pea seed - Pea shoot
-- [ ] Broad Bean seed - Broad Bean
-- [ ] Rye seed - Rye
+- [x] Breadfruit Seed - Breadfruit
+- [x] Cashew Seed - Cashew Nut
+- [x] Rice Seed - Rice
+- [x] Rubber Seed - Rubber
+- [x] Turnip seed - Turnip
+- [x] Swede seed - Swede
+- [x] Pea seed - Pea shoot
+- [x] Broad Bean seed - Broad Bean
+- [x] Rye seed - Rye
 - [ ] Hemp seed - Hemp
 - [ ] St. Johns Wort Seed - St. Johns Wort
 - [ ] Yarrow seed - Yarrow
@@ -843,6 +843,8 @@ t_shrub_raspberry - Raspberry bush
 *Terrain flora:*
 
 ```markdown
+- [x] Birch Tree
+- [x] Spruce Tree
 - [x] Cranberry Shrub
 - [x] Lingonberry Shrub
 - [x] Bilberry Shrub
@@ -1507,4 +1509,3 @@ fruit seeds:
 - [ ] Large Mast - 1 log, 4 Sheets
 - [ ] Steering stick attached to steering wood - stick, log - cutting tool
 ```
-
