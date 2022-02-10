@@ -720,12 +720,12 @@ t_shrub_raspberry - Raspberry bush
 - [x] Breadfruit Seed - Breadfruit
 - [x] Cashew Seed - Cashew Nut
 - [x] Rice Seed - Rice
-- [x] Rubber Seed - Rubber
 - [x] Turnip seed - Turnip
 - [x] Swede seed - Swede
 - [x] Pea seed - Pea shoot
 - [x] Broad Bean seed - Broad Bean
 - [x] Rye seed - Rye
+- [ ] Rubber Seed - Rubber
 - [ ] Hemp seed - Hemp
 - [ ] St. Johns Wort Seed - St. Johns Wort
 - [ ] Yarrow seed - Yarrow
