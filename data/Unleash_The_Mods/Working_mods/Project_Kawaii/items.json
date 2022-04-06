@@ -100,9 +100,6 @@
     "material_thickness": 4,
     "environmental_protection": 5,
     "flags": [ "VARSIZE", "WATERPROOF", "POCKETS", "RAINPROOF", "STURDY", "FANCY" ],
-    "max_charges": 500,
-    "initial_charges": 500,
-    "turns_per_charge": 0,
     "ammo": [ "battery" ],
     "use_action": {
       "type": "transform",
@@ -137,8 +134,6 @@
     "material_thickness": 4,
     "environmental_protection": 5,
     "flags": [ "VARSIZE", "WATERPROOF", "POCKETS", "RAINPROOF", "STURDY", "FANCY" ],
-    "max_charges": 500,
-    "turns_per_charge": 100,
     "ammo": [ "battery" ],
     "revert_to": "kawaii_maid_dress_lss",
     "use_action": {
@@ -174,8 +169,6 @@
     "material_thickness": 4,
     "environmental_protection": 5,
     "flags": [ "VARSIZE", "WATERPROOF", "POCKETS", "RAINPROOF", "STURDY", "FANCY" ],
-    "max_charges": 500,
-    "turns_per_charge": 300,
     "ammo": [ "battery" ],
     "revert_to": "kawaii_maid_dress_lss",
     "use_action": {
@@ -308,8 +301,7 @@
     "material": [ "cotton" ],
     "symbol": "[",
     "color": "white",
-    "covers": [ "leg_l", "leg_r" ],
-    "coverage": 15,
+    "armor": [ { "coverage": 15, "covers": [ "leg_l", "leg_r" ] } ],
     "warmth": 0,
     "material_thickness": 1,
     "flags": [ "VARSIZE", "SKINTIGHT", "FANCY" ]
@@ -325,8 +317,7 @@
     "material": [ "cotton" ],
     "symbol": "[",
     "color": "white",
-    "covers": [ "torso" ],
-    "coverage": 15,
+    "armor": [ { "coverage": 15, "covers": [ "torso" ] } ],
     "warmth": 0,
     "material_thickness": 1,
     "flags": [ "VARSIZE", "SKINTIGHT", "FANCY" ]
@@ -342,8 +333,7 @@
     "material": [ "cotton" ],
     "symbol": "[",
     "color": "white",
-    "covers": [ "leg_l", "leg_r" ],
-    "coverage": 15,
+    "armor": [ { "coverage": 15, "covers": [ "leg_l", "leg_r" ] } ],
     "warmth": 5,
     "material_thickness": 1,
     "flags": [ "VARSIZE", "SKINTIGHT", "FANCY" ]
@@ -359,8 +349,7 @@
     "material": [ "cotton" ],
     "symbol": "[",
     "color": "white",
-    "covers": [ "torso" ],
-    "coverage": 15,
+    "armor": [ { "coverage": 15, "covers": [ "torso" ] } ],
     "warmth": 5,
     "material_thickness": 1,
     "flags": [ "VARSIZE", "SKINTIGHT", "FANCY" ]
@@ -376,8 +365,7 @@
     "material": [ "cotton" ],
     "symbol": "[",
     "color": "white",
-    "covers": [ "leg_l", "leg_r" ],
-    "coverage": 15,
+    "armor": [ { "coverage": 15, "covers": [ "leg_l", "leg_r" ] } ],
     "warmth": 5,
     "material_thickness": 1,
     "flags": [ "VARSIZE", "SKINTIGHT", "FANCY" ]
@@ -393,8 +381,7 @@
     "material": [ "cotton" ],
     "symbol": "[",
     "color": "white",
-    "covers": [ "torso" ],
-    "coverage": 15,
+    "armor": [ { "coverage": 15, "covers": [ "torso" ] } ],
     "warmth": 5,
     "material_thickness": 1,
     "flags": [ "VARSIZE", "SKINTIGHT", "FANCY" ]
@@ -410,8 +397,7 @@
     "material": [ "cotton" ],
     "symbol": "[",
     "color": "light_red",
-    "covers": [ "leg_l", "leg_r" ],
-    "coverage": 15,
+    "armor": [ { "coverage": 15, "covers": [ "leg_l", "leg_r" ] } ],
     "warmth": 5,
     "material_thickness": 1,
     "flags": [ "VARSIZE", "SKINTIGHT", "WATER_FRIENDLY" ]
@@ -427,8 +413,7 @@
     "material": [ "cotton" ],
     "symbol": "[",
     "color": "light_red",
-    "covers": [ "torso" ],
-    "coverage": 10,
+    "armor": [ { "coverage": 10, "covers": [ "torso" ] } ],
     "material_thickness": 1,
     "flags": [ "VARSIZE", "WATER_FRIENDLY", "SKINTIGHT" ]
   },
@@ -443,8 +428,7 @@
     "material": [ "cotton" ],
     "symbol": "[",
     "color": "pink",
-    "covers": [ "leg_l", "leg_r" ],
-    "coverage": 7,
+    "armor": [ { "coverage": 7, "covers": [ "leg_l", "leg_r" ] } ],
     "material_thickness": 1,
     "flags": [ "VARSIZE", "FANCY" ]
   },
@@ -528,9 +512,6 @@
     "warmth": 40,
     "material_thickness": 3,
     "flags": [ "VARSIZE", "FANCY", "WATERPROOF", "RAINPROOF", "SKINTIGHT" ],
-    "max_charges": 200,
-    "initial_charges": 200,
-    "turns_per_charge": 0,
     "ammo": [ "battery" ],
     "use_action": {
       "type": "transform",
@@ -540,7 +521,14 @@
       "menu_text": "Activate heater",
       "need_charges": 1,
       "need_charges_msg": "%s does not have enough power left."
-    }
+    },
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "flag_restriction": [ "BATTERY_HEAVY" ],
+        "default_magazine": "heavy_plus_battery_cell"
+      }
+    ]
   },
   {
     "id": "kawaii_maid_hat_thermal_on",
@@ -558,9 +546,6 @@
     "warmth": 80,
     "material_thickness": 3,
     "flags": [ "VARSIZE", "FANCY", "WATERPROOF", "RAINPROOF", "SKINTIGHT" ],
-    "max_charges": 200,
-    "initial_charges": 200,
-    "turns_per_charge": 1000,
     "ammo": [ "battery" ],
     "revert_to": "kawaii_maid_hat_thermal_off",
     "use_action": {
@@ -568,7 +553,14 @@
       "msg": "You deactivate the headdress' heating systems",
       "target": "kawaii_maid_hat_thermal_off",
       "menu_text": "Deactivate heater"
-    }
+    },
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "flag_restriction": [ "BATTERY_HEAVY" ],
+        "default_magazine": "heavy_plus_battery_cell"
+      }
+    ]
   },
   {
     "id": "kawaii_maid_hat_lss",
@@ -586,9 +578,6 @@
     "warmth": 40,
     "material_thickness": 5,
     "flags": [ "VARSIZE", "FANCY", "WATERPROOF", "RAINPROOF", "SKINTIGHT", "STURDY" ],
-    "max_charges": 300,
-    "initial_charges": 300,
-    "turns_per_charge": 0,
     "environmental_protection": 5,
     "techniques": [ "WBLOCK_1" ],
     "ammo": [ "battery" ],
@@ -600,7 +589,14 @@
       "menu_text": "Change climate control settings",
       "need_charges": 1,
       "need_charges_msg": "%s does not have enough power left."
-    }
+    },
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "flag_restriction": [ "BATTERY_HEAVY" ],
+        "default_magazine": "heavy_plus_battery_cell"
+      }
+    ]
   },
   {
     "id": "kawaii_maid_hat_lss1",
@@ -618,9 +614,6 @@
     "warmth": 80,
     "material_thickness": 5,
     "flags": [ "VARSIZE", "FANCY", "WATERPROOF", "RAINPROOF", "SKINTIGHT", "STURDY" ],
-    "max_charges": 300,
-    "initial_charges": 300,
-    "turns_per_charge": 1000,
     "environmental_protection": 5,
     "techniques": [ "WBLOCK_1" ],
     "ammo": [ "battery" ],
@@ -633,7 +626,14 @@
       "menu_text": "Change climate control settings",
       "need_charges": 1,
       "need_charges_msg": "%s does not have enough power left."
-    }
+    },
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "flag_restriction": [ "BATTERY_HEAVY" ],
+        "default_magazine": "heavy_plus_battery_cell"
+      }
+    ]
   },
   {
     "id": "kawaii_maid_hat_lss2",
@@ -651,9 +651,6 @@
     "warmth": 0,
     "material_thickness": 5,
     "flags": [ "VARSIZE", "FANCY", "WATERPROOF", "RAINPROOF", "SKINTIGHT", "STURDY" ],
-    "max_charges": 300,
-    "initial_charges": 300,
-    "turns_per_charge": 2000,
     "environmental_protection": 5,
     "techniques": [ "WBLOCK_1" ],
     "ammo": [ "battery" ],
@@ -663,7 +660,14 @@
       "msg": "You deactivate the headdress' climate control.",
       "target": "kawaii_maid_hat_lss",
       "menu_text": "Change climate control settings"
-    }
+    },
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "flag_restriction": [ "BATTERY_HEAVY" ],
+        "default_magazine": "heavy_plus_battery_cell"
+      }
+    ]
   },
   {
     "id": "kawaii_hitec_megane",
@@ -676,15 +680,11 @@
     "material": [ "glass", "plastic" ],
     "symbol": "[",
     "color": "cyan",
-    "covers": [ "eyes" ],
-    "coverage": 75,
+    "armor": [ { "coverage": 75, "covers": [ "eyes" ] } ],
     "material_thickness": 2,
     "environmental_protection": 6,
     "qualities": [ [ "GLARE", 2 ] ],
     "flags": [ "WATER_FRIENDLY", "FANCY", "FIX_NEARSIGHT", "FIX_FARSIGHT", "SUN_GLASSES", "FLASH_PROTECTION" ],
-    "max_charges": 100,
-    "initial_charges": 100,
-    "charges_per_use": 0,
     "ammo": [ "battery" ],
     "use_action": {
       "type": "transform",
@@ -694,7 +694,14 @@
       "active": true,
       "need_charges": 1,
       "need_charges_msg": "%s does not have enough power left."
-    }
+    },
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "flag_restriction": [ "BATTERY_HEAVY" ],
+        "default_magazine": "heavy_plus_battery_cell"
+      }
+    ]
   },
   {
     "id": "kawaii_hitec_megane_nv",
@@ -707,14 +714,10 @@
     "material": [ "glass", "plastic" ],
     "symbol": "[",
     "color": "cyan",
-    "covers": [ "eyes" ],
-    "coverage": 75,
+    "armor": [ { "coverage": 75, "covers": [ "eyes" ] } ],
     "material_thickness": 2,
     "environmental_protection": 6,
     "flags": [ "WATER_FRIENDLY", "FANCY", "FIX_NEARSIGHT", "FIX_FARSIGHT", "GNV_EFFECT" ],
-    "max_charges": 100,
-    "initial_charges": 100,
-    "charges_per_use": 10,
     "ammo": [ "battery" ],
     "revert_to": "kawaii_hitec_megane",
     "use_action": {
@@ -725,7 +728,14 @@
       "active": true,
       "need_charges": 1,
       "need_charges_msg": "%s does not have enough power left."
-    }
+    },
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "flag_restriction": [ "BATTERY_HEAVY" ],
+        "default_magazine": "heavy_plus_battery_cell"
+      }
+    ]
   },
   {
     "id": "kawaii_hitec_megane_ir",
@@ -738,14 +748,10 @@
     "material": [ "glass", "plastic" ],
     "symbol": "[",
     "color": "cyan",
-    "covers": [ "eyes" ],
-    "coverage": 75,
+    "armor": [ { "coverage": 75, "covers": [ "eyes" ] } ],
     "material_thickness": 2,
     "environmental_protection": 6,
     "flags": [ "WATER_FRIENDLY", "FANCY", "FIX_NEARSIGHT", "FIX_FARSIGHT", "IR_EFFECT" ],
-    "max_charges": 100,
-    "initial_charges": 100,
-    "charges_per_use": 10,
     "ammo": [ "battery" ],
     "revert_to": "kawaii_hitec_megane",
     "use_action": {
@@ -753,7 +759,14 @@
       "menu_text": "Toggle vision mode",
       "msg": "You switch the glasses to blinder mode.",
       "target": "kawaii_hitec_megane_blind"
-    }
+    },
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "flag_restriction": [ "BATTERY_HEAVY" ],
+        "default_magazine": "heavy_plus_battery_cell"
+      }
+    ]
   },
   {
     "id": "kawaii_hitec_megane_blind",
@@ -766,21 +779,24 @@
     "material": [ "glass", "plastic" ],
     "symbol": "[",
     "color": "cyan",
-    "covers": [ "eyes" ],
-    "coverage": 75,
+    "armor": [ { "coverage": 75, "covers": [ "eyes" ] } ],
     "material_thickness": 2,
     "environmental_protection": 6,
     "flags": [ "WATER_FRIENDLY", "FANCY", "FIX_NEARSIGHT", "FIX_FARSIGHT", "BLIND" ],
-    "max_charges": 100,
-    "initial_charges": 100,
-    "charges_per_use": 0,
     "ammo": [ "battery" ],
     "use_action": {
       "type": "transform",
       "menu_text": "Toggle vision mode",
       "msg": "You return the glasses to its default mode.",
       "target": "kawaii_hitec_megane"
-    }
+    },
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "flag_restriction": [ "BATTERY_HEAVY" ],
+        "default_magazine": "heavy_plus_battery_cell"
+      }
+    ]
   },
   {
     "id": "kawaii_maid_megane_01",
@@ -793,8 +809,7 @@
     "material": [ "glass", "plastic" ],
     "symbol": "[",
     "color": "cyan",
-    "covers": [ "eyes" ],
-    "coverage": 75,
+    "armor": [ { "coverage": 75, "covers": [ "eyes" ] } ],
     "material_thickness": 1,
     "environmental_protection": 1,
     "flags": [ "WATER_FRIENDLY", "FANCY", "FIX_NEARSIGHT", "FIX_FARSIGHT" ],
@@ -816,8 +831,7 @@
     "material": [ "glass", "plastic" ],
     "symbol": "[",
     "color": "cyan",
-    "covers": [ "eyes" ],
-    "coverage": 75,
+    "armor": [ { "coverage": 75, "covers": [ "eyes" ] } ],
     "material_thickness": 1,
     "environmental_protection": 1,
     "flags": [ "WATER_FRIENDLY", "FANCY", "FIX_NEARSIGHT", "FIX_FARSIGHT" ],
@@ -839,8 +853,7 @@
     "material": [ "glass", "plastic" ],
     "symbol": "[",
     "color": "cyan",
-    "covers": [ "eyes" ],
-    "coverage": 75,
+    "armor": [ { "coverage": 75, "covers": [ "eyes" ] } ],
     "material_thickness": 1,
     "environmental_protection": 1,
     "flags": [ "WATER_FRIENDLY", "FANCY", "FIX_NEARSIGHT", "FIX_FARSIGHT" ],
@@ -862,8 +875,7 @@
     "material": [ "glass", "plastic" ],
     "symbol": "[",
     "color": "cyan",
-    "covers": [ "eyes" ],
-    "coverage": 75,
+    "armor": [ { "coverage": 75, "covers": [ "eyes" ] } ],
     "material_thickness": 1,
     "environmental_protection": 1,
     "flags": [ "WATER_FRIENDLY", "FANCY", "FIX_NEARSIGHT", "FIX_FARSIGHT" ],
@@ -885,8 +897,7 @@
     "material": [ "glass", "plastic" ],
     "symbol": "[",
     "color": "cyan",
-    "covers": [ "eyes" ],
-    "coverage": 75,
+    "armor": [ { "coverage": 75, "covers": [ "eyes" ] } ],
     "material_thickness": 1,
     "environmental_protection": 1,
     "flags": [ "WATER_FRIENDLY", "FANCY", "FIX_NEARSIGHT", "FIX_FARSIGHT" ]
@@ -902,8 +913,7 @@
     "material": [ "glass", "plastic" ],
     "symbol": "[",
     "color": "cyan",
-    "covers": [ "eyes" ],
-    "coverage": 75,
+    "armor": [ { "coverage": 75, "covers": [ "eyes" ] } ],
     "material_thickness": 1,
     "environmental_protection": 1,
     "flags": [ "WATER_FRIENDLY", "FANCY", "FIX_NEARSIGHT", "FIX_FARSIGHT" ]
@@ -919,8 +929,7 @@
     "material": [ "glass", "plastic" ],
     "symbol": "[",
     "color": "cyan",
-    "covers": [ "eyes" ],
-    "coverage": 75,
+    "armor": [ { "coverage": 75, "covers": [ "eyes" ] } ],
     "material_thickness": 1,
     "environmental_protection": 1,
     "flags": [ "WATER_FRIENDLY", "FANCY", "FIX_NEARSIGHT", "FIX_FARSIGHT" ]
@@ -936,8 +945,7 @@
     "material": [ "glass", "plastic" ],
     "symbol": "[",
     "color": "cyan",
-    "covers": [ "eyes" ],
-    "coverage": 75,
+    "armor": [ { "coverage": 75, "covers": [ "eyes" ] } ],
     "material_thickness": 1,
     "environmental_protection": 1,
     "flags": [ "WATER_FRIENDLY", "FANCY", "FIX_NEARSIGHT", "FIX_FARSIGHT" ]
@@ -953,8 +961,7 @@
     "material": [ "glass", "plastic" ],
     "symbol": "[",
     "color": "cyan",
-    "covers": [ "eyes" ],
-    "coverage": 75,
+    "armor": [ { "coverage": 75, "covers": [ "eyes" ] } ],
     "material_thickness": 1,
     "environmental_protection": 1,
     "flags": [ "WATER_FRIENDLY", "FANCY", "FIX_NEARSIGHT", "FIX_FARSIGHT" ]
@@ -970,8 +977,7 @@
     "material": [ "cotton" ],
     "symbol": "[",
     "color": "dark_gray",
-    "covers": [ "head" ],
-    "coverage": 65,
+    "armor": [ { "coverage": 65, "covers": [ "head" ] } ],
     "warmth": 20,
     "material_thickness": 1,
     "flags": [ "VARSIZE" ]
@@ -1273,10 +1279,8 @@
     "material": [ "leather" ],
     "symbol": "[",
     "color": "dark_gray",
-    "covers": [ "foot_l", "foot_r" ],
-    "coverage": 90,
+    "armor": [ { "coverage": 90, "encumbrance": 12, "covers": [ "foot_l", "foot_r" ] } ],
     "warmth": 20,
-    "encumbrance": 12,
     "material_thickness": 3,
     "environmental_protection": 2,
     "flags": [ "VARSIZE", "FANCY", "WATERPROOF" ]
@@ -1292,10 +1296,8 @@
     "material": [ "kevlar", "nomex" ],
     "symbol": "[",
     "color": "white",
-    "covers": [ "foot_l", "foot_r" ],
-    "coverage": 100,
+    "armor": [ { "coverage": 100, "encumbrance": 5, "covers": [ "foot_l", "foot_r" ] } ],
     "warmth": 30,
-    "encumbrance": 5,
     "material_thickness": 7,
     "environmental_protection": 10,
     "flags": [ "VARSIZE", "FANCY", "WATERPROOF", "STURDY" ]
@@ -1311,10 +1313,8 @@
     "material": [ "kevlar", "nomex" ],
     "symbol": "[",
     "color": "white",
-    "covers": [ "foot_l", "foot_r" ],
-    "coverage": 100,
+    "armor": [ { "coverage": 100, "encumbrance": 0, "covers": [ "foot_l", "foot_r" ] } ],
     "warmth": 2,
-    "encumbrance": 0,
     "material_thickness": 5,
     "environmental_protection": 10,
     "flags": [ "VARSIZE", "FANCY", "WATERPROOF", "STURDY" ]
@@ -1332,11 +1332,10 @@
     "weight": "60 g",
     "volume": "500 ml",
     "use_action": { "type": "transform", "msg": "You loosen the scarf.", "target": "kawaii_scarf_loose", "menu_text": "Adjust scarf" },
-    "covers": [ "mouth" ],
     "flags": [ "OUTER", "FANCY" ],
     "warmth": 60,
     "environmental_protection": 3,
-    "armor": [ { "encumbrance": 15, "coverage": 85 } ],
+    "armor": [ { "encumbrance": 15, "coverage": 85, "covers": [ "mouth" ] } ],
     "material_thickness": 1
   },
   {
@@ -1358,11 +1357,10 @@
       "target": "kawaii_scarf",
       "menu_text": "Adjust scarf"
     },
-    "covers": [ "mouth" ],
     "flags": [ "OUTER", "ALLOWS_NATURAL_ATTACKS", "FANCY" ],
     "warmth": 20,
     "environmental_protection": 3,
-    "armor": [ { "encumbrance": 10, "coverage": 45 } ],
+    "armor": [ { "encumbrance": 10, "coverage": 45, "covers": [ "mouth" ] } ],
     "material_thickness": 1
   }
 ]

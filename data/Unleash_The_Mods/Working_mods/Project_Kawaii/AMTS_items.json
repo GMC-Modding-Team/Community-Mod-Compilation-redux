@@ -155,8 +155,14 @@
     "symbol": ";",
     "color": "light_gray",
     "ammo": [ "battery" ],
-    "max_charges": 2000,
-    "flags": [ "NO_UNLOAD", "RECHARGE" ]
+    "flags": [ "NO_UNLOAD", "RECHARGE", "IS_UPS" ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "flag_restriction": [ "BATTERY_HEAVY" ],
+        "default_magazine": "heavy_plus_battery_cell"
+      }
+    ]
   },
   {
     "id": "kawaii_portable_kitchen",
@@ -172,10 +178,9 @@
     "color": "brown",
     "ammo": [ "lamp_oil" ],
     "sub": "hotplate",
-    "max_charges": 600,
-    "charges_per_use": 1,
     "qualities": [ [ "COOK", 3 ], [ "BOIL", 2 ], [ "CONTAIN", 1 ], [ "CHEM", 1 ] ],
-    "use_action": "HOTPLATE"
+    "use_action": "HOTPLATE",
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "watertight": true, "ammo_restriction": { "lamp_oil": 600 } } ]
   },
   {
     "id": "kawaii_amts_eve",
@@ -196,7 +201,6 @@
     "ranged_damage": { "damage_type": "stab", "amount": 5 },
     "dispersion": 40,
     "durability": 9,
-    "burst": 2,
     "pocket_data": [
       {
         "pocket_type": "MAGAZINE_WELL",

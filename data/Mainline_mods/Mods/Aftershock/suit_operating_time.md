@@ -1,25 +1,14 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Powered Armor Balance](#powered-armor-balance)
-  - [Operating time](#operating-time)
-      - [Additional factors](#additional-factors)
-      - [Example Calculation](#example-calculation)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # Powered Armor Balance
 
 These are guidelines for designing all sorts of Aftershock power armor.
 
-## Operating time
+## Operating time 
 
 We define `operating time` as the amount of time the suit/gear-piece takes to consume 1000 charges of batteries. The following factors, totaled, determine how long the suit should work between battery swaps.
 
 
 #### Additional factors
- |      Extra Hours      |     Condition                                                           |
+ |      Extra Hours      |     Condition                                                           | 
  |-----------------------|-------------------------------------------------------------------------|
  |        4 hours        | Base operating time. All suits work for at least 4 hours per full charge |
  |-----------------------|-------------------------------------------------------------------------|
@@ -41,7 +30,7 @@ We define `operating time` as the amount of time the suit/gear-piece takes to co
 
 Once you have determined the operating time using the table above, simply divide the number 277777.78 by the indicated number of hours to obtain your new suit's `power_draw` json value.
 
-For player convenience, the power draw and battery capacity of all clothing pieces that comprise a single matching outfit (e.g., the Magellan exosuit and its helmet) should be the same.
+For player convenience, the power draw and battery capacity of all clothing pieces that comprise a single matching outfit (e.g., the Magellan exosuit and its helmet) should be the same. 
 
 #### Example Calculation
 
@@ -60,7 +49,7 @@ Consider the Magellan exosuit, which has the following definition:
     "symbol": "[",
     "looks_like": "robofac_enviro_suit",
     "color": "light_gray",
-    "ammo": [ "battery" ],
+    "ammo": "battery",
     "charges_per_use": 1,
     "use_action": {
       "type": "transform",
@@ -92,7 +81,7 @@ The active version provides no additional bonuses except for cold protection.
 
 Evaluating the performance time using the table above, the result should be:
 
-| Suit Qualifies |      Extra Hours      |     Condition                                                           |
+| Suit Qualifies |      Extra Hours      |     Condition                                                           | 
 |----------------|-----------------------|-------------------------------------------------------------------------|
 |      yes       |        4 hours        | Base operating time. All suits work for at least 4 hours per full charge |
 |----------------|-----------------------|-------------------------------------------------------------------------|

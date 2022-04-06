@@ -1,14 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [List of Short Term Tasks](#list-of-short-term-tasks)
-  - [JSON](#json)
-  - [Code](#code)
-- [Mid Term Ideas](#mid-term-ideas)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # List of Short Term Tasks
 
 In order to keep Dark Skies Above moving and to not get overwhelmed, I'm creating lists of achievable, short term tasks that need to done.  These lists should be periodically updated as items are completed.
