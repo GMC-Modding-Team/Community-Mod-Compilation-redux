@@ -5,19 +5,6 @@
     "name": "Experimental",
     "threshold_mut": "THRESH_SECRONOM_EX",
     "mutagen_message": "You feel so strange.",
-    "iv_message": "You inject yoursel-arRGH!",
-    "iv_min_mutations": 2,
-    "iv_additional_mutations": 1,
-    "iv_additional_mutations_chance": 5,
-    "iv_fatigue": 65,
-    "iv_sound": true,
-    "iv_sound_message": "yourself scream in agony!",
-    "iv_sound_id": "shout",
-    "iv_sound_variant": "scream",
-    "iv_noise": 15,
-    "iv_sleep": true,
-    "iv_sleep_message": "You were knocked unconscious and spasm to the ground.",
-    "iv_sleep_dur": 600,
     "memorial_message": "Burst out of humanity."
   },
   {
@@ -36,8 +23,7 @@
     "type": "COMESTIBLE",
     "name": { "str": "experimental mutagen" },
     "description": "Mutagen developed by the secronom team. Unstable.",
-    "//": "Priceless and unknown.",
-    "use_action": { "type": "mutagen", "mutation_category": "SECRONOM_EX" }
+    "//": "Priceless and unknown."
   },
   {
     "id": "iv_mutagen_secronom_ex",
@@ -45,8 +31,7 @@
     "type": "COMESTIBLE",
     "name": { "str": "experimental serum" },
     "description": "Super-concentrated mutagen developed by the secronom team. Highly unstable. ",
-    "color": "green",
-    "use_action": { "type": "mutagen_iv", "mutation_category": "SECRONOM_EX" }
+    "color": "green"
   },
   {
     "id": "SECRO_TENDRIL",
@@ -673,7 +658,7 @@
     "types": [ "MUZZLE" ],
     "prereqs": [ "SECRO_LICKER_ATK", "SECRO_LICKER_DEF" ],
     "social_modifiers": { "persuade": -15, "lie": -15 },
-    "max_stamina_modifier": 0.7,
+    "stamina_regen_modifier": 0.7,
     "attacks": [
       {
         "attack_text_u": "You lick %s",
@@ -913,7 +898,7 @@
     "dodge_modifier": -6,
     "movecost_modifier": 1.15,
     "movecost_obstacle_modifier": 1.25,
-    "speed_modifier": 1.1,
+    "enchantments": [ { "condition": "ALWAYS", "values": [ { "value": "SPEED", "multiply": 1.1 } ] } ],
     "attackcost_modifier": 1.1,
     "attacks": [
       {
@@ -949,7 +934,7 @@
     "description": "You have several eyesprouts scattered throughout your hair, and they are sometimes painful when covered by a headgear. Provides additional vision bonuses and increases your perception by 3, but increases head encumberance by 20.",
     "prereqs": [ "SECRO_UNKNOWN_HAIR_START" ],
     "encumbrance_always": [ [ "head", 20 ] ],
-    "map_memory_capacity_multiplier": 1.25,
+    "enchantments": [ { "condition": "ALWAYS", "values": [ { "value": "MAP_MEMORY", "multiply": 1.25 } ] } ],
     "overmap_sight": 2.5,
     "overmap_multiplier": 1.25,
     "passive_mods": { "per_mod": 3 },
