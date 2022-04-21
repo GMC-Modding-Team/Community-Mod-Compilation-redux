@@ -3,25 +3,23 @@
     "id": "c_nano_mutagen_trigger",
     "type": "effect_on_condition",
     "recurrence": [ "1 s", "1 s" ],
-    "condition": { "u_has_effect" : "c_nano_mutagen_trigger" },
+    "condition": { "u_has_effect": "c_nano_mutagen_trigger" },
     "effect": [
       {
         "u_message": "You feel your body being subtly altered, a rapid internal metamorphosis triggered by the nanites coursing through your system.",
         "type": "mixed"
       },
       { "run_eocs": [ "c_nano_mutagen_thresh_test" ] },
-      { "u_mutate_category" : "SUPER_SOLDIER", "use_vitamins": false },
+      { "u_mutate_category": "SUPER_SOLDIER", "use_vitamins": false },
       { "run_eocs": [ "c_nano_mutagen_trigger_bonus", "c_nano_mutagen_trigger_bonus" ] },
-      { "u_lose_effect" : "c_nano_mutagen_trigger" }
+      { "u_lose_effect": "c_nano_mutagen_trigger" }
     ]
   },
   {
     "id": "c_nano_mutagen_trigger_bonus",
     "type": "effect_on_condition",
     "condition": { "one_in_chance": 3 },
-    "effect": [
-      { "u_mutate_category" : "SUPER_SOLDIER", "use_vitamins": false }
-    ]
+    "effect": [ { "u_mutate_category": "SUPER_SOLDIER", "use_vitamins": false } ]
   },
   {
     "id": "c_nano_mutagen_thresh_test",
@@ -36,11 +34,8 @@
       ]
     },
     "effect": [
-      {
-        "u_message": "Something strains mightily for a moment… and then… you're… FREE!",
-        "type": "good"
-      },
-      { "u_add_trait" : "THRESH_SUPER_SOLDIER" }
+      { "u_message": "Something strains mightily for a moment… and then… you're… FREE!", "type": "good" },
+      { "u_add_trait": "THRESH_SUPER_SOLDIER" }
     ]
   }
 ]
