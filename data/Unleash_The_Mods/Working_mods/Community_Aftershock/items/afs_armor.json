@@ -11,10 +11,8 @@
     "price": "100 kUSD",
     "price_postapoc": "50 USD",
     "material": [ "superalloy", "plastic" ],
-    "covers": [ "head", "eyes", "mouth" ],
-    "coverage": 100,
+    "armor": [ { "coverage": 100, "encumbrance": 15, "covers": [ "head", "eyes", "mouth" ] } ],
     "material_thickness": 2,
-    "encumbrance": 15,
     "warmth": 20,
     "environmental_protection": 11,
     "qualities": [ [ "GLARE", 3 ] ],
@@ -30,7 +28,16 @@
     },
     "flags": [ "WATERPROOF", "FLASH_PROTECTION", "ONLY_ONE", "STURDY" ],
     "looks_like": "depowered_helmet",
-    "magazines": [ [ "battery", [ "light_battery_cell", "light_minus_battery_cell", "light_plus_battery_cell" ] ] ]
+    "pocket_data": [
+      {
+        "magazine_well": "250 ml",
+        "pocket_type": "MAGAZINE_WELL",
+        "holster": true,
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [ "light_battery_cell", "light_minus_battery_cell", "light_plus_battery_cell" ]
+      }
+    ]
   },
   {
     "id": "afs_hev_helmet_on",
@@ -42,8 +49,7 @@
     "turns_per_charge": 20,
     "use_action": { "menu_text": "Turn off", "type": "transform", "msg": "The %s flicks off.", "target": "afs_hev_helmet" },
     "flags": [ "LIGHT_500", "WATERPROOF", "FLASH_PROTECTION", "ONLY_ONE", "STURDY" ],
-    "looks_like": "depowered_helmet",
-    "magazines": [ [ "battery", [ "light_battery_cell", "light_minus_battery_cell", "light_plus_battery_cell" ] ] ]
+    "looks_like": "depowered_helmet"
   },
   {
     "id": "afs_bag_of_holding",
@@ -58,9 +64,7 @@
     "material": [ "glass", "superalloy", "platinum" ],
     "symbol": "[",
     "color": "cyan",
-    "covers": [ "torso" ],
-    "coverage": 30,
-    "encumbrance": 10,
+    "armor": [ { "encumbrance": 10, "coverage": 30, "covers": [ "torso" ] } ],
     "warmth": 5,
     "material_thickness": 2,
     "flags": [ "BELTED", "ONLY_ONE", "LEAK_DAM" ],
@@ -85,9 +89,7 @@
     "material": [ "leather" ],
     "symbol": "[",
     "color": "dark_gray",
-    "covers": [ "torso" ],
-    "coverage": 20,
-    "encumbrance": 5,
+    "armor": [ { "encumbrance": 5, "coverage": 20, "covers": [ "torso" ] } ],
     "material_thickness": 1,
     "pocket_data": [ { "pocket_type": "MAGAZINE", "ammo_restriction": { "arrow": 40 } } ],
     "flags": [ "BELTED", "OVERSIZE", "WATER_FRIENDLY" ]
@@ -104,9 +106,7 @@
     "material": [ "leather" ],
     "symbol": "[",
     "color": "dark_gray",
-    "covers": [ "torso" ],
-    "coverage": 20,
-    "encumbrance": 5,
+    "armor": [ { "encumbrance": 5, "coverage": 20, "covers": [ "torso" ] } ],
     "material_thickness": 1,
     "pocket_data": [ { "pocket_type": "MAGAZINE", "ammo_restriction": { "bolt": 40 } } ],
     "flags": [ "BELTED", "OVERSIZE", "WATER_FRIENDLY" ]
@@ -124,10 +124,8 @@
     "price": "50 USD",
     "price_postapoc": "100 USD",
     "material": [ "plastic" ],
-    "covers": [ "torso" ],
-    "coverage": 50,
+    "armor": [ { "coverage": 50, "encumbrance": 10, "covers": [ "torso" ] } ],
     "material_thickness": 1,
-    "encumbrance": 10,
     "pocket_data": [
       { "pocket_type": "CONTAINER", "max_contains_volume": "2500 ml", "max_contains_weight": "5 kg", "moves": 80 },
       { "pocket_type": "CONTAINER", "max_contains_volume": "2500 ml", "max_contains_weight": "5 kg", "moves": 80 },
@@ -148,10 +146,14 @@
     "price": "1000 kUSD",
     "price_postapoc": "500 USD",
     "material": [ "superalloy", "kevlar" ],
-    "covers": [ "torso", "arm_l", "arm_r", "hand_l", "hand_r", "leg_l", "leg_r", "foot_l", "foot_r" ],
-    "coverage": 100,
+    "armor": [
+      {
+        "coverage": 100,
+        "encumbrance": 9,
+        "covers": [ "torso", "arm_l", "arm_r", "hand_l", "hand_r", "leg_l", "leg_r", "foot_l", "foot_r" ]
+      }
+    ],
     "material_thickness": 2,
-    "encumbrance": 9,
     "warmth": 20,
     "environmental_protection": 5,
     "flags": [
@@ -183,9 +185,13 @@
     "material": [ "wool" ],
     "symbol": "[",
     "color": "white",
-    "covers": [ "torse", "arm_l", "arm_r", "hand_l", "hand_r", "leg_l", "leg_r", "foot_l", "foot_r" ],
-    "coverage": 100,
-    "encumbrance": 40,
+    "armor": [
+      {
+        "encumbrance": 40,
+        "coverage": 100,
+        "covers": [ "torso", "arm_l", "arm_r", "hand_l", "hand_r", "leg_l", "leg_r", "foot_l", "foot_r" ]
+      }
+    ],
     "warmth": 100,
     "material_thickness": 3,
     "environmental_protection": 2,
@@ -198,7 +204,7 @@
     "copy-from": "afs_quilt",
     "name": { "str": "patchwork quilt" },
     "description": "A huge, patchwork wool quilt.  Very, very warm.",
-    "encumbrance": 50,
+    "armor": [ { "encumbrance": 50 } ],
     "warmth": 90
   },
   {
@@ -212,9 +218,7 @@
     "material": [ "cotton", "plastic" ],
     "symbol": "[",
     "color": "light_blue",
-    "covers": [ "torso", "arm_l", "arm_r" ],
-    "coverage": 95,
-    "encumbrance": 14,
+    "armor": [ { "encumbrance": 14, "coverage": 95, "covers": [ "torso", "arm_l", "arm_r" ] } ],
     "pocket_data": [
       { "pocket_type": "CONTAINER", "max_contains_volume": "700 ml", "max_contains_weight": "3 kg", "moves": 80 },
       { "pocket_type": "CONTAINER", "max_contains_volume": "700 ml", "max_contains_weight": "3 kg", "moves": 80 }
@@ -228,7 +232,7 @@
   {
     "id": "afs_survivor_belt",
     "type": "ARMOR",
-    "copy-from": "survivor_belt",
+    "copy-from": "survivor_belt_notools",
     "name": { "str": "survivor utility belt (holster)" },
     "description": "A custom-built leather utility belt covered with straps and pouches containing many useful hand tools and a clip for holding various equipment.  Durable and carefully crafted to be comfortable to wear.  Activate to clip something to it.",
     "use_action": { "type": "holster", "holster_prompt": "Attach what to belt loop?", "holster_msg": "You clip your %s to your %s" }
@@ -236,7 +240,7 @@
   {
     "id": "survivor_belt",
     "type": "ARMOR",
-    "copy-from": "survivor_belt",
+    "copy-from": "survivor_belt_notools",
     "name": { "str": "survivor utility belt (sheath)" }
   },
   {
@@ -251,9 +255,7 @@
     "material": [ "steel" ],
     "symbol": "[",
     "color": "dark_gray",
-    "covers": [ "head", "mouth", "eyes" ],
-    "coverage": 100,
-    "encumbrance": 30,
+    "armor": [ { "encumbrance": 30, "coverage": 100, "covers": [ "head", "mouth", "eyes" ] } ],
     "material_thickness": 3,
     "qualities": [ [ "GLARE", 3 ] ],
     "flags": [ "SUN_GLASSES", "FLASH_PROTECTION" ]
@@ -270,9 +272,7 @@
     "material": [ "steel" ],
     "symbol": "[",
     "color": "dark_gray",
-    "covers": [ "eyes", "mouth" ],
-    "coverage": 100,
-    "encumbrance": 60,
+    "armor": [ { "encumbrance": 60, "coverage": 100, "covers": [ "eyes", "mouth" ] } ],
     "material_thickness": 2,
     "qualities": [ [ "GLARE", 2 ] ],
     "flags": [ "SUN_GLASSES", "FLASH_PROTECTION", "BLIND" ]
@@ -289,9 +289,7 @@
     "material": [ "leather", "steel" ],
     "symbol": "[",
     "color": "brown",
-    "covers": [ "torso" ],
-    "coverage": 100,
-    "encumbrance": 16,
+    "armor": [ { "encumbrance": 16, "coverage": 100, "covers": [ "torso" ] } ],
     "warmth": 25,
     "material_thickness": 3,
     "flags": [ "RAINPROOF", "STURDY", "OUTER", "ONLY_ONE", "VARSIZE" ]
@@ -308,9 +306,7 @@
     "material": [ "cotton", "steel" ],
     "symbol": "[",
     "color": "white",
-    "covers": [ "torso" ],
-    "coverage": 95,
-    "encumbrance": 14,
+    "armor": [ { "encumbrance": 14, "coverage": 95, "covers": [ "torso" ] } ],
     "warmth": 20,
     "material_thickness": 2,
     "flags": [ "OUTER", "VARSIZE" ]
@@ -327,9 +323,7 @@
     "material": [ "titanium", "cotton" ],
     "symbol": "[",
     "color": "white",
-    "covers": [ "torso" ],
-    "coverage": 80,
-    "encumbrance": 4,
+    "armor": [ { "encumbrance": 4, "coverage": 80, "covers": [ "torso" ] } ],
     "material_thickness": 2
   },
   {
@@ -346,9 +340,7 @@
     "material": [ "kevlar", "titanium" ],
     "symbol": "[",
     "color": "light_gray",
-    "covers": [ "torso" ],
-    "coverage": 85,
-    "encumbrance": 7,
+    "armor": [ { "encumbrance": 7, "coverage": 85, "covers": [ "torso" ] } ],
     "warmth": 15,
     "material_thickness": 3,
     "use_action": { "type": "holster", "holster_prompt": "Stash ammo", "holster_msg": "You stash your %s." },
@@ -357,5 +349,83 @@
       { "pocket_type": "CONTAINER", "max_contains_volume": "1250 ml", "max_contains_weight": "5 kg", "moves": 80 }
     ],
     "flags": [ "STURDY", "OUTER" ]
+  },
+  {
+    "id": "armguard_bone",
+    "type": "ARMOR",
+    "category": "armor",
+    "name": { "str": "pair of bone arm guards", "str_pl": "pairs of bone arm guards" },
+    "description": "A pair of arm guards made from leather, reinforced with bone.  Light and strong.",
+    "weight": "645 g",
+    "volume": "3 L",
+    "price": 20000,
+    "to_hit": 1,
+    "material": [ "bone", "leather" ],
+    "symbol": "[",
+    "color": "white",
+    "armor": [ { "encumbrance": 22, "coverage": 95, "covers": [ "arm_l", "arm_r" ] } ],
+    "warmth": 20,
+    "material_thickness": 4,
+    "environmental_protection": 1,
+    "flags": [ "STURDY", "BELTED", "BLOCK_WHILE_WORN", "WATER_FRIENDLY" ]
+  },
+  {
+    "id": "armor_bone",
+    "type": "ARMOR",
+    "category": "armor",
+    "name": { "str": "bone body armor" },
+    "description": "Body armor consisting of a leather suit with strategically-placed bone reinforcement.  Light and strong.",
+    "weight": "2687 g",
+    "volume": "12500 ml",
+    "price": 100000,
+    "to_hit": -5,
+    "bashing": 2,
+    "material": [ "bone", "leather" ],
+    "symbol": "[",
+    "color": "white",
+    "armor": [ { "encumbrance": 24, "coverage": 95, "covers": [ "torso", "leg_l", "leg_r" ] } ],
+    "warmth": 20,
+    "material_thickness": 4,
+    "flags": [ "VARSIZE", "STURDY" ]
+  },
+  {
+    "id": "gauntlets_bone",
+    "type": "ARMOR",
+    "category": "armor",
+    "name": { "str": "pair of bone armor gauntlets", "str_pl": "pairs of bone armor gauntlets" },
+    "description": "Leather gauntlets with bone armor reinforcement.  Very light and strong.",
+    "weight": "690 g",
+    "volume": "1250 ml",
+    "price": 38000,
+    "to_hit": -2,
+    "bashing": 2,
+    "material": [ "bone", "leather" ],
+    "symbol": "[",
+    "color": "white",
+    "armor": [ { "encumbrance": 15, "coverage": 95, "covers": [ "hand_l", "hand_r" ] } ],
+    "warmth": 20,
+    "material_thickness": 4,
+    "environmental_protection": 4,
+    "flags": [ "STURDY" ]
+  },
+  {
+    "id": "helmet_bone",
+    "type": "ARMOR",
+    "category": "armor",
+    "name": { "str": "bone armor helmet" },
+    "description": "A grotesque, horned helmet carved from bone.  Covers the entire head; very light and strong.",
+    "weight": "1621 g",
+    "volume": "4250 ml",
+    "price": 42000,
+    "to_hit": -2,
+    "bashing": 2,
+    "material": [ "bone" ],
+    "symbol": "[",
+    "color": "white",
+    "armor": [ { "encumbrance": 25, "coverage": 100, "covers": [ "head", "eyes", "mouth" ] } ],
+    "warmth": 10,
+    "material_thickness": 5,
+    "environmental_protection": 3,
+    "flags": [ "VARSIZE", "WATERPROOF", "STURDY" ]
   }
 ]

@@ -118,10 +118,10 @@
     "symbol": "/",
     "color": "yellow",
     "ammo": [ "gasoline" ],
-    "max_charges": 500,
     "charges_per_use": 1,
     "use_action": { "target": "afs_power_cutter_on", "msg": "You rev up the power cutter!", "active": true, "type": "transform" },
-    "flags": [ "ALWAYS_TWOHAND", "NONCONDUCTIVE" ]
+    "flags": [ "ALWAYS_TWOHAND", "NONCONDUCTIVE" ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "gasoline": 500 }, "watertight": true } ]
   },
   {
     "id": "afs_power_cutter_on",
@@ -136,13 +136,13 @@
     "symbol": "/",
     "color": "yellow",
     "ammo": [ "gasoline" ],
-    "max_charges": 500,
     "turns_per_charge": 3,
     "revert_to": "afs_power_cutter",
     "techniques": "SWEEP",
     "use_action": { "target": "afs_power_cutter", "msg": "Your power cutter falls quiet.", "menu_text": "Turn off", "type": "transform" },
     "qualities": [ [ "CUT", 1 ], [ "SAW_M", 5 ], [ "SAW_M_FINE", 1 ], [ "BUTCHER", -70 ] ],
-    "flags": [ "ALWAYS_TWOHAND", "MESSY", "TRADER_AVOID", "NONCONDUCTIVE" ]
+    "flags": [ "ALWAYS_TWOHAND", "MESSY", "TRADER_AVOID", "NONCONDUCTIVE" ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "gasoline": 500 }, "watertight": true } ]
   },
   {
     "id": "afs_murdersaw",
@@ -160,10 +160,10 @@
     "symbol": "/",
     "color": "yellow",
     "ammo": [ "gasoline" ],
-    "max_charges": 500,
     "charges_per_use": 1,
     "use_action": { "target": "afs_murdersaw_on", "msg": "You rev up the murdersaw!", "active": true, "type": "transform" },
-    "flags": [ "ALWAYS_TWOHAND", "NONCONDUCTIVE" ]
+    "flags": [ "ALWAYS_TWOHAND", "NONCONDUCTIVE" ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "gasoline": 500 }, "watertight": true } ]
   },
   {
     "id": "afs_murdersaw_on",
@@ -179,13 +179,13 @@
     "symbol": "/",
     "color": "yellow",
     "ammo": [ "gasoline" ],
-    "max_charges": 500,
     "turns_per_charge": 5,
     "revert_to": "afs_murdersaw",
     "techniques": "SWEEP",
     "use_action": { "target": "afs_murdersaw", "msg": "Your murdersaw falls quiet.", "menu_text": "Turn off", "type": "transform" },
     "qualities": [ [ "CUT", 1 ], [ "SAW_M", 1 ], [ "BUTCHER", -50 ] ],
-    "flags": [ "ALWAYS_TWOHAND", "MESSY", "TRADER_AVOID", "NONCONDUCTIVE" ]
+    "flags": [ "ALWAYS_TWOHAND", "MESSY", "TRADER_AVOID", "NONCONDUCTIVE" ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "gasoline": 500 }, "watertight": true } ]
   },
   {
     "id": "afs_rope_lighter",
@@ -211,8 +211,7 @@
     "copy-from": "UPS_off",
     "name": { "str": "UPS", "str_pl": "UPS's" },
     "description": "This is a unified power supply, or UPS.  It is a device developed jointly by military and scientific interests for use in combat and the field.  The UPS is designed to power armor and some guns, but drains batteries quickly.  It can be worn around to either leg for ease of access, and it's been waterproofed to protect the delicate electronics.",
-    "coverage": 5,
-    "encumbrance": 2,
+    "armor": [ { "encumbrance": 2, "coverage": 5 } ],
     "covers": [ "leg_l", "leg_r" ],
     "flags": [ "NO_UNLOAD", "RECHARGE", "WAIST", "FRAGILE", "OVERSIZE", "WATERPROOF" ]
   },
@@ -222,8 +221,7 @@
     "copy-from": "adv_UPS_off",
     "name": { "str": "advanced UPS", "str_pl": "advanced UPS's" },
     "description": "This is an advanced version of the unified power supply, or UPS.  This device has been significantly redesigned to provide better efficiency as well as to consume plutonium fuel cells rather than batteries, and is both slimmer and lighter to wear.  Sadly, its plutonium reactor can't be charged in UPS charging station.",
-    "coverage": 5,
-    "encumbrance": 1,
+    "armor": [ { "encumbrance": 1, "coverage": 5 } ],
     "covers": [ "leg_l", "leg_r" ],
     "flags": [ "WAIST", "FRAGILE", "OVERSIZE" ]
   },
@@ -269,7 +267,16 @@
       "active": true
     },
     "flags": [ "USE_UPS", "NO_UNLOAD", "NO_RELOAD" ],
-    "magazines": [ [ "battery", [ "light_battery_cell", "light_minus_battery_cell", "light_plus_battery_cell" ] ] ]
+    "pocket_data": [
+      {
+        "magazine_well": "250 ml",
+        "pocket_type": "MAGAZINE_WELL",
+        "holster": true,
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [ "light_battery_cell", "light_minus_battery_cell", "light_plus_battery_cell" ]
+      }
+    ]
   },
   {
     "id": "afs_energy_saber_on",
@@ -296,6 +303,15 @@
       "target": "afs_energy_saber_off",
       "msg": "The blade dissipates into particles."
     },
-    "magazines": [ [ "battery", [ "light_battery_cell", "light_minus_battery_cell", "light_plus_battery_cell" ] ] ]
+    "pocket_data": [
+      {
+        "magazine_well": "250 ml",
+        "pocket_type": "MAGAZINE_WELL",
+        "holster": true,
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [ "light_battery_cell", "light_minus_battery_cell", "light_plus_battery_cell" ]
+      }
+    ]
   }
 ]

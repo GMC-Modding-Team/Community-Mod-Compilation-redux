@@ -29,6 +29,34 @@
     }
   },
   {
+    "id": "afs_mounted_gibs_shotgun",
+    "copy-from": "turret",
+    "type": "vehicle_part",
+    "name": { "str": "mounted Gibson S86" },
+    "item": "afs_gibs_shotgun",
+    "color": "magenta",
+    "broken_color": "magenta",
+    "breaks_into": [ { "item": "scrap", "count": 9 }, { "item": "steel_chunk", "count": 4 }, { "item": "steel_lump", "count": 1 } ],
+    "requirements": {
+      "install": { "skills": [ [ "mechanics", 5 ], [ "electronics", 5 ] ] },
+      "removal": { "skills": [ [ "mechanics", 3 ] ] }
+    }
+  },
+  {
+    "id": "afs_mounted_Accipitermg",
+    "copy-from": "turret",
+    "type": "vehicle_part",
+    "name": { "str": "mounted Accipiter Hawk-00" },
+    "item": "afs_Accipitermg",
+    "color": "magenta",
+    "broken_color": "magenta",
+    "breaks_into": [ { "item": "scrap", "count": 9 }, { "item": "steel_chunk", "count": 4 }, { "item": "steel_lump", "count": 1 } ],
+    "requirements": {
+      "install": { "skills": [ [ "mechanics", 5 ], [ "electronics", 5 ] ] },
+      "removal": { "skills": [ [ "mechanics", 3 ] ] }
+    }
+  },
+  {
     "id": "afs_laser_rifle",
     "copy-from": "turret",
     "type": "vehicle_part",
@@ -66,8 +94,8 @@
     "damage_reduction": { "all": 4 }
   },
   {
-    "type": "vehicle_part",
     "id": "afs_control_station",
+    "type": "vehicle_part",
     "name": { "str": "control station" },
     "symbol": "$",
     "looks_like": "vehicle_dashboard",
@@ -292,7 +320,7 @@
     "type": "vehicle_part",
     "categories": [ "energy" ],
     "copy-from": "solar_panel",
-    "name": { "str": "quantum solar panel" },
+    "name": "quantum solar panel",
     "looks_like": "solar_panel_v2",
     "proportional": { "epower": 6.0 },
     "item": "solar_panel_v3",
@@ -313,7 +341,7 @@
   {
     "id": "robot_cargo",
     "type": "vehicle_part",
-    "name": { "str": "robot_carrier" },
+    "name": "robot_carrier",
     "symbol": "=",
     "categories": [ "cargo", "passengers" ],
     "color": "light_gray",
@@ -335,6 +363,41 @@
       { "item": "steel_lump", "count": [ 6, 8 ] },
       { "item": "steel_chunk", "count": [ 6, 8 ] },
       { "item": "scrap", "count": [ 6, 8 ] }
+    ]
+  },
+  {
+    "id": "exo_gantry",
+    "type": "vehicle_part",
+    "name": { "str": "exosuit maintenance gantry" },
+    "symbol": "T",
+    "categories": [ "utility" ],
+    "color": "light_gray",
+    "broken_symbol": "x",
+    "broken_color": "light_gray",
+    "looks_like": "welding_rig",
+    "damage_modifier": 10,
+    "durability": 200,
+    "description": "A gantry for supporting an exosuit upright during maintenance and repair.  Includes the specialized tools needed for complex repairs and will also charge the suit's power when active.",
+    "size": 800,
+    "bonus": 600,
+    "item": "afs_metal_rig",
+    "location": "center",
+    "requirements": {
+      "install": { "skills": [ [ "mechanics", 3 ] ], "time": "60 m", "using": [ [ "vehicle_wrench_2", 1 ] ] },
+      "removal": { "skills": [ [ "mechanics", 2 ] ], "time": "30 m", "using": [ [ "vehicle_wrench_2", 1 ] ] },
+      "repair": { "skills": [ [ "mechanics", 4 ] ], "time": "60 m", "using": [ [ "welding_standard", 5 ] ] }
+    },
+    "flags": [ "CARGO", "OBSTACLE", "COVERED", "RECHARGE" ],
+    "pseudo_tools": [
+      { "id": "welder", "hotkey": "w" },
+      { "id": "soldering_iron", "hotkey": "s" },
+      { "id": "exo_repair_kit", "hotkey": "e" }
+    ],
+    "breaks_into": [
+      { "item": "steel_lump", "count": [ 3, 6 ] },
+      { "item": "steel_chunk", "count": [ 3, 6 ] },
+      { "item": "scrap", "count": [ 3, 6 ] },
+      { "item": "welder", "charges": 0, "prob": 50 }
     ]
   }
 ]

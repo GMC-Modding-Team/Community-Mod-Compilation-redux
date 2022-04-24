@@ -682,7 +682,7 @@
   {
     "id": "Lab with Anthill",
     "type": "overmap_special",
-    "overmaps": [ { "point": [ 0, 0, 0 ], "overmap": "lab_stairs" }, { "point": [ 3, 1, 0 ], "overmap": "anthill" } ],
+    "overmaps": [ { "point": [ 0, 0, 0 ], "overmap": "lab_stairs" }, { "point": [ 3, 1, 0 ], "overmap": "anthill_north" } ],
     "connections": [ { "point": [ 0, -1, 0 ], "terrain": "road" } ],
     "locations": [ "wilderness" ],
     "city_distance": [ 10, -1 ],
@@ -795,7 +795,7 @@
     "flags": [ "CLASSIC" ]
   },
   {
-    "id": "Military Bunker",
+    "id": "military_bunker",
     "type": "overmap_special",
     "overmaps": [
       { "point": [ 0, -1, 0 ], "overmap": "road_end_north" },
@@ -809,7 +809,7 @@
     "flags": [ "MILITARY" ]
   },
   {
-    "id": "Military Outpost",
+    "id": "military_outpost",
     "type": "overmap_special",
     "overmaps": [ { "point": [ 0, 0, 0 ], "overmap": "outpost_north" } ],
     "locations": [ "wilderness" ],
@@ -1034,8 +1034,20 @@
   {
     "id": "Mine Entrance",
     "type": "overmap_special",
-    "overmaps": [ { "point": [ 0, 0, 0 ], "overmap": "s_lot_north" }, { "point": [ 0, 1, 0 ], "overmap": "mine_entrance" } ],
-    "connections": [ { "point": [ 0, -1, 0 ], "terrain": "road", "connection": "local_road", "from": [ 0, 0, 0 ] } ],
+    "overmaps": [
+      { "point": [ 0, 0, 0 ], "overmap": "s_lot_north" },
+      { "point": [ 0, 1, 0 ], "overmap": "mine_entrance_north" },
+      { "point": [ 1, 1, 0 ], "overmap": "mine_entrance_loading_zone_north" },
+      { "point": [ 1, 0, 0 ], "overmap": "road_end_north" },
+      { "point": [ 0, 1, 1 ], "overmap": "mine_entrance_roof_north" },
+      { "point": [ 0, 1, -1 ], "overmap": "mine_shaft_middle_north" },
+      { "point": [ 0, 1, -2 ], "overmap": "mine_shaft_lower_north" },
+      { "point": [ 1, 1, -2 ], "overmap": "mine_shaft_lower_east_north" }
+    ],
+    "connections": [
+      { "point": [ 0, -1, 0 ], "terrain": "road", "connection": "local_road", "from": [ 0, 0, 0 ] },
+      { "point": [ 1, -1, 0 ], "terrain": "road", "connection": "local_road", "from": [ 1, 0, 0 ] }
+    ],
     "locations": [ "wilderness" ],
     "city_distance": [ 10, 40 ],
     "city_sizes": [ 4, -1 ],
@@ -1043,9 +1055,9 @@
     "flags": [ "WILDERNESS" ]
   },
   {
-    "id": "Anthill",
+    "id": "anthill",
     "type": "overmap_special",
-    "overmaps": [ { "point": [ 0, 0, 0 ], "overmap": "anthill" } ],
+    "overmaps": [ { "point": [ 0, 0, 0 ], "overmap": "anthill_north" } ],
     "locations": [ "wilderness" ],
     "city_distance": [ 10, -1 ],
     "occurrences": [ 0, 1 ],
@@ -1056,7 +1068,7 @@
   {
     "id": "Acid Anthill",
     "type": "overmap_special",
-    "overmaps": [ { "point": [ 0, 0, 0 ], "overmap": "acid_anthill" } ],
+    "overmaps": [ { "point": [ 0, 0, 0 ], "overmap": "anthill_north" } ],
     "locations": [ "wilderness" ],
     "city_distance": [ 10, -1 ],
     "occurrences": [ 0, 1 ],
@@ -1067,7 +1079,10 @@
   {
     "id": "Spider Pit",
     "type": "overmap_special",
-    "overmaps": [ { "point": [ 0, 0, 0 ], "overmap": "spider_pit" }, { "point": [ 0, 0, -1 ], "overmap": "spider_pit_under" } ],
+    "overmaps": [
+      { "point": [ 0, 0, 0 ], "overmap": "spider_pit_north" },
+      { "point": [ 0, 0, -1 ], "overmap": "spider_pit_under_north" }
+    ],
     "locations": [ "forest" ],
     "city_sizes": [ 0, 12 ],
     "occurrences": [ 0, 500 ],
@@ -1125,9 +1140,28 @@
     "id": "Triffid Grove",
     "type": "overmap_special",
     "overmaps": [
-      { "point": [ 0, 0, 0 ], "overmap": "triffid_grove" },
-      { "point": [ 0, 0, -1 ], "overmap": "triffid_roots" },
-      { "point": [ 0, 0, -2 ], "overmap": "triffid_finale" }
+      { "point": [ 0, 0, 3 ], "overmap": "triffid_grove_roof_north" },
+      { "point": [ 0, 0, 2 ], "overmap": "triffid_grove_z3_north" },
+      { "point": [ 0, 0, 1 ], "overmap": "triffid_grove_z2_north" },
+      { "point": [ 0, 0, 0 ], "overmap": "triffid_grove_north" },
+      { "point": [ 0, 1, 0 ], "overmap": "triffid_field_north" },
+      { "point": [ 0, -1, 0 ], "overmap": "triffid_field_north" },
+      { "point": [ 1, 0, 0 ], "overmap": "triffid_field_north" },
+      { "point": [ -1, 0, 0 ], "overmap": "triffid_field_north" },
+      { "point": [ 1, 1, 0 ], "overmap": "triffid_field_north" },
+      { "point": [ -1, -1, 0 ], "overmap": "triffid_field_north" },
+      { "point": [ -1, 1, 0 ], "overmap": "triffid_field_north" },
+      { "point": [ 1, -1, 0 ], "overmap": "triffid_field_north" },
+      { "point": [ 0, 0, -1 ], "overmap": "triffid_roots_north" },
+      { "point": [ 0, -1, -1 ], "overmap": "triffid_rootss_north" },
+      { "point": [ 0, 1, -1 ], "overmap": "triffid_rootsn_north" },
+      { "point": [ 1, 0, -1 ], "overmap": "triffid_rootse_north" },
+      { "point": [ -1, 0, -1 ], "overmap": "triffid_rootsw_north" },
+      { "point": [ 1, 1, -1 ], "overmap": "triffid_rootsen_north" },
+      { "point": [ -1, 1, -1 ], "overmap": "triffid_rootsnw_north" },
+      { "point": [ -1, -1, -1 ], "overmap": "triffid_rootssw_north" },
+      { "point": [ 1, -1, -1 ], "overmap": "triffid_rootsse_north" },
+      { "point": [ 0, 0, -2 ], "overmap": "triffid_finale_north" }
     ],
     "locations": [ "forest" ],
     "city_distance": [ 10, -1 ],
@@ -3552,24 +3586,6 @@
     "flags": [ "CLASSIC", "WILDERNESS" ]
   },
   {
-    "id": "basin",
-    "type": "overmap_special",
-    "overmaps": [ { "point": [ 0, 0, 0 ], "overmap": "pond_forest_north" } ],
-    "locations": [ "forest" ],
-    "city_distance": [ 15, -1 ],
-    "occurrences": [ 0, 5 ],
-    "flags": [ "CLASSIC", "WILDERNESS" ]
-  },
-  {
-    "id": "bog",
-    "type": "overmap_special",
-    "overmaps": [ { "point": [ 0, 0, 0 ], "overmap": "pond_swamp_north" } ],
-    "locations": [ "swamp" ],
-    "city_distance": [ 15, -1 ],
-    "occurrences": [ 0, 5 ],
-    "flags": [ "CLASSIC", "WILDERNESS" ]
-  },
-  {
     "id": "Swamp Shack",
     "type": "overmap_special",
     "overmaps": [
@@ -4503,7 +4519,7 @@
       { "point": [ 0, 1, -2 ], "overmap": "microlab_generic_edge" },
       { "point": [ 1, 1, -2 ], "overmap": "microlab_generic" },
       { "point": [ 2, 1, -2 ], "overmap": "microlab_generic" },
-      { "point": [ 3, 1, -2 ], "overmap": "microlab_generic_hallway_start_south" },
+      { "point": [ 3, 1, -2 ], "overmap": "microlab_generic_hallway_end_north" },
       { "point": [ 4, 1, -2 ], "overmap": "microlab_generic" },
       { "point": [ 5, 1, -2 ], "overmap": "microlab_generic_edge" },
       { "point": [ 6, 1, -2 ], "overmap": "microlab_rock_border" },
@@ -4511,7 +4527,7 @@
       { "point": [ 0, 2, -2 ], "overmap": "microlab_generic_edge" },
       { "point": [ 1, 2, -2 ], "overmap": "microlab_generic" },
       { "point": [ 2, 2, -2 ], "overmap": "microlab_generic" },
-      { "point": [ 3, 2, -2 ], "overmap": "microlab_generic_hallway_north" },
+      { "point": [ 3, 2, -2 ], "overmap": "microlab_generic_hallway_ns" },
       { "point": [ 4, 2, -2 ], "overmap": "microlab_generic" },
       { "point": [ 5, 2, -2 ], "overmap": "microlab_generic_edge" },
       { "point": [ 6, 2, -2 ], "overmap": "microlab_rock_border" },
@@ -4552,7 +4568,7 @@
       { "point": [ 0, 1, -4 ], "overmap": "microlab_generic_edge_room_connector_west" },
       { "point": [ 1, 1, -4 ], "overmap": "microlab_generic" },
       { "point": [ 2, 1, -4 ], "overmap": "microlab_generic" },
-      { "point": [ 3, 1, -4 ], "overmap": "microlab_generic_hallway_start_south" },
+      { "point": [ 3, 1, -4 ], "overmap": "microlab_generic_hallway_end_north" },
       { "point": [ 4, 1, -4 ], "overmap": "microlab_generic" },
       { "point": [ 5, 1, -4 ], "overmap": "microlab_generic_edge" },
       { "point": [ 6, 1, -4 ], "overmap": "microlab_rock_border" },
@@ -4560,7 +4576,7 @@
       { "point": [ 0, 2, -4 ], "overmap": "microlab_generic_edge" },
       { "point": [ 1, 2, -4 ], "overmap": "microlab_generic" },
       { "point": [ 2, 2, -4 ], "overmap": "microlab_generic" },
-      { "point": [ 3, 2, -4 ], "overmap": "microlab_generic_hallway_north" },
+      { "point": [ 3, 2, -4 ], "overmap": "microlab_generic_hallway_ns" },
       { "point": [ 4, 2, -4 ], "overmap": "microlab_generic" },
       { "point": [ 5, 2, -4 ], "overmap": "microlab_generic_edge" },
       { "point": [ 6, 2, -4 ], "overmap": "microlab_rock_border" },

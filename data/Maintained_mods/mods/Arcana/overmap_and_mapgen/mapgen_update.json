@@ -1,7 +1,7 @@
 [
   {
-    "type": "ter_furn_transform",
     "id": "arcana_plants",
+    "type": "ter_furn_transform",
     "fail_message": "Life fails to take hold in this place.",
     "terrain": [
       {
@@ -33,8 +33,8 @@
     "furniture": [ { "result": "f_null", "valid_flags": [ "MOUNTABLE", "BLOCK_WIND", "ORGANIC", "FUNGUS" ] } ]
   },
   {
-    "type": "ter_furn_transform",
     "id": "arcana_pestilence",
+    "type": "ter_furn_transform",
     "terrain": [
       {
         "result": [ [ "t_dirt", 75 ], [ "t_dirtmound", 25 ] ],
@@ -45,8 +45,8 @@
     ]
   },
   {
-    "type": "ter_furn_transform",
     "id": "arcana_fire_dragonblood3",
+    "type": "ter_furn_transform",
     "fail_message": "Nothing remains to be marked by flame.",
     "terrain": [
       {
@@ -92,8 +92,8 @@
     ]
   },
   {
-    "type": "ter_furn_transform",
     "id": "arcana_open_lock",
+    "type": "ter_furn_transform",
     "fail_message": "You fail to find any obstacles to clear.",
     "terrain": [
       {
@@ -226,21 +226,27 @@
     ]
   },
   {
-    "type": "ter_furn_transform",
     "id": "arcana_pulse",
+    "type": "ter_furn_transform",
     "fail_message": "The ground weathers the blast unscathed.",
-    "terrain": [ { "result": "t_dirt", "valid_flags": [ "DOOR", "BLOCK_WIND", "WALL", "TREE" ] } ],
+    "terrain": [
+      { "result": [ [ "t_dirt", 50 ], [ "t_pit_shallow", 25 ], [ "t_dirtmound", 25 ] ], "valid_flags": [ "TREE" ] },
+      {
+        "result": [ [ "t_rock_floor_no_roof", 25 ], [ "t_railroad_rubble", 75 ] ],
+        "valid_flags": [ "DOOR", "BLOCK_WIND", "WALL", "ROAD" ]
+      }
+    ],
     "furniture": [ { "result": "f_null", "valid_flags": [ "PERMEABLE", "MINEABLE", "BLOCK_WIND" ] } ]
   },
   {
-    "type": "ter_furn_transform",
     "id": "arcana_barrier",
+    "type": "ter_furn_transform",
     "fail_message": "The barrier flickers out of existence.",
     "furniture": [ { "result": "f_force_barrier", "valid_furniture": [ "f_null" ] } ]
   },
   {
-    "type": "ter_furn_transform",
     "id": "arcana_consecrate",
+    "type": "ter_furn_transform",
     "fail_message": "Reality fails to impose itself on this place.",
     "terrain": [
       {
@@ -323,8 +329,8 @@
     ]
   },
   {
-    "type": "ter_furn_transform",
     "id": "arcana_sundering_quake",
+    "type": "ter_furn_transform",
     "fail_message": "The earth remains still.",
     "terrain": [
       {
@@ -867,6 +873,7 @@
       "place_loot": [
         { "group": "swat_gear", "x": 4, "y": [ 17, 20 ], "chance": 50, "repeat": 10 },
         { "group": "tools_gunsmith", "x": 6, "y": 20, "chance": 50, "repeat": 5 },
+        { "group": "drugs_soldier", "x": 6, "y": 20, "chance": 50, "repeat": 5 },
         { "group": "rural_church_start_scales", "x": 6, "y": 20 }
       ],
       "faction_owner": [ { "id": "cleansing_flame", "x": [ 4, 6 ], "y": [ 17, 20 ] } ],
@@ -880,8 +887,8 @@
     "object": {
       "place_nested": [ { "chunks": [ "cf_church_upgrade_4_e" ], "x": 4, "y": 0 } ],
       "place_npcs": [
-        { "class": "cf_auxillery_guard_2", "x": 4, "y": 10, "add_trait": "CF_AUX_MARKER_1" },
-        { "class": "cf_auxillery_guard_2", "x": 10, "y": 13, "add_trait": "CF_AUX_MARKER_1" }
+        { "class": "cf_auxillery_guard_2", "x": 4, "y": 10, "add_trait": "CF_AUX_MARKER_2" },
+        { "class": "cf_auxillery_guard_2", "x": 10, "y": 13, "add_trait": "CF_AUX_MARKER_2" }
       ]
     }
   },
@@ -911,8 +918,8 @@
     "object": {
       "place_nested": [ { "chunks": [ "cf_church_upgrade_4_e" ], "x": 4, "y": 0 } ],
       "place_npcs": [
-        { "class": "cf_auxillery_guard_3", "x": 4, "y": 10, "add_trait": "CF_AUX_MARKER_2" },
-        { "class": "cf_auxillery_guard_3", "x": 10, "y": 13, "add_trait": "CF_AUX_MARKER_2" }
+        { "class": "cf_auxillery_guard_3", "x": 4, "y": 10, "add_trait": "CF_AUX_MARKER_1" },
+        { "class": "cf_auxillery_guard_3", "x": 10, "y": 13, "add_trait": "CF_AUX_MARKER_1" }
       ]
     }
   },
@@ -955,8 +962,8 @@
       ],
       "faction_owner": [ { "id": "cleansing_flame", "x": 13, "y": [ 13, 15 ] } ],
       "place_npcs": [
-        { "class": "cf_auxillery_guard_3", "x": 4, "y": 10, "add_trait": "CF_AUX_MARKER_2" },
-        { "class": "cf_auxillery_guard_3", "x": 10, "y": 13, "add_trait": "CF_AUX_MARKER_2" },
+        { "class": "cf_auxillery_guard_3", "x": 4, "y": 10, "add_trait": "CF_AUX_MARKER_1" },
+        { "class": "cf_auxillery_guard_3", "x": 10, "y": 13, "add_trait": "CF_AUX_MARKER_1" },
         { "class": "cf_auxillery_merchant_5", "x": 12, "y": 14, "add_trait": "CF_AUX_MARKER_6" }
       ]
     }
@@ -1144,8 +1151,7 @@
       "mapping": {
         "B": { "items": [ { "item": "bed", "chance": 50 } ] },
         "D": { "items": [ { "item": "clothing_outdoor_torso", "chance": 50 }, { "item": "clothing_outdoor_pants", "chance": 50 } ] }
-      },
-      "faction_owner": [ { "id": "cleansing_flame", "x": [ 0, 6 ], "y": [ 0, 9 ] } ]
+      }
     }
   },
   {
@@ -1196,8 +1202,7 @@
           ]
         },
         "t": { "items": [ { "item": "standing_stones_libation", "chance": 5 } ] }
-      },
-      "faction_owner": [ { "id": "cleansing_flame", "x": [ 0, 1 ], "y": [ 0, 9 ] } ]
+      }
     }
   },
   {
@@ -1400,8 +1405,8 @@
       "mapgensize": [ 18, 18 ],
       "rows": [
         " .... ........ ...",
-        "+.... ........+...",
-        " ....+........    ",
+        " .... ........+...",
+        "+....+........    ",
         " .... ........+...",
         " .... ........ ...",
         "         ++       ",
@@ -1551,7 +1556,7 @@
         { "point": "furniture", "id": "f_workbench", "x": 4, "y": 4 },
         { "point": "furniture", "id": "f_anvil", "x": 5, "y": 4 },
         { "point": "furniture", "id": "f_forge", "x": 6, "y": 4 },
-        { "line": "furniture", "id": "f_rack_wood", "x": 3, "x2": 3, "y": 6, "y2": 8 },
+        { "point": "furniture", "id": "f_rack_wood", "x": 3, "y": 8 },
         { "point": "furniture", "id": "f_rack_wood", "x": 6, "y": 8 },
         { "line": "furniture", "id": "f_counter", "x": 4, "x2": 5, "y": 9, "y2": 9 }
       ]
@@ -1632,9 +1637,10 @@
     "object": {
       "set": [
         { "point": "terrain", "id": "t_drystone_wall", "x": 18, "y": 16 },
-        { "point": "terrain", "id": "t_drystone_wall", "x": 18, "y": 21 }
-      ],
-      "place_loot": [ { "item": "candle_warding_special", "x": 20, "y": 17 }, { "item": "candle_warding_special", "x": 20, "y": 20 } ]
+        { "point": "terrain", "id": "t_drystone_wall", "x": 18, "y": 21 },
+        { "point": "furniture", "id": "f_arcane_candlestick_lit", "x": 20, "y": 17 },
+        { "point": "furniture", "id": "f_arcane_candlestick_lit", "x": 20, "y": 20 }
+      ]
     }
   },
   {
@@ -1644,18 +1650,18 @@
     "object": {
       "set": [
         { "point": "terrain", "id": "t_drystone_wall", "x": 3, "y": 16 },
-        { "point": "terrain", "id": "t_drystone_wall", "x": 3, "y": 21 }
+        { "point": "terrain", "id": "t_drystone_wall", "x": 3, "y": 21 },
+        { "point": "furniture", "id": "f_arcane_candlestick_lit", "x": 1, "y": 17 },
+        { "point": "furniture", "id": "f_arcane_candlestick_lit", "x": 1, "y": 20 }
       ],
       "place_loot": [
-        { "item": "candle_warding_special", "x": 1, "y": 17 },
-        { "item": "candle_warding_special", "x": 1, "y": 20 },
-        { "group": "rural_church_restock_scales", "x": 3, "y": 6 },
-        { "group": "tools_science", "x": 3, "y": [ 6, 8 ], "chance": 50, "repeat": 5 },
-        { "group": "supplies_reagents_lab", "x": 3, "y": [ 6, 8 ], "chance": 50, "repeat": 5 },
-        { "group": "bionics", "x": 3, "y": [ 6, 8 ], "chance": 25, "repeat": 5 },
+        { "group": "rural_church_restock_scales", "x": 6, "y": 8 },
+        { "group": "tools_science", "x": 3, "y": 8, "chance": 50, "repeat": 5 },
+        { "group": "supplies_reagents_lab", "x": 6, "y": 8, "chance": 50, "repeat": 5 },
+        { "group": "bionics", "x": 3, "y": 8, "chance": 25, "repeat": 5 },
         { "group": "metal_workshop", "x": 6, "y": 8, "chance": 75, "repeat": 10 }
       ],
-      "faction_owner": [ { "id": "cleansing_flame", "x": 3, "y": [ 6, 8 ] }, { "id": "cleansing_flame", "x": 6, "y": 8 } ],
+      "faction_owner": [ { "id": "cleansing_flame", "x": 3, "y": 8 }, { "id": "cleansing_flame", "x": 6, "y": 8 } ],
       "place_npcs": [
         { "class": "cleansing_flame_purifier_merchant", "x": 5, "y": 8 },
         { "class": "cleansing_flame_purifier_rep", "x": 12, "y": 5, "add_trait": "FIX_CF_GM" }
