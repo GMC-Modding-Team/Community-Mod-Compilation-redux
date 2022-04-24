@@ -1,17 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Design Document SPOILERS AHEAD](#design-document-spoilers-ahead)
-- [What belongs in DinoMod?](#what-belongs-in-dinomod)
-- [Realism vs. Fun](#realism-vs-fun)
-- [Adding, replacing, removing](#adding-replacing-removing)
-- [How to contribute](#how-to-contribute)
-- [Where should new dinosaurs spawn?](#where-should-new-dinosaurs-spawn)
-- [How to add a dinosaur](#how-to-add-a-dinosaur)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # Design Document SPOILERS AHEAD
 The core idea of DinoMod is this: https://tvtropes.org/pmwiki/pmwiki.php/Main/EverythingsBetterWithDinosaurs
 The purpose of this mod is to make Cataclysm a more fun game to play and develop for, showing off new mechanics and bringing life to parts of the game that aren't as well-developed.
@@ -48,7 +34,7 @@ monstergroups folder:
 * dinosaur.json is where you add the dinosaur to spawn in special DinoMod locations
 * fungi.json is where you add the fungal variant to spawn in fungal locations
 * lab.json is where you add the dinosaur if it is not native to North America
-* misc.json has all kinds of odd lists, especially for safe, scaveninging, and underground dinos
+* misc.json has all kinds of odd lists, especially for safe, scavenging, and underground dinos
 * monstergroups_egg.json is where you add the hatchling to be spawned from its own egg, and from random eggs
 * wilderness.json is where your dino will be spawned in natural settings. Forests should stay safe.
 * zinosaur.json  adds the zombified version to zombie spawn lists and is where the zombie upgrade groups go for now
@@ -62,3 +48,12 @@ monsters folder:
 * zed-dinosaur.json is where new zombified dinos go. copy-from can be very helpful here.
 * zinosaur_burned.json is where the burned zombie variant goes
 * zinosaur_upgrade.json is where upgraded versions go
+
+
+# How to add a dinosaur nest
+This is much easier! 
+
+* Each dinosaur gets its own nest mapgen file in \mapgen\map_extras\ you can copy from a similar dino there
+* You can define the map extra in \overmap\map_extras.json
+* Finally you tell it to spawn in the right biome in regional_overlay.json . Predator nests go in swamps, everything else in forests
+

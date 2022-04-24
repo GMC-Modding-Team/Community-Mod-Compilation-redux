@@ -1,21 +1,24 @@
 [
   {
     "//": "All dinos over 23 kg should have a zombie version to zombify into",
-    "id": "mon_zilophosaurus",
     "type": "MONSTER",
+    "id": "mon_zilophosaurus",
     "name": { "str": "dilophosaurus zombie" },
     "copy-from": "mon_zallimimus",
     "looks_like": "mon_dilophosaurus",
     "volume": "400 L",
     "weight": "400 kg",
-    "speed": 95,
+    "speed": 75,
+    "attack_cost": 75,
     "melee_skill": 4,
-    "melee_dice": 1,
-    "melee_dice_sides": 6,
+    "melee_dice": 2,
+    "melee_dice_sides": 3,
     "melee_cut": 2,
     "armor_bash": 4,
     "armor_cut": 4,
     "armor_bullet": 2,
+    "families": [ "prof_intro_biology", "prof_wp_zombie" ],
+    "weakpoint_sets": [ "wps_dinosaur_body" ],
     "hp": 120,
     "description": "The shuffling corpse of a medium-sized dinosaur with sharp teeth and two prominent bony crests on its head, with ragged strips of ripped flesh hanging down like a frill.",
     "burn_into": "mon_zilophosaurus_scorched",
@@ -23,21 +26,24 @@
     "upgrades": { "half_life": 14, "into_group": "GROUP_zilophosaurus_UPGRADE" }
   },
   {
-    "id": "mon_zeratosaurus",
     "type": "MONSTER",
+    "id": "mon_zeratosaurus",
     "name": { "str": "ceratosaurus zombie" },
     "copy-from": "mon_zyrannosaurus",
     "looks_like": "mon_zyrannosaurus",
     "volume": "540 L",
     "weight": "540 kg",
-    "speed": 150,
+    "speed": 65,
+    "attack_cost": 65,
     "melee_skill": 4,
-    "melee_dice": 3,
-    "melee_dice_sides": 4,
-    "melee_cut": 6,
+    "melee_dice": 2,
+    "melee_dice_sides": 2,
+    "melee_cut": 2,
     "armor_bash": 4,
     "armor_cut": 5,
     "armor_bullet": 2,
+    "families": [ "prof_intro_biology", "prof_wp_zombie" ],
+    "weakpoint_sets": [ "wps_dinosaur_body" ],
     "hp": 135,
     "description": "This zombie is enormous, scaly, and studded with bony spikes; it moves with horrible speed.  Its colorful horns are worn and wet with filth and its bright scales and bone spikes have taken a beating.",
     "burn_into": "mon_zeratosaurus_scorched",
@@ -46,8 +52,8 @@
     "flags": [ "SEES", "SMELLS", "HEARS", "BASHES", "POISON", "STUMBLES", "NO_BREATHE", "REVIVES", "FILTHY", "WARM", "SWIMS" ]
   },
   {
-    "id": "mon_zpinosaurus",
     "type": "MONSTER",
+    "id": "mon_zpinosaurus",
     "name": { "str": "spinosaurus zombie" },
     "looks_like": "mon_spinosaurus",
     "species": [ "ZOMBIE" ],
@@ -60,17 +66,16 @@
     "material": [ "flesh" ],
     "aggression": 100,
     "morale": 100,
-    "speed": 80,
+    "speed": 40,
+    "attack_cost": 40,
     "melee_skill": 4,
-    "melee_dice": 3,
-    "melee_dice_sides": 8,
-    "melee_cut": 15,
+    "melee_dice": 4,
+    "melee_dice_sides": 5,
+    "melee_cut": 4,
     "armor_bash": 6,
     "armor_cut": 8,
-    "weakpoints": [
-      { "name": "the head", "armor_mult": { "physical": 0.5 }, "coverage": 3 },
-      { "name": "the eye", "armor_mult": { "physical": 0 }, "coverage": 1 }
-    ],
+    "families": [ "prof_intro_biology", "prof_wp_zombie" ],
+    "weakpoint_sets": [ "wps_dinosaur_body" ],
     "hp": 430,
     "description": "Enormous putrid dinosaur corpse with a ferocious crocodile-like head, oozing black eyes, and a tattered sail on its back.",
     "special_attacks": [ [ "scratch", 10 ], [ "GRAB", 10 ], { "type": "bite", "cooldown": 5 } ],
@@ -93,46 +98,91 @@
     ],
     "vision_night": 3,
     "harvest": "zed_dino_leather",
-    "categories": [ "DINOSAUR", "CLASSIC" ]
+    "dissect": "dissect_dino_large_pred",
+    "categories": [ "DINOSAUR" ]
   },
   {
-    "id": "mon_zallosaurus",
     "type": "MONSTER",
+    "id": "mon_zorvosaurus",
+    "name": { "str": "torvosaurus zombie" },
+    "looks_like": "mon_torvosaurus",
+    "species": [ "ZOMBIE" ],
+    "default_faction": "zombie",
+    "symbol": "Z",
+    "color": "green",
+    "volume": "1000 L",
+    "weight": "1000 kg",
+    "bodytype": "ostrich",
+    "material": [ "flesh" ],
+    "aggression": 100,
+    "morale": 100,
+    "speed": 40,
+    "attack_cost": 40,
+    "melee_skill": 4,
+    "melee_dice": 4,
+    "melee_dice_sides": 7,
+    "melee_cut": 12,
+    "armor_bash": 4,
+    "armor_cut": 3,
+    "armor_bullet": 2,
+    "families": [ "prof_intro_biology", "prof_wp_zombie" ],
+    "weakpoint_sets": [ "wps_dinosaur_body" ],
+    "hp": 260,
+    "description": "Putrid dinosaur corpse with a large head, long sharp teeth, oozing black eyes, and a long tail.",
+    "special_attacks": [ [ "scratch", 10 ], [ "GRAB", 10 ], { "type": "bite", "cooldown": 5 } ],
+    "burn_into": "mon_zorvosaurus_scorched",
+    "fungalize_into": "mon_zorvosaurus_fungus",
+    "upgrades": { "half_life": 14, "into_group": "GROUP_zorvosaurus_UPGRADE" },
+    "flags": [ "SEES", "SMELLS", "HEARS", "POISON", "STUMBLES", "BASHES", "DESTROYS", "NO_BREATHE", "REVIVES", "FILTHY", "WARM" ],
+    "vision_night": 3,
+    "harvest": "zed_dino_leather",
+    "dissect": "dissect_dino_large_pred",
+    "categories": [ "DINOSAUR" ]
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_zallosaurus",
     "name": { "str": "allosaurus zombie" },
     "copy-from": "mon_zyrannosaurus",
     "looks_like": "mon_allosaurus",
     "volume": "1000 L",
     "weight": "1000 kg",
     "speed": 90,
-    "melee_dice": 3,
-    "melee_dice_sides": 4,
-    "melee_cut": 6,
+    "attack_cost": 90,
+    "melee_dice": 2,
+    "melee_dice_sides": 2,
+    "melee_cut": 2,
     "armor_bash": 4,
     "armor_cut": 4,
     "armor_bullet": 2,
+    "families": [ "prof_intro_biology", "prof_wp_zombie" ],
+    "weakpoint_sets": [ "wps_dinosaur_body" ],
     "hp": 190,
     "special_attacks": [ [ "scratch", 10 ], [ "GRAB", 10 ], { "type": "bite", "cooldown": 5 } ],
-    "description": "The shambling corpse of a large predatory bipedal dinosaur, with tiger-like stripes on its broad, scaled back.",
+    "description": "The shambling corpse of a large predatory bipedal dinosaur with a mouth full of sharp serrated teeth.",
     "burn_into": "mon_zallosaurus_scorched",
     "fungalize_into": "mon_zallosaurus_fungus",
     "upgrades": { "half_life": 14, "into_group": "GROUP_zallosaurus_UPGRADE" },
     "flags": [ "SEES", "SMELLS", "HEARS", "POISON", "STUMBLES", "BASHES", "NO_BREATHE", "REVIVES", "FILTHY", "WARM" ]
   },
   {
-    "id": "mon_zacrocanthosaurus",
     "type": "MONSTER",
+    "id": "mon_zacrocanthosaurus",
     "name": { "str": "acrocanthosaurus zombie" },
     "copy-from": "mon_zyrannosaurus",
     "looks_like": "mon_allosaurus",
     "volume": "1000 L",
     "weight": "1000 kg",
     "speed": 60,
-    "melee_dice": 3,
-    "melee_dice_sides": 4,
-    "melee_cut": 8,
+    "attack_cost": 60,
+    "melee_dice": 4,
+    "melee_dice_sides": 5,
+    "melee_cut": 4,
     "armor_bash": 11,
     "armor_cut": 4,
     "armor_bullet": 2,
+    "families": [ "prof_intro_biology", "prof_wp_zombie" ],
+    "weakpoint_sets": [ "wps_dinosaur_body" ],
     "hp": 270,
     "special_attacks": [ [ "GRAB", 10 ], { "type": "bite", "cooldown": 10 }, [ "LUNGE", 20 ] ],
     "description": "The shambling corpse of a huge, bipedal dinosaur predator, with a tall ridge running down the length of its back covered with heavy muscles.  Its teeth are curved and serrated like sawblades.",
@@ -142,20 +192,23 @@
     "flags": [ "SEES", "SMELLS", "HEARS", "POISON", "STUMBLES", "BASHES", "NO_BREATHE", "REVIVES", "FILTHY", "WARM" ]
   },
   {
-    "id": "mon_ziats",
     "type": "MONSTER",
+    "id": "mon_ziats",
     "name": { "str": "siats zombie" },
     "copy-from": "mon_zyrannosaurus",
     "looks_like": "mon_allosaurus",
     "volume": "1000 L",
     "weight": "1000 kg",
     "speed": 60,
-    "melee_dice": 3,
-    "melee_dice_sides": 4,
-    "melee_cut": 6,
+    "attack_cost": 60,
+    "melee_dice": 2,
+    "melee_dice_sides": 2,
+    "melee_cut": 2,
     "armor_bash": 4,
     "armor_cut": 4,
     "armor_bullet": 2,
+    "families": [ "prof_intro_biology", "prof_wp_zombie" ],
+    "weakpoint_sets": [ "wps_dinosaur_body" ],
     "hp": 365,
     "special_attacks": [ [ "BIO_OP_TAKEDOWN", 20 ], [ "RANGED_PULL", 20 ], [ "GRAB_DRAG", 10 ] ],
     "description": "The shambling corpse of a huge, bipedal dinosaur predator with long claws and strong arms for grappling.",
@@ -165,11 +218,42 @@
     "flags": [ "SEES", "SMELLS", "HEARS", "POISON", "STUMBLES", "BASHES", "NO_BREATHE", "REVIVES", "FILTHY", "WARM" ]
   },
   {
-    "id": "mon_zorgosaurus",
     "type": "MONSTER",
+    "id": "mon_zryptosaurus",
+    "name": { "str_sp": "dryptosaurus zombie" },
+    "copy-from": "mon_zappalachiosaurus",
+    "hp": 200,
+    "description": "Large jaws drooling black liquid lifted over a shuffling dinosaur corpse.",
+    "special_attacks": [
+      { "type": "bite", "cooldown": 15 },
+      [ "GRAB", 15 ],
+      { "type": "leap", "cooldown": 20, "max_range": 5, "allow_no_target": true }
+    ],
+    "burn_into": "mon_zryptosaurus_scorched",
+    "fungalize_into": "mon_zryptosaurus_fungus",
+    "upgrades": { "half_life": 14, "into_group": "GROUP_zryptosaurus_UPGRADE" }
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_zappalachiosaurus",
+    "name": { "str_sp": "appalachiosaurus zombie" },
+    "copy-from": "mon_zorgosaurus",
+    "speed": 100,
+    "melee_cut": 14,
+    "hp": 220,
+    "description": "Massive jaws drooling black liquid lifted over a huge shuffling dinosaur corpse.",
+    "special_attacks": [ { "type": "bite", "cooldown": 15 }, [ "GRAB", 15 ], [ "scratch", 20 ], [ "LUNGE", 20 ] ],
+    "burn_into": "mon_zappalachiosaurus_scorched",
+    "fungalize_into": "mon_zappalachiosaurus_fungus",
+    "upgrades": { "half_life": 14, "into_group": "GROUP_zappalachiosaurus_UPGRADE" }
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_zorgosaurus",
     "name": { "str_sp": "gorgosaurus zombie" },
     "copy-from": "mon_zalbertosaurus",
     "speed": 50,
+    "attack_cost": 50,
     "melee_cut": 13,
     "hp": 250,
     "description": "Massive jaws drooling black liquid lifted over a huge shuffling dinosaur corpse.",
@@ -179,12 +263,13 @@
     "upgrades": { "half_life": 14, "into_group": "GROUP_zorgosaurus_UPGRADE" }
   },
   {
-    "id": "mon_zalbertosaurus",
     "type": "MONSTER",
+    "id": "mon_zalbertosaurus",
     "name": { "str": "albertosaurus zombie" },
     "copy-from": "mon_zyrannosaurus",
+    "melee_dice": 3,
     "melee_dice_sides": 4,
-    "melee_cut": 10,
+    "melee_cut": 14,
     "armor_bash": 5,
     "armor_cut": 5,
     "armor_bullet": 3,
@@ -196,15 +281,18 @@
     "upgrades": { "half_life": 14, "into_group": "GROUP_zalbertosaurus_UPGRADE" }
   },
   {
-    "id": "mon_zianzhousaurus",
     "type": "MONSTER",
+    "id": "mon_zianzhousaurus",
     "name": { "str": "qianzhousaurus zombie" },
     "copy-from": "mon_zyrannosaurus",
     "looks_like": "mon_zyrannosaurus",
     "volume": "550 L",
     "weight": "770 kg",
     "speed": 60,
+    "attack_cost": 60,
+    "melee_dice": 3,
     "melee_dice_sides": 4,
+    "melee_cut": 13,
     "armor_bash": 5,
     "armor_cut": 5,
     "armor_bullet": 3,
@@ -216,8 +304,24 @@
     "flags": [ "SEES", "SMELLS", "HEARS", "BASHES", "POISON", "STUMBLES", "NO_BREATHE", "REVIVES", "FILTHY", "WARM" ]
   },
   {
-    "id": "mon_zyrannosaurus",
     "type": "MONSTER",
+    "id": "mon_zaspletosaurus",
+    "name": { "str": "daspletosaurus zombie" },
+    "copy-from": "mon_zyrannosaurus",
+    "looks_like": "mon_zyrannosaurus",
+    "melee_dice": 4,
+    "melee_dice_sides": 5,
+    "melee_cut": 4,
+    "hp": 300,
+    "description": "Huge jaws with long sharp teeth drooling black liquid, lifted by a huge but shuffling dinosaur corpse.",
+    "burn_into": "mon_zaspletosaurus_scorched",
+    "fungalize_into": "mon_zaspletosaurus_fungus",
+    "upgrades": { "half_life": 14, "into_group": "GROUP_zaspletosaurus_UPGRADE" },
+    "flags": [ "SEES", "SMELLS", "HEARS", "BASHES", "POISON", "STUMBLES", "NO_BREATHE", "REVIVES", "FILTHY", "WARM" ]
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_zyrannosaurus",
     "name": { "str": "Z-Rex", "str_pl": "Z-Rexes" },
     "species": [ "ZOMBIE" ],
     "default_faction": "zombie",
@@ -230,18 +334,17 @@
     "aggression": 100,
     "morale": 100,
     "speed": 40,
+    "attack_cost": 40,
     "melee_skill": 5,
-    "melee_dice": 3,
-    "melee_dice_sides": 6,
-    "melee_cut": 13,
+    "melee_dice": 5,
+    "melee_dice_sides": 8,
+    "melee_cut": 10,
     "armor_bash": 6,
     "armor_cut": 8,
-    "weakpoints": [
-      { "name": "the head", "armor_mult": { "physical": 0.5 }, "coverage": 3 },
-      { "name": "the eye", "armor_mult": { "physical": 0 }, "coverage": 1 }
-    ],
+    "families": [ "prof_intro_biology", "prof_wp_zombie" ],
+    "weakpoint_sets": [ "wps_lg_theropod_body" ],
     "hp": 400,
-    "description": "Massive piles of ragged, stinking flesh lifting enormous teeth.",
+    "description": "Massive piles of ragged, stinking flesh lifting enormous sharp teeth.",
     "special_attacks": [ [ "scratch", 10 ], [ "GRAB", 7 ], { "type": "bite", "cooldown": 5 } ],
     "burn_into": "mon_zyrannosaurus_scorched",
     "fungalize_into": "mon_zyrannosaurus_fungus",
@@ -262,11 +365,12 @@
     ],
     "vision_night": 3,
     "harvest": "zed_dino_feather",
-    "categories": [ "DINOSAUR", "CLASSIC" ]
+    "dissect": "dissect_dino_large_pred",
+    "categories": [ "DINOSAUR" ]
   },
   {
-    "id": "mon_zyrannosaurus_chain",
     "type": "MONSTER",
+    "id": "mon_zyrannosaurus_chain",
     "//": "Special monster for Old Guard questline",
     "name": { "str": "chained tyrannosaurus zombie" },
     "copy-from": "mon_zyrannosaurus",
@@ -276,8 +380,8 @@
     "aggression": 0
   },
   {
-    "id": "mon_zallimimus",
     "type": "MONSTER",
+    "id": "mon_zallimimus",
     "name": { "str": "gallimimus zombie" },
     "looks_like": "mon_gallimimus",
     "species": [ "ZOMBIE" ],
@@ -290,7 +394,8 @@
     "material": [ "flesh" ],
     "aggression": 100,
     "morale": 100,
-    "speed": 100,
+    "speed": 135,
+    "attack_cost": 135,
     "melee_skill": 3,
     "melee_dice": 1,
     "melee_dice_sides": 4,
@@ -298,10 +403,8 @@
     "armor_bash": 2,
     "armor_cut": 4,
     "armor_bullet": 2,
-    "weakpoints": [
-      { "name": "the head", "armor_mult": { "physical": 0.5 }, "coverage": 3 },
-      { "name": "the eye", "armor_mult": { "physical": 0 }, "coverage": 1 }
-    ],
+    "families": [ "prof_intro_biology", "prof_wp_zombie" ],
+    "weakpoint_sets": [ "wps_dinosaur_body" ],
     "hp": 120,
     "special_attacks": [ [ "scratch", 10 ], [ "GRAB", 10 ], { "type": "bite", "cooldown": 5 } ],
     "description": "The shuffling corpse of a medium-sized bipedal dinosaur, covered with tattered feathers and black, putrid liquid.",
@@ -311,17 +414,47 @@
     "flags": [ "SEES", "SMELLS", "HEARS", "PET_MOUNTABLE", "POISON", "STUMBLES", "NO_BREATHE", "REVIVES", "FILTHY", "WARM" ],
     "vision_night": 3,
     "harvest": "zed_dino_feather",
-    "categories": [ "DINOSAUR", "CLASSIC" ]
+    "categories": [ "DINOSAUR" ]
   },
   {
-    "id": "mon_zothronychus",
     "type": "MONSTER",
+    "id": "mon_ztruthiomimus",
+    "name": { "str": "struthiomimus zombie" },
+    "copy-from": "mon_zallimimus",
+    "looks_like": "mon_gallimimus",
+    "volume": "420 L",
+    "weight": "420 kg",
+    "speed": 140,
+    "attack_cost": 140,
+    "burn_into": "mon_ztruthiomimus_scorched",
+    "fungalize_into": "mon_ztruthiomimus_fungus",
+    "upgrades": { "half_life": 14, "into_group": "GROUP_ztruthiomimus_UPGRADE" }
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_zornithomimus",
+    "name": { "str": "ornithomimus zombie" },
+    "copy-from": "mon_zallimimus",
+    "looks_like": "mon_gallimimus",
+    "volume": "170 L",
+    "weight": "170 kg",
+    "speed": 125,
+    "attack_cost": 125,
+    "burn_into": "mon_zornithomimus_scorched",
+    "fungalize_into": "mon_zornithomimus_fungus",
+    "upgrades": { "half_life": 14, "into_group": "GROUP_zornithomimus_UPGRADE" },
+    "extend": { "flags": [ "CLIMBS" ] }
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_zothronychus",
     "name": { "str": "nothronychus zombie" },
     "copy-from": "mon_zeinonychus",
     "looks_like": "mon_nothronychus",
     "volume": "800 L",
     "weight": "800 kg",
     "speed": 50,
+    "attack_cost": 50,
     "melee_skill": 3,
     "melee_dice": 4,
     "melee_dice_sides": 4,
@@ -336,8 +469,30 @@
     "upgrades": { "half_life": 14, "into_group": "GROUP_zothronychus_UPGRADE" }
   },
   {
-    "id": "mon_zeinonychus",
     "type": "MONSTER",
+    "id": "mon_zanzu",
+    "name": { "str": "anzu zombie" },
+    "copy-from": "mon_zeinonychus",
+    "looks_like": "mon_anzu",
+    "volume": "250 L",
+    "weight": "250 kg",
+    "speed": 100,
+    "melee_skill": 3,
+    "melee_dice": 4,
+    "melee_dice_sides": 4,
+    "armor_bash": 4,
+    "armor_cut": 4,
+    "armor_bullet": 2,
+    "hp": 120,
+    "special_attacks": [ [ "scratch", 10 ], [ "GRAB", 10 ], { "type": "bite", "cooldown": 5 }, [ "LONGSWIPE", 30 ] ],
+    "description": "The shuffling corpse of a large bipedal dinosaur covered with tattered feathers and black putrid liquid.  Long claws protrude from its hands.",
+    "burn_into": "mon_zanzu_scorched",
+    "fungalize_into": "mon_zothronychus_fungus",
+    "upgrades": { "half_life": 14, "into_group": "GROUP_zanzu_UPGRADE" }
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_zeinonychus",
     "name": { "str": "deinonychus zombie" },
     "looks_like": "mon_deinonychus",
     "species": [ "ZOMBIE" ],
@@ -350,7 +505,8 @@
     "material": [ "flesh" ],
     "aggression": 100,
     "morale": 100,
-    "speed": 20,
+    "speed": 65,
+    "attack_cost": 65,
     "melee_skill": 5,
     "melee_dice": 1,
     "melee_dice_sides": 8,
@@ -358,10 +514,8 @@
     "armor_bash": 2,
     "armor_cut": 4,
     "armor_bullet": 2,
-    "weakpoints": [
-      { "name": "the head", "armor_mult": { "physical": 0.5 }, "coverage": 3 },
-      { "name": "the eye", "armor_mult": { "physical": 0 }, "coverage": 1 }
-    ],
+    "families": [ "prof_intro_biology", "prof_wp_zombie" ],
+    "weakpoint_sets": [ "wps_dinosaur_body" ],
     "hp": 45,
     "special_attacks": [
       { "type": "leap", "cooldown": 5, "max_range": 5, "allow_no_target": true },
@@ -377,21 +531,22 @@
     "vision_day": 30,
     "vision_night": 10,
     "harvest": "zed_dino_feather",
-    "categories": [ "DINOSAUR", "CLASSIC" ]
+    "categories": [ "DINOSAUR" ]
   },
   {
-    "id": "mon_zutahraptor",
     "type": "MONSTER",
+    "id": "mon_zutahraptor",
     "name": { "str": "utahraptor zombie" },
     "copy-from": "mon_zeinonychus",
     "looks_like": "mon_utahraptor",
     "volume": "500 L",
     "weight": "500 kg",
-    "speed": 130,
+    "speed": 65,
+    "attack_cost": 65,
     "melee_skill": 5,
     "melee_dice": 2,
     "melee_dice_sides": 6,
-    "melee_cut": 5,
+    "melee_cut": 8,
     "armor_bash": 3,
     "armor_cut": 4,
     "armor_bullet": 2,
@@ -402,8 +557,8 @@
     "upgrades": { "half_life": 14, "into_group": "GROUP_zutahraptor_UPGRADE" }
   },
   {
-    "id": "mon_zamargasaurus",
     "type": "MONSTER",
+    "id": "mon_zamargasaurus",
     "name": { "str_sp": "amargasaurus zombie" },
     "copy-from": "mon_zapatosaurus",
     "looks_like": "mon_zapatosaurus",
@@ -424,8 +579,8 @@
     "flags": [ "SEES", "SMELLS", "HEARS", "BASHES", "POISON", "STUMBLES", "NO_BREATHE", "REVIVES", "FILTHY", "WARM" ]
   },
   {
-    "id": "mon_zapatosaurus",
     "type": "MONSTER",
+    "id": "mon_zapatosaurus",
     "name": { "str": "apatosaurus zombie" },
     "copy-from": "mon_zamptosaurus",
     "looks_like": "mon_apatosaurus",
@@ -438,10 +593,8 @@
     "armor_bash": 6,
     "armor_cut": 4,
     "armor_bullet": 2,
-    "weakpoints": [
-      { "name": "the head", "armor_mult": { "physical": 0.5 }, "coverage": 3 },
-      { "name": "the eye", "armor_mult": { "physical": 0 }, "coverage": 1 }
-    ],
+    "families": [ "prof_intro_biology", "prof_wp_zombie" ],
+    "weakpoint_sets": [ "wps_sauropod_body" ],
     "hp": 500,
     "special_attacks": [
       { "id": "slam", "cooldown": 10, "damage_max_instance": [ { "damage_type": "bash", "amount": 12 } ] },
@@ -453,9 +606,9 @@
     "upgrades": { "half_life": 14, "into_group": "GROUP_zapatosaurus_UPGRADE" }
   },
   {
-    "id": "mon_zrontosaurus",
     "type": "MONSTER",
-    "name": { "str": "Brontosaurus zombie" },
+    "id": "mon_zrontosaurus",
+    "name": { "str": "brontosaurus zombie" },
     "copy-from": "mon_zapatosaurus",
     "looks_like": "mon_apatosaurus",
     "description": "Massive, long-necked, four-legged dinosaur corpse with a bulky torso and a long, whip-like tail.",
@@ -464,8 +617,8 @@
     "upgrades": { "half_life": 14, "into_group": "GROUP_zrontosaurus_UPGRADE" }
   },
   {
-    "id": "mon_ziplodocus",
     "type": "MONSTER",
+    "id": "mon_ziplodocus",
     "name": { "str": "diplodocus zombie" },
     "copy-from": "mon_zamptosaurus",
     "looks_like": "mon_apatosaurus",
@@ -489,8 +642,8 @@
     "upgrades": { "half_life": 14, "into_group": "GROUP_ziplodocus_UPGRADE" }
   },
   {
-    "id": "mon_zamarasaurus",
     "type": "MONSTER",
+    "id": "mon_zamarasaurus",
     "name": { "str": "camarasaurus zombie" },
     "copy-from": "mon_zapatosaurus",
     "looks_like": "mon_apatosaurus",
@@ -502,8 +655,8 @@
     "upgrades": { "half_life": 14, "into_group": "GROUP_zamarasaurus_UPGRADE" }
   },
   {
-    "id": "mon_zrachiosaurus",
     "type": "MONSTER",
+    "id": "mon_zrachiosaurus",
     "name": { "str": "brachiosaurus zombie" },
     "copy-from": "mon_zapatosaurus",
     "looks_like": "mon_apatosaurus",
@@ -519,8 +672,8 @@
     "upgrades": { "half_life": 14, "into_group": "GROUP_zrachiosaurus_UPGRADE" }
   },
   {
-    "id": "mon_zalamosaurus",
     "type": "MONSTER",
+    "id": "mon_zalamosaurus",
     "name": { "str": "alamosaurus zombie" },
     "copy-from": "mon_zapatosaurus",
     "looks_like": "mon_apatosaurus",
@@ -535,8 +688,8 @@
     "upgrades": { "half_life": 14, "into_group": "GROUP_zalamosaurus_UPGRADE" }
   },
   {
-    "id": "mon_ztegosaurus",
     "type": "MONSTER",
+    "id": "mon_ztegosaurus",
     "name": { "str": "stegosaurus zombie" },
     "copy-from": "mon_zamptosaurus",
     "looks_like": "mon_stegosaurus",
@@ -551,6 +704,8 @@
     "armor_bash": 4,
     "armor_cut": 4,
     "armor_bullet": 2,
+    "families": [ "prof_intro_biology", "prof_wp_zombie", "prof_wp_nat_armored" ],
+    "weakpoint_sets": [ "wps_ankylosaurid_body" ],
     "hp": 275,
     "special_attacks": [
       { "id": "stomp_DinoMod", "cooldown": 10, "damage_max_instance": [ { "damage_type": "bash", "amount": 10 } ] },
@@ -565,8 +720,8 @@
     "upgrades": { "half_life": 14, "into_group": "GROUP_ztegosaurus_UPGRADE" }
   },
   {
-    "id": "mon_zyoplosaurus",
     "type": "MONSTER",
+    "id": "mon_zyoplosaurus",
     "name": { "str": "dyoplosaurus zombie" },
     "copy-from": "mon_zankylosaurus",
     "looks_like": "mon_ankylosaurus",
@@ -578,8 +733,8 @@
     "upgrades": { "half_life": 14, "into_group": "GROUP_zyoplosaurus_UPGRADE" }
   },
   {
-    "id": "mon_zankylosaurus",
     "type": "MONSTER",
+    "id": "mon_zankylosaurus",
     "name": { "str": "ankylosaurus zombie" },
     "looks_like": "mon_ankylosaurus",
     "species": [ "ZOMBIE" ],
@@ -600,10 +755,8 @@
     "armor_bash": 16,
     "armor_cut": 21,
     "armor_bullet": 7,
-    "weakpoints": [
-      { "name": "the head", "armor_mult": { "physical": 0.8 }, "coverage": 3 },
-      { "name": "the eye", "armor_mult": { "physical": 0 }, "coverage": 1 }
-    ],
+    "families": [ "prof_intro_biology", "prof_wp_zombie", "prof_wp_nat_armored" ],
+    "weakpoint_sets": [ "wps_ankylosaurid_body" ],
     "hp": 375,
     "special_attacks": [ [ "scratch", 10 ], [ "GRAB", 10 ], { "type": "bite", "cooldown": 5 }, [ "tailsmash_DinoMod", 30 ] ],
     "description": "The shuffling corpse of what looks like a giant armadillo with peeling armored plates and black, glistening eyes.  Its tail ends in a massive spiked club of bone.",
@@ -613,11 +766,11 @@
     "flags": [ "SEES", "SMELLS", "HEARS", "POISON", "STUMBLES", "NO_BREATHE", "REVIVES", "FILTHY", "WARM", "BASHES" ],
     "vision_night": 3,
     "harvest": "zed_dino_leather",
-    "categories": [ "DINOSAUR", "CLASSIC" ]
+    "categories": [ "DINOSAUR" ]
   },
   {
-    "id": "mon_zodosaurus",
     "type": "MONSTER",
+    "id": "mon_zodosaurus",
     "name": { "str": "nodosaurus zombie" },
     "copy-from": "mon_zankylosaurus",
     "looks_like": "mon_ankylosaurus",
@@ -632,8 +785,8 @@
     "upgrades": { "half_life": 14, "into_group": "GROUP_zodosaurus_UPGRADE" }
   },
   {
-    "id": "mon_zedmontonia",
     "type": "MONSTER",
+    "id": "mon_zedmontonia",
     "name": { "str": "edmontonia zombie" },
     "copy-from": "mon_zankylosaurus",
     "looks_like": "mon_ankylosaurus",
@@ -649,8 +802,8 @@
     "upgrades": { "half_life": 14, "into_group": "GROUP_zedmontonia_UPGRADE" }
   },
   {
-    "id": "mon_zamptosaurus",
     "type": "MONSTER",
+    "id": "mon_zamptosaurus",
     "name": { "str": "camptosaurus zombie" },
     "looks_like": "mon_parasaurolophus",
     "species": [ "ZOMBIE" ],
@@ -671,10 +824,8 @@
     "armor_bash": 5,
     "armor_cut": 4,
     "armor_bullet": 2,
-    "weakpoints": [
-      { "name": "the head", "armor_mult": { "physical": 0.5 }, "coverage": 3 },
-      { "name": "the eye", "armor_mult": { "physical": 0 }, "coverage": 1 }
-    ],
+    "families": [ "prof_intro_biology", "prof_wp_zombie" ],
+    "weakpoint_sets": [ "wps_dinosaur_body" ],
     "hp": 170,
     "special_attacks": [ [ "scratch", 10 ], [ "GRAB", 10 ], { "type": "bite", "cooldown": 5 } ],
     "description": "The shuffling corpse of a large, feathered, bipedal dinosaur with strong legs, broad shoulders, and a pointed beak.  Its tattered feathers are stained with black, sticky liquid.",
@@ -684,37 +835,52 @@
     "flags": [ "SEES", "SMELLS", "HEARS", "POISON", "STUMBLES", "NO_BREATHE", "REVIVES", "FILTHY", "WARM", "BASHES" ],
     "vision_night": 3,
     "harvest": "zed_dino_leather",
-    "categories": [ "DINOSAUR", "CLASSIC" ]
+    "categories": [ "DINOSAUR" ]
   },
   {
-    "id": "mon_zaiasaura",
     "type": "MONSTER",
-    "name": { "str": "maiasaura zombie" },
-    "copy-from": "mon_zarasaurolophus",
-    "hp": 200,
-    "description": "A huge, mottled dinosaur with hooves and a heavy tail, dead but walking, eyes vacant and swollen.  Has a flat beak, thick nose, and a small but spiky head crest.",
-    "burn_into": "mon_zaiasaura_scorched",
-    "fungalize_into": "mon_zaiasaura_fungus",
-    "upgrades": { "half_life": 14, "into_group": "GROUP_zaiasaura_UPGRADE" }
-  },
-  {
-    "id": "mon_zarasaurolophus",
-    "type": "MONSTER",
-    "name": { "str": "parasaurolophus zombie" },
+    "id": "mon_zadrosaurus",
+    "name": { "str": "hadrosaurus zombie" },
     "copy-from": "mon_zamptosaurus",
     "looks_like": "mon_parasaurolophus",
     "volume": "1000 L",
     "weight": "1000 kg",
-    "speed": 80,
+    "speed": 65,
     "melee_dice": 2,
     "melee_dice_sides": 6,
     "melee_cut": 2,
     "armor_cut": 7,
     "armor_bullet": 4,
-    "weakpoints": [
-      { "name": "the head", "armor_mult": { "physical": 0.5 }, "coverage": 3 },
-      { "name": "the eye", "armor_mult": { "physical": 0 }, "coverage": 1 }
+    "families": [ "prof_intro_biology", "prof_wp_zombie" ],
+    "weakpoint_sets": [ "wps_dinosaur_body" ],
+    "hp": 220,
+    "special_attacks": [
+      [ "scratch", 10 ],
+      [ "GRAB", 10 ],
+      { "type": "bite", "cooldown": 5 },
+      { "id": "stomp_DinoMod", "cooldown": 10, "damage_max_instance": [ { "damage_type": "bash", "amount": 12 } ] }
     ],
+    "description": "A bulky, beaked dinosaur, dead but walking, eyes vacant and swollen.",
+    "burn_into": "mon_zadrosaurus_scorched",
+    "fungalize_into": "mon_zadrosaurus_fungus",
+    "upgrades": { "half_life": 14, "into_group": "GROUP_zadrosaurus_UPGRADE" }
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_zarasaurolophus",
+    "name": { "str": "parasaurolophus zombie" },
+    "copy-from": "mon_zamptosaurus",
+    "looks_like": "mon_parasaurolophus",
+    "volume": "1000 L",
+    "weight": "1000 kg",
+    "speed": 65,
+    "melee_dice": 2,
+    "melee_dice_sides": 6,
+    "melee_cut": 2,
+    "armor_cut": 7,
+    "armor_bullet": 4,
+    "families": [ "prof_intro_biology", "prof_wp_zombie" ],
+    "weakpoint_sets": [ "wps_dinosaur_body" ],
     "hp": 320,
     "special_attacks": [
       [ "scratch", 10 ],
@@ -728,14 +894,14 @@
     "upgrades": { "half_life": 14, "into_group": "GROUP_zarasaurolophus_UPGRADE" }
   },
   {
-    "id": "mon_zorythosaurus",
     "type": "MONSTER",
+    "id": "mon_zorythosaurus",
     "name": { "str": "corythosaurus zombie" },
     "copy-from": "mon_zamptosaurus",
     "looks_like": "mon_parasaurolophus",
     "volume": "1000 L",
     "weight": "1000 kg",
-    "speed": 95,
+    "speed": 65,
     "melee_dice": 2,
     "melee_dice_sides": 6,
     "melee_cut": 2,
@@ -749,14 +915,25 @@
     "special_attacks": [ [ "SHRIEK", 5 ] ]
   },
   {
-    "id": "mon_zedmontosaurus",
     "type": "MONSTER",
+    "id": "mon_zaiasaura",
+    "name": { "str": "maiasaura zombie" },
+    "copy-from": "mon_zarasaurolophus",
+    "hp": 200,
+    "description": "A huge, mottled dinosaur with hooves and a heavy tail, dead but walking, eyes vacant and swollen.  Has a flat beak, thick nose, and a small but spiky head crest.",
+    "burn_into": "mon_zaiasaura_scorched",
+    "fungalize_into": "mon_zaiasaura_fungus",
+    "upgrades": { "half_life": 14, "into_group": "GROUP_zaiasaura_UPGRADE" }
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_zedmontosaurus",
     "name": { "str": "edmontosaurus zombie" },
     "copy-from": "mon_zamptosaurus",
     "looks_like": "mon_parasaurolophus",
     "volume": "1000 L",
     "weight": "1000 kg",
-    "speed": 90,
+    "speed": 65,
     "melee_dice": 2,
     "melee_dice_sides": 6,
     "melee_cut": 2,
@@ -769,8 +946,8 @@
     "upgrades": { "half_life": 14, "into_group": "GROUP_zedmontosaurus_UPGRADE" }
   },
   {
-    "id": "mon_zachycephalosaurus",
     "type": "MONSTER",
+    "id": "mon_zachycephalosaurus",
     "name": { "str": "pachycephalosaurus zombie" },
     "looks_like": "mon_pachycephalosaurus",
     "species": [ "ZOMBIE" ],
@@ -789,7 +966,8 @@
     "melee_dice_sides": 4,
     "armor_bash": 3,
     "armor_cut": 4,
-    "weakpoints": [ { "name": "the eye", "armor_mult": { "physical": 0 }, "coverage": 1 } ],
+    "families": [ "prof_intro_biology", "prof_wp_zombie" ],
+    "weakpoint_sets": [ "wps_lg_ceratopsian_body" ],
     "hp": 125,
     "special_attacks": [ [ "scratch", 10 ], [ "GRAB", 10 ], { "type": "bite", "cooldown": 5 } ],
     "description": "The shuffling corpse of a medium-sized bipedal dinosaur covered with tattered feathers and black, putrid liquid.  It resembles a reptilian ostrich with a hard-looking domed head.",
@@ -799,11 +977,11 @@
     "flags": [ "SEES", "SMELLS", "HEARS", "PET_MOUNTABLE", "POISON", "STUMBLES", "NO_BREATHE", "REVIVES", "FILTHY", "WARM" ],
     "vision_night": 3,
     "harvest": "zed_dino_feather",
-    "categories": [ "DINOSAUR", "CLASSIC" ]
+    "categories": [ "DINOSAUR" ]
   },
   {
-    "id": "mon_zachycephalosaurus_chain",
     "type": "MONSTER",
+    "id": "mon_zachycephalosaurus_chain",
     "//": "Special monster for Old Guard questline",
     "name": { "str": "chained Pachycephalosaurus zombie" },
     "copy-from": "mon_zachycephalosaurus",
@@ -813,8 +991,8 @@
     "speed": 80
   },
   {
-    "id": "mon_zachyrhinosaurus",
     "type": "MONSTER",
+    "id": "mon_zachyrhinosaurus",
     "name": { "str": "pachyrhinosaurus zombie" },
     "copy-from": "mon_zriceratops",
     "hp": 200,
@@ -828,8 +1006,8 @@
     ]
   },
   {
-    "id": "mon_zentaceratops",
     "type": "MONSTER",
+    "id": "mon_zentaceratops",
     "name": { "str": "pentaceratops zombie" },
     "copy-from": "mon_zriceratops",
     "armor_cut": 9,
@@ -841,8 +1019,8 @@
     "upgrades": { "half_life": 14, "into_group": "GROUP_zentaceratops_UPGRADE" }
   },
   {
-    "id": "mon_zosmoceratops",
     "type": "MONSTER",
+    "id": "mon_zosmoceratops",
     "name": { "str": "kosmoceratops zombie" },
     "copy-from": "mon_zriceratops",
     "looks_like": "mon_zriceratops",
@@ -863,8 +1041,8 @@
     "flags": [ "SEES", "SMELLS", "HEARS", "BASHES", "POISON", "STUMBLES", "NO_BREATHE", "REVIVES", "FILTHY", "WARM" ]
   },
   {
-    "id": "mon_zorosaurus",
     "type": "MONSTER",
+    "id": "mon_zorosaurus",
     "name": { "str": "torosaurus zombie" },
     "copy-from": "mon_zriceratops",
     "armor_cut": 9,
@@ -876,8 +1054,8 @@
     "special_attacks": [ { "id": "impale" }, [ "STRETCH_ATTACK", 5 ] ]
   },
   {
-    "id": "mon_zriceratops",
     "type": "MONSTER",
+    "id": "mon_zriceratops",
     "name": { "str": "triceratops zombie" },
     "copy-from": "mon_zamptosaurus",
     "looks_like": "mon_triceratops",
@@ -892,7 +1070,8 @@
     "armor_bash": 5,
     "armor_cut": 7,
     "armor_bullet": 3,
-    "weakpoints": [ { "name": "the eye", "armor_mult": { "physical": 0 }, "coverage": 1 } ],
+    "families": [ "prof_intro_biology", "prof_wp_zombie" ],
+    "weakpoint_sets": [ "wps_lg_ceratopsian_body" ],
     "hp": 400,
     "description": "A massive, shambling, rhino-like dinosaur corpse with a bony crest from which three wicked-looking horns emerge.  Its eyes ooze black, putrid tears.",
     "burn_into": "mon_zriceratops_scorched",
@@ -904,8 +1083,8 @@
     ]
   },
   {
-    "id": "mon_zteranodon",
     "type": "MONSTER",
+    "id": "mon_zteranodon",
     "name": { "str": "pteranodon zombie" },
     "looks_like": "mon_pteranodon",
     "species": [ "ZOMBIE" ],
@@ -925,6 +1104,8 @@
     "melee_cut": 0,
     "armor_bash": 4,
     "armor_cut": 4,
+    "families": [ "prof_intro_biology", "prof_wp_zombie", "prof_wp_flying" ],
+    "weakpoint_sets": [ "wps_pterosaur_body" ],
     "hp": 30,
     "special_attacks": [ [ "scratch", 10 ] ],
     "description": "The ragged but flying corpse of a large, feathered reptile with a long, pointy, toothless beak and a long, pointy head crest.",
@@ -947,11 +1128,11 @@
     ],
     "vision_night": 3,
     "harvest": "zed_dino_feather",
-    "categories": [ "DINOSAUR", "CLASSIC" ]
+    "categories": [ "DINOSAUR" ]
   },
   {
-    "id": "mon_zuetzalcoatlus",
     "type": "MONSTER",
+    "id": "mon_zuetzalcoatlus",
     "name": { "str": "quetzalcoatlus zombie" },
     "copy-from": "mon_zteranodon",
     "volume": "190 L",
@@ -964,8 +1145,8 @@
     "upgrades": {  }
   },
   {
-    "id": "mon_zosasaurus",
     "type": "MONSTER",
+    "id": "mon_zosasaurus",
     "name": { "str": "mosasaurus zombie" },
     "copy-from": "mon_zyrannosaurus",
     "looks_like": "mon_zyrannosaurus",
@@ -980,7 +1161,8 @@
     "armor_bash": 5,
     "armor_cut": 7,
     "armor_bullet": 7,
-    "weakpoints": [ { "name": "the eye", "armor_mult": { "physical": 0 }, "coverage": 1 } ],
+    "families": [ "prof_intro_biology", "prof_wp_zombie" ],
+    "weakpoint_sets": [ "wps_mosasaur_body" ],
     "hp": 335,
     "description": "The ragged bloated corpse of a huge aquatic dinosaur the size of a house, with a crocodile-like head and swimming fins.",
     "burn_into": "mon_zosasaurus_scorched",
@@ -1002,8 +1184,8 @@
     ]
   },
   {
-    "id": "mon_zamargasaurus_juvenile",
     "type": "MONSTER",
+    "id": "mon_zamargasaurus_juvenile",
     "name": { "str": "juvenile sauropod zombie" },
     "copy-from": "mon_zapatosaurus_juvenile",
     "looks_like": "mon_apatosaurus",
@@ -1012,8 +1194,8 @@
     "upgrades": { "half_life": 14, "into": "mon_zamargasaurus" }
   },
   {
-    "id": "mon_zapatosaurus_juvenile",
     "type": "MONSTER",
+    "id": "mon_zapatosaurus_juvenile",
     "name": { "str": "juvenile sauropod zombie" },
     "looks_like": "mon_apatosaurus",
     "species": [ "ZOMBIE" ],
@@ -1034,10 +1216,8 @@
     "armor_bash": 6,
     "armor_cut": 4,
     "armor_bullet": 2,
-    "weakpoints": [
-      { "name": "the head", "armor_mult": { "physical": 0.5 }, "coverage": 3 },
-      { "name": "the eye", "armor_mult": { "physical": 0 }, "coverage": 1 }
-    ],
+    "families": [ "prof_intro_biology", "prof_wp_zombie" ],
+    "weakpoint_sets": [ "wps_sauropod_body" ],
     "hp": 200,
     "special_attacks": [
       { "id": "stomp_DinoMod", "cooldown": 10, "damage_max_instance": [ { "damage_type": "bash", "amount": 12 } ] },
@@ -1050,11 +1230,11 @@
     "flags": [ "SEES", "SMELLS", "HEARS", "POISON", "STUMBLES", "NO_BREATHE", "REVIVES", "FILTHY", "WARM", "BASHES" ],
     "vision_night": 3,
     "harvest": "zed_dino_leather",
-    "categories": [ "DINOSAUR", "CLASSIC" ]
+    "categories": [ "DINOSAUR" ]
   },
   {
-    "id": "mon_zrontosaurus_juvenile",
     "type": "MONSTER",
+    "id": "mon_zrontosaurus_juvenile",
     "name": { "str": "juvenile sauropod zombie" },
     "copy-from": "mon_zapatosaurus_juvenile",
     "looks_like": "mon_apatosaurus",
@@ -1063,8 +1243,8 @@
     "upgrades": { "half_life": 14, "into": "mon_zrontosaurus" }
   },
   {
-    "id": "mon_ziplodocus_juvenile",
     "type": "MONSTER",
+    "id": "mon_ziplodocus_juvenile",
     "name": { "str": "juvenile sauropod zombie" },
     "copy-from": "mon_zapatosaurus_juvenile",
     "looks_like": "mon_apatosaurus",
@@ -1073,8 +1253,8 @@
     "upgrades": { "half_life": 14, "into": "mon_ziplodocus" }
   },
   {
-    "id": "mon_zamarasaurus_juvenile",
     "type": "MONSTER",
+    "id": "mon_zamarasaurus_juvenile",
     "name": { "str": "juvenile sauropod zombie" },
     "copy-from": "mon_zapatosaurus_juvenile",
     "looks_like": "mon_apatosaurus",
@@ -1083,8 +1263,8 @@
     "upgrades": { "half_life": 14, "into": "mon_zamarasaurus" }
   },
   {
-    "id": "mon_zrachiosaurus_juvenile",
     "type": "MONSTER",
+    "id": "mon_zrachiosaurus_juvenile",
     "name": { "str": "juvenile sauropod zombie" },
     "copy-from": "mon_zapatosaurus_juvenile",
     "looks_like": "mon_apatosaurus",
@@ -1098,8 +1278,8 @@
     "upgrades": { "half_life": 14, "into": "mon_zrachiosaurus" }
   },
   {
-    "id": "mon_zalamosaurus_juvenile",
     "type": "MONSTER",
+    "id": "mon_zalamosaurus_juvenile",
     "name": { "str": "juvenile sauropod zombie" },
     "copy-from": "mon_zapatosaurus_juvenile",
     "looks_like": "mon_apatosaurus",

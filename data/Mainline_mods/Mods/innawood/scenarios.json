@@ -1,14 +1,24 @@
 [
   {
-    "id": "evacuee",
     "type": "scenario",
+    "id": "evacuee",
     "//": "Overriding evacuee to put it at the top of the list of available scenarios.",
-    "name": "In a cave",
+    "name": "In a Cave",
     "points": 0,
-    "description": "Somehow, you found yourself in a cave.",
+    "description": "Somehow, you found yourself in a cave.  Someone else is with you.",
     "allowed_locs": [ "sloc_cave_underground_innawood", "sloc_cave_innawood" ],
     "start_name": "Cave",
     "flags": [  ]
+  },
+  {
+    "type": "scenario",
+    "id": "cave_lonesome",
+    "name": "A Lonely Cave",
+    "points": -1,
+    "description": "Somehow, you found yourself in a cave.  Seems like you're on your own.",
+    "allowed_locs": [ "sloc_cave_underground_innawood", "sloc_cave_innawood" ],
+    "start_name": "Cave",
+    "flags": [ "LONE_START" ]
   },
   {
     "type": "scenario",
@@ -22,8 +32,8 @@
     "eoc": [ "scenario_infected" ]
   },
   {
-    "id": "hunted_start",
     "type": "scenario",
+    "id": "hunted_start",
     "name": "Challenge - Hunted",
     "points": -2,
     "forced_traits": [ "HAS_NEMESIS" ],
@@ -34,8 +44,8 @@
     "missions": [ "MISSION_KILL_NEMESIS" ]
   },
   {
-    "id": "fungal_start",
     "type": "scenario",
+    "id": "fungal_start",
     "name": "Challenge - Fungal Infection",
     "points": -8,
     "description": "You feel spores crawling beneath your skin.  It's only a matter of time.",
@@ -45,8 +55,8 @@
     "flags": [ "CHALLENGE", "LONE_START" ]
   },
   {
-    "id": "bad_day",
     "type": "scenario",
+    "id": "bad_day",
     "name": "Challenge - Really Bad Day",
     "points": -8,
     "description": "You start drunk to the point of incapacitation, depressed, infected, surrounded by fire, and sick with the flu.  This day went downhill really fast.",
@@ -57,8 +67,8 @@
     "flags": [ "FIRE_START", "CHALLENGE", "LONE_START" ]
   },
   {
-    "id": "bordered",
     "type": "scenario",
+    "id": "bordered",
     "name": "Challenge - Bordered",
     "points": -2,
     "description": "You have survived the initial wave of panic, and have achieved (relative) safety in a wilderness.  The only thing that really bothers you is a mysterious sky-high wall seen in the distance.",
@@ -67,8 +77,8 @@
     "flags": [ "CHALLENGE", "BORDERED" ]
   },
   {
-    "id": "ambushed",
     "type": "scenario",
+    "id": "ambushed",
     "name": "Ambush",
     "points": -3,
     "description": "It is the winter after zero hour.  As you were scavenging for food and a warm place to stay at, you heard the sound of lots of movement nearby.",
@@ -81,8 +91,8 @@
     "professions": [ "sheltered_survivor", "sheltered_militia", "winter_scavenger", "winter_army" ]
   },
   {
-    "id": "summer_advanced_start",
     "type": "scenario",
+    "id": "summer_advanced_start",
     "name": "The Next Summer",
     "points": 0,
     "description": "A little over a year has passed since the apocalypse started, and you're about to face your second summer in Hell.",
@@ -94,8 +104,8 @@
     "professions": [ "sheltered_survivor", "sheltered_militia", "winter_scavenger", "winter_army" ]
   },
   {
-    "id": "last_flight",
     "type": "scenario",
+    "id": "last_flight",
     "name": "Last Flight",
     "//": "Doesn't seem to spawn the helicopter without a road nearby.  Dissabeled until this can be fixed.",
     "points": 2,
@@ -107,8 +117,8 @@
     "flags": [ "LONE_START" ]
   },
   {
-    "id": "wilderness",
     "type": "scenario",
+    "id": "wilderness",
     "name": "Wilderness",
     "points": 0,
     "description": "You find yourself amongst trees.  The screaming and the moaning is fainter this far from civilization, but you'd better know what you're doing out here.",
@@ -117,8 +127,8 @@
     "flags": [ "LONE_START" ]
   },
   {
-    "id": "car_crash",
     "type": "scenario",
+    "id": "car_crash",
     "name": "Car Crash",
     "points": -2,
     "description": "You decided the open road would be a better prospect than the zombie-filled cities.  While en route to your destination, you were involved in a wreck.  When you look around, you can no longer spot the road you were driving on.  Just how hard did you hit your head?",
@@ -126,5 +136,18 @@
     "start_name": "Crash Site",
     "map_extra": "mx_mayhem",
     "flags": [ "CHALLENGE", "HELI_CRASH", "LONE_START" ]
+  },
+  {
+    "type": "scenario",
+    "id": "medieval",
+    "name": "Challenge - Medieval Peasant",
+    "points": -4,
+    "description": "Som nigromancie hath brought yow hidder!  Ye have only the hoose on youre legges and the knyf at youre syde and youre prayeres to Marie moder of God.",
+    "start_name": "Wilderness",
+    "allowed_locs": [ "sloc_forest", "sloc_field" ],
+    "professions": [ "churl" ],
+    "forced_traits": [ "ILLITERATE", "ANTIJUNK", "STRONGSTOMACH", "SPIRITUAL" ],
+    "forbidden_traits": [ "FASTREADER", "SLOWREADER" ],
+    "flags": [ "CHALLENGE", "LONE_START" ]
   }
 ]
