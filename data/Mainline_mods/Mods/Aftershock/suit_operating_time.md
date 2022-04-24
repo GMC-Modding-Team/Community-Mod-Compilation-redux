@@ -1,3 +1,14 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Powered Armor Balance](#powered-armor-balance)
+  - [Operating time](#operating-time)
+      - [Additional factors](#additional-factors)
+      - [Example Calculation](#example-calculation)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Powered Armor Balance
 
 These are guidelines for designing all sorts of Aftershock power armor.
