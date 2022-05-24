@@ -1,7 +1,7 @@
 [
   {
-    "id": "PrepNet",
     "type": "mutation",
+    "id": "PrepNet",
     "name": { "str": "PrepNet Tag" },
     "points": 0,
     "valid": false,
@@ -10,8 +10,8 @@
     "threshold": true
   },
   {
-    "id": "MIGO",
     "type": "mutation_category",
+    "id": "MIGO",
     "name": "YUGGOTH",
     "threshold_mut": "THRESH_YUGGOTH",
     "mutagen_message": "Strange memories of another world overwhelm you…",
@@ -26,8 +26,8 @@
     "memorial_message": "Prepared the way into the galaxy."
   },
   {
-    "id": "MASTODON",
     "type": "mutation_category",
+    "id": "MASTODON",
     "name": "Mastodon",
     "threshold_mut": "THRESH_MASTODON",
     "mutagen_message": "You feel a desire to trumpet and toot.",
@@ -35,8 +35,8 @@
     "memorial_message": "Went extinct."
   },
   {
-    "id": "THRESH_MASTODON",
     "type": "mutation",
+    "id": "THRESH_MASTODON",
     "name": { "str": "Killophant" },
     "points": 1,
     "description": "Your species was created as the ultimate shock troop.  Inherit the earth, pedigree your ancestors, crush the foe.",
@@ -46,9 +46,9 @@
     "threshold": true
   },
   {
-    "id": "MIGO_HEAT_RESIST",
     "type": "mutation",
-    "name": { "str": "Mi-go acclimatization" },
+    "id": "MIGO_HEAT_RESIST",
+    "name": "Mi-go acclimatization",
     "points": 4,
     "bodytemp_modifiers": [ -2500, -6500 ],
     "description": "Fleshy fronds grown from your scalp function like organic heat sinks.  They allow you to live comfortably within the mi-go atmosphere.",
@@ -61,9 +61,9 @@
     "prereqs": [ "WARM_NATURED" ]
   },
   {
-    "id": "FACIAL_TENTACLES",
     "type": "mutation",
-    "name": { "str": "Facial Tentacles" },
+    "id": "FACIAL_TENTACLES",
+    "name": "Facial Tentacles",
     "points": 1,
     "visibility": 8,
     "ugliness": 5,
@@ -74,9 +74,9 @@
     "wet_protection": [ { "part": "mouth", "neutral": 4 } ]
   },
   {
-    "id": "MOUTH_TENDRILS",
     "type": "mutation",
-    "name": { "str": "Mouth Tendrils" },
+    "id": "MOUTH_TENDRILS",
+    "name": "Mouth Tendrils",
     "points": -1,
     "visibility": 7,
     "ugliness": 6,
@@ -85,9 +85,9 @@
     "leads_to": [ "FACIAL_TENTACLES" ]
   },
   {
-    "id": "WARM_NATURED",
     "type": "mutation",
-    "name": { "str": "Warm Natured" },
+    "id": "WARM_NATURED",
+    "name": "Warm Natured",
     "points": 2,
     "description": "Your body becomes much more efficient at distributing heat from itself.",
     "category": [ "MIGO" ],
@@ -95,9 +95,9 @@
     "bodytemp_modifiers": [ -500, -1250 ]
   },
   {
-    "id": "NEURAL_IMPROVEMENT",
     "type": "mutation",
-    "name": { "str": "Neural Improvement" },
+    "id": "NEURAL_IMPROVEMENT",
+    "name": "Neural Improvement",
     "points": 1,
     "description": "You see the world a little differently today.  Intelligence + 1",
     "changes_to": [ "EXPANDED_CONSCIOUSNESS" ],
@@ -105,20 +105,20 @@
     "passive_mods": { "int_mod": 1 }
   },
   {
-    "id": "EXPANDED_CONSCIOUSNESS",
     "type": "mutation",
-    "name": { "str": "Expanded Consciousness" },
+    "id": "EXPANDED_CONSCIOUSNESS",
+    "name": "Expanded Consciousness",
     "points": 2,
     "description": "You are beginning to see a way off this planet.  Intelligence + 2",
     "prereqs": [ "NEURAL_IMPROVEMENT" ],
-    "changes_to": [ "UPLIFTED" ],
+    "changes_to": [ "UPLIFTED_CONSCIOUSNESS" ],
     "category": [ "MIGO" ],
     "passive_mods": { "int_mod": 2 }
   },
   {
-    "id": "UPLIFTED",
     "type": "mutation",
-    "name": { "str": "Extremely Smart" },
+    "id": "UPLIFTED_CONSCIOUSNESS",
+    "name": "Extremely Smart",
     "points": 3,
     "visibility": 1,
     "ugliness": 1,
@@ -129,23 +129,23 @@
     "passive_mods": { "int_mod": 4 }
   },
   {
-    "id": "ALIEN_INT",
     "type": "mutation",
-    "name": { "str": "Alien Intelligence" },
+    "id": "ALIEN_INT",
+    "name": "Alien Intelligence",
     "points": 3,
     "visibility": 3,
     "ugliness": 6,
     "description": "You can see the connections from A to B to C to D.  You look at fellow survivors like you are imagining taking them apart.  Intelligence + 5",
-    "prereqs": [ "UPLIFTED" ],
+    "prereqs": [ "UPLIFTED_CONSCIOUSNESS" ],
     "category": [ "MIGO" ],
     "threshreq": [ "THRESH_YUGGOTH" ],
     "starting_trait": false,
     "passive_mods": { "int_mod": 5 }
   },
   {
-    "id": "ENHANCED_REACTIONS",
     "type": "mutation",
-    "name": { "str": "Enhanced Reactions" },
+    "id": "ENHANCED_REACTIONS",
+    "name": "Enhanced Reactions",
     "points": 1,
     "description": "Today is the day to start juggling.  Dexterity + 1",
     "changes_to": [ "QUICKENING" ],
@@ -153,9 +153,9 @@
     "passive_mods": { "dex_mod": 1 }
   },
   {
-    "id": "QUICKENING",
     "type": "mutation",
-    "name": { "str": "Quickening" },
+    "id": "QUICKENING",
+    "name": "Quickening",
     "points": 2,
     "description": "You are starting to move like they do.  Dexterity + 2",
     "prereqs": [ "ENHANCED_REACTIONS" ],
@@ -164,9 +164,9 @@
     "passive_mods": { "dex_mod": 2 }
   },
   {
-    "id": "OTHERWORLDLY_GRACE",
     "type": "mutation",
-    "name": { "str": "Otherworldly Grace" },
+    "id": "OTHERWORLDLY_GRACE",
+    "name": "Otherworldly Grace",
     "points": 3,
     "description": "You no longer move like a human, others find it disconcerting.  Dexterity + 4",
     "prereqs": [ "ENHANCED_REACTIONS" ],
@@ -176,9 +176,9 @@
     "passive_mods": { "dex_mod": 4 }
   },
   {
-    "id": "NEW_MUSCLES",
     "type": "mutation",
-    "name": { "str": "New Muscles" },
+    "id": "NEW_MUSCLES",
+    "name": "New Muscles",
     "points": 1,
     "description": "You see some new muscles that you aren't sure you've seen on humans before.  Strength + 1",
     "changes_to": [ "MUSCLE_FIBER" ],
@@ -187,9 +187,9 @@
     "passive_mods": { "str_mod": 1 }
   },
   {
-    "id": "MUSCLE_FIBER",
     "type": "mutation",
-    "name": { "str": "Muscle Fiber" },
+    "id": "MUSCLE_FIBER",
+    "name": "Muscle Fiber",
     "points": 2,
     "description": "Fibrous tissue seems to be spreading through your body.  Strength + 2",
     "prereqs": [ "STR_UP" ],
@@ -199,9 +199,9 @@
     "passive_mods": { "str_mod": 2 }
   },
   {
-    "id": "MIGO_EARS",
     "type": "mutation",
-    "name": { "str": "Mi-go Ears" },
+    "id": "MIGO_EARS",
+    "name": "Mi-go Ears",
     "points": 1,
     "visibility": 4,
     "description": "Your ears have split into a series of tuberous projections.  They waggle towards far away sounds.",
@@ -211,9 +211,9 @@
     "hearing_modifier": 1.4
   },
   {
-    "id": "DETACHMENT",
     "type": "mutation",
-    "name": { "str": "Detachment" },
+    "id": "DETACHMENT",
+    "name": "Detachment",
     "points": 2,
     "flags": [ "PRED1" ],
     "description": "When were you ever like these creatures, helpless before the changes ravaging this world.",
@@ -225,9 +225,9 @@
     "category": [ "MIGO" ]
   },
   {
-    "id": "ELDRITCH",
     "type": "mutation",
-    "name": { "str": "Eldritch" },
+    "id": "ELDRITCH",
+    "name": "Eldritch",
     "points": 3,
     "description": "You have a sinister aspect to your demeanor, no longer part of this world.  You feel no sorrow at the deaths of humans and your brain now processes combat skills more efficiently as you mentally dissect your opponents.",
     "social_modifiers": { "intimidate": 3, "persuade": -10, "lie": -12 },
@@ -240,9 +240,9 @@
     "category": [ "MIGO" ]
   },
   {
-    "id": "THRESH_YUGGOTH",
     "type": "mutation",
-    "name": { "str": "YUGGOTH" },
+    "id": "THRESH_YUGGOTH",
+    "name": "YUGGOTH",
     "points": 1,
     "description": "This death throes of this world are the birthing pangs of yours.",
     "valid": false,
@@ -250,9 +250,9 @@
     "threshold": true
   },
   {
-    "id": "MIGO_SCENT",
     "type": "mutation",
-    "name": { "str": "Fetid scent" },
+    "id": "MIGO_SCENT",
+    "name": "Fetid scent",
     "points": 6,
     "description": "Your sweat now smells otherworldly, and not in a good way.  The mi-go still hate you but at least they aren't offended by your smell.",
     "valid": false,
@@ -265,9 +265,9 @@
     "scent_type": "sc_fetid"
   },
   {
-    "id": "EERIE",
     "type": "mutation",
-    "name": { "str": "Eerie" },
+    "id": "EERIE",
+    "name": "Eerie",
     "points": 1,
     "description": "You are offputting to others.  You're mannerisms have changed as if human interaction is becoming foreign.",
     "category": [ "MIGO" ],
@@ -275,9 +275,9 @@
     "ugliness": 2
   },
   {
-    "id": "WINGS_migo",
     "type": "mutation",
-    "name": { "str": "Mi-go Wings" },
+    "id": "WINGS_migo",
+    "name": "Mi-go Wings",
     "points": 1,
     "visibility": 4,
     "ugliness": 8,
@@ -293,24 +293,24 @@
     }
   },
   {
-    "id": "MIGO_BREATHE",
     "type": "mutation",
-    "name": { "str": "Mi-go breathe" },
+    "id": "MIGO_BREATHE",
+    "name": "Mi-go breathe",
     "points": 4,
     "description": "You can now breathe the gasses the mi-go thrive in.",
     "starting_trait": false,
     "category": [ "MIGO" ]
   },
   {
-    "id": "SHOUT1",
     "type": "mutation",
+    "id": "SHOUT1",
     "copy-from": "SHOUT1",
     "extend": { "category": [ "MIGO" ] }
   },
   {
-    "id": "UPLIFTED",
     "type": "mutation",
-    "name": { "str": "Uplifted" },
+    "id": "UPLIFTED",
+    "name": "Uplifted",
     "points": 2,
     "description": "You come from uplifted animal stock.  This decreases morale penalties for being wet.",
     "valid": false,
@@ -328,21 +328,21 @@
     ]
   },
   {
-    "id": "TOUGH_FEET",
     "type": "mutation",
+    "id": "TOUGH_FEET",
     "copy-from": "TOUGH_FEET",
     "extend": { "category": [ "MASTODON" ] }
   },
   {
-    "id": "THICKSKIN",
     "type": "mutation",
+    "id": "THICKSKIN",
     "copy-from": "THICKSKIN",
     "extend": { "category": [ "MASTODON" ] }
   },
   {
-    "id": "HAULER",
     "type": "mutation",
-    "name": { "str": "Hauler" },
+    "id": "HAULER",
+    "name": "Hauler",
     "points": 2,
     "description": "You are capable of carrying far more than someone with similar strength could.  Your maximum weight carried is increased by 60%.",
     "category": [ "MASTODON" ],
@@ -350,39 +350,39 @@
     "weight_capacity_modifier": 1.6
   },
   {
-    "id": "BADKNEES",
     "type": "mutation",
+    "id": "BADKNEES",
     "copy-from": "BADKNEES",
     "extend": { "category": [ "MASTODON" ] }
   },
   {
-    "id": "VEGETARIAN",
     "type": "mutation",
+    "id": "VEGETARIAN",
     "copy-from": "VEGETARIAN",
     "extend": { "category": [ "MASTODON" ] }
   },
   {
-    "id": "SMELLY",
     "type": "mutation",
+    "id": "SMELLY",
     "copy-from": "SMELLY",
     "extend": { "category": [ "MASTODON" ] }
   },
   {
-    "id": "CLUMSY",
     "type": "mutation",
+    "id": "CLUMSY",
     "copy-from": "CLUMSY",
     "extend": { "category": [ "MASTODON" ] }
   },
   {
-    "id": "SLOWRUNNER",
     "type": "mutation",
+    "id": "SLOWRUNNER",
     "copy-from": "SLOWRUNNER",
     "extend": { "category": [ "MASTODON" ] }
   },
   {
-    "id": "PATCHFUR",
     "type": "mutation",
-    "name": { "str": "Patched Fur" },
+    "id": "PATCHFUR",
+    "name": "Patched Fur",
     "points": 0,
     "visibility": 2,
     "ugliness": 1,
@@ -392,27 +392,27 @@
     "category": [ "MASTODON" ]
   },
   {
-    "id": "LIGHTFUR",
     "type": "mutation",
+    "id": "LIGHTFUR",
     "copy-from": "LIGHTFUR",
     "extend": { "category": [ "MASTODON" ] }
   },
   {
-    "id": "FUR",
     "type": "mutation",
+    "id": "FUR",
     "copy-from": "FUR",
     "extend": { "category": [ "MASTODON" ] }
   },
   {
-    "id": "URSINE_FUR",
     "type": "mutation",
+    "id": "URSINE_FUR",
     "copy-from": "URSINE_FUR",
     "extend": { "category": [ "MASTODON" ] }
   },
   {
-    "id": "CRUSHINGFEET",
     "type": "mutation",
-    "name": { "str": "Crushing Feet" },
+    "id": "CRUSHINGFEET",
+    "name": "Crushing Feet",
     "points": -4,
     "visibility": 2,
     "ugliness": 2,
@@ -431,21 +431,21 @@
     }
   },
   {
-    "id": "RUMINANT",
     "type": "mutation",
+    "id": "RUMINANT",
     "copy-from": "RUMINANT",
     "extend": { "category": [ "MASTODON" ] }
   },
   {
-    "id": "GRAZER",
     "type": "mutation",
+    "id": "GRAZER",
     "copy-from": "GRAZER",
     "extend": { "category": [ "MASTODON" ] }
   },
   {
-    "id": "FACEBUMPS",
     "type": "mutation",
-    "name": { "str": "Face Bumps" },
+    "id": "FACEBUMPS",
+    "name": "Face Bumps",
     "points": 0,
     "visibility": 3,
     "ugliness": 3,
@@ -454,9 +454,9 @@
     "changes_to": [ "TUSKS" ]
   },
   {
-    "id": "TUSKS",
     "type": "mutation",
-    "name": { "str": "Tusks" },
+    "id": "TUSKS",
+    "name": "Tusks",
     "points": 1,
     "visibility": 3,
     "ugliness": 1,
@@ -473,9 +473,9 @@
     }
   },
   {
-    "id": "TUSKS_POINTED",
     "type": "mutation",
-    "name": { "str": "Pointed Tusks" },
+    "id": "TUSKS_POINTED",
+    "name": "Pointed Tusks",
     "points": 1,
     "visibility": 8,
     "ugliness": 2,
@@ -495,63 +495,63 @@
     }
   },
   {
-    "id": "MUT_TOUGH",
     "type": "mutation",
+    "id": "MUT_TOUGH",
     "copy-from": "MUT_TOUGH",
     "extend": { "category": [ "MASTODON" ] }
   },
   {
-    "id": "MUT_TOUGH2",
     "type": "mutation",
+    "id": "MUT_TOUGH2",
     "copy-from": "MUT_TOUGH2",
     "extend": { "category": [ "MASTODON" ] }
   },
   {
-    "id": "MUT_TOUGH3",
     "type": "mutation",
+    "id": "MUT_TOUGH3",
     "copy-from": "MUT_TOUGH3",
     "extend": { "category": [ "MASTODON" ] }
   },
   {
-    "id": "LARGE",
     "type": "mutation",
+    "id": "LARGE",
     "copy-from": "LARGE",
     "extend": { "category": [ "MASTODON" ] }
   },
   {
-    "id": "LARGE_OK",
     "type": "mutation",
+    "id": "LARGE_OK",
     "copy-from": "LARGE_OK",
     "extend": { "category": [ "MASTODON" ] }
   },
   {
-    "id": "HUGE",
     "type": "mutation",
+    "id": "HUGE",
     "copy-from": "HUGE",
     "extend": { "category": [ "MASTODON" ] }
   },
   {
-    "id": "HUGE_OK",
     "type": "mutation",
+    "id": "HUGE_OK",
     "copy-from": "HUGE_OK",
     "extend": { "category": [ "MASTODON" ], "threshreq": [ "THRESH_MASTODON" ] },
     "profession": true
   },
   {
-    "id": "SMELLY2",
     "type": "mutation",
+    "id": "SMELLY2",
     "copy-from": "SMELLY2",
     "extend": { "category": [ "MASTODON" ] }
   },
   {
-    "id": "SNOUT",
     "type": "mutation",
+    "id": "SNOUT",
     "copy-from": "SNOUT",
     "extend": { "category": [ "MASTODON" ], "changes_to": [ "TRUNK" ] }
   },
   {
-    "id": "TRUNK",
     "type": "mutation",
+    "id": "TRUNK",
     "name": { "str": "Elephant Trunk" },
     "points": -4,
     "visibility": 5,
@@ -566,33 +566,33 @@
     "craft_skill_bonus": [ [ "electronics", 1 ], [ "tailor", 1 ], [ "mechanics", 1 ], [ "cooking", 1 ] ]
   },
   {
-    "id": "HUNGER",
     "type": "mutation",
+    "id": "HUNGER",
     "copy-from": "HUNGER",
     "extend": { "category": [ "MASTODON" ] }
   },
   {
-    "id": "MET_RAT",
     "type": "mutation",
+    "id": "MET_RAT",
     "copy-from": "MET_RAT",
     "extend": { "category": [ "MASTODON" ] }
   },
   {
-    "id": "THIRST",
     "type": "mutation",
+    "id": "THIRST",
     "copy-from": "THIRST",
     "extend": { "category": [ "MASTODON" ] }
   },
   {
-    "id": "THIRST2",
     "type": "mutation",
+    "id": "THIRST2",
     "copy-from": "THIRST2",
     "extend": { "category": [ "MASTODON" ] }
   },
   {
-    "id": "TRIPAWS",
     "type": "mutation",
-    "name": { "str": "Three Fingered" },
+    "id": "TRIPAWS",
+    "name": "Three Fingered",
     "points": -3,
     "visibility": 3,
     "ugliness": 2,
@@ -606,27 +606,27 @@
     "category": [ "MASTODON" ]
   },
   {
-    "id": "HERBIVORE",
     "type": "mutation",
+    "id": "HERBIVORE",
     "copy-from": "HERBIVORE",
     "extend": { "category": [ "MASTODON" ] }
   },
   {
-    "id": "PONDEROUS1",
     "type": "mutation",
+    "id": "PONDEROUS1",
     "copy-from": "PONDEROUS1",
     "extend": { "category": [ "MASTODON" ] }
   },
   {
-    "id": "PONDEROUS2",
     "type": "mutation",
+    "id": "PONDEROUS2",
     "copy-from": "PONDEROUS2",
     "extend": { "category": [ "MASTODON" ] }
   },
   {
-    "id": "TRUMPET",
     "type": "mutation",
-    "name": { "str": "Trumpeting Voice" },
+    "id": "TRUMPET",
+    "name": "Trumpeting Voice",
     "points": -1,
     "mixed_effect": true,
     "description": "You have a trumpeting, elephantine voice.  Threatening NPCs will be easier, but lying will very hard.",
@@ -635,8 +635,8 @@
     "social_modifiers": { "lie": -30, "intimidate": 10 }
   },
   {
-    "id": "AFS_BRUTAL_STRENGTH",
     "type": "mutation",
+    "id": "AFS_BRUTAL_STRENGTH",
     "name": { "str": "Brutal Strength" },
     "description": "Genetic tampering made your body incredibly strong.  Strength + 7.",
     "points": 0,
@@ -647,8 +647,8 @@
     "passive_mods": { "str_mod": 7 }
   },
   {
-    "id": "AFS_CRYOADAPTATION",
     "type": "mutation",
+    "id": "AFS_CRYOADAPTATION",
     "name": { "str": "Cryoadaptation" },
     "description": "An experimental cryosleep procedure has permanently altered your body, allowing you to better tolerate cold temperatures.",
     "bodytemp_modifiers": [ -850, 850 ],
@@ -658,20 +658,20 @@
     "profession": true
   },
   {
-    "id": "LEG_TENTACLES",
     "type": "mutation",
+    "id": "LEG_TENTACLES",
     "copy-from": "LEG_TENTACLES",
     "extend": { "allow_soft_gear": true }
   },
   {
-    "id": "CHEMIMBALANCE",
     "type": "mutation",
+    "id": "CHEMIMBALANCE",
     "copy-from": "CHEMIMBALANCE",
     "extend": { "category": [ "MIGO" ] }
   },
   {
-    "id": "SCHIZOPHRENIC",
     "type": "mutation",
+    "id": "SCHIZOPHRENIC",
     "copy-from": "SCHIZOPHRENIC",
     "extend": { "category": [ "MIGO" ] }
   }

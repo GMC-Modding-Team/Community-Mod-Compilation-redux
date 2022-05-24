@@ -1,21 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  
-
-- [Dark Skies Above](#dark-skies-above)
-- [Summary of Intent and Content](#summary-of-intent-and-content)
-- [Contributing](#contributing)
-- [Content](#content)
-  - [The World](#the-world)
-  - [The Arrival and The Aliens](#the-arrival-and-the-aliens)
-  - [Other Aliens](#other-aliens)
-  - [Alien Technology](#alien-technology)
-  - [The Player](#the-player)
-  - [The Resistance and the Narrative](#the-resistance-and-the-narrative)
-  - [Other NPCs](#other-npcs)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # Dark Skies Above
 
 This document is intended to not only guide new potential contributors, but also help get my own thoughts on how the game will progress in text. Assume spoilers beyond this point!

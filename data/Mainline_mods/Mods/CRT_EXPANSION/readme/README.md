@@ -1,20 +1,9 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  
-
-- [C.R.T Expansion mod pack](#crt-expansion-mod-pack)
-- [Extended Techniques](#extended-techniques)
-- [For those curious about stat scaling:](#for-those-curious-about-stat-scaling)
-- [Dead Space](#dead-space)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # C.R.T Expansion mod pack
 The core mod of the CRT Expansion mod pack, it currently adds an armor set, mildly OP gas mask and transforming vest, some gun mods, a new melee/tool and a new material. The items also use a lot of higher end materials such as superalloy, rubber (the "new" material), the lesser used hardsteel and also neoprene.
 
 This mod also adds a few new classes to CDDA. To name a few: the C.R.I.T Medic, C.R.I.T Commanding Officer, C.R.I.T Automatic Rifleman, C.R.I.T Grunt, C.R.I.T NCO, C.R.I.T ROTC member, and also some more.
 
-I tried to keep the professions revolving around slightly upgraded army gear and as "balanced" as possible except for the C.R.I.T Spec Ops which is for trying out the new items and being stupid powerful and the Juggernaught for being a Juggernaught.
+I tried to keep the professions revolving around slightly upgraded army gear and as "balanced" as possible except for the CRIT Spec Ops which is for trying out the new items and being stupid powerful and the Juggernaught for being a Juggernaught.
 
 I can't fix some things like the toolmods attatching to the vest and gasmask, but that doesn't hurt the game (my mod already breaks it) and it's more of a cheap way to progress instead of getting a UPS, even though it still drinks a ton of power.
 
