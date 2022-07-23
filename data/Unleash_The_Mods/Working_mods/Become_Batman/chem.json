@@ -4,7 +4,8 @@
     "copy-from": "mutagen_flavor",
     "type": "COMESTIBLE",
     "name": { "str": "bat mutagen" },
-    "use_action": { "type": "mutagen", "mutation_category": "BAT" }
+    "description": "a bat derived mutagen",
+    "vitamins": [ [ "mutagen_bat", 225 ], [ "mutagen", 125 ] ]
   },
   {
     "id": "iv_mutagen_bat",
@@ -13,6 +14,59 @@
     "name": { "str": "bat serum" },
     "description": "A super-concentrated mutagen as black as the night.  You need a syringe to inject it… if you really want to?",
     "color": "black",
-    "use_action": { "type": "mutagen_iv", "mutation_category": "BAT" }
+    "use_action": {
+      "type": "consume_drug",
+      "activation_message": "You inject the bat mutagenic primer.",
+      "tools_needed": { "syringe": -1 },
+      "vitamins": [ [ "mutagen_bat", 450, 550 ] ]
+    }
+  },
+  {
+    "id": "mutagen_bat",
+    "type": "vitamin",
+    "vit_type": "counter",
+    "name": { "str": "Bat Mutagen" },
+    "excess": "mutagen_bat",
+    "min": 0,
+    "max": 2500,
+    "rate": "1 h",
+    "disease_excess": [ [ 100, 500 ], [ 501, 2199 ], [ 2200, 2500 ] ]
+  },
+  {
+    "type": "effect_type",
+    "id": "mutagen_bat",
+    "name": [ "Bat Mutation", "Bat Transformation", "Bat Metamorphosis" ],
+    "desc": [
+      "You consumed bat mutagen.",
+      "You hear even the most distant of sounds.",
+      "You feel tired, and the desire to hang off a tree overwhelms you."
+    ],
+    "main_parts_only": true,
+    "max_intensity": 3,
+    "resist_traits": [ "THRESH_BAT" ],
+    "base_mods": {
+      "vomit_chance": [ 1150 ],
+      "vomit_tick": [ 120 ],
+      "hurt_min": [ 1 ],
+      "hurt_max": [ 2 ],
+      "hurt_chance": [ 500 ],
+      "hurt_tick": [ 150 ],
+      "pain_min": [ 1 ],
+      "pain_max": [ 2 ],
+      "pain_chance": [ 90 ],
+      "pain_tick": [ 50 ]
+    },
+    "scaling_mods": {
+      "vomit_chance": [ -450 ],
+      "str_mod": [ -1 ],
+      "per_mod": [ 3 ],
+      "dex_mod": [ 1 ],
+      "int_mod": [ 0 ],
+      "hurt_chance": [ -240, -50 ],
+      "hurt_tick": [ -25 ],
+      "pain_chance": [ -30 ]
+    },
+    "rating": "bad",
+    "blood_analysis_description": "Bat Mutagen Contamination"
   }
 ]
