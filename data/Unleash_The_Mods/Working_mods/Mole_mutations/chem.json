@@ -4,15 +4,68 @@
     "copy-from": "mutagen_flavor",
     "type": "COMESTIBLE",
     "name": { "str": "mole mutagen" },
-    "use_action": { "type": "mutagen", "mutation_category": "MOLE" }
+    "vitamins": [ [ "mutagen_mole", 225 ], [ "mutagen", 125 ] ]
   },
   {
     "id": "iv_mutagen_mole",
     "copy-from": "iv_mutagen_flavor",
     "type": "COMESTIBLE",
-    "name": { "str": "mole serum" },
+    "name": { "str": "mole mutagenic primer" },
     "description": "A super-concentrated mutagen with a boring brown.  You need a syringe to inject it… if you really want to?",
     "color": "brown",
-    "use_action": { "type": "mutagen_iv", "mutation_category": "MOLE" }
+    "use_action": {
+      "type": "consume_drug",
+      "activation_message": "You inject the mole mutagenic primer.",
+      "tools_needed": { "syringe": -1 },
+      "vitamins": [ [ "mutagen_mole", 450, 550 ] ]
+    }
+  },
+  {
+    "id": "mutagen_mole",
+    "type": "vitamin",
+    "vit_type": "counter",
+    "name": { "str": "Mole Mutagen" },
+    "excess": "mutagen_mole",
+    "min": 0,
+    "max": 2500,
+    "rate": "1 h",
+    "disease_excess": [ [ 100, 500 ], [ 501, 2199 ], [ 2200, 2500 ] ]
+  },
+  {
+    "type": "effect_type",
+    "id": "mutagen_mole",
+    "name": [ "Mole Mutation", "Mole Transformation", "Mole Metamorphosis" ],
+    "desc": [
+      "You consumed mole mutagen.",
+      "You feel the desire to burrow underground.",
+      "The land above is filled with nothing but danger, better to leave it behind"
+    ],
+    "main_parts_only": true,
+    "max_intensity": 3,
+    "resist_traits": [ "THRESH_MOLE" ],
+    "base_mods": {
+      "vomit_chance": [ 1150 ],
+      "vomit_tick": [ 120 ],
+      "hurt_min": [ 1 ],
+      "hurt_max": [ 2 ],
+      "hurt_chance": [ 500 ],
+      "hurt_tick": [ 150 ],
+      "pain_min": [ 1 ],
+      "pain_max": [ 2 ],
+      "pain_chance": [ 90 ],
+      "pain_tick": [ 50 ]
+    },
+    "scaling_mods": {
+      "vomit_chance": [ -450 ],
+      "str_mod": [ 3 ],
+      "per_mod": [ -1 ],
+      "dex_mod": [ -1 ],
+      "int_mod": [ 0 ],
+      "hurt_chance": [ -240, -50 ],
+      "hurt_tick": [ -25 ],
+      "pain_chance": [ -30 ]
+    },
+    "rating": "bad",
+    "blood_analysis_description": "Mole Mutagen Contamination"
   }
 ]
