@@ -79,21 +79,34 @@
     "passive_mods": { "dex_mod": -4 }
   },
   {
-    "id": "PER_SLIME_OK",
     "type": "mutation",
-    "name": { "str": "Distributed Senses" },
-    "points": 7,
-    "visibility": 10,
-    "ugliness": 10,
-    "description": "You can now extend and reabsorb sensory organs at will, and can therefore ignore most shocks that would overwhelm lesser beings.",
-    "valid": false,
-    "purifiable": false,
-    "leads_to": [ "SLIMESPAWNER" ],
-    "prereqs": [ "PER_SLIME" ],
-    "prereqs2": [ "AMORPHOUS" ],
-    "threshreq": [ "THRESH_SLIME", "THRESH_SHOGGOTH" ],
-    "category": [ "SLIME", "SHOGGOTH" ],
-    "passive_mods": { "per_mod": 5 }
+    "id": "SLIMY",
+    "copy-from": "SLIMY",
+    "extend": { "category": [ "SHOGGOTH" ], "threshreq": [ "THRESH_SHOGGOTH" ] }
+  },
+ {
+    "type": "mutation",
+    "id": "VISCOUS",
+    "copy-from": "VISCOUS",
+    "extend": { "category": [ "SHOGGOTH" ], "threshreq": [ "THRESH_SHOGGOTH" ] }
+  },
+ {
+    "type": "mutation",
+    "id": "BENDY1",
+    "copy-from": "BENDY1",
+    "extend": { "category": [ "SHOGGOTH" ], "threshreq": [ "THRESH_SHOGGOTH" ] }
+  },
+ {
+    "type": "mutation",
+    "id": "BENDY2",
+    "copy-from": "BENDY2",
+    "extend": { "category": [ "SHOGGOTH" ], "threshreq": [ "THRESH_SHOGGOTH" ] }
+  },
+ {
+    "type": "mutation",
+    "id": "PER_SLIME_OK",
+    "copy-from": "PER_SLIME_OK",
+    "extend": { "category": [ "SHOGGOTH" ], "threshreq": [ "THRESH_SHOGGOTH" ] }
   },
   {
     "id": "SHOGGOTH_BODY",
@@ -143,43 +156,23 @@
     "healing_resting": 2.25,
     "mending_modifier": 100.0
   },
-  {
-    "id": "PER_SLIME",
+ {
     "type": "mutation",
-    "name": { "str": "Sensory Disintegration" },
-    "points": -7,
-    "visibility": 10,
-    "ugliness": 10,
-    "description": "Your sense organs are all over the place: eyes extending and retracting, 'ears' of various shapes migrating about, and taste & smell are uncontrollable.  The world is a horrible mixup.  Ugh!",
-    "valid": false,
-    "purifiable": false,
-    "changes_to": [ "PER_SLIME_OK" ],
-    "prereqs": [ "PER_UP" ],
-    "prereqs2": [ "AMORPHOUS" ],
-    "threshreq": [ "THRESH_SLIME", "THRESH_SHOGGOTH" ],
-    "category": [ "SLIME", "SHOGGOTH" ],
-    "passive_mods": { "per_mod": -8 }
+    "id": "PER_UP",
+    "copy-from": "PER_UP",
+    "extend": { "category": [ "SHOGGOTH" ] }
   },
   {
-    "id": "AMORPHOUS",
     "type": "mutation",
-    "name": { "str": "Amorphous Body" },
-    "points": -2,
-    "visibility": 10,
-    "ugliness": 10,
-    "consume_time_modifier": 1.1,
-    "description": "Your flesh is a pleasing gel-like consistency.  Your bodily functions seem to be moving around, and your leg-equivalents flow comfortably - if a little slower than your old meat-legs.",
-    "purifiable": false,
-    "leads_to": [ "INT_SLIME", "PER_SLIME" ],
-    "threshreq": [ "THRESH_SLIME", "THRESH_SHOGGOTH" ],
-    "category": [ "SLIME", "SHOGGOTH" ],
-    "armor": [
-      {
-        "parts": [ "torso", "head", "arm_l", "arm_r", "hand_l", "hand_r", "leg_l", "leg_r", "foot_l", "foot_r", "mouth", "eyes" ],
-        "bash": 4
-      }
-    ],
-    "movecost_modifier": 1.25
+    "id": "PER_SLIME",
+    "copy-from": "PER_SLIME",
+    "extend": { "category": [ "SHOGGOTH" ], "threshreq": [ "THRESH_SHOGGOTH" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "AMORPHOUS",
+    "copy-from": "AMORPHOUS",
+    "extend": { "category": [ "SHOGGOTH" ], "threshreq": [ "THRESH_SHOGGOTH" ] }
   },
   {
     "id": "SHUFFLING_HORROR",
@@ -205,59 +198,35 @@
       "strength_damage": { "damage_type": "cut", "amount": 2 }
     }
   },
+ {
+    "type": "mutation",
+    "id": "HUNGER",
+    "copy-from": "HUNGER",
+    "extend": { "category": [ "SHOGGOTH" ] }
+  },
+ {
+    "type": "mutation",
+    "id": "HUNGER2",
+    "copy-from": "HUNGER2",
+    "extend": { "category": [ "SHOGGOTH" ] }
+  },
   {
+    "type": "mutation",
     "id": "HUNGER3",
-    "type": "mutation",
-    "name": { "str": "Extreme Metabolism" },
-    "points": -2,
-    "description": "You consume three times as much food as the average human to maintain your truly superhuman endurance.",
-    "prereqs": [ "HUNGER2" ],
-    "leads_to": [ "EATHEALTH" ],
-    "types": [ "METABOLISM" ],
-    "category": [ "CHIMERA", "SHOGGOTH" ],
-    "metabolism_modifier": 2.0,
-    "stamina_regen_modifier": 0.5
+    "copy-from": "HUNGER3",
+    "extend": { "category": [ "SHOGGOTH" ] }
   },
   {
+    "type": "mutation",
     "id": "EATHEALTH",
-    "type": "mutation",
-    "name": { "str": "Hyper-Metabolism" },
-    "points": 15,
-    "description": "Your particular metabolism allows you to burn calories at a prodigious rate to regenerate tissues in a matter of minutes, this is however a very wasteful process.  Activate to start healing.",
-    "prereqs": [ "HUNGER3" ],
-    "types": [ "METABOLISM" ],
-    "threshreq": [ "THRESH_CHIMERA", "THRESH_SHOGGOTH" ],
-    "category": [ "CHIMERA", "SHOGGOTH" ],
-    "valid": false,
-    "active": true,
-    "transform": {
-      "target": "EATHEALTH_active",
-      "msg_transform": "Your hyper-metabolism starts burning up calories.",
-      "active": true,
-      "moves": 0
-    }
+    "copy-from": "EATHEALTH",
+    "extend": { "category": [ "SHOGGOTH" ], "threshreq": [ "THRESH_SHOGGOTH" ] }
   },
   {
-    "id": "MUT_TOUGH",
     "type": "mutation",
-    "name": { "str": "Resilient" },
-    "points": 2,
-    "description": "You can survive injuries that would incapacitate humans: you get a 20% bonus to all hit points.  Stacks with Tough, etc.",
-    "social_modifiers": { "intimidate": 2 },
-    "prereqs": [ "LARGE_OK", "HUGE_OK", "STR_UP_3", "STR_UP_4", "MASOCHIST_MED", "SHOGGOTH_BUFF_OK" ],
-    "threshreq": [
-      "THRESH_URSINE",
-      "THRESH_CATTLE",
-      "THRESH_CHIMERA",
-      "THRESH_MEDICAL",
-      "THRESH_LIZARD",
-      "THRESH_BEAST",
-      "THRESH_SHOGGOTH"
-    ],
-    "cancels": [ "FLIMSY", "FLIMSY2", "FLIMSY3", "GLASSJAW" ],
-    "changes_to": [ "MUT_TOUGH2" ],
-    "category": [ "URSINE", "CATTLE", "CHIMERA", "BEAST", "LIZARD", "MEDICAL", "SHOGGOTH" ],
-    "hp_modifier_secondary": 0.2
+    "id": "TOUGH",
+    "copy-from": "TOUGH",
+    "extend": { "category": [ "SHOGGOTH" ] }
   },
   {
     "id": "THRESH_SHOGGOTH",
@@ -303,16 +272,11 @@
     "category": [ "MILK", "MILK", "MILK", "MILK", "MILK", "MILK", "MILK", "MILK", "MILK", "MILK", "MILK", "MILK", "MILK" ],
     "purifiable": false
   },
-  {
-    "id": "CATTLE_EARS",
+ {
     "type": "mutation",
-    "name": { "str": "Cattle Ears" },
-    "points": 0,
-    "description": "You have a pair of soft and floppy ears, like a cow.",
-    "visibility": 5,
-    "ugliness": -2,
-    "category": [ "MILK", "CATTLE" ],
-    "purifiable": true
+    "id": "CATTLE_EARS",
+    "copy-from": "CATTLE_EARS",
+    "extend": { "category": [ "MILK" ] }
   },
   {
     "id": "BOUNTIFUL",
