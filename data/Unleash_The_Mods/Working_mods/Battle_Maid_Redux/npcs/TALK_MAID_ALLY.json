@@ -41,7 +41,9 @@
       {
         "text": "Mind if we just chat for a bit about your history?",
         "topic": "TALK_MAID_CONVERSATION",
-        "condition": { "or": [ { "npc_has_flag": "BG_SURVIVAL_STORY" }, { "npc_has_trait": "NPC_STATIC_NPC" } ] },
+        "condition": {
+          "and": [ "at_safe_space", { "or": [ { "npc_has_trait_flag": "BG_SURVIVAL_STORY" }, { "npc_has_trait": "NPC_STATIC_NPC" } ] } ]
+        },
         "//": "If the NPC already has a BG story, or started out as a static NPC (and so probably doesn't need a random bg story), then go on.",
         "switch": true
       },
@@ -313,13 +315,13 @@
       }
     ]
   },
-   {
-    "id": "TALK_MISC_RULES",
+  {
+    "id": "TALK_MISC_RULES_MAID",
     "type": "talk_topic",
     "dynamic_line": {
-      "concatenate": [
+      "and": [
         {
-          "concatenate": [
+          "and": [
             { "npc_override": "allow_pick_up", "yes": "OVERRIDE: " },
             {
               "npc_rule": "allow_pick_up",
@@ -329,7 +331,7 @@
           ]
         },
         {
-          "concatenate": [
+          "and": [
             { "npc_override": "allow_bash", "yes": "  OVERRIDE: ", "no": "  " },
             {
               "npc_rule": "allow_bash",
@@ -339,7 +341,7 @@
           ]
         },
         {
-          "concatenate": [
+          "and": [
             { "npc_override": "allow_sleep", "yes": "  OVERRIDE: ", "no": "  " },
             {
               "npc_rule": "allow_sleep",
@@ -349,7 +351,7 @@
           ]
         },
         {
-          "concatenate": [
+          "and": [
             { "npc_override": "allow_complain", "yes": "  OVERRIDE: ", "no": "  " },
             {
               "npc_rule": "allow_complain",
@@ -359,7 +361,7 @@
           ]
         },
         {
-          "concatenate": [
+          "and": [
             { "npc_override": "allow_pulp", "yes": "  OVERRIDE: ", "no": "  " },
             {
               "npc_rule": "allow_pulp",
@@ -369,7 +371,7 @@
           ]
         },
         {
-          "concatenate": [
+          "and": [
             { "npc_override": "close_doors", "yes": "  OVERRIDE: ", "no": "  " },
             {
               "npc_rule": "close_doors",
@@ -379,7 +381,7 @@
           ]
         },
         {
-          "concatenate": [
+          "and": [
             { "npc_override": "ignore_noise", "yes": "  OVERRIDE: ", "no": "  " },
             {
               "npc_rule": "ignore_noise",
@@ -389,7 +391,7 @@
           ]
         },
         {
-          "concatenate": [
+          "and": [
             { "npc_override": "avoid_doors", "yes": "  OVERRIDE: ", "no": "  " },
             {
               "npc_rule": "avoid_doors",
@@ -399,7 +401,7 @@
           ]
         },
         {
-          "concatenate": [
+          "and": [
             { "npc_override": "forbid_engage", "yes": "  OVERRIDE: ", "no": "  " },
             {
               "npc_rule": "forbid_engage",

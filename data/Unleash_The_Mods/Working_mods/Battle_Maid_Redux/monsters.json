@@ -51,7 +51,7 @@
     "melee_skill": 2,
     "melee_dice": 2,
     "melee_dice_sides": 4,
-    "melee_damage": [ { "damage_type": "cut", "amount": 2 } ],
+    "melee_cut": 2,
     "dodge": 2,
     "armor_bash": 0,
     "armor_cut": 0,
@@ -60,8 +60,7 @@
     "harvest": "human",
     "hp": 40,
     "description": "A child entrusted to you by the owner of the house you served at. There's a deep feeling of fear in your stomach as you embrace the cataclysm, but protecting this child gives you purpose and makes you feel less alone.",
-    "death_function": { "effect": { "id": "death_guilt", "min_level": 6 } },
-    "flags": [ "SEES", "HEARS", "SMELLS", "WARM" ]
+    "flags": [ "SEES", "HEARS", "SMELLS", "WARM", "GUILT", "BONES" ]
   },
   {
     "id": "mon_little_maid",
@@ -79,7 +78,7 @@
     "melee_skill": 5,
     "melee_dice": 1,
     "melee_dice_sides": 1,
-    "melee_damage": [ { "damage_type": "cut", "amount": 1 } ],
+    "melee_cut": 1,
     "dodge": 2,
     "armor_bash": 10,
     "armor_cut": 10,
@@ -110,7 +109,7 @@
     "melee_skill": 0,
     "melee_dice": 0,
     "melee_dice_sides": 0,
-    "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
+    "melee_cut": 0,
     "dodge": 0,
     "armor_bash": 0,
     "armor_cut": 0,
@@ -119,7 +118,7 @@
     "hp": 100,
     "emit_fields": [ "emit_toxic_leak" ],
     "harvest": "exempt",
-    "death_function": { "message": "The %s's body leaks acid.", "effect": { "id": "death_acid", "hit_self": true } },
+    "death_function": [ "GAS", "ACID" ],
     "special_attacks": [ [ "ACID_BARF", 1 ] ],
     "description": "A large living mass of meat made alive by the means of alchemy. The twisted, distorted meat lump has a mouth-like organ like that of a human, where it constantly spews poisonous gas and acidic bodily fluids from, while making unpleasant sounds.",
     "flags": [ "SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "NO_BREATHE", "ACIDPROOF", "ACID_BLOOD" ]
