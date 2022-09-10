@@ -1,12 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [No Hope](#no-hope)
-- [List of features](#list-of-features)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # No Hope
 
 The mod is based on the old lore where there was a full-scale war with China with many months of preceding marauding and civil disorder. Thus the world with the mod will be much more damaged overall, there will be much less loot etc.
@@ -52,3 +43,5 @@ The major goal is to make Cataclysm harder and harsher. To achieve this goal, I 
 - Gave all mechas ability to protect their operators from melee and ranged damage.
 
 - Returned CBM loot in most places it was removed from (electronic stores, toxic dumps, sewage treatment plants etc).
+
+- Removed military base from the game as it has very serious balance issues.

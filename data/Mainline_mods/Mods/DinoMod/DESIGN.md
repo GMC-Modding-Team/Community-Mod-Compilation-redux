@@ -1,17 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Design Document SPOILERS AHEAD](#design-document-spoilers-ahead)
-- [What belongs in DinoMod?](#what-belongs-in-dinomod)
-- [Realism vs. Fun](#realism-vs-fun)
-- [Adding, replacing, removing](#adding-replacing-removing)
-- [How to contribute](#how-to-contribute)
-- [Where should new dinosaurs spawn?](#where-should-new-dinosaurs-spawn)
-- [How to add a dinosaur](#how-to-add-a-dinosaur)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # Design Document SPOILERS AHEAD
 The core idea of DinoMod is this: https://tvtropes.org/pmwiki/pmwiki.php/Main/EverythingsBetterWithDinosaurs
 The purpose of this mod is to make Cataclysm a more fun game to play and develop for, showing off new mechanics and bringing life to parts of the game that aren't as well-developed.
@@ -29,14 +15,13 @@ This mod is about adding content. In general it should have as light a touch on 
 This mod is distributed with the base game, so any content contributed will have to be submitted to the Github site. You can talk with the mod maintainers about your ideas on Discord.
 
 # Where should new dinosaurs spawn?
-North American dinos should be added to dinosaur and wilderness monster groups. Zombie variants should be added to the zinosaur monster groups. Dinos from other parts of the world should be added to the labs monster group and/or get a new dedicated lab finale variant just for them, especially good for finales if they're very dangerous. Small dinos that can't zombify are good options for CBM dinos. Fungal zombie variants get added to fungal spawn lists.
+North American dinos should be added to dinosaur and wilderness monster groups. Zombie variants should be added to the zinosaur monster groups. Dinos from other parts of the world should be added to the labs monster group and their region lists and/or get a new dedicated lab finale variant just for them, especially good for finales if they're very dangerous. Small dinos that can't zombify are good options for CBM dinos. Fungal zombie variants get added to fungal spawn lists.
 
 # How to add a dinosaur
 As of this writing, each dinosaur touches at least ten different JSON files, listed here by folder. Please put the new dino in the same order in all files, near similar dinos, organized by real world taxonomy. 
 
 Main DinoMod folder: 
 
-* cooking_components.json is where you add the dinosaur egg to allow it to be cooked, 
 * monster_factions.json is where custom dino factions go. Plant eaters are pretty simple but predators have three each usually to manage famiies
 
 items folder:
@@ -63,6 +48,9 @@ monsters folder:
 * zinosaur_burned.json is where the burned zombie variant goes
 * zinosaur_upgrade.json is where upgraded versions go
 
+requirements folder:
+
+* cooking_components.json is where you add the dinosaur egg to allow it to be cooked
 
 # How to add a dinosaur nest
 This is much easier! 
