@@ -1,25 +1,5 @@
 [
   {
-    "id": "base_turret",
-    "type": "MONSTER",
-    "name": { "str": "automated turret" },
-    "default_faction": "defense_bot",
-    "species": [ "ROBOT" ],
-    "hp": 30,
-    "speed": 100,
-    "material": [ "steel" ],
-    "symbol": "t",
-    "looks_like": "mon_turret",
-    "aggression": 100,
-    "morale": 100,
-    "armor_bash": 14,
-    "armor_cut": 16,
-    "armor_acid": 14,
-    "death_function": { "corpse_type": "BROKEN" },
-    "death_drops": "broken_robots",
-    "flags": [ "SEES", "NOHEAD", "ELECTRONIC", "IMMOBILE", "NO_BREATHE" ]
-  },
-  {
     "id": "mon_zombie_necro",
     "type": "MONSTER",
     "copy-from": "mon_zombie_necro",
@@ -51,7 +31,7 @@
     "revert_to_itype": "bot_craftbuddy",
     "death_function": { "corpse_type": "BROKEN" },
     "death_drops": { "groups": [ [ "broken_robots", 3 ] ] },
-    "flags": [ "GUILT", "SEES", "HEARS", "ELECTRONIC", "NO_BREATHE", "PRIORITIZE_TARGETS", "PATH_AVOID_DANGER_1" ]
+    "flags": [ "SEES", "HEARS", "ELECTRONIC", "NO_BREATHE", "PRIORITIZE_TARGETS", "PATH_AVOID_DANGER_1" ]
   },
   {
     "abstract": "mon_autoarmor_base",
@@ -1201,8 +1181,7 @@
     "melee_skill": 5,
     "melee_dice": 2,
     "melee_dice_sides": 2,
-    "melee_damage": [ { "damage_type": "cut", "amount": 8 } ],
-    "melee_damage": [ { "damage_type": "electric", "amount": 8 } ],
+    "melee_damage": [ { "damage_type": "electric", "amount": 8 }, { "damage_type": "cut", "amount": 8 } ],
     "armor_bash": 12,
     "armor_cut": 12,
     "armor_acid": 4,
@@ -1225,8 +1204,7 @@
     "melee_skill": 5,
     "melee_dice": 2,
     "melee_dice_sides": 2,
-    "melee_damage": [ { "damage_type": "cut", "amount": 6 } ],
-    "melee_damage": [ { "damage_type": "heat", "amount": 4 } ],
+    "melee_damage": [ { "damage_type": "heat", "amount": 4 }, { "damage_type": "cut", "amount": 6 } ],
     "attack_effs": [ { "id": "onfire", "chance": 50, "duration": 10 } ],
     "armor_bash": 12,
     "armor_cut": 12,
@@ -1415,13 +1393,6 @@
       }
     ],
     "extend": { "flags": [ "ACIDPROOF" ] }
-  },
-  {
-    "id": "mon_chickenbot",
-    "type": "MONSTER",
-    "copy-from": "mon_chickenbot",
-    "death_drops": { "groups": [ [ "broken_robots", 2 ] ] },
-    "death_function": { "corpse_type": "BROKEN" }
   },
   {
     "id": "mon_chickenbot",
