@@ -1,3 +1,12 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [About This Mod](#about-this-mod)
+- [Planned list of features](#planned-list-of-features)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # About This Mod
 
 A very work-in-progress start to a more Lovecraftian-focused version of Cataclysm set in the 1920s, with 99.9% of the population mysteriously disappearing at midnight of day 0.  
