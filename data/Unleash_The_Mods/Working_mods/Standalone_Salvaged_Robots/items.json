@@ -152,6 +152,25 @@
     "looks_like": "bot_turret"
   },
   {
+    "id": "bot_turret_disarmed",
+    "type": "TOOL",
+    "copy-from": "bot_turret_base",
+    "name": { "str": "disarmed defense turret" },
+    "description": "An automated defense turret.  It lacks an integrated weapon.",
+    "price": "100 USD",
+    "price_postapoc": "100 USD",
+    "color": "light_green",
+    "use_action": {
+      "type": "place_monster",
+      "monster_id": "mon_turret_disarmed",
+      "hostile_msg": "Error. No weapon systems found.",
+      "friendly_msg": "Error. No weapon systems found.",
+      "difficulty": 4,
+      "moves": 100,
+      "skills": [ "electronics", "computer" ]
+    }
+  },
+  {
     "id": "bot_milturret_disarmed",
     "type": "TOOL",
     "copy-from": "bot_turret_base",
@@ -716,22 +735,5 @@
       "difficulty": 10,
       "moves": 500
     }
-  },
-  {
-    "id": "broken_tripod",
-    "type": "GENERIC",
-    "symbol": ",",
-    "color": "green",
-    "name": { "str": "broken tribot" },
-    "category": "other",
-    "description": "A broken tribot.  Now that its legs lie broken and immobile, the world seems a little less threatening.  Could be gutted for parts.",
-    "price": "10 USD",
-    "material": [ "steel", "plastic" ],
-    "volume": "187500 ml",
-    "weight": "430000 g",
-    "bashing": 10,
-    "cutting": 6,
-    "to_hit": -2,
-    "flags": [ "TRADER_AVOID", "NO_REPAIR" ]
   }
 ]

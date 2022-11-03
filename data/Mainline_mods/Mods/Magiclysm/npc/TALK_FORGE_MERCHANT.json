@@ -1,7 +1,7 @@
 [
   {
-    "id": "forge_lord_merchant",
     "type": "npc",
+    "id": "forge_lord_merchant",
     "//": "The Lord of the Forge of Wonders.",
     "name_unique": "Valzain of Psiom",
     "name_suffix": "Forge Lord",
@@ -13,16 +13,16 @@
     "faction": "forge_lords"
   },
   {
-    "id": "NC_FORGE_LORD",
     "type": "npc_class",
+    "id": "NC_FORGE_LORD",
     "name": { "str": "Wondrous Dreamer" },
     "job_description": "I created this place from dreams and magic.",
-    "traits": [ { "group": "NPC_starting_traits" }, { "group": "Appearance_demographics" } ],
+    "traits": [ { "trait": "VAULT_DEFENDER" }, { "group": "NPC_starting_traits" }, { "group": "Appearance_demographics" } ],
     "//": "This is a unique NPC who doesn't get randomly selected background traits",
     "common": false,
     "bonus_int": { "rng": [ 20, 25 ] },
     "bonus_per": { "rng": [ 20, 25 ] },
-    "shopkeeper_item_group": "NC_FORGE_LORD_STORE",
+    "shopkeeper_item_group": [ { "group": "NC_FORGE_LORD_SHOP", "rigid": true } ],
     "worn_override": "NC_FORGE_LORD_clothes",
     "skills": [
       {
@@ -36,8 +36,8 @@
     ]
   },
   {
-    "id": "NC_FORGE_LORD_clothes",
     "type": "item_group",
+    "id": "NC_FORGE_LORD_clothes",
     "subtype": "collection",
     "entries": [
       { "item": "mbelt_pockets_greater", "prob": 100 },
@@ -61,9 +61,16 @@
       { "group": "enchanted_melee_weapons_plus2", "prob": 20 },
       { "group": "enchanted_rings_common", "prob": 20 },
       { "group": "enchanted_rings_uncommon", "prob": 5 },
+      { "group": "enchanted_bracelets", "prob": 4 },
       { "group": "enchanted_belts", "prob": 2 },
       { "group": "spellbook_loot_1", "prob": 35, "count": [ 1, 3 ] }
     ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "collection",
+    "id": "NC_FORGE_LORD_SHOP",
+    "items": [ { "group": "NC_FORGE_LORD_STORE", "count": [ 20, 32 ], "prob": 100 } ]
   },
   {
     "id": "TALK_FORGE_LORD",
@@ -85,8 +92,8 @@
     ]
   },
   {
-    "id": "TALK_FORGE_LORD_BOOKS_DELIVER",
     "type": "talk_topic",
+    "id": "TALK_FORGE_LORD_BOOKS_DELIVER",
     "dynamic_line": "Excellent.  What new stories have you brought me?",
     "repeat_responses": {
       "for_item": [

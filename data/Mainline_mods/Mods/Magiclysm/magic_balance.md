@@ -1,26 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Spells](#spells)
-    - [Difficulty](#difficulty)
-    - [Max Level](#max-level)
-    - [Attack Stats](#attack-stats)
-    - [Effect](#effect)
-    - [Energy Source](#energy-source)
-    - [Casting Time](#casting-time)
-    - [Energy Cost](#energy-cost)
-    - [Fields](#fields)
-    - [Damage Type](#damage-type)
-    - [Valid targets](#valid-targets)
-  - [Tier Examples:](#tier-examples)
-    - [Tier 0](#tier-0)
-    - [Tier 1](#tier-1)
-    - [Tier 2](#tier-2)
-    - [Tier 3](#tier-3)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # Spells
 Spells are incredibly versatile, and can range wildly depending on the JSON values that are assigned to them. As such, spells can be said to reside in various "tiers" that are based on their stats. The tier of spell is not listed in game, but can be derived based on several factors.
 
@@ -40,7 +17,7 @@ The effect is the main part of the spell, and should be treated as such when bal
 Energy source is generally related to the class that is assigned to the spell. Stamina would be the type of thing that increases the spell's tier by a significant margin, due to the ease of recovering stamina. Bionic power is relegated to Technomancer, and HP is featured in the Animist class. If spells with spell classes that are not Animist use HP, their tier is automatically higher than if they were to use Mana, which is the normal energy source for spells.
 
 ### Casting Time
-There are several different ranges of casting times. These include: Fast combat spell (0 - 300 moves) Slow combat spell (300 - 1000 moves) and noncombat spell (longer than 1000 moves) The tier of a spell is quite heavily dependant on its ability to be used quickly in high-pressure situations; so the longer it takes to cast, the more relaxed the tier of the spell can be. A spell would be a very high tier indeed if it took no time to cast; do not do this unless it has severe restrictions.
+There are several different ranges of casting times. These include: Fast combat spell (0 - 300 moves) Slow combat spell (300 - 1000 moves) and noncombat spell (longer than 1000 moves) The tier of a spell is quite heavily dependent on its ability to be used quickly in high-pressure situations; so the longer it takes to cast, the more relaxed the tier of the spell can be. A spell would be a very high tier indeed if it took no time to cast; do not do this unless it has severe restrictions.
 
 ### Energy Cost
 Mana pools can vary, but it is good to balance around the idea that the caster has about 2000 mana to work with. In Magiclysm, spells should be a supplement to your other combat options. This means that at low levels and low tiers, a mage will spend all or nearly all of his mana to deal with low threats: 2-3 zombies or a fat zombie, etc. The tier of a spell will be a good guide to what kind of a threat a mage can conquer at a given level of spell.
