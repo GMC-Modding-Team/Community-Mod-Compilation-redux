@@ -136,8 +136,8 @@
     "armor": [ { "encumbrance": 0, "coverage": 100, "covers": [ "foot_l", "foot_r" ] } ]
   },
   {
-    "id": "stormhammer",
     "type": "GENERIC",
+    "id": "stormhammer",
     "name": { "str": "The Stormhammer" },
     "description": "A crackling magical warhammer full of lightning to smite your foes with, and of course, smash things to bits!",
     "weight": "1337 g",
@@ -183,8 +183,8 @@
     "duration_increment": 2000
   },
   {
-    "id": "stormglove",
     "type": "GENERIC",
+    "id": "stormglove",
     "symbol": "3",
     "color": "light_gray",
     "name": { "str": "Stormfist" },
@@ -278,7 +278,18 @@
     "color": "green",
     "pocket_data": [ { "pocket_type": "CONTAINER", "max_contains_volume": "25 L", "max_contains_weight": "75 kg", "moves": 60 } ],
     "material_thickness": 3,
-    "flags": [ "BELTED", "TRADER_AVOID", "WATERPROOF", "STURDY", "NO_UNWIELD", "ONLY_ONE", "NO_REPAIR", "NO_SALVAGE" ],
+    "flags": [
+      "BELTED",
+      "TRADER_AVOID",
+      "WATERPROOF",
+      "STURDY",
+      "OVERSIZE",
+      "NO_TAKEOFF",
+      "ONLY_ONE",
+      "NO_REPAIR",
+      "NO_SALVAGE",
+      "ZERO_WEIGHT"
+    ],
     "armor": [ { "encumbrance": [ 5, 10 ], "coverage": 40, "covers": [ "torso" ] } ]
   },
   {
@@ -289,6 +300,7 @@
     "name": { "str": "Wicked Bonespear" },
     "description": "This is a wicked spear/halberd hybrid entirely created of bone.",
     "material": [ "bone" ],
+    "weapon_category": [ "POLEARMS", "SPEARS" ],
     "flags": [
       "UNBREAKABLE_MELEE",
       "REACH_ATTACK",
@@ -327,6 +339,7 @@
       "NO_SALVAGE",
       "NO_UNLOAD",
       "WATERPROOF_GUN",
+      "NO_TURRET",
       "NEVER_JAMS"
     ],
     "ammo_effects": [ "NEVER_MISFIRES" ],
@@ -344,8 +357,8 @@
     "volume": "2500 ml"
   },
   {
-    "id": "druid_seed",
     "type": "TOOL",
+    "id": "druid_seed",
     "name": { "str": "seed of purification", "str_pl": "seeds of purification" },
     "weight": "1 g",
     "color": "white",
@@ -357,7 +370,7 @@
       "menu_text": "Squeeze seed"
     },
     "symbol": "!",
-    "description": "A magical seed that can be squeezed to release purifying dust, which can then be used to purify up to a gallon of water",
+    "description": "A magical seed that can be squeezed to release purifying dust, which can then be used to purify up to a gallon of water.",
     "volume": "250 ml",
     "flags": [ "TRADER_AVOID" ]
   },
@@ -365,7 +378,7 @@
     "id": "druid_dust",
     "type": "TOOL",
     "name": "faintly glowing dust",
-    "description": "This fine dust glows with a growing intensity",
+    "description": "This fine dust glows with a growing intensity.",
     "weight": "1 g",
     "volume": "30 ml",
     "price": 0,
@@ -376,8 +389,8 @@
     "use_action": [ "WATER_PURIFIER" ]
   },
   {
-    "id": "druid_fertilizer",
     "type": "COMESTIBLE",
+    "id": "druid_fertilizer",
     "name": { "str": "seed of growth", "str_pl": "seeds of growth" },
     "weight": "27 g",
     "color": "white",
@@ -474,7 +487,7 @@
     "warmth": 0,
     "material_thickness": 2,
     "environmental_protection": 2,
-    "flags": [ "ONLY_ONE", "OVERSIZE", "PERSONAL", "STURDY" ],
+    "flags": [ "SEMITANGIBLE", "ONLY_ONE", "OVERSIZE", "TRADER_AVOID", "PERSONAL", "STURDY", "NO_TAKEOFF", "NONCONDUCTIVE" ],
     "armor": [
       {
         "encumbrance": 10,
@@ -603,6 +616,7 @@
     "name": { "str": "flaming sword" },
     "description": "This wooden sword is ablaze!  It seems to be safe-ish to hold, but will burn up soon.",
     "material": [ "wood" ],
+    "weapon_category": [ "CONSTRUCTED_SWORDS", "MEDIUM_SWORDS" ],
     "flags": [
       "UNBREAKABLE_MELEE",
       "NONCONDUCTIVE",
@@ -622,7 +636,7 @@
     "cutting": 2,
     "to_hit": 2,
     "relic_data": {
-      "passive_effects": [ { "has": "WIELD", "condition": "ALWAYS", "values": [ { "value": "ITEM_DAMAGE_HEAT", "add": 8 } ] } ]
+      "passive_effects": [ { "has": "WIELD", "condition": "ALWAYS", "values": [ { "value": "ITEM_DAMAGE_HEAT", "add": 28 } ] } ]
     }
   },
   {
@@ -634,6 +648,7 @@
     "name": { "str": "decaying boneclub" },
     "description": "A pulsating club made of bone, stained with an ever-moving blood coating eager to absorb the living.",
     "material": [ "bone", "flesh" ],
+    "weapon_category": [ "BATONS" ],
     "flags": [
       "UNBREAKABLE_MELEE",
       "NONCONDUCTIVE",
@@ -672,6 +687,7 @@
       "TRADER_AVOID",
       "NO_UNLOAD",
       "NO_REPAIR",
+      "NO_TURRET",
       "WATERPROOF_GUN"
     ],
     "ammo_effects": [ "NEVER_MISFIRES" ],
@@ -801,6 +817,7 @@
     "symbol": "[",
     "color": "light_gray",
     "qualities": [ [ "CUT", 2 ], [ "CUT_FINE", 1 ], [ "BUTCHER", 12 ] ],
+    "weapon_category": [ "CLAWS" ],
     "flags": [
       "UNARMED_WEAPON",
       "UNBREAKABLE_MELEE",
@@ -951,8 +968,8 @@
     "flags": [ "TRADER_AVOID" ]
   },
   {
-    "id": "magical_throwing_knife",
     "type": "GENERIC",
+    "id": "magical_throwing_knife",
     "copy-from": "throwing_knife",
     "price": 0,
     "price_postapoc": 0,
@@ -963,40 +980,40 @@
     "thrown_damage": [ { "damage_type": "stab", "amount": 20, "armor_penetration": 5 } ]
   },
   {
-    "id": "magical_throwing_knife_fire",
     "type": "GENERIC",
+    "id": "magical_throwing_knife_fire",
     "copy-from": "magical_throwing_knife",
     "name": { "str": "magical throwing knife", "str_pl": "magical throwing knives" },
     "description": "A thin and flat knife made for throwing, wrapped in ethereal flames.  Its ineffective cutting edge and odd shape makes it unsuitable for use as a tool.",
     "thrown_damage": [ { "damage_type": "heat", "amount": 15 }, { "damage_type": "stab", "amount": 5 } ]
   },
   {
-    "id": "magical_throwing_knife_cold",
     "type": "GENERIC",
+    "id": "magical_throwing_knife_cold",
     "copy-from": "magical_throwing_knife",
     "name": { "str": "magical throwing knife", "str_pl": "magical throwing knives" },
     "description": "A thin and flat knife made for throwing, emanates cold.  Its ineffective cutting edge and odd shape makes it unsuitable for use as a tool.",
     "thrown_damage": [ { "damage_type": "cold", "amount": 15 }, { "damage_type": "stab", "amount": 5 } ]
   },
   {
-    "id": "magical_throwing_knife_cut",
     "type": "GENERIC",
+    "id": "magical_throwing_knife_cut",
     "copy-from": "magical_throwing_knife",
     "name": { "str": "magical throwing knife", "str_pl": "magical throwing knives" },
     "description": "A thin and flat knife with wide edge made for throwing, seems unnaturally sharp.  Its ineffective cutting edge and odd shape makes it unsuitable for use as a tool.",
     "thrown_damage": [ { "damage_type": "cut", "amount": 15, "armor_multiplier": 0.2 }, { "damage_type": "stab", "amount": 5 } ]
   },
   {
-    "id": "magical_throwing_knife_biological",
     "type": "GENERIC",
+    "id": "magical_throwing_knife_biological",
     "copy-from": "magical_throwing_knife",
     "name": { "str": "magical throwing knife", "str_pl": "magical throwing knives" },
     "description": "A thin and flat knife made for throwing, made of porous substance and covered in dark ooze.  Its ineffective cutting edge and odd shape makes it unsuitable for use as a tool.",
     "thrown_damage": [ { "damage_type": "biological", "amount": 15 }, { "damage_type": "stab", "amount": 5 } ]
   },
   {
-    "id": "magical_throwing_knife_pure_special",
     "type": "GENERIC",
+    "id": "magical_throwing_knife_pure_special",
     "copy-from": "magical_throwing_knife",
     "name": { "str": "magical throwing knife", "str_pl": "magical throwing knives" },
     "description": "A transparent blade seems to radiate intent to be thrown.  Its ineffective cutting edge and odd shape makes it unsuitable for use as a tool.",

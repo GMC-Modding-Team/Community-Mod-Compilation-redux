@@ -3,7 +3,7 @@
 Use the `home` key to get to the top.
 
 
-# <u>Table of contents</u>
+# Table of contents
 
 * [To-do](#to-do)
 * [Primitive Survival Sources](#primitive-survival-sources)
@@ -614,17 +614,17 @@ t_shrub_raspberry - Raspberry bush
 *Comestibles:*
 
 ```markdown
-- [ ] Blueberry Juice
-- [ ] Raspberry Juice
-- [ ] Goji berry Juice
-- [ ] Strawberry Juice
-- [ ] Bilberry Juice
-- [ ] Acai berry Juices
-- [ ] Grape Juice
-- [ ] Black-currant juice
-- [ ] Lingonberries juice
-- [ ] Cloudberry juice
-- [ ] Crowberry juice
+- [x] Blueberry Juice
+- [x] Raspberry Juice
+- [x] Goji berry Juice
+- [x] Strawberry Juice
+- [x] Bilberry Juice
+- [x] Acai berry Juice
+- [x] Grape Juice
+- [x] Black-currant juice
+- [x] Lingonberries juice
+- [x] Cloudberry juice
+- [x] Crowberry juice
 ```
 
 
@@ -717,15 +717,15 @@ t_shrub_raspberry - Raspberry bush
 - [x] Black-currant Seed - Black-currant
 - [x] Goji seed - Goji berries
 - [x] Acai seed - Acai berries
-- [x] Breadfruit Seed - Breadfruit
-- [x] Cashew Seed - Cashew Nut
-- [x] Rice Seed - Rice
-- [x] Turnip seed - Turnip
-- [x] Swede seed - Swede
-- [x] Pea seed - Pea shoot
-- [x] Broad Bean seed - Broad Bean
-- [x] Rye seed - Rye
+- [ ] Breadfruit Seed - Breadfruit
+- [ ] Cashew Seed - Cashew Nut
+- [ ] Rice Seed - Rice
 - [ ] Rubber Seed - Rubber
+- [ ] Turnip seed - Turnip
+- [ ] Swede seed - Swede
+- [ ] Pea seed - Pea shoot
+- [ ] Broad Bean seed - Broad Bean
+- [ ] Rye seed - Rye
 - [ ] Hemp seed - Hemp
 - [ ] St. Johns Wort Seed - St. Johns Wort
 - [ ] Yarrow seed - Yarrow
@@ -843,8 +843,6 @@ t_shrub_raspberry - Raspberry bush
 *Terrain flora:*
 
 ```markdown
-- [x] Birch Tree
-- [x] Spruce Tree
 - [x] Cranberry Shrub
 - [x] Lingonberry Shrub
 - [x] Bilberry Shrub
@@ -1372,13 +1370,13 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 *Unfinished-Comestibles:*
 
 ```markdown
-- [ ] Blueberry Juice
-- [ ] Raspberry Juice
-- [ ] Goji berry Juice
-- [ ] Strawberry Juice
-- [ ] Bilberry Juice
-- [ ] Acai berry Juice
-- [ ] Grape Juice
+- [x] Blueberry Juice
+- [x] Raspberry Juice
+- [x] Goji berry Juice
+- [x] Strawberry Juice
+- [x] Bilberry Juice
+- [x] Acai berry Juice
+- [x] Grape Juice
 ```
 
 
@@ -1448,11 +1446,11 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 fruit seeds:
 
 ```markdown
-- [ ] Lingonberry Seed - Lingonberry
-- [ ] Bilberry Seed - Bilberry
-- [ ] Cloudberry Seed - Cloudberry
-- [ ] Crowberry Seed - Crowberry
-- [ ] Black-currant Seed - Black-currant
+- [x] Lingonberry Seed - Lingonberry
+- [x] Bilberry Seed - Bilberry
+- [x] Cloudberry Seed - Cloudberry
+- [x] Crowberry Seed - Crowberry
+- [x] Black-currant Seed - Black-currant
 - [ ] Breadfruit Seed - Breadfruit
 - [ ] Cashew Seed - Cashew Nut
 - [ ] Rice Seed - Rice
@@ -1464,8 +1462,8 @@ fruit seeds:
 - [ ] Rye seed - Rye
 - [ ] Hemp seed - Hemp
 - [ ] Goji seed - Goji berries
-- [ ] Bilberries seed - Bilberries
-- [ ] Acai seed - Acai berries
+- [x] Bilberries seed - Bilberries
+- [x] Acai seed - Acai berries
 - [ ] St. Johns Wort Seed - St. Johns Wort
 - [ ] Yarrow seed - Yarrow
 - [ ] Golden Rod Seed - Golden Rod
@@ -1509,3 +1507,4 @@ fruit seeds:
 - [ ] Large Mast - 1 log, 4 Sheets
 - [ ] Steering stick attached to steering wood - stick, log - cutting tool
 ```
+

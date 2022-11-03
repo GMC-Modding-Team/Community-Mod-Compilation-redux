@@ -1,21 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Dark Skies Above](#dark-skies-above)
-- [Summary of Intent and Content](#summary-of-intent-and-content)
-- [Contributing](#contributing)
-- [Content](#content)
-  - [The World](#the-world)
-  - [The Arrival and The Aliens](#the-arrival-and-the-aliens)
-  - [Other Aliens](#other-aliens)
-  - [Alien Technology](#alien-technology)
-  - [The Player](#the-player)
-  - [The Resistance and the Narrative](#the-resistance-and-the-narrative)
-  - [Other NPCs](#other-npcs)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # Dark Skies Above
 
 This document is intended to not only guide new potential contributors, but also help get my own thoughts on how the game will progress in text. Assume spoilers beyond this point!
@@ -42,7 +24,7 @@ Summarized below are the rough design directions currently intended.
 
 The Earth presented in Dark Skies is a little closer to our current tech level (things you'd reasonably find in the 21st century). It is still roughly "some time in the near future", and some of the advancements in technology reflect this. The effects of global warming are already starting to increase the severity and frequency of natural disasters, while tensions between trade leaders are starting to grow due to global economic depression. As if things couldn't get any worse, astronomical institutions across the globe one day detected a peculiar gravitational anomaly just outside the Moon's orbit, initially considered a quaint discovery before alien spacecraft begin to spill from it...
 
-The game takes place in a different timeline to base game Cataclysm, a different future if you will. Former President Toffer's atomic deregulations didn't go as far as he would've liked and presidential canidate Loft won over Oswald, by however slim a margin.  Loft is generally a better statesman (ie better PR) and more focused on internal affairs: namely, sweet deals with corporations who are looking to start plumbing outer space for resources, while maintaining a general air of concern over increasing natural disasters. 
+The game takes place in a different timeline to base game Cataclysm, a different future if you will. Former President Toffer's atomic deregulations didn't go as far as he would've liked and presidential candidate Loft won over Oswald, by however slim a margin.  Loft is generally a better statesman (ie better PR) and more focused on internal affairs: namely, sweet deals with corporations who are looking to start plumbing outer space for resources, while maintaining a general air of concern over increasing natural disasters. 
 
 
 ## The Arrival and The Aliens
