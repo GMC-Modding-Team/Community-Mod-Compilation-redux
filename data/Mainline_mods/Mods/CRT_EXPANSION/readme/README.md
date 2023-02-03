@@ -1,3 +1,14 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [C.R.I.T Expansion Mod](#crit-expansion-mod)
+- [Extended Techniques](#extended-techniques)
+- [For those curious about stat scaling:](#for-those-curious-about-stat-scaling)
+- [Lore](#lore)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # C.R.I.T Expansion Mod
 The core mod of the C.R.I.T Expansion Mod, it currently adds an armor set, mildly OP gas mask and transforming vest, some gun mods, a new melee/tool and a new material. The items also use a lot of higher end materials such as superalloy, rubber (the "new" material), the lesser used tempered steel and also neoprene.
 

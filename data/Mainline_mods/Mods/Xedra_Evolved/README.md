@@ -1,3 +1,14 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Lore](#lore)
+- [I want to believe](#i-want-to-believe)
+  - [Chapter 1 Hail Arcadia](#chapter-1-hail-arcadia)
+    - [Shipping manifest](#shipping-manifest)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Lore
 The logic behind the Xedra Evolved Δ.  Imagine if the time from blob contamination to portal storm was basically several decades and portal intrusions built up over that timeframe with contamination zones resulting in parts of our world following other laws of physics.  So you have humanity starting to adapt to  the dead rising but it takes twelve hours for them to reanimate and sometimes portals to other dimensions open and usually monsters/disease spill out but sometimes riches spill out and the government has projects exploring other dimensions and hunting Exodii nodes for cybernetic parts.
 Then eventually the Cataclysm occurs and Kaiju appear with natural disasters and the dead rise instantly and everything still collapses. But now the Exodii and interdimensional scavengers are here so if you start with CBMs they may recognize that you were part of an organization that hunted them.
