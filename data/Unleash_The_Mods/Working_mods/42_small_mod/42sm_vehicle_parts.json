@@ -4,8 +4,6 @@
     "type": "vehicle_part",
     "name": { "str": "atomic headlight" },
     "item": "headlight_atomic",
-    "symbol": "*",
-    "broken_symbol": "*",
     "color": "light_blue",
     "broken_color": "green",
     "durability": 20,
@@ -14,12 +12,15 @@
     "damage_modifier": 10,
     "folded_volume": "500 ml",
     "breaks_into": [ { "item": "cable", "charges": [ 1, 4 ] }, { "item": "scrap", "count": [ 2, 4 ] } ],
+    "folding_time": "1 minute",
+    "unfolding_time": "1 minute",    
     "requirements": {
       "install": { "skills": [ [ "mechanics", 1 ] ], "time": "200 s", "using": [ [ "vehicle_screw", 1 ] ] },
       "removal": { "skills": [ [ "mechanics", 1 ] ], "time": "200 s", "using": [ [ "vehicle_screw", 1 ] ] },
       "repair": { "skills": [ [ "mechanics", 1 ] ], "time": "20 s", "using": [ [ "adhesive", 1 ] ] }
     },
-    "flags": [ "LEAK_DAM", "RADIOACTIVE", "CONE_LIGHT", "FOLDABLE" ]
+    "flags": [ "LEAK_DAM", "RADIOACTIVE", "CONE_LIGHT" ],
+    "variants": [ { "symbols": "*", "symbols_broken": "*" } ]    
   },
   {
     "id": "wide_headlight_atomic",
@@ -29,7 +30,7 @@
     "copy-from": "headlight_atomic",
     "looks_like": "headlight_atomic",
     "description": "A bright light that illuminates a wide cone outside the vehicle when turned on, self-powered by an atomic decay reaction that never stops.  During installation, you can choose what direction to point the light, so multiple headlights can illuminate the sides or rear, as well as the front.",
-    "flags": [ "LEAK_DAM", "RADIOACTIVE", "WIDE_CONE_LIGHT", "FOLDABLE" ]
+    "flags": [ "LEAK_DAM", "RADIOACTIVE", "WIDE_CONE_LIGHT" ]
   },
   {
     "id": "headlight_reinforced_atomic",
@@ -55,9 +56,7 @@
     "id": "megafridge",
     "type": "vehicle_part",
     "name": { "str": "megafridge" },
-    "symbol": "H",
     "color": "light_blue",
-    "broken_symbol": "#",
     "broken_color": "light_blue",
     "looks_like": "minifridge",
     "damage_modifier": 80,
@@ -81,15 +80,14 @@
       { "item": "hose", "prob": 50 },
       { "item": "motor_tiny", "prob": 25 }
     ],
+    "variants": [ { "symbols": "H", "symbols_broken": "#" } ],       
     "damage_reduction": { "all": 32 }
   },
   {
     "id": "megafreezer",
     "type": "vehicle_part",
     "name": { "str": "megafreezer" },
-    "symbol": "H",
     "color": "light_blue",
-    "broken_symbol": "#",
     "broken_color": "blue",
     "looks_like": "minifreezer",
     "damage_modifier": 80,
@@ -111,6 +109,7 @@
       { "item": "hose", "prob": 50 },
       { "item": "motor_tiny", "prob": 25 }
     ],
+    "variants": [ { "symbols": "H", "symbols_broken": "#" } ],           
     "damage_reduction": { "all": 32 }
   }
 ]
