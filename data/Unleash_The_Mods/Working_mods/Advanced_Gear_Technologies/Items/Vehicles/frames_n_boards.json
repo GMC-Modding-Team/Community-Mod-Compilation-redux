@@ -29,6 +29,8 @@
     "description": "A heavy metal framework infused with nanites working to augment the durability.  Other vehicle components can be mounted on it, and it can be attached to other frames to increase the vehicle's size.",
     "looks_like": "frame",
     "folded_volume": "6250 ml",
+    "folding_time": "1 minute",
+    "unfolding_time": "1 minute",    
     "breaks_into": [ { "item": "nano_frame", "count": [ 0, 1 ] } ],
     "damage_reduction": { "all": 150 },
     "requirements": {
@@ -36,78 +38,82 @@
       "removal": { "skills": [ [ "mechanics", 1 ] ], "using": "vehicle_weld_removal" },
       "repair": { "skills": [ [ "mechanics", 1 ] ], "time": 30000, "using": [ [ "welding_standard", 5 ] ] }
     },
-    "flags": [ "MOUNTABLE", "FOLDABLE" ]
-  },
-  {
-    "id": "nanotech_frame_cover",
-    "type": "vehicle_part",
-    "copy-from": "nanotech_frame",
-    "looks_like": "hdframe_cover",
-    "symbol": "^"
-  },
-  {
-    "id": "nanotech_frame_cross",
-    "type": "vehicle_part",
-    "copy-from": "nanotech_frame",
-    "looks_like": "hdframe_cross",
-    "symbol": "c",
-    "extend": { "flags": [ "INITIAL_PART" ] }
-  },
-  {
-    "id": "nanotech_frame_horizontal",
-    "copy-from": "nanotech_frame",
-    "looks_like": "hdframe_horizontal",
-    "type": "vehicle_part",
-    "symbol": "h"
-  },
-  {
-    "id": "nanotech_frame_horizontal_2",
-    "copy-from": "nanotech_frame",
-    "looks_like": "hdframe_horizontal_2",
-    "type": "vehicle_part",
-    "symbol": "="
-  },
-  {
-    "id": "nanotech_frame_ne",
-    "copy-from": "nanotech_frame",
-    "looks_like": "hdframe_ne",
-    "type": "vehicle_part",
-    "symbol": "u"
-  },
-  {
-    "id": "nanotech_frame_nw",
-    "copy-from": "nanotech_frame",
-    "looks_like": "hdframe_nw",
-    "type": "vehicle_part",
-    "symbol": "y"
-  },
-  {
-    "id": "nanotech_frame_se",
-    "copy-from": "nanotech_frame",
-    "looks_like": "hdframe_se",
-    "type": "vehicle_part",
-    "symbol": "n"
-  },
-  {
-    "id": "nanotech_frame_sw",
-    "copy-from": "nanotech_frame",
-    "looks_like": "hdframe_sw",
-    "type": "vehicle_part",
-    "symbol": "b"
-  },
-  {
-    "id": "nanotech_frame_vertical",
-    "copy-from": "nanotech_frame",
-    "looks_like": "hdframe_vertical",
-    "type": "vehicle_part",
-    "symbol": "j"
-  },
-  {
-    "id": "nanotech_frame_vertical_2",
-    "copy-from": "nanotech_frame",
-    "looks_like": "hdframe_vertical_2",
-    "type": "vehicle_part",
-    "symbol": "H"
+    "flags": [ "MOUNTABLE", "FOLDABLE", "INITIAL_PART" ],
+    "variants": [ 
+    { "id": "horizontal", "label": "Horizontal", "symbols": "──│───│─", "symbols_broken": "#" },
+    {
+     "id": "nanotech_frame_horizontal",
+     "label": "Front Horizontal",
+     "symbols": "h",
+     "symbols_broken": "#"        
+    },
+    {
+      "id": "nanotech_frame_cover",
+      "label": "Cover",
+      "symbols": "^",
+      "symbols_broken": "#"        
+     },
+     {
+      "id": "nanotech_frame_cross",
+      "label": "Cross",
+      "symbols": "C",
+      "symbols_broken": "#"        
+     },
+     {
+      "id": "nanotech_frame_horizontal",
+      "label": "Thick Horizontal",
+      "symbols": "h",
+      "symbols_broken": "#"        
+     },
+     {
+      "id": "nanotech_frame_horizontal_2",
+      "label": "Thick Horizontal",
+      "symbols": "=",
+      "symbols_broken": "#"        
+     },               
+     {
+      "id": "nanotech_frame_ne",
+      "label": "Front Right",
+      "symbols": "u",
+      "symbols_broken": "#"        
+     },
+     {
+      "id": "nanotech_frame_nw",
+      "label": "Front Left",
+      "symbols": "Y",
+      "symbols_broken": "#"        
+     },            
+     {
+      "id": "nanotech_frame_se",
+      "label": "Rear Right",
+      "symbols": "n",
+      "symbols_broken": "#"        
+     },              
+     {
+      "id": "nanotech_frame_sw",
+      "label": "Rear Left",
+      "symbols": "b",
+      "symbols_broken": "#"        
+     },              
+     {
+      "id": "nanotech_frame_sw",
+      "label": "Rear Left",
+      "symbols": "b",
+      "symbols_broken": "#"        
+     },              
+     {
+      "id": "nanotech_frame_vertical",
+      "label": "Vertical Left",
+      "symbols": "j",
+      "symbols_broken": "#"        
+     },     
+     {
+      "id": "nanotech_frame_vertical_2",
+      "label": "Vertical Left",
+      "symbols": "H", 
+      "symbols_broken": "#"        
+     }                    
+    ]
   },
   {
     "id": "nanotech_frame2",
@@ -128,79 +134,77 @@
       "removal": { "skills": [ [ "computer", 0 ] ], "qualities": [ { "id": "NANO_PRO", "level": 1 } ] },
       "repair": { "skills": [ [ "computer", 0 ] ], "time": 6000, "qualities": [ { "id": "NANO_PRO", "level": 1 } ] }
     },
-    "flags": [ "MOUNTABLE", "FOLDABLE" ]
-  },
-  {
-    "id": "nanotech_frame2_cover",
-    "type": "vehicle_part",
-    "copy-from": "nanotech_frame2",
-    "looks_like": "hdframe_cover",
-    "symbol": "^"
-  },
-  {
-    "id": "nanotech_frame2_cross",
-    "type": "vehicle_part",
-    "copy-from": "nanotech_frame2",
-    "looks_like": "hdframe_cross",
-    "symbol": "c",
-    "extend": { "flags": [ "INITIAL_PART" ] }
-  },
-  {
-    "id": "nanotech_frame2_horizontal",
-    "copy-from": "nanotech_frame2",
-    "looks_like": "hdframe_horizontal",
-    "type": "vehicle_part",
-    "symbol": "h"
-  },
-  {
-    "id": "nanotech_frame2_horizontal_2",
-    "copy-from": "nanotech_frame2",
-    "looks_like": "hdframe_horizontal_2",
-    "type": "vehicle_part",
-    "symbol": "="
-  },
-  {
-    "id": "nanotech_frame2_ne",
-    "copy-from": "nanotech_frame2",
-    "looks_like": "hdframe_ne",
-    "type": "vehicle_part",
-    "symbol": "u"
-  },
-  {
-    "id": "nanotech_frame2_nw",
-    "copy-from": "nanotech_frame2",
-    "looks_like": "hdframe_nw",
-    "type": "vehicle_part",
-    "symbol": "y"
-  },
-  {
-    "id": "nanotech_frame2_se",
-    "copy-from": "nanotech_frame2",
-    "looks_like": "hdframe_se",
-    "type": "vehicle_part",
-    "symbol": "n"
-  },
-  {
-    "id": "nanotech_frame2_sw",
-    "copy-from": "nanotech_frame2",
-    "looks_like": "hdframe_sw",
-    "type": "vehicle_part",
-    "symbol": "b"
-  },
-  {
-    "id": "nanotech_frame2_vertical",
-    "copy-from": "nanotech_frame2",
-    "looks_like": "hdframe_vertical",
-    "type": "vehicle_part",
-    "symbol": "j"
-  },
-  {
-    "id": "nanotech_frame2_vertical_2",
-    "copy-from": "nanotech_frame2",
-    "looks_like": "hdframe_vertical_2",
-    "type": "vehicle_part",
-    "symbol": "H"
-  },
+    "flags": [ "MOUNTABLE", "FOLDABLE" ],
+    "variants": [ 
+    { "id": "horizontal", "label": "Horizontal", "symbols": "──│───│─", "symbols_broken": "#" },
+    {
+     "id": "nanotech_frame2_horizontal",
+     "label": "Front Horizontal",
+     "symbols": "h",
+     "symbols_broken": "#"        
+    },
+    {
+      "id": "nanotech_frame2_cover",
+      "label": "Nanotech Cover",
+      "symbols": "^",
+      "symbols_broken": "#"        
+     },
+     {
+      "id": "nanotech_frame2_cross",
+      "label": "Nanotech Cross",
+      "symbols": "C",
+      "symbols_broken": "#"        
+     },
+     {
+      "id": "nanotech_frame2_horizontal",
+      "label": "Nanotech Thick Horizontal",
+      "symbols": "h",
+      "symbols_broken": "#"        
+     },
+     {
+      "id": "nanotech_frame2_horizontal_2",
+      "label": "Nanotech Thick Horizontal",
+      "symbols": "=",
+      "symbols_broken": "#"        
+     },    
+     {
+      "id": "nanotech_frame2_ne",
+      "label": "Nanotech Front Right",
+      "symbols": "u",
+      "symbols_broken": "#"        
+     },
+     {
+       "id": "nanotech_frame2_nw",
+       "label": "Nanotech Front Left",
+       "symbols": "y",
+       "symbols_broken": "#"        
+      },
+      {
+       "id": "nanotech_frame2_se",
+       "label": "Nanotech Back Right",
+       "symbols": "n",
+       "symbols_broken": "#"        
+      },
+      {
+       "id": "nanotech_frame2_sw",
+       "label": "Nanotech Back Left",
+       "symbols": "b",
+       "symbols_broken": "#"        
+      },
+      {
+       "id": "nanotech_frame2_vertical",
+       "label": "Nanotech Vertical",
+       "symbols": "J",
+       "symbols_broken": "#"        
+      },       
+      {
+        "id": "nanotech_frame2_vertical_2",
+        "label": "Nanotech Thick Vertical",
+        "symbols": "J",
+        "symbols_broken": "#"        
+       } 
+    ]      
+  },                
   {
     "id": "nanoboard",
     "type": "vehicle_part",
