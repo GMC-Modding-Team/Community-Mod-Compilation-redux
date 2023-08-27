@@ -12,7 +12,7 @@
     "symbol": "]",
     "material": [ "steel", "nanite" ],
     "techniques": [ "DEF_DISARM" ],
-    "bashing": 20,
+    "melee_damage": { "bash": 20 },
     "category": "veh_parts",
     "price": "55 USD",
     "price_postapoc": "25 USD"
@@ -23,97 +23,23 @@
     "name": { "str": "nanotech hybrid frame" },
     "item": "nano_frame",
     "location": "structure",
+    "copy-from": "frame_abstract",
     "color": "dark_gray",
     "durability": 3000,
-    "symbol": "]",
+    "variants": [ { "symbols": "]", "symbols_broken": "]" } ],
     "description": "A heavy metal framework infused with nanites working to augment the durability.  Other vehicle components can be mounted on it, and it can be attached to other frames to increase the vehicle's size.",
     "looks_like": "frame",
     "folded_volume": "6250 ml",
     "folding_time": "1 minute",
-    "unfolding_time": "1 minute",    
+    "unfolding_time": "1 minute",
     "breaks_into": [ { "item": "nano_frame", "count": [ 0, 1 ] } ],
     "damage_reduction": { "all": 150 },
     "requirements": {
-      "install": { "skills": [ [ "mechanics", 1 ] ], "time": 120000, "using": [ [ "welding_standard", 10 ] ] },
+      "install": { "skills": [ [ "mechanics", 1 ] ], "time": "20 m", "using": [ [ "welding_standard", 10 ] ] },
       "removal": { "skills": [ [ "mechanics", 1 ] ], "using": "vehicle_weld_removal" },
-      "repair": { "skills": [ [ "mechanics", 1 ] ], "time": 30000, "using": [ [ "welding_standard", 5 ] ] }
+      "repair": { "skills": [ [ "mechanics", 1 ] ], "time": "5 m", "using": [ [ "welding_standard", 5 ] ] }
     },
-    "flags": [ "MOUNTABLE", "FOLDABLE", "INITIAL_PART" ],
-    "variants": [ 
-    { "id": "horizontal", "label": "Horizontal", "symbols": "──│───│─", "symbols_broken": "#" },
-    {
-     "id": "nanotech_frame_horizontal",
-     "label": "Front Horizontal",
-     "symbols": "h",
-     "symbols_broken": "#"        
-    },
-    {
-      "id": "nanotech_frame_cover",
-      "label": "Cover",
-      "symbols": "^",
-      "symbols_broken": "#"        
-     },
-     {
-      "id": "nanotech_frame_cross",
-      "label": "Cross",
-      "symbols": "C",
-      "symbols_broken": "#"        
-     },
-     {
-      "id": "nanotech_frame_horizontal",
-      "label": "Thick Horizontal",
-      "symbols": "h",
-      "symbols_broken": "#"        
-     },
-     {
-      "id": "nanotech_frame_horizontal_2",
-      "label": "Thick Horizontal",
-      "symbols": "=",
-      "symbols_broken": "#"        
-     },               
-     {
-      "id": "nanotech_frame_ne",
-      "label": "Front Right",
-      "symbols": "u",
-      "symbols_broken": "#"        
-     },
-     {
-      "id": "nanotech_frame_nw",
-      "label": "Front Left",
-      "symbols": "Y",
-      "symbols_broken": "#"        
-     },            
-     {
-      "id": "nanotech_frame_se",
-      "label": "Rear Right",
-      "symbols": "n",
-      "symbols_broken": "#"        
-     },              
-     {
-      "id": "nanotech_frame_sw",
-      "label": "Rear Left",
-      "symbols": "b",
-      "symbols_broken": "#"        
-     },              
-     {
-      "id": "nanotech_frame_sw",
-      "label": "Rear Left",
-      "symbols": "b",
-      "symbols_broken": "#"        
-     },              
-     {
-      "id": "nanotech_frame_vertical",
-      "label": "Vertical Left",
-      "symbols": "j",
-      "symbols_broken": "#"        
-     },     
-     {
-      "id": "nanotech_frame_vertical_2",
-      "label": "Vertical Left",
-      "symbols": "H", 
-      "symbols_broken": "#"        
-     }                    
-    ]
+    "flags": [ "MOUNTABLE", "INITIAL_PART" ]
   },
   {
     "id": "nanotech_frame2",
@@ -123,213 +49,40 @@
     "location": "structure",
     "color": "dark_gray",
     "durability": 7500,
-    "symbol": "]",
+    "variants": [ { "symbols": "]", "symbols_broken": "]" } ],
+    "copy-from": "frame_abstract",
     "description": "A large cluster of nanites actively forming a support network for other structures to attach to.  Other vehicle components can be mounted on it, and it can be attached to other frames to increase the vehicle's size.",
     "looks_like": "frame",
     "folded_volume": "2 L",
     "breaks_into": [ { "item": "xl_nanite_cluster", "count": [ 1, 1 ] } ],
     "damage_reduction": { "all": 500 },
     "requirements": {
-      "install": { "skills": [ [ "computer", 0 ] ], "time": 6000, "qualities": [ { "id": "NANO_PRO", "level": 1 } ] },
+      "install": { "skills": [ [ "computer", 0 ] ], "time": "30 m", "qualities": [ { "id": "NANO_PRO", "level": 1 } ] },
       "removal": { "skills": [ [ "computer", 0 ] ], "qualities": [ { "id": "NANO_PRO", "level": 1 } ] },
-      "repair": { "skills": [ [ "computer", 0 ] ], "time": 6000, "qualities": [ { "id": "NANO_PRO", "level": 1 } ] }
+      "repair": { "skills": [ [ "computer", 0 ] ], "time": "30 m", "qualities": [ { "id": "NANO_PRO", "level": 1 } ] }
     },
-    "flags": [ "MOUNTABLE", "FOLDABLE" ],
-    "variants": [ 
-    { "id": "horizontal", "label": "Horizontal", "symbols": "──│───│─", "symbols_broken": "#" },
-    {
-     "id": "nanotech_frame2_horizontal",
-     "label": "Front Horizontal",
-     "symbols": "h",
-     "symbols_broken": "#"        
-    },
-    {
-      "id": "nanotech_frame2_cover",
-      "label": "Nanotech Cover",
-      "symbols": "^",
-      "symbols_broken": "#"        
-     },
-     {
-      "id": "nanotech_frame2_cross",
-      "label": "Nanotech Cross",
-      "symbols": "C",
-      "symbols_broken": "#"        
-     },
-     {
-      "id": "nanotech_frame2_horizontal",
-      "label": "Nanotech Thick Horizontal",
-      "symbols": "h",
-      "symbols_broken": "#"        
-     },
-     {
-      "id": "nanotech_frame2_horizontal_2",
-      "label": "Nanotech Thick Horizontal",
-      "symbols": "=",
-      "symbols_broken": "#"        
-     },    
-     {
-      "id": "nanotech_frame2_ne",
-      "label": "Nanotech Front Right",
-      "symbols": "u",
-      "symbols_broken": "#"        
-     },
-     {
-       "id": "nanotech_frame2_nw",
-       "label": "Nanotech Front Left",
-       "symbols": "y",
-       "symbols_broken": "#"        
-      },
-      {
-       "id": "nanotech_frame2_se",
-       "label": "Nanotech Back Right",
-       "symbols": "n",
-       "symbols_broken": "#"        
-      },
-      {
-       "id": "nanotech_frame2_sw",
-       "label": "Nanotech Back Left",
-       "symbols": "b",
-       "symbols_broken": "#"        
-      },
-      {
-       "id": "nanotech_frame2_vertical",
-       "label": "Nanotech Vertical",
-       "symbols": "J",
-       "symbols_broken": "#"        
-      },       
-      {
-        "id": "nanotech_frame2_vertical_2",
-        "label": "Nanotech Thick Vertical",
-        "symbols": "J",
-        "symbols_broken": "#"        
-       } 
-    ]      
-  },                
+    "flags": [ "MOUNTABLE" ]
+  },
   {
     "id": "nanoboard",
     "type": "vehicle_part",
     "name": { "str": "nanotech board" },
     "item": "xl_nanite_cluster",
     "location": "center",
+    "copy-from": "base_board_abstract",
     "color": "dark_gray",
     "durability": 5000,
     "folded_volume": "6250 ml",
     "size": 120,
-    "symbol": "]",
+    "variants": [ { "symbols": "]", "symbols_broken": "]" } ],
     "description": "A strong metal wall.  Keeps zombies outside the vehicle and prevents people from seeing through it.",
     "breaks_into": [ { "item": "xl_nanite_cluster", "count": [ 1, 1 ] } ],
     "requirements": {
-      "install": { "skills": [ [ "computer", 0 ] ], "time": 6000, "qualities": [ { "id": "NANO_PRO", "level": 1 } ] },
+      "install": { "skills": [ [ "computer", 0 ] ], "time": "30 m", "qualities": [ { "id": "NANO_PRO", "level": 1 } ] },
       "removal": { "skills": [ [ "computer", 0 ] ], "qualities": [ { "id": "NANO_PRO", "level": 1 } ] },
-      "repair": { "skills": [ [ "computer", 0 ] ], "time": 6000, "qualities": [ { "id": "NANO_PRO", "level": 1 } ] }
+      "repair": { "skills": [ [ "computer", 0 ] ], "time": "30 m", "qualities": [ { "id": "NANO_PRO", "level": 1 } ] }
     },
-    "flags": [ "AISLE", "OPAQUE", "OBSTACLE", "TOOL_NONE", "FLAT_SURF", "CARGO", "COVERED" ],
+    "flags": [ "AISLE", "OBSTACLE", "TOOL_NONE", "FLAT_SURF", "CARGO", "COVERED" ],
     "damage_reduction": { "all": 400 }
-  },
-  {
-    "id": "nanohalfboard",
-    "copy-from": "nanoboard",
-    "type": "vehicle_part",
-    "name": { "str": "nanotech quarterpanel" },
-    "description": "A half-height strong metal wall.  Keeps zombies outside the vehicle but allows people to see over it.",
-    "delete": { "flags": [ "OPAQUE" ] }
-  },
-  {
-    "id": "nanoboard_horizontal",
-    "copy-from": "nanoboard",
-    "type": "vehicle_part",
-    "looks_like": "hdboard_horizontal",
-    "symbol": "h"
-  },
-  {
-    "id": "nanohalfboard_horizontal",
-    "copy-from": "nanohalfboard",
-    "type": "vehicle_part",
-    "looks_like": "hdhalfboard_horizontal",
-    "symbol": "h"
-  },
-  {
-    "id": "nanohalfboard_horizontal_2",
-    "copy-from": "nanohalfboard",
-    "type": "vehicle_part",
-    "looks_like": "hdhalfboard_horizontal_2",
-    "symbol": "="
-  },
-  {
-    "id": "nanoboard_ne",
-    "copy-from": "nanoboard",
-    "type": "vehicle_part",
-    "looks_like": "hdboard_ne",
-    "symbol": "u"
-  },
-  {
-    "id": "nanohalfboard_ne",
-    "copy-from": "nanohalfboard",
-    "type": "vehicle_part",
-    "looks_like": "hdhalfboard_ne",
-    "symbol": "u"
-  },
-  {
-    "id": "nanoboard_nw",
-    "copy-from": "nanoboard",
-    "type": "vehicle_part",
-    "looks_like": "hdboard_nw",
-    "symbol": "y"
-  },
-  {
-    "id": "nanohalfboard_nw",
-    "copy-from": "nanohalfboard",
-    "type": "vehicle_part",
-    "looks_like": "hdhalfboard_nw",
-    "symbol": "y"
-  },
-  {
-    "id": "nanoboard_se",
-    "copy-from": "nanoboard",
-    "type": "vehicle_part",
-    "looks_like": "hdboard_se",
-    "symbol": "n"
-  },
-  {
-    "id": "nanohalfboard_se",
-    "copy-from": "nanohalfboard",
-    "type": "vehicle_part",
-    "looks_like": "hdhalfboard_se",
-    "symbol": "n"
-  },
-  {
-    "id": "nanoboard_sw",
-    "copy-from": "nanoboard",
-    "type": "vehicle_part",
-    "looks_like": "hdboard_sw",
-    "symbol": "b"
-  },
-  {
-    "id": "nanohalfboard_sw",
-    "copy-from": "nanohalfboard",
-    "type": "vehicle_part",
-    "looks_like": "hdhalfboard_sw",
-    "symbol": "b"
-  },
-  {
-    "id": "nanoboard_vertical",
-    "copy-from": "nanoboard",
-    "type": "vehicle_part",
-    "looks_like": "hdboard_vertical",
-    "symbol": "j"
-  },
-  {
-    "id": "nanohalfboard_vertical",
-    "copy-from": "nanohalfboard",
-    "type": "vehicle_part",
-    "looks_like": "hdhalfboard_vertical",
-    "symbol": "j"
-  },
-  {
-    "id": "nanohalfboard_vertical_2",
-    "copy-from": "nanohalfboard",
-    "type": "vehicle_part",
-    "looks_like": "hdhalfboard_vertical_2",
-    "symbol": "H"
   }
 ]
