@@ -761,6 +761,7 @@ This regex will find all non-ascii (unicode) characters, excluding the ellipsis 
 ---
 # Price
 `key` `price` should have a `value` `string`
+
 ```C++
 "price": 100,
 "price_postapoc": 1000
@@ -771,3 +772,26 @@ This regex will find all non-ascii (unicode) characters, excluding the ellipsis 
 ```
 
 ---
+
+## Melee_damage
+
+```c++
+"bashing": 6,
+"cutting": 25,
+
+"melee_damage": { "bash": 6, "cut": 25 },
+```
+
+### Resist
+
+```c++
+"bash_resist": 10,
+"cut_resist": 16,
+"bullet_resist": 9,
+"acid_resist": 6,
+"fire_resist": 3,
+"elec_resist": 4,
+
+"resist": { "bash": 10, "cut": 16, "acid": 6, "heat": 3, "electric": 4, "bullet": 9 },
+```
+
