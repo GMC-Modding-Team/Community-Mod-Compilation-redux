@@ -27,3 +27,35 @@ better descriptions
 more unique comestibles
 
 move materials to individual comestibles
+
+
+
+### **Part 1**
+
+- [x] Add extra cereal recipes
+- [x] Add Cereal
+- [x] Add Drinks
+- [x] Add Cereal bars
+- [x] Add Granola
+- [x] Add Porridge
+- [x] Add Porridge pots
+
+### **Part 2**
+
+- [ ] Add better descriptions
+- [ ] Fix weight and volume
+- [ ] Better postapoc_price and price
+- [ ] Improve fun (most likely a lesser value)
+- [ ] Add more code to individual items
+- [ ] Better abstracts
+
+### **Part 3**
+
+- [ ] Add other types of food that can be added to Breakfast
+- [ ] Add a way to make cereal less abstracted on result (unless it works)
+- [ ] Add a way to add water/milk to porridge and requiring a container (recipes, more)
+
+### Last things todo
+
+1. [ ] Write a new [readme.md](http://readme.md/) before merge
+2. [ ] Rename mod
