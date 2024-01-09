@@ -1,0 +1,64 @@
+[
+  {
+    "id": "constr_blaze_blob_pit",
+    "type": "construction",
+    "category": "OTHER",
+    "group": "dig_blaze_blob_pit",
+    "difficulty": 0,
+    "time": "60 m",
+    "pre_terrain": "t_pit_corpsed",
+    "post_terrain": "blob_pit",
+    "tools": [
+      [ [ "gloople", -1 ], [ "glooplegrow", -1 ], [ "oozle", -1 ], [ "oozlegrow", -1 ], [ "gray", -1 ], [ "graygrow", -1 ] ]
+    ]
+  },
+  {
+    "id": "constr_blaze_blob_pit_slime",
+    "type": "construction",
+    "category": "OTHER",
+    "group": "dig_blaze_blob_pit_slime",
+    "difficulty": 0,
+    "time": "5 m",
+    "pre_terrain": "t_slime",
+    "post_terrain": "blob_pit_slime",
+    "tools": [
+      [ [ "gloople", -1 ], [ "glooplegrow", -1 ], [ "oozle", -1 ], [ "oozlegrow", -1 ], [ "gray", -1 ], [ "graygrow", -1 ] ]
+    ]
+  },
+  {
+    "id": "blob_pit",
+    "type": "terrain",
+    "name": "mass of blob feed",
+    "description": "",
+    "symbol": "O",
+    "color": "light_green",
+    "move_cost": 0,
+    "bash": {
+      "str_min": 1,
+      "str_max": 1,
+      "ter_set": "t_pit",
+      "sound": "squish!",
+      "sound_fail": "squish!",
+      "items": [ { "item": "bfeed", "count": [ 250, 500 ] } ]
+    },
+    "flags": [ "WALL", "TRANSPARENT", "EASY_DECONSTRUCT" ]
+  },
+  {
+    "id": "blob_pit_slime",
+    "type": "terrain",
+    "name": "mound of blob feed",
+    "description": "",
+    "symbol": "O",
+    "color": "light_green",
+    "move_cost": 0,
+    "bash": {
+      "str_min": 1,
+      "str_max": 1,
+      "ter_set": "t_dirt",
+      "sound": "squish!",
+      "sound_fail": "squish!",
+      "items": [ { "item": "bfeed", "count": [ 50, 250 ] } ]
+    },
+    "flags": [ "WALL", "TRANSPARENT", "EASY_DECONSTRUCT" ]
+  }
+]

@@ -1,0 +1,307 @@
+[
+  {
+    "id": "cargo_rack_extended",
+    "type": "vehicle_part",
+    "name": { "str": "cargo shelving" },
+    "symbol": "=",
+    "looks_like": "box",
+    "color": "light_gray",
+    "broken_symbol": "#",
+    "broken_color": "dark_gray",
+    "durability": 250,
+    "size": 4000,
+    "item": "vehicle_shelving",
+    "location": "center",
+    "requirements": {
+      "install": { "skills": [ [ "mechanics", 1 ] ], "time": "120 m", "using": [ [ "welding_standard", 5 ] ] },
+      "removal": { "skills": [ [ "mechanics", 2 ] ], "time": "60 m", "using": [ [ "vehicle_weld_removal", 1 ] ] },
+      "repair": { "skills": [ [ "mechanics", 2 ] ], "time": "120 m", "using": [ [ "welding_standard", 5 ] ] }
+    },
+    "flags": [ "OBSTACLE", "CARGO", "COVERED" ],
+    "breaks_into": [
+      { "item": "steel_lump", "count": [ 6, 16 ] },
+      { "item": "steel_chunk", "count": [ 6, 16 ] },
+      { "item": "scrap", "count": [ 6, 16 ] }
+    ],
+    "damage_reduction": { "all": 28 }
+  },
+  {
+    "id": "solar_array",
+    "type": "vehicle_part",
+    "name": { "str": "solar array" },
+    "item": "solar_array",
+    "location": "center",
+    "symbol": "#",
+    "broken_symbol": "x",
+    "color": "yellow",
+    "broken_color": "yellow",
+    "durability": 250,
+    "epower": 600,
+    "damage_modifier": 10,
+    "description": "A dozen solar panels set on a chassis reaching several meters high.  It keeps the fragile panels safely away from any potential threats and improves efficiency due to being able track the sun.  Will recharge the vehicle's electrical power when exposed to the sun.",
+    "breaks_into": [
+      { "item": "steel_lump", "count": [ 3, 6 ] },
+      { "item": "steel_chunk", "count": [ 6, 12 ] },
+      { "item": "scrap", "count": [ 8, 16 ] },
+      { "item": "solar_cell", "count": [ 10, 40 ] }
+    ],
+    "requirements": {
+      "install": { "skills": [ [ "mechanics", 6 ] ], "time": "60 m", "using": [ [ "welding_standard", 5 ] ] },
+      "removal": { "skills": [ [ "mechanics", 4 ] ], "time": "45 m", "using": [ [ "vehicle_weld_removal", 1 ] ] },
+      "repair": { "skills": [ [ "mechanics", 7 ] ], "time": "25 m", "using": [ [ "welding_standard", 5 ] ] }
+    },
+    "flags": [ "SOLAR_PANEL", "OBSTACLE" ]
+  },
+  {
+    "id": "solar_array2",
+    "type": "vehicle_part",
+    "name": { "str": "upgraded solar array" },
+    "item": "solar_array2",
+    "location": "center",
+    "symbol": "#",
+    "broken_symbol": "x",
+    "color": "yellow",
+    "broken_color": "yellow",
+    "durability": 250,
+    "epower": 1200,
+    "damage_modifier": 10,
+    "description": "A dozen upgraded solar panels set on a chassis reaching several meters high.  It keeps the fragile panels safely away from any potential threats and improves efficiency due to being able track the sun.  Will recharge the vehicle's electrical power when exposed to the sun.",
+    "breaks_into": [
+      { "item": "steel_lump", "count": [ 3, 6 ] },
+      { "item": "steel_chunk", "count": [ 6, 12 ] },
+      { "item": "scrap", "count": [ 8, 16 ] },
+      { "item": "solar_cell", "count": [ 20, 60 ] }
+    ],
+    "requirements": {
+      "install": { "skills": [ [ "mechanics", 6 ] ], "time": "60 m", "using": [ [ "welding_standard", 5 ] ] },
+      "removal": { "skills": [ [ "mechanics", 4 ] ], "time": "45 m", "using": [ [ "vehicle_weld_removal", 1 ] ] },
+      "repair": { "skills": [ [ "mechanics", 7 ] ], "time": "25 m", "using": [ [ "welding_standard", 5 ] ] }
+    },
+    "flags": [ "SOLAR_PANEL", "OBSTACLE" ]
+  },
+  {
+    "id": "solar_array2r",
+    "type": "vehicle_part",
+    "name": { "str": "upgraded reinforced solar array" },
+    "item": "solar_array2r",
+    "location": "center",
+    "symbol": "#",
+    "broken_symbol": "x",
+    "color": "light_blue",
+    "broken_color": "light_gray",
+    "durability": 500,
+    "epower": 1080,
+    "damage_modifier": 10,
+    "description": "A dozen upgraded solar panels set on a chassis reaching several meters high.  It keeps the fragile panels safely away from any potential threats and improves efficiency due to being able track the sun.  Will recharge the vehicle's electrical power when exposed to the sun.",
+    "breaks_into": [
+      { "item": "steel_lump", "count": [ 6, 11 ] },
+      { "item": "steel_chunk", "count": [ 12, 23 ] },
+      { "item": "scrap", "count": [ 16, 31 ] },
+      { "item": "solar_cell", "count": [ 20, 60 ] }
+    ],
+    "requirements": {
+      "install": { "skills": [ [ "mechanics", 8 ] ], "time": "60 m", "using": [ [ "welding_standard", 5 ] ] },
+      "removal": { "skills": [ [ "mechanics", 6 ] ], "time": "45 m", "using": [ [ "vehicle_weld_removal", 1 ] ] },
+      "repair": { "skills": [ [ "mechanics", 9 ] ], "time": "25 m", "using": [ [ "welding_standard", 5 ] ] }
+    },
+    "flags": [ "SOLAR_PANEL", "OBSTACLE" ]
+  },
+  {
+    "id": "wiring",
+    "type": "vehicle_part",
+    "name": { "str": "wiring" },
+    "item": "wire",
+    "location": "structure",
+    "symbol": ".",
+    "broken_symbol": "#",
+    "color": "white",
+    "broken_color": "white",
+    "durability": 10,
+    "description": "A length of heavy duty copper wire, useful for routing power from one part of a vehicle to another part.",
+    "folded_volume": "250 ml",
+    "breaks_into": [ { "item": "wire", "prob": 50 } ],
+    "requirements": {
+      "install": { "skills": [ [ "mechanics", 1 ] ], "time": "60 s" },
+      "removal": { "skills": [ [ "mechanics", 2 ] ], "time": "30 s" },
+      "repair": { "skills": [ [ "mechanics", 2 ] ], "time": "60 s" }
+    },
+    "flags": [ "INITIAL_PART", "FOLDABLE", "AISLE" ]
+  },
+  {
+    "id": "stabilized_cargo_portal",
+    "type": "vehicle_part",
+    "name": { "str": "pocket dimension cargo" },
+    "//": "Keep away from Svarog detectors!",
+    "item": "space_anomaly",
+    "location": "center",
+    "symbol": "O",
+    "broken_symbol": "O",
+    "color": "magenta",
+    "broken_color": "magenta",
+    "durability": 400,
+    "size": 6000,
+    "cargo_weight_modifier": 0,
+    "breaks_into": [ { "item": "cargo_rack", "prob": 50 } ],
+    "requirements": {
+      "install": { "skills": [ [ "mechanics", 8 ] ], "time": "60 m", "using": [ [ "welding_standard", 5 ] ] },
+      "removal": { "skills": [ [ "mechanics", 6 ] ], "time": "45 m", "using": [ [ "vehicle_weld_removal", 1 ] ] },
+      "repair": { "skills": [ [ "mechanics", 9 ] ], "time": "25 m", "using": [ [ "welding_standard", 5 ] ] }
+    },
+    "flags": [ "CARGO", "COVERED" ]
+  },
+  {
+    "id": "afs_fridge",
+    "type": "vehicle_part",
+    "copy-from": "minifridge",
+    "name": { "str": "refrigerator" },
+    "symbol": "{",
+    "categories": [ "cargo" ],
+    "color": "white",
+    "broken_color": "white",
+    "looks_like": "minifridge",
+    "durability": 400,
+    "description": "A medium-sized household refrigerator, converted to utilize vehicle power.  When turned on, food inside will be cooled, extending the time it has before spoiling.",
+    "epower": -100,
+    "size": 1200,
+    "item": "afs_fridge"
+  },
+  {
+    "id": "afs_freezer",
+    "type": "vehicle_part",
+    "copy-from": "minifreezer",
+    "name": { "str": "freezer" },
+    "symbol": "{",
+    "categories": [ "cargo" ],
+    "color": "light_blue",
+    "broken_color": "light_blue",
+    "looks_like": "minifridge",
+    "durability": 400,
+    "description": "A household fridge, converted to run at a much lower temperature and on vehicle power.  When turned on, food inside will be frozen, completely stopping it from spoiling.",
+    "epower": -120,
+    "size": 1200,
+    "item": "afs_freezer"
+  },
+  {
+    "id": "afs_metal_rig",
+    "type": "vehicle_part",
+    "name": { "str": "MetalMaster forge buddy" },
+    "symbol": "&",
+    "categories": [ "utility" ],
+    "color": "red",
+    "broken_symbol": "x",
+    "broken_color": "red",
+    "looks_like": "welding_rig",
+    "damage_modifier": 10,
+    "durability": 200,
+    "description": "A welding and metalworking station, powered by the vehicle's battery.  'e'xamine the forge rig to utilize its welder or soldering iron; you'll still need glare protection.",
+    "size": 200,
+    "item": "afs_metal_rig",
+    "location": "center",
+    "requirements": {
+      "install": { "skills": [ [ "mechanics", 3 ] ], "time": "60 m", "using": [ [ "vehicle_wrench_2", 1 ] ] },
+      "removal": { "skills": [ [ "mechanics", 2 ] ], "time": "30 m", "using": [ [ "vehicle_wrench_2", 1 ] ] },
+      "repair": { "skills": [ [ "mechanics", 4 ] ], "time": "60 m", "using": [ [ "welding_standard", 5 ] ] }
+    },
+    "flags": [ "CARGO", "OBSTACLE", "COVERED" ],
+    "pseudo_tools": [ { "id": "welder", "hotkey": "w" }, { "id": "soldering_iron", "hotkey": "s" }, { "id": "forge" }, { "id": "kiln" } ],
+    "breaks_into": [
+      { "item": "steel_lump", "count": [ 3, 6 ] },
+      { "item": "steel_chunk", "count": [ 3, 6 ] },
+      { "item": "scrap", "count": [ 3, 6 ] },
+      { "item": "welder", "charges": 0, "prob": 50 },
+      { "item": "forge", "charges": 0, "prob": 50 },
+      { "item": "kiln", "charges": 0, "prob": 50 }
+    ]
+  },
+  {
+    "id": "afs_cooking_rig",
+    "type": "vehicle_part",
+    "name": { "str": "cooking rig" },
+    "symbol": "&",
+    "categories": [ "utility" ],
+    "color": "blue",
+    "broken_symbol": "x",
+    "broken_color": "blue",
+    "looks_like": "kitchen_unit",
+    "damage_modifier": 10,
+    "durability": 125,
+    "description": "An all-in-one kitchen unit and chemistry lab.  'e'xamine it to use its hotplate to heat up food or drinks.",
+    "size": 200,
+    "item": "afs_cooking_rig",
+    "location": "center",
+    "requirements": {
+      "install": { "skills": [ [ "mechanics", 3 ] ], "time": "60 m", "using": [ [ "vehicle_wrench_2", 1 ] ] },
+      "removal": { "skills": [ [ "mechanics", 2 ] ], "time": "30 m", "using": [ [ "vehicle_wrench_2", 1 ] ] },
+      "repair": { "skills": [ [ "mechanics", 4 ] ], "time": "60 m", "using": [ [ "welding_standard", 5 ] ] }
+    },
+    "flags": [ "CARGO", "OBSTACLE", "COVERED", "FLAT_SURF" ],
+    "pseudo_tools": [
+      { "id": "water_faucet" },
+      { "id": "hotplate", "hotkey": "h" },
+      { "id": "pot" },
+      { "id": "pan" },
+      { "id": "chemistry_set" },
+      { "id": "electrolysis_kit" }
+    ],
+    "breaks_into": [
+      { "item": "steel_lump", "count": [ 6, 9 ] },
+      { "item": "steel_chunk", "count": [ 6, 9 ] },
+      { "item": "scrap", "count": [ 6, 9 ] },
+      { "item": "pot", "prob": 50 },
+      { "item": "pan", "prob": 50 },
+      { "item": "chemistry_set", "charges": 0, "prob": 50 },
+      { "item": "hotplate", "charges": 0, "prob": 50 }
+    ]
+  },
+  {
+    "id": "afs_kitchen_rig",
+    "type": "vehicle_part",
+    "name": { "str": "KitchenMaster cooking buddy" },
+    "symbol": "&",
+    "categories": [ "utility" ],
+    "color": "yellow",
+    "broken_symbol": "x",
+    "broken_color": "yellow",
+    "looks_like": "kitchen_unit",
+    "damage_modifier": 10,
+    "durability": 200,
+    "description": "An all-in-one kitchen unit, chemistry lab, and food preparation area.  'e'xamine it to use its hotplate to heat up food or drinks.",
+    "size": 200,
+    "item": "afs_kitchen_rig",
+    "location": "center",
+    "requirements": {
+      "install": { "skills": [ [ "mechanics", 3 ] ], "time": "60 m", "using": [ [ "vehicle_wrench_2", 1 ] ] },
+      "removal": { "skills": [ [ "mechanics", 2 ] ], "time": "30 m", "using": [ [ "vehicle_wrench_2", 1 ] ] },
+      "repair": { "skills": [ [ "mechanics", 4 ] ], "time": "60 m", "using": [ [ "welding_standard", 5 ] ] }
+    },
+    "flags": [ "CARGO", "OBSTACLE", "COVERED", "FLAT_SURF" ],
+    "pseudo_tools": [
+      { "id": "water_faucet" },
+      { "id": "vac_sealer" },
+      { "id": "dehydrator" },
+      { "id": "food_processor" },
+      { "id": "press" },
+      { "id": "puller" },
+      { "id": "hotplate", "hotkey": "h" },
+      { "id": "pot" },
+      { "id": "pan" },
+      { "id": "chemistry_set" },
+      { "id": "electrolysis_kit" },
+      { "id": "water_purifier", "hotkey": "p" }
+    ],
+    "breaks_into": [
+      { "item": "steel_lump", "count": [ 9, 18 ] },
+      { "item": "steel_chunk", "count": [ 9, 18 ] },
+      { "item": "scrap", "count": [ 9, 18 ] },
+      { "item": "pot", "prob": 50 },
+      { "item": "pan", "prob": 50 },
+      { "item": "chemistry_set", "charges": 0, "prob": 50 },
+      { "item": "hotplate", "charges": 0, "prob": 50 },
+      { "item": "water_purifier", "charges": 0, "prob": 50 },
+      { "item": "vac_sealer", "charges": 0, "prob": 50 },
+      { "item": "dehydrator", "charges": 0, "prob": 50 },
+      { "item": "food_processor", "charges": 0, "prob": 50 },
+      { "item": "press", "prob": 50 }
+    ]
+  }
+]
