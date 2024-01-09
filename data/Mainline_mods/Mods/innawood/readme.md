@@ -1,12 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Goal](#goal)
-- [Changes](#changes)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # Goal
 
 The goal of the mod is to create a 'innawood' experience, where the player can experience exploring an untouched land, and have to craft rather than loot everything they want to use.
@@ -21,8 +12,7 @@ The goal of the mod is to create a 'innawood' experience, where the player can e
 - Sand spawns somewhat commonly in plains.
 - Get a lot of withered plants from smashing young trees.
 - Bog iron can be extracted and refined to allow metalworking.
-- The old ammonia recipe is back.
-- Ammonia, glass from sand, cattail jelly, quicklime, cement, and mortar are auto learned.
+- Glass from sand, cattail jelly, quicklime, cement, mortar, and other recipes for a wilderness experience are auto learned.
 - Mortar can be made without a cement mixer, but now requires water.
 - Man made junk found on the ground or though foraging is removed.
 - You can make nails without first needing a nail.

@@ -1,18 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Design Document SPOILERS AHEAD](#design-document-spoilers-ahead)
-- [What belongs in DinoMod?](#what-belongs-in-dinomod)
-- [Realism vs. Fun](#realism-vs-fun)
-- [Adding, replacing, removing](#adding-replacing-removing)
-- [How to contribute](#how-to-contribute)
-- [Where should new dinosaurs spawn?](#where-should-new-dinosaurs-spawn)
-- [How to add a dinosaur](#how-to-add-a-dinosaur)
-- [How to add a dinosaur nest](#how-to-add-a-dinosaur-nest)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # Design Document SPOILERS AHEAD
 The core idea of DinoMod is this: https://tvtropes.org/pmwiki/pmwiki.php/Main/EverythingsBetterWithDinosaurs
 The purpose of this mod is to make Cataclysm a more fun game to play and develop for, showing off new mechanics and bringing life to parts of the game that aren't as well-developed.
@@ -73,4 +58,11 @@ This is much easier!
 * Each dinosaur gets its own nest mapgen file in \mapgen\map_extras\ you can copy from a similar dino there
 * You can define the map extra in \overmap\map_extras.json
 * Finally you tell it to spawn in the right biome in regional_overlay.json . Predator nests go in swamps, everything else in forests
+  
+# Lore
+
+* Dinosaurs came here through portals at the very beginning of the portal storm
+* The Swampers expected this and were prepared.  They believe that the dinosaurs are here to restore our world to be back in harmony with the rest
+* Before all this, some of the labs were already pulling dinos and dino material back here for study, including some with CBMs.  They got out.
+* The Exodii don't know that this was a dino free world. That's very rare.
 

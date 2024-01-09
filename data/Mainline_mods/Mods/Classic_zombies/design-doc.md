@@ -1,43 +1,19 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [The DDotDDD - Dark Days of the Dead Design Document](#the-ddotddd---dark-days-of-the-dead-design-document)
-  - [Mission Statement](#mission-statement)
-  - [Gameplay](#gameplay)
-    - [Desired changes to monster stats](#desired-changes-to-monster-stats)
-  - [Setting](#setting)
-    - [Changes to in-game stuff for setting reasons](#changes-to-in-game-stuff-for-setting-reasons)
-      - [Items and spawns](#items-and-spawns)
-      - [Professions and Scenarios](#professions-and-scenarios)
-        - [Movie-inspired starts](#movie-inspired-starts)
-        - [Story starts](#story-starts)
-    - [Zombification Mechanics](#zombification-mechanics)
-    - [History](#history)
-    - [Factions](#factions)
-      - [The Montana Army National Guard](#the-montana-army-national-guard)
-      - [The Central Alberta Historical Re-Enactors Army](#the-central-alberta-historical-re-enactors-army)
-      - [The Wild Rose Survivors](#the-wild-rose-survivors)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # The DDotDDD - Dark Days of the Dead Design Document
 
 ## Mission Statement
-Dark days of the dead is a cataclysm full conversion mod meant to turn the kitchen sink of cataclysm dda into a classic Romero-style zombie story.
+Dark days of the dead is a Cataclysm full conversion mod meant to turn the kitchen sink of Cataclysm: DDA into a classic Romero-style zombie story.
 
 ## Gameplay
 DDotD, like CDDA, aims for verisimilitude and the feeling of being a survivor in a Romero zombie movie. Like Dawn of the Dead, zombies should represent less of an individual deadly threat, and more of an unstoppable glacial force. Survivors should be poorly prepared and weak.
 
 ### Desired changes to monster stats
-Only classic zombies are allowed in ddotd. These zombies are slow moving shamblers. They have an enormous pool of hit points, but no armor. They are walking corpses, feeling no pain and continuing on in the face of incredible injuries. They can be destroyed with catastrophic damage, by completely destroying their bodies (represented by depleting their very large HP pool) or by a headshot. A deep bite from a zombie should have a very high (about 80%) chance of developing Conversion, an effect that kills you in about 3 days. (We should add an achievement for things accomplished in the time after getting Conversion). Scratches that pierce armor should have a low (about 10%) chance of causing Conversion, and gives an alternate form that takes longer, about 5 days, to kill you.
+Only classic zombies are allowed in DDotD. These zombies are slow moving shamblers. They have an enormous pool of hit points, but no armor. They are walking corpses, feeling no pain and continuing on in the face of incredible injuries. They can be destroyed with catastrophic damage, by completely destroying their bodies (represented by depleting their very large HP pool) or by a headshot. A deep bite from a zombie should have a very high (about 80%) chance of developing Conversion, an effect that kills you in about 3 days. (We should add an achievement for things accomplished in the time after getting Conversion). Scratches that pierce armor should have a low (about 10%) chance of causing Conversion, and gives an alternate form that takes longer, about 5 days, to kill you.
 
-Re-dead zombies do not revive. Some, but not all, human corpses should revive as zombies though. These zombies do not evolve. However it should be possible to destroy body parts and get things like crawling zombies as a result.
+Killed zombies do not revive. Some, but not all, human corpses should revive as zombies though. These zombies do not evolve. However it should be possible to destroy body parts and get things like crawling zombies as a result.
 
 DDotD zombies *are* capable of learning. At some point we may add our own late stage evolution to introduce zombies that can open doors or use simple tools.
 
-There are no aliens or interdimensional threats in ddotd.
-
+There are no aliens or interdimensional threats in DDotD.
 
 ## Setting
 The setting of DDotD should be vaguely "in the past", some time between 1980 and 2000. DDotD takes place in Alberta, Canada, in a fictionalized version of the Red Deer area. Why Alberta? Because the current CDDA mapgen of small clustered towns surrounded by fields and patches of forests on mostly flat land suits Alberta perfectly. This also allows us to have harsher winters to survive. Most buildings and loot in CDDA core will be appropriate, but guns and gun stores (with the exception of hunting rifles) are somewhat less common, and military presence substantially less so.

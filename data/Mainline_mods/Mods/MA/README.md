@@ -1,15 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [MA](#ma)
-- [Implemented Features](#implemented-features)
-- [Plannned Features](#plannned-features)
-- [Notes](#notes)
-- [Additonal files](#additonal-files)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # MA
 
 Overmap overhaul mod for Cataclysm: DDA that uses some features of Massachusetts state when generating overmaps.
@@ -34,7 +22,7 @@ Overmap terrain might be unpolished at times on some of the overmaps (e.g. field
 * OVERMAP_PLACE_SWAMPS - Allows to place procgen swamps during overmap generation.
 * OVERMAP_PLACE_RAVINES - Allows to place procgen ravines during overmap generation.
 
-# Additonal files
+# Additional files
 
 * MA_overmap_index.png - visual index of overmap coordinates.
 * MA_overmap_cities.xlsx - visual index of city coordinates, original data and json generator.
