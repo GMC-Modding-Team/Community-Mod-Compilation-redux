@@ -1,3 +1,14 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Adding New Powers](#adding-new-powers)
+- [Maintaining the Theme](#maintaining-the-theme)
+- [Intelligence Bonuses](#intelligence-bonuses)
+- [Path Capabilities](#path-capabilities)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Adding New Powers
 
 When adding powers, keep the following in mind:

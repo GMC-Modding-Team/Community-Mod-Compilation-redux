@@ -50,6 +50,8 @@ Use the `home` key to get to the top.
 - [vehicle_part](#vehicle_part)
 - [Unicode Characters](#unicode-characters)
 - [Price](#price)
+  - [Melee_damage](#melee_damage)
+    - [Resist](#resist)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

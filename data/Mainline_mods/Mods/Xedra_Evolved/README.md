@@ -1,3 +1,18 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+    - [Agents of Change](#agents-of-change)
+- [Lore](#lore)
+- [I want to believe](#i-want-to-believe)
+  - [Chapter 1 Hail Arcadia](#chapter-1-hail-arcadia)
+    - [Rumours of New Birth](#rumours-of-new-birth)
+  - [Chapter 2 Powers beyond mere imagination](#chapter-2-powers-beyond-mere-imagination)
+  - [Chapter 3 A Thirst for Blood](#chapter-3-a-thirst-for-blood)
+    - [Shipping manifest](#shipping-manifest)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ### Agents of Change
 I want to take this space to thank GuardianDll for all the time we've talked about what to do in this mod and the work they have put into creating content for this mod.  I'd also like to thank TheShadowFerret for patiently reviewing my PRs no matter how hare brained my sentence structure is at any given time.  Ramza13 for creating the EOC system that I've used so heavily in this mod and all of the dev team for their assistance in correcting my attempts and sometimes even building c++ functions related to all the mods and systems I work on.
 
