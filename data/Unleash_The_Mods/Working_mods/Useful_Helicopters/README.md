@@ -1,11 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [useful_helicopters](#useful_helicopters)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # useful_helicopters
 A Cataclysm DDA mod that rebalances helicopters to make them more practical. Has recently undergone a complete overhaul to make it compatible with 0.F and address issues with the initial (extremely hacky) release. The goal of this mod is to make helicopters actually factor into gameplay in an authentic and fun way. This is not a "realism" mod, but it is also not designed to (intentionally) enable giant flying bases. Note: NOT compatible with Bright Nights. NOT compatible with 0.E Stable. Designed for the upcoming 0.F stable release and working with the current 0.F experimental.
 
