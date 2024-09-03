@@ -1,3 +1,21 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Weapon Categorization](#weapon-categorization)
+- [Weapon types](#weapon-types)
+  - [Ballistic/Railguns](#ballisticrailguns)
+    - [Expected ballistic stats](#expected-ballistic-stats)
+  - [Lasers](#lasers)
+    - [Expected laser weapon stats](#expected-laser-weapon-stats)
+  - [Plasma](#plasma)
+    - [Expected plasma weapon stats](#expected-plasma-weapon-stats)
+  - [Voltaic-Electroshock](#voltaic-electroshock)
+    - [Expected voltaic weapon stats](#expected-voltaic-weapon-stats)
+  - [Explosive Projectiles](#explosive-projectiles)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Weapon Categorization
 
 For ease of balancing, all aftershock weapons are separated into three abstract and gamified categories: light weapons, medium weapons and heavy weapons. Where a weapon belongs among these three categories depends on its raw damage output  as defined on the weapon/ammo json definitions.

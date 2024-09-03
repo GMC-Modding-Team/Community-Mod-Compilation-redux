@@ -1,3 +1,20 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Organizations](#organizations)
+  - [The Powers of Earth](#the-powers-of-earth)
+    - [United Interstellar Coordination Agency [UICA]](#united-interstellar-coordination-agency-uica)
+    - [TsKBEM](#tskbem)
+    - [PrepNet Phyle](#prepnet-phyle)
+- [Solar Corporations](#solar-corporations)
+    - [Solar corporations currently mentioned within Aftershock](#solar-corporations-currently-mentioned-within-aftershock)
+    - [Mercurial Genomics](#mercurial-genomics)
+    - [Wraitheon Industries ltd](#wraitheon-industries-ltd)
+  - [Minor corporations](#minor-corporations)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 This page list all the organizations that are mentioned in Aftershock background or that otherwise play an important role within the mod's lore.  (very early draft at this point)
 
 # Organizations

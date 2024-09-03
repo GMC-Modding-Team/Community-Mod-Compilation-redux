@@ -1,3 +1,15 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Abridged History of the Orion Arm](#abridged-history-of-the-orion-arm)
+  - [Earthbound Epoch and Early Space Age (1900-2080)](#earthbound-epoch-and-early-space-age-1900-2080)
+  - [The Hyperspace Expansion (2080-2150)](#the-hyperspace-expansion-2080-2150)
+  - [The discontinuity (2152-2475)](#the-discontinuity-2152-2475)
+  - [Reclamation to Present(2475-2530)](#reclamation-to-present2475-2530)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Abridged History of the Orion Arm
 
 As written from an in universe perspective.

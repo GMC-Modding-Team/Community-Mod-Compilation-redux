@@ -1,3 +1,16 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Contributing to Bombastic Perks](#contributing-to-bombastic-perks)
+  - [Rules for all content](#rules-for-all-content)
+  - [Naming Convention](#naming-convention)
+  - [Adding](#adding)
+    - [Menu Entry](#menu-entry)
+  - [Reasoning For The Above](#reasoning-for-the-above)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Contributing to Bombastic Perks
 
 ## Rules for all content

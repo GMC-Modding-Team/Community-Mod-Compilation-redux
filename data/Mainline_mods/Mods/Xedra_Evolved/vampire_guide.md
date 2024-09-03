@@ -1,3 +1,11 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [A Thirst for Blood](#a-thirst-for-blood)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## A Thirst for Blood
 
 If you want to become a vampire you first need to go to a place where moroi and strigoi can be found, while they can be found in lots of locations the most common places to find them are currently variant cathedrals and hunting lodges. Once you find them you need to fight one until you are grabbed, then bitten and the bite is followed by text about a feeling like backwash into your veins. You will also gain the Wan effect.

@@ -1,3 +1,14 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Earthbound Epoch and Early Space Age ( ???-2080 )](#earthbound-epoch-and-early-space-age---2080-)
+- [The Hyperspace Expansion (2080-2152)](#the-hyperspace-expansion-2080-2152)
+- [The discontinuity (2152- 2375)](#the-discontinuity-2152--2375)
+- [Reclamation and Present (2375-2430)](#reclamation-and-present-2375-2430)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 Mostly what In-game sources would let you know. Only events that should be referenced in more than a single place are listed.
 
 ### Earthbound Epoch and Early Space Age ( ???-2080 )

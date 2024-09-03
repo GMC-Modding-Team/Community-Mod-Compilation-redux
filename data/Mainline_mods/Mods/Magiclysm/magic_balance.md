@@ -1,3 +1,36 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+  - [Contents](#contents)
+- [Spells](#spells)
+    - [Difficulty](#difficulty)
+    - [Max Level](#max-level)
+    - [Attack Stats](#attack-stats)
+    - [Effect](#effect)
+    - [Energy Source](#energy-source)
+    - [Casting Time](#casting-time)
+    - [Energy Cost](#energy-cost)
+    - [Fields](#fields)
+    - [Damage Type](#damage-type)
+    - [Valid targets](#valid-targets)
+  - [Tier Examples:](#tier-examples)
+    - [Tier 0](#tier-0)
+    - [Tier 1](#tier-1)
+    - [Tier 2](#tier-2)
+    - [Tier 3](#tier-3)
+  - [Spellcasting Proficiencies](#spellcasting-proficiencies)
+    - [Evocation](#evocation)
+    - [Channeling](#channeling)
+    - [Conjuration](#conjuration)
+    - [Enhancement](#enhancement)
+    - [Conveyance](#conveyance)
+      - [How The JMATH Works](#how-the-jmath-works)
+        - [How JMATH Outputs are Used in Spells](#how-jmath-outputs-are-used-in-spells)
+    - [Advice for Using Proficiencies in Spells](#advice-for-using-proficiencies-in-spells)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Contents
 
 - [Spells](#spells)
