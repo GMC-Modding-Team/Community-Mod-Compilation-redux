@@ -1,18 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-    - [Agents of Change](#agents-of-change)
-- [Lore](#lore)
-- [I want to believe](#i-want-to-believe)
-  - [Chapter 1 Hail Arcadia](#chapter-1-hail-arcadia)
-    - [Rumours of New Birth](#rumours-of-new-birth)
-  - [Chapter 2 Powers beyond mere imagination](#chapter-2-powers-beyond-mere-imagination)
-  - [Chapter 3 A Thirst for Blood](#chapter-3-a-thirst-for-blood)
-    - [Shipping manifest](#shipping-manifest)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 ### Agents of Change
 I want to take this space to thank GuardianDll for all the time we've talked about what to do in this mod and the work they have put into creating content for this mod.  I'd also like to thank TheShadowFerret for patiently reviewing my PRs no matter how hare brained my sentence structure is at any given time.  Ramza13 for creating the EOC system that I've used so heavily in this mod and all of the dev team for their assistance in correcting my attempts and sometimes even building c++ functions related to all the mods and systems I work on.
 
@@ -25,7 +10,7 @@ Classes and scenarios specific to this mod will likely revolve around either inv
 ## Chapter 1 Hail Arcadia
 The first bit of content for Xedra Evolved revolves around a dimension that's relatively nearby in Nether terms, even pre-portal technology mankind had records of encounters with beings matching the descriptions of these creatures across multiple cultures and times.  Future additions will explore other avenues.  Welcoming mapgen and monsters in this section. A musician at the Refugee Center might have some knowledge about these creatures. 
 ### Rumours of New Birth
-When dimensional seepage began many of the fae returned to their old places of power.  This included the elemental fae which were less likely to interact with humans due to a more alien lifecycle.  As the cataclysm began most of the fae left for less actively hostile dimensions.  In the case of the elemental fae this proves to be a problem as their unborn children aren't carried in the belly of a fae but rather are born over time in sacred locations, known as genius locii.  In hidden locations across the Earth a few unlucky elemental fae are waking up to find themselves abandoned in a dying world.  Maybe they'll be able to find a way out, one day.  
+When dimensional seepage began many of the fae returned to their old places of power.  This included the elemental fae which were less likely to interact with humans due to a more alien lifecycle.  As the Cataclysm began most of the fae left for less actively hostile dimensions.  In the case of the elemental fae this proves to be a problem as their unborn children aren't carried in the belly of a fae but rather are born over time in sacred locations, known as genius locii.  In hidden locations across the Earth a few unlucky elemental fae are waking up to find themselves abandoned in a dying world.  Maybe they'll be able to find a way out, one day.  
 
 ## Chapter 2 Powers beyond mere imagination
 This section introduces several magical classes and spells and abilities for the these classes.  The player can grasp powers that they never dreamed of before the portals to other worlds started opening.  This magical system can be used alongside Magiclysm's but doesn't require it. The goal is for each of the classes to feel different from each other.  Currently looking for mapgen locations that could play a good host for the various items that grant these powers.  Such as pawn shops, museums and monster lairs.

@@ -1,19 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Design Document SPOILERS AHEAD](#design-document-spoilers-ahead)
-- [What belongs in DinoMod?](#what-belongs-in-dinomod)
-- [Realism vs. Fun](#realism-vs-fun)
-- [Adding, replacing, removing](#adding-replacing-removing)
-- [How to contribute](#how-to-contribute)
-- [Where should new dinosaurs spawn?](#where-should-new-dinosaurs-spawn)
-- [How to add a dinosaur](#how-to-add-a-dinosaur)
-- [How to add a dinosaur nest](#how-to-add-a-dinosaur-nest)
-- [Lore](#lore)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # Design Document SPOILERS AHEAD
 The core idea of DinoMod is this: https://tvtropes.org/pmwiki/pmwiki.php/Main/EverythingsBetterWithDinosaurs
 The purpose of this mod is to make Cataclysm a more fun game to play and develop for, showing off new mechanics and bringing life to parts of the game that aren't as well-developed.
@@ -38,7 +22,7 @@ As of this writing, each dinosaur touches at least ten different JSON files, lis
 
 Main DinoMod folder: 
 
-* monster_factions.json is where custom dino factions go. Plant eaters are pretty simple but predators have three each usually to manage famiies
+* monster_factions.json is where custom dino factions go. Plant eaters are pretty simple but predators have three each usually to manage families
 
 items folder:
 

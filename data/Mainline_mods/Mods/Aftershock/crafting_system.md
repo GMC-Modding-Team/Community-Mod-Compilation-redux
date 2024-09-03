@@ -1,19 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Scrap Crafting System](#scrap-crafting-system)
-  - [Overview](#overview)
-    - [Current Scrap Categories](#current-scrap-categories)
-  - [Scrap Tiers Briefly Explained](#scrap-tiers-briefly-explained)
-    - [Tier 1](#tier-1)
-    - [Tier 2](#tier-2)
-    - [Tier 3](#tier-3)
-    - [Tier 4](#tier-4)
-    - [Tier 5](#tier-5)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # Scrap Crafting System
 
 ## Overview
@@ -75,7 +59,7 @@ This tier of scrap is properly uncommon, it spawns should be limited to the 'bos
 
 ### Tier 5
 
-Very rare loot occasionally dropped by endgame threats and dungeons, extracting it requires very high skills and specialized tools. Thematically linked to the dimensional technology that caused the cataclysm. Might be used to craft items that severely and permanently alter the combat aspects of gameplay. For example:
+Very rare loot occasionally dropped by endgame threats and dungeons, extracting it requires very high skills and specialized tools. Thematically linked to the dimensional technology that caused the Discontinuity. Might be used to craft items that severely and permanently alter the combat aspects of gameplay. For example:
 
 - Hologram Cloak Mk. II
 - Rechargeable Spell Casters
