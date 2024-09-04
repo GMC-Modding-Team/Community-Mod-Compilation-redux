@@ -1,3 +1,21 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Settlements](#settlements)
+  - [Port Augustmoon](#port-augustmoon)
+- [Natural Locations](#natural-locations)
+  - [Ravines](#ravines)
+  - [Glacial Tunnels](#glacial-tunnels)
+- [Human Ruins](#human-ruins)
+  - [Ruined Starcities](#ruined-starcities)
+  - [Cryovaults](#cryovaults)
+  - [Crashed starships](#crashed-starships)
+- [Other](#other)
+  - [MI-GO vaults](#mi-go-vaults)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 Map locations that exist or should be added to the mod. Feel free to expand on these if they are of interest.
 
 

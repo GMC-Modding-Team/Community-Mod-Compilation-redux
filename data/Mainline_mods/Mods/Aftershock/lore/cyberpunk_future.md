@@ -1,3 +1,12 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Solar Corporations](#solar-corporations)
+- [Technology](#technology)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Solar Corporations
 The true powers of the age, Solar Corporations are vast corporate entities and industrial conglomerates that formed when outer space was privatized during Earth's early space age. 
 

@@ -1,3 +1,11 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [item_category_id | included/excluded | reasoning](#item_category_id--includedexcluded--reasoning)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 As of writing there are 34 item categories in the game.
 No Hope alters some of the spawn rates for the categories to a degree depending on the players choice at the start of the game.
 These rates notably don't work with every type of item spawn rn.

@@ -1,3 +1,22 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Ranged Combat Balance](#ranged-combat-balance)
+  - [Damage types](#damage-types)
+    - [Ballistic/Railguns](#ballisticrailguns)
+    - [Lasers](#lasers)
+    - [Plasma](#plasma)
+    - [Voltaic-Electroshock](#voltaic-electroshock)
+    - [Explosive Projectiles](#explosive-projectiles)
+  - [Weapon Categorization](#weapon-categorization)
+    - [Light Weapons](#light-weapons)
+    - [Medium Weapons](#medium-weapons)
+    - [Heavy Weapons](#heavy-weapons)
+  - [Ranged Test cases](#ranged-test-cases)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Ranged Combat Balance
 
 ## Damage types

@@ -1,3 +1,15 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [MA](#ma)
+- [Implemented Features](#implemented-features)
+- [Plannned Features](#plannned-features)
+- [Notes](#notes)
+- [Additional files](#additional-files)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # MA
 
 Overmap overhaul mod for Cataclysm: DDA that uses some features of Massachusetts state when generating overmaps.

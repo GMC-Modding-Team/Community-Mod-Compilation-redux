@@ -1,3 +1,23 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Sky Islands](#sky-islands)
+    - [Warning:](#warning)
+- [Overview](#overview)
+    - [You Can't Go Back](#you-cant-go-back)
+    - [Death is not the end.](#death-is-not-the-end)
+  - [Warpcloak](#warpcloak)
+    - [Warp Sickness](#warp-sickness)
+  - [The Island](#the-island)
+  - [The "Expeditions"](#the-expeditions)
+    - [Missions](#missions)
+    - [Warp Shards and Warped Items](#warp-shards-and-warped-items)
+- [Tips](#tips)
+- [Changelog](#changelog)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Sky Islands
 A raid-based gameplay overhaul mod for CDDA, inspired by games like Escape from Tarkov and Dark & Darker.
 ### Warning:
