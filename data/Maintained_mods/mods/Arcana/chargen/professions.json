@@ -2,8 +2,90 @@
   {
     "type": "item_group",
     "subtype": "collection",
+    "//": "Arcanist professions start with a relevant essence holding the equivalent of two essence per profession point cost, minus any loaded into their primary weapon if any.",
+    "id": "starting_mana_gem_2_essence",
+    "entries": [ { "item": "essence", "charges": 2 } ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "collection",
+    "id": "starting_mana_gem_4_essence",
+    "entries": [ { "item": "essence", "charges": 4 } ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "collection",
+    "id": "starting_mana_gem_9_blood_essence",
+    "entries": [ { "item": "essence_blood", "charges": 9 } ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "collection",
+    "id": "starting_mana_gem_237_dull_essence",
+    "entries": [ { "item": "essence_dull", "charges": 237 } ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "collection",
+    "id": "starting_mana_gem_7_essence",
+    "entries": [ { "item": "essence", "charges": 7 } ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "collection",
+    "id": "starting_mana_gem_14_essence",
+    "entries": [ { "item": "essence", "charges": 14 } ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "collection",
+    "id": "starting_mana_gem_36_blood_essence",
+    "entries": [ { "item": "essence_blood", "charges": 36 } ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "collection",
+    "id": "starting_mana_gem_43_blood_essence",
+    "entries": [ { "item": "essence_blood", "charges": 43 } ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "collection",
+    "id": "starting_mana_gem_440_dull_essence",
+    "entries": [ { "item": "essence_dull", "charges": 440 } ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "collection",
+    "id": "starting_mana_gem_520_dull_essence",
+    "entries": [ { "item": "essence_dull", "charges": 520 } ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "collection",
+    "id": "starting_mana_gem_11_essence",
+    "entries": [ { "item": "essence", "charges": 11 } ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "collection",
     "id": "bandolier_flintlock_shrike",
     "entries": [ { "item": "flintlock_ammo", "charges": 14 } ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "collection",
+    "id": "1911_gun_arcane_purifier",
+    "entries": [ { "item": "m1911", "ammo-item": "45_acp", "charges": 7, "contents-item": [ "arcane_accelerator_railgun" ] } ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "collection",
+    "id": "1911_mags_arcane_purifier",
+    "entries": [
+      { "item": "m1911mag", "ammo-item": "45_acp", "charges": 7 },
+      { "item": "m1911mag", "ammo-item": "45_acp", "charges": 7 }
+    ]
   },
   {
     "type": "item_group",
@@ -12,15 +94,25 @@
     "entries": [ { "item": "reloaded_shot_00_arcana", "charges": 25 } ]
   },
   {
-    "id": "arcanist_apprentice",
+    "type": "item_group",
+    "subtype": "collection",
+    "id": "charged_candle",
+    "entries": [ { "item": "candle", "charges": 100 } ]
+  },
+  {
     "type": "profession",
+    "id": "arcanist_apprentice",
     "name": "Apprentice",
     "description": "You were an aspiring student of a well-learned master of the mysterious arts.  Sadly, you had only just begun your apprenticeship when your master was claimed by the end of the world.",
     "points": 1,
     "items": {
       "both": {
         "items": [ "tunic_rag", "robe", "socks", "bastsandals", "gloves_leather", "knit_scarf", "book_magicfordummies" ],
-        "entries": [ { "item": "makeshift_knife", "container-item": "sheath" }, { "group": "charged_matches" } ]
+        "entries": [
+          { "item": "mana_gem", "contents-group": "starting_mana_gem_2_essence" },
+          { "item": "makeshift_knife", "container-item": "sheath" },
+          { "group": "charged_matches" }
+        ]
       },
       "male": [ "boxer_shorts" ],
       "female": [ "bra", "panties" ]
@@ -28,12 +120,13 @@
     "traits": [ "PROF_ARCANIST" ]
   },
   {
-    "id": "arcanist_alchemist",
     "type": "profession",
+    "id": "arcanist_alchemist",
     "name": "Alchemist",
     "description": "You studied under a well-learned scholar, a seeker of the fabled elixir of life.  Despite the tutelage of a master alchemist, you never got any closer to finishing the great work.",
     "points": 2,
     "skills": [ { "level": 5, "name": "chemistry" }, { "level": 2, "name": "cooking" }, { "level": 1, "name": "firstaid" } ],
+    "proficiencies": [ "prof_intro_chemistry", "prof_distilling" ],
     "items": {
       "both": {
         "items": [
@@ -48,10 +141,13 @@
           "red_black_vulnerary",
           "chem_ethanol",
           "bottle_glass",
-          "book_potioncraft",
-          "essence"
+          "book_potioncraft"
         ],
-        "entries": [ { "item": "punch_dagger", "container-item": "sheath" }, { "group": "charged_matches" } ]
+        "entries": [
+          { "item": "mana_gem", "contents-group": "starting_mana_gem_4_essence" },
+          { "item": "punch_dagger", "container-item": "sheath" },
+          { "group": "charged_matches" }
+        ]
       },
       "male": [ "briefs" ],
       "female": [ "bra", "panties" ]
@@ -60,8 +156,8 @@
     "flags": [ "SCEN_ONLY" ]
   },
   {
-    "id": "arcanist_scribe",
     "type": "profession",
+    "id": "arcanist_scribe",
     "name": "Scribe",
     "description": "You were a well-read scholar, learning the basics of giving true power to the written word.  You dreamt of great archives holding forbidden knowledge, but all you have seen lately is a ruined world.",
     "points": 2,
@@ -77,15 +173,17 @@
           "mbag",
           "pockknife",
           "flask_hip",
-          "candle",
           "survival_marker",
           "scroll_blank",
           "scroll_sun",
           "book_scrollcraft",
-          "monster_tear",
-          "essence"
+          "monster_tear"
         ],
-        "entries": [ { "group": "charged_matches" } ]
+        "entries": [
+          { "item": "mana_gem", "contents-group": "starting_mana_gem_4_essence" },
+          { "group": "charged_matches" },
+          { "group": "charged_candle" }
+        ]
       },
       "male": [ "briefs" ],
       "female": [ "bra", "panties" ]
@@ -94,8 +192,8 @@
     "flags": [ "SCEN_ONLY" ]
   },
   {
-    "id": "arcanist_bloodmage",
     "type": "profession",
+    "id": "arcanist_bloodmage",
     "name": "Blood Mage",
     "description": "You have beheld true power, as a member of the Sanguine Order.  Power from within, as well as power from beyond.  But at what cost?",
     "points": 4,
@@ -109,10 +207,10 @@
     ],
     "items": {
       "both": {
-        "items": [ "dress_shirt", "robe", "socks", "boots", "backpack", "waterskin", "bowl_clay", "book_bloodmagic" ],
+        "items": [ "dress_shirt", "robe", "socks", "boots", "backpack", "revenant_crown", "waterskin", "bowl_clay", "book_bloodmagic" ],
         "entries": [
           { "item": "bloodscourge", "ammo-item": "essence_blood", "charges": 15, "custom-flags": [ "auto_wield" ] },
-          { "item": "revenant_crown", "charges": 6 },
+          { "item": "mana_gem_blood", "contents-group": "starting_mana_gem_9_blood_essence" },
           { "item": "blood_athame", "container-item": "sheath" },
           { "group": "charged_matches" }
         ]
@@ -124,8 +222,8 @@
     "flags": [ "SCEN_ONLY" ]
   },
   {
-    "id": "arcanist_magehunter",
     "type": "profession",
+    "id": "arcanist_magehunter",
     "name": "Mage Hunter",
     "description": "You were a member of The Cleansing Flame, a religious order.  The end of all has come.  The barrier between worlds has been shattered.  The dead hunger for the living.  But you will not give in.",
     "points": 4,
@@ -140,10 +238,12 @@
         "items": [
           "dress_shirt",
           "pants",
+          "gilded_aegis",
           "socks",
           "boots_larmor",
           "gauntlets_larmor",
           "helmet_galea",
+          "somen_clairvoyance",
           "holy_symbol",
           "backpack",
           "waterskin",
@@ -151,8 +251,7 @@
         ],
         "entries": [
           { "item": "hexenhammer", "charges": 3, "custom-flags": [ "auto_wield" ] },
-          { "item": "somen_clairvoyance", "charges": 24 },
-          { "item": "gilded_aegis", "charges": 60 },
+          { "item": "mana_gem_dull", "contents-group": "starting_mana_gem_237_dull_essence" },
           { "item": "knife_hunting", "container-item": "sheath" },
           { "group": "charged_matches" }
         ]
@@ -164,19 +263,29 @@
     "flags": [ "SCEN_ONLY" ]
   },
   {
-    "id": "arcanist_oathkeeper",
     "type": "profession",
+    "id": "arcanist_dark_priest",
     "name": "Dark Priest",
     "description": "He From Beyond The Veil calls to you, to your brothers and sisters.  And the faithful, those who remain at least, shall bring him into this world.",
     "points": 6,
     "skills": [ { "level": 5, "name": "magic" }, { "level": 2, "name": "gun" }, { "level": 2, "name": "dodge" } ],
     "items": {
       "both": {
-        "items": [ "loincloth", "tunic", "socks", "bastsandals", "backpack", "waterskin", "offering_chalice", "book_sacrifice" ],
+        "items": [
+          "loincloth",
+          "tunic",
+          "robe_shadow",
+          "socks",
+          "bastsandals",
+          "gauntlets_necro",
+          "backpack",
+          "waterskin",
+          "offering_chalice",
+          "book_sacrifice"
+        ],
         "entries": [
           { "item": "thunder_sigil", "ammo-item": "essence", "charges": 5, "custom-flags": [ "auto_wield" ] },
-          { "item": "robe_shadow", "charges": 20 },
-          { "item": "gauntlets_necro", "charges": 4 },
+          { "item": "mana_gem", "contents-group": "starting_mana_gem_7_essence" },
           { "item": "copper_knife", "container-item": "sheath" },
           { "group": "charged_matches" }
         ]
@@ -187,14 +296,19 @@
     "flags": [ "SCEN_ONLY" ]
   },
   {
-    "id": "arcanist_summoner",
     "type": "profession",
+    "id": "arcanist_summoner",
     "name": "Summoner",
     "description": "You were a student of a master arcanist.  Not taught to merely take advantage of power from beyond, no.  Taught to draw it forth in living form, bind it to your will.  If only your master hadn't summoned more power than could be controlled.",
     "spells": [ { "id": "arcana_magic_summon_shadow", "level": 1 }, { "id": "arcana_magic_summon_shadow_snake", "level": 1 } ],
-    "points": 6,
-    "skills": [ { "level": 6, "name": "magic" }, { "level": 5, "name": "fabrication" }, { "level": 2, "name": "dodge" } ],
-    "proficiencies": [ "prof_fibers", "prof_fibers_rope", "prof_leatherworking_basic", "prof_metalworking" ],
+    "points": 7,
+    "skills": [
+      { "level": 6, "name": "magic" },
+      { "level": 5, "name": "fabrication" },
+      { "level": 3, "name": "survival" },
+      { "level": 2, "name": "dodge" }
+    ],
+    "proficiencies": [ "prof_fibers", "prof_fibers_rope", "prof_leatherworking_basic", "prof_metalworking", "prof_carving" ],
     "items": {
       "both": {
         "items": [
@@ -217,8 +331,8 @@
           "book_summoning"
         ],
         "entries": [
-          { "item": "makeshift_knife", "container-item": "sheath" },
-          { "item": "essence", "count": 10 },
+          { "item": "knife_hunting", "container-item": "sheath" },
+          { "item": "mana_gem", "contents-group": "starting_mana_gem_14_essence" },
           { "item": "q_staff", "custom-flags": [ "auto_wield" ] },
           { "group": "charged_matches" }
         ]
@@ -230,8 +344,45 @@
     "flags": [ "SCEN_ONLY" ]
   },
   {
-    "id": "arcanist_shrike",
     "type": "profession",
+    "id": "arcanist_dragonblood_aspirant",
+    "name": "Dragonblood Aspirant",
+    "description": "You had been a apprentice within the Sanguine Order, in particular a sect that sought to research mastery over creatures from Beyond.  Your mentor and peers did not live to see this research bear fruit, leaving you to pursue what they left incomplete.",
+    "points": 6,
+    "skills": [
+      { "level": 5, "name": "magic" },
+      { "level": 3, "name": "cooking" },
+      { "level": 1, "name": "firstaid" },
+      { "level": 1, "name": "survival" }
+    ],
+    "items": {
+      "both": {
+        "items": [
+          "socks",
+          "boots",
+          "gloves_fingerless",
+          "cloak",
+          "keffiyeh",
+          "mbag",
+          "clay_pot",
+          "book_potioncraft",
+          "book_bloodmagic"
+        ],
+        "entries": [
+          { "item": "mana_gem_blood", "contents-group": "starting_mana_gem_36_blood_essence" },
+          { "item": "blood_athame", "container-item": "sheath" },
+          { "group": "charged_matches" }
+        ]
+      },
+      "male": [ "boxer_shorts", "dress_shirt", "pants" ],
+      "female": [ "bra", "panties", "dress" ]
+    },
+    "traits": [ "PROF_SANGUINE", "ARCANA_SCALYPATCHES", "ARCANA_SCALYWINGS", "ARCANA_SCALYTAIL", "ARCANA_INNERHEAT" ],
+    "flags": [ "SCEN_ONLY" ]
+  },
+  {
+    "type": "profession",
+    "id": "arcanist_shrike",
     "name": "Sanguine Shrike",
     "description": "You were a hunter of hunters, protecting your fellow blood mages during rituals and important missions.  As the Sanguine Order crumbled, many of your brethren strayed from The Path and left the Order to rot.  Will you follow suit?",
     "spells": [ { "id": "arcana_magic_harden_senses", "level": 1 } ],
@@ -242,42 +393,35 @@
       { "level": 3, "name": "magic" },
       { "level": 3, "name": "melee" },
       { "level": 2, "name": "throw" },
-      { "level": 2, "name": "cutting" },
+      { "level": 2, "name": "stabbing" },
       { "level": 2, "name": "dodge" },
-      { "level": 2, "name": "rifle" },
+      { "level": 2, "name": "pistol" },
       { "level": 1, "name": "mechanics" },
       { "level": 1, "name": "survival" },
       { "level": 1, "name": "firstaid" }
     ],
-    "proficiencies": [ "prof_leatherworking_basic", "prof_metalworking", "prof_tanning_basic" ],
+    "proficiencies": [ "prof_leatherworking_basic", "prof_metalworking", "prof_tanning_basic", "prof_handloading" ],
     "items": {
       "both": {
         "items": [
+          "armor_wyrm",
           "duster",
           "tricorne",
           "keffiyeh",
           "socks",
           "flask_hip",
           "backpack_leather",
-          "pipe_cleaner",
-          "screwdriver",
           "bowl_clay",
           "book_bloodmagic"
         ],
         "entries": [
-          { "item": "armor_wyrm", "ammo-item": "essence_blood", "charges": 16 },
-          { "item": "bloodaxe", "ammo-item": "essence_blood", "charges": 3, "custom-flags": [ "auto_wield" ] },
-          {
-            "item": "carbine_flintlock_double",
-            "ammo-item": "flintlock_ammo",
-            "charges": 2,
-            "contents-item": "shoulder_strap"
-          },
+          { "item": "bloodaxe", "ammo-item": "essence_blood", "charges": 5 },
+          { "item": "shrike_misericorde", "charges": 2, "container-item": "scabbard" },
           { "item": "flintlock_pouch", "contents-group": "bandolier_flintlock_shrike" },
+          { "item": "flintlock_ammo", "charges": 14 },
+          { "item": "mana_gem_blood", "contents-group": "starting_mana_gem_43_blood_essence" },
           { "item": "blindfold", "custom-flags": [ "no_auto_equip" ] },
           { "item": "ear_plugs", "custom-flags": [ "no_auto_equip" ] },
-          { "item": "vinegar", "container-item": "bottle_plastic_small" },
-          { "item": "lamp_oil", "container-item": "bottle_plastic_small" },
           { "group": "charged_ref_lighter" }
         ]
       },
@@ -288,8 +432,8 @@
     "flags": [ "SCEN_ONLY" ]
   },
   {
-    "id": "arcanist_purifier",
     "type": "profession",
+    "id": "arcanist_purifier",
     "name": "Arcane Purifier",
     "description": "You have embraced modern technology and mystical power alike, in your pursuit of knowledge and a way to prevent the cataclysm.  Once of the Cleansing Flame, whether you went rogue or still honor their ideals, that no longer matters anymore.",
     "spells": [ { "id": "arcana_magic_capacitance", "level": 1 } ],
@@ -302,6 +446,7 @@
       "bio_tools",
       "bio_batteries",
       "bio_watch",
+      "bio_life_sign_suppression",
       "bio_power_storage_mkII"
     ],
     "skills": [
@@ -331,9 +476,12 @@
           "book_hexenhammer"
         ],
         "entries": [
-          { "item": "ethereal_hand_crossbow", "container-item": "XL_holster", "charges": 20 },
-          { "item": "v29", "container-item": "XL_holster" },
-          { "item": "sun_sword", "charges": 20, "container-item": "scabbard" },
+          { "item": "ethereal_hand_crossbow", "container-item": "XL_holster", "charges": 40 },
+          { "item": "holster", "contents-group": "1911_gun_arcane_purifier" },
+          { "item": "legpouch_large", "contents-group": "1911_mags_arcane_purifier" },
+          { "item": "45_acp", "charges": 9 },
+          { "item": "sun_sword", "container-item": "scabbard" },
+          { "item": "mana_gem_dull", "contents-group": "starting_mana_gem_440_dull_essence" },
           { "item": "medium_battery_cell", "charges": 500 },
           { "group": "charged_matches" },
           { "group": "charged_smart_phone" }
@@ -346,25 +494,24 @@
     "flags": [ "SCEN_ONLY" ]
   },
   {
-    "id": "arcanist_operator",
     "type": "profession",
+    "ident": "arcanist_operator",
     "name": "Arcane Operative",
     "description": "You have embraced modern technology and mystical power alike, armed and augmented to investigate anomalies, procure artifacts, and help ensure the arcane stayed hidden from everyday life.  Once of the Cleansing Flame, whether you went rogue or still honor their ideals, you must use what you've learned to survive.",
     "spells": [ { "id": "arcana_magic_capacitance", "level": 1 } ],
-    "points": 12,
+    "points": 10,
     "CBMs": [
       "bio_targeting",
       "bio_cqb",
       "bio_shotgun",
       "bio_blade",
-      "bio_shock",
       "bio_carbon",
-      "bio_adrenaline",
       "bio_night_vision",
       "bio_lockpick",
       "bio_fingerhack",
       "bio_ups",
       "bio_metabolics",
+      "bio_essence_surge_cell",
       "bio_power_storage_mkII"
     ],
     "skills": [
@@ -375,10 +522,10 @@
       { "level": 2, "name": "pistol" },
       { "level": 2, "name": "rifle" },
       { "level": 2, "name": "shotgun" },
-      { "level": 2, "name": "unarmed" },
-      { "level": 2, "name": "cutting" },
+      { "level": 3, "name": "unarmed" },
       { "level": 2, "name": "computer" }
     ],
+    "proficiencies": [ "prof_leatherworking_basic", "prof_metalworking", "prof_lockpicking", "prof_elec_soldering" ],
     "items": {
       "both": {
         "items": [
@@ -394,8 +541,11 @@
           "book_hexenhammer"
         ],
         "entries": [
-          { "item": "ethereal_crossbow", "charges": 20, "contents-item": "shoulder_strap" },
-          { "item": "v29", "container-item": "XL_holster" },
+          { "item": "ethereal_crossbow", "charges": 80, "contents-item": "shoulder_strap" },
+          { "item": "holster", "contents-group": "1911_gun_arcane_purifier" },
+          { "item": "legpouch_large", "contents-group": "1911_mags_arcane_purifier" },
+          { "item": "mana_gem_dull", "contents-group": "starting_mana_gem_520_dull_essence" },
+          { "item": "45_acp", "charges": 9 },
           { "item": "bandolier_shotgun", "contents-group": "bandolier_shotgun_shot_00_arcana" },
           { "group": "charged_smart_phone" }
         ]
@@ -407,8 +557,61 @@
     "flags": [ "SCEN_ONLY" ]
   },
   {
-    "id": "arcanist_scholar",
     "type": "profession",
+    "id": "arcanist_mendicant",
+    "name": "Keeper Mendicant",
+    "description": "When your order crumbled, and the world fell into darkness soon thereafter, you were driven to wander in your struggle to survive.  But your oath is immortal, and when the stars are right you will find a way to serve the Shrouded King once more.",
+    "points": 10,
+    "spells": [ { "id": "arcana_magic_temporal_aura", "level": 1 } ],
+    "skills": [
+      { "level": 2, "name": "fabrication" },
+      { "level": 3, "name": "tailor" },
+      { "level": 2, "name": "cooking" },
+      { "level": 5, "name": "magic" },
+      { "level": 2, "name": "gun" },
+      { "level": 3, "name": "melee" },
+      { "level": 2, "name": "stabbing" },
+      { "level": 3, "name": "dodge" },
+      { "level": 3, "name": "survival" }
+    ],
+    "proficiencies": [ "prof_fibers", "prof_fibers_rope", "prof_leatherworking_basic", "prof_metalworking", "prof_carving" ],
+    "items": {
+      "both": {
+        "items": [
+          "loincloth",
+          "armor_plarmor",
+          "robe",
+          "footrags",
+          "boots_larmor",
+          "gloves_wraps",
+          "gauntlets_larmor",
+          "helmet_larmor",
+          "patchwork_scarf",
+          "cyclopean_mirror",
+          "leather_pouch",
+          "charm_bone",
+          "waterskin",
+          "flint_steel",
+          "bowl_clay",
+          "book_sacrifice"
+        ],
+        "entries": [
+          { "item": "spear_pestilence", "ammo-item": "essence", "charges": 9, "container-item": "spearsling" },
+          { "item": "mana_gem", "contents-group": "starting_mana_gem_11_essence" },
+          { "item": "salt", "container-item": "bag_canvas_small", "count": 100 },
+          { "group": "charged_candle" },
+          { "item": "sewing_kit", "charges": 50 },
+          { "item": "copper_knife", "container-item": "sheath" }
+        ]
+      },
+      "female": [ "chestwrap" ]
+    },
+    "traits": [ "PROF_CHALICE2" ],
+    "flags": [ "SCEN_ONLY" ]
+  },
+  {
+    "type": "profession",
+    "id": "arcanist_scholar",
     "name": "Arcane Scholar",
     "description": "You were always the studious type, collecting interesting books.  Over time your studies turned towards the eccentric and anomalous, and as the end of the world struck, you gathered nothing more than your most prized possessions.",
     "points": 2,
@@ -428,7 +631,7 @@
           "book_syncretism",
           "pockknife"
         ],
-        "entries": [ { "group": "charged_matches" } ]
+        "entries": [ { "item": "mana_gem", "contents-group": "starting_mana_gem_4_essence" }, { "group": "charged_matches" } ]
       },
       "male": [ "boxer_briefs" ],
       "female": [ "bra", "panties" ]

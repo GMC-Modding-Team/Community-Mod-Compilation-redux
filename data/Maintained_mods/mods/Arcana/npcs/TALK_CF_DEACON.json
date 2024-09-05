@@ -1,7 +1,7 @@
 [
   {
-    "id": "TALK_CF_DEACON",
     "type": "talk_topic",
+    "id": "TALK_CF_DEACON",
     "dynamic_line": { "u_is_wearing": "badge_marshal", "yes": "Hello, Marshal.  How may I help you?", "no": "Hello.  How may I help you?" },
     "responses": [
       {
@@ -102,8 +102,8 @@
     ]
   },
   {
-    "id": "TALK_CF_DEACON_MISSION_CF_4_DEAL",
     "type": "talk_topic",
+    "id": "TALK_CF_DEACON_MISSION_CF_4_DEAL",
     "dynamic_line": "I'll do what I can to speak with other scavengers that stop by.  I would suggest continuing to check with other people here, the more of us working to attract local traders, the more likely that this will succeed.  While I trust that Sofia's people can take care of any unwanted attention this may attract, the main concern is talking people into visiting a settlement that's relatively unknown.",
     "responses": [
       {
@@ -113,15 +113,31 @@
           {
             "mapgen_update": "arcana_cf_4_wasteland_scavengers_1",
             "om_terrain": "cf_church_1",
-            "om_special": "cf_rural_church"
+            "om_special": "cf_rural_church",
+            "must_see": true,
+            "search_range": 256
           },
           {
             "mapgen_update": "arcana_cf_4_wasteland_scavengers_2",
             "om_terrain": "cf_church_3",
-            "om_special": "cf_rural_church"
+            "om_special": "cf_rural_church",
+            "must_see": true,
+            "search_range": 256
           },
-          { "mapgen_update": "arcana_cf_4_roof_1", "om_terrain": "cf_church_1_roof", "om_special": "cf_rural_church" },
-          { "mapgen_update": "arcana_cf_4_roof_2", "om_terrain": "cf_church_3_roof", "om_special": "cf_rural_church" }
+          {
+            "mapgen_update": "arcana_cf_4_roof_1",
+            "om_terrain": "cf_church_1_roof",
+            "om_special": "cf_rural_church",
+            "must_see": true,
+            "search_range": 256
+          },
+          {
+            "mapgen_update": "arcana_cf_4_roof_2",
+            "om_terrain": "cf_church_3_roof",
+            "om_special": "cf_rural_church",
+            "must_see": true,
+            "search_range": 256
+          }
         ],
         "condition": { "u_has_var": "sofia_ally_seeking_2", "type": "mission", "context": "flag", "value": "yes" },
         "switch": true,
@@ -177,11 +193,7 @@
     "dynamic_line": {
       "npc_has_effect": "rural_church_aware",
       "yes": "No doubt the others here have ample work to be done.  As for myself, I'll manage.  I feel a bit bad having left the parish unattended though.  There's a group of survivors who knew Father Alexander currently sheltering there, and they likely will be have work to be done too.  I could direct you there if you'd like, in case you wish to visit them yourself.",
-      "no": {
-        "u_has_effect": "already_asked_deacon",
-        "yes": "I just hope they're alright.  As far as I can tell they can take care of themselves, but in times like this you never know what might happen.",
-        "no": "No doubt the others here have ample work to be done.  As for myself, I'll manage.  I feel a bit bad having left the parish unattended though.  There's a group of survivors who knew Father Alexander currently sheltering there, and while I'm confident they can take care of themselves, I'm still worried about them."
-      }
+      "no": "No doubt the others here have ample work to be done.  As for myself, I'll manage.  I feel a bit bad having left the parish unattended though.  There's a group of survivors who knew Father Alexander currently sheltering there, and while I'm confident they can take care of themselves, I'm still worried about them."
     },
     "responses": [
       {

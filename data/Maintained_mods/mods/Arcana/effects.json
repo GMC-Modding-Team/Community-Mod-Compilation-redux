@@ -1,7 +1,34 @@
 [
   {
-    "id": "magic_sign_exertion",
     "type": "effect_type",
+    "id": "arcana_dragonblood_blood_effigy_effect",
+    "max_duration": "10 s",
+    "name": [ "Blood Effigy" ],
+    "desc": [
+      "This is just used for Arcana mutagenic effects.  If you see this, that likely means DDA has bugged out in some way again."
+    ]
+  },
+  {
+    "type": "effect_type",
+    "id": "arcana_dragonblood_sacramental_heart_effect",
+    "max_duration": "10 s",
+    "name": [ "Sacramental Heart" ],
+    "desc": [
+      "This is just used for Arcana mutagenic effects.  If you see this, that likely means DDA has bugged out in some way again."
+    ]
+  },
+  {
+    "type": "effect_type",
+    "id": "arcana_paragon_veilblade_effect",
+    "max_duration": "10 s",
+    "name": [ "Ritual Blade" ],
+    "desc": [
+      "This is just used for Arcana mutagenic effects.  If you see this, that likely means DDA has bugged out in some way again."
+    ]
+  },
+  {
+    "type": "effect_type",
+    "id": "magic_sign_exertion",
     "name": [ "Magic Sign Exertion" ],
     "desc": [ "Overuse of Magic Signs increases fatigue gain." ],
     "apply_message": "You feel a slight sense of exertion from casting the spell.",
@@ -10,11 +37,24 @@
     "max_duration": "200 m",
     "max_intensity": 200,
     "int_dur_factor": "1 m",
-    "base_mods": { "fatigue_min": [ 1 ], "fatigue_tick": [ 25 ] }
+    "base_mods": { "sleepiness_min": [ 1 ], "sleepiness_tick": [ 25 ] }
   },
   {
-    "id": "triffid_garland_buff",
     "type": "effect_type",
+    "id": "sanguine_mark_burnout",
+    "name": [ "Draconic Exertion" ],
+    "desc": [ "Overuse of Sanguine Marks increases hunger gain." ],
+    "apply_message": "You feel your inner fire waver from casting the spell.",
+    "remove_message": "The strange sense of unease from spellcasting fades.",
+    "rating": "bad",
+    "max_duration": "200 m",
+    "max_intensity": 200,
+    "int_dur_factor": "1 m",
+    "base_mods": { "hunger_min": [ 1 ], "hunger_tick": [ 25 ] }
+  },
+  {
+    "type": "effect_type",
+    "id": "triffid_garland_buff",
     "name": [ "Verdant Boost" ],
     "desc": [ "Your body's natural stamina and pain recovery is enhanced." ],
     "remove_message": "The garland's recovery effect fades.",
@@ -25,32 +65,51 @@
     "base_mods": { "pain_min": [ -1 ], "stamina_min": [ 20 ], "health_min": [ 1 ], "h_mod_min": [ 1 ], "rad_min": [ -1 ] }
   },
   {
-    "id": "halo_flute_effect",
     "type": "effect_type",
+    "id": "halo_flute_effect",
     "//": "Effectively combines some of the perks of Free Action and yellow potion.",
     "removes_effects": [ "downed", "bouldering", "grabbed", "lack_sleep", "sleep_deprived" ]
   },
   {
-    "id": "life_sign_suppression_debuff",
     "type": "effect_type",
+    "id": "life_sign_suppression_debuff",
     "//": "This makes you health go down slowly while LSS is in use.",
     "base_mods": { "health_min": [ -1 ], "health_tick": [ 60 ], "h_mod_min": [ -1 ], "h_mod_tick": [ 60 ] }
   },
   {
-    "id": "temporal_stimulation_effect",
     "type": "effect_type",
-    "//": "This adds the stamina and fatigue effects to TS.  And the speed boost, because speed enchantments can't be trusted to work.",
-    "base_mods": { "speed_mod": [ 100 ], "stamina_min": [ 20 ], "fatigue_min": [ 1 ], "fatigue_tick": [ 300 ] }
+    "id": "arcana_timestop_indicator",
+    "name": [ "Time Stands Still" ],
+    "desc": [ "A spell has given you bonus moves for the moment." ],
+    "apply_message": "Time stands still…",
+    "remove_message": "The flow of time resumes.",
+    "rating": "good",
+    "max_duration": "1 s"
   },
   {
-    "id": "potion_numbness",
     "type": "effect_type",
+    "id": "temporal_stimulation_effect",
+    "name": [ "Temporal Stimulation" ],
+    "//": "This adds the stamina and fatigue effects to TS.  And the speed boost, because speed enchantments can't be trusted to work.",
+    "base_mods": {
+      "speed_mod": [ 100 ],
+      "stamina_min": [ 20 ],
+      "hunger_min": [ 1 ],
+      "hunger_tick": [ 75 ],
+      "thirst_min": [ 1 ],
+      "thirst_tick": [ 75 ],
+      "sleepiness_min": [ 1 ],
+      "sleepiness_tick": [ 75 ]
+    }
+  },
+  {
+    "type": "effect_type",
+    "id": "potion_numbness",
     "name": [ "Intense Numbness" ],
     "resist_effects": [ "talisman_warding" ],
     "desc": [ "Your body feels incredibly numb and sluggish." ],
     "remove_message": "The numbness fades.",
-    "//": "Only Mycus Adrenaline in this case can really shake off the sluggishness.",
-    "removes_effects": [ "shakes", "formication", "jetinjector", "stimpack", "adrenaline", "meth" ],
+    "removes_effects": [ "shakes", "formication" ],
     "decay_messages": [ [ "The numbing effect of your potion is starting to fade.", "bad" ] ],
     "rating": "good",
     "max_duration": "30 m",
@@ -59,8 +118,8 @@
     "base_mods": { "pain_tick": [ 25 ], "pain_min": [ -15 ], "speed_mod": [ -25, -15 ] }
   },
   {
-    "id": "potion_strength",
     "type": "effect_type",
+    "id": "potion_strength",
     "name": [ "Strengthened" ],
     "resist_effects": [ "talisman_warding" ],
     "desc": [ "You feel mighty, like you could take on the world." ],
@@ -71,56 +130,47 @@
     "max_intensity": 30,
     "int_dur_factor": "1 m",
     "base_mods": {
-      "pain_chance": [ 12, 24 ],
-      "pain_min": [ 1 ],
-      "pain_tick": [ 25 ],
-      "pain_max_val": [ 20, 10 ],
       "str_mod": [ 5 ],
-      "dex_mod": [ -1 ],
-      "int_mod": [ -1 ],
-      "per_mod": [ -1 ],
+      "dex_mod": [ -1, 0 ],
+      "int_mod": [ -1, 0 ],
+      "per_mod": [ -1, 0 ],
       "speed_mod": [ 5 ],
       "stamina_min": [ 50 ],
       "stamina_chance": [ 6 ],
-      "fatigue_min": [ 1 ],
-      "fatigue_tick": [ 300 ],
-      "fatigue_chance": [ 6, 12 ]
+      "sleepiness_min": [ 1 ],
+      "sleepiness_tick": [ 300 ],
+      "sleepiness_chance": [ 6, 12 ]
     }
   },
   {
-    "id": "potion_speed",
     "type": "effect_type",
+    "id": "potion_speed",
     "name": [ "Speedy" ],
     "desc": [ "Your heart feels like it's beating dangerously fast, you can't even think about rest." ],
     "resist_effects": [ "talisman_warding" ],
     "remove_message": "Your heartbeat slows back down to a normal pace.",
-    "//": "Hinders relaxing, but paralysis and similar effects are too strong to prevent.",
-    "removes_effects": [ "relax_gas", "lack_sleep", "sleep" ],
+    "removes_effects": [ "relax_gas", "lack_sleep" ],
     "decay_messages": [ [ "The quickening effect of your potion is starting to fade.", "bad" ] ],
     "rating": "good",
     "max_duration": "30 m",
     "max_intensity": 30,
     "int_dur_factor": "1 m",
     "base_mods": {
-      "pain_chance": [ 12, 24 ],
-      "pain_min": [ 1 ],
-      "pain_tick": [ 25 ],
-      "pain_max_val": [ 15, 10 ],
-      "str_mod": [ -2 ],
+      "str_mod": [ -2, -1 ],
       "dex_mod": [ 2 ],
-      "int_mod": [ -2 ],
+      "int_mod": [ -2, -1 ],
       "per_mod": [ 2 ],
       "speed_mod": [ 50 ],
       "stamina_min": [ -25 ],
       "stamina_tick": [ 30 ],
       "stamina_chance": [ 6, 12 ],
-      "fatigue_min": [ -1 ],
-      "fatigue_chance": [ 12 ]
+      "sleepiness_min": [ -1 ],
+      "sleepiness_chance": [ 12 ]
     }
   },
   {
-    "id": "potion_healing",
     "type": "effect_type",
+    "id": "potion_healing",
     "name": [ "Elixir" ],
     "resist_effects": [ "talisman_warding" ],
     "desc": [ "Not immortality, but it still feels nice." ],
@@ -128,6 +178,8 @@
     "removes_effects": [
       "poison",
       "badpoison",
+      "venom_dmg",
+      "venom_weaken",
       "infected",
       "fungus",
       "bleed",
@@ -153,8 +205,8 @@
     }
   },
   {
-    "id": "potion_vulnerary",
     "type": "effect_type",
+    "id": "potion_vulnerary",
     "name": [ "Vulnerary" ],
     "resist_effects": [ "talisman_warding" ],
     "desc": [ "You can feel a soothing sensation lingering after applying salve to your wounds." ],
@@ -176,8 +228,8 @@
     }
   },
   {
-    "id": "potion_incense",
     "type": "effect_type",
+    "id": "potion_incense",
     "name": [ "Incense" ],
     "resist_effects": [ "talisman_warding" ],
     "desc": [ "Your mind feels energized, warding off fatigue." ],
@@ -192,33 +244,46 @@
       "dex_mod": [ 1 ],
       "int_mod": [ -1, 0 ],
       "per_mod": [ -1, 0 ],
-      "fatigue_min": [ -1 ],
-      "fatigue_tick": [ 6 ]
+      "sleepiness_min": [ -1 ],
+      "sleepiness_tick": [ 6 ]
     }
   },
   {
-    "id": "revenant_hunger",
     "type": "effect_type",
+    "id": "revenant_hunger",
     "name": [ "Revenant Hunger" ],
     "desc": [ "Immunity to food poisoning and parasites, increased hunger gain.  Does not purge pre-existing conditions." ],
     "resist_effects": [ "talisman_warding" ],
-    "remove_message": "Your craving for rotten food subsides.",
-    "blocks_effects": [ "poison", "badpoison", "foodpoison", "paralyzepoison", "bloodworms", "paincysts", "brainworms", "tapeworm" ],
+    "blocks_effects": [ "foodpoison", "bloodworms", "paincysts", "brainworms", "tapeworm" ],
     "removes_effects": [ "hunger_full", "hunger_engorged" ],
-    "decay_messages": [ [ "Your craving for rotten food is starting to wane.", "bad" ] ],
-    "rating": "good",
-    "max_duration": "30 m",
-    "max_intensity": 30,
-    "int_dur_factor": "1 m",
-    "base_mods": { "hunger_min": [ 1 ], "hunger_chance": [ 18, 36 ], "fatigue_min": [ 1 ], "fatigue_chance": [ 36, 72 ] }
+    "base_mods": { "hunger_min": [ 1 ], "hunger_chance": [ 18, 36 ], "sleepiness_min": [ 1 ], "sleepiness_chance": [ 36, 72 ] }
   },
   {
-    "id": "cold_ward",
     "type": "effect_type",
+    "id": "arcana_lingering_chill",
+    "name": [ "Lingering Chill" ],
+    "desc": [ "An unearthly chill soaks deep into your very core, sapping the life from your body!" ],
+    "resist_traits": [ "ARCANA_INNERHEAT", "ARCANA_INNERFIRE", "ARCANA_DRAGONFIRE" ],
+    "apply_message": "A brutally cold wind chills you to the bone!",
+    "remove_message": "The otherworldly chill leaves your body.",
+    "rating": "bad",
+    "max_duration": "30 s",
+    "base_mods": {
+      "speed_mod": [ -20, -15 ],
+      "dex_mod": [ -1, 0 ],
+      "hurt_min": [ 2, 1 ],
+      "hurt_chance": [ 2, 3 ],
+      "hit_mod": [ -2 ],
+      "dodge_mod": [ -3 ]
+    }
+  },
+  {
+    "type": "effect_type",
+    "id": "cold_ward",
     "name": [ "Ward Against Cold" ],
     "desc": [ "Protection against the effects of cold." ],
     "remove_message": "For a moment you feel a terrible chill in the air, as the ward against cold fades.",
-    "removes_effects": [ "cold", "frostbite", "frostbite_recovery" ],
+    "removes_effects": [ "cold", "frostbite", "frostbite_recovery", "arcana_lingering_chill" ],
     "decay_messages": [ [ "Your ward against cold is waning.", "bad" ] ],
     "rating": "good",
     "max_duration": "120 m",
@@ -226,12 +291,12 @@
     "int_dur_factor": "1 m"
   },
   {
-    "id": "cold_ward_true",
     "type": "effect_type",
+    "id": "cold_ward_true",
     "name": [ "Greater Ward Against Cold" ],
     "desc": [ "Protection against the effects of cold, and any sources of direct damage." ],
     "remove_message": "For a moment you feel a terrible chill in the air, as the greater ward against cold fades.",
-    "removes_effects": [ "cold", "frostbite", "frostbite_recovery" ],
+    "removes_effects": [ "cold", "frostbite", "frostbite_recovery", "arcana_lingering_chill" ],
     "decay_messages": [ [ "Your greater ward against cold is waning.", "bad" ] ],
     "rating": "good",
     "max_duration": "120 m",
@@ -240,8 +305,14 @@
     "flags": [ "COLD_IMMUNE" ]
   },
   {
-    "id": "free_action",
     "type": "effect_type",
+    "id": "cold_ward_hidden",
+    "removes_effects": [ "arcana_lingering_chill" ],
+    "max_duration": "5 s"
+  },
+  {
+    "type": "effect_type",
+    "id": "free_action",
     "name": [ "Free Action" ],
     "desc": [ "Protection against paralytic and other hindering effects." ],
     "remove_message": "You feel the otherworldly tension in your muscles leave your body, as the ward against paralytic effects fades.",
@@ -266,8 +337,8 @@
     "int_dur_factor": "1 m"
   },
   {
-    "id": "hardened_senses",
     "type": "effect_type",
+    "id": "hardened_senses",
     "name": [ "Hardened Senses" ],
     "desc": [ "Protection against blindness, deafness, stuns, and dazing." ],
     "remove_message": "You feel the wards guarding your vision and hearing fade.",
@@ -279,8 +350,8 @@
     "int_dur_factor": "1 m"
   },
   {
-    "id": "heat_ward",
     "type": "effect_type",
+    "id": "heat_ward",
     "name": [ "Ward Against Heat" ],
     "desc": [ "Protection against most effects of heat." ],
     "remove_message": "You feel a strange tingling sensation, as the ward against heat fades.",
@@ -292,8 +363,8 @@
     "int_dur_factor": "1 m"
   },
   {
-    "id": "heat_ward_true",
     "type": "effect_type",
+    "id": "heat_ward_true",
     "name": [ "Ward Against Flame" ],
     "desc": [ "Complete immunity to fire, and to related side effects." ],
     "remove_message": "You feel a strange tingling sensation, as the ward against flame fades.",
@@ -306,20 +377,20 @@
     "flags": [ "HEAT_IMMUNE", "HEATPROOF" ]
   },
   {
-    "id": "heat_ward_hidden",
     "type": "effect_type",
+    "id": "heat_ward_hidden",
     "removes_effects": [ "onfire", "smoke", "hot", "blisters", "hot_speed" ],
     "max_duration": "5 s",
     "flags": [ "HEAT_IMMUNE", "HEATPROOF" ]
   },
   {
-    "id": "mask_blind_immunity",
     "type": "effect_type",
+    "id": "mask_blind_immunity",
     "blocks_effects": [ "blind" ]
   },
   {
-    "id": "heat_ward_dragonblood",
     "type": "effect_type",
+    "id": "heat_ward_dragonblood",
     "name": [ "Elemental Affinity" ],
     "desc": [
       "No longer slowed down by heat exhaustion.  You are still vulnerable to the other side effects of heatstroke, and may blister in extreme temperatures."
@@ -327,15 +398,20 @@
     "removes_effects": [ "hot_speed" ]
   },
   {
-    "id": "feather_fall_dragonblood",
     "type": "effect_type",
+    "id": "feather_fall_dragonblood",
     "name": [ "Draconic Wings" ],
     "desc": [ "Immunity to fall damage." ],
     "flags": [ "FEATHER_FALL" ]
   },
   {
-    "id": "blood_clarity",
     "type": "effect_type",
+    "id": "food_protect_dragonblood",
+    "blocks_effects": [ "tapeworm", "bloodworms", "brainworms", "paincysts", "foodpoison" ]
+  },
+  {
+    "type": "effect_type",
+    "id": "blood_clarity",
     "name": [ "Clarity of Blood" ],
     "desc": [ "Protection against parasitic and corruptive threats, such as the Mycus." ],
     "remove_message": "The soothing sensation coursing through your veins fades, as the protective magic dissipates.",
@@ -359,8 +435,8 @@
     }
   },
   {
-    "id": "acid_ward",
     "type": "effect_type",
+    "id": "acid_ward",
     "name": [ "Ward Against Corrosion" ],
     "desc": [ "Protection against lingering acid effects.  Direct contact will still harm you." ],
     "remove_message": "You feel a tingling sensation over your skin, as the protective magic fades.",
@@ -372,8 +448,8 @@
     "int_dur_factor": "1 m"
   },
   {
-    "id": "acid_ward_true",
     "type": "effect_type",
+    "id": "acid_ward_true",
     "name": [ "Ward Against Acid" ],
     "desc": [ "Complete immunity to acid damage, in addition to its aftereffects." ],
     "remove_message": "You feel a tingling sensation over your skin, as the protective magic fades.",
@@ -386,55 +462,33 @@
     "flags": [ "ACID_IMMUNE" ]
   },
   {
-    "id": "acid_ward_hidden",
     "type": "effect_type",
+    "id": "acid_ward_hidden",
     "removes_effects": [ "corroding" ],
     "max_duration": "5 s",
     "flags": [ "ACID_IMMUNE" ]
   },
   {
-    "id": "poison_ward",
     "type": "effect_type",
+    "id": "poison_ward",
     "name": [ "Ward Against Poison" ],
-    "desc": [
-      "Protection against toxic gas and venom, suppresses the effect of radiation sickness while reducing accumulated radiation steadily."
-    ],
+    "desc": [ "Protection against toxic gas and venom, steadily reduces accumulated radiation." ],
     "remove_message": "You feel a momentary weakness as the protective magic fades.",
-    "removes_effects": [
-      "stung",
-      "poison",
-      "badpoison",
-      "paralyzepoison",
-      "teargas",
-      "migo_atmosphere",
-      "venom_dmg",
-      "venom_weaken",
-      "irradiated"
-    ],
+    "removes_effects": [ "stung", "poison", "badpoison", "paralyzepoison", "teargas", "migo_atmosphere", "venom_dmg", "venom_weaken" ],
     "max_duration": "120 m",
     "max_intensity": 120,
     "int_dur_factor": "1 m",
     "base_mods": { "rad_min": [ -1 ] }
   },
   {
-    "id": "poison_ward_hidden",
     "type": "effect_type",
-    "removes_effects": [
-      "stung",
-      "poison",
-      "badpoison",
-      "paralyzepoison",
-      "teargas",
-      "migo_atmosphere",
-      "venom_dmg",
-      "venom_weaken",
-      "irradiated"
-    ],
+    "id": "poison_ward_hidden",
+    "removes_effects": [ "stung", "poison", "badpoison", "paralyzepoison", "teargas", "migo_atmosphere", "venom_dmg", "venom_weaken" ],
     "max_duration": "5 s"
   },
   {
-    "id": "cleric_warding",
     "type": "effect_type",
+    "id": "cleric_warding",
     "name": [ "Ward Against Evil" ],
     "desc": [ "Protects against various anomalous effects." ],
     "remove_message": "The magical protection fades.",
@@ -446,8 +500,8 @@
     "int_dur_factor": "1 m"
   },
   {
-    "id": "cleric_warding_true",
     "type": "effect_type",
+    "id": "cleric_warding_true",
     "name": [ "Holy Ward" ],
     "desc": [ "Immunity to blade and bullet, protection from anomalous effects and cold-type damage." ],
     "remove_message": "The magical protection enveloping your body flickers and fades.",
@@ -474,8 +528,8 @@
     "flags": [ "CUT_IMMUNE", "STAB_IMMUNE", "BULLET_IMMUNE", "COLD_IMMUNE" ]
   },
   {
-    "id": "spell_might",
     "type": "effect_type",
+    "id": "spell_might",
     "name": [ "Might" ],
     "desc": [ "The fabric of The Veil is woven into your frame.  Your strength is augmented by magic." ],
     "remove_message": "You feel weakened as your magically-induced strength leaves you.",
@@ -488,8 +542,8 @@
     "scaling_mods": { "str_mod": [ 0.0825 ] }
   },
   {
-    "id": "spell_agility",
     "type": "effect_type",
+    "id": "spell_agility",
     "name": [ "Agility" ],
     "desc": [ "The winds of distant realms are at your back.  Your dexterity and speed are augmented by magic." ],
     "remove_message": "You feel sluggish as your magically-induced agility leaves you.",
@@ -502,8 +556,8 @@
     "scaling_mods": { "dex_mod": [ 0.0825 ], "speed_mod": [ 0.38 ], "stamina_min": [ 0.08 ] }
   },
   {
-    "id": "spell_insight",
     "type": "effect_type",
+    "id": "spell_insight",
     "name": [ "Insight" ],
     "desc": [
       "The eyes of The Beyond shall guide you.  Your perception is augmented by magic, and you can see clearly in darkness."
@@ -519,8 +573,8 @@
     "flags": [ "NIGHT_VISION" ]
   },
   {
-    "id": "spell_revelation",
     "type": "effect_type",
+    "id": "spell_revelation",
     "name": [ "Revelation" ],
     "desc": [
       "A flood of strange awareness has filled your mind.  Your intelligence has been temporarily augmented by magic, aiding spellcasting and crafting."
@@ -528,15 +582,15 @@
     "remove_message": "Things are starting to return to normal.",
     "decay_messages": [ [ "Your spell of revelation is waning.", "bad" ] ],
     "rating": "good",
-    "max_duration": "120 m",
-    "max_intensity": 15,
+    "max_duration": "360 m",
+    "max_intensity": 360,
     "int_dur_factor": "1 m",
     "base_mods": { "int_mod": [ 1 ] },
-    "scaling_mods": { "int_mod": [ 0.5 ] }
+    "scaling_mods": { "int_mod": [ 0.0275 ] }
   },
   {
-    "id": "spell_eclipse",
     "type": "effect_type",
+    "id": "spell_eclipse",
     "name": [ "Eclipse" ],
     "desc": [ "Unholy power fuels you, strengthening your body with an unnatural adrenaline surge." ],
     "remove_message": "You feel numb, hit with the sheer weight of the unnatural magic fading.",
@@ -553,13 +607,13 @@
       "per_mod": [ 4 ],
       "speed_mod": [ 30 ],
       "stamina_min": [ 20 ],
-      "fatigue_min": [ 1 ],
-      "fatigue_tick": [ 300 ]
+      "sleepiness_min": [ 1 ],
+      "sleepiness_tick": [ 300 ]
     }
   },
   {
-    "id": "talisman_warding",
     "type": "effect_type",
+    "id": "talisman_warding",
     "name": [ "Alchemical Ward" ],
     "desc": [ "Temporary resistance to the side effects of certain potion effects." ],
     "remove_message": "The talisman's effect fades.",
@@ -570,17 +624,24 @@
     "int_dur_factor": "1 m"
   },
   {
-    "id": "talisman_pet_buff",
     "type": "effect_type",
-    "name": [ "Warded" ],
+    "id": "talisman_pet_buff",
+    "name": [ "Defender's Ward" ],
+    "desc": [
+      "Immunity to debuffs such as blindness, bleeding, stunning, etc.  Monsters (but not NPCs) additionally gain increased melee damage, accuracy, and dodge."
+    ],
     "removes_effects": [
       "bleed",
+      "blind",
       "infected",
       "bite",
       "stunned",
+      "dazed",
       "downed",
       "poison",
       "badpoison",
+      "venom_dmg",
+      "venom_weaken",
       "smoke",
       "boomered",
       "glowing",
@@ -589,109 +650,75 @@
     ],
     "blocks_effects": [
       "bleed",
+      "blind",
       "infected",
       "bite",
       "stunned",
+      "dazed",
       "downed",
       "poison",
       "badpoison",
+      "venom_dmg",
+      "venom_weaken",
       "smoke",
       "boomered",
       "glowing",
       "taint",
       "visuals"
     ],
-    "flags": [ "ELECTRIC_IMMUNE", "ACID_IMMUNE", "COLD_IMMUNE", "BIO_IMMUNE" ]
+    "base_mods": { "hit_mod": [ 5 ], "dodge_mod": [ 5 ], "speed_mod": [ 100 ], "bash_mod": [ 25 ] },
+    "max_duration": "100 m"
   },
   {
-    "id": "dragonblood_clarity",
     "type": "effect_type",
+    "id": "dragonblood_clarity",
     "name": [ "Revenant Blood" ],
-    "desc": [
-      "Immunity to food poisoning, parasites, and fungus.  Increased hunger and thirst gain, with positive metabolic effects."
-    ],
-    "resist_effects": [ "talisman_warding" ],
+    "desc": [ "Immunity to poisons, parasites, and fungus of all kinds; steadily reduces accumulated radiation." ],
     "remove_message": "The protective effect of your sanguine mark fades, leaving a momentary itch in your veins.",
+    "//": "Food poisoning and food parasites are already covered by Metabolic Adaptability.",
     "removes_effects": [
-      "nausea",
+      "stung",
       "poison",
       "badpoison",
-      "foodpoison",
-      "dermatik",
-      "formication",
-      "bloodworms",
-      "paincysts",
-      "brainworms",
-      "tapeworm",
+      "paralyzepoison",
+      "teargas",
+      "migo_atmosphere",
+      "venom_dmg",
+      "venom_weaken",
       "spores",
       "fungus",
-      "hunger_full",
-      "hunger_engorged"
+      "dermatik",
+      "formication",
+      "tapeworm",
+      "bloodworms",
+      "brainworms",
+      "paincysts"
     ],
     "decay_messages": [ [ "The protective magic flowing through your blood is starting to wane.", "bad" ] ],
     "rating": "good",
     "max_duration": "120 m",
     "max_intensity": 120,
     "int_dur_factor": "1 m",
-    "base_mods": {
-      "hunger_min": [ 1 ],
-      "hunger_chance": [ 18, 36 ],
-      "thirst_min": [ 1 ],
-      "thirst_chance": [ 18, 36 ],
-      "fatigue_min": [ 1 ],
-      "fatigue_chance": [ 36, 12 ],
-      "stamina_min": [ 30 ],
-      "health_min": [ 1 ],
-      "health_chance": [ 12 ],
-      "h_mod_min": [ 1 ],
-      "h_mod_chance": [ 12 ]
-    }
+    "base_mods": { "rad_min": [ -1 ] }
   },
   {
-    "id": "dragonbreath_side_effects",
     "type": "effect_type",
-    "max_duration": "60 m",
-    "base_mods": { "hunger_min": [ 2 ] }
-  },
-  {
     "id": "destructive_absorption_side_effects",
-    "type": "effect_type",
     "name": [ "Absorption Aftereffects" ],
-    "desc": [ "Reduces hunger and thirst, at the expense of stamina and fatigue." ],
-    "max_duration": "30 m",
-    "max_intensity": 30,
-    "int_dur_factor": "1 m",
-    "base_mods": {
-      "hunger_min": [ -1 ],
-      "hunger_tick": [ 5 ],
-      "thirst_min": [ -1 ],
-      "thirst_tick": [ 5 ],
-      "stamina_min": [ -200 ],
-      "stamina_tick": [ 5 ],
-      "fatigue_min": [ 1 ],
-      "fatigue_chance": [ 75 ],
-      "fatigue_chance_bot": [ 100 ],
-      "fatigue_tick": [ 5 ],
-      "health_min": [ 1 ],
-      "health_chance": [ 50 ],
-      "health_chance_bot": [ 100 ],
-      "health_tick": [ 5 ],
-      "h_mod_min": [ 1 ],
-      "h_mod_chance": [ 50 ],
-      "h_mod_chance_bot": [ 100 ],
-      "h_mod_tick": [ 5 ]
-    }
+    "desc": [ "Rapidly recovers stamina, increases healthiness." ],
+    "max_duration": "10 m",
+    "base_mods": { "stamina_min": [ 200 ], "health_min": [ 1 ], "h_mod_min": [ 1 ] }
   },
   {
-    "id": "arcane_healing_staunch",
     "type": "effect_type",
+    "id": "arcane_healing_staunch",
     "removes_effects": [ "bleed", "redcells_anemia", "hypovolemia" ],
     "max_duration": "1 s",
     "base_mods": { "pain_min": [ -5 ] }
   },
   {
-    "id": "arcane_healing_side_effects",
     "type": "effect_type",
+    "id": "arcane_healing_side_effects",
     "resist_effects": [ "talisman_warding" ],
     "name": [
       "Healing Fatigue",
@@ -702,17 +729,18 @@
       "Healing Overexertion"
     ],
     "desc": [
-      "Drawing upon power from Beyond to heal the body can overtax body and mind.  The effects don't feel very severe now, but it might be best to recover unless it's an emergency.",
-      "Drawing upon power from Beyond to heal the body is slowing your natural healing, and making exertion more difficult.",
-      "Drawing upon power from Beyond to heal the body is slowing your natural healing, and making exertion more difficult.",
-      "Drawing upon power from Beyond to heal the body is slowing your natural healing, and making exertion more difficult.",
-      "Drawing upon power from Beyond to heal the body is slowing your natural healing, and making exertion more difficult.",
-      "Drawing upon power from Beyond to heal the body is slowing your natural healing, and making exertion more difficult."
+      "Drawing upon power from Beyond to heal the body can overtax the body.  The effects don't feel very severe now, but it might be best to recover unless it's an emergency.",
+      "Drawing upon power from Beyond to heal the body is wearing you down and slowing your natural healing.",
+      "Drawing upon power from Beyond to heal the body is wearing you down and slowing your natural healing.",
+      "Drawing upon power from Beyond to heal the body is wearing you down and slowing your natural healing.",
+      "Drawing upon power from Beyond to heal the body is wearing you down and slowing your natural healing.",
+      "Drawing upon power from Beyond to heal the body is wearing you down and slowing your natural healing."
     ],
     "max_intensity": 6,
-    "max_duration": "24 h",
-    "int_dur_factor": "2 h",
+    "max_duration": "3 d",
+    "int_dur_factor": "12 h",
     "base_mods": {
+      "str_mod": [ -0.75 ],
       "health_min": [ -1 ],
       "health_tick": [ 1800, 2000 ],
       "h_mod_min": [ -1 ],
@@ -720,20 +748,28 @@
       "stamina_min": [ -5 ],
       "stamina_tick": [ 10, 12 ]
     },
-    "scaling_mods": { "health_min": [ -1, -0.8 ], "h_mod_min": [ -1, -0.8 ], "stamina_min": [ -5 ], "stamina_tick": [ -1, -0.8 ] }
+    "scaling_mods": {
+      "str_mod": [ -0.75, -0.5 ],
+      "health_min": [ -1, -0.8 ],
+      "health_tick": [ -200, -250 ],
+      "h_mod_min": [ -1, -0.8 ],
+      "h_mod_tick": [ -200, -250 ],
+      "stamina_min": [ -5 ],
+      "stamina_tick": [ -1, -0.8 ]
+    }
   },
   {
-    "id": "arcane_pulse_side_effects",
     "type": "effect_type",
+    "id": "arcane_pulse_side_effects",
     "//": "Proper Chosen are more acclimated to channeling He From Beyond The Veil's blessings.",
-    "resist_traits": [ "PROF_CHALICE" ],
+    "resist_traits": [ "PROF_CHALICE", "PROF_CHALICE2" ],
     "name": [ "Arcane Burnout" ],
     "desc": [
       "Human minds and bodies were not made to be a conduit for such destructive energy.  Overuse won't kill you, but will make it harder to focus on spellcasting."
     ],
     "max_intensity": 6,
-    "max_duration": "24 h",
-    "int_dur_factor": "2 h",
+    "max_duration": "6 d",
+    "int_dur_factor": "24 h",
     "base_mods": {
       "int_mod": [ -1 ],
       "stamina_min": [ -5 ],
@@ -742,38 +778,56 @@
       "vomit_tick": [ 60, 120 ]
     },
     "scaling_mods": {
-      "int_mod": [ -1.25, -1 ],
+      "int_mod": [ -1.5, -1 ],
+      "per_mod": [ -1, -0.75 ],
       "stamina_min": [ -2, -1 ],
       "pain_min": [ 1, 0.5 ],
-      "pain_chance": [ -200, 100 ],
+      "pain_chance": [ -200, -100 ],
       "vomit_chance": [ -200, -100 ]
     }
   },
   {
-    "id": "arcana_aegis_mending",
     "type": "effect_type",
+    "id": "arcana_aegis_mending",
     "blocks_effects": [ "bleed", "redcells_anemia", "hypovolemia" ],
     "rating": "good"
   },
   {
-    "id": "drain_life_mending",
     "type": "effect_type",
+    "id": "drain_life_mending",
     "removes_effects": [ "bleed", "winded", "redcells_anemia", "hypovolemia" ],
     "rating": "good",
     "max_duration": "15 s",
     "base_mods": { "pain_min": [ -3 ], "stamina_min": [ 30 ] }
   },
   {
-    "id": "sword_mending",
     "type": "effect_type",
+    "id": "sword_mending",
     "removes_effects": [ "bleed", "winded", "redcells_anemia", "hypovolemia" ],
     "rating": "good",
     "max_duration": "15 s",
     "base_mods": { "pain_min": [ -6 ], "stamina_min": [ 60 ] }
   },
   {
-    "id": "arcana_invis",
     "type": "effect_type",
+    "id": "arcana_wyrm_berserker_decay",
+    "name": [ "Abyssal Aura" ],
+    "desc": [ "Constant pain and stamina recovery, in exchange for increased fatigue gain and steady healthiness decline." ],
+    "base_mods": {
+      "pain_min": [ -1 ],
+      "pain_tick": [ 30 ],
+      "stamina_min": [ 30 ],
+      "health_min": [ -1 ],
+      "health_tick": [ 125 ],
+      "h_mod_min": [ -1 ],
+      "h_mod_tick": [ 125 ],
+      "sleepiness_min": [ 1 ],
+      "sleepiness_tick": [ 125 ]
+    }
+  },
+  {
+    "type": "effect_type",
+    "id": "arcana_invis",
     "name": [ "Illusion Cloak" ],
     "desc": [
       "Light seems to warp around you in an unnatural manner, rendering you invisible and protecting against various perception-related hazards."
@@ -805,16 +859,16 @@
     "flags": [ "INVISIBLE" ]
   },
   {
-    "id": "arcana_invis_lesser",
     "type": "effect_type",
+    "id": "arcana_invis_lesser",
     "name": [ "Lesser Illusion Cloak" ],
     "desc": [ "Light seems to warp around you in an unnatural manner, rendering you invisible." ],
     "removes_effects": [ "glowy_led", "laserlocked", "was_laserlocked", "glowing", "attention", "haslight", "taint" ],
     "flags": [ "INVISIBLE" ]
   },
   {
-    "id": "lightning_ward",
     "type": "effect_type",
+    "id": "lightning_ward",
     "name": [ "Lightning Ward" ],
     "desc": [ "Complete immunity to lightning, reduced speed." ],
     "remove_message": "You feel an electric tingle as your protective magic fades.",
@@ -828,8 +882,8 @@
     "flags": [ "ELECTRIC_IMMUNE" ]
   },
   {
-    "id": "lightning_ward_true",
     "type": "effect_type",
+    "id": "lightning_ward_true",
     "name": [ "Greater Lightning Ward" ],
     "desc": [ "Complete immunity to lightning." ],
     "remove_message": "You feel an electric tingle as your protective magic fades.",
@@ -842,15 +896,15 @@
     "flags": [ "ELECTRIC_IMMUNE" ]
   },
   {
-    "id": "lightning_ward_hidden",
     "type": "effect_type",
+    "id": "lightning_ward_hidden",
     "removes_effects": [ "zapped" ],
     "max_duration": "5 s",
     "flags": [ "ELECTRIC_IMMUNE" ]
   },
   {
-    "id": "archon_gaze_effect",
     "type": "effect_type",
+    "id": "archon_gaze_effect",
     "//": "Regular Ward Against Evil will only protect you a bit, you need Holy Ward to actually stop the effect.  This will be relevant once I add an encounter you can access after restoring the ritual blade.",
     "resist_effects": [ "cleric_warding" ],
     "name": [ "Glimpse of The Beyond" ],
@@ -884,10 +938,10 @@
     }
   },
   {
-    "id": "chalice_offering_side_effects",
     "type": "effect_type",
+    "id": "chalice_offering_side_effects",
     "resist_effects": [ "talisman_warding" ],
-    "resist_traits": [ "PROF_CHALICE", "THRESH_VEIL" ],
+    "resist_traits": [ "PROF_CHALICE", "PROF_CHALICE2", "THRESH_VEIL" ],
     "name": [
       "",
       "Otherworldly Weakness",
@@ -906,8 +960,8 @@
     ],
     "desc": [
       "",
-      "You've been feeling more weary lately, and it's getting hard to think straight.  Overuse of the chalice seems to have an effect on you.",
-      "It's starting to get harder to focus on your surroundings.  Maybe using your own life force to fuel the chalice is a bad idea….",
+      "You feel more weary lately, and it's getting hard to think straight.  Overuse of the chalice seems to have an effect on you.",
+      "It feels harder to focus on your surroundings.  Maybe using your own life force to fuel the chalice is a bad idea…",
       "Even when you aren't exhausted, you find it hard to stay awake.  This is going to be the death of you if you keep overusing that damn chalice!",
       "You feel an odd sensation in the back of your head, an ethereal ache you can't quite explain.  It's like your very existence is crumbling away.",
       "You feel an odd sensation in the back of your head, an ethereal ache you can't quite explain.  It's like your very existence is crumbling away.",
@@ -915,15 +969,15 @@
       "Your very essence is nothing more than fuel for the pyre…"
     ],
     "rating": "bad",
-    "max_duration": "49 d",
+    "max_duration": "21 d",
     "max_intensity": 7,
-    "int_dur_factor": "7 d",
+    "int_dur_factor": "3 d",
     "//": "This will EVENTUALLY kill you if you max out the effects, unless you're abusing magical healing.",
     "base_mods": {
-      "fatigue_min": [ 1 ],
-      "fatigue_chance": [ 30 ],
-      "fatigue_chance_bot": [ 100 ],
-      "fatigue_tick": [ 1000 ],
+      "sleepiness_min": [ 1 ],
+      "sleepiness_chance": [ 30 ],
+      "sleepiness_chance_bot": [ 100 ],
+      "sleepiness_tick": [ 1000 ],
       "int_mod": [ -0.25 ],
       "sleep_min": [ 10 ],
       "sleep_max": [ 30 ],
@@ -936,37 +990,38 @@
       "hurt_tick": [ 3600 ]
     },
     "scaling_mods": {
-      "fatigue_chance": [ 10, 8 ],
-      "fatigue_tick": [ -100, -80 ],
+      "sleepiness_chance": [ 10, 8 ],
+      "sleepiness_tick": [ -100, -80 ],
       "int_mod": [ -0.75, -0.6 ],
       "per_mod": [ -0.75, -0.6 ],
       "sleep_chance": [ 5, 4 ],
-      "hurt_chance": [ 15, 10 ]
+      "hurt_chance": [ 15, 10 ],
+      "hurt_tick": [ -240, -180 ]
     }
   },
   {
-    "id": "blood_athame_side_effects",
     "type": "effect_type",
-    "resist_effects": [ "talisman_warding" ],
+    "id": "blood_athame_side_effects",
+    "resist_effects": [ "talisman_warding", "sanguine_staff_buff" ],
     "resist_traits": [ "PROF_SANGUINE", "THRESH_DRAGONBLOOD" ],
     "//": "This won't kill you, but the health and stat penalties will make you wish it did later on down the line.",
     "name": [ "", "Strange Anemia", "Strange Anemia", "Strange Anemia", "Strange Anemia", "Severe Strange Anemia" ],
     "desc": [
       "",
       "Your muscles have been feeling more fatigued lately, and you feel faintly queasy on the inside.  Maybe overusing that athame did something to you…",
-      "The weakness in your body has worsened, and you've been having hunger pangs.  It seems blood magic has consequences if overused.",
+      "You still feel fatigued more readily, and you've been having hunger pangs.  It seems blood magic has consequences if overused.",
       "Your body feels sluggish and drained, and it seems to be getting worse the more you rely on blood magic.  Relying on it less might help ease your suffering.",
       "It feels like your body is struggling to sustain itself, as your overuse of the athame's magic has taken its toll on you.  It might be a good idea to stop using that damn thing for a while…",
       "Using that athame so many times was a terrible mistake, you feel like you've been drained half to death…"
     ],
     "rating": "bad",
-    "max_duration": "30 d",
+    "max_duration": "6 d",
     "max_intensity": 6,
-    "int_dur_factor": "5 d",
+    "int_dur_factor": "1 d",
     "base_mods": {
-      "health_min": [ 1 ],
+      "health_min": [ -1 ],
       "health_tick": [ 3600 ],
-      "h_mod_min": [ 1 ],
+      "h_mod_min": [ -1 ],
       "h_mod_tick": [ 3600 ],
       "hunger_min": [ 1 ],
       "hunger_chance": [ -20 ],
@@ -976,7 +1031,7 @@
       "thirst_min": [ 1 ],
       "thirst_chance": [ -120 ],
       "thirst_chance_bot": [ 100 ],
-      "thirst_tick": [ 300 ]
+      "thirst_tick": [ 600 ]
     },
     "scaling_mods": {
       "health_tick": [ -360, -300 ],
@@ -988,8 +1043,47 @@
     }
   },
   {
-    "id": "arcana_scroll_nature_effect",
     "type": "effect_type",
+    "id": "sanguine_staff_buff",
+    "name": [ "Enduring Blood" ],
+    "desc": [
+      "Reduces the impact of Strange Anemia and mitigates its effects, outright preventing it if one uses the athame while under this effect, along with preventing wounds from bleeding.  Allows one to use the silver athame's sanguine rituals more freely."
+    ],
+    "blocks_effects": [ "bleed", "blood_athame_side_effects" ],
+    "apply_message": "Something stirs in your veins as the staff's protective effect washes over you.",
+    "decay_messages": [ [ "The effect of the staff's strange magic is waning.", "bad" ] ],
+    "remove_message": "Your heart skips a beat briefly as your feel the staff's influence fade.",
+    "rating": "good",
+    "max_duration": "200 m",
+    "max_intensity": 200,
+    "int_dur_factor": "1 m",
+    "base_mods": {
+      "health_min": [ 1 ],
+      "health_tick": [ 1800 ],
+      "h_mod_min": [ 1 ],
+      "h_mod_tick": [ 1800 ],
+      "hunger_min": [ -1 ],
+      "hunger_chance": [ 80 ],
+      "hunger_chance_bot": [ 100 ],
+      "hunger_tick": [ 300 ],
+      "thirst_min": [ -1 ],
+      "thirst_chance": [ 80 ],
+      "thirst_chance_bot": [ 100 ],
+      "thirst_tick": [ 600 ]
+    },
+    "scaling_mods": { "str_mod": [ 0.02 ], "dex_mod": [ 0.02 ] }
+  },
+  {
+    "type": "effect_type",
+    "id": "sanguine_staff_mending",
+    "removes_effects": [ "bleed", "winded" ],
+    "rating": "good",
+    "max_duration": "15 s",
+    "base_mods": { "pain_min": [ -20 ], "stamina_min": [ 200 ], "sleepiness_min": [ -100 ] }
+  },
+  {
+    "type": "effect_type",
+    "id": "arcana_scroll_nature_effect",
     "//": "Explicitly punish Mycus players who will be immune to mutation, that's what you get for channeling a rival interloper's nature magic.",
     "resist_traits": [ "THRESH_MARLOSS", "THRESH_MYCUS" ],
     "removes_effects": [
@@ -1000,55 +1094,64 @@
       "bleed",
       "poison",
       "badpoison",
+      "venom_dmg",
+      "venom_weaken",
       "spores",
       "fungus",
       "redcells_anemia",
       "hypovolemia"
     ],
     "rating": "good",
+    "max_duration": "5 s",
     "base_mods": {
-      "rad_min": [ -25, 25 ],
-      "fatigue_min": [ 0, 50 ],
-      "health_min": [ 0, -10 ],
-      "h_mod_min": [ 0, -10 ],
-      "pain_min": [ 0, 10 ],
-      "hunger_min": [ 0, 25 ]
+      "rad_min": [ -5, 5 ],
+      "sleepiness_min": [ 0, 10 ],
+      "health_min": [ 0, -2 ],
+      "h_mod_min": [ 0, -2 ],
+      "pain_min": [ 0, 2 ],
+      "hunger_min": [ 0, 5 ]
     }
   },
   {
-    "id": "arcana_evil_mimic",
     "type": "effect_type",
+    "id": "arcana_evil_mimic",
+    "resist_effects": [ "arcana_evil_mimic_active" ],
     "apply_message": "You feel an evil presence…",
     "rating": "bad",
     "max_duration": "100 h",
     "max_intensity": 25,
-    "int_dur_factor": "4 h",
+    "int_dur_factor": "1 h",
     "base_mods": {
       "str_mod": [ 2 ],
       "dex_mod": [ 1 ],
       "int_mod": [ -1 ],
       "per_mod": [ -1 ],
-      "fatigue_tick": [ 1800 ],
-      "fatigue_chance": [ 6, 12 ]
+      "sleepiness_tick": [ 1800 ],
+      "sleepiness_chance": [ 6, 12 ]
     },
     "scaling_mods": {
-      "str_mod": [ -0.24 ],
-      "dex_mod": [ -0.2 ],
+      "str_mod": [ -0.24, 0.12 ],
+      "dex_mod": [ -0.2, 0.12 ],
       "int_mod": [ -0.24 ],
       "per_mod": [ -0.2 ],
       "stamina_min": [ 2.5 ],
-      "fatigue_min": [ 0.25 ]
+      "sleepiness_min": [ 0.25 ]
     }
   },
   {
-    "id": "arcana_moonstone_touch",
     "type": "effect_type",
+    "id": "arcana_evil_mimic_active",
+    "max_duration": "4 s"
+  },
+  {
+    "type": "effect_type",
+    "id": "arcana_moonstone_touch",
     "max_duration": "4 s",
     "base_mods": { "health_min": [ 1 ], "h_mod_min": [ 1 ] }
   },
   {
-    "id": "arcana_mech_laser_immunities",
     "type": "effect_type",
+    "id": "arcana_mech_laser_immunities",
     "name": [ "Environmental Shielding" ],
     "desc": [
       "A barrier projected by your mech is currently providing resistance to acid and fire, plus immunity to toxic gas.  Also shields you from being blinded, and negates falling damage."
@@ -1074,8 +1177,8 @@
     "flags": [ "FEATHER_FALL", "COLD_IMMUNE" ]
   },
   {
-    "id": "adrenaline_arcana",
     "type": "effect_type",
+    "id": "adrenaline_arcana",
     "name": [ "Killing Surge" ],
     "desc": [ "You feel a rush of otherworldly adrenaline." ],
     "remove_message": "The otherworldly adrenaline running through you fades.",
@@ -1088,189 +1191,44 @@
     "base_mods": { "speed_mod": [ 25 ], "str_mod": [ 2 ], "dex_mod": [ 2 ], "per_mod": [ 1 ], "stamina_min": [ 5 ] }
   },
   {
-    "id": "sent_to_hermit",
     "type": "effect_type",
-    "//": "This marks a player as having been led to The Hermit via a quest chain, no name or description since this one is player-side.  Intended to be permanent."
-  },
-  {
-    "id": "hermit_inquire_denied",
-    "type": "effect_type",
-    "//": "This marks a player as having asking The Hermit for personal information and failed the roll, no name or description since this one is player-side.  Intended duration 3 hours."
-  },
-  {
-    "id": "shrike_inquire_denied",
-    "type": "effect_type",
-    "//": "This marks a player as having asking Elena for intel and failed the roll, no name or description since this one is player-side.  Intended duration 3 hours."
-  },
-  {
-    "id": "hermit_earned_trust_1",
-    "type": "effect_type",
-    "//": "This marks a player as having talked The Hermit into revealing general familiarity with the arcane.  Intended to be permanent."
-  },
-  {
-    "id": "hermit_earned_trust_2",
-    "type": "effect_type",
-    "//": "This marks a player as having talked The Hermit into revealing their affiliation with the Keepers of The Oath, opening up quests.  Intended to be permanent."
-  },
-  {
-    "id": "hermit_stage_1",
-    "type": "effect_type",
-    "name": [ "Quest Stage 1" ],
+    "id": "arcana_veilblade_halt_portal_storms",
+    "name": [ "Ethereal Guidance" ],
     "desc": [
-      "AI tag marking The Hermit's quest progression, changing dialogue.  Intended to be permanent.  This is a bug if you have it."
+      "Should you master the secrets of this blade, wielding it will force portal storms to burn out earlier than normal.  Only the worthy will be offered protection."
     ]
   },
   {
-    "id": "hermit_quest_backdoor",
     "type": "effect_type",
-    "//": "This marks a player as having talked The Hermit into helping an illiterate character complete the ritual.  Intended to be permanent."
-  },
-  {
-    "id": "hermit_has_sanguine_codex",
-    "type": "effect_type",
-    "name": [ "Has Sanguine Codex" ],
-    "desc": [ "AI tag marking The Hermit's progress through the ritual.  Intended to be permanent.  This is a bug if you have it." ]
-  },
-  {
-    "id": "hermit_has_blood_essence",
-    "type": "effect_type",
-    "name": [ "Has Blood Essence" ],
-    "desc": [ "AI tag marking The Hermit's progress through the ritual.  Intended to be permanent.  This is a bug if you have it." ]
-  },
-  {
-    "id": "hermit_has_salt",
-    "type": "effect_type",
-    "name": [ "Has Salt" ],
-    "desc": [ "AI tag marking The Hermit's progress through the ritual.  Intended to be permanent.  This is a bug if you have it." ]
-  },
-  {
-    "id": "hermit_stage_2",
-    "type": "effect_type",
-    "//": "AI tag marking The Hermit's quest progression, changing dialogue.  Intended to be permanent.  Also given to players for achievement tracking purposes."
-  },
-  {
-    "id": "hermit_stage_3",
-    "type": "effect_type",
-    "name": [ "Quest Stage 3" ],
-    "desc": [
-      "AI tag marking The Hermit's quest progression, changing dialogue.  Intended to be permanent.  This is a bug if you have it."
-    ]
-  },
-  {
-    "id": "hermit_stage_failure",
-    "type": "effect_type",
-    "name": [ "Quest Stage Failure" ],
-    "desc": [
-      "AI tag marking The Hermit's quest progression, changing dialogue.  Intended to be permanent.  This is a bug if you have it."
-    ]
-  },
-  {
-    "id": "hermit_stage_3_backdoor",
-    "type": "effect_type",
-    "//": "Effect for players, confirms that the hermit has given this specific player the restored ritual blade, beginning the backdoor quest.  Intended to be permanent."
-  },
-  {
-    "id": "hermit_stage_4",
-    "type": "effect_type",
-    "name": [ "Quest Stage 4" ],
-    "desc": [
-      "AI tag marking The Hermit's quest progression, changing dialogue.  Intended to be permanent.  This is a bug if you have it."
-    ]
-  },
-  {
-    "id": "rural_church_aware",
-    "type": "effect_type",
-    "//": "Effect for both players and NPCs, to filter out whether the rural church has already spawned vs new players asking about the structure, and used by The Deacon to change dialogue after he's heard back from Sofia.  Intended to be permanent.  No name or description since players will get it too."
-  },
-  {
-    "id": "already_asked_deacon",
-    "type": "effect_type",
-    "//": "Effect for players, filters out dialogue in The Deacon's talk topic, once the player has already been directed to the rural church.  Intended to be permanent."
-  },
-  {
-    "id": "sofia_deacon_message",
-    "type": "effect_type",
-    "//": "Effect for players, transmits mission info from Sofia to the Deacon.  Intended to be permanent."
-  },
-  {
-    "id": "sofia_motive_explained",
-    "type": "effect_type",
-    "//": "Effect for both players and NPCs, for Sofia it filters out sanguinist and Keeper players that have explained their motivation for visiting the holdout.  Also used for Johnathan to filter out some bug-proofing dialogue."
-  },
-  {
-    "id": "cf_hunter_motive",
-    "type": "effect_type",
-    "//": "Effect for players, marks certain professions as having explained to the mage hunter guards why their mere presence gives them the heebie-jeebies.  Intended to be permanent."
-  },
-  {
-    "id": "cf_mission_1",
-    "type": "effect_type",
-    "//": "Effect for players, marks them as being trustworthy and known to Sofia's camp.  Intended to be permanent."
-  },
-  {
-    "id": "cf_mission_receipt",
-    "type": "effect_type",
-    "//": "Effect for both players and NPCs, changes dialogue for both the Evac Merchant and Sofia.  Intended to be permanent."
-  },
-  {
-    "id": "cf_mission_3_recruited",
-    "type": "effect_type",
-    "//": "Effect for players, indicates that they asked one of the guards to assist in a hunt.  Intended to be permanent."
-  },
-  {
-    "id": "cf_mission_3_recruited_2",
-    "type": "effect_type",
-    "//": "Effect for players, indicates that they asked another guard to assist in a hunt.  Intended to be permanent."
-  },
-  {
-    "id": "cf_mission_3_recruited_3",
-    "type": "effect_type",
-    "//": "Effect for players, indicates that they asked another guard to assist in a hunt.  Intended to be permanent."
-  },
-  {
-    "id": "cf_mission_3",
-    "type": "effect_type",
-    "name": [ "Mission Marker" ],
-    "desc": [
-      "AI tag marking that Sofia has attracted the first wave of allies to the rural church.  Also used to indicate to Jonathan that their third mission has been completed.  Intended to be permanent.  This is a bug if you have it."
-    ]
-  },
-  {
-    "id": "cf_mission_sofia_3",
-    "type": "effect_type",
-    "//": "Effect for players, tracks having completed Sofia's third mission for achievement tracking.  Intended to be permanent."
-  },
-  {
-    "id": "cf_mission_johnathan_3",
-    "type": "effect_type",
-    "//": "Effect for players, tracks having completed Johnathan's third mission for achievement tracking.  Intended to be permanent."
-  },
-  {
-    "id": "cf_mission_sofia_7",
-    "type": "effect_type",
-    "//": "Effect for players, tracks having completed Sofia's final mission for achievement tracking.  Intended to be permanent."
-  },
-  {
-    "id": "cf_sofia_notes_given",
-    "type": "effect_type",
-    "//": "Effect for players, indicates that Sofia has already given the player a copy of Apprentice's Notes.  Intended to be permanent."
-  },
-  {
-    "id": "cf_sofia_traded",
-    "type": "effect_type",
-    "//": "Effect for players, populates Sofia's initial menu with the trade option.  Intended to be permanent."
-  },
-  {
-    "id": "cf_seeker_traded",
-    "type": "effect_type",
-    "//": "Effect for players, populates Matthew's initial menu with the trade option.  Intended to be permanent."
-  },
-  {
-    "id": "cf_aux_merchant_restocked",
-    "type": "effect_type",
-    "name": [ "Recently restocked" ],
-    "desc": [
-      "AI tag marking an NPC as having triggered their merchant restock effect recently.  Intended duration 1 week.  This is a bug if you have it."
-    ]
+    "id": "arcana_divine_healing_effects",
+    "name": [ "Dimensional Mending" ],
+    "desc": [ "Steady recovery of stamina, pain, and radiation, immunity to bleeding, poison, and infections for the duration." ],
+    "max_duration": "30 m",
+    "max_intensity": 30,
+    "int_dur_factor": "1 m",
+    "removes_effects": [
+      "poison",
+      "badpoison",
+      "venom_dmg",
+      "venom_weaken",
+      "bite",
+      "infected",
+      "fungus",
+      "bleed",
+      "common_cold",
+      "flu",
+      "tetanus"
+    ],
+    "base_mods": {
+      "stamina_min": [ 25 ],
+      "pain_min": [ -1 ],
+      "pain_tick": [ 10 ],
+      "rad_min": [ -1 ],
+      "rad_tick": [ 25 ],
+      "health_min": [ 1 ],
+      "health_tick": [ 25 ],
+      "h_mod_min": [ 1 ],
+      "h_mod_tick": [ 25 ]
+    }
   }
 ]
