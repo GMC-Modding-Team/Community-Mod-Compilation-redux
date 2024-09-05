@@ -1,23 +1,5 @@
 [
   {
-    "result": "bearing",
-    "type": "recipe",
-    "activity_level": "LIGHT_EXERCISE",
-    "category": "CC_AMMO",
-    "subcategory": "CSC_AMMO_OTHER",
-    "skill_used": "fabrication",
-    "skills_required": [ "gun", 2 ],
-    "difficulty": 2,
-    "time": "45 m",
-    "autolearn": true,
-    "book_learn": [ [ "textbook_fabrication", 1 ] ],
-    "using": [ [ "forging_standard", 5 ] ],
-    "tools": [ [ [ "press", -1 ] ], [ [ "crucible", -1 ], [ "crucible_clay", -1 ] ] ],
-    "components": [
-      [ [ "copper", 50 ], [ "tin", 50 ], [ "bismuth", 50 ], [ "solder_wire", 50 ], [ "silver_small", 50 ], [ "scrap", 1 ] ]
-    ]
-  },
-  {
     "result": "chestwrap_fur",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
@@ -122,8 +104,8 @@
     "flags": [ "BLIND_HARD" ]
   },
   {
-    "result": "pliers",
     "type": "recipe",
+    "result": "pliers",
     "activity_level": "BRISK_EXERCISE",
     "category": "CC_OTHER",
     "subcategory": "CSC_OTHER_TOOLS",
@@ -136,31 +118,25 @@
     "components": [ [ [ "steel_chunk", 1 ], [ "scrap", 3 ] ], [ [ "plastic_chunk", 1 ], [ "stick", 1 ], [ "2x4", 1 ] ] ]
   },
   {
-    "result": "pemmican",
     "type": "recipe",
-    "activity_level": "LIGHT_EXERCISE",
-    "category": "CC_FOOD",
-    "subcategory": "CSC_FOOD_MEAT",
-    "skill_used": "cooking",
-    "difficulty": 5,
-    "charges": 4,
-    "time": "45 m",
-    "autolearn": true,
-    "qualities": [ { "id": "CUT", "level": 1 } ],
-    "tools": [ [ [ "surface_heat", 20, "LIST" ] ] ],
+    "result": "pemmican",
+    "copy-from": "pemmican",
     "components": [
-      [ [ "edible_tallow_lard", 1, "LIST" ] ],
+      [ [ "edible_tallow_lard", 2, "LIST" ], [ "ghee", 2 ] ],
       [
         [ "jerky", 2 ],
-        [ "jerky_offal", 2 ],
         [ "dry_meat", 2 ],
         [ "meat_smoked", 2 ],
         [ "dry_fish", 2 ],
-        [ "salted_fish", 2 ],
-        [ "fish_smoked", 2 ]
+        [ "fish_smoked", 2 ],
+        [ "dry_lobster", 2 ],
+        [ "lobster_smoked", 2 ],
+        [ "jerky_offal", 2 ],
+        [ "salted_fish", 2 ]
       ],
       [
         [ "dry_veggy", 2 ],
+        [ "dry_corn", 2 ],
         [ "dry_fruit", 2 ],
         [ "dry_mushroom", 2 ],
         [ "juice_pulp", 4 ],
@@ -174,14 +150,35 @@
         [ "cranberries", 1 ],
         [ "irradiated_raspberries", 1 ],
         [ "raspberries", 1 ],
+        [ "wintergreen_berry", 4 ],
+        [ "m_stellatum_berries", 4 ],
         [ "irradiated_blackberries", 1 ],
         [ "blackberries", 1 ]
       ]
     ]
   },
   {
-    "result": "deluxe_eggs",
     "type": "recipe",
+    "result": "pemmican_meat",
+    "copy-from": "pemmican_meat",
+    "components": [
+      [ [ "edible_tallow_lard", 2, "LIST" ], [ "ghee", 2 ] ],
+      [
+        [ "jerky", 2 ],
+        [ "dry_meat", 2 ],
+        [ "meat_smoked", 2 ],
+        [ "dry_fish", 2 ],
+        [ "fish_smoked", 2 ],
+        [ "dry_lobster", 2 ],
+        [ "lobster_smoked", 2 ],
+        [ "jerky_offal", 2 ],
+        [ "salted_fish", 2 ]
+      ]
+    ]
+  },
+  {
+    "type": "recipe",
+    "result": "deluxe_eggs",
     "activity_level": "LIGHT_EXERCISE",
     "category": "CC_FOOD",
     "subcategory": "CSC_FOOD_OTHER",
@@ -223,8 +220,8 @@
     ]
   },
   {
-    "result": "deluxe_eggs",
     "type": "recipe",
+    "result": "deluxe_eggs",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "from_powder",
     "category": "CC_FOOD",
@@ -268,8 +265,8 @@
     ]
   },
   {
-    "result": "stone_chopper",
     "type": "recipe",
+    "result": "stone_chopper",
     "activity_level": "MODERATE_EXERCISE",
     "category": "CC_OTHER",
     "subcategory": "CSC_OTHER_TOOLS",
@@ -277,14 +274,14 @@
     "difficulty": 1,
     "time": "20 m",
     "autolearn": true,
-    "proficiencies": [ { "proficiency": "prof_knapping", "required": false, "time_multiplier": 2.0 } ],
+    "proficiencies": [ { "proficiency": "prof_knapping" } ],
     "qualities": [ { "id": "HAMMER", "level": 1 } ],
     "components": [ [ [ "rock_flaking", 1 ], [ "sharp_rock", 1 ] ] ]
   },
   {
-    "result": "hobo_stove",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
+    "result": "hobo_stove",
     "category": "CC_OTHER",
     "subcategory": "CSC_OTHER_TOOLS",
     "skill_used": "survival",

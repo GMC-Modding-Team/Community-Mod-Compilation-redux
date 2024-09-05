@@ -1,7 +1,7 @@
 [
   {
-    "id": "f_char_purifier",
     "type": "furniture",
+    "id": "f_char_purifier",
     "name": "charcoal purifier",
     "description": "A makeshift filter constructed to hold a supply of charcoal, for purifying water.",
     "symbol": "=",
@@ -22,8 +22,8 @@
     }
   },
   {
-    "id": "f_still_mounds",
     "type": "furniture",
+    "id": "f_still_mounds",
     "name": "makeshift still",
     "symbol": "#",
     "looks_like": "bottle_glass",
@@ -44,8 +44,8 @@
     }
   },
   {
-    "id": "f_pulley_lifter",
     "type": "furniture",
+    "id": "f_pulley_lifter",
     "name": "rope and pulley lifter",
     "symbol": "|",
     "looks_like": "vp_crane_tiny",
@@ -69,14 +69,15 @@
     }
   },
   {
-    "id": "f_barricade_windbreak",
     "type": "furniture",
+    "id": "f_barricade_windbreak",
     "name": "wooden windbreak",
     "symbol": "#",
     "bgcolor": "brown",
     "looks_like": "t_wall_log_half",
     "description": "A waist-high barricade made of stout saplings, held in place by poles hammered into the ground.  Primarily used to keep the wind out, but also works to fence in  a campsite.",
     "move_cost_mod": -1,
+    "coverage": 60,
     "required_str": -1,
     "flags": [
       "CLIMB_SIMPLE",
@@ -93,8 +94,8 @@
     "examine_action": "chainfence",
     "deconstruct": { "items": [ { "item": "stick", "count": 8 }, { "item": "pointy_stick", "count": 4 } ] },
     "bash": {
-      "str_min": 3,
-      "str_max": 40,
+      "str_min": 6,
+      "str_max": 36,
       "sound": "smash!",
       "sound_fail": "whump.",
       "items": [ { "item": "stick", "count": [ 2, 6 ] }, { "item": "splinter", "count": [ 2, 6 ] } ]
@@ -128,8 +129,8 @@
     "flags": [ "TRANSPARENT", "FLAMMABLE", "THIN_OBSTACLE", "INDOORS", "MOUNTABLE", "EASY_DECONSTRUCT" ]
   },
   {
-    "id": "f_rack_wood_makeshift",
     "type": "furniture",
+    "id": "f_rack_wood_makeshift",
     "looks_like": "f_rack_wood",
     "name": "makeshift wooden rack",
     "symbol": "{",
@@ -150,8 +151,8 @@
     }
   },
   {
-    "id": "f_counter_makeshift",
     "type": "furniture",
+    "id": "f_counter_makeshift",
     "looks_like": "f_counter",
     "name": "makeshift counter",
     "description": "A bit rustic for most kitchens, made from simple joinery and wood glue.",
@@ -174,8 +175,8 @@
     "workbench": { "multiplier": 1.1, "mass": 200000, "volume": "75L" }
   },
   {
-    "id": "f_table_makeshift",
     "type": "furniture",
+    "id": "f_table_makeshift",
     "looks_like": "f_table",
     "name": "makeshift table",
     "description": "Sit down when you eat!  At least the legs seem to be joined up properly, so it probably won't fall apart if you eat off it.",
@@ -188,8 +189,8 @@
     "flags": [ "TRANSPARENT", "FLAMMABLE", "ORGANIC", "MOUNTABLE", "SHORT", "FLAT_SURF", "EASY_DECONSTRUCT" ],
     "deconstruct": { "items": [ { "item": "2x4", "count": 6 } ] },
     "bash": {
-      "str_min": 12,
-      "str_max": 50,
+      "str_min": 10,
+      "str_max": 45,
       "sound": "smash!",
       "sound_fail": "whump.",
       "items": [ { "item": "2x4", "count": [ 2, 4 ] }, { "item": "splinter", "count": 3 } ]
@@ -198,8 +199,8 @@
     "workbench": { "multiplier": 1.1, "mass": 200000, "volume": "75L" }
   },
   {
-    "id": "f_chair_makeshift",
     "type": "furniture",
+    "id": "f_chair_makeshift",
     "looks_like": "f_chair",
     "name": "makeshift chair",
     "symbol": "#",
@@ -223,8 +224,8 @@
     }
   },
   {
-    "id": "f_bench_makeshift",
     "type": "furniture",
+    "id": "f_bench_makeshift",
     "looks_like": "f_bench",
     "name": "makeshift bench",
     "symbol": "#",
@@ -248,21 +249,21 @@
     }
   },
   {
-    "id": "f_hobo_stove_clay_placed",
     "type": "furniture",
+    "id": "f_hobo_stove_clay_placed",
     "looks_like": "clay_pot",
     "name": "placed clay oven",
     "description": "A portable clay oven, placed on the ground.  It can't hold much wood at once, but it will keep a fire safe from wind and rain.",
     "symbol": "#",
     "color": "brown",
-    "move_cost_mod": -1,
+    "move_cost_mod": 1,
     "coverage": 15,
     "required_str": 1,
     "//": "INDOORS and BLOCK_WIND are used to ensure it doesn't go out.  Doesn't let you move onto it to prevent exploiting that.",
     "flags": [ "PLACE_ITEM", "TRANSPARENT", "FIRE_CONTAINER", "EASY_DECONSTRUCT", "INDOORS", "BLOCK_WIND" ],
     "deployed_item": "hobo_stove_clay",
     "examine_action": "fireplace",
-    "max_volume": "10 L",
+    "max_volume": "55 L",
     "bash": {
       "str_min": 8,
       "str_max": 30,
