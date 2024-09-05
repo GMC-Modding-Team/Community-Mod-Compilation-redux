@@ -61,7 +61,9 @@
         { "monster": "mon_zombie_failed_weapon", "x": 2, "y": 10 },
         { "monster": "mon_zombie_failed_weapon", "x": 12, "y": 4 }
       ],
-      "place_vehicles": [ { "vehicle": "humvee_tow", "x": 8, "y": 18, "rotation": 30, "chance": 100, "fuel": 10, "status": 1 } ]
+      "place_vehicles": [
+        { "vehicle": "humvee_tow", "x": 8, "y": 18, "rotation": 30, "chance": 100, "fuel": 10, "status": 1 }
+      ]
     }
   },
   {
@@ -107,10 +109,10 @@
       },
       "monster": { "i": { "monster": "mon_zombie_soldier", "chance": 30 } },
       "place_monster": [
-        { "monster": "mon_zombie_bio_dormant_unarmed", "x": 8, "y": 14 },
-        { "monster": "mon_zombie_bio_dormant_unarmed", "x": 13, "y": 15 },
-        { "monster": "mon_zombie_bio_dormant_unarmed", "x": 9, "y": 10 },
-        { "monster": "mon_zombie_bio_dormant_unarmed", "x": 22, "y": 14 }
+        { "monster": "mon_zombie_bio_dormant_armed", "x": 8, "y": 14 },
+        { "monster": "mon_zombie_bio_dormant_armed", "x": 13, "y": 15 },
+        { "monster": "mon_zombie_bio_dormant_armed", "x": 9, "y": 10 },
+        { "monster": "mon_zombie_bio_dormant_armed", "x": 22, "y": 14 }
       ],
       "place_loot": [
         { "item": "arc_laser_rifle", "x": 8, "y": 9, "chance": 75, "repeat": 5 },
@@ -122,39 +124,15 @@
         { "group": "lmil_armor_collection", "x": 10, "y": 9, "chance": 75, "repeat": 1 },
         { "item": "UPS_off", "x": 10, "y": 10, "chance": 75, "repeat": 1 },
         { "item": "plut_cell", "x": 10, "y": 10, "chance": 75, "repeat": 5 },
-        { "item": "medium_atomic_battery_cell", "x": 10, "y": 11, "chance": 75, "repeat": 10 },
+        { "item": "medium_atomic_battery_cell_rechargeable", "x": 10, "y": 11, "chance": 75, "repeat": 10 },
         { "item": "plasma", "x": 10, "y": 12, "chance": 75, "repeat": 2 },
-        {
-          "item": "nato_assault_rifle",
-          "variant": "m4a1",
-          "x": 12,
-          "y": [ 9, 11 ],
-          "magazine": 100,
-          "chance": 75,
-          "repeat": 30
-        },
-        {
-          "item": "nato_assault_rifle",
-          "variant": "acr",
-          "x": 12,
-          "y": 9,
-          "magazine": 100,
-          "chance": 75,
-          "repeat": 8
-        },
-        { "item": "m16a4", "x": 12, "y": 9, "magazine": 100, "chance": 75, "repeat": 2 },
+        { "item": "modular_m4_carbine", "variant": "modular_m4a1", "x": 12, "y": [ 9, 11 ], "magazine": 100, "chance": 75, "repeat": 30 },
+        { "item": "modular_m16_auto_rifle", "variant": "acr", "x": 12, "y": 9, "magazine": 100, "chance": 75, "repeat": 8 },
+        { "item": "modular_m16a4", "x": 12, "y": 9, "magazine": 100, "chance": 75, "repeat": 2 },
         { "item": "stanag30", "x": 12, "y": 12, "chance": 75, "repeat": 80 },
         { "item": "stanag50", "x": 12, "y": 12, "chance": 75, "repeat": 20 },
         { "item": "556", "x": 14, "y": [ 9, 12 ], "chance": 75, "repeat": 150 },
-        {
-          "item": "nato_assault_rifle",
-          "variant": "m4a1",
-          "x": 16,
-          "y": [ 9, 11 ],
-          "magazine": 100,
-          "chance": 75,
-          "repeat": 36
-        },
+        { "item": "modular_m4_carbine", "variant": "modular_m4a1", "x": 16, "y": [ 9, 11 ], "magazine": 100, "chance": 75, "repeat": 36 },
         { "item": "stanag30", "x": 16, "y": 12, "chance": 75, "repeat": 100 },
         { "item": "556", "x": 18, "y": [ 9, 12 ], "chance": 75, "repeat": 150 },
         { "item": "m249", "x": 20, "y": 9, "chance": 75, "repeat": 6 },
@@ -184,61 +162,6 @@
         { "item": "goggles_nv", "x": [ 17, 18 ], "y": 15, "chance": 75, "repeat": 40 },
         { "item": "knife_combat", "x": [ 22, 23 ], "y": 15, "chance": 75, "repeat": 100 },
         { "item": "holster", "x": [ 20, 21 ], "y": 15, "chance": 75, "repeat": 100 }
-      ]
-    }
-  },
-  {
-    "type": "mapgen",
-    "method": "json",
-    "om_terrain": [ "necropolis_c_2" ],
-    "weight": 250,
-    "object": {
-      "fill_ter": "t_floor",
-      "rows": [
-        "|---|...................",
-        "|r r|...................",
-        "|-+-|--|................",
-        "    @@d|................",
-        "    @@ |................",
-        " h     |................",
-        "kkk   o|................",
-        "-------|.|--------------",
-        ".........|rrrrrrrrrrrrrr",
-        "|-|-|....|r             ",
-        "|r|r|--|.|r  ccc        ",
-        "|+|+|@@|-|r  ccc    G   ",
-        "       |t|r             ",
-        "       + |-------|     |",
-        "       |S|.......|    5|",
-        "|+|+|@@|-|-------|-===-|",
-        "|r|r|--|.|rrrrrrr|    6|",
-        "|-|-|....|r      +  G   ",
-        "|r|r|--|.|r rrrr |  h   ",
-        "|+|+|@@|-|r rrrr |k6kkk|",
-        "       |t|r      |!!!!!|",
-        "       + |rGrrrr |     |",
-        "       |S|r rrrr v     |",
-        "|+|+|@@|-|r      v     |"
-      ],
-      "palettes": [ "necropolis_b2" ],
-      "terrain": { "R": "t_hole" },
-      "place_loot": [
-        { "group": "mags_milspec", "x": [ 12, 15 ], "y": 18, "chance": 30, "repeat": 5 },
-        { "item": "medium_atomic_battery_cell", "x": [ 12, 15 ], "y": 18, "chance": 30, "repeat": 5 },
-        { "item": "plasma", "x": [ 12, 15 ], "y": 18, "chance": 10 },
-        { "group": "ammo_milspec", "x": [ 12, 15 ], "y": 19, "chance": 50, "repeat": 5 },
-        { "group": "mil_food_nodrugs", "x": [ 12, 15 ], "y": 21, "chance": 50, "repeat": 5 },
-        { "group": "army_personal_locker", "x": [ 12, 15 ], "y": 22, "chance": 50, "repeat": 10 }
-      ],
-      "place_monsters": [
-        { "monster": "GROUP_NECROPOLIS_VAULT2", "x": [ 1, 22 ], "y": [ 1, 6 ], "density": 0.1 },
-        { "monster": "GROUP_NECROPOLIS_VAULT2", "x": [ 1, 8 ], "y": [ 6, 22 ], "density": 0.1 }
-      ],
-      "place_monster": [
-        { "group": "GROUP_ZOMBIE_SUPER_SOLDIER_RANDOM", "x": 11, "y": 17 },
-        { "group": "GROUP_ZOMBIE_SUPER_SOLDIER_RANDOM", "x": 16, "y": 20 },
-        { "group": "GROUP_ZOMBIE_SUPER_SOLDIER_RANDOM", "x": 20, "y": 18 },
-        { "group": "GROUP_ZOMBIE_SUPER_SOLDIER_RANDOM", "x": 23, "y": 17 }
       ]
     }
   }

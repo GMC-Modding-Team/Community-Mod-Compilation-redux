@@ -15,7 +15,7 @@
     "location": "underbarrel",
     "mod_targets": [ "rifle", "shotgun", "smg", "crossbow", "launcher" ],
     "gun_data": {
-      "ammo": [ "diesel", "gasoline", "flammable", "lamp_oil", "motor_oil", "jp8", "avgas" ],
+      "ammo": [ "diesel", "gasoline", "flammable", "lamp_oil", "crude_lamp_oil", "motor_oil", "jp8", "avgas" ],
       "skill": "launcher",
       "ranged_damage": { "damage_type": "heat", "amount": -1 },
       "dispersion": 600,
@@ -30,7 +30,16 @@
         "pocket_type": "MAGAZINE",
         "rigid": true,
         "watertight": true,
-        "ammo_restriction": { "diesel": 250, "gasoline": 250, "flammable": 250, "lamp_oil": 250, "motor_oil": 250, "jp8": 250, "avgas": 250 }
+        "ammo_restriction": {
+          "diesel": 250,
+          "gasoline": 250,
+          "flammable": 250,
+          "lamp_oil": 250,
+          "crude_lamp_oil": 250,
+          "motor_oil": 250,
+          "jp8": 250,
+          "avgas": 250
+        }
       }
     ],
     "min_skills": [ [ "weapon", 2 ], [ "launcher", 1 ] ],
@@ -54,7 +63,7 @@
     "symbol": ":",
     "material": [ "steel", "plastic" ],
     "mod_targets": [ "rifle", "shotgun", "smg", "crossbow", "launcher" ],
-    "bashing": 9,
+    "melee_damage": { "bash": 9 },
     "gun_data": {
       "skill": "pistol",
       "ammo": "22",
@@ -73,13 +82,13 @@
         "holster": true,
         "max_contains_volume": "20 L",
         "max_contains_weight": "20 kg",
-        "item_restriction": [ "mosquitomag", "sw22mag", "wp22mag", "surv_22_mag" ]
+        "item_restriction": [ "mosquitomag", "ruger_mk4_mag", "wp22mag", "surv_22_mag" ]
       }
     ]
   },
   {
-    "id": "9mmaux",
     "type": "GUNMOD",
+    "id": "9mmaux",
     "name": { "str": "survivor's auxiliary 9mm pistol" },
     "location": "underbarrel",
     "weight": "961 g",
@@ -93,7 +102,7 @@
     "symbol": ":",
     "material": [ "steel", "plastic" ],
     "mod_targets": [ "rifle", "shotgun", "smg", "crossbow", "launcher" ],
-    "bashing": 8,
+    "melee_damage": { "bash": 8 },
     "gun_data": {
       "skill": "pistol",
       "ammo": "9mm",
@@ -117,8 +126,8 @@
     ]
   },
   {
-    "id": "45aux",
     "type": "GUNMOD",
+    "id": "45aux",
     "name": { "str": "survivor's auxiliary .45 pistol" },
     "location": "underbarrel",
     "weight": "1120 g",
@@ -132,7 +141,7 @@
     "symbol": ":",
     "material": [ "steel", "plastic" ],
     "mod_targets": [ "rifle", "shotgun", "smg", "crossbow", "launcher" ],
-    "bashing": 8,
+    "melee_damage": { "bash": 8 },
     "gun_data": {
       "skill": "pistol",
       "ammo": "45",
@@ -156,8 +165,8 @@
     ]
   },
   {
-    "id": "surv_laser_sight",
     "type": "GUNMOD",
+    "id": "surv_laser_sight",
     "name": { "str": "survivor's laser sight" },
     "location": "sights",
     "sight_dispersion": 20,
@@ -171,6 +180,7 @@
     "material": [ "plastic", "steel" ],
     "mod_targets": [ "smg", "rifle", "pistol", "shotgun", "crossbow", "bow", "launcher" ],
     "volume": "250 ml",
+    "integral_volume": "125 ml",
     "price": "850 USD",
     "price_postapoc": "850 cent",
     "install_time": "30 m",
@@ -178,17 +188,13 @@
     "flags": [ "DISABLE_SIGHTS" ]
   },
   {
-    "id": "lmg_handle",
     "type": "GUNMOD",
-    "name": { "str": "makeshift LMG recoil handle" },
-    "//": "Unique to my LMGs!",
-    "location": "carry handle",
-    "sight_dispersion": 45,
-    "field_of_view": 900,
-    "aim_speed_modifier": 10,
-    "dispersion_modifier": 60,
+    "id": "lmg_handle",
+    "name": { "str": "survivor's LMG recoil handle" },
+    "location": "grip",
+    "dispersion_modifier": -25,
     "handling_modifier": 10,
-    "description": "A side-mounted handle designed for a custom LMG of some sort, to help in hip fire.  Reduces target acquisition time and perceived recoil, but increases overall dispersion.  Attaching it will hinder the effective use of the weapon's default sights, as well.",
+    "description": "A side-mounted handle designed for machine guns, to help in hip fire.  Makes aiming easier and greatly reduces recoil, but hinders the use of the weapon's default sights and makes it slower to wield.",
     "weight": "120 g",
     "volume": "250 ml",
     "integral_volume": "0 ml",
@@ -199,7 +205,7 @@
     "mod_targets": [ "rifle" ],
     "install_time": "20 m",
     "min_skills": [ [ "weapon", 2 ], [ "gun", 1 ] ],
-    "flags": [ "DISABLE_SIGHTS" ]
+    "flags": [ "DISABLE_SIGHTS", "NEEDS_UNFOLD" ]
   },
   {
     "id": "shot_crafted_suppressor",
@@ -212,7 +218,7 @@
     "price_postapoc": "350 cent",
     "install_time": "30 s",
     "to_hit": 1,
-    "bashing": 3,
+    "melee_damage": { "bash": 3 },
     "material": [ "steel" ],
     "symbol": ":",
     "color": "dark_gray",

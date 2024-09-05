@@ -87,14 +87,13 @@
     "type": "item_group",
     "//": "Items a Bio-Weapon might hoard for power generation, based on the needs of the successful versions of the Project (except Delta, who lacks any overt fuel source).",
     "items": [
-      { "item": "chem_ethanol", "charges": [ 0, 2000 ], "container-item": "metal_tank_little", "prob": 10 },
-      { "item": "denat_alcohol", "charges": [ 0, 2000 ], "container-item": "metal_tank_little", "prob": 10 },
-      { "item": "chem_methanol", "charges": [ 0, 2000 ], "container-item": "metal_tank_little", "prob": 10 },
-      { "item": "gasoline", "charges": [ 0, 2000 ], "container-item": "metal_tank_little", "prob": 15 },
-      { "item": "hydrogen_tank", "charges": [ 0, 24 ], "prob": 10 },
+      { "item": "chem_ethanol", "charges": [ 1, 2000 ], "container-item": "metal_tank_little", "prob": 10 },
+      { "item": "denat_alcohol", "charges": [ 1, 2000 ], "container-item": "metal_tank_little", "prob": 10 },
+      { "item": "chem_methanol", "charges": [ 1, 2000 ], "container-item": "metal_tank_little", "prob": 10 },
+      { "item": "gasoline", "charges": [ 1, 2000 ], "container-item": "metal_tank_little", "prob": 15 },
+      { "item": "c_hydrogen_gas", "charges": [ 1, 20 ], "container-item": "metal_tank_little", "prob": 10 },
       { "item": "plasma", "charges": [ 1, 4 ], "prob": 5 },
-      { "group": "ammo_any_batteries", "prob": 25 },
-      { "group": "ammo_atomic_batteries", "prob": 15 }
+      { "group": "ammo_any_batteries", "prob": 25 }
     ]
   },
   {
@@ -106,8 +105,11 @@
     "entries": [
       { "group": "mon_zombie_bio_common" },
       { "item": "mil_armor", "damage": [ 1, 4 ], "prob": 75 },
-      { "item": "mil_helm", "damage": [ 1, 4 ], "prob": 75, "charges": [ 0, 100 ] },
-      { "item": "vest", "damage": [ 1, 4 ], "prob": 50 },
+      { "item": "mil_helm", "damage": [ 1, 4 ], "prob": 75 },
+      {
+        "distribution": [ { "item": "molle_pack", "damage": [ 1, 4 ], "prob": 50 }, { "item": "rucksack", "damage": [ 1, 4 ], "prob": 50 } ],
+        "prob": 50
+      },
       {
         "distribution": [
           { "item": "sheath", "contents-item": "knife_combat", "damage": [ 0, 3 ], "prob": 75 },
@@ -115,8 +117,29 @@
         ],
         "prob": 80
       },
-      { "item": "arc_laser_rifle", "damage": [ 0, 3 ], "charges": [ 0, 2500 ] },
-      { "item": "medium_atomic_battery_cell_rechargeable", "damage": [ 0, 1 ], "charges": [ 0, 5000 ], "prob": 25 }
+      {
+        "distribution": [
+          {
+            "collection": [
+              { "item": "arc_laser_rifle", "damage": [ 0, 3 ], "charges": [ 0, 2500 ] },
+              {
+                "item": "medium_atomic_battery_cell_rechargeable",
+                "damage": [ 0, 1 ],
+                "charges": [ 0, 5000 ],
+                "prob": 25
+              }
+            ],
+            "prob": 80
+          },
+          {
+            "collection": [
+              { "item": "arc_laser_rifle_ups", "damage": [ 0, 3 ] },
+              { "item": "UPS_off", "damage": [ 0, 1 ], "charges": [ 0, 1250 ], "prob": 10 }
+            ],
+            "prob": 20
+          }
+        ]
+      }
     ]
   },
   {
@@ -128,8 +151,11 @@
     "entries": [
       { "group": "mon_zombie_bio_common" },
       { "item": "mil_armor", "damage": [ 1, 4 ], "prob": 75 },
-      { "item": "mil_helm", "damage": [ 1, 4 ], "prob": 75, "charges": [ 0, 100 ] },
-      { "item": "vest", "damage": [ 1, 4 ], "prob": 50 },
+      { "item": "mil_helm", "damage": [ 1, 4 ], "prob": 75 },
+      {
+        "distribution": [ { "item": "molle_pack", "damage": [ 1, 4 ], "prob": 50 }, { "item": "rucksack", "damage": [ 1, 4 ], "prob": 50 } ],
+        "prob": 50
+      },
       {
         "distribution": [
           { "item": "sheath", "contents-item": "knife_combat", "damage": [ 0, 3 ], "prob": 75 },
@@ -137,8 +163,29 @@
         ],
         "prob": 80
       },
-      { "item": "xarm_laser_shotgun", "damage": [ 0, 3 ], "charges": [ 0, 2500 ] },
-      { "item": "medium_atomic_battery_cell_rechargeable", "damage": [ 0, 1 ], "charges": [ 0, 5000 ], "prob": 25 }
+      {
+        "distribution": [
+          {
+            "collection": [
+              { "item": "xarm_laser_shotgun", "damage": [ 0, 3 ], "charges": [ 0, 2500 ] },
+              {
+                "item": "medium_atomic_battery_cell_rechargeable",
+                "damage": [ 0, 1 ],
+                "charges": [ 0, 5000 ],
+                "prob": 25
+              }
+            ],
+            "prob": 80
+          },
+          {
+            "collection": [
+              { "item": "xarm_laser_shotgun_ups", "damage": [ 0, 3 ] },
+              { "item": "UPS_off", "damage": [ 0, 1 ], "charges": [ 0, 1250 ], "prob": 10 }
+            ],
+            "prob": 20
+          }
+        ]
+      }
     ]
   },
   {
@@ -150,9 +197,15 @@
     "entries": [
       { "group": "mon_zombie_bio_common" },
       { "item": "lmil_armor", "damage": [ 1, 4 ], "prob": 75 },
-      { "item": "lmil_helm", "damage": [ 1, 4 ], "prob": 75, "charges": [ 0, 100 ] },
-      { "item": "rucksack", "damage": [ 1, 4 ], "prob": 50 },
-      { "item": "dump_pouch", "damage": [ 1, 4 ], "prob": 50 },
+      { "item": "lmil_helm", "damage": [ 1, 4 ], "prob": 75 },
+      {
+        "distribution": [ { "item": "molle_pack", "damage": [ 1, 4 ], "prob": 50 }, { "item": "rucksack", "damage": [ 1, 4 ], "prob": 50 } ],
+        "prob": 50
+      },
+      {
+        "distribution": [ { "item": "legrig", "damage": [ 1, 4 ], "prob": 50 }, { "item": "dump_pouch", "damage": [ 1, 4 ], "prob": 50 } ],
+        "prob": 50
+      },
       {
         "distribution": [
           { "item": "sheath", "contents-item": "knife_combat", "damage": [ 0, 3 ], "prob": 75 },
@@ -160,10 +213,31 @@
         ],
         "prob": 80
       },
-      { "item": "mx_laser_sniper", "damage": [ 0, 3 ], "charges": [ 0, 2500 ] },
-      { "item": "medium_atomic_battery_cell_rechargeable", "damage": [ 0, 1 ], "charges": [ 0, 5000 ], "prob": 25 },
+      {
+        "distribution": [
+          {
+            "collection": [
+              { "item": "mx_laser_sniper", "damage": [ 0, 3 ], "charges": [ 0, 2500 ] },
+              {
+                "item": "medium_atomic_battery_cell_rechargeable",
+                "damage": [ 0, 1 ],
+                "charges": [ 0, 5000 ],
+                "prob": 25
+              }
+            ],
+            "prob": 75
+          },
+          {
+            "collection": [
+              { "item": "mx_laser_sniper_ups", "damage": [ 0, 3 ] },
+              { "item": "UPS_off", "damage": [ 0, 1 ], "charges": [ 0, 1250 ], "prob": 10 }
+            ],
+            "prob": 25
+          }
+        ]
+      },
       { "item": "e_tool", "damage": [ 0, 3 ], "prob": 50 },
-      { "item": "mre_beef_box", "damage": [ 0, 3 ], "prob": 75 },
+      { "group": "mre_full_pack", "damage": [ 0, 3 ], "prob": 75 },
       { "item": "large_tent_kit", "damage": [ 0, 3 ], "prob": 25 },
       { "item": "rollmat", "damage": [ 0, 3 ], "prob": 50 }
     ]
@@ -177,9 +251,11 @@
     "entries": [
       { "group": "mon_zombie_bio_common" },
       { "item": "hmil_armor", "damage": [ 1, 4 ], "prob": 75 },
-      { "item": "hmil_helm", "damage": [ 1, 4 ], "prob": 75, "charges": [ 0, 100 ] },
-      { "item": "vest", "damage": [ 1, 4 ], "prob": 50 },
-      { "item": "dump_pouch", "damage": [ 1, 4 ], "prob": 50 },
+      { "item": "hmil_helm", "damage": [ 1, 4 ], "prob": 75 },
+      {
+        "distribution": [ { "item": "legrig", "damage": [ 1, 4 ], "prob": 50 }, { "item": "dump_pouch", "damage": [ 1, 4 ], "prob": 50 } ],
+        "prob": 50
+      },
       {
         "distribution": [
           { "item": "sheath", "contents-item": "knife_combat", "damage": [ 0, 3 ], "prob": 75 },
@@ -187,8 +263,29 @@
         ],
         "prob": 80
       },
-      { "item": "krx_laser_lmg", "damage": [ 0, 3 ], "charges": [ 0, 5000 ] },
-      { "item": "heavy_atomic_battery_cell_rechargeable", "damage": [ 0, 1 ], "charges": [ 0, 10000 ], "prob": 25 }
+      {
+        "distribution": [
+          {
+            "collection": [
+              { "item": "krx_laser_lmg", "damage": [ 0, 3 ], "charges": [ 0, 5000 ] },
+              {
+                "item": "heavy_atomic_battery_cell_rechargeable",
+                "damage": [ 0, 1 ],
+                "charges": [ 0, 10000 ],
+                "prob": 25
+              }
+            ],
+            "prob": 95
+          },
+          {
+            "collection": [
+              { "item": "krx_laser_lmg_ups", "damage": [ 0, 3 ] },
+              { "item": "UPS_off", "damage": [ 0, 1 ], "charges": [ 0, 1250 ], "prob": 10 }
+            ],
+            "prob": 5
+          }
+        ]
+      }
     ]
   },
   {
@@ -200,9 +297,11 @@
     "entries": [
       { "group": "mon_zombie_bio_common" },
       { "item": "hmil_armor", "damage": [ 1, 4 ], "prob": 75 },
-      { "item": "hmil_helm", "damage": [ 1, 4 ], "prob": 75, "charges": [ 0, 100 ] },
-      { "item": "vest", "damage": [ 1, 4 ], "prob": 50 },
-      { "item": "dump_pouch", "damage": [ 1, 4 ], "prob": 50 },
+      { "item": "hmil_helm", "damage": [ 1, 4 ], "prob": 75 },
+      {
+        "distribution": [ { "item": "legrig", "damage": [ 1, 4 ], "prob": 50 }, { "item": "dump_pouch", "damage": [ 1, 4 ], "prob": 50 } ],
+        "prob": 50
+      },
       {
         "distribution": [
           { "item": "sheath", "contents-item": "knife_combat", "damage": [ 0, 3 ], "prob": 75 },
@@ -211,7 +310,8 @@
         "prob": 80
       },
       { "item": "mk_ionic_cannon", "damage": [ 0, 3 ], "charges": [ 0, 1 ] },
-      { "item": "plasma", "damage": [ 0, 1 ], "charges": [ 1, 2 ], "prob": 50 }
+      { "item": "plasma", "damage": [ 0, 1 ], "charges": [ 1, 2 ], "prob": 50 },
+      { "item": "UPS_off", "damage": [ 0, 1 ], "charges": [ 0, 1250 ], "prob": 10 }
     ]
   },
   {
@@ -223,8 +323,11 @@
     "entries": [
       { "group": "mon_zombie_bio_common" },
       { "item": "lmil_armor", "damage": [ 1, 4 ], "prob": 75 },
-      { "item": "lmil_helm", "damage": [ 1, 4 ], "prob": 75, "charges": [ 0, 100 ] },
-      { "item": "molle_pack", "damage": [ 1, 4 ], "prob": 50 },
+      { "item": "lmil_helm", "damage": [ 1, 4 ], "prob": 75 },
+      {
+        "distribution": [ { "item": "molle_pack", "damage": [ 1, 4 ], "prob": 50 }, { "item": "rucksack", "damage": [ 1, 4 ], "prob": 50 } ],
+        "prob": 50
+      },
       {
         "distribution": [
           { "item": "sheath", "contents-item": "knife_combat", "damage": [ 0, 3 ], "prob": 75 },
@@ -232,8 +335,29 @@
         ],
         "prob": 80
       },
-      { "item": "neo_laser_pistol", "damage": [ 0, 3 ], "charges": [ 0, 250 ] },
-      { "item": "light_atomic_battery_cell_rechargeable", "damage": [ 0, 1 ], "charges": [ 0, 500 ], "prob": 25 },
+      {
+        "distribution": [
+          {
+            "collection": [
+              { "item": "neo_laser_pistol", "damage": [ 0, 3 ], "charges": [ 0, 250 ] },
+              {
+                "item": "light_atomic_battery_cell_rechargeable",
+                "damage": [ 0, 1 ],
+                "charges": [ 0, 1000 ],
+                "prob": 25
+              }
+            ],
+            "prob": 50
+          },
+          {
+            "collection": [
+              { "item": "neo_laser_pistol_ups", "damage": [ 0, 3 ] },
+              { "item": "UPS_off", "damage": [ 0, 1 ], "charges": [ 0, 1250 ], "prob": 10 }
+            ],
+            "prob": 50
+          }
+        ]
+      },
       { "item": "chemistry_set", "damage": [ 0, 1 ], "prob": 90 },
       { "item": "id_science", "damage": [ 0, 1 ], "prob": 25 },
       {
@@ -251,8 +375,11 @@
     "entries": [
       { "group": "mon_zombie_bio_common" },
       { "item": "lmil_armor", "damage": [ 1, 4 ], "prob": 75 },
-      { "item": "lmil_helm", "damage": [ 1, 4 ], "prob": 75, "charges": [ 0, 100 ] },
-      { "item": "molle_pack", "damage": [ 1, 4 ], "prob": 50 },
+      { "item": "lmil_helm", "damage": [ 1, 4 ], "prob": 75 },
+      {
+        "distribution": [ { "item": "molle_pack", "damage": [ 1, 4 ], "prob": 50 }, { "item": "rucksack", "damage": [ 1, 4 ], "prob": 50 } ],
+        "prob": 50
+      },
       {
         "distribution": [
           { "item": "sheath", "contents-item": "knife_combat", "damage": [ 0, 3 ], "prob": 75 },
@@ -260,8 +387,29 @@
         ],
         "prob": 80
       },
-      { "item": "akro_laser_smg", "damage": [ 0, 3 ], "charges": [ 0, 500 ] },
-      { "item": "light_atomic_battery_cell_rechargeable", "damage": [ 0, 1 ], "charges": [ 500, 1000 ], "prob": 25 },
+      {
+        "distribution": [
+          {
+            "collection": [
+              { "item": "akro_laser_smg", "damage": [ 0, 3 ], "charges": [ 0, 500 ] },
+              {
+                "item": "light_atomic_battery_cell_rechargeable",
+                "damage": [ 0, 1 ],
+                "charges": [ 0, 1000 ],
+                "prob": 25
+              }
+            ],
+            "prob": 50
+          },
+          {
+            "collection": [
+              { "item": "akro_laser_smg_ups", "damage": [ 0, 3 ] },
+              { "item": "UPS_off", "damage": [ 0, 1 ], "charges": [ 0, 1250 ], "prob": 10 }
+            ],
+            "prob": 50
+          }
+        ]
+      },
       { "item": "chemistry_set", "damage": [ 0, 1 ], "prob": 90 },
       { "item": "id_science", "damage": [ 0, 1 ], "prob": 25 },
       {
@@ -323,8 +471,11 @@
           {
             "collection": [
               { "item": "mil_armor", "damage": [ 1, 4 ], "prob": 75 },
-              { "item": "mil_helm", "damage": [ 1, 4 ], "prob": 75, "charges": [ 0, 100 ] },
-              { "item": "vest", "damage": [ 1, 4 ], "prob": 50 },
+              { "item": "mil_helm", "damage": [ 1, 4 ], "prob": 75 },
+              {
+                "distribution": [ { "item": "molle_pack", "damage": [ 1, 4 ], "prob": 50 }, { "item": "rucksack", "damage": [ 1, 4 ], "prob": 50 } ],
+                "prob": 50
+              },
               {
                 "item": "medium_atomic_battery_cell_rechargeable",
                 "damage": [ 0, 1 ],
@@ -337,9 +488,11 @@
           {
             "collection": [
               { "item": "hmil_armor", "damage": [ 1, 4 ], "prob": 75 },
-              { "item": "hmil_helm", "damage": [ 1, 4 ], "prob": 75, "charges": [ 0, 100 ] },
-              { "item": "vest", "damage": [ 1, 4 ], "prob": 50 },
-              { "item": "dump_pouch", "damage": [ 1, 4 ], "prob": 50 },
+              { "item": "hmil_helm", "damage": [ 1, 4 ], "prob": 75 },
+              {
+                "distribution": [ { "item": "legrig", "damage": [ 1, 4 ], "prob": 50 }, { "item": "dump_pouch", "damage": [ 1, 4 ], "prob": 50 } ],
+                "prob": 50
+              },
               {
                 "distribution": [
                   { "item": "heavy_atomic_battery_cell_rechargeable", "damage": [ 0, 1 ], "charges": [ 0, 10000 ], "prob": 15 },
@@ -353,9 +506,15 @@
           {
             "collection": [
               { "item": "lmil_armor", "damage": [ 1, 4 ], "prob": 75 },
-              { "item": "lmil_helm", "damage": [ 1, 4 ], "prob": 75, "charges": [ 0, 100 ] },
-              { "item": "rucksack", "damage": [ 1, 4 ], "prob": 50 },
-              { "item": "dump_pouch", "damage": [ 1, 4 ], "prob": 50 },
+              { "item": "lmil_helm", "damage": [ 1, 4 ], "prob": 75 },
+              {
+                "distribution": [ { "item": "molle_pack", "damage": [ 1, 4 ], "prob": 50 }, { "item": "rucksack", "damage": [ 1, 4 ], "prob": 50 } ],
+                "prob": 50
+              },
+              {
+                "distribution": [ { "item": "legrig", "damage": [ 1, 4 ], "prob": 50 }, { "item": "dump_pouch", "damage": [ 1, 4 ], "prob": 50 } ],
+                "prob": 50
+              },
               {
                 "item": "medium_atomic_battery_cell_rechargeable",
                 "damage": [ 0, 1 ],
@@ -363,7 +522,7 @@
                 "prob": 20
               },
               { "item": "e_tool", "damage": [ 0, 3 ], "prob": 50 },
-              { "item": "mre_beef_box", "damage": [ 0, 3 ], "prob": 75 },
+              { "group": "mre_full_pack", "damage": [ 0, 3 ], "prob": 75 },
               { "item": "large_tent_kit", "damage": [ 0, 3 ], "prob": 25 },
               { "item": "rollmat", "damage": [ 0, 3 ], "prob": 50 }
             ],
@@ -372,8 +531,11 @@
           {
             "collection": [
               { "item": "lmil_armor", "damage": [ 1, 4 ], "prob": 75 },
-              { "item": "lmil_helm", "damage": [ 1, 4 ], "prob": 75, "charges": [ 0, 100 ] },
-              { "item": "molle_pack", "damage": [ 1, 4 ], "prob": 50 },
+              { "item": "lmil_helm", "damage": [ 1, 4 ], "prob": 75 },
+              {
+                "distribution": [ { "item": "molle_pack", "damage": [ 1, 4 ], "prob": 50 }, { "item": "rucksack", "damage": [ 1, 4 ], "prob": 50 } ],
+                "prob": 50
+              },
               {
                 "distribution": [
                   { "item": "light_atomic_battery_cell_rechargeable", "damage": [ 0, 1 ], "charges": [ 0, 500 ], "prob": 20 },

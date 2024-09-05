@@ -1,7 +1,7 @@
 [
   {
-    "id": "style_surv_com",
     "type": "martial_art",
+    "id": "style_surv_com",
     "name": { "str": "Survivor Combatives" },
     "description": "You learned how to handle yourself in the cataclysm.  Whether armed or unarmed, you know how to use your wits to stay alive.  Survival is of the highest priority.",
     "initiate": [ "You steady yourself, prepared for the fights ahead.", "%s prepares for the fights ahead." ],
@@ -12,19 +12,33 @@
     "arm_block_with_bio_armor_arms": true,
     "leg_block_with_bio_armor_legs": true,
     "allow_all_weapons": true,
+    "static_buffs": [
+      {
+        "id": "buff_surv_com_static",
+        "name": "Fluid Motion",
+        "description": "You've learned to move with a purposeful efficiency.  Movement speed increased by 25% of Intelligence.",
+        "skill_requirements": [ { "name": "melee", "level": 7 } ],
+        "unarmed_allowed": true,
+        "melee_allowed": true,
+        "flat_bonuses": [ { "stat": "speed", "scaling-stat": "int", "scale": 0.25 } ]
+      }
+    ],
     "onmove_buffs": [
       {
         "id": "buff_surv_com_onmove",
         "name": "Elusiveness",
-        "description": "Quick and fluid movements make you harder to catch.\n\n+1 Dodge attempts, Dodge skill increased by 25% of Intelligence, immunity to knockdown.\nLasts 3 turns, stacks 2 times.",
+        "description": "Quick and fluid movements make you harder to catch, and better able to roll with the punches.\n\n+1 Dodge attempts, Dodge skill increased by 25% of Intelligence, bash damage taken reduced by 25% of Intelligence, quicker recovery from knockdowns.\nLasts 3 turns, stacks 2 times.",
         "skill_requirements": [ { "name": "melee", "level": 4 } ],
         "unarmed_allowed": true,
         "melee_allowed": true,
-        "throw_immune": true,
+        "flags": [ "DOWNED_RECOVERY" ],
         "buff_duration": 3,
-        "max_stacks": 2,
+        "max_stacks": 3,
         "bonus_dodges": 1,
-        "flat_bonuses": [ { "stat": "dodge", "scaling-stat": "int", "scale": 0.25 } ]
+        "flat_bonuses": [
+          { "stat": "dodge", "scaling-stat": "int", "scale": 0.25 },
+          { "stat": "armor", "type": "bash", "scaling-stat": "str", "scale": 0.25 }
+        ]
       }
     ],
     "onhit_buffs": [
@@ -36,7 +50,7 @@
         "unarmed_allowed": true,
         "melee_allowed": true,
         "buff_duration": 2,
-        "max_stacks": 2,
+        "max_stacks": 3,
         "bonus_blocks": 1,
         "flat_bonuses": [ { "stat": "block", "scaling-stat": "int", "scale": 1.0 } ]
       }
@@ -45,15 +59,15 @@
       {
         "id": "buff_surv_com_onkill",
         "name": "Misdirection",
-        "description": "The shock and awe of combat gives you an opportunity to slip away.\n\n+2 Block attempts, +2 Dodge attempts, movement speed increased by 100% of Intelligence, moving generates 1/2 as much noise.\nLast 6 turns.",
+        "description": "The shock and awe of combat gives you an opportunity to slip away.\n\n+2 Block attempts, +2 Dodge attempts, Dodge skill increased by 50% of Intelligence, movement speed increased by 200% of Intelligence, moving generates 1/2 as much noise.\nLast 6 turns.",
         "skill_requirements": [ { "name": "melee", "level": 6 } ],
         "unarmed_allowed": true,
         "melee_allowed": true,
         "stealthy": true,
         "buff_duration": 6,
-        "bonus_dodges": 2,
+        "bonus_dodges": 3,
         "bonus_blocks": 2,
-        "flat_bonuses": [ { "stat": "speed", "scaling-stat": "int", "scale": 1.0 } ]
+        "flat_bonuses": [ { "stat": "dodge", "scaling-stat": "int", "scale": 0.5 }, { "stat": "speed", "scaling-stat": "int", "scale": 2.0 } ]
       }
     ],
     "techniques": [
@@ -65,8 +79,8 @@
     ]
   },
   {
-    "id": "style_mut_com",
     "type": "martial_art",
+    "id": "style_mut_com",
     "name": { "str": "Post-Human Combatives" },
     "description": "You've learned a number of tricks to take advantage of the potential that abandoning your humanity can offer.  Focused on heavy, powerful weapons or mutant limbs, a supernaturally strong post-human can use their abilities to great effect.",
     "initiate": [ "Your loosen your footwork and let your instincts take over.", "%s enters a loose, animalistic stance." ],
@@ -76,31 +90,44 @@
       {
         "id": "buff_mut_com_static",
         "name": "Large And In Charge",
-        "description": "Your stance makes better use of your might to compensate for poor footwork.\nAccuracy increased by 15% of strength, -10 move cost.",
+        "description": "Your stance makes better use of your might to compensate for poor footwork.\nAccuracy increased by 15% of strength, -10% move cost.",
         "skill_requirements": [ { "name": "melee", "level": 6 } ],
         "unarmed_allowed": true,
         "melee_allowed": true,
-        "flat_bonuses": [ { "stat": "hit", "scaling-stat": "str", "scale": 0.15 }, { "stat": "movecost", "scale": -10.0 } ]
+        "flat_bonuses": [ { "stat": "hit", "scaling-stat": "str", "scale": 0.15 } ],
+        "mult_bonuses": [ { "stat": "movecost", "scale": 0.9 } ]
       }
     ],
     "onpause_buffs": [
       {
         "id": "buff_mut_com_onpause",
         "name": "Stored Potential",
-        "description": "Conserving your energy and focusing your mind will permit explosive bursts of action.\n\n-10 move cost.\nLasts 2 turns, stacks 3 times.",
+        "description": "Conserving your energy and focusing your mind will permit explosive bursts of action.\n\n-10% move cost.\nLasts 3 turns.",
         "skill_requirements": [ { "name": "melee", "level": 5 } ],
         "unarmed_allowed": true,
         "melee_allowed": true,
         "buff_duration": 3,
-        "max_stacks": 3,
-        "flat_bonuses": [ { "stat": "movecost", "scale": -10.0 } ]
+        "mult_bonuses": [ { "stat": "movecost", "scale": 0.9 } ]
+      }
+    ],
+    "onattack_buffs": [
+      {
+        "id": "buff_mut_com_onattack",
+        "name": "Tension",
+        "description": "All you need to survive is to commit to the offensive.\n\n-10% move cost.\nLasts 3 turns, stacks 2 times.",
+        "skill_requirements": [ { "name": "melee", "level": 5 } ],
+        "unarmed_allowed": true,
+        "melee_allowed": true,
+        "buff_duration": 3,
+        "max_stacks": 2,
+        "mult_bonuses": [ { "stat": "movecost", "scale": 0.9 } ]
       }
     ],
     "onmove_buffs": [
       {
         "id": "buff_mut_com_onmove",
         "name": "Bull Rush",
-        "description": "When you get enough momentum going, they're going to feel it.\n\nMovement speed increased by 45% of strength, bash damage increased by 15% of strength.  Enables \"Battering Ram\" technique.\nLasts 2 turns, stacks 3 times.",
+        "description": "When you get enough momentum going, they're going to feel it.\n\nMovement speed increased by 45% of strength, damage increased by 15% of strength.  Enables \"Battering Ram\" technique.\nLasts 3 turns, stacks 3 times.",
         "skill_requirements": [ { "name": "melee", "level": 4 } ],
         "unarmed_allowed": true,
         "melee_allowed": true,
@@ -108,7 +135,9 @@
         "max_stacks": 3,
         "flat_bonuses": [
           { "stat": "speed", "scaling-stat": "str", "scale": 0.45 },
-          { "stat": "damage", "type": "bash", "scaling-stat": "str", "scale": 0.15 }
+          { "stat": "damage", "type": "bash", "scaling-stat": "str", "scale": 0.15 },
+          { "stat": "damage", "type": "cut", "scaling-stat": "str", "scale": 0.15 },
+          { "stat": "damage", "type": "stab", "scaling-stat": "str", "scale": 0.15 }
         ]
       }
     ],
@@ -116,159 +145,38 @@
       {
         "id": "buff_mut_com_onhit",
         "name": "Brutal Efficiency",
-        "description": "One powerful blow makes the follow-up that much easier.\n\n+2 Accuracy, bash armor penetration increased by 30% of strength.\nLasts 2 turns, stacks 2 times.",
+        "description": "One powerful blow makes the follow-up that much easier.\n\n+2 Accuracy, armor penetration increased by 25% of strength.\nLasts 2 turns, stacks 2 times.",
         "skill_requirements": [ { "name": "melee", "level": 7 } ],
         "unarmed_allowed": true,
         "melee_allowed": true,
         "buff_duration": 2,
         "max_stacks": 2,
-        "flat_bonuses": [ { "stat": "hit", "scale": 2 }, { "stat": "arpen", "type": "bash", "scaling-stat": "str", "scale": 0.3 } ]
+        "flat_bonuses": [
+          { "stat": "hit", "scale": 2 },
+          { "stat": "arpen", "type": "bash", "scaling-stat": "str", "scale": 0.25 },
+          { "stat": "arpen", "type": "cut", "scaling-stat": "str", "scale": 0.25 },
+          { "stat": "arpen", "type": "stab", "scaling-stat": "str", "scale": 0.25 }
+        ]
       }
     ],
     "techniques": [ "tec_mut_com_battering_ram", "tec_mut_com_overrun", "tec_mut_com_stampeding_strike", "tec_mut_com_feint" ],
+    "weapon_category": [ "FLAILS", "MACES", "LONG_SWORDS", "HOOKING_WEAPONRY", "POLEARMS", "GREAT_SWORDS", "GREAT_HAMMERS", "GREAT_AXES" ],
     "weapons": [
-      "2h_flail_steel",
-      "2h_flail_wood",
       "chainsaw_off",
       "chainsaw_on",
       "combatsaw_off",
       "combatsaw_on",
+      "compgreatbow",
       "e_combatsaw_off",
       "e_combatsaw_on",
       "elec_chainsaw_off",
       "elec_chainsaw_on",
-      "glaive",
-      "greatsword_makeshift",
-      "halberd",
-      "halberd_fake",
-      "hammer_sledge",
-      "hammer_sledge_engineer",
-      "hammer_sledge_heavy",
-      "hammer_sledge_short",
+      "greatbow_makeshift",
       "homewrecker",
-      "ji",
       "lajatang",
-      "lobotomizer",
-      "longsword",
-      "longsword_fake",
-      "longsword_inferior",
-      "lucern_hammer",
-      "lucern_hammerfake",
-      "makeshift_halberd",
-      "makeshift_scythe_war",
       "masonrysaw_off",
       "masonrysaw_on",
-      "naginata",
-      "naginata_fake",
-      "naginata_inferior",
-      "nodachi",
-      "nodachi_fake",
-      "nodachi_inferior",
-      "pickaxe",
-      "pike",
-      "pike_copper",
-      "pike_fake",
-      "pike_inferior",
-      "pike_wood",
-      "scythe",
-      "scythe_war",
-      "spear_survivor",
-      "zweihander",
-      "zweihander_fake",
-      "zweihander_inferior"
+      "woodgreatbow"
     ]
-  },
-  {
-    "id": "style_biojutsu",
-    "copy-from": "style_biojutsu",
-    "type": "martial_art",
-    "name": { "str": "Bionic Combatives" },
-    "extend": { "weapons": [ "unbio_bladed_weapon", "unbio_sword_weapon", "unbio_claws_weapon", "bio_sword_weapon" ] }
-  },
-  {
-    "id": "style_aikido",
-    "copy-from": "style_aikido",
-    "type": "martial_art",
-    "name": { "str": "Aikido" },
-    "extend": { "weapons": [ "unbio_claws_weapon" ] }
-  },
-  {
-    "id": "style_judo",
-    "copy-from": "style_judo",
-    "type": "martial_art",
-    "name": { "str": "Judo" },
-    "extend": { "weapons": [ "unbio_claws_weapon" ] }
-  },
-  {
-    "id": "style_silat",
-    "copy-from": "style_silat",
-    "type": "martial_art",
-    "name": { "str": "Silat" },
-    "extend": { "weapons": [ "elc_bld", "elc_blds", "molded_knife", "unbio_bladed_weapon", "flesh_knife" ] }
-  },
-  {
-    "id": "style_eskrima",
-    "copy-from": "style_eskrima",
-    "type": "martial_art",
-    "name": { "str": "Eskrima" },
-    "extend": { "weapons": [ "elc_bld", "elc_blds", "molded_knife", "unbio_bladed_weapon", "flesh_knife" ] }
-  },
-  {
-    "id": "style_krav_maga",
-    "copy-from": "style_krav_maga",
-    "type": "martial_art",
-    "name": { "str": "Krav Maga" },
-    "extend": {
-      "weapons": [
-        "elc_bld",
-        "elc_blds",
-        "molded_knife",
-        "unbio_bladed_weapon",
-        "flesh_knife",
-        "neo_laser_pistol",
-        "neo_laser_pistol_ups",
-        "akro_laser_smg",
-        "akro_laser_smg_ups",
-        "arc_laser_rifle",
-        "arc_laser_rifle_ups"
-      ]
-    }
-  },
-  {
-    "id": "style_fencing",
-    "copy-from": "style_fencing",
-    "type": "martial_art",
-    "name": { "str": "Fencing" },
-    "extend": { "weapons": [ "unbio_sword_weapon", "flesh_blade" ] }
-  },
-  {
-    "id": "style_barbaran",
-    "copy-from": "style_barbaran",
-    "type": "martial_art",
-    "name": { "str": "Barbaran Montante" },
-    "extend": { "weapons": [ "greatsword_makeshift" ] }
-  },
-  {
-    "id": "style_swordsmanship",
-    "copy-from": "style_swordsmanship",
-    "type": "martial_art",
-    "name": { "str": "Medieval Swordsmanship" },
-    "extend": { "weapons": [ "unbio_sword_weapon", "flesh_blade", "greatsword_makeshift" ] }
-  },
-  {
-    "id": "style_ninjutsu",
-    "copy-from": "style_ninjutsu",
-    "type": "martial_art",
-    "name": { "str": "Ninjutsu" },
-    "extend": {
-      "weapons": [ "elc_bld", "elc_blds", "molded_knife", "unbio_bladed_weapon", "unbio_sword_weapon", "flesh_knife", "flesh_blade" ]
-    }
-  },
-  {
-    "id": "style_medievalpole",
-    "copy-from": "style_medievalpole",
-    "type": "martial_art",
-    "name": { "str": "Fior Di Battaglia" },
-    "extend": { "weapons": [ "molded_axe" ] }
   }
 ]
