@@ -3,10 +3,8 @@
     "id": "cargo_rack_extended",
     "type": "vehicle_part",
     "name": { "str": "cargo shelving" },
-    "symbol": "=",
     "looks_like": "box",
     "color": "light_gray",
-    "broken_symbol": "#",
     "broken_color": "dark_gray",
     "durability": 250,
     "size": 4000,
@@ -23,7 +21,8 @@
       { "item": "steel_chunk", "count": [ 6, 16 ] },
       { "item": "scrap", "count": [ 6, 16 ] }
     ],
-    "damage_reduction": { "all": 28 }
+    "damage_reduction": { "all": 28 },
+    "variants": [ { "symbols": "=", "symbols_broken": "#" } ]
   },
   {
     "id": "solar_array",
@@ -31,8 +30,6 @@
     "name": { "str": "solar array" },
     "item": "solar_array",
     "location": "center",
-    "symbol": "#",
-    "broken_symbol": "x",
     "color": "yellow",
     "broken_color": "yellow",
     "durability": 250,
@@ -50,7 +47,8 @@
       "removal": { "skills": [ [ "mechanics", 4 ] ], "time": "45 m", "using": [ [ "vehicle_weld_removal", 1 ] ] },
       "repair": { "skills": [ [ "mechanics", 7 ] ], "time": "25 m", "using": [ [ "welding_standard", 5 ] ] }
     },
-    "flags": [ "SOLAR_PANEL", "OBSTACLE" ]
+    "flags": [ "SOLAR_PANEL", "OBSTACLE" ],
+    "variants": [ { "symbols": "#", "symbols_broken": "x" } ]
   },
   {
     "id": "solar_array2",
@@ -58,8 +56,6 @@
     "name": { "str": "upgraded solar array" },
     "item": "solar_array2",
     "location": "center",
-    "symbol": "#",
-    "broken_symbol": "x",
     "color": "yellow",
     "broken_color": "yellow",
     "durability": 250,
@@ -77,7 +73,8 @@
       "removal": { "skills": [ [ "mechanics", 4 ] ], "time": "45 m", "using": [ [ "vehicle_weld_removal", 1 ] ] },
       "repair": { "skills": [ [ "mechanics", 7 ] ], "time": "25 m", "using": [ [ "welding_standard", 5 ] ] }
     },
-    "flags": [ "SOLAR_PANEL", "OBSTACLE" ]
+    "flags": [ "SOLAR_PANEL", "OBSTACLE" ],
+    "variants": [ { "symbols": "#", "symbols_broken": "x" } ]
   },
   {
     "id": "solar_array2r",
@@ -85,8 +82,6 @@
     "name": { "str": "upgraded reinforced solar array" },
     "item": "solar_array2r",
     "location": "center",
-    "symbol": "#",
-    "broken_symbol": "x",
     "color": "light_blue",
     "broken_color": "light_gray",
     "durability": 500,
@@ -104,7 +99,8 @@
       "removal": { "skills": [ [ "mechanics", 6 ] ], "time": "45 m", "using": [ [ "vehicle_weld_removal", 1 ] ] },
       "repair": { "skills": [ [ "mechanics", 9 ] ], "time": "25 m", "using": [ [ "welding_standard", 5 ] ] }
     },
-    "flags": [ "SOLAR_PANEL", "OBSTACLE" ]
+    "flags": [ "SOLAR_PANEL", "OBSTACLE" ],
+    "variants": [ { "symbols": "#", "symbols_broken": "x" } ]
   },
   {
     "id": "wiring",
@@ -112,8 +108,6 @@
     "name": { "str": "wiring" },
     "item": "wire",
     "location": "structure",
-    "symbol": ".",
-    "broken_symbol": "#",
     "color": "white",
     "broken_color": "white",
     "durability": 10,
@@ -125,7 +119,8 @@
       "removal": { "skills": [ [ "mechanics", 2 ] ], "time": "30 s" },
       "repair": { "skills": [ [ "mechanics", 2 ] ], "time": "60 s" }
     },
-    "flags": [ "INITIAL_PART", "FOLDABLE", "AISLE" ]
+    "flags": [ "INITIAL_PART", "FOLDABLE", "AISLE" ],
+    "variants": [ { "symbols": ".", "symbols_broken": "#" } ]
   },
   {
     "id": "stabilized_cargo_portal",
@@ -134,8 +129,6 @@
     "//": "Keep away from Svarog detectors!",
     "item": "space_anomaly",
     "location": "center",
-    "symbol": "O",
-    "broken_symbol": "O",
     "color": "magenta",
     "broken_color": "magenta",
     "durability": 400,
@@ -147,14 +140,14 @@
       "removal": { "skills": [ [ "mechanics", 6 ] ], "time": "45 m", "using": [ [ "vehicle_weld_removal", 1 ] ] },
       "repair": { "skills": [ [ "mechanics", 9 ] ], "time": "25 m", "using": [ [ "welding_standard", 5 ] ] }
     },
-    "flags": [ "CARGO", "COVERED" ]
+    "flags": [ "CARGO", "COVERED" ],
+    "variants": [ { "symbols": "O", "symbols_broken": "O" } ]
   },
   {
     "id": "afs_fridge",
     "type": "vehicle_part",
     "copy-from": "minifridge",
     "name": { "str": "refrigerator" },
-    "symbol": "{",
     "categories": [ "cargo" ],
     "color": "white",
     "broken_color": "white",
@@ -163,14 +156,14 @@
     "description": "A medium-sized household refrigerator, converted to utilize vehicle power.  When turned on, food inside will be cooled, extending the time it has before spoiling.",
     "epower": -100,
     "size": 1200,
-    "item": "afs_fridge"
+    "item": "afs_fridge",
+    "variants": [ { "symbols": "{", "symbols_broken": "#" } ]
   },
   {
     "id": "afs_freezer",
     "type": "vehicle_part",
     "copy-from": "minifreezer",
     "name": { "str": "freezer" },
-    "symbol": "{",
     "categories": [ "cargo" ],
     "color": "light_blue",
     "broken_color": "light_blue",
@@ -179,16 +172,15 @@
     "description": "A household fridge, converted to run at a much lower temperature and on vehicle power.  When turned on, food inside will be frozen, completely stopping it from spoiling.",
     "epower": -120,
     "size": 1200,
-    "item": "afs_freezer"
+    "item": "afs_freezer",
+    "variants": [ { "symbols": "{", "symbols_broken": "#" } ]
   },
   {
     "id": "afs_metal_rig",
     "type": "vehicle_part",
     "name": { "str": "MetalMaster forge buddy" },
-    "symbol": "&",
     "categories": [ "utility" ],
     "color": "red",
-    "broken_symbol": "x",
     "broken_color": "red",
     "looks_like": "welding_rig",
     "damage_modifier": 10,
@@ -211,16 +203,15 @@
       { "item": "welder", "charges": 0, "prob": 50 },
       { "item": "forge", "charges": 0, "prob": 50 },
       { "item": "kiln", "charges": 0, "prob": 50 }
-    ]
+    ],
+    "variants": [ { "symbols": "&", "symbols_broken": "x" } ]
   },
   {
     "id": "afs_cooking_rig",
     "type": "vehicle_part",
     "name": { "str": "cooking rig" },
-    "symbol": "&",
     "categories": [ "utility" ],
     "color": "blue",
-    "broken_symbol": "x",
     "broken_color": "blue",
     "looks_like": "kitchen_unit",
     "damage_modifier": 10,
@@ -251,16 +242,15 @@
       { "item": "pan", "prob": 50 },
       { "item": "chemistry_set", "charges": 0, "prob": 50 },
       { "item": "hotplate", "charges": 0, "prob": 50 }
-    ]
+    ],
+    "variants": [ { "symbols": "&", "symbols_broken": "x" } ]
   },
   {
     "id": "afs_kitchen_rig",
     "type": "vehicle_part",
     "name": { "str": "KitchenMaster cooking buddy" },
-    "symbol": "&",
     "categories": [ "utility" ],
     "color": "yellow",
-    "broken_symbol": "x",
     "broken_color": "yellow",
     "looks_like": "kitchen_unit",
     "damage_modifier": 10,
@@ -302,6 +292,7 @@
       { "item": "dehydrator", "charges": 0, "prob": 50 },
       { "item": "food_processor", "charges": 0, "prob": 50 },
       { "item": "press", "prob": 50 }
-    ]
+    ],
+    "variants": [ { "symbols": "&", "symbols_broken": "x" } ]
   }
 ]
