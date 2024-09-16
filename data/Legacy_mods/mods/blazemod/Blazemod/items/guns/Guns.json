@@ -7,7 +7,6 @@
     "name": { "str": "nail rifle" },
     "description": "This is a nailgun that has been extensively modified with the addition of a short barrel, stock and hand guard.  It can be reloaded using detachable magazines and is an overall much more effective weapon.",
     "to_hit": -1,
-    "bashing": 12,
     "price_postapoc": 750,
     "skill": "rifle",
     "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "AUTO", "auto", 3 ] ],
@@ -32,7 +31,8 @@
         "max_contains_weight": "20 kg",
         "item_restriction": [ "nailmag" ]
       }
-    ]
+    ],
+    "melee_damage": { "bash": 12 }
   },
   {
     "id": "rebar_rifle",
@@ -46,7 +46,6 @@
     "price": 550000,
     "price_postapoc": 6000,
     "to_hit": -3,
-    "bashing": 10,
     "material": [ "steel", "wood" ],
     "symbol": "(",
     "color": "brown",
@@ -55,7 +54,6 @@
     "dispersion": 90,
     "durability": 6,
     "clip_size": 1,
-    "ups_charges": 40,
     "reload": 200,
     "valid_mod_locations": [
       [ "emitter", 1 ],
@@ -67,7 +65,9 @@
       [ "underbarrel mount", 1 ]
     ],
     "ammo_effects": [ "INCENDIARY", "TRAIL" ],
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "ammo_restriction": { "metal_rail": 1 } } ]
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "ammo_restriction": { "metal_rail": 1 } } ],
+    "flags": [ "USE_UPS" ],
+    "melee_damage": { "bash": 10 }
   },
   {
     "id": "tihar",
@@ -86,7 +86,6 @@
     "ammo": [ "pebble" ],
     "weight": "4211 g",
     "volume": "2750 ml",
-    "bashing": 8,
     "to_hit": -1,
     "ranged_damage": { "damage_type": "stab", "amount": 15 },
     "range": 15,
@@ -106,7 +105,8 @@
       [ "rail mount", 1 ],
       [ "underbarrel mount", 1 ]
     ],
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "ammo_restriction": { "pebble": 15 } } ]
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "ammo_restriction": { "pebble": 15 } } ],
+    "melee_damage": { "bash": 8 }
   },
   {
     "id": "helsing",
@@ -125,7 +125,6 @@
     "ammo": [ "bolt" ],
     "weight": "3110 g",
     "volume": "3 L",
-    "bashing": 12,
     "to_hit": -1,
     "ranged_damage": { "damage_type": "stab", "amount": 5 },
     "range": 20,
@@ -144,7 +143,8 @@
       [ "rail mount", 1 ],
       [ "underbarrel mount", 1 ]
     ],
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "ammo_restriction": { "bolt": 8 } } ]
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "ammo_restriction": { "bolt": 8 } } ],
+    "melee_damage": { "bash": 12 }
   },
   {
     "id": "ftk93",
@@ -157,13 +157,11 @@
     "price": 980000,
     "material": [ "steel", "plastic" ],
     "ammo_effects": [ "PLASMA", "EXPLOSIVE", "FLAME" ],
-    "flags": [ "NEVER_JAMS" ],
-    "ups_charges": 5,
+    "flags": [ "NEVER_JAMS", "USE_UPS" ],
     "skill": "rifle",
     "ammo": [ "fusion" ],
     "weight": "2267 g",
     "volume": "3500 ml",
-    "bashing": 10,
     "to_hit": -1,
     "ranged_damage": { "damage_type": "stab", "amount": 40 },
     "dispersion": 30,
@@ -180,7 +178,8 @@
       [ "stock", 1 ],
       [ "underbarrel", 1 ]
     ],
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "ammo_restriction": { "fusion": 2 } } ]
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "ammo_restriction": { "fusion": 2 } } ],
+    "melee_damage": { "bash": 10 }
   },
   {
     "id": "an94",
@@ -195,7 +194,6 @@
     "price": 420000,
     "price_postapoc": 4500,
     "to_hit": -1,
-    "bashing": 11,
     "material": [ "steel", "plastic" ],
     "symbol": "(",
     "color": "brown",
@@ -227,7 +225,8 @@
         "max_contains_weight": "20 kg",
         "item_restriction": [ "ak74mag", "rpk74mag" ]
       }
-    ]
+    ],
+    "melee_damage": { "bash": 11 }
   },
   {
     "id": "flamethrower_simple",
@@ -239,7 +238,6 @@
     "volume": "5 L",
     "price": 20000,
     "to_hit": -1,
-    "bashing": 8,
     "material": [ "steel", "plastic" ],
     "range": 4,
     "dispersion": 600,
@@ -247,13 +245,13 @@
     "relative": { "reload": 2 },
     "pocket_data": [
       {
+        "magazine_well": "1196 ml",
         "pocket_type": "MAGAZINE_WELL",
-        "holster": true,
-        "max_contains_volume": "20 L",
-        "max_contains_weight": "20 kg",
-        "item_restriction": [ "aux_pressurized_tank", "pressurized_tank" ]
+        "rigid": false,
+        "item_restriction": [ "pressurized_tank", "pressurized_tank_modern" ]
       }
-    ]
+    ],
+    "melee_damage": { "bash": 8 }
   },
   {
     "id": "heavy_rail_rifle",
@@ -267,7 +265,6 @@
     "price": 900000,
     "price_postapoc": 9000,
     "to_hit": -1,
-    "bashing": 12,
     "material": [ "steel", "plastic" ],
     "symbol": "(",
     "color": "dark_gray",
@@ -278,7 +275,6 @@
     "dispersion": 100,
     "durability": 7,
     "clip_size": 10,
-    "ups_charges": 100,
     "reload": 200,
     "valid_mod_locations": [
       [ "accessories", 4 ],
@@ -291,8 +287,9 @@
       [ "underbarrel", 1 ]
     ],
     "ammo_effects": [ "INCENDIARY", "TRAIL" ],
-    "flags": [ "RELOAD_ONE" ],
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "ammo_restriction": { "metal_rail": 10 } } ]
+    "flags": [ "RELOAD_ONE", "USE_UPS" ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "ammo_restriction": { "metal_rail": 10 } } ],
+    "melee_damage": { "bash": 12 }
   },
   {
     "id": "survivor_special_700",
@@ -330,7 +327,6 @@
     "volume": "2 L",
     "price": 500000,
     "to_hit": -2,
-    "bashing": 5,
     "material": [ "steel", "plastic" ],
     "symbol": "(",
     "color": "magenta",
@@ -340,7 +336,6 @@
     "dispersion": 180,
     "durability": 4,
     "loudness": 7,
-    "ups_charges": 20,
     "reload": 300,
     "valid_mod_locations": [
       [ "accessories", 2 ],
@@ -353,7 +348,8 @@
       [ "underbarrel mount", 1 ]
     ],
     "ammo_effects": [ "LASER", "INCENDIARY" ],
-    "flags": [ "NO_UNLOAD" ]
+    "flags": [ "NO_UNLOAD", "USE_UPS" ],
+    "melee_damage": { "bash": 5 }
   },
   {
     "id": "acr",
@@ -368,7 +364,6 @@
     "price": 234300,
     "price_postapoc": 6000,
     "to_hit": -1,
-    "bashing": 12,
     "material": [ "steel", "plastic" ],
     "symbol": "(",
     "color": "dark_gray",
@@ -402,7 +397,8 @@
           "survivor223mag"
         ]
       }
-    ]
+    ],
+    "melee_damage": { "bash": 12 }
   },
   {
     "id": "h&k416a5",
@@ -418,7 +414,6 @@
     "price": 540000,
     "price_postapoc": 2250,
     "to_hit": -1,
-    "bashing": 12,
     "material": [ "steel", "plastic" ],
     "symbol": "(",
     "color": "dark_gray",
@@ -450,7 +445,8 @@
           "survivor223mag"
         ]
       }
-    ]
+    ],
+    "melee_damage": { "bash": 12 }
   },
   {
     "id": "m1014",
@@ -465,7 +461,6 @@
     "price": 169900,
     "price_postapoc": 3500,
     "to_hit": -1,
-    "bashing": 12,
     "material": [ "steel", "plastic" ],
     "ranged_damage": { "damage_type": "bullet", "amount": 1 },
     "dispersion": 345,
@@ -484,7 +479,8 @@
       [ "underbarrel mount", 1 ]
     ],
     "flags": [ "RELOAD_ONE", "NEEDS_UNFOLD" ],
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "shot": 8 } } ]
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "shot": 8 } } ],
+    "melee_damage": { "bash": 12 }
   },
   {
     "id": "m27iar",
@@ -527,14 +523,12 @@
     "type": "GUN",
     "name": { "str": "M4A1" },
     "description": "A popular carbine, long used by the US military.  Though accurate, small, and lightweight, it is infamous for its unreliability when not properly maintained.",
-    "ascii_picture": "m4a1",
     "weight": "2880 g",
     "volume": "3310 ml",
     "longest_side": "758 mm",
     "price": 240000,
     "price_postapoc": 5000,
     "to_hit": -1,
-    "bashing": 12,
     "material": [ "steel", "plastic" ],
     "symbol": "(",
     "color": "dark_gray",
@@ -566,7 +560,8 @@
           "survivor223mag"
         ]
       }
-    ]
+    ],
+    "melee_damage": { "bash": 12 }
   },
   {
     "id": "scar_l",
@@ -582,7 +577,6 @@
     "price": 280000,
     "price_postapoc": 6000,
     "to_hit": -1,
-    "bashing": 12,
     "material": [ "steel", "plastic" ],
     "symbol": "(",
     "color": "dark_gray",
@@ -614,6 +608,7 @@
           "survivor223mag"
         ]
       }
-    ]
+    ],
+    "melee_damage": { "bash": 12 }
   }
 ]

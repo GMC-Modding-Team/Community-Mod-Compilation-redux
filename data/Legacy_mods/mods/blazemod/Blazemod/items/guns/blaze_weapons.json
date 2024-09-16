@@ -9,7 +9,6 @@
     "volume": "3750 ml",
     "price": "3500 USD",
     "to_hit": -3,
-    "bashing": 6,
     "material": [ "steel" ],
     "symbol": "(",
     "color": "dark_gray",
@@ -31,7 +30,8 @@
         "item_restriction": [ "bolt_hopper" ]
       }
     ],
-    "flags": [ "NEVER_JAMS", "MOUNTED_GUN" ]
+    "flags": [ "NEVER_JAMS", "MOUNTED_GUN" ],
+    "melee_damage": { "bash": 6 }
   },
   {
     "id": "cangun",
@@ -43,7 +43,6 @@
     "volume": "5500 ml",
     "price": "600 USD",
     "to_hit": -1,
-    "bashing": 12,
     "material": [ "steel", "plastic" ],
     "symbol": "(",
     "color": "light_gray",
@@ -66,7 +65,8 @@
       }
     ],
     "ammo_effects": [ "WIDE" ],
-    "flags": [ "NEVER_JAMS", "MOUNTED_GUN", "NON-FOULING" ]
+    "flags": [ "NEVER_JAMS", "MOUNTED_GUN", "NON-FOULING" ],
+    "melee_damage": { "bash": 12 }
   },
   {
     "id": "cutter",
@@ -78,7 +78,6 @@
     "volume": "2 L",
     "price": "100 USD",
     "to_hit": -1,
-    "bashing": 10,
     "material": [ "steel", "wood" ],
     "symbol": "(",
     "color": "white",
@@ -92,7 +91,8 @@
     "pocket_data": [ { "pocket_type": "MAGAZINE", "holster": true, "rigid": true, "ammo_restriction": { "ripdisk": 5 } } ],
     "reload": 1250,
     "valid_mod_locations": [  ],
-    "flags": [ "MOUNTED_GUN", "NEVER_JAMS", "NON-FOULING" ]
+    "flags": [ "MOUNTED_GUN", "NEVER_JAMS", "NON-FOULING" ],
+    "melee_damage": { "bash": 10 }
   },
   {
     "id": "gattler",
@@ -104,7 +104,6 @@
     "volume": "3750 ml",
     "price": "800 USD",
     "to_hit": -1,
-    "bashing": 12,
     "material": [ "steel", "plastic" ],
     "symbol": "(",
     "color": "light_gray",
@@ -119,7 +118,8 @@
     "pocket_data": [ { "pocket_type": "MAGAZINE", "holster": true, "rigid": true, "ammo_restriction": { "flintlock": 12 } } ],
     "reload": 750,
     "valid_mod_locations": [  ],
-    "flags": [ "NEVER_JAMS", "MOUNTED_GUN" ]
+    "flags": [ "NEVER_JAMS", "MOUNTED_GUN" ],
+    "melee_damage": { "bash": 12 }
   },
   {
     "id": "lasgun",
@@ -131,7 +131,6 @@
     "volume": "3 L",
     "price": "2700 USD",
     "to_hit": -1,
-    "bashing": 8,
     "material": [ "steel", "plastic" ],
     "symbol": "(",
     "color": "blue",
@@ -140,10 +139,10 @@
     "ranged_damage": { "damage_type": "heat", "amount": 150, "armor_penetration": 100 },
     "sight_dispersion": 150,
     "durability": 8,
-    "ups_charges": 249,
     "valid_mod_locations": [  ],
     "ammo_effects": [ "LASER", "WIDE" ],
-    "flags": [ "NEVER_JAMS", "NO_UNLOAD", "MOUNTED_GUN" ]
+    "flags": [ "NEVER_JAMS", "NO_UNLOAD", "MOUNTED_GUN", "USE_UPS" ],
+    "melee_damage": { "bash": 8 }
   },
   {
     "id": "lasgunp",
@@ -155,7 +154,6 @@
     "volume": "3 L",
     "price": "7500 USD",
     "to_hit": -1,
-    "bashing": 8,
     "material": [ "steel", "plastic" ],
     "symbol": "(",
     "color": "blue",
@@ -165,10 +163,10 @@
     "sight_dispersion": 150,
     "durability": 8,
     "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "AUTO", "auto", 5 ] ],
-    "ups_charges": 29,
     "valid_mod_locations": [  ],
     "ammo_effects": [ "LASER", "WIDE" ],
-    "flags": [ "NEVER_JAMS", "NO_UNLOAD", "MOUNTED_GUN" ]
+    "flags": [ "NEVER_JAMS", "NO_UNLOAD", "MOUNTED_GUN", "USE_UPS" ],
+    "melee_damage": { "bash": 8 }
   },
   {
     "id": "lasgunx",
@@ -180,7 +178,6 @@
     "volume": "4500 ml",
     "price": "7500 USD",
     "to_hit": -1,
-    "bashing": 8,
     "material": [ "steel", "plastic" ],
     "symbol": "(",
     "color": "magenta",
@@ -189,10 +186,10 @@
     "ranged_damage": { "damage_type": "heat", "amount": 200, "armor_penetration": 100 },
     "sight_dispersion": 150,
     "durability": 8,
-    "ups_charges": 499,
     "valid_mod_locations": [  ],
     "ammo_effects": [ "EXPLOSIVE", "LASER", "WIDE" ],
-    "flags": [ "NEVER_JAMS", "NO_UNLOAD", "MOUNTED_GUN", "NON-FOULING" ]
+    "flags": [ "NEVER_JAMS", "NO_UNLOAD", "MOUNTED_GUN", "NON-FOULING", "USE_UPS" ],
+    "melee_damage": { "bash": 8 }
   },
   {
     "id": "nailer",
@@ -204,7 +201,6 @@
     "volume": "2500 ml",
     "price": "500 USD",
     "to_hit": -1,
-    "bashing": 12,
     "material": [ "steel", "plastic" ],
     "symbol": "(",
     "color": "light_blue",
@@ -214,7 +210,6 @@
     "ranged_damage": { "damage_type": "stab", "amount": 25, "armor_penetration": 30 },
     "sight_dispersion": 150,
     "durability": 5,
-    "ups_charges": 9,
     "reload": 150,
     "valid_mod_locations": [  ],
     "pocket_data": [
@@ -227,7 +222,8 @@
         "item_restriction": [ "nailmag" ]
       }
     ],
-    "flags": [ "MOUNTED_GUN", "NEVER_JAMS", "NON-FOULING" ]
+    "flags": [ "MOUNTED_GUN", "NEVER_JAMS", "NON-FOULING", "USE_UPS" ],
+    "melee_damage": { "bash": 12 }
   },
   {
     "id": "needler",
@@ -239,7 +235,6 @@
     "volume": "3750 ml",
     "price": "1100 USD",
     "to_hit": -1,
-    "bashing": 12,
     "material": [ "steel", "plastic" ],
     "symbol": "(",
     "color": "dark_gray",
@@ -262,7 +257,8 @@
         "item_restriction": [ "nailmag" ]
       }
     ],
-    "flags": [ "MOUNTED_GUN", "NEVER_JAMS" ]
+    "flags": [ "MOUNTED_GUN", "NEVER_JAMS" ],
+    "melee_damage": { "bash": 12 }
   },
   {
     "id": "railturret",
@@ -274,7 +270,6 @@
     "volume": "4 L",
     "price": "5500 USD",
     "to_hit": -3,
-    "bashing": 10,
     "material": [ "steel", "wood" ],
     "symbol": "(",
     "color": "magenta",
@@ -286,10 +281,10 @@
     "durability": 6,
     "clip_size": 1,
     "pocket_data": [ { "pocket_type": "MAGAZINE", "holster": true, "rigid": true, "ammo_restriction": { "metal_rail": 1 } } ],
-    "ups_charges": 249,
     "reload": 200,
     "valid_mod_locations": [  ],
-    "ammo_effects": [ "FRAG", "TRAIL", "WIDE" ]
+    "ammo_effects": [ "FRAG", "TRAIL", "WIDE", "USE_UPS" ],
+    "melee_damage": { "bash": 10 }
   },
   {
     "id": "ripper",
@@ -301,7 +296,6 @@
     "volume": "3750 ml",
     "price": "950 USD",
     "to_hit": -1,
-    "bashing": 12,
     "material": [ "steel" ],
     "symbol": "(",
     "color": "dark_gray",
@@ -317,7 +311,8 @@
     "reload": 750,
     "valid_mod_locations": [  ],
     "ammo_effects": [ "WIDE" ],
-    "flags": [ "NEVER_JAMS", "MOUNTED_GUN", "NON-FOULING" ]
+    "flags": [ "NEVER_JAMS", "MOUNTED_GUN", "NON-FOULING" ],
+    "melee_damage": { "bash": 12 }
   },
   {
     "id": "rslauncher",
@@ -329,7 +324,6 @@
     "volume": "4500 ml",
     "price": "2800 USD",
     "to_hit": -1,
-    "bashing": 12,
     "material": [ "steel", "plastic" ],
     "symbol": "(",
     "color": "light_gray",
@@ -345,7 +339,8 @@
     "reload": 2500,
     "valid_mod_locations": [  ],
     "ammo_effects": [ "WIDE" ],
-    "flags": [ "NEVER_JAMS", "MOUNTED_GUN", "NON-FOULING" ]
+    "flags": [ "NEVER_JAMS", "MOUNTED_GUN", "NON-FOULING" ],
+    "melee_damage": { "bash": 12 }
   },
   {
     "id": "scorpion",
@@ -357,7 +352,6 @@
     "volume": "5 L",
     "price": "1500 USD",
     "to_hit": -1,
-    "bashing": 12,
     "material": [ "wood", "steel" ],
     "symbol": "(",
     "color": "dark_gray",
@@ -372,7 +366,8 @@
     "reload": 750,
     "valid_mod_locations": [  ],
     "ammo_effects": [ "WIDE" ],
-    "flags": [ "NEVER_JAMS", "MOUNTED_GUN", "NON-FOULING" ]
+    "flags": [ "NEVER_JAMS", "MOUNTED_GUN", "NON-FOULING" ],
+    "melee_damage": { "bash": 12 }
   },
   {
     "id": "shardgun",
@@ -384,7 +379,6 @@
     "volume": "3500 ml",
     "price": "500 USD",
     "to_hit": -1,
-    "bashing": 12,
     "material": [ "steel", "plastic" ],
     "symbol": "(",
     "color": "light_blue",
@@ -396,7 +390,6 @@
     "sight_dispersion": 150,
     "durability": 5,
     "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "AUTO", "auto", 25 ] ],
-    "ups_charges": 1,
     "reload": 150,
     "valid_mod_locations": [  ],
     "pocket_data": [
@@ -409,7 +402,8 @@
         "item_restriction": [ "bb_hopper" ]
       }
     ],
-    "flags": [ "MOUNTED_GUN", "NEVER_JAMS", "NON-FOULING" ]
+    "flags": [ "MOUNTED_GUN", "NEVER_JAMS", "NON-FOULING", "USE_UPS" ],
+    "melee_damage": { "bash": 12 }
   },
   {
     "id": "slauncher",
@@ -421,7 +415,6 @@
     "volume": "4 L",
     "price": "1100 USD",
     "to_hit": -1,
-    "bashing": 12,
     "material": [ "steel", "plastic" ],
     "symbol": "(",
     "color": "light_gray",
@@ -437,7 +430,8 @@
     "reload": 750,
     "valid_mod_locations": [  ],
     "ammo_effects": [ "WIDE" ],
-    "flags": [ "NEVER_JAMS", "MOUNTED_GUN", "NON-FOULING" ]
+    "flags": [ "NEVER_JAMS", "MOUNTED_GUN", "NON-FOULING" ],
+    "melee_damage": { "bash": 12 }
   },
   {
     "id": "teslagun",
@@ -449,7 +443,6 @@
     "volume": "3750 ml",
     "price": "2800 USD",
     "to_hit": -1,
-    "bashing": 8,
     "material": [ "steel", "plastic" ],
     "symbol": "(",
     "color": "blue",
@@ -457,10 +450,10 @@
     "range": 20,
     "ranged_damage": { "damage_type": "electric", "amount": 30, "armor_penetration": 10 },
     "durability": 8,
-    "ups_charges": 249,
     "valid_mod_locations": [  ],
     "ammo_effects": [ "BOUNCE", "LIGHTNING" ],
-    "flags": [ "NEVER_JAMS", "NO_UNLOAD", "NON-FOULING", "MOUNTED_GUN" ]
+    "flags": [ "NEVER_JAMS", "NO_UNLOAD", "NON-FOULING", "MOUNTED_GUN", "USE_UPS" ],
+    "melee_damage": { "bash": 8 }
   },
   {
     "id": "tiharturret",
@@ -472,7 +465,6 @@
     "volume": "3750 ml",
     "price": "1550 USD",
     "to_hit": -3,
-    "bashing": 6,
     "material": [ "steel" ],
     "symbol": "(",
     "color": "light_gray",
@@ -494,7 +486,8 @@
       }
     ],
     "reload": 150,
-    "flags": [ "NEVER_JAMS", "MOUNTED_GUN", "NON-FOULING" ]
+    "flags": [ "NEVER_JAMS", "MOUNTED_GUN", "NON-FOULING" ],
+    "melee_damage": { "bash": 6 }
   },
   {
     "id": "rifle_308",
@@ -508,7 +501,6 @@
     "volume": "2 L",
     "price": "100 USD",
     "to_hit": -1,
-    "bashing": 10,
     "material": [ "steel", "wood" ],
     "symbol": "(",
     "color": "brown",
@@ -542,7 +534,8 @@
         "max_contains_weight": "20 kg",
         "item_restriction": [ "g3_makeshiftmag", "g3mag", "g3bigmag" ]
       }
-    ]
+    ],
+    "melee_damage": { "bash": 10 }
   },
   {
     "id": "surv_carbine_223",
@@ -556,7 +549,6 @@
     "volume": "1500 ml",
     "price": "100 USD",
     "to_hit": -1,
-    "bashing": 6,
     "material": [ "steel", "wood" ],
     "symbol": "(",
     "color": "brown",
@@ -602,6 +594,7 @@
           "stanag150"
         ]
       }
-    ]
+    ],
+    "melee_damage": { "bash": 6 }
   }
 ]
