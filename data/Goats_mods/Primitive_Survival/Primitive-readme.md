@@ -854,9 +854,9 @@ t_shrub_raspberry - Raspberry bush
 - [x] Acai Shrub
 - [x] Birch Tree
 - [x] Spruce Tree
-- [ ] Breadfruit Tree
-- [ ] Cashew Tree
-- [ ] Rubber Tree
+- [x] Breadfruit Tree
+- [x] Cashew Tree
+- [x] Rubber Tree
 - [ ] Rice Plant
 - [ ] Turnip Plant
 - [ ] Swede Plant
