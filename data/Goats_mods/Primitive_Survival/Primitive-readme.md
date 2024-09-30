@@ -857,17 +857,17 @@ t_shrub_raspberry - Raspberry bush
 - [x] Breadfruit Tree
 - [x] Cashew Tree
 - [x] Rubber Tree
-- [x] Rice Plant
-- [x] Turnip Plant
-- [ ] Swede Plant
-- [ ] Pea Plant
-- [ ] Broad Bean Plant
-- [ ] Rye Plant
-- [ ] Hemp Plant
-- [ ] St. Johns Wort Plant
-- [ ] Yarrow Plant
-- [ ] Golden Rod Plant
-- [ ] Calendula Plant
+- [x] Rice Shrub
+- [x] Turnip Shrub
+- [ ] Swede Shrub
+- [ ] Pea Shrub
+- [ ] Broad Bean Shrub
+- [ ] Rye Shrub
+- [ ] Hemp Shrub
+- [ ] St. Johns Wort Shrub
+- [ ] Yarrow Shrub
+- [ ] Golden Rod Shrub
+- [ ] Calendula Shrub
 ```
 
 
