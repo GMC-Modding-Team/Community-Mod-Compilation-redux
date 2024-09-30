@@ -857,8 +857,8 @@ t_shrub_raspberry - Raspberry bush
 - [x] Breadfruit Tree
 - [x] Cashew Tree
 - [x] Rubber Tree
-- [ ] Rice Plant
-- [ ] Turnip Plant
+- [x] Rice Plant
+- [x] Turnip Plant
 - [ ] Swede Plant
 - [ ] Pea Plant
 - [ ] Broad Bean Plant
@@ -1507,4 +1507,3 @@ fruit seeds:
 - [ ] Large Mast - 1 log, 4 Sheets
 - [ ] Steering stick attached to steering wood - stick, log - cutting tool
 ```
-
