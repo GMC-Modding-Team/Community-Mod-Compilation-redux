@@ -861,8 +861,8 @@ t_shrub_raspberry - Raspberry bush
 - [x] Swede Shrub
 - [x] Pea Shrub
 - [x] Broad Bean Shrub
-- [ ] Rye Shrub
-- [ ] Hemp Shrub
+- [x] Rye Shrub
+- [x] Hemp Shrub
 - [ ] St. Johns Wort Shrub
 - [ ] Yarrow Shrub
 - [ ] Golden Rod Shrub
@@ -1415,7 +1415,7 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 - [ ] Green soup - herbs, water, flour, seasoning - boil
 - [ ] Vegetable soup - vegetables, water, seasoning - boil
 - [ ] Mushroom soup - mushrooms, water, flour, seasoning - boil
-- [ ] Vegetable stew - vegetables, water, mushrooms, seasoning - bake
+- [x] Vegetable and meat stew - vegetables, water, mushrooms, seasoning - bake
 ```
 
 
@@ -1460,7 +1460,7 @@ fruit seeds:
 - [ ] Broad Bean seed - Broad Bean
 - [ ] Rye seed - Rye
 - [ ] Hemp seed - Hemp
-- [ ] Goji seed - Goji berries
+- [x] Goji seed - Goji berries
 - [x] Bilberries seed - Bilberries
 - [x] Acai seed - Acai berries
 - [ ] St. Johns Wort Seed - St. Johns Wort
