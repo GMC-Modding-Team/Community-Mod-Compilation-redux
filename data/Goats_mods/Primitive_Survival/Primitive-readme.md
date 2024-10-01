@@ -724,12 +724,8 @@ t_shrub_raspberry - Raspberry bush
 - [x] Swede seed - Swede
 - [x] Pea seed - Pea shoot
 - [x] Broad Bean seed - Broad Bean
-- [ ] Rye seed - Rye
-- [ ] Hemp seed - Hemp
-- [ ] St. Johns Wort Seed - St. Johns Wort
-- [ ] Yarrow seed - Yarrow
-- [ ] Golden Rod Seed - Golden Rod
-- [ ] Calendula seed - Calendula
+- [x] Rye seed - Rye
+- [x] Hemp seed - Hemp
 ```
 
 
@@ -740,15 +736,6 @@ t_shrub_raspberry - Raspberry bush
 **Sub-Category -** [Medicine](#medicine)
 
 
-
-*GENERIC:*
-
-```markdown
-- [ ] St. Johns Wort
-- [ ] Yarrow
-- [ ] Golden Rod
-- [ ] Calendula
-```
 
 
 
@@ -863,10 +850,6 @@ t_shrub_raspberry - Raspberry bush
 - [x] Broad Bean Shrub
 - [x] Rye Shrub
 - [x] Hemp Shrub
-- [ ] St. Johns Wort Shrub
-- [ ] Yarrow Shrub
-- [ ] Golden Rod Shrub
-- [ ] Calendula Shrub
 ```
 
 
@@ -1442,7 +1425,7 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 
 
 
-fruit seeds:
+seeds:
 
 ```markdown
 - [x] Lingonberry Seed - Lingonberry
@@ -1463,10 +1446,6 @@ fruit seeds:
 - [x] Goji seed - Goji berries
 - [x] Bilberries seed - Bilberries
 - [x] Acai seed - Acai berries
-- [ ] St. Johns Wort Seed - St. Johns Wort
-- [ ] Yarrow seed - Yarrow
-- [ ] Golden Rod Seed - Golden Rod
-- [ ] Calendula seed - Calendula
 ```
 
 
