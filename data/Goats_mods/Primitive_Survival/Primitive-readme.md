@@ -720,11 +720,10 @@ t_shrub_raspberry - Raspberry bush
 - [x] Breadfruit Seed - Breadfruit
 - [x] Cashew Seed - Cashew Nut
 - [x] Rice Seed - Rice
-- [ ] Rubber Seed - Rubber
 - [x] Turnip seed - Turnip
 - [x] Swede seed - Swede
-- [ ] Pea seed - Pea shoot
-- [ ] Broad Bean seed - Broad Bean
+- [x] Pea seed - Pea shoot
+- [x] Broad Bean seed - Broad Bean
 - [ ] Rye seed - Rye
 - [ ] Hemp seed - Hemp
 - [ ] St. Johns Wort Seed - St. Johns Wort
@@ -860,8 +859,8 @@ t_shrub_raspberry - Raspberry bush
 - [x] Rice Shrub
 - [x] Turnip Shrub
 - [x] Swede Shrub
-- [ ] Pea Shrub
-- [ ] Broad Bean Shrub
+- [x] Pea Shrub
+- [x] Broad Bean Shrub
 - [ ] Rye Shrub
 - [ ] Hemp Shrub
 - [ ] St. Johns Wort Shrub
