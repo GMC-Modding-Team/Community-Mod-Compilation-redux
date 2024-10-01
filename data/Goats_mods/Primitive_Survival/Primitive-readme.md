@@ -717,12 +717,12 @@ t_shrub_raspberry - Raspberry bush
 - [x] Black-currant Seed - Black-currant
 - [x] Goji seed - Goji berries
 - [x] Acai seed - Acai berries
-- [ ] Breadfruit Seed - Breadfruit
-- [ ] Cashew Seed - Cashew Nut
-- [ ] Rice Seed - Rice
+- [x] Breadfruit Seed - Breadfruit
+- [x] Cashew Seed - Cashew Nut
+- [x] Rice Seed - Rice
 - [ ] Rubber Seed - Rubber
-- [ ] Turnip seed - Turnip
-- [ ] Swede seed - Swede
+- [x] Turnip seed - Turnip
+- [x] Swede seed - Swede
 - [ ] Pea seed - Pea shoot
 - [ ] Broad Bean seed - Broad Bean
 - [ ] Rye seed - Rye
@@ -859,7 +859,7 @@ t_shrub_raspberry - Raspberry bush
 - [x] Rubber Tree
 - [x] Rice Shrub
 - [x] Turnip Shrub
-- [ ] Swede Shrub
+- [x] Swede Shrub
 - [ ] Pea Shrub
 - [ ] Broad Bean Shrub
 - [ ] Rye Shrub
