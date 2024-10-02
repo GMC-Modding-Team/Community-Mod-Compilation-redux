@@ -204,9 +204,7 @@ deconstruct pile of leaves to get leaves ATM.
 *Materials:*
 
 ```markdown
-- [ ] Leather
 - [ ] Clay
-- [ ] ubber
 - [ ] Rocks
 - [ ] Logs
 - [ ] Sticks
@@ -219,8 +217,8 @@ deconstruct pile of leaves to get leaves ATM.
 *Leather clothing:*
 
 ```markdown
-leather_belt - Leather belt
-dress_shoes -  Leather shoes
+- [ ] leather_belt - Leather belt
+- [ ] dress_shoes -  Leather shoes
 ```
 
 
@@ -431,6 +429,7 @@ dress_shoes -  Leather shoes
 - [x] Leaves
 - [x] Peat
 - [x] Bamboo
+- [x] Cloth
 ```
 
 
