@@ -68,9 +68,9 @@ Use the `home` key to get to the top.
 - [x] Find out what `Items` have been added already to vanilla game and add to `Vanilla` Category
 - [x] Remove all `Items` in vanilla - add extra code to `Vanilla` Category
 - [x] Remove all `Materials` in vanilla - add extra code to `Vanilla` Category
-- [ ] Remove unwanted `Recipes`
+- [x] Remove unwanted `Recipes`
 - [ ] Add new `Construction` method for building with `Sticks`
-- [ ] Add new `Construction` method for building with `Sticks` and `Mud`
+- [ ] Add new `Construction` method for building with `Mud`
 - [ ] Add new `Construction` method for building with `bamboo`
 - [ ] Add more `Items`
 - [ ] Add more `Recipes`
@@ -159,8 +159,7 @@ lots of new items,
 
 *How to collect leaves:*
 Build menu - build_pile_of_leaves  requires- withered 50
-deconstruct pile of leaves to get leaves ATM,
-until I implement leaves falling off trees.
+deconstruct pile of leaves to get leaves ATM.
 
 
 
@@ -173,14 +172,14 @@ until I implement leaves falling off trees.
 *Tools:*
 
 ```markdown
-Primitive Knife
-Primitive Stone Hammers
-Primitive Hand Axes
-Primitive Adzes
-Primitive Shovel
-Mortar And Pestless
-t_Bellows - Primitive Bellows
-awl_bone - Primitive Bone Awl
+- [ ] Primitive Knife
+- [ ] Primitive Stone Hammer
+- [ ] Primitive Hand Axe
+- [ ] Primitive Adze
+- [ ] Primitive Shovel
+- [ ] Mortar And Pestless
+- [ ] t_Bellows - Primitive Bellows
+- [ ] awl_bone - Primitive Bone Awl
 ```
 
 
@@ -188,8 +187,8 @@ awl_bone - Primitive Bone Awl
 *Weapons:*
 
 ```markdown
-bolas - Primitive Bolas
-slingshot - Primitive Slingshot
+- [ ] bolas - Primitive Bolas
+- [ ] slingshot - Primitive Slingshot
 ```
 
 
@@ -197,7 +196,7 @@ slingshot - Primitive Slingshot
 *Generic:*
 
 ```markdown
-Glue
+- [ ] Glue
 ```
 
 
@@ -205,14 +204,14 @@ Glue
 *Materials:*
 
 ```markdown
-Leather
-Clay
-Rubber
-Rocks
-Logs
-Sticks
-Long Sticks
-Grass
+- [ ] Leather
+- [ ] Clay
+- [ ] ubber
+- [ ] Rocks
+- [ ] Logs
+- [ ] Sticks
+- [ ] Long Sticks
+- [ ] Grass
 ```
 
 
@@ -229,11 +228,11 @@ dress_shoes -  Leather shoes
 *Raw-Fruit:*
 
 ```markdown
-Blueberries
-Raspberries
-Strawberries
-Cranberries
-Grapes
+- [ ] Blueberries
+- [ ] Raspberries
+- [ ] Strawberries
+- [ ] Cranberries
+- [ ] Grapes
 ```
 
 
@@ -241,7 +240,7 @@ Grapes
 *Food:*
 
 ```markdown
-soup_meat - Meat soup
+- [ ] soup_meat - Meat soup
 ```
 
 
@@ -249,25 +248,17 @@ soup_meat - Meat soup
 *Seeds:*
 
 ```markdown
-seed_barley - Barley Seed - Barley
-seed_cabbage - Cabbage Seed - Cabbage
-coffee_pod - Coffee Bean - Coffee
-seed_grapes - Grape Seed - Grape
-seed_sugar_beet - Sugar Seed - Cane Sugar
-seed_tobacco - Tobacco Seed - Tobacco
-seed_tomato - Tomato Seed - Tomato
-seed_wheat - Wheat Seed - Wheat
+- [ ] seed_barley - Barley Seed - Barley
+- [ ] seed_cabbage - Cabbage Seed - Cabbage
+- [ ] coffee_pod - Coffee Bean - Coffee
+- [ ] seed_grapes - Grape Seed - Grape
+- [ ] seed_sugar_beet - Sugar Seed - Cane Sugar
+- [ ] seed_tobacco - Tobacco Seed - Tobacco
+- [ ] seed_tomato - Tomato Seed - Tomato
+- [ ] seed_wheat - Wheat Seed - Wheat
 ```
 
 
-
-*Terrain flora:*
-
-```markdown
-t_shrub_blueberry - Blueberry bush
-t_shrub_strawberry - Strawberry bush
-t_shrub_raspberry - Raspberry bush
-```
 
 
 
@@ -466,10 +457,10 @@ t_shrub_raspberry - Raspberry bush
 *Cloth Clothing:*
 
 ```markdown
-- [ ] Cloth Cap
-- [ ] Cloth Shirt
-- [ ] Cloth Mittens
-- [ ] Cloth leggings
+- [x] Cloth Cap
+- [x] Cloth Shirt
+- [x] Cloth Mittens
+- [x] Cloth leggings
 - [ ] Cloth Hood
 - [ ] Cloth Pants
 - [ ] Cloth Shoes
@@ -1076,7 +1067,7 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 - [ ] Primitive Dagger
 - [ ] Primitive Sword
 - [ ] Primitive Staff
-- [ ] Atlatls (A.k.a. Spear Throwers) - take from code already made
+- [x] Atlatls (A.k.a. Spear Throwers) - take from code already made
 ```
 
 
@@ -1406,7 +1397,7 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 *unfinished food:*
 
 ```markdown
-- [ ] Cashew Nuts
+- [x] Cashew Nuts
 - [ ] Cashew Milk
 - [ ] Ground Cashew
 - [ ] Organic Oil
@@ -1433,16 +1424,12 @@ seeds:
 - [x] Cloudberry Seed - Cloudberry
 - [x] Crowberry Seed - Crowberry
 - [x] Black-currant Seed - Black-currant
-- [ ] Breadfruit Seed - Breadfruit
-- [ ] Cashew Seed - Cashew Nut
-- [ ] Rice Seed - Rice
-- [ ] Rubber Seed - Rubber
-- [ ] Turnip seed - Turnip
-- [ ] Swede seed - Swede
-- [ ] Pea seed - Pea shoot
-- [ ] Broad Bean seed - Broad Bean
-- [ ] Rye seed - Rye
-- [ ] Hemp seed - Hemp
+- [x] Rice Seed - Rice
+- [x] Turnip seed - Turnip
+- [x] Swede seed - Swede
+- [x] Pea seed - Pea shoot
+- [x] Broad Bean seed - Broad Bean
+- [x] Rye seed - Rye
 - [x] Goji seed - Goji berries
 - [x] Bilberries seed - Bilberries
 - [x] Acai seed - Acai berries
