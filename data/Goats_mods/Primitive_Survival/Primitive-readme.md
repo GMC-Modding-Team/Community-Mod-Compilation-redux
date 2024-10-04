@@ -427,7 +427,7 @@ deconstruct pile of leaves to get leaves ATM.
 ```markdown
 - [x] Mud
 - [x] Leaves
-- [x] Peat
+- [ ] Peat
 - [x] Bamboo
 - [x] Cloth
 ```
