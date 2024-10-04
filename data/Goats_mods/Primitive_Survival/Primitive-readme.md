@@ -460,11 +460,11 @@ deconstruct pile of leaves to get leaves ATM.
 - [x] Cloth Shirt
 - [x] Cloth Mittens
 - [x] Cloth leggings
-- [ ] Cloth Hood
-- [ ] Cloth Pants
-- [ ] Cloth Shoes
-- [ ] Cloth Jacket
-- [ ] Cloth Gloves
+- [x] Cloth Hood
+- [x] Cloth Pants
+- [x] Cloth Shoes
+- [x] Cloth Jacket
+- [x] Cloth Gloves
 ```
 
 

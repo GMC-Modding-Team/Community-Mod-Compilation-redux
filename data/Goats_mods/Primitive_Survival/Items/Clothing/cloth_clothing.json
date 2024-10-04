@@ -5,7 +5,7 @@
     "name": { "str": "cloth cap" },
     "description": "A simple round cap.  Its brim helps keep the sun out of your eyes.",
     "weight": "92 g",
-    "volume": "500 ml",
+    "volume": "250 ml",
     "price": "15 USD",
     "price_postapoc": "80 cent",
     "material": [ "cloth" ],
@@ -30,7 +30,7 @@
     "type": "ARMOR",
     "name": { "str": "cloth shirt" },
     "description": "A simple cloth shirt.  Worn beneath your regular clothes, it provides a little extra warmth.",
-    "weight": "100 g",
+    "weight": "92 g",
     "volume": "250 ml",
     "price": "10 USD",
     "price_postapoc": "50 cent",
@@ -51,7 +51,7 @@
     "type": "ARMOR",
     "name": { "str": "pair of cloth mittens", "str_pl": "pairs of cloth mittens" },
     "description": "A pair of warm cloth mittens.",
-    "weight": "410 g",
+    "weight": "210 g",
     "volume": "1 L",
     "price": "40 USD",
     "price_postapoc": "2 USD 50 cent",
@@ -68,8 +68,8 @@
     "type": "ARMOR",
     "name": { "str": "cloth leggings", "str_pl": "pairs of cloth leggings" },
     "description": "Skin-tight cloth leggings, sometimes used when exercising, that keep your legs nice and warm.",
-    "weight": "155 g",
-    "volume": "500 ml",
+    "weight": "92 g",
+    "volume": "250 ml",
     "price": "10 USD",
     "price_postapoc": "50 cent",
     "material": [ "cloth" ],
@@ -80,5 +80,180 @@
     "material_thickness": 0.1,
     "flags": [ "VARSIZE", "SKINTIGHT", "WATER_FRIENDLY" ],
     "armor": [ { "coverage": 100, "covers": [ "leg_l", "leg_r" ] } ]
+  },
+  {
+    "id": "hood_cloth",
+    "type": "ARMOR",
+    "name": { "str": "cloth hood", "str_pl": "pairs of cloth hoods" },
+    "description": "Cloth hood, that keep your head nice and warm.",
+    "weight": "92 g",
+    "volume": "200 ml",
+    "price": "10 USD",
+    "price_postapoc": "50 cent",
+    "material": [ "cloth" ],
+    "symbol": "[",
+    "looks_like": "balclava",
+    "color": "white",
+    "warmth": 20,
+    "material_thickness": 0.1,
+    "flags": [ "VARSIZE", "SKINTIGHT", "WATER_FRIENDLY" ],
+    "armor": [
+      {
+        "encumbrance_modifiers": [ "NONE" ],
+        "coverage": 100,
+        "covers": [ "head" ],
+        "specifically_covers": [ "head_crown" ]
+      },
+      { "coverage": 80, "covers": [ "head" ], "specifically_covers": [ "head_forehead" ] },
+      { "coverage": 20, "covers": [ "head" ], "specifically_covers": [ "head_ear_l", "head_ear_r" ] }
+    ]
+  },
+  {
+    "id": "pants_cloth",
+    "type": "ARMOR",
+    "name": { "str_sp": "cloth pants" },
+    "description": "A pair of cloth pants.  Slightly warmer than jeans.",
+    "weight": "560 g",
+    "volume": "2 L",
+    "price": "10 USD",
+    "price_postapoc": "50 cent",
+    "material": [ "cloth" ],
+    "symbol": "[",
+    "looks_like": "jeans",
+    "color": "brown",
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "1250 ml",
+        "max_contains_weight": "4 kg",
+        "max_item_length": "19 cm",
+        "moves": 80
+      },
+      {
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "1250 ml",
+        "max_contains_weight": "4 kg",
+        "max_item_length": "19 cm",
+        "moves": 80
+      },
+      {
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "1080 ml",
+        "max_contains_weight": "4 kg",
+        "max_item_length": "165 mm",
+        "moves": 100
+      },
+      {
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "1080 ml",
+        "max_contains_weight": "4 kg",
+        "max_item_length": "165 mm",
+        "moves": 100
+      }
+    ],
+    "warmth": 15,
+    "material_thickness": 0.2,
+    "flags": [ "VARSIZE", "POCKETS" ],
+    "armor": [ { "encumbrance": [ 7, 11 ], "coverage": 100, "covers": [ "leg_l", "leg_r" ] } ]
+  },
+  {
+    "id": "shoes_cloth",
+    "type": "ARMOR",
+    "name": { "str": "pair of cloth shoes", "str_pl": "pairs of cloth shoecloth shoess" },
+    "description": "Tough cloth shoes, for getting about in.",
+    "weight": "280 g",
+    "volume": "250 ml",
+    "price": "10 USD",
+    "price_postapoc": "50 cent",
+    "to_hit": -1,
+    "symbol": "[",
+    "looks_like": "dress_shoes",
+    "color": "dark_gray",
+    "warmth": 20,
+    "environmental_protection": 1,
+    "flags": [ "VARSIZE", "WATERPROOF" ],
+    "armor": [
+      {
+        "covers": [ "foot_l", "foot_r" ],
+        "specifically_covers": [
+          "foot_toes_r",
+          "foot_toes_l",
+          "foot_ankle_r",
+          "foot_ankle_l",
+          "foot_heel_r",
+          "foot_heel_l",
+          "foot_arch_r",
+          "foot_arch_l"
+        ],
+        "material": [ { "type": "cloth", "covered_by_mat": 100, "thickness": 2.5 } ],
+        "encumbrance": 12,
+        "coverage": 100
+      },
+      {
+        "covers": [ "foot_l", "foot_r" ],
+        "specifically_covers": [ "foot_sole_r", "foot_sole_l" ],
+        "material": [
+          { "type": "cloth", "covered_by_mat": 100, "thickness": 0.1 },
+          { "type": "rubber", "covered_by_mat": 100, "thickness": 6.0 }
+        ],
+        "coverage": 100
+      }
+    ]
+  },
+  {
+    "id": "jacket_cloth",
+    "type": "ARMOR",
+    "name": { "str": "cloth jacket" },
+    "description": "A jacket made from cloth.",
+    "weight": "500 g",
+    "volume": "3250 ml",
+    "price": "80 USD",
+    "price_postapoc": "7 USD 50 cent",
+    "material": [ "cloth" ],
+    "symbol": "[",
+    "looks_like": "jacket_windbreaker",
+    "color": "light_blue",
+    "armor": [
+      { "covers": [ "torso" ], "specifically_covers": [ "torso_lower" ], "coverage": 100, "encumbrance": [ 8, 10 ] },
+      { "covers": [ "torso" ], "specifically_covers": [ "torso_upper" ], "coverage": 95 },
+      { "covers": [ "arm_l", "arm_r" ], "coverage": 100, "encumbrance": [ 8, 8 ] }
+    ],
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "1500 ml",
+        "max_contains_weight": "2 kg",
+        "max_item_length": "15 cm",
+        "moves": 80
+      },
+      {
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "1500 ml",
+        "max_contains_weight": "2 kg",
+        "max_item_length": "15 cm",
+        "moves": 80
+      }
+    ],
+    "warmth": 25,
+    "material_thickness": 0.95,
+    "flags": [ "VARSIZE", "POCKETS", "OUTER" ]
+  },
+  {
+    "id": "gloves_cloth",
+    "type": "ARMOR",
+    "name": { "str": "pair of cloth gloves", "str_pl": "pairs of cloth gloves" },
+    "description": "A pair of cloth gloves.",
+    "weight": "160 g",
+    "volume": "270 ml",
+    "price": "60 USD",
+    "price_postapoc": "1 USD 40 cent",
+    "material": [ "cloth" ],
+    "symbol": "[",
+    "looks_like": "gloves_medical",
+    "color": "dark_gray",
+    "material_thickness": 0.5,
+    "environmental_protection": 4,
+    "flags": [ "WATER_FRIENDLY", "WATERPROOF" ],
+    "armor": [ { "encumbrance": 15, "coverage": 100, "covers": [ "hand_l", "hand_r" ] } ]
   }
 ]
