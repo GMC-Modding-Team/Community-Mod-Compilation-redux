@@ -472,11 +472,11 @@ deconstruct pile of leaves to get leaves ATM.
 *Leather clothing:*
 
 ```markdown
-- [ ] Leather cap
-- [ ] Leather shirt
-- [ ] Leather leggings
-- [ ] Leather Jacket
-- [ ] Leather Gloves
+- [x] Leather cap
+- [x] Leather shirt
+- [x] Leather leggings
+- [x] Leather Jacket
+- [x] Leather Gloves
 ```
 
 
