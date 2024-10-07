@@ -1193,15 +1193,15 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 *Cloth Clothing:*
 
 ```markdown
-- [ ] Cloth Cap
-- [ ] Cloth Shirt
-- [ ] Cloth Mittens
-- [ ] Cloth leggings
-- [ ] Cloth Hood
-- [ ] Cloth Pants
-- [ ] Cloth Shoes
-- [ ] Cloth Jacket
-- [ ] Cloth Gloves
+- [x] Cloth Cap
+- [x] Cloth Shirt
+- [x] Cloth Mittens
+- [x] Cloth leggings
+- [x] Cloth Hood
+- [x] Cloth Pants
+- [x] Cloth Shoes
+- [x] Cloth Jacket
+- [x] Cloth Gloves
 ```
 
 
@@ -1209,11 +1209,11 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 *Leather clothing:*
 
 ```markdown
-- [ ] Leather cap
-- [ ] Leather shirt
-- [ ] Leather leggings
-- [ ] Leather Jacket
-- [ ] Leather Gloves
+- [x] Leather cap
+- [x] Leather shirt
+- [x] Leather leggings
+- [x] Leather Jacket
+- [x] Leather Gloves
 ```
 
 
@@ -1221,15 +1221,15 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 *Fur clothing:*
 
 ```markdown
-- [ ] Fur Cap
-- [ ] Fur Shirt
-- [ ] Fur Mittens
-- [ ] Fur Leggings
-- [ ] Fur Hood
-- [ ] Fur Shoes
-- [ ] Fur Cloak
-- [ ] Fur Jacket
-- [ ] Fur Gloves
+- [x] Fur Cap
+- [x] Fur Shirt
+- [x] Fur Mittens
+- [x] Fur Leggings
+- [x] Fur Hood
+- [x] Fur Shoes
+- [x] Fur Cloak
+- [x] Fur Jacket
+- [x] Fur Gloves
 ```
 
 
@@ -1237,32 +1237,25 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 *Birch-bark:*
 
 ```markdown
-- [ ] Birch-bark shoes
-- [ ] Birch-bark cap
+- [x] Birch-bark shoes
+- [x] Birch-bark cap
 ```
 
 
-
-*Source-bark:*
-
-```markdown
-- [ ] Source-bark shoes
-- [ ] Source-bark cap
-```
 
 
 
 *Combination clothes:*
 
 ```markdown
-- [ ] Fur-Leather Belt
-- [ ] Fur-Leather Cap
-- [ ] Fur-Leather Shirt
-- [ ] Fur-Leather Leggings
-- [ ] Fur-Leather Shoes
-- [ ] Fur-Leather Jacket
-- [ ] Fur-Leather Cloak
-- [ ] Fur-Leather Mittens
+- [x] Fur-Leather Belt
+- [x] Fur-Leather Cap
+- [x] Fur-Leather Shirt
+- [x] Fur-Leather Leggings
+- [x] Fur-Leather Shoes
+- [x] Fur-Leather Jacket
+- [x] Fur-Leather Cloak
+- [x] Fur-Leather Mittens
 ```
 
 
@@ -1287,9 +1280,9 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 *Leather clothing:*
 
 ```markdown
-- [ ] Leather forearm guards
-- [ ] Leather shin guards
-- [ ] Leather cuirass
+- [x] Leather forearm guards
+- [x] Leather shin guards
+- [x] Leather cuirass
 ```
 
 
@@ -1297,9 +1290,9 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 *Combination clothes:*
 
 ```markdown
-- [ ] Fur-Leather forearm guards
-- [ ] Fur-Leather shin guards
-- [ ] Fur-Leather cuirass
+- [x] Fur-Leather forearm guards
+- [x] Fur-Leather shin guards
+- [x] Fur-Leather cuirass
 ```
 
 
