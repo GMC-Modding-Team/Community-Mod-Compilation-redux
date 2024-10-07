@@ -532,9 +532,9 @@ deconstruct pile of leaves to get leaves ATM.
 *Leather clothing:*
 
 ```markdown
-- [ ] Leather forearm guards
-- [ ] Leather shin guards
-- [ ] Leather cuirass
+- [x] Leather forearm guards
+- [x] Leather shin guards
+- [x] Leather cuirass
 ```
 
 
@@ -542,9 +542,9 @@ deconstruct pile of leaves to get leaves ATM.
 *Combination clothes:*
 
 ```markdown
-- [ ] Fur-Leather forearm guards
-- [ ] Fur-Leather shin guards
-- [ ] Fur-Leather cuirass
+- [x] Fur-Leather forearm guards
+- [x] Fur-Leather shin guards
+- [x] Fur-Leather cuirass
 ```
 
 
