@@ -484,15 +484,15 @@ deconstruct pile of leaves to get leaves ATM.
 *Fur clothing:*
 
 ```markdown
-- [ ] Fur Cap
-- [ ] Fur Shirt
-- [ ] Fur Mittens
-- [ ] Fur Leggings
-- [ ] Fur Hood
-- [ ] Fur Shoes
-- [ ] Fur Cloak
-- [ ] Fur Jacket
-- [ ] Fur Gloves
+- [x] Fur Cap
+- [x] Fur Shirt
+- [x] Fur Mittens
+- [x] Fur Leggings
+- [x] Fur Hood
+- [x] Fur Shoes
+- [x] Fur Cloak
+- [x] Fur Jacket
+- [x] Fur Gloves
 ```
 
 
@@ -500,8 +500,8 @@ deconstruct pile of leaves to get leaves ATM.
 *Bark:*
 
 ```markdown
-- [ ] bark shoes
-- [ ] bark cap
+- [x] bark shoes
+- [x] bark cap
 ```
 
 
