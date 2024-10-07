@@ -490,9 +490,9 @@ deconstruct pile of leaves to get leaves ATM.
 - [x] Fur Leggings
 - [x] Fur Hood
 - [x] Fur Shoes
-- [x] Fur Cloak
 - [x] Fur Jacket
 - [x] Fur Gloves
+- [x] Fur Cloak
 ```
 
 
@@ -509,14 +509,14 @@ deconstruct pile of leaves to get leaves ATM.
 *Combination clothes:*
 
 ```markdown
-- [ ] Fur-Leather Belt
-- [ ] Fur-Leather Cap
-- [ ] Fur-Leather Shirt
-- [ ] Fur-Leather Leggings
-- [ ] Fur-Leather Shoes
-- [ ] Fur-Leather Jacket
-- [ ] Fur-Leather Cloak
-- [ ] Fur-Leather Mittens
+- [x] Fur-Leather Cap
+- [x] Fur-Leather Shirt
+- [x] Fur-Leather Leggings
+- [x] Fur-Leather Shoes
+- [x] Fur-Leather Jacket
+- [x] Fur-Leather Mittens
+- [x] Fur-Leather Cloak
+- [x] Fur-Leather Belt
 ```
 
 
