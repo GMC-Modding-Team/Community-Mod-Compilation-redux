@@ -142,7 +142,8 @@ Use the `home` key to get to the top.
 [Build a Primitive Adobe Rocket Stove (Part 1)](https://www.youtube.com/watch?v=TO3e4NYqr3c)\
 [Build a Primitive Adobe Rocket Stove (Part 2)](https://www.youtube.com/watch?v=hcbrIdEEG60)\
 [Build a Primitive Adobe Rocket Stove (Part 3)](https://www.youtube.com/watch?v=Htx6d9bz2Yo)\
-[Build a Primitive Adobe Rocket Stove (Part 4)](https://www.youtube.com/watch?v=N34CxATbf7Q)
+[Build a Primitive Adobe Rocket Stove (Part 4)](https://www.youtube.com/watch?v=N34CxATbf7Q)\
+[Add mushrooms edible](https://www.google.com/search?q=edible+mushrooms+in+new+england&sca_esv=159f37a1251190f9&rlz=1C1ONGR_en-GBGB1001GB1001&ei=7AsFZ7biBsGrhbIP9vifoA8&oq=new+england+mushrooms&gs_lp=Egxnd3Mtd2l6LXNlcnAiFW5ldyBlbmdsYW5kIG11c2hyb29tcyoCCAAyChAAGLADGNYEGEcyChAAGLADGNYEGEcyChAAGLADGNYEGEcyChAAGLADGNYEGEcyChAAGLADGNYEGEcyChAAGLADGNYEGEcyChAAGLADGNYEGEcyChAAGLADGNYEGEdI7xVQAFgAcAJ4AZABAJgBAKABAKoBALgBAcgBAJgCAqACBpgDAIgGAZAGCJIHATKgBwA&sclient=gws-wiz-serp)
 
 
 
