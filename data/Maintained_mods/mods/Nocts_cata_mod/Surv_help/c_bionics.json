@@ -12,21 +12,21 @@
     "skill": "rifle",
     "range": 30,
     "ranged_damage": { "damage_type": "heat", "amount": 20, "armor_penetration": 15 },
+    "energy_drain": "40 kJ",
     "dispersion": 10,
     "sight_dispersion": 150,
     "durability": 10,
     "modes": [ [ "DEFAULT", "auto", 5 ] ],
     "reload": 500,
     "ammo_effects": [ "LASER", "INCENDIARY" ],
-    "flags": [ "NEVER_JAMS", "NO_DROP", "TRADER_AVOID", "NON-FOULING", "NEEDS_NO_LUBE", "USES_BIONIC_POWER" ]
+    "flags": [ "NEVER_JAMS", "NO_DROP", "TRADER_AVOID", "NON_FOULING", "NEEDS_NO_LUBE", "USES_BIONIC_POWER" ]
   },
   {
-    "id": "bio_laser_armgun",
     "type": "bionic",
+    "id": "bio_laser_armgun",
     "name": { "str": "Laser Gatling Arm" },
     "//": "To be re-added if this ever gets accessible in JSON: However, you are unable to use or carry two-handed items, and your strength limits what you can use with your one hand.",
     "occupied_bodyparts": [ [ "arm_l", 10 ] ],
-    "act_cost": "50 kJ",
     "fake_weapon": "bio_laser_minigun",
     "description": "Your left arm has been outfitted with a complex array of rotating laser projectors.  Or in layman's terms, a laser gatling gun!  You may use your energy banks to fire a barrage of lasers.",
     "flags": [ "BIONIC_GUN" ]
@@ -41,27 +41,29 @@
     "difficulty": 3
   },
   {
-    "id": "bio_sword_weapon",
     "type": "GENERIC",
+    "id": "bio_sword_weapon",
+    "weapon_category": [ "BIONIC_WEAPONRY", "BIONIC_SWORDS" ],
     "name": { "str": "monomolecular sword" },
     "description": "A yard-long sword made from high-tech alloy and edged with bonded nanocrystals.",
     "weight": "300 g",
     "to_hit": 3,
     "color": "dark_gray",
     "symbol": "{",
+    "looks_like": "bio_blade_weapon",
     "material": [ "superalloy" ],
     "techniques": [ "RAPID", "WBLOCK_2" ],
     "volume": "2250 ml",
-    "cutting": 48,
-    "flags": [ "NO_UNWIELD", "NO_DROP", "UNBREAKABLE_MELEE", "TRADER_AVOID" ],
-    "qualities": [ [ "CUT", 1 ], [ "BUTCHER", 20 ] ]
+    "melee_damage": { "cut": 48 },
+    "flags": [ "BIONIC_WEAPON", "UNBREAKABLE_MELEE", "TRADER_AVOID" ],
+    "qualities": [ [ "CUT", 2 ], [ "BUTCHER", 20 ] ]
   },
   {
-    "id": "bio_sword",
     "type": "bionic",
+    "id": "bio_sword",
     "name": { "str": "Monomolecular Sword" },
     "occupied_bodyparts": [ [ "arm_r", 5 ], [ "hand_r", 2 ] ],
-    "act_cost": "1 kJ",
+    "act_cost": "150 J",
     "fake_weapon": "bio_sword_weapon",
     "description": "A deadly yard-long blade made of advanced material now resides inside your forearm, capable of being extended through the back of your wrist at the cost of a small amount of power.  Though exceptionally sharp, it will prevent you from holding anything else while extended.",
     "flags": [ "BIONIC_TOGGLED", "BIONIC_WEAPON", "USES_BIONIC_POWER" ]
@@ -88,20 +90,20 @@
     "skill": "rifle",
     "range": 5,
     "ranged_damage": { "damage_type": "heat", "amount": 5 },
+    "energy_drain": "50 kJ",
     "dispersion": 300,
     "sight_dispersion": 150,
     "durability": 10,
-    "modes": [ [ "DEFAULT", "auto", 5 ] ],
+    "modes": [ [ "DEFAULT", "auto", 2 ] ],
     "reload": 500,
     "ammo_effects": [ "FLAME", "INCENDIARY" ],
-    "flags": [ "NEVER_JAMS", "NO_DROP", "TRADER_AVOID", "NON-FOULING", "NEEDS_NO_LUBE", "USES_BIONIC_POWER" ]
+    "flags": [ "NEVER_JAMS", "NO_DROP", "TRADER_AVOID", "NON_FOULING", "NEEDS_NO_LUBE", "USES_BIONIC_POWER" ]
   },
   {
-    "id": "bio_flamethrower",
     "type": "bionic",
+    "id": "bio_flamethrower",
     "name": { "str": "Dual-Hand Flamethrower" },
     "occupied_bodyparts": [ [ "hand_r", 2 ], [ "hand_l", 2 ] ],
-    "act_cost": "100 kJ",
     "fake_weapon": "bio_flamethrower_gun",
     "description": "Implanted in the palms of your hands lie a compact flamethrower system that uses bionic power and oxygen in the air as ignition, use as any other gun.",
     "flags": [ "BIONIC_GUN" ]
@@ -120,15 +122,78 @@
     "type": "bionic",
     "name": { "str": "Plasma Pulse Cell" },
     "//": "Spikes of power at low efficiency because the available fuels have much smaller stack sizes than most fuels.  Since hydrogen is energy-dense, power per unit is massive.",
-    "description": "Implanted in your chest is a small, advanced form of hydrogen fuel cell.  Designed to produce a spike of power production for cutting-edge military cybernetics, it is significantly less efficient than a traditional hydrogen fuel cell, but each pulse still puts out a lot of power.  Each pulse vents a jet of intense heat, making it dangerous in confined spaces.  It can store either hydrogen gas, or it can use denser military-grade hydrogen canisters.",
+    "description": "Implanted in your chest is a small, advanced form of hydrogen fuel cell.  Designed to produce a spike of power production for cutting-edge military cybernetics, it is significantly less efficient than a traditional hydrogen fuel cell, but each pulse still puts out a lot of power.  Each pulse vents a jet of intense heat, making it dangerous in confined spaces.  It has two chambers, this one is configured for military-grade hydrogen canisters.",
     "occupied_bodyparts": [ [ "torso", 15 ] ],
-    "encumbrance": [ [ "torso", 5 ] ],
-    "fuel_options": [ "c_hydrogen_gas", "hydrogen_cell" ],
-    "fuel_capacity": 8,
+    "fuel_options": [ "hydrogen_cell" ],
     "fuel_efficiency": 0.25,
     "exothermic_power_gen": true,
     "time": 1,
-    "flags": [ "BIONIC_TOGGLED", "BIONIC_POWER_SOURCE", "BIONIC_NPC_USABLE" ]
+    "flags": [ "BIONIC_TOGGLED", "BIONIC_POWER_SOURCE", "BIONIC_NPC_USABLE" ],
+    "included_bionics": [ "bio_plasma_cell_hydrogen" ],
+    "passive_pseudo_items": [ "c_internal_plasma_tank" ]
+  },
+  {
+    "id": "c_internal_plasma_tank",
+    "type": "GENERIC",
+    "category": "container",
+    "name": { "str": "internal plasma tank" },
+    "description": "Internal tank for Plasma Pulse Cell bionic.",
+    "volume": "501 ml",
+    "weight": "1 g",
+    "price": 0,
+    "material": [ "plastic" ],
+    "symbol": "(",
+    "color": "magenta",
+    "flags": [ "INTEGRATED", "UNBREAKABLE", "PERSONAL", "NO_REPAIR", "ALLOWS_NATURAL_ATTACKS", "BIONIC_FUEL_SOURCE", "TARDIS" ],
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "watertight": true,
+        "rigid": true,
+        "max_contains_volume": "1000 ml",
+        "max_item_volume": "200 ml",
+        "max_contains_weight": "1 kg",
+        "material_restriction": [ "hydrogen_cell" ]
+      }
+    ]
+  },
+  {
+    "id": "bio_plasma_cell_hydrogen",
+    "type": "bionic",
+    "name": { "str": "Hydrogen Pulse Cell" },
+    "description": "A small, advanced form of hydrogen fuel cell, designed to produce a spike of power production for cutting-edge military cybernetics.  This is the separate chamber for burning lower-pressure hydrogen, for less intense bursts of bionic energy.",
+    "fuel_options": [ "c_hydrogen_gas" ],
+    "fuel_efficiency": 0.25,
+    "exothermic_power_gen": true,
+    "time": 1,
+    "flags": [ "BIONIC_TOGGLED", "BIONIC_POWER_SOURCE", "BIONIC_NPC_USABLE" ],
+    "included": true,
+    "passive_pseudo_items": [ "c_internal_hydrogen_tank" ]
+  },
+  {
+    "id": "c_internal_hydrogen_tank",
+    "type": "GENERIC",
+    "category": "container",
+    "name": { "str": "internal hydrogen tank" },
+    "description": "Internal tank for Hydrogen Pulse Cell bionic.",
+    "volume": "501 ml",
+    "weight": "1 g",
+    "price": 0,
+    "material": [ "plastic" ],
+    "symbol": "(",
+    "color": "magenta",
+    "flags": [ "INTEGRATED", "UNBREAKABLE", "PERSONAL", "NO_REPAIR", "ALLOWS_NATURAL_ATTACKS", "BIONIC_FUEL_SOURCE", "TARDIS" ],
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "watertight": true,
+        "rigid": true,
+        "max_contains_volume": "1000 ml",
+        "max_item_volume": "200 ml",
+        "max_contains_weight": "1 kg",
+        "material_restriction": [ "c_hydrogen_gas" ]
+      }
+    ]
   },
   {
     "id": "bio_plasma_cell",
@@ -136,61 +201,28 @@
     "type": "BIONIC_ITEM",
     "name": { "str": "Plasma Pulse Cell CBM" },
     "looks_like": "bio_fuel_cell_gasoline",
-    "description": "This implant provides an experimental military hydrogen cell, able to produce large spikes of power for intense usage.  Its network of pressurized storage can hold 500 ml of hydrogen gas, or denser hydrogen canisters used in plasma weaponry.  The label advises not to use it in confined spaces, and to keep moving if used during a military operation, due to hazardous levels of waste heat.",
+    "description": "This implant provides an experimental military hydrogen cell, able to produce large spikes of power for intense usage.  Its network of pressurized storage has two chambers, one can hold 500 ml of hydrogen gas, the other 5 rounds of denser hydrogen canisters used in plasma weaponry.  The label advises not to use it in confined spaces, and to keep moving if used during a military operation, due to hazardous levels of waste heat.",
     "price": "4500 USD",
     "weight": "600 g",
     "difficulty": 7
   },
   {
-    "type": "GENERIC",
-    "//": "pseudo item, used as fuel type for atomic battery CBM",
-    "id": "c_atomic_battery_power",
-    "symbol": "?",
-    "color": "white",
-    "name": { "str": "Alphavoltaic Power", "str_pl": "none" },
-    "description": "seeing this is a bug",
-    "stackable": true,
-    "volume": "0 ml",
-    "material": [ "c_atomic_battery_power" ],
-    "flags": [ "PSEUDO", "PERPETUAL" ]
-  },
-  {
     "id": "bio_atomic_battery",
-    "//": "This actually does nothing useful, see below.",
     "type": "bionic",
     "name": { "str": "Atomic Battery" },
-    "description": "Your body has been implanted with a compact, advanced plutonium-cell generator for military use.  A true atomic battery, using advanced materials to create a practical alphavoltaic power source.  While its power output is still very low, it's also consistent with negligible waste heat, making it a useful backup to another power generation method.  It will produce power continuously unless interrupted by the integral disconnect switch.",
+    "description": "Your body has been implanted with a compact, advanced plutonium-cell generator for military use.  A true atomic battery, using advanced materials to create a practical alphavoltaic power source.  While its power output is still very low, it's also consistent with negligible waste heat, making it a useful backup to another power generation method.",
     "occupied_bodyparts": [ [ "torso", 10 ] ],
-    "included_bionics": [ "bio_atomic_battery_2" ],
-    "flags": [ "BIONIC_SHOCKPROOF" ]
-  },
-  {
-    "id": "bio_atomic_battery_2",
-    "//": "This hides where the actual powergen is defined.  Toggling pure-passive powergen screws up the logic such that it'll only work when off, so of course turning it on needs to be disguised as a safety switch.  5 watts, closer to a bank of RHUs than an RTG, but it outputs ",
-    "type": "bionic",
-    "name": { "str": "Atomic Battery Interrupter" },
-    "description": "An integrated safety mechanism allowing one to shut down power production at will.  Works via angling plutonium catalysts to manipulate how much alpha decay hits the advanced nanocompounds that produce power.  Turn it on to halt power production, in the unlikely event that it becomes necessary.",
-    "fuel_options": [ "c_atomic_battery_power" ],
-    "passive_fuel_efficiency": 0.005,
-    "time": 1,
-    "flags": [ "BIONIC_TOGGLED", "BIONIC_POWER_SOURCE", "BIONIC_SHOCKPROOF" ]
+    "enchantments": [ { "values": [ { "value": "POWER_TRICKLE", "add": 6 } ] } ],
+    "flags": [ "BIONIC_POWER_SOURCE", "BIONIC_NPC_USABLE", "BIONIC_SHOCKPROOF" ]
   },
   {
     "id": "bio_atomic_battery",
     "copy-from": "bionic_general",
     "type": "BIONIC_ITEM",
     "name": { "str": "Atomic Battery CBM" },
-    "description": "An old form of non-thermal radioisotope generator, given new life and military applications using cutting-edge plutonium-catalyst developments.  Effectively a plutonium fuel cell converted into an alphavoltaic battery, with greater power output and longevity than older implants.  Its output is still very low at only 5 watts, but it is continuous unless deliberately interrupted by the provided disconnect system, making it a good supplement to a more intensive power generation method.",
+    "description": "An old form of non-thermal radioisotope generator, given new life and military applications using cutting-edge plutonium-catalyst developments.  Effectively a plutonium fuel cell converted into an alphavoltaic battery, with greater power output and longevity than older implants.  Its output is still very low at only 5 watts, but it also provides a continuous source of power, making it a good supplement to a more intensive power generation method.",
     "price": "8000 USD",
     "difficulty": 8
-  },
-  {
-    "id": "bio_atomic_battery_2",
-    "//": "Never actually exists, only needed by bionic code for unknown reason to avoid load error.",
-    "copy-from": "bionic_general",
-    "type": "BIONIC_ITEM",
-    "name": { "str": "Atomic Battery Interrupter" },
-    "description": "A system of power control and safety mechanisms normally built into an Atomic Battery system.  Removing it is almost certainly a bad idea."
   },
   {
     "id": "bio_hazard_shield",
@@ -227,14 +259,14 @@
     "time": 1
   },
   {
-    "id": "C_ENCH_HAZARD_SHIELD",
     "type": "enchantment",
+    "id": "C_ENCH_HAZARD_SHIELD",
     "condition": "ACTIVE",
     "ench_effects": [ { "effect": "hazard_shield_effect", "intensity": 1 } ]
   },
   {
-    "id": "hazard_shield_effect",
     "type": "effect_type",
+    "id": "hazard_shield_effect",
     "name": [ "Hazard Stabilization" ],
     "desc": [
       "Immunity to acid and biological damage.  Prevents, but does not cure, exposure to contact and injected hazards, such as venom.  Food poisoning and toxic gas will still affect you, but you will not take damage-over-time from them."
@@ -283,9 +315,9 @@
     "symbol": "#",
     "color": "white",
     "weight": "226 g",
-    "bashing": 3,
+    "melee_damage": { "bash": 3 },
     "flags": [ "NO_UNWIELD", "NO_DROP", "UNBREAKABLE_MELEE", "TRADER_AVOID", "USES_BIONIC_POWER" ],
-    "max_charges": 1000,
+    "ammo": "battery",
     "charges_per_use": 6,
     "use_action": [ "OXYTORCH" ],
     "qualities": [ [ "WELD", 2 ] ]
@@ -314,14 +346,14 @@
     "time": 1
   },
   {
-    "id": "C_ENCH_BIOPATTERN_DISTORTION",
     "type": "enchantment",
+    "id": "C_ENCH_BIOPATTERN_DISTORTION",
     "condition": "ACTIVE",
     "mutations": [ "C_BIOPATTERN_DISTORTION" ]
   },
   {
-    "id": "C_BIOPATTERN_DISTORTION",
     "type": "mutation",
+    "id": "C_BIOPATTERN_DISTORTION",
     "name": { "str": "Biopattern Distortion" },
     "points": 99,
     "valid": false,
@@ -369,7 +401,8 @@
     "name": { "str_sp": "Sentinel Power Storage CBM" },
     "looks_like": "bio_power_storage_mkII",
     "description": "A Compact Bionics Module developed by Omnitech Labs for military applications based on the highly successful Power Storage CBM.  Increases the user's power capacity by 1000 units.",
-    "price": 1000000,
+    "price": "10000 USD",
+    "price_postapoc": "10 USD",
     "weight": "50 g",
     "difficulty": 1
   }

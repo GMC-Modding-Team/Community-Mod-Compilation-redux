@@ -122,7 +122,43 @@
   {
     "type": "mapgen",
     "method": "json",
-    "om_terrain": [ "Survivor_Encampment" ],
+    "om_terrain": [ "Survivor_Encampment_roof" ],
+    "weight": 1000,
+    "object": {
+      "rows": [
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "  .....                 ",
+        "  .....                 ",
+        "  .....                 ",
+        "  ......         ,,,,,  ",
+        "  ......         ,,,,,  ",
+        "  .=....         ,,,,,  ",
+        "  ......         ,,,,,  ",
+        "  ......         ,,,,,  ",
+        "                        ",
+        "  ....................  ",
+        "  ....................  ",
+        "  ....................  ",
+        "  ....................  ",
+        "  ....................  ",
+        "  ....................  ",
+        "  ....................  ",
+        "  ....................  ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "palettes": [ "roof_palette" ],
+      "terrain": { ",": "t_thatch_roof", "=": "t_flat_roof" }
+    }
+  },
+  {
+    "type": "mapgen",
+    "method": "json",
+    "om_terrain": [ "Survivor_Encampment_robotics" ],
     "//": "Variant two, house and equipment sheds.  These are infested with renegade robots.",
     "weight": 1000,
     "object": {
@@ -222,8 +258,7 @@
         "n": "f_cupboard",
         "o": "f_oven",
         "s": "f_sink",
-        "t": "f_toilet",
-        "v": "f_woodstove"
+        "t": "f_toilet"
       },
       "set": [ { "point": "trap", "id": "tr_rollmat", "x": 12, "y": 13 }, { "point": "trap", "id": "tr_rollmat", "x": 12, "y": 17 } ],
       "place_toilets": [ { "x": 6, "y": 20 } ],
@@ -246,7 +281,7 @@
           "items": [
             { "item": "surgery", "chance": 75 },
             { "item": "bionics_failed_bio", "chance": 75 },
-            { "item": "bionics_failed_bio", "chance": 50 }
+            { "item": "bionic_power_storage_mil", "chance": 50 }
           ]
         },
         "o": { "items": { "item": "oven", "chance": 50 } },
@@ -261,7 +296,6 @@
       },
       "place_loot": [
         { "group": "tools_gunsmith", "x": 20, "y": [ 12, 13 ], "chance": 90, "repeat": 2 },
-        { "group": "ammo_atomic_batteries", "x": 20, "y": [ 12, 13 ], "chance": 50, "repeat": 2 },
         { "group": "tools_robotics", "x": 20, "y": [ 18, 20 ], "chance": 90, "repeat": 2 },
         { "group": "supplies_electronics", "x": 20, "y": [ 18, 20 ], "chance": 75, "repeat": 3 },
         { "item": "recipe_surv", "x": 5, "y": 11 }
@@ -285,7 +319,43 @@
   {
     "type": "mapgen",
     "method": "json",
-    "om_terrain": [ "Survivor_Encampment" ],
+    "om_terrain": [ "Survivor_Encampment_robotics_roof" ],
+    "weight": 1000,
+    "object": {
+      "rows": [
+        "                        ",
+        "                        ",
+        "                        ",
+        "  ........    ,,,,,,,,  ",
+        "  ........    ,,,,,,,,  ",
+        "  ........    ,,,,,,,,  ",
+        "  ........    ,,,,,,,,  ",
+        "  ........    ,,,,,,,,  ",
+        "  ........    ,,,,,,,,  ",
+        "  ........              ",
+        "  ........       ,,,,   ",
+        "  ........      ,,,,,,  ",
+        "  ........      ,,,,,,  ",
+        "  ........      ,,,,,,  ",
+        "  ........      ,,,,,,  ",
+        "  ........       ,,,,   ",
+        "  ........              ",
+        "  ........     ,,,,,,,  ",
+        "  ........     ,,,,,,,  ",
+        "  ........     ,,,,,,,  ",
+        "  ........     ,,,,,,,  ",
+        "  ........     ,,,,,,,  ",
+        "                        ",
+        "                        "
+      ],
+      "palettes": [ "roof_palette" ],
+      "terrain": { ",": "t_metal_flat_roof" }
+    }
+  },
+  {
+    "type": "mapgen",
+    "method": "json",
+    "om_terrain": [ "Survivor_Encampment_bandits" ],
     "//": "Variant three, hostile NPCs.  Slightly closer to the traditional encampment layout.",
     "weight": 1000,
     "object": {
@@ -415,7 +485,43 @@
   {
     "type": "mapgen",
     "method": "json",
-    "om_terrain": [ "Survivor_Encampment" ],
+    "om_terrain": [ "Survivor_Encampment_bandits_roof" ],
+    "weight": 1000,
+    "object": {
+      "rows": [
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "  .......               ",
+        "  .......      .......  ",
+        "  .......      ...=...  ",
+        "  .......      .......  ",
+        "  .......      .......  ",
+        "  .......      .......  ",
+        "  .......               ",
+        "  .......      .......  ",
+        "  .......      .......  ",
+        "  .......      .....=.  ",
+        "  .......      .......  ",
+        "  .......      .......  ",
+        "  .......               ",
+        "               .......  ",
+        "               .......  ",
+        "               .......  ",
+        "                        ",
+        "                        "
+      ],
+      "palettes": [ "roof_palette" ],
+      "terrain": { "=": "t_flat_roof" }
+    }
+  },
+  {
+    "type": "mapgen",
+    "method": "json",
+    "om_terrain": [ "Survivor_Encampment_overrun" ],
     "//": "Variant four, zombie takeover.  Incomplete version based off the original design, implies they were struggling with an outbreak while still under construction.",
     "weight": 1000,
     "object": {
@@ -541,11 +647,47 @@
   {
     "type": "mapgen",
     "method": "json",
-    "om_terrain": [ "Survivor_Encampment_2" ],
-    "//": "Prepper NPCs variant.  This version will remain rooted in a separate overmap special, to keep their spawns unique.",
+    "om_terrain": [ "Survivor_Encampment_overrun_roof" ],
     "weight": 1000,
     "object": {
-      "faction_owner": [ { "id": "preppers", "x": [ 2, 22 ], "y": [ 3, 22 ] } ],
+      "rows": [
+        "                        ",
+        "                        ",
+        "                        ",
+        "  .......      .......  ",
+        "  .......      ...=...  ",
+        "  .......      .......  ",
+        "  .......      .......  ",
+        "  .......      .......  ",
+        "                        ",
+        "  .......      .......  ",
+        "  .......      .......  ",
+        "  .......      .....=.  ",
+        "  .......      .......  ",
+        "  .......      .......  ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "palettes": [ "roof_palette" ],
+      "terrain": { "=": "t_flat_roof" }
+    }
+  },
+  {
+    "type": "mapgen",
+    "method": "json",
+    "om_terrain": [ "Survivor_Encampment_2" ],
+    "//": "Prepper NPCs variant.",
+    "weight": 1000,
+    "object": {
+      "faction_owner": [ { "id": "preppers", "x": [ 10, 13 ], "y": [ 3, 22 ] }, { "id": "preppers", "x": [ 16, 20 ], "y": [ 4, 16 ] } ],
       "rows": [
         ".........&..............",
         "##########====##########",
@@ -633,6 +775,7 @@
         "t": "f_table",
         "v": "f_woodstove"
       },
+      "place_zones": [ { "type": "NPC_NO_INVESTIGATE", "faction": "preppers", "x": [ 1, 22 ], "y": [ 2, 22 ] } ],
       "place_toilets": [ { "x": 16, "y": 20 }, { "x": 18, "y": 20 }, { "x": 20, "y": 20 } ],
       "mapping": {
         "B": { "items": { "item": "bed", "chance": 75 } },
@@ -659,7 +802,8 @@
       "place_loot": [
         { "group": "power_tools", "x": [ 19, 20 ], "y": 6, "chance": 75, "repeat": 3 },
         { "group": "supplies_reagents_lab", "x": [ 19, 20 ], "y": 6, "chance": 50, "repeat": 3 },
-        { "group": "bionics_failed_bio", "x": [ 17, 19 ], "y": 6, "chance": 50, "repeat": 3 },
+        { "group": "bionics_failed_bio", "x": [ 17, 19 ], "y": 6, "chance": 50, "repeat": 2 },
+        { "group": "bionic_power_storage_mil", "x": [ 17, 19 ], "y": 6, "chance": 50 },
         { "group": "tools_gunsmith", "x": [ 16, 18 ], "y": 10, "chance": 75, "repeat": 3 },
         { "group": "gunmod_common", "x": [ 16, 18 ], "y": 10, "chance": 50, "repeat": 3 },
         { "group": "gunmod_rare", "x": [ 16, 18 ], "y": 10, "chance": 50, "repeat": 3 },
@@ -671,10 +815,10 @@
         { "group": "drugs_heal_simple", "x": [ 16, 17 ], "y": 14, "chance": 50, "repeat": 6 },
         { "group": "survivor_weapons", "x": [ 16, 18 ], "y": 16, "chance": 75, "repeat": 3 },
         { "group": "ammo_reloaded", "x": [ 16, 18 ], "y": 16, "chance": 50, "repeat": 6 },
-        { "group": "mags_makeshift", "x": [ 16, 18 ], "y": 16, "chance": 50, "repeat": 6 },
         { "group": "tools_electronics", "x": 20, "y": [ 14, 16 ], "chance": 75, "repeat": 3 },
         { "group": "supplies_electronics", "x": 20, "y": [ 14, 16 ], "chance": 50, "repeat": 6 },
-        { "group": "bionics_failed_bio", "x": 20, "y": [ 14, 16 ], "chance": 50, "repeat": 3 },
+        { "group": "bionics_failed_bio", "x": 20, "y": [ 14, 16 ], "chance": 50, "repeat": 2 },
+        { "group": "bionic_power_storage_mil", "x": 20, "y": [ 14, 16 ], "chance": 50 },
         { "item": "bucket", "x": [ 6, 7 ], "y": 4 },
         { "item": "recipe_surv", "x": 4, "y": 11 }
       ],
@@ -683,7 +827,6 @@
         { "vehicle": "bicycle_electric", "x": 13, "y": 15, "chance": 90, "fuel": 25, "status": -1, "rotation": 270 },
         { "vehicle": "surv_tachanka", "x": 12, "y": 8, "chance": 75, "status": -1, "rotation": 270 }
       ],
-      "place_monster": [ { "monster": "mon_horse", "x": 4, "y": 4 }, { "monster": "mon_horse", "x": 6, "y": 6 } ],
       "place_npcs": [
         { "class": "survn", "x": 9, "y": 4 },
         { "class": "survn", "x": 18, "y": 6 },
@@ -694,6 +837,122 @@
         { "class": "survn", "x": 6, "y": 19 },
         { "class": "survn", "x": 14, "y": 17 }
       ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "method": "json",
+    "om_terrain": [ "Survivor_Encampment_2_roof" ],
+    "weight": 1000,
+    "object": {
+      "rows": [
+        "                        ",
+        "                        ",
+        "                        ",
+        "  ,,,,,,,      .......  ",
+        "  ,,,,,,,      ...=...  ",
+        "  ,,,,,,,      .......  ",
+        "  ,,,,,,,      .......  ",
+        "  ,,,,,,,      .......  ",
+        "                        ",
+        "  .......      .......  ",
+        "  .......      .......  ",
+        "  .......      .......  ",
+        "  .......      .......  ",
+        "  .......      .......  ",
+        "  .......      .......  ",
+        "  .......      .......  ",
+        "  .......      .......  ",
+        "  .......      .......  ",
+        "                        ",
+        "               .......  ",
+        "               .......  ",
+        "               .......  ",
+        "                        ",
+        "                        "
+      ],
+      "palettes": [ "roof_palette" ],
+      "terrain": { ",": "t_thatch_roof", "=": "t_flat_roof" }
+    }
+  },
+  {
+    "type": "mapgen",
+    "method": "json",
+    "om_terrain": [ "Survivor_Encampment_Lot_Preppers" ],
+    "//": "Buffer space for inhabited survivor encampment, used to spawn players outside them in the relevant scenario.",
+    "weight": 1000,
+    "object": {
+      "rows": [
+        "...........??...........",
+        "..........????..........",
+        "..........????..........",
+        "..........????..........",
+        "..........????..........",
+        "..........????..........",
+        "..........????..........",
+        "..........????..........",
+        "..........????..........",
+        "..........????..........",
+        ".??????????,,??????????.",
+        "??????????,,,,??????????",
+        "??????????,,,,??????????",
+        ".?????????,,,,?????????.",
+        "..........,,,,..........",
+        "..........,,,,..........",
+        "..........,,,,..........",
+        "..........,,,,..........",
+        "..........,,,,..........",
+        "..........,,,,..........",
+        "..........,,,,..........",
+        "..........,,,,..........",
+        "..........,,,,..........",
+        "..........,,,,.........."
+      ],
+      "terrain": {
+        ".": [ [ "t_region_groundcover", 12 ], [ "t_region_shrub_fruit", 2 ], "t_region_tree_shade" ],
+        ",": "t_region_groundcover_barren",
+        "?": [ "t_region_groundcover_barren", "t_region_groundcover" ]
+      }
+    }
+  },
+  {
+    "type": "mapgen",
+    "method": "json",
+    "om_terrain": [ "Survivor_Encampment_Lot_Generic" ],
+    "//": "Used for all other encampment variants to ensure that players in the relevant scenario never spawn at a hostile camp.",
+    "weight": 1000,
+    "object": {
+      "rows": [
+        "...........??...........",
+        "..........????..........",
+        "..........????..........",
+        "..........????..........",
+        "..........????..........",
+        "..........????..........",
+        "..........????..........",
+        "..........????..........",
+        "..........????..........",
+        "..........????..........",
+        ".??????????,,??????????.",
+        "??????????,,,,??????????",
+        "??????????,,,,??????????",
+        ".?????????,,,,?????????.",
+        "..........,,,,..........",
+        "..........,,,,..........",
+        "..........,,,,..........",
+        "..........,,,,..........",
+        "..........,,,,..........",
+        "..........,,,,..........",
+        "..........,,,,..........",
+        "..........,,,,..........",
+        "..........,,,,..........",
+        "..........,,,,.........."
+      ],
+      "terrain": {
+        ".": [ [ "t_region_groundcover", 12 ], [ "t_region_shrub_fruit", 2 ], "t_region_tree_shade" ],
+        ",": "t_region_groundcover_barren",
+        "?": [ [ "t_region_groundcover_barren", 10 ], [ "t_region_groundcover", 8 ], "t_region_shrub_fruit", "t_region_tree_shade" ]
+      }
     }
   }
 ]

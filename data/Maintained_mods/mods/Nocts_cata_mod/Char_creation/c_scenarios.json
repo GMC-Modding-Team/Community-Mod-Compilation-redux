@@ -2,14 +2,14 @@
   {
     "type": "scenario",
     "name": "Bio-Weapon Lab",
-    "description": "You woke up, where are you?  Who are you?  What are you?!  That doesn't matter right now... you have a bad feeling...",
+    "description": "You woke up, where are you?  Who are you?  What are you?!  That doesn't matter right now… you have a bad feeling…",
     "flags": [ "LONE_START", "SUR_START" ],
-    "custom_initial_date": { "season": "summer" },
+    "start_of_game": { "season": "summer" },
     "id": "bio_weapon_lab",
     "points": 0,
     "start_name": "Bio-Weapon Lab",
     "allowed_locs": [ "Bio_Weapon_Lab_l" ],
-    "professions": [ "bio_weapon_a", "bio_weapon_b", "bio_weapon_g", "bio_weapon_d", "failed_weapon" ],
+    "professions": [ "bio_weapon_a", "bio_weapon_b", "bio_weapon_g", "bio_weapon_d", "failed_weapon_scen" ],
     "traits": [ "MARTIAL_ARTS_MUT_COM", "MARTIAL_ARTS_BIOJUTSU" ],
     "forbidden_traits": [
       "GOURMAND",
@@ -30,7 +30,7 @@
     "name": "Mycus B.W.M.D",
     "description": "After mycus assimilation was successful, our local system was instructed to claim more territory for the mycus. Hostile organisms are near, proceed with caution.",
     "flags": [ "LONE_START", "SUR_START" ],
-    "custom_initial_date": { "season": "autumn" },
+    "start_of_game": { "season": "autumn" },
     "id": "mycus_bwmd",
     "points": 2,
     "start_name": "Fungal Territory",
@@ -53,50 +53,84 @@
   },
   {
     "type": "scenario",
-    "name": "Prepper Household",
-    "description": "You knew something was coming, you prepared, when the dead rose, you knew what to do. With your house now barricaded, it's time to put your plan into action.",
+    "name": "Prepper Safehouse",
+    "description": "You knew something was coming, so you made connections with like-minded survivors beforehand to establish safe refuge.  You've made your plans, now it's time to put them into action.",
     "id": "prep_house",
     "points": 2,
-    "start_name": "Boarded Up House",
-    "allowed_locs": [ "sloc_house_boarded" ],
-    "professions": [ "survivalist", "jr_survivalist", "prepper" ],
-    "traits": [ "MARTIAL_ARTS_SURV_COM" ]
+    "start_name": "Safehouse",
+    "allowed_locs": [
+      "sloc_house_boarded",
+      "surv_camp_l",
+      "sloc_surv_holdout",
+      "sloc_surv_encampment",
+      "sloc_cabin",
+      "sloc_hermit_shack",
+      "sloc_farm_survivalist",
+      "sloc_lmoe"
+    ],
+    "professions": [
+      "survivalist",
+      "jr_survivalist",
+      "prepper",
+      "fisher",
+      "birder",
+      "groundskeeper",
+      "blacksmith",
+      "bionic_silencer",
+      "surv_drifter",
+      "surv_knight_errant",
+      "surv_techno_barbarian"
+    ],
+    "traits": [ "MARTIAL_ARTS_SURV_COM" ],
+    "forced_traits": [ "PROF_PREPPER_HOLDOUT" ],
+    "flags": [ "CITY_START", "LONE_START" ]
   },
   {
     "type": "scenario",
     "name": "Slave Fighter's Freedom",
-    "description": "All your life you have been experimented on and forced to fight others for the amusement of your masters. Never having seen the sun or the outside the cataclysm gave you a chance at freedom. Now you just have to escape from your fellow combatants...",
+    "description": "All your life, you have been experimented on and forced to fight others for the amusement of your masters.  Never having seen the sun or the outside, the cataclysm gave you a chance at freedom.  Now you just have to escape from your fellow combatants…",
     "flags": [ "LONE_START", "CHALLENGE" ],
     "id": "house_fight_scenario",
     "points": -2,
     "start_name": "Sketchy Cabin",
     "allowed_locs": [ "house_fight_s" ],
     "traits": [
-      "ARM_FEATHERS",
-      "BEAK",
-      "CARNIVORE",
-      "CHITIN",
-      "ELFAEYES",
       "FANGS",
-      "FELINE_EARS",
-      "GROWL",
-      "LIGHT_BONES",
-      "MARTIAL_ARTS_BIOJUTSU",
-      "MARTIAL_ARTS_MUT_COM",
-      "MARTIAL_ARTS_SURV_COM",
+      "SPINES",
+      "PLANTSKIN",
       "NAILS",
       "PADDED_FEET",
-      "PLANTSKIN",
-      "PONDEROUS1",
-      "RADIOACTIVE1",
       "RAP_TALONS",
-      "SLIMY",
-      "SLIT_NOSTRILS",
+      "HOOVES",
+      "TAIL_FLUFFY",
       "TAIL_LONG",
-      "TROGLO",
-      "URSINE_EYE",
-      "WEB_WALKER",
-      "WHISKERS"
+      "WHISKERS",
+      "SLIT_NOSTRILS",
+      "BEAK",
+      "UNSTABLE",
+      "RADIOACTIVE1",
+      "SLIMY",
+      "CARNIVORE",
+      "PONDEROUS1",
+      "COLDBLOOD",
+      "GROWL",
+      "ARM_FEATHERS",
+      "ARM_TENTACLES",
+      "LEG_TENTACLES",
+      "CHAOTIC",
+      "LIGHT_BONES",
+      "CHITIN",
+      "ELECTRORECEPTORS",
+      "SCALES",
+      "FEATHERS",
+      "FUR",
+      "ANTLERS",
+      "WINGS_BIRD",
+      "WINGS_INSECT",
+      "WINGS_BAT",
+      "SMALL",
+      "LARGE",
+      "MARTIAL_ARTS_MUT_COM"
     ],
     "professions": [ "sf_blade", "sf_claw", "sf_shock", "sf_weapon" ]
   },
@@ -120,62 +154,109 @@
   },
   {
     "copy-from": "alone",
-    "id": "alone",
     "type": "scenario",
+    "id": "alone",
     "extend": { "traits": [ "MARTIAL_ARTS_SURV_COM" ] }
   },
   {
     "copy-from": "summer_advanced_start",
-    "id": "summer_advanced_start",
     "type": "scenario",
-    "extend": { "traits": [ "MARTIAL_ARTS_SURV_COM" ], "professions": [ "bio_infantry", "bio_scout", "bio_knight", "bio_tool" ] }
+    "id": "summer_advanced_start",
+    "extend": {
+      "traits": [ "MARTIAL_ARTS_MUT_COM", "MARTIAL_ARTS_SURV_COM" ],
+      "professions": [
+        "bio_weapon_a",
+        "bio_weapon_b",
+        "bio_weapon_g",
+        "bio_weapon_d",
+        "bio_infantry",
+        "bio_scout",
+        "bio_knight",
+        "bio_tool",
+        "surv_drifter",
+        "surv_knight_errant",
+        "surv_techno_barbarian"
+      ]
+    }
   },
   {
     "copy-from": "ambushed",
+    "type": "scenario",
     "id": "ambushed",
-    "type": "scenario",
-    "extend": { "traits": [ "MARTIAL_ARTS_SURV_COM" ], "professions": [ "bio_infantry", "bio_scout", "bio_knight", "bio_tool" ] }
-  },
-  {
-    "copy-from": "cyberpunk",
-    "id": "cyberpunk",
-    "type": "scenario",
-    "extend": { "traits": [ "MARTIAL_ARTS_BIOJUTSU" ] }
+    "extend": {
+      "traits": [ "MARTIAL_ARTS_MUT_COM", "MARTIAL_ARTS_SURV_COM" ],
+      "professions": [
+        "bio_weapon_a",
+        "bio_weapon_b",
+        "bio_weapon_g",
+        "bio_weapon_d",
+        "bio_infantry",
+        "bio_scout",
+        "bio_knight",
+        "bio_tool",
+        "surv_drifter",
+        "surv_knight_errant",
+        "surv_techno_barbarian"
+      ]
+    }
   },
   {
     "copy-from": "wilderness",
     "type": "scenario",
-    "extend": { "allowed_locs": [ "surv_camp_l" ] },
+    "add_professions": true,
+    "extend": { "allowed_locs": [ "surv_camp_l" ], "professions": [ "surv_drifter", "surv_knight_errant", "surv_techno_barbarian" ] },
     "id": "wilderness"
   },
   {
     "copy-from": "mutant",
-    "id": "mutant",
     "type": "scenario",
-    "extend": { "traits": [ "MARTIAL_ARTS_MUT_COM" ], "professions": [ "failed_weapon" ] }
+    "id": "mutant",
+    "extend": {
+      "traits": [ "MARTIAL_ARTS_MUT_COM" ],
+      "professions": [ "bio_weapon_a", "bio_weapon_b", "bio_weapon_g", "bio_weapon_d", "failed_weapon" ]
+    }
   },
   {
     "copy-from": "lab_chal",
-    "id": "lab_chal",
     "type": "scenario",
-    "extend": { "professions": [ "failed_weapon" ] }
+    "id": "lab_chal",
+    "extend": { "traits": [ "MARTIAL_ARTS_MUT_COM" ], "professions": [ "failed_weapon" ] }
   },
   {
     "copy-from": "lab_staff",
-    "id": "lab_staff",
     "type": "scenario",
-    "extend": { "professions": [ "bio_infantry", "bio_scout", "bio_knight", "bio_tool" ] }
+    "id": "lab_staff",
+    "extend": { "professions": [ "bio_infantry", "bio_scout", "bio_knight", "bio_tool", "bionic_silencer" ] }
   },
   {
     "copy-from": "heli_crash",
-    "id": "heli_crash",
     "type": "scenario",
-    "extend": { "professions": [ "bio_infantry", "bio_scout", "bio_knight", "bio_tool" ] }
+    "id": "heli_crash",
+    "extend": { "professions": [ "bio_infantry", "bio_scout", "bio_knight", "bio_tool", "bionic_silencer" ] }
   },
   {
     "copy-from": "overrun",
-    "id": "overrun",
     "type": "scenario",
+    "id": "overrun",
     "extend": { "professions": [ "bio_infantry", "bio_scout", "bio_knight", "bio_tool" ] }
+  },
+  {
+    "copy-from": "aircraft_carrier_start",
+    "type": "scenario",
+    "id": "aircraft_carrier_start",
+    "extend": { "professions": [ "bio_infantry", "bio_scout", "bio_knight", "bio_tool" ] }
+  },
+  {
+    "copy-from": "surrounded",
+    "type": "scenario",
+    "add_professions": true,
+    "extend": { "allowed_locs": [ "sloc_mansion" ], "professions": [ "surv_drifter", "surv_knight_errant", "surv_techno_barbarian" ] },
+    "id": "surrounded"
+  },
+  {
+    "copy-from": "migo_prisoner",
+    "type": "scenario",
+    "id": "migo_prisoner",
+    "extend": { "professions": [ "failed_weapon" ] }
   }
 ]

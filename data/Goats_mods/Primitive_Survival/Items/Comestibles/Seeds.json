@@ -7,25 +7,14 @@
     "category": "seeds",
     "volume": "250 ml",
     "weight": "1 g",
-    "price": 120,
-    "price_postapoc": 25,
-    "charges": 4,
+    "price": "120 cent",
+    "price_postapoc": "25 cent",
     "stack_size": 100,
     "material": [ "veggy" ],
     "primary_material": "dried_vegetable",
     "symbol": ".",
     "color": "brown",
     "flags": [ "NUTRIENT_OVERRIDE", "PLANTABLE_SEED" ]
-  },
-  {
-    "abstract": "seed_tea_leaf",
-    "type": "COMESTIBLE",
-    "copy-from": "seed",
-    "name": { "str": "Tea Leaf template", "str_pl": "Tea Leaf template" },
-    "description": "It is a species of tea leaves.",
-    "volume": "10 ml",
-    "material": [ "tlgreentea" ],
-    "primary_material": "dried_vegetable"
   },
   {
     "abstract": "seed_fruit",
@@ -36,12 +25,19 @@
     "material": [ "fruit" ]
   },
   {
-    "abstract": "seed_mushroom_base",
+    "abstract": "seed_veggy",
+    "type": "COMESTIBLE",
+    "copy-from": "seed",
+    "name": { "str_sp": "veggy seeds" },
+    "primary_material": "dried_vegetable",
+    "material": [ "veggy" ]
+  },
+  {
+    "abstract": "seed_mushroom",
     "type": "COMESTIBLE",
     "copy-from": "seed",
     "name": { "str_sp": "mushroom spores" },
     "description": "Some mushroom spores.",
-    "charges": 2,
     "color": "green"
   },
   {
@@ -50,7 +46,7 @@
     "type": "COMESTIBLE",
     "name": { "str": "rice seed", "str_pl": "rice seeds" },
     "description": "Long grain rice seed",
-    "seed_data": { "plant_name": "rice", "fruit": "rice", "byproducts": [ "plant_fibre" ], "grow": 100 }
+    "seed_data": { "plant_name": "rice plant", "fruit": "rice", "byproducts": [ "plant_fibre" ], "grow": "91 days" }
   },
   {
     "id": "seed_lingonberries",
@@ -109,13 +105,43 @@
     "seed_data": { "plant_name": "acaiberry", "fruit": "acaiberries", "byproducts": [ "withered" ], "grow": "91 days" }
   },
   {
+    "id": "seed_turnip",
+    "copy-from": "seed_veggy",
     "type": "COMESTIBLE",
-    "copy-from": "seed_tea_leaf",
-    "id": "seed_tea_leaf",
-    "name": { "str": "tea leaf seed", "str_pl": "tea leaf seeds" },
-    "description": "It is a species of tea leaves.",
-    "looks_like": "seed_wheat",
-    "charges": 4,
-    "seed_data": { "plant_name": "tea plant", "fruit": "tea_raw", "byproducts": [ "withered" ], "grow": "70 days" }
+    "name": { "str": "turnip seed", "str_pl": "turnip seeds" },
+    "description": "Turnip seed",
+    "seed_data": { "plant_name": "turnip plant", "fruit": "turnip", "byproducts": [ "withered" ], "grow": "91 days" }
+  },
+  {
+    "id": "seed_swede",
+    "copy-from": "seed_veggy",
+    "type": "COMESTIBLE",
+    "name": { "str": "swede seed", "str_pl": "swede seeds" },
+    "description": "Swede seed",
+    "seed_data": { "plant_name": "swede plant", "fruit": "swede", "byproducts": [ "withered" ], "grow": "91 days" }
+  },
+  {
+    "id": "seed_pea",
+    "copy-from": "seed_veggy",
+    "type": "COMESTIBLE",
+    "name": { "str": "pea seed", "str_pl": "pea seeds" },
+    "description": "pea seed",
+    "seed_data": { "plant_name": "pea plant", "fruit": "pea", "byproducts": [ "withered" ], "grow": "91 days" }
+  },
+  {
+    "id": "seed_broad_bean",
+    "copy-from": "seed_veggy",
+    "type": "COMESTIBLE",
+    "name": { "str": "broad bean seed", "str_pl": "broad bean seeds" },
+    "description": "broad bean seed",
+    "seed_data": { "plant_name": "broad bean plant", "fruit": "broad_bean", "byproducts": [ "withered" ], "grow": "91 days" }
+  },
+  {
+    "id": "seed_hemp",
+    "copy-from": "seed",
+    "type": "COMESTIBLE",
+    "name": { "str": "hemp seed", "str_pl": "hemp seeds" },
+    "description": "hemp seed",
+    "seed_data": { "plant_name": "rice plant", "fruit": "seed_hemp", "byproducts": [ "hemp_fibre" ], "grow": "91 days" }
   }
 ]

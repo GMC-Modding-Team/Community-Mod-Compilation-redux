@@ -12,11 +12,11 @@
           "has": "WORN",
           "condition": "ALWAYS",
           "values": [
-            { "value": "STRENGTH", "add": 10 },
-            { "value": "ARMOR_BASH", "add": -20 },
+            { "value": "STRENGTH", "add": 5 },
+            { "value": "ARMOR_BASH", "add": -10 },
             { "value": "ARMOR_CUT", "add": -20 },
-            { "value": "ARMOR_STAB", "add": -20 },
-            { "value": "ARMOR_BULLET", "add": -20 }
+            { "value": "ARMOR_STAB", "add": -15 },
+            { "value": "ARMOR_BULLET", "add": -15 }
           ]
         }
       ]
@@ -31,6 +31,31 @@
     "description": "A strange radiance permeating your body, granting you sight beyond sight.",
     "color": "magenta",
     "relic_data": { "passive_effects": [ { "has": "WORN", "condition": "ALWAYS", "mutations": [ "ARCANA_CLAIRVOYANCE_LESSER" ] } ] },
+    "extend": { "flags": [ "ONLY_ONE", "NO_TAKEOFF" ] }
+  },
+  {
+    "id": "halo_phase_shield",
+    "copy-from": "spell_base",
+    "type": "ARMOR",
+    "name": { "str": "sunstone halo" },
+    "description": "A strange radiance permeating your body, repelling nearby attackers away from you.",
+    "color": "dark_gray",
+    "relic_data": {
+      "passive_effects": [
+        {
+          "has": "WORN",
+          "condition": "ALWAYS",
+          "hit_me_effect": [
+            {
+              "id": "arcana_react_phase_shield",
+              "once_in": 10,
+              "message": "%2$s is suddenly forced back!",
+              "npc_message": "%2$s is suddenly forced away from %1$s!"
+            }
+          ]
+        }
+      ]
+    },
     "extend": { "flags": [ "ONLY_ONE", "NO_TAKEOFF" ] }
   },
   {
@@ -75,7 +100,7 @@
     "copy-from": "spell_base",
     "type": "ARMOR",
     "name": { "str": "shrouded aura" },
-    "description": "A strange radiance permeating your body, obscuring your life force from the undead.",
+    "description": "A strange radiance permeating your body, obscuring your life force from the undead.  You will be invisible to them, but not to other creatures, and they will still be able to hear and smell you.",
     "color": "white",
     "relic_data": {
       "passive_effects": [
@@ -90,12 +115,14 @@
     "extend": { "flags": [ "ONLY_ONE", "NO_TAKEOFF" ] }
   },
   {
-    "id": "arcana_ench_halo_flute_effect",
-    "type": "enchantment",
-    "has": "WORN",
-    "condition": "ALWAYS",
-    "values": [ { "value": "MOVE_COST", "multiply": -0.9 }, { "value": "BONUS_DODGE", "add": 10 } ],
-    "ench_effects": [ { "effect": "halo_flute_effect", "intensity": 1 } ]
+    "id": "halo_fadedaura",
+    "copy-from": "spell_base",
+    "type": "ARMOR",
+    "name": { "str": "faded halo" },
+    "description": "A strange radiance permeating your body, hiding your aura from otherworldly creatures in exchange for being more visible to wildlife and the undead.",
+    "color": "white",
+    "relic_data": { "passive_effects": [ { "has": "WORN", "condition": "ALWAYS", "mutations": [ "ARCANA_TRANSCENDANT_AURA" ] } ] },
+    "extend": { "flags": [ "ONLY_ONE", "NO_TAKEOFF" ] }
   },
   {
     "id": "halo_flute_effect",
@@ -104,7 +131,16 @@
     "name": { "str": "elusive aura" },
     "description": "A strange radiance permeating your body, enhancing your movement and reflexes.",
     "color": "white",
-    "relic_data": { "passive_effects": [ { "id": "arcana_ench_halo_flute_effect" } ] },
+    "relic_data": {
+      "passive_effects": [
+        {
+          "has": "WORN",
+          "condition": "ALWAYS",
+          "values": [ { "value": "MOVE_COST", "multiply": -0.9 }, { "value": "BONUS_DODGE", "add": 10 } ],
+          "ench_effects": [ { "effect": "halo_flute_effect", "intensity": 1 } ]
+        }
+      ]
+    },
     "extend": { "flags": [ "ONLY_ONE", "NO_TAKEOFF" ] }
   },
   {
@@ -152,7 +188,7 @@
   },
   {
     "id": "amulet_exotic",
-    "type": "TOOL_ARMOR",
+    "type": "ARMOR",
     "name": { "str": "exotic amulet" },
     "description": "A makeshift necklace with a single gem, a charm worked from some manner of unnatural material.",
     "weight": "60 g",
@@ -247,7 +283,7 @@
     "price": "1000 USD",
     "price_postapoc": "100 USD",
     "to_hit": 1,
-    "bashing": 1,
+    "melee_damage": { "bash": 1 },
     "material": [ "cotton", "copper" ],
     "symbol": "[",
     "looks_like": "leather_pouch",
@@ -262,7 +298,7 @@
               "id": "arcana_react_satchel_attention",
               "hit_self": true,
               "once_in": 50,
-              "message": "You feel like something is watching you...",
+              "message": "You feel like something is watching you…",
               "npc_message": "A strange aura of malice seems to briefly surround %1$s."
             },
             {
@@ -279,57 +315,44 @@
     "pocket_data": [
       {
         "pocket_type": "CONTAINER",
-        "rigid": true,
         "spoil_multiplier": 0.9,
         "weight_multiplier": 0.25,
-        "max_contains_volume": "75 L",
+        "max_contains_volume": "50 L",
         "max_contains_weight": "150 kg",
         "moves": 80
       },
       {
         "max_contains_volume": "5 L",
         "max_contains_weight": "25 kg",
-        "moves": 0,
-        "rigid": true,
+        "moves": 1,
         "holster": true,
         "flag_restriction": [ "MAGIC_FOCUS" ]
       },
       {
         "max_contains_volume": "5 L",
         "max_contains_weight": "25 kg",
-        "moves": 0,
-        "rigid": true,
+        "moves": 1,
         "holster": true,
         "flag_restriction": [ "MAGIC_FOCUS" ]
       },
       {
         "max_contains_volume": "5 L",
         "max_contains_weight": "25 kg",
-        "moves": 0,
-        "rigid": true,
+        "moves": 1,
         "holster": true,
         "flag_restriction": [ "MAGIC_FOCUS" ]
       },
       {
         "max_contains_volume": "5 L",
         "max_contains_weight": "25 kg",
-        "moves": 0,
-        "rigid": true,
+        "moves": 1,
         "holster": true,
         "flag_restriction": [ "MAGIC_FOCUS" ]
       }
     ],
     "use_action": { "type": "holster", "holster_prompt": "Store what magical focus?", "holster_msg": "You store your %s" },
     "flags": [ "BELTED", "OVERSIZE", "TRADER_KEEP_EQUIPPED", "TARDIS" ],
-    "armor": [
-      {
-        "encumbrance": 15,
-        "coverage": 15,
-        "covers": [ "torso" ],
-        "specifically_covers": [ "torso_waist" ],
-        "material": [ "cotton", "copper" ],
-        "material_thickness": 1
-      }
-    ]
+    "material_thickness": 1,
+    "armor": [ { "encumbrance": [ 0, 25 ], "coverage": 15, "covers": [ "torso" ], "specifically_covers": [ "torso_waist" ] } ]
   }
 ]

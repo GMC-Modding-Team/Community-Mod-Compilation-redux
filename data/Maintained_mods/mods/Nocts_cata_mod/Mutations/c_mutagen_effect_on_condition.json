@@ -1,7 +1,7 @@
 [
   {
-    "id": "c_nano_mutagen_trigger",
     "type": "effect_on_condition",
+    "id": "c_nano_mutagen_trigger",
     "recurrence": [ "1 s", "1 s" ],
     "condition": { "u_has_effect": "c_nano_mutagen_trigger" },
     "effect": [
@@ -11,19 +11,19 @@
       },
       { "run_eocs": [ "c_nano_mutagen_thresh_test" ] },
       { "u_mutate_category": "SUPER_SOLDIER", "use_vitamins": false },
-      { "run_eocs": [ "c_nano_mutagen_trigger_bonus", "c_nano_mutagen_trigger_bonus" ] },
+      { "run_eocs": [ "c_nano_mutagen_trigger_bonus" ] },
       { "u_lose_effect": "c_nano_mutagen_trigger" }
     ]
   },
   {
-    "id": "c_nano_mutagen_trigger_bonus",
     "type": "effect_on_condition",
-    "condition": { "one_in_chance": 3 },
+    "id": "c_nano_mutagen_trigger_bonus",
+    "condition": { "one_in_chance": 10 },
     "effect": [ { "u_mutate_category": "SUPER_SOLDIER", "use_vitamins": false } ]
   },
   {
-    "id": "c_nano_mutagen_thresh_test",
     "type": "effect_on_condition",
+    "id": "c_nano_mutagen_thresh_test",
     "condition": {
       "and": [
         { "u_has_flag": "C_SENTINEL_MARKER_1" },

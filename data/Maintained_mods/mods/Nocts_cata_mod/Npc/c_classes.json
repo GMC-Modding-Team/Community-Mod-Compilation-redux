@@ -1,7 +1,7 @@
 [
   {
-    "id": "NC_PREPPER",
     "type": "npc_class",
+    "id": "NC_PREPPER",
     "name": "Prepper",
     "job_description": "Just surviving, as usual.",
     "common": false,
@@ -33,8 +33,8 @@
     ]
   },
   {
-    "id": "NC_SUPER_SOLDIER",
     "type": "npc_class",
+    "id": "NC_SUPER_SOLDIER",
     "name": "Super Soldier",
     "job_description": "I am guarding this place in exchange for food and shelter.",
     "common": false,
@@ -76,8 +76,8 @@
     ]
   },
   {
-    "id": "NC_SLAVE_FIGHTER_BLUE",
     "type": "npc_class",
+    "id": "NC_SLAVE_FIGHTER_BLUE",
     "name": "Slave Fighter (Blue Team)",
     "job_description": "I am free…",
     "common": false,
@@ -98,12 +98,11 @@
     "traits": [
       { "group": "Appearance_demographics" },
       [ "PROF_GLADIATOR", 100 ],
-      [ "ELFAEYES", 10 ],
       [ "FANGS", 10 ],
+      [ "SPINES", 10 ],
       [ "PLANTSKIN", 5 ],
       [ "NAILS", 25 ],
       [ "PADDED_FEET", 15 ],
-      [ "FELINE_EARS", 10 ],
       [ "TAIL_LONG", 10 ],
       [ "WHISKERS", 10 ],
       [ "BEAK", 5 ],
@@ -131,8 +130,8 @@
     ]
   },
   {
-    "id": "NC_SLAVE_FIGHTER_RED",
     "type": "npc_class",
+    "id": "NC_SLAVE_FIGHTER_RED",
     "name": "Slave Fighter (Red Team)",
     "job_description": "Rip and tear!",
     "common": false,
@@ -154,19 +153,21 @@
     "traits": [
       { "group": "Appearance_demographics" },
       [ "PROF_GLADIATOR", 100 ],
-      [ "URSINE_EYE", 50 ],
       [ "FANGS", 50 ],
-      [ "CHITIN", 50 ],
+      [ "SPINES", 50 ],
       [ "NAILS", 75 ],
-      [ "WEB_WALKER", 25 ],
+      [ "PADDED_FEET", 25 ],
+      [ "TAIL_LONG", 50 ],
+      [ "WHISKERS", 75 ],
       [ "SLIT_NOSTRILS", 25 ],
-      [ "WHISKERS", 25 ],
-      [ "TROGLO", 50 ],
-      [ "RADIOACTIVE1", 50 ],
       [ "SLIMY", 25 ],
-      [ "CARNIVORE", 50 ],
       [ "PONDEROUS1", 50 ],
-      [ "GROWL", 50 ]
+      [ "ARM_FEATHERS", 75 ],
+      [ "LEG_TENTACLES", 25 ],
+      [ "CHITIN", 50 ],
+      [ "ANTLERS", 25 ],
+      [ "WINGS_BAT", 50 ],
+      [ "LARGE", 25 ]
     ],
     "bionics": [
       { "id": "bio_metabolics", "chance": 75 },
@@ -207,8 +208,8 @@
     ]
   },
   {
-    "id": "NC_BIO_WEAPON_SIGMA",
     "type": "npc_class",
+    "id": "NC_BIO_WEAPON_SIGMA",
     "name": "Bio-Weapon",
     "job_description": "I am protecting my people.",
     "common": false,
@@ -240,9 +241,10 @@
     "worn_override": "NC_BIO_WEAPON_worn",
     "carry_override": "NC_BIO_WEAPON_carry",
     "weapon_override": "NC_BIO_WEAPON_S_weapon",
-    "//": "Generic mutation and bionic setup, modeled after a mix of Beta and Delta.  Add brown eyes if they ever become part of mainline.",
+    "//": "Generic mutation and bionic setup, modeled after a mix of Beta and Delta.",
     "traits": [
-      [ "hair_black_crewcut", 100 ],
+      { "trait": "hair_crewcut", "variant": "black" },
+      { "trait": "eye_color", "variant": "brown" },
       [ "SKIN_TAN", 100 ],
       [ "BIO_WEAPON_GENERIC", 100 ],
       [ "NIGHTVISION", 100 ],
@@ -272,8 +274,8 @@
     ]
   },
   {
-    "id": "NC_BIO_WEAPON_LAMBDA",
     "type": "npc_class",
+    "id": "NC_BIO_WEAPON_LAMBDA",
     "name": "Bio-Weapon",
     "job_description": "I am fighting towards a better tomorrow…",
     "common": false,
@@ -312,9 +314,10 @@
     "worn_override": "NC_BIO_WEAPON_worn",
     "carry_override": "NC_BIO_WEAPON_carry",
     "weapon_override": "NC_BIO_WEAPON_L_weapon",
-    "//": "Generic mutation and CBM setup, modeled after a mix of Alpha and Gamma.  Add red eyes if they ever become part of mainline.",
+    "//": "Generic mutation and CBM setup, modeled after a mix of Alpha and Gamma.  Would use red eyes if they were an option.",
     "traits": [
-      [ "hair_blond_medium", 100 ],
+      { "trait": "hair_medium", "variant": "blond" },
+      { "trait": "eye_color", "variant": "amber" },
       [ "SKIN_LIGHT", 100 ],
       [ "BIO_WEAPON_GENERIC", 100 ],
       [ "NIGHTVISION", 100 ],
@@ -342,8 +345,8 @@
     ]
   },
   {
-    "id": "NC_SCIENTIST_ROUTER",
     "type": "npc_class",
+    "id": "NC_SCIENTIST_ROUTER",
     "name": "Scientist",
     "job_description": "I'm trying to pick up the pieces of my research…",
     "bonus_per": { "rng": [ -2, -2 ] },
@@ -359,12 +362,12 @@
       { "skill": "mechanics", "level": { "rng": [ 3, 3 ] } },
       { "skill": "speech", "level": { "rng": [ 2, 2 ] } }
     ],
-    "//": "Will need to reimplement beard, figuring out what style it's meant to be, when beards stop being broken.  Also recall trait selection specified blue eyes.",
-    "traits": [ [ "hair_white_short", 100 ], [ "SKIN_MEDIUM", 100 ] ]
+    "//": "Will need to reimplement beard, figuring out what style it's meant to be, when beards stop being broken.",
+    "traits": [ { "trait": "hair_short", "variant": "white" }, { "trait": "eye_color", "variant": "blue" }, [ "SKIN_MEDIUM", 100 ] ]
   },
   {
-    "id": "NC_BIO_HUNTER_E",
     "type": "npc_class",
+    "id": "NC_BIO_HUNTER_E",
     "name": "Bio-Weapon Hunter",
     "job_description": "I am here to find answers…",
     "common": false,
@@ -398,9 +401,10 @@
     "worn_override": "NC_BIO_HUNTER_E_worn",
     "carry_override": "NC_BIO_HUNTER_E_carry",
     "weapon_override": "NC_BIO_HUNTER_E_weapon",
-    "//": "Add green eyes if it becomes available in vanilla.  CBM setup is a balanced setup mixing Super Scout and Bio-Engineer, as much as is NPC-usable.  Also fairly broad Sentinel mutation selection, closer to an upgraded Super Soldier.",
+    "//": "CBM setup is a balanced setup mixing Super Scout and Bio-Engineer, as much as is NPC-usable.  Also fairly broad Sentinel mutation selection, closer to an upgraded Super Soldier.",
     "traits": [
-      [ "hair_red_long", 100 ],
+      { "trait": "hair_long", "variant": "red" },
+      { "trait": "eye_color", "variant": "green" },
       [ "SKIN_LIGHT", 100 ],
       [ "BGSS_BHunter", 100 ],
       [ "SUPER_SOLDIER_MARKER", 100 ],

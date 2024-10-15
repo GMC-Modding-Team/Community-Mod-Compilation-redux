@@ -20,13 +20,13 @@
     "melee_dice": 6,
     "melee_dice_sides": 4,
     "melee_damage": [ { "damage_type": "cut", "amount": 10 } ],
-    "armor_cut": 5,
-    "armor_stab": 15,
-    "armor_bullet": 30,
-    "armor_acid": 2,
     "vision_night": 10,
     "harvest": "zombie",
-    "special_attacks": [ { "type": "bite", "cooldown": 3 }, [ "GRAB", 7 ], [ "scratch", 10 ] ],
+    "special_attacks": [
+      { "type": "bite", "cooldown": 3 },
+      { "id": "grab", "cooldown": 7, "move_cost": 50 },
+      { "id": "scratch", "min_mul": 0.5, "cooldown": 10 }
+    ],
     "death_drops": "default_zombie_death_drops",
     "burn_into": "mon_zombie_scorched",
     "flags": [
@@ -42,7 +42,8 @@
       "REVIVES",
       "PUSH_MON",
       "FILTHY"
-    ]
+    ],
+    "armor": { "cut": 5, "stab": 15, "bullet": 30, "acid": 2 }
   },
   {
     "id": "mon_slasher_weak",
@@ -65,13 +66,13 @@
     "melee_dice": 3,
     "melee_dice_sides": 3,
     "melee_damage": [ { "damage_type": "cut", "amount": 15 } ],
-    "armor_cut": 5,
-    "armor_stab": 10,
-    "armor_bullet": 20,
-    "armor_acid": 2,
     "vision_night": 7,
     "harvest": "zombie",
-    "special_attacks": [ { "type": "bite", "cooldown": 5 }, [ "GRAB", 7 ], [ "scratch", 10 ] ],
+    "special_attacks": [
+      { "type": "bite", "cooldown": 5 },
+      { "id": "grab", "cooldown": 7, "move_cost": 50 },
+      { "id": "scratch", "min_mul": 0.5, "cooldown": 10 }
+    ],
     "death_drops": "default_zombie_death_drops",
     "burn_into": "mon_zombie_scorched",
     "flags": [
@@ -87,7 +88,8 @@
       "REVIVES",
       "PUSH_MON",
       "FILTHY"
-    ]
+    ],
+    "armor": { "cut": 5, "stab": 10, "bullet": 20, "acid": 2 }
   },
   {
     "id": "mon_waster",
@@ -110,17 +112,14 @@
     "melee_dice_sides": 6,
     "melee_damage": [ { "damage_type": "cut", "amount": 12 } ],
     "dodge": 1,
-    "armor_cut": 15,
-    "armor_stab": 30,
-    "armor_bullet": 45,
-    "armor_acid": 4,
     "vision_day": 25,
     "vision_night": 3,
     "luminance": 3,
     "harvest": "zombie",
     "special_attacks": [ [ "scratch", 10 ], { "type": "bite", "cooldown": 5 } ],
     "death_drops": "mon_zombie_cop_death_drops",
-    "flags": [ "SEES", "HEARS", "REVIVES", "NO_BREATHE", "POISON", "FILTHY" ]
+    "flags": [ "SEES", "HEARS", "REVIVES", "NO_BREATHE", "POISON", "FILTHY" ],
+    "armor": { "cut": 15, "stab": 30, "bullet": 45, "acid": 4 }
   },
   {
     "id": "mon_leaper",
@@ -143,10 +142,6 @@
     "melee_dice_sides": 4,
     "melee_damage": [ { "damage_type": "cut", "amount": 2 } ],
     "dodge": 3,
-    "armor_cut": 5,
-    "armor_stab": 15,
-    "armor_bullet": 20,
-    "armor_acid": 4,
     "vision_night": 5,
     "harvest": "zombie",
     "special_attacks": [
@@ -160,7 +155,8 @@
     ],
     "death_drops": "default_zombie_death_drops",
     "burn_into": "mon_zombie_scorched",
-    "flags": [ "SEES", "HEARS", "SMELLS", "WARM", "BASHES", "POISON", "NO_BREATHE", "REVIVES", "CLIMBS", "PUSH_MON", "FILTHY" ]
+    "flags": [ "SEES", "HEARS", "SMELLS", "WARM", "BASHES", "POISON", "NO_BREATHE", "REVIVES", "CLIMBS", "PUSH_MON", "FILTHY" ],
+    "armor": { "cut": 5, "stab": 15, "bullet": 20, "acid": 4 }
   },
   {
     "id": "mon_twitcher",
@@ -183,9 +179,6 @@
     "melee_dice_sides": 3,
     "melee_damage": [ { "damage_type": "cut", "amount": 5 } ],
     "dodge": 5,
-    "armor_bash": 10,
-    "armor_cut": 10,
-    "armor_bullet": 20,
     "vision_day": 30,
     "vision_night": 5,
     "harvest": "zombie",
@@ -208,7 +201,8 @@
     ],
     "death_drops": "default_zombie_death_drops",
     "burn_into": "mon_zombie_scorched",
-    "flags": [ "SEES", "HEARS", "SMELLS", "WARM", "BASHES", "POISON", "NO_BREATHE", "REVIVES", "PUSH_MON", "FILTHY" ]
+    "flags": [ "SEES", "HEARS", "SMELLS", "WARM", "BASHES", "POISON", "NO_BREATHE", "REVIVES", "PUSH_MON", "FILTHY" ],
+    "armor": { "bash": 10, "cut": 10, "bullet": 20 }
   },
   {
     "id": "mon_pack",
@@ -231,10 +225,6 @@
     "melee_dice_sides": 4,
     "melee_damage": [ { "damage_type": "cut", "amount": 4 } ],
     "dodge": 2,
-    "armor_cut": 5,
-    "armor_stab": 5,
-    "armor_bullet": 10,
-    "armor_acid": 4,
     "vision_day": 40,
     "vision_night": 4,
     "harvest": "zombie",
@@ -242,7 +232,8 @@
     "death_drops": { "subtype": "collection", "groups": [ [ "default_zombie_clothes", 100 ], [ "child_items", 65 ] ] },
     "burn_into": "mon_zombie_child_scorched",
     "flags": [ "SEES", "HEARS", "SMELLS", "WARM", "BASHES", "POISON", "NO_BREATHE", "REVIVES", "CLIMBS", "FILTHY", "SWARMS" ],
-    "//": "no GUILT because it no longer looks enough like a child to evoke pity"
+    "//": "no GUILT because it no longer looks enough like a child to evoke pity",
+    "armor": { "cut": 5, "stab": 5, "bullet": 10, "acid": 4 }
   },
   {
     "id": "mon_puker",
@@ -265,10 +256,6 @@
     "melee_dice": 3,
     "melee_dice_sides": 5,
     "melee_damage": [ { "damage_type": "cut", "amount": 4 } ],
-    "armor_cut": 5,
-    "armor_stab": 15,
-    "armor_bullet": 30,
-    "armor_acid": 20,
     "dodge": 1,
     "vision_night": 3,
     "harvest": "zombie",
@@ -292,7 +279,8 @@
       "REVIVES",
       "PUSH_MON",
       "FILTHY"
-    ]
+    ],
+    "armor": { "cut": 5, "stab": 15, "bullet": 30, "acid": 20 }
   },
   {
     "id": "mon_spider_disease",
@@ -319,13 +307,11 @@
     "attack_effs": [ { "id": "blood_spiders", "duration": 40000, "affect_hit_bp": true } ],
     "//": "5 hits to max intensity, 6 hits to max duration",
     "dodge": 2,
-    "armor_bash": 2,
-    "armor_cut": 6,
-    "armor_bullet": 5,
     "vision_day": 5,
     "vision_night": 5,
     "harvest": "arachnid",
     "fungalize_into": "mon_spider_fungus",
-    "flags": [ "SEES", "SMELLS", "HEARS", "WEBWALK", "CLIMBS", "PATH_AVOID_FIRE", "PATH_AVOID_FALL" ]
+    "flags": [ "SEES", "SMELLS", "HEARS", "WEBWALK", "CLIMBS", "PATH_AVOID_FIRE", "PATH_AVOID_FALL" ],
+    "armor": { "bash": 2, "cut": 6, "bullet": 5 }
   }
 ]
