@@ -10,9 +10,9 @@
     "weight": "5000 g",
     "volume": "1500 ml",
     "price": "180 USD",
-    "bashing": 8,
     "to_hit": -2,
-    "qualities": [ [ "LIFT", 400 ], [ "JACK", 400 ] ]
+    "qualities": [ [ "LIFT", 400 ], [ "JACK", 400 ] ],
+    "melee_damage": { "bash": 8 }
   },
   {
     "type": "GENERIC",
@@ -25,7 +25,6 @@
     "color": "dark_gray",
     "weight": "2628 g",
     "volume": "1 L",
-    "bashing": 12,
     "to_hit": -3,
     "pocket_data": [
       {
@@ -37,9 +36,10 @@
         "max_contains_weight": "5 kg"
       }
     ],
-    "delete": { "qualities": [ [ "COOK", 3 ] ] },
+    "delete": { "qualities": [ "COOK" ] },
     "extend": { "qualities": [ [ "HAMMER", 1 ], [ "COOK", 2 ] ] },
-    "flags": [ "RAIN_PROTECT", "TARDIS" ]
+    "flags": [ "RAIN_PROTECT", "TARDIS" ],
+    "melee_damage": { "bash": 12 }
   },
   {
     "type": "GENERIC",
@@ -52,11 +52,10 @@
     "color": "dark_gray",
     "weight": "2628 g",
     "volume": "1 L",
-    "bashing": 12,
-    "cutting": 3,
     "flags": [ "STAB" ],
     "to_hit": -3,
-    "delete": { "qualities": [ [ "COOK", 3 ] ] },
-    "extend": { "qualities": [ [ "HAMMER", 1 ], [ "COOK", 1 ] ] }
+    "delete": { "qualities": [ "COOK" ] },
+    "extend": { "qualities": [ [ "HAMMER", 1 ], [ "COOK", 1 ] ] },
+    "melee_damage": { "bash": 12, "cut": 3 }
   }
 ]
