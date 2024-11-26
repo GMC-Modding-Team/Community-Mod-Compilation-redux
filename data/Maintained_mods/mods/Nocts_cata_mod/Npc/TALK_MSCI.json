@@ -15,8 +15,8 @@
         "text": "So now what are you going to do?",
         "condition": {
           "and": [
-            { "npc_has_var": "apophis_dead", "type": "dialogue", "context": "router", "value": "yes" },
-            { "u_has_var": "apophis_dead", "type": "dialogue", "context": "router", "value": "yes" }
+            { "compare_string": [ "yes", { "npc_val": "c_var_apophis_dead" } ] },
+            { "compare_string": [ "yes", { "u_val": "c_var_apophis_dead" } ] }
           ]
         },
         "switch": true,
@@ -24,13 +24,13 @@
       },
       {
         "text": "Anything I can help with?",
-        "condition": { "npc_has_var": "apophis_dead", "type": "dialogue", "context": "router", "value": "yes" },
+        "condition": { "compare_string": [ "yes", { "npc_val": "c_var_apophis_dead" } ] },
         "switch": true,
         "topic": "TALK_MSCI_NOWWHAT_NEW"
       },
       {
         "text": "So, what can I help you with?",
-        "condition": { "u_has_var": "proven_worthy", "type": "dialogue", "context": "router", "value": "yes" },
+        "condition": { "compare_string": [ "yes", { "u_val": "c_var_proven_worthy" } ] },
         "switch": true,
         "topic": "TALK_MISSION_LIST"
       },
@@ -99,7 +99,7 @@
       {
         "text": "Security breach at a Bio-Weapon lab… that might've been Evelynn actually, not just the creatures that were there.",
         "switch": true,
-        "condition": { "u_has_var": "searching_for_msci", "type": "dialogue", "context": "evelynn", "value": "yes" },
+        "condition": { "compare_string": [ "yes", { "u_val": "c_searching_for_msci" } ] },
         "topic": "TALK_MSCI_PROOF_EVY"
       },
       {
@@ -131,13 +131,7 @@
     "type": "talk_topic",
     "//": "Sadly the wild goose chase will still be needed for players who started Evy's mission in saves predating the addition of this dialogue, but this idiotproofs it as best as I can.",
     "dynamic_line": "I see, so that means you already confirmed what I suspected, and made an attempt to lead her here.  Hope things turned out alright.  If you think you can handle yourself, I still have other missions for you.",
-    "responses": [
-      {
-        "text": "We'll see.",
-        "topic": "TALK_MSCI",
-        "effect": { "u_add_var": "proven_worthy", "type": "dialogue", "context": "router", "value": "yes" }
-      }
-    ]
+    "responses": [ { "text": "We'll see.", "topic": "TALK_MSCI", "effect": { "u_add_var": "c_var_proven_worthy", "value": "yes" } } ]
   },
   {
     "id": "TALK_MSCI_PROOF_SCEN",
@@ -147,25 +141,13 @@
       "yes": "So that explains a lot, triggering the alarms probably caused a power failure in the systems keeping you locked up there.  I'm glad you made it out of there in one piece.  Come see me when you're ready.",
       "no": "I see, hadn't expected that since you weren't wearing the badge.  Triggering the alarms probably caused a power failure in the systems keeping you locked up there.  I'm glad you made it out of there in one piece.  Come see me when you're ready."
     },
-    "responses": [
-      {
-        "text": "Alright then.",
-        "topic": "TALK_MSCI",
-        "effect": { "u_add_var": "proven_worthy", "type": "dialogue", "context": "router", "value": "yes" }
-      }
-    ]
+    "responses": [ { "text": "Alright then.", "topic": "TALK_MSCI", "effect": { "u_add_var": "c_var_proven_worthy", "value": "yes" } } ]
   },
   {
     "id": "TALK_MSCI_PROOF_ITEM",
     "type": "talk_topic",
     "dynamic_line": "How the hell… well that's good luck on our part I suppose.  You survived whatever was there at least, let me see.  So I was right, the Super Soldier project made it at least past Zero Day.  I hope there were other survivors there.  In any case, come see me when you're ready, there's much to be done.",
-    "responses": [
-      {
-        "text": "We'll see.",
-        "topic": "TALK_MSCI",
-        "effect": { "u_add_var": "proven_worthy", "type": "dialogue", "context": "router", "value": "yes" }
-      }
-    ]
+    "responses": [ { "text": "We'll see.", "topic": "TALK_MSCI", "effect": { "u_add_var": "c_var_proven_worthy", "value": "yes" } } ]
   },
   {
     "id": "TALK_MSCI_PROOF_TRY_ACCEPT",
