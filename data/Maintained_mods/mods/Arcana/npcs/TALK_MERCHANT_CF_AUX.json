@@ -15,108 +15,14 @@
         "no": "Anything you need?"
       }
     },
-    "speaker_effect": [
-      {
-        "condition": { "and": [ { "npc_has_trait": "CF_AUX_MARKER_1" }, { "not": { "npc_has_effect": "cf_aux_merchant_restocked" } } ] },
-        "effect": [
-          { "npc_add_effect": "cf_aux_merchant_restocked", "duration": 2592000 },
-          {
-            "mapgen_update": "cf_church_merchant_restock_1",
-            "om_terrain": "cf_church_1",
-            "om_special": "cf_rural_church"
-          }
-        ]
-      },
-      {
-        "condition": { "and": [ { "npc_has_trait": "CF_AUX_MARKER_2" }, { "not": { "npc_has_effect": "cf_aux_merchant_restocked" } } ] },
-        "effect": [
-          { "npc_add_effect": "cf_aux_merchant_restocked", "duration": 2592000 },
-          {
-            "mapgen_update": "cf_church_merchant_restock_2",
-            "om_terrain": "cf_church_1",
-            "om_special": "cf_rural_church"
-          }
-        ]
-      },
-      {
-        "condition": { "and": [ { "npc_has_trait": "CF_AUX_MARKER_3" }, { "not": { "npc_has_effect": "cf_aux_merchant_restocked" } } ] },
-        "effect": [
-          { "npc_add_effect": "cf_aux_merchant_restocked", "duration": 2592000 },
-          {
-            "mapgen_update": "cf_church_merchant_restock_3",
-            "om_terrain": "cf_church_1",
-            "om_special": "cf_rural_church"
-          }
-        ]
-      },
-      {
-        "condition": { "and": [ { "npc_has_trait": "CF_AUX_MARKER_4" }, { "not": { "npc_has_effect": "cf_aux_merchant_restocked" } } ] },
-        "effect": [
-          { "npc_add_effect": "cf_aux_merchant_restocked", "duration": 2592000 },
-          {
-            "mapgen_update": "cf_church_merchant_restock_4",
-            "om_terrain": "cf_church_1",
-            "om_special": "cf_rural_church"
-          }
-        ]
-      },
-      {
-        "condition": { "and": [ { "npc_has_trait": "CF_AUX_MARKER_5" }, { "not": { "npc_has_effect": "cf_aux_merchant_restocked" } } ] },
-        "effect": [
-          { "npc_add_effect": "cf_aux_merchant_restocked", "duration": 2592000 },
-          {
-            "mapgen_update": "cf_church_merchant_restock_5",
-            "om_terrain": "cf_church_1",
-            "om_special": "cf_rural_church"
-          }
-        ]
-      },
-      {
-        "condition": { "and": [ { "npc_has_trait": "CF_AUX_MARKER_6" }, { "not": { "npc_has_effect": "cf_aux_merchant_restocked" } } ] },
-        "effect": [
-          { "npc_add_effect": "cf_aux_merchant_restocked", "duration": 2592000 },
-          {
-            "mapgen_update": "cf_church_merchant_restock_6",
-            "om_terrain": "cf_church_3",
-            "om_special": "cf_rural_church"
-          }
-        ]
-      },
-      {
-        "condition": { "and": [ { "npc_has_trait": "CF_AUX_MARKER_7" }, { "not": { "npc_has_effect": "cf_aux_merchant_restocked" } } ] },
-        "effect": [
-          { "npc_add_effect": "cf_aux_merchant_restocked", "duration": 2592000 },
-          {
-            "mapgen_update": "cf_church_merchant_restock_7",
-            "om_terrain": "cf_church_1",
-            "om_special": "cf_rural_church"
-          }
-        ]
-      },
-      {
-        "condition": { "and": [ { "npc_has_trait": "CF_AUX_MARKER_8" }, { "not": { "npc_has_effect": "cf_aux_merchant_restocked" } } ] },
-        "effect": [
-          { "npc_add_effect": "cf_aux_merchant_restocked", "duration": 2592000 },
-          {
-            "mapgen_update": "cf_church_merchant_restock_8",
-            "om_terrain": "cf_church_3",
-            "om_special": "cf_rural_church"
-          }
-        ]
-      }
-    ],
     "responses": [
       {
         "text": "I've been sent to ask about recent attacks on survivors by anomalous creatures.  Know anything about that?",
         "condition": {
           "and": [
-            { "u_has_var": "johnathan_prelude_mid", "type": "mission", "context": "rural_church", "value": "yes" },
-            {
-              "not": { "npc_has_var": "johnathan_prelude_mid", "type": "mission", "context": "rural_church", "value": "yes" }
-            },
-            {
-              "not": { "u_has_var": "johnathan_prelude_data_5", "type": "mission", "context": "rural_church", "value": "yes" }
-            }
+            { "compare_string": [ "yes", { "u_val": "johnathan_prelude_mid" } ] },
+            { "not": { "compare_string": [ "yes", { "npc_val": "johnathan_prelude_mid" } ] } },
+            { "not": { "compare_string": [ "yes", { "u_val": "johnathan_prelude_data_5" } ] } }
           ]
         },
         "topic": "TALK_MERCHANT_CF_AUX_GM_PRELUDE"
@@ -125,8 +31,8 @@
         "text": "So, how are you getting along with the others here?",
         "condition": {
           "and": [
-            { "not": { "u_has_var": "cf_aux_opinion_given", "type": "flag", "context": "knowledge", "value": "yes" } },
-            { "u_has_var": "sofia_mission_4_end", "type": "mission", "context": "rural_church", "value": "yes" }
+            { "not": { "compare_string": [ "yes", { "u_val": "cf_aux_opinion_given" } ] } },
+            { "compare_string": [ "yes", { "u_val": "sofia_mission_4_end" } ] }
           ]
         },
         "topic": "TALK_MERCHANT_CF_AUX_SITUATION"
@@ -135,15 +41,20 @@
       { "text": "What do you do around here?", "topic": "TALK_MERCHANT_CF_AUX_DO" },
       { "text": "Got anything to trade?", "effect": "start_trade", "topic": "TALK_MERCHANT_CF_AUX" },
       {
+        "text": "I'd like to ask about turning in a bounty.",
+        "condition": { "compare_string": [ "yes", { "u_val": "cf_aux_bounty_learned" } ] },
+        "topic": "TALK_MERCHANT_CF_AUX_BOUNTY_ASK"
+      },
+      {
         "text": "Can I do anything to help?",
         "switch": true,
         "condition": {
           "and": [
-            { "not": { "u_has_var": "cf_aux_bounty_learned", "type": "flag", "context": "knowledge", "value": "yes" } },
+            { "not": { "compare_string": [ "yes", { "u_val": "cf_aux_bounty_learned" } ] } },
             { "npc_has_any_trait": [ "CF_AUX_MARKER_2", "CF_AUX_MARKER_7" ] }
           ]
         },
-        "effect": { "u_add_var": "cf_aux_bounty_learned", "type": "flag", "context": "knowledge", "value": "yes" },
+        "effect": { "u_add_var": "cf_aux_bounty_learned", "value": "yes" },
         "topic": "TALK_MERCHANT_CF_AUX_BOUNTY_INTRO"
       },
       { "text": "Can I do anything to help?", "switch": true, "default": true, "topic": "TALK_MISSION_LIST" },
@@ -188,14 +99,14 @@
         "text": "Alright…",
         "condition": { "npc_has_trait": "CF_AUX_MARKER_3" },
         "switch": true,
-        "effect": { "u_add_var": "cf_aux_opinion_given", "type": "flag", "context": "knowledge", "value": "yes" },
+        "effect": { "u_add_var": "cf_aux_opinion_given", "value": "yes" },
         "topic": "TALK_MERCHANT_CF_AUX"
       },
       {
         "text": "Good to hear, I guess.",
         "switch": true,
         "default": true,
-        "effect": { "u_add_var": "cf_aux_opinion_given", "type": "flag", "context": "knowledge", "value": "yes" },
+        "effect": { "u_add_var": "cf_aux_opinion_given", "value": "yes" },
         "topic": "TALK_MERCHANT_CF_AUX"
       }
     ]
@@ -243,7 +154,7 @@
     "id": "TALK_MERCHANT_CF_AUX_BOUNTY_INTRO",
     "type": "talk_topic",
     "dynamic_line": "Far as steady jobs go, not much.  I got bounties on behalf of the people running this place, however.  Not like shooting people in the face kinda bounties, more monster-hunting and other stuff like that.  Interested?",
-    "speaker_effect": { "effect": { "u_add_var": "cf_aux_bounty_learned", "type": "flag", "context": "knowledge", "value": "yes" } },
+    "speaker_effect": { "effect": { "u_add_var": "cf_aux_bounty_learned", "value": "yes" } },
     "responses": [
       { "text": "What sort of bounties are on offer?", "topic": "TALK_MERCHANT_CF_AUX_BOUNTY_ASK" },
       { "text": "Perhaps another time.", "topic": "TALK_MERCHANT_CF_AUX" }
@@ -253,18 +164,18 @@
     "id": "TALK_MERCHANT_CF_AUX_BOUNTY_ASK",
     "type": "talk_topic",
     "dynamic_line": "That \"Grandmaster\" guy had me look into running two different kinds of bounty to offer.  First off, if you have any of those weird pieces certain critters drop, I can arrange for a payment of a Scale each.  Twisted bones, amorphous amber, that sort of thing.  Second, they have a bounty on certain books.  Eldritch lore kinda stuff.",
-    "//": "Needing to actually remove the items, rather than handing them over to potentially be bought back, means using explicitly responses rather than bulk_trade.",
+    "//": "Needing to actually remove the items, rather than handing them over to potentially be bought back, means using explicit responses rather than bulk_trade.",
     "responses": [
       {
-        "text": "Turning in a fungal fighter sting.",
-        "condition": { "u_has_item": "fighter_sting" },
-        "effect": { "u_consume_item": "fighter_sting" },
+        "text": "Turning in an iron thorn.",
+        "condition": { "u_has_item": "iron_thorn" },
+        "effect": { "u_consume_item": "iron_thorn" },
         "topic": "TALK_MERCHANT_CF_AUX_BOUNTY_TURNIN"
       },
       {
-        "text": "Turning in a biollante bud.",
-        "condition": { "u_has_item": "biollante_bud" },
-        "effect": { "u_consume_item": "biollante_bud" },
+        "text": "Turning in an inflorescent root.",
+        "condition": { "u_has_item": "inflorescent_root" },
+        "effect": { "u_consume_item": "inflorescent_root" },
         "topic": "TALK_MERCHANT_CF_AUX_BOUNTY_TURNIN"
       },
       {
@@ -274,7 +185,7 @@
         "topic": "TALK_MERCHANT_CF_AUX_BOUNTY_TURNIN"
       },
       {
-        "text": "Turning in a triffid queen flower.",
+        "text": "Turning in a scarlet flower.",
         "condition": { "u_has_item": "triffid_queen_flower" },
         "effect": { "u_consume_item": "triffid_queen_flower" },
         "topic": "TALK_MERCHANT_CF_AUX_BOUNTY_TURNIN"
@@ -322,7 +233,7 @@
         "topic": "TALK_MERCHANT_CF_AUX_BOUNTY_TURNIN"
       },
       {
-        "text": "Turning in a wyrmskin fragment.",
+        "text": "Turning in an acrid fragment.",
         "condition": { "u_has_item": "wyrmskin_piece" },
         "effect": { "u_consume_item": "wyrmskin_piece" },
         "topic": "TALK_MERCHANT_CF_AUX_BOUNTY_TURNIN"
@@ -384,7 +295,7 @@
       },
       {
         "text": "For what purpose are they after Oaths to The Chalice?",
-        "condition": { "u_has_any_trait": [ "PROF_CHALICE", "THRESH_VEIL" ] },
+        "condition": { "u_has_any_trait": [ "PROF_CHALICE", "PROF_CHALICE2", "THRESH_VEIL" ] },
         "topic": "TALK_MERCHANT_CF_AUX_BOUNTY_BOOKS_CHALICE"
       },
       {

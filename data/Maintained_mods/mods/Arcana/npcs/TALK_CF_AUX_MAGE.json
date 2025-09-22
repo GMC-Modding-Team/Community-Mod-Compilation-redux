@@ -1,31 +1,20 @@
 [
   {
-    "id": "TALK_CF_AUX_MAGE",
     "type": "talk_topic",
+    "id": "TALK_CF_AUX_MAGE",
     "dynamic_line": {
       "u_has_any_trait": [ "PROF_CLEANSINGFLAME", "PROF_CLEANSINGFLAME2" ],
       "yes": "Greetings, Hunter.  How may I be of service?",
       "no": "Greetings, how can I help you?"
-    },
-    "speaker_effect": {
-      "condition": { "not": { "npc_has_effect": "cf_aux_merchant_restocked" } },
-      "effect": [
-        { "npc_add_effect": "cf_aux_merchant_restocked", "duration": 2592000 },
-        { "mapgen_update": "cf_church_celine_restock", "om_terrain": "cf_church_1", "om_special": "cf_rural_church" }
-      ]
     },
     "responses": [
       {
         "text": "I've been sent to ask about recent attacks on survivors by anomalous creatures.  Know anything about that?",
         "condition": {
           "and": [
-            { "u_has_var": "johnathan_prelude_mid", "type": "mission", "context": "rural_church", "value": "yes" },
-            {
-              "not": { "npc_has_var": "johnathan_prelude_mid", "type": "mission", "context": "rural_church", "value": "yes" }
-            },
-            {
-              "not": { "u_has_var": "johnathan_prelude_data_5", "type": "mission", "context": "rural_church", "value": "yes" }
-            }
+            { "compare_string": [ "yes", { "u_val": "johnathan_prelude_mid" } ] },
+            { "not": { "compare_string": [ "yes", { "npc_val": "johnathan_prelude_mid" } ] } },
+            { "not": { "compare_string": [ "yes", { "u_val": "johnathan_prelude_data_5" } ] } }
           ]
         },
         "topic": "TALK_CF_AUX_MAGE_GM_PRELUDE"
@@ -34,15 +23,15 @@
       { "text": "What can you tell me about this place?", "topic": "TALK_CF_AUX_MAGE_WHERE" },
       { "text": "What do you do here?", "topic": "TALK_CF_AUX_MAGE_DO" },
       {
-        "text": "Do you have anything to trade?",
-        "effect": "start_trade",
-        "condition": { "u_has_var": "cf_celine_traded", "type": "flag", "context": "knowledge", "value": "yes" },
-        "topic": "TALK_CF_AUX_MAGE"
+        "text": "Can you teach me any spells?",
+        "topic": "TALK_CF_AUX_MAGE_SPELL_MENU",
+        "condition": { "not": { "compare_string": [ "yes", { "u_val": "celine_all_spells_known" } ] } }
       },
       {
-        "text": "Can you teach me anything?",
-        "condition": { "u_has_var": "cf_celine_training", "type": "flag", "context": "knowledge", "value": "yes" },
-        "topic": "TALK_TRAIN"
+        "text": "Do you have anything to trade?",
+        "effect": "start_trade",
+        "condition": { "compare_string": [ "yes", { "u_val": "cf_celine_traded" } ] },
+        "topic": "TALK_CF_AUX_MAGE"
       },
       { "text": "Well, bye.", "topic": "TALK_DONE" }
     ]
@@ -50,18 +39,13 @@
   {
     "id": "TALK_CF_AUX_MAGE_GM_PRELUDE",
     "type": "talk_topic",
-    "dynamic_line": "I myself don't know anything about that, actually.  However, the contact your friend Sofia sent you to speak with, responsible for our meeting.  He might be able to help as well.",
+    "dynamic_line": "I myself don't know anything about that, actually.  However, seek the contact your friend Sofia sent you to speak with, responsible for our meeting.  He might be able to help.",
     "responses": [
       {
         "text": "We'll see, then.",
         "effect": [
-          { "npc_add_var": "johnathan_prelude_mid", "type": "mission", "context": "rural_church", "value": "yes" },
-          {
-            "u_add_var": "johnathan_prelude_hermit_idea",
-            "type": "mission",
-            "context": "rural_church",
-            "value": "yes"
-          }
+          { "npc_add_var": "johnathan_prelude_mid", "value": "yes" },
+          { "u_add_var": "johnathan_prelude_hermit_idea", "value": "yes" }
         ],
         "topic": "TALK_CF_AUX_MAGE"
       }
@@ -86,9 +70,9 @@
         "topic": "TALK_CF_AUX_MAGE_HOARD"
       },
       {
-        "text": "Can you teach me anything?.",
-        "effect": { "u_add_var": "cf_celine_training", "type": "flag", "context": "knowledge", "value": "yes" },
-        "topic": "TALK_TRAIN"
+        "text": "Can you teach me any spells?",
+        "topic": "TALK_CF_AUX_MAGE_SPELL_MENU",
+        "condition": { "not": { "compare_string": [ "yes", { "u_val": "celine_all_spells_known" } ] } }
       },
       { "text": "I see.", "topic": "TALK_CF_AUX_MAGE" }
     ]
@@ -100,12 +84,12 @@
     "responses": [ { "text": "Oh, okay.", "topic": "TALK_CF_AUX_MAGE" } ]
   },
   {
-    "id": "TALK_CF_AUX_MAGE_HOARD",
     "type": "talk_topic",
+    "id": "TALK_CF_AUX_MAGE_HOARD",
     "dynamic_line": {
       "u_has_any_trait": [ "PROF_CLEANSINGFLAME", "PROF_CLEANSINGFLAME2" ],
       "yes": "I mean no offense by that.  The people here have been welcoming to an extent far beyond any other arcanist sect I have run into in the past.  It's only just, well, Jonathan and the others still seem rather reluctant to bring the others together, and help teach them.",
-      "no": "That is the reputation the Cleansing Flame has developed among some scholars.  Their approach towards the arcane so variable, so unpredictable.  The community gathered here is the most welcoming I've seen in a long time, but even they keep their knowledge close to their heart.  It doesn't feel like the best way."
+      "no": "That is the reputation the Cleansing Flame has developed among some scholars.  Their approach towards the arcane was so variable, so unpredictable.  The community gathered here is the most welcoming I've seen in a long time, but even they keep their knowledge close to their heart.  It doesn't feel like the best way."
     },
     "responses": [
       {
@@ -120,15 +104,17 @@
       },
       {
         "text": "I'll see what I can do to help.  We can't afford to lose such valuable information.",
-        "condition": { "u_has_any_trait": [ "PROF_CHALICE", "THRESH_VEIL", "PROF_ARCANIST", "PROF_ARCANIST2", "LOVES_BOOKS" ] },
+        "condition": {
+          "u_has_any_trait": [ "PROF_CHALICE", "PROF_CHALICE2", "THRESH_VEIL", "PROF_ARCANIST", "PROF_ARCANIST2", "LOVES_BOOKS" ]
+        },
         "topic": "TALK_CF_AUX_MAGE_HOARD_ASSURANCE"
       },
       { "text": "We'll have to see how things go, I guess.", "topic": "TALK_CF_AUX_MAGE" }
     ]
   },
   {
-    "id": "TALK_CF_AUX_MAGE_HOARD_ASSURANCE",
     "type": "talk_topic",
+    "id": "TALK_CF_AUX_MAGE_HOARD_ASSURANCE",
     "dynamic_line": "Thank you for that.  Sofia, others here, they seem to know that this knowledge can enrich the lives of other survivors too.  I'll have to trust them to lead the way in doing so.",
     "responses": [ { "text": "Indeed.", "topic": "TALK_CF_AUX_MAGE" } ]
   },
@@ -161,12 +147,102 @@
     "type": "talk_topic",
     "dynamic_line": "Aside from study and any other work I can get, I also have supplies I trade around, helps supplement my efforts to gather new materials and books to ready.  Anything you'd like?",
     "speaker_effect": {
-      "condition": { "not": { "u_has_var": "cf_celine_traded", "type": "flag", "context": "knowledge", "value": "yes" } },
-      "effect": { "u_add_var": "cf_celine_traded", "type": "flag", "context": "knowledge", "value": "yes" }
+      "condition": { "not": { "compare_string": [ "yes", { "u_val": "cf_celine_traded" } ] } },
+      "effect": { "u_add_var": "cf_celine_traded", "value": "yes" }
     },
     "responses": [
       { "text": "Sure, let's see what you have.", "effect": "start_trade", "topic": "TALK_CF_AUX_MAGE" },
       { "text": "Maybe another time, thank you.", "topic": "TALK_CF_AUX_MAGE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_CF_AUX_MAGE_SPELL_MENU",
+    "dynamic_line": "I know a few tricks I could teach you, Magic Signs as they've been called.  The arts of Agility, Conjure Flame, and Displacement.  If you have the coin, I'll put the materials and such together to help with learning the spell pattern.  Same sort of Golden Scales the others here use.",
+    "responses": [
+      {
+        "text": "What can you tell me about Agility?",
+        "condition": { "not": { "u_has_trait": "SPELL_AGILE" } },
+        "topic": "TALK_CF_AUX_MAGE_SPELL_MENU_1"
+      },
+      {
+        "text": "What can you tell me about Conjure Flame?",
+        "condition": { "not": { "u_has_trait": "SPELL_FIRE" } },
+        "topic": "TALK_CF_AUX_MAGE_SPELL_MENU_2"
+      },
+      {
+        "text": "What can you tell me about Displacement?",
+        "condition": { "not": { "u_has_trait": "SPELL_DAMPENING" } },
+        "topic": "TALK_CF_AUX_MAGE_SPELL_MENU_3"
+      },
+      {
+        "text": "I already know all of those, thanks anyway.",
+        "switch": true,
+        "condition": { "and": [ { "u_has_trait": "SPELL_AGILE" }, { "u_has_trait": "SPELL_FIRE" }, { "u_has_trait": "SPELL_DAMPENING" } ] },
+        "effect": { "u_add_var": "celine_all_spells_known", "value": "yes" },
+        "topic": "TALK_CF_AUX_MAGE"
+      },
+      { "text": "Maybe another time.", "switch": true, "default": true, "topic": "TALK_CF_AUX_MAGE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_CF_AUX_MAGE_SPELL_MENU_1",
+    "dynamic_line": "It's a fairly simple spell that increases dexterity, and affects your speed as well.  I've gotten out of some close scrapes in the past using it on myself and occasionally traveling partners.  I'll teach it to you for 3 Golden Scales.",
+    "responses": [
+      {
+        "text": "[GS3] You have a deal, then.",
+        "condition": { "u_has_items": { "item": "CF_golden_scale", "count": 3 } },
+        "effect": [ { "u_consume_item": "CF_golden_scale", "count": 3 }, { "u_add_trait": "SPELL_AGILE" } ],
+        "topic": "TALK_DONE"
+      },
+      {
+        "text": "I'll need more Scales for that.  Maybe later.",
+        "switch": true,
+        "condition": { "not": { "u_has_items": { "item": "CF_golden_scale", "count": 3 } } },
+        "topic": "TALK_CF_AUX_MAGE"
+      },
+      { "text": "Not right now.", "switch": true, "default": true, "topic": "TALK_CF_AUX_MAGE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_CF_AUX_MAGE_SPELL_MENU_2",
+    "dynamic_line": "Whatever area you target with it goes up in flames.  Its damage is best when you center it on whatever you want dead, just be careful since it can blow out windows or otherwise wreck the place.  Not to mention accidentally blowing up your ally or burning your house down wouldn't be a good idea.  I'll teach it to you for 3 Golden Scales.",
+    "responses": [
+      {
+        "text": "[GS4] You have a deal, then.",
+        "condition": { "u_has_items": { "item": "CF_golden_scale", "count": 3 } },
+        "effect": [ { "u_consume_item": "CF_golden_scale", "count": 3 }, { "u_add_trait": "SPELL_FIRE" } ],
+        "topic": "TALK_DONE"
+      },
+      {
+        "text": "I'll need more Scales for that.  Maybe later.",
+        "switch": true,
+        "condition": { "not": { "u_has_items": { "item": "CF_golden_scale", "count": 3 } } },
+        "topic": "TALK_CF_AUX_MAGE"
+      },
+      { "text": "Not right now.", "switch": true, "default": true, "topic": "TALK_CF_AUX_MAGE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_CF_AUX_MAGE_SPELL_MENU_3",
+    "dynamic_line": "Pick a target, and instantly swap places with them.  Not only will they be left staggered afterward, but so will anyone standing near where you emerge.  I'll teach it to you for 3 Golden Scales.",
+    "responses": [
+      {
+        "text": "[GS3] You have a deal, then.",
+        "condition": { "u_has_items": { "item": "CF_golden_scale", "count": 3 } },
+        "effect": [ { "u_consume_item": "CF_golden_scale", "count": 3 }, { "u_add_trait": "SPELL_DAMPENING" } ],
+        "topic": "TALK_DONE"
+      },
+      {
+        "text": "I'll need more Scales for that.  Maybe later.",
+        "switch": true,
+        "condition": { "not": { "u_has_items": { "item": "CF_golden_scale", "count": 3 } } },
+        "topic": "TALK_CF_AUX_MAGE"
+      },
+      { "text": "Not right now.", "switch": true, "default": true, "topic": "TALK_CF_AUX_MAGE" }
     ]
   }
 ]

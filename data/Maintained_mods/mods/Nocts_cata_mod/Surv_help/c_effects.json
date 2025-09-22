@@ -1,13 +1,13 @@
 [
   {
-    "id": "rtg_induction_radiation",
     "type": "effect_type",
+    "id": "rtg_induction_radiation",
     "max_duration": "2 m",
     "base_mods": { "rad_min": [ 1 ] }
   },
   {
-    "id": "adrenaline_bioweapon",
     "type": "effect_type",
+    "id": "adrenaline_bioweapon",
     "name": [ "Exertion", "Bloodlust" ],
     "desc": [ "You feel worn out and empty inside.", "You thirst for blood!" ],
     "apply_message": "You feel an unnatural surge of adrenaline!",
@@ -29,8 +29,8 @@
     "scaling_mods": { "speed_mod": [ 30 ], "str_mod": [ 4 ], "dex_mod": [ 4 ], "int_mod": [ -1 ], "per_mod": [ 1 ], "stamina_min": [ 4 ] }
   },
   {
-    "id": "biostim_side_effects",
     "type": "effect_type",
+    "id": "biostim_side_effects",
     "name": [ "Biostim", "Biostim Overdose" ],
     "desc": [
       "Your muscles feel abnormally tense and it's hard to sit still.",
@@ -68,13 +68,13 @@
       "hurt_min": [ 1 ],
       "hurt_max": [ 3 ],
       "vomit_chance": [ 600 ],
-      "fatigue_chance": [ 250 ],
-      "fatigue_min": [ 1 ]
+      "sleepiness_chance": [ 250 ],
+      "sleepiness_min": [ 1 ]
     }
   },
   {
-    "id": "c_sentinel_phys",
     "type": "effect_type",
+    "id": "c_sentinel_phys",
     "removes_effects": [
       "poison",
       "badpoison",
@@ -96,8 +96,8 @@
     "base_mods": { "pain_min": [ -1 ], "pain_tick": [ 60 ], "rad_min": [ -1 ], "rad_tick": [ 300 ] }
   },
   {
-    "id": "c_sentinel_ment",
     "type": "effect_type",
+    "id": "c_sentinel_ment",
     "removes_effects": [
       "dazed",
       "visuals",
@@ -118,19 +118,19 @@
     ]
   },
   {
-    "id": "c_mi_go_beam_stamina",
     "type": "effect_type",
+    "id": "c_mi_go_beam_stamina",
     "name": [ "Powering Beam Weapon" ],
     "desc": [ "The salvaged stun emitter is wearing your body down a bit, presumably that's what powers it." ],
     "base_mods": { "stamina_min": [ -5 ], "speed_mod": [ -5 ] }
   },
   {
-    "id": "c_mi_go_carapace_stamina",
     "type": "effect_type",
+    "id": "c_mi_go_carapace_stamina",
     "base_mods": {
       "stamina_min": [ 20 ],
-      "fatigue_min": [ 1 ],
-      "fatigue_tick": [ 300 ],
+      "sleepiness_min": [ 1 ],
+      "sleepiness_tick": [ 300 ],
       "health_min": [ 1 ],
       "health_tick": [ 300 ],
       "h_mod_min": [ 1 ],
@@ -138,17 +138,85 @@
     }
   },
   {
-    "id": "c_bio_painrec",
     "type": "effect_type",
+    "id": "c_bio_painrec",
     "base_mods": { "pain_min": [ -1 ], "pain_tick": [ 10 ] }
   },
   {
-    "id": "c_nano_mutagen_trigger",
     "type": "effect_type",
+    "id": "c_nano_mutagen_trigger",
     "max_duration": "10 s",
     "name": [ "Test Effect Name" ],
     "desc": [
       "This is just to ensure nano-mutagen is working right.  If you see this on your effects screen DDA likely fucked up again."
     ]
+  },
+  {
+    "type": "effect_type",
+    "id": "c_mi_go_wings_immunity",
+    "removes_effects": [ "downed", "bouldering" ],
+    "base_mods": { "sleepiness_min": [ 1 ], "sleepiness_tick": [ 300 ] },
+    "flags": [ "EFFECT_FEATHER_FALL" ]
+  },
+  {
+    "type": "effect_type",
+    "id": "c_flesh_pistol_side_effect",
+    "//": "For all of the flesh weapons, proc rate uses 500 seconds as a baseline, reduced by an amount equal to the weapon's base damage multiplied by its maximum burst size.",
+    "base_mods": {
+      "hunger_min": [ 1 ],
+      "hunger_tick": [ 460 ],
+      "health_min": [ -1 ],
+      "health_tick": [ 460 ],
+      "h_mod_min": [ -1 ],
+      "h_mod_tick": [ 460 ]
+    }
+  },
+  {
+    "type": "effect_type",
+    "id": "c_flesh_smg_side_effect",
+    "base_mods": {
+      "hunger_min": [ 1 ],
+      "hunger_tick": [ 375 ],
+      "health_min": [ -1 ],
+      "health_tick": [ 375 ],
+      "h_mod_min": [ -1 ],
+      "h_mod_tick": [ 375 ]
+    }
+  },
+  {
+    "type": "effect_type",
+    "id": "c_flesh_rifle_side_effect",
+    "base_mods": {
+      "hunger_min": [ 1 ],
+      "hunger_tick": [ 320 ],
+      "health_min": [ -1 ],
+      "health_tick": [ 320 ],
+      "h_mod_min": [ -1 ],
+      "h_mod_tick": [ 320 ]
+    }
+  },
+  {
+    "type": "effect_type",
+    "id": "c_flesh_lmg_side_effect",
+    "base_mods": {
+      "hunger_min": [ 1 ],
+      "hunger_tick": [ 100 ],
+      "health_min": [ -1 ],
+      "health_tick": [ 100 ],
+      "h_mod_min": [ -1 ],
+      "h_mod_tick": [ 100 ]
+    }
+  },
+  {
+    "type": "effect_type",
+    "id": "c_flesh_scattergun_side_effect",
+    "base_mods": {
+      "hunger_min": [ 1 ],
+      "hunger_tick": [ 380 ],
+      "health_min": [ -1 ],
+      "health_tick": [ 380 ],
+      "h_mod_min": [ -1 ],
+      "h_mod_tick": [ 380 ]
+    }
   }
 ]

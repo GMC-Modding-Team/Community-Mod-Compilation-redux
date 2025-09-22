@@ -21,12 +21,13 @@
     "melee_dice_sides": 1,
     "melee_damage": [ { "damage_type": "cut", "amount": 3 } ],
     "dodge": 3,
-    "armor_bash": 10,
-    "armor_cut": 16,
-    "armor_bullet": 13,
     "harvest": "zombie",
-    "special_attacks": [ [ "TENTACLE", 2 ], [ "scratch", 10 ] ],
-    "flags": [ "HEARS", "GOODHEARING", "WARM", "CLIMBS", "NOHEAD", "POISON", "NO_BREATHE" ]
+    "special_attacks": [
+      { "id": "tentacle", "cooldown": 15, "damage_max_instance": [ { "damage_type": "bash", "amount": 3 } ] },
+      { "id": "scratch", "min_mul": 0.5, "cooldown": 10 }
+    ],
+    "flags": [ "HEARS", "GOODHEARING", "WARM", "CLIMBS", "NOHEAD", "POISON", "NO_BREATHE" ],
+    "armor": { "bash": 10, "cut": 16, "bullet": 13 }
   },
   {
     "id": "mon_dullahan",
@@ -50,10 +51,12 @@
     "melee_dice_sides": 5,
     "melee_damage": [ { "damage_type": "cut", "amount": 5 } ],
     "dodge": 3,
-    "armor_bash": 20,
-    "armor_cut": 40,
     "harvest": "zombie",
-    "special_attacks": [ [ "TENTACLE", 7 ], [ "scratch", 8 ] ],
-    "flags": [ "WARM", "CLIMBS", "NOHEAD", "POISON", "NO_BREATHE" ]
+    "special_attacks": [
+      { "id": "tentacle", "cooldown": 7, "damage_max_instance": [ { "damage_type": "bash", "amount": 3 } ] },
+      { "id": "scratch", "min_mul": 0.5, "cooldown": 8 }
+    ],
+    "flags": [ "WARM", "CLIMBS", "NOHEAD", "POISON", "NO_BREATHE" ],
+    "armor": { "bash": 20, "cut": 40 }
   }
 ]

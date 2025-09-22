@@ -1,7 +1,7 @@
 [
   {
-    "id": "TALK_CF_GM",
     "type": "talk_topic",
+    "id": "TALK_CF_GM",
     "dynamic_line": {
       "u_has_any_trait": [ "PROF_CLEANSINGFLAME", "PROF_CLEANSINGFLAME2" ],
       "yes": { "u_male": "Greetings, Brother.  This is a sacred place.", "no": "Greetings, Sister.  This is a sacred place." },
@@ -13,7 +13,7 @@
           "no": "You are not welcome here sanguinist.  State your intentions."
         },
         "no": {
-          "u_has_any_trait": [ "PROF_CHALICE", "THRESH_VEIL" ],
+          "u_has_any_trait": [ "PROF_CHALICE", "PROF_CHALICE2", "THRESH_VEIL" ],
           "yes": {
             "u_has_effect": "cf_mission_1",
             "yes": "Welcome, Keeper.  What do you require?",
@@ -37,7 +37,7 @@
         "topic": "TALK_CF_GM_ADVICE_1",
         "condition": {
           "and": [
-            { "not": { "u_has_var": "sofia_allies_secured", "type": "mission", "context": "rural_church", "value": "yes" } },
+            { "not": { "compare_string": [ "yes", { "u_val": "sofia_allies_secured" } ] } },
             { "u_has_mission": "MISSION_CF_REP_4" }
           ]
         }
@@ -62,8 +62,8 @@
         "topic": "TALK_CF_GM_MISSION_4_OPINION",
         "condition": {
           "and": [
-            { "not": { "npc_has_var": "johnathan_opinion_given", "type": "flag", "context": "knowledge", "value": "yes" } },
-            { "u_has_var": "sofia_mission_4_end", "type": "mission", "context": "rural_church", "value": "yes" }
+            { "not": { "compare_string": [ "yes", { "npc_val": "johnathan_opinion_given" } ] } },
+            { "compare_string": [ "yes", { "u_val": "sofia_mission_4_end" } ] }
           ]
         }
       },
@@ -84,6 +84,7 @@
             "PROF_CLEANSINGFLAME2",
             "PROF_SANGUINE",
             "PROF_CHALICE",
+            "PROF_CHALICE2",
             "THRESH_VEIL"
           ]
         },
@@ -96,19 +97,19 @@
       },
       {
         "text": "What can I do to help?",
-        "condition": { "npc_has_var": "johnathan_prelude_ended", "type": "mission", "context": "rural_church", "value": "yes" },
+        "condition": { "compare_string": [ "yes", { "npc_val": "johnathan_prelude_ended" } ] },
         "switch": true,
         "topic": "TALK_MISSION_LIST"
       },
       {
         "text": "Alright, I think that's everything we need to track this anomaly down.",
-        "condition": { "u_has_var": "johnathan_prelude_data_5", "type": "mission", "context": "rural_church", "value": "yes" },
+        "condition": { "compare_string": [ "yes", { "u_val": "johnathan_prelude_data_5" } ] },
         "switch": true,
         "topic": "TALK_CF_GM_PRELUDE_4_READY"
       },
       {
         "text": "Any advice for this mission?",
-        "condition": { "u_has_var": "johnathan_prelude_mid", "type": "mission", "context": "rural_church", "value": "yes" },
+        "condition": { "compare_string": [ "yes", { "u_val": "johnathan_prelude_mid" } ] },
         "switch": true,
         "topic": "TALK_CF_GM_PRELUDE_4_MID_ADVICE"
       },
@@ -118,41 +119,29 @@
         "switch": true,
         "topic": "TALK_CF_GM_PRELUDE_4"
       },
-      {
-        "text": "Anything I can do to help?",
-        "condition": { "npc_has_trait": "FIX_CF_GM" },
-        "switch": true,
-        "topic": "TALK_MISSION_LIST"
-      },
-      {
-        "text": "Anything I can do to help?",
-        "//": "Effect reused since this is all just to patch up my mistake.",
-        "condition": { "not": { "npc_has_effect": "sofia_motive_explained" } },
-        "switch": true,
-        "topic": "TALK_CF_GM_DUN_GOOFED"
-      },
+      { "text": "Anything I can do to help?", "switch": true, "default": true, "topic": "TALK_MISSION_LIST" },
       { "text": "Well, bye.", "topic": "TALK_DONE" }
     ]
   },
   {
-    "id": "TALK_CF_GM_ADVICE_1",
     "type": "talk_topic",
+    "id": "TALK_CF_GM_ADVICE_1",
     "dynamic_line": "I've never been to the center myself, so I'm not sure what to suggest.  More hands to help build and hunt would be nice, though I suppose a source of trade would be useful, to keep our supplies well stocked.  I'll trust you to use your discretion.",
     "responses": [ { "text": "I see.  That's all then.", "topic": "TALK_CF_GM" } ]
   },
   {
-    "id": "TALK_CF_GM_ADVICE_2",
     "type": "talk_topic",
+    "id": "TALK_CF_GM_ADVICE_2",
     "dynamic_line": {
-      "u_has_any_trait": [ "PROF_CHALICE", "THRESH_VEIL" ],
+      "u_has_any_trait": [ "PROF_CHALICE", "PROF_CHALICE2", "THRESH_VEIL" ],
       "yes": "I tracked their movements for some time intermittently, along with keeping tabs on other leads.  No sign of contact with any remainder of the Keepers, but they have been involved in anomalous activity within the past month prior to the beginning of all this.  I will trust you to retrieve any intel as you see fit given your connection to their order, but do exercise caution.",
       "no": "I tracked their movements for some time intermittently, along with keeping tabs on other leads.  No sign of contact with any remainder of the Keepers, but they have been involved in anomalous activity within the past month prior to the beginning of all this.  Keep your guard up, and deal with them as needed if they seem unlikely to cooperate.  We can't afford to let this intel slip out of our grasp."
     },
     "responses": [ { "text": "…", "topic": "TALK_CF_GM" } ]
   },
   {
-    "id": "TALK_CF_GM_ADVICE_3",
     "type": "talk_topic",
+    "id": "TALK_CF_GM_ADVICE_3",
     "dynamic_line": {
       "u_has_any_trait": [ "PROF_SANGUINE" ],
       "yes": "You should know how dangerous the Shrikes are, sanguinist.  I doubt you'll be able to just walk in and charm them into giving us what we need, but you're welcome to try.  Personally I'd suggest you err on the side of caution.",
@@ -161,8 +150,8 @@
     "responses": [ { "text": "…", "topic": "TALK_CF_GM" } ]
   },
   {
-    "id": "TALK_CF_GM_ADVICE_4",
     "type": "talk_topic",
+    "id": "TALK_CF_GM_ADVICE_4",
     "dynamic_line": "Most of our order had little familiarity with these laboratories.  If we knew then what we knew now, we would've tried to force our way into every last one of them.  I do, however, recall that site was the subject of an investigation by one of our urban contacts, a Purifier like Nicholas.  Shortly before all this boiled over.",
     "responses": [
       { "text": "What did they find?", "topic": "TALK_CF_GM_ADVICE_4_2" },
@@ -170,8 +159,8 @@
     ]
   },
   {
-    "id": "TALK_CF_GM_ADVICE_4_2",
     "type": "talk_topic",
+    "id": "TALK_CF_GM_ADVICE_4_2",
     "dynamic_line": "He'd led a small hunting party with him to track a shipment, part of the intel-gathering that produced the list that allowed you to identify as a threat.  They didn't identify anything anomalous but there was mention of human trafficking, possibly experimentation.  The hunters with him were told to hold back while he attempted to sneak in.",
     "responses": [
       { "text": "What happened?", "topic": "TALK_CF_GM_ADVICE_4_3" },
@@ -179,29 +168,22 @@
     ]
   },
   {
-    "id": "TALK_CF_GM_ADVICE_4_3",
     "type": "talk_topic",
+    "id": "TALK_CF_GM_ADVICE_4_3",
     "dynamic_line": "They lost him, waited over a day before leaving.  They were instructed not to assault the facility due to the risk of too many of our people being exposed, even if his life was at risk.  That place is going to be dangerous, even if they've succumbed to the apocalypse by now.  However good the intentions of their main project might have been, there's no telling what evils they might have inflicted on the world in the process.",
     "responses": [ { "text": "I see.  Thank you for the information.", "topic": "TALK_CF_GM" } ]
   },
   {
-    "id": "TALK_CF_GM_MISSION_4_OPINION",
     "type": "talk_topic",
+    "id": "TALK_CF_GM_MISSION_4_OPINION",
     "//": "Unlike Sofia, Johnathan does not trust the Old Guard if you've picked that particular resolution for Sofia's fourth mission.",
     "dynamic_line": {
-      "u_has_var": "old_guard_presence",
-      "type": "knowledge",
-      "context": "rural_church",
-      "value": "yes",
-      "yes": "They're hard-working, but they know more than they let on.  At least, whoever sent them.  Be careful what you say around them.  They are here for a reason, and I'm concerned that it endanger our purpose.",
+      "compare_string": [ "yes", { "u_val": "old_guard_presence" } ],
+      "yes": "They're hard-working, but they know more than they let on.  At least, whoever sent them.  Be careful what you say around them.  They are here for a reason, and I'm concerned that it might endanger our purpose.",
       "no": "I have my concerns, but they seem to be trustworthy.  Not well-versed in the arcane, but if need be we can teach them our ways.  Other than that, they seem to mostly just help with day-to-day tasks."
     },
     "responses": [
-      {
-        "text": "I see…",
-        "effect": { "npc_add_var": "johnathan_opinion_given", "type": "flag", "context": "knowledge", "value": "yes" },
-        "topic": "TALK_CF_GM"
-      }
+      { "text": "I see…", "effect": { "npc_add_var": "johnathan_opinion_given", "value": "yes" }, "topic": "TALK_CF_GM" }
     ]
   },
   {
@@ -212,7 +194,8 @@
       {
         "text": "Alright.",
         "effect": [
-          { "npc_add_var": "johnathan_prelude_ended", "type": "mission", "context": "rural_church", "value": "yes" },
+          { "npc_add_var": "johnathan_prelude_ended", "value": "yes" },
+          { "u_add_var": "johnathan_prelude_ended", "value": "yes" },
           {
             "mapgen_update": "cf_church_upgrade_GM_4_prelude_a",
             "om_terrain": "cf_church_1",
@@ -245,10 +228,7 @@
       "u_has_mission": "MISSION_CF_GM_4_PRELUDE",
       "yes": "Whatever killed most of the survivors is still in the area, and we know they're more dangerous at night.  Try not approach during the day.  Look for anything that seems out of place and bring it here.  If I can't figure anything out of it, I'll recommend you to Sofia.",
       "no": {
-        "u_has_var": "johnathan_prelude_penultimate",
-        "type": "mission",
-        "context": "rural_church",
-        "value": "yes",
+        "compare_string": [ "yes", { "u_val": "johnathan_prelude_penultimate" } ],
         "no": "Visit the center first and foremost, but any contact that has extensive involvement with traders and explorers might know something.  Get at least five confirmed locations and we should have a better understanding of where the epicenter might be.",
         "yes": "Bring what you found to Sofia, she should be able to help.  I'll look into consulting with the others as well, until you come back with anything."
       }
@@ -259,18 +239,11 @@
     "id": "TALK_CF_GM_PRELUDE_4",
     "type": "talk_topic",
     "dynamic_line": {
-      "u_has_var": "johnathan_prelude_started",
-      "type": "mission",
-      "context": "rural_church",
-      "value": "yes",
+      "compare_string": [ "yes", { "u_val": "johnathan_prelude_started" } ],
       "no": "There is a new problem I've been made aware of recently, but I'm afraid it's more complicated than normal.  We've been tracking reports of attacks on scavengers and anomalous activity over a wide area, without any leads on the source.  I can tell you what I know and see if we can find anything out.",
       "yes": "Afraid I haven't acquired any new intel.  Still, I'll answer any questions and hopefully that will help narrow things down.  What do you have for me?"
     },
-    "speaker_effect": [
-      {
-        "effect": [ { "u_add_var": "johnathan_prelude_started", "type": "mission", "context": "rural_church", "value": "yes" } ]
-      }
-    ],
+    "speaker_effect": [ { "effect": [ { "u_add_var": "johnathan_prelude_started", "value": "yes" } ] } ],
     "responses": [
       { "text": "What sort of attacks happened?", "topic": "TALK_CF_GM_PRELUDE_4_ATTACKS" },
       { "text": "Can you describe the anomalies?", "topic": "TALK_CF_GM_PRELUDE_4_ANOMALIES" },
@@ -341,12 +314,12 @@
     "responses": [
       {
         "text": "It could be provoked by a more subtle incident, like what broke the back of the Keepers.",
-        "condition": { "u_has_any_trait": [ "PROF_CHALICE", "THRESH_VEIL" ] },
+        "condition": { "u_has_any_trait": [ "PROF_CHALICE", "PROF_CHALICE2", "THRESH_VEIL" ] },
         "topic": "TALK_CF_GM_PRELUDE_4_ATTACKS_2_1"
       },
       {
         "text": "They might not be physical interlopers, they could be like summoned monsters.",
-        "condition": { "or": [ { "u_has_trait": "PROF_ARCANIST2" }, { "u_has_skill": { "skill": "magic", "level": 6 } } ] },
+        "condition": { "or": [ { "u_has_trait": "PROF_ARCANIST2" }, { "math": [ "u_skill('magic')", ">=", "6" ] } ] },
         "topic": "TALK_CF_GM_PRELUDE_4_ATTACKS_2_2"
       },
       { "text": "Any way we could narrow down the location?", "topic": "TALK_CF_GM_PRELUDE_4_PROGRESSION" },
@@ -407,8 +380,8 @@
       {
         "text": "…",
         "effect": [
-          { "u_add_var": "johnathan_prelude_ended", "type": "mission", "context": "rural_church", "value": "yes" },
-          { "npc_add_var": "johnathan_prelude_ended", "type": "mission", "context": "rural_church", "value": "yes" },
+          { "u_add_var": "johnathan_prelude_ended", "value": "yes" },
+          { "npc_add_var": "johnathan_prelude_ended", "value": "yes" },
           { "u_add_effect": "cf_mission_1", "duration": "PERMANENT" }
         ],
         "topic": "TALK_DONE"
@@ -433,7 +406,7 @@
     "responses": [
       {
         "text": "This seems familiar.  The Keepers have suffered a similar fate in their foremost holy site, haven't they?",
-        "condition": { "u_has_any_trait": [ "PROF_CHALICE", "THRESH_VEIL" ] },
+        "condition": { "u_has_any_trait": [ "PROF_CHALICE", "PROF_CHALICE2", "THRESH_VEIL" ] },
         "topic": "TALK_CF_GM_PRELUDE_4_ATTACKS_2_1"
       },
       { "text": "Maybe there's a way to get a more exact location?", "topic": "TALK_CF_GM_PRELUDE_4_PROGRESSION" },
@@ -444,17 +417,14 @@
     "id": "TALK_CF_GM_PRELUDE_4_PROGRESSION",
     "type": "talk_topic",
     "dynamic_line": {
-      "u_has_var": "johnathan_opinion_given",
-      "type": "flag",
-      "context": "knowledge",
-      "value": "yes",
+      "compare_string": [ "yes", { "u_val": "johnathan_opinion_given" } ],
       "no": "We need more information on how many attacks have actually happened, and where.  I would suggest you talk to people at the refugee center, any other location that frequently receives visits from scavengers.",
       "yes": "We need more information on how many attacks have actually happened, and where.  I would suggest you talk to people at the refugee center, any other location that frequently receives visits from scavengers.  I'd also suggest talking to the merchants set up in the new meeting hall."
     },
     "responses": [
       {
         "text": "I'll see what I can do.",
-        "effect": { "u_add_var": "johnathan_prelude_mid", "type": "mission", "context": "rural_church", "value": "yes" },
+        "effect": { "u_add_var": "johnathan_prelude_mid", "value": "yes" },
         "topic": "TALK_CF_GM"
       }
     ]
@@ -505,17 +475,5 @@
     "type": "talk_topic",
     "dynamic_line": "To bring justice to those who would endanger humanity, if we must.  To mend the growing wound In The Veil Between Worlds, if we can.  To guard and guide so that a dangerous path may be avoided, so we shall.  So long as the Sun shines upon the Earth.  We are hunters of the wicked and otherworldly, and protectors of the innocent.  At least, we strive to be.  There weren't that many of us, and being scattered as small parties meant that not all of us adhered to proper conduct, though it never reached the point of dissension and division.",
     "responses": [ { "text": "I see.", "topic": "TALK_CF_GM" } ]
-  },
-  {
-    "id": "TALK_CF_GM_DUN_GOOFED",
-    "type": "talk_topic",
-    "dynamic_line": "(( Unfortunately, due to a mistake on the part of the mod author, old versions of this NPC were set to start with Sofia's first mission instead of the inaccessible dummy mission created for them.  This was supposed to allow old saves to be able to immediately make use of the new mission chain being added, but bungling it means versions from old saves cannot correctly grab the new mission chain.  This message is here to inform the player why their old version of this NPC still lacks accessible missions. ))",
-    "responses": [
-      {
-        "text": "Oof.",
-        "effect": { "npc_add_effect": "sofia_motive_explained", "duration": "PERMANENT" },
-        "topic": "TALK_CF_GM"
-      }
-    ]
   }
 ]

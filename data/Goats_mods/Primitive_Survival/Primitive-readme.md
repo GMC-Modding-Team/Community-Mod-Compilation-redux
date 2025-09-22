@@ -68,9 +68,9 @@ Use the `home` key to get to the top.
 - [x] Find out what `Items` have been added already to vanilla game and add to `Vanilla` Category
 - [x] Remove all `Items` in vanilla - add extra code to `Vanilla` Category
 - [x] Remove all `Materials` in vanilla - add extra code to `Vanilla` Category
-- [ ] Remove unwanted `Recipes`
+- [x] Remove unwanted `Recipes`
 - [ ] Add new `Construction` method for building with `Sticks`
-- [ ] Add new `Construction` method for building with `Sticks` and `Mud`
+- [ ] Add new `Construction` method for building with `Mud`
 - [ ] Add new `Construction` method for building with `bamboo`
 - [ ] Add more `Items`
 - [ ] Add more `Recipes`
@@ -142,7 +142,8 @@ Use the `home` key to get to the top.
 [Build a Primitive Adobe Rocket Stove (Part 1)](https://www.youtube.com/watch?v=TO3e4NYqr3c)\
 [Build a Primitive Adobe Rocket Stove (Part 2)](https://www.youtube.com/watch?v=hcbrIdEEG60)\
 [Build a Primitive Adobe Rocket Stove (Part 3)](https://www.youtube.com/watch?v=Htx6d9bz2Yo)\
-[Build a Primitive Adobe Rocket Stove (Part 4)](https://www.youtube.com/watch?v=N34CxATbf7Q)
+[Build a Primitive Adobe Rocket Stove (Part 4)](https://www.youtube.com/watch?v=N34CxATbf7Q)\
+[Add mushrooms edible](https://www.google.com/search?q=edible+mushrooms+in+new+england&sca_esv=159f37a1251190f9&rlz=1C1ONGR_en-GBGB1001GB1001&ei=7AsFZ7biBsGrhbIP9vifoA8&oq=new+england+mushrooms&gs_lp=Egxnd3Mtd2l6LXNlcnAiFW5ldyBlbmdsYW5kIG11c2hyb29tcyoCCAAyChAAGLADGNYEGEcyChAAGLADGNYEGEcyChAAGLADGNYEGEcyChAAGLADGNYEGEcyChAAGLADGNYEGEcyChAAGLADGNYEGEcyChAAGLADGNYEGEcyChAAGLADGNYEGEdI7xVQAFgAcAJ4AZABAJgBAKABAKoBALgBAcgBAJgCAqACBpgDAIgGAZAGCJIHATKgBwA&sclient=gws-wiz-serp)
 
 
 
@@ -159,8 +160,7 @@ lots of new items,
 
 *How to collect leaves:*
 Build menu - build_pile_of_leaves  requires- withered 50
-deconstruct pile of leaves to get leaves ATM,
-until I implement leaves falling off trees.
+deconstruct pile of leaves to get leaves ATM.
 
 
 
@@ -173,14 +173,14 @@ until I implement leaves falling off trees.
 *Tools:*
 
 ```markdown
-Primitive Knife
-Primitive Stone Hammers
-Primitive Hand Axes
-Primitive Adzes
-Primitive Shovel
-Mortar And Pestless
-t_Bellows - Primitive Bellows
-awl_bone - Primitive Bone Awl
+- [ ] Primitive Knife
+- [ ] Primitive Stone Hammer
+- [ ] Primitive Hand Axe
+- [ ] Primitive Adze
+- [ ] Primitive Shovel
+- [ ] Mortar And Pestless
+- [ ] t_Bellows - Primitive Bellows
+- [ ] awl_bone - Primitive Bone Awl
 ```
 
 
@@ -188,8 +188,8 @@ awl_bone - Primitive Bone Awl
 *Weapons:*
 
 ```markdown
-bolas - Primitive Bolas
-slingshot - Primitive Slingshot
+- [ ] bolas - Primitive Bolas
+- [ ] slingshot - Primitive Slingshot
 ```
 
 
@@ -197,7 +197,7 @@ slingshot - Primitive Slingshot
 *Generic:*
 
 ```markdown
-Glue
+- [ ] Glue
 ```
 
 
@@ -205,14 +205,12 @@ Glue
 *Materials:*
 
 ```markdown
-Leather
-Clay
-Rubber
-Rocks
-Logs
-Sticks
-Long Sticks
-Grass
+- [ ] Clay
+- [ ] Rocks
+- [ ] Logs
+- [ ] Sticks
+- [ ] Long Sticks
+- [ ] Grass
 ```
 
 
@@ -220,8 +218,8 @@ Grass
 *Leather clothing:*
 
 ```markdown
-leather_belt - Leather belt
-dress_shoes -  Leather shoes
+- [ ] leather_belt - Leather belt
+- [ ] dress_shoes -  Leather shoes
 ```
 
 
@@ -229,11 +227,11 @@ dress_shoes -  Leather shoes
 *Raw-Fruit:*
 
 ```markdown
-Blueberries
-Raspberries
-Strawberries
-Cranberries
-Grapes
+- [ ] Blueberries
+- [ ] Raspberries
+- [ ] Strawberries
+- [ ] Cranberries
+- [ ] Grapes
 ```
 
 
@@ -241,7 +239,7 @@ Grapes
 *Food:*
 
 ```markdown
-soup_meat - Meat soup
+- [ ] soup_meat - Meat soup
 ```
 
 
@@ -249,25 +247,17 @@ soup_meat - Meat soup
 *Seeds:*
 
 ```markdown
-seed_barley - Barley Seed - Barley
-seed_cabbage - Cabbage Seed - Cabbage
-coffee_pod - Coffee Bean - Coffee
-seed_grapes - Grape Seed - Grape
-seed_sugar_beet - Sugar Seed - Cane Sugar
-seed_tobacco - Tobacco Seed - Tobacco
-seed_tomato - Tomato Seed - Tomato
-seed_wheat - Wheat Seed - Wheat
+- [ ] seed_barley - Barley Seed - Barley
+- [ ] seed_cabbage - Cabbage Seed - Cabbage
+- [ ] coffee_pod - Coffee Bean - Coffee
+- [ ] seed_grapes - Grape Seed - Grape
+- [ ] seed_sugar_beet - Sugar Seed - Cane Sugar
+- [ ] seed_tobacco - Tobacco Seed - Tobacco
+- [ ] seed_tomato - Tomato Seed - Tomato
+- [ ] seed_wheat - Wheat Seed - Wheat
 ```
 
 
-
-*Terrain flora:*
-
-```markdown
-t_shrub_blueberry - Blueberry bush
-t_shrub_strawberry - Strawberry bush
-t_shrub_raspberry - Raspberry bush
-```
 
 
 
@@ -438,8 +428,9 @@ t_shrub_raspberry - Raspberry bush
 ```markdown
 - [x] Mud
 - [x] Leaves
-- [x] Peat
+- [ ] Peat
 - [x] Bamboo
+- [x] Cloth
 ```
 
 
@@ -466,15 +457,15 @@ t_shrub_raspberry - Raspberry bush
 *Cloth Clothing:*
 
 ```markdown
-- [ ] Cloth Cap
-- [ ] Cloth Shirt
-- [ ] Cloth Mittens
-- [ ] Cloth leggings
-- [ ] Cloth Hood
-- [ ] Cloth Pants
-- [ ] Cloth Shoes
-- [ ] Cloth Jacket
-- [ ] Cloth Gloves
+- [x] Cloth Cap
+- [x] Cloth Shirt
+- [x] Cloth Mittens
+- [x] Cloth leggings
+- [x] Cloth Hood
+- [x] Cloth Pants
+- [x] Cloth Shoes
+- [x] Cloth Jacket
+- [x] Cloth Gloves
 ```
 
 
@@ -482,11 +473,11 @@ t_shrub_raspberry - Raspberry bush
 *Leather clothing:*
 
 ```markdown
-- [ ] Leather cap
-- [ ] Leather shirt
-- [ ] Leather leggings
-- [ ] Leather Jacket
-- [ ] Leather Gloves
+- [x] Leather cap
+- [x] Leather shirt
+- [x] Leather leggings
+- [x] Leather Jacket
+- [x] Leather Gloves
 ```
 
 
@@ -494,15 +485,15 @@ t_shrub_raspberry - Raspberry bush
 *Fur clothing:*
 
 ```markdown
-- [ ] Fur Cap
-- [ ] Fur Shirt
-- [ ] Fur Mittens
-- [ ] Fur Leggings
-- [ ] Fur Hood
-- [ ] Fur Shoes
-- [ ] Fur Cloak
-- [ ] Fur Jacket
-- [ ] Fur Gloves
+- [x] Fur Cap
+- [x] Fur Shirt
+- [x] Fur Mittens
+- [x] Fur Leggings
+- [x] Fur Hood
+- [x] Fur Shoes
+- [x] Fur Jacket
+- [x] Fur Gloves
+- [x] Fur Cloak
 ```
 
 
@@ -510,8 +501,8 @@ t_shrub_raspberry - Raspberry bush
 *Bark:*
 
 ```markdown
-- [ ] bark shoes
-- [ ] bark cap
+- [x] bark shoes
+- [x] bark cap
 ```
 
 
@@ -519,14 +510,14 @@ t_shrub_raspberry - Raspberry bush
 *Combination clothes:*
 
 ```markdown
-- [ ] Fur-Leather Belt
-- [ ] Fur-Leather Cap
-- [ ] Fur-Leather Shirt
-- [ ] Fur-Leather Leggings
-- [ ] Fur-Leather Shoes
-- [ ] Fur-Leather Jacket
-- [ ] Fur-Leather Cloak
-- [ ] Fur-Leather Mittens
+- [x] Fur-Leather Cap
+- [x] Fur-Leather Shirt
+- [x] Fur-Leather Leggings
+- [x] Fur-Leather Shoes
+- [x] Fur-Leather Jacket
+- [x] Fur-Leather Mittens
+- [x] Fur-Leather Cloak
+- [x] Fur-Leather Belt
 ```
 
 
@@ -542,9 +533,9 @@ t_shrub_raspberry - Raspberry bush
 *Leather clothing:*
 
 ```markdown
-- [ ] Leather forearm guards
-- [ ] Leather shin guards
-- [ ] Leather cuirass
+- [x] Leather forearm guards
+- [x] Leather shin guards
+- [x] Leather cuirass
 ```
 
 
@@ -552,9 +543,9 @@ t_shrub_raspberry - Raspberry bush
 *Combination clothes:*
 
 ```markdown
-- [ ] Fur-Leather forearm guards
-- [ ] Fur-Leather shin guards
-- [ ] Fur-Leather cuirass
+- [x] Fur-Leather forearm guards
+- [x] Fur-Leather shin guards
+- [x] Fur-Leather cuirass
 ```
 
 
@@ -717,20 +708,15 @@ t_shrub_raspberry - Raspberry bush
 - [x] Black-currant Seed - Black-currant
 - [x] Goji seed - Goji berries
 - [x] Acai seed - Acai berries
-- [ ] Breadfruit Seed - Breadfruit
-- [ ] Cashew Seed - Cashew Nut
-- [ ] Rice Seed - Rice
-- [ ] Rubber Seed - Rubber
-- [ ] Turnip seed - Turnip
-- [ ] Swede seed - Swede
-- [ ] Pea seed - Pea shoot
-- [ ] Broad Bean seed - Broad Bean
-- [ ] Rye seed - Rye
-- [ ] Hemp seed - Hemp
-- [ ] St. Johns Wort Seed - St. Johns Wort
-- [ ] Yarrow seed - Yarrow
-- [ ] Golden Rod Seed - Golden Rod
-- [ ] Calendula seed - Calendula
+- [x] Breadfruit Seed - Breadfruit
+- [x] Cashew Seed - Cashew Nut
+- [x] Rice Seed - Rice
+- [x] Turnip seed - Turnip
+- [x] Swede seed - Swede
+- [x] Pea seed - Pea shoot
+- [x] Broad Bean seed - Broad Bean
+- [x] Rye seed - Rye
+- [x] Hemp seed - Hemp
 ```
 
 
@@ -741,15 +727,6 @@ t_shrub_raspberry - Raspberry bush
 **Sub-Category -** [Medicine](#medicine)
 
 
-
-*GENERIC:*
-
-```markdown
-- [ ] St. Johns Wort
-- [ ] Yarrow
-- [ ] Golden Rod
-- [ ] Calendula
-```
 
 
 
@@ -854,20 +831,16 @@ t_shrub_raspberry - Raspberry bush
 - [x] Acai Shrub
 - [x] Birch Tree
 - [x] Spruce Tree
-- [ ] Breadfruit Tree
-- [ ] Cashew Tree
-- [ ] Rubber Tree
-- [ ] Rice Plant
-- [ ] Turnip Plant
-- [ ] Swede Plant
-- [ ] Pea Plant
-- [ ] Broad Bean Plant
-- [ ] Rye Plant
-- [ ] Hemp Plant
-- [ ] St. Johns Wort Plant
-- [ ] Yarrow Plant
-- [ ] Golden Rod Plant
-- [ ] Calendula Plant
+- [x] Breadfruit Tree
+- [x] Cashew Tree
+- [x] Rubber Tree
+- [x] Rice Shrub
+- [x] Turnip Shrub
+- [x] Swede Shrub
+- [x] Pea Shrub
+- [x] Broad Bean Shrub
+- [x] Rye Shrub
+- [x] Hemp Shrub
 ```
 
 
@@ -1094,7 +1067,7 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 - [ ] Primitive Dagger
 - [ ] Primitive Sword
 - [ ] Primitive Staff
-- [ ] Atlatls (A.k.a. Spear Throwers) - take from code already made
+- [x] Atlatls (A.k.a. Spear Throwers) - take from code already made
 ```
 
 
@@ -1221,15 +1194,15 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 *Cloth Clothing:*
 
 ```markdown
-- [ ] Cloth Cap
-- [ ] Cloth Shirt
-- [ ] Cloth Mittens
-- [ ] Cloth leggings
-- [ ] Cloth Hood
-- [ ] Cloth Pants
-- [ ] Cloth Shoes
-- [ ] Cloth Jacket
-- [ ] Cloth Gloves
+- [x] Cloth Cap
+- [x] Cloth Shirt
+- [x] Cloth Mittens
+- [x] Cloth leggings
+- [x] Cloth Hood
+- [x] Cloth Pants
+- [x] Cloth Shoes
+- [x] Cloth Jacket
+- [x] Cloth Gloves
 ```
 
 
@@ -1237,11 +1210,11 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 *Leather clothing:*
 
 ```markdown
-- [ ] Leather cap
-- [ ] Leather shirt
-- [ ] Leather leggings
-- [ ] Leather Jacket
-- [ ] Leather Gloves
+- [x] Leather cap
+- [x] Leather shirt
+- [x] Leather leggings
+- [x] Leather Jacket
+- [x] Leather Gloves
 ```
 
 
@@ -1249,15 +1222,15 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 *Fur clothing:*
 
 ```markdown
-- [ ] Fur Cap
-- [ ] Fur Shirt
-- [ ] Fur Mittens
-- [ ] Fur Leggings
-- [ ] Fur Hood
-- [ ] Fur Shoes
-- [ ] Fur Cloak
-- [ ] Fur Jacket
-- [ ] Fur Gloves
+- [x] Fur Cap
+- [x] Fur Shirt
+- [x] Fur Mittens
+- [x] Fur Leggings
+- [x] Fur Hood
+- [x] Fur Shoes
+- [x] Fur Cloak
+- [x] Fur Jacket
+- [x] Fur Gloves
 ```
 
 
@@ -1265,32 +1238,25 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 *Birch-bark:*
 
 ```markdown
-- [ ] Birch-bark shoes
-- [ ] Birch-bark cap
+- [x] Birch-bark shoes
+- [x] Birch-bark cap
 ```
 
 
-
-*Source-bark:*
-
-```markdown
-- [ ] Source-bark shoes
-- [ ] Source-bark cap
-```
 
 
 
 *Combination clothes:*
 
 ```markdown
-- [ ] Fur-Leather Belt
-- [ ] Fur-Leather Cap
-- [ ] Fur-Leather Shirt
-- [ ] Fur-Leather Leggings
-- [ ] Fur-Leather Shoes
-- [ ] Fur-Leather Jacket
-- [ ] Fur-Leather Cloak
-- [ ] Fur-Leather Mittens
+- [x] Fur-Leather Belt
+- [x] Fur-Leather Cap
+- [x] Fur-Leather Shirt
+- [x] Fur-Leather Leggings
+- [x] Fur-Leather Shoes
+- [x] Fur-Leather Jacket
+- [x] Fur-Leather Cloak
+- [x] Fur-Leather Mittens
 ```
 
 
@@ -1315,9 +1281,9 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 *Leather clothing:*
 
 ```markdown
-- [ ] Leather forearm guards
-- [ ] Leather shin guards
-- [ ] Leather cuirass
+- [x] Leather forearm guards
+- [x] Leather shin guards
+- [x] Leather cuirass
 ```
 
 
@@ -1325,9 +1291,9 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 *Combination clothes:*
 
 ```markdown
-- [ ] Fur-Leather forearm guards
-- [ ] Fur-Leather shin guards
-- [ ] Fur-Leather cuirass
+- [x] Fur-Leather forearm guards
+- [x] Fur-Leather shin guards
+- [x] Fur-Leather cuirass
 ```
 
 
@@ -1416,7 +1382,7 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 - [ ] Green soup - herbs, water, flour, seasoning - boil
 - [ ] Vegetable soup - vegetables, water, seasoning - boil
 - [ ] Mushroom soup - mushrooms, water, flour, seasoning - boil
-- [ ] Vegetable stew - vegetables, water, mushrooms, seasoning - bake
+- [x] Vegetable and meat stew - vegetables, water, mushrooms, seasoning - bake
 ```
 
 
@@ -1424,7 +1390,7 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 *unfinished food:*
 
 ```markdown
-- [ ] Cashew Nuts
+- [x] Cashew Nuts
 - [ ] Cashew Milk
 - [ ] Ground Cashew
 - [ ] Organic Oil
@@ -1443,7 +1409,7 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 
 
 
-fruit seeds:
+seeds:
 
 ```markdown
 - [x] Lingonberry Seed - Lingonberry
@@ -1451,23 +1417,15 @@ fruit seeds:
 - [x] Cloudberry Seed - Cloudberry
 - [x] Crowberry Seed - Crowberry
 - [x] Black-currant Seed - Black-currant
-- [ ] Breadfruit Seed - Breadfruit
-- [ ] Cashew Seed - Cashew Nut
-- [ ] Rice Seed - Rice
-- [ ] Rubber Seed - Rubber
-- [ ] Turnip seed - Turnip
-- [ ] Swede seed - Swede
-- [ ] Pea seed - Pea shoot
-- [ ] Broad Bean seed - Broad Bean
-- [ ] Rye seed - Rye
-- [ ] Hemp seed - Hemp
-- [ ] Goji seed - Goji berries
+- [x] Rice Seed - Rice
+- [x] Turnip seed - Turnip
+- [x] Swede seed - Swede
+- [x] Pea seed - Pea shoot
+- [x] Broad Bean seed - Broad Bean
+- [x] Rye seed - Rye
+- [x] Goji seed - Goji berries
 - [x] Bilberries seed - Bilberries
 - [x] Acai seed - Acai berries
-- [ ] St. Johns Wort Seed - St. Johns Wort
-- [ ] Yarrow seed - Yarrow
-- [ ] Golden Rod Seed - Golden Rod
-- [ ] Calendula seed - Calendula
 ```
 
 
@@ -1507,4 +1465,3 @@ fruit seeds:
 - [ ] Large Mast - 1 log, 4 Sheets
 - [ ] Steering stick attached to steering wood - stick, log - cutting tool
 ```
-

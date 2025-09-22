@@ -53,11 +53,11 @@
     "items": [
       [ "candle", 20 ],
       [ "oil_lamp", 20 ],
+      [ "oil_lamp_clay", 20 ],
       [ "flashlight", 15 ],
       [ "wearable_light", 15 ],
       [ "electric_lantern", 10 ],
       [ "gasoline_lantern", 10 ],
-      [ "survivor_light", 5 ],
       [ "atomic_lamp", 1 ]
     ]
   },
@@ -83,8 +83,8 @@
       [ "chem_ethanol", 10 ],
       { "group": "arcana_hunt_random", "prob": 25 },
       { "item": "essence", "prob": 25, "count": [ 1, 3 ] },
-      { "item": "essence_blood", "prob": 25, "count": [ 2, 6 ] },
-      { "item": "essence_dull", "prob": 25, "count": [ 8, 16 ] }
+      { "item": "essence_blood", "prob": 25, "count": [ 3, 9 ] },
+      { "item": "essence_dull", "prob": 25, "count": [ 15, 45 ] }
     ]
   },
   {
@@ -93,16 +93,19 @@
     "items": [
       [ "thunder_sigil", 5 ],
       [ "bloodscourge", 5 ],
+      [ "lichhook", 5 ],
       [ "bloodaxe", 15 ],
       [ "spear_pestilence", 10 ],
       [ "sun_sword", 10 ],
       [ "ethereal_crossbow", 5 ],
-      [ "gilded_aegis", 10 ],
+      [ "gilded_aegis", 5 ],
       [ "armor_wyrm", 10 ],
       [ "robe_shadow", 5 ],
-      [ "somen_clairvoyance", 5 ],
+      [ "somen_clairvoyance", 10 ],
       [ "revenant_crown", 10 ],
-      [ "gauntlets_necro", 15 ],
+      [ "gauntlets_necro", 10 ],
+      [ "cyclopean_mirror", 5 ],
+      [ "shrike_misericorde", 1 ],
       [ "thermic_essence_cutter", 1 ]
     ]
   },
@@ -114,8 +117,8 @@
       [ "strength_potion", 40 ],
       [ "speed_potion", 35 ],
       [ "healing_potion", 30 ],
-      [ "red_black_vulnerary", 25 ],
-      [ "yellow_white_incense", 20 ],
+      { "item": "red_black_vulnerary", "prob": 25, "count": 2 },
+      { "item": "yellow_white_incense", "prob": 20, "count": 2 },
       [ "scroll_sun", 25 ],
       [ "scroll_moon", 25 ],
       [ "scroll_artiface", 20 ],
@@ -266,97 +269,6 @@
     ]
   },
   {
-    "id": "add_apprentice",
-    "type": "item_group",
-    "subtype": "collection",
-    "entries": [ { "item": "book_magicfordummies" } ]
-  },
-  {
-    "id": "essence",
-    "type": "item_group",
-    "items": [ [ "essence", 1 ] ]
-  },
-  {
-    "id": "essence_blood",
-    "type": "item_group",
-    "items": [ { "item": "essence_blood", "prob": 100, "count": [ 1, 3 ] } ]
-  },
-  {
-    "id": "essence_boss",
-    "type": "item_group",
-    "items": [ { "item": "essence", "prob": 100, "count": [ 2, 5 ] } ]
-  },
-  {
-    "id": "essence_nether",
-    "type": "item_group",
-    "items": [ { "item": "essence", "prob": 100, "count": [ 1, 3 ] } ]
-  },
-  {
-    "id": "dermatik_sting",
-    "type": "item_group",
-    "items": [ [ "dermatik_sting", 1 ] ]
-  },
-  {
-    "id": "graboid_fang",
-    "type": "item_group",
-    "items": [ [ "graboid_fang", 1 ] ]
-  },
-  {
-    "id": "triffid_queen_flower",
-    "type": "item_group",
-    "items": [ [ "triffid_queen_flower", 1 ] ]
-  },
-  {
-    "id": "vortex_shard",
-    "type": "item_group",
-    "items": [ [ "vortex_shard", 1 ] ]
-  },
-  {
-    "id": "blob_gem",
-    "type": "item_group",
-    "items": [ [ "blob_gem", 1 ] ]
-  },
-  {
-    "id": "monster_tear",
-    "type": "item_group",
-    "items": [ [ "monster_tear", 1 ] ]
-  },
-  {
-    "id": "shadow_gem",
-    "type": "item_group",
-    "items": [ [ "shadow_gem", 1 ] ]
-  },
-  {
-    "id": "bone_twisted",
-    "type": "item_group",
-    "items": [ [ "bone_twisted", 1 ] ]
-  },
-  {
-    "id": "gracken_knuckles",
-    "type": "item_group",
-    "items": [ [ "gracken_knuckles", 1 ] ]
-  },
-  {
-    "id": "wyrmskin_piece",
-    "type": "item_group",
-    "items": [ [ "wyrmskin_piece", 1 ] ]
-  },
-  {
-    "id": "monster_fang",
-    "type": "item_group",
-    "items": [ [ "monster_fang", 1 ] ]
-  },
-  {
-    "id": "iridescent_plate",
-    "type": "item_group",
-    "items": [ [ "iridescent_plate", 1 ] ]
-  },
-  {
-    "id": "engraved_stone",
-    "type": "item_group",
-    "items": [ [ "engraved_stone", 1 ] ]
-  },
-  {
     "id": "arcana_hunt_random",
     "type": "item_group",
     "items": [
@@ -404,14 +316,11 @@
     "//": "A smattering of non-magitech tools and materials of anomalous origin.",
     "type": "item_group",
     "items": [
-      { "item": "meat_frond", "prob": 10, "charges": 2, "container-item": "jar_glass_sealed" },
-      { "item": "leech_flower", "prob": 5, "charges": 2, "container-item": "jar_glass_sealed" },
-      { "item": "meat_bark", "prob": 5, "charges": 2, "container-item": "jar_glass_sealed" },
-      { "item": "veggy_tainted", "prob": 10, "charges": 2, "container-item": "jar_glass_sealed" },
-      [ "marloss_berry", 4 ],
-      [ "marloss_seed", 3 ],
-      [ "marloss_gel", 3 ],
-      { "item": "veggy", "prob": 10, "charges": 2, "container-item": "jar_glass_sealed" },
+      { "item": "meat_frond", "prob": 10, "count": 2, "container-item": "jar_glass_sealed" },
+      { "item": "leech_flower", "prob": 5, "count": 2, "container-item": "jar_glass_sealed" },
+      { "item": "meat_bark", "prob": 5, "count": 2, "container-item": "jar_glass_sealed" },
+      { "item": "veggy_tainted", "prob": 15, "count": 2, "container-item": "jar_glass_sealed" },
+      { "item": "veggy", "prob": 15, "count": 2, "container-item": "jar_glass_sealed" },
       [ "stick_fiber", 4 ],
       [ "fighter_sting", 3 ],
       [ "biollante_bud", 3 ],
@@ -450,11 +359,12 @@
     "//": "Arcana-only magitech CBMs.",
     "type": "item_group",
     "items": [
-      [ "bio_electrothermal_arc_projector", 25 ],
+      [ "bio_electrothermal_arc_projector", 20 ],
       [ "bio_rift_focus_projector", 10 ],
       [ "bio_essence_surge_cell", 30 ],
-      [ "bio_temporal_stimulation", 25 ],
-      [ "bio_life_sign_suppression", 10 ]
+      [ "bio_temporal_stimulation", 20 ],
+      [ "bio_life_sign_suppression", 10 ],
+      [ "bio_kinetic_amplifier", 20 ]
     ]
   },
   {
@@ -467,6 +377,92 @@
       [ "coalescent_converter", 5 ],
       [ "thermic_essence_cutter", 35 ],
       [ "spatial_displacer", 5 ]
+    ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "distribution",
+    "id": "autodoc_installation_magitech",
+    "items": [
+      { "item": "AID_bio_electrothermal_arc_projector", "prob": 20 },
+      { "item": "AID_bio_rift_focus_projector", "prob": 10 },
+      { "item": "AID_bio_essence_surge_cell", "prob": 30 },
+      { "item": "AID_bio_temporal_stimulation", "prob": 20 },
+      { "item": "AID_bio_life_sign_suppression", "prob": 10 },
+      { "item": "AID_bio_kinetic_amplifier", "prob": 10 }
+    ]
+  },
+  {
+    "id": "vault_magic_item_stash",
+    "type": "item_group",
+    "items": [
+      [ "arcanemap", 10 ],
+      [ "hexenhammer", 5 ],
+      [ "offering_chalice", 5 ],
+      [ "blood_athame", 5 ],
+      [ "mana_gem", 2 ],
+      [ "mana_gem_blood", 2 ],
+      [ "mana_gem_dull", 1 ],
+      [ "totem_elecresist", 1 ],
+      [ "totem_clairvoyance", 1 ],
+      [ "totem_insight", 1 ],
+      [ "totem_lightning", 1 ]
+    ]
+  },
+  {
+    "id": "arcana_mansion_art",
+    "type": "item_group",
+    "subtype": "collection",
+    "groups": [
+      { "group": "art", "prob": 40 },
+      { "group": "magic_books", "prob": 30 },
+      {
+        "distribution": [ { "group": "arcana_hunt_random", "prob": 80 }, { "group": "arcana_totem_random", "prob": 20 } ],
+        "prob": 20
+      },
+      {
+        "distribution": [ { "group": "magic_tools", "prob": 75 }, { "group": "magic_items", "prob": 25 } ],
+        "prob": 10
+      }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "mine_storage",
+    "items": [
+      [ "shovel", 10 ],
+      [ "pickaxe", 2 ],
+      [ "bucket", 20 ],
+      [ "rock", 40 ],
+      [ "rock_large", 10 ],
+      { "group": "tools_toolbox", "prob": 5 },
+      [ "coal_lump", 20 ],
+      [ "material_shrd_limestone", 40 ],
+      [ "material_niter", 5 ],
+      [ "chem_rdx", 5 ],
+      [ "chem_hmtd", 10 ]
+    ]
+  },
+  {
+    "id": "sewing_room",
+    "type": "item_group",
+    "subtype": "distribution",
+    "items": [
+      { "group": "suits", "prob": 50, "damage": [ 0, 2 ] },
+      [ "scissors", 50 ],
+      [ "thread", 50 ],
+      { "group": "pants", "prob": 40, "damage": [ 0, 2 ] },
+      { "group": "shirts", "prob": 40, "damage": [ 0, 2 ] },
+      [ "knitting_needles", 40 ],
+      [ "string_36", 40 ],
+      [ "yarn", 40 ],
+      { "group": "bed", "prob": 30, "damage": [ 0, 2 ] },
+      { "item": "sewing_kit", "prob": 30, "charges": [ 0, 25 ] },
+      [ "cotton_patchwork", 30 ],
+      [ "lycra_patch", 15 ],
+      [ "nylon", 10 ],
+      { "item": "tailors_kit", "prob": 20, "charges": [ 0, 100 ] },
+      [ "kevlar_shears", 5 ]
     ]
   }
 ]

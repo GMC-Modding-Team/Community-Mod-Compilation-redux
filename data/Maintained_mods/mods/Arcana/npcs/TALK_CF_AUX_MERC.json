@@ -12,13 +12,9 @@
         "text": "I've been sent to ask about recent attacks on survivors by anomalous creatures.  Know anything about that?",
         "condition": {
           "and": [
-            { "u_has_var": "johnathan_prelude_mid", "type": "mission", "context": "rural_church", "value": "yes" },
-            {
-              "not": { "npc_has_var": "johnathan_prelude_mid", "type": "mission", "context": "rural_church", "value": "yes" }
-            },
-            {
-              "not": { "u_has_var": "johnathan_prelude_data_5", "type": "mission", "context": "rural_church", "value": "yes" }
-            }
+            { "compare_string": [ "yes", { "u_val": "johnathan_prelude_mid" } ] },
+            { "not": { "compare_string": [ "yes", { "npc_val": "johnathan_prelude_mid" } ] } },
+            { "not": { "compare_string": [ "yes", { "u_val": "johnathan_prelude_data_5" } ] } }
           ]
         },
         "topic": "TALK_CF_AUX_MERC_GM_PRELUDE"
@@ -129,16 +125,6 @@
       "If you're gonna be fighting monsters, either gear up for any threat that might be out there, or stay light.  If it slows you down it needs to be worth it."
     ],
     "responses": [ { "text": "…", "topic": "TALK_CF_AUX_MERC" } ]
-  },
-  {
-    "id": "TALK_CF_AUX_MERC_MERCH",
-    "type": "talk_topic",
-    "dynamic_line": "Merchs are what they call dollar bills around here.  Free Merchant Credit Notes or something.  If you want to buy stuff around here and you don't want to barter away your guns, you need Merch.",
-    "responses": [
-      { "text": "I see.  Let's try this again from the start.", "topic": "TALK_CF_AUX_MERC" },
-      { "text": "Okay, how much Merch do I need?", "topic": "TALK_CF_AUX_MERC_HIRE" },
-      { "text": "Well, thanks for the info.  Bye!", "topic": "TALK_DONE" }
-    ]
   },
   {
     "id": "TALK_CF_AUX_MERC_YEEHAW",

@@ -1,29 +1,29 @@
 [
   {
-    "id": "breach",
     "type": "palette",
+    "id": "breach",
     "terrain": {
       "_": "t_rock_floor",
       ".": [
         [ "t_rock", 5 ],
         [ "t_rock_floor", 45 ],
-        [ "t_cave_moss", 145 ],
+        [ "t_moss_underground", 145 ],
         [ "t_shrub_helmet_plump", 1 ],
         [ "t_shrub_pod_sweet", 1 ],
         [ "t_shrub_wheat_cave", 1 ],
         [ "t_shrub_tails_pig", 1 ],
         [ "t_shrub_bush_quarry", 1 ]
       ],
-      ",": [ "t_rock_floor", "t_cave_moss", "t_cave_moss" ],
+      ",": [ "t_rock_floor", "t_moss_underground", "t_moss_underground" ],
       "%": "t_rock_floor",
       "#": "t_rock",
       ":": [ "t_rock_floor", "t_rock" ],
       ";": [ "t_rock_floor", "t_rock_floor", "t_rock_floor", "t_rock" ],
-      "!": [ "t_rock_floor", "t_cave_moss", "t_rock", "t_rock" ],
-      "?": [ "t_rock_floor", "t_cave_moss", "t_cave_moss", "t_rock" ],
+      "!": [ "t_rock_floor", "t_moss_underground", "t_rock", "t_rock" ],
+      "?": [ "t_rock_floor", "t_moss_underground", "t_moss_underground", "t_rock" ],
       ">": "t_slope_down",
       "<": "t_slope_up",
-      "o": [ [ "t_rock_floor", 2 ], [ "t_cave_moss", 1 ] ],
+      "o": [ [ "t_rock_floor", 2 ], [ "t_moss_underground", 1 ] ],
       "O": "t_rock_floor"
     },
     "furniture": {
@@ -34,26 +34,26 @@
     "mapping": { "%": { "item": [ { "item": "rock", "count": [ 1, 3 ] } ] } }
   },
   {
-    "id": "breach_lab",
     "type": "palette",
+    "id": "breach_lab",
     "terrain": {
       "_": "t_thconc_floor",
       "|": "t_concrete_wall",
       "+": "t_door_metal_c",
       "=": "t_door_metal_pickable",
       "[": "t_thconc_floor",
-      "^": "t_centrifuge",
+      "^": "t_thconc_floor",
       "1": "t_thconc_floor",
       "2": "t_thconc_floor",
-      "3": "t_machinery_light",
-      "4": "t_machinery_heavy",
-      "6": "t_console_broken",
+      "3": "t_thconc_floor",
+      "4": "t_thconc_floor",
+      "6": "t_thconc_floor",
       "A": "t_vat",
       "B": "t_thconc_floor",
       "C": "t_thconc_floor",
       "D": "t_thconc_floor",
       "F": "t_thconc_floor",
-      "G": "t_generator_broken",
+      "G": "t_thconc_floor",
       "S": "t_thconc_floor",
       "T": "t_thconc_floor",
       "V": "t_thconc_floor_olight",
@@ -68,8 +68,8 @@
       "g": "t_chaingate_l",
       "l": "t_thconc_floor",
       "m": [
-        "t_cave_moss",
-        "t_cave_moss",
+        "t_moss_underground",
+        "t_moss_underground",
         "t_shrub_helmet_plump",
         "t_shrub_pod_sweet",
         "t_shrub_wheat_cave",
@@ -86,12 +86,17 @@
     },
     "furniture": {
       "[": "f_bookcase",
+      "^": "f_centrifuge",
       "1": "f_autodoc",
       "2": "f_autodoc_couch",
+      "3": "f_machinery_light",
+      "4": "f_machinery_heavy",
+      "6": "f_console_broken",
       "B": "f_bed",
       "C": "f_counter",
       "D": "f_dresser",
       "F": "f_fridge",
+      "G": "f_generator_broken",
       "S": "f_shower",
       "T": "f_toilet",
       "V": "f_vending_o",
@@ -116,8 +121,8 @@
     }
   },
   {
-    "id": "breach_camp",
     "type": "palette",
+    "id": "breach_camp",
     "terrain": {
       "|": "t_wall_log",
       "+": "t_door_c",
@@ -139,8 +144,8 @@
       "k": "t_rock_floor",
       "l": "t_rock_floor",
       "m": [
-        "t_cave_moss",
-        "t_cave_moss",
+        "t_moss_underground",
+        "t_moss_underground",
         "t_shrub_helmet_plump",
         "t_shrub_pod_sweet",
         "t_shrub_wheat_cave",
@@ -446,7 +451,12 @@
         "   ,~~~~~~, "
       ],
       "palettes": [ "breach" ],
-      "terrain": { "=": "t_water_dp", "/": [ "t_water_sh", "t_water_dp" ], "-": "t_water_sh", "~": [ "t_cave_moss", "t_water_sh" ] },
+      "terrain": {
+        "=": "t_water_dp",
+        "/": [ "t_water_sh", "t_water_dp" ],
+        "-": "t_water_sh",
+        "~": [ "t_moss_underground", "t_water_sh" ]
+      },
       "place_nested": [ { "chunks": [ [ "breach_spawn_water", 100 ] ], "x": 4, "y": 4 } ]
     }
   },
@@ -727,7 +737,7 @@
       ],
       "palettes": [ "breach" ],
       "place_items": [
-        { "item": "mine_storage", "x": [ 5, 7 ], "y": [ 4, 6 ], "chance": 50, "repeat": 5 },
+        { "item": "mine_materials", "x": [ 5, 7 ], "y": [ 4, 6 ], "chance": 50, "repeat": 5 },
         { "item": "caveyot_miners", "x": [ 7, 10 ], "y": [ 1, 4 ], "chance": 90, "repeat": 5 }
       ],
       "place_vehicles": [ { "vehicle": "caveyot_miners", "x": [ 2, 3 ], "y": [ 5, 6 ], "chance": 35, "rotation": 90 } ],
@@ -756,7 +766,7 @@
         "  ,,,,,,,,  "
       ],
       "palettes": [ "breach" ],
-      "terrain": { "-": "t_cave_moss", "~": "t_cave_moss", "+": "t_cave_moss", "b": "t_rock_floor" },
+      "terrain": { "-": "t_moss_underground", "~": "t_moss_underground", "+": "t_moss_underground", "b": "t_rock_floor" },
       "furniture": { "-": "f_canvas_wall", "~": "f_groundsheet", "+": "f_canvas_door", "b": "f_brazier" },
       "place_items": [ { "item": "caveyot_survivors", "x": [ 4, 7 ], "y": [ 2, 9 ], "chance": 90, "repeat": 5 } ],
       "place_monster": [ { "monster": "mon_zombie_survivor", "x": [ 0, 11 ], "y": [ 0, 11 ], "repeat": [ 2, 5 ] } ]
@@ -787,7 +797,7 @@
       "palettes": [ "breach" ],
       "terrain": {
         "|": [ "t_wall_log", "t_wall_log_chipped" ],
-        "/": [ "t_wall_log", "t_wall_log_chipped", "t_wall_log_broken", "t_cave_moss" ],
+        "/": [ "t_wall_log", "t_wall_log_chipped", "t_wall_log_broken", "t_moss_underground" ],
         "+": [ "t_door_frame", "t_door_b", "t_door_c" ],
         "^": "t_rock_floor"
       },
@@ -846,7 +856,7 @@
       "palettes": [ "breach" ],
       "terrain": {
         "|": [ "t_wall_log", "t_wall_log_chipped" ],
-        "/": [ "t_wall_log", "t_wall_log_chipped", "t_wall_log_broken", "t_cave_moss" ],
+        "/": [ "t_wall_log", "t_wall_log_chipped", "t_wall_log_broken", "t_moss_underground" ],
         "+": [ "t_door_frame", "t_door_b", "t_door_c" ]
       },
       "place_items": [ { "item": "cavern_ruins", "x": [ 8, 9 ], "y": [ 7, 10 ], "chance": 50, "repeat": 10 } ],
@@ -877,7 +887,7 @@
       "palettes": [ "breach" ],
       "terrain": {
         "|": [ "t_wall_log", "t_wall_log_chipped" ],
-        "/": [ "t_wall_log", "t_wall_log_chipped", "t_wall_log_broken", "t_cave_moss" ],
+        "/": [ "t_wall_log", "t_wall_log_chipped", "t_wall_log_broken", "t_moss_underground" ],
         "+": [ "t_door_frame", "t_door_b", "t_door_c" ]
       },
       "place_items": [ { "item": "cavern_ruins", "x": [ 5, 6 ], "y": [ 4, 7 ], "chance": 50, "repeat": 10 } ],
@@ -1006,7 +1016,7 @@
           "t_rock_floor",
           "t_rock_floor",
           "t_rock_floor",
-          "t_cave_moss",
+          "t_moss_underground",
           "t_little_column",
           "t_column"
         ]
@@ -1288,9 +1298,7 @@
             [ "breach_spawn_bats", 125 ],
             [ "breach_spawn_bears", 100 ],
             [ "breach_spawn_cougars", 25 ],
-            [ "breach_spawn_mole", 25 ],
             [ "breach_spawn_chud", 100 ],
-            [ "breach_spawn_eye", 50 ],
             [ "breach_spawn_crawler", 50 ],
             [ "breach_spawn_sludge", 25 ],
             [ "breach_spawn_snakes", 100 ],
@@ -1315,7 +1323,6 @@
         {
           "chunks": [
             [ "breach_spawn_lobster", 500 ],
-            [ "breach_spawn_blinky", 50 ],
             [ "breach_spawn_carp", 150 ],
             [ "breach_spawn_fish", 150 ],
             [ "breach_spawn_gators", 75 ],
@@ -1351,12 +1358,6 @@
       "mapgensize": [ 5, 5 ],
       "place_monster": [ { "monster": "mon_sewer_rat", "x": [ 0, 4 ], "y": [ 0, 4 ], "repeat": [ 1, 10 ] } ]
     }
-  },
-  {
-    "type": "mapgen",
-    "method": "json",
-    "nested_mapgen_id": "breach_spawn_mole",
-    "object": { "mapgensize": [ 5, 5 ], "place_monster": [ { "monster": "mon_nakedmolerat_giant", "x": [ 0, 4 ], "y": [ 0, 4 ] } ] }
   },
   {
     "type": "mapgen",
@@ -1407,9 +1408,10 @@
     "type": "mapgen",
     "method": "json",
     "nested_mapgen_id": "breach_spawn_gators",
+    "//": "ID retained, we can't have nice things in DDA",
     "object": {
       "mapgensize": [ 5, 5 ],
-      "place_monster": [ { "monster": "mon_gator", "x": [ 0, 4 ], "y": [ 0, 4 ], "repeat": [ 1, 3 ] } ]
+      "place_monster": [ { "monster": "mon_rattlesnake_big", "x": [ 0, 4 ], "y": [ 0, 4 ], "repeat": [ 1, 3 ] } ]
     }
   },
   {
@@ -1428,15 +1430,6 @@
     "object": {
       "mapgensize": [ 5, 5 ],
       "place_monster": [ { "monster": "mon_chud", "x": [ 0, 4 ], "y": [ 0, 4 ], "repeat": [ 1, 4 ] } ]
-    }
-  },
-  {
-    "type": "mapgen",
-    "method": "json",
-    "nested_mapgen_id": "breach_spawn_eye",
-    "object": {
-      "mapgensize": [ 5, 5 ],
-      "place_monster": [ { "monster": "mon_one_eye", "x": [ 0, 4 ], "y": [ 0, 4 ], "repeat": [ 1, 3 ] } ]
     }
   },
   {
@@ -1472,15 +1465,6 @@
   {
     "type": "mapgen",
     "method": "json",
-    "nested_mapgen_id": "breach_spawn_blinky",
-    "object": {
-      "mapgensize": [ 5, 5 ],
-      "place_monster": [ { "monster": "mon_fish_blinky", "x": [ 0, 4 ], "y": [ 0, 4 ], "repeat": [ 1, 3 ] } ]
-    }
-  },
-  {
-    "type": "mapgen",
-    "method": "json",
     "nested_mapgen_id": "breach_spawn_carp",
     "object": {
       "mapgensize": [ 5, 5 ],
@@ -1505,7 +1489,7 @@
     "nested_mapgen_id": "breach_spawn_frogs",
     "object": {
       "mapgensize": [ 5, 5 ],
-      "place_monster": [ { "monster": "mon_frog_giant", "x": [ 0, 4 ], "y": [ 0, 4 ], "repeat": [ 1, 3 ] } ]
+      "place_monster": [ { "monster": "mon_strange_frog", "x": [ 0, 4 ], "y": [ 0, 4 ], "repeat": [ 1, 3 ] } ]
     }
   },
   {
