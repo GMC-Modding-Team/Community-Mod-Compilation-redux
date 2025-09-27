@@ -1,0 +1,43 @@
+[
+  {
+    "id": "insulated_box_large",
+    "type": "vehicle_part",
+    "name": { "str": "large insulated box" },
+    "description": "A storage place to keep your pizzas warm.  Might be useable for other food as well.",
+    "variants": [ { "symbols": "o", "symbols_broken": "#" } ],
+    "color": "red",
+    "broken_color": "red",
+    "damage_modifier": 60,
+    "durability": 100,
+    "size": 500,
+    "item": "insulated_box_large",
+    "location": "center",
+    "flags": [ "CARGO", "BOARDABLE", "COVERED", "LOCKABLE_CARGO" ],
+    "requirements": {
+      "install": { "skills": [ [ "mechanics", 1 ] ], "time": "30 m", "using": [ [ "vehicle_screw", 1 ] ] },
+      "removal": { "skills": [ [ "mechanics", 2 ] ], "time": "15 m", "using": [ [ "vehicle_screw", 1 ] ] },
+      "repair": { "skills": [ [ "mechanics", 2 ] ], "time": "30 m", "using": [ [ "adhesive", 1 ] ] }
+    },
+    "breaks_into": [ { "item": "insulated_box_large" }, { "item": "scrap", "count": [ 2, 4 ] } ]
+  },
+  {
+    "id": "drone_interface",
+    "type": "vehicle_part",
+    "name": { "str": "drone interface" },
+    "symbol": "$",
+    "looks_like": "robot_controls",
+    "color": "light_green",
+    "broken_symbol": "*",
+    "broken_color": "light_gray",
+    "damage_modifier": 10,
+    "durability": 10,
+    "description": "A consumer interface for a robotic drone, complete with POS system.  The network is currently offline and cannot process your cash cards.",
+    "bonus": 40,
+    "item": "laptop",
+    "requirements": {
+      "install": { "time": 15000, "skills": [ [ "electronics", 4 ] ], "qualities": [ { "id": "SCREW", "level": 2 } ] },
+      "removal": { "skills": [ [ "electronics", 1 ] ], "qualities": [ { "id": "SCREW", "level": 2 } ] }
+    },
+    "breaks_into": "ig_vp_device"
+  }
+]
