@@ -1,40 +1,6 @@
 [
   {
     "type": "effect_on_condition",
-    "id": "EOC_VITAKIN_LEARNING_STOP_BLEEDING",
-    "recurrence": [
-      { "math": [ "jmath_vitakinesis_learning_eocs_modifiers(global_tier_one_power_learning_time_low)" ] },
-      { "math": [ "jmath_vitakinesis_learning_eocs_modifiers(global_tier_one_power_learning_time_high)" ] }
-    ],
-    "condition": {
-      "and": [
-        { "u_has_trait": "VITAKINETIC" },
-        { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
-        {
-          "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_ONE_POWER_INSIGHT" },
-            { "math": [ "u_spell_level('vita_slow_bleeding')", ">=", "5" ] }
-          ]
-        },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
-        { "math": [ "u_spell_level('vita_stop_bleeding')", "<=", "0" ] },
-        { "not": { "u_know_recipe": "practice_vita_stop_bleeding" } }
-      ]
-    },
-    "deactivate_condition": {
-      "or": [ { "not": { "u_has_trait": "VITAKINETIC" } }, { "math": [ "u_spell_level('vita_stop_bleeding')", ">=", "1" ] } ]
-    },
-    "effect": [
-      { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "=", "0" ] },
-      { "u_learn_recipe": "practice_vita_stop_bleeding" },
-      {
-        "u_message": "Use of your powers has led to an insight.  Rather than merely slowing your bleeding, you could stop it, and clean the wound to encourage healing too, if you can figure out the proper technique.",
-        "popup": true
-      }
-    ]
-  },
-  {
-    "type": "effect_on_condition",
     "id": "EOC_VITAKIN_LEARNING_HEALING_TOUCH",
     "recurrence": [
       { "math": [ "jmath_vitakinesis_learning_eocs_modifiers(global_tier_one_power_learning_time_low)" ] },
@@ -45,12 +11,57 @@
         { "u_has_trait": "VITAKINETIC" },
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
-          "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_ONE_POWER_INSIGHT" },
-            { "math": [ "u_spell_level('vita_health_power')", ">=", "6" ] }
-          ]
+          "or": [ { "x_in_y_chance": { "x": 1, "y": 20 } }, { "math": [ "u_spell_level('vita_health_power')", ">=", "6" ] } ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('vita_health_power_ally')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_vita_healing_touch" } }
       ]
@@ -80,16 +91,64 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_ONE_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 20 } },
             {
               "and": [
                 { "math": [ "u_spell_level('vita_health_power_ally')", ">=", "5" ] },
-                { "math": [ "u_spell_level('vita_slow_bleeding')", ">=", "5" ] }
+                { "math": [ "u_spell_level('vita_stop_bleeding')", ">=", "5" ] }
               ]
             }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('vita_hurt_touch')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_vita_hurt_touch" } }
       ]
@@ -117,21 +176,64 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_ONE_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 20 } },
             {
               "and": [
                 { "math": [ "u_spell_level('vita_health_power')", ">=", "8" ] },
-                {
-                  "or": [
-                    { "math": [ "u_spell_level('vita_slow_bleeding')", ">=", "7" ] },
-                    { "math": [ "u_spell_level('vita_stop_bleeding')", ">=", "3" ] }
-                  ]
-                }
+                { "or": [ { "math": [ "u_spell_level('vita_stop_bleeding')", ">=", "6" ] } ] }
               ]
             }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('vita_remove_poison')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_vita_remove_poison" } }
       ]
@@ -160,12 +262,57 @@
         { "u_has_trait": "VITAKINETIC" },
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
-          "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_TWO_POWER_INSIGHT" },
-            { "math": [ "u_spell_level('vita_remove_poison')", ">=", "5" ] }
-          ]
+          "or": [ { "x_in_y_chance": { "x": 1, "y": 40 } }, { "math": [ "u_spell_level('vita_remove_poison')", ">=", "5" ] } ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('vita_cure_disease')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_vita_cure_disease" } }
       ]
@@ -195,7 +342,7 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_TWO_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 40 } },
             {
               "and": [
                 { "math": [ "u_spell_level('vita_health_power')", ">=", "8" ] },
@@ -204,7 +351,55 @@
             }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('vita_sleeping_trance')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_vita_sleeping_trance" } }
       ]
@@ -234,7 +429,7 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_TWO_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 40 } },
             {
               "and": [
                 {
@@ -246,14 +441,62 @@
                 {
                   "or": [
                     { "math": [ "u_spell_level('vita_health_power')", ">=", "10" ] },
-                    { "math": [ "u_spell_level('vita_slow_bleeding')", ">=", "8" ] }
+                    { "math": [ "u_spell_level('vita_stop_bleeding')", ">=", "8" ] }
                   ]
                 }
               ]
             }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('vita_pain_split')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_vita_pain_split" } }
       ]
@@ -280,12 +523,57 @@
         { "u_has_trait": "VITAKINETIC" },
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
-          "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_TWO_POWER_INSIGHT" },
-            { "math": [ "u_spell_level('vita_cure_disease')", ">=", "7" ] }
-          ]
+          "or": [ { "x_in_y_chance": { "x": 1, "y": 40 } }, { "math": [ "u_spell_level('vita_cure_disease')", ">=", "7" ] } ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('vita_stop_infection')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_vita_stop_infection" } }
       ]
@@ -315,7 +603,7 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_TWO_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 40 } },
             {
               "and": [
                 { "math": [ "u_spell_level('vita_stop_infection')", ">=", "5" ] },
@@ -324,7 +612,55 @@
             }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('vita_healing_trance')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_vita_healing_trance" } }
       ]
@@ -353,12 +689,57 @@
         { "u_has_trait": "VITAKINETIC" },
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
-          "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_TWO_POWER_INSIGHT" },
-            { "math": [ "u_spell_level('vita_hurt_touch')", ">=", "8" ] }
-          ]
+          "or": [ { "x_in_y_chance": { "x": 1, "y": 40 } }, { "math": [ "u_spell_level('vita_hurt_touch')", ">=", "8" ] } ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('vita_attack_touch')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_vita_attack_touch" } }
       ]
@@ -388,7 +769,7 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_THREE_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 80 } },
             {
               "and": [
                 { "math": [ "u_spell_level('vita_healing_trance')", ">=", "6" ] },
@@ -402,7 +783,55 @@
             }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('vita_blood_purge')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_vita_blood_purge" } }
       ]
@@ -432,7 +861,7 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_THREE_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 80 } },
             {
               "and": [
                 { "math": [ "u_spell_level('vita_stop_infection')", ">=", "12" ] },
@@ -446,7 +875,55 @@
             }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('vita_banish_illness')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_vita_banish_illness" } }
       ]
@@ -476,7 +953,7 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_THREE_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 80 } },
             {
               "and": [
                 {
@@ -496,7 +973,55 @@
             }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('vita_super_heal')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_vita_super_heal" } }
       ]
@@ -524,7 +1049,7 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_THREE_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 80 } },
             {
               "or": [
                 { "math": [ "u_spell_level('vita_super_heal')", ">=", "6" ] },
@@ -538,7 +1063,55 @@
             }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('vita_return_from_death')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_vita_return_from_death" } }
       ]
