@@ -5,24 +5,29 @@
     "name": { "str": "modular helmet" },
     "weight": "1844 g",
     "color": "dark_gray",
-    "covers": [ "head", "mouth", "eyes" ],
     "techniques": [ "WBLOCK_1" ],
     "to_hit": -2,
-    "storage": 0,
     "symbol": "[",
     "description": "A helmet that covers your whole head.  Unfortunately, the modular chin is stuck in the down position, but it's better than nothing.  It even includes a sun visor.",
     "price": 35500,
     "material": [ "plastic" ],
     "volume": "1500 ml",
-    "cutting": 0,
+    "melee_damage": { "bash": 8, "cut": 0 },
     "warmth": 12,
     "phase": "solid",
     "environmental_protection": 3,
-    "encumbrance": 2,
-    "bashing": 8,
-    "coverage": 95,
     "material_thickness": 4,
-    "flags": [ "SUN_GLASSES" ]
+    "flags": [ "SUN_GLASSES" ],
+    "armor": [
+      {
+        "material": [
+          { "type": "plastic", "covered_by_mat": 100, "thickness": 4.0 }
+        ],
+        "encumbrance": 2,
+        "coverage": 95,
+        "covers": [ "head", "mouth", "eyes" ]
+      }
+    ]
   },
   {
     "type": "ARMOR",
@@ -30,23 +35,29 @@
     "name": { "str": "motorcycle armor" },
     "weight": "2125 g",
     "color": "dark_gray",
-    "covers": [ "torso", "arm_l", "arm_r" ],
     "to_hit": 0,
-    "storage": 2,
     "symbol": "[",
     "description": "A suit of armor to be used by dirt bikers and motorcyclists.  It has a small pocket intended for you to put your keys and your wallet, if you had some.",
     "price": 43000,
     "material": [ "plastic", "cotton" ],
     "volume": "1000 ml",
-    "cutting": 0,
+    "melee_damage": { "bash": 8, "cut": 0 },
     "warmth": 6,
     "phase": "solid",
     "environmental_protection": 2,
-    "encumbrance": 0,
-    "bashing": 8,
-    "coverage": 95,
     "material_thickness": 4,
-    "flags": [ "VARSIZE" ]
+    "flags": [ "VARSIZE" ],
+    "armor": [
+      {
+        "material": [
+          { "type": "plastic", "covered_by_mat": 100, "thickness": 4.0 },
+          { "type": "cotton", "covered_by_mat": 100, "thickness": 2.0 }
+        ],
+        "encumbrance": 0,
+        "coverage": 95,
+        "covers": [ "torso", "arm_l", "arm_r" ]
+      }
+    ]
   },
   {
     "type": "ARMOR",
@@ -54,22 +65,58 @@
     "name": { "str": "motorcycle pants" },
     "weight": "1340 g",
     "color": "dark_gray",
-    "covers": [ "leg_l", "leg_r" ],
     "to_hit": 0,
-    "storage": 0,
     "symbol": "[",
     "description": "A pair of pants designed for dirt bikers and motorcyclists.",
     "price": 43000,
     "material": [ "plastic", "cotton" ],
     "volume": "750 ml",
-    "cutting": 0,
+    "melee_damage": { "bash": 0, "cut": 0 },
     "warmth": 6,
     "phase": "solid",
     "environmental_protection": 2,
-    "encumbrance": 0,
-    "bashing": 0,
-    "coverage": 100,
-    "material_thickness": 3
+    "material_thickness": 3,
+    "armor": [
+      {
+        "material": [
+          { "type": "plastic", "covered_by_mat": 100, "thickness": 3.0 },
+          { "type": "cotton", "covered_by_mat": 100, "thickness": 2.0 }
+        ],
+        "encumbrance": 0,
+        "coverage": 100,
+        "covers": [ "leg_l", "leg_r" ]
+      }
+    ],
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "1250 ml",
+        "max_contains_weight": "4 kg",
+        "max_item_length": "19 cm",
+        "moves": 80
+      },
+      {
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "1250 ml",
+        "max_contains_weight": "4 kg",
+        "max_item_length": "19 cm",
+        "moves": 80
+      },
+      {
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "1080 ml",
+        "max_contains_weight": "4 kg",
+        "max_item_length": "165 mm",
+        "moves": 100
+      },
+      {
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "1080 ml",
+        "max_contains_weight": "4 kg",
+        "max_item_length": "165 mm",
+        "moves": 100
+      }
+    ]
   },
   {
     "type": "ARMOR",
@@ -77,23 +124,29 @@
     "name": { "str": "motorcycle boots" },
     "weight": "2125 g",
     "color": "dark_gray",
-    "covers": [ "foot_l", "foot_r" ],
     "to_hit": 0,
-    "storage": 0,
     "symbol": "[",
     "description": "A pair of strengthened boots to be used by dirt bikers and motorcyclists.",
     "price": 28000,
     "material": [ "plastic", "cotton" ],
     "volume": "2000 ml",
-    "cutting": 0,
+    "melee_damage": { "bash": 5, "cut": 0 },
     "warmth": 6,
     "phase": "solid",
     "environmental_protection": 3,
-    "encumbrance": 2,
-    "bashing": 5,
-    "coverage": 100,
     "material_thickness": 4,
-    "flags": [ "VARSIZE" ]
+    "flags": [ "VARSIZE" ],
+    "armor": [
+      {
+        "material": [
+          { "type": "plastic", "covered_by_mat": 100, "thickness": 4.0 },
+          { "type": "cotton", "covered_by_mat": 100, "thickness": 2.0 }
+        ],
+        "encumbrance": 2,
+        "coverage": 100,
+        "covers": [ "foot_l", "foot_r" ]
+      }
+    ]
   },
   {
     "type": "ARMOR",
@@ -103,21 +156,27 @@
     "color": "white",
     "covers": [ "torso" ],
     "to_hit": 0,
-    "storage": 1,
     "symbol": "[",
     "description": "An Estilo & Thames T-shirt.",
     "price": 14000,
-    "material": [ "superfabric", "null" ],
+    "material": [ "superfabric" ],
     "volume": "500 ml",
-    "cutting": 0,
+    "melee_damage": { "bash": 0, "cut": 0 },
     "warmth": 11,
     "phase": "solid",
     "environmental_protection": 1,
-    "encumbrance": 0,
-    "bashing": 0,
     "flags": [ "VARSIZE" ],
-    "coverage": 90,
-    "material_thickness": 1
+    "material_thickness": 1,
+    "armor": [
+      {
+        "material": [
+          { "type": "superfabric", "covered_by_mat": 100, "thickness": 1.0 }
+        ],
+        "encumbrance": 0,
+        "coverage": 90,
+        "covers": [ "torso" ]
+      }
+    ]
   },
   {
     "type": "ARMOR",
@@ -125,23 +184,58 @@
     "name": { "str": "E&T pants" },
     "weight": "450 g",
     "color": "brown",
-    "covers": [ "leg_l", "leg_r" ],
     "to_hit": 0,
-    "storage": 4,
     "symbol": "[",
     "description": "A pair of Estilo & Thames pants.",
     "price": 15000,
-    "material": [ "superfabric", "null" ],
+    "material": [ "superfabric" ],
     "volume": "1500 ml",
-    "cutting": 0,
+    "melee_damage": { "bash": 0, "cut": 0 },
     "warmth": 20,
     "phase": "solid",
     "environmental_protection": 2,
-    "encumbrance": 0,
-    "bashing": 0,
     "flags": [ "VARSIZE", "POCKETS" ],
-    "coverage": 90,
-    "material_thickness": 2
+    "material_thickness": 2,
+    "armor": [
+      {
+        "material": [
+          { "type": "superfabric", "covered_by_mat": 100, "thickness": 2.0 }
+        ],
+        "encumbrance": 0,
+        "coverage": 90,
+        "covers": [ "leg_l", "leg_r" ]
+      }
+    ],
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "1250 ml",
+        "max_contains_weight": "4 kg",
+        "max_item_length": "19 cm",
+        "moves": 80
+      },
+      {
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "1250 ml",
+        "max_contains_weight": "4 kg",
+        "max_item_length": "19 cm",
+        "moves": 80
+      },
+      {
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "1080 ml",
+        "max_contains_weight": "4 kg",
+        "max_item_length": "165 mm",
+        "moves": 100
+      },
+      {
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "1080 ml",
+        "max_contains_weight": "4 kg",
+        "max_item_length": "165 mm",
+        "moves": 100
+      }
+    ]
   },
   {
     "type": "ARMOR",
@@ -149,21 +243,26 @@
     "name": { "str": "face rags" },
     "weight": "220 g",
     "color": "dark_gray",
-    "covers": [ "head", "mouth" ],
     "to_hit": -2,
-    "storage": 0,
     "symbol": "[",
     "description": "Rags that you can wrap around your face.",
     "price": 100,
     "material": [ "cotton" ],
     "volume": "250 ml",
-    "cutting": 0,
+    "melee_damage": { "bash": 0, "cut": 0 },
     "warmth": 8,
     "phase": "solid",
     "environmental_protection": 4,
-    "encumbrance": 0,
-    "bashing": 0,
-    "coverage": 65,
-    "material_thickness": 3
+    "material_thickness": 3,
+    "armor": [
+      {
+        "material": [
+          { "type": "cotton", "covered_by_mat": 100, "thickness": 3.0 }
+        ],
+        "encumbrance": 0,
+        "coverage": 65,
+        "covers": [ "head", "mouth" ]
+      }
+    ]
   }
 ]
