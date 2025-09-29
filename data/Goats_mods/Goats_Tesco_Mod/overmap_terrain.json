@@ -3,19 +3,24 @@
     "type": "overmap_terrain",
     "id": "tesco_store",
     "name": "Tesco Supermarket",
+    "copy-from": "generic_city_building",
     "sym": "g",
     "color": "blue",
     "see_cost": 5,
     "flags": [ "SIDEWALK", "NO_ROTATE" ],
-    "mapgen": [ { "method": "json", "weight": 100, "object": { "fill_ter": "t_floor" } } ]
+    "looks_like": "s_grocery",
+    "mapgen": [ { "method": "json", "weight": 100, "object": { "fill_ter": "t_floor" } } ],
+    "extend": { "flags": [ "SOURCE_FOOD", "SOURCE_DRINK" ] }
   },
   {
     "type": "overmap_terrain",
     "id": "tesco_store_roof",
+    "copy-from": "generic_city_building",
     "name": "Roof of Tesco Supermarket",
     "sym": "^",
     "color": "blue",
     "flags": [ "NO_ROTATE" ],
-    "mapgen": [ { "method": "json", "weight": 100, "object": { "fill_ter": "t_flat_roof" } } ]
+    "mapgen": [ { "method": "json", "weight": 100, "object": { "fill_ter": "t_flat_roof" } } ],
+    "extend": { "flags": [ "SOURCE_FOOD", "SOURCE_DRINK" ] }
   }
 ]
