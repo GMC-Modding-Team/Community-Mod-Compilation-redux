@@ -5,7 +5,7 @@
 
 ## What it does
 - Adds goats (buck, doe, kid) with taming, milking, cheese, and feed.
-- Wilderness herds (forests & fields) + a rural **goat pen** site with a shed, trough, feed bin, milking machine, and an instruction sign.
+- Wilderness herds (forests & fields) + a rural **goat pen** site with a shed, trough, feed bin.
 - **Aging:** goat **kids** upgrade into adult **does/bucks** after ~180 in-game days.
 
 ## Install
@@ -15,7 +15,7 @@
 ## Crafting
 - **Goat bell** (Other → Tools; activity: *MODERATE_EXERCISE*).
 - **Goat cheese** (milk + vinegar/rennet + salt; activity: *LIGHT_EXERCISE*).
-- **Goat feed** (flour + water; activity: *NO_EXERCISE*).
+- **Goat feed** (flour + water; activity: *LIGHT_EXERCISE*).
 - **Goat treats** (flour + sugar/molasses + water; activity: *LIGHT_EXERCISE*).
 
 ## Changelog
