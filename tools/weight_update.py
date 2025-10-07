@@ -1,44 +1,80 @@
 #!/usr/bin/env python3
 
-# Make sure you have python3 installed.
-# Ensure that the json_formatter is kept in Tools with this script.
-# They must be in the same folder!
-# For Windows:
-# Using command prompt type "python weight_update.py"
-# For Max OS X or Linux:
-# Swap any "\\" with "/", then run the script as in windows.
+"""Convert integer weight fields into string representations."""
 
+from __future__ import annotations
+
+import argparse
 import logging
+from pathlib import Path
+
 from base_script import change_file, load_json
 
-logging.basicConfig(filename="weight_update.log", level=logging.INFO)
-logging.info("Started logging.")
+
+LOGGER = logging.getLogger(__name__)
+
+EXCLUDED_TYPES = {"mapgen", "overmap_terrain", "mod_tileset"}
 
 
-def gen_new(path):
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Convert integer weight fields into string values.",
+    )
+    parser.add_argument(
+        "directory",
+        type=Path,
+        help="Directory containing JSON files to update.",
+    )
+    parser.add_argument(
+        "--log-level",
+        default="INFO",
+        type=str.upper,
+        choices=["CRITICAL", "ERROR", "WARNING", "INFO", "DEBUG"],
+        help="Logging verbosity.",
+    )
+    parser.add_argument(
+        "--log-file",
+        type=Path,
+        help="Optional path to a log file.",
+    )
+    return parser.parse_args()
+
+
+def gen_new(path: Path):
     change = False
     json_data = load_json(path)
     if json_data is None:
         return None
     for jo in json_data:
         # We only want JsonObjects
-        if type(jo) is str:
+        if isinstance(jo, str):
             continue
         # And only if they have weight
         if not jo.get("weight"):
             continue
         # Mapgen uses the wrong type of weight, so we exclude it.
-        elif jo.get("type") in ["mapgen", "overmap_terrain", "mod_tileset"]:
+        if jo.get("type") in EXCLUDED_TYPES:
             continue
         # We're only looking for integers.
-        elif isinstance(jo.get("weight"), int):
-            weight = jo["weight"]
-            jo["weight"] = str(weight) + " g"
+        if isinstance(jo.get("weight"), int):
+            jo["weight"] = f"{jo['weight']} g"
             change = True
 
+    if change:
+        LOGGER.debug("Updated weights in %s", path)
     return json_data if change else None
 
 
+def main() -> None:
+    args = parse_args()
+    log_file = args.log_file.expanduser() if args.log_file else None
+    logging.basicConfig(
+        level=getattr(logging, args.log_level),
+        filename=str(log_file) if log_file else None,
+        force=True,
+    )
+    change_file(args.directory, gen_new)
+
+
 if __name__ == "__main__":
-    json_dir = input("What directory are the json files in? ")
-    change_file(json_dir, gen_new)
+    main()

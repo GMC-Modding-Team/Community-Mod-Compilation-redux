@@ -1,68 +1,102 @@
 #!/usr/bin/env python3
 
-# Make sure you have python3 installed.
-# Ensure that the json_formatter is kept in Tools with this script.
-# They must be in the same folder!
-# For Windows:
-# Using command prompt type "python covers_update.py"
-# For Max OS X or Linux:
-# Swap any "\\" with "/", then run the script as in windows.
+"""Translate legacy cover entries to modern body part identifiers."""
 
+from __future__ import annotations
+
+import argparse
 import logging
+from pathlib import Path
+
 from base_script import change_file, load_json
 
-logging.basicConfig(filename="covers_update.log", level=logging.DEBUG)
-logging.info("Started logging.")
+LOGGER = logging.getLogger(__name__)
 
 
-def gen_new(path):
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Convert cover strings to modern body part identifiers.",
+    )
+    parser.add_argument(
+        "directory",
+        type=Path,
+        help="Directory containing JSON files to update.",
+    )
+    parser.add_argument(
+        "--log-level",
+        default="INFO",
+        type=str.upper,
+        choices=["CRITICAL", "ERROR", "WARNING", "INFO", "DEBUG"],
+        help="Logging verbosity.",
+    )
+    parser.add_argument(
+        "--log-file",
+        type=Path,
+        help="Optional path to a log file.",
+    )
+    return parser.parse_args()
+
+
+BODY_PART_MAP = {
+    "ARMS": ["arm_l", "arm_r"],
+    "EYES": ["eyes"],
+    "FEET": ["foot_l", "foot_r"],
+    "FOOTS": ["foot_l", "foot_r"],
+    "HANDS": ["hand_l", "hand_r"],
+    "HEAD": ["head"],
+    "LEGS": ["leg_l", "leg_r"],
+    "MOUTH": ["mouth"],
+    "TORSO": ["torso"],
+}
+
+
+def expand_bodypart(bodypart: str, jo: dict) -> list[str]:
+    if bodypart.endswith("_EITHER"):
+        jo["sided"] = True
+        base = bodypart[:-7]
+        bodypart = f"{base}s"
+    key = bodypart.upper()
+    if key not in BODY_PART_MAP and key.endswith("S"):
+        key = key[:-1]
+    return BODY_PART_MAP.get(key, [bodypart])
+
+
+def gen_new(path: Path):
     change = False
     json_data = load_json(path)
     if json_data is None:
         return None
     for jo in json_data:
         # We only want JsonObjects
-        if type(jo) is str:
+        if isinstance(jo, str):
             continue
         # And only if they have coverage
-        if not jo.get("covers"):
+        covers = jo.get("covers")
+        if not covers:
             continue
-        joc = []
-        for bodypart in jo["covers"]:
-            if bodypart.endswith("_EITHER"):
-                bodypart = bodypart[:-7]
-                jo["sided"] = True
-                bodypart = bodypart + "s"
-            if bodypart == "ARMS":
-                joc.append("arm_l")
-                joc.append("arm_r")
-            elif bodypart == "EYES":
-                joc.append("eyes")
-            elif bodypart in ["FEET", "FOOTS"]:
-                joc.append("foot_l")
-                joc.append("foot_r")
-            elif bodypart == "HANDS":
-                joc.append("hand_l")
-                joc.append("hand_r")
-            elif bodypart == "HEAD":
-                joc.append("head")
-            elif bodypart == "LEGS":
-                joc.append("leg_l")
-                joc.append("leg_r")
-            elif bodypart == "MOUTH":
-                joc.append("mouth")
-            elif bodypart == "TORSO":
-                joc.append("torso")
-            else:
-                joc.append(bodypart)
+        joc: list[str] = []
+        for bodypart in covers:
+            joc.extend(expand_bodypart(bodypart, jo))
         if jo["covers"] == joc:
             continue
         jo["covers"] = joc
         change = True
 
+    if change:
+        LOGGER.debug("Updated covers in %s", path)
     return json_data if change else None
 
 
+def main() -> None:
+    args = parse_args()
+    log_file = args.log_file.expanduser() if args.log_file else None
+    logging.basicConfig(
+        level=getattr(logging, args.log_level),
+        filename=str(log_file) if log_file else None,
+        force=True,
+    )
+    change_file(args.directory, gen_new)
+
+
 if __name__ == "__main__":
-    json_dir = input("What directory are the json files in? ")
-    change_file(json_dir, gen_new)
+    main()

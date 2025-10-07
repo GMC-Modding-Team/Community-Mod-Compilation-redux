@@ -1,95 +1,105 @@
-# This script copies dictionary that contains "sewing_kit"
-# value in a nested list
-# appends it to a new list of dictionaries, changes said value.
-# its "time" value and adds "id_suffix" item.
-# Made for extracting and editing armors to use the sewing_machine item
-# takes care of pening and closing the file,
-# converting it to Python's data type and stores it in "data" opbject
+"""Extract and transform sewing machine recipes."""
+
+from __future__ import annotations
+
+import argparse
 import json
-
-with open("arms.json", "r") as recipejson:
-    dataList = json.load(recipejson)
-
-
-storageData = []
+import logging
+from copy import deepcopy
+from pathlib import Path
+from typing import Iterable
 
 
-# moves the dicts that have SEW into a new list
-def appender(lis):
-    for dict in lis:
-        for keyDict, valueList in dict.items():
-            # checks if the value is iterable
-            if hasattr(keyDict, "__iter__"):
-                if keyDict == "qualities":
-                    print("found qualities")
-                    for subDict in valueList:
-                        if hasattr(subDict, "__iter__"):
-                            for key, value in subDict.items():
-                                if value == "SEW":
-                                    storageData.append(dict)
-                                    print("dictionary moved")
-                else:
-                    print("key checked")
+LOGGER = logging.getLogger(__name__)
 
 
-def increaseSEW(dataList):
-    # increases the SEW value
-    for dict in dataList:
-        for keyDict, valueList in dict.items():
-            # checks if the value is iterable
-            if hasattr(keyDict, "__iter__"):
-                if keyDict == "qualities":
-                    print("found it!")
-                    for subDict in valueList:
-                        if hasattr(subDict, "__iter__"):
-                            for key, value in enumerate(subDict):
-                                if value == "level":
-                                    print("increased SEW level")
-                                    subDict[value] = 2
-                else:
-                    print("key checked")
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Extract recipes that require sewing qualities and adapt them.",
+    )
+    parser.add_argument(
+        "input",
+        type=Path,
+        help="Source JSON file containing recipe definitions.",
+    )
+    parser.add_argument(
+        "output",
+        type=Path,
+        help="Destination file for the transformed recipes.",
+    )
+    parser.add_argument(
+        "--log-level",
+        default="INFO",
+        type=str.upper,
+        choices=["CRITICAL", "ERROR", "WARNING", "INFO", "DEBUG"],
+        help="Logging verbosity.",
+    )
+    return parser.parse_args()
 
 
-def decreaseTime(dataList):
-    # increases the SEW value
-    for dict in dataList:
-        for key, value in dict.items():
-            # checks if the value is iterable
-            if hasattr(key, "__iter__"):
-                if key == "time":
-                    print("found it!")
-                    dict[key] -= int(value * 0.5)
-                else:
-                    print("key checked")
+def requires_sewing(entry: dict) -> bool:
+    qualities = entry.get("qualities")
+    if not isinstance(qualities, list):
+        return False
+    for quality in qualities:
+        if isinstance(quality, dict) and any(value == "SEW" for value in quality.values()):
+            return True
+    return False
 
 
-def changeSubcategory(dataList):
-    # increases the SEW value
-    for dict in dataList:
-        for key, value in dict.items():
-            # checks if the value is iterable
-            if hasattr(key, "__iter__"):
-                if key == "subcategory":
-                    print("found it!")
-                    dict[key] = "CSC_SEWING_MACHINE"
-                else:
-                    print("key checked")
+def extract_recipes(data: Iterable[dict]) -> list[dict]:
+    return [
+        deepcopy(entry)
+        for entry in data
+        if isinstance(entry, dict) and requires_sewing(entry)
+    ]
 
 
-def addSufix(dataList):
-    for dict in dataList:
-        # adds "sm" sufix
-        dict["id_suffix"] = "sm"
-        print("sufix key/value added")
+def increase_sew_level(entry: dict) -> None:
+    for quality in entry.get("qualities", []):
+        if isinstance(quality, dict) and "level" in quality:
+            quality["level"] = 2
 
 
-appender(dataList)
-increaseSEW(storageData)
-decreaseTime(storageData)
-changeSubcategory(storageData)
-addSufix(storageData)
+def halve_time(entry: dict) -> None:
+    time_value = entry.get("time")
+    if isinstance(time_value, (int, float)):
+        entry["time"] = int(time_value * 0.5)
 
 
-# converts the "data" object to JSON type and writes it on "newRecipe.json"
-with open("sm_arms.json", "w") as newRecipe:
-    json.dump(storageData, newRecipe, sort_keys=True)
+def set_subcategory(entry: dict) -> None:
+    if "subcategory" in entry:
+        entry["subcategory"] = "CSC_SEWING_MACHINE"
+
+
+def add_suffix(entry: dict) -> None:
+    entry["id_suffix"] = "sm"
+
+
+def transform(entry: dict) -> dict:
+    increase_sew_level(entry)
+    halve_time(entry)
+    set_subcategory(entry)
+    add_suffix(entry)
+    return entry
+
+
+def main() -> None:
+    args = parse_args()
+    logging.basicConfig(level=getattr(logging, args.log_level), force=True)
+
+    with args.input.open(encoding="utf-8") as recipejson:
+        data_list = json.load(recipejson)
+
+    if not isinstance(data_list, list):
+        raise ValueError("Input JSON must contain a list of recipes")
+
+    storage_data = [transform(recipe) for recipe in extract_recipes(data_list)]
+    LOGGER.info("Extracted %s recipes", len(storage_data))
+
+    with args.output.open("w", encoding="utf-8") as new_recipe:
+        json.dump(storage_data, new_recipe, sort_keys=True, ensure_ascii=False)
+
+
+if __name__ == "__main__":
+    main()
