@@ -1,0 +1,32 @@
+[
+  {
+    "type": "COMESTIBLE",
+    "id": "weed",
+    "copy-from": "weed",
+    "name": { "str_sp": "cannabis buds" },
+    "description": "Dried cannabis flower (generic). Requires a smoking apparatus (pipe/bong) and a fire source. Roughly ~18% THC / ~1% CBD.",
+    "vitamins": [ [ "vit_thc", "180 mg" ], [ "vit_cbd", "10 mg" ] ],
+    "use_action": {
+      "type": "consume_drug",
+      "activation_message": "You smoke some weed.",
+      "effects": [
+        { "id": "weed_high", "duration": "84 m" },
+        { "id": "pkill1_generic", "duration": "90 m" },
+        { "id": "pkill2", "duration": "5 m" }
+      ],
+      "stat_adjustments": { "hunger": 4, "thirst": 6 },
+      "fields_produced": { "fd_weedsmoke": 2 },
+      "charges_needed": { "fire": 1 },
+      "tools_needed": { "apparatus": -1 },
+      "moves": 420
+    }
+  },
+  {
+    "type": "COMESTIBLE",
+    "id": "joint",
+    "copy-from": "joint",
+    "name": { "str": "joint" },
+    "description": "Marijuana, cannabis, pot—whatever you call it, it's rolled up in a piece of paper and ready for smokin'. (Generic, ~18% THC / ~1% CBD.)",
+    "vitamins": [ [ "vit_thc", "180 mg" ], [ "vit_cbd", "10 mg" ] ]
+  }
+]
