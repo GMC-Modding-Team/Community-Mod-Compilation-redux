@@ -1,9 +1,9 @@
 [
   {
     "id": "mx_servo_arm",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "servo arm module" },
-    "description": "A paired powered arm module that reinforces both arms.  improves bash resistance and arm coverage while its diagnostics routine gives a short confidence kick. [High draw]",
+    "description": "A paired powered arm module that reinforces both arms.  improves bash resistance and arm coverage while its diagnostics routine gives a short confidence kick. [High draw] Uses internal battery power when active.",
     "weight": "2200 g",
     "volume": "1250 ml",
     "price": "9500 USD",
@@ -27,27 +27,34 @@
         "material_thickness": 5,
         "environmental_protection": 3
       }
-    ]
+    ],
+    "ammo": [ "battery" ],
+    "max_charges": 800,
+    "initial_charges": 800
   },
   {
     "id": "mx_servo_arm_active",
     "copy-from": "mx_servo_arm",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "servo arm module (active)" },
-    "description": "A paired powered arm module that reinforces both arms.  improves bash resistance and arm coverage while its diagnostics routine gives a short confidence kick. It is powered on. [High draw]",
+    "description": "A paired powered arm module that reinforces both arms.  improves bash resistance and arm coverage while its diagnostics routine gives a short confidence kick. It is powered on. [High draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_servo_arm_mk1",
       "msg": "You deactivate the servo arm module.",
       "menu_text": "Deactivate module"
     },
-    "flags": [ "BLOCK_WHILE_WORN" ]
+    "flags": [ "BLOCK_WHILE_WORN" ],
+    "ammo": [ "battery" ],
+    "max_charges": 800,
+    "initial_charges": 800,
+    "power_draw": "900 W"
   },
   {
     "id": "mx_sprint_legs",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "sprint actuator module" },
-    "description": "A paired leg actuator module for both legs. adds light leg armor and stabilizes movement under load. [Medium draw]",
+    "description": "A paired leg actuator module for both legs. adds light leg armor and stabilizes movement under load. [Medium draw] Uses internal battery power when active.",
     "weight": "1800 g",
     "volume": "1200 ml",
     "price": "8800 USD",
@@ -71,27 +78,34 @@
         "material_thickness": 4,
         "environmental_protection": 3
       }
-    ]
+    ],
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500
   },
   {
     "id": "mx_sprint_legs_active",
     "copy-from": "mx_sprint_legs",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "sprint actuator module (active)" },
-    "description": "A paired leg actuator module for both legs. adds light leg armor and stabilizes movement under load. It is powered on. [Medium draw]",
+    "description": "A paired leg actuator module for both legs. adds light leg armor and stabilizes movement under load. It is powered on. [Medium draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_sprint_legs_mk1",
       "msg": "You deactivate the sprint actuator module",
       "menu_text": "Deactivate module"
     },
-    "color": "light_cyan"
+    "color": "light_cyan",
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500,
+    "power_draw": "350 W"
   },
   {
     "id": "mx_toolkit_module_mk1",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "integrated toolkit module" },
-    "description": "A chest-mounted maintenance module. adds small torso protection and counts as a compact field toolkit with screw, wrench, and hammer utility. [Medium draw]",
+    "description": "A chest-mounted maintenance module. adds small torso protection and counts as a compact field toolkit with screw, wrench, and hammer utility. [Medium draw] Uses internal battery power when active.",
     "weight": "2400 g",
     "volume": "1750 ml",
     "price": "9900 USD",
@@ -108,27 +122,34 @@
       "active": true
     },
     "armor": [ { "covers": [ "torso" ], "coverage": 60, "encumbrance": 3, "material_thickness": 3, "environmental_protection": 2 } ],
-    "qualities": [ [ "SCREW", 1 ], [ "WRENCH", 1 ], [ "HAMMER", 1 ] ]
+    "qualities": [ [ "SCREW", 1 ], [ "WRENCH", 1 ], [ "HAMMER", 1 ] ],
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500
   },
   {
     "id": "mx_toolkit_module_mk1_active",
     "copy-from": "mx_toolkit_module_mk1",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "integrated toolkit module (active)" },
-    "description": "A chest-mounted maintenance module. adds small torso protection and counts as a compact field toolkit with screw, wrench, and hammer utility. It is powered on. [Medium draw]",
+    "description": "A chest-mounted maintenance module. adds small torso protection and counts as a compact field toolkit with screw, wrench, and hammer utility. It is powered on. [Medium draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_toolkit_module_mk1",
       "msg": "You deactivate the integrated toolkit module.",
       "menu_text": "Deactivate module"
     },
-    "qualities": [ [ "SCREW", 2 ], [ "WRENCH", 2 ], [ "HAMMER", 2 ] ]
+    "qualities": [ [ "SCREW", 2 ], [ "WRENCH", 2 ], [ "HAMMER", 2 ] ],
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500,
+    "power_draw": "350 W"
   },
   {
     "id": "mx_toolkit_module_mk2",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "integrated toolkit moduleI" },
-    "description": "A chest-mounted maintenance module.I adds small torso protection and counts as a compact field toolkit with screw, wrench, and hammer utility. [Medium draw]",
+    "description": "A chest-mounted maintenance module.I adds small torso protection and counts as a compact field toolkit with screw, wrench, and hammer utility. [Medium draw] Uses internal battery power when active.",
     "weight": "2550 g",
     "volume": "1750 ml",
     "price": "13600 USD",
@@ -145,14 +166,17 @@
       "active": true
     },
     "armor": [ { "covers": [ "torso" ], "coverage": 65, "encumbrance": 4, "material_thickness": 4, "environmental_protection": 3 } ],
-    "qualities": [ [ "SCREW", 2 ], [ "WRENCH", 2 ], [ "HAMMER", 2 ] ]
+    "qualities": [ [ "SCREW", 2 ], [ "WRENCH", 2 ], [ "HAMMER", 2 ] ],
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500
   },
   {
     "id": "mx_toolkit_module_mk2_active",
     "copy-from": "mx_toolkit_module_mk2",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "integrated toolkit moduleI (active)" },
-    "description": "A chest-mounted maintenance module.I adds small torso protection and counts as a compact field toolkit with screw, wrench, and hammer utility. It is powered on. [Medium draw]",
+    "description": "A chest-mounted maintenance module.I adds small torso protection and counts as a compact field toolkit with screw, wrench, and hammer utility. It is powered on. [Medium draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_toolkit_module_mk2",
@@ -160,13 +184,17 @@
       "menu_text": "Deactivate module"
     },
     "color": "light_red",
-    "qualities": [ [ "SCREW", 3 ], [ "WRENCH", 3 ], [ "HAMMER", 3 ] ]
+    "qualities": [ [ "SCREW", 3 ], [ "WRENCH", 3 ], [ "HAMMER", 3 ] ],
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500,
+    "power_draw": "350 W"
   },
   {
     "id": "mx_toolkit_module_mk3",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "integrated toolkit moduleII" },
-    "description": "A chest-mounted maintenance module.II adds small torso protection and counts as a compact field toolkit with screw, wrench, and hammer utility. [Medium draw]",
+    "description": "A chest-mounted maintenance module.II adds small torso protection and counts as a compact field toolkit with screw, wrench, and hammer utility. [Medium draw] Uses internal battery power when active.",
     "weight": "2650 g",
     "volume": "1750 ml",
     "price": "17800 USD",
@@ -183,14 +211,17 @@
       "active": true
     },
     "armor": [ { "covers": [ "torso" ], "coverage": 70, "encumbrance": 5, "material_thickness": 5, "environmental_protection": 4 } ],
-    "qualities": [ [ "SCREW", 3 ], [ "WRENCH", 3 ], [ "HAMMER", 3 ] ]
+    "qualities": [ [ "SCREW", 3 ], [ "WRENCH", 3 ], [ "HAMMER", 3 ] ],
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500
   },
   {
     "id": "mx_toolkit_module_mk3_active",
     "copy-from": "mx_toolkit_module_mk3",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "integrated toolkit moduleII (active)" },
-    "description": "A chest-mounted maintenance module.II adds small torso protection and counts as a compact field toolkit with screw, wrench, and hammer utility. It is powered on. [Medium draw]",
+    "description": "A chest-mounted maintenance module.II adds small torso protection and counts as a compact field toolkit with screw, wrench, and hammer utility. It is powered on. [Medium draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_toolkit_module_mk3",
@@ -198,13 +229,17 @@
       "menu_text": "Deactivate module"
     },
     "color": "light_white",
-    "qualities": [ [ "SCREW", 4 ], [ "WRENCH", 4 ], [ "HAMMER", 4 ] ]
+    "qualities": [ [ "SCREW", 4 ], [ "WRENCH", 4 ], [ "HAMMER", 4 ] ],
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500,
+    "power_draw": "350 W"
   },
   {
     "id": "mx_power_optimizer",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "power optimizer module" },
-    "description": "A power-routing torso module that hardens the suit core against glancing hits. mainly serves as a protective chest insert with system diagnostics. [Medium draw]",
+    "description": "A power-routing torso module that hardens the suit core against glancing hits. mainly serves as a protective chest insert with system diagnostics. [Medium draw] Uses internal battery power when active.",
     "weight": "1600 g",
     "volume": "1300 ml",
     "price": "10200 USD",
@@ -220,27 +255,34 @@
       "menu_text": "Activate module",
       "active": true
     },
-    "armor": [ { "covers": [ "torso" ], "coverage": 55, "encumbrance": 3, "material_thickness": 3, "environmental_protection": 3 } ]
+    "armor": [ { "covers": [ "torso" ], "coverage": 55, "encumbrance": 3, "material_thickness": 3, "environmental_protection": 3 } ],
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500
   },
   {
     "id": "mx_power_optimizer_active",
     "copy-from": "mx_power_optimizer",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "power optimizer module (active)" },
-    "description": "A power-routing torso module that hardens the suit core against glancing hits. mainly serves as a protective chest insert with system diagnostics. It is powered on. [Medium draw]",
+    "description": "A power-routing torso module that hardens the suit core against glancing hits. mainly serves as a protective chest insert with system diagnostics. It is powered on. [Medium draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_power_optimizer",
       "msg": "You deactivate the power optimizer module.",
       "menu_text": "Deactivate module"
     },
-    "flags": [ "WATCH" ]
+    "flags": [ "WATCH" ],
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500,
+    "power_draw": "350 W"
   },
   {
     "id": "mx_optics_helmet_mk1",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "optics helmet module" },
-    "description": "A helmet optics package for all compatible suits. adds increasing head protection and environmental sealing. [Low draw]",
+    "description": "A helmet optics package for all compatible suits. adds increasing head protection and environmental sealing. [Low draw] Uses internal battery power when active.",
     "weight": "900 g",
     "volume": "750 ml",
     "price": "11000 USD",
@@ -256,27 +298,34 @@
       "menu_text": "Activate module",
       "active": true
     },
-    "armor": [ { "covers": [ "head" ], "coverage": 74, "encumbrance": 3, "material_thickness": 4, "environmental_protection": 4 } ]
+    "armor": [ { "covers": [ "head" ], "coverage": 74, "encumbrance": 3, "material_thickness": 4, "environmental_protection": 4 } ],
+    "ammo": [ "battery" ],
+    "max_charges": 300,
+    "initial_charges": 300
   },
   {
     "id": "mx_optics_helmet_mk1_active",
     "copy-from": "mx_optics_helmet_mk1",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "optics helmet module (active)" },
-    "description": "A helmet optics package for all compatible suits. adds increasing head protection and environmental sealing. It is powered on. [Low draw]",
+    "description": "A helmet optics package for all compatible suits. adds increasing head protection and environmental sealing. It is powered on. [Low draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_optics_helmet_mk1",
       "msg": "You deactivate the optics helmet module.",
       "menu_text": "Deactivate module"
     },
-    "flags": [ "WATCH" ]
+    "flags": [ "WATCH" ],
+    "ammo": [ "battery" ],
+    "max_charges": 300,
+    "initial_charges": 300,
+    "power_draw": "120 W"
   },
   {
     "id": "mx_optics_helmet_mk2",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "optics helmet moduleI" },
-    "description": "A helmet optics package for all compatible suits.I adds increasing head protection and environmental sealing. [Low draw]",
+    "description": "A helmet optics package for all compatible suits.I adds increasing head protection and environmental sealing. [Low draw] Uses internal battery power when active.",
     "weight": "950 g",
     "volume": "750 ml",
     "price": "14500 USD",
@@ -292,14 +341,17 @@
       "menu_text": "Activate module",
       "active": true
     },
-    "armor": [ { "covers": [ "head" ], "coverage": 80, "encumbrance": 4, "material_thickness": 5, "environmental_protection": 5 } ]
+    "armor": [ { "covers": [ "head" ], "coverage": 80, "encumbrance": 4, "material_thickness": 5, "environmental_protection": 5 } ],
+    "ammo": [ "battery" ],
+    "max_charges": 300,
+    "initial_charges": 300
   },
   {
     "id": "mx_optics_helmet_mk2_active",
     "copy-from": "mx_optics_helmet_mk2",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "optics helmet moduleI (active)" },
-    "description": "A helmet optics package for all compatible suits.I adds increasing head protection and environmental sealing. It is powered on. [Low draw]",
+    "description": "A helmet optics package for all compatible suits.I adds increasing head protection and environmental sealing. It is powered on. [Low draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_optics_helmet_mk2",
@@ -307,13 +359,17 @@
       "menu_text": "Deactivate module"
     },
     "color": "light_blue",
-    "flags": [ "WATCH", "GNV_EFFECT" ]
+    "flags": [ "WATCH", "GNV_EFFECT" ],
+    "ammo": [ "battery" ],
+    "max_charges": 300,
+    "initial_charges": 300,
+    "power_draw": "120 W"
   },
   {
     "id": "mx_optics_helmet_mk3",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "optics helmet moduleII" },
-    "description": "A helmet optics package for all compatible suits.II adds increasing head protection and environmental sealing. [Low draw]",
+    "description": "A helmet optics package for all compatible suits.II adds increasing head protection and environmental sealing. [Low draw] Uses internal battery power when active.",
     "weight": "1000 g",
     "volume": "750 ml",
     "price": "18900 USD",
@@ -329,14 +385,17 @@
       "menu_text": "Activate module",
       "active": true
     },
-    "armor": [ { "covers": [ "head" ], "coverage": 86, "encumbrance": 5, "material_thickness": 6, "environmental_protection": 6 } ]
+    "armor": [ { "covers": [ "head" ], "coverage": 86, "encumbrance": 5, "material_thickness": 6, "environmental_protection": 6 } ],
+    "ammo": [ "battery" ],
+    "max_charges": 300,
+    "initial_charges": 300
   },
   {
     "id": "mx_optics_helmet_mk3_active",
     "copy-from": "mx_optics_helmet_mk3",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "optics helmet moduleII (active)" },
-    "description": "A helmet optics package for all compatible suits.II adds increasing head protection and environmental sealing. It is powered on. [Low draw]",
+    "description": "A helmet optics package for all compatible suits.II adds increasing head protection and environmental sealing. It is powered on. [Low draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_optics_helmet_mk3",
@@ -344,13 +403,17 @@
       "menu_text": "Deactivate module"
     },
     "color": "light_white",
-    "flags": [ "WATCH", "GNV_EFFECT", "IR_EFFECT", "FLASH_PROTECTION" ]
+    "flags": [ "WATCH", "GNV_EFFECT", "IR_EFFECT", "FLASH_PROTECTION" ],
+    "ammo": [ "battery" ],
+    "max_charges": 300,
+    "initial_charges": 300,
+    "power_draw": "120 W"
   },
   {
     "id": "mx_field_shockframe_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "shockframe brace module" },
-    "description": "A reinforced torso brace for impact management. It improves torso bash protection and steadies the wearer under heavy blows. [Medium draw]",
+    "description": "A reinforced torso brace for impact management. It improves torso bash protection and steadies the wearer under heavy blows. [Medium draw] Uses internal battery power when active.",
     "weight": "2100 g",
     "volume": "1450 ml",
     "price": "11900 USD",
@@ -366,27 +429,34 @@
       "menu_text": "Activate module",
       "active": true
     },
-    "armor": [ { "covers": [ "torso" ], "coverage": 78, "encumbrance": 4, "material_thickness": 5, "environmental_protection": 3 } ]
+    "armor": [ { "covers": [ "torso" ], "coverage": 78, "encumbrance": 4, "material_thickness": 5, "environmental_protection": 3 } ],
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500
   },
   {
     "id": "mx_field_shockframe_module_active",
     "copy-from": "mx_field_shockframe_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "shockframe brace module (active)" },
-    "description": "A reinforced torso brace for impact management. It improves torso bash protection and steadies the wearer under heavy blows. It is powered on. [Medium draw]",
+    "description": "A reinforced torso brace for impact management. It improves torso bash protection and steadies the wearer under heavy blows. It is powered on. [Medium draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_field_shockframe_module",
       "msg": "You deactivate the shockframe brace module.",
       "menu_text": "Deactivate module"
     },
-    "flags": [ "BLOCK_WHILE_WORN" ]
+    "flags": [ "BLOCK_WHILE_WORN" ],
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500,
+    "power_draw": "350 W"
   },
   {
     "id": "mx_recon_silencerig_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "silent step rig" },
-    "description": "A paired foot rig with softened contact pads. It adds light foot armor while staying fairly low-encumbrance for scouting. [Low draw]",
+    "description": "A paired foot rig with softened contact pads. It adds light foot armor while staying fairly low-encumbrance for scouting. [Low draw] Uses internal battery power when active.",
     "weight": "1500 g",
     "volume": "1100 ml",
     "price": "13800 USD",
@@ -410,14 +480,17 @@
         "material_thickness": 3,
         "environmental_protection": 2
       }
-    ]
+    ],
+    "ammo": [ "battery" ],
+    "max_charges": 300,
+    "initial_charges": 300
   },
   {
     "id": "mx_recon_silencerig_module_active",
     "copy-from": "mx_recon_silencerig_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "silent step rig (active)" },
-    "description": "A paired foot rig with softened contact pads. It adds light foot armor while staying fairly low-encumbrance for scouting. It is powered on. [Low draw]",
+    "description": "A paired foot rig with softened contact pads. It adds light foot armor while staying fairly low-encumbrance for scouting. It is powered on. [Low draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_recon_silencerig_module",
@@ -425,13 +498,17 @@
       "menu_text": "Deactivate module"
     },
     "color": "light_dark_gray",
-    "flags": [ "ACTIVE_CLOAKING" ]
+    "flags": [ "ACTIVE_CLOAKING" ],
+    "ammo": [ "battery" ],
+    "max_charges": 300,
+    "initial_charges": 300,
+    "power_draw": "120 W"
   },
   {
     "id": "mx_recon_longscan_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "long-range scan hood" },
-    "description": "A recon sensor hood with hardened optics housing. It provides solid head coverage and better environmental protection than basic scout gear. [Low draw]",
+    "description": "A recon sensor hood with hardened optics housing. It provides solid head coverage and better environmental protection than basic scout gear. [Low draw] Uses internal battery power when active.",
     "weight": "950 g",
     "volume": "800 ml",
     "price": "15200 USD",
@@ -447,14 +524,17 @@
       "menu_text": "Activate module",
       "active": true
     },
-    "armor": [ { "covers": [ "head" ], "coverage": 80, "encumbrance": 3, "material_thickness": 4, "environmental_protection": 4 } ]
+    "armor": [ { "covers": [ "head" ], "coverage": 80, "encumbrance": 3, "material_thickness": 4, "environmental_protection": 4 } ],
+    "ammo": [ "battery" ],
+    "max_charges": 300,
+    "initial_charges": 300
   },
   {
     "id": "mx_recon_longscan_module_active",
     "copy-from": "mx_recon_longscan_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "long-range scan hood (active)" },
-    "description": "A recon sensor hood with hardened optics housing. It provides solid head coverage and better environmental protection than basic scout gear. It is powered on. [Low draw]",
+    "description": "A recon sensor hood with hardened optics housing. It provides solid head coverage and better environmental protection than basic scout gear. It is powered on. [Low draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_recon_longscan_module",
@@ -462,13 +542,17 @@
       "menu_text": "Deactivate module"
     },
     "color": "light_cyan",
-    "flags": [ "WATCH", "BAROMETER", "HYGROMETER" ]
+    "flags": [ "WATCH", "BAROMETER", "HYGROMETER" ],
+    "ammo": [ "battery" ],
+    "max_charges": 300,
+    "initial_charges": 300,
+    "power_draw": "120 W"
   },
   {
     "id": "mx_industrial_riglift_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "riglift gantry arm" },
-    "description": "A heavy industrial arm assembly for both arms. It gives strong arm armor and counts as a sturdy hammering aid for rough work. [Medium draw]",
+    "description": "A heavy industrial arm assembly for both arms. It gives strong arm armor and counts as a sturdy hammering aid for rough work. [Medium draw] Uses internal battery power when active.",
     "weight": "3600 g",
     "volume": "1600 ml",
     "price": "14800 USD",
@@ -493,14 +577,17 @@
         "environmental_protection": 3
       }
     ],
-    "qualities": [ [ "HAMMER", 2 ] ]
+    "qualities": [ [ "HAMMER", 2 ] ],
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500
   },
   {
     "id": "mx_industrial_riglift_module_active",
     "copy-from": "mx_industrial_riglift_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "riglift gantry arm (active)" },
-    "description": "A heavy industrial arm assembly for both arms. It gives strong arm armor and counts as a sturdy hammering aid for rough work. It is powered on. [Medium draw]",
+    "description": "A heavy industrial arm assembly for both arms. It gives strong arm armor and counts as a sturdy hammering aid for rough work. It is powered on. [Medium draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_industrial_riglift_module",
@@ -509,13 +596,17 @@
     },
     "color": "light_yellow",
     "flags": [ "BLOCK_WHILE_WORN" ],
-    "qualities": [ [ "HAMMER", 3 ] ]
+    "qualities": [ [ "HAMMER", 3 ] ],
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500,
+    "power_draw": "350 W"
   },
   {
     "id": "mx_industrial_forge_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "forge support module" },
-    "description": "A plated torso work core with dense chest armor and integrated striking mass. It is one of the toughest industrial torso inserts in the set. [Medium draw]",
+    "description": "A plated torso work core with dense chest armor and integrated striking mass. It is one of the toughest industrial torso inserts in the set. [Medium draw] Uses internal battery power when active.",
     "weight": "2800 g",
     "volume": "1900 ml",
     "price": "14200 USD",
@@ -532,14 +623,17 @@
       "active": true
     },
     "armor": [ { "covers": [ "torso" ], "coverage": 84, "encumbrance": 5, "material_thickness": 6, "environmental_protection": 4 } ],
-    "qualities": [ [ "HAMMER", 3 ] ]
+    "qualities": [ [ "HAMMER", 3 ] ],
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500
   },
   {
     "id": "mx_industrial_forge_module_active",
     "copy-from": "mx_industrial_forge_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "forge support module (active)" },
-    "description": "A plated torso work core with dense chest armor and integrated striking mass. It is one of the toughest industrial torso inserts in the set. It is powered on. [Medium draw]",
+    "description": "A plated torso work core with dense chest armor and integrated striking mass. It is one of the toughest industrial torso inserts in the set. It is powered on. [Medium draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_industrial_forge_module",
@@ -548,13 +642,17 @@
     },
     "color": "light_brown",
     "flags": [ "BLOCK_WHILE_WORN" ],
-    "qualities": [ [ "HAMMER", 4 ] ]
+    "qualities": [ [ "HAMMER", 4 ] ],
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500,
+    "power_draw": "350 W"
   },
   {
     "id": "mx_hazard_filter_module_mk1",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "environmental filter module" },
-    "description": "A hazard-rated filtration insert. strongly boosts mouth environmental protection for toxic or smoky areas. [Medium draw]",
+    "description": "A hazard-rated filtration insert. strongly boosts mouth environmental protection for toxic or smoky areas. [Medium draw] Uses internal battery power when active.",
     "weight": "1900 g",
     "volume": "1400 ml",
     "price": "10500 USD",
@@ -570,14 +668,17 @@
       "menu_text": "Activate module",
       "active": true
     },
-    "armor": [ { "covers": [ "mouth" ], "coverage": 76, "encumbrance": 2, "material_thickness": 3, "environmental_protection": 10 } ]
+    "armor": [ { "covers": [ "mouth" ], "coverage": 76, "encumbrance": 2, "material_thickness": 3, "environmental_protection": 10 } ],
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500
   },
   {
     "id": "mx_hazard_filter_module_mk1_active",
     "copy-from": "mx_hazard_filter_module_mk1",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "environmental filter module (active)" },
-    "description": "A hazard-rated filtration insert. strongly boosts mouth environmental protection for toxic or smoky areas. It is powered on. [Medium draw]",
+    "description": "A hazard-rated filtration insert. strongly boosts mouth environmental protection for toxic or smoky areas. It is powered on. [Medium draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_hazard_filter_module_mk1",
@@ -585,13 +686,17 @@
       "menu_text": "Deactivate module"
     },
     "color": "light_green",
-    "flags": [ "GAS_PROOF" ]
+    "flags": [ "GAS_PROOF" ],
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500,
+    "power_draw": "350 W"
   },
   {
     "id": "mx_hazard_filter_module_mk2",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "environmental filter moduleI" },
-    "description": "A hazard-rated filtration insert.I strongly boosts mouth environmental protection for toxic or smoky areas. [Medium draw]",
+    "description": "A hazard-rated filtration insert.I strongly boosts mouth environmental protection for toxic or smoky areas. [Medium draw] Uses internal battery power when active.",
     "weight": "2000 g",
     "volume": "1400 ml",
     "price": "13800 USD",
@@ -607,27 +712,34 @@
       "menu_text": "Activate module",
       "active": true
     },
-    "armor": [ { "covers": [ "mouth" ], "coverage": 82, "encumbrance": 3, "material_thickness": 4, "environmental_protection": 12 } ]
+    "armor": [ { "covers": [ "mouth" ], "coverage": 82, "encumbrance": 3, "material_thickness": 4, "environmental_protection": 12 } ],
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500
   },
   {
     "id": "mx_hazard_filter_module_mk2_active",
     "copy-from": "mx_hazard_filter_module_mk2",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "environmental filter moduleI (active)" },
-    "description": "A hazard-rated filtration insert.I strongly boosts mouth environmental protection for toxic or smoky areas. It is powered on. [Medium draw]",
+    "description": "A hazard-rated filtration insert.I strongly boosts mouth environmental protection for toxic or smoky areas. It is powered on. [Medium draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_hazard_filter_module_mk2",
       "msg": "You deactivate the environmental filter moduleI.",
       "menu_text": "Deactivate module"
     },
-    "flags": [ "GAS_PROOF", "RAD_RESIST" ]
+    "flags": [ "GAS_PROOF", "RAD_RESIST" ],
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500,
+    "power_draw": "350 W"
   },
   {
     "id": "mx_hazard_filter_module_mk3",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "environmental filter moduleII" },
-    "description": "A hazard-rated filtration insert.II strongly boosts mouth environmental protection for toxic or smoky areas. [Medium draw]",
+    "description": "A hazard-rated filtration insert.II strongly boosts mouth environmental protection for toxic or smoky areas. [Medium draw] Uses internal battery power when active.",
     "weight": "2100 g",
     "volume": "1400 ml",
     "price": "18100 USD",
@@ -643,14 +755,17 @@
       "menu_text": "Activate module",
       "active": true
     },
-    "armor": [ { "covers": [ "mouth" ], "coverage": 88, "encumbrance": 4, "material_thickness": 5, "environmental_protection": 14 } ]
+    "armor": [ { "covers": [ "mouth" ], "coverage": 88, "encumbrance": 4, "material_thickness": 5, "environmental_protection": 14 } ],
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500
   },
   {
     "id": "mx_hazard_filter_module_mk3_active",
     "copy-from": "mx_hazard_filter_module_mk3",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "environmental filter moduleII (active)" },
-    "description": "A hazard-rated filtration insert.II strongly boosts mouth environmental protection for toxic or smoky areas. It is powered on. [Medium draw]",
+    "description": "A hazard-rated filtration insert.II strongly boosts mouth environmental protection for toxic or smoky areas. It is powered on. [Medium draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_hazard_filter_module_mk3",
@@ -658,13 +773,17 @@
       "menu_text": "Deactivate module"
     },
     "color": "light_white",
-    "flags": [ "GAS_PROOF", "RAD_RESIST", "RAD_PROOF", "RAINPROOF" ]
+    "flags": [ "GAS_PROOF", "RAD_RESIST", "RAD_PROOF", "RAINPROOF" ],
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500,
+    "power_draw": "350 W"
   },
   {
     "id": "mx_hazard_analysis_helmet",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "hazard analysis hood" },
-    "description": "A sealed hazard-analysis helmet insert. It gives solid head armor and strong environmental protection for contaminated zones. [Low draw]",
+    "description": "A sealed hazard-analysis helmet insert. It gives solid head armor and strong environmental protection for contaminated zones. [Low draw] Uses internal battery power when active.",
     "weight": "1000 g",
     "volume": "800 ml",
     "price": "12500 USD",
@@ -680,27 +799,34 @@
       "menu_text": "Activate module",
       "active": true
     },
-    "armor": [ { "covers": [ "head" ], "coverage": 82, "encumbrance": 3, "material_thickness": 4, "environmental_protection": 8 } ]
+    "armor": [ { "covers": [ "head" ], "coverage": 82, "encumbrance": 3, "material_thickness": 4, "environmental_protection": 8 } ],
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500
   },
   {
     "id": "mx_hazard_analysis_helmet_active",
     "copy-from": "mx_hazard_analysis_helmet",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "hazard analysis hood (active)" },
-    "description": "A sealed hazard-analysis helmet insert. It gives solid head armor and strong environmental protection for contaminated zones. It is powered on. [Low draw]",
+    "description": "A sealed hazard-analysis helmet insert. It gives solid head armor and strong environmental protection for contaminated zones. It is powered on. [Low draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_hazard_analysis_helmet",
       "msg": "You deactivate the hazard analysis hood.",
       "menu_text": "Deactivate module"
     },
-    "flags": [ "WATCH", "BAROMETER", "HYGROMETER" ]
+    "flags": [ "WATCH", "BAROMETER", "HYGROMETER" ],
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500,
+    "power_draw": "350 W"
   },
   {
     "id": "mx_field_torso_triage_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "field triage torso module" },
-    "description": "A triage torso insert with improved chest protection and emergency support gear. [Medium draw]",
+    "description": "A triage torso insert with improved chest protection and emergency support gear. [Medium draw] Uses internal battery power when active.",
     "weight": "2600 g",
     "volume": "1750 ml",
     "price": "15800 USD",
@@ -716,14 +842,17 @@
       "menu_text": "Activate module",
       "active": true
     },
-    "armor": [ { "covers": [ "torso" ], "coverage": 82, "encumbrance": 5, "material_thickness": 5, "environmental_protection": 5 } ]
+    "armor": [ { "covers": [ "torso" ], "coverage": 82, "encumbrance": 5, "material_thickness": 5, "environmental_protection": 5 } ],
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500
   },
   {
     "id": "mx_field_torso_triage_module_active",
     "copy-from": "mx_field_torso_triage_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "field triage torso module (active)" },
-    "description": "A triage torso insert with improved chest protection and emergency support gear. It is powered on. [Medium draw]",
+    "description": "A triage torso insert with improved chest protection and emergency support gear. It is powered on. [Medium draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_field_torso_triage_module",
@@ -731,13 +860,17 @@
       "menu_text": "Deactivate module"
     },
     "color": "light_pink",
-    "flags": [ "RAINPROOF" ]
+    "flags": [ "RAINPROOF" ],
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500,
+    "power_draw": "350 W"
   },
   {
     "id": "mx_recon_head_ghost_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "recon ghost head module" },
-    "description": "A ghost-pattern recon head module offering good head protection without becoming too heavy. [High draw]",
+    "description": "A ghost-pattern recon head module offering good head protection without becoming too heavy. [High draw] Uses internal battery power when active.",
     "weight": "850 g",
     "volume": "600 ml",
     "price": "14900 USD",
@@ -753,14 +886,17 @@
       "menu_text": "Activate module",
       "active": true
     },
-    "armor": [ { "covers": [ "head" ], "coverage": 80, "encumbrance": 2, "material_thickness": 4, "environmental_protection": 5 } ]
+    "armor": [ { "covers": [ "head" ], "coverage": 80, "encumbrance": 2, "material_thickness": 4, "environmental_protection": 5 } ],
+    "ammo": [ "battery" ],
+    "max_charges": 800,
+    "initial_charges": 800
   },
   {
     "id": "mx_recon_head_ghost_module_active",
     "copy-from": "mx_recon_head_ghost_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "recon ghost head module (active)" },
-    "description": "A ghost-pattern recon head module offering good head protection without becoming too heavy. It is powered on. [High draw]",
+    "description": "A ghost-pattern recon head module offering good head protection without becoming too heavy. It is powered on. [High draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_recon_head_ghost_module",
@@ -768,13 +904,17 @@
       "menu_text": "Deactivate module"
     },
     "color": "light_white",
-    "flags": [ "GNV_EFFECT" ]
+    "flags": [ "GNV_EFFECT" ],
+    "ammo": [ "battery" ],
+    "max_charges": 800,
+    "initial_charges": 800,
+    "power_draw": "900 W"
   },
   {
     "id": "mx_recon_mouth_whisper_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "recon whisper mouth module" },
-    "description": "A whisper-pattern mouth insert with strong filtering and low encumbrance. [Medium draw]",
+    "description": "A whisper-pattern mouth insert with strong filtering and low encumbrance. [Medium draw] Uses internal battery power when active.",
     "weight": "700 g",
     "volume": "450 ml",
     "price": "13600 USD",
@@ -790,27 +930,34 @@
       "menu_text": "Activate module",
       "active": true
     },
-    "armor": [ { "covers": [ "mouth" ], "coverage": 76, "encumbrance": 1, "material_thickness": 2, "environmental_protection": 8 } ]
+    "armor": [ { "covers": [ "mouth" ], "coverage": 76, "encumbrance": 1, "material_thickness": 2, "environmental_protection": 8 } ],
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500
   },
   {
     "id": "mx_recon_mouth_whisper_module_active",
     "copy-from": "mx_recon_mouth_whisper_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "recon whisper mouth module (active)" },
-    "description": "A whisper-pattern mouth insert with strong filtering and low encumbrance. It is powered on. [Medium draw]",
+    "description": "A whisper-pattern mouth insert with strong filtering and low encumbrance. It is powered on. [Medium draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_recon_mouth_whisper_module",
       "msg": "You deactivate the recon whisper mouth module.",
       "menu_text": "Deactivate module"
     },
-    "flags": [ "GAS_PROOF" ]
+    "flags": [ "GAS_PROOF" ],
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500,
+    "power_draw": "350 W"
   },
   {
     "id": "mx_industrial_torso_loader_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "industrial loader torso module" },
-    "description": "A loader torso core with heavy chest plating for industrial frames. [High draw]",
+    "description": "A loader torso core with heavy chest plating for industrial frames. [High draw] Uses internal battery power when active.",
     "weight": "3100 g",
     "volume": "2 L",
     "price": "16900 USD",
@@ -826,27 +973,34 @@
       "menu_text": "Activate module",
       "active": true
     },
-    "armor": [ { "covers": [ "torso" ], "coverage": 86, "encumbrance": 5, "material_thickness": 7, "environmental_protection": 4 } ]
+    "armor": [ { "covers": [ "torso" ], "coverage": 86, "encumbrance": 5, "material_thickness": 7, "environmental_protection": 4 } ],
+    "ammo": [ "battery" ],
+    "max_charges": 800,
+    "initial_charges": 800
   },
   {
     "id": "mx_industrial_torso_loader_module_active",
     "copy-from": "mx_industrial_torso_loader_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "industrial loader torso module (active)" },
-    "description": "A loader torso core with heavy chest plating for industrial frames. It is powered on. [High draw]",
+    "description": "A loader torso core with heavy chest plating for industrial frames. It is powered on. [High draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_industrial_torso_loader_module",
       "msg": "You deactivate the industrial loader torso module.",
       "menu_text": "Deactivate module"
     },
-    "flags": [ "ELECTRIC_IMMUNE" ]
+    "flags": [ "ELECTRIC_IMMUNE" ],
+    "ammo": [ "battery" ],
+    "max_charges": 800,
+    "initial_charges": 800,
+    "power_draw": "900 W"
   },
   {
     "id": "mx_hazard_head_spectrometer_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "hazard spectrometer head module" },
-    "description": "A sealed head module with added helmet armor and very high environmental protection. [Low draw]",
+    "description": "A sealed head module with added helmet armor and very high environmental protection. [Low draw] Uses internal battery power when active.",
     "weight": "950 g",
     "volume": "650 ml",
     "price": "15300 USD",
@@ -862,27 +1016,34 @@
       "menu_text": "Activate module",
       "active": true
     },
-    "armor": [ { "covers": [ "head" ], "coverage": 82, "encumbrance": 3, "material_thickness": 4, "environmental_protection": 10 } ]
+    "armor": [ { "covers": [ "head" ], "coverage": 82, "encumbrance": 3, "material_thickness": 4, "environmental_protection": 10 } ],
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500
   },
   {
     "id": "mx_hazard_head_spectrometer_module_active",
     "copy-from": "mx_hazard_head_spectrometer_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "hazard spectrometer head module (active)" },
-    "description": "A sealed head module with added helmet armor and very high environmental protection. It is powered on. [Low draw]",
+    "description": "A sealed head module with added helmet armor and very high environmental protection. It is powered on. [Low draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_hazard_head_spectrometer_module",
       "msg": "You deactivate the hazard spectrometer head module.",
       "menu_text": "Deactivate module"
     },
-    "flags": [ "WATCH", "BAROMETER", "HYGROMETER", "RAD_RESIST" ]
+    "flags": [ "WATCH", "BAROMETER", "HYGROMETER", "RAD_RESIST" ],
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500,
+    "power_draw": "350 W"
   },
   {
     "id": "mx_hazard_mouth_rebreather_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "hazard rebreather mouth module" },
-    "description": "A hazard rebreather insert offering some of the best mouth environmental protection in the mod. [Low draw]",
+    "description": "A hazard rebreather insert offering some of the best mouth environmental protection in the mod. [Low draw] Uses internal battery power when active.",
     "weight": "950 g",
     "volume": "550 ml",
     "price": "14600 USD",
@@ -898,14 +1059,17 @@
       "menu_text": "Activate module",
       "active": true
     },
-    "armor": [ { "covers": [ "mouth" ], "coverage": 82, "encumbrance": 2, "material_thickness": 3, "environmental_protection": 12 } ]
+    "armor": [ { "covers": [ "mouth" ], "coverage": 82, "encumbrance": 2, "material_thickness": 3, "environmental_protection": 12 } ],
+    "ammo": [ "battery" ],
+    "max_charges": 300,
+    "initial_charges": 300
   },
   {
     "id": "mx_hazard_mouth_rebreather_module_active",
     "copy-from": "mx_hazard_mouth_rebreather_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "hazard rebreather mouth module (active)" },
-    "description": "A hazard rebreather insert offering some of the best mouth environmental protection in the mod. It is powered on. [Low draw]",
+    "description": "A hazard rebreather insert offering some of the best mouth environmental protection in the mod. It is powered on. [Low draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_hazard_mouth_rebreather_module",
@@ -913,13 +1077,17 @@
       "menu_text": "Deactivate module"
     },
     "color": "light_green",
-    "flags": [ "GAS_PROOF", "RAD_RESIST" ]
+    "flags": [ "GAS_PROOF", "RAD_RESIST" ],
+    "ammo": [ "battery" ],
+    "max_charges": 300,
+    "initial_charges": 300,
+    "power_draw": "120 W"
   },
   {
     "id": "mx_hazard_torso_lifesupport_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "hazard life-support torso module" },
-    "description": "A hazard torso life-support core with strong chest protection and extensive environmental sealing. [Medium draw]",
+    "description": "A hazard torso life-support core with strong chest protection and extensive environmental sealing. [Medium draw] Uses internal battery power when active.",
     "weight": "2900 g",
     "volume": "2 L",
     "price": "17500 USD",
@@ -935,27 +1103,34 @@
       "menu_text": "Activate module",
       "active": true
     },
-    "armor": [ { "covers": [ "torso" ], "coverage": 86, "encumbrance": 5, "material_thickness": 6, "environmental_protection": 8 } ]
+    "armor": [ { "covers": [ "torso" ], "coverage": 86, "encumbrance": 5, "material_thickness": 6, "environmental_protection": 8 } ],
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500
   },
   {
     "id": "mx_hazard_torso_lifesupport_module_active",
     "copy-from": "mx_hazard_torso_lifesupport_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "hazard life-support torso module (active)" },
-    "description": "A hazard torso life-support core with strong chest protection and extensive environmental sealing. It is powered on. [Medium draw]",
+    "description": "A hazard torso life-support core with strong chest protection and extensive environmental sealing. It is powered on. [Medium draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_hazard_torso_lifesupport_module",
       "msg": "You deactivate the hazard life-support torso module.",
       "menu_text": "Deactivate module"
     },
-    "flags": [ "RAINPROOF", "RAD_PROOF", "ELECTRIC_IMMUNE" ]
+    "flags": [ "RAINPROOF", "RAD_PROOF", "ELECTRIC_IMMUNE" ],
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500,
+    "power_draw": "350 W"
   },
   {
     "id": "mx_arms_guard",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "paired arm guard module" },
-    "description": "A paired arm guard for both arms. is a straightforward armor upgrade line with increasing protection and servo support. [Medium draw]",
+    "description": "A paired arm guard for both arms. is a straightforward armor upgrade line with increasing protection and servo support. [Medium draw] Uses internal battery power when active.",
     "weight": "2600 g",
     "volume": "2200 ml",
     "price": "11000 USD",
@@ -979,27 +1154,34 @@
       "msg": "You activate the paired arm guard module.",
       "menu_text": "Activate module",
       "active": true
-    }
+    },
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500
   },
   {
     "id": "mx_arms_guard_active",
     "copy-from": "mx_arms_guard",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "paired arm guard module (active)" },
-    "description": "A paired arm guard for both arms. is a straightforward armor upgrade line with increasing protection and servo support. It is powered on. [Medium draw]",
+    "description": "A paired arm guard for both arms. is a straightforward armor upgrade line with increasing protection and servo support. It is powered on. [Medium draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_arms_guard",
       "msg": "You deactivate the paired arm guard module.",
       "menu_text": "Deactivate module"
     },
-    "flags": [ "BLOCK_WHILE_WORN" ]
+    "flags": [ "BLOCK_WHILE_WORN" ],
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500,
+    "power_draw": "350 W"
   },
   {
     "id": "mx_legs_piston",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "paired leg piston module" },
-    "description": "A paired leg piston set for both legs. improves leg protection while staying practical for everyday use. [Medium draw]",
+    "description": "A paired leg piston set for both legs. improves leg protection while staying practical for everyday use. [Medium draw] Uses internal battery power when active.",
     "weight": "2800 g",
     "volume": "2400 ml",
     "price": "11200 USD",
@@ -1023,26 +1205,33 @@
       "msg": "You activate the paired leg piston module.",
       "menu_text": "Activate module",
       "active": true
-    }
+    },
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500
   },
   {
     "id": "mx_legs_piston_active",
     "copy-from": "mx_legs_piston",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "paired leg piston module (active)" },
-    "description": "A paired leg piston set for both legs. improves leg protection while staying practical for everyday use. It is powered on. [Medium draw]",
+    "description": "A paired leg piston set for both legs. improves leg protection while staying practical for everyday use. It is powered on. [Medium draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_legs_piston",
       "msg": "You deactivate the paired leg piston module.",
       "menu_text": "Deactivate module"
-    }
+    },
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500,
+    "power_draw": "350 W"
   },
   {
     "id": "mx_feet_stabilizer",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "paired foot stabilizer module" },
-    "description": "A paired foot stabilizer set. improves foot armor and footing with modest encumbrance. [Low draw]",
+    "description": "A paired foot stabilizer set. improves foot armor and footing with modest encumbrance. [Low draw] Uses internal battery power when active.",
     "weight": "2200 g",
     "volume": "1800 ml",
     "price": "9800 USD",
@@ -1066,26 +1255,33 @@
       "msg": "You activate the paired foot stabilizer module.",
       "menu_text": "Activate module",
       "active": true
-    }
+    },
+    "ammo": [ "battery" ],
+    "max_charges": 300,
+    "initial_charges": 300
   },
   {
     "id": "mx_feet_stabilizer_active",
     "copy-from": "mx_feet_stabilizer",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "paired foot stabilizer module (active)" },
-    "description": "A paired foot stabilizer set. improves foot armor and footing with modest encumbrance. It is powered on. [Low draw]",
+    "description": "A paired foot stabilizer set. improves foot armor and footing with modest encumbrance. It is powered on. [Low draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_feet_stabilizer",
       "msg": "You deactivate the paired foot stabilizer module.",
       "menu_text": "Deactivate module"
-    }
+    },
+    "ammo": [ "battery" ],
+    "max_charges": 300,
+    "initial_charges": 300,
+    "power_draw": "120 W"
   },
   {
     "id": "mx_torso_harness_mk1",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "torso harness module" },
-    "description": "A torso harness module line. offers rising chest protection and better environmental shielding. [Medium draw]",
+    "description": "A torso harness module line. offers rising chest protection and better environmental shielding. [Medium draw] Uses internal battery power when active.",
     "weight": "3000 g",
     "volume": "2500 ml",
     "price": "12000 USD",
@@ -1101,27 +1297,34 @@
       "msg": "You activate the torso harness module.",
       "menu_text": "Activate module",
       "active": true
-    }
+    },
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500
   },
   {
     "id": "mx_torso_harness_mk1_active",
     "copy-from": "mx_torso_harness_mk1",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "torso harness module (active)" },
-    "description": "A torso harness module line. offers rising chest protection and better environmental shielding. It is powered on. [Medium draw]",
+    "description": "A torso harness module line. offers rising chest protection and better environmental shielding. It is powered on. [Medium draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_torso_harness_mk1",
       "msg": "You deactivate the torso harness module.",
       "menu_text": "Deactivate module"
     },
-    "flags": [ "RAINPROOF" ]
+    "flags": [ "RAINPROOF" ],
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500,
+    "power_draw": "350 W"
   },
   {
     "id": "mx_head_optics_mk1",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "head optics module" },
-    "description": "A universal head module line. adds helmet armor, optics housing, and moderate sealing. [Low draw]",
+    "description": "A universal head module line. adds helmet armor, optics housing, and moderate sealing. [Low draw] Uses internal battery power when active.",
     "weight": "1200 g",
     "volume": "900 ml",
     "price": "10800 USD",
@@ -1137,27 +1340,34 @@
       "msg": "You activate the head optics module.",
       "menu_text": "Activate module",
       "active": true
-    }
+    },
+    "ammo": [ "battery" ],
+    "max_charges": 300,
+    "initial_charges": 300
   },
   {
     "id": "mx_head_optics_mk1_active",
     "copy-from": "mx_head_optics_mk1",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "head optics module (active)" },
-    "description": "A universal head module line. adds helmet armor, optics housing, and moderate sealing. It is powered on. [Low draw]",
+    "description": "A universal head module line. adds helmet armor, optics housing, and moderate sealing. It is powered on. [Low draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_head_optics_mk1",
       "msg": "You deactivate the head optics module.",
       "menu_text": "Deactivate module"
     },
-    "flags": [ "WATCH" ]
+    "flags": [ "WATCH" ],
+    "ammo": [ "battery" ],
+    "max_charges": 300,
+    "initial_charges": 300,
+    "power_draw": "120 W"
   },
   {
     "id": "mx_mouth_respirator_mk1",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "mouth respirator module" },
-    "description": "A universal respirator module line. sharply improves face environmental protection and scales up well into hazardous content. [Low draw]",
+    "description": "A universal respirator module line. sharply improves face environmental protection and scales up well into hazardous content. [Low draw] Uses internal battery power when active.",
     "weight": "900 g",
     "volume": "800 ml",
     "price": "8600 USD",
@@ -1173,27 +1383,34 @@
       "msg": "You activate the mouth respirator module.",
       "menu_text": "Activate module",
       "active": true
-    }
+    },
+    "ammo": [ "battery" ],
+    "max_charges": 300,
+    "initial_charges": 300
   },
   {
     "id": "mx_mouth_respirator_mk1_active",
     "copy-from": "mx_mouth_respirator_mk1",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "mouth respirator module (active)" },
-    "description": "A universal respirator module line. sharply improves face environmental protection and scales up well into hazardous content. It is powered on. [Low draw]",
+    "description": "A universal respirator module line. sharply improves face environmental protection and scales up well into hazardous content. It is powered on. [Low draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_mouth_respirator_mk1",
       "msg": "You deactivate the mouth respirator module.",
       "menu_text": "Deactivate module"
     },
-    "flags": [ "GAS_PROOF" ]
+    "flags": [ "GAS_PROOF" ],
+    "ammo": [ "battery" ],
+    "max_charges": 300,
+    "initial_charges": 300,
+    "power_draw": "120 W"
   },
   {
     "id": "mx_torso_harness_mk2",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "torso harness moduleI" },
-    "description": "A torso harness module line.I offers rising chest protection and better environmental shielding. [Medium draw]",
+    "description": "A torso harness module line.I offers rising chest protection and better environmental shielding. [Medium draw] Uses internal battery power when active.",
     "weight": "3000 g",
     "volume": "2500 ml",
     "price": "12000 USD",
@@ -1209,27 +1426,34 @@
       "msg": "You activate the torso harness moduleI.",
       "menu_text": "Activate module",
       "active": true
-    }
+    },
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500
   },
   {
     "id": "mx_torso_harness_mk2_active",
     "copy-from": "mx_torso_harness_mk2",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "torso harness moduleI (active)" },
-    "description": "A torso harness module line.I offers rising chest protection and better environmental shielding. It is powered on. [Medium draw]",
+    "description": "A torso harness module line.I offers rising chest protection and better environmental shielding. It is powered on. [Medium draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_torso_harness_mk2",
       "msg": "You deactivate the torso harness moduleI.",
       "menu_text": "Deactivate module"
     },
-    "flags": [ "RAINPROOF", "RAD_RESIST" ]
+    "flags": [ "RAINPROOF", "RAD_RESIST" ],
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500,
+    "power_draw": "350 W"
   },
   {
     "id": "mx_head_optics_mk2",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "head optics moduleI" },
-    "description": "A universal head module line.I adds helmet armor, optics housing, and moderate sealing. [Low draw]",
+    "description": "A universal head module line.I adds helmet armor, optics housing, and moderate sealing. [Low draw] Uses internal battery power when active.",
     "weight": "1200 g",
     "volume": "900 ml",
     "price": "10800 USD",
@@ -1245,27 +1469,34 @@
       "msg": "You activate the head optics moduleI.",
       "menu_text": "Activate module",
       "active": true
-    }
+    },
+    "ammo": [ "battery" ],
+    "max_charges": 300,
+    "initial_charges": 300
   },
   {
     "id": "mx_head_optics_mk2_active",
     "copy-from": "mx_head_optics_mk2",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "head optics moduleI (active)" },
-    "description": "A universal head module line.I adds helmet armor, optics housing, and moderate sealing. It is powered on. [Low draw]",
+    "description": "A universal head module line.I adds helmet armor, optics housing, and moderate sealing. It is powered on. [Low draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_head_optics_mk2",
       "msg": "You deactivate the head optics moduleI.",
       "menu_text": "Deactivate module"
     },
-    "flags": [ "WATCH", "GNV_EFFECT" ]
+    "flags": [ "WATCH", "GNV_EFFECT" ],
+    "ammo": [ "battery" ],
+    "max_charges": 300,
+    "initial_charges": 300,
+    "power_draw": "120 W"
   },
   {
     "id": "mx_mouth_respirator_mk2",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "mouth respirator moduleI" },
-    "description": "A universal respirator module line.I sharply improves face environmental protection and scales up well into hazardous content. [Low draw]",
+    "description": "A universal respirator module line.I sharply improves face environmental protection and scales up well into hazardous content. [Low draw] Uses internal battery power when active.",
     "weight": "900 g",
     "volume": "800 ml",
     "price": "8600 USD",
@@ -1281,27 +1512,34 @@
       "msg": "You activate the mouth respirator moduleI.",
       "menu_text": "Activate module",
       "active": true
-    }
+    },
+    "ammo": [ "battery" ],
+    "max_charges": 300,
+    "initial_charges": 300
   },
   {
     "id": "mx_mouth_respirator_mk2_active",
     "copy-from": "mx_mouth_respirator_mk2",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "mouth respirator moduleI (active)" },
-    "description": "A universal respirator module line.I sharply improves face environmental protection and scales up well into hazardous content. It is powered on. [Low draw]",
+    "description": "A universal respirator module line.I sharply improves face environmental protection and scales up well into hazardous content. It is powered on. [Low draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_mouth_respirator_mk2",
       "msg": "You deactivate the mouth respirator moduleI.",
       "menu_text": "Deactivate module"
     },
-    "flags": [ "GAS_PROOF", "RAD_RESIST" ]
+    "flags": [ "GAS_PROOF", "RAD_RESIST" ],
+    "ammo": [ "battery" ],
+    "max_charges": 300,
+    "initial_charges": 300,
+    "power_draw": "120 W"
   },
   {
     "id": "mx_torso_harness_mk3",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "torso harness moduleII" },
-    "description": "A torso harness module line.II offers rising chest protection and better environmental shielding. [Medium draw]",
+    "description": "A torso harness module line.II offers rising chest protection and better environmental shielding. [Medium draw] Uses internal battery power when active.",
     "weight": "3000 g",
     "volume": "2500 ml",
     "price": "12000 USD",
@@ -1317,14 +1555,17 @@
       "msg": "You activate the torso harness moduleII.",
       "menu_text": "Activate module",
       "active": true
-    }
+    },
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500
   },
   {
     "id": "mx_torso_harness_mk3_active",
     "copy-from": "mx_torso_harness_mk3",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "torso harness moduleII (active)" },
-    "description": "A torso harness module line.II offers rising chest protection and better environmental shielding. It is powered on. [Medium draw]",
+    "description": "A torso harness module line.II offers rising chest protection and better environmental shielding. It is powered on. [Medium draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_torso_harness_mk3",
@@ -1332,13 +1573,17 @@
       "menu_text": "Deactivate module"
     },
     "color": "light_white",
-    "flags": [ "RAINPROOF", "RAD_RESIST", "ELECTRIC_IMMUNE" ]
+    "flags": [ "RAINPROOF", "RAD_RESIST", "ELECTRIC_IMMUNE" ],
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500,
+    "power_draw": "350 W"
   },
   {
     "id": "mx_head_optics_mk3",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "head optics moduleII" },
-    "description": "A universal head module line.II adds helmet armor, optics housing, and moderate sealing. [Low draw]",
+    "description": "A universal head module line.II adds helmet armor, optics housing, and moderate sealing. [Low draw] Uses internal battery power when active.",
     "weight": "1200 g",
     "volume": "900 ml",
     "price": "10800 USD",
@@ -1354,14 +1599,17 @@
       "msg": "You activate the head optics moduleII.",
       "menu_text": "Activate module",
       "active": true
-    }
+    },
+    "ammo": [ "battery" ],
+    "max_charges": 300,
+    "initial_charges": 300
   },
   {
     "id": "mx_head_optics_mk3_active",
     "copy-from": "mx_head_optics_mk3",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "head optics moduleII (active)" },
-    "description": "A universal head module line.II adds helmet armor, optics housing, and moderate sealing. It is powered on. [Low draw]",
+    "description": "A universal head module line.II adds helmet armor, optics housing, and moderate sealing. It is powered on. [Low draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_head_optics_mk3",
@@ -1369,13 +1617,17 @@
       "menu_text": "Deactivate module"
     },
     "color": "light_white",
-    "flags": [ "WATCH", "GNV_EFFECT", "IR_EFFECT", "FLASH_PROTECTION" ]
+    "flags": [ "WATCH", "GNV_EFFECT", "IR_EFFECT", "FLASH_PROTECTION" ],
+    "ammo": [ "battery" ],
+    "max_charges": 300,
+    "initial_charges": 300,
+    "power_draw": "120 W"
   },
   {
     "id": "mx_mouth_respirator_mk3",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "mouth respirator moduleII" },
-    "description": "A universal respirator module line.II sharply improves face environmental protection and scales up well into hazardous content. [Low draw]",
+    "description": "A universal respirator module line.II sharply improves face environmental protection and scales up well into hazardous content. [Low draw] Uses internal battery power when active.",
     "weight": "900 g",
     "volume": "800 ml",
     "price": "8600 USD",
@@ -1391,14 +1643,17 @@
       "msg": "You activate the mouth respirator moduleII.",
       "menu_text": "Activate module",
       "active": true
-    }
+    },
+    "ammo": [ "battery" ],
+    "max_charges": 300,
+    "initial_charges": 300
   },
   {
     "id": "mx_mouth_respirator_mk3_active",
     "copy-from": "mx_mouth_respirator_mk3",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "mouth respirator moduleII (active)" },
-    "description": "A universal respirator module line.II sharply improves face environmental protection and scales up well into hazardous content. It is powered on. [Low draw]",
+    "description": "A universal respirator module line.II sharply improves face environmental protection and scales up well into hazardous content. It is powered on. [Low draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_mouth_respirator_mk3",
@@ -1406,13 +1661,17 @@
       "menu_text": "Deactivate module"
     },
     "color": "light_white",
-    "flags": [ "GAS_PROOF", "RAD_RESIST", "RAD_PROOF", "RAINPROOF" ]
+    "flags": [ "GAS_PROOF", "RAD_RESIST", "RAD_PROOF", "RAINPROOF" ],
+    "ammo": [ "battery" ],
+    "max_charges": 300,
+    "initial_charges": 300,
+    "power_draw": "120 W"
   },
   {
     "id": "mx_arms_breacher_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "field breacher arms module" },
-    "description": "A field breacher arm package with high arm coverage and blunt-impact resistance for close-quarters work. [Medium draw]",
+    "description": "A field breacher arm package with high arm coverage and blunt-impact resistance for close-quarters work. [Medium draw] Uses internal battery power when active.",
     "weight": "3000 g",
     "volume": "2400 ml",
     "price": "14500 USD",
@@ -1436,27 +1695,34 @@
       "msg": "You activate the field breacher arms module.",
       "menu_text": "Activate module",
       "active": true
-    }
+    },
+    "ammo": [ "battery" ],
+    "max_charges": 800,
+    "initial_charges": 800
   },
   {
     "id": "mx_arms_breacher_module_active",
     "copy-from": "mx_arms_breacher_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "field breacher arms module (active)" },
-    "description": "A field breacher arm package with high arm coverage and blunt-impact resistance for close-quarters work. It is powered on. [Medium draw]",
+    "description": "A field breacher arm package with high arm coverage and blunt-impact resistance for close-quarters work. It is powered on. [Medium draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_arms_breacher_module",
       "msg": "You deactivate the field breacher arms module.",
       "menu_text": "Deactivate module"
     },
-    "flags": [ "BLOCK_WHILE_WORN" ]
+    "flags": [ "BLOCK_WHILE_WORN" ],
+    "ammo": [ "battery" ],
+    "max_charges": 800,
+    "initial_charges": 800,
+    "power_draw": "900 W"
   },
   {
     "id": "mx_legs_responder_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "field responder legs module" },
-    "description": "A field responder leg package balancing protection and mobility for rescue operations. [Medium draw]",
+    "description": "A field responder leg package balancing protection and mobility for rescue operations. [Medium draw] Uses internal battery power when active.",
     "weight": "3000 g",
     "volume": "2500 ml",
     "price": "14500 USD",
@@ -1480,27 +1746,34 @@
       "msg": "You activate the field responder legs module.",
       "menu_text": "Activate module",
       "active": true
-    }
+    },
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500
   },
   {
     "id": "mx_legs_responder_module_active",
     "copy-from": "mx_legs_responder_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "field responder legs module (active)" },
-    "description": "A field responder leg package balancing protection and mobility for rescue operations. It is powered on. [Medium draw]",
+    "description": "A field responder leg package balancing protection and mobility for rescue operations. It is powered on. [Medium draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_legs_responder_module",
       "msg": "You deactivate the field responder legs module.",
       "menu_text": "Deactivate module"
     },
-    "color": "light_red"
+    "color": "light_red",
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500,
+    "power_draw": "350 W"
   },
   {
     "id": "mx_feet_grip_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "field grip feet module" },
-    "description": "A field grip foot package with sturdier soles and better all-around foot protection. [Low draw]",
+    "description": "A field grip foot package with sturdier soles and better all-around foot protection. [Low draw] Uses internal battery power when active.",
     "weight": "2400 g",
     "volume": "1900 ml",
     "price": "14500 USD",
@@ -1524,26 +1797,33 @@
       "msg": "You activate the field grip feet module.",
       "menu_text": "Activate module",
       "active": true
-    }
+    },
+    "ammo": [ "battery" ],
+    "max_charges": 300,
+    "initial_charges": 300
   },
   {
     "id": "mx_feet_grip_module_active",
     "copy-from": "mx_feet_grip_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "field grip feet module (active)" },
-    "description": "A field grip foot package with sturdier soles and better all-around foot protection. It is powered on. [Low draw]",
+    "description": "A field grip foot package with sturdier soles and better all-around foot protection. It is powered on. [Low draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_feet_grip_module",
       "msg": "You deactivate the field grip feet module.",
       "menu_text": "Deactivate module"
-    }
+    },
+    "ammo": [ "battery" ],
+    "max_charges": 300,
+    "initial_charges": 300,
+    "power_draw": "120 W"
   },
   {
     "id": "mx_arms_sleek_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "recon sleek arms module" },
-    "description": "A recon arms package that favors lower encumbrance over raw armor while still improving arm coverage. [Medium draw]",
+    "description": "A recon arms package that favors lower encumbrance over raw armor while still improving arm coverage. [Medium draw] Uses internal battery power when active.",
     "weight": "2300 g",
     "volume": "2100 ml",
     "price": "14500 USD",
@@ -1567,27 +1847,34 @@
       "msg": "You activate the recon sleek arms module.",
       "menu_text": "Activate module",
       "active": true
-    }
+    },
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500
   },
   {
     "id": "mx_arms_sleek_module_active",
     "copy-from": "mx_arms_sleek_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "recon sleek arms module (active)" },
-    "description": "A recon arms package that favors lower encumbrance over raw armor while still improving arm coverage. It is powered on. [Medium draw]",
+    "description": "A recon arms package that favors lower encumbrance over raw armor while still improving arm coverage. It is powered on. [Medium draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_arms_sleek_module",
       "msg": "You deactivate the recon sleek arms module.",
       "menu_text": "Deactivate module"
     },
-    "color": "light_cyan"
+    "color": "light_cyan",
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500,
+    "power_draw": "350 W"
   },
   {
     "id": "mx_legs_runner_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "recon runner legs module" },
-    "description": "A recon leg package tuned for agile travel with moderate leg armor. [Medium draw]",
+    "description": "A recon leg package tuned for agile travel with moderate leg armor. [Medium draw] Uses internal battery power when active.",
     "weight": "2500 g",
     "volume": "2300 ml",
     "price": "14500 USD",
@@ -1611,26 +1898,33 @@
       "msg": "You activate the recon runner legs module.",
       "menu_text": "Activate module",
       "active": true
-    }
+    },
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500
   },
   {
     "id": "mx_legs_runner_module_active",
     "copy-from": "mx_legs_runner_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "recon runner legs module (active)" },
-    "description": "A recon leg package tuned for agile travel with moderate leg armor. It is powered on. [Medium draw]",
+    "description": "A recon leg package tuned for agile travel with moderate leg armor. It is powered on. [Medium draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_legs_runner_module",
       "msg": "You deactivate the recon runner legs module.",
       "menu_text": "Deactivate module"
-    }
+    },
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500,
+    "power_draw": "350 W"
   },
   {
     "id": "mx_feet_whisper_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "recon whisper feet module" },
-    "description": "A recon foot package with light foot armor aimed at keeping the suit nimble. [Low draw]",
+    "description": "A recon foot package with light foot armor aimed at keeping the suit nimble. [Low draw] Uses internal battery power when active.",
     "weight": "1800 g",
     "volume": "1600 ml",
     "price": "14500 USD",
@@ -1654,14 +1948,17 @@
       "msg": "You activate the recon whisper feet module.",
       "menu_text": "Activate module",
       "active": true
-    }
+    },
+    "ammo": [ "battery" ],
+    "max_charges": 300,
+    "initial_charges": 300
   },
   {
     "id": "mx_feet_whisper_module_active",
     "copy-from": "mx_feet_whisper_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "recon whisper feet module (active)" },
-    "description": "A recon foot package with light foot armor aimed at keeping the suit nimble. It is powered on. [Low draw]",
+    "description": "A recon foot package with light foot armor aimed at keeping the suit nimble. It is powered on. [Low draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_feet_whisper_module",
@@ -1669,13 +1966,17 @@
       "menu_text": "Deactivate module"
     },
     "color": "light_cyan",
-    "flags": [ "FIN" ]
+    "flags": [ "FIN" ],
+    "ammo": [ "battery" ],
+    "max_charges": 300,
+    "initial_charges": 300,
+    "power_draw": "120 W"
   },
   {
     "id": "mx_torso_ghost_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "recon ghost torso module" },
-    "description": "A recon ghost torso package with balanced chest protection and moderate environmental support. [High draw]",
+    "description": "A recon ghost torso package with balanced chest protection and moderate environmental support. [High draw] Uses internal battery power when active.",
     "weight": "2600 g",
     "volume": "2300 ml",
     "price": "14500 USD",
@@ -1691,27 +1992,34 @@
       "msg": "You activate the recon ghost torso module.",
       "menu_text": "Activate module",
       "active": true
-    }
+    },
+    "ammo": [ "battery" ],
+    "max_charges": 800,
+    "initial_charges": 800
   },
   {
     "id": "mx_torso_ghost_module_active",
     "copy-from": "mx_torso_ghost_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "recon ghost torso module (active)" },
-    "description": "A recon ghost torso package with balanced chest protection and moderate environmental support. It is powered on. [High draw]",
+    "description": "A recon ghost torso package with balanced chest protection and moderate environmental support. It is powered on. [High draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_torso_ghost_module",
       "msg": "You deactivate the recon ghost torso module.",
       "menu_text": "Deactivate module"
     },
-    "flags": [ "ACTIVE_CLOAKING" ]
+    "flags": [ "ACTIVE_CLOAKING" ],
+    "ammo": [ "battery" ],
+    "max_charges": 800,
+    "initial_charges": 800,
+    "power_draw": "900 W"
   },
   {
     "id": "mx_arms_lifter_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "industrial lifter arms module" },
-    "description": "A heavy industrial arm package with thick protection on both arms and strong work-oriented structure. [High draw]",
+    "description": "A heavy industrial arm package with thick protection on both arms and strong work-oriented structure. [High draw] Uses internal battery power when active.",
     "weight": "4200 g",
     "volume": "2800 ml",
     "price": "14500 USD",
@@ -1736,14 +2044,17 @@
       "menu_text": "Activate module",
       "active": true
     },
-    "qualities": [ [ "HAMMER", 2 ] ]
+    "qualities": [ [ "HAMMER", 2 ] ],
+    "ammo": [ "battery" ],
+    "max_charges": 800,
+    "initial_charges": 800
   },
   {
     "id": "mx_arms_lifter_module_active",
     "copy-from": "mx_arms_lifter_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "industrial lifter arms module (active)" },
-    "description": "A heavy industrial arm package with thick protection on both arms and strong work-oriented structure. It is powered on. [High draw]",
+    "description": "A heavy industrial arm package with thick protection on both arms and strong work-oriented structure. It is powered on. [High draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_arms_lifter_module",
@@ -1752,13 +2063,17 @@
     },
     "color": "light_yellow",
     "flags": [ "BLOCK_WHILE_WORN" ],
-    "qualities": [ [ "HAMMER", 3 ] ]
+    "qualities": [ [ "HAMMER", 3 ] ],
+    "ammo": [ "battery" ],
+    "max_charges": 800,
+    "initial_charges": 800,
+    "power_draw": "900 W"
   },
   {
     "id": "mx_legs_bracer_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "industrial bracer legs module" },
-    "description": "An industrial bracer leg package emphasizing high leg durability over nimbleness. [Medium draw]",
+    "description": "An industrial bracer leg package emphasizing high leg durability over nimbleness. [Medium draw] Uses internal battery power when active.",
     "weight": "4200 g",
     "volume": "3000 ml",
     "price": "14500 USD",
@@ -1782,27 +2097,34 @@
       "msg": "You activate the industrial bracer legs module.",
       "menu_text": "Activate module",
       "active": true
-    }
+    },
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500
   },
   {
     "id": "mx_legs_bracer_module_active",
     "copy-from": "mx_legs_bracer_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "industrial bracer legs module (active)" },
-    "description": "An industrial bracer leg package emphasizing high leg durability over nimbleness. It is powered on. [Medium draw]",
+    "description": "An industrial bracer leg package emphasizing high leg durability over nimbleness. It is powered on. [Medium draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_legs_bracer_module",
       "msg": "You deactivate the industrial bracer legs module.",
       "menu_text": "Deactivate module"
     },
-    "color": "light_yellow"
+    "color": "light_yellow",
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500,
+    "power_draw": "350 W"
   },
   {
     "id": "mx_feet_plating_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "industrial plated feet module" },
-    "description": "A plated industrial foot package built for rough floors, debris, and heavy stance support. [Medium draw]",
+    "description": "A plated industrial foot package built for rough floors, debris, and heavy stance support. [Medium draw] Uses internal battery power when active.",
     "weight": "3000 g",
     "volume": "2200 ml",
     "price": "14500 USD",
@@ -1826,27 +2148,34 @@
       "msg": "You activate the industrial plated feet module.",
       "menu_text": "Activate module",
       "active": true
-    }
+    },
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500
   },
   {
     "id": "mx_feet_plating_module_active",
     "copy-from": "mx_feet_plating_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "industrial plated feet module (active)" },
-    "description": "A plated industrial foot package built for rough floors, debris, and heavy stance support. It is powered on. [Medium draw]",
+    "description": "A plated industrial foot package built for rough floors, debris, and heavy stance support. It is powered on. [Medium draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_feet_plating_module",
       "msg": "You deactivate the industrial plated feet module.",
       "menu_text": "Deactivate module"
     },
-    "color": "light_brown"
+    "color": "light_brown",
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500,
+    "power_draw": "350 W"
   },
   {
     "id": "mx_arms_sealed_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "hazard sealed arms module" },
-    "description": "A sealed hazard arm package that combines solid protection with high environmental coverage. [Medium draw]",
+    "description": "A sealed hazard arm package that combines solid protection with high environmental coverage. [Medium draw] Uses internal battery power when active.",
     "weight": "3100 g",
     "volume": "2500 ml",
     "price": "14500 USD",
@@ -1870,26 +2199,33 @@
       "msg": "You activate the hazard sealed arms module.",
       "menu_text": "Activate module",
       "active": true
-    }
+    },
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500
   },
   {
     "id": "mx_arms_sealed_module_active",
     "copy-from": "mx_arms_sealed_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "hazard sealed arms module (active)" },
-    "description": "A sealed hazard arm package that combines solid protection with high environmental coverage. It is powered on. [Medium draw]",
+    "description": "A sealed hazard arm package that combines solid protection with high environmental coverage. It is powered on. [Medium draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_arms_sealed_module",
       "msg": "You deactivate the hazard sealed arms module.",
       "menu_text": "Deactivate module"
-    }
+    },
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500,
+    "power_draw": "350 W"
   },
   {
     "id": "mx_legs_sealed_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "hazard sealed legs module" },
-    "description": "A sealed hazard leg package for contaminated environments, giving strong protection and sealing. [Medium draw]",
+    "description": "A sealed hazard leg package for contaminated environments, giving strong protection and sealing. [Medium draw] Uses internal battery power when active.",
     "weight": "3200 g",
     "volume": "2600 ml",
     "price": "14500 USD",
@@ -1913,27 +2249,34 @@
       "msg": "You activate the hazard sealed legs module.",
       "menu_text": "Activate module",
       "active": true
-    }
+    },
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500
   },
   {
     "id": "mx_legs_sealed_module_active",
     "copy-from": "mx_legs_sealed_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "hazard sealed legs module (active)" },
-    "description": "A sealed hazard leg package for contaminated environments, giving strong protection and sealing. It is powered on. [Medium draw]",
+    "description": "A sealed hazard leg package for contaminated environments, giving strong protection and sealing. It is powered on. [Medium draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_legs_sealed_module",
       "msg": "You deactivate the hazard sealed legs module.",
       "menu_text": "Deactivate module"
     },
-    "color": "light_green"
+    "color": "light_green",
+    "ammo": [ "battery" ],
+    "max_charges": 500,
+    "initial_charges": 500,
+    "power_draw": "350 W"
   },
   {
     "id": "mx_feet_waders_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "hazard wader feet module" },
-    "description": "A hazard foot package built to keep the lower suit protected in wet, dirty, and contaminated terrain. [Low draw]",
+    "description": "A hazard foot package built to keep the lower suit protected in wet, dirty, and contaminated terrain. [Low draw] Uses internal battery power when active.",
     "weight": "2500 g",
     "volume": "1900 ml",
     "price": "14500 USD",
@@ -1957,27 +2300,34 @@
       "msg": "You activate the hazard wader feet module.",
       "menu_text": "Activate module",
       "active": true
-    }
+    },
+    "ammo": [ "battery" ],
+    "max_charges": 300,
+    "initial_charges": 300
   },
   {
     "id": "mx_feet_waders_module_active",
     "copy-from": "mx_feet_waders_module",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "hazard wader feet module (active)" },
-    "description": "A hazard foot package built to keep the lower suit protected in wet, dirty, and contaminated terrain. It is powered on. [Low draw]",
+    "description": "A hazard foot package built to keep the lower suit protected in wet, dirty, and contaminated terrain. It is powered on. [Low draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_feet_waders_module",
       "msg": "You deactivate the hazard wader feet module.",
       "menu_text": "Deactivate module"
     },
-    "flags": [ "FLOTATION", "RAINPROOF" ]
+    "flags": [ "FLOTATION", "RAINPROOF" ],
+    "ammo": [ "battery" ],
+    "max_charges": 300,
+    "initial_charges": 300,
+    "power_draw": "120 W"
   },
   {
     "id": "mx_field_combat_stim_torso",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "field combat stim torso module" },
-    "description": "A high-end field torso core built around emergency injectors, shock damping, and combat-support systems. [High draw]",
+    "description": "A high-end field torso core built around emergency injectors, shock damping, and combat-support systems. [High draw] Uses internal battery power when active.",
     "weight": "2900 g",
     "volume": "2400 ml",
     "price": "22000 USD",
@@ -1993,27 +2343,34 @@
       "msg": "You activate the field combat stim torso module.",
       "menu_text": "Activate module",
       "active": true
-    }
+    },
+    "ammo": [ "battery" ],
+    "max_charges": 800,
+    "initial_charges": 800
   },
   {
     "id": "mx_field_combat_stim_torso_active",
     "copy-from": "mx_field_combat_stim_torso",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "field combat stim torso module (active)" },
-    "description": "A high-end field torso core built around emergency injectors, shock damping, and combat-support systems. It is powered on. [High draw]",
+    "description": "A high-end field torso core built around emergency injectors, shock damping, and combat-support systems. It is powered on. [High draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_field_combat_stim_torso",
       "msg": "You deactivate the field combat stim torso module.",
       "menu_text": "Deactivate module"
     },
-    "flags": [ "ELECTRIC_IMMUNE", "FLASH_PROTECTION" ]
+    "flags": [ "ELECTRIC_IMMUNE", "FLASH_PROTECTION" ],
+    "ammo": [ "battery" ],
+    "max_charges": 800,
+    "initial_charges": 800,
+    "power_draw": "900 W"
   },
   {
     "id": "mx_recon_cloak_torso",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "recon cloaking torso module" },
-    "description": "A rare recon torso core with light-bending panels and silent stabilization hardware. [High draw]",
+    "description": "A rare recon torso core with light-bending panels and silent stabilization hardware. [High draw] Uses internal battery power when active.",
     "weight": "2500 g",
     "volume": "2200 ml",
     "price": "26000 USD",
@@ -2029,27 +2386,34 @@
       "msg": "You activate the recon cloaking torso module.",
       "menu_text": "Activate module",
       "active": true
-    }
+    },
+    "ammo": [ "battery" ],
+    "max_charges": 800,
+    "initial_charges": 800
   },
   {
     "id": "mx_recon_cloak_torso_active",
     "copy-from": "mx_recon_cloak_torso",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "recon cloaking torso module (active)" },
-    "description": "A rare recon torso core with light-bending panels and silent stabilization hardware. It is powered on. [High draw]",
+    "description": "A rare recon torso core with light-bending panels and silent stabilization hardware. It is powered on. [High draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_recon_cloak_torso",
       "msg": "You deactivate the recon cloaking torso module.",
       "menu_text": "Deactivate module"
     },
-    "flags": [ "ACTIVE_CLOAKING" ]
+    "flags": [ "ACTIVE_CLOAKING" ],
+    "ammo": [ "battery" ],
+    "max_charges": 800,
+    "initial_charges": 800,
+    "power_draw": "900 W"
   },
   {
     "id": "mx_recon_thermal_head",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "recon thermal tracker head module" },
-    "description": "An elite recon optics package combining thermal tracking, low-light enhancement, and sensor watch functions. [High draw]",
+    "description": "An elite recon optics package combining thermal tracking, low-light enhancement, and sensor watch functions. [High draw] Uses internal battery power when active.",
     "weight": "1200 g",
     "volume": "900 ml",
     "price": "24000 USD",
@@ -2065,27 +2429,34 @@
       "msg": "You activate the recon thermal tracker head module.",
       "menu_text": "Activate module",
       "active": true
-    }
+    },
+    "ammo": [ "battery" ],
+    "max_charges": 800,
+    "initial_charges": 800
   },
   {
     "id": "mx_recon_thermal_head_active",
     "copy-from": "mx_recon_thermal_head",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "recon thermal tracker head module (active)" },
-    "description": "An elite recon optics package combining thermal tracking, low-light enhancement, and sensor watch functions. It is powered on. [High draw]",
+    "description": "An elite recon optics package combining thermal tracking, low-light enhancement, and sensor watch functions. It is powered on. [High draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_recon_thermal_head",
       "msg": "You deactivate the recon thermal tracker head module.",
       "menu_text": "Deactivate module"
     },
-    "flags": [ "WATCH", "GNV_EFFECT", "IR_EFFECT" ]
+    "flags": [ "WATCH", "GNV_EFFECT", "IR_EFFECT" ],
+    "ammo": [ "battery" ],
+    "max_charges": 800,
+    "initial_charges": 800,
+    "power_draw": "900 W"
   },
   {
     "id": "mx_industrial_overdrive_arms",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "industrial overdrive arms module" },
-    "description": "A top-tier industrial arm package built for brutal lifting loads, impact work, and powered tool support. [High draw]",
+    "description": "A top-tier industrial arm package built for brutal lifting loads, impact work, and powered tool support. [High draw] Uses internal battery power when active.",
     "weight": "4600 g",
     "volume": "3000 ml",
     "price": "25000 USD",
@@ -2110,14 +2481,17 @@
       "msg": "You activate the industrial overdrive arms module.",
       "menu_text": "Activate module",
       "active": true
-    }
+    },
+    "ammo": [ "battery" ],
+    "max_charges": 800,
+    "initial_charges": 800
   },
   {
     "id": "mx_industrial_overdrive_arms_active",
     "copy-from": "mx_industrial_overdrive_arms",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "industrial overdrive arms module (active)" },
-    "description": "A top-tier industrial arm package built for brutal lifting loads, impact work, and powered tool support. It is powered on. [High draw]",
+    "description": "A top-tier industrial arm package built for brutal lifting loads, impact work, and powered tool support. It is powered on. [High draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_industrial_overdrive_arms",
@@ -2125,13 +2499,17 @@
       "menu_text": "Deactivate module"
     },
     "flags": [ "BLOCK_WHILE_WORN" ],
-    "qualities": [ [ "HAMMER", 4 ], [ "WRENCH", 3 ] ]
+    "qualities": [ [ "HAMMER", 4 ], [ "WRENCH", 3 ] ],
+    "ammo": [ "battery" ],
+    "max_charges": 800,
+    "initial_charges": 800,
+    "power_draw": "900 W"
   },
   {
     "id": "mx_hazard_fullseal_torso",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "hazard full-seal torso module" },
-    "description": "A rare hazard torso core that seals suit interfaces and drives extreme environmental protection systems. [High draw]",
+    "description": "A rare hazard torso core that seals suit interfaces and drives extreme environmental protection systems. [High draw] Uses internal battery power when active.",
     "weight": "3200 g",
     "volume": "2500 ml",
     "price": "28000 USD",
@@ -2147,27 +2525,34 @@
       "msg": "You activate the hazard full-seal torso module.",
       "menu_text": "Activate module",
       "active": true
-    }
+    },
+    "ammo": [ "battery" ],
+    "max_charges": 800,
+    "initial_charges": 800
   },
   {
     "id": "mx_hazard_fullseal_torso_active",
     "copy-from": "mx_hazard_fullseal_torso",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "hazard full-seal torso module (active)" },
-    "description": "A rare hazard torso core that seals suit interfaces and drives extreme environmental protection systems. It is powered on. [High draw]",
+    "description": "A rare hazard torso core that seals suit interfaces and drives extreme environmental protection systems. It is powered on. [High draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_hazard_fullseal_torso",
       "msg": "You deactivate the hazard full-seal torso module.",
       "menu_text": "Deactivate module"
     },
-    "flags": [ "GAS_PROOF", "RAD_PROOF", "RAINPROOF", "ELECTRIC_IMMUNE" ]
+    "flags": [ "GAS_PROOF", "RAD_PROOF", "RAINPROOF", "ELECTRIC_IMMUNE" ],
+    "ammo": [ "battery" ],
+    "max_charges": 800,
+    "initial_charges": 800,
+    "power_draw": "900 W"
   },
   {
     "id": "mx_field_breach_arms",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "field breach arms module" },
-    "description": "An elite field breaching arm package with reinforced impact plates and powered bracing for violent entry work. [High draw]",
+    "description": "An elite field breaching arm package with reinforced impact plates and powered bracing for violent entry work. [High draw] Uses internal battery power when active.",
     "weight": "3400 g",
     "volume": "2500 ml",
     "price": "21000 USD",
@@ -2191,20 +2576,27 @@
       "msg": "You activate the field breach arms module.",
       "menu_text": "Activate module",
       "active": true
-    }
+    },
+    "ammo": [ "battery" ],
+    "max_charges": 800,
+    "initial_charges": 800
   },
   {
     "id": "mx_field_breach_arms_active",
     "copy-from": "mx_field_breach_arms",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "name": { "str": "field breach arms module (active)" },
-    "description": "An elite field breaching arm package with reinforced impact plates and powered bracing for violent entry work. It is powered on. [High draw]",
+    "description": "An elite field breaching arm package with reinforced impact plates and powered bracing for violent entry work. It is powered on. [High draw] Uses internal battery power when active. Uses internal battery power while active.",
     "use_action": {
       "type": "transform",
       "target": "mx_field_breach_arms",
       "msg": "You deactivate the field breach arms module.",
       "menu_text": "Deactivate module"
     },
-    "flags": [ "BLOCK_WHILE_WORN" ]
+    "flags": [ "BLOCK_WHILE_WORN" ],
+    "ammo": [ "battery" ],
+    "max_charges": 800,
+    "initial_charges": 800,
+    "power_draw": "900 W"
   }
 ]
