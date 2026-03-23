@@ -1,116 +1,9 @@
 [
   {
-    "id": "mx_servo_arm",
-    "type": "TOOL_ARMOR",
-    "category": "exosuit",
-    "name": { "str": "servo arm module" },
-    "description": "A paired powered arm module that reinforces both arms.  improves bash resistance and arm coverage while its diagnostics routine gives a short confidence kick.",
-    "weight": "2200 g",
-    "volume": "1250 ml",
-    "price": "9500 USD",
-    "price_postapoc": "500 USD",
-    "material": [ "steel", "plastic" ],
-    "symbol": "]",
-    "color": "light_gray",
-    "flags": [ "MX_ARM_MODULE", "MX_ALLSUIT_MODULE", "CANT_WEAR" ],
-    "use_action": {
-      "type": "transform",
-      "target": "mx_servo_arm_active",
-      "msg": "You activate the servo arm module",
-      "menu_text": "Activate module",
-      "active": true
-    },
-    "armor": [
-      {
-        "covers": [ "arm_l", "arm_r" ],
-        "coverage": 78,
-        "encumbrance": 4,
-        "material_thickness": 5,
-        "environmental_protection": 3
-      }
-    ],
-    "ammo": [ "battery" ],
-    "max_charges": 800,
-    "initial_charges": 800
-  },
-  {
-    "id": "mx_servo_arm_active",
-    "copy-from": "mx_servo_arm",
-    "type": "TOOL_ARMOR",
-    "category": "exosuit",
-    "name": { "str": "servo arm module (active)" },
-    "description": "A paired powered arm module that reinforces both arms.  improves bash resistance and arm coverage while its diagnostics routine gives a short confidence kick. It is powered on.",
-    "use_action": {
-      "type": "transform",
-      "target": "mx_servo_arm",
-      "msg": "You deactivate the servo arm module.",
-      "menu_text": "Deactivate module"
-    },
-    "flags": [ "BLOCK_WHILE_WORN" ],
-    "ammo": [ "battery" ],
-    "max_charges": 800,
-    "initial_charges": 800,
-    "power_draw": "900 W"
-  },
-  {
-    "id": "mx_sprint_legs",
-    "type": "TOOL_ARMOR",
-    "category": "exosuit",
-    "name": { "str": "sprint actuator module" },
-    "description": "A paired leg actuator module for both legs. Mk.I adds light leg armor and stabilizes movement under load.",
-    "weight": "1800 g",
-    "volume": "1200 ml",
-    "price": "8800 USD",
-    "price_postapoc": "450 USD",
-    "material": [ "steel", "plastic" ],
-    "symbol": "]",
-    "color": "cyan",
-    "flags": [ "MX_LEG_MODULE", "MX_ALLSUIT_MODULE", "CANT_WEAR" ],
-    "use_action": {
-      "type": "transform",
-      "target": "mx_sprint_legs_active",
-      "msg": "You activate the sprint actuator module",
-      "menu_text": "Activate module",
-      "active": true
-    },
-    "armor": [
-      {
-        "covers": [ "leg_l", "leg_r" ],
-        "coverage": 76,
-        "encumbrance": 4,
-        "material_thickness": 4,
-        "environmental_protection": 3
-      }
-    ],
-    "ammo": [ "battery" ],
-    "max_charges": 500,
-    "initial_charges": 500
-  },
-  {
-    "id": "mx_sprint_legs_active",
-    "copy-from": "mx_sprint_legs",
-    "type": "TOOL_ARMOR",
-    "category": "exosuit",
-    "name": { "str": "sprint actuator module (active)" },
-    "description": "A paired leg actuator module for both legs. adds light leg armor and stabilizes movement under load. It is powered on.",
-    "use_action": {
-      "type": "transform",
-      "target": "mx_sprint_legs",
-      "msg": "You deactivate the sprint actuator module",
-      "menu_text": "Deactivate module"
-    },
-    "color": "light_cyan",
-    "ammo": [ "battery" ],
-    "max_charges": 500,
-    "initial_charges": 500,
-    "power_draw": "350 W"
-  },
-  {
     "id": "mx_toolkit_module_mk1",
     "type": "TOOL_ARMOR",
     "name": { "str": "integrated toolkit module Mk.I" },
     "description": "A chest-mounted maintenance module. Mk.I adds small torso protection and counts as a compact field toolkit with screw, wrench, and hammer utility.",
-    "category": "exosuit",
     "weight": "2400 g",
     "volume": "1750 ml",
     "price": "9900 USD",
@@ -130,7 +23,8 @@
     "qualities": [ [ "SCREW", 1 ], [ "WRENCH", 1 ], [ "HAMMER", 1 ] ],
     "ammo": [ "battery" ],
     "max_charges": 500,
-    "initial_charges": 500
+    "initial_charges": 500,
+    "category": "exosuit"
   },
   {
     "id": "mx_toolkit_module_mk1_active",
@@ -138,7 +32,6 @@
     "type": "TOOL_ARMOR",
     "name": { "str": "integrated toolkit module Mk.I (active)" },
     "description": "A chest-mounted maintenance module. Mk.I adds small torso protection and counts as a compact field toolkit with screw, wrench, and hammer utility. It is powered on.",
-    "category": "exosuit",
     "use_action": {
       "type": "transform",
       "target": "mx_toolkit_module_mk1",
@@ -149,14 +42,14 @@
     "ammo": [ "battery" ],
     "max_charges": 500,
     "initial_charges": 500,
-    "power_draw": "350 W"
+    "power_draw": "350 W",
+    "category": "exosuit"
   },
   {
     "id": "mx_toolkit_module_mk2",
     "type": "TOOL_ARMOR",
     "name": { "str": "integrated toolkit module Mk.II" },
     "description": "A chest-mounted maintenance module. Mk.II adds small torso protection and counts as a compact field toolkit with screw, wrench, and hammer utility.",
-    "category": "exosuit",
     "weight": "2550 g",
     "volume": "1750 ml",
     "price": "13600 USD",
@@ -176,7 +69,8 @@
     "qualities": [ [ "SCREW", 2 ], [ "WRENCH", 2 ], [ "HAMMER", 2 ] ],
     "ammo": [ "battery" ],
     "max_charges": 500,
-    "initial_charges": 500
+    "initial_charges": 500,
+    "category": "exosuit"
   },
   {
     "id": "mx_toolkit_module_mk2_active",
@@ -184,7 +78,6 @@
     "type": "TOOL_ARMOR",
     "name": { "str": "integrated toolkit module Mk.II (active)" },
     "description": "A chest-mounted maintenance module. Mk.II adds small torso protection and counts as a compact field toolkit with screw, wrench, and hammer utility. It is powered on.",
-    "category": "exosuit",
     "use_action": {
       "type": "transform",
       "target": "mx_toolkit_module_mk2",
@@ -196,14 +89,14 @@
     "ammo": [ "battery" ],
     "max_charges": 500,
     "initial_charges": 500,
-    "power_draw": "350 W"
+    "power_draw": "350 W",
+    "category": "exosuit"
   },
   {
     "id": "mx_toolkit_module_mk3",
     "type": "TOOL_ARMOR",
     "name": { "str": "integrated toolkit module Mk.III" },
     "description": "A chest-mounted maintenance module. Mk.III adds small torso protection and counts as a compact field toolkit with screw, wrench, and hammer utility.",
-    "category": "exosuit",
     "weight": "2650 g",
     "volume": "1750 ml",
     "price": "17800 USD",
@@ -223,7 +116,8 @@
     "qualities": [ [ "SCREW", 3 ], [ "WRENCH", 3 ], [ "HAMMER", 3 ] ],
     "ammo": [ "battery" ],
     "max_charges": 500,
-    "initial_charges": 500
+    "initial_charges": 500,
+    "category": "exosuit"
   },
   {
     "id": "mx_toolkit_module_mk3_active",
@@ -231,7 +125,6 @@
     "type": "TOOL_ARMOR",
     "name": { "str": "integrated toolkit module Mk.III (active)" },
     "description": "A chest-mounted maintenance module. Mk.III adds small torso protection and counts as a compact field toolkit with screw, wrench, and hammer utility. It is powered on.",
-    "category": "exosuit",
     "use_action": {
       "type": "transform",
       "target": "mx_toolkit_module_mk3",
@@ -243,445 +136,14 @@
     "ammo": [ "battery" ],
     "max_charges": 500,
     "initial_charges": 500,
-    "power_draw": "350 W"
-  },
-  {
-    "id": "mx_power_optimizer",
-    "type": "TOOL_ARMOR",
-    "category": "exosuit",
-    "name": { "str": "power optimizer module" },
-    "description": "A power-routing torso module that hardens the suit core against glancing hits. mainly serves as a protective chest insert with system diagnostics.",
-    "weight": "1600 g",
-    "volume": "1300 ml",
-    "price": "10200 USD",
-    "price_postapoc": "575 USD",
-    "material": [ "steel", "plastic" ],
-    "symbol": "]",
-    "color": "light_blue",
-    "flags": [ "MX_UTILITY_MODULE", "MX_ALLSUIT_MODULE", "CANT_WEAR" ],
-    "use_action": {
-      "type": "transform",
-      "target": "mx_power_optimizer_active",
-      "msg": "You activate the power optimizer module",
-      "menu_text": "Activate module",
-      "active": true
-    },
-    "armor": [ { "covers": [ "torso" ], "coverage": 55, "encumbrance": 3, "material_thickness": 3, "environmental_protection": 3 } ],
-    "ammo": [ "battery" ],
-    "max_charges": 500,
-    "initial_charges": 500
-  },
-  {
-    "id": "mx_power_optimizer_active",
-    "copy-from": "mx_power_optimizer",
-    "type": "TOOL_ARMOR",
-    "category": "exosuit",
-    "name": { "str": "power optimizer module (active)" },
-    "description": "A power-routing torso module that hardens the suit core against glancing hits. mainly serves as a protective chest insert with system diagnostics. It is powered on.",
-    "use_action": {
-      "type": "transform",
-      "target": "mx_power_optimizer",
-      "msg": "You deactivate the power optimizer module.",
-      "menu_text": "Deactivate module"
-    },
-    "flags": [ "BAROMETER", "HYGROMETER", "WATCH" ],
-    "ammo": [ "battery" ],
-    "max_charges": 500,
-    "initial_charges": 500,
-    "power_draw": "350 W"
-  },
-  {
-    "id": "mx_optics_helmet_mk1",
-    "type": "TOOL_ARMOR",
-    "name": { "str": "optics helmet module Mk.I" },
-    "description": "A helmet optics package for all compatible suits. Mk.I adds increasing head protection and environmental sealing.",
-    "category": "exosuit",
-    "weight": "900 g",
-    "volume": "750 ml",
-    "price": "11000 USD",
-    "price_postapoc": "600 USD",
-    "material": [ "plastic", "steel" ],
-    "symbol": "]",
-    "color": "light_blue",
-    "flags": [ "MX_HELMET_MODULE", "MX_ALLSUIT_MODULE", "CANT_WEAR" ],
-    "use_action": {
-      "type": "transform",
-      "target": "mx_optics_helmet_mk1_active",
-      "msg": "You activate the optics helmet module.",
-      "menu_text": "Activate module",
-      "active": true
-    },
-    "armor": [ { "covers": [ "head" ], "coverage": 74, "encumbrance": 3, "material_thickness": 4, "environmental_protection": 4 } ],
-    "ammo": [ "battery" ],
-    "max_charges": 300,
-    "initial_charges": 300
-  },
-  {
-    "id": "mx_optics_helmet_mk1_active",
-    "copy-from": "mx_optics_helmet_mk1",
-    "type": "TOOL_ARMOR",
-    "name": { "str": "optics helmet module Mk.I (active)" },
-    "description": "A helmet optics package for all compatible suits. Mk.I adds increasing head protection and environmental sealing. It is powered on.",
-    "category": "exosuit",
-    "use_action": {
-      "type": "transform",
-      "target": "mx_optics_helmet_mk1",
-      "msg": "You deactivate the optics helmet module.",
-      "menu_text": "Deactivate module"
-    },
-    "flags": [ "WATCH" ],
-    "ammo": [ "battery" ],
-    "max_charges": 300,
-    "initial_charges": 300,
-    "power_draw": "120 W"
-  },
-  {
-    "id": "mx_optics_helmet_mk2",
-    "type": "TOOL_ARMOR",
-    "name": { "str": "optics helmet module Mk.II" },
-    "description": "A helmet optics package for all compatible suits. Mk.II adds increasing head protection and environmental sealing.",
-    "category": "exosuit",
-    "weight": "950 g",
-    "volume": "750 ml",
-    "price": "14500 USD",
-    "price_postapoc": "725 USD",
-    "material": [ "plastic", "steel" ],
-    "symbol": "]",
-    "color": "blue",
-    "flags": [ "MX_HELMET_MODULE", "MX_ALLSUIT_MODULE", "CANT_WEAR" ],
-    "use_action": {
-      "type": "transform",
-      "target": "mx_optics_helmet_mk2_active",
-      "msg": "You activate the optics helmet moduleI.",
-      "menu_text": "Activate module",
-      "active": true
-    },
-    "armor": [ { "covers": [ "head" ], "coverage": 80, "encumbrance": 4, "material_thickness": 5, "environmental_protection": 5 } ],
-    "ammo": [ "battery" ],
-    "max_charges": 300,
-    "initial_charges": 300
-  },
-  {
-    "id": "mx_optics_helmet_mk2_active",
-    "copy-from": "mx_optics_helmet_mk2",
-    "type": "TOOL_ARMOR",
-    "name": { "str": "optics helmet module Mk.II (active)" },
-    "description": "A helmet optics package for all compatible suits. Mk.II adds increasing head protection and environmental sealing. It is powered on.",
-    "category": "exosuit",
-    "use_action": {
-      "type": "transform",
-      "target": "mx_optics_helmet_mk2",
-      "msg": "You deactivate the optics helmet moduleI.",
-      "menu_text": "Deactivate module"
-    },
-    "color": "light_blue",
-    "flags": [ "GNV_EFFECT", "WATCH" ],
-    "ammo": [ "battery" ],
-    "max_charges": 300,
-    "initial_charges": 300,
-    "power_draw": "120 W"
-  },
-  {
-    "id": "mx_optics_helmet_mk3",
-    "type": "TOOL_ARMOR",
-    "name": { "str": "optics helmet module Mk.III" },
-    "description": "A helmet optics package for all compatible suits. Mk.III adds increasing head protection and environmental sealing.",
-    "category": "exosuit",
-    "weight": "1000 g",
-    "volume": "750 ml",
-    "price": "18900 USD",
-    "price_postapoc": "900 USD",
-    "material": [ "plastic", "steel" ],
-    "symbol": "]",
-    "color": "white",
-    "flags": [ "MX_HELMET_MODULE", "MX_ALLSUIT_MODULE", "CANT_WEAR" ],
-    "use_action": {
-      "type": "transform",
-      "target": "mx_optics_helmet_mk3_active",
-      "msg": "You activate the optics helmet moduleII.",
-      "menu_text": "Activate module",
-      "active": true
-    },
-    "armor": [ { "covers": [ "head" ], "coverage": 86, "encumbrance": 5, "material_thickness": 6, "environmental_protection": 6 } ],
-    "ammo": [ "battery" ],
-    "max_charges": 300,
-    "initial_charges": 300
-  },
-  {
-    "id": "mx_optics_helmet_mk3_active",
-    "copy-from": "mx_optics_helmet_mk3",
-    "type": "TOOL_ARMOR",
-    "name": { "str": "optics helmet module Mk.III (active)" },
-    "description": "A helmet optics package for all compatible suits. Mk.III adds increasing head protection and environmental sealing. It is powered on.",
-    "category": "exosuit",
-    "use_action": {
-      "type": "transform",
-      "target": "mx_optics_helmet_mk3",
-      "msg": "You deactivate the optics helmet moduleII.",
-      "menu_text": "Deactivate module"
-    },
-    "color": "light_white",
-    "flags": [ "WATCH", "GNV_EFFECT", "IR_EFFECT", "FLASH_PROTECTION" ],
-    "ammo": [ "battery" ],
-    "max_charges": 300,
-    "initial_charges": 300,
-    "power_draw": "120 W"
-  },
-  {
-    "id": "mx_field_shockframe_module",
-    "type": "TOOL_ARMOR",
-    "category": "exosuit",
-    "name": { "str": "shockframe brace module" },
-    "description": "A reinforced torso brace for impact management. It improves torso bash protection and steadies the wearer under heavy blows.",
-    "weight": "2100 g",
-    "volume": "1450 ml",
-    "price": "11900 USD",
-    "price_postapoc": "650 USD",
-    "material": [ "steel", "plastic" ],
-    "symbol": "]",
-    "color": "light_red",
-    "flags": [ "MX_ARM_MODULE", "MX_FIELD_SPECIAL", "CANT_WEAR" ],
-    "use_action": {
-      "type": "transform",
-      "target": "mx_field_shockframe_module_active",
-      "msg": "You activate the shockframe brace module.",
-      "menu_text": "Activate module",
-      "active": true
-    },
-    "armor": [ { "covers": [ "torso" ], "coverage": 78, "encumbrance": 4, "material_thickness": 5, "environmental_protection": 3 } ],
-    "ammo": [ "battery" ],
-    "max_charges": 500,
-    "initial_charges": 500
-  },
-  {
-    "id": "mx_field_shockframe_module_active",
-    "copy-from": "mx_field_shockframe_module",
-    "type": "TOOL_ARMOR",
-    "category": "exosuit",
-    "name": { "str": "shockframe brace module (active)" },
-    "description": "A reinforced torso brace for impact management. It improves torso bash protection and steadies the wearer under heavy blows. It is powered on.",
-    "use_action": {
-      "type": "transform",
-      "target": "mx_field_shockframe_module",
-      "msg": "You deactivate the shockframe brace module.",
-      "menu_text": "Deactivate module"
-    },
-    "flags": [ "BLOCK_WHILE_WORN" ],
-    "ammo": [ "battery" ],
-    "max_charges": 500,
-    "initial_charges": 500,
-    "power_draw": "350 W"
-  },
-  {
-    "id": "mx_recon_silencerig_module",
-    "type": "TOOL_ARMOR",
-    "category": "exosuit",
-    "name": { "str": "silent step rig" },
-    "description": "A paired foot rig with softened contact pads. It adds light foot armor while staying fairly low-encumbrance for scouting.",
-    "weight": "1500 g",
-    "volume": "1100 ml",
-    "price": "13800 USD",
-    "price_postapoc": "775 USD",
-    "material": [ "plastic", "kevlar", "steel" ],
-    "symbol": "]",
-    "color": "dark_gray",
-    "flags": [ "MX_LEG_MODULE", "MX_RECON_SPECIAL", "CANT_WEAR" ],
-    "use_action": {
-      "type": "transform",
-      "target": "mx_recon_silencerig_module_active",
-      "msg": "You activate the silent step rig.",
-      "menu_text": "Activate module",
-      "active": true
-    },
-    "armor": [
-      {
-        "covers": [ "foot_l", "foot_r" ],
-        "coverage": 74,
-        "encumbrance": 3,
-        "material_thickness": 3,
-        "environmental_protection": 2
-      }
-    ],
-    "ammo": [ "battery" ],
-    "max_charges": 300,
-    "initial_charges": 300
-  },
-  {
-    "id": "mx_recon_silencerig_module_active",
-    "copy-from": "mx_recon_silencerig_module",
-    "type": "TOOL_ARMOR",
-    "category": "exosuit",
-    "name": { "str": "silent step rig (active)" },
-    "description": "A paired foot rig with softened contact pads. It adds light foot armor while staying fairly low-encumbrance for scouting. It is powered on.",
-    "use_action": {
-      "type": "transform",
-      "target": "mx_recon_silencerig_module",
-      "msg": "You deactivate the silent step rig.",
-      "menu_text": "Deactivate module"
-    },
-    "color": "light_dark_gray",
-    "flags": [ "ACTIVE_CLOAKING" ],
-    "ammo": [ "battery" ],
-    "max_charges": 300,
-    "initial_charges": 300,
-    "power_draw": "120 W"
-  },
-  {
-    "id": "mx_recon_longscan_module",
-    "type": "TOOL_ARMOR",
-    "category": "exosuit",
-    "name": { "str": "long-range scan hood" },
-    "description": "A recon sensor hood with hardened optics housing. It provides solid head coverage and better environmental protection than basic scout gear.",
-    "weight": "950 g",
-    "volume": "800 ml",
-    "price": "15200 USD",
-    "price_postapoc": "850 USD",
-    "material": [ "plastic", "steel" ],
-    "symbol": "]",
-    "color": "cyan",
-    "flags": [ "MX_HELMET_MODULE", "MX_RECON_SPECIAL", "CANT_WEAR" ],
-    "use_action": {
-      "type": "transform",
-      "target": "mx_recon_longscan_module_active",
-      "msg": "You activate the long-range scan hood.",
-      "menu_text": "Activate module",
-      "active": true
-    },
-    "armor": [ { "covers": [ "head" ], "coverage": 80, "encumbrance": 3, "material_thickness": 4, "environmental_protection": 4 } ],
-    "ammo": [ "battery" ],
-    "max_charges": 300,
-    "initial_charges": 300
-  },
-  {
-    "id": "mx_recon_longscan_module_active",
-    "copy-from": "mx_recon_longscan_module",
-    "type": "TOOL_ARMOR",
-    "category": "exosuit",
-    "name": { "str": "long-range scan hood (active)" },
-    "description": "A recon sensor hood with hardened optics housing. It provides solid head coverage and better environmental protection than basic scout gear. It is powered on.",
-    "use_action": {
-      "type": "transform",
-      "target": "mx_recon_longscan_module",
-      "msg": "You deactivate the long-range scan hood.",
-      "menu_text": "Deactivate module"
-    },
-    "color": "light_cyan",
-    "flags": [ "WATCH", "BAROMETER", "HYGROMETER" ],
-    "ammo": [ "battery" ],
-    "max_charges": 300,
-    "initial_charges": 300,
-    "power_draw": "120 W"
-  },
-  {
-    "id": "mx_industrial_riglift_module",
-    "type": "TOOL_ARMOR",
-    "category": "exosuit",
-    "name": { "str": "riglift gantry arm" },
-    "description": "A heavy industrial arm assembly for both arms. It gives strong arm armor and counts as a sturdy hammering aid for rough work.",
-    "weight": "3600 g",
-    "volume": "1600 ml",
-    "price": "14800 USD",
-    "price_postapoc": "800 USD",
-    "material": [ "steel", "plastic" ],
-    "symbol": "]",
-    "color": "yellow",
-    "flags": [ "MX_ARM_MODULE", "MX_INDUSTRIAL_SPECIAL", "CANT_WEAR" ],
-    "use_action": {
-      "type": "transform",
-      "target": "mx_industrial_riglift_module_active",
-      "msg": "You activate the riglift gantry arm.",
-      "menu_text": "Activate module",
-      "active": true
-    },
-    "armor": [
-      {
-        "covers": [ "arm_l", "arm_r" ],
-        "coverage": 82,
-        "encumbrance": 5,
-        "material_thickness": 6,
-        "environmental_protection": 3
-      }
-    ],
-    "qualities": [ [ "HAMMER", 2 ] ],
-    "ammo": [ "battery" ],
-    "max_charges": 500,
-    "initial_charges": 500
-  },
-  {
-    "id": "mx_industrial_riglift_module_active",
-    "copy-from": "mx_industrial_riglift_module",
-    "type": "TOOL_ARMOR",
-    "category": "exosuit",
-    "name": { "str": "riglift gantry arm (active)" },
-    "description": "A heavy industrial arm assembly for both arms. It gives strong arm armor and counts as a sturdy hammering aid for rough work. It is powered on.",
-    "use_action": {
-      "type": "transform",
-      "target": "mx_industrial_riglift_module",
-      "msg": "You deactivate the riglift gantry arm.",
-      "menu_text": "Deactivate module"
-    },
-    "color": "light_yellow",
-    "flags": [ "BLOCK_WHILE_WORN" ],
-    "qualities": [ [ "HAMMER", 3 ] ],
-    "ammo": [ "battery" ],
-    "max_charges": 500,
-    "initial_charges": 500,
-    "power_draw": "350 W"
-  },
-  {
-    "id": "mx_industrial_forge_module",
-    "type": "TOOL_ARMOR",
-    "category": "exosuit",
-    "name": { "str": "forge support module" },
-    "description": "A plated torso work core with dense chest armor and integrated striking mass. It is one of the toughest industrial torso inserts in the set.",
-    "weight": "2800 g",
-    "volume": "1900 ml",
-    "price": "14200 USD",
-    "price_postapoc": "760 USD",
-    "material": [ "steel", "plastic" ],
-    "symbol": "]",
-    "color": "brown",
-    "flags": [ "MX_UTILITY_MODULE", "MX_INDUSTRIAL_SPECIAL", "CANT_WEAR" ],
-    "use_action": {
-      "type": "transform",
-      "target": "mx_industrial_forge_module_active",
-      "msg": "You activate the forge support module.",
-      "menu_text": "Activate module",
-      "active": true
-    },
-    "armor": [ { "covers": [ "torso" ], "coverage": 84, "encumbrance": 5, "material_thickness": 6, "environmental_protection": 4 } ],
-    "qualities": [ [ "HAMMER", 3 ] ],
-    "ammo": [ "battery" ],
-    "max_charges": 500,
-    "initial_charges": 500
-  },
-  {
-    "id": "mx_industrial_forge_module_active",
-    "copy-from": "mx_industrial_forge_module",
-    "type": "TOOL_ARMOR",
-    "category": "exosuit",
-    "name": { "str": "forge support module (active)" },
-    "description": "A plated torso work core with dense chest armor and integrated striking mass. It is one of the toughest industrial torso inserts in the set. It is powered on.",
-    "use_action": {
-      "type": "transform",
-      "target": "mx_industrial_forge_module",
-      "msg": "You deactivate the forge support module.",
-      "menu_text": "Deactivate module"
-    },
-    "color": "light_brown",
-    "flags": [ "BLOCK_WHILE_WORN" ],
-    "qualities": [ [ "HAMMER", 4 ] ],
-    "ammo": [ "battery" ],
-    "max_charges": 500,
-    "initial_charges": 500,
-    "power_draw": "350 W"
+    "power_draw": "350 W",
+    "category": "exosuit"
   },
   {
     "id": "mx_hazard_filter_module_mk1",
     "type": "TOOL_ARMOR",
     "name": { "str": "environmental filter module Mk.I" },
     "description": "A hazard-rated filtration insert. Mk.I strongly boosts mouth environmental protection for toxic or smoky areas.",
-    "category": "exosuit",
     "weight": "1900 g",
     "volume": "1400 ml",
     "price": "10500 USD",
@@ -700,7 +162,8 @@
     "armor": [ { "covers": [ "mouth" ], "coverage": 76, "encumbrance": 2, "material_thickness": 3, "environmental_protection": 10 } ],
     "ammo": [ "battery" ],
     "max_charges": 500,
-    "initial_charges": 500
+    "initial_charges": 500,
+    "category": "exosuit"
   },
   {
     "id": "mx_hazard_filter_module_mk1_active",
@@ -708,7 +171,6 @@
     "type": "TOOL_ARMOR",
     "name": { "str": "environmental filter module Mk.I (active)" },
     "description": "A hazard-rated filtration insert. Mk.I strongly boosts mouth environmental protection for toxic or smoky areas. It is powered on.",
-    "category": "exosuit",
     "use_action": {
       "type": "transform",
       "target": "mx_hazard_filter_module_mk1",
@@ -720,14 +182,14 @@
     "ammo": [ "battery" ],
     "max_charges": 500,
     "initial_charges": 500,
-    "power_draw": "350 W"
+    "power_draw": "350 W",
+    "category": "exosuit"
   },
   {
     "id": "mx_hazard_filter_module_mk2",
     "type": "TOOL_ARMOR",
     "name": { "str": "environmental filter module Mk.II" },
     "description": "A hazard-rated filtration insert. Mk.II strongly boosts mouth environmental protection for toxic or smoky areas.",
-    "category": "exosuit",
     "weight": "2000 g",
     "volume": "1400 ml",
     "price": "13800 USD",
@@ -746,7 +208,8 @@
     "armor": [ { "covers": [ "mouth" ], "coverage": 82, "encumbrance": 3, "material_thickness": 4, "environmental_protection": 12 } ],
     "ammo": [ "battery" ],
     "max_charges": 500,
-    "initial_charges": 500
+    "initial_charges": 500,
+    "category": "exosuit"
   },
   {
     "id": "mx_hazard_filter_module_mk2_active",
@@ -754,25 +217,24 @@
     "type": "TOOL_ARMOR",
     "name": { "str": "environmental filter module Mk.II (active)" },
     "description": "A hazard-rated filtration insert. Mk.II strongly boosts mouth environmental protection for toxic or smoky areas. It is powered on.",
-    "category": "exosuit",
     "use_action": {
       "type": "transform",
       "target": "mx_hazard_filter_module_mk2",
       "msg": "You deactivate the environmental filter moduleI.",
       "menu_text": "Deactivate module"
     },
-    "flags": [ "GAS_PROOF", "RAD_RESIST" ],
+    "flags": [ "GAS_PROOF", "RAD_RESIST", "RAINPROOF" ],
     "ammo": [ "battery" ],
     "max_charges": 500,
     "initial_charges": 500,
-    "power_draw": "350 W"
+    "power_draw": "350 W",
+    "category": "exosuit"
   },
   {
     "id": "mx_hazard_filter_module_mk3",
     "type": "TOOL_ARMOR",
     "name": { "str": "environmental filter module Mk.III" },
     "description": "A hazard-rated filtration insert. Mk.III strongly boosts mouth environmental protection for toxic or smoky areas.",
-    "category": "exosuit",
     "weight": "2100 g",
     "volume": "1400 ml",
     "price": "18100 USD",
@@ -791,7 +253,8 @@
     "armor": [ { "covers": [ "mouth" ], "coverage": 88, "encumbrance": 4, "material_thickness": 5, "environmental_protection": 14 } ],
     "ammo": [ "battery" ],
     "max_charges": 500,
-    "initial_charges": 500
+    "initial_charges": 500,
+    "category": "exosuit"
   },
   {
     "id": "mx_hazard_filter_module_mk3_active",
@@ -799,7 +262,6 @@
     "type": "TOOL_ARMOR",
     "name": { "str": "environmental filter module Mk.III (active)" },
     "description": "A hazard-rated filtration insert. Mk.III strongly boosts mouth environmental protection for toxic or smoky areas. It is powered on.",
-    "category": "exosuit",
     "use_action": {
       "type": "transform",
       "target": "mx_hazard_filter_module_mk3",
@@ -811,194 +273,12 @@
     "ammo": [ "battery" ],
     "max_charges": 500,
     "initial_charges": 500,
-    "power_draw": "350 W"
-  },
-  {
-    "id": "mx_hazard_analysis_helmet",
-    "type": "TOOL_ARMOR",
-    "category": "exosuit",
-    "name": { "str": "hazard analysis hood" },
-    "description": "A sealed hazard-analysis helmet insert. It gives solid head armor and strong environmental protection for contaminated zones.",
-    "weight": "1000 g",
-    "volume": "800 ml",
-    "price": "12500 USD",
-    "price_postapoc": "700 USD",
-    "material": [ "plastic", "steel" ],
-    "symbol": "]",
-    "color": "light_green",
-    "flags": [ "MX_HELMET_MODULE", "MX_HAZARD_SPECIAL", "CANT_WEAR" ],
-    "use_action": {
-      "type": "transform",
-      "target": "mx_hazard_analysis_helmet_active",
-      "msg": "You activate the hazard analysis hood.",
-      "menu_text": "Activate module",
-      "active": true
-    },
-    "armor": [ { "covers": [ "head" ], "coverage": 82, "encumbrance": 3, "material_thickness": 4, "environmental_protection": 8 } ],
-    "ammo": [ "battery" ],
-    "max_charges": 500,
-    "initial_charges": 500
-  },
-  {
-    "id": "mx_hazard_analysis_helmet_active",
-    "copy-from": "mx_hazard_analysis_helmet",
-    "type": "TOOL_ARMOR",
-    "category": "exosuit",
-    "name": { "str": "hazard analysis hood (active)" },
-    "description": "A sealed hazard-analysis helmet insert. It gives solid head armor and strong environmental protection for contaminated zones. It is powered on.",
-    "use_action": {
-      "type": "transform",
-      "target": "mx_hazard_analysis_helmet",
-      "msg": "You deactivate the hazard analysis hood.",
-      "menu_text": "Deactivate module"
-    },
-    "flags": [ "BAROMETER", "HYGROMETER", "WATCH" ],
-    "ammo": [ "battery" ],
-    "max_charges": 500,
-    "initial_charges": 500,
-    "power_draw": "350 W"
-  },
-  {
-    "id": "mx_field_torso_triage_module",
-    "type": "TOOL_ARMOR",
-    "category": "exosuit",
-    "name": { "str": "field triage torso module" },
-    "description": "A triage torso insert with improved chest protection and emergency support gear.",
-    "weight": "2600 g",
-    "volume": "1750 ml",
-    "price": "15800 USD",
-    "price_postapoc": "700 USD",
-    "material": [ "steel", "plastic" ],
-    "symbol": "]",
-    "color": "pink",
-    "flags": [ "MX_TORSO_MODULE", "MX_FIELD_SPECIAL", "CANT_WEAR" ],
-    "use_action": {
-      "type": "transform",
-      "target": "mx_field_torso_triage_module_active",
-      "msg": "You activate the field triage torso module.",
-      "menu_text": "Activate module",
-      "active": true
-    },
-    "armor": [ { "covers": [ "torso" ], "coverage": 82, "encumbrance": 5, "material_thickness": 5, "environmental_protection": 5 } ],
-    "ammo": [ "battery" ],
-    "max_charges": 500,
-    "initial_charges": 500
-  },
-  {
-    "id": "mx_field_torso_triage_module_active",
-    "copy-from": "mx_field_torso_triage_module",
-    "type": "TOOL_ARMOR",
-    "category": "exosuit",
-    "name": { "str": "field triage torso module (active)" },
-    "description": "A triage torso insert with improved chest protection and emergency support gear. It is powered on.",
-    "use_action": {
-      "type": "transform",
-      "target": "mx_field_torso_triage_module",
-      "msg": "You deactivate the field triage torso module.",
-      "menu_text": "Deactivate module"
-    },
-    "color": "light_pink",
-    "flags": [ "RAINPROOF" ],
-    "ammo": [ "battery" ],
-    "max_charges": 500,
-    "initial_charges": 500,
-    "power_draw": "350 W"
-  },
-  {
-    "id": "mx_recon_head_ghost_module",
-    "type": "TOOL_ARMOR",
-    "category": "exosuit",
-    "name": { "str": "recon ghost head module" },
-    "description": "A ghost-pattern recon head module offering good head protection without becoming too heavy.",
-    "weight": "850 g",
-    "volume": "600 ml",
-    "price": "14900 USD",
-    "price_postapoc": "700 USD",
-    "material": [ "steel", "plastic" ],
-    "symbol": "]",
-    "color": "white",
-    "flags": [ "MX_HEAD_MODULE", "MX_RECON_SPECIAL", "CANT_WEAR" ],
-    "use_action": {
-      "type": "transform",
-      "target": "mx_recon_head_ghost_module_active",
-      "msg": "You activate the recon ghost head module.",
-      "menu_text": "Activate module",
-      "active": true
-    },
-    "armor": [ { "covers": [ "head" ], "coverage": 80, "encumbrance": 2, "material_thickness": 4, "environmental_protection": 5 } ],
-    "ammo": [ "battery" ],
-    "max_charges": 800,
-    "initial_charges": 800
-  },
-  {
-    "id": "mx_recon_head_ghost_module_active",
-    "copy-from": "mx_recon_head_ghost_module",
-    "type": "TOOL_ARMOR",
-    "category": "exosuit",
-    "name": { "str": "recon ghost head module (active)" },
-    "description": "A ghost-pattern recon head module offering good head protection without becoming too heavy. It is powered on.",
-    "use_action": {
-      "type": "transform",
-      "target": "mx_recon_head_ghost_module",
-      "msg": "You deactivate the recon ghost head module.",
-      "menu_text": "Deactivate module"
-    },
-    "color": "light_white",
-    "flags": [ "ACTIVE_CLOAKING", "GNV_EFFECT" ],
-    "ammo": [ "battery" ],
-    "max_charges": 800,
-    "initial_charges": 800,
-    "power_draw": "900 W"
-  },
-  {
-    "id": "mx_recon_mouth_whisper_module",
-    "type": "TOOL_ARMOR",
-    "category": "exosuit",
-    "name": { "str": "recon whisper mouth module" },
-    "description": "A whisper-pattern mouth insert with strong filtering and low encumbrance.",
-    "weight": "700 g",
-    "volume": "450 ml",
-    "price": "13600 USD",
-    "price_postapoc": "700 USD",
-    "material": [ "steel", "plastic" ],
-    "symbol": "]",
-    "color": "light_gray",
-    "flags": [ "MX_MOUTH_MODULE", "MX_RECON_SPECIAL", "CANT_WEAR" ],
-    "use_action": {
-      "type": "transform",
-      "target": "mx_recon_mouth_whisper_module_active",
-      "msg": "You activate the recon whisper mouth module.",
-      "menu_text": "Activate module",
-      "active": true
-    },
-    "armor": [ { "covers": [ "mouth" ], "coverage": 76, "encumbrance": 1, "material_thickness": 2, "environmental_protection": 8 } ],
-    "ammo": [ "battery" ],
-    "max_charges": 500,
-    "initial_charges": 500
-  },
-  {
-    "id": "mx_recon_mouth_whisper_module_active",
-    "copy-from": "mx_recon_mouth_whisper_module",
-    "type": "TOOL_ARMOR",
-    "category": "exosuit",
-    "name": { "str": "recon whisper mouth module (active)" },
-    "description": "A whisper-pattern mouth insert with strong filtering and low encumbrance. It is powered on.",
-    "use_action": {
-      "type": "transform",
-      "target": "mx_recon_mouth_whisper_module",
-      "msg": "You deactivate the recon whisper mouth module.",
-      "menu_text": "Deactivate module"
-    },
-    "flags": [ "GAS_PROOF" ],
-    "ammo": [ "battery" ],
-    "max_charges": 500,
-    "initial_charges": 500,
-    "power_draw": "350 W"
+    "power_draw": "350 W",
+    "category": "exosuit"
   },
   {
     "id": "mx_industrial_torso_loader_module",
     "type": "TOOL_ARMOR",
-    "category": "exosuit",
     "name": { "str": "industrial loader torso module" },
     "description": "A loader torso core with heavy chest plating for industrial frames.",
     "weight": "3100 g",
@@ -1019,13 +299,13 @@
     "armor": [ { "covers": [ "torso" ], "coverage": 86, "encumbrance": 5, "material_thickness": 7, "environmental_protection": 4 } ],
     "ammo": [ "battery" ],
     "max_charges": 800,
-    "initial_charges": 800
+    "initial_charges": 800,
+    "category": "exosuit"
   },
   {
     "id": "mx_industrial_torso_loader_module_active",
     "copy-from": "mx_industrial_torso_loader_module",
     "type": "TOOL_ARMOR",
-    "category": "exosuit",
     "name": { "str": "industrial loader torso module (active)" },
     "description": "A loader torso core with heavy chest plating for industrial frames. It is powered on.",
     "use_action": {
@@ -1038,12 +318,12 @@
     "ammo": [ "battery" ],
     "max_charges": 800,
     "initial_charges": 800,
-    "power_draw": "900 W"
+    "power_draw": "900 W",
+    "category": "exosuit"
   },
   {
     "id": "mx_hazard_head_spectrometer_module",
     "type": "TOOL_ARMOR",
-    "category": "exosuit",
     "name": { "str": "hazard spectrometer head module" },
     "description": "A sealed head module with added helmet armor and very high environmental protection.",
     "weight": "950 g",
@@ -1064,13 +344,13 @@
     "armor": [ { "covers": [ "head" ], "coverage": 82, "encumbrance": 3, "material_thickness": 4, "environmental_protection": 10 } ],
     "ammo": [ "battery" ],
     "max_charges": 500,
-    "initial_charges": 500
+    "initial_charges": 500,
+    "category": "exosuit"
   },
   {
     "id": "mx_hazard_head_spectrometer_module_active",
     "copy-from": "mx_hazard_head_spectrometer_module",
     "type": "TOOL_ARMOR",
-    "category": "exosuit",
     "name": { "str": "hazard spectrometer head module (active)" },
     "description": "A sealed head module with added helmet armor and very high environmental protection. It is powered on.",
     "use_action": {
@@ -1083,12 +363,12 @@
     "ammo": [ "battery" ],
     "max_charges": 500,
     "initial_charges": 500,
-    "power_draw": "350 W"
+    "power_draw": "350 W",
+    "category": "exosuit"
   },
   {
     "id": "mx_hazard_mouth_rebreather_module",
     "type": "TOOL_ARMOR",
-    "category": "exosuit",
     "name": { "str": "hazard rebreather mouth module" },
     "description": "A hazard rebreather insert offering some of the best mouth environmental protection in the mod.",
     "weight": "950 g",
@@ -1109,13 +389,13 @@
     "armor": [ { "covers": [ "mouth" ], "coverage": 82, "encumbrance": 2, "material_thickness": 3, "environmental_protection": 12 } ],
     "ammo": [ "battery" ],
     "max_charges": 300,
-    "initial_charges": 300
+    "initial_charges": 300,
+    "category": "exosuit"
   },
   {
     "id": "mx_hazard_mouth_rebreather_module_active",
     "copy-from": "mx_hazard_mouth_rebreather_module",
     "type": "TOOL_ARMOR",
-    "category": "exosuit",
     "name": { "str": "hazard rebreather mouth module (active)" },
     "description": "A hazard rebreather insert offering some of the best mouth environmental protection in the mod. It is powered on.",
     "use_action": {
@@ -1129,7 +409,8 @@
     "ammo": [ "battery" ],
     "max_charges": 300,
     "initial_charges": 300,
-    "power_draw": "120 W"
+    "power_draw": "120 W",
+    "category": "exosuit"
   },
   {
     "id": "mx_hazard_torso_lifesupport_module",
@@ -1154,13 +435,13 @@
     "armor": [ { "covers": [ "torso" ], "coverage": 86, "encumbrance": 5, "material_thickness": 6, "environmental_protection": 8 } ],
     "ammo": [ "battery" ],
     "max_charges": 500,
-    "initial_charges": 500
+    "initial_charges": 500,
+    "category": "exosuit"
   },
   {
     "id": "mx_hazard_torso_lifesupport_module_active",
     "copy-from": "mx_hazard_torso_lifesupport_module",
     "type": "TOOL_ARMOR",
-    "category": "exosuit",
     "name": { "str": "hazard life-support torso module (active)" },
     "description": "A hazard torso life-support core with strong chest protection and extensive environmental sealing. It is powered on.",
     "use_action": {
@@ -1173,14 +454,14 @@
     "ammo": [ "battery" ],
     "max_charges": 500,
     "initial_charges": 500,
-    "power_draw": "350 W"
+    "power_draw": "350 W",
+    "category": "exosuit"
   },
   {
     "id": "mx_arms_guard_mk1",
     "type": "ARMOR",
     "name": { "str": "paired arm guard module Mk.I" },
     "description": "A paired arm guard for both arms. Mk.I is a straightforward armor upgrade line with increasing protection and servo support.",
-    "category": "exosuit",
     "weight": "2600 g",
     "volume": "2200 ml",
     "price": "11000 USD",
@@ -1205,9 +486,7 @@
       "menu_text": "Activate module",
       "active": true
     },
-    "ammo": [ "battery" ],
-    "max_charges": 500,
-    "initial_charges": 500
+    "category": "exosuit"
   },
   {
     "id": "mx_arms_guard_mk1_active",
@@ -1215,7 +494,6 @@
     "type": "ARMOR",
     "name": { "str": "paired arm guard module Mk.I (active)" },
     "description": "A paired arm guard for both arms. Mk.I is a straightforward armor upgrade line with increasing protection and servo support. It is powered on.",
-    "category": "exosuit",
     "use_action": {
       "type": "transform",
       "target": "mx_arms_guard_mk1",
@@ -1223,17 +501,13 @@
       "menu_text": "Deactivate module"
     },
     "flags": [ "BLOCK_WHILE_WORN" ],
-    "ammo": [ "battery" ],
-    "max_charges": 500,
-    "initial_charges": 500,
-    "power_draw": "350 W"
+    "category": "exosuit"
   },
   {
     "id": "mx_legs_piston_mk1",
     "type": "ARMOR",
     "name": { "str": "paired leg piston module Mk.I" },
     "description": "A paired leg piston set for both legs. Mk.I improves leg protection while staying practical for everyday use.",
-    "category": "exosuit",
     "weight": "2800 g",
     "volume": "2400 ml",
     "price": "11200 USD",
@@ -1258,9 +532,7 @@
       "menu_text": "Activate module",
       "active": true
     },
-    "ammo": [ "battery" ],
-    "max_charges": 500,
-    "initial_charges": 500
+    "category": "exosuit"
   },
   {
     "id": "mx_legs_piston_mk1_active",
@@ -1268,24 +540,19 @@
     "type": "ARMOR",
     "name": { "str": "paired leg piston module Mk.I (active)" },
     "description": "A paired leg piston set for both legs. Mk.I improves leg protection while staying practical for everyday use. It is powered on.",
-    "category": "exosuit",
     "use_action": {
       "type": "transform",
       "target": "mx_legs_piston_mk1",
       "msg": "You deactivate the paired leg piston module Mk.I.",
       "menu_text": "Deactivate module"
     },
-    "ammo": [ "battery" ],
-    "max_charges": 500,
-    "initial_charges": 500,
-    "power_draw": "350 W"
+    "category": "exosuit"
   },
   {
     "id": "mx_feet_stabilizer_mk1",
     "type": "ARMOR",
     "name": { "str": "paired foot stabilizer module Mk.I" },
     "description": "A paired foot stabilizer set. Mk.I improves foot armor and footing with modest encumbrance.",
-    "category": "exosuit",
     "weight": "2200 g",
     "volume": "1800 ml",
     "price": "9800 USD",
@@ -1310,9 +577,7 @@
       "menu_text": "Activate module",
       "active": true
     },
-    "ammo": [ "battery" ],
-    "max_charges": 300,
-    "initial_charges": 300
+    "category": "exosuit"
   },
   {
     "id": "mx_feet_stabilizer_mk1_active",
@@ -1320,24 +585,19 @@
     "type": "ARMOR",
     "name": { "str": "paired foot stabilizer module Mk.I (active)" },
     "description": "A paired foot stabilizer set. Mk.I improves foot armor and footing with modest encumbrance. It is powered on.",
-    "category": "exosuit",
     "use_action": {
       "type": "transform",
       "target": "mx_feet_stabilizer_mk1",
       "msg": "You deactivate the paired foot stabilizer module Mk.I.",
       "menu_text": "Deactivate module"
     },
-    "ammo": [ "battery" ],
-    "max_charges": 300,
-    "initial_charges": 300,
-    "power_draw": "120 W"
+    "category": "exosuit"
   },
   {
     "id": "mx_torso_harness_mk1",
     "type": "TOOL_ARMOR",
     "name": { "str": "torso harness module Mk.I" },
     "description": "A torso harness module line. Mk.I offers rising chest protection and better environmental shielding.",
-    "category": "exosuit",
     "weight": "3000 g",
     "volume": "2500 ml",
     "price": "12000 USD",
@@ -1356,7 +616,8 @@
     },
     "ammo": [ "battery" ],
     "max_charges": 500,
-    "initial_charges": 500
+    "initial_charges": 500,
+    "category": "exosuit"
   },
   {
     "id": "mx_torso_harness_mk1_active",
@@ -1364,7 +625,6 @@
     "type": "TOOL_ARMOR",
     "name": { "str": "torso harness module Mk.I (active)" },
     "description": "A torso harness module line. Mk.I offers rising chest protection and better environmental shielding. It is powered on.",
-    "category": "exosuit",
     "use_action": {
       "type": "transform",
       "target": "mx_torso_harness_mk1",
@@ -1375,14 +635,14 @@
     "ammo": [ "battery" ],
     "max_charges": 500,
     "initial_charges": 500,
-    "power_draw": "350 W"
+    "power_draw": "350 W",
+    "category": "exosuit"
   },
   {
     "id": "mx_head_optics_mk1",
     "type": "TOOL_ARMOR",
     "name": { "str": "head optics module Mk.I" },
     "description": "A universal head module line. Mk.I adds helmet armor, optics housing, and moderate sealing.",
-    "category": "exosuit",
     "weight": "1200 g",
     "volume": "900 ml",
     "price": "10800 USD",
@@ -1401,7 +661,8 @@
     },
     "ammo": [ "battery" ],
     "max_charges": 300,
-    "initial_charges": 300
+    "initial_charges": 300,
+    "category": "exosuit"
   },
   {
     "id": "mx_head_optics_mk1_active",
@@ -1409,7 +670,6 @@
     "type": "TOOL_ARMOR",
     "name": { "str": "head optics module Mk.I (active)" },
     "description": "A universal head module line. Mk.I adds helmet armor, optics housing, and moderate sealing. It is powered on.",
-    "category": "exosuit",
     "use_action": {
       "type": "transform",
       "target": "mx_head_optics_mk1",
@@ -1420,14 +680,14 @@
     "ammo": [ "battery" ],
     "max_charges": 300,
     "initial_charges": 300,
-    "power_draw": "120 W"
+    "power_draw": "120 W",
+    "category": "exosuit"
   },
   {
     "id": "mx_mouth_respirator_mk1",
     "type": "TOOL_ARMOR",
     "name": { "str": "mouth respirator module Mk.I" },
     "description": "A universal respirator module line. Mk.I sharply improves face environmental protection and scales up well into hazardous content.",
-    "category": "exosuit",
     "weight": "900 g",
     "volume": "800 ml",
     "price": "8600 USD",
@@ -1446,7 +706,8 @@
     },
     "ammo": [ "battery" ],
     "max_charges": 300,
-    "initial_charges": 300
+    "initial_charges": 300,
+    "category": "exosuit"
   },
   {
     "id": "mx_mouth_respirator_mk1_active",
@@ -1454,7 +715,6 @@
     "type": "TOOL_ARMOR",
     "name": { "str": "mouth respirator module Mk.I (active)" },
     "description": "A universal respirator module line. Mk.I sharply improves face environmental protection and scales up well into hazardous content. It is powered on.",
-    "category": "exosuit",
     "use_action": {
       "type": "transform",
       "target": "mx_mouth_respirator_mk1",
@@ -1465,7 +725,8 @@
     "ammo": [ "battery" ],
     "max_charges": 300,
     "initial_charges": 300,
-    "power_draw": "120 W"
+    "power_draw": "120 W",
+    "category": "exosuit"
   },
   {
     "id": "mx_arms_guard_mk2",
@@ -1495,7 +756,8 @@
       "msg": "You activate the paired arm guard module Mk.II.",
       "menu_text": "Activate module",
       "active": true
-    }
+    },
+    "category": "exosuit"
   },
   {
     "id": "mx_arms_guard_mk2_active",
@@ -1509,7 +771,8 @@
       "msg": "You deactivate the paired arm guard module Mk.II.",
       "menu_text": "Deactivate module"
     },
-    "flags": [ "BLOCK_WHILE_WORN" ]
+    "flags": [ "BLOCK_WHILE_WORN" ],
+    "category": "exosuit"
   },
   {
     "id": "mx_legs_piston_mk2",
@@ -1539,7 +802,8 @@
       "msg": "You activate the paired leg piston module Mk.II.",
       "menu_text": "Activate module",
       "active": true
-    }
+    },
+    "category": "exosuit"
   },
   {
     "id": "mx_legs_piston_mk2_active",
@@ -1552,7 +816,8 @@
       "target": "mx_legs_piston_mk2",
       "msg": "You deactivate the paired leg piston module Mk.II.",
       "menu_text": "Deactivate module"
-    }
+    },
+    "category": "exosuit"
   },
   {
     "id": "mx_feet_stabilizer_mk2",
@@ -1582,7 +847,8 @@
       "msg": "You activate the paired foot stabilizer module Mk.II.",
       "menu_text": "Activate module",
       "active": true
-    }
+    },
+    "category": "exosuit"
   },
   {
     "id": "mx_feet_stabilizer_mk2_active",
@@ -1595,14 +861,14 @@
       "target": "mx_feet_stabilizer_mk2",
       "msg": "You deactivate the paired foot stabilizer module Mk.II.",
       "menu_text": "Deactivate module"
-    }
+    },
+    "category": "exosuit"
   },
   {
     "id": "mx_torso_harness_mk2",
     "type": "TOOL_ARMOR",
     "name": { "str": "torso harness module Mk.II" },
     "description": "A torso harness module line. Mk.II offers rising chest protection and better environmental shielding.",
-    "category": "exosuit",
     "weight": "3000 g",
     "volume": "2500 ml",
     "price": "12000 USD",
@@ -1621,7 +887,8 @@
     },
     "ammo": [ "battery" ],
     "max_charges": 500,
-    "initial_charges": 500
+    "initial_charges": 500,
+    "category": "exosuit"
   },
   {
     "id": "mx_torso_harness_mk2_active",
@@ -1629,25 +896,24 @@
     "type": "TOOL_ARMOR",
     "name": { "str": "torso harness module Mk.II (active)" },
     "description": "A torso harness module line. Mk.II offers rising chest protection and better environmental shielding. It is powered on.",
-    "category": "exosuit",
     "use_action": {
       "type": "transform",
       "target": "mx_torso_harness_mk2",
       "msg": "You deactivate the torso harness moduleI.",
       "menu_text": "Deactivate module"
     },
-    "flags": [ "RAINPROOF", "RAD_RESIST" ],
+    "flags": [ "RAD_RESIST", "RAINPROOF" ],
     "ammo": [ "battery" ],
     "max_charges": 500,
     "initial_charges": 500,
-    "power_draw": "350 W"
+    "power_draw": "350 W",
+    "category": "exosuit"
   },
   {
     "id": "mx_head_optics_mk2",
     "type": "TOOL_ARMOR",
     "name": { "str": "head optics module Mk.II" },
     "description": "A universal head module line. Mk.II adds helmet armor, optics housing, and moderate sealing.",
-    "category": "exosuit",
     "weight": "1200 g",
     "volume": "900 ml",
     "price": "10800 USD",
@@ -1666,7 +932,8 @@
     },
     "ammo": [ "battery" ],
     "max_charges": 300,
-    "initial_charges": 300
+    "initial_charges": 300,
+    "category": "exosuit"
   },
   {
     "id": "mx_head_optics_mk2_active",
@@ -1674,25 +941,24 @@
     "type": "TOOL_ARMOR",
     "name": { "str": "head optics module Mk.II (active)" },
     "description": "A universal head module line. Mk.II adds helmet armor, optics housing, and moderate sealing. It is powered on.",
-    "category": "exosuit",
     "use_action": {
       "type": "transform",
       "target": "mx_head_optics_mk2",
       "msg": "You deactivate the head optics moduleI.",
       "menu_text": "Deactivate module"
     },
-    "flags": [ "WATCH", "GNV_EFFECT" ],
+    "flags": [ "GNV_EFFECT", "WATCH" ],
     "ammo": [ "battery" ],
     "max_charges": 300,
     "initial_charges": 300,
-    "power_draw": "120 W"
+    "power_draw": "120 W",
+    "category": "exosuit"
   },
   {
     "id": "mx_mouth_respirator_mk2",
     "type": "TOOL_ARMOR",
     "name": { "str": "mouth respirator module Mk.II" },
     "description": "A universal respirator module line. Mk.II sharply improves face environmental protection and scales up well into hazardous content.",
-    "category": "exosuit",
     "weight": "900 g",
     "volume": "800 ml",
     "price": "8600 USD",
@@ -1711,7 +977,8 @@
     },
     "ammo": [ "battery" ],
     "max_charges": 300,
-    "initial_charges": 300
+    "initial_charges": 300,
+    "category": "exosuit"
   },
   {
     "id": "mx_mouth_respirator_mk2_active",
@@ -1719,7 +986,6 @@
     "type": "TOOL_ARMOR",
     "name": { "str": "mouth respirator module Mk.II (active)" },
     "description": "A universal respirator module line. Mk.II sharply improves face environmental protection and scales up well into hazardous content. It is powered on.",
-    "category": "exosuit",
     "use_action": {
       "type": "transform",
       "target": "mx_mouth_respirator_mk2",
@@ -1730,7 +996,8 @@
     "ammo": [ "battery" ],
     "max_charges": 300,
     "initial_charges": 300,
-    "power_draw": "120 W"
+    "power_draw": "120 W",
+    "category": "exosuit"
   },
   {
     "id": "mx_arms_guard_mk3",
@@ -1760,7 +1027,8 @@
       "msg": "You activate the paired arm guard module Mk.III.",
       "menu_text": "Activate module",
       "active": true
-    }
+    },
+    "category": "exosuit"
   },
   {
     "id": "mx_arms_guard_mk3_active",
@@ -1775,7 +1043,8 @@
       "menu_text": "Deactivate module"
     },
     "color": "light_white",
-    "flags": [ "BLOCK_WHILE_WORN" ]
+    "flags": [ "BLOCK_WHILE_WORN" ],
+    "category": "exosuit"
   },
   {
     "id": "mx_legs_piston_mk3",
@@ -1805,7 +1074,8 @@
       "msg": "You activate the paired leg piston module Mk.III.",
       "menu_text": "Activate module",
       "active": true
-    }
+    },
+    "category": "exosuit"
   },
   {
     "id": "mx_legs_piston_mk3_active",
@@ -1819,7 +1089,8 @@
       "msg": "You deactivate the paired leg piston module Mk.III.",
       "menu_text": "Deactivate module"
     },
-    "color": "light_white"
+    "color": "light_white",
+    "category": "exosuit"
   },
   {
     "id": "mx_feet_stabilizer_mk3",
@@ -1849,7 +1120,8 @@
       "msg": "You activate the paired foot stabilizer module Mk.III.",
       "menu_text": "Activate module",
       "active": true
-    }
+    },
+    "category": "exosuit"
   },
   {
     "id": "mx_feet_stabilizer_mk3_active",
@@ -1863,14 +1135,14 @@
       "msg": "You deactivate the paired foot stabilizer module Mk.III.",
       "menu_text": "Deactivate module"
     },
-    "color": "light_white"
+    "color": "light_white",
+    "category": "exosuit"
   },
   {
     "id": "mx_torso_harness_mk3",
     "type": "TOOL_ARMOR",
     "name": { "str": "torso harness module Mk.III" },
     "description": "A torso harness module line. Mk.III offers rising chest protection and better environmental shielding.",
-    "category": "exosuit",
     "weight": "3000 g",
     "volume": "2500 ml",
     "price": "12000 USD",
@@ -1889,7 +1161,8 @@
     },
     "ammo": [ "battery" ],
     "max_charges": 500,
-    "initial_charges": 500
+    "initial_charges": 500,
+    "category": "exosuit"
   },
   {
     "id": "mx_torso_harness_mk3_active",
@@ -1897,7 +1170,6 @@
     "type": "TOOL_ARMOR",
     "name": { "str": "torso harness module Mk.III (active)" },
     "description": "A torso harness module line. Mk.III offers rising chest protection and better environmental shielding. It is powered on.",
-    "category": "exosuit",
     "use_action": {
       "type": "transform",
       "target": "mx_torso_harness_mk3",
@@ -1905,18 +1177,18 @@
       "menu_text": "Deactivate module"
     },
     "color": "light_white",
-    "flags": [ "RAINPROOF", "RAD_RESIST", "ELECTRIC_IMMUNE" ],
+    "flags": [ "ELECTRIC_IMMUNE", "RAD_RESIST", "RAINPROOF" ],
     "ammo": [ "battery" ],
     "max_charges": 500,
     "initial_charges": 500,
-    "power_draw": "350 W"
+    "power_draw": "350 W",
+    "category": "exosuit"
   },
   {
     "id": "mx_head_optics_mk3",
     "type": "TOOL_ARMOR",
     "name": { "str": "head optics module Mk.III" },
     "description": "A universal head module line. Mk.III adds helmet armor, optics housing, and moderate sealing.",
-    "category": "exosuit",
     "weight": "1200 g",
     "volume": "900 ml",
     "price": "10800 USD",
@@ -1935,7 +1207,8 @@
     },
     "ammo": [ "battery" ],
     "max_charges": 300,
-    "initial_charges": 300
+    "initial_charges": 300,
+    "category": "exosuit"
   },
   {
     "id": "mx_head_optics_mk3_active",
@@ -1943,7 +1216,6 @@
     "type": "TOOL_ARMOR",
     "name": { "str": "head optics module Mk.III (active)" },
     "description": "A universal head module line. Mk.III adds helmet armor, optics housing, and moderate sealing. It is powered on.",
-    "category": "exosuit",
     "use_action": {
       "type": "transform",
       "target": "mx_head_optics_mk3",
@@ -1951,18 +1223,18 @@
       "menu_text": "Deactivate module"
     },
     "color": "light_white",
-    "flags": [ "WATCH", "GNV_EFFECT", "IR_EFFECT", "FLASH_PROTECTION" ],
+    "flags": [ "FLASH_PROTECTION", "GNV_EFFECT", "IR_EFFECT", "WATCH" ],
     "ammo": [ "battery" ],
     "max_charges": 300,
     "initial_charges": 300,
-    "power_draw": "120 W"
+    "power_draw": "120 W",
+    "category": "exosuit"
   },
   {
     "id": "mx_mouth_respirator_mk3",
     "type": "TOOL_ARMOR",
     "name": { "str": "mouth respirator module Mk.III" },
     "description": "A universal respirator module line. Mk.III sharply improves face environmental protection and scales up well into hazardous content.",
-    "category": "exosuit",
     "weight": "900 g",
     "volume": "800 ml",
     "price": "8600 USD",
@@ -1981,7 +1253,8 @@
     },
     "ammo": [ "battery" ],
     "max_charges": 300,
-    "initial_charges": 300
+    "initial_charges": 300,
+    "category": "exosuit"
   },
   {
     "id": "mx_mouth_respirator_mk3_active",
@@ -1989,7 +1262,6 @@
     "type": "TOOL_ARMOR",
     "name": { "str": "mouth respirator module Mk.III (active)" },
     "description": "A universal respirator module line. Mk.III sharply improves face environmental protection and scales up well into hazardous content. It is powered on.",
-    "category": "exosuit",
     "use_action": {
       "type": "transform",
       "target": "mx_mouth_respirator_mk3",
@@ -2001,12 +1273,12 @@
     "ammo": [ "battery" ],
     "max_charges": 300,
     "initial_charges": 300,
-    "power_draw": "120 W"
+    "power_draw": "120 W",
+    "category": "exosuit"
   },
   {
     "id": "mx_arms_breacher_module",
     "type": "TOOL_ARMOR",
-    "category": "exosuit",
     "name": { "str": "field breacher arms module" },
     "description": "A field breacher arm package with high arm coverage and blunt-impact resistance for close-quarters work.",
     "weight": "3000 g",
@@ -2035,13 +1307,13 @@
     },
     "ammo": [ "battery" ],
     "max_charges": 800,
-    "initial_charges": 800
+    "initial_charges": 800,
+    "category": "exosuit"
   },
   {
     "id": "mx_arms_breacher_module_active",
     "copy-from": "mx_arms_breacher_module",
     "type": "TOOL_ARMOR",
-    "category": "exosuit",
     "name": { "str": "field breacher arms module (active)" },
     "description": "A field breacher arm package with high arm coverage and blunt-impact resistance for close-quarters work. It is powered on.",
     "use_action": {
@@ -2054,12 +1326,12 @@
     "ammo": [ "battery" ],
     "max_charges": 800,
     "initial_charges": 800,
-    "power_draw": "900 W"
+    "power_draw": "900 W",
+    "category": "exosuit"
   },
   {
     "id": "mx_legs_responder_module",
     "type": "TOOL_ARMOR",
-    "category": "exosuit",
     "name": { "str": "field responder legs module" },
     "description": "A field responder leg package balancing protection and mobility for rescue operations.",
     "weight": "3000 g",
@@ -2088,13 +1360,13 @@
     },
     "ammo": [ "battery" ],
     "max_charges": 500,
-    "initial_charges": 500
+    "initial_charges": 500,
+    "category": "exosuit"
   },
   {
     "id": "mx_legs_responder_module_active",
     "copy-from": "mx_legs_responder_module",
     "type": "TOOL_ARMOR",
-    "category": "exosuit",
     "name": { "str": "field responder legs module (active)" },
     "description": "A field responder leg package balancing protection and mobility for rescue operations. It is powered on.",
     "use_action": {
@@ -2107,12 +1379,12 @@
     "ammo": [ "battery" ],
     "max_charges": 500,
     "initial_charges": 500,
-    "power_draw": "350 W"
+    "power_draw": "350 W",
+    "category": "exosuit"
   },
   {
     "id": "mx_feet_grip_module",
     "type": "TOOL_ARMOR",
-    "category": "exosuit",
     "name": { "str": "field grip feet module" },
     "description": "A field grip foot package with sturdier soles and better all-around foot protection.",
     "weight": "2400 g",
@@ -2141,13 +1413,13 @@
     },
     "ammo": [ "battery" ],
     "max_charges": 300,
-    "initial_charges": 300
+    "initial_charges": 300,
+    "category": "exosuit"
   },
   {
     "id": "mx_feet_grip_module_active",
     "copy-from": "mx_feet_grip_module",
     "type": "TOOL_ARMOR",
-    "category": "exosuit",
     "name": { "str": "field grip feet module (active)" },
     "description": "A field grip foot package with sturdier soles and better all-around foot protection. It is powered on.",
     "use_action": {
@@ -2159,12 +1431,12 @@
     "ammo": [ "battery" ],
     "max_charges": 300,
     "initial_charges": 300,
-    "power_draw": "120 W"
+    "power_draw": "120 W",
+    "category": "exosuit"
   },
   {
     "id": "mx_arms_sleek_module",
     "type": "TOOL_ARMOR",
-    "category": "exosuit",
     "name": { "str": "recon sleek arms module" },
     "description": "A recon arms package that favors lower encumbrance over raw armor while still improving arm coverage.",
     "weight": "2300 g",
@@ -2193,13 +1465,13 @@
     },
     "ammo": [ "battery" ],
     "max_charges": 500,
-    "initial_charges": 500
+    "initial_charges": 500,
+    "category": "exosuit"
   },
   {
     "id": "mx_arms_sleek_module_active",
     "copy-from": "mx_arms_sleek_module",
     "type": "TOOL_ARMOR",
-    "category": "exosuit",
     "name": { "str": "recon sleek arms module (active)" },
     "description": "A recon arms package that favors lower encumbrance over raw armor while still improving arm coverage. It is powered on.",
     "use_action": {
@@ -2209,15 +1481,16 @@
       "menu_text": "Deactivate module"
     },
     "color": "light_cyan",
+    "flags": [ "BLOCK_WHILE_WORN" ],
     "ammo": [ "battery" ],
     "max_charges": 500,
     "initial_charges": 500,
-    "power_draw": "350 W"
+    "power_draw": "350 W",
+    "category": "exosuit"
   },
   {
     "id": "mx_legs_runner_module",
     "type": "TOOL_ARMOR",
-    "category": "exosuit",
     "name": { "str": "recon runner legs module" },
     "description": "A recon leg package tuned for agile travel with moderate leg armor.",
     "weight": "2500 g",
@@ -2246,13 +1519,13 @@
     },
     "ammo": [ "battery" ],
     "max_charges": 500,
-    "initial_charges": 500
+    "initial_charges": 500,
+    "category": "exosuit"
   },
   {
     "id": "mx_legs_runner_module_active",
     "copy-from": "mx_legs_runner_module",
     "type": "TOOL_ARMOR",
-    "category": "exosuit",
     "name": { "str": "recon runner legs module (active)" },
     "description": "A recon leg package tuned for agile travel with moderate leg armor. It is powered on.",
     "use_action": {
@@ -2264,12 +1537,12 @@
     "ammo": [ "battery" ],
     "max_charges": 500,
     "initial_charges": 500,
-    "power_draw": "350 W"
+    "power_draw": "350 W",
+    "category": "exosuit"
   },
   {
     "id": "mx_feet_whisper_module",
     "type": "TOOL_ARMOR",
-    "category": "exosuit",
     "name": { "str": "recon whisper feet module" },
     "description": "A recon foot package with light foot armor aimed at keeping the suit nimble.",
     "weight": "1800 g",
@@ -2298,13 +1571,13 @@
     },
     "ammo": [ "battery" ],
     "max_charges": 300,
-    "initial_charges": 300
+    "initial_charges": 300,
+    "category": "exosuit"
   },
   {
     "id": "mx_feet_whisper_module_active",
     "copy-from": "mx_feet_whisper_module",
     "type": "TOOL_ARMOR",
-    "category": "exosuit",
     "name": { "str": "recon whisper feet module (active)" },
     "description": "A recon foot package with light foot armor aimed at keeping the suit nimble. It is powered on.",
     "use_action": {
@@ -2318,12 +1591,12 @@
     "ammo": [ "battery" ],
     "max_charges": 300,
     "initial_charges": 300,
-    "power_draw": "120 W"
+    "power_draw": "120 W",
+    "category": "exosuit"
   },
   {
     "id": "mx_torso_ghost_module",
     "type": "TOOL_ARMOR",
-    "category": "exosuit",
     "name": { "str": "recon ghost torso module" },
     "description": "A recon ghost torso package with balanced chest protection and moderate environmental support.",
     "weight": "2600 g",
@@ -2344,13 +1617,13 @@
     },
     "ammo": [ "battery" ],
     "max_charges": 800,
-    "initial_charges": 800
+    "initial_charges": 800,
+    "category": "exosuit"
   },
   {
     "id": "mx_torso_ghost_module_active",
     "copy-from": "mx_torso_ghost_module",
     "type": "TOOL_ARMOR",
-    "category": "exosuit",
     "name": { "str": "recon ghost torso module (active)" },
     "description": "A recon ghost torso package with balanced chest protection and moderate environmental support. It is powered on.",
     "use_action": {
@@ -2363,12 +1636,12 @@
     "ammo": [ "battery" ],
     "max_charges": 800,
     "initial_charges": 800,
-    "power_draw": "900 W"
+    "power_draw": "900 W",
+    "category": "exosuit"
   },
   {
     "id": "mx_arms_lifter_module",
     "type": "TOOL_ARMOR",
-    "category": "exosuit",
     "name": { "str": "industrial lifter arms module" },
     "description": "A heavy industrial arm package with thick protection on both arms and strong work-oriented structure.",
     "weight": "4200 g",
@@ -2398,13 +1671,13 @@
     "qualities": [ [ "HAMMER", 2 ] ],
     "ammo": [ "battery" ],
     "max_charges": 800,
-    "initial_charges": 800
+    "initial_charges": 800,
+    "category": "exosuit"
   },
   {
     "id": "mx_arms_lifter_module_active",
     "copy-from": "mx_arms_lifter_module",
     "type": "TOOL_ARMOR",
-    "category": "exosuit",
     "name": { "str": "industrial lifter arms module (active)" },
     "description": "A heavy industrial arm package with thick protection on both arms and strong work-oriented structure. It is powered on.",
     "use_action": {
@@ -2419,12 +1692,12 @@
     "ammo": [ "battery" ],
     "max_charges": 800,
     "initial_charges": 800,
-    "power_draw": "900 W"
+    "power_draw": "900 W",
+    "category": "exosuit"
   },
   {
     "id": "mx_legs_bracer_module",
     "type": "TOOL_ARMOR",
-    "category": "exosuit",
     "name": { "str": "industrial bracer legs module" },
     "description": "An industrial bracer leg package emphasizing high leg durability over nimbleness.",
     "weight": "4200 g",
@@ -2453,13 +1726,13 @@
     },
     "ammo": [ "battery" ],
     "max_charges": 500,
-    "initial_charges": 500
+    "initial_charges": 500,
+    "category": "exosuit"
   },
   {
     "id": "mx_legs_bracer_module_active",
     "copy-from": "mx_legs_bracer_module",
     "type": "TOOL_ARMOR",
-    "category": "exosuit",
     "name": { "str": "industrial bracer legs module (active)" },
     "description": "An industrial bracer leg package emphasizing high leg durability over nimbleness. It is powered on.",
     "use_action": {
@@ -2472,12 +1745,12 @@
     "ammo": [ "battery" ],
     "max_charges": 500,
     "initial_charges": 500,
-    "power_draw": "350 W"
+    "power_draw": "350 W",
+    "category": "exosuit"
   },
   {
     "id": "mx_feet_plating_module",
     "type": "TOOL_ARMOR",
-    "category": "exosuit",
     "name": { "str": "industrial plated feet module" },
     "description": "A plated industrial foot package built for rough floors, debris, and heavy stance support.",
     "weight": "3000 g",
@@ -2506,13 +1779,13 @@
     },
     "ammo": [ "battery" ],
     "max_charges": 500,
-    "initial_charges": 500
+    "initial_charges": 500,
+    "category": "exosuit"
   },
   {
     "id": "mx_feet_plating_module_active",
     "copy-from": "mx_feet_plating_module",
     "type": "TOOL_ARMOR",
-    "category": "exosuit",
     "name": { "str": "industrial plated feet module (active)" },
     "description": "A plated industrial foot package built for rough floors, debris, and heavy stance support. It is powered on.",
     "use_action": {
@@ -2525,12 +1798,12 @@
     "ammo": [ "battery" ],
     "max_charges": 500,
     "initial_charges": 500,
-    "power_draw": "350 W"
+    "power_draw": "350 W",
+    "category": "exosuit"
   },
   {
     "id": "mx_arms_sealed_module",
     "type": "TOOL_ARMOR",
-    "category": "exosuit",
     "name": { "str": "hazard sealed arms module" },
     "description": "A sealed hazard arm package that combines solid protection with high environmental coverage.",
     "weight": "3100 g",
@@ -2559,13 +1832,13 @@
     },
     "ammo": [ "battery" ],
     "max_charges": 500,
-    "initial_charges": 500
+    "initial_charges": 500,
+    "category": "exosuit"
   },
   {
     "id": "mx_arms_sealed_module_active",
     "copy-from": "mx_arms_sealed_module",
     "type": "TOOL_ARMOR",
-    "category": "exosuit",
     "name": { "str": "hazard sealed arms module (active)" },
     "description": "A sealed hazard arm package that combines solid protection with high environmental coverage. It is powered on.",
     "use_action": {
@@ -2574,15 +1847,16 @@
       "msg": "You deactivate the hazard sealed arms module.",
       "menu_text": "Deactivate module"
     },
+    "flags": [ "BLOCK_WHILE_WORN" ],
     "ammo": [ "battery" ],
     "max_charges": 500,
     "initial_charges": 500,
-    "power_draw": "350 W"
+    "power_draw": "350 W",
+    "category": "exosuit"
   },
   {
     "id": "mx_legs_sealed_module",
     "type": "TOOL_ARMOR",
-    "category": "exosuit",
     "name": { "str": "hazard sealed legs module" },
     "description": "A sealed hazard leg package for contaminated environments, giving strong protection and sealing.",
     "weight": "3200 g",
@@ -2611,13 +1885,13 @@
     },
     "ammo": [ "battery" ],
     "max_charges": 500,
-    "initial_charges": 500
+    "initial_charges": 500,
+    "category": "exosuit"
   },
   {
     "id": "mx_legs_sealed_module_active",
     "copy-from": "mx_legs_sealed_module",
     "type": "TOOL_ARMOR",
-    "category": "exosuit",
     "name": { "str": "hazard sealed legs module (active)" },
     "description": "A sealed hazard leg package for contaminated environments, giving strong protection and sealing. It is powered on.",
     "use_action": {
@@ -2630,12 +1904,12 @@
     "ammo": [ "battery" ],
     "max_charges": 500,
     "initial_charges": 500,
-    "power_draw": "350 W"
+    "power_draw": "350 W",
+    "category": "exosuit"
   },
   {
     "id": "mx_feet_waders_module",
     "type": "TOOL_ARMOR",
-    "category": "exosuit",
     "name": { "str": "hazard wader feet module" },
     "description": "A hazard foot package built to keep the lower suit protected in wet, dirty, and contaminated terrain.",
     "weight": "2500 g",
@@ -2664,13 +1938,13 @@
     },
     "ammo": [ "battery" ],
     "max_charges": 300,
-    "initial_charges": 300
+    "initial_charges": 300,
+    "category": "exosuit"
   },
   {
     "id": "mx_feet_waders_module_active",
     "copy-from": "mx_feet_waders_module",
     "type": "TOOL_ARMOR",
-    "category": "exosuit",
     "name": { "str": "hazard wader feet module (active)" },
     "description": "A hazard foot package built to keep the lower suit protected in wet, dirty, and contaminated terrain. It is powered on.",
     "use_action": {
@@ -2683,6 +1957,7 @@
     "ammo": [ "battery" ],
     "max_charges": 300,
     "initial_charges": 300,
-    "power_draw": "120 W"
+    "power_draw": "120 W",
+    "category": "exosuit"
   }
 ]
