@@ -3,27 +3,27 @@
     "type": "region_settings",
     "id": "default",
     "default_oter": [
-      "backroom_border",
-      "backroom_border",
-      "backroom_border",
-      "backroom_border",
-      "backroom_border",
-      "backroom_border",
-      "backroom_border",
-      "backroom_border",
-      "backroom_border",
-      "backroom_border",
+      "open_air",
+      "open_air",
+      "open_air",
+      "open_air",
+      "open_air",
+      "open_air",
+      "open_air",
+      "open_air",
+      "open_air",
+      "solid_earth",
       "backfloorchamber_north",
-      "backroom_border",
-      "backroom_border",
-      "backroom_border",
-      "backroom_border",
-      "backroom_border",
-      "backroom_border",
-      "backroom_border",
-      "backroom_border",
-      "backroom_border",
-      "backroom_border"
+      "solid_earth",
+      "empty_rock",
+      "empty_rock",
+      "deep_rock",
+      "deep_rock",
+      "deep_rock",
+      "deep_rock",
+      "deep_rock",
+      "deep_rock",
+      "deep_rock"
     ],
     "default_groundcover": [ [ "t_region_groundcover", 1 ] ],
     "region_terrain_and_furniture": {
@@ -65,14 +65,6 @@
       "noise_threshold_swamp_isolated": 1.0,
       "river_floodplain_buffer_distance_min": 0,
       "river_floodplain_buffer_distance_max": 0
-    },
-    "overmap_connection_settings": {
-      "intra_city_road_connection": "local_road",
-      "inter_city_road_connection": "local_road",
-      "trail_connection": "forest_trail",
-      "sewer_connection": "sewer_tunnel",
-      "subway_connection": "subway_tunnel",
-      "rail_connection": "local_railroad"
     },
     "forest_mapgen_settings": {
       "forest": {
@@ -144,14 +136,14 @@
       "trailheads": { "trailhead_basic": 1, "trailhead_outhouse": 1, "trailhead_shack": 1 }
     },
     "map_extras": {
-      "backrooms": {
+      "field": {
         "chance": 40,
         "extras": {
           "mx_teleporter_node": 100,
-          "mx_autodoc_room": 25,
           "mx_casings": 50,
           "mx_corpses": 50,
           "mx_collegekids": 25,
+          "mx_autodoc_room": 25,
           "mx_spider": 20,
           "mx_nest_dermatik": 20,
           "mx_science": 20,
@@ -167,7 +159,13 @@
           "mx_jabberwock": 1,
           "mx_helicopter": 1
         }
-      }
+      },
+      "forest_thick": { "chance": 0, "extras": {  } },
+      "forest_water": { "chance": 0, "extras": {  } },
+      "forest": { "chance": 0, "extras": {  } },
+      "road": { "chance": 0, "extras": {  } },
+      "build": { "chance": 0, "extras": {  } },
+      "subway": { "chance": 0, "extras": {  } }
     },
     "city": {
       "shop_radius": 30,
@@ -187,6 +185,6 @@
       "base_wind_season_variation": 50,
       "weather_black_list": [ "early_portal_storm", "portal_storm" ]
     },
-    "overmap_feature_flag_settings": { "clear_blacklist": false, "blacklist": [  ], "clear_whitelist": true, "whitelist": [ "BACKROOMS" ] }
+    "overmap_feature_flag_settings": { "clear_blacklist": false, "blacklist": [ "LAB" ], "clear_whitelist": false, "whitelist": [  ] }
   }
 ]

@@ -1,0 +1,167 @@
+[
+  {
+    "type": "talk_topic",
+    "id": "TALK_BRIT_OFFICER",
+    "dynamic_line": {
+      "u_is_wearing": "brit_mk7_helmet",
+      "yes": [
+        "Ah, good to see another serviceman. Stand easy.",
+        "Glad to see you're still in uniform. Maintaining standards even now.",
+        "Good day, soldier. Situation report?"
+      ],
+      "no": [
+        "Civilian, this is a restricted military area.",
+        "Identify yourself, please.",
+        "I say, are you authorized to be here?",
+        "Good day. I'm Lieutenant Parker. And you are?"
+      ]
+    },
+    "responses": [
+      { "text": "Who are you?", "topic": "TALK_BRIT_OFFICER_WHO" },
+      { "text": "What's the situation here?", "topic": "TALK_BRIT_OFFICER_SITUATION" },
+      { "text": "Are you in command?", "topic": "TALK_BRIT_OFFICER_COMMAND" },
+      { "text": "Do you need any assistance?", "topic": "TALK_BRIT_OFFICER_MISSION" },
+      { "text": "I'll leave you to your duties.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_BRIT_OFFICER_WHO",
+    "dynamic_line": [
+      "Lieutenant Parker, Royal Military Academy Sandhurst, class of '21.",
+      "Captain Williams, formerly attached to 16 Air Assault Brigade.",
+      "Major Thompson, 42 Commando, Royal Marines.",
+      "Lieutenant Davies, 1st Battalion, Parachute Regiment."
+    ],
+    "responses": [
+      { "text": "How did you end up here?", "topic": "TALK_BRIT_OFFICER_HISTORY" },
+      { "text": "Let's talk about something else.", "topic": "TALK_BRIT_OFFICER" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_BRIT_OFFICER_SITUATION",
+    "dynamic_line": [
+      "Dire, to put it mildly. We've lost contact with high command and most of our forces are scattered.",
+      "We're maintaining a defensive perimeter here while gathering intelligence on the situation. Resources are limited.",
+      "Attempting to establish contact with other surviving military units. So far, communications have been spotty at best.",
+      "Frankly, it's a complete shambles. Chain of command has collapsed, and we're operating on outdated contingency plans."
+    ],
+    "responses": [
+      { "text": "What's your current objective?", "topic": "TALK_BRIT_OFFICER_OBJECTIVE" },
+      { "text": "Let's talk about something else.", "topic": "TALK_BRIT_OFFICER" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_BRIT_OFFICER_COMMAND",
+    "dynamic_line": [
+      "I'm the senior officer in this immediate area, yes. Though that's not saying much these days.",
+      "Technically, yes. Though the traditional command structure has rather broken down.",
+      "I'm coordinating our local efforts. There may be higher-ranking officers elsewhere, if they've survived.",
+      "I've assumed command of the surviving personnel in this sector, in accordance with protocol."
+    ],
+    "responses": [
+      { "text": "How many personnel do you have?", "topic": "TALK_BRIT_OFFICER_PERSONNEL" },
+      { "text": "Let's talk about something else.", "topic": "TALK_BRIT_OFFICER" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_BRIT_OFFICER_PERSONNEL",
+    "dynamic_line": [
+      "A handful of infantry, plus some support staff. We've lost too many good people.",
+      "Not enough, I'm afraid. We started with a full platoon, now we're down to squad strength.",
+      "Our numbers fluctuate. We've been taking in stragglers from other units when we find them.",
+      "That information is need-to-know. Suffice to say, we're undermanned for our objectives."
+    ],
+    "responses": [ { "text": "Let's talk about something else.", "topic": "TALK_BRIT_OFFICER" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_BRIT_OFFICER_HISTORY",
+    "dynamic_line": [
+      "I was leading a training exercise when everything went pear-shaped. We lost communications, then the attacks started.",
+      "I was stationed at the embassy when the crisis began. Had to fight our way out when the local population... changed.",
+      "Was on a NATO exchange program. Found myself cut off from British forces when it all went to hell.",
+      "I was coordinating with American forces when we lost contact with command. Been trying to maintain order ever since."
+    ],
+    "responses": [
+      { "text": "That must have been difficult.", "topic": "TALK_BRIT_OFFICER_SYMPATHY" },
+      { "text": "Let's talk about something else.", "topic": "TALK_BRIT_OFFICER" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_BRIT_OFFICER_SYMPATHY",
+    "dynamic_line": [
+      "Indeed. But one carries on, doesn't one? The job remains the same: protect civilians, maintain order.",
+      "We're trained to adapt and overcome. Though I must say, the current situation rather exceeds the scenarios covered at Sandhurst.",
+      "Thank you for your concern. It's been... challenging. Lost a lot of good people.",
+      "Stiff upper lip and all that. We do what we must."
+    ],
+    "responses": [ { "text": "Let's talk about something else.", "topic": "TALK_BRIT_OFFICER" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_BRIT_OFFICER_OBJECTIVE",
+    "dynamic_line": [
+      "Primary objective is to secure this location and gather intelligence on the wider situation.",
+      "We're attempting to establish contact with any remaining command structure and assist civilians where possible.",
+      "Currently focused on survival and reconnaissance. We need to understand what we're dealing with before formulating a broader strategy.",
+      "Immediate goal is to secure essential supplies and establish a defensible position. Long-term planning is... complicated."
+    ],
+    "responses": [
+      { "text": "Do you need any assistance with that?", "topic": "TALK_BRIT_OFFICER_MISSION" },
+      { "text": "Let's talk about something else.", "topic": "TALK_BRIT_OFFICER" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_BRIT_OFFICER_MISSION",
+    "dynamic_line": [
+      "Actually, yes. We're desperately short on medical supplies. If you could locate some, it would be tremendously helpful.",
+      "We need to establish communications with other surviving units. There's supposed to be a military radio in a supply cache nearby.",
+      "Our reconnaissance is limited by manpower. If you could scout the surrounding area and report back, that would be valuable intelligence.",
+      "We've lost contact with a patrol that was sent to secure supplies. If you could determine their fate, I'd be grateful."
+    ],
+    "responses": [
+      {
+        "text": "I'll see what I can do.",
+        "topic": "TALK_MISSION_ACCEPTED",
+        "effect": { "npc_add_var": "mission_offered", "type": "general", "context": "chat", "value": "yes" }
+      },
+      { "text": "I can't help right now.", "topic": "TALK_MISSION_REJECTED" },
+      { "text": "Let's talk about something else.", "topic": "TALK_BRIT_OFFICER" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_MISSION_ACCEPTED",
+    "dynamic_line": {
+      "npc_has_var": "mission_offered",
+      "type": "general",
+      "context": "chat",
+      "value": "yes",
+      "yes": "Excellent. Your assistance is greatly appreciated. Report back when you have something to share.",
+      "no": "I'm not sure what you're referring to."
+    },
+    "responses": [ { "text": "I'll get right on it.", "topic": "TALK_DONE" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_MISSION_REJECTED",
+    "dynamic_line": {
+      "npc_has_var": "mission_offered",
+      "type": "general",
+      "context": "chat",
+      "value": "yes",
+      "yes": "I understand. These are difficult times. Perhaps you'll reconsider when circumstances allow.",
+      "no": "I'm not sure what you're referring to."
+    },
+    "responses": [
+      { "text": "Let's talk about something else.", "topic": "TALK_BRIT_OFFICER" },
+      { "text": "I should go.", "topic": "TALK_DONE" }
+    ]
+  }
+]

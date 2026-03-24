@@ -14,9 +14,7 @@
     "looks_like": "mon_turret",
     "aggression": 100,
     "morale": 100,
-    "armor_bash": 14,
-    "armor_cut": 16,
-    "armor_acid": 14,
+    "armor": { "bash": 14, "cut": 16, "acid": 14 },
     "death_function": { "corpse_type": "BROKEN" },
     "flags": [ "SEES", "NOHEAD", "ELECTRONIC", "IMMOBILE", "NO_BREATHE" ]
   },
@@ -71,57 +69,5 @@
       }
     ],
     "extend": { "flags": [ "FIREPROOF" ] }
-  },
-  {
-    "id": "mon_advturret_rail",
-    "type": "MONSTER",
-    "copy-from": "base_turret",
-    "name": { "str": "railgun turret" },
-    "symbol": "t",
-    "description": "A work of art and know-how of electronics, a modified standard CROWS turret with a railgun. It's a admirable work of art and at the same quite scary to look up.",
-    "default_faction": "military",
-    "diff": 30,
-    "color": "magenta",
-    "revert_to_itype": "bot_advturret_rail",
-    "starting_ammo": { "steel_rail": 50 },
-    "special_attacks": [
-      {
-        "type": "gun",
-        "cooldown": 5,
-        "gun_type": "robogun_rail",
-        "ammo_type": "steel_rail",
-        "fake_skills": [ [ "gun", 5 ], [ "rifle", 5 ] ],
-        "fake_dex": 10,
-        "no_ammo_sound": "buzz!",
-        "ranges": [ [ 0, 30, "DEFAULT" ] ]
-      }
-    ],
-    "extend": { "flags": [ "DROPS_AMMO" ] }
-  },
-  {
-    "id": "mon_turret_nail",
-    "type": "MONSTER",
-    "copy-from": "base_turret",
-    "name": { "str": "nailgun turret" },
-    "symbol": "t",
-    "description": "A work of art and know-how of electronics, a modified standard CROWS turret with a nail gun. It's a admirable work of art and at the same quite scary to look up.",
-    "default_faction": "military",
-    "diff": 30,
-    "color": "magenta",
-    "revert_to_itype": "bot_turret_nail",
-    "starting_ammo": { "nail": 500 },
-    "special_attacks": [
-      {
-        "type": "gun",
-        "cooldown": 0,
-        "gun_type": "robogun_advnail",
-        "ammo_type": "nail",
-        "fake_skills": [ [ "gun", 2 ], [ "smg", 2 ] ],
-        "fake_dex": 8,
-        "no_ammo_sound": "click click!",
-        "ranges": [ [ 0, 10, "AUTO" ] ]
-      }
-    ],
-    "extend": { "flags": [ "DROPS_AMMO" ] }
   }
 ]

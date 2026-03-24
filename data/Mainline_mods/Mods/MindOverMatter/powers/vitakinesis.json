@@ -34,44 +34,6 @@
     }
   },
   {
-    "id": "vita_slow_bleeding",
-    "type": "SPELL",
-    "name": "[Ψ]Coagulation (C)",
-    "description": "By increasing the efficiency of your platelets and speeding their movement, you can slow your rate of bleeding and even prevent it before it starts.\n\nThis power <color_yellow>is maintained by concentration</color> and <color_red>may fail</color> if <color_yellow>concentration is interrupted</color>.",
-    "message": "",
-    "teachable": false,
-    "valid_targets": [ "self" ],
-    "spell_class": "VITAKINETIC",
-    "skill": "metaphysics",
-    "flags": [ "PSIONIC", "CONCENTRATE", "SILENT", "NO_HANDS", "NO_LEGS", "RANDOM_DURATION", "NO_EXPLOSION_SFX" ],
-    "difficulty": 1,
-    "max_level": { "math": [ "int_to_level(1)" ] },
-    "effect": "effect_on_condition",
-    "effect_str": "EOC_VITAKIN_SLOW_BLEEDING_INITIATE",
-    "shape": "blast",
-    "min_duration": {
-      "math": [
-        "( (u_spell_level('vita_slow_bleeding') * 1800) + 29000) * (scaling_factor(u_val('intelligence') ) ) * u_nether_attunement_power_scaling"
-      ]
-    },
-    "max_duration": {
-      "math": [
-        "( (u_spell_level('vita_slow_bleeding') * 16300) + 117400) * (scaling_factor(u_val('intelligence') ) ) * u_nether_attunement_power_scaling"
-      ]
-    },
-    "energy_source": "STAMINA",
-    "base_energy_cost": {
-      "math": [
-        "u_effect_intensity('effect_vitakin_slow_bleeding') > -1 ? 0 : max((2500 - (u_spell_level('vita_health_power') * 95)), 1250)"
-      ]
-    },
-    "base_casting_time": {
-      "math": [
-        "u_effect_intensity('effect_vitakin_slow_bleeding') > -1 ? 10 : max((200 -(u_spell_level('vita_health_power') * 6.5)), 50)"
-      ]
-    }
-  },
-  {
     "id": "vita_stop_bleeding",
     "type": "SPELL",
     "name": "[Ψ]Staunch Wound",
@@ -86,6 +48,7 @@
     "max_level": { "math": [ "int_to_level(1)" ] },
     "effect": "effect_on_condition",
     "effect_str": "EOC_VITAKIN_STOP_BLEEDING_EOC",
+    "extra_effects": [ { "id": "psionic_drained_difficulty_two", "hit_self": true } ],
     "shape": "blast",
     "min_damage": 1,
     "max_damage": 1,
@@ -107,7 +70,6 @@
     "valid_targets": [ "self" ],
     "spell_class": "VITAKINETIC",
     "skill": "metaphysics",
-    "teachable": false,
     "flags": [ "PSIONIC", "SILENT", "NO_HANDS", "NO_LEGS", "NO_EXPLOSION_SFX" ],
     "effect": "spawn_item",
     "effect_str": "vita_bandage_01",
@@ -125,7 +87,6 @@
     "valid_targets": [ "self" ],
     "spell_class": "VITAKINETIC",
     "skill": "metaphysics",
-    "teachable": false,
     "flags": [ "PSIONIC", "SILENT", "NO_HANDS", "NO_LEGS", "NO_EXPLOSION_SFX" ],
     "effect": "spawn_item",
     "effect_str": "vita_bandages_02",
@@ -143,7 +104,6 @@
     "valid_targets": [ "self" ],
     "spell_class": "VITAKINETIC",
     "skill": "metaphysics",
-    "teachable": false,
     "flags": [ "PSIONIC", "SILENT", "NO_HANDS", "NO_LEGS", "NO_EXPLOSION_SFX" ],
     "effect": "spawn_item",
     "effect_str": "vita_bandages_03",
@@ -168,6 +128,7 @@
     "max_level": { "math": [ "int_to_level(1)" ] },
     "effect": "attack",
     "effect_str": "effect_vitakin_hurt",
+    "extra_effects": [ { "id": "psionic_drained_difficulty_three", "hit_self": true } ],
     "shape": "blast",
     "damage_type": "biological",
     "min_dot": 1,
@@ -207,6 +168,7 @@
     "max_level": { "math": [ "int_to_level(1)" ] },
     "effect": "attack",
     "effect_str": "effect_vita_health",
+    "extra_effects": [ { "id": "psionic_drained_difficulty_three", "hit_self": true } ],
     "shape": "blast",
     "min_range": 1,
     "min_duration": {
@@ -244,6 +206,7 @@
     "max_level": { "math": [ "int_to_level(1)" ] },
     "effect": "effect_on_condition",
     "effect_str": "EOC_VITAKIN_DEXTOXIFICATION_CHECK_1",
+    "extra_effects": [ { "id": "psionic_drained_difficulty_three", "hit_self": true } ],
     "min_duration": {
       "math": [
         "( (u_spell_level('vita_remove_poison') * 400) + 15600) * (scaling_factor(u_val('intelligence') ) ) * u_nether_attunement_power_scaling"
@@ -277,6 +240,7 @@
     "max_level": { "math": [ "int_to_level(1)" ] },
     "effect": "effect_on_condition",
     "effect_str": "EOC_VITAKIN_SLEEP",
+    "extra_effects": [ { "id": "psionic_drained_difficulty_four", "hit_self": true } ],
     "shape": "blast",
     "energy_source": "STAMINA",
     "base_energy_cost": 1000,
@@ -334,6 +298,7 @@
     "difficulty": 5,
     "max_level": { "math": [ "int_to_level(1)" ] },
     "effect": "pain_split",
+    "extra_effects": [ { "id": "psionic_drained_difficulty_five", "hit_self": true } ],
     "shape": "blast",
     "energy_source": "STAMINA",
     "base_energy_cost": 6500,
@@ -358,6 +323,7 @@
     "max_level": { "math": [ "int_to_level(1)" ] },
     "effect": "effect_on_condition",
     "effect_str": "EOC_VITAKIN_STOP_INFECTION_SWITCH",
+    "extra_effects": [ { "id": "psionic_drained_difficulty_five", "hit_self": true } ],
     "shape": "blast",
     "energy_source": "STAMINA",
     "base_energy_cost": 5000,
@@ -373,7 +339,6 @@
     "name": "[Ψ]SAllay Infection #1",
     "description": "The first of the Allay Infection spells.  This summons a low-power disinfectant/antibiotic--it's a bug if you have it.",
     "valid_targets": [ "self" ],
-    "teachable": false,
     "spell_class": "VITAKINETIC",
     "skill": "metaphysics",
     "flags": [ "PSIONIC", "SILENT", "NO_HANDS", "NO_LEGS", "NO_EXPLOSION_SFX" ],
@@ -391,7 +356,6 @@
     "name": "[Ψ]SAllay Infection #2",
     "description": "The second of the Allay Infection spells.  This summons a medium-power disinfectant/antibiotic--it's a bug if you have it.",
     "valid_targets": [ "self" ],
-    "teachable": false,
     "spell_class": "VITAKINETIC",
     "skill": "metaphysics",
     "flags": [ "PSIONIC", "SILENT", "NO_HANDS", "NO_LEGS", "NO_EXPLOSION_SFX" ],
@@ -409,7 +373,6 @@
     "name": "[Ψ]SAllay Infection #3",
     "description": "The third of the Allay Infection spells.  This summons a high-power disinfectant/antibiotic--it's a bug if you have it.",
     "valid_targets": [ "self" ],
-    "teachable": false,
     "spell_class": "VITAKINETIC",
     "skill": "metaphysics",
     "flags": [ "PSIONIC", "SILENT", "NO_HANDS", "NO_LEGS", "NO_EXPLOSION_SFX" ],
@@ -425,8 +388,8 @@
     "id": "vita_healing_trance",
     "type": "SPELL",
     "name": "[Ψ]Revitalizing Meditation",
-    "description": "Enter a trance state and heal your injuries many times faster than they would heal naturally.",
-    "message": "You enter a trance and submerge your awareness into your body.",
+    "description": "Enter a trance state and heal your injuries",
+    "message": "You exit your trance and your wounds feel less painful.",
     "teachable": false,
     "valid_targets": [ "self" ],
     "spell_class": "VITAKINETIC",
@@ -434,12 +397,22 @@
     "flags": [ "PSIONIC", "CONCENTRATE", "SILENT", "NO_HANDS", "NO_LEGS", "RANDOM_DAMAGE" ],
     "difficulty": 6,
     "max_level": { "math": [ "int_to_level(1)" ] },
-    "effect": "effect_on_condition",
-    "effect_str": "EOC_VITAKIN_HEALING_TRANCE",
+    "effect": "attack",
+    "extra_effects": [ { "id": "psionic_drained_difficulty_six", "hit_self": true } ],
     "shape": "blast",
+    "min_damage": {
+      "math": [
+        "( (u_spell_level('vita_healing_trance') * -0.5) - 3) * (scaling_factor(u_val('intelligence') ) ) * u_nether_attunement_power_scaling"
+      ]
+    },
+    "max_damage": {
+      "math": [
+        "( (u_spell_level('vita_healing_trance') * -2) - 8) * (scaling_factor(u_val('intelligence') ) ) * u_nether_attunement_power_scaling"
+      ]
+    },
     "energy_source": "STAMINA",
     "base_energy_cost": 8000,
-    "base_casting_time": 500
+    "base_casting_time": 360000
   },
   {
     "id": "vita_attack_touch",
@@ -455,6 +428,7 @@
     "difficulty": 6,
     "max_level": { "math": [ "int_to_level(1)" ] },
     "effect": "attack",
+    "extra_effects": [ { "id": "psionic_drained_difficulty_six", "hit_self": true } ],
     "shape": "blast",
     "damage_type": "biological",
     "min_damage": {
@@ -526,7 +500,10 @@
     "max_level": { "math": [ "int_to_level(1)" ] },
     "effect": "attack",
     "effect_str": "cureall",
-    "extra_effects": [ { "id": "vita_blood_purge_no_mutagens", "hit_self": true } ],
+    "extra_effects": [
+      { "id": "vita_blood_purge_no_mutagens", "hit_self": true },
+      { "id": "psionic_drained_difficulty_seven", "hit_self": true }
+    ],
     "shape": "blast",
     "energy_source": "STAMINA",
     "base_energy_cost": 8500,
@@ -562,6 +539,7 @@
     "max_level": { "math": [ "int_to_level(1)" ] },
     "effect": "effect_on_condition",
     "effect_str": "EOC_VITAKIN_BANISH_ILLNESS_SELECTOR",
+    "extra_effects": [ { "id": "psionic_drained_difficulty_eight", "hit_self": true } ],
     "shape": "blast",
     "energy_source": "STAMINA",
     "base_energy_cost": 10000,
@@ -607,7 +585,6 @@
     "name": "Anabolic Rejuvenation Heal",
     "description": "The healing part of Anabolic Rejuvenation.",
     "valid_targets": [ "self" ],
-    "teachable": false,
     "min_damage": { "math": [ "min((-1 * u_nether_attunement_power_scaling), -1)" ] },
     "max_damage": { "math": [ "min((-1 * u_nether_attunement_power_scaling), -1)" ] },
     "effect": "attack",
@@ -620,7 +597,6 @@
     "name": "Anabolic Rejuvenation draining",
     "description": "The draining part of Anabolic Rejuvenation.",
     "valid_targets": [ "self" ],
-    "teachable": false,
     "effect": "effect_on_condition",
     "effect_str": "EOC_VITA_SUPER_HEAL_DRAIN",
     "shape": "blast",
@@ -641,6 +617,7 @@
     "max_level": { "math": [ "int_to_level(1)" ] },
     "effect": "effect_on_condition",
     "effect_str": "EOC_VITAKIN_RESTORE_LIMB_SELECTOR",
+    "extra_effects": [ { "id": "psionic_drained_difficulty_ten", "hit_self": true } ],
     "shape": "blast",
     "min_duration": {
       "math": [
