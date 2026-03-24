@@ -1,0 +1,153 @@
+[
+  {
+    "type": "talk_topic",
+    "id": "TALK_BRIT_SAS",
+    "dynamic_line": {
+      "u_is_wearing": "brit_mk7_helmet",
+      "yes": [
+        "Keep your distance, mate. Identify yourself.",
+        "Military, eh? Stand down and state your business.",
+        "Another survivor from the forces? Interesting."
+      ],
+      "no": [
+        "That's far enough, civilian.",
+        "Stop right there. What do you want?",
+        "I wouldn't come any closer if I were you.",
+        "State your business quickly."
+      ]
+    },
+    "responses": [
+      { "text": "Who are you?", "topic": "TALK_BRIT_SAS_WHO" },
+      { "text": "What are you doing here?", "topic": "TALK_BRIT_SAS_DOING" },
+      { "text": "Any advice for surviving out here?", "topic": "TALK_BRIT_SAS_ADVICE" },
+      { "text": "Have you seen any other special forces?", "topic": "TALK_BRIT_SAS_OTHERS" },
+      { "text": "I'll leave you alone.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_BRIT_SAS_WHO",
+    "dynamic_line": [
+      "That's not important. Former military, let's leave it at that.",
+      "Used to be with 22 SAS. Not that it matters much now.",
+      "Does it matter? Just another survivor trying to stay alive.",
+      "Let's just say I had specialized training before the world went to hell."
+    ],
+    "responses": [
+      { "text": "SAS? That's impressive.", "topic": "TALK_BRIT_SAS_IMPRESSED", "condition": { "u_has_intelligence": 7 } },
+      { "text": "How did you end up here?", "topic": "TALK_BRIT_SAS_HISTORY" },
+      { "text": "Let's talk about something else.", "topic": "TALK_BRIT_SAS" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_BRIT_SAS_IMPRESSED",
+    "dynamic_line": [
+      "Was. Past tense. Regiment doesn't exist anymore, far as I can tell.",
+      "Don't be. The skills that kept me alive then are keeping me alive now. Nothing special about it.",
+      "Save your admiration. Didn't do much good when the world fell apart, did it?",
+      "It's just training. Discipline and preparation. You'd do well to learn some of it yourself."
+    ],
+    "responses": [
+      { "text": "Could you teach me some of those skills?", "topic": "TALK_BRIT_SAS_TEACH" },
+      { "text": "Let's talk about something else.", "topic": "TALK_BRIT_SAS" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_BRIT_SAS_TEACH",
+    "dynamic_line": [
+      "Not interested in taking on students.",
+      "You learn by doing in this world. Stay alive long enough, you'll pick it up.",
+      "Maybe. If you prove you're worth the effort.",
+      "Training takes time we don't have. Best advice: stay alert, travel light, and trust no one."
+    ],
+    "responses": [ { "text": "Fair enough.", "topic": "TALK_BRIT_SAS" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_BRIT_SAS_DOING",
+    "dynamic_line": [
+      "Reconnaissance. Assessing threats. The usual.",
+      "Staying alive. Same as everyone else.",
+      "Keeping mobile. Stationary targets don't last long these days.",
+      "Looking for other survivors with military background. Strength in numbers, if they're the right sort."
+    ],
+    "responses": [
+      { "text": "Are you alone?", "topic": "TALK_BRIT_SAS_ALONE" },
+      { "text": "Let's talk about something else.", "topic": "TALK_BRIT_SAS" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_BRIT_SAS_ALONE",
+    "dynamic_line": [
+      "That's not information I share casually.",
+      "Maybe. Maybe not. Better for both of us if you don't know.",
+      "Was part of a four-man patrol. I'm the only one still breathing.",
+      "Alone works better for me. Groups attract attention."
+    ],
+    "responses": [ { "text": "Let's talk about something else.", "topic": "TALK_BRIT_SAS" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_BRIT_SAS_HISTORY",
+    "dynamic_line": [
+      "Was on an operation when everything went sideways. Details aren't important.",
+      "Joint training exercise with American Delta. Then the world ended.",
+      "Extraction went bad. Team was compromised. Then those... things started appearing.",
+      "Wrong place, wrong time. Story of my life."
+    ],
+    "responses": [
+      { "text": "That's rough.", "topic": "TALK_BRIT_SAS_SYMPATHY" },
+      { "text": "Let's talk about something else.", "topic": "TALK_BRIT_SAS" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_BRIT_SAS_SYMPATHY",
+    "dynamic_line": [
+      "Save it. Sympathy doesn't keep you alive out here.",
+      "It is what it is. Can't change the past.",
+      "Appreciate the sentiment, but it doesn't matter now.",
+      "We adapt and overcome. It's what we're trained to do."
+    ],
+    "responses": [ { "text": "Let's talk about something else.", "topic": "TALK_BRIT_SAS" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_BRIT_SAS_ADVICE",
+    "dynamic_line": [
+      "Travel light. Stay quiet. Trust your instincts.",
+      "Avoid cities. Too many of those things. Stick to rural areas when possible.",
+      "Don't get attached to people or places. Be ready to move at a moment's notice.",
+      "Learn to live with less sleep. The night belongs to them now."
+    ],
+    "responses": [
+      { "text": "Any combat tips?", "topic": "TALK_BRIT_SAS_COMBAT" },
+      { "text": "Let's talk about something else.", "topic": "TALK_BRIT_SAS" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_BRIT_SAS_COMBAT",
+    "dynamic_line": [
+      "Avoid it when possible. Every engagement is a risk.",
+      "Noise attracts them. Use blades when you can, firearms only when necessary.",
+      "Always have an escape route planned. Never let them surround you.",
+      "Conserve ammunition. Make every shot count. Headshots are the only shots worth taking."
+    ],
+    "responses": [ { "text": "That's helpful, thanks.", "topic": "TALK_BRIT_SAS" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_BRIT_SAS_OTHERS",
+    "dynamic_line": [
+      "None. If they're smart, they're keeping a low profile.",
+      "Ran into an American operator a few weeks back. Heading west, last I saw.",
+      "There's rumors of a group operating out of an old RAF base, but I haven't confirmed it.",
+      "Special forces types tend to work alone or in small teams. They're out there, just hard to find."
+    ],
+    "responses": [ { "text": "Let's talk about something else.", "topic": "TALK_BRIT_SAS" } ]
+  }
+]

@@ -1,4 +1,4 @@
-# TheGoatGod's Mod Compilation **[Version-0.2.2]**
+# TheGoatGod's Mod Compilation **[Version-0.3.0]**
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -9,8 +9,8 @@
   - [Cataclysm: Goats Dark Horizons](#cataclysm-goats-dark-horizons)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-[![Build_Number](https://img.shields.io/badge/CDDA_Build%3A-%2311458-blue)](https://github.com/CleverRaven/Cataclysm-DDA)
-[![version](https://img.shields.io/badge/GMC_version-0.1.8-blue)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/releases/tag/V0.1.8)
+[![Build_Number](https://img.shields.io/badge/CDDA_Build%3A-H_release-blue)](https://github.com/CleverRaven/Cataclysm-DDA)
+[![version](https://img.shields.io/badge/GMC_version-0.3.0-blue)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/releases/tag/V0.3.0)
 [![Repo_Size](https://img.shields.io/github/repo-size/GMC-Modding-Team/Community-Mod-Compilation-redux)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/graphs/code-frequency)
 [![Total_Downloads](https://img.shields.io/github/downloads/GMC-Modding-Team/Community-Mod-Compilation-redux/total)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/releases)
 [![Discord](https://img.shields.io/discord/682148537752223765?label=Discord)](https://discord.gg/sk8HHF6sMY)\

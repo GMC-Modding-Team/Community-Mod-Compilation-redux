@@ -11,12 +11,57 @@
         { "u_has_trait": "TELEPORTER" },
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
-          "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_ONE_POWER_INSIGHT" },
-            { "math": [ "u_spell_level('teleport_blink')", ">=", "6" ] }
-          ]
+          "or": [ { "x_in_y_chance": { "x": 1, "y": 20 } }, { "math": [ "u_spell_level('teleport_blink')", ">=", "6" ] } ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('teleport_phase')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_teleport_phase" } }
       ]
@@ -27,45 +72,6 @@
       { "u_learn_recipe": "practice_teleport_phase" },
       {
         "u_message": "Use of your powers has led to an insight.  You could control your teleporting, traveling short distances without crossing the intervening space, if you can figure out the proper technique.",
-        "popup": true
-      }
-    ]
-  },
-  {
-    "type": "effect_on_condition",
-    "id": "EOC_TELEPORT_LEARNING_EPHEMERAL_WALK",
-    "recurrence": [
-      { "math": [ "jmath_teleportation_learning_eocs_modifiers(global_tier_two_power_learning_time_low)" ] },
-      { "math": [ "jmath_teleportation_learning_eocs_modifiers(global_tier_two_power_learning_time_high)" ] }
-    ],
-    "condition": {
-      "and": [
-        { "u_has_trait": "TELEPORTER" },
-        { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
-        {
-          "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_TWO_POWER_INSIGHT" },
-            {
-              "and": [
-                { "math": [ "u_spell_level('teleport_phase')", ">=", "10" ] },
-                { "math": [ "u_spell_level('teleport_stride')", ">=", "5" ] }
-              ]
-            }
-          ]
-        },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
-        { "math": [ "u_spell_level('teleport_ephemeral_walk')", "<=", "0" ] },
-        { "not": { "u_know_recipe": "practice_teleport_ephemeral_walk" } }
-      ]
-    },
-    "deactivate_condition": {
-      "or": [ { "not": { "u_has_trait": "TELEPORTER" } }, { "math": [ "u_spell_level('teleport_ephemeral_walk')", ">=", "1" ] } ]
-    },
-    "effect": [
-      { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "=", "0" ] },
-      { "u_learn_recipe": "practice_teleport_ephemeral_walk" },
-      {
-        "u_message": "Use of your powers has led to an insight.  You can maintain a slight offset from normal space, allowing yourself to effortlessly phase through obstacles while still being able to interact with reality, if you can figure out the proper technique.",
         "popup": true
       }
     ]
@@ -83,7 +89,7 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_ONE_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 20 } },
             {
               "and": [
                 { "math": [ "u_spell_level('teleport_phase')", ">=", "4" ] },
@@ -92,7 +98,55 @@
             }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('teleport_stride')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_teleport_stride" } }
       ]
@@ -120,7 +174,7 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_TWO_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 40 } },
             {
               "and": [
                 { "math": [ "u_spell_level('teleport_displacement')", ">=", "5" ] },
@@ -129,7 +183,55 @@
             }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('teleport_transpose')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_teleport_transpose" } }
       ]
@@ -159,7 +261,7 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_TWO_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 40 } },
             {
               "and": [
                 { "math": [ "u_spell_level('teleport_phase')", ">=", "5" ] },
@@ -168,7 +270,55 @@
             }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('teleport_displacement')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_teleport_displacement" } }
       ]
@@ -198,7 +348,7 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_TWO_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 40 } },
             {
               "and": [
                 {
@@ -212,7 +362,55 @@
             }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('teleport_collapse')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_teleport_collapse" } }
       ]
@@ -242,7 +440,7 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_TWO_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 40 } },
             {
               "and": [
                 {
@@ -256,7 +454,55 @@
             }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('teleport_farstep')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_teleport_farstep" } }
       ]
@@ -284,7 +530,7 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_THREE_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 80 } },
             {
               "and": [
                 {
@@ -299,7 +545,55 @@
             }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('teleport_banish')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_teleport_banish" } }
       ]
@@ -327,7 +621,7 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_THREE_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 80 } },
             {
               "and": [
                 { "math": [ "u_spell_level('teleport_stride')", ">=", "10" ] },
@@ -336,7 +630,55 @@
             }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('teleport_gateway')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_teleport_gateway" } }
       ]
@@ -364,7 +706,7 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_THREE_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 80 } },
             {
               "and": [
                 {
@@ -378,56 +720,65 @@
             }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
-        { "math": [ "u_spell_level('teleport_summon')", "<=", "0" ] },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
+        { "math": [ "u_spell_level('teleport_breach')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_teleport_breach" } }
       ]
     },
-    "deactivate_condition": { "or": [ { "not": { "u_has_trait": "TELEPORTER" } }, { "math": [ "u_spell_level('teleport_summon')", ">=", "1" ] } ] },
+    "deactivate_condition": { "or": [ { "not": { "u_has_trait": "TELEPORTER" } }, { "math": [ "u_spell_level('teleport_breach')", ">=", "1" ] } ] },
     "effect": [
       { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "=", "0" ] },
       { "u_learn_recipe": "practice_teleport_breach" },
       {
         "u_message": "Use of your powers has led to an insight.  Just as you can send a target away from you, you could open up a portal to the Nether and allow some of its denizens to come through to Earth, if you can figure out the technique.",
-        "popup": true
-      }
-    ]
-  },
-  {
-    "type": "effect_on_condition",
-    "id": "EOC_TELEPORT_LEARNING_REALITY_TEAR",
-    "recurrence": [
-      { "math": [ "jmath_teleportation_learning_eocs_modifiers(global_tier_three_power_learning_time_low)" ] },
-      { "math": [ "jmath_teleportation_learning_eocs_modifiers(global_tier_three_power_learning_time_high)" ] }
-    ],
-    "condition": {
-      "and": [
-        { "u_has_trait": "TELEPORTER" },
-        { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
-        {
-          "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_THREE_POWER_INSIGHT" },
-            {
-              "and": [
-                { "math": [ "u_spell_level('teleport_summon')", ">=", "10" ] },
-                { "math": [ "u_spell_level('teleport_gateway')", ">=", "10" ] }
-              ]
-            }
-          ]
-        },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
-        { "math": [ "u_spell_level('teleport_reality_tear')", "<=", "0" ] },
-        { "not": { "u_know_recipe": "practice_teleport_reality_tear" } }
-      ]
-    },
-    "deactivate_condition": {
-      "or": [ { "not": { "u_has_trait": "TELEPORTER" } }, { "math": [ "u_spell_level('teleport_reality_tear')", ">=", "1" ] } ]
-    },
-    "effect": [
-      { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "=", "0" ] },
-      { "u_learn_recipe": "practice_teleport_reality_tear" },
-      {
-        "u_message": "Use of your powers has led to an insight.  You are able to open a permanent tear in reality to the Nether, allowing all manners of creatures to pass through to Earth.",
         "popup": true
       }
     ]
