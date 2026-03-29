@@ -53,16 +53,27 @@ def load_vehicles(paths: Iterable[Path]) -> list[dict]:
         if not path.exists():
             raise FileNotFoundError(f"Failed: could not find {path}")
         with path.open(encoding="utf-8") as resource_file:
-            vehicles.extend(json.load(resource_file))
+            data = json.load(resource_file)
+        # FIX 4: a file may contain a single object instead of a list;
+        # wrapping it ensures we always iterate over a list of vehicles.
+        if isinstance(data, dict):
+            data = [data]
+        vehicles.extend(data)
     return vehicles
 
 
 def write_to_json(path: Path, data, formatter: Path) -> None:
-    path.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
+    # FIX 3: use indent=2 as a readable fallback when the external formatter
+    # is not present, instead of writing a single unformatted line.
     if formatter.exists():
+        path.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
         subprocess.run([str(formatter), str(path)], check=False)
     else:
-        LOGGER.debug("Formatter %s not found; skipping", formatter)
+        LOGGER.debug("Formatter %s not found; using built-in indent=2 fallback", formatter)
+        path.write_text(
+            json.dumps(data, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
 
 
 def really_add_parts(
@@ -78,11 +89,15 @@ def really_add_parts(
     pretty_subparts = []
     temp_parts = ""
     for part in y_part["parts"]:
-        temp_parts += f'"{part}"'
+        # FIX 2: part may be a dict (fuel/ammo entries); use json.dumps for an
+        # accurate length measurement instead of f'"{part}"' which would
+        # produce "{'part': ...}" and raise a TypeError on dict values.
+        part_str = json.dumps(part) if isinstance(part, dict) else f'"{part}"'
+        temp_parts += part_str
         if len(temp_parts) > LINE_LIMIT:
             pretty_parts.append(pretty_subparts)
             pretty_subparts = []
-            temp_parts = f'"{part}"'
+            temp_parts = part_str
         temp_parts += ", "
         pretty_subparts.append(part)
     pretty_parts.append(pretty_subparts)
@@ -111,16 +126,22 @@ def add_parts(
 ) -> int:
     xparts = new_parts.get(xpoint, {})
     if not xparts:
-        return 0
+        # FIX 5: preserve last_center instead of resetting to 0 when a column
+        # has no parts, so adjacent columns stay correctly aligned.
+        return last_center
+
     min_y = 122
     max_y = -122
     for ypoint in xparts:
         min_y = min(min_y, ypoint)
         max_y = max(max_y, ypoint)
 
+    # Emit the center row first, then walk outward in both directions.
     if xpoint == 0:
         really_add_parts(revised_parts, xpoint, last_center, xparts)
-    for ypoint in range(min_y - 1, last_center, 1):
+    # FIX 1: was range(min_y - 1, last_center) which started one row too low,
+    # skipping the actual min_y row entirely.  Correct start is min_y.
+    for ypoint in range(min_y, last_center):
         really_add_parts(revised_parts, xpoint, ypoint, xparts)
     if xpoint != 0:
         really_add_parts(revised_parts, xpoint, last_center, xparts)
