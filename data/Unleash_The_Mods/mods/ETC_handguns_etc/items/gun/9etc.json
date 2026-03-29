@@ -1,0 +1,307 @@
+[
+  {
+    "id": "etc_deel",
+    "type": "GUN",
+    "copy-from": "etc_pistol_base",
+    "name": { "str_sp": "OCG Desert Eel" },
+    "description": "This electrothermal-chemical pistol packs a lot of power for its size and weight. As an UPS cannot fit inside a pocket, OmniCorp Desert Eel is a true pocket pistol only for cyborgs with the UPS bionic.",
+    "weight": "600 g",
+    "volume": "221 ml",
+    "price": "800 USD",
+    "price_postapoc": "40 USD",
+    "to_hit": -2,
+    "melee_damage": { "bash": 8 },
+    "material": [ "plastic", "superalloy" ],
+    "color": "dark_gray",
+    "ammo": [ "9etc" ],
+    "ranged_damage": { "damage_type": "stab", "amount": -2 },
+    "dispersion": 560,
+    "durability": 9,
+    "looks_like": "makarov",
+    "//": "Compatible with all OCG 9mm ETC magazines, but using bigger mags nullifies its main advantage.",
+    "flags": [ "WATERPROOF_GUN" ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "magazine_well": "250 ml",
+        "max_contains_volume": "1 L",
+        "max_contains_weight": "500 g",
+        "item_restriction": [ "deelmag", "ocg9emag", "ocg9emagbig", "ocg9emagdrum", "beelmag", "ocg_id10mag" ]
+      }
+    ]
+  },
+  {
+    "id": "etc_hac",
+    "copy-from": "etc_pistol_base",
+    "type": "GUN",
+    "name": { "str": "OCG Hand Autocannon" },
+    "description": "Bulky, heavy and intimidating, the Hand Autocannon barely fits inside a normal holster and is the most powerful electrothermal-chemical pistol developed by OmniCorp. It has 2 round burst and automatic fire modes.",
+    "weight": "1600 g",
+    "volume": "800 ml",
+    "price": "990 USD",
+    "price_postapoc": "50 USD",
+    "to_hit": -2,
+    "melee_damage": { "bash": 8 },
+    "material": [ "steel", "superalloy" ],
+    "color": "dark_gray",
+    "ammo": [ "9etc" ],
+    "ranged_damage": { "damage_type": "stab", "amount": 2 },
+    "dispersion": 290,
+    "durability": 10,
+    "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "BURST", "2 rd.", 2 ], [ "AUTO", "auto", 4 ] ],
+    "built_in_mods": "wire_stock",
+    "looks_like": "mac_10",
+    "flags": [ "WATERPROOF_GUN", "DURABLE_MELEE" ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "magazine_well": "500 ml",
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [
+          "ocg9emag",
+          "ocg9emagbig",
+          "ocg9emagdrum",
+          "deelmag",
+          "glockmag",
+          "glockbigmag",
+          "glock17_17",
+          "glock17_22",
+          "glock_drum_50rd",
+          "glock_drum_100rd"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "etc_chaingun",
+    "copy-from": "etc_nanogun",
+    "type": "GUN",
+    "name": { "str": "OCG N9A1 Chaingun" },
+    "description": "OmniCorp's N9A1 Chaingun stands out from the Nanogun with its unique trigger group and very flexible burst limiter. Each setting in its fire selector lever can be further tuned through short or long trigger pulls.",
+    "weight": "4 kg",
+    "price": "2800 USD",
+    "price_postapoc": "120 USD",
+    "ammo": [ "9etc" ],
+    "ranged_damage": { "damage_type": "stab", "amount": -1 },
+    "recoil": 0,
+    "built_in_mods": [ "ocg_grippod_fg", "ocg_grippod_bipod" ],
+    "reload": 750,
+    "modes": [
+      [ "DEFAULT", "semi-auto", 1 ],
+      [ "E2BURST", "2 rd.", 2 ],
+      [ "F3BURST", "3 rd.", 3 ],
+      [ "G6BURST", "6 rd.", 6 ],
+      [ "HBURST", "low auto", 7 ],
+      [ "IAUTO", "high auto", 20 ]
+    ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "ammo_restriction": { "9etc": 750 } } ]
+  },
+  {
+    "id": "etc_o2020h",
+    "copy-from": "etc_o2020",
+    "type": "GUN",
+    "name": { "str": "OCG O2020H" },
+    "description": "9mm ETC variant of OmniCorp O2020 SMG. Features more stopping power, recoil, louder gunfire, reduced rate of fire and less rounds per magazine. Utilizes a helical magazine to maximize ammunition capacity.",
+    "weight": "1900 g",
+    "price": "2250 USD",
+    "price_postapoc": "75 USD",
+    "ammo": [ "9etc" ],
+    "ranged_damage": { "damage_type": "stab", "amount": -1 },
+    "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "EBURST", "2 rd.", 2, [ "SIMULTANEOUS" ] ], [ "FAUTO", "auto", 6 ] ],
+    "pocket_data": [
+      {
+        "magazine_well": "250 ml",
+        "pocket_type": "MAGAZINE_WELL",
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [ "o2020h_56_mag" ]
+      }
+    ]
+  },
+  {
+    "id": "etc_o2020hsd",
+    "copy-from": "etc_o2020h",
+    "type": "GUN",
+    "name": { "str": "OCG O2020HSD" },
+    "description": "A 9mm ETC version of the O2020SD with a heavier suppressor, developed together with depleted uranium 9x19mm subsonic armor-piercing rounds. When firing such rounds, it is quieter than the O2020SD, but much louder otherwise",
+    "price": "32 kUSD",
+    "price_postapoc": "140 USD",
+    "valid_mod_locations": [
+      [ "accessories", 3 ],
+      [ "brass catcher", 1 ],
+      [ "sling", 1 ],
+      [ "barrel", 1 ],
+      [ "grip", 1 ],
+      [ "mechanism", 4 ],
+      [ "barrel", 1 ],
+      [ "rail", 1 ],
+      [ "sights", 1 ],
+      [ "underbarrel", 1 ]
+    ],
+    "built_in_mods": [ "o2020hsd_suppressor" ]
+  },
+  {
+    "id": "etc_o9_electromagnum",
+    "copy-from": "etc_pistol_revolver_1ups",
+    "type": "GUN",
+    "name": { "str_sp": "OCG O9 Electromagnum" },
+    "description": "A compact yet heavy electrothermal-chemical revolver from OmniCorp. Comparable to a .44 magnum or .460 Rowland revolver in performance, but requires a charged UPS and can load only four bullets like the larger Anti-Drone and Anti-Materiel revolvers.",
+    "weight": "1400 g",
+    "volume": "400 ml",
+    "price": "950 USD",
+    "price_postapoc": "55 USD",
+    "to_hit": -2,
+    "melee_damage": { "bash": 8 },
+    "material": [ "superalloy", "wood" ],
+    "color": "dark_gray",
+    "ammo": [ "9etc" ],
+    "ranged_damage": { "damage_type": "stab", "amount": 1 },
+    "dispersion": 360,
+    "durability": 9,
+    "clip_size": 4,
+    "looks_like": "model_10_revolver",
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "magazine_well": "500 ml",
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [ "9etc_speedloader" ]
+      }
+    ]
+  },
+  {
+    "id": "etc_o92_doublemag",
+    "copy-from": "etc_pistol_revolver_1ups",
+    "type": "GUN",
+    "name": { "str_sp": "OCG O9-2 Doublemag" },
+    "description": "A double-barreled yet compact 9mm electrothermal-chemical revolver from OmniCorp. Unlike the .22 DBR, its layout and action allow single shots but impairs accuracy and makes it less reliable.",
+    "weight": "700 g",
+    "volume": "325 ml",
+    "price": "800 USD",
+    "price_postapoc": "48 USD",
+    "to_hit": -2,
+    "melee_damage": { "bash": 8 },
+    "material": [ "superalloy" ],
+    "color": "dark_gray",
+    "ammo": [ "9etc" ],
+    "ranged_damage": { "damage_type": "stab", "amount": -1 },
+    "dispersion": 600,
+    "durability": 7,
+    "modes": [ [ "DEFAULT", "single", 1 ], [ "DOUBLE", "double", 2, [ "SIMULTANEOUS" ] ] ],
+    "looks_like": "sw_619",
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "magazine_well": "1000 ml",
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [ "9etc_speedloader" ]
+      }
+    ]
+  },
+  {
+    "id": "etc_ocg_minisniper",
+    "type": "GUN",
+    "copy-from": "etc_rifle_base_1ups",
+    "name": { "str_sp": "OCG MS400 Mini Sniper" },
+    "description": "Propelling rounds at muzzle velocities expected from rifle cartridges, this highly accurate 9mm electrothermal-chemical rifle from OmniCorp can mostly fulfill the sniper role in urban environments.",
+    "weight": "2900 g",
+    "volume": "2400 ml",
+    "price": "2250 USD",
+    "price_postapoc": "100 USD",
+    "//": "Longer barrel than any other 9mm ETC firearm. Still smaller than DMRs or snipers. With 9mm ETC HAPM, can punch through any or at least most drones armor. Muzzle velocity somewhere above 1100 and below 2000 m/s",
+    "to_hit": -1,
+    "melee_damage": { "bash": 10 },
+    "material": [ "steel", "superalloy" ],
+    "color": "dark_gray",
+    "ammo": [ "9etc" ],
+    "ranged_damage": { "damage_type": "stab", "amount": 1, "armor_penetration": 10 },
+    "recoil": 160,
+    "range": 12,
+    "dispersion": 80,
+    "durability": 10,
+    "built_in_mods": "minisniper_capacitor",
+    "default_mods": "rifle_scope",
+    "looks_like": "M24",
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "magazine_well": "1000 ml",
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [ "deelmag", "ocg9emag", "ocg9emagbig", "ocg9emagdrum" ]
+      }
+    ]
+  },
+  {
+    "id": "etc_ocg_ms400sd",
+    "type": "GUN",
+    "copy-from": "etc_ocg_minisniper",
+    "name": { "str_sp": "OCG MS400SD Boatman" },
+    "description": "This variant of the MS400 Mini Sniper is deadly accurate and \"silent\" even with hypersonic rounds. A great OmniCorp product for 6'+ tall bald hitmen or zombie apocalypse survivors.",
+    "price": "50 kUSD",
+    "price_postapoc": "320 USD",
+    "valid_mod_locations": [
+      [ "accessories", 4 ],
+      [ "brass catcher", 1 ],
+      [ "sling", 1 ],
+      [ "barrel", 1 ],
+      [ "grip", 1 ],
+      [ "mechanism", 4 ],
+      [ "magazine", 1 ],
+      [ "rail", 1 ],
+      [ "sights", 1 ],
+      [ "stock", 1 ],
+      [ "underbarrel", 1 ]
+    ],
+    "built_in_mods": [ "minisniper_capacitor", "ms400sd_suppressor" ]
+  },
+  {
+    "id": "etc_ocg_ssmg",
+    "copy-from": "etc_smg_base",
+    "type": "GUN",
+    "name": { "str": "OCG Super SMG" },
+    "description": "\"Puts the machinegun in submachinegun\" - OmniCorp marketing pitch. Compatible with ammo belts, the SSMG is very bulky but can almost match a .223 machinegun's stopping power. Features integrated combined forward grip/bipod unit and a roomy magazine well.",
+    "weight": "2 kg",
+    "volume": "1900 ml",
+    "price": "2500 USD",
+    "price_postapoc": "115 USD",
+    "to_hit": -2,
+    "melee_damage": { "bash": 10 },
+    "material": [ "steel", "superalloy" ],
+    "color": "dark_gray",
+    "ammo": [ "9etc" ],
+    "range": 4,
+    "ranged_damage": { "damage_type": "stab", "amount": 3 },
+    "dispersion": 200,
+    "durability": 9,
+    "built_in_mods": [ "ocg_grippod_fg", "ocg_grippod_bipod" ],
+    "valid_mod_locations": [
+      [ "accessories", 3 ],
+      [ "brass catcher", 1 ],
+      [ "sling", 1 ],
+      [ "barrel", 1 ],
+      [ "grip", 1 ],
+      [ "mechanism", 4 ],
+      [ "muzzle", 1 ],
+      [ "rail", 1 ],
+      [ "sights", 1 ],
+      [ "stock", 1 ],
+      [ "underbarrel", 1 ]
+    ],
+    "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "EBURST", "3 rd.", 3 ], [ "FAUTO", "auto", 5 ] ],
+    "looks_like": "needlegun",
+    "flags": [ "WATERPROOF_GUN", "DURABLE_MELEE" ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "magazine_well": "500 ml",
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [ "belt9etc", "ocg9emag", "ocg9emagbig", "ocg9emagdrum", "deelmag" ]
+      }
+    ]
+  }
+]

@@ -1,38 +1,6 @@
 [
   {
     "type": "effect_on_condition",
-    "id": "EOC_PHOTOKIN_LEARNING_LIGHT_UP_ENEMY",
-    "recurrence": [
-      { "math": [ "jmath_photokinesis_learning_eocs_modifiers(global_tier_one_power_learning_time_low)" ] },
-      { "math": [ "jmath_photokinesis_learning_eocs_modifiers(global_tier_one_power_learning_time_high)" ] }
-    ],
-    "condition": {
-      "and": [
-        { "u_has_trait": "PHOTOKINETIC" },
-        { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
-        { "or": [ { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_ONE_POWER_INSIGHT" } ] },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
-        { "math": [ "u_spell_level('photokinetic_light_up_enemy')", "<=", "0" ] },
-        { "not": { "u_know_recipe": "practice_photokinetic_light_up_enemy" } }
-      ]
-    },
-    "deactivate_condition": {
-      "or": [
-        { "not": { "u_has_trait": "PHOTOKINETIC" } },
-        { "math": [ "u_spell_level('photokinetic_light_up_enemy')", ">=", "1" ] }
-      ]
-    },
-    "effect": [
-      { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "=", "0" ] },
-      { "u_learn_recipe": "practice_photokinetic_light_up_enemy" },
-      {
-        "u_message": "Use of your powers has led to an insight.  Creating light in a single place is easy, but you could outline another being in light, marking their location and making it harder for them to avoid attack, if you can figure out the proper technique.",
-        "popup": true
-      }
-    ]
-  },
-  {
-    "type": "effect_on_condition",
     "id": "EOC_PHOTOKIN_LEARNING_SNUFF_LIGHT",
     "recurrence": [
       { "math": [ "jmath_photokinesis_learning_eocs_modifiers(global_tier_one_power_learning_time_low)" ] },
@@ -44,7 +12,7 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_ONE_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 20 } },
             {
               "or": [
                 { "math": [ "u_spell_level('photokinetic_light_local')", ">=", "5" ] },
@@ -53,7 +21,55 @@
             }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('photokinetic_snuff_light')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_photokinetic_snuff_light" } }
       ]
@@ -83,7 +99,7 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_ONE_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 20 } },
             {
               "and": [
                 { "math": [ "u_spell_level('photokinetic_snuff_light')", ">=", "5" ] },
@@ -92,7 +108,55 @@
             }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('photokinetic_light_dodge')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_photokinetic_light_dodge" } }
       ]
@@ -122,7 +186,7 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_ONE_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 20 } },
             {
               "or": [
                 { "math": [ "u_spell_level('photokinetic_light_local')", ">=", "8" ] },
@@ -131,7 +195,55 @@
             }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('photokinetic_light_beam')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_photokinetic_light_beam" } }
       ]
@@ -161,11 +273,59 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_ONE_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 20 } },
             { "or": [ { "math": [ "u_spell_level('photokinetic_light_dodge')", ">=", "6" ] } ] }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('photokinetic_camouflage')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_photokinetic_camouflage" } }
       ]
@@ -195,7 +355,7 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_ONE_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 20 } },
             {
               "or": [
                 { "math": [ "u_spell_level('photokinetic_light_dodge')", ">=", "9" ] },
@@ -209,7 +369,55 @@
             }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('photokinetic_rad_immunity')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_photokinetic_rad_immunity" } }
       ]
@@ -242,7 +450,7 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_TWO_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 40 } },
             {
               "and": [
                 { "math": [ "u_spell_level('photokinetic_light_dodge')", ">=", "8" ] },
@@ -252,7 +460,55 @@
             }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('photokinetic_light_arms')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_photokinetic_light_arms" } }
       ]
@@ -282,7 +538,7 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_TWO_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 40 } },
             {
               "and": [
                 { "math": [ "u_spell_level('photokinetic_camouflage')", ">=", "8" ] },
@@ -291,7 +547,55 @@
             }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('photokinetic_hide_ugly')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_photokinetic_hide_ugly" } }
       ]
@@ -321,7 +625,7 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_TWO_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 40 } },
             {
               "and": [
                 { "math": [ "u_spell_level('photokinetic_light_beam')", ">=", "6" ] },
@@ -335,7 +639,55 @@
             }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('photokinetic_light_image')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_photokinetic_light_image" } }
       ]
@@ -365,7 +717,7 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_TWO_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 40 } },
             {
               "and": [
                 { "math": [ "u_spell_level('photokinetic_rad_immunity')", ">=", "6" ] },
@@ -379,7 +731,55 @@
             }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('photokinetic_radio')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_photokinetic_radio" } }
       ]
@@ -398,50 +798,6 @@
   },
   {
     "type": "effect_on_condition",
-    "id": "EOC_PHOTOKIN_LEARNING_STUN_ROBOTS",
-    "recurrence": [
-      { "math": [ "jmath_photokinesis_learning_eocs_modifiers(global_tier_two_power_learning_time_low)" ] },
-      { "math": [ "jmath_photokinesis_learning_eocs_modifiers(global_tier_two_power_learning_time_high)" ] }
-    ],
-    "condition": {
-      "and": [
-        { "u_has_trait": "PHOTOKINETIC" },
-        { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
-        {
-          "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_TWO_POWER_INSIGHT" },
-            {
-              "or": [
-                { "math": [ "u_spell_level('photokinetic_light_flash')", ">=", "5" ] },
-                {
-                  "and": [
-                    { "math": [ "u_spell_level('photokinetic_radio')", ">=", "6" ] },
-                    { "math": [ "u_spell_level('photokinetic_light_beam')", ">=", "4" ] }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
-        { "math": [ "u_spell_level('photokinetic_stun_robots')", "<=", "0" ] },
-        { "not": { "u_know_recipe": "practice_photokinetic_stun_robots" } }
-      ]
-    },
-    "deactivate_condition": {
-      "or": [ { "not": { "u_has_trait": "PHOTOKINETIC" } }, { "math": [ "u_spell_level('photokinetic_stun_robots')", ">=", "1" ] } ]
-    },
-    "effect": [
-      { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "=", "0" ] },
-      { "u_learn_recipe": "practice_photokinetic_stun_robots" },
-      {
-        "u_message": "Use of your powers has led to an insight.  Electronics are vulnerable to electromagnetic waves, and light is an electromagnetic wave.  While you couldn't destroy electronics, you can overload them and cause them to fail for a brief time.",
-        "popup": true
-      }
-    ]
-  },
-  {
-    "type": "effect_on_condition",
     "id": "EOC_PHOTOKIN_LEARNING_INVISIBILITY",
     "recurrence": [
       { "math": [ "jmath_photokinesis_learning_eocs_modifiers(global_tier_two_power_learning_time_low)" ] },
@@ -453,7 +809,7 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_TWO_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 40 } },
             {
               "and": [
                 {
@@ -472,7 +828,55 @@
             }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('photokinetic_invisibility')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_photokinetic_invisibility" } }
       ]
@@ -505,7 +909,7 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_TWO_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 40 } },
             {
               "and": [
                 { "math": [ "u_spell_level('photokinetic_light_beam')", ">=", "8" ] },
@@ -519,7 +923,55 @@
             }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('photokinetic_light_flash')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_photokinetic_light_flash" } }
       ]
@@ -549,7 +1001,7 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_THREE_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 80 } },
             {
               "and": [
                 { "math": [ "u_spell_level('photokinetic_create_light')", ">=", "12" ] },
@@ -563,7 +1015,55 @@
             }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('photokinetic_blinding_glare')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_photokinetic_light_blinding_glare" } }
       ]
@@ -596,7 +1096,7 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_THREE_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 80 } },
             {
               "and": [
                 { "math": [ "u_spell_level('photokinetic_blinding_glare')", ">=", "5" ] },
@@ -610,7 +1110,55 @@
             }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('photokinetic_light_disintegrate')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_photokinetic_light_disintegrate" } }
       ]

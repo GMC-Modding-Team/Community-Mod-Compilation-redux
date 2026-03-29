@@ -1,0 +1,131 @@
+[
+  {
+    "id": "RPG_TAC",
+    "type": "GUN",
+    "reload_noise_volume": 10,
+    "symbol": "(",
+    "color": "brown",
+    "name": { "str": "RPG-7 TAC", "str_pl": "RPG-7 TAC" },
+    "description": "  <color_yellow>▋</color>RPG-7 Tactical(<color_yellow>Tactical</color>)\r\n<color_dark_gray>    「Warning: please do not aim at the face」</color>\r\n<color_dark_gray>─────────────────────────────────────────</color>\r\n  harm          <good>■■■■■■■■■■■■■■■■■■■</good>□   9\r\n  Accuracy        <good>■■■■■■■■■■■■</good>□□□□□□□□   5\r\n  range          <good>■■■■■■■■■■■■■■■</good>□□□□□   7\r\n  rate of fire          <good>■■■■</good>□□□□□□□□□□□□□□□□   2\r\n  operability        <good>■■■■■■■■■■■■</good>□□□□□□□□   5\r\n<color_dark_gray>─────────────────────────────────────────</color>\r\n<color_dark_gray>Tactical RPG！Just attach your favorite accessory and turn it into a Christmas tree too！</color>",
+    "price": "2500 USD",
+    "material": [ "steel", "plastic" ],
+    "flags": [ "BACKBLAST", "NEVER_JAMS" ],
+    "skill": "launcher",
+    "ammo": [ "RPG-7" ],
+    "weight": "6500 g",
+    "volume": "4300 ml",
+    "melee_damage": { "bash": 10 },
+    "to_hit": -3,
+    "dispersion": 400,
+    "durability": 10,
+    "clip_size": 1,
+    "valid_mod_locations": [
+      [ "accessories", 4 ],
+      [ "grip", 1 ],
+      [ "mechanism", 4 ],
+      [ "sights", 1 ],
+      [ "sling", 1 ],
+      [ "stock", 1 ],
+      [ "underbarrel", 1 ],
+      [ "rail mount", 2 ],
+      [ "underbarrel mount", 2 ]
+    ],
+    "built_in_mods": [ "recoil_stock", "grip" ],
+    "modes": [ [ "REACH", "Safety insurance", 1, "MELEE" ], [ "DEFAULT", "semi-auto", 1 ] ],
+    "use_action": { "target": "RPG_TAC_C", "msg": "You quickly checked the weapon.", "menu_text": "Check weapon", "type": "transform" },
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "RPG-7": 1 } } ]
+  },
+  {
+    "id": "RPG_TAC_C",
+    "copy-from": "RPG_TAC",
+    "type": "GUN",
+    "name": { "str": "RPG-7 TAC", "str_pl": "RPG-7 TAC" },
+    "countdown_interval": 1,
+    "countdown_action": { "target": "RPG_TAC", "type": "transform" }
+  },
+  {
+    "id": "RPG_TAC_U",
+    "copy-from": "RPG_TAC",
+    "type": "GUN",
+    "name": { "str": "A cool bazooka", "str_pl": "A cool bazooka" },
+    "description": "-[Unidentified]-",
+    "proportional": { "price": 0.35 },
+    "use_action": {
+      "target": "RPG_TAC_C",
+      "msg": "You carefully checked the weapon.",
+      "menu_text": "Appraisal weapon",
+      "type": "transform"
+    }
+  },
+  {
+    "id": "AKAR_B",
+    "type": "GUN",
+    "symbol": "(",
+    "color": "dark_gray",
+    "name": { "str": "AK-M4 Assault rifle", "str_pl": "AK-M4 Assault rifle" },
+    "description": "  <color_yellow>▋</color>AK-M4(<color_yellow>Drunk</color>)\r\n<color_dark_gray>    「AK and AR were drunk that day」</color>\r\n<color_dark_gray>─────────────────────────────────────────</color>\r\n  Hurt          <good>■■■■■■■■■■■</good>□□□□□□□□□   5\r\n  Accuracy        <good>■■■■■■■■■■■■</good>□□□□□□□□   5\r\n  range          <good>■■■■■■■■■■■■■■</good>□□□□□□   6\r\n  rate of fire          <good>■■■■■■■■■■■■■■</good>□□□□□□   6\r\n  operability        <good>■■■■■■■■■■■■■■■</good>□□□□□   7\r\n<color_dark_gray>─────────────────────────────────────────</color>\r\n<color_dark_gray>This beauty is a hybrid of AK47 in the Eastern Hemisphere and M4 in the Western Hemisphere.</color>",
+    "material": [ "steel" ],
+    "weight": "1000 g",
+    "volume": "250 ml",
+    "price": "3500 USD",
+    "melee_damage": { "bash": 1 },
+    "to_hit": -5,
+    "skill": "rifle",
+    "ammo": [ "223" ],
+    "ranged_damage": { "damage_type": "bullet", "amount": 0 },
+    "durability": 6,
+    "reload_noise_volume": 10,
+    "loudness": 0,
+    "recoil": 0,
+    "dispersion": 200,
+    "sight_dispersion": 30,
+    "built_in_mods": [ "IOV_AR_upper_556", "IOV_AR_stock", "IOV_AR_grip", "IOV_AR_barrel_16", "IOV_GripPod" ],
+    "valid_mod_locations": [
+      [ "accessories", 3 ],
+      [ "barrel", 1 ],
+      [ "grip", 1 ],
+      [ "mechanism", 1 ],
+      [ "muzzle", 1 ],
+      [ "rail", 1 ],
+      [ "sights", 1 ],
+      [ "sling", 1 ],
+      [ "stock", 1 ]
+    ],
+    "modes": [
+      [ "REACH", "Gun insurance", 1, "MELEE" ],
+      [ "DEFAULT", "semi-auto", 1 ],
+      [ "BURST", "Short burst ", 3 ],
+      [ "AUTO", "Automatic", 15 ]
+    ],
+    "pocket_data": [
+      {
+        "magazine_well": "250 ml",
+        "pocket_type": "MAGAZINE_WELL",
+        "holster": true,
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [ "stanag30", "stanag50", "survivor223mag" ]
+      }
+    ],
+    "use_action": { "target": "AKAR_B_C", "msg": "You carefully check the weapon.", "menu_text": "Check weapon", "type": "transform" }
+  },
+  {
+    "id": "AKAR_B_C",
+    "copy-from": "AKAR_B",
+    "type": "GUN",
+    "symbol": "(",
+    "color": "dark_gray",
+    "name": { "str": "AK-M4 Assault rifle", "str_pl": "AK-M4 Assault rifle" },
+    "countdown_interval": 1,
+    "countdown_action": { "target": "AKAR_B", "type": "transform" }
+  },
+  {
+    "id": "AKAR_B_U",
+    "copy-from": "AKAR_B",
+    "type": "GUN",
+    "name": { "str": "A strange gun", "str_pl": "A strange gun" },
+    "description": "-[Unidentified]-",
+    "proportional": { "price": 0.35 },
+    "use_action": { "target": "AKAR_B_C", "msg": "You checked the weapon carefully.", "menu_text": "鉴定武器", "type": "transform" }
+  }
+]

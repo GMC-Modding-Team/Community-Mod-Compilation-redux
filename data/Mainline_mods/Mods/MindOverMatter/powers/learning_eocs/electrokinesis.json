@@ -12,11 +12,59 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_ONE_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 20 } },
             { "and": [ { "math": [ "u_spell_level('electrokinetic_shock_touch')", ">=", "4" ] } ] }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('electrokinetic_zap_enemies')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_electrokinetic_zap_enemies" } }
       ]
@@ -49,7 +97,7 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_ONE_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 20 } },
             {
               "and": [
                 { "math": [ "u_spell_level('electrokinetic_shock_touch')", ">=", "5" ] },
@@ -58,7 +106,55 @@
             }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('electrokinetic_melee_attacks')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_electrokinetic_melee_attacks" } }
       ]
@@ -91,7 +187,7 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_ONE_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 20 } },
             {
               "and": [
                 { "math": [ "u_spell_level('electrokinetic_see_electric')", ">=", "5" ] },
@@ -100,7 +196,55 @@
             }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('electrokinetic_personal_battery')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_electrokinetic_personal_battery" } }
       ]
@@ -133,7 +277,7 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_TWO_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 40 } },
             {
               "and": [
                 { "math": [ "u_spell_level('electrokinetic_see_electric')", ">=", "6" ] },
@@ -147,7 +291,55 @@
             }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('electrokinetic_paralysis')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_electrokinetic_paralysis" } }
       ]
@@ -180,7 +372,7 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_TWO_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 40 } },
             {
               "or": [
                 { "math": [ "u_spell_level('electrokinetic_paralysis')", ">=", "4" ] },
@@ -194,7 +386,55 @@
             }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('electrokinetic_reduce_pain')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_electrokinetic_reduce_pain" } }
       ]
@@ -216,49 +456,6 @@
   },
   {
     "type": "effect_on_condition",
-    "id": "EOC_ELECTROKIN_LEARNING_HACKING_INTERFACE",
-    "recurrence": [
-      { "math": [ "jmath_electrokinesis_learning_eocs_modifiers(global_tier_two_power_learning_time_low)" ] },
-      { "math": [ "jmath_electrokinesis_learning_eocs_modifiers(global_tier_two_power_learning_time_high)" ] }
-    ],
-    "condition": {
-      "and": [
-        { "u_has_trait": "ELECTROKINETIC" },
-        { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
-        {
-          "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_TWO_POWER_INSIGHT" },
-            {
-              "and": [
-                { "math": [ "u_spell_level('electrokinetic_see_electric')", ">=", "4" ] },
-                { "math": [ "u_spell_level('electrokinetic_shock_touch')", ">=", "4" ] },
-                { "math": [ "u_spell_level('electrokinetic_personal_battery')", ">=", "4" ] }
-              ]
-            }
-          ]
-        },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
-        { "math": [ "u_spell_level('electrokinetic_hacking_interface')", "<=", "0" ] },
-        { "not": { "u_know_recipe": "practice_electrokinetic_hacking_interface" } }
-      ]
-    },
-    "deactivate_condition": {
-      "or": [
-        { "not": { "u_has_trait": "ELECTROKINETIC" } },
-        { "math": [ "u_spell_level('electrokinetic_hacking_interface')", ">=", "1" ] }
-      ]
-    },
-    "effect": [
-      { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "=", "0" ] },
-      { "u_learn_recipe": "practice_electrokinetic_hacking_interface" },
-      {
-        "u_message": "Use of your powers has led to an insight.  You could create an electrical interface to hack nearby devices, if you can figure out the technique.",
-        "popup": true
-      }
-    ]
-  },
-  {
-    "type": "effect_on_condition",
     "id": "EOC_ELECTROKIN_LEARNING_LIGHTNING_BOLT",
     "recurrence": [
       { "math": [ "jmath_electrokinesis_learning_eocs_modifiers(global_tier_two_power_learning_time_low)" ] },
@@ -270,7 +467,7 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_TWO_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 40 } },
             {
               "and": [
                 {
@@ -284,7 +481,55 @@
             }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('electrokinetic_lightning_bolt')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_electrokinetic_lightning_bolt" } }
       ]
@@ -317,7 +562,7 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_TWO_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 40 } },
             {
               "and": [
                 {
@@ -331,7 +576,55 @@
             }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('electrokinetic_recharge_vehicle')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_electrokinetic_recharge_vehicle" } }
       ]
@@ -363,12 +656,57 @@
         { "u_has_trait": "ELECTROKINETIC" },
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
-          "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_TWO_POWER_INSIGHT" },
-            { "math": [ "u_spell_level('electrokinetic_reduce_pain')", ">=", "9" ] }
-          ]
+          "or": [ { "x_in_y_chance": { "x": 1, "y": 40 } }, { "math": [ "u_spell_level('electrokinetic_reduce_pain')", ">=", "9" ] } ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('electrokinetic_pain_immune')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_electrokinetic_pain_immune" } }
       ]
@@ -401,7 +739,7 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_TWO_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 40 } },
             {
               "and": [
                 {
@@ -420,7 +758,55 @@
             }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('electrokinetic_speed_boost')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_electrokinetic_speed_boost" } }
       ]
@@ -442,49 +828,6 @@
   },
   {
     "type": "effect_on_condition",
-    "id": "EOC_ELECTROKIN_LEARNING_ROBOT_INTERFACE",
-    "recurrence": [
-      { "math": [ "jmath_electrokinesis_learning_eocs_modifiers(global_tier_three_power_learning_time_low)" ] },
-      { "math": [ "jmath_electrokinesis_learning_eocs_modifiers(global_tier_three_power_learning_time_high)" ] }
-    ],
-    "condition": {
-      "and": [
-        { "u_has_trait": "ELECTROKINETIC" },
-        { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
-        {
-          "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_THREE_POWER_INSIGHT" },
-            {
-              "and": [
-                { "math": [ "u_spell_level('electrokinetic_see_electric')", ">=", "12" ] },
-                { "math": [ "u_spell_level('electrokinetic_hacking_interface')", ">=", "8" ] },
-                { "math": [ "u_spell_level('electrokinetic_kill_robot')", ">=", "8" ] }
-              ]
-            }
-          ]
-        },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
-        { "math": [ "u_spell_level('electrokinetic_robot_interface')", "<=", "0" ] },
-        { "not": { "u_know_recipe": "practice_electrokinetic_robot_interface" } }
-      ]
-    },
-    "deactivate_condition": {
-      "or": [
-        { "not": { "u_has_trait": "ELECTROKINETIC" } },
-        { "math": [ "u_spell_level('electrokinetic_robot_interface')", ">=", "1" ] }
-      ]
-    },
-    "effect": [
-      { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "=", "0" ] },
-      { "u_learn_recipe": "practice_electrokinetic_robot_interface" },
-      {
-        "u_message": "Use of your powers has led to an insight.  You could directly manipulate a nearby robot's circuitry, if you can figure out the technique.",
-        "popup": true
-      }
-    ]
-  },
-  {
-    "type": "effect_on_condition",
     "id": "EOC_ELECTROKIN_LEARNING_KILL_ROBOT",
     "recurrence": [
       { "math": [ "jmath_electrokinesis_learning_eocs_modifiers(global_tier_three_power_learning_time_low)" ] },
@@ -496,7 +839,7 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_THREE_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 80 } },
             {
               "and": [
                 {
@@ -511,7 +854,55 @@
             }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('electrokinetic_kill_robot')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_electrokinetic_kill_robot" } }
       ]
@@ -544,7 +935,7 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_THREE_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 80 } },
             {
               "and": [
                 { "math": [ "u_spell_level('electrokinetic_zap_enemies')", ">=", "12" ] },
@@ -558,7 +949,55 @@
             }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('electrokinetic_lightning_aura')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_electrokinetic_lightning_aura" } }
       ]
@@ -591,7 +1030,7 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_THREE_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 80 } },
             {
               "and": [
                 {
@@ -610,7 +1049,55 @@
             }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('electrokinetic_lightning_blast')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_electrokinetic_lightning_blast" } }
       ]
@@ -643,7 +1130,7 @@
         { "math": [ "u_vitamin('vitamin_psi_learning_counter')", "==", "1" ] },
         {
           "or": [
-            { "test_eoc": "EOC_CONDITION_ODDS_OF_RANDOM_TIER_THREE_POWER_INSIGHT" },
+            { "x_in_y_chance": { "x": 1, "y": 80 } },
             {
               "and": [
                 { "math": [ "u_spell_level('electrokinetic_speed_boost')", ">=", "8" ] },
@@ -657,7 +1144,55 @@
             }
           ]
         },
-        { "test_eoc": "EOC_PSI_LEARNING_BANNED_EFFECTS" },
+        {
+          "not": {
+            "u_has_any_effect": [
+              "sleep",
+              "effect_psi_learning_new_power",
+              "effect_vitakin_wakeful_resting",
+              "infected",
+              "spores",
+              "taint",
+              "visuals",
+              "hallu",
+              "motor_seizure",
+              "frostbite",
+              "blisters",
+              "formication",
+              "pre_common_cold",
+              "common_cold",
+              "pre_flu",
+              "flu",
+              "pre_conjunctivitis_viral",
+              "conjunctivitis_viral",
+              "pre_conjunctivitis_bacterial",
+              "conjunctivitis_bacterial",
+              "asthma",
+              "brainworms",
+              "bloodworms",
+              "grabbed",
+              "lack_sleep",
+              "sleep_deprived",
+              "under_operation",
+              "zapped",
+              "electrocuted",
+              "anemia",
+              "redcells_anemia",
+              "scurvy",
+              "toxin_buildup",
+              "bad_food_ennui",
+              "hypovolemia",
+              "disabled",
+              "foodpoison",
+              "venom_pain",
+              "venom_dmg",
+              "badpoison",
+              "onfire",
+              "dazed",
+              "stunned"
+            ]
+          }
+        },
         { "math": [ "u_spell_level('electrokinetic_revive')", "<=", "0" ] },
         { "not": { "u_know_recipe": "practice_electrokinetic_revive" } }
       ]

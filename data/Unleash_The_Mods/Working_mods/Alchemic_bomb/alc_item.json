@@ -8,7 +8,7 @@
     "volume": "250 ml",
     "price": "0 cent",
     "to_hit": -3,
-    "bashing": 1,
+    "melee_damage": { "bash": 1 },
     "material": [ "stone" ],
     "symbol": "=",
     "color": "red",
@@ -22,7 +22,7 @@
     "weight": "1000 g",
     "volume": "1000 ml",
     "price": "0 cent",
-    "bashing": 5,
+    "melee_damage": { "bash": 5 },
     "material": [ "paper", "leather" ],
     "symbol": "?",
     "color": "light_gray",
@@ -60,7 +60,7 @@
     "weight": "80 g",
     "volume": "250 ml",
     "price": "0 cent",
-    "bashing": 4,
+    "melee_damage": { "bash": 4 },
     "material": [ "leather", "plastic" ],
     "symbol": "[",
     "color": "dark_gray",
@@ -69,7 +69,6 @@
       {
         "ammo_restriction": {
           "pebble": 2000,
-          "700nx": 2000,
           "50": 2000,
           "4570": 2000,
           "BB": 2000,
@@ -99,7 +98,6 @@
           "8x40mm": 2000,
           "20x66mm": 2000,
           "5x50": 2000,
-          "metal_rail": 2000,
           "stimpack_ammo": 2000,
           "ampoule": 2000,
           "300": 2000,
@@ -111,7 +109,8 @@
           "762R": 2000,
           "paintball": 2000
         },
-        "moves": 35
+        "moves": 35,
+        "volume_encumber_modifier": 0.3
       }
     ],
     "flags": [ "BELTED", "OVERSIZE", "WATER_FRIENDLY" ]
@@ -128,7 +127,7 @@
     "material": [ "steel" ],
     "volume": "250 ml",
     "weight": "400 g",
-    "bashing": 3,
+    "melee_damage": { "bash": 3 },
     "thrown_damage": [ { "damage_type": "bash", "amount": 13 } ],
     "ammo_type": "thrown",
     "count": 5,
@@ -146,7 +145,7 @@
     "volume": "250 ml",
     "price": "0 cent",
     "to_hit": -3,
-    "bashing": 1,
+    "melee_damage": { "bash": 1 },
     "material": [ "glass" ],
     "symbol": "*",
     "color": "green",
@@ -162,7 +161,7 @@
     "volume": "250 ml",
     "price": "0 cent",
     "to_hit": -3,
-    "bashing": 1,
+    "melee_damage": { "bash": 1 },
     "material": [ "glass", "cotton" ],
     "symbol": "*",
     "color": "light_gray",
@@ -179,17 +178,11 @@
     "volume": "250 ml",
     "price": "0 cent",
     "to_hit": -3,
-    "bashing": 1,
+    "melee_damage": { "bash": 1 },
     "material": [ "steel", "plastic" ],
     "symbol": "*",
     "color": "green",
-    "use_action": {
-      "type": "explosion",
-      "sound_volume": 0,
-      "sound_msg": "Tick.",
-      "no_deactivate_msg": "You've already pulled the %s's pin, try throwing it instead.",
-      "explosion": { "power": 50, "shrapnel": 80 }
-    },
+    "use_action": { "type": "explosion", "explosion": { "power": 50, "shrapnel": 80 } },
     "flags": [ "BOMB", "GRENADE", "ACT_ON_RANGED_HIT", "TRADER_AVOID", "NO_REPAIR" ]
   },
   {
@@ -202,20 +195,14 @@
     "volume": "500 ml",
     "price": "0 cent",
     "to_hit": -3,
-    "bashing": 1,
+    "melee_damage": { "bash": 1 },
     "material": [ "steel", "plastic" ],
     "symbol": "*",
     "color": "green",
     "initial_charges": 3,
     "max_charges": 3,
     "turns_per_charge": 1,
-    "use_action": {
-      "type": "explosion",
-      "sound_volume": 0,
-      "sound_msg": "Tick.",
-      "no_deactivate_msg": "You've already pulled the %s's pin, try throwing it instead.",
-      "explosion": { "power": 90, "shrapnel": 140 }
-    },
+    "use_action": { "type": "explosion", "explosion": { "power": 90, "shrapnel": 140 } },
     "flags": [ "BOMB", "GRENADE", "ACT_ON_RANGED_HIT", "TRADER_AVOID", "NO_REPAIR" ]
   },
   {
@@ -228,20 +215,14 @@
     "volume": "750 ml",
     "price": "0 cent",
     "to_hit": -3,
-    "bashing": 1,
+    "melee_damage": { "bash": 1 },
     "material": [ "steel", "ceramic" ],
     "symbol": "*",
     "color": "green",
     "initial_charges": 10,
     "max_charges": 10,
     "turns_per_charge": 1,
-    "use_action": {
-      "type": "explosion",
-      "sound_volume": 0,
-      "sound_msg": "Tick.",
-      "no_deactivate_msg": "You've already pulled the %s's pin, try throwing it instead.",
-      "explosion": { "power": 100, "shrapnel": { "casing_mass": 300, "fragment_mass": 2.0 } }
-    },
+    "use_action": { "type": "explosion", "explosion": { "power": 100, "shrapnel": { "casing_mass": 300, "fragment_mass": 2.0 } } },
     "flags": [ "BOMB", "GRENADE", "ACT_ON_RANGED_HIT", "TRADER_AVOID", "NO_REPAIR" ]
   },
   {
@@ -259,11 +240,7 @@
     "color": "yellow",
     "initial_charges": 1,
     "max_charges": 1,
-    "use_action": {
-      "type": "explosion",
-      "no_deactivate_msg": "You can't disarm your %s.  Place it, get away, and use the remote control to detonate.",
-      "explosion": { "power": 500, "shrapnel": { "casing_mass": 500, "fragment_mass": 2.0 } }
-    },
+    "use_action": { "type": "explosion", "explosion": { "power": 500, "shrapnel": { "casing_mass": 500, "fragment_mass": 2.0 } } },
     "flags": [ "RADIO_ACTIVATION", "RADIOSIGNAL_1", "BOMB", "TRADER_AVOID", "NO_REPAIR" ]
   },
   {
@@ -276,19 +253,11 @@
     "volume": "250 ml",
     "price": "0 cent",
     "to_hit": -3,
-    "bashing": 1,
+    "melee_damage": { "bash": 1 },
     "material": [ "steel", "plastic" ],
     "symbol": "*",
     "color": "yellow",
-    "use_action": {
-      "type": "explosion",
-      "draw_explosion_radius": 4,
-      "draw_explosion_color": "cyan",
-      "emp_blast_radius": 4,
-      "sound_volume": 0,
-      "sound_msg": "Tick.",
-      "no_deactivate_msg": "You've already pulled the %s's pin, try throwing it instead."
-    },
+    "use_action": { "type": "explosion", "draw_explosion_radius": 4, "draw_explosion_color": "cyan", "emp_blast_radius": 4 },
     "flags": [ "ACT_ON_RANGED_HIT", "RADIO_MODABLE", "RADIO_INVOKE_PROC", "BOMB", "GRENADE", "TRADER_AVOID", "NO_REPAIR" ]
   },
   {
@@ -301,19 +270,11 @@
     "volume": "500 ml",
     "price": "0 cent",
     "to_hit": -3,
-    "bashing": 1,
+    "melee_damage": { "bash": 1 },
     "material": [ "steel", "plastic" ],
     "symbol": "*",
     "color": "yellow",
-    "use_action": {
-      "type": "explosion",
-      "draw_explosion_radius": 4,
-      "draw_explosion_color": "cyan",
-      "scrambler_blast_radius": 4,
-      "sound_volume": 0,
-      "sound_msg": "Tick.",
-      "no_deactivate_msg": "You've already pulled the %s's pin, try throwing it instead."
-    },
+    "use_action": { "type": "explosion", "draw_explosion_radius": 4, "draw_explosion_color": "cyan", "scrambler_blast_radius": 4 },
     "flags": [ "ACT_ON_RANGED_HIT", "RADIO_MODABLE", "RADIO_INVOKE_PROC", "BOMB", "GRENADE", "TRADER_AVOID", "NO_REPAIR" ]
   },
   {
@@ -326,17 +287,11 @@
     "volume": "500 ml",
     "price": "0 cent",
     "to_hit": -3,
-    "bashing": 1,
+    "melee_damage": { "bash": 1 },
     "material": [ "steel", "plastic" ],
     "symbol": "*",
     "color": "green",
-    "use_action": {
-      "type": "explosion",
-      "do_flashbang": true,
-      "sound_volume": 0,
-      "sound_msg": "Tick.",
-      "no_deactivate_msg": "You've already pulled the %s's pin, try throwing it instead."
-    },
+    "use_action": { "type": "explosion", "do_flashbang": true },
     "flags": [ "RADIO_MODABLE", "RADIO_INVOKE_PROC", "BOMB", "GRENADE", "ACT_ON_RANGED_HIT", "TRADER_AVOID", "NO_REPAIR" ]
   },
   {
@@ -349,22 +304,14 @@
     "volume": "500 ml",
     "price": "0 cent",
     "to_hit": -3,
-    "bashing": 1,
+    "melee_damage": { "bash": 1 },
     "material": [ "steel", "plastic" ],
     "symbol": "*",
     "color": "green",
     "initial_charges": 3,
     "max_charges": 3,
     "turns_per_charge": 1,
-    "use_action": {
-      "type": "explosion",
-      "fields_type": "fd_toxic_gas",
-      "fields_radius": 2,
-      "fields_min_intensity": 14,
-      "sound_volume": 0,
-      "sound_msg": "Hiss.",
-      "no_deactivate_msg": "You've already armed the %s, try throwing it instead."
-    },
+    "use_action": { "type": "explosion", "fields_type": "fd_toxic_gas", "fields_radius": 2, "fields_min_intensity": 14 },
     "flags": [ "BOMB", "GRENADE", "ACT_ON_RANGED_HIT", "TRADER_AVOID", "NO_REPAIR" ]
   },
   {
@@ -377,7 +324,7 @@
     "volume": "500 ml",
     "price": "0 cent",
     "to_hit": -3,
-    "bashing": 1,
+    "melee_damage": { "bash": 1 },
     "material": [ "steel", "plastic" ],
     "symbol": "*",
     "color": "green",
@@ -386,8 +333,7 @@
       "do_flashbang": true,
       "fields_type": "fd_electricity",
       "fields_radius": 4,
-      "fields_min_intensity": 200,
-      "sound_volume": -20
+      "fields_min_intensity": 200
     },
     "flags": [ "BOMB", "GRENADE", "ACT_ON_RANGED_HIT", "TRADER_AVOID", "NO_REPAIR" ]
   },
@@ -401,7 +347,7 @@
     "volume": "500 ml",
     "price": "0 cent",
     "to_hit": -3,
-    "bashing": 1,
+    "melee_damage": { "bash": 1 },
     "material": [ "steel", "powder" ],
     "symbol": "*",
     "color": "green",
@@ -421,7 +367,7 @@
     "volume": "1000 ml",
     "price": "0 cent",
     "to_hit": -3,
-    "bashing": 1,
+    "melee_damage": { "bash": 1 },
     "material": [ "steel" ],
     "symbol": ";",
     "color": "dark_gray",
@@ -438,20 +384,14 @@
     "volume": "500 ml",
     "price": "0 cent",
     "to_hit": -3,
-    "bashing": 1,
+    "melee_damage": { "bash": 1 },
     "material": [ "paper", "powder" ],
     "symbol": "*",
     "color": "green",
     "initial_charges": 3,
     "max_charges": 3,
     "turns_per_charge": 1,
-    "use_action": {
-      "type": "explosion",
-      "sound_volume": 0,
-      "sound_msg": "Tick.",
-      "no_deactivate_msg": "You've already pulled the %s's pin, try throwing it instead.",
-      "explosion": { "power": 250 }
-    },
+    "use_action": { "type": "explosion", "explosion": { "power": 250 } },
     "flags": [ "BOMB", "GRENADE", "ACT_ON_RANGED_HIT", "TRADER_AVOID", "NO_REPAIR" ]
   },
   {
@@ -464,15 +404,12 @@
     "volume": "250 ml",
     "price": "0 cent",
     "to_hit": -3,
-    "bashing": 1,
+    "melee_damage": { "bash": 1 },
     "material": [ "paper", "powder" ],
     "symbol": "*",
     "color": "green",
     "use_action": {
       "type": "explosion",
-      "sound_volume": 0,
-      "sound_msg": "Tick.",
-      "no_deactivate_msg": "You've already pulled the %s's pin, try throwing it instead.",
       "explosion": { "power": 10, "shrapnel": { "casing_mass": 35, "fragment_mass": 1.0 }, "distance_factor": 0.1 }
     },
     "flags": [ "BOMB", "GRENADE", "ACT_ON_RANGED_HIT", "TRADER_AVOID", "NO_REPAIR" ]
@@ -487,15 +424,12 @@
     "volume": "500 ml",
     "price": "0 cent",
     "to_hit": -3,
-    "bashing": 1,
+    "melee_damage": { "bash": 1 },
     "material": [ "ceramic" ],
     "symbol": "*",
     "color": "green",
     "use_action": {
       "type": "explosion",
-      "sound_volume": 0,
-      "sound_msg": "Tick.",
-      "no_deactivate_msg": "You've already pulled the %s's pin, try throwing it instead.",
       "explosion": { "power": 20, "shrapnel": { "casing_mass": 30, "fragment_mass": 5.0 }, "distance_factor": 0.2 }
     },
     "flags": [ "BOMB", "GRENADE", "ACT_ON_RANGED_HIT", "TRADER_AVOID", "NO_REPAIR" ]
@@ -510,7 +444,7 @@
     "volume": "500 ml",
     "price": "0 cent",
     "to_hit": -3,
-    "bashing": 1,
+    "melee_damage": { "bash": 1 },
     "material": [ "plastic" ],
     "symbol": "*",
     "color": "green",
@@ -527,7 +461,7 @@
     "volume": "250 ml",
     "price": "0 cent",
     "to_hit": -1,
-    "bashing": 3,
+    "melee_damage": { "bash": 3 },
     "material": [ "plastic", "powder" ],
     "symbol": "*",
     "color": "blue",

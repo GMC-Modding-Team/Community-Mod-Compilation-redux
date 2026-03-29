@@ -1,0 +1,69 @@
+[
+  {
+    "id": "MISSION_BRIT_OFFICER_1",
+    "type": "mission_definition",
+    "name": "Find Military Radio",
+    "goal": "MGOAL_FIND_ITEM",
+    "difficulty": 3,
+    "value": 25000,
+    "item": "radio_military",
+    "origins": [ "ORIGIN_SECONDARY" ],
+    "followup": "MISSION_BRIT_OFFICER_2",
+    "dialogue": {
+      "describe": "We need help...",
+      "offer": "We've lost contact with other British military units in the area. There's a military-grade radio in a supply cache that was being transported when everything went to hell. If you could retrieve it, we might be able to establish communications with other survivors.",
+      "accepted": "Excellent. The supply vehicle was last seen on the main road heading east, about 5 kilometers from here. It should be marked with RAF insignia.",
+      "rejected": "I understand. It's dangerous out there. Perhaps you'll reconsider when you're better prepared.",
+      "advice": "The vehicle was a standard military transport. Look for something that might have been ambushed or abandoned. And be careful - those things are attracted to vehicles.",
+      "inquire": "Have you found the military radio yet?",
+      "success": "Brilliant work! This will be invaluable for our operations. With this, we can coordinate with other units and perhaps even call in support if any is available.",
+      "success_lie": "This... this isn't a military radio. What good is this to us?",
+      "failure": "It's a shame you couldn't find it. We'll have to make do without communications for now."
+    }
+  },
+  {
+    "id": "MISSION_BRIT_OFFICER_2",
+    "type": "mission_definition",
+    "name": "Retrieve Medical Supplies",
+    "goal": "MGOAL_FIND_ITEM",
+    "difficulty": 4,
+    "value": 30000,
+    "item": "1st_aid",
+    "count": 3,
+    "origins": [ "ORIGIN_SECONDARY" ],
+    "followup": "MISSION_BRIT_OFFICER_3",
+    "dialogue": {
+      "describe": "We have wounded personnel...",
+      "offer": "Thanks to the radio, we've made contact with a small group of survivors holed up in a pharmacy. They're running low on supplies, but they have medical kits we desperately need for our wounded. Could you retrieve some first aid kits from them?",
+      "accepted": "Thank you. The pharmacy is in the town to the north. The survivors there are expecting you. Be careful, the town is crawling with those things.",
+      "rejected": "I understand. Perhaps another time.",
+      "advice": "Stick to the shadows and avoid confrontation if possible. The pharmacy should be marked on your map now.",
+      "inquire": "Have you retrieved the medical supplies?",
+      "success": "Excellent work! These will save lives. Our medic can finally properly treat the wounded.",
+      "success_lie": "These aren't the medical supplies we need. Where did you get these?",
+      "failure": "It's unfortunate you couldn't complete the mission. Our wounded will have to make do with what we have."
+    }
+  },
+  {
+    "id": "MISSION_BRIT_OFFICER_3",
+    "type": "mission_definition",
+    "name": "Eliminate Zombie Officer",
+    "goal": "MGOAL_KILL_MONSTER_TYPE",
+    "difficulty": 5,
+    "value": 50000,
+    "monster_type": "mon_zombie_soldier",
+    "monster_kill_goal": 1,
+    "origins": [ "ORIGIN_SECONDARY" ],
+    "dialogue": {
+      "describe": "There's a dangerous situation...",
+      "offer": "We've received reports of a former British Army officer who's turned. He was carrying sensitive information when he was infected. We need you to... take care of him and recover any documents he might have been carrying.",
+      "accepted": "Thank you. This is a difficult task, but necessary. The officer was last seen near the abandoned military checkpoint to the east. Be careful - even in death, he retains some of his combat training.",
+      "rejected": "I understand. It's a grim task.",
+      "advice": "The officer will be wearing distinctive insignia. He may be surrounded by other infected military personnel. A long-range approach might be safest.",
+      "inquire": "Have you eliminated the zombie officer?",
+      "success": "Well done. It's never easy to take down one of our own, even when they're... changed. You've done a service to the Crown and to his memory.",
+      "success_lie": "I don't believe you've completed this task. Our intelligence suggests the target is still active.",
+      "failure": "It's unfortunate you couldn't complete this mission. We'll have to send someone else."
+    }
+  }
+]
