@@ -369,41 +369,70 @@ def update_json_content(content):
 # ---------------------------------------------------------------------------
 
 def process_file(filepath, dry_run=False):
+    """
+    Process a single JSON file.
+    Returns one of: 'updated', 'unchanged', 'error'
+    """
     try:
         with open(filepath, 'r', encoding='utf-8') as fh:
             original = fh.read()
     except Exception as exc:
         print(f"  [ERROR] Could not read {filepath}: {exc}", file=sys.stderr)
-        return
+        return 'error'
 
     updated = update_json_content(original)
 
     if updated == original:
-        return  # Nothing changed – stay silent
+        return 'unchanged'
 
     if dry_run:
         print(f"  [DRY-RUN] Would update: {filepath}")
-        return
+        return 'updated'
 
     try:
         with open(filepath, 'w', encoding='utf-8') as fh:
             fh.write(updated)
         print(f"  [UPDATED] {filepath}")
+        return 'updated'
     except Exception as exc:
         print(f"  [ERROR] Could not write {filepath}: {exc}", file=sys.stderr)
+        return 'error'
 
 
 def process_path(path, dry_run=False):
+    """
+    Process a single file or recursively walk a directory tree.
+    Prints a summary of results when finished.
+    """
     if os.path.isfile(path):
+        if not path.lower().endswith('.json'):
+            print(f"  [SKIP] Not a JSON file: {path}", file=sys.stderr)
+            return
         process_file(path, dry_run=dry_run)
+
     elif os.path.isdir(path):
-        total = 0
-        for root, _dirs, files in os.walk(path):
-            for fname in files:
-                if fname.lower().endswith('.json'):
-                    process_file(os.path.join(root, fname), dry_run=dry_run)
-                    total += 1
-        print(f"\nScanned {total} JSON file(s) under '{path}'.")
+        counts = {'updated': 0, 'unchanged': 0, 'error': 0, 'total': 0}
+
+        for root, dirs, files in os.walk(path):
+            # Sort dirs in-place so os.walk visits sub-folders alphabetically
+            dirs.sort()
+            for fname in sorted(files):
+                if not fname.lower().endswith('.json'):
+                    continue
+                filepath = os.path.join(root, fname)
+                result = process_file(filepath, dry_run=dry_run)
+                counts['total'] += 1
+                counts[result] += 1
+
+        label = "DRY-RUN" if dry_run else "DONE"
+        print(
+            f"\n[{label}] '{path}' — "
+            f"{counts['total']} file(s) scanned: "
+            f"{counts['updated']} updated, "
+            f"{counts['unchanged']} unchanged, "
+            f"{counts['error']} error(s)."
+        )
+
     else:
         print(f"[ERROR] Path not found: {path}", file=sys.stderr)
         sys.exit(1)
