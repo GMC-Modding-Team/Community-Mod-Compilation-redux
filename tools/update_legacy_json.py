@@ -167,8 +167,28 @@ def fix_integral_volume(content):
 def fix_weight(content):
     """
     "weight": N  ->  "weight": "N g"
+    NOTE: for "type": "mapgen" objects, fix_mapgen_weight is used instead
+    (removes the key entirely).  For "type": "speech" objects, weight is
+    left completely untouched (handled via per-object pipeline selection).
     """
     return _sub(r'"weight"\s*:\s*(\d+)', r'"weight": "\1 g"', content)
+
+
+def fix_mapgen_weight(content):
+    """
+    Remove "weight": N entirely from mapgen objects.
+    In mapgen entries "weight" is a legacy spawn-weight integer that is no
+    longer used and should be deleted rather than converted to "N g".
+    Handles both comma-before and comma-after positions so the surrounding
+    JSON remains valid after removal.
+    """
+    # Remove:  "weight": N,   (key is followed by a comma)
+    content = _sub(r'"weight"\s*:\s*\d+\s*,\s*', '', content)
+    # Remove:  , "weight": N  (key is preceded by a comma)
+    content = _sub(r',\s*"weight"\s*:\s*\d+', '', content)
+    # Remove any bare remainder (no surrounding commas)
+    content = _sub(r'"weight"\s*:\s*\d+', '', content)
+    return content
 
 
 def fix_effect(content):
@@ -199,11 +219,108 @@ def fix_note(content):
     return _sub(r'"note"\s*:', '"//":', content)
 
 
+# Types where "chance" is a LEGACY field that should be renamed to "prob".
+# All other types use "chance" as a valid native field and must NOT be touched.
+_CHANCE_TO_PROB_TYPES = frozenset({
+    "mutation",
+    "technique",
+    "ammo_effect",
+    "body_part",
+    "emit",
+    "field_type",
+    "trap",
+    "monster_attack",
+    "SPELL",
+    "ENCHANTMENT",
+})
+
+
 def fix_chance(content):
     """
     "chance": N  ->  "prob": N
+
+    IMPORTANT: "chance" is a valid native field in many CDDA types (mapgen,
+    monstergroup, item_group, overmap_special, palette, and all their nested
+    sub-objects).  This transform is therefore an allowlist: it only renames
+    "chance" when the enclosing top-level object has a "type" value that is
+    confirmed to use "chance" as a legacy alias for "prob".
+
+    The per-object pipeline in update_json_content passes only the chunk for
+    the current top-level object, so the regex here operates on a single
+    object at a time and the type check is reliable.
     """
+    # Detect the type of this object chunk
+    m = re.search(r'"type"\s*:\s*"([^"]+)"', content)
+    if not m or m.group(1) not in _CHANCE_TO_PROB_TYPES:
+        return content  # leave "chance" untouched for all other types
     return _sub(r'"chance"\s*:\s*(\d+)', r'"prob": \1', content)
+
+
+def _mask_proportional(content):
+    """
+    Replace the contents of every "proportional": { ... } block with a
+    placeholder so that subsequent transforms cannot touch them.
+    Returns (masked_content, list_of_original_blocks).
+
+    The placeholder format is  \x00PROP<index>\x00  which cannot appear in
+    valid JSON, making it safe to restore later.
+    """
+    originals = []
+    result = []
+    i = 0
+    pattern = re.compile(r'"proportional"\s*:\s*\{')
+    while i < len(content):
+        m = pattern.search(content, i)
+        if not m:
+            result.append(content[i:])
+            break
+        # Append everything up to the opening brace of the proportional block
+        result.append(content[i:m.start()])
+        # Find the matching closing brace, respecting nesting and strings
+        brace_start = m.end() - 1  # position of the '{'
+        depth = 0
+        in_str = False
+        escape = False
+        j = brace_start
+        while j < len(content):
+            ch = content[j]
+            if escape:
+                escape = False
+                j += 1
+                continue
+            if ch == '\\' and in_str:
+                escape = True
+                j += 1
+                continue
+            if ch == '"':
+                in_str = not in_str
+                j += 1
+                continue
+            if in_str:
+                j += 1
+                continue
+            if ch == '{':
+                depth += 1
+            elif ch == '}':
+                depth -= 1
+                if depth == 0:
+                    j += 1
+                    break
+            j += 1
+        block = content[brace_start:j]          # the full { ... } block
+        key_prefix = content[m.start():brace_start]  # '"proportional": '
+        idx = len(originals)
+        originals.append(key_prefix + block)
+        result.append(f'\x00PROP{idx}\x00')
+        i = j
+    return ''.join(result), originals
+
+
+def _restore_proportional(content, originals):
+    """Restore the original proportional blocks from their placeholders."""
+    for idx, original in enumerate(originals):
+        content = content.replace(f'\x00PROP{idx}\x00', original)
+    return content
 
 
 def fix_price(content):
@@ -357,10 +474,111 @@ TRANSFORMS = [
 ]
 
 
+# ---------------------------------------------------------------------------
+# Per-type pipeline variants
+# ---------------------------------------------------------------------------
+
+# mapgen: remove weight entirely; leave "chance" completely untouched
+_TRANSFORMS_MAPGEN = [
+    fix_mapgen_weight if t is fix_weight else t
+    for t in TRANSFORMS
+    if t is not fix_chance
+]
+
+# speech: leave volume completely alone ("volume" is loudness, not item size)
+_TRANSFORMS_SPEECH = [
+    t for t in TRANSFORMS
+    if t is not fix_volume
+]
+
+
+def _split_top_level_objects(text):
+    """
+    Yield (start, end) index pairs for every top-level JSON object { ... }
+    found in *text*, ignoring content inside strings.
+    """
+    depth = 0
+    in_str = False
+    escape = False
+    start = None
+    for i, ch in enumerate(text):
+        if escape:
+            escape = False
+            continue
+        if ch == '\\' and in_str:
+            escape = True
+            continue
+        if ch == '"':
+            in_str = not in_str
+            continue
+        if in_str:
+            continue
+        if ch == '{':
+            if depth == 0:
+                start = i
+            depth += 1
+        elif ch == '}':
+            depth -= 1
+            if depth == 0 and start is not None:
+                yield start, i + 1
+                start = None
+
+
 def update_json_content(content):
-    """Apply all transformations to a string of JSON content."""
-    for transform in TRANSFORMS:
-        content = transform(content)
+    """
+    Apply all transformations to a string of JSON content.
+
+    Per-type special rules
+    ----------------------
+    "mapgen"  : weight is removed entirely; "chance" is NOT renamed to "prob".
+    "speech"  : "volume" is left completely untouched.
+    all types : nothing inside a "proportional": { ... } block is touched.
+    "chance"  : only renamed to "prob" for types in _CHANCE_TO_PROB_TYPES
+                (allowlist); all other types keep "chance" untouched.
+
+    Because fix_chance now needs to inspect each object's "type" field
+    individually, we always split the content into per-object chunks.
+    """
+    # ------------------------------------------------------------------
+    # Step 1: mask every "proportional": { ... } block so that none of
+    # the regex transforms can accidentally modify values inside them.
+    # ------------------------------------------------------------------
+    content, prop_originals = _mask_proportional(content)
+
+    # ------------------------------------------------------------------
+    # Step 2: split into individual top-level objects and apply the
+    # correct per-type pipeline to each one.
+    # ------------------------------------------------------------------
+    spans = list(_split_top_level_objects(content))
+    if not spans:
+        # File is not a JSON array of objects (e.g. a bare object or
+        # non-standard structure) — fall back to the full pipeline.
+        for transform in TRANSFORMS:
+            content = transform(content)
+    else:
+        result = []
+        prev_end = 0
+        for start, end in spans:
+            # Preserve whitespace / punctuation between objects verbatim.
+            result.append(content[prev_end:start])
+            chunk = content[start:end]
+            if re.search(r'"type"\s*:\s*"mapgen"', chunk):
+                pipeline = _TRANSFORMS_MAPGEN
+            elif re.search(r'"type"\s*:\s*"speech"', chunk):
+                pipeline = _TRANSFORMS_SPEECH
+            else:
+                pipeline = TRANSFORMS
+            for transform in pipeline:
+                chunk = transform(chunk)
+            result.append(chunk)
+            prev_end = end
+        result.append(content[prev_end:])
+        content = ''.join(result)
+
+    # ------------------------------------------------------------------
+    # Step 3: restore the original proportional blocks.
+    # ------------------------------------------------------------------
+    content = _restore_proportional(content, prop_originals)
     return content
 
 
