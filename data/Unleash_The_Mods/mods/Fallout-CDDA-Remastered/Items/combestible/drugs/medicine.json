@@ -1,0 +1,73 @@
+[
+  {
+    "id": "rad_away",
+    "type": "COMESTIBLE",
+    "comestible_type": "MED",
+    "name": { "str": "RadAway" },
+    "description": "RadAway is a chemical solution that bonds with radioactive particles and removes them from the user's system.",
+    "weight": "1 g",
+    "volume": "250 ml",
+    "price": 3000,
+    "price_postapoc": 20000,
+    "charges": 10,
+    "stack_size": 200,
+    "flags": [ "NPC_SAFE", "IRREPLACEABLE_CONSUMABLE" ],
+    "symbol": "!",
+    "color": "yellow",
+    "use_action": {
+      "type": "consume_drug",
+      "activation_message": "You inject some RadAway.",
+      "effects": [ { "id": "pblue", "duration": 3600 } ]
+    }
+  },
+
+  {
+    "id": "rad_x",
+    "type": "COMESTIBLE",
+    "comestible_type": "MED",
+    "name": "Rad-X",
+    "description": "A potent anti-radiation medicine that bolsters the user's natural Radiation Resistance. Unlike most other chems, Rad-X is addiction-free, making it perfectly safe to use without risking the chance of addiction.",
+    "weight": "1 g",
+    "volume": "250 ml",
+    "price": 1000,
+    "price_postapoc": 20000,
+    "charges": 10,
+    "stack_size": 200,
+    "symbol": "!",
+    "color": "light_green",
+    "use_action": {
+      "type": "consume_drug",
+      "activation_message": "You take some Rad-X.",
+      "effects": [ { "id": "iodine", "duration": 7200 } ]
+    }
+  },
+
+  {
+    "id": "med_x",
+    "type": "COMESTIBLE",
+    "comestible_type": "MED",
+    "name": "morphine",
+    "description": "Med-X is the brand name of morphine, a potent opiate analgesic that binds to opioid receptors in the brain and central nervous system, reducing the perception of pain as well as the emotional response to pain. The active ingredient acts as a general anesthetic that dulls pain throughout the body and typically causes listlessness and lethargy. In laymans terms, its a powerful painkiller delivered via a hypodermic needle.",
+    "weight": "1 g",
+    "volume": "250 ml",
+    "price": 4000,
+    "price_postapoc": 25000,
+    "charges": 4,
+    "stack_size": 100,
+    "material": "powder",
+    "symbol": "!",
+    "color": "light_gray",
+    "stim": -5,
+    "healthy": -3,
+    "fun": 25,
+    "addiction_potential": 25,
+    "addiction_type": "opiate",
+    "flags": [ "NO_INGEST", "IRREPLACEABLE_CONSUMABLE" ],
+    "use_action": {
+      "type": "consume_drug",
+      "activation_message": "You shoot up with the Med-X syringe.",
+      "tools_needed": { "syringe": 1 },
+      "effects": [ { "id": "pkill3", "duration": 120 }, { "id": "pkill2", "duration": 1200 } ]
+    }
+  }
+]
