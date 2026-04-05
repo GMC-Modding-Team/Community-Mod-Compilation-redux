@@ -40,9 +40,7 @@
     "type": "item_group",
     "id": "NC_DOBBSF_weapon",
     "subtype": "distribution",
-    "entries": [
-      { "item": "null" }
-    ]
+    "entries": [ { "item": "null" } ]
   },
   {
     "type": "item_group",
@@ -53,16 +51,13 @@
       { "item": "helmet_combat_light_winter" },
       { "item": "socks" },
       { "item": "boots_combat" }
-
     ]
   },
   {
     "type": "item_group",
     "id": "NC_DOBBSF_carry",
     "subtype": "collection",
-    "entries": [
-      { "item": "null" }
-    ]
+    "entries": [ { "item": "null" } ]
   },
   {
     "type": "TOOL",
@@ -74,16 +69,15 @@
     "weight": "81500 g",
     "symbol": "B",
     "color": "green",
-    "price": 100,
-    "price_postapoc": 0,
+    "price": "1 USD",
+    "price_postapoc": "0 cent",
     "material": [ "steel" ],
     "max_charges": 0,
     "initial_charges": 0,
     "charges_per_use": 0,
     "turns_per_charge": 0,
-    "ammo": "NULL",
-    "use_action": 
-    {
+    "ammo": [ "NULL" ],
+    "use_action": {
       "type": "place_npc",
       "npc_class_id": "npc_dobbs_frozen",
       "summon_msg": "With a slight hiss the pod opens, and a weary soldier stumbles out of the pod to breathe fresh air for the first time in years.",
@@ -95,20 +89,25 @@
     "type": "talk_topic",
     "dynamic_line": {
       "u_female": true,
-      "yes": [ "I have to rejoin my unit!", "Where am I?", "Why am I covered in goo?", "Which way to the front line.", "My head hurts!" ],
-      "no": [ "I have to rejoin my unit!", "Where am I?", "Why am I covered in goo?", "Which way to the front line.", "My head hurts." ] },
+      "yes": [
+        "I have to rejoin my unit!",
+        "Where am I?",
+        "Why am I covered in goo?",
+        "Which way to the front line.",
+        "My head hurts!"
+      ],
+      "no": [
+        "I have to rejoin my unit!",
+        "Where am I?",
+        "Why am I covered in goo?",
+        "Which way to the front line.",
+        "My head hurts."
+      ]
+    },
     "responses": [
-      {
-        "text": "Who are you, what happened to you?",
-        "topic": "TALK_DOBBSOLDIER_INFOTOWN"
-      },
-      {
-        "text": "Do you want to come with me? I can be your squad now.", "topic": "TALK_DOBBSOLDIER_RECRUIT"
-      },
-      {
-        "text": "See you later.",
-        "topic": "TALK_DONE"
-      }
+      { "text": "Who are you, what happened to you?", "topic": "TALK_DOBBSOLDIER_INFOTOWN" },
+      { "text": "Do you want to come with me? I can be your squad now.", "topic": "TALK_DOBBSOLDIER_RECRUIT" },
+      { "text": "See you later.", "topic": "TALK_DONE" }
     ]
   },
   {
@@ -117,23 +116,14 @@
     "dynamic_line": {
       "u_female": true,
       "yes": "I was in a battle. Yes, a battle. There was gunfire and explosions everywhere. People dying. I was scared but I had to keep on fighting. Then there was this blinding flash. he next thing I remember was seeing my body as if I was looking down at it from above. I heard the doctors say I was dead and then they threw my body onto a pile of other bodies. Some men came by and took my body to a laboratory. I heard them say something about trying to regenerate my body by immersing it in something called Biomed Gel.",
-      "no": "I was in a battle. Yes, a battle. There was gunfire and explosions everywhere. People dying. I was scared but I had to keep on fighting. Then there was this blinding flash. he next thing I remember was seeing my body as if I was looking down at it from above. I heard the doctors say I was dead and then they threw my body onto a pile of other bodies. Some men came by and took my body to a laboratory. I heard them say something about trying to regenerate my body by immersing it in something called Biomed Gel."},
-    "responses": [
-      {
-        "text": "Got it.",
-        "topic": "TALK_DOBBSOLDIER_START"
-      }
-    ]
+      "no": "I was in a battle. Yes, a battle. There was gunfire and explosions everywhere. People dying. I was scared but I had to keep on fighting. Then there was this blinding flash. he next thing I remember was seeing my body as if I was looking down at it from above. I heard the doctors say I was dead and then they threw my body onto a pile of other bodies. Some men came by and took my body to a laboratory. I heard them say something about trying to regenerate my body by immersing it in something called Biomed Gel."
+    },
+    "responses": [ { "text": "Got it.", "topic": "TALK_DOBBSOLDIER_START" } ]
   },
   {
     "id": "TALK_DOBBSOLDIER_RECRUIT",
     "type": "talk_topic",
-    "dynamic_line": {
-      "u_female": true,
-      "yes": "I am ready to rejoin my squad!",
-      "no": "I am ready to rejoin my squad!"},
-    "responses": [
-      { "text": "Want to travel with me?", "topic": "TALK_SUGGEST_FOLLOW", "condition": { "not": "npc_following" } }
-    ]
+    "dynamic_line": { "u_female": true, "yes": "I am ready to rejoin my squad!", "no": "I am ready to rejoin my squad!" },
+    "responses": [ { "text": "Want to travel with me?", "topic": "TALK_SUGGEST_FOLLOW", "condition": { "not": "npc_following" } } ]
   }
 ]

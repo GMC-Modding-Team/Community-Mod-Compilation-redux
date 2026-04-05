@@ -42,9 +42,7 @@
     "type": "item_group",
     "id": "NC_BOSABBOT_worn",
     "subtype": "collection",
-    "entries": [
-      { "item": "power_armor_t51" }
-    ]
+    "entries": [ { "item": "power_armor_t51" } ]
   },
   {
     "type": "item_group",
@@ -60,9 +58,7 @@
     "type": "item_group",
     "id": "NC_BOSPAL_weapon",
     "subtype": "collection",
-    "entries": [
-      { "item": "cz53", "charges": 500 }
-    ]
+    "entries": [ { "item": "cz53", "charges": 500 } ]
   },
   {
     "type": "talk_topic",
@@ -79,7 +75,11 @@
         "You're back, Did you find any tech in the wastes?",
         "Hello there, fellow member of the brotherhood."
       ],
-      "no": [ "Who are you? What are you doing here?", "Shouldn't you be banging rocks together, local?", "If you think you're getting in, think again." ]
+      "no": [
+        "Who are you? What are you doing here?",
+        "Shouldn't you be banging rocks together, local?",
+        "If you think you're getting in, think again."
+      ]
     },
     "responses": [
       {
@@ -87,30 +87,16 @@
         "condition": { "not": { "u_has_var": "u_are_bos_member", "type": "general", "context": "meeting", "value": "yes" } },
         "topic": "TALK_bos_abbot_2"
       },
-      {
-        "text": "What is the Brotherhood of Steel?",
-        "topic": "TALK_bos_abbot_3"
-      },
-      {
-        "text": "Is there anyway for me to join the Brotherhood of Steel?",
-        "topic": "TALK_MISSION_LIST"
-      },
-      {
-        "text": "Goodbye.",
-        "topic": "TALK_DONE"
-      }
+      { "text": "What is the Brotherhood of Steel?", "topic": "TALK_bos_abbot_3" },
+      { "text": "Is there anyway for me to join the Brotherhood of Steel?", "topic": "TALK_MISSION_LIST" },
+      { "text": "Goodbye.", "topic": "TALK_DONE" }
     ]
   },
   {
     "id": "TALK_bos_abbot_2",
     "type": "talk_topic",
     "dynamic_line": "I'm a paladin for the Brotherhood of Steel. I have been posted at this outpost's gate to defend it from all potential assailants.",
-    "responses": [
-      {
-        "text": "Thanks for the info.",
-        "topic": "TALK_DONE"
-      }
-    ]
+    "responses": [ { "text": "Thanks for the info.", "topic": "TALK_DONE" } ]
   },
   {
     "id": "TALK_bos_abbot_3",
@@ -125,12 +111,7 @@
       ],
       "no": "We're an organization principally devoted to the preservation of the old world's technology. As I'm sure you can tell, most people out in the wastes now can't appreciate the more refined arts and sciences of the past, and the herculean task of maintaining such delicate technology falls to us and us alone. You're not a member, so you're not privy to the resources our outpost can provide."
     },
-    "responses": [
-      {
-        "text": "Thanks for the info.",
-        "topic": "TALK_DONE"
-      }
-    ]
+    "responses": [ { "text": "Thanks for the info.", "topic": "TALK_DONE" } ]
   },
   {
     "id": "MISSION_BOS_FIND_GLOWTAPE",
@@ -140,20 +121,11 @@
     "goal": "MGOAL_FIND_ITEM",
     "difficulty": 3,
     "value": 150000,
-    "assign_mission_target": {
-    "om_terrain": "FO_WESTTEK_2_roof_2",
-    "search_range": 300,
-    "reveal_radius": 3
-  },
+    "assign_mission_target": { "om_terrain": "FO_WESTTEK_2_roof_2", "search_range": 300, "reveal_radius": 3 },
     "item": "item_fo_glow_holotape",
     "count": 1,
     "end": {
-      "update_mapgen": [
-        {
-          "om_terrain": "FO_BOSOUTPOST_1",
-          "place_nested": [ { "chunks": [ "fo_bos_postdoor" ], "x": 11, "y": 12 } ]
-        }
-      ],
+      "update_mapgen": [ { "om_terrain": "FO_BOSOUTPOST_1", "place_nested": [ { "chunks": [ "fo_bos_postdoor" ], "x": 11, "y": 12 } ] } ],
       "effect": [
         { "u_add_var": "u_are_bos_member", "type": "general", "context": "meeting", "value": "yes" },
         { "u_buy_item": "medium_battery_cell", "ammo-item": "battery", "charges": 500, "container-item": "aer9" },
@@ -165,7 +137,7 @@
         { "u_buy_item": "10mmap", "count": 20 },
         { "u_buy_item": "10mm_incendiary", "count": 20 },
         { "u_buy_item": "10mm", "count": 50 }
-         ]
+      ]
     },
     "origins": [ "ORIGIN_SECONDARY" ],
     "dialogue": {
