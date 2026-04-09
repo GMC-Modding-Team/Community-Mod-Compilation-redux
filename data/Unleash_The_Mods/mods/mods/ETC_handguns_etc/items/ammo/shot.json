@@ -1,0 +1,67 @@
+[
+  {
+    "id": "bp_shot_antimateriel",
+    "copy-from": "reloaded_shot_antimateriel",
+    "type": "AMMO",
+    "name": { "str": "anti-materiel slug, black powder" },
+    "description": "A custom armor-piercing incendiary slug with an extracted 262gr 9x19mm ETC SAP depleted uranium projectile as its tip, enveloped by a lead outer core which in turn is covered by a copper jacket. Statistically smokeless powder is far more common than the other components this requires, so making this anachronism is very situational (read: almost always useless).",
+    "proportional": { "price": 0.9, "damage": { "damage_type": "stab", "amount": 0.9 }, "dispersion": 1.1 },
+    "extend": { "effects": [ "MUZZLE_SMOKE", "BLACKPOWDER" ] }
+  },
+  {
+    "id": "bp_shot_microflechette",
+    "copy-from": "reloaded_shot_microflechette",
+    "type": "AMMO",
+    "name": { "str": "micro-flechette shell, black powder" },
+    "description": "A shell filled with very tiny tungsten darts, this is a custom hand load for hunting prey made of metal rather than flesh and bones. Statistically smokeless powder is far more common than the other components this requires, so making this anachronism is very situational (read: almost always useless).",
+    "proportional": { "price": 0.9, "damage": { "damage_type": "stab", "amount": 0.9 }, "dispersion": 1.1 },
+    "extend": { "effects": [ "MUZZLE_SMOKE", "BLACKPOWDER" ] }
+  },
+  {
+    "id": "bp_shot_tungsten",
+    "copy-from": "reloaded_shot_tungsten",
+    "type": "AMMO",
+    "name": { "str": "hardcore slug, black powder" },
+    "description": "A custom armor-piercing slug with an extracted 100gr .22 ETC tungsten ball converted into its tip, enveloped by a lead outer core which in turn is covered by a copper jacket. Statistically smokeless powder is far more common than the other components this requires, so making this anachronism is very situational (read: almost always useless).",
+    "proportional": { "price": 0.9, "damage": { "damage_type": "stab", "amount": 0.9 }, "dispersion": 1.1 },
+    "extend": { "effects": [ "MUZZLE_SMOKE", "BLACKPOWDER" ] }
+  },
+  {
+    "id": "reloaded_shot_antimateriel",
+    "copy-from": "reloaded_shot_microflechette",
+    "type": "AMMO",
+    "name": { "str": "anti-materiel slug" },
+    "description": "A custom armor-piercing incendiary slug with an extracted 262gr 9x19mm ETC SAP depleted uranium projectile as its tip, enveloped by a lead outer core which in turn is covered by a copper jacket.",
+    "price": "25 USD",
+    "material": [ "plastic", "powder", "uranium" ],
+    "dispersion": 80,
+    "relative": { "damage": { "damage_type": "stab", "amount": 12, "armor_penetration": -17 }, "range": 14 },
+    "proportional": { "recoil": 2 },
+    "extend": { "effects": [ "INCENDIARY" ] },
+    "delete": { "effects": [ "SHOT" ] }
+  },
+  {
+    "id": "reloaded_shot_microflechette",
+    "type": "AMMO",
+    "copy-from": "shot_00",
+    "name": { "str": "micro-flechette shell" },
+    "description": "A shell filled with very tiny tungsten darts, this is a custom hand load for hunting prey made of metal rather than flesh and bones.",
+    "price": "20 USD",
+    "material": [ "plastic", "powder", "tungsten" ],
+    "relative": { "damage": { "damage_type": "stab", "amount": -12, "armor_penetration": 50 }, "recoil": 250 },
+    "extend": { "effects": [ "RECYCLED" ] },
+    "delete": { "effects": [ "NEVER_MISFIRES" ], "flags": [ "IRREPLACEABLE_CONSUMABLE" ] }
+  },
+  {
+    "id": "reloaded_shot_tungsten",
+    "copy-from": "reloaded_shot_microflechette",
+    "type": "AMMO",
+    "name": { "str": "hardcore slug" },
+    "description": "A custom armor-piercing slug with an extracted 100gr .22 ETC tungsten ball converted into its tip, enveloped by a lead outer core which in turn is covered by a copper jacket.",
+    "price": "12 USD",
+    "dispersion": 90,
+    "relative": { "damage": { "damage_type": "stab", "amount": 6, "armor_penetration": -34 }, "range": 12 },
+    "proportional": { "recoil": 1.5 },
+    "delete": { "effects": [ "SHOT" ] }
+  }
+]
