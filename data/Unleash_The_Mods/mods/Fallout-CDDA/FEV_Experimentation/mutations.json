@@ -62,54 +62,6 @@
   },
   {
     "type": "mutation",
-    "id": "FEV_PAWS",
-    "name": { "str": "FEV Paws" },
-    "points": 0,
-    "visibility": 3,
-    "ugliness": 2,
-    "mixed_effect": true,
-    "description": "Your hands have fused into quasi-paws.  Fine manipulation is a challenge: permanent hand encumbrance of 10, difficulty with delicate craftwork, and your gloves don't fit.  But they handle water better and bear weight well, allowing you to move on all fours when crouching and unarmed.",
-    "encumbrance_always": [ [ "hand_l", 10 ], [ "hand_r", 10 ] ],
-    "restricts_gear": [ "hand_l", "hand_r" ],
-    "craft_skill_bonus": [ [ "electronics", -2 ], [ "tailor", -2 ], [ "mechanics", -2 ] ],
-    "types": [ "HANDS" ],
-    "cancels": [ "TALONS" ],
-    "changes_to": [ "PAWS_LARGE" ],
-    "category": [ "LUPINE", "RAT", "FELINE", "BEAST", "URSINE", "FEVMUTANT" ],
-    "triggers": [
-      [
-        {
-          "condition": {
-            "and": [
-              { "u_has_move_mode": "crouch" },
-              { "not": "u_can_drop_weapon" },
-              {
-                "u_has_any_trait": [ "THRESH_BEAST", "THRESH_FELINE", "THRESH_LUPINE", "THRESH_URSINE", "THRESH_RAT", "THRESH_MOUSE", "THRESH_RABBIT" ]
-              }
-            ]
-          },
-          "msg_on": { "text": "You drop down on all fours." },
-          "msg_off": { "text": "You rise up to walk on your hind feet." }
-        }
-      ]
-    ],
-    "enchantments": [
-      {
-        "condition": {
-          "and": [
-            { "u_has_move_mode": "crouch" },
-            { "not": "u_can_drop_weapon" },
-            {
-              "u_has_any_trait": [ "THRESH_BEAST", "THRESH_FELINE", "THRESH_LUPINE", "THRESH_URSINE", "THRESH_RAT", "THRESH_MOUSE", "THRESH_RABBIT" ]
-            }
-          ]
-        },
-        "values": [ { "value": "MOVE_COST", "multiply": -0.5 } ]
-      }
-    ]
-  },
-  {
-    "type": "mutation",
     "id": "HAMFISTS",
     "name": "Ham Fisted",
     "points": -4,
@@ -130,7 +82,6 @@
     "encumbrance_always": [ [ "HAND_L", 10 ], [ "HAND_R", 10 ] ],
     "restricts_gear": [ "HAND_L", "HAND_R" ],
     "types": [ "HANDS" ],
-    "prereqs": [ "FEV_PAWS" ],
     "cancels": [ "TALONS" ],
     "category": [ "FEVMUTANT" ]
   },
