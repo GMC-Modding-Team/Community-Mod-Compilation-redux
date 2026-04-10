@@ -1,3 +1,7 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 **Description**
 Through the portals rupturing reality in the cataclysm, you were sucked into a world yet untouched by humans. Here you encounter massive animals that seem almost out of place, but eerily familiar at the same time. You know this megafauna went extinct just around the time your ancestors first set foot on this land some 10.000 years ago. Distant memories of these Pleistocenic animals rest deep in your conscious. 
 

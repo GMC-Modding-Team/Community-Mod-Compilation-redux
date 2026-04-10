@@ -4,7 +4,6 @@
 
 - [No Hope](#no-hope)
 - [List of features](#list-of-features)
-- [List of temporarily missing features](#list-of-temporarily-missing-features)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

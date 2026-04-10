@@ -8,11 +8,12 @@
     - [You Can't Go Back](#you-cant-go-back)
     - [Death is not the end.](#death-is-not-the-end)
   - [Warpcloak](#warpcloak)
-    - [Warp Sickness](#warp-sickness)
+    - [Warp Sickness and Variable Difficulty](#warp-sickness-and-variable-difficulty)
   - [The Island](#the-island)
   - [The "Expeditions"](#the-expeditions)
     - [Missions](#missions)
     - [Warp Shards and Warped Items](#warp-shards-and-warped-items)
+  - [Warp Home Spell](#warp-home-spell)
 - [Tips](#tips)
 - [Changelog](#changelog)
 

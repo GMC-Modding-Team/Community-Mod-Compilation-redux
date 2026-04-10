@@ -1,3 +1,7 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 **The Sly Somnambulist's Mighty Morphin Mutations!**
  This mod rejiggers and strengthens some mutations and creates new ones to hopefully make the less flashy mutation lines more interesting to play and make mutations more fun overall.  It's a WIP of course, and I'd love any comments about balancing issues.  The overall intent is to try and help make each mutation line add a much more unique playstyle to the game. Requests, critiques, and suggestions are welcome!
 

@@ -5,6 +5,7 @@ Use the `home` key to get to the top.
 **Table of Contents**
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 - [Vanilla locations](#vanilla-locations)
 - [Modded locations and new times](#modded-locations-and-new-times)

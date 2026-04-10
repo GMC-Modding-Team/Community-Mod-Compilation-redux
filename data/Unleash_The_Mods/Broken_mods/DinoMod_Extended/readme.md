@@ -1,3 +1,7 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 A while ago I was going through old merge/pull requests on github and just seeing what was or wasn't added etc and I stumbled upon these files.
 
 These files were created by github user LyleSY who instead of uploading this as a mod tried to get it mainlined which it never did. It added dinos to forests as well as full dino evolution with breeding, eggs and baby dinos.

@@ -19,15 +19,6 @@
     - [Tier 1](#tier-1)
     - [Tier 2](#tier-2)
     - [Tier 3](#tier-3)
-  - [Spellcasting Proficiencies](#spellcasting-proficiencies)
-    - [Evocation](#evocation)
-    - [Channeling](#channeling)
-    - [Conjuration](#conjuration)
-    - [Enhancement](#enhancement)
-    - [Conveyance](#conveyance)
-      - [How The JMATH Works](#how-the-jmath-works)
-        - [How JMATH Outputs are Used in Spells](#how-jmath-outputs-are-used-in-spells)
-    - [Advice for Using Proficiencies in Spells](#advice-for-using-proficiencies-in-spells)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
