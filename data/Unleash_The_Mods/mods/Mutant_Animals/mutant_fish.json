@@ -86,7 +86,10 @@
     "color": "white",
     "symbol": "G",
     "attack_effs": [ { "id": "grabbed", "chance": 30 } ],
-    "special_attacks": [ [ "RANGED_PULL", 5 ], [ "GRAB_DRAG", 1 ] ],
+    "special_attacks": [
+      { "id": "ranged_pull", "range": 5, "cooldown": 10 },
+      { "id": "grab_drag", "cooldown": 15, "grab_data": { "drag_deviation": 1, "drag_movecost_mod": 0.2 } }
+    ],
     "extend": { "flags": [ "PUSH_MON", "REVIVES" ] }
   },
   {
