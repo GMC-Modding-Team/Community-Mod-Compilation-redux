@@ -7,6 +7,23 @@ Use the `home` key to get to the top.
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 - [Package bionic professions](#package-bionic-professions)
+<<<<<<<< HEAD:docs/Modding/Catalogues/Professions_catalogue.md
+  - [Professions](#professions-pbp)
+- [More classes scenarios](#more-classes-scenarios)
+  * [Professions](#professions-mcs)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+# Package bionic professions
+
+```json
+Mod id
+"id": "package_bionic_professions"
+```
+
+
+#### Professions PBP
+========
   - [Professions](#professions)
 - [More classes scenarios](#more-classes-scenarios)
   - [Professions](#professions-1)
@@ -21,6 +38,7 @@ Use the `home` key to get to the top.
 
 
 ## Professions
+>>>>>>>> master:docs/Catalogues/Professions_catalogue.md
 ```Json
 `"id": "quiver_bionic_prepper",`
 `"id": "bionic_athlete",`
@@ -50,14 +68,26 @@ Use the `home` key to get to the top.
 `"id": "razorgirl",`
 ```
 
+---
 
 # More classes scenarios
+<<<<<<<< HEAD:docs/Modding/Catalogues/Professions_catalogue.md
+
+```json
+Mod id
+"id": "more_classes_scenarios"
+========
 ```Regex
 "more_classes_scenarios"
+>>>>>>>> master:docs/Catalogues/Professions_catalogue.md
 ```
 
+#### Professions MCS
 
+<<<<<<<< HEAD:docs/Modding/Catalogues/Professions_catalogue.md
+========
 ## Professions
+>>>>>>>> master:docs/Catalogues/Professions_catalogue.md
 ```Json
 `"id": "specops",`
 `"id": "soldier",`
@@ -71,3 +101,6 @@ Use the `home` key to get to the top.
 `"id": "goalie",`
 `"id": "elementary_student",`
 ```
+
+---
+
