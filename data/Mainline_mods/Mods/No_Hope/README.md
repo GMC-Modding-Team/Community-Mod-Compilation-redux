@@ -1,3 +1,13 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [No Hope](#no-hope)
+- [List of features](#list-of-features)
+- [List of temporarily missing features](#list-of-temporarily-missing-features)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # No Hope
 
 The mod is based on the old lore where there was a full-scale war with China with many months of preceding marauding and civil disorder. Thus the world with the mod will be much more damaged overall, there will be much less loot etc.

@@ -9,8 +9,9 @@
     "weight": "55 g",
     "price": "25 USD",
     "price_postapoc": "15 USD",
-    "proportional": { "dispersion": 0.89 },
-    "relative": { "recoil": 300, "range": 19 }
+    "damage": { "damage_type": "bullet", "armor_penetration": 12 },
+    "proportional": { "range": 2.0, "dispersion": 0.89, "recoil": 2.0 },
+    "extend": { "effects": [ "RECYCLED" ] }
   },
   {
     "id": "c_hydrogen_gas",
@@ -18,21 +19,26 @@
     "name": { "str_sp": "hydrogen gas" },
     "category": "chems",
     "description": "A light, flammable gas compressed for use as fuel.  Quite energy dense, but also requiring a lot of energy to produce, even moreso without pre-cataclysm industry.",
-    "weight": "1438 mg",
-    "volume": "1500 ml",
+    "//": "Roughly 23 kg per cubic meter at the lower end of pressure for compressed hydrogen.",
+    "weight": "2300 mg",
+    "volume": "1000 ml",
     "price": "50 cent",
     "price_postapoc": "5 cent",
     "symbol": "=",
     "color": "white",
-    "stack_size": 24,
+    "damage": { "damage_type": "heat", "amount": 9, "armor_penetration": 2 },
+    "range": 6,
+    "dispersion": 120,
+    "stack_size": 10,
     "material": [ "c_hydrogen_gas" ],
     "phase": "liquid",
     "ammo_type": "c_hydrogen",
+    "effects": [ "INCENDIARY" ],
     "flags": [ "NO_DROP", "IRREMOVABLE" ]
   },
   {
-    "id": "c_bioampoule",
     "type": "AMMO",
+    "id": "c_bioampoule",
     "category": "other",
     "name": { "str": "bio-ampoule" },
     "symbol": "=",
@@ -43,21 +49,52 @@
     "ammo_type": "c_bioampoule_type"
   },
   {
-    "id": "c_alien_resin_bullet",
     "type": "AMMO",
+    "id": "c_alien_resin_bullet",
     "price_postapoc": "20 cent",
     "name": { "str": "resin bullet" },
     "symbol": "=",
     "color": "green",
-    "description": "A glassy green pellet of alien resin, molded in a shape vaguely resembling a modern rifle bullet, albeit elongated.",
+    "description": "A glassy green pellet of alien resin, molded in a shape resembling an elongated rifle bullet.  Designed for an exotic pneumatic weapon.",
     "material": [ "alien_resin" ],
     "volume": "250 ml",
     "weight": "3 g",
     "ammo_type": "c_alien_resin_bullet_type",
-    "damage": { "damage_type": "stab", "amount": 30, "armor_penetration": 10 },
+    "damage": { "damage_type": "stab", "amount": 20, "armor_penetration": 10 },
     "range": 45,
     "loudness": 2,
     "count": 20,
     "effects": [ "NEVER_MISFIRES", "NON_FOULING", "RECOVER_10" ]
+  },
+  {
+    "type": "AMMO",
+    "id": "c_alien_resin_bullet_makeshift",
+    "copy-from": "c_alien_resin_bullet",
+    "name": { "str": "molded projector bullet" },
+    "color": "light_gray",
+    "description": "A molded metal projectile for an exotic pneumatic weapon, resembling an elongated rifle bullet.  Inferior to purpose-built resin bullets, but easier to make.",
+    "material": [ "iron" ],
+    "weight": "5 g",
+    "damage": { "damage_type": "bullet", "amount": 20, "armor_penetration": 5 },
+    "range": 30,
+    "dispersion": 100
+  },
+  {
+    "id": "36navy_makeshift_magnum",
+    "copy-from": "36navy",
+    "type": "AMMO",
+    "name": { "str": ".36 paper overpressure cartridge" },
+    "description": "A paper cartridge containing an increased measure of any available powder, and a .36 projectile for the Colt M1861 Navy.  A bit more powerful but less accurate, and potentially unreliable.",
+    "proportional": { "damage": { "damage_type": "bullet", "amount": 1.25 }, "range": 1.1, "dispersion": 1.5, "recoil": 2.0 },
+    "extend": { "effects": [ "RECYCLED" ] }
+  },
+  {
+    "id": "44army_makeshift_magnum",
+    "copy-from": "44army",
+    "type": "AMMO",
+    "name": { "str": ".44 paper overpressure cartridge" },
+    "description": "A paper cartridge containing an increased measure of any available powder, and a .44 projectile for the Colt M1860 Army.  A bit more powerful but less accurate, and potentially unreliable.",
+    "proportional": { "damage": { "damage_type": "bullet", "amount": 1.25 }, "range": 1.1, "dispersion": 1.5, "recoil": 2.0 },
+    "extend": { "effects": [ "RECYCLED" ] }
   }
 ]

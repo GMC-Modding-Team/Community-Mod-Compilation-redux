@@ -6,7 +6,7 @@
     "description": "A small barrel which launches signal flares.  However, due to its awkward position, it has lower accuracy compared to an actual flaregun.",
     "weight": "500 g",
     "volume": "250 ml",
-    "price": 8000,
+    "price": "80 USD",
     "material": [ "steel" ],
     "symbol": ":",
     "color": "light_red",
@@ -25,7 +25,7 @@
     "description": "The integrated underbarrel shotgun of this gun which holds a single shot.  It's irremovable.",
     "weight": "2600 g",
     "volume": "0 L",
-    "price": 95000,
+    "price": "950 USD",
     "to_hit": -1,
     "material": [ "steel" ],
     "symbol": ":",
@@ -58,7 +58,7 @@
     "weight": "250 g",
     "volume": "125 ml",
     "integral_volume": "0 L",
-    "price": 42000,
+    "price": "420 USD",
     "material": [ "plastic", "steel" ],
     "symbol": ":",
     "color": "dark_gray",
@@ -69,7 +69,7 @@
       "dispersion_modifier": 10
     },
     "charges_per_use": 1,
-    "ammo": "battery",
+    "ammo": [ "battery" ],
     "use_action": {
       "type": "transform",
       "msg": "You turn the tactical flashlight on.",
@@ -81,19 +81,9 @@
     "pocket_data": [
       {
         "pocket_type": "MAGAZINE_WELL",
-        "holster": true,
         "rigid": true,
-        "max_contains_volume": "20 L",
-        "max_contains_weight": "20 kg",
-        "item_restriction": [
-          "light_disposable_cell",
-          "light_minus_disposable_cell",
-          "light_battery_cell",
-          "light_plus_battery_cell",
-          "light_minus_battery_cell",
-          "light_atomic_battery_cell",
-          "light_minus_atomic_battery_cell"
-        ]
+        "flag_restriction": [ "BATTERY_MEDIUM" ],
+        "default_magazine": "medium_battery_cell"
       }
     ]
   },
@@ -105,7 +95,7 @@
     "description": "A compact flashlight which is attached to the side of your weapon, not powerful, but good enough for tight hallways.",
     "revert_to": "flash_acc",
     "flags": [ "LIGHT_75", "CHARGEDIM", "TRADER_AVOID" ],
-    "ammo": "battery",
+    "ammo": [ "battery" ],
     "use_action": { "type": "transform", "menu_text": "Turn off", "msg": "You turn the tactical flashlight off.", "target": "flash_acc" }
   }
 ]
