@@ -1,25 +1,16 @@
 [
   {
     "id": "556dk",
+    "copy-from": "556",
     "type": "AMMO",
     "name": { "str": "5.56 DK" },
-    "description": "5.56x45mm electrothermal-chemical ammunition with 16gr drone killer bullets. A hypervelocity round with great range, armor penetration and accuracy, useful for designated marksman and battle rifles.",
-    "//": "damage reduced by 20. Stopping power might still be too high for such a lightweight round, regardless of muzzle velocity.",
-    "weight": "12 g",
-    "volume": "250 ml",
     "price": "6580 cent",
     "price_postapoc": "150 USD",
-    "material": [ "brass", "powder" ],
-    "symbol": "=",
-    "color": "yellow",
-    "count": 30,
-    "stack_size": 47,
-    "ammo_type": "556etc",
-    "casing": "223_casing",
-    "range": 48,
-    "damage": { "damage_type": "stab", "amount": 39, "armor_penetration": 51 },
-    "dispersion": 15,
-    "recoil": 2700,
+    "description": "5.56x45mm electrothermal-chemical ammunition with 16gr drone killer bullets. A hypervelocity round with great range, armor penetration and accuracy, close in stopping power to the 6.5 Grendel and 6.8 Remington SPC rounds.",
+    "//": "2600m/s muzzle velocity, even higher in overcharged guns like the ADR. Damage reduced by 12 due to very lightweight round.",
+    "ammo_type": "223",
+    "range": 100,
+    "relative": { "damage": { "damage_type": "stab", "amount": 5, "armor_penetration": 45 }, "recoil": 1050, "dispersion": -5 },
     "looks_like": "556",
     "flags": [ "IRREPLACEABLE_CONSUMABLE" ],
     "effects": [ "COOKOFF" ]
@@ -50,7 +41,7 @@
     "description": "5.56x45mm electrothermal-chemical ammunition with a depleted uranium 185gr subsonic armor piercing bullet. OCG quickly made a conventional 5.56 NATO version of this round with some compromises and kept producing both before the Cataclysm.",
     "copy-from": "556dk",
     "material": [ "brass", "powder", "uranium" ],
-    "//": "320m/s muzzle velocity. Pitiful muzzle energy for a ETC rifle round but great ballistic coefficient, terminal ballistics and very dense round make up for it to an extent.",
+    "//": "320m/s muzzle velocity. Pitiful muzzle energy for a ETC rifle round but great ballistic coefficient, terminal ballistics and very dense round make up for it.",
     "proportional": {
       "weight": 0.95,
       "price": 2,
@@ -92,5 +83,22 @@
     "extend": { "effects": [ "RECYCLED" ] },
     "looks_like": "reloaded_556_incendiary",
     "delete": { "effects": [ "NEVER_MISFIRES" ], "flags": [ "IRREPLACEABLE_CONSUMABLE" ] }
+  },
+  {
+    "id": "556blackout",
+    "copy-from": "223",
+    "type": "AMMO",
+    "name": { "str": "5.56 OCG Noctis" },
+    "description": "5.56x45mm ammunition with subsonic 154gr depleted uranium bullets. While weaker and shorter ranged than dedicated subsonic rounds such as 9x39mm, they are more compact and can cut armor like a hot knife through butter.",
+    "material": [ "brass", "powder", "uranium" ],
+    "//": "320 m/s muzzle velocity.",
+    "weight": "13 g",
+    "price": "11160 cent",
+    "price_postapoc": "17 USD",
+    "relative": { "damage": { "damage_type": "stab", "amount": -17, "armor_penetration": 26 }, "dispersion": 7 },
+    "proportional": { "range": 0.73, "recoil": 0.45 },
+    "loudness": 68,
+    "looks_like": "556",
+    "extend": { "effects": [ "NEVER_MISFIRES" ] }
   }
 ]

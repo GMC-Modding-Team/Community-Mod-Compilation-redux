@@ -21,7 +21,7 @@
     "count": 50,
     "linkage": "ammolink30mm",
     "reload_time": 60,
-    "flags": [ "MAG_COMPACT" ],
+    "flags": [ "MAG_COMPACT", "ZERO_WEIGHT" ],
     "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "30mm": 300 } } ]
   },
   {
@@ -345,7 +345,7 @@
     "name": { "str": "30mm autocannon" },
     "description": "A chain-driven autocannon chambered in 30x113mm, originally designed for aircraft use, but later adapted for armored vehicles.  Obviously it needs to be mounted on a vehicle to fire.",
     "price": "28 kUSD",
-    "material": [ "hardsteel" ],
+    "material": [ "qt_steel" ],
     "flags": [ "NO_RELOAD", "MOUNTED_GUN" ],
     "skill": "launcher",
     "ammo": [ "30mm" ],
@@ -377,7 +377,7 @@
     "name": { "str": "120mm tank gun" },
     "description": "A 120mm cannon from a tank.  Obviously it needs to be mounted on a vehicle to fire.",
     "price": "900 kUSD",
-    "material": [ "hardsteel" ],
+    "material": [ "qt_steel" ],
     "flags": [ "NEVER_JAMS", "NO_RELOAD", "MOUNTED_GUN" ],
     "skill": "launcher",
     "ammo": [ "120mm_usable" ],
@@ -390,7 +390,8 @@
     "sight_dispersion": 10,
     "durability": 9,
     "clip_size": 1,
-    "loudness": 300
+    "loudness": 300,
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "120mm_usable": 1 } } ]
   },
   {
     "id": "tank_gun_auto",
@@ -400,7 +401,7 @@
     "name": { "str": "120mm autoloading tank gun" },
     "description": "A 120mm cannon from a tank, with a 5-round autoloader.  Obviously it needs to be mounted on a vehicle to fire.",
     "price": "910 kUSD",
-    "material": [ "hardsteel" ],
+    "material": [ "qt_steel" ],
     "skill": "launcher",
     "ammo": [ "120mm_usable" ],
     "weight": "3300 kg",
@@ -413,7 +414,8 @@
     "durability": 9,
     "clip_size": 5,
     "loudness": 300,
-    "flags": [ "NO_RELOAD", "MOUNTED_GUN" ]
+    "flags": [ "NO_RELOAD", "MOUNTED_GUN" ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "120mm_usable": 5 } } ]
   },
   {
     "id": "tank_gun_rws",
@@ -423,7 +425,7 @@
     "name": { "str": "120mm remote weapon system" },
     "description": "A 120mm cannon with an advanced autoloader, designed to operate via remote control.  Obviously it needs to be mounted on a vehicle to fire.",
     "price": "920 kUSD",
-    "material": [ "hardsteel" ],
+    "material": [ "qt_steel" ],
     "skill": "launcher",
     "ammo": [ "120mm_usable" ],
     "weight": "3500 kg",
@@ -436,7 +438,8 @@
     "durability": 8,
     "clip_size": 5,
     "loudness": 300,
-    "flags": [ "NO_RELOAD", "MOUNTED_GUN" ]
+    "flags": [ "NO_RELOAD", "MOUNTED_GUN" ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "120mm_usable": 5 } } ]
   },
   {
     "id": "howitzer_gun",
@@ -446,7 +449,7 @@
     "name": { "str": "155mm howitzer" },
     "description": "A 155mm cannon designed for artillery and heavy tanks.  Obviously it needs to be mounted on a vehicle to fire.",
     "price": "920 kUSD",
-    "material": [ "hardsteel" ],
+    "material": [ "qt_steel" ],
     "flags": [ "NEVER_JAMS", "NO_RELOAD", "MOUNTED_GUN" ],
     "skill": "launcher",
     "ammo": [ "155mm" ],
@@ -459,7 +462,8 @@
     "sight_dispersion": 10,
     "durability": 9,
     "clip_size": 1,
-    "loudness": 400
+    "loudness": 400,
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "155mm": 1 } } ]
   },
   {
     "id": "atgm_turret",
@@ -469,7 +473,7 @@
     "name": { "str": "Vehicular ATGM Launcher" },
     "description": "A launcher for anti-tank guided missiles.  While highly accurate, it isn't fire-and-forget.  Obviously it needs to be mounted on a vehicle to fire.",
     "price": "910 kUSD",
-    "material": [ "hardsteel" ],
+    "material": [ "qt_steel" ],
     "skill": "launcher",
     "ammo": [ "atgm" ],
     "weight": "600 kg",
@@ -481,7 +485,8 @@
     "durability": 9,
     "clip_size": 2,
     "loudness": 200,
-    "flags": [ "NO_RELOAD", "MOUNTED_GUN" ]
+    "flags": [ "NO_RELOAD", "MOUNTED_GUN" ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "atgm": 2 } } ]
   },
   {
     "id": "textbook_launcher",
@@ -547,10 +552,52 @@
     "price": "755 USD",
     "to_hit": -3,
     "bashing": 30,
-    "material": [ "hardsteel", "steel" ],
+    "material": [ "qt_steel", "steel" ],
     "symbol": "]",
     "color": "white",
     "diameter": 60,
     "width": 30
+  },
+  {
+    "id": "bot_tankbot",
+    "looks_like": "broken_tankbot",
+    "type": "TOOL",
+    "name": { "str": "inactive tank drone" },
+    "description": "This is an inactive Beagle Mini-Tank UGV.  Using this item involves placing it on the ground, loading the unit with the factory-loaded 5.56 rounds and 40mm cartridge grenades in your inventory (if you wish to divide your ammunition, set aside whatever ammunition you do NOT want to give the robot) and turning it on.  If reprogrammed and rewired successfully the tank drone will then identify you as a friendly, roam around or follow you, and attack all enemies with a built-in firearm and grenade launcher.",
+    "weight": "200000 g",
+    "//": "cheating a bit with the volume due to lack of proper vehicle storage options",
+    "volume": "250 L",
+    "price": "1000000 USD",
+    "to_hit": -3,
+    "bashing": 8,
+    "material": [ "steel" ],
+    "symbol": ";",
+    "color": "light_green",
+    "use_action": {
+      "type": "place_monster",
+      "monster_id": "mon_tankbot",
+      "friendly_msg": "The tank drone rolls out and begins acquiring targets.",
+      "hostile_msg": "The tank drone swivels its turret and aims directly at you.  Don your brown pants!",
+      "//": "Milspec, clearly designed with little concern for collateral damage. What did you expect of a robo-tank?",
+      "difficulty": 10,
+      "moves": 500,
+      "skills": [ "electronics", "computer" ]
+    }
+  },
+  {
+    "id": "broken_tankbot",
+    "type": "GENERIC",
+    "symbol": ",",
+    "color": "green",
+    "name": { "str": "broken tank drone" },
+    "category": "other",
+    "description": "A broken tank drone.  Still looks intimidating despite being permanently inoperative, possibly due to the sheer size and mass.  Could be gutted for parts.",
+    "price": "10 USD",
+    "material": [ "steel", "plastic" ],
+    "weight": "1223850 g",
+    "volume": "875 L",
+    "melee_damage": { "bash": 20, "cut": 15 },
+    "to_hit": -3,
+    "flags": [ "TRADER_AVOID", "NO_REPAIR" ]
   }
 ]

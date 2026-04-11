@@ -14,7 +14,7 @@
     "ammo": [ "arrow" ],
     "weight": "2110 g",
     "volume": "2 L",
-    "bashing": 6,
+    "melee_damage": { "bash": 6 },
     "to_hit": -1,
     "ranged_damage": { "damage_type": "stab", "amount": 27, "armor_penetration": 7 },
     "range": 30,
@@ -30,7 +30,8 @@
       [ "sights", 1 ],
       [ "stock", 1 ],
       [ "underbarrel", 1 ]
-    ]
+    ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "arrow": 1 } } ]
   },
   {
     "id": "airbower",
@@ -47,7 +48,7 @@
     "ammo": [ "arrow" ],
     "weight": "3100 g",
     "volume": "1500 ml",
-    "bashing": 12,
+    "melee_damage": { "bash": 12 },
     "ranged_damage": { "damage_type": "stab", "amount": 22, "armor_penetration": 5 },
     "range": 20,
     "dispersion": 60,
@@ -68,7 +69,8 @@
       "type": "transform",
       "target": "airbower_succ",
       "msg": "You hear a soft click as the automated air compressor readies itself."
-    }
+    },
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "arrow": 3 } } ]
   },
   {
     "id": "airbower_succ",
@@ -77,7 +79,6 @@
     "reload_noise_volume": 40,
     "name": { "str": "airbower (on)" },
     "description": "A top-of-the-line pneumatic arrow launcher. Silent and deadly, designed for hunting, but splits zombie skulls just as easily. Holding three standard arrows and enough compressed air for each, the Airbower is versatile and powerful. Activate to turn off the internal air compressor, which is currently helping you to reload faster at the cost of some power and noise.",
-    "ups_charges": 8,
     "use_action": {
       "menu_text": "Turn Off Compressor",
       "type": "transform",
@@ -99,14 +100,13 @@
     "ammo": [ "bolt" ],
     "weight": "2100 g",
     "volume": "1 L",
-    "bashing": 6,
+    "melee_damage": { "bash": 6 },
     "ranged_damage": { "damage_type": "stab", "amount": 20, "armor_penetration": 5 },
     "range": 18,
     "dispersion": 50,
     "durability": 9,
     "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "AUTO", "auto", 3 ] ],
     "clip_size": 20,
-    "ups_charges": 20,
     "loudness": 15,
     "valid_mod_locations": [
       [ "accessories", 4 ],
@@ -117,6 +117,7 @@
       [ "stock", 1 ],
       [ "underbarrel", 1 ]
     ],
-    "flags": [ "RELOAD_ONE", "WATERPROOF_GUN", "NEVER_JAMS" ]
+    "flags": [ "RELOAD_ONE", "WATERPROOF_GUN", "NEVER_JAMS" ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "bolt": 20 } } ]
   }
 ]

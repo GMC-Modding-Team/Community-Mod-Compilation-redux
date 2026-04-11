@@ -6,15 +6,10 @@
       {
         "text": "Get bent, traitor!",
         "topic": "TALK_DONE",
-        "condition": { "u_has_var": "rc_search_for_bandit", "type": "count", "context": "unmarked_mission_progress", "value": "1" },
+        "condition": { "u_has_var": "search_for_bandit", "type": "flag", "context": "bandits", "value": "yes" },
         "effect": [
           { "npc_change_faction": "hells_raiders" },
-          {
-            "u_add_var": "rc_search_for_bandit",
-            "type": "count",
-            "context": "unmarked_mission_progress",
-            "value": "2"
-          },
+          { "u_add_var": "search_for_bandit", "type": "flag", "context": "bandits", "value": "done" },
           "insult_combat"
         ]
       }

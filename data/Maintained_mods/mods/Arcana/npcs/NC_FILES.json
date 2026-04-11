@@ -30,7 +30,8 @@
     "weapon_override": "NC_HERMIT_weapon",
     "traits": [
       [ "SKIN_MEDIUM", 100 ],
-      [ "hair_white_short", 100 ],
+      { "trait": "hair_short", "variant": "white" },
+      { "trait": "eye_color", "variant": "brown" },
       [ "PROF_CHALICE", 100 ],
       [ "NIGHTVISION", 100 ],
       [ "MYOPIC", 100 ],
@@ -51,7 +52,6 @@
       { "skill": "magic", "level": { "rng": [ 0, 2 ] } },
       { "skill": "computer", "level": { "rng": [ 1, 3 ] } },
       { "skill": "driving", "level": { "rng": [ 1, 3 ] } },
-      { "skill": "barter", "level": { "rng": [ 2, 4 ] } },
       { "skill": "cooking", "level": { "rng": [ 1, 3 ] } },
       { "skill": "fabrication", "level": { "rng": [ 5, 6 ] } },
       { "skill": "firstaid", "level": { "rng": [ 3, 6 ] } },
@@ -75,7 +75,6 @@
     "bonus_int": { "rng": [ 2, 5 ] },
     "skills": [
       { "skill": "magic", "level": { "rng": [ 6, 8 ] } },
-      { "skill": "barter", "level": { "rng": [ 1, 3 ] } },
       { "skill": "cooking", "level": { "rng": [ 3, 5 ] } },
       { "skill": "fabrication", "level": { "rng": [ 5, 6 ] } },
       { "skill": "firstaid", "level": { "rng": [ 2, 4 ] } },
@@ -91,18 +90,11 @@
     "weapon_override": "NC_CF_REP_weapon",
     "traits": [
       [ "SKIN_LIGHT", 100 ],
-      [ "hair_blond_long", 100 ],
+      { "trait": "hair_long", "variant": "blond" },
+      { "trait": "eye_color", "variant": "green" },
       [ "PROF_CLEANSINGFLAME", 100 ],
-      [ "SPELL_HEAL", 100 ],
-      [ "SPELL_FLAMEARMOR", 100 ],
-      [ "SPELL_CLERIC", 100 ],
       [ "NONADDICTIVE", 100 ],
       [ "SPIRITUAL", 100 ]
-    ],
-    "spells": [
-      { "id": "arcana_magic_healing", "level": 3 },
-      { "id": "arcana_magic_heat_ward", "level": 5 },
-      { "id": "arcana_magic_ward_against_evil", "level": 6 }
     ]
   },
   {
@@ -129,28 +121,20 @@
       { "skill": "melee", "level": { "rng": [ 2, 4 ] } },
       { "skill": "unarmed", "level": { "rng": [ 3, 5 ] } },
       { "skill": "gun", "level": { "rng": [ 3, 5 ] } },
-      { "skill": "lockpick", "level": { "rng": [ 2, 4 ] } }
+      { "skill": "traps", "level": { "rng": [ 2, 4 ] } }
     ],
     "worn_override": "NC_CF_GM_worn",
     "carry_override": "NC_CF_GM_misc",
     "weapon_override": "NC_CF_GM_weapon",
     "traits": [
       [ "SKIN_MEDIUM", 100 ],
-      [ "hair_black_medium", 100 ],
+      { "trait": "hair_medium", "variant": "black" },
+      { "trait": "eye_color", "variant": "hazel" },
       [ "PROF_CLEANSINGFLAME", 100 ],
       [ "MARTIAL_ARTS_CF", 100 ],
-      [ "SPELL_DAYLIGHT", 100 ],
-      [ "SPELL_LIGHT", 100 ],
-      [ "SPELL_CONSECRATELESSER", 100 ],
       [ "SPIRITUAL", 100 ],
       [ "TERRIFYING", 100 ],
-      [ "TRIGGERHAPPY", 100 ],
       [ "TRUTHTELLER", 100 ]
-    ],
-    "spells": [
-      { "id": "arcana_magic_surge_adrenaline", "level": 5 },
-      { "id": "arcana_magic_light", "level": 2 },
-      { "id": "arcana_magic_consecrate", "level": 4 }
     ]
   },
   {
@@ -168,7 +152,6 @@
       { "skill": "fabrication", "level": { "rng": [ 3, 5 ] } },
       { "skill": "firstaid", "level": { "rng": [ 2, 6 ] } },
       { "skill": "speech", "level": { "rng": [ 3, 6 ] } },
-      { "skill": "barter", "level": { "rng": [ 3, 6 ] } },
       { "skill": "survival", "level": { "rng": [ 3, 6 ] } },
       { "skill": "swimming", "level": { "rng": [ 1, 4 ] } },
       { "skill": "tailor", "level": { "rng": [ 2, 5 ] } },
@@ -181,19 +164,46 @@
     "traits": [
       { "group": "Appearance_cleansingflame" },
       [ "PROF_CLEANSINGFLAME", 100 ],
-      [ "SPELL_AGILE", 100 ],
-      [ "SPELL_LOCKPICK", 100 ],
-      [ "SPELL_PLANTS", 100 ],
       [ "SPIRITUAL", 100 ],
       [ "PACIFIST", 100 ],
       [ "FASTREADER", 100 ],
       [ "GOODMEMORY", 100 ]
-    ],
-    "spells": [
-      { "id": "arcana_magic_agility", "level": 7 },
-      { "id": "arcana_magic_open_lock", "level": 5 },
-      { "id": "arcana_magic_overgrowth", "level": 3 }
     ]
+  },
+  {
+    "type": "npc_class",
+    "id": "NC_CF_PURIFIER",
+    "name": { "str": "Arcane Purifier" },
+    "job_description": "I'm a specialist who studies the anomalous.",
+    "common": false,
+    "bonus_str": { "rng": [ -2, 1 ] },
+    "bonus_dex": { "rng": [ -1, 3 ] },
+    "bonus_int": { "rng": [ 2, 4 ] },
+    "skills": [
+      { "skill": "magic", "level": { "rng": [ 5, 7 ] } },
+      { "skill": "computer", "level": { "rng": [ 3, 6 ] } },
+      { "skill": "fabrication", "level": { "rng": [ 2, 4 ] } },
+      { "skill": "electronics", "level": { "rng": [ 3, 6 ] } },
+      { "skill": "chemistry", "level": { "rng": [ 3, 6 ] } },
+      { "skill": "survival", "level": { "rng": [ 3, 6 ] } },
+      { "skill": "dodge", "level": { "rng": [ 3, 6 ] } },
+      { "skill": "gun", "level": { "rng": [ 1, 3 ] } },
+      { "skill": "pistol", "level": { "rng": [ 1, 3 ] } }
+    ],
+    "bionics": [
+      { "id": "bio_batteries", "chance": 100 },
+      { "id": "bio_blade", "chance": 25 },
+      { "id": "bio_carbon", "chance": 25 },
+      { "id": "bio_essence_surge_cell", "chance": 25 },
+      { "id": "bio_metabolics", "chance": 25 },
+      { "id": "bio_power_storage_mkII", "chance": 100 },
+      { "id": "bio_targeting", "chance": 50 },
+      { "id": "bio_tools", "chance": 75 }
+    ],
+    "worn_override": "NC_CF_PURIFIER_worn",
+    "carry_override": "NC_CF_PURIFIER_misc",
+    "weapon_override": "EMPTY_GROUP",
+    "traits": [ { "group": "Appearance_cleansingflame" }, { "group": "Arcanist_starting_traits" }, [ "PROF_CLEANSINGFLAME2", 100 ] ]
   },
   {
     "type": "npc_class",
@@ -287,17 +297,7 @@
       { "group": "Appearance_demographics" },
       { "group": "Arcanist_starting_traits" },
       [ "BGSS_BLOOD_MAGE_2", 100 ],
-      [ "PROF_SANGUINE", 100 ],
-      [ "SPELL_CLARITY", 100 ],
-      [ "SPELL_CONFUSE", 100 ],
-      [ "SPELL_ACID", 100 ],
-      [ "SPELL_FREEACTION", 100 ]
-    ],
-    "spells": [
-      { "id": "arcana_magic_clarity_blood", "level": 4 },
-      { "id": "arcana_magic_confuse_monster", "level": 5 },
-      { "id": "arcana_magic_conjure_acid", "level": 2 },
-      { "id": "arcana_magic_free_action", "level": 4 }
+      [ "PROF_SANGUINE", 100 ]
     ]
   },
   {
@@ -351,9 +351,9 @@
     "carry_override": "NC_BLOOD_MAGE_SHRIKE_misc",
     "weapon_override": "NC_BLOOD_MAGE_SHRIKE_HUNTMASTER_weapon",
     "traits": [
-      { "group": "Appearance_demographics" },
       { "group": "Arcanist_starting_traits" },
-      [ "hair_black_long", 100 ],
+      { "trait": "hair_long", "variant": "black" },
+      { "trait": "eye_color", "variant": "brown" },
       [ "SKIN_MEDIUM", 100 ],
       [ "PROF_SANGUINE", 100 ]
     ]
@@ -366,7 +366,7 @@
     "common": false,
     "skills": [
       { "skill": "magic", "level": { "rng": [ 3, 6 ] } },
-      { "skill": "barter", "level": { "rng": [ 3, 6 ] } },
+      { "skill": "speech", "level": { "rng": [ 3, 6 ] } },
       { "skill": "fabrication", "level": { "rng": [ 2, 4 ] } },
       { "skill": "survival", "level": { "rng": [ 3, 6 ] } },
       { "skill": "bashing", "level": { "rng": [ 2, 4 ] } },
@@ -382,9 +382,9 @@
     "carry_override": "NC_BLOOD_MAGE_SHRIKE_MERCHANT_misc",
     "weapon_override": "NC_BLOOD_MAGE_SHRIKE_MERCHANT_weapon",
     "traits": [
-      { "group": "Appearance_demographics" },
       { "group": "Arcanist_starting_traits" },
-      [ "hair_black_short", 100 ],
+      { "trait": "hair_short", "variant": "black" },
+      { "trait": "eye_color", "variant": "amber" },
       [ "SKIN_LIGHT", 100 ],
       [ "PROF_SANGUINE", 100 ],
       [ "PSYCHOPATH", 100 ],
@@ -446,7 +446,6 @@
       { "skill": "fabrication", "level": { "rng": [ 4, 5 ] } },
       { "skill": "firstaid", "level": { "rng": [ 2, 4 ] } },
       { "skill": "speech", "level": { "rng": [ 0, 5 ] } },
-      { "skill": "barter", "level": { "rng": [ 0, 5 ] } },
       { "skill": "survival", "level": { "rng": [ 2, 4 ] } },
       { "skill": "tailor", "level": { "rng": [ 1, 3 ] } },
       { "skill": "driving", "level": { "rng": [ 2, 5 ] } },
@@ -464,8 +463,7 @@
       [ "LIGHTSTEP", 100 ],
       [ "TRUTHTELLER", 100 ],
       [ "ANIMALDISCORD", 100 ]
-    ],
-    "spells": [ { "id": "arcana_magic_conjure_flame", "level": 6 }, { "id": "arcana_magic_dampening", "level": 3 } ]
+    ]
   },
   {
     "type": "npc_class",
@@ -482,7 +480,7 @@
       { "skill": "cooking", "level": { "rng": [ 1, 3 ] } },
       { "skill": "fabrication", "level": { "rng": [ 2, 4 ] } },
       { "skill": "firstaid", "level": { "rng": [ 1, 3 ] } },
-      { "skill": "barter", "level": { "rng": [ 1, 3 ] } },
+      { "skill": "speech", "level": { "rng": [ 1, 3 ] } },
       { "skill": "survival", "level": { "rng": [ 4, 7 ] } },
       { "skill": "tailor", "level": { "rng": [ 0, 2 ] } },
       { "skill": "driving", "level": { "rng": [ 2, 5 ] } },
@@ -492,15 +490,15 @@
       { "skill": "pistol", "level": { "rng": [ 2, 4 ] } },
       { "skill": "melee", "level": { "rng": [ 1, 3 ] } },
       { "skill": "unarmed", "level": { "rng": [ 1, 3 ] } },
-      { "skill": "traps", "level": { "rng": [ 2, 4 ] } },
-      { "skill": "lockpick", "level": { "rng": [ 1, 5 ] } }
+      { "skill": "traps", "level": { "rng": [ 2, 4 ] } }
     ],
     "worn_override": "NC_CF_AUX_MERC_worn",
     "carry_override": "NC_CF_AUX_MERC_misc",
     "weapon_override": "NC_CF_AUX_MERC_weapon",
     "traits": [
       [ "SKIN_MEDIUM", 100 ],
-      [ "hair_gray_medium", 100 ],
+      { "trait": "hair_medium", "variant": "gray" },
+      { "trait": "eye_color", "variant": "gray" },
       [ "BGSS_Gung_Ho_1", 100 ],
       [ "OUTDOORSMAN", 100 ],
       [ "PSYCHOPATH", 75 ],
@@ -561,7 +559,7 @@
       { "item": "gloves_leather" },
       { "item": "socks" },
       { "item": "boots_hiking" },
-      { "item": "satchel_eternity", "contents-item": "offering_mission_notes" },
+      { "item": "mbag" },
       { "item": "glasses_eye" },
       { "item": "charm_bone" }
     ]
@@ -709,10 +707,45 @@
       { "item": "CF_golden_scale", "count": [ 30, 60 ] },
       { "item": "essence_dull", "count": [ 20, 60 ] },
       { "group": "cleansing_flame_books", "count": [ 3, 5 ] },
-      { "group": "mansion_books", "count": [ 2, 4 ] },
+      { "group": "mansion_books", "count": [ 3, 5 ] },
       { "group": "cleansing_flame_crafting", "count": [ 1, 3 ] },
       { "group": "cleansing_flame_gear_consumables", "count": [ 1, 3 ] },
       { "group": "reading_lights" }
+    ]
+  },
+  {
+    "id": "NC_CF_PURIFIER_worn",
+    "type": "item_group",
+    "subtype": "collection",
+    "entries": [
+      { "item": "under_armor_shorts" },
+      { "item": "under_armor" },
+      { "item": "socks" },
+      {
+        "distribution": [ { "item": "pants", "prob": 25 }, { "item": "jeans", "prob": 25 }, { "item": "pants_cargo", "prob": 50 } ]
+      },
+      { "item": "tshirt" },
+      {
+        "distribution": [
+          { "item": "trenchcoat", "prob": 25 },
+          { "item": "coat_lab", "prob": 25 },
+          { "item": "duster", "prob": 25 },
+          { "item": "cloak", "prob": 25 }
+        ]
+      },
+      { "distribution": [ { "item": "boots", "prob": 50 }, { "item": "boots_hiking", "prob": 50 } ] },
+      { "distribution": [ { "item": "mbag", "prob": 50 }, { "item": "slingpack", "prob": 50 } ] }
+    ]
+  },
+  {
+    "id": "NC_CF_PURIFIER_misc",
+    "type": "item_group",
+    "subtype": "collection",
+    "items": [
+      { "item": "CF_golden_scale", "count": [ 25, 50 ] },
+      { "item": "essence_dull", "count": [ 20, 60 ] },
+      { "group": "cleansing_flame_crafting", "count": [ 1, 3 ] },
+      { "group": "science", "count": [ 1, 3 ] }
     ]
   },
   {
@@ -784,7 +817,7 @@
       },
       {
         "distribution": [
-          { "item": "mana_gem", "prob": 25 },
+          { "item": "mana_gem_dull", "prob": 25 },
           { "item": "holy_symbol", "prob": 25 },
           { "item": "holy_symbol_wood", "prob": 25 },
           { "item": "bead_necklace", "prob": 15 },
@@ -854,7 +887,7 @@
       { "item": "water_clean" },
       { "item": "matches" },
       {
-        "distribution": [ { "item": "rag", "prob": 25, "count": [ 1, 3 ] }, { "item": "bandages", "prob": 75 } ],
+        "distribution": [ { "item": "bandages_makeshift", "prob": 25, "count": [ 1, 3 ] }, { "item": "bandages", "prob": 75 } ],
         "prob": 75
       },
       { "item": "essence_blood", "charges": [ 1, 3 ], "prob": 25 }
@@ -866,13 +899,12 @@
     "ammo": 100,
     "magazine": 100,
     "items": [
-      [ "sten", 5 ],
+      [ "sten", 15 ],
       [ "surv_six_shooter", 10 ],
       [ "surv_hand_cannon", 10 ],
       [ "2_shot_special", 10 ],
-      [ "surv_carbine_223", 5 ],
-      [ "survivor_special_700", 10 ],
-      [ "knife_butcher", 10 ],
+      [ "ruger_mini", 5 ],
+      { "item": "knife_huge", "variant": "knife_butcher", "prob": 15 },
       [ "machete", 10 ],
       [ "blood_athame", 5 ],
       [ "ax", 10 ],
@@ -945,10 +977,11 @@
     "id": "NC_BLOOD_MAGE_SHRIKE_weapon",
     "ammo": 100,
     "items": [
-      [ "pistol_flintlock", 50 ],
+      [ "pistol_flintlock", 40 ],
       [ "carbine_flintlock", 25 ],
       [ "rifle_flintlock", 15 ],
-      [ "carbine_flintlock_double", 10 ]
+      [ "carbine_flintlock_double", 10 ],
+      [ "shrike_misericorde_folded", 10 ]
     ]
   },
   {
@@ -1004,7 +1037,10 @@
       { "item": "matches" },
       { "group": "stash_food", "count": [ 2, 4 ] },
       { "group": "rural_church_medical_items", "count": [ 1, 3 ] },
-      { "item": "essence_blood", "charges": [ 5, 10 ] }
+      { "item": "manual_shrike" },
+      { "group": "mansion_books", "count": [ 1, 3 ] },
+      { "group": "medieval", "count": [ 1, 3 ] },
+      { "item": "essence_blood", "charges": [ 15, 30 ] }
     ]
   },
   {
@@ -1073,7 +1109,7 @@
       { "group": "gear_survival", "count": [ 3, 6 ] },
       { "group": "magic_crafting", "count": [ 3, 6 ] },
       { "group": "unaligned_arcanist_books", "count": [ 3, 5 ] },
-      { "group": "unaligned_arcanist_spells", "prob": 25, "count": [ 1, 2 ] }
+      { "group": "unaligned_arcanist_spells", "count": [ 1, 2 ] }
     ]
   },
   {
@@ -1127,7 +1163,7 @@
       { "item": "kevlar" },
       { "item": "jersey" },
       { "item": "jacket_leather_mod" },
-      { "item": "bandolier_shotgun", "charges": 25, "contents-item": "reloaded_shot_00_arcana" },
+      { "item": "reloaded_shot_00_arcana", "charges": 25, "container-item": "bandolier_shotgun" },
       { "item": "boxer_shorts" },
       { "item": "jeans" },
       { "item": "gloves_fingerless_mod" },
@@ -1148,81 +1184,100 @@
   },
   {
     "id": "NC_ARSONIST_random",
+    "copy-from": "NC_ARSONIST_random",
     "type": "item_group",
-    "items": [ [ "bloodscourge", 1 ] ]
+    "extend": { "items": [ [ "bloodscourge", 1 ] ] }
   },
   {
     "id": "NC_ARSONIST_misc",
+    "copy-from": "NC_ARSONIST_misc",
     "type": "item_group",
-    "items": [ [ "bloodaxe", 1 ] ]
+    "extend": { "items": [ [ "bloodaxe", 1 ] ] }
   },
   {
     "id": "NC_BOUNTY_HUNTER_coat",
+    "copy-from": "NC_BOUNTY_HUNTER_coat",
     "type": "item_group",
-    "items": [ [ "gilded_aegis", 1 ] ]
+    "extend": { "items": [ [ "gilded_aegis", 1 ] ] }
   },
   {
     "id": "NC_DOCTOR_misc",
+    "copy-from": "NC_DOCTOR_misc",
     "type": "item_group",
-    "items": [ [ "healing_potion", 5 ] ]
+    "extend": { "items": [ [ "healing_potion", 5 ] ] }
   },
   {
     "id": "NC_HUNTER_archery",
+    "copy-from": "NC_HUNTER_archery",
     "type": "item_group",
-    "items": [ [ "ethereal_crossbow", 1 ] ]
+    "extend": { "items": [ [ "ethereal_crossbow", 1 ] ] }
   },
   {
     "id": "NC_HUNTER_misc",
+    "copy-from": "NC_HUNTER_misc",
     "type": "item_group",
-    "items": [
-      [ "graboid_fang", 1 ],
-      [ "bone_twisted", 1 ],
-      [ "gracken_knuckles", 1 ],
-      [ "wyrmskin_piece", 1 ],
-      [ "monster_fang", 1 ],
-      [ "iridescent_plate", 1 ]
-    ]
+    "extend": {
+      "items": [
+        [ "graboid_fang", 1 ],
+        [ "bone_twisted", 1 ],
+        [ "gracken_knuckles", 1 ],
+        [ "wyrmskin_piece", 1 ],
+        [ "monster_fang", 1 ],
+        [ "iridescent_plate", 1 ]
+      ]
+    }
   },
   {
     "id": "NC_JUNK_SHOPKEEP_misc",
+    "copy-from": "NC_JUNK_SHOPKEEP_misc",
     "type": "item_group",
-    "items": [ [ "scroll_blank", 10 ], [ "silver_glyph", 5 ] ]
+    "subtype": "collection",
+    "extend": { "items": [ { "item": "scroll_blank", "prob": 10 }, { "item": "silver_glyph", "prob": 5 } ] }
   },
   {
     "id": "NC_SCAVENGER_gloves",
+    "copy-from": "NC_SCAVENGER_gloves",
     "type": "item_group",
-    "items": [ [ "gauntlets_necro", 1 ] ]
+    "extend": { "items": [ [ "gauntlets_necro", 1 ] ] }
   },
   {
     "id": "NC_SCAVENGER_archery",
+    "copy-from": "NC_SCAVENGER_archery",
     "type": "item_group",
-    "items": [ [ "ethereal_crossbow", 1 ] ]
+    "extend": { "items": [ [ "ethereal_crossbow", 1 ] ] }
   },
   {
     "id": "NC_SCAVENGER_misc",
+    "copy-from": "NC_SCAVENGER_misc",
     "type": "item_group",
-    "items": [
-      [ "numbness_potion", 1 ],
-      [ "healing_potion", 1 ],
-      [ "scroll_sun", 1 ],
-      [ "scroll_artiface", 1 ],
-      [ "totem_confusion", 1 ],
-      [ "totem_insight", 1 ],
-      [ "totem_plants", 1 ]
-    ]
+    "extend": {
+      "items": [
+        [ "numbness_potion", 1 ],
+        [ "healing_potion", 1 ],
+        [ "scroll_sun", 1 ],
+        [ "scroll_artiface", 1 ],
+        [ "totem_confusion", 1 ],
+        [ "totem_insight", 1 ],
+        [ "totem_plants", 1 ]
+      ]
+    }
   },
   {
     "id": "npc_extra",
+    "copy-from": "npc_extra",
     "type": "item_group",
-    "items": [ [ "triffid_garland", 1 ], [ "amulet_exotic", 1 ], [ "brooch_iridescent", 1 ] ]
+    "extend": { "items": [ [ "triffid_garland", 1 ], [ "amulet_exotic", 1 ], [ "brooch_iridescent", 1 ] ] }
   },
   {
     "id": "NC_EVAC_SHOPKEEP_misc",
+    "copy-from": "NC_EVAC_SHOPKEEP_misc",
     "type": "item_group",
     "subtype": "collection",
-    "items": [
-      { "item": "CF_golden_scale", "count": [ 10, 60 ], "prob": 30 },
-      { "group": "cleansing_flame_gear_consumables", "count": [ 1, 3 ], "prob": 10 }
-    ]
+    "extend": {
+      "items": [
+        { "item": "CF_golden_scale", "count": [ 10, 60 ], "prob": 30 },
+        { "group": "cleansing_flame_gear_consumables", "count": [ 1, 3 ], "prob": 10 }
+      ]
+    }
   }
 ]

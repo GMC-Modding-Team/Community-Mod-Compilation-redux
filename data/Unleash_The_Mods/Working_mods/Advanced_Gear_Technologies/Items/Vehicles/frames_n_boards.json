@@ -1,0 +1,88 @@
+[
+  {
+    "id": "nano_frame",
+    "type": "GENERIC",
+    "name": { "str": "nanotech hybrid frame" },
+    "description": "A large frame made of steel and reinforced with nanites.  Useful for crafting.",
+    "looks_like": "frame",
+    "weight": "20000 g",
+    "volume": "15 L",
+    "to_hit": -5,
+    "color": "cyan",
+    "symbol": "]",
+    "material": [ "steel", "nanite" ],
+    "techniques": [ "DEF_DISARM" ],
+    "melee_damage": { "bash": 20 },
+    "category": "veh_parts",
+    "price": "55 USD",
+    "price_postapoc": "25 USD"
+  },
+  {
+    "id": "nanotech_frame",
+    "type": "vehicle_part",
+    "name": { "str": "nanotech hybrid frame" },
+    "item": "nano_frame",
+    "location": "structure",
+    "copy-from": "frame_abstract",
+    "color": "dark_gray",
+    "durability": 3000,
+    "variants": [ { "symbols": "]", "symbols_broken": "]" } ],
+    "description": "A heavy metal framework infused with nanites working to augment the durability.  Other vehicle components can be mounted on it, and it can be attached to other frames to increase the vehicle's size.",
+    "looks_like": "frame",
+    "folded_volume": "6250 ml",
+    "folding_time": "1 minute",
+    "unfolding_time": "1 minute",
+    "breaks_into": [ { "item": "nano_frame", "count": [ 0, 1 ] } ],
+    "damage_reduction": { "all": 150 },
+    "requirements": {
+      "install": { "skills": [ [ "mechanics", 1 ] ], "time": "20 m", "using": [ [ "welding_standard", 10 ] ] },
+      "removal": { "skills": [ [ "mechanics", 1 ] ], "using": "vehicle_weld_removal" },
+      "repair": { "skills": [ [ "mechanics", 1 ] ], "time": "5 m", "using": [ [ "welding_standard", 5 ] ] }
+    },
+    "flags": [ "MOUNTABLE", "INITIAL_PART" ]
+  },
+  {
+    "id": "nanotech_frame2",
+    "type": "vehicle_part",
+    "name": { "str": "nanotech frame" },
+    "item": "xl_nanite_cluster",
+    "location": "structure",
+    "color": "dark_gray",
+    "durability": 7500,
+    "variants": [ { "symbols": "]", "symbols_broken": "]" } ],
+    "copy-from": "frame_abstract",
+    "description": "A large cluster of nanites actively forming a support network for other structures to attach to.  Other vehicle components can be mounted on it, and it can be attached to other frames to increase the vehicle's size.",
+    "looks_like": "frame",
+    "folded_volume": "2 L",
+    "breaks_into": [ { "item": "xl_nanite_cluster", "count": [ 1, 1 ] } ],
+    "damage_reduction": { "all": 500 },
+    "requirements": {
+      "install": { "skills": [ [ "computer", 0 ] ], "time": "30 m", "qualities": [ { "id": "NANO_PRO", "level": 1 } ] },
+      "removal": { "skills": [ [ "computer", 0 ] ], "qualities": [ { "id": "NANO_PRO", "level": 1 } ] },
+      "repair": { "skills": [ [ "computer", 0 ] ], "time": "30 m", "qualities": [ { "id": "NANO_PRO", "level": 1 } ] }
+    },
+    "flags": [ "MOUNTABLE" ]
+  },
+  {
+    "id": "nanoboard",
+    "type": "vehicle_part",
+    "name": { "str": "nanotech board" },
+    "item": "xl_nanite_cluster",
+    "location": "center",
+    "copy-from": "base_board_abstract",
+    "color": "dark_gray",
+    "durability": 5000,
+    "folded_volume": "6250 ml",
+    "size": 120,
+    "variants": [ { "symbols": "]", "symbols_broken": "]" } ],
+    "description": "A strong metal wall.  Keeps zombies outside the vehicle and prevents people from seeing through it.",
+    "breaks_into": [ { "item": "xl_nanite_cluster", "count": [ 1, 1 ] } ],
+    "requirements": {
+      "install": { "skills": [ [ "computer", 0 ] ], "time": "30 m", "qualities": [ { "id": "NANO_PRO", "level": 1 } ] },
+      "removal": { "skills": [ [ "computer", 0 ] ], "qualities": [ { "id": "NANO_PRO", "level": 1 } ] },
+      "repair": { "skills": [ [ "computer", 0 ] ], "time": "30 m", "qualities": [ { "id": "NANO_PRO", "level": 1 } ] }
+    },
+    "flags": [ "AISLE", "OBSTACLE", "TOOL_NONE", "FLAT_SURF", "CARGO", "COVERED" ],
+    "damage_reduction": { "all": 400 }
+  }
+]

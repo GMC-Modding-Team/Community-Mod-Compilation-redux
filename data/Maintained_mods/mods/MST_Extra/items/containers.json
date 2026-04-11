@@ -9,8 +9,7 @@
     "volume": "1503 ml",
     "price": "20 USD",
     "to_hit": -1,
-    "bashing": 1,
-    "material": [ "wood" ],
+    "melee_damage": { "bash": 1 },
     "symbol": ")",
     "color": "light_gray",
     "pocket_data": [
@@ -22,8 +21,19 @@
         "max_contains_weight": "3 kg"
       }
     ],
-    "armor_data": { "covers": [ "leg_l", "leg_r" ], "sided": true, "coverage": 5, "encumbrance": 5, "material_thickness": 1 },
-    "flags": [ "WAIST" ]
+    "armor_data": {
+      "sided": true,
+      "armor": [
+        {
+          "material": [ { "type": "wood", "covered_by_mat": 100, "thickness": 1.0 } ],
+          "coverage": 10,
+          "encumbrance": 4,
+          "covers": [ "leg_l", "leg_r" ],
+          "specifically_covers": [ "leg_hip_r", "leg_hip_l" ]
+        }
+      ]
+    },
+    "flags": [ "BELTED", "OVERSIZE", "WATER_FRIENDLY" ]
   },
   {
     "id": "jar_clay",
@@ -33,7 +43,7 @@
     "description": "A half-liter clay jar, glazed for waterproofing with a tight-fitting wooden stopper.",
     "weight": "150 g",
     "volume": "502 ml",
-    "bashing": 4,
+    "melee_damage": { "bash": 4 },
     "material": [ "clay" ],
     "symbol": ")",
     "color": "brown",

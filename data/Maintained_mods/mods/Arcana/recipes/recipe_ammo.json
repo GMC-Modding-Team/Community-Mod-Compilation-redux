@@ -36,6 +36,48 @@
     "flags": [ "BLIND_EASY" ]
   },
   {
+    "result": "essence_dull",
+    "type": "recipe",
+    "id_suffix": "from monsterpart",
+    "category": "CC_ARCANA",
+    "subcategory": "CSC_ARCANA_AMMO",
+    "skill_used": "magic",
+    "difficulty": 1,
+    "time": "10 m",
+    "activity_level": "NO_EXERCISE",
+    "batch_time_factors": [ 95, 5 ],
+    "autolearn": true,
+    "book_learn": [ [ "book_hexenhammer", 0 ], [ "book_syncretism", 1 ], [ "book_potioncraft", 1 ] ],
+    "result_mult": 20,
+    "using": [ [ "arcana_purification_standard", 1 ] ],
+    "components": [
+      [
+        [ "iron_thorn", 1 ],
+        [ "inflorescent_root", 1 ],
+        [ "graboid_fang", 1 ],
+        [ "triffid_queen_flower", 1 ],
+        [ "dermatik_sting", 1 ],
+        [ "vortex_shard", 1 ],
+        [ "blob_gem", 1 ],
+        [ "monster_tear", 1 ],
+        [ "shadow_gem", 1 ],
+        [ "bone_twisted", 1 ],
+        [ "gracken_knuckles", 1 ],
+        [ "wyrmskin_piece", 1 ],
+        [ "monster_fang", 1 ],
+        [ "iridescent_plate", 1 ],
+        [ "engraved_stone", 1 ],
+        [ "stinger_flute", 1 ],
+        [ "charm_bone", 1 ],
+        [ "triffid_garland", 1 ],
+        [ "amulet_exotic", 1 ],
+        [ "brooch_iridescent", 1 ]
+      ]
+    ],
+    "delete_flags": [ "HIDDEN_HALLU", "HIDDEN_POISON", "BAD_TASTE", "CANNIBALISM" ],
+    "flags": [ "BLIND_EASY" ]
+  },
+  {
     "result": "essence_blood",
     "type": "recipe",
     "id_suffix": "human sacrifice",
@@ -49,7 +91,7 @@
     "autolearn": true,
     "book_learn": [ [ "book_bloodmagic", 0 ], [ "book_syncretism", 1 ], [ "book_scrollcraft", 1 ] ],
     "using": [ [ "arcana_purification_standard", 1 ] ],
-    "components": [ [ [ "human_flesh", 5 ], [ "mutant_human_flesh", 10 ], [ "meat", 15 ] ] ],
+    "components": [ [ [ "arcana_flesh_standard", 5, "LIST" ] ] ],
     "delete_flags": [ "HIDDEN_HALLU", "HIDDEN_POISON", "BAD_TASTE", "CANNIBALISM" ],
     "flags": [ "BLIND_EASY", "ALLOW_ROTTEN" ]
   },
@@ -87,10 +129,32 @@
     "batch_time_factors": [ 95, 5 ],
     "book_learn": [ [ "book_potioncraft", 5 ], [ "book_bloodmagic", 4 ], [ "recipe_lab_arcana", 4 ] ],
     "qualities": [ { "id": "CHEM", "level": 3 }, { "id": "DISTILL", "level": 1 } ],
-    "tools": [ [ [ "electrolysis_kit", 80 ] ] ],
-    "components": [ [ [ "blood", 1 ] ], [ [ "salt", 10 ] ], [ [ "material_quicklime", 5 ] ] ],
+    "tools": [ [ [ "electrolysis_kit", 100 ] ] ],
+    "components": [
+      [ [ "arcana_blood_standard", 1, "LIST" ] ],
+      [ [ "salt", 5 ] ],
+      [ [ "material_quicklime", 1 ], [ "lye", 1 ], [ "lye_powder", 30 ] ]
+    ],
     "delete_flags": [ "HIDDEN_HALLU", "HIDDEN_POISON", "BAD_TASTE", "CANNIBALISM" ],
     "flags": [ "SECRET" ]
+  },
+  {
+    "result": "essence",
+    "type": "recipe",
+    "id_suffix": "other_essences",
+    "category": "CC_ARCANA",
+    "subcategory": "CSC_ARCANA_AMMO",
+    "skill_used": "magic",
+    "difficulty": 5,
+    "time": "6 m",
+    "activity_level": "NO_EXERCISE",
+    "batch_time_factors": [ 95, 5 ],
+    "book_learn": [ [ "book_sacrifice", 3 ], [ "book_syncretism", 4 ], [ "book_scrollcraft", 4 ] ],
+    "autolearn": true,
+    "using": [ [ "arcana_purification_standard", 1 ] ],
+    "components": [ [ [ "essence_blood", 3 ], [ "essence_dull", 30 ] ] ],
+    "delete_flags": [ "HIDDEN_HALLU", "HIDDEN_POISON", "BAD_TASTE", "CANNIBALISM" ],
+    "flags": [ "BLIND_EASY", "ALLOW_ROTTEN" ]
   },
   {
     "result": "essence",
@@ -108,31 +172,19 @@
     "tools": [ [ [ "offering_chalice", -1 ] ] ],
     "components": [
       [
-        [ "essence_blood", 3 ],
-        [ "essence_dull", 30 ],
+        [ "vortex_stone", 1 ],
+        [ "spiral_stone", 2 ],
         [ "mycus_fruit", 5 ],
         [ "marloss_seed", 10 ],
         [ "marloss_gel", 1 ],
         [ "marloss_berry", 15 ],
         [ "slime_scrap", 25 ],
         [ "bone_tainted", 50 ],
-        [ "stick_fiber", 100 ],
         [ "chitin_piece", 100 ],
-        [ "iron_thorn", 1 ],
-        [ "inflorescent_root", 1 ],
-        [ "graboid_fang", 1 ],
-        [ "triffid_queen_flower", 1 ],
-        [ "dermatik_sting", 1 ],
-        [ "vortex_shard", 1 ],
-        [ "blob_gem", 1 ],
-        [ "monster_tear", 1 ],
-        [ "shadow_gem", 1 ],
-        [ "bone_twisted", 1 ],
-        [ "gracken_knuckles", 1 ],
-        [ "wyrmskin_piece", 1 ],
-        [ "monster_fang", 1 ],
-        [ "iridescent_plate", 1 ],
-        [ "engraved_stone", 1 ]
+        [ "acidchitin_piece", 100 ],
+        [ "stick_fiber", 200 ],
+        [ "alien_pod_resin", 1 ],
+        [ "royal_jelly", 1 ]
       ]
     ],
     "delete_flags": [ "HIDDEN_HALLU", "HIDDEN_POISON", "BAD_TASTE", "CANNIBALISM" ],
@@ -151,21 +203,19 @@
     "batch_time_factors": [ 95, 5 ],
     "book_learn": [ [ "book_sacrifice", 3 ], [ "book_syncretism", 4 ], [ "book_scrollcraft", 4 ] ],
     "autolearn": true,
-    "result_mult": 5,
+    "result_mult": 10,
     "tools": [ [ [ "offering_chalice", -1 ] ] ],
     "components": [
       [
-        [ "vortex_stone", 1 ],
-        [ "spiral_stone", 6 ],
+        [ "essence_pure", 1 ],
         [ "teleporter", 1 ],
         [ "portal", 1 ],
-        [ "petrified_eye", 1 ],
+        [ "petrified_eye", 2 ],
         [ "etched_skull", 1 ],
         [ "small_relic", 1 ],
+        [ "tindalos_whistle", 1 ],
         [ "violin_golden", 1 ],
-        [ "alien_pod_resin", 3 ],
         [ "jabberwock_heart", 3 ],
-        [ "royal_jelly", 2 ],
         [ "panacea", 1 ]
       ]
     ],
@@ -233,7 +283,7 @@
     "category": "CC_ARCANA",
     "subcategory": "CSC_ARCANA_AMMO",
     "skill_used": "magic",
-    "skills_required": [ [ "fabrication", 4 ], [ "archery", 3 ], [ "survival", 1 ] ],
+    "skills_required": [ [ "fabrication", 4 ], [ "archery", 1 ], [ "survival", 1 ] ],
     "difficulty": 1,
     "time": "20 m",
     "activity_level": "LIGHT_EXERCISE",
@@ -248,6 +298,8 @@
         [ "gracken_knuckles", 1 ],
         [ "graboid_fang", 1 ],
         [ "monster_fang", 1 ],
+        [ "iron_thorn", 1 ],
+        [ "dermatik_sting", 1 ],
         [ "vortex_shard", 1 ],
         [ "blob_gem", 1 ],
         [ "monster_tear", 1 ],
@@ -277,6 +329,8 @@
         [ "gracken_knuckles", 1 ],
         [ "graboid_fang", 1 ],
         [ "monster_fang", 1 ],
+        [ "iron_thorn", 1 ],
+        [ "dermatik_sting", 1 ],
         [ "vortex_shard", 1 ],
         [ "blob_gem", 1 ],
         [ "monster_tear", 1 ],
@@ -298,7 +352,7 @@
     "autolearn": true,
     "book_learn": [ [ "book_magicfordummies", 1 ] ],
     "qualities": [ { "id": "CUT", "level": 1 } ],
-    "components": [ [ [ "arrow_arcana_unpowered", 5 ] ], [ [ "flame_talisman", 1 ] ] ]
+    "components": [ [ [ "arrow_arcana_unpowered", 10 ] ], [ [ "flame_talisman", 1 ] ] ]
   },
   {
     "type": "recipe",
@@ -313,7 +367,7 @@
     "autolearn": true,
     "book_learn": [ [ "book_magicfordummies", 1 ] ],
     "qualities": [ { "id": "CUT", "level": 1 } ],
-    "components": [ [ [ "bolt_arcana_unpowered", 5 ] ], [ [ "flame_talisman", 1 ] ] ]
+    "components": [ [ [ "bolt_arcana_unpowered", 10 ] ], [ [ "flame_talisman", 1 ] ] ]
   },
   {
     "type": "recipe",
@@ -328,7 +382,7 @@
     "autolearn": true,
     "book_learn": [ [ "book_magicfordummies", 2 ] ],
     "qualities": [ { "id": "CUT", "level": 1 } ],
-    "components": [ [ [ "arrow_arcana_unpowered", 5 ] ], [ [ "water_talisman", 1 ] ] ]
+    "components": [ [ [ "arrow_arcana_unpowered", 10 ] ], [ [ "water_talisman", 1 ] ] ]
   },
   {
     "type": "recipe",
@@ -343,7 +397,7 @@
     "autolearn": true,
     "book_learn": [ [ "book_magicfordummies", 2 ] ],
     "qualities": [ { "id": "CUT", "level": 1 } ],
-    "components": [ [ [ "bolt_arcana_unpowered", 5 ] ], [ [ "water_talisman", 1 ] ] ]
+    "components": [ [ [ "bolt_arcana_unpowered", 10 ] ], [ [ "water_talisman", 1 ] ] ]
   },
   {
     "type": "recipe",
@@ -358,7 +412,7 @@
     "autolearn": true,
     "book_learn": [ [ "book_magicfordummies", 3 ] ],
     "qualities": [ { "id": "CUT", "level": 1 } ],
-    "components": [ [ [ "arrow_arcana_unpowered", 5 ] ], [ [ "earth_talisman", 1 ] ] ]
+    "components": [ [ [ "arrow_arcana_unpowered", 10 ] ], [ [ "earth_talisman", 1 ] ] ]
   },
   {
     "type": "recipe",
@@ -373,7 +427,7 @@
     "autolearn": true,
     "book_learn": [ [ "book_magicfordummies", 3 ] ],
     "qualities": [ { "id": "CUT", "level": 1 } ],
-    "components": [ [ [ "bolt_arcana_unpowered", 5 ] ], [ [ "earth_talisman", 1 ] ] ]
+    "components": [ [ [ "bolt_arcana_unpowered", 10 ] ], [ [ "earth_talisman", 1 ] ] ]
   },
   {
     "type": "recipe",
@@ -388,7 +442,7 @@
     "autolearn": true,
     "book_learn": [ [ "book_magicfordummies", 4 ] ],
     "qualities": [ { "id": "CUT", "level": 1 } ],
-    "components": [ [ [ "arrow_arcana_unpowered", 5 ] ], [ [ "air_talisman", 1 ] ] ]
+    "components": [ [ [ "arrow_arcana_unpowered", 10 ] ], [ [ "air_talisman", 1 ] ] ]
   },
   {
     "type": "recipe",
@@ -403,7 +457,7 @@
     "autolearn": true,
     "book_learn": [ [ "book_magicfordummies", 4 ] ],
     "qualities": [ { "id": "CUT", "level": 1 } ],
-    "components": [ [ [ "bolt_arcana_unpowered", 5 ] ], [ [ "air_talisman", 1 ] ] ]
+    "components": [ [ [ "bolt_arcana_unpowered", 10 ] ], [ [ "air_talisman", 1 ] ] ]
   },
   {
     "result": "reloaded_shot_00_arcana",
@@ -412,7 +466,7 @@
     "category": "CC_ARCANA",
     "subcategory": "CSC_ARCANA_AMMO",
     "skill_used": "magic",
-    "difficulty": 3,
+    "difficulty": 4,
     "skills_required": [ [ "fabrication", 2 ], [ "gun", 1 ] ],
     "time": "2 m",
     "batch_time_factors": [ 60, 5 ],
@@ -420,11 +474,11 @@
     "charges": 1,
     "reversible": true,
     "using": [ [ "shot_forming", 1 ], [ "ammo_shot", 1 ] ],
-    "tools": [ [ [ "press", -1 ] ] ],
+    "tools": [ [ [ "press", -1 ], [ "press_dowel", -1 ] ] ],
     "components": [
-      [ [ "gunpowder", 6 ], [ "gunpowder_pistol", 6 ], [ "gunpowder_shotgun", 6 ] ],
-      [ [ "silver_small", 10 ] ],
-      [ [ "essence_dull", 6 ] ]
+      [ [ "gunpowder", 6 ], [ "gunpowder_pistol", 6 ], [ "gunpowder_shotgun", 6 ], [ "chem_black_powder", 9 ] ],
+      [ [ "silver_small", 10 ], [ "platinum_small", 6 ] ],
+      [ [ "essence_dull", 12 ] ]
     ]
   },
   {
@@ -443,7 +497,12 @@
     "reversible": true,
     "book_learn": [ [ "book_hexenhammer", 2 ], [ "book_syncretism", 2 ], [ "book_magicfordummies", 3 ] ],
     "qualities": [ { "id": "CUT", "level": 1 } ],
-    "components": [ [ [ "chem_black_powder", 5 ] ], [ [ "silver_small", 10 ] ], [ [ "essence_dull", 6 ] ], [ [ "paper", 1 ] ] ]
+    "components": [
+      [ [ "gunpowder", 3 ], [ "gunpowder_pistol", 3 ], [ "gunpowder_shotgun", 3 ], [ "chem_black_powder", 5 ] ],
+      [ [ "silver_small", 10 ], [ "platinum_small", 6 ] ],
+      [ [ "essence_dull", 10 ] ],
+      [ [ "paper", 1 ] ]
+    ]
   },
   {
     "type": "recipe",
@@ -456,6 +515,7 @@
     "skills_required": [ [ "fabrication", 3 ], [ "gun", 1 ] ],
     "time": "50 s",
     "autolearn": true,
+    "reversible": true,
     "book_learn": [
       [ "recipe_bullets", 3 ],
       [ "manual_shotgun", 3 ],
@@ -466,8 +526,8 @@
     "qualities": [ { "id": "CUT", "level": 1 }, { "id": "SAW_M", "level": 1 } ],
     "components": [
       [ [ "gunpowder", 16 ], [ "chem_black_powder", 24 ] ],
-      [ [ "silver_small", 16 ] ],
-      [ [ "essence_dull", 8 ] ],
+      [ [ "silver_small", 16 ], [ "platinum_small", 10 ] ],
+      [ [ "essence_dull", 16 ] ],
       [ [ "paper", 1 ], [ "aluminum_foil", 1 ] ]
     ]
   }

@@ -1,0 +1,110 @@
+[
+  {
+    "id": "BURROW",
+    "type": "mutation",
+    "copy-from": "BURROW",
+    "extend": { "threshreq": [ "THRESH_MOLE" ], "category": [ "MOLE" ] }
+  },
+  {
+    "id": "THRESH_MOLE",
+    "type": "mutation",
+    "name": { "str": "Mole" },
+    "points": 1,
+    "description": "You no longer have to deal with the dangers of the surface if you don't want to.",
+    "valid": false,
+    "purifiable": false,
+    "threshold": true
+  },
+  {
+    "id": "CLAWS_ST",
+    "type": "mutation",
+    "copy-from": "CLAWS_ST",
+    "extend": { "threshreq": [ "THRESH_MOLE" ], "category": [ "MOLE" ] }
+  },
+  {
+    "id": "CLAWS_RAT",
+    "type": "mutation",
+    "copy-from": "CLAWS_RAT",
+    "extend": { "threshreq": [ "THRESH_MOLE" ], "category": [ "MOLE" ] }
+  },
+  {
+    "id": "MUZZLE_RAT",
+    "type": "mutation",
+    "copy-from": "MUZZLE_RAT",
+    "extend": { "category": [ "MOLE" ] }
+  },
+  {
+    "id": "SIX_FINGERS",
+    "type": "mutation",
+    "name": { "str": "Polydactyl" },
+    "points": 0,
+    "visibility": 2,
+    "ugliness": 4,
+    "description": "You have grown an extra thumb which you can control rather effectively, it doesn't do much except for making it harder to get a fitting pair of gloves and occasionally helping with crafting.",
+    "types": [ "HANDS" ],
+    "category": [ "MOLE" ],
+    "craft_skill_bonus": [ [ "electronics", 1 ], [ "tailor", 1 ], [ "mechanics", 1 ] ],
+    "restricts_gear": [ "hand_l", "hand_r" ],
+    "allow_soft_gear": true
+  },
+  {
+    "id": "ANIMALDISCORD",
+    "type": "mutation",
+    "copy-from": "ANIMALDISCORD",
+    "extend": { "category": [ "MOLE" ] }
+  },
+  {
+    "id": "LONER",
+    "type": "mutation",
+    "name": { "str": "Loner" },
+    "points": -1,
+    "visibility": 0,
+    "ugliness": 0,
+    "starting_trait": true,
+    "description": "You are specially bad at social interactions.",
+    "category": [ "MOLE" ],
+    "social_modifiers": { "persuade": -10, "lie": -10, "intimidate": -5 }
+  },
+  {
+    "id": "GOOD_BREATHING",
+    "type": "mutation",
+    "name": { "str": "Effective Breathing" },
+    "points": 3,
+    "visibility": 0,
+    "ugliness": 0,
+    "description": "Your respiratory system feels overall lighter and the term 'heavy air' is something of the past.",
+    "types": [ "NOSE" ],
+    "category": [ "MOLE" ],
+    "encumbrance_always": [ [ "mouth", -10 ] ]
+  },
+  {
+    "id": "DEFORMED",
+    "type": "mutation",
+    "copy-from": "DEFORMED",
+    "extend": { "category": [ "MOLE" ] }
+  },
+  {
+    "id": "MOLE_BUILD",
+    "type": "mutation",
+    "name": { "str": "Tunneler Build" },
+    "points": 0,
+    "visibility": 3,
+    "ugliness": 2,
+    "description": "Your frame has adapted for life in confined spaces.  Your limbs are a bit shorter and your body became bulkier, trading muscle mass for mobility.  (+1 Strength, -1 Dexterity)",
+    "prereqs": [ "BURROW" ],
+    "category": [ "MOLE" ],
+    "passive_mods": { "str_mod": 1, "dex_mod": -1 }
+  },
+  {
+    "id": "MYOPIC",
+    "type": "mutation",
+    "copy-from": "MYOPIC",
+    "extend": { "category": [ "MOLE" ] }
+  },
+  {
+    "id": "INCISORS",
+    "type": "mutation",
+    "copy-from": "INCISORS",
+    "extend": { "threshreq": [ "THRESH_MOLE" ], "category": [ "MOLE" ] }
+  }
+]

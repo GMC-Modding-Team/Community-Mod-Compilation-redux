@@ -26,7 +26,8 @@
       { "stat": "damage", "type": "cut", "scale": 0.5 },
       { "stat": "damage", "type": "stab", "scale": 0.5 }
     ],
-    "down_dur": 1
+    "down_dur": 1,
+    "attack_vectors": [ "vector_null", "vector_punch" ]
   },
   {
     "type": "technique",
@@ -45,13 +46,14 @@
       { "stat": "damage", "type": "stab", "scale": 0.5 }
     ],
     "knockback_dist": 1,
-    "stun_dur": 1
+    "stun_dur": 1,
+    "attack_vectors": [ "vector_null", "vector_punch" ]
   },
   {
     "type": "technique",
     "id": "tec_surv_com_feint",
     "name": "Feint",
-    "messages": [ "You fake a strike at %s", "<npcname> fakes a strike at %s" ],
+    "messages": [ "You fake a strike at %s.", "<npcname> fakes a strike at %s." ],
     "skill_requirements": [ { "name": "melee", "level": 4 } ],
     "unarmed_allowed": true,
     "melee_allowed": true,
@@ -66,6 +68,69 @@
     "skill_requirements": [ { "name": "melee", "level": 9 } ],
     "unarmed_allowed": true,
     "melee_allowed": true,
-    "disarms": true
+    "disarms": true,
+    "attack_vectors": [ "vector_null", "vector_punch" ]
+  },
+  {
+    "type": "technique",
+    "id": "tec_mut_com_battering_ram",
+    "name": "Battering Ram",
+    "messages": [ "You send %s flying with a mighty blow", "<npcname>'s sends %s flying with a mighty blow" ],
+    "skill_requirements": [ { "name": "melee", "level": 6 } ],
+    "unarmed_allowed": true,
+    "melee_allowed": true,
+    "required_buffs_all": [ "buff_mut_com_onmove" ],
+    "crit_tec": true,
+    "stun_dur": 2,
+    "knockback_dist": 4,
+    "attack_vectors": [ "vector_null", "vector_punch" ]
+  },
+  {
+    "type": "technique",
+    "id": "tec_mut_com_overrun",
+    "name": "Overrun",
+    "messages": [ "You swiftly slam into and bowl over %s", "<npcname> swiftly slams into and bowls over %s" ],
+    "skill_requirements": [ { "name": "melee", "level": 5 } ],
+    "unarmed_allowed": true,
+    "melee_allowed": true,
+    "crit_tec": true,
+    "down_dur": 2,
+    "mult_bonuses": [ { "stat": "movecost", "scale": 0.9 } ],
+    "attack_vectors": [ "vector_null", "vector_punch" ]
+  },
+  {
+    "type": "technique",
+    "id": "tec_mut_com_stampeding_strike",
+    "name": "Stampeding Strike",
+    "messages": [ "You bear down on %s with terrible force", "<npcname> bears down on %s with terrible force" ],
+    "skill_requirements": [ { "name": "melee", "level": 7 } ],
+    "unarmed_allowed": true,
+    "melee_allowed": true,
+    "crit_tec": true,
+    "condition": { "npc_has_effect": "downed" },
+    "condition_desc": "* Only works on a <info>downed</info> target",
+    "stun_dur": 1,
+    "flat_bonuses": [
+      { "stat": "arpen", "type": "bash", "scaling-stat": "str", "scale": 0.5 },
+      { "stat": "arpen", "type": "cut", "scaling-stat": "str", "scale": 0.9 },
+      { "stat": "arpen", "type": "stab", "scaling-stat": "str", "scale": 0.5 }
+    ],
+    "mult_bonuses": [
+      { "stat": "damage", "type": "bash", "scale": 1.15 },
+      { "stat": "damage", "type": "cut", "scale": 1.15 },
+      { "stat": "damage", "type": "stab", "scale": 1.15 }
+    ],
+    "attack_vectors": [ "vector_punch" ]
+  },
+  {
+    "type": "technique",
+    "id": "tec_mut_com_feint",
+    "name": "Feint",
+    "messages": [ "You fake a strike at %s.", "<npcname> fakes a strike at %s." ],
+    "skill_requirements": [ { "name": "melee", "level": 5 } ],
+    "unarmed_allowed": true,
+    "melee_allowed": true,
+    "defensive": true,
+    "miss_recovery": true
   }
 ]

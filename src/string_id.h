@@ -117,7 +117,6 @@ class string_id
 
         const T &operator*() const {
             return obj();
-
         }
         const T *operator->() const {
             return &obj();

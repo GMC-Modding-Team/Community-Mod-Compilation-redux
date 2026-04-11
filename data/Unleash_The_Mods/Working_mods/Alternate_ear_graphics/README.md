@@ -1,3 +1,18 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  
+
+- [Alternate ear graphics](#alternate-ear-graphics)
+  - [Dependencies](#dependencies)
+  - [Installation](#installation)
+    - [Enabling the mod mid-game](#enabling-the-mod-mid-game)
+  - [Usage Guide](#usage-guide)
+    - [V1.1 Texture replacement](#v11-texture-replacement)
+  - [Versions](#versions)
+  - [Issues](#issues)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Alternate ear graphics
 A small mod I threw together which replaces certian mutation graphics with ones i'd redesigned. 
 FULL DISCLAIMER, I designed these alternate graphics for a particular character of mine! I only made this because a few people seemed interested. Use this with the understanding that these graphics arent intended to work with all the different appearances your character can take, if the colour is the problem ive added a selection of pallets  (see V1.1 texture replacement below) but otherwise just understand results may vary.

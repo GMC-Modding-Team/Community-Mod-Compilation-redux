@@ -1,17 +1,15 @@
 [
   {
-    "id": "side_drum_makeshift",
     "type": "TOOL_ARMOR",
+    "id": "side_drum_makeshift",
     "name": { "str": "side drum" },
     "category": "tools",
     "weight": "1800 g",
     "color": "brown",
-    "covers": [ "torso" ],
-    "initial_charges": 1,
     "use_action": {
       "type": "musical_instrument",
       "speed_penalty": 15,
-      "volume": 20,
+      "volume": "5000 ml",
       "fun": 2,
       "fun_bonus": 2,
       "description_frequency": 20,
@@ -31,11 +29,10 @@
     "price": "5 USD",
     "material": [ "wood", "leather" ],
     "volume": "2500 ml",
-    "encumbrance": 10,
-    "bashing": 4,
-    "flags": [ "WAIST" ],
-    "coverage": 10,
-    "material_thickness": 2
+    "melee_damage": { "bash": 4 },
+    "flags": [ "BELTED" ],
+    "material_thickness": 2,
+    "armor": [ { "encumbrance": 10, "coverage": 10, "covers": [ "torso" ], "specifically_covers": [ "torso_waist" ] } ]
   },
   {
     "id": "mask_gas_makeshift",
@@ -52,17 +49,48 @@
     "material": [ "cotton", "plastic" ],
     "symbol": "[",
     "color": "light_gray",
-    "covers": [ "head", "mouth", "eyes" ],
-    "coverage": 100,
-    "encumbrance": 20,
     "warmth": 15,
     "material_thickness": 2,
     "environmental_protection": 1,
     "environmental_protection_with_filter": 15,
     "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "gasfilter_m": 100 } } ],
-    "max_charges": 100,
     "ammo": [ "gasfilter_m" ],
-    "use_action": "GASMASK",
-    "flags": [ "OUTER", "HELMET_COMPAT" ]
+    "use_action": "GASMASK_ACTIVATE",
+    "flags": [ "OUTER" ],
+    "armor": [ { "encumbrance": 20, "coverage": 100, "covers": [ "head", "mouth", "eyes" ] } ]
+  },
+  {
+    "id": "straw_bed_rollmat",
+    "type": "TOOL_ARMOR",
+    "name": { "str_sp": "woven straw bedding" },
+    "description": "A thick mat of tightly-woven straw or pine boughs.  It could be worn as a thick blanket, or used to deploy it as a mat to sleep on.",
+    "weight": "1500 g",
+    "volume": "3 L",
+    "price": "20 USD",
+    "price_postapoc": "50 cent",
+    "to_hit": -1,
+    "material": [ "paper" ],
+    "symbol": "[",
+    "looks_like": "fiber_mat",
+    "color": "white",
+    "warmth": 30,
+    "material_thickness": 1,
+    "environmental_protection": 1,
+    "flags": [ "OVERSIZE", "OUTER", "ALLOWS_NATURAL_ATTACKS", "SINGLE_USE" ],
+    "use_action": {
+      "type": "place_trap",
+      "allow_under_player": true,
+      "trap": "tr_rollmat_straw",
+      "moves": 100,
+      "practice": 0,
+      "done_message": "You unroll the woven straw bedding and lay it on the ground."
+    },
+    "armor": [
+      {
+        "encumbrance": 45,
+        "coverage": 100,
+        "covers": [ "torso", "arm_l", "arm_r", "hand_l", "hand_r", "leg_l", "leg_r", "foot_l", "foot_r" ]
+      }
+    ]
   }
 ]

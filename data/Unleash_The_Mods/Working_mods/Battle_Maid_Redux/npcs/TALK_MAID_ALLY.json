@@ -41,9 +41,7 @@
       {
         "text": "Mind if we just chat for a bit about your history?",
         "topic": "TALK_MAID_CONVERSATION",
-        "condition": {
-          "and": [ "at_safe_space", { "or": [ { "npc_has_trait_flag": "BG_SURVIVAL_STORY" }, { "npc_has_trait": "NPC_STATIC_NPC" } ] } ]
-        },
+        "condition": { "or": [ { "npc_has_flag": "BG_SURVIVAL_STORY" }, { "npc_has_trait": "NPC_STATIC_NPC" } ] },
         "//": "If the NPC already has a BG story, or started out as a static NPC (and so probably doesn't need a random bg story), then go on.",
         "switch": true
       },
@@ -105,7 +103,9 @@
     "id": "TALK_MAID_MILK2",
     "type": "talk_topic",
     "dynamic_line": "Ah...Ahn♪ Oh master, that feels so...good...",
-    "speaker_effect": { "effect": [ { "u_buy_item": "milk", "count": 4 }, { "npc_add_effect": "maid_milked", "duration": 28000 } ] },
+    "speaker_effect": {
+      "effect": [ { "u_buy_item": "milk", "count": 4, "cost": 1000 }, { "npc_add_effect": "maid_milked", "duration": 28000 } ]
+    },
     "responses": [
       {
         "text": "We're not done yet. I want your 'milk' too.",
@@ -119,7 +119,7 @@
     "id": "TALK_MAID_MILK3",
     "type": "talk_topic",
     "dynamic_line": "Th-there too? N-no, wait, I'm going to...! Master, please, I can't stop - urgh, please, just let me rest...!",
-    "speaker_effect": { "effect": [ { "u_buy_item": "protein_milk", "count": 1 } ] },
+    "speaker_effect": { "effect": [ { "u_buy_item": "protein_milk", "count": 1, "cost": 1000 } ] },
     "responses": [ { "text": "That's all for now.", "topic": "TALK_DONE" } ]
   },
   {
@@ -141,7 +141,7 @@
     "id": "TALK_SHOGGOTH_HEART3",
     "type": "talk_topic",
     "dynamic_line": "For my beloved master, I would do anything! Oh, if you ever change your mind, just put my heart back in the flask - I'll be back in no time!",
-    "speaker_effect": { "effect": [ { "u_buy_item": "meat_shoggoth", "count": 2 }, "npc_die" ] },
+    "speaker_effect": { "effect": [ { "u_buy_item": "meat_shoggoth", "count": 2, "cost": 1000 }, "npc_die" ] },
     "responses": [ { "text": "...", "topic": "TALK_DONE" } ]
   },
   {
@@ -314,12 +314,12 @@
     ]
   },
   {
-    "id": "TALK_MISC_RULES_MAID",
+    "id": "TALK_MISC_RULES",
     "type": "talk_topic",
     "dynamic_line": {
-      "and": [
+      "concatenate": [
         {
-          "and": [
+          "concatenate": [
             { "npc_override": "allow_pick_up", "yes": "OVERRIDE: " },
             {
               "npc_rule": "allow_pick_up",
@@ -329,7 +329,7 @@
           ]
         },
         {
-          "and": [
+          "concatenate": [
             { "npc_override": "allow_bash", "yes": "  OVERRIDE: ", "no": "  " },
             {
               "npc_rule": "allow_bash",
@@ -339,7 +339,7 @@
           ]
         },
         {
-          "and": [
+          "concatenate": [
             { "npc_override": "allow_sleep", "yes": "  OVERRIDE: ", "no": "  " },
             {
               "npc_rule": "allow_sleep",
@@ -349,7 +349,7 @@
           ]
         },
         {
-          "and": [
+          "concatenate": [
             { "npc_override": "allow_complain", "yes": "  OVERRIDE: ", "no": "  " },
             {
               "npc_rule": "allow_complain",
@@ -359,7 +359,7 @@
           ]
         },
         {
-          "and": [
+          "concatenate": [
             { "npc_override": "allow_pulp", "yes": "  OVERRIDE: ", "no": "  " },
             {
               "npc_rule": "allow_pulp",
@@ -369,7 +369,7 @@
           ]
         },
         {
-          "and": [
+          "concatenate": [
             { "npc_override": "close_doors", "yes": "  OVERRIDE: ", "no": "  " },
             {
               "npc_rule": "close_doors",
@@ -379,7 +379,7 @@
           ]
         },
         {
-          "and": [
+          "concatenate": [
             { "npc_override": "ignore_noise", "yes": "  OVERRIDE: ", "no": "  " },
             {
               "npc_rule": "ignore_noise",
@@ -389,7 +389,7 @@
           ]
         },
         {
-          "and": [
+          "concatenate": [
             { "npc_override": "avoid_doors", "yes": "  OVERRIDE: ", "no": "  " },
             {
               "npc_rule": "avoid_doors",
@@ -399,7 +399,7 @@
           ]
         },
         {
-          "and": [
+          "concatenate": [
             { "npc_override": "forbid_engage", "yes": "  OVERRIDE: ", "no": "  " },
             {
               "npc_rule": "forbid_engage",

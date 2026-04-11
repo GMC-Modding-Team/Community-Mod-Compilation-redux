@@ -24,7 +24,6 @@ struct pair_greater_cmp_first {
     bool operator()( const std::pair<T, U> &a, const std::pair<T, U> &b ) const {
         return a.first > b.first;
     }
-
 };
 
 /**

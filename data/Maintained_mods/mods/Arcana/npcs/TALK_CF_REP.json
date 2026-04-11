@@ -19,7 +19,7 @@
             "no": "Welcome, Sister.  I knew we were not alone just yet."
           },
           "no": {
-            "u_has_any_trait": [ "PROF_CHALICE", "THRESH_VEIL" ],
+            "u_has_any_trait": [ "PROF_CHALICE", "PROF_CHALICE2", "THRESH_VEIL" ],
             "yes": {
               "u_has_effect": "sofia_motive_explained",
               "yes": "Greetings.  I hope that we can work together.",
@@ -31,11 +31,8 @@
       }
     },
     "speaker_effect": {
-      "condition": { "not": { "npc_has_effect": "cf_aux_merchant_restocked" } },
-      "effect": [
-        { "npc_add_effect": "cf_aux_merchant_restocked", "duration": 2592000 },
-        { "mapgen_update": "cf_church_sofia_restock", "om_terrain": "cf_church_4", "om_special": "cf_rural_church" }
-      ]
+      "condition": { "not": { "u_has_effect": "sofia_deacon_message" } },
+      "effect": { "u_add_effect": "sofia_deacon_message", "duration": "PERMANENT" }
     },
     "responses": [
       {
@@ -69,8 +66,8 @@
         "topic": "TALK_CF_REP_DEACON_MISSION",
         "condition": {
           "and": [
-            { "not": { "u_has_effect": "sofia_deacon_message" } },
-            { "not": { "u_has_any_trait": [ "PROF_CHALICE", "THRESH_VEIL", "PROF_SANGUINE" ] } },
+            { "not": { "compare_string": [ "yes", { "u_val": "sofia_deacon_message" } ] } },
+            { "not": { "u_has_any_trait": [ "PROF_CHALICE", "PROF_CHALICE2", "THRESH_VEIL", "PROF_SANGUINE" ] } },
             { "u_has_mission": "MISSION_CF_DEACON_1" }
           ]
         }
@@ -81,12 +78,8 @@
         "condition": {
           "and": [
             { "u_has_item": "arcana_dream_journal" },
-            {
-              "u_has_var": "johnathan_prelude_penultimate",
-              "type": "mission",
-              "context": "rural_church",
-              "value": "yes"
-            }
+            { "not": { "compare_string": [ "yes", { "npc_val": "johnathan_prelude_data_5" } ] } },
+            { "compare_string": [ "yes", { "u_val": "johnathan_prelude_penultimate" } ] }
           ]
         },
         "effect": [ { "u_consume_item": "arcana_dream_journal" } ]
@@ -97,12 +90,8 @@
         "condition": {
           "and": [
             { "u_has_item": "arcana_strange_crystal" },
-            {
-              "u_has_var": "johnathan_prelude_penultimate",
-              "type": "mission",
-              "context": "rural_church",
-              "value": "yes"
-            }
+            { "not": { "compare_string": [ "yes", { "npc_val": "johnathan_prelude_data_5" } ] } },
+            { "compare_string": [ "yes", { "u_val": "johnathan_prelude_penultimate" } ] }
           ]
         },
         "effect": [ { "u_consume_item": "arcana_strange_crystal" } ]
@@ -118,13 +107,9 @@
         "condition": {
           "and": [
             { "not": { "u_has_mission": "MISSION_CF_GM_4_PRELUDE" } },
-            {
-              "not": { "u_has_var": "johnathan_prelude_penultimate", "type": "mission", "context": "rural_church", "value": "yes" }
-            },
-            {
-              "not": { "u_has_var": "johnathan_prelude_ended", "type": "mission", "context": "rural_church", "value": "yes" }
-            },
-            { "u_has_var": "johnathan_prelude_mid", "type": "mission", "context": "rural_church", "value": "yes" }
+            { "not": { "compare_string": [ "yes", { "u_val": "johnathan_prelude_penultimate" } ] } },
+            { "not": { "compare_string": [ "yes", { "u_val": "johnathan_prelude_ended" } ] } },
+            { "compare_string": [ "yes", { "u_val": "johnathan_prelude_mid" } ] }
           ]
         }
       },
@@ -134,12 +119,17 @@
         "condition": { "u_has_mission": "MISSION_CF_PURIFIER_1_3" }
       },
       {
+        "text": "[MISSION] About this \"bone charm\" you asked me to make…",
+        "topic": "TALK_CF_REP_MISSION_1",
+        "condition": { "u_has_mission": "MISSION_CF_REP_1" }
+      },
+      {
         "text": "So, how are things working out with the new arrivals so far?",
         "topic": "TALK_CF_REP_MISSION_4_OPINION",
         "condition": {
           "and": [
-            { "not": { "u_has_var": "sofia_opinion_given", "type": "flag", "context": "knowledge", "value": "yes" } },
-            { "u_has_var": "sofia_mission_4_end", "type": "mission", "context": "rural_church", "value": "yes" }
+            { "not": { "compare_string": [ "yes", { "u_val": "sofia_opinion_given" } ] } },
+            { "compare_string": [ "yes", { "u_val": "sofia_mission_4_end" } ] }
           ]
         }
       },
@@ -189,8 +179,9 @@
           "and": [
             { "not": { "u_has_effect": "cf_mission_1" } },
             { "not": { "u_has_effect": "sofia_motive_explained" } },
-            { "not": { "u_has_trait": "THRESH_VEIL" } },
-            { "u_has_trait": "PROF_CHALICE" }
+            { "not": { "u_has_trait": "PROF_CHALICE" } },
+            { "not": { "u_has_trait": "PROF_CHALICE2" } },
+            { "u_has_trait": "THRESH_VEIL" }
           ]
         },
         "topic": "TALK_CF_REP_CHOSEN"
@@ -201,7 +192,7 @@
           "and": [
             { "not": { "u_has_effect": "cf_mission_1" } },
             { "not": { "u_has_effect": "sofia_motive_explained" } },
-            { "u_has_trait": "PROF_CHALICE" }
+            { "u_has_any_trait": [ "PROF_CHALICE", "PROF_CHALICE2" ] }
           ]
         },
         "topic": "TALK_CF_REP_CHALICE_MOTIVE_1"
@@ -212,7 +203,7 @@
           "and": [
             { "not": { "u_has_effect": "cf_mission_1" } },
             { "not": { "u_has_effect": "sofia_motive_explained" } },
-            { "u_has_trait": "PROF_CHALICE" }
+            { "u_has_any_trait": [ "PROF_CHALICE", "PROF_CHALICE2" ] }
           ]
         },
         "topic": "TALK_CF_REP_CHALICE_MOTIVE_2"
@@ -224,7 +215,7 @@
             { "not": { "u_has_effect": "cf_mission_1" } },
             { "not": { "u_has_effect": "sofia_motive_explained" } },
             { "u_has_effect": "rural_church_aware" },
-            { "u_has_any_trait": [ "PROF_CHALICE", "THRESH_VEIL", "PROF_SANGUINE" ] }
+            { "u_has_any_trait": [ "PROF_CHALICE", "PROF_CHALICE2", "THRESH_VEIL", "PROF_SANGUINE" ] }
           ]
         },
         "topic": "TALK_CF_REP_MERCHANT_MOTIVE"
@@ -236,10 +227,20 @@
             { "not": { "u_has_effect": "cf_mission_1" } },
             { "not": { "u_has_effect": "sofia_motive_explained" } },
             { "u_has_mission": "MISSION_CF_DEACON_1" },
-            { "u_has_any_trait": [ "PROF_CHALICE", "THRESH_VEIL", "PROF_SANGUINE" ] }
+            { "u_has_any_trait": [ "PROF_CHALICE", "PROF_CHALICE2", "THRESH_VEIL", "PROF_SANGUINE" ] }
           ]
         },
         "topic": "TALK_CF_REP_DEACON_MOTIVE"
+      },
+      {
+        "text": "Can you teach me any spells?",
+        "topic": "TALK_CF_REP_SPELL_MENU",
+        "condition": {
+          "and": [
+            { "u_has_effect": "cf_mission_1" },
+            { "not": { "compare_string": [ "yes", { "u_val": "sofia_all_spells_known" } ] } }
+          ]
+        }
       },
       {
         "text": "Do you have anything to trade?",
@@ -250,30 +251,20 @@
       },
       { "text": "Do you have anything to trade?", "switch": true, "default": true, "topic": "TALK_CF_REP_TRADE" },
       { "text": "Anything I can do to help?", "topic": "TALK_MISSION_LIST" },
-      {
-        "text": "Well, bye.",
-        "topic": "TALK_DONE",
-        "effect": { "u_add_effect": "sofia_deacon_message", "duration": "PERMANENT" }
-      }
+      { "text": "Well, bye.", "topic": "TALK_DONE" }
     ]
   },
   {
     "id": "TALK_CF_REP_MISSION_2_COPY",
     "type": "talk_topic",
     "dynamic_line": "Oh, okay.  Should be easy enough to replace, since the list is a bit short.  Our needs and resources haven't changed at the moment anyway.  Here you go.",
-    "responses": [ { "text": "Thank you.", "topic": "TALK_CF_REP", "effect": { "u_buy_item": "cf_rep_trade_arrangement" } } ]
+    "responses": [ { "text": "Thank you.", "topic": "TALK_CF_REP", "effect": { "u_spawn_item": "cf_rep_trade_arrangement" } } ]
   },
   {
     "type": "talk_topic",
     "id": "TALK_CF_REP_DEACON_MISSION",
     "dynamic_line": "I see.  I'm glad that he's doing alright over there.  If you get the chance to stop by, be sure to tell him we're doing okay.  Should put his mind at ease, as I'm sure he's needed over there.",
-    "responses": [
-      {
-        "text": "Alright.",
-        "topic": "TALK_CF_REP",
-        "effect": { "u_add_effect": "sofia_deacon_message", "duration": "PERMANENT" }
-      }
-    ]
+    "responses": [ { "text": "Alright.", "topic": "TALK_CF_REP", "effect": { "u_add_var": "sofia_deacon_message", "value": "yes" } } ]
   },
   {
     "type": "talk_topic",
@@ -333,7 +324,7 @@
   {
     "type": "talk_topic",
     "id": "TALK_CF_REP_JOHNATHAN_ADVICE_2_1",
-    "dynamic_line": "Like any proper sanctum, there's a main room just beyond the entrance, and common rooms for the benefit of any people sheltered there.  Workspaces, archives, armories and the like will be downstairs, and they're likely to be infested by abominations given what what others have mentioned.  The main room there will be divided into hallways by the stone supports and walls, you might be able to use them to keep any monsters down there bunched up.  As for what's beyond that, I…",
+    "dynamic_line": "Like any proper sanctum, there's a main hall just beyond the entrance, common rooms for the benefit of any people sheltered there, and downstairs past the shrine.  Workspaces, archives, armories and the like will be downstairs, and they're likely to be infested by abominations given what what others have mentioned.  The main room there will be divided into hallways by the stone supports and walls, you might be able to use them to keep any monsters down there bunched up.  As for what's beyond that, I…",
     "responses": [
       { "text": "Yes?  What's wrong?", "topic": "TALK_CF_REP_JOHNATHAN_ADVICE_2_3" },
       { "text": "Maybe it would be better to ask about something else.", "topic": "TALK_CF_REP_JOHNATHAN_ADVICE_2" },
@@ -343,7 +334,7 @@
   {
     "type": "talk_topic",
     "id": "TALK_CF_REP_JOHNATHAN_ADVICE_2_3",
-    "dynamic_line": "The floor below that used to be our ritual room, and a tomb for those that've fallen in battle.  What the others said, that part of the structured has been completely subverted by some unknown intrusion from Beyond.  It's bad enough that those who fell trying to hold those monsters back went unburied, but gods know what happened to those laid to rest there.  You'll need to take down a barrier sealing off the stairs, you'll see one of our swords.  You'll be able to remove it to dispel the barrier easily enough.  Whatever you do, please come back safely.",
+    "dynamic_line": "The floor below that used to be our ritual room, along with the tomb for those that've fallen in battle.  What the others said, that part of the structure has been completely subverted by some unknown intrusion from Beyond.  It's bad enough that those who fell trying to hold those monsters back went unburied, but gods know what happened to those laid to rest there.  You'll need to take down a barrier sealing off the stairs, you'll see one of our swords.  You'll be able to remove it to dispel the barrier easily enough.  Whatever you do, please come back safely.",
     "responses": [
       { "text": "I'd like to ask about something else, please.", "topic": "TALK_CF_REP_JOHNATHAN_ADVICE_2" },
       { "text": "Thank you.  That's it for now.", "topic": "TALK_CF_REP" }
@@ -386,7 +377,7 @@
       {
         "text": "So be it.  \"No matter the cost, no matter what we must do, for the strength and safety of this world…\"",
         "switch": true,
-        "condition": { "u_has_trait": "PROF_CHALICE" },
+        "condition": { "u_has_any_trait": [ "PROF_CHALICE", "PROF_CHALICE2" ] },
         "topic": "TALK_CF_REP"
       },
       { "text": "Understood.  Thank you.", "switch": true, "default": true, "topic": "TALK_CF_REP" }
@@ -396,10 +387,7 @@
     "type": "talk_topic",
     "id": "TALK_CF_REP_JOHNATHAN_PRELUDE",
     "dynamic_line": {
-      "u_has_var": "sofia_opinion_given",
-      "type": "flag",
-      "context": "knowledge",
-      "value": "yes",
+      "compare_string": [ "yes", { "u_val": "sofia_opinion_given" } ],
       "yes": "Ask the merchant contacts here before you leave, you might be able to get a bit out information out of them first.  Then check with the refugee center.  We've tracked area anomalies like this before, just get more info on where these attacks have taken place and we should be able to figure things out from here.",
       "no": "I'd primarily suggest the refugee center, as they may be able to help provide more information.  What we need is simply confirming specific locations of where attacks have taken place.  We can handle it from there, afterward."
     },
@@ -417,7 +405,10 @@
     "dynamic_line": "A few of their early entries, the first few days into the journey, references nearby landmarks.  The last one before things go off the rails mentions a recently-built otherworldly structure in their path, and I can confirm which location that is.  Given the description suggests something anomalous happened there more recently, it's possible that the source of this took up residence there.  Go talk to Johnathan, tell him we have what we need.",
     "speaker_effect": [
       {
-        "effect": [ { "u_add_var": "johnathan_prelude_data_5", "type": "mission", "context": "rural_church", "value": "yes" } ]
+        "effect": [
+          { "u_add_var": "johnathan_prelude_data_5", "value": "yes" },
+          { "npc_add_var": "johnathan_prelude_data_5", "value": "yes" }
+        ]
       }
     ],
     "responses": [
@@ -437,7 +428,10 @@
     "dynamic_line": "It still has some lingering aftereffects.  Like a trail of energy burnt into what remains of its enchantments, essentially pointing in the direction of the source as of the moment it activated.  That'd be no good to us just standing here, but we know the rough area of the anomalous region, and we know where it was when it activated.  Go tell Johnathan we have what we need to pinpoint the source.",
     "speaker_effect": [
       {
-        "effect": [ { "u_add_var": "johnathan_prelude_data_5", "type": "mission", "context": "rural_church", "value": "yes" } ]
+        "effect": [
+          { "u_add_var": "johnathan_prelude_data_5", "value": "yes" },
+          { "npc_add_var": "johnathan_prelude_data_5", "value": "yes" }
+        ]
       }
     ],
     "responses": [
@@ -587,12 +581,103 @@
   },
   {
     "type": "talk_topic",
+    "id": "TALK_CF_REP_MISSION_1",
+    "dynamic_line": "What do you wish to know?  As I said, I can explain why we need one if you wish.  I can also try to help advise you on what creatures might be useful to hunt for the materials needed to make one.",
+    "responses": [
+      {
+        "text": "It's a protective spell, I'm guessing?",
+        "condition": { "u_has_any_trait": [ "PROF_CLEANSINGFLAME", "PROF_CLEANSINGFLAME2", "PROF_CHALICE", "PROF_CHALICE2", "THRESH_VEIL" ] },
+        "switch": true,
+        "topic": "TALK_CF_REP_MISSION_1_HOW_KNOWN"
+      },
+      {
+        "text": "What sort of ritual does this entail?",
+        "condition": { "u_has_any_trait": [ "PROF_ARCANIST", "PROF_ARCANIST2", "PROF_SANGUINE", "THRESH_DRAGONBLOOD" ] },
+        "switch": true,
+        "topic": "TALK_CF_REP_MISSION_1_HOW_ARCANIST"
+      },
+      {
+        "text": "I'm not sure how it'd help protect this place.",
+        "condition": { "or": [ { "u_has_effect": "cf_sofia_notes_given" }, { "math": [ "u_skill('magic')", ">=", "1" ] } ] },
+        "switch": true,
+        "topic": "TALK_CF_REP_MISSION_1_HOW"
+      },
+      {
+        "text": "This just seems like a very strange request.",
+        "switch": true,
+        "default": true,
+        "topic": "TALK_CF_REP_MISSION_1_WHY"
+      },
+      {
+        "text": "Where would I find the materials needed to make one of these things?",
+        "topic": "TALK_CF_REP_MISSION_1_WHERE"
+      },
+      { "text": "Never mind, I'll figure it out.", "topic": "TALK_CF_REP" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_CF_REP_MISSION_1_HOW_KNOWN",
+    "dynamic_line": {
+      "u_has_any_trait": [ "PROF_CLEANSINGFLAME", "PROF_CLEANSINGFLAME2" ],
+      "yes": "Indeed.  There are still concerns that the fabric of The Veil may still be unstable and vulnerable to new anomalies, and the potential for otherworldly monsters being attracted to this place.  Same method by which we safeguarded our sanctums, until most of them were overwhelmed the day everything boiled over.",
+      "no": "You are correct.  Our methods may differ from that of the Keepers, but the objective is similar.  With the right rituals we can reduce the rest of any additional anomalies opening up too close to us, and make the place less visible to any interlopers already in this world.  That will allow us to use the arcane items at our disposal to the fullest, otherwise we'd basically be lighting up a beacon for every otherwordly monster within a couple miles."
+    },
+    "responses": [
+      { "text": "So how do I go about making one?", "topic": "TALK_CF_REP_MISSION_1_WHERE" },
+      { "text": "That's all for now, thank you.", "topic": "TALK_CF_REP" }
+    ]
+  },
+  {
+    "id": "TALK_CF_REP_MISSION_1_HOW_ARCANIST",
+    "type": "talk_topic",
+    "dynamic_line": "A protective spell that will shroud this location from interlopers in the area, and reduce the risk of any anomalies.  Without that, we can't use every tool at our disposal to safeguard this place to the fullest.",
+    "responses": [
+      { "text": "So how do I go about making one?", "topic": "TALK_CF_REP_MISSION_1_WHERE" },
+      { "text": "That's all for now, thank you.", "topic": "TALK_CF_REP" }
+    ]
+  },
+  {
+    "id": "TALK_CF_REP_MISSION_1_HOW",
+    "type": "talk_topic",
+    "dynamic_line": "It's a ritual to protect this location.  I would hope that you've gained some familiarity with the strange beasts and otherworldly phenomenon.  I suspect it would also be useful to you, to go hunting for creatures of this sort to see for yourself how abnormal things have become, and adding a personal touch to this component would also be a useful learning experience of its own.",
+    "responses": [
+      { "text": "So how do I go about making one?", "topic": "TALK_CF_REP_MISSION_1_WHERE" },
+      { "text": "That's all for now, thank you.", "topic": "TALK_CF_REP" }
+    ]
+  },
+  {
+    "id": "TALK_CF_REP_MISSION_1_WHY",
+    "type": "talk_topic",
+    "dynamic_line": "Understandable, the purpose of it concerns ritual protection of this place.  It may seem of little importance to you, but remember that hunting down the materials needed to make one means at least one less abomination endangering other people.  That, and what you might learn of these hazards now afflicting our reality during your hunt, will offer valuable experience.  I hope that is acceptable, if nothing else?",
+    "responses": [
+      { "text": "Fine, any advice on what to hunt for?", "topic": "TALK_CF_REP_MISSION_1_WHERE" },
+      { "text": "We'll see, maybe.", "topic": "TALK_CF_REP" }
+    ]
+  },
+  {
+    "id": "TALK_CF_REP_MISSION_1_WHERE",
+    "type": "talk_topic",
+    "dynamic_line": "Materials used to make these items are commonly wrested from beasts such as what other survivors call \"grackens\" as well as \"krecks\" which have been seen lingering near tears in reality, or lurking near the remains of slain soldiers and other groups.  Abominations some have termed hunting horrors and flying polyps may also be a source, though more dangerous.",
+    "responses": [
+      { "text": "Anything else?", "topic": "TALK_CF_REP_MISSION_1_WHERE_2" },
+      { "text": "Guess we'll see what I can do.", "topic": "TALK_CF_REP" }
+    ]
+  },
+  {
+    "id": "TALK_CF_REP_MISSION_1_WHERE_2",
+    "type": "talk_topic",
+    "dynamic_line": "Some of the undead, most prominently the ones contorting into predatory forms, and those afflicted by bony growths taking over their bodies, have been known to yield such materials as well.  Even some living beings native to this world, afflicted by mutation and contorted into forms no natural process could mimic, can display anomalous properties that would linger in their bodies well after death.",
+    "responses": [ { "text": "That's all for now, I guess.", "topic": "TALK_CF_REP" } ]
+  },
+  {
+    "type": "talk_topic",
     "id": "TALK_CF_REP_MISSION_4_OPINION",
     "dynamic_line": "They've been helpful so far.  Supplies are coming in and going out, slowly but surely.  And they seem to be getting along well enough with the others, we might eventually gain recruits thanks to your efforts.",
     "responses": [
       {
         "text": "That's good to hear.",
-        "effect": { "u_add_var": "sofia_opinion_given", "type": "flag", "context": "knowledge", "value": "yes" },
+        "effect": { "u_add_var": "sofia_opinion_given", "value": "yes" },
         "topic": "TALK_CF_REP"
       }
     ]
@@ -621,9 +706,17 @@
         "condition": {
           "or": [
             {
-              "u_has_any_trait": [ "PROF_ARCANIST", "PROF_ARCANIST2", "PROF_SANGUINE", "PROF_CHALICE", "THRESH_VEIL", "THRESH_DRAGONBLOOD" ]
+              "u_has_any_trait": [
+                "PROF_ARCANIST",
+                "PROF_ARCANIST2",
+                "PROF_SANGUINE",
+                "PROF_CHALICE",
+                "PROF_CHALICE2",
+                "THRESH_VEIL",
+                "THRESH_DRAGONBLOOD"
+              ]
             },
-            { "u_has_skill": { "skill": "magic", "level": 1 } }
+            { "math": [ "u_skill('magic')", ">=", "1" ] }
           ]
         },
         "switch": true,
@@ -663,7 +756,7 @@
         "switch": true,
         "default": true,
         "topic": "TALK_CF_REP",
-        "effect": [ { "u_buy_item": "book_magicfordummies" }, { "u_add_effect": "cf_sofia_notes_given", "duration": "PERMANENT" } ]
+        "effect": [ { "u_spawn_item": "book_magicfordummies" }, { "u_add_effect": "cf_sofia_notes_given", "duration": "PERMANENT" } ]
       }
     ]
   },
@@ -687,6 +780,7 @@
               "PROF_CLEANSINGFLAME2",
               "PROF_SANGUINE",
               "PROF_CHALICE",
+              "PROF_CHALICE2",
               "THRESH_VEIL",
               "THRESH_DRAGONBLOOD"
             ]
@@ -712,7 +806,7 @@
         "switch": true,
         "default": true,
         "topic": "TALK_CF_REP",
-        "effect": [ { "u_buy_item": "book_magicfordummies" }, { "u_add_effect": "cf_sofia_notes_given", "duration": "PERMANENT" } ]
+        "effect": [ { "u_spawn_item": "book_magicfordummies" }, { "u_add_effect": "cf_sofia_notes_given", "duration": "PERMANENT" } ]
       }
     ]
   },
@@ -751,7 +845,15 @@
         "text": "What do you mean, arcane?",
         "condition": {
           "not": {
-            "u_has_any_trait": [ "PROF_ARCANIST", "PROF_ARCANIST2", "PROF_SANGUINE", "PROF_CHALICE", "THRESH_VEIL", "THRESH_DRAGONBLOOD" ]
+            "u_has_any_trait": [
+              "PROF_ARCANIST",
+              "PROF_ARCANIST2",
+              "PROF_SANGUINE",
+              "PROF_CHALICE",
+              "PROF_CHALICE2",
+              "THRESH_VEIL",
+              "THRESH_DRAGONBLOOD"
+            ]
           }
         },
         "topic": "TALK_CF_REP_ARCANE"
@@ -760,14 +862,22 @@
         "text": "The Veil?",
         "condition": {
           "not": {
-            "u_has_any_trait": [ "PROF_ARCANIST", "PROF_ARCANIST2", "PROF_SANGUINE", "PROF_CHALICE", "THRESH_VEIL", "THRESH_DRAGONBLOOD" ]
+            "u_has_any_trait": [
+              "PROF_ARCANIST",
+              "PROF_ARCANIST2",
+              "PROF_SANGUINE",
+              "PROF_CHALICE",
+              "PROF_CHALICE2",
+              "THRESH_VEIL",
+              "THRESH_DRAGONBLOOD"
+            ]
           }
         },
         "topic": "TALK_CF_REP_VEIL"
       },
       {
         "text": "And who were the Sanguine Order?",
-        "condition": { "not": { "u_has_any_trait": [ "PROF_SANGUINE", "PROF_CHALICE" ] } },
+        "condition": { "not": { "u_has_any_trait": [ "PROF_SANGUINE", "PROF_CHALICE", "PROF_CHALICE2" ] } },
         "topic": "TALK_CF_REP_SANGUINE_QUERY"
       },
       { "text": "…", "topic": "TALK_CF_REP" }
@@ -800,6 +910,98 @@
     "type": "talk_topic",
     "dynamic_line": "A few others among our order, some having had contact with our fellows working closer to the cities.  Grandmaster Leone seems to be the most senior of the group, and he provided me with a lot of information I'll need to examine closely.  Might lead us to other survivors to get in touch with.  Might be a good idea to speak with him as well.",
     "responses": [ { "text": "We'll see.", "topic": "TALK_CF_REP" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_CF_REP_SPELL_MENU",
+    "dynamic_line": "There are a few Magic Signs I could pass on to you.  Since you've aided us, I could teach you the use of Heat Ward, Poison Armor, or Ward Against Evil, if you don't already know them.  I will need a given amount of Golden Scales, to cover the materials and essence that go into copying these secrets into a form others can use.",
+    "responses": [
+      {
+        "text": "What can you tell me about Heat Ward?",
+        "condition": { "not": { "u_has_trait": "SPELL_FLAMEARMOR" } },
+        "topic": "TALK_CF_REP_SPELL_MENU_1"
+      },
+      {
+        "text": "What can you tell me about Poison Armor?",
+        "condition": { "not": { "u_has_trait": "SPELL_POISONARMOR" } },
+        "topic": "TALK_CF_REP_SPELL_MENU_2"
+      },
+      {
+        "text": "What can you tell me about Ward Against Evil?",
+        "condition": { "not": { "u_has_trait": "SPELL_CLERIC" } },
+        "topic": "TALK_CF_REP_SPELL_MENU_3"
+      },
+      {
+        "text": "There's nothing more I could learn from you.  Thanks anyway.",
+        "switch": true,
+        "condition": {
+          "and": [ { "u_has_trait": "SPELL_FLAMEARMOR" }, { "u_has_trait": "SPELL_POISONARMOR" }, { "u_has_trait": "SPELL_CLERIC" } ]
+        },
+        "effect": { "u_add_var": "sofia_all_spells_known", "value": "yes" },
+        "topic": "TALK_CF_REP"
+      },
+      { "text": "Maybe another time.", "switch": true, "default": true, "topic": "TALK_CF_REP" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_CF_REP_SPELL_MENU_1",
+    "dynamic_line": "It's a spell some of our hunters learn to protect against overheating and smoke inhalation.  It's not enough to negate being immersed in flame, but you won't catch alight from it.  I'll need 4 Golden Scales to cover the cost of materials and for warding the ritual preparations.",
+    "responses": [
+      {
+        "text": "[GS4] You have a deal, then.",
+        "condition": { "u_has_items": { "item": "CF_golden_scale", "count": 4 } },
+        "effect": [ { "u_consume_item": "CF_golden_scale", "count": 4 }, { "u_add_trait": "SPELL_FLAMEARMOR" } ],
+        "topic": "TALK_DONE"
+      },
+      {
+        "text": "I'll need more Scales for that.  Maybe later.",
+        "switch": true,
+        "condition": { "not": { "u_has_items": { "item": "CF_golden_scale", "count": 4 } } },
+        "topic": "TALK_CF_REP"
+      },
+      { "text": "Not right now.", "switch": true, "default": true, "topic": "TALK_CF_REP" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_CF_REP_SPELL_MENU_2",
+    "dynamic_line": "It guards the body against toxins of nearly any sort.  Poison gas, venom from mutant beasts, I've seen it ease signs of radiation sickness as well.  I'll need 3 Golden Scales to cover the cost of materials and for warding the ritual preparations.",
+    "responses": [
+      {
+        "text": "[GS3] You have a deal, then.",
+        "condition": { "u_has_items": { "item": "CF_golden_scale", "count": 3 } },
+        "effect": [ { "u_consume_item": "CF_golden_scale", "count": 3 }, { "u_add_trait": "SPELL_POISONARMOR" } ],
+        "topic": "TALK_DONE"
+      },
+      {
+        "text": "I'll need more Scales for that.  Maybe later.",
+        "switch": true,
+        "condition": { "not": { "u_has_items": { "item": "CF_golden_scale", "count": 3 } } },
+        "topic": "TALK_CF_REP"
+      },
+      { "text": "Not right now.", "switch": true, "default": true, "topic": "TALK_CF_REP" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_CF_REP_SPELL_MENU_3",
+    "dynamic_line": "This is a sacred protective spell against otherworldly influences.  Things that draw attention from Beyond or instability on the victim, likely the most common example.  I'll need 4 Golden Scales to cover the cost of materials and for warding the ritual preparations.",
+    "responses": [
+      {
+        "text": "[GS4] You have a deal, then.",
+        "condition": { "u_has_items": { "item": "CF_golden_scale", "count": 4 } },
+        "effect": [ { "u_consume_item": "CF_golden_scale", "count": 4 }, { "u_add_trait": "SPELL_CLERIC" } ],
+        "topic": "TALK_DONE"
+      },
+      {
+        "text": "I'll need more Scales for that.  Maybe later.",
+        "switch": true,
+        "condition": { "not": { "u_has_items": { "item": "CF_golden_scale", "count": 4 } } },
+        "topic": "TALK_CF_REP"
+      },
+      { "text": "Not right now.", "switch": true, "default": true, "topic": "TALK_CF_REP" }
+    ]
   },
   {
     "type": "talk_topic",

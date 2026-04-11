@@ -1,3 +1,39 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  
+
+- [Creative Tools for CDDA](#creative-tools-for-cdda)
+  - [List of furniture added as debug actions.](#list-of-furniture-added-as-debug-actions)
+    - [`furniture-appliances`](#furniture-appliances)
+    - [`furniture-barriers`](#furniture-barriers)
+    - [`furniture-decorative`](#furniture-decorative)
+    - [`furniture-domestic_plants`](#furniture-domestic_plants)
+    - [`furniture-eggs`](#furniture-eggs)
+    - [`furniture-emitters`](#furniture-emitters)
+    - [`furniture-fakes`](#furniture-fakes)
+    - [`furniture-fireplaces`](#furniture-fireplaces)
+    - [`furniture-flora`](#furniture-flora)
+    - [`furniture-fungal`](#furniture-fungal)
+    - [`furniture-graves`](#furniture-graves)
+    - [`furniture-industrial`](#furniture-industrial)
+    - [`furniture-medical`](#furniture-medical)
+    - [`furniture-migo`](#furniture-migo)
+    - [`furniture-plumbing`](#furniture-plumbing)
+    - [`furniture-recreation`](#furniture-recreation)
+    - [`furniture-regional_pseudo`](#furniture-regional_pseudo)
+    - [`furniture-roof`](#furniture-roof)
+    - [`furniture-rural`](#furniture-rural)
+    - [`furniture-seats`](#furniture-seats)
+    - [`furniture-signs`](#furniture-signs)
+    - [`furniture-sleep`](#furniture-sleep)
+    - [`furniture-storage`](#furniture-storage)
+    - [`furniture-surfaces`](#furniture-surfaces)
+    - [`furniture-terrains`](#furniture-terrains)
+    - [`furniture-tools`](#furniture-tools)
+  - [Item Template](#item-template)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 
 # Creative Tools for CDDA
 ## List of furniture added as debug actions.

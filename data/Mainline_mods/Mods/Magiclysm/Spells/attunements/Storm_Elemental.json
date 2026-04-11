@@ -1,8 +1,8 @@
 [
   {
-    "id": "storm_chain_master",
     "type": "SPELL",
-    "name": { "str": "Storm Chain" },
+    "id": "storm_chain_master",
+    "name": "Storm Chain",
     "description": "You touch an unwilling subject and lightning dances from you to multiple nearby enemies.",
     "effect": "attack",
     "shape": "blast",
@@ -24,10 +24,10 @@
     "extra_effects": [ { "id": "storm_chain_1" }, { "id": "storm_chain_1" } ]
   },
   {
-    "id": "storm_chain_1",
     "type": "SPELL",
-    "name": { "str": "Storm Chain 1" },
-    "description": "#1 in the storm chain series of effects",
+    "id": "storm_chain_1",
+    "name": "Storm Chain 1",
+    "description": "#1 in the storm chain series of effects.",
     "effect": "attack",
     "shape": "line",
     "damage_type": "electric",
@@ -50,10 +50,10 @@
     "extra_effects": [ { "id": "storm_chain_2" }, { "id": "storm_chain_2" } ]
   },
   {
-    "id": "storm_chain_2",
     "type": "SPELL",
-    "name": { "str": "Storm Chain 2" },
-    "description": "#2 in the storm chain series of effects",
+    "id": "storm_chain_2",
+    "name": "Storm Chain 2",
+    "description": "#2 in the storm chain series of effects.",
     "effect": "attack",
     "shape": "line",
     "damage_type": "electric",
@@ -76,10 +76,10 @@
     "extra_effects": [ { "id": "storm_chain_3" }, { "id": "storm_chain_3" } ]
   },
   {
-    "id": "storm_chain_3",
     "type": "SPELL",
-    "name": { "str": "Storm Chain 3" },
-    "description": "#3 in the storm chain series of effects",
+    "id": "storm_chain_3",
+    "name": "Storm Chain 3",
+    "description": "#3 in the storm chain series of effects.",
     "effect": "attack",
     "shape": "line",
     "damage_type": "electric",
@@ -99,5 +99,40 @@
     "sound_description": "a crackle",
     "valid_targets": [ "hostile", "ground" ],
     "flags": [ "LOUD", "RANDOM_TARGET", "RANDOM_CRITTER" ]
+  },
+  {
+    "id": "storm_elemental_electric_melee",
+    "type": "SPELL",
+    "name": "Galvanic",
+    "description": "Fill your hands with high-voltage electricity, and deal additional electric damage in melee.",
+    "valid_targets": [ "self" ],
+    "effect": "attack",
+    "effect_str": "eff_storm_elemental_electric_melee",
+    "shape": "blast",
+    "flags": [ "NO_LEGS", "SILENT", "NO_HANDS", "NO_EXPLOSION_SFX" ],
+    "spell_class": "STORM_ELEMENTAL",
+    "difficulty": 4,
+    "min_duration": 20000,
+    "max_duration": 720000,
+    "duration_increment": 20000,
+    "base_casting_time": 500,
+    "final_casting_time": 150,
+    "casting_time_increment": -10,
+    "base_energy_cost": 325,
+    "final_energy_cost": 150,
+    "energy_increment": -5,
+    "max_level": 35,
+    "energy_source": "MANA"
+  },
+  {
+    "id": "eff_storm_elemental_electric_melee",
+    "type": "effect_type",
+    "name": [ "Galvanic" ],
+    "desc": [ "You deal additional electric damage in melee." ],
+    "apply_message": "Electric energy is concentrated in your hands, and it's ready to go.",
+    "remove_message": "Your hands turn back to normal condition.",
+    "rating": "good",
+    "show_intensity": false,
+    "enchantments": [ { "values": [ { "value": "ITEM_DAMAGE_ELEC", "add": 35 }, { "value": "MELEE_DAMAGE", "multiply": 0.4 } ] } ]
   }
 ]

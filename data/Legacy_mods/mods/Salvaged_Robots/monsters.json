@@ -31,7 +31,7 @@
     "special_when_hit": [ "ZAPBACK", 100 ],
     "special_attacks": [ [ "PARROT", 500 ] ],
     "revert_to_itype": "bot_craftbuddy",
-    "death_function": [ "BROKEN" ],
+    "death_function": { "corpse_type": "BROKEN" },
     "death_drops": { "groups": [ [ "broken_robots", 3 ] ] },
     "flags": [ "GUILT", "SEES", "HEARS", "ELECTRONIC", "NO_BREATHE", "PRIORITIZE_TARGETS", "PATH_AVOID_DANGER_1" ]
   },
@@ -55,7 +55,7 @@
     "melee_skill": 1,
     "melee_dice": 3,
     "melee_dice_sides": 4,
-    "melee_cut": 0,
+    "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "armor_bash": 14,
     "armor_cut": 14,
     "armor_fire": 10,
@@ -64,7 +64,7 @@
     "vision_night": 10,
     "path_settings": { "max_dist": 10 },
     "death_drops": { "groups": [ [ "broken_robots", 2 ] ] },
-    "death_function": [ "BROKEN" ],
+    "death_function": { "corpse_type": "BROKEN" },
     "flags": [ "SEES", "HEARS", "NOHEAD", "NO_BREATHE", "ELECTRONIC", "PATH_AVOID_DANGER_1" ]
   },
   {
@@ -142,7 +142,7 @@
     "armor_cut": 4,
     "emit_fields": [ { "emit_id": "emit_sparks", "delay": "1 s" } ],
     "revert_to_itype": "bot_distract_hack",
-    "death_function": [ "MELT" ],
+    "death_function": { "corpse_type": "NO_CORPSE", "message": "The %s melts away." },
     "special_attacks": [ [ "PARROT", 0 ] ],
     "extend": { "flags": [ "STUMBLES", "HIT_AND_RUN", "HARDTOSHOOT", "PET_WONT_FOLLOW", "ELECTRIC" ] }
   },
@@ -161,7 +161,7 @@
     "morale": 0,
     "dodge": 4,
     "emit_fields": [ { "emit_id": "emit_fire_plume", "delay": "1 s" } ],
-    "death_function": [ "MELT" ],
+    "death_function": { "corpse_type": "NO_CORPSE", "message": "The %s melts away." },
     "extend": { "flags": [ "STUMBLES", "HARDTOSHOOT", "PET_WONT_FOLLOW", "FIREY" ] }
   },
   {
@@ -228,7 +228,7 @@
     "armor_fire": 3,
     "armor_acid": 6,
     "death_drops": { "groups": [ [ "broken_robots", 4 ] ] },
-    "death_function": [ "BROKEN" ],
+    "death_function": { "corpse_type": "BROKEN" },
     "special_attacks": [ { "id": "flash" } ],
     "flags": [ "SEES", "FLIES", "ELECTRONIC", "NO_BREATHE", "NOHEAD", "PRIORITIZE_TARGETS" ]
   },
@@ -258,7 +258,7 @@
     "revert_to_itype": "bot_eyebot_furnace",
     "fear_triggers": [ "HURT" ],
     "emit_fields": [ "emit_hot_air4_stream" ],
-    "death_function": [ "BROKEN", "EXPLODE" ],
+    "death_function": { "corpse_type": "BROKEN" },
     "extend": { "flags": [ "PET_WONT_FOLLOW", "WARM" ] }
   },
   {
@@ -310,7 +310,7 @@
     "armor_fire": 4,
     "armor_acid": 6,
     "vision_day": 50,
-    "death_function": [ "BROKEN" ],
+    "death_function": { "corpse_type": "BROKEN" },
     "death_drops": { "groups": [ [ "broken_robots", 3 ] ] },
     "flags": [ "SEES", "HEARS", "ELECTRONIC", "NO_BREATHE", "PRIORITIZE_TARGETS", "PATH_AVOID_DANGER_1" ]
   },
@@ -340,7 +340,7 @@
     "melee_skill": 2,
     "melee_dice": 4,
     "melee_dice_sides": 6,
-    "melee_cut": 1,
+    "melee_damage": [ { "damage_type": "cut", "amount": 1 } ],
     "special_attacks": [
       {
         "type": "gun",
@@ -367,7 +367,7 @@
     "melee_skill": 3,
     "melee_dice": 4,
     "melee_dice_sides": 5,
-    "melee_cut": 1,
+    "melee_damage": [ { "damage_type": "cut", "amount": 1 } ],
     "starting_ammo": { "water": 1000 },
     "special_attacks": [
       {
@@ -413,7 +413,7 @@
     "fear_triggers": [ "HURT" ],
     "revert_to_itype": "bot_utilibot_digester",
     "emit_fields": [ { "emit_id": "emit_acid_trail", "delay": "1 s" } ],
-    "extend": { "flags": [ "STUMBLES", "ABSORBS", "ACIDPROOF" ] }
+    "extend": { "flags": [ "STUMBLES", "ACIDPROOF" ] }
   },
   {
     "id": "mon_utilibot_beehive",
@@ -471,12 +471,12 @@
     "melee_skill": 8,
     "melee_dice": 1,
     "melee_dice_sides": 2,
-    "melee_cut": 5,
+    "melee_damage": [ { "damage_type": "cut", "amount": 5 } ],
     "attack_effs": [ { "id": "bleed", "chance": 20, "duration": 3 } ],
     "vision_day": 50,
     "special_attacks": [ { "id": "hypo_pkill" } ],
     "anger_triggers": [ "FRIEND_ATTACKED", "PLAYER_WEAK", "HURT", "PLAYER_CLOSE" ],
-    "death_function": [ "BROKEN" ],
+    "death_function": { "corpse_type": "BROKEN" },
     "death_drops": { "groups": [ [ "broken_robots", 3 ] ] },
     "flags": [ "SEES", "HEARS", "ELECTRONIC", "NO_BREATHE", "PRIORITIZE_TARGETS", "PATH_AVOID_DANGER_1" ]
   },
@@ -492,7 +492,7 @@
     "morale": 100,
     "vision_night": 15,
     "revert_to_itype": "bot_medibot_assassin",
-    "melee_cut": 10,
+    "melee_damage": [ { "damage_type": "cut", "amount": 10 } ],
     "attack_effs": [ { "id": "bleed", "chance": 30, "duration": 5 } ],
     "special_attacks": [
       { "id": "hypo_poison" },
@@ -563,7 +563,7 @@
     "color": "light_blue",
     "aggression": 100,
     "morale": 100,
-    "melee_cut": 0,
+    "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "armor_bash": 10,
     "armor_cut": 10,
     "armor_fire": 4,
@@ -572,7 +572,7 @@
     "path_settings": { "max_dist": 5 },
     "special_attacks": [ [ "TAZER", 5 ] ],
     "death_drops": { "groups": [ [ "broken_robots", 4 ] ] },
-    "death_function": [ "BROKEN" ],
+    "death_function": { "corpse_type": "BROKEN" },
     "flags": [ "SEES", "HEARS", "GOODHEARING", "ELECTRONIC", "NO_BREATHE", "PATH_AVOID_DANGER_1" ]
   },
   {
@@ -663,7 +663,7 @@
     "melee_skill": 2,
     "melee_dice": 2,
     "melee_dice_sides": 2,
-    "melee_cut": 0,
+    "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "dodge": 5,
     "armor_bash": 14,
     "armor_cut": 10,
@@ -671,7 +671,7 @@
     "armor_acid": 4,
     "vision_day": 50,
     "special_attacks": [ [ "PARROT", 80 ] ],
-    "death_function": [ "BROKEN" ],
+    "death_function": { "corpse_type": "BROKEN" },
     "harvest": "mon_broken_cyborg",
     "flags": [ "SEES", "HEARS", "BASHES", "ELECTRONIC", "NO_BREATHE", "WARM", "STUMBLES", "HUMAN", "NO_NECRO" ]
   },
@@ -738,7 +738,7 @@
     "vision_day": 50,
     "path_settings": { "max_dist": 5 },
     "death_drops": { "groups": [ [ "broken_robots", 1 ] ] },
-    "death_function": [ "BROKEN" ],
+    "death_function": { "corpse_type": "BROKEN" },
     "flags": [ "SEES", "HEARS", "BASHES", "ELECTRONIC", "NO_BREATHE", "PRIORITIZE_TARGETS", "PATH_AVOID_DANGER_1" ]
   },
   {
@@ -1146,7 +1146,7 @@
     "melee_skill": 2,
     "melee_dice": 1,
     "melee_dice_sides": 4,
-    "melee_cut": 15,
+    "melee_damage": [ { "damage_type": "cut", "amount": 15 } ],
     "dodge": 3,
     "vision_day": 10,
     "revert_to_itype": "bot_defbot_cowboy",
@@ -1176,7 +1176,7 @@
     "melee_skill": 5,
     "melee_dice": 2,
     "melee_dice_sides": 2,
-    "melee_cut": 8,
+    "melee_damage": [ { "damage_type": "cut", "amount": 8 } ],
     "melee_damage": [ { "damage_type": "electric", "amount": 8 } ],
     "armor_bash": 12,
     "armor_cut": 12,
@@ -1200,7 +1200,7 @@
     "melee_skill": 5,
     "melee_dice": 2,
     "melee_dice_sides": 2,
-    "melee_cut": 6,
+    "melee_damage": [ { "damage_type": "cut", "amount": 6 } ],
     "melee_damage": [ { "damage_type": "heat", "amount": 4 } ],
     "attack_effs": [ { "id": "onfire", "chance": 50, "duration": 10 } ],
     "armor_bash": 12,
@@ -1395,7 +1395,7 @@
     "type": "MONSTER",
     "copy-from": "mon_chickenbot",
     "death_drops": { "groups": [ [ "broken_robots", 2 ] ] },
-    "death_function": [ "BROKEN" ]
+    "death_function": { "corpse_type": "BROKEN" }
   },
   {
     "abstract": "mon_chickenbot_base",
@@ -1418,7 +1418,7 @@
     "melee_skill": 3,
     "melee_dice": 3,
     "melee_dice_sides": 3,
-    "melee_cut": 0,
+    "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "armor_bash": 18,
     "armor_cut": 14,
     "armor_stab": 4,
@@ -1428,7 +1428,7 @@
     "vision_night": 35,
     "path_settings": { "max_dist": 10 },
     "death_drops": { "groups": [ [ "broken_robots", 2 ] ] },
-    "death_function": [ "BROKEN" ],
+    "death_function": { "corpse_type": "BROKEN" },
     "flags": [ "SEES", "HEARS", "BASHES", "NO_BREATHE", "ELECTRONIC", "PRIORITIZE_TARGETS" ]
   },
   {
@@ -1442,7 +1442,7 @@
     "melee_skill": 7,
     "melee_dice": 3,
     "melee_dice_sides": 4,
-    "melee_cut": 20,
+    "melee_damage": [ { "damage_type": "cut", "amount": 20 } ],
     "vision_day": 20,
     "vision_night": 10,
     "revert_to_itype": "bot_chickenbot_horror",
@@ -1478,7 +1478,7 @@
     "melee_skill": 7,
     "melee_dice": 3,
     "melee_dice_sides": 4,
-    "melee_cut": 20,
+    "melee_damage": [ { "damage_type": "cut", "amount": 20 } ],
     "vision_day": 20,
     "vision_night": 10,
     "revert_to_itype": "bot_chickenbot_nightmare",
@@ -1490,7 +1490,7 @@
     "type": "MONSTER",
     "copy-from": "mon_tankbot",
     "death_drops": { "groups": [ [ "broken_robots", 6 ] ] },
-    "death_function": [ "BROKEN", "EXPLODE" ]
+    "death_function": { "corpse_type": "BROKEN" }
   },
   {
     "abstract": "mon_tankbot_base",
@@ -1513,7 +1513,7 @@
     "melee_skill": 5,
     "melee_dice": 5,
     "melee_dice_sides": 5,
-    "melee_cut": 0,
+    "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "armor_bash": 90,
     "armor_cut": 90,
     "armor_stab": 20,
@@ -1522,7 +1522,7 @@
     "vision_day": 50,
     "path_settings": { "max_dist": 20 },
     "death_drops": { "groups": [ [ "broken_robots", 6 ] ] },
-    "death_function": [ "BROKEN", "EXPLODE" ],
+    "death_function": { "corpse_type": "BROKEN" },
     "flags": [ "SEES", "HEARS", "GOODHEARING", "NOHEAD", "BASHES", "DESTROYS", "NO_BREATHE", "ELECTRONIC", "PRIORITIZE_TARGETS" ]
   },
   {
