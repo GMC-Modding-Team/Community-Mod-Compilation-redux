@@ -318,11 +318,11 @@
         "groundcover": { "t_region_groundcover_forest": 1 },
         "clear_components": false,
         "components": {
-          "trees": { "sequence": 0, "prob": 12, "clear_types": false, "types": { "t_region_tree_forest": 128, "t_tree_young": 32 } },
-          "shrubs_and_flowers": { "sequence": 1, "prob": 10, "clear_types": false, "types": { "t_region_shrub_forest": 120, "f_region_forest": 10 } },
+          "trees": { "sequence": 0, "chance": 12, "clear_types": false, "types": { "t_region_tree_forest": 128, "t_tree_young": 32 } },
+          "shrubs_and_flowers": { "sequence": 1, "chance": 10, "clear_types": false, "types": { "t_region_shrub_forest": 120, "f_region_forest": 10 } },
           "clutter": {
             "sequence": 2,
-            "prob": 80,
+            "chance": 80,
             "clear_types": false,
             "types": {
               "t_trunk": 128,
@@ -335,7 +335,7 @@
               "t_pit_shallow": 1
             }
           },
-          "water": { "sequence": 3, "prob": 512, "clear_types": false, "types": { "t_puddle": 1 } }
+          "water": { "sequence": 3, "chance": 512, "clear_types": false, "types": { "t_puddle": 1 } }
         },
         "clear_terrain_furniture": false,
         "terrain_furniture": {  }
@@ -466,16 +466,16 @@
         "groundcover": { "t_region_groundcover_forest": 1 },
         "clear_components": false,
         "components": {
-          "trees": { "sequence": 0, "prob": 5, "clear_types": false, "types": { "t_region_tree_forest_dense": 100, "t_tree_young": 5 } },
+          "trees": { "sequence": 0, "chance": 5, "clear_types": false, "types": { "t_region_tree_forest_dense": 100, "t_tree_young": 5 } },
           "shrubs_and_flowers": {
             "sequence": 1,
-            "prob": 5,
+            "chance": 5,
             "clear_types": false,
             "types": { "t_region_shrub_forest_dense": 130, "f_region_forest_dense": 10 }
           },
           "clutter": {
             "sequence": 2,
-            "prob": 64,
+            "chance": 64,
             "clear_types": false,
             "types": {
               "t_trunk": 64,
@@ -488,7 +488,7 @@
               "t_pit_shallow": 1
             }
           },
-          "water": { "sequence": 3, "prob": 512, "clear_types": false, "types": { "t_puddle": 1 } }
+          "water": { "sequence": 3, "chance": 512, "clear_types": false, "types": { "t_puddle": 1 } }
         },
         "clear_terrain_furniture": false,
         "terrain_furniture": {  }
@@ -523,7 +523,7 @@
         "components": {
           "trees": {
             "sequence": 0,
-            "prob": 45,
+            "chance": 45,
             "clear_types": false,
             "types": {
               "t_tree": 40,
@@ -555,24 +555,29 @@
           },
           "shrubs_and_flowers": {
             "sequence": 1,
-            "prob": 15,
+            "chance": 15,
             "clear_types": false,
             "types": { "t_region_shrub_swamp": 80, "f_region_forest_water": 30 }
           },
           "clutter": {
             "sequence": 2,
-            "prob": 75,
+            "chance": 75,
             "clear_types": false,
             "types": { "t_trunk": 1, "f_boulder_small": 2, "f_boulder_medium": 1 }
           },
-          "water": { "sequence": 3, "prob": 2, "clear_types": false, "types": { "t_swater_sh": 6, "t_swater_dp": 1, "t_water_murky": 12 } }
+          "water": {
+            "sequence": 3,
+            "chance": 2,
+            "clear_types": false,
+            "types": { "t_swater_sh": 6, "t_swater_dp": 1, "t_water_murky": 12 }
+          }
         },
         "clear_terrain_furniture": false,
-        "terrain_furniture": { "t_water_murky": { "prob": 2, "clear_furniture": false, "furniture": { "f_region_water_plant": 1 } } }
+        "terrain_furniture": { "t_water_murky": { "chance": 2, "clear_furniture": false, "furniture": { "f_region_water_plant": 1 } } }
       }
     },
     "forest_trail_settings": {
-      "prob": 2,
+      "chance": 2,
       "border_point_chance": 2,
       "minimum_forest_size": 100,
       "random_point_min": 4,
@@ -584,7 +589,7 @@
     },
     "map_extras": {
       "forest": {
-        "prob": 40,
+        "chance": 40,
         "extras": {
           "mx_blackberry_patch": 1000,
           "mx_point_dead_vegetation": 500,
@@ -620,7 +625,7 @@
         }
       },
       "forest_thick": {
-        "prob": 30,
+        "chance": 30,
         "extras": {
           "mx_blackberry_patch": 1300,
           "mx_grove": 500,
@@ -657,7 +662,7 @@
         }
       },
       "forest_water": {
-        "prob": 20,
+        "chance": 20,
         "extras": {
           "mx_pond": 240,
           "mx_pond_swamp": 240,
@@ -686,7 +691,7 @@
         }
       },
       "field": {
-        "prob": 6,
+        "chance": 6,
         "extras": {
           "mx_grass": 3500,
           "mx_grass2": 3500,
@@ -719,7 +724,7 @@
         }
       },
       "road": {
-        "prob": 75,
+        "chance": 75,
         "extras": {
           "mx_helicopter": 10,
           "mx_military": 50,
@@ -743,11 +748,11 @@
           "mx_exocrash_2": 5
         }
       },
-      "bridgehead_ground": { "prob": 5, "extras": { "mx_minefield": 100 } },
-      "city_center": { "prob": 20, "extras": { "mx_fungal_zone": 100 } },
-      "road_nesw_manhole": { "prob": 20, "extras": { "mx_city_trap": 1, "mx_laststand": 1 } },
+      "bridgehead_ground": { "chance": 5, "extras": { "mx_minefield": 100 } },
+      "city_center": { "chance": 20, "extras": { "mx_fungal_zone": 100 } },
+      "road_nesw_manhole": { "chance": 20, "extras": { "mx_city_trap": 1, "mx_laststand": 1 } },
       "build": {
-        "prob": 90,
+        "chance": 90,
         "extras": {
           "mx_bugout": 20,
           "mx_house_spider": 40,
@@ -764,11 +769,11 @@
           "mx_corpses": 30
         }
       },
-      "marloss": { "prob": 20, "extras": { "mx_marloss_pilgrimage": 100 } },
-      "subway": { "prob": 75, "extras": { "mx_military": 5, "mx_science": 12, "mx_drugdeal": 5, "mx_casings": 10 } },
-      "lab_subway": { "prob": 25, "extras": { "mx_military": 5, "mx_science": 15, "mx_portal": 3, "mx_portal_in": 3 } },
+      "marloss": { "chance": 20, "extras": { "mx_marloss_pilgrimage": 100 } },
+      "subway": { "chance": 75, "extras": { "mx_military": 5, "mx_science": 12, "mx_drugdeal": 5, "mx_casings": 10 } },
+      "lab_subway": { "chance": 25, "extras": { "mx_military": 5, "mx_science": 15, "mx_portal": 3, "mx_portal_in": 3 } },
       "research_facility_lot": {
-        "prob": 3,
+        "chance": 3,
         "extras": {
           "mx_helicopter": 15,
           "mx_military": 65,
@@ -783,7 +788,7 @@
         }
       },
       "research_facility_interior": {
-        "prob": 2,
+        "chance": 2,
         "extras": {
           "mx_jabberwock": 1,
           "mx_military": 5,
@@ -794,11 +799,11 @@
           "mx_casings": 30
         }
       },
-      "river": { "prob": 1, "extras": { "mx_null": 66, "mx_riverside_boat": 1, "mx_reed": 33 } },
-      "lake_shore": { "prob": 2, "extras": { "mx_reed": 100 } },
-      "sewer": { "prob": 80, "extras": { "mx_null": 100 } },
+      "river": { "chance": 1, "extras": { "mx_null": 66, "mx_riverside_boat": 1, "mx_reed": 33 } },
+      "lake_shore": { "chance": 2, "extras": { "mx_reed": 100 } },
+      "sewer": { "chance": 80, "extras": { "mx_null": 100 } },
       "agricultural": {
-        "prob": 38,
+        "chance": 38,
         "extras": {
           "mx_point_burned_ground": 500,
           "mx_point_dead_vegetation": 500,
