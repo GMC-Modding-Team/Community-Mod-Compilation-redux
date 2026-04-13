@@ -55,13 +55,12 @@
     "melee_dice": 2,
     "melee_dice_sides": 4,
     "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
-    "armor_bash": 18,
-    "armor_cut": 14,
     "vision_night": 20,
     "path_settings": { "max_dist": 25 },
     "starting_ammo": { "40x46mm_m433": 100, "556": 1000, "bot_tripod": 2 },
     "special_attacks": [ [ "CHICKENBOT", 4 ], [ "GRENADIER", 20 ] ],
-    "flags": [ "SEES", "HEARS", "NO_BREATHE", "ELECTRONIC", "PRIORITIZE_TARGETS" ]
+    "flags": [ "SEES", "HEARS", "NO_BREATHE", "ELECTRONIC", "PRIORITIZE_TARGETS" ],
+    "armor": { "bash": 18, "cut": 14 }
   },
   {
     "id": "mon_tankbot",
@@ -97,13 +96,12 @@
     "melee_damage": [ { "damage_type": "cut", "amount": 6 } ],
     "melee_damage": [ { "damage_type": "stab", "amount": 18 } ],
     "dodge": 3,
-    "armor_bash": 10,
-    "armor_cut": 18,
     "special_attacks": [ [ "slash", 10 ], [ "PARROT", 25 ] ],
     "death_drops": { "groups": [ [ "robots", 70 ], [ "molebot", 30 ] ] },
     "death_function": { "corpse_type": "BROKEN" },
     "flags": [ "HEARS", "GOODHEARING", "BORES", "CAN_DIG", "NO_BREATHE", "ELECTRONIC", "PATH_AVOID_DANGER_1" ],
-    "anger_triggers": [ "HURT", "FRIEND_DIED", "PLAYER_CLOSE" ]
+    "anger_triggers": [ "HURT", "FRIEND_DIED", "PLAYER_CLOSE" ],
+    "armor": { "bash": 10, "cut": 18 }
   },
   {
     "id": "mon_broken_cyborg",
@@ -141,8 +139,6 @@
     "melee_dice_sides": 6,
     "melee_damage": [ { "damage_type": "cut", "amount": 4 } ],
     "dodge": 2,
-    "armor_bash": 14,
-    "armor_cut": 10,
     "vision_day": 50,
     "vision_night": 5,
     "special_attacks": [
@@ -190,7 +186,8 @@
       "HUMAN",
       "BONES",
       "NO_NECRO"
-    ]
+    ],
+    "armor": { "bash": 14, "cut": 10 }
   },
   {
     "id": "mon_cyborg_cop",
@@ -211,8 +208,6 @@
     "melee_dice": 2,
     "melee_dice_sides": 11,
     "dodge": 2,
-    "armor_bash": 12,
-    "armor_cut": 16,
     "vision_day": 50,
     "vision_night": 5,
     "starting_ammo": { "bomblet_stun": 100 },
@@ -258,7 +253,8 @@
       "BONES",
       "NO_NECRO"
     ],
-    "anger_triggers": [ "HURT", "FRIEND_ATTACKED", "SOUND", "PLAYER_CLOSE" ]
+    "anger_triggers": [ "HURT", "FRIEND_ATTACKED", "SOUND", "PLAYER_CLOSE" ],
+    "armor": { "bash": 12, "cut": 16 }
   },
   {
     "id": "mon_manhack_missile",
@@ -279,8 +275,6 @@
     "melee_dice": 0,
     "melee_dice_sides": 0,
     "dodge": 0,
-    "armor_bash": 5,
-    "armor_cut": 5,
     "vision_day": 50,
     "vision_night": 25,
     "revert_to_itype": "bot_manhack_missile",
@@ -289,7 +283,8 @@
     "special_attacks": [ [ "KAMIKAZE", 0 ], [ "DISAPPEAR", 300 ] ],
     "death_drops": "rocket_drops",
     "death_function": [ "DISINTEGRATE" ],
-    "flags": [ "SEES", "PATH_AVOID_DANGER_2", "PRIORITIZE_TARGETS", "FLIES", "NOHEAD", "ELECTRONIC", "NO_BREATHE", "INTERIOR_AMMO" ]
+    "flags": [ "SEES", "PATH_AVOID_DANGER_2", "PRIORITIZE_TARGETS", "FLIES", "NOHEAD", "ELECTRONIC", "NO_BREATHE", "INTERIOR_AMMO" ],
+    "armor": { "bash": 5, "cut": 5 }
   },
   {
     "id": "mon_manhack_fire",
@@ -311,7 +306,6 @@
     "melee_dice": 0,
     "melee_dice_sides": 0,
     "dodge": 6,
-    "armor_cut": 4,
     "vision_day": 40,
     "luminance": 5,
     "revert_to_itype": "bot_manhack_fire",
@@ -319,7 +313,8 @@
     "special_attacks": [ [ "KAMIKAZE", 0 ] ],
     "death_drops": { "subtype": "collection", "groups": [ [ "robots", 80 ] ], "//": "80% chance of an item from group robots" },
     "death_function": [ "BROKEN_AMMO" ],
-    "flags": [ "SEES", "FLIES", "NOHEAD", "ELECTRONIC", "NO_BREATHE", "INTERIOR_AMMO" ]
+    "flags": [ "SEES", "FLIES", "NOHEAD", "ELECTRONIC", "NO_BREATHE", "INTERIOR_AMMO" ],
+    "armor": { "cut": 4 }
   },
   {
     "id": "mon_turret_shockcannon",
@@ -336,15 +331,14 @@
     "color": "cyan",
     "aggression": 100,
     "morale": 100,
-    "armor_bash": 10,
-    "armor_cut": 12,
     "luminance": 40,
     "revert_to_itype": "bot_turret_shockcannon",
     "starting_ammo": { "battery": 10000 },
     "special_attacks": [ { "type": "gun", "cooldown": 1, "gun_type": "shockcannon", "ranges": [ [ 0, 5, "DEFAULT" ] ] } ],
     "death_drops": { "groups": [ [ "Shockcannon_turret", 80 ] ] },
     "death_function": [ "EXPLODE" ],
-    "flags": [ "SEES", "NOHEAD", "ELECTRONIC", "ELECTRIC", "IMMOBILE", "NO_BREATHE" ]
+    "flags": [ "SEES", "NOHEAD", "ELECTRONIC", "ELECTRIC", "IMMOBILE", "NO_BREATHE" ],
+    "armor": { "bash": 10, "cut": 12 }
   },
   {
     "id": "mon_robot_drone",
@@ -366,8 +360,6 @@
     "melee_dice_sides": 4,
     "melee_damage": [ { "damage_type": "cut", "amount": 24 } ],
     "dodge": 4,
-    "armor_bash": 8,
-    "armor_cut": 14,
     "vision_day": 50,
     "vision_night": 12,
     "luminance": 8,
@@ -392,7 +384,8 @@
     ],
     "death_drops": { "groups": [ [ "robots", 90 ], [ "robots", 90 ] ] },
     "death_function": { "corpse_type": "BROKEN" },
-    "flags": [ "SEES", "HEARS", "FLIES", "PATH_AVOID_DANGER_1", "ELECTRONIC", "HIT_AND_RUN", "NO_BREATHE", "INTERIOR_AMMO" ]
+    "flags": [ "SEES", "HEARS", "FLIES", "PATH_AVOID_DANGER_1", "ELECTRONIC", "HIT_AND_RUN", "NO_BREATHE", "INTERIOR_AMMO" ],
+    "armor": { "bash": 8, "cut": 14 }
   },
   {
     "id": "mon_generator_SCINET",
@@ -408,10 +401,9 @@
     "symbol": "4",
     "color": "i_white",
     "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
-    "armor_bash": 8,
-    "armor_cut": 14,
     "special_attacks": [ [ "GENERATOR", 7 ] ],
     "death_function": [ "SMOKEBURST" ],
-    "flags": [ "NOHEAD", "ACIDPROOF", "IMMOBILE", "QUEEN" ]
+    "flags": [ "NOHEAD", "ACIDPROOF", "IMMOBILE", "QUEEN" ],
+    "armor": { "bash": 8, "cut": 14 }
   }
 ]
