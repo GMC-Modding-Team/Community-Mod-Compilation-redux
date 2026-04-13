@@ -66,8 +66,7 @@
     "looks_like": "power_armor_light",
     "name": { "str": "light auto armor" },
     "hp": 120,
-    "armor": { "bash": 14, "cut": 14, "bullet": 10, "acid": 10 },
-    "armor_fire": 10,
+    "armor": { "bash": 14, "cut": 14, "bullet": 10, "acid": 10, "fire": 10 },
     "revert_to_itype": "bot_autoarmor_light"
   },
   {
@@ -77,8 +76,7 @@
     "looks_like": "power_armor_basic",
     "name": { "str": "auto armor" },
     "hp": 120,
-    "armor": { "bash": 16, "cut": 16, "bullet": 10, "acid": 10 },
-    "armor_fire": 10,
+    "armor": { "bash": 16, "cut": 16, "bullet": 10, "acid": 10, "fire": 10 },
     "revert_to_itype": "bot_autoarmor_basic"
   },
   {
@@ -88,8 +86,7 @@
     "looks_like": "power_armor_heavy",
     "name": { "str": "heavy auto armor" },
     "hp": 120,
-    "armor": { "bash": 18, "cut": 18, "bullet": 12, "acid": 10 },
-    "armor_fire": 10,
+    "armor": { "bash": 18, "cut": 18, "bullet": 12, "acid": 10, "fire": 10 },
     "revert_to_itype": "bot_autoarmor_heavy"
   },
   {
@@ -218,12 +215,12 @@
     "name": { "str": "floating heater" },
     "color": "pink",
     "luminance": 8,
-    "armor_fire": 10,
     "description": "A salvaged eyebot repurposed into a floating space heater. It emits a constant jet of warm air to heat an enclosed space.",
     "revert_to_itype": "bot_eyebot_heater",
     "fear_triggers": [ "HURT" ],
     "emit_fields": [ "emit_hot_air2_stream" ],
-    "extend": { "flags": [ "PET_WONT_FOLLOW", "WARM" ] }
+    "extend": { "flags": [ "PET_WONT_FOLLOW", "WARM" ] },
+    "armor": { "fire": 10 }
   },
   {
     "id": "mon_eyebot_furnace",
@@ -232,13 +229,13 @@
     "name": { "str": "floating furnace" },
     "color": "red",
     "luminance": 10,
-    "armor_fire": 10,
     "description": "A salvaged eyebot repurposed into a floating space heater.  It emits a constant jet of dangerously hot air to heat an enclosed space.  Warning!  Can result in rapid heatstroke!",
     "revert_to_itype": "bot_eyebot_furnace",
     "fear_triggers": [ "HURT" ],
     "emit_fields": [ "emit_hot_air4_stream" ],
     "death_function": { "corpse_type": "BROKEN" },
-    "extend": { "flags": [ "PET_WONT_FOLLOW", "WARM" ] }
+    "extend": { "flags": [ "PET_WONT_FOLLOW", "WARM" ] },
+    "armor": { "fire": 10 }
   },
   {
     "id": "mon_eyebot_burn",
@@ -247,7 +244,6 @@
     "name": { "str": "burning eye" },
     "color": "red",
     "luminance": 100,
-    "armor_fire": 12,
     "description": "A salvaged eyebot refitted with a laser weapon.  The lack of recoil allows the hovering robot to aim and fire without penalty. It has decent range and damage, but requires an extended recharge time between shots.",
     "revert_to_itype": "bot_eyebot_burn",
     "special_attacks": [
@@ -265,7 +261,8 @@
         "targeting_sound": "\"Hostile Detected.\"",
         "targeting_volume": 20
       }
-    ]
+    ],
+    "armor": { "fire": 12 }
   },
   {
     "id": "mon_utilibot",
