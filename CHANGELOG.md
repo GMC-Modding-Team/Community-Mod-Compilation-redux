@@ -26,6 +26,7 @@
 
 **Merged pull requests:**
 
+- \[H\] update mainline mod with price updates [\#233](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/233) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[tool\] adds armor\_update.py [\#232](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/232) ([TheGoatGod](https://github.com/TheGoatGod))
 - Pr test changelog generator [\#231](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/231) ([TheGoatGod](https://github.com/TheGoatGod))
 - test [\#230](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/230) ([TheGoatGod](https://github.com/TheGoatGod))
