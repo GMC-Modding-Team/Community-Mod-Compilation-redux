@@ -15,8 +15,6 @@
     "volume": "30000 ml",
     "weight": "40750 g",
     "hp": 150,
-    "armor_fire": 6,
-    "armor_acid": 6,
     "speed": 130,
     "material": [ "steel", "aluminum" ],
     "looks_like": "mon_tripod",
@@ -33,7 +31,8 @@
     "revert_to_itype": "bot_craftbuddy",
     "death_function": { "corpse_type": "BROKEN" },
     "death_drops": { "groups": [ [ "broken_robots", 3 ] ] },
-    "flags": [ "GUILT", "SEES", "HEARS", "ELECTRONIC", "NO_BREATHE", "PRIORITIZE_TARGETS", "PATH_AVOID_DANGER_1" ]
+    "flags": [ "GUILT", "SEES", "HEARS", "ELECTRONIC", "NO_BREATHE", "PRIORITIZE_TARGETS", "PATH_AVOID_DANGER_1" ],
+    "armor": { "acid": 6, "fire": 6 }
   },
   {
     "id": "mon_autoarmor_base",
@@ -56,16 +55,13 @@
     "melee_dice": 3,
     "melee_dice_sides": 4,
     "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
-    "armor_bash": 14,
-    "armor_cut": 14,
-    "armor_fire": 10,
-    "armor_acid": 10,
     "vision_day": 20,
     "vision_night": 10,
     "path_settings": { "max_dist": 10 },
     "death_drops": { "groups": [ [ "broken_robots", 2 ] ] },
     "death_function": { "corpse_type": "BROKEN" },
-    "flags": [ "SEES", "HEARS", "NOHEAD", "NO_BREATHE", "ELECTRONIC", "PATH_AVOID_DANGER_1" ]
+    "flags": [ "SEES", "HEARS", "NOHEAD", "NO_BREATHE", "ELECTRONIC", "PATH_AVOID_DANGER_1" ],
+    "armor": { "bash": 14, "cut": 14, "acid": 10, "fire": 10 }
   },
   {
     "id": "mon_autoarmor_light",
@@ -74,12 +70,8 @@
     "looks_like": "power_armor_light",
     "name": { "str": "light auto armor" },
     "hp": 120,
-    "armor_bash": 14,
-    "armor_cut": 14,
-    "armor_stab": 10,
-    "armor_acid": 10,
-    "armor_fire": 10,
-    "revert_to_itype": "bot_autoarmor_light"
+    "revert_to_itype": "bot_autoarmor_light",
+    "armor": { "bash": 14, "cut": 14, "stab": 10, "acid": 10, "fire": 10 }
   },
   {
     "id": "mon_autoarmor_basic",
@@ -88,12 +80,8 @@
     "looks_like": "power_armor_basic",
     "name": { "str": "auto armor" },
     "hp": 120,
-    "armor_bash": 16,
-    "armor_cut": 16,
-    "armor_stab": 10,
-    "armor_acid": 10,
-    "armor_fire": 10,
-    "revert_to_itype": "bot_autoarmor_basic"
+    "revert_to_itype": "bot_autoarmor_basic",
+    "armor": { "bash": 16, "cut": 16, "stab": 10, "acid": 10, "fire": 10 }
   },
   {
     "id": "mon_autoarmor_heavy",
@@ -102,12 +90,8 @@
     "looks_like": "power_armor_heavy",
     "name": { "str": "heavy auto armor" },
     "hp": 120,
-    "armor_bash": 18,
-    "armor_cut": 18,
-    "armor_stab": 12,
-    "armor_acid": 10,
-    "armor_fire": 10,
-    "revert_to_itype": "bot_autoarmor_heavy"
+    "revert_to_itype": "bot_autoarmor_heavy",
+    "armor": { "bash": 18, "cut": 18, "stab": 12, "acid": 10, "fire": 10 }
   },
   {
     "id": "mon_light_hack",
@@ -122,9 +106,9 @@
     "aggression": 0,
     "morale": 50,
     "dodge": 8,
-    "armor_cut": 4,
     "revert_to_itype": "bot_light_hack",
-    "extend": { "flags": [ "STUMBLES", "HARDTOSHOOT" ] }
+    "extend": { "flags": [ "STUMBLES", "HARDTOSHOOT" ] },
+    "armor": { "cut": 4 }
   },
   {
     "id": "mon_distract_hack",
@@ -139,12 +123,12 @@
     "aggression": 100,
     "morale": 10,
     "dodge": 8,
-    "armor_cut": 4,
     "emit_fields": [ { "emit_id": "emit_sparks", "delay": "1 s" } ],
     "revert_to_itype": "bot_distract_hack",
     "death_function": { "corpse_type": "NO_CORPSE", "message": "The %s melts away." },
     "special_attacks": [ [ "PARROT", 0 ] ],
-    "extend": { "flags": [ "STUMBLES", "HIT_AND_RUN", "HARDTOSHOOT", "PET_WONT_FOLLOW", "ELECTRIC" ] }
+    "extend": { "flags": [ "STUMBLES", "HIT_AND_RUN", "HARDTOSHOOT", "PET_WONT_FOLLOW", "ELECTRIC" ] },
+    "armor": { "cut": 4 }
   },
   {
     "id": "mon_arson_hack",
@@ -223,14 +207,11 @@
     "morale": 80,
     "melee_skill": 6,
     "dodge": 3,
-    "armor_bash": 8,
-    "armor_cut": 10,
-    "armor_fire": 3,
-    "armor_acid": 6,
     "death_drops": { "groups": [ [ "broken_robots", 4 ] ] },
     "death_function": { "corpse_type": "BROKEN" },
     "special_attacks": [ { "id": "flash" } ],
-    "flags": [ "SEES", "FLIES", "ELECTRONIC", "NO_BREATHE", "NOHEAD", "PRIORITIZE_TARGETS" ]
+    "flags": [ "SEES", "FLIES", "ELECTRONIC", "NO_BREATHE", "NOHEAD", "PRIORITIZE_TARGETS" ],
+    "armor": { "bash": 8, "cut": 10, "acid": 6, "fire": 3 }
   },
   {
     "id": "mon_eyebot_heater",
@@ -239,12 +220,12 @@
     "name": { "str": "floating heater" },
     "color": "pink",
     "luminance": 8,
-    "armor_fire": 10,
     "description": "A salvaged eyebot repurposed into a floating space heater.  It emits a constant jet of warm air to heat an enclosed space.",
     "revert_to_itype": "bot_eyebot_heater",
     "fear_triggers": [ "HURT" ],
     "emit_fields": [ { "emit_id": "emit_hot_air2_stream", "delay": "1 s" } ],
-    "extend": { "flags": [ "PET_WONT_FOLLOW", "WARM" ] }
+    "extend": { "flags": [ "PET_WONT_FOLLOW", "WARM" ] },
+    "armor": { "fire": 10 }
   },
   {
     "id": "mon_eyebot_furnace",
@@ -252,14 +233,14 @@
     "copy-from": "mon_eyebot",
     "name": { "str": "floating furnace" },
     "color": "red",
-    "luminance": 10,
-    "armor_fire": 10,
+    "luminance": 10,+
     "description": "A salvaged eyebot repurposed into a floating space heater.  It emits a constant jet of dangerously hot air to heat an enclosed space.  Warning!  Can result in rapid heatstroke!",
     "revert_to_itype": "bot_eyebot_furnace",
     "fear_triggers": [ "HURT" ],
     "emit_fields": [ "emit_hot_air4_stream" ],
     "death_function": { "corpse_type": "BROKEN" },
-    "extend": { "flags": [ "PET_WONT_FOLLOW", "WARM" ] }
+    "extend": { "flags": [ "PET_WONT_FOLLOW", "WARM" ] },
+    "armor": { "fire": 10 }
   },
   {
     "id": "mon_eyebot_burn",
@@ -267,7 +248,6 @@
     "copy-from": "mon_eyebot",
     "name": { "str": "burning eye" },
     "color": "red",
-    "armor_fire": 12,
     "description": "A salvaged eyebot refitted with a laser weapon.  The lack of recoil allows the hovering robot to aim and fire without penalty.  It has decent range and damage, but requires an extended recharge time between shots.",
     "revert_to_itype": "bot_eyebot_burn",
     "special_attacks": [
@@ -285,7 +265,8 @@
         "targeting_sound": "\"Hostile Detected.\"",
         "targeting_volume": 20
       }
-    ]
+    ],
+    "armor": { "fire": 12 }
   },
   {
     "id": "mon_utilibot",
@@ -305,14 +286,11 @@
     "morale": 80,
     "aggression": 0,
     "anger_triggers": [ "HURT" ],
-    "armor_bash": 8,
-    "armor_cut": 8,
-    "armor_fire": 4,
-    "armor_acid": 6,
     "vision_day": 50,
     "death_function": { "corpse_type": "BROKEN" },
     "death_drops": { "groups": [ [ "broken_robots", 3 ] ] },
-    "flags": [ "SEES", "HEARS", "ELECTRONIC", "NO_BREATHE", "PRIORITIZE_TARGETS", "PATH_AVOID_DANGER_1" ]
+    "flags": [ "SEES", "HEARS", "ELECTRONIC", "NO_BREATHE", "PRIORITIZE_TARGETS", "PATH_AVOID_DANGER_1" ],
+    "armor": { "bash": 8, "cut": 8, "acid": 6, "fire": 4 }
   },
   {
     "id": "mon_hazmatbot",
@@ -388,8 +366,8 @@
     "name": { "str": "blob breeder" },
     "revert_to_itype": "bot_utilibot_blob",
     "description": "A salvaged utility robot converted into a mobile incubator for the alien blob.  It will intermittently release a group of living blobs.  Why on Earth would you build this?",
-    "armor_bash": 12,
-    "reproduction": { "baby_monster": "mon_blob", "baby_count": 10, "baby_timer": 1 }
+    "reproduction": { "baby_monster": "mon_blob", "baby_count": 10, "baby_timer": 1 },
+    "armor": { "bash": 12 }
   },
   {
     "id": "mon_utilibot_slimespring",
@@ -398,8 +376,8 @@
     "name": { "str": "slime breeder" },
     "description": "A salvaged utility robot converted into a mobile incubator for the alien blob.  It will intermittently release a group of friendly blobs.",
     "revert_to_itype": "bot_utilibot_slimespring",
-    "armor_bash": 12,
-    "reproduction": { "baby_monster": "mon_player_blob", "baby_count": 5, "baby_timer": 1 }
+    "reproduction": { "baby_monster": "mon_player_blob", "baby_count": 5, "baby_timer": 1 },
+    "armor": { "bash": 12 }
   },
   {
     "id": "mon_utilibot_digester",
@@ -463,10 +441,6 @@
     "material": [ "steel", "plastic" ],
     "symbol": "R",
     "color": "white",
-    "armor_bash": 6,
-    "armor_cut": 6,
-    "armor_fire": 2,
-    "armor_acid": 6,
     "morale": 100,
     "melee_skill": 8,
     "melee_dice": 1,
@@ -478,7 +452,8 @@
     "anger_triggers": [ "FRIEND_ATTACKED", "PLAYER_WEAK", "HURT", "PLAYER_CLOSE" ],
     "death_function": { "corpse_type": "BROKEN" },
     "death_drops": { "groups": [ [ "broken_robots", 3 ] ] },
-    "flags": [ "SEES", "HEARS", "ELECTRONIC", "NO_BREATHE", "PRIORITIZE_TARGETS", "PATH_AVOID_DANGER_1" ]
+    "flags": [ "SEES", "HEARS", "ELECTRONIC", "NO_BREATHE", "PRIORITIZE_TARGETS", "PATH_AVOID_DANGER_1" ],
+    "armor": { "bash": 6, "cut": 6, "acid": 6, "fire": 2 }
   },
   {
     "id": "mon_medibot_assassin",
@@ -564,16 +539,13 @@
     "aggression": 100,
     "morale": 100,
     "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
-    "armor_bash": 10,
-    "armor_cut": 10,
-    "armor_fire": 4,
-    "armor_acid": 4,
     "vision_day": 50,
     "path_settings": { "max_dist": 5 },
     "special_attacks": [ [ "TAZER", 5 ] ],
     "death_drops": { "groups": [ [ "broken_robots", 4 ] ] },
     "death_function": { "corpse_type": "BROKEN" },
-    "flags": [ "SEES", "HEARS", "GOODHEARING", "ELECTRONIC", "NO_BREATHE", "PATH_AVOID_DANGER_1" ]
+    "flags": [ "SEES", "HEARS", "GOODHEARING", "ELECTRONIC", "NO_BREATHE", "PATH_AVOID_DANGER_1" ],
+    "armor": { "bash": 10, "cut": 10, "acid": 4, "fire": 4 }
   },
   {
     "id": "mon_skitterbot_rat",
@@ -584,8 +556,6 @@
     "color": "light_gray",
     "speed": 250,
     "hp": 30,
-    "armor_bash": 8,
-    "armor_cut": 8,
     "vision_night": 20,
     "revert_to_itype": "bot_skitterbot_rat",
     "melee_skill": 6,
@@ -593,7 +563,8 @@
     "melee_dice_sides": 2,
     "melee_damage": [ { "damage_type": "electric", "amount": 6 } ],
     "special_attacks": [ { "type": "leap", "cooldown": 2, "move_cost": 0, "max_range": 10, "min_consider_range": 3 } ],
-    "extend": { "flags": [ "CLIMBS" ] }
+    "extend": { "flags": [ "CLIMBS" ] },
+    "armor": { "bash": 8, "cut": 8 }
   },
   {
     "id": "mon_skitterbot_grab",
@@ -605,8 +576,6 @@
     "color": "light_green",
     "speed": 200,
     "hp": 30,
-    "armor_bash": 8,
-    "armor_cut": 8,
     "vision_day": 20,
     "revert_to_itype": "bot_skitterbot_grab",
     "melee_skill": 6,
@@ -614,7 +583,8 @@
     "melee_dice_sides": 2,
     "attack_effs": [ { "id": "downed", "chance": 20, "duration": 5 } ],
     "special_attacks": [ [ "GRAB", 1 ] ],
-    "extend": { "flags": [ "SWARMS", "GRABS", "GROUP_BASH" ] }
+    "extend": { "flags": [ "SWARMS", "GRABS", "GROUP_BASH" ] },
+    "armor": { "bash": 8, "cut": 8 }
   },
   {
     "id": "mon_skitterbot_hunter",
@@ -626,8 +596,6 @@
     "aggression": 100,
     "speed": 200,
     "hp": 30,
-    "armor_bash": 8,
-    "armor_cut": 8,
     "vision_day": 20,
     "revert_to_itype": "bot_skitterbot_hunter",
     "starting_ammo": { "8mm_caseless": 120 },
@@ -639,7 +607,8 @@
         "gun_type": "robogun_8x40mm",
         "fake_skills": [ [ "gun", 5 ], [ "rifle", 6 ] ],
         "fake_dex": 10,
-        "ranges": [ [ 0, 10, "DEFAULT" ] ]
+        "ranges": [ [ 0, 10, "DEFAULT" ] ],
+    "armor": { "bash": 8, "cut": 8 }
       }
     ],
     "extend": { "flags": [ "DROPS_AMMO" ] }
@@ -665,15 +634,12 @@
     "melee_dice_sides": 2,
     "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "dodge": 5,
-    "armor_bash": 14,
-    "armor_cut": 10,
-    "armor_fire": 2,
-    "armor_acid": 4,
     "vision_day": 50,
     "special_attacks": [ [ "PARROT", 80 ] ],
     "death_function": { "corpse_type": "BROKEN" },
     "harvest": "mon_broken_cyborg",
-    "flags": [ "SEES", "HEARS", "BASHES", "ELECTRONIC", "NO_BREATHE", "WARM", "STUMBLES", "HUMAN", "NO_NECRO" ]
+    "flags": [ "SEES", "HEARS", "BASHES", "ELECTRONIC", "NO_BREATHE", "WARM", "STUMBLES", "HUMAN", "NO_NECRO" ],
+    "armor": { "bash": 14, "cut": 10, "acid": 4, "fire": 2 }
   },
   {
     "id": "mon_cyborg_necro",
@@ -730,16 +696,12 @@
     "melee_dice": 2,
     "melee_dice_sides": 4,
     "dodge": 4,
-    "armor_bash": 12,
-    "armor_cut": 12,
-    "armor_stab": 6,
-    "armor_fire": 5,
-    "armor_acid": 12,
     "vision_day": 50,
     "path_settings": { "max_dist": 5 },
     "death_drops": { "groups": [ [ "broken_robots", 1 ] ] },
     "death_function": { "corpse_type": "BROKEN" },
-    "flags": [ "SEES", "HEARS", "BASHES", "ELECTRONIC", "NO_BREATHE", "PRIORITIZE_TARGETS", "PATH_AVOID_DANGER_1" ]
+    "flags": [ "SEES", "HEARS", "BASHES", "ELECTRONIC", "NO_BREATHE", "PRIORITIZE_TARGETS", "PATH_AVOID_DANGER_1" ],
+    "armor": { "bash": 12, "cut": 12, "stab": 6, "acid": 12, "fire": 5 }
   },
   {
     "id": "mon_milbot_trainer",
@@ -988,17 +950,13 @@
     "description": "An advanced robot still functioning due to its internal fusion core.  This model is armed with a powerful laser-emitter.",
     "default_faction": "science",
     "species": [ "ROBOT" ],
-    "hp": 100,
-    "armor_bash": 8,
-    "armor_cut": 6,
-    "armor_stab": 6,
-    "armor_fire": 8,
-    "armor_acid": 12,
+    "hp": 100,]
     "vision_day": 50,
     "speed": 110,
     "color": "white_cyan",
     "aggression": 100,
-    "dodge": 5
+    "dodge": 5,
+    "armor": { "bash": 8, "cut": 6, "stab": 6, "acid": 12, "fire": 8 }
   },
   {
     "id": "mon_advbot_laser",
@@ -1178,15 +1136,13 @@
     "melee_dice_sides": 2,
     "melee_damage": [ { "damage_type": "cut", "amount": 8 } ],
     "melee_damage": [ { "damage_type": "electric", "amount": 8 } ],
-    "armor_bash": 12,
-    "armor_cut": 12,
-    "armor_acid": 4,
     "dodge": 3,
     "vision_day": 20,
     "revert_to_itype": "bot_defbot_samurai",
     "special_when_hit": [ "ZAPBACK", 5 ],
     "emit_fields": [ { "emit_id": "emit_electric_arcs", "delay": "1 s" } ],
-    "extend": { "flags": [ "ELECTRIC" ] }
+    "extend": { "flags": [ "ELECTRIC" ] },
+    "armor": { "bash": 12, "cut": 12, "acid": 4 }
   },
   {
     "id": "mon_defbot_paladin",
@@ -1203,9 +1159,6 @@
     "melee_damage": [ { "damage_type": "cut", "amount": 6 } ],
     "melee_damage": [ { "damage_type": "heat", "amount": 4 } ],
     "attack_effs": [ { "id": "onfire", "chance": 50, "duration": 10 } ],
-    "armor_bash": 12,
-    "armor_cut": 12,
-    "armor_acid": 4,
     "dodge": 3,
     "vision_day": 50,
     "revert_to_itype": "bot_defbot_paladin",
@@ -1224,7 +1177,8 @@
         "require_targeting_player": false,
         "require_targeting_npc": false,
         "require_targeting_monster": false,
-        "ranges": [ [ 0, 10, "DEFAULT" ] ]
+        "ranges": [ [ 0, 10, "DEFAULT" ] ],
+    "armor": { "bash": 12, "cut": 12, "acid": 4 }
       }
     ],
     "extend": { "flags": [ "FIREPROOF", "DROPS_AMMO" ] }
@@ -1342,7 +1296,6 @@
     "speed": 100,
     "hp": 80,
     "luminance": 200,
-    "armor_bash": 8,
     "revert_to_itype": "bot_advbot_glitter",
     "emit_fields": [ { "emit_id": "emit_dazzle_trail", "delay": "1 s" } ],
     "special_attacks": [
@@ -1353,7 +1306,8 @@
         "gun_type": "robogun_laser",
         "fake_skills": [ [ "gun", 5 ], [ "rifle", 5 ] ],
         "fake_dex": 8,
-        "ranges": [ [ 0, 5, "AUTO" ] ]
+        "ranges": [ [ 0, 5, "AUTO" ] ],
+    "armor": { "bash": 8 }
       }
     ],
     "extend": { "flags": [ "DROPS_AMMO" ] }
@@ -1371,8 +1325,6 @@
     "revert_to_itype": "bot_advbot_bitter",
     "melee_skill": 4,
     "melee_damage": [ { "damage_type": "acid", "amount": 8 } ],
-    "armor_bash": 8,
-    "armor_cut": 8,
     "emit_fields": [ { "emit_id": "emit_acid_trail", "delay": "1 s" } ],
     "special_when_hit": [ "ACIDSPLASH", 100 ],
     "special_attacks": [
@@ -1385,7 +1337,8 @@
         "fake_skills": [ [ "gun", 5 ], [ "rifle", 5 ] ],
         "fake_dex": 10,
         "require_targeting_player": false,
-        "ranges": [ [ 0, 20, "DEFAULT" ] ]
+        "ranges": [ [ 0, 20, "DEFAULT" ] ],
+    "armor": { "bash": 8, "cut": 8 }
       }
     ],
     "extend": { "flags": [ "ACIDPROOF" ] }
@@ -1419,17 +1372,13 @@
     "melee_dice": 3,
     "melee_dice_sides": 3,
     "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
-    "armor_bash": 18,
-    "armor_cut": 14,
-    "armor_stab": 4,
-    "armor_fire": 6,
-    "armor_acid": 6,
     "vision_day": 50,
     "vision_night": 35,
     "path_settings": { "max_dist": 10 },
     "death_drops": { "groups": [ [ "broken_robots", 2 ] ] },
     "death_function": { "corpse_type": "BROKEN" },
-    "flags": [ "SEES", "HEARS", "BASHES", "NO_BREATHE", "ELECTRONIC", "PRIORITIZE_TARGETS" ]
+    "flags": [ "SEES", "HEARS", "BASHES", "NO_BREATHE", "ELECTRONIC", "PRIORITIZE_TARGETS" ],
+    "armor": { "bash": 18, "cut": 14, "stab": 4, "acid": 6, "fire": 6 }
   },
   {
     "id": "mon_chickenbot_horror",
@@ -1514,16 +1463,12 @@
     "melee_dice": 5,
     "melee_dice_sides": 5,
     "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
-    "armor_bash": 90,
-    "armor_cut": 90,
-    "armor_stab": 20,
-    "armor_fire": 10,
-    "armor_acid": 10,
     "vision_day": 50,
     "path_settings": { "max_dist": 20 },
     "death_drops": { "groups": [ [ "broken_robots", 6 ] ] },
     "death_function": { "corpse_type": "BROKEN" },
-    "flags": [ "SEES", "HEARS", "GOODHEARING", "NOHEAD", "BASHES", "DESTROYS", "NO_BREATHE", "ELECTRONIC", "PRIORITIZE_TARGETS" ]
+    "flags": [ "SEES", "HEARS", "GOODHEARING", "NOHEAD", "BASHES", "DESTROYS", "NO_BREATHE", "ELECTRONIC", "PRIORITIZE_TARGETS" ],
+    "armor": { "bash": 90, "cut": 90, "stab": 20, "acid": 10, "fire": 10 }
   },
   {
     "id": "mon_tankbot_king",
@@ -1536,14 +1481,14 @@
     "hp": 200,
     "speed": 60,
     "color": "pink",
-    "armor_cut": 30,
     "melee_skill": 7,
     "melee_dice": 5,
     "melee_dice_sides": 10,
     "attack_effs": [ { "id": "downed", "chance": 20, "duration": 10 }, { "id": "stunned", "chance": 20, "duration": 10 } ],
     "vision_day": 20,
     "revert_to_itype": "bot_tankbot_king",
-    "special_attacks": [ [ "SMASH", 15 ] ]
+    "special_attacks": [ [ "SMASH", 15 ] ],
+    "armor": { "cut": 30 }
   },
   {
     "id": "mon_tankbot_sultan",
