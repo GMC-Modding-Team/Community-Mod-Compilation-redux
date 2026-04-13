@@ -698,6 +698,77 @@ def _restore_variants_weights(content, originals):
     return content
 
 
+def _mask_phases_weights(content):
+    """
+    Mask numeric "weight" entries inside every "phases": [ ... ] block so
+    weighted phase entries are not converted to grams.
+    Returns (masked_content, list_of_original_weight_tokens).
+    """
+    originals = []
+    result = []
+    i = 0
+    pattern = re.compile(r'"phases"\s*:\s*\[')
+    while i < len(content):
+        m = pattern.search(content, i)
+        if not m:
+            result.append(content[i:])
+            break
+        result.append(content[i:m.start()])
+
+        # Find matching closing bracket for this phases array.
+        bracket_start = m.end() - 1
+        depth = 0
+        in_str = False
+        escape = False
+        j = bracket_start
+        while j < len(content):
+            ch = content[j]
+            if escape:
+                escape = False
+                j += 1
+                continue
+            if ch == '\\' and in_str:
+                escape = True
+                j += 1
+                continue
+            if ch == '"':
+                in_str = not in_str
+                j += 1
+                continue
+            if in_str:
+                j += 1
+                continue
+            if ch == '[':
+                depth += 1
+            elif ch == ']':
+                depth -= 1
+                if depth == 0:
+                    j += 1
+                    break
+            j += 1
+
+        key_prefix = content[m.start():bracket_start]
+        phases_block = content[bracket_start:j]
+
+        def _replace_weight_token(match):
+            idx = len(originals)
+            originals.append(match.group(0))
+            return f'\x00PHW{idx}\x00'
+
+        phases_block = re.sub(r'"weight"\s*:\s*\d+', _replace_weight_token, phases_block)
+        result.append(key_prefix + phases_block)
+        i = j
+
+    return ''.join(result), originals
+
+
+def _restore_phases_weights(content, originals):
+    """Restore masked numeric phases weight tokens."""
+    for idx, original in enumerate(originals):
+        content = content.replace(f'\x00PHW{idx}\x00', original)
+    return content
+
+
 def fix_price(content):
     """
     "price": N          ->  "price": "N cent"
@@ -918,6 +989,7 @@ def update_json_content(content):
     "mapgen" arrays: nested numeric "weight" entries are left untouched.
     "relative" objects: numeric "price"/"price_postapoc"/"weight" are untouched.
     "variants" arrays: nested numeric "weight" entries are left untouched.
+    "phases" arrays: nested numeric "weight" entries are left untouched.
     all types : nothing inside a "proportional": { ... } block is touched.
     """
     # ------------------------------------------------------------------
@@ -931,6 +1003,7 @@ def update_json_content(content):
     content, mapgen_weight_originals = _mask_mapgen_weights(content)
     content, relative_originals = _mask_relative_price_weight(content)
     content, variants_weight_originals = _mask_variants_weights(content)
+    content, phases_weight_originals = _mask_phases_weights(content)
 
     # ------------------------------------------------------------------
     # Step 2: split into individual top-level objects and apply the
@@ -967,6 +1040,7 @@ def update_json_content(content):
     # ------------------------------------------------------------------
     # Step 3: restore the original proportional blocks.
     # ------------------------------------------------------------------
+    content = _restore_phases_weights(content, phases_weight_originals)
     content = _restore_variants_weights(content, variants_weight_originals)
     content = _restore_relative_price_weight(content, relative_originals)
     content = _restore_mapgen_weights(content, mapgen_weight_originals)
