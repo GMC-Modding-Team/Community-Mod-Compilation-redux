@@ -20,7 +20,6 @@
 [![Contributors_Status](https://img.shields.io/github/contributors-anon/GMC-Modding-Team/Community-Mod-Compilation-redux)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/graphs/contributors)
 <a href="https://gitlocalize.com/repo/5745/whole_project?utm_source=badge"> <img src="https://gitlocalize.com/repo/5745/whole_project/badge.svg" /> </a>\
 [![style check - JSON](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions/workflows/style_check_json.yml/badge.svg)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions/workflows/style_check_json.yml)
-[![Generator - TOC](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions/workflows/Generator_toc.yml/badge.svg)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions/workflows/Generator_toc.yml)
 [![Generator - Changelog](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions/workflows/Generator_Changelog.yml/badge.svg)](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/actions/workflows/Generator_Changelog.yml)
 
 
