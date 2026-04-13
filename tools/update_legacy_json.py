@@ -34,13 +34,12 @@ Transformations applied
   14. "mod-type": "SUPPLEMENTAL"-> "category": "SUPPLEMENTAL"
   15. "author": "x"             -> "authors": [ "x" ]
   16. "note":                   -> "//"
-  17. "chance": N               -> "prob": N
-  18. "price": N                -> "price": "N cent"
-  19. "price_postapoc": N       -> "price_postapoc": "N cent"
-  20. "min_melee": N            -> skill_requirements entry  (merged with min_unarmed)
-  21. "min_unarmed": N          -> skill_requirements entry  (merged with min_melee)
-  22. "bashing": N, "cutting": M-> "melee_damage": { "bash": N, "cut": M }
-  23. "bash_resist": N, etc.    -> "resist": { "bash": N, ... }
+  17. "price": N                -> "price": "N cent"
+  18. "price_postapoc": N       -> "price_postapoc": "N cent"
+  19. "min_melee": N            -> skill_requirements entry  (merged with min_unarmed)
+  20. "min_unarmed": N          -> skill_requirements entry  (merged with min_melee)
+  21. "bashing": N, "cutting": M-> "melee_damage": { "bash": N, "cut": M }
+  22. "bash_resist": N, etc.    -> "resist": { "bash": N, ... }
 """
 
 import os
@@ -217,43 +216,6 @@ def fix_note(content):
     "note":  ->  "//"
     """
     return _sub(r'"note"\s*:', '"//":', content)
-
-
-# Types where "chance" is a LEGACY field that should be renamed to "prob".
-# All other types use "chance" as a valid native field and must NOT be touched.
-_CHANCE_TO_PROB_TYPES = frozenset({
-    "mutation",
-    "technique",
-    "ammo_effect",
-    "body_part",
-    "emit",
-    "field_type",
-    "trap",
-    "monster_attack",
-    "SPELL",
-    "ENCHANTMENT",
-})
-
-
-def fix_chance(content):
-    """
-    "chance": N  ->  "prob": N
-
-    IMPORTANT: "chance" is a valid native field in many CDDA types (mapgen,
-    monstergroup, item_group, overmap_special, palette, and all their nested
-    sub-objects).  This transform is therefore an allowlist: it only renames
-    "chance" when the enclosing top-level object has a "type" value that is
-    confirmed to use "chance" as a legacy alias for "prob".
-
-    The per-object pipeline in update_json_content passes only the chunk for
-    the current top-level object, so the regex here operates on a single
-    object at a time and the type check is reliable.
-    """
-    # Detect the type of this object chunk
-    m = re.search(r'"type"\s*:\s*"([^"]+)"', content)
-    if not m or m.group(1) not in _CHANCE_TO_PROB_TYPES:
-        return content  # leave "chance" untouched for all other types
-    return _sub(r'"chance"\s*:\s*(\d+)', r'"prob": \1', content)
 
 
 def _mask_proportional(content):
@@ -466,7 +428,6 @@ TRANSFORMS = [
     fix_mod_type,
     fix_author,
     fix_note,
-    fix_chance,
     fix_price,
     fix_skill_requirements,
     fix_melee_damage,
@@ -478,11 +439,10 @@ TRANSFORMS = [
 # Per-type pipeline variants
 # ---------------------------------------------------------------------------
 
-# mapgen: remove weight entirely; leave "chance" completely untouched
+# mapgen: remove weight entirely
 _TRANSFORMS_MAPGEN = [
     fix_mapgen_weight if t is fix_weight else t
     for t in TRANSFORMS
-    if t is not fix_chance
 ]
 
 # speech: leave volume completely alone ("volume" is loudness, not item size)
@@ -530,14 +490,9 @@ def update_json_content(content):
 
     Per-type special rules
     ----------------------
-    "mapgen"  : weight is removed entirely; "chance" is NOT renamed to "prob".
+    "mapgen"  : weight is removed entirely.
     "speech"  : "volume" is left completely untouched.
     all types : nothing inside a "proportional": { ... } block is touched.
-    "chance"  : only renamed to "prob" for types in _CHANCE_TO_PROB_TYPES
-                (allowlist); all other types keep "chance" untouched.
-
-    Because fix_chance now needs to inspect each object's "type" field
-    individually, we always split the content into per-object chunks.
     """
     # ------------------------------------------------------------------
     # Step 1: mask every "proportional": { ... } block so that none of
