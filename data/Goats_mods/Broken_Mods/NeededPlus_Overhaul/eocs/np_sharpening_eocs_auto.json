@@ -1,0 +1,294 @@
+[
+  {
+    "type": "effect_on_condition",
+    "id": "NP_EOC_SHARPEN_MENU_AUTO",
+    "condition": { "and": [ { "u_has_item": "np_whetstone" } ] },
+    "effect": [
+      {
+        "u_run_inv_eocs": "manual",
+        "title": "Select a blade to sharpen",
+        "search_data": [ { "category": "weapons" } ],
+        "true_eocs": [ "NP_EOC_SHARPEN_ROUTE" ],
+        "false_eocs": [ "NP_EOC_NO_BLADE" ]
+      }
+    ],
+    "false_effect": [ { "u_message": "You need a whetstone to do that.", "type": "bad" } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "NP_EOC_NO_BLADE",
+    "effect": [ { "u_message": "No suitable blades found.", "type": "bad" } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "NP_EOC_SHARPEN_ROUTE",
+    "effect": [
+      { "run_eocs": "NP_EOC_SHARPEN_battleaxe", "condition": { "compare_string": [ "battleaxe", { "context_val": "id" } ] } },
+      {
+        "run_eocs": "NP_EOC_SHARPEN_bwirebat",
+        "condition": { "compare_string": [ "bwirebat", { "context_val": "id" } ] }
+      },
+      {
+        "run_eocs": "NP_EOC_SHARPEN_bio_blade_weapon",
+        "condition": { "compare_string": [ "bio_blade_weapon", { "context_val": "id" } ] }
+      },
+      {
+        "run_eocs": "NP_EOC_SHARPEN_knife_bread",
+        "condition": { "compare_string": [ "knife_bread", { "context_val": "id" } ] }
+      },
+      {
+        "run_eocs": "NP_EOC_SHARPEN_knife_vegetable_cleaver",
+        "condition": { "compare_string": [ "knife_vegetable_cleaver", { "context_val": "id" } ] }
+      },
+      {
+        "run_eocs": "NP_EOC_SHARPEN_knife_meat_cleaver",
+        "condition": { "compare_string": [ "knife_meat_cleaver", { "context_val": "id" } ] }
+      },
+      {
+        "run_eocs": "NP_EOC_SHARPEN_bullwhip_razor",
+        "condition": { "compare_string": [ "bullwhip_razor", { "context_val": "id" } ] }
+      },
+      {
+        "run_eocs": "NP_EOC_SHARPEN_makeshift_scythe_war",
+        "condition": { "compare_string": [ "makeshift_scythe_war", { "context_val": "id" } ] }
+      },
+      {
+        "run_eocs": "NP_EOC_SHARPEN_makeshift_halberd",
+        "condition": { "compare_string": [ "makeshift_halberd", { "context_val": "id" } ] }
+      },
+      {
+        "run_eocs": "NP_EOC_SHARPEN_halberd",
+        "condition": { "compare_string": [ "halberd", { "context_val": "id" } ] }
+      },
+      {
+        "run_eocs": "NP_EOC_SHARPEN_glaive",
+        "condition": { "compare_string": [ "glaive", { "context_val": "id" } ] }
+      },
+      {
+        "run_eocs": "NP_EOC_SHARPEN_naginata",
+        "condition": { "compare_string": [ "naginata", { "context_val": "id" } ] }
+      },
+      {
+        "run_eocs": "NP_EOC_SHARPEN_spear_survivor",
+        "condition": { "compare_string": [ "spear_survivor", { "context_val": "id" } ] }
+      },
+      {
+        "run_eocs": "NP_EOC_SHARPEN_scythe_war",
+        "condition": { "compare_string": [ "scythe_war", { "context_val": "id" } ] }
+      },
+      {
+        "run_eocs": "NP_EOC_SHARPEN_poleaxe",
+        "condition": { "compare_string": [ "poleaxe", { "context_val": "id" } ] }
+      },
+      { "run_eocs": "NP_EOC_SHARPEN_ji", "condition": { "compare_string": [ "ji", { "context_val": "id" } ] } },
+      {
+        "run_eocs": "NP_EOC_SHARPEN_knife_hunting",
+        "condition": { "compare_string": [ "knife_hunting", { "context_val": "id" } ] }
+      },
+      {
+        "run_eocs": "NP_EOC_SHARPEN_makeshift_machete",
+        "condition": { "compare_string": [ "makeshift_machete", { "context_val": "id" } ] }
+      },
+      {
+        "run_eocs": "NP_EOC_SHARPEN_sword_xiphos",
+        "condition": { "compare_string": [ "sword_xiphos", { "context_val": "id" } ] }
+      },
+      {
+        "run_eocs": "NP_EOC_SHARPEN_khopesh",
+        "condition": { "compare_string": [ "khopesh", { "context_val": "id" } ] }
+      },
+      { "run_eocs": "NP_EOC_SHARPEN_dao", "condition": { "compare_string": [ "dao", { "context_val": "id" } ] } },
+      {
+        "run_eocs": "NP_EOC_SHARPEN_sword_bronze",
+        "condition": { "compare_string": [ "sword_bronze", { "context_val": "id" } ] }
+      },
+      {
+        "run_eocs": "NP_EOC_SHARPEN_butterfly_swords",
+        "condition": { "compare_string": [ "butterfly_swords", { "context_val": "id" } ] }
+      },
+      {
+        "run_eocs": "NP_EOC_SHARPEN_lajatang",
+        "condition": { "compare_string": [ "lajatang", { "context_val": "id" } ] }
+      },
+      {
+        "run_eocs": "NP_EOC_SHARPEN_bagh_nakha",
+        "condition": { "compare_string": [ "bagh_nakha", { "context_val": "id" } ] }
+      },
+      {
+        "run_eocs": "NP_EOC_SHARPEN_arisaka_bayonet",
+        "condition": { "compare_string": [ "arisaka_bayonet", { "context_val": "id" } ] }
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "NP_EOC_SHARPEN_battleaxe",
+    "condition": { "u_has_item": "battleaxe" },
+    "effect": [ { "u_remove_item_with": "battleaxe" }, { "u_spawn_item": "battleaxe_sharp", "suppress_message": true } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "NP_EOC_SHARPEN_bwirebat",
+    "condition": { "u_has_item": "bwirebat" },
+    "effect": [ { "u_remove_item_with": "bwirebat" }, { "u_spawn_item": "bwirebat_sharp", "suppress_message": true } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "NP_EOC_SHARPEN_bio_blade_weapon",
+    "condition": { "u_has_item": "bio_blade_weapon" },
+    "effect": [ { "u_remove_item_with": "bio_blade_weapon" }, { "u_spawn_item": "bio_blade_weapon_sharp", "suppress_message": true } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "NP_EOC_SHARPEN_knife_bread",
+    "condition": { "u_has_item": "knife_bread" },
+    "effect": [ { "u_remove_item_with": "knife_bread" }, { "u_spawn_item": "knife_bread_sharp", "suppress_message": true } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "NP_EOC_SHARPEN_knife_vegetable_cleaver",
+    "condition": { "u_has_item": "knife_vegetable_cleaver" },
+    "effect": [
+      { "u_remove_item_with": "knife_vegetable_cleaver" },
+      { "u_spawn_item": "knife_vegetable_cleaver_sharp", "suppress_message": true }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "NP_EOC_SHARPEN_knife_meat_cleaver",
+    "condition": { "u_has_item": "knife_meat_cleaver" },
+    "effect": [
+      { "u_remove_item_with": "knife_meat_cleaver" },
+      { "u_spawn_item": "knife_meat_cleaver_sharp", "suppress_message": true }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "NP_EOC_SHARPEN_bullwhip_razor",
+    "condition": { "u_has_item": "bullwhip_razor" },
+    "effect": [ { "u_remove_item_with": "bullwhip_razor" }, { "u_spawn_item": "bullwhip_razor_sharp", "suppress_message": true } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "NP_EOC_SHARPEN_makeshift_scythe_war",
+    "condition": { "u_has_item": "makeshift_scythe_war" },
+    "effect": [
+      { "u_remove_item_with": "makeshift_scythe_war" },
+      { "u_spawn_item": "makeshift_scythe_war_sharp", "suppress_message": true }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "NP_EOC_SHARPEN_makeshift_halberd",
+    "condition": { "u_has_item": "makeshift_halberd" },
+    "effect": [
+      { "u_remove_item_with": "makeshift_halberd" },
+      { "u_spawn_item": "makeshift_halberd_sharp", "suppress_message": true }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "NP_EOC_SHARPEN_halberd",
+    "condition": { "u_has_item": "halberd" },
+    "effect": [ { "u_remove_item_with": "halberd" }, { "u_spawn_item": "halberd_sharp", "suppress_message": true } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "NP_EOC_SHARPEN_glaive",
+    "condition": { "u_has_item": "glaive" },
+    "effect": [ { "u_remove_item_with": "glaive" }, { "u_spawn_item": "glaive_sharp", "suppress_message": true } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "NP_EOC_SHARPEN_naginata",
+    "condition": { "u_has_item": "naginata" },
+    "effect": [ { "u_remove_item_with": "naginata" }, { "u_spawn_item": "naginata_sharp", "suppress_message": true } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "NP_EOC_SHARPEN_spear_survivor",
+    "condition": { "u_has_item": "spear_survivor" },
+    "effect": [ { "u_remove_item_with": "spear_survivor" }, { "u_spawn_item": "spear_survivor_sharp", "suppress_message": true } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "NP_EOC_SHARPEN_scythe_war",
+    "condition": { "u_has_item": "scythe_war" },
+    "effect": [ { "u_remove_item_with": "scythe_war" }, { "u_spawn_item": "scythe_war_sharp", "suppress_message": true } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "NP_EOC_SHARPEN_poleaxe",
+    "condition": { "u_has_item": "poleaxe" },
+    "effect": [ { "u_remove_item_with": "poleaxe" }, { "u_spawn_item": "poleaxe_sharp", "suppress_message": true } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "NP_EOC_SHARPEN_ji",
+    "condition": { "u_has_item": "ji" },
+    "effect": [ { "u_remove_item_with": "ji" }, { "u_spawn_item": "ji_sharp", "suppress_message": true } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "NP_EOC_SHARPEN_knife_hunting",
+    "condition": { "u_has_item": "knife_hunting" },
+    "effect": [ { "u_remove_item_with": "knife_hunting" }, { "u_spawn_item": "knife_hunting_sharp", "suppress_message": true } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "NP_EOC_SHARPEN_makeshift_machete",
+    "condition": { "u_has_item": "makeshift_machete" },
+    "effect": [
+      { "u_remove_item_with": "makeshift_machete" },
+      { "u_spawn_item": "makeshift_machete_sharp", "suppress_message": true }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "NP_EOC_SHARPEN_sword_xiphos",
+    "condition": { "u_has_item": "sword_xiphos" },
+    "effect": [ { "u_remove_item_with": "sword_xiphos" }, { "u_spawn_item": "sword_xiphos_sharp", "suppress_message": true } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "NP_EOC_SHARPEN_khopesh",
+    "condition": { "u_has_item": "khopesh" },
+    "effect": [ { "u_remove_item_with": "khopesh" }, { "u_spawn_item": "khopesh_sharp", "suppress_message": true } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "NP_EOC_SHARPEN_dao",
+    "condition": { "u_has_item": "dao" },
+    "effect": [ { "u_remove_item_with": "dao" }, { "u_spawn_item": "dao_sharp", "suppress_message": true } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "NP_EOC_SHARPEN_sword_bronze",
+    "condition": { "u_has_item": "sword_bronze" },
+    "effect": [ { "u_remove_item_with": "sword_bronze" }, { "u_spawn_item": "sword_bronze_sharp", "suppress_message": true } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "NP_EOC_SHARPEN_butterfly_swords",
+    "condition": { "u_has_item": "butterfly_swords" },
+    "effect": [ { "u_remove_item_with": "butterfly_swords" }, { "u_spawn_item": "butterfly_swords_sharp", "suppress_message": true } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "NP_EOC_SHARPEN_lajatang",
+    "condition": { "u_has_item": "lajatang" },
+    "effect": [ { "u_remove_item_with": "lajatang" }, { "u_spawn_item": "lajatang_sharp", "suppress_message": true } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "NP_EOC_SHARPEN_bagh_nakha",
+    "condition": { "u_has_item": "bagh_nakha" },
+    "effect": [ { "u_remove_item_with": "bagh_nakha" }, { "u_spawn_item": "bagh_nakha_sharp", "suppress_message": true } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "NP_EOC_SHARPEN_arisaka_bayonet",
+    "condition": { "u_has_item": "arisaka_bayonet" },
+    "effect": [ { "u_remove_item_with": "arisaka_bayonet" }, { "u_spawn_item": "arisaka_bayonet_sharp", "suppress_message": true } ]
+  }
+]
