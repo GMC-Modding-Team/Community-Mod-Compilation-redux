@@ -285,6 +285,78 @@ def _restore_proportional(content, originals):
     return content
 
 
+def _mask_fg_weights(content):
+    """
+    Mask numeric "weight" entries inside every "fg": [ ... ] block so that
+    fix_weight cannot convert them to grams.
+    Returns (masked_content, list_of_original_weight_tokens).
+    """
+    originals = []
+    result = []
+    i = 0
+    pattern = re.compile(r'"fg"\s*:\s*\[')
+    while i < len(content):
+        m = pattern.search(content, i)
+        if not m:
+            result.append(content[i:])
+            break
+        result.append(content[i:m.start()])
+
+        # Find matching closing bracket for this fg array.
+        bracket_start = m.end() - 1
+        depth = 0
+        in_str = False
+        escape = False
+        j = bracket_start
+        while j < len(content):
+            ch = content[j]
+            if escape:
+                escape = False
+                j += 1
+                continue
+            if ch == '\\' and in_str:
+                escape = True
+                j += 1
+                continue
+            if ch == '"':
+                in_str = not in_str
+                j += 1
+                continue
+            if in_str:
+                j += 1
+                continue
+            if ch == '[':
+                depth += 1
+            elif ch == ']':
+                depth -= 1
+                if depth == 0:
+                    j += 1
+                    break
+            j += 1
+
+        key_prefix = content[m.start():bracket_start]
+        fg_block = content[bracket_start:j]
+
+        def _replace_weight_token(match):
+            idx = len(originals)
+            originals.append(match.group(0))
+            return f'\x00FGW{idx}\x00'
+
+        # Mask only numeric weight tokens inside fg objects.
+        fg_block = re.sub(r'"weight"\s*:\s*\d+', _replace_weight_token, fg_block)
+        result.append(key_prefix + fg_block)
+        i = j
+
+    return ''.join(result), originals
+
+
+def _restore_fg_weights(content, originals):
+    """Restore masked numeric fg weight tokens."""
+    for idx, original in enumerate(originals):
+        content = content.replace(f'\x00FGW{idx}\x00', original)
+    return content
+
+
 def fix_price(content):
     """
     "price": N          ->  "price": "N cent"
@@ -499,6 +571,7 @@ def update_json_content(content):
     "mapgen"  : weight is removed entirely.
     "speech"  : "volume" is left completely untouched.
     "mod_tileset": "weight" is left completely untouched.
+    "fg" arrays: nested numeric "weight" entries are left untouched.
     all types : nothing inside a "proportional": { ... } block is touched.
     """
     # ------------------------------------------------------------------
@@ -506,6 +579,7 @@ def update_json_content(content):
     # the regex transforms can accidentally modify values inside them.
     # ------------------------------------------------------------------
     content, prop_originals = _mask_proportional(content)
+    content, fg_weight_originals = _mask_fg_weights(content)
 
     # ------------------------------------------------------------------
     # Step 2: split into individual top-level objects and apply the
@@ -542,6 +616,7 @@ def update_json_content(content):
     # ------------------------------------------------------------------
     # Step 3: restore the original proportional blocks.
     # ------------------------------------------------------------------
+    content = _restore_fg_weights(content, fg_weight_originals)
     content = _restore_proportional(content, prop_originals)
     return content
 
