@@ -769,6 +769,81 @@ def _restore_phases_weights(content, originals):
     return content
 
 
+def _mask_price_rules_prices(content):
+    """
+    Mask numeric "price" and "price_postapoc" entries inside every
+    "price_rules": [ ... ] block so pricing rules remain untouched.
+    Returns (masked_content, list_of_original_price_tokens).
+    """
+    originals = []
+    result = []
+    i = 0
+    pattern = re.compile(r'"price_rules"\s*:\s*\[')
+    while i < len(content):
+        m = pattern.search(content, i)
+        if not m:
+            result.append(content[i:])
+            break
+        result.append(content[i:m.start()])
+
+        # Find matching closing bracket for this price_rules array.
+        bracket_start = m.end() - 1
+        depth = 0
+        in_str = False
+        escape = False
+        j = bracket_start
+        while j < len(content):
+            ch = content[j]
+            if escape:
+                escape = False
+                j += 1
+                continue
+            if ch == '\\' and in_str:
+                escape = True
+                j += 1
+                continue
+            if ch == '"':
+                in_str = not in_str
+                j += 1
+                continue
+            if in_str:
+                j += 1
+                continue
+            if ch == '[':
+                depth += 1
+            elif ch == ']':
+                depth -= 1
+                if depth == 0:
+                    j += 1
+                    break
+            j += 1
+
+        key_prefix = content[m.start():bracket_start]
+        price_rules_block = content[bracket_start:j]
+
+        def _replace_price_token(match):
+            idx = len(originals)
+            originals.append(match.group(0))
+            return f'\x00PRS{idx}\x00'
+
+        price_rules_block = re.sub(
+            r'"(?:price|price_postapoc)"\s*:\s*\d+(?:\.\d+)?',
+            _replace_price_token,
+            price_rules_block,
+        )
+        result.append(key_prefix + price_rules_block)
+        i = j
+
+    return ''.join(result), originals
+
+
+def _restore_price_rules_prices(content, originals):
+    """Restore masked numeric price_rules price tokens."""
+    for idx, original in enumerate(originals):
+        content = content.replace(f'\x00PRS{idx}\x00', original)
+    return content
+
+
 def fix_price(content):
     """
     "price": N          ->  "price": "N cent"
@@ -990,6 +1065,7 @@ def update_json_content(content):
     "relative" objects: numeric "price"/"price_postapoc"/"weight" are untouched.
     "variants" arrays: nested numeric "weight" entries are left untouched.
     "phases" arrays: nested numeric "weight" entries are left untouched.
+    "price_rules" arrays: numeric "price"/"price_postapoc" are untouched.
     all types : nothing inside a "proportional": { ... } block is touched.
     """
     # ------------------------------------------------------------------
@@ -1004,6 +1080,7 @@ def update_json_content(content):
     content, relative_originals = _mask_relative_price_weight(content)
     content, variants_weight_originals = _mask_variants_weights(content)
     content, phases_weight_originals = _mask_phases_weights(content)
+    content, price_rules_originals = _mask_price_rules_prices(content)
 
     # ------------------------------------------------------------------
     # Step 2: split into individual top-level objects and apply the
@@ -1040,6 +1117,7 @@ def update_json_content(content):
     # ------------------------------------------------------------------
     # Step 3: restore the original proportional blocks.
     # ------------------------------------------------------------------
+    content = _restore_price_rules_prices(content, price_rules_originals)
     content = _restore_phases_weights(content, phases_weight_originals)
     content = _restore_variants_weights(content, variants_weight_originals)
     content = _restore_relative_price_weight(content, relative_originals)
