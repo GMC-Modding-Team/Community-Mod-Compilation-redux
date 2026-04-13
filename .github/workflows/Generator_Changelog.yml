@@ -2,13 +2,15 @@ name: Changelog
 
 on:
   pull_request:
-    types: [closed]
-
+    types:
+      - closed
   release:
-    types: [published]
+    types:
+      - published
 
   issues:
-    types: [closed]
+    types:
+      - closed
 
 
 jobs:
@@ -19,5 +21,3 @@ jobs:
         uses: janheinrichmerker/action-github-changelog-generator@v2.3
         with:
           token: ${{ secrets.WORKFLOW }}
-        run: |
-          git push "https://$CI_USER:$CI_TOKEN@github.com/$GITHUB_REPOSITORY.git" HEAD:master
