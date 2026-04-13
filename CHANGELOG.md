@@ -26,6 +26,7 @@
 
 **Merged pull requests:**
 
+- \[H\] updates rebalance mods for armor to include fire [\#242](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/242) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Tools\] updates armor\_update.py [\#241](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/241) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[H\] maintained mods update [\#240](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/240) ([TheGoatGod](https://github.com/TheGoatGod))
 - pk rebalacing update armor [\#239](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/239) ([TheGoatGod](https://github.com/TheGoatGod))
