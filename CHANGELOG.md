@@ -26,6 +26,7 @@
 
 **Merged pull requests:**
 
+- \[Tools\] updates armor\_update.py [\#241](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/241) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[H\] armor update for mainline mods [\#238](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/238) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[H\] Armor update for rebalance mods [\#237](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/237) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[H\] update armor in legacy mods [\#236](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/236) ([TheGoatGod](https://github.com/TheGoatGod))
