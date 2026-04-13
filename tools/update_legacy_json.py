@@ -34,13 +34,12 @@ Transformations applied
   14. "mod-type": "SUPPLEMENTAL"-> "category": "SUPPLEMENTAL"
   15. "author": "x"             -> "authors": [ "x" ]
   16. "note":                   -> "//"
-  17. "chance": N               -> "prob": N
-  18. "price": N                -> "price": "N cent"
-  19. "price_postapoc": N       -> "price_postapoc": "N cent"
-  20. "min_melee": N            -> skill_requirements entry  (merged with min_unarmed)
-  21. "min_unarmed": N          -> skill_requirements entry  (merged with min_melee)
-  22. "bashing": N, "cutting": M-> "melee_damage": { "bash": N, "cut": M }
-  23. "bash_resist": N, etc.    -> "resist": { "bash": N, ... }
+  17. "price": N                -> "price": "N cent"
+  18. "price_postapoc": N       -> "price_postapoc": "N cent"
+  19. "min_melee": N            -> skill_requirements entry  (merged with min_unarmed)
+  20. "min_unarmed": N          -> skill_requirements entry  (merged with min_melee)
+  21. "bashing": N, "cutting": M-> "melee_damage": { "bash": N, "cut": M }
+  22. "bash_resist": N, etc.    -> "resist": { "bash": N, ... }
 """
 
 import os
@@ -167,28 +166,10 @@ def fix_integral_volume(content):
 def fix_weight(content):
     """
     "weight": N  ->  "weight": "N g"
-    NOTE: for "type": "mapgen" objects, fix_mapgen_weight is used instead
-    (removes the key entirely).  For "type": "speech" objects, weight is
-    left completely untouched (handled via per-object pipeline selection).
+    NOTE: selected object types (e.g. mapgen / mod_tileset) skip this
+    transform via per-object pipeline selection.
     """
     return _sub(r'"weight"\s*:\s*(\d+)', r'"weight": "\1 g"', content)
-
-
-def fix_mapgen_weight(content):
-    """
-    Remove "weight": N entirely from mapgen objects.
-    In mapgen entries "weight" is a legacy spawn-weight integer that is no
-    longer used and should be deleted rather than converted to "N g".
-    Handles both comma-before and comma-after positions so the surrounding
-    JSON remains valid after removal.
-    """
-    # Remove:  "weight": N,   (key is followed by a comma)
-    content = _sub(r'"weight"\s*:\s*\d+\s*,\s*', '', content)
-    # Remove:  , "weight": N  (key is preceded by a comma)
-    content = _sub(r',\s*"weight"\s*:\s*\d+', '', content)
-    # Remove any bare remainder (no surrounding commas)
-    content = _sub(r'"weight"\s*:\s*\d+', '', content)
-    return content
 
 
 def fix_effect(content):
@@ -217,43 +198,6 @@ def fix_note(content):
     "note":  ->  "//"
     """
     return _sub(r'"note"\s*:', '"//":', content)
-
-
-# Types where "chance" is a LEGACY field that should be renamed to "prob".
-# All other types use "chance" as a valid native field and must NOT be touched.
-_CHANCE_TO_PROB_TYPES = frozenset({
-    "mutation",
-    "technique",
-    "ammo_effect",
-    "body_part",
-    "emit",
-    "field_type",
-    "trap",
-    "monster_attack",
-    "SPELL",
-    "ENCHANTMENT",
-})
-
-
-def fix_chance(content):
-    """
-    "chance": N  ->  "prob": N
-
-    IMPORTANT: "chance" is a valid native field in many CDDA types (mapgen,
-    monstergroup, item_group, overmap_special, palette, and all their nested
-    sub-objects).  This transform is therefore an allowlist: it only renames
-    "chance" when the enclosing top-level object has a "type" value that is
-    confirmed to use "chance" as a legacy alias for "prob".
-
-    The per-object pipeline in update_json_content passes only the chunk for
-    the current top-level object, so the regex here operates on a single
-    object at a time and the type check is reliable.
-    """
-    # Detect the type of this object chunk
-    m = re.search(r'"type"\s*:\s*"([^"]+)"', content)
-    if not m or m.group(1) not in _CHANCE_TO_PROB_TYPES:
-        return content  # leave "chance" untouched for all other types
-    return _sub(r'"chance"\s*:\s*(\d+)', r'"prob": \1', content)
 
 
 def _mask_proportional(content):
@@ -320,6 +264,583 @@ def _restore_proportional(content, originals):
     """Restore the original proportional blocks from their placeholders."""
     for idx, original in enumerate(originals):
         content = content.replace(f'\x00PROP{idx}\x00', original)
+    return content
+
+
+def _mask_fg_weights(content):
+    """
+    Mask numeric "weight" entries inside every "fg": [ ... ] block so that
+    fix_weight cannot convert them to grams.
+    Returns (masked_content, list_of_original_weight_tokens).
+    """
+    originals = []
+    result = []
+    i = 0
+    pattern = re.compile(r'"fg"\s*:\s*\[')
+    while i < len(content):
+        m = pattern.search(content, i)
+        if not m:
+            result.append(content[i:])
+            break
+        result.append(content[i:m.start()])
+
+        # Find matching closing bracket for this fg array.
+        bracket_start = m.end() - 1
+        depth = 0
+        in_str = False
+        escape = False
+        j = bracket_start
+        while j < len(content):
+            ch = content[j]
+            if escape:
+                escape = False
+                j += 1
+                continue
+            if ch == '\\' and in_str:
+                escape = True
+                j += 1
+                continue
+            if ch == '"':
+                in_str = not in_str
+                j += 1
+                continue
+            if in_str:
+                j += 1
+                continue
+            if ch == '[':
+                depth += 1
+            elif ch == ']':
+                depth -= 1
+                if depth == 0:
+                    j += 1
+                    break
+            j += 1
+
+        key_prefix = content[m.start():bracket_start]
+        fg_block = content[bracket_start:j]
+
+        def _replace_weight_token(match):
+            idx = len(originals)
+            originals.append(match.group(0))
+            return f'\x00FGW{idx}\x00'
+
+        # Mask only numeric weight tokens inside fg objects.
+        fg_block = re.sub(r'"weight"\s*:\s*\d+', _replace_weight_token, fg_block)
+        result.append(key_prefix + fg_block)
+        i = j
+
+    return ''.join(result), originals
+
+
+def _restore_fg_weights(content, originals):
+    """Restore masked numeric fg weight tokens."""
+    for idx, original in enumerate(originals):
+        content = content.replace(f'\x00FGW{idx}\x00', original)
+    return content
+
+
+def _mask_gun_data_ammo(content):
+    """
+    Mask string "ammo" entries inside every "gun_data": { ... } block so
+    fix_ammo_type cannot convert them to arrays.
+    Returns (masked_content, list_of_original_ammo_tokens).
+    """
+    originals = []
+    result = []
+    i = 0
+    pattern = re.compile(r'"gun_data"\s*:\s*\{')
+    while i < len(content):
+        m = pattern.search(content, i)
+        if not m:
+            result.append(content[i:])
+            break
+        result.append(content[i:m.start()])
+
+        # Find matching closing brace for this gun_data object.
+        brace_start = m.end() - 1
+        depth = 0
+        in_str = False
+        escape = False
+        j = brace_start
+        while j < len(content):
+            ch = content[j]
+            if escape:
+                escape = False
+                j += 1
+                continue
+            if ch == '\\' and in_str:
+                escape = True
+                j += 1
+                continue
+            if ch == '"':
+                in_str = not in_str
+                j += 1
+                continue
+            if in_str:
+                j += 1
+                continue
+            if ch == '{':
+                depth += 1
+            elif ch == '}':
+                depth -= 1
+                if depth == 0:
+                    j += 1
+                    break
+            j += 1
+
+        key_prefix = content[m.start():brace_start]
+        gun_data_block = content[brace_start:j]
+
+        def _replace_ammo_token(match):
+            idx = len(originals)
+            originals.append(match.group(0))
+            return f'\x00GDA{idx}\x00'
+
+        gun_data_block = re.sub(r'"ammo"\s*:\s*"[^"]+"', _replace_ammo_token, gun_data_block)
+        result.append(key_prefix + gun_data_block)
+        i = j
+
+    return ''.join(result), originals
+
+
+def _restore_gun_data_ammo(content, originals):
+    """Restore masked string gun_data ammo tokens."""
+    for idx, original in enumerate(originals):
+        content = content.replace(f'\x00GDA{idx}\x00', original)
+    return content
+
+
+def _mask_monsters_weights(content):
+    """
+    Mask numeric "weight" entries inside every "monsters": [ ... ] block so
+    fix_weight cannot convert weighted spawn entries to grams.
+    Returns (masked_content, list_of_original_weight_tokens).
+    """
+    originals = []
+    result = []
+    i = 0
+    pattern = re.compile(r'"monsters"\s*:\s*\[')
+    while i < len(content):
+        m = pattern.search(content, i)
+        if not m:
+            result.append(content[i:])
+            break
+        result.append(content[i:m.start()])
+
+        # Find matching closing bracket for this monsters array.
+        bracket_start = m.end() - 1
+        depth = 0
+        in_str = False
+        escape = False
+        j = bracket_start
+        while j < len(content):
+            ch = content[j]
+            if escape:
+                escape = False
+                j += 1
+                continue
+            if ch == '\\' and in_str:
+                escape = True
+                j += 1
+                continue
+            if ch == '"':
+                in_str = not in_str
+                j += 1
+                continue
+            if in_str:
+                j += 1
+                continue
+            if ch == '[':
+                depth += 1
+            elif ch == ']':
+                depth -= 1
+                if depth == 0:
+                    j += 1
+                    break
+            j += 1
+
+        key_prefix = content[m.start():bracket_start]
+        monsters_block = content[bracket_start:j]
+
+        def _replace_weight_token(match):
+            idx = len(originals)
+            originals.append(match.group(0))
+            return f'\x00MSW{idx}\x00'
+
+        monsters_block = re.sub(r'"weight"\s*:\s*\d+', _replace_weight_token, monsters_block)
+        result.append(key_prefix + monsters_block)
+        i = j
+
+    return ''.join(result), originals
+
+
+def _restore_monsters_weights(content, originals):
+    """Restore masked numeric monsters weight tokens."""
+    for idx, original in enumerate(originals):
+        content = content.replace(f'\x00MSW{idx}\x00', original)
+    return content
+
+
+def _mask_mapgen_weights(content):
+    """
+    Mask numeric "weight" entries inside every "mapgen": [ ... ] block so
+    mapgen weighted entries are not converted to grams.
+    Returns (masked_content, list_of_original_weight_tokens).
+    """
+    originals = []
+    result = []
+    i = 0
+    pattern = re.compile(r'"mapgen"\s*:\s*\[')
+    while i < len(content):
+        m = pattern.search(content, i)
+        if not m:
+            result.append(content[i:])
+            break
+        result.append(content[i:m.start()])
+
+        # Find matching closing bracket for this mapgen array.
+        bracket_start = m.end() - 1
+        depth = 0
+        in_str = False
+        escape = False
+        j = bracket_start
+        while j < len(content):
+            ch = content[j]
+            if escape:
+                escape = False
+                j += 1
+                continue
+            if ch == '\\' and in_str:
+                escape = True
+                j += 1
+                continue
+            if ch == '"':
+                in_str = not in_str
+                j += 1
+                continue
+            if in_str:
+                j += 1
+                continue
+            if ch == '[':
+                depth += 1
+            elif ch == ']':
+                depth -= 1
+                if depth == 0:
+                    j += 1
+                    break
+            j += 1
+
+        key_prefix = content[m.start():bracket_start]
+        mapgen_block = content[bracket_start:j]
+
+        def _replace_weight_token(match):
+            idx = len(originals)
+            originals.append(match.group(0))
+            return f'\x00MGW{idx}\x00'
+
+        mapgen_block = re.sub(r'"weight"\s*:\s*\d+', _replace_weight_token, mapgen_block)
+        result.append(key_prefix + mapgen_block)
+        i = j
+
+    return ''.join(result), originals
+
+
+def _restore_mapgen_weights(content, originals):
+    """Restore masked numeric mapgen weight tokens."""
+    for idx, original in enumerate(originals):
+        content = content.replace(f'\x00MGW{idx}\x00', original)
+    return content
+
+
+def _mask_relative_price_weight(content):
+    """
+    Mask numeric "price", "price_postapoc", and "weight" entries inside every
+    "relative": { ... } block so those relative modifiers stay unchanged.
+    Returns (masked_content, list_of_original_tokens).
+    """
+    originals = []
+    result = []
+    i = 0
+    pattern = re.compile(r'"relative"\s*:\s*\{')
+    while i < len(content):
+        m = pattern.search(content, i)
+        if not m:
+            result.append(content[i:])
+            break
+        result.append(content[i:m.start()])
+
+        # Find matching closing brace for this relative object.
+        brace_start = m.end() - 1
+        depth = 0
+        in_str = False
+        escape = False
+        j = brace_start
+        while j < len(content):
+            ch = content[j]
+            if escape:
+                escape = False
+                j += 1
+                continue
+            if ch == '\\' and in_str:
+                escape = True
+                j += 1
+                continue
+            if ch == '"':
+                in_str = not in_str
+                j += 1
+                continue
+            if in_str:
+                j += 1
+                continue
+            if ch == '{':
+                depth += 1
+            elif ch == '}':
+                depth -= 1
+                if depth == 0:
+                    j += 1
+                    break
+            j += 1
+
+        key_prefix = content[m.start():brace_start]
+        relative_block = content[brace_start:j]
+
+        def _replace_token(match):
+            idx = len(originals)
+            originals.append(match.group(0))
+            return f'\x00REL{idx}\x00'
+
+        relative_block = re.sub(
+            r'"(?:price|price_postapoc|weight)"\s*:\s*\d+',
+            _replace_token,
+            relative_block,
+        )
+        result.append(key_prefix + relative_block)
+        i = j
+
+    return ''.join(result), originals
+
+
+def _restore_relative_price_weight(content, originals):
+    """Restore masked numeric relative price/weight tokens."""
+    for idx, original in enumerate(originals):
+        content = content.replace(f'\x00REL{idx}\x00', original)
+    return content
+
+
+def _mask_variants_weights(content):
+    """
+    Mask numeric "weight" entries inside every "variants": [ ... ] block so
+    variant metadata weights are not converted to grams.
+    Returns (masked_content, list_of_original_weight_tokens).
+    """
+    originals = []
+    result = []
+    i = 0
+    pattern = re.compile(r'"variants"\s*:\s*\[')
+    while i < len(content):
+        m = pattern.search(content, i)
+        if not m:
+            result.append(content[i:])
+            break
+        result.append(content[i:m.start()])
+
+        # Find matching closing bracket for this variants array.
+        bracket_start = m.end() - 1
+        depth = 0
+        in_str = False
+        escape = False
+        j = bracket_start
+        while j < len(content):
+            ch = content[j]
+            if escape:
+                escape = False
+                j += 1
+                continue
+            if ch == '\\' and in_str:
+                escape = True
+                j += 1
+                continue
+            if ch == '"':
+                in_str = not in_str
+                j += 1
+                continue
+            if in_str:
+                j += 1
+                continue
+            if ch == '[':
+                depth += 1
+            elif ch == ']':
+                depth -= 1
+                if depth == 0:
+                    j += 1
+                    break
+            j += 1
+
+        key_prefix = content[m.start():bracket_start]
+        variants_block = content[bracket_start:j]
+
+        def _replace_weight_token(match):
+            idx = len(originals)
+            originals.append(match.group(0))
+            return f'\x00VRW{idx}\x00'
+
+        variants_block = re.sub(r'"weight"\s*:\s*\d+', _replace_weight_token, variants_block)
+        result.append(key_prefix + variants_block)
+        i = j
+
+    return ''.join(result), originals
+
+
+def _restore_variants_weights(content, originals):
+    """Restore masked numeric variants weight tokens."""
+    for idx, original in enumerate(originals):
+        content = content.replace(f'\x00VRW{idx}\x00', original)
+    return content
+
+
+def _mask_phases_weights(content):
+    """
+    Mask numeric "weight" entries inside every "phases": [ ... ] block so
+    weighted phase entries are not converted to grams.
+    Returns (masked_content, list_of_original_weight_tokens).
+    """
+    originals = []
+    result = []
+    i = 0
+    pattern = re.compile(r'"phases"\s*:\s*\[')
+    while i < len(content):
+        m = pattern.search(content, i)
+        if not m:
+            result.append(content[i:])
+            break
+        result.append(content[i:m.start()])
+
+        # Find matching closing bracket for this phases array.
+        bracket_start = m.end() - 1
+        depth = 0
+        in_str = False
+        escape = False
+        j = bracket_start
+        while j < len(content):
+            ch = content[j]
+            if escape:
+                escape = False
+                j += 1
+                continue
+            if ch == '\\' and in_str:
+                escape = True
+                j += 1
+                continue
+            if ch == '"':
+                in_str = not in_str
+                j += 1
+                continue
+            if in_str:
+                j += 1
+                continue
+            if ch == '[':
+                depth += 1
+            elif ch == ']':
+                depth -= 1
+                if depth == 0:
+                    j += 1
+                    break
+            j += 1
+
+        key_prefix = content[m.start():bracket_start]
+        phases_block = content[bracket_start:j]
+
+        def _replace_weight_token(match):
+            idx = len(originals)
+            originals.append(match.group(0))
+            return f'\x00PHW{idx}\x00'
+
+        phases_block = re.sub(r'"weight"\s*:\s*\d+', _replace_weight_token, phases_block)
+        result.append(key_prefix + phases_block)
+        i = j
+
+    return ''.join(result), originals
+
+
+def _restore_phases_weights(content, originals):
+    """Restore masked numeric phases weight tokens."""
+    for idx, original in enumerate(originals):
+        content = content.replace(f'\x00PHW{idx}\x00', original)
+    return content
+
+
+def _mask_price_rules_prices(content):
+    """
+    Mask numeric "price" and "price_postapoc" entries inside every
+    "price_rules": [ ... ] block so pricing rules remain untouched.
+    Returns (masked_content, list_of_original_price_tokens).
+    """
+    originals = []
+    result = []
+    i = 0
+    pattern = re.compile(r'"price_rules"\s*:\s*\[')
+    while i < len(content):
+        m = pattern.search(content, i)
+        if not m:
+            result.append(content[i:])
+            break
+        result.append(content[i:m.start()])
+
+        # Find matching closing bracket for this price_rules array.
+        bracket_start = m.end() - 1
+        depth = 0
+        in_str = False
+        escape = False
+        j = bracket_start
+        while j < len(content):
+            ch = content[j]
+            if escape:
+                escape = False
+                j += 1
+                continue
+            if ch == '\\' and in_str:
+                escape = True
+                j += 1
+                continue
+            if ch == '"':
+                in_str = not in_str
+                j += 1
+                continue
+            if in_str:
+                j += 1
+                continue
+            if ch == '[':
+                depth += 1
+            elif ch == ']':
+                depth -= 1
+                if depth == 0:
+                    j += 1
+                    break
+            j += 1
+
+        key_prefix = content[m.start():bracket_start]
+        price_rules_block = content[bracket_start:j]
+
+        def _replace_price_token(match):
+            idx = len(originals)
+            originals.append(match.group(0))
+            return f'\x00PRS{idx}\x00'
+
+        price_rules_block = re.sub(
+            r'"(?:price|price_postapoc)"\s*:\s*\d+(?:\.\d+)?',
+            _replace_price_token,
+            price_rules_block,
+        )
+        result.append(key_prefix + price_rules_block)
+        i = j
+
+    return ''.join(result), originals
+
+
+def _restore_price_rules_prices(content, originals):
+    """Restore masked numeric price_rules price tokens."""
+    for idx, original in enumerate(originals):
+        content = content.replace(f'\x00PRS{idx}\x00', original)
     return content
 
 
@@ -466,7 +987,6 @@ TRANSFORMS = [
     fix_mod_type,
     fix_author,
     fix_note,
-    fix_chance,
     fix_price,
     fix_skill_requirements,
     fix_melee_damage,
@@ -478,17 +998,22 @@ TRANSFORMS = [
 # Per-type pipeline variants
 # ---------------------------------------------------------------------------
 
-# mapgen: remove weight entirely; leave "chance" completely untouched
+# mapgen: leave weight untouched
 _TRANSFORMS_MAPGEN = [
-    fix_mapgen_weight if t is fix_weight else t
-    for t in TRANSFORMS
-    if t is not fix_chance
+    t for t in TRANSFORMS
+    if t is not fix_weight
 ]
 
 # speech: leave volume completely alone ("volume" is loudness, not item size)
 _TRANSFORMS_SPEECH = [
     t for t in TRANSFORMS
     if t is not fix_volume
+]
+
+# mod_tileset: leave weight untouched (metadata weighting, not item mass)
+_TRANSFORMS_MOD_TILESET = [
+    t for t in TRANSFORMS
+    if t is not fix_weight
 ]
 
 
@@ -530,20 +1055,32 @@ def update_json_content(content):
 
     Per-type special rules
     ----------------------
-    "mapgen"  : weight is removed entirely; "chance" is NOT renamed to "prob".
+    "mapgen"  : "weight" is left completely untouched.
     "speech"  : "volume" is left completely untouched.
+    "mod_tileset": "weight" is left completely untouched.
+    "fg" arrays: nested numeric "weight" entries are left untouched.
+    "gun_data" objects: string "ammo" entries are left untouched.
+    "monsters" arrays: nested numeric "weight" entries are left untouched.
+    "mapgen" arrays: nested numeric "weight" entries are left untouched.
+    "relative" objects: numeric "price"/"price_postapoc"/"weight" are untouched.
+    "variants" arrays: nested numeric "weight" entries are left untouched.
+    "phases" arrays: nested numeric "weight" entries are left untouched.
+    "price_rules" arrays: numeric "price"/"price_postapoc" are untouched.
     all types : nothing inside a "proportional": { ... } block is touched.
-    "chance"  : only renamed to "prob" for types in _CHANCE_TO_PROB_TYPES
-                (allowlist); all other types keep "chance" untouched.
-
-    Because fix_chance now needs to inspect each object's "type" field
-    individually, we always split the content into per-object chunks.
     """
     # ------------------------------------------------------------------
     # Step 1: mask every "proportional": { ... } block so that none of
     # the regex transforms can accidentally modify values inside them.
     # ------------------------------------------------------------------
     content, prop_originals = _mask_proportional(content)
+    content, fg_weight_originals = _mask_fg_weights(content)
+    content, gun_data_ammo_originals = _mask_gun_data_ammo(content)
+    content, monsters_weight_originals = _mask_monsters_weights(content)
+    content, mapgen_weight_originals = _mask_mapgen_weights(content)
+    content, relative_originals = _mask_relative_price_weight(content)
+    content, variants_weight_originals = _mask_variants_weights(content)
+    content, phases_weight_originals = _mask_phases_weights(content)
+    content, price_rules_originals = _mask_price_rules_prices(content)
 
     # ------------------------------------------------------------------
     # Step 2: split into individual top-level objects and apply the
@@ -566,6 +1103,8 @@ def update_json_content(content):
                 pipeline = _TRANSFORMS_MAPGEN
             elif re.search(r'"type"\s*:\s*"speech"', chunk):
                 pipeline = _TRANSFORMS_SPEECH
+            elif re.search(r'"type"\s*:\s*"mod_tileset"', chunk):
+                pipeline = _TRANSFORMS_MOD_TILESET
             else:
                 pipeline = TRANSFORMS
             for transform in pipeline:
@@ -578,6 +1117,14 @@ def update_json_content(content):
     # ------------------------------------------------------------------
     # Step 3: restore the original proportional blocks.
     # ------------------------------------------------------------------
+    content = _restore_price_rules_prices(content, price_rules_originals)
+    content = _restore_phases_weights(content, phases_weight_originals)
+    content = _restore_variants_weights(content, variants_weight_originals)
+    content = _restore_relative_price_weight(content, relative_originals)
+    content = _restore_mapgen_weights(content, mapgen_weight_originals)
+    content = _restore_monsters_weights(content, monsters_weight_originals)
+    content = _restore_gun_data_ammo(content, gun_data_ammo_originals)
+    content = _restore_fg_weights(content, fg_weight_originals)
     content = _restore_proportional(content, prop_originals)
     return content
 
