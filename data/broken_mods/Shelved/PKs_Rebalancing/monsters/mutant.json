@@ -37,14 +37,13 @@
     "melee_damage": [ { "damage_type": "cut", "amount": 3 } ],
     "dodge": 6,
     "attack_effs": [ { "id": "poison", "duration": 400 }, { "id": "rad_tenths", "duration": 15 } ],
-    "armor_bash": 2,
-    "armor_cut": 6,
     "vision_day": 15,
     "vision_night": 7,
     "special_attacks": [ [ "DERMATIK", 20 ], [ "wound_minor", 30 ] ],
     "anger_triggers": [ "FRIEND_ATTACKED", "PLAYER_WEAK", "STALK" ],
     "fear_triggers": [ "HURT" ],
-    "flags": [ "SEES", "HEARS", "SMELLS", "STUMBLES", "FLIES", "CHITIN" ]
+    "flags": [ "SEES", "HEARS", "SMELLS", "STUMBLES", "FLIES", "CHITIN" ],
+    "armor": { "bash": 2, "cut": 6 }
   },
   {
     "id": "mon_coyote_wolf",
@@ -114,12 +113,12 @@
     "special_attacks": [ [ "sliming", 30 ] ],
     "emit_fields": [ "emit_sludge" ],
     "dodge": 5,
-    "armor_bash": 8,
     "vision_day": 10,
     "vision_night": 30,
     "death_function": { "corpse_type": "NO_CORPSE", "message": "The %s melts away." },
     "regenerates": 1,
-    "flags": [ "NOHEAD", "SEES", "POISON", "HEARS", "SMELLS", "SLUDGEPROOF", "SWIMS", "FLAMMABLE", "NOGIB", "HARDTOSHOOT" ]
+    "flags": [ "NOHEAD", "SEES", "POISON", "HEARS", "SMELLS", "SLUDGEPROOF", "SWIMS", "FLAMMABLE", "NOGIB", "HARDTOSHOOT" ],
+    "armor": { "bash": 8 }
   },
   {
     "id": "mon_chud",
@@ -192,8 +191,6 @@
       { "id": "rad_tenths", "duration": 50 },
       { "id": "rad_tenths", "duration": 100 }
     ],
-    "armor_bash": 1,
-    "armor_cut": 1,
     "emit_fields": [ "emit_fatigue" ],
     "special_attacks": [
       [ "wound_minor", 20 ],
@@ -216,7 +213,8 @@
       "LEATHER",
       "PATH_AVOID_DANGER_2",
       "PRIORITIZE_TARGETS"
-    ]
+    ],
+    "armor": { "bash": 1, "cut": 1 }
   },
   {
     "id": "mon_thing_head",
@@ -321,13 +319,11 @@
     "melee_damage": [ { "damage_type": "cut", "amount": 4 } ],
     "attack_effs": [ { "id": "thing_poison", "duration": 200 }, { "id": "rad_tenths", "duration": 100 } ],
     "dodge": 3,
-    "armor_cut": 6,
-    "armor_bash": 12,
-    "armor_acid": 15,
     "vision_night": 10,
     "special_attacks": [ [ "TENTACLE", 5 ], [ "GRENADIER", 5 ] ],
     "starting_ammo": { "bot_thing_head": 4, "bot_thing_spider": 4 },
-    "death_function": [ "DARKMAN", "MELT" ]
+    "death_function": [ "DARKMAN", "MELT" ],
+    "armor": { "bash": 12, "cut": 6, "acid": 15 }
   },
   {
     "id": "mon_human_snail",
@@ -345,14 +341,13 @@
     "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "dodge": 0,
     "attack_effs": [ { "id": "rad_tenths", "duration": 20 }, { "id": "rad_tenths", "duration": 40 } ],
-    "armor_bash": 6,
-    "armor_cut": 12,
     "vision_day": 5,
     "vision_night": 20,
     "emit_fields": [ "emit_slime_trail" ],
     "special_attacks": [ [ "ACID", 20 ], [ "impale", 40 ], [ "numbing_poison", 30 ], [ "sliming", 60 ] ],
     "anger_triggers": [ "FRIEND_ATTACKED", "HURT", "FRIEND_DIED" ],
-    "flags": [ "SEES", "SMELLS", "HEARS", "PATH_AVOID_DANGER_2", "HUMAN", "ACIDPROOF", "ACID_BLOOD" ]
+    "flags": [ "SEES", "SMELLS", "HEARS", "PATH_AVOID_DANGER_2", "HUMAN", "ACIDPROOF", "ACID_BLOOD" ],
+    "armor": { "bash": 6, "cut": 12 }
   },
   {
     "id": "mon_twisted_body",
@@ -369,15 +364,14 @@
     "melee_dice_sides": 5,
     "melee_damage": [ { "damage_type": "cut", "amount": 3 } ],
     "dodge": 6,
-    "armor_bash": 2,
-    "armor_cut": 2,
     "attack_effs": [ { "id": "rad_tenths", "duration": 10 }, { "id": "rad_tenths", "duration": 50 } ],
     "vision_day": 40,
     "vision_night": 7,
     "special_attacks": [ [ "wound_minor", 40 ], [ "scratch", 20 ], [ "slash", 40 ] ],
     "anger_triggers": [ "PLAYER_CLOSE", "PLAYER_WEAK", "FRIEND_ATTACKED" ],
     "regenerates": 1,
-    "flags": [ "SEES", "HEARS", "GOODHEARING", "POISON", "HUMAN", "LEATHER", "CLIMBS", "SWARMS" ]
+    "flags": [ "SEES", "HEARS", "GOODHEARING", "POISON", "HUMAN", "LEATHER", "CLIMBS", "SWARMS" ],
+    "armor": { "bash": 2, "cut": 2 }
   },
   {
     "id": "mon_jabberwock",
@@ -445,8 +439,6 @@
     "melee_dice_sides": 9,
     "melee_damage": [ { "damage_type": "cut", "amount": 10 } ],
     "dodge": 5,
-    "armor_bash": 18,
-    "armor_cut": 12,
     "attack_effs": [ { "id": "rad_tenths", "duration": 40 } ],
     "vision_day": 50,
     "vision_night": 5,
@@ -482,7 +474,8 @@
       "FAT",
       "REVIVES",
       "NO_NECRO"
-    ]
+    ],
+    "armor": { "bash": 18, "cut": 12 }
   },
   {
     "id": "mon_bat_vampire",
@@ -509,7 +502,6 @@
     "melee_damage": [ { "damage_type": "cut", "amount": 4 } ],
     "dodge": 3,
     "attack_effs": [ { "id": "rad_tenths", "duration": 20 } ],
-    "armor_bash": 6,
     "vision_day": 10,
     "vision_night": 20,
     "path_settings": { "max_dist": 20 },
@@ -538,7 +530,8 @@
       "SWARMS",
       "HIT_AND_RUN",
       "GROUP_MORALE"
-    ]
+    ],
+    "armor": { "bash": 6 }
   },
   {
     "id": "mon_coyote_wolf_zerg",
@@ -564,8 +557,6 @@
     "melee_damage": [ { "damage_type": "cut", "amount": 12 } ],
     "dodge": 5,
     "attack_effs": [ { "id": "rad_tenths", "duration": 20 } ],
-    "armor_bash": 3,
-    "armor_cut": 1,
     "vision_day": 40,
     "vision_night": 5,
     "path_settings": { "max_dist": 30 },
@@ -599,7 +590,8 @@
       "FAT",
       "SWARMS",
       "GROUP_MORALE"
-    ]
+    ],
+    "armor": { "bash": 3, "cut": 1 }
   },
   {
     "id": "mon_raphael",
@@ -623,10 +615,6 @@
     "melee_damage": [ { "damage_type": "cut", "amount": 7 } ],
     "melee_damage": [ { "damage_type": "stab", "amount": 15 } ],
     "dodge": 5,
-    "armor_bash": 6,
-    "armor_stab": 8,
-    "armor_cut": 14,
-    "armor_acid": 5,
     "armor_fire": 8,
     "vision_day": 40,
     "vision_night": 15,
@@ -665,7 +653,8 @@
       "HIT_AND_RUN"
     ],
     "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "PLAYER_CLOSE" ],
-    "placate_triggers": [ "FIRE", "HURT" ]
+    "placate_triggers": [ "FIRE", "HURT" ],
+    "armor": { "bash": 6, "cut": 14, "stab": 8, "acid": 5 }
   },
   {
     "id": "mon_donatello",
@@ -834,9 +823,6 @@
     "melee_dice_sides": 6,
     "melee_damage": [ { "damage_type": "cut", "amount": 12 } ],
     "dodge": 7,
-    "armor_bash": 4,
-    "armor_cut": 4,
-    "armor_acid": 1,
     "armor_fire": 1,
     "vision_day": 30,
     "vision_night": 20,
@@ -873,7 +859,8 @@
       "HARDTOSHOOT"
     ],
     "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT" ],
-    "placate_triggers": [ "PLAYER_WEAK" ]
+    "placate_triggers": [ "PLAYER_WEAK" ],
+    "armor": { "bash": 4, "cut": 4, "acid": 1 }
   },
   {
     "id": "mon_giant_crayfish",
@@ -894,8 +881,6 @@
     "melee_damage": [ { "damage_type": "cut", "amount": 6 } ],
     "dodge": 2,
     "attack_effs": [ { "id": "rad_tenths", "duration": 10 } ],
-    "armor_bash": 5,
-    "armor_cut": 8,
     "vision_day": 35,
     "vision_night": 7,
     "special_attacks": [
@@ -917,7 +902,8 @@
     ],
     "flags": [ "SMELLS", "HEARS", "SEES", "CHITIN", "SWIMS", "GRABS", "FAT", "ARTHROPOD_BLOOD" ],
     "anger_triggers": [ "PLAYER_CLOSE", "HURT" ],
-    "fear_triggers": [ "FIRE" ]
+    "fear_triggers": [ "FIRE" ],
+    "armor": { "bash": 5, "cut": 8 }
   },
   {
     "id": "mon_graboid",
@@ -933,9 +919,6 @@
     "melee_dice": 6,
     "melee_dice_sides": 6,
     "melee_damage": [ { "damage_type": "cut", "amount": 9 } ],
-    "armor_bash": 12,
-    "armor_cut": 6,
-    "armor_stab": 8,
     "attack_effs": [ { "id": "rad_tenths", "duration": 10 } ],
     "vision_day": 2,
     "vision_night": 2,
@@ -962,7 +945,8 @@
     "death_function": [ "WORM", "NORMAL" ],
     "flags": [ "SEES", "HEARS", "GOODHEARING", "DIGS", "BASHES", "POISON", "WARM", "LEATHER", "FAT" ],
     "anger_triggers": [ "SOUND", "FRIEND_ATTACKED", "PLAYER_WEAK" ],
-    "fear_triggers": [ "HURT", "FRIEND_DIED", "FIRE" ]
+    "fear_triggers": [ "HURT", "FRIEND_DIED", "FIRE" ],
+    "armor": { "bash": 12, "cut": 6, "stab": 8 }
   },
   {
     "id": "mon_worm",
@@ -979,14 +963,13 @@
     "melee_dice_sides": 6,
     "melee_damage": [ { "damage_type": "cut", "amount": 5 } ],
     "attack_effs": [ { "id": "rad_tenths", "duration": 10 } ],
-    "armor_bash": 3,
-    "armor_cut": 2,
     "special_attacks": [ [ "wound_minor", 30 ] ],
     "regen_morale": true,
     "regenerates": 1,
     "flags": [ "DIGS", "HEARS", "GOODHEARING", "WARM", "LEATHER" ],
     "anger_triggers": [ "SOUND", "FRIEND_ATTACKED", "PLAYER_WEAK" ],
-    "fear_triggers": [ "HURT", "FRIEND_DIED" ]
+    "fear_triggers": [ "HURT", "FRIEND_DIED" ],
+    "armor": { "bash": 3, "cut": 2 }
   },
   {
     "id": "mon_halfworm",
@@ -1010,14 +993,14 @@
     "melee_dice_sides": 6,
     "melee_damage": [ { "damage_type": "cut", "amount": 3 } ],
     "attack_effs": [ { "id": "rad_tenths", "duration": 10 } ],
-    "armor_bash": 2,
     "harvest": "mutant_meatslug",
     "upgrades": { "half_life": 3, "into_group": "GROUP_WORM" },
     "regenerates": 1,
     "regen_morale": true,
     "flags": [ "CAN_DIG", "HEARS", "GOODHEARING", "WARM", "LEATHER" ],
     "anger_triggers": [ "SOUND", "FRIEND_ATTACKED", "PLAYER_WEAK" ],
-    "fear_triggers": [ "HURT", "FRIEND_DIED" ]
+    "fear_triggers": [ "HURT", "FRIEND_DIED" ],
+    "armor": { "bash": 2 }
   },
   {
     "id": "mon_thing_swamp",
@@ -1045,16 +1028,13 @@
       { "id": "rad_tenths", "duration": 60 },
       { "id": "rad_tenths", "duration": 120 }
     ],
-    "armor_bash": 4,
-    "armor_cut": 13,
-    "armor_stab": 10,
-    "armor_acid": 20,
     "armor_fire": 1,
     "vision_day": 35,
     "vision_night": 12,
     "emit_fields": [ "emit_gas_stream", "emit_gas_stream", "emit_radiation_plume" ],
     "path_settings": { "max_dist": 30 },
     "death_function": [ "MELT", "ACID" ],
-    "flags": [ "SEES", "HEARS", "POISON", "HUMAN", "WARM", "BASHES", "GROUP_BASH", "NO_BREATHE", "LEATHER", "BONES", "STUMBLES" ]
+    "flags": [ "SEES", "HEARS", "POISON", "HUMAN", "WARM", "BASHES", "GROUP_BASH", "NO_BREATHE", "LEATHER", "BONES", "STUMBLES" ],
+    "armor": { "bash": 4, "cut": 13, "stab": 10, "acid": 20 }
   }
 ]
