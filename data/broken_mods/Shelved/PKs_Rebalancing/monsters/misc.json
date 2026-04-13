@@ -41,7 +41,6 @@
     "melee_dice_sides": 4,
     "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "dodge": 3,
-    "armor_bash": 4,
     "path_settings": { "max_dist": 8 },
     "special_attacks": [
       [ "RANGED_PULL", 60 ],
@@ -63,7 +62,8 @@
       }
     ],
     "anger_triggers": [ "STALK", "PLAYER_WEAK", "PLAYER_CLOSE" ],
-    "flags": [ "SEES", "SMELLS", "HEARS", "SWIMS" ]
+    "flags": [ "SEES", "SMELLS", "HEARS", "SWIMS" ],
+    "armor": { "bash": 4 }
   },
   {
     "id": "mon_rattlesnake",
@@ -124,9 +124,6 @@
     "melee_dice_sides": 8,
     "melee_damage": [ { "damage_type": "cut", "amount": 8 } ],
     "dodge": 1,
-    "armor_bash": 2,
-    "armor_cut": 4,
-    "armor_bullet": 3,
     "vision_day": 30,
     "vision_night": 5,
     "harvest": "mutant_animal_large_noskin",
@@ -149,7 +146,8 @@
     "placate_triggers": [ "PLAYER_WEAK" ],
     "reproduction": { "baby_egg": "egg_reptile", "baby_count": 3, "baby_timer": 10 },
     "baby_flags": [ "SPRING" ],
-    "flags": [ "SEES", "HEARS", "SMELLS", "HARDTOSHOOT", "SWIMS" ]
+    "flags": [ "SEES", "HEARS", "SMELLS", "HARDTOSHOOT", "SWIMS" ],
+    "armor": { "bash": 2, "cut": 4, "bullet": 3 }
   },
   {
     "id": "mon_null",
@@ -181,8 +179,6 @@
     "melee_damage": [ { "damage_type": "cut", "amount": 12 } ],
     "dodge": 2,
     "attack_effs": [ { "id": "rad_tenths", "duration": 2 } ],
-    "armor_bash": 6,
-    "armor_cut": 8,
     "vision_day": 5,
     "vision_night": 35,
     "path_settings": { "max_dist": 8 },
@@ -202,7 +198,8 @@
     "anger_triggers": [ "PLAYER_CLOSE", "PLAYER_WEAK" ],
     "fear_triggers": [ "FIRE", "HURT" ],
     "placate_triggers": [ "MEAT" ],
-    "flags": [ "SEES", "HEARS", "GOODHEARING", "SMELLS", "KEENNOSE", "PATH_AVOID_DANGER_1", "ANIMAL", "ATTACKMON", "SWIMS" ]
+    "flags": [ "SEES", "HEARS", "GOODHEARING", "SMELLS", "KEENNOSE", "PATH_AVOID_DANGER_1", "ANIMAL", "ATTACKMON", "SWIMS" ],
+    "armor": { "bash": 6, "cut": 8 }
   },
   {
     "id": "mon_hallu_mannequin",
@@ -225,15 +222,13 @@
     "melee_dice_sides": 2,
     "dodge": 1,
     "attack_effs": [ { "id": "rad_tenths", "duration": 10 } ],
-    "armor_bash": 2,
-    "armor_cut": 4,
-    "armor_acid": 6,
     "vision_day": 35,
     "vision_night": 5,
     "path_settings": { "max_dist": 35 },
     "special_attacks": [ [ "GRAB", 30 ] ],
     "death_function": [ "DISAPPEAR" ],
-    "flags": [ "SEES", "PATH_AVOID_DANGER_1", "NO_BREATHE", "PLASTIC" ]
+    "flags": [ "SEES", "PATH_AVOID_DANGER_1", "NO_BREATHE", "PLASTIC" ],
+    "armor": { "bash": 2, "cut": 4, "acid": 6 }
   },
   {
     "id": "mon_pig",
@@ -282,14 +277,13 @@
     "melee_dice_sides": 2,
     "melee_damage": [ { "damage_type": "cut", "amount": 1 } ],
     "dodge": 3,
-    "armor_bash": 0,
-    "armor_cut": 1,
     "vision_day": 25,
     "vision_night": 10,
     "special_attacks": [ [ "wound_minor", 30 ], { "type": "bite", "cooldown": 5, "no_infection_chance": 8 } ],
     "anger_triggers": [ "PLAYER_WEAK", "FRIEND_ATTACKED", "FRIEND_DIED", "HURT" ],
     "fear_triggers": [ "PLAYER_CLOSE" ],
-    "flags": [ "SEES", "SMELLS", "HEARS", "WARM", "SWIMS", "PATH_AVOID_DANGER_1", "ANIMAL", "SWARMS", "GROUP_MORALE" ]
+    "flags": [ "SEES", "SMELLS", "HEARS", "WARM", "SWIMS", "PATH_AVOID_DANGER_1", "ANIMAL", "SWARMS", "GROUP_MORALE" ],
+    "armor": { "bash": 0, "cut": 1 }
   },
   {
     "id": "mon_rat_king",
@@ -305,8 +299,6 @@
     "melee_dice_sides": 2,
     "melee_damage": [ { "damage_type": "cut", "amount": 5 } ],
     "dodge": 0,
-    "armor_bash": 2,
-    "armor_cut": 0,
     "vision_day": 5,
     "vision_night": 25,
     "starting_ammo": { "bot_rat": 25 },
@@ -319,7 +311,8 @@
     "special_attacks": [ [ "wound_minor", 60 ], [ "RATKING", 3 ], [ "GRENADIER", 10 ] ],
     "anger_triggers": [ "STALK", "HURT", "FRIEND_ATTACKED", "FRIEND_DIED" ],
     "fear_triggers": [ "PLAYER_CLOSE" ],
-    "flags": [ "SEES", "SMELLS", "WARM", "SWIMS", "BONES" ]
+    "flags": [ "SEES", "SMELLS", "WARM", "SWIMS", "BONES" ],
+    "armor": { "bash": 2, "cut": 0 }
   },
   {
     "id": "mon_cow",
@@ -346,14 +339,12 @@
     "melee_damage": [ { "damage_type": "stab", "amount": 8 } ],
     "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "dodge": 2,
-    "armor_bash": 4,
-    "armor_cut": 1,
-    "armor_acid": 2,
     "vision_day": 40,
     "special_attacks": [ [ "hammer", 15 ], [ "wound_minor", 30 ] ],
     "anger_triggers": [ "FRIEND_DIED", "HURT" ],
     "fear_triggers": [ "SOUND" ],
-    "placate_triggers": [ "PLAYER_WEAK" ]
+    "placate_triggers": [ "PLAYER_WEAK" ],
+    "armor": { "bash": 4, "cut": 1, "acid": 2 }
   },
   {
     "id": "mon_bear",
@@ -370,8 +361,6 @@
     "melee_damage": [ { "damage_type": "cut", "amount": 8 } ],
     "melee_damage": [ { "damage_type": "cut", "amount": 8 } ],
     "dodge": 3,
-    "armor_bash": 1,
-    "armor_cut": 3,
     "vision_day": 30,
     "vision_night": 15,
     "path_settings": { "max_dist": 30 },
@@ -389,7 +378,8 @@
     ],
     "anger_triggers": [ "HURT", "PLAYER_NEAR_BABY" ],
     "fear_triggers": [ "SOUND" ],
-    "placate_triggers": [ "MEAT" ]
+    "placate_triggers": [ "MEAT" ],
+    "armor": { "bash": 1, "cut": 3 }
   },
   {
     "id": "mon_bear_pk",
@@ -406,10 +396,9 @@
     "melee_dice_sides": 16,
     "melee_damage": [ { "damage_type": "cut", "amount": 8 } ],
     "dodge": 3,
-    "armor_bash": 1,
-    "armor_cut": 3,
     "vision_day": 30,
-    "vision_night": 15
+    "vision_night": 15,
+    "armor": { "bash": 1, "cut": 3 }
   },
   {
     "id": "mon_bear_weak",
@@ -426,11 +415,10 @@
     "melee_dice_sides": 6,
     "melee_damage": [ { "damage_type": "cut", "amount": 4 } ],
     "dodge": 2,
-    "armor_bash": 1,
-    "armor_cut": 3,
     "vision_day": 25,
     "vision_night": 10,
-    "anger_triggers": [ "HURT", "PLAYER_NEAR_BABY", "PLAYER_WEAK" ]
+    "anger_triggers": [ "HURT", "PLAYER_NEAR_BABY", "PLAYER_WEAK" ],
+    "armor": { "bash": 1, "cut": 3 }
   },
   {
     "id": "mon_cougar",
@@ -465,14 +453,13 @@
     "melee_dice_sides": 8,
     "melee_damage": [ { "damage_type": "cut", "amount": 8 } ],
     "dodge": 6,
-    "armor_bash": 2,
-    "armor_cut": 3,
     "vision_day": 40,
     "vision_night": 20,
     "special_attacks": [ [ "LUNGE", 30 ], [ "scratch", 40 ], { "type": "leap", "cooldown": 5, "max_range": 5 } ],
     "anger_triggers": [ "STALK", "PLAYER_WEAK", "HURT", "PLAYER_CLOSE", "FRIEND_ATTACKED" ],
     "fear_triggers": [ "SOUND" ],
-    "placate_triggers": [ "MEAT" ]
+    "placate_triggers": [ "MEAT" ],
+    "armor": { "bash": 2, "cut": 3 }
   },
   {
     "id": "mon_cougar_weak",
@@ -489,14 +476,13 @@
     "melee_dice_sides": 4,
     "melee_damage": [ { "damage_type": "cut", "amount": 6 } ],
     "dodge": 7,
-    "armor_bash": 1,
-    "armor_cut": 0,
     "vision_day": 40,
     "vision_night": 10,
     "special_attacks": [ [ "LUNGE", 50 ], [ "scratch", 60 ], { "type": "leap", "cooldown": 5, "max_range": 5 } ],
     "anger_triggers": [ "STALK", "PLAYER_WEAK", "PLAYER_CLOSE", "FRIEND_ATTACKED" ],
     "fear_triggers": [ "SOUND" ],
-    "placate_triggers": [ "MEAT", "SOUND" ]
+    "placate_triggers": [ "MEAT", "SOUND" ],
+    "armor": { "bash": 1, "cut": 0 }
   },
   {
     "id": "mon_dog",
@@ -511,14 +497,13 @@
     "melee_dice_sides": 3,
     "melee_damage": [ { "damage_type": "cut", "amount": 3 } ],
     "dodge": 3,
-    "armor_bash": 0,
-    "armor_cut": 0,
     "vision_day": 45,
     "vision_night": 5,
     "path_settings": { "max_dist": 25 },
     "flags": [ "SEES", "HEARS", "SMELLS", "ANIMAL", "PATH_AVOID_DANGER_1", "WARM", "HIT_AND_RUN", "KEENNOSE", "GROUP_MORALE" ],
     "anger_triggers": [ "HURT", "FRIEND_ATTACKED", "FRIEND_DIED", "PLAYER_WEAK" ],
-    "placate_triggers": [ "MEAT", "SOUND" ]
+    "placate_triggers": [ "MEAT", "SOUND" ],
+    "armor": { "bash": 0, "cut": 0 }
   },
   {
     "id": "mon_dog_large",
@@ -538,8 +523,6 @@
     "melee_dice_sides": 4,
     "melee_damage": [ { "damage_type": "cut", "amount": 4 } ],
     "dodge": 3,
-    "armor_bash": 0,
-    "armor_cut": 0,
     "vision_day": 40,
     "vision_night": 5,
     "path_settings": { "max_dist": 25 },
@@ -547,7 +530,8 @@
     "anger_triggers": [ "STALK", "HURT", "FRIEND_ATTACKED", "PLAYER_WEAK" ],
     "fear_triggers": [ "FRIEND_DIED" ],
     "placate_triggers": [ "MEAT", "SOUND" ],
-    "flags": [ "SEES", "HEARS", "SMELLS", "ANIMAL", "PATH_AVOID_DANGER_1", "WARM", "KEENNOSE", "GROUP_MORALE" ]
+    "flags": [ "SEES", "HEARS", "SMELLS", "ANIMAL", "PATH_AVOID_DANGER_1", "WARM", "KEENNOSE", "GROUP_MORALE" ],
+    "armor": { "bash": 0, "cut": 0 }
   },
   {
     "id": "mon_moose",
@@ -564,14 +548,12 @@
     "melee_damage": [ { "damage_type": "cut", "amount": 2 } ],
     "melee_damage": [ { "damage_type": "bash", "amount": 6 }, { "damage_type": "stab", "amount": 2 } ],
     "dodge": 1,
-    "armor_bash": 4,
-    "armor_cut": 1,
-    "armor_acid": 2,
     "path_settings": { "max_dist": 25 },
     "special_attacks": [ [ "SMASH", 50 ] ],
     "anger_triggers": [ "HURT", "MATING_SEASON", "FRIEND_ATTACKED" ],
     "placate_triggers": [ "PLAYER_WEAK" ],
-    "flags": [ "SEES", "HEARS", "SMELLS", "PATH_AVOID_DANGER_1", "ANIMAL", "BASHES", "WARM", "ATTACKMON" ]
+    "flags": [ "SEES", "HEARS", "SMELLS", "PATH_AVOID_DANGER_1", "ANIMAL", "BASHES", "WARM", "ATTACKMON" ],
+    "armor": { "bash": 4, "cut": 1, "acid": 2 }
   },
   {
     "id": "mon_moose_pk",
@@ -590,16 +572,14 @@
     "melee_damage": [ { "damage_type": "cut", "amount": 3 } ],
     "melee_damage": [ { "damage_type": "bash", "amount": 12 }, { "damage_type": "stab", "amount": 3 } ],
     "dodge": 2,
-    "armor_bash": 5,
-    "armor_cut": 2,
-    "armor_acid": 2,
     "vision_day": 40,
     "vision_night": 8,
     "special_attacks": [ [ "SMASH", 50 ] ],
     "anger_triggers": [ "HURT", "MATING_SEASON", "FRIEND_ATTACKED" ],
     "fear_triggers": [ "SOUND" ],
     "placate_triggers": [ "PLAYER_WEAK" ],
-    "flags": [ "SEES", "HEARS", "SMELLS", "PATH_AVOID_DANGER_1", "ANIMAL", "BASHES", "WARM", "ATTACKMON" ]
+    "flags": [ "SEES", "HEARS", "SMELLS", "PATH_AVOID_DANGER_1", "ANIMAL", "BASHES", "WARM", "ATTACKMON" ],
+    "armor": { "bash": 5, "cut": 2, "acid": 2 }
   },
   {
     "id": "mon_moose_weak",
@@ -617,16 +597,14 @@
     "melee_damage": [ { "damage_type": "cut", "amount": 2 } ],
     "melee_damage": [ { "damage_type": "bash", "amount": 5 }, { "damage_type": "stab", "amount": 2 } ],
     "dodge": 1,
-    "armor_bash": 3,
-    "armor_cut": 1,
-    "armor_acid": 2,
     "vision_day": 40,
     "vision_night": 7,
     "special_attacks": [ [ "SMASH", 90 ] ],
     "anger_triggers": [ "HURT", "MATING_SEASON", "FRIEND_ATTACKED" ],
     "fear_triggers": [ "HURT" ],
     "placate_triggers": [ "PLAYER_WEAK" ],
-    "flags": [ "SEES", "HEARS", "SMELLS", "PATH_AVOID_DANGER_1", "ANIMAL", "BASHES", "WARM", "ATTACKMON" ]
+    "flags": [ "SEES", "HEARS", "SMELLS", "PATH_AVOID_DANGER_1", "ANIMAL", "BASHES", "WARM", "ATTACKMON" ],
+    "armor": { "bash": 3, "cut": 1, "acid": 2 }
   },
   {
     "id": "mon_wolf",
@@ -643,7 +621,6 @@
     "melee_damage": [ { "damage_type": "stab", "amount": 3 } ],
     "melee_damage": [ { "damage_type": "cut", "amount": 5 } ],
     "dodge": 4,
-    "armor_bash": 2,
     "vision_day": 40,
     "vision_night": 7,
     "path_settings": { "max_dist": 30 },
@@ -653,7 +630,8 @@
     ],
     "biosignature": { "biosig_item": "feces_dog", "biosig_timer": 6 },
     "anger_triggers": [ "STALK", "FRIEND_DIED", "PLAYER_WEAK", "PLAYER_CLOSE" ],
-    "placate_triggers": [ "MEAT", "FRIEND_ATTACKED" ]
+    "placate_triggers": [ "MEAT", "FRIEND_ATTACKED" ],
+    "armor": { "bash": 2 }
   },
   {
     "id": "mon_coyote",
@@ -677,7 +655,6 @@
     "melee_dice_sides": 3,
     "melee_damage": [ { "damage_type": "cut", "amount": 2 } ],
     "dodge": 3,
-    "armor_bash": 1,
     "vision_night": 5,
     "path_settings": { "max_dist": 10 },
     "anger_triggers": [ "STALK", "FRIEND_ATTACKED", "PLAYER_WEAK", "HURT" ],
@@ -686,7 +663,8 @@
     "harvest": "mammal_fur",
     "upgrades": { "half_life": 17, "into": "mon_coyote_small" },
     "biosignature": { "biosig_item": "feces_dog", "biosig_timer": 6 },
-    "flags": [ "SEES", "HEARS", "SMELLS", "ANIMAL", "PATH_AVOID_DANGER_1", "WARM", "HIT_AND_RUN", "KEENNOSE" ]
+    "flags": [ "SEES", "HEARS", "SMELLS", "ANIMAL", "PATH_AVOID_DANGER_1", "WARM", "HIT_AND_RUN", "KEENNOSE" ],
+    "armor": { "bash": 1 }
   },
   {
     "id": "mon_skunk",
@@ -741,14 +719,13 @@
     "melee_dice_sides": 5,
     "melee_damage": [ { "damage_type": "cut", "amount": 3 } ],
     "dodge": 2,
-    "armor_bash": 2,
-    "armor_cut": 0,
     "path_settings": { "max_dist": 40 },
     "special_attacks": [ [ "wound_minor", 30 ], [ "hammer", 40 ], { "type": "leap", "cooldown": 15, "max_range": 2 } ],
     "anger_triggers": [ "HURT", "STALK", "FRIEND_DIED" ],
     "fear_triggers": [ "SOUND", "FRIEND_ATTACKED" ],
     "placate_triggers": [ "PLAYER_WEAK" ],
-    "flags": [ "SEES", "HEARS", "SMELLS", "ANIMAL", "PATH_AVOID_DANGER_1", "WARM" ]
+    "flags": [ "SEES", "HEARS", "SMELLS", "ANIMAL", "PATH_AVOID_DANGER_1", "WARM" ],
+    "armor": { "bash": 2, "cut": 0 }
   },
   {
     "id": "mon_robin",
@@ -825,8 +802,6 @@
       { "id": "rad_tenths", "duration": 10 },
       { "id": "rad_tenths", "duration": 60 }
     ],
-    "armor_bash": 14,
-    "armor_cut": 6,
     "vision_day": 35,
     "vision_night": 10,
     "special_attacks": [
@@ -852,7 +827,8 @@
     "anger_triggers": [ "PLAYER_CLOSE", "PLAYER_WEAK", "FRIEND_ATTACKED" ],
     "fear_triggers": [ "HURT", "FRIEND_DIED" ],
     "placate_triggers": [ "MEAT" ],
-    "flags": [ "SEES", "HEARS", "SMELLS", "KEENNOSE", "PATH_AVOID_DANGER_1", "ANIMAL", "WARM", "BASHES", "DESTROYS", "PUSH_MON" ]
+    "flags": [ "SEES", "HEARS", "SMELLS", "KEENNOSE", "PATH_AVOID_DANGER_1", "ANIMAL", "WARM", "BASHES", "DESTROYS", "PUSH_MON" ],
+    "armor": { "bash": 14, "cut": 6 }
   },
   {
     "id": "mon_bear_mega_mating",
@@ -882,8 +858,6 @@
       { "id": "rad_tenths", "duration": 10 },
       { "id": "rad_tenths", "duration": 60 }
     ],
-    "armor_bash": 14,
-    "armor_cut": 6,
     "vision_day": 30,
     "vision_night": 10,
     "special_attacks": [
@@ -910,7 +884,8 @@
     "anger_triggers": [ "PLAYER_CLOSE", "PLAYER_WEAK", "SOUND", "STALK", "FIRE", "FRIEND_ATTACKED" ],
     "fear_triggers": [ "HURT", "FIRE" ],
     "placate_triggers": [ "MEAT" ],
-    "flags": [ "SEES", "HEARS", "SMELLS", "ANIMAL", "WARM", "BASHES", "DESTROYS", "ATTACKMON", "SWARMS" ]
+    "flags": [ "SEES", "HEARS", "SMELLS", "ANIMAL", "WARM", "BASHES", "DESTROYS", "ATTACKMON", "SWARMS" ],
+    "armor": { "bash": 14, "cut": 6 }
   },
   {
     "id": "mon_bear_mega_kid",
@@ -939,8 +914,6 @@
       { "id": "rad_tenths", "duration": 10 },
       { "id": "rad_tenths", "duration": 60 }
     ],
-    "armor_bash": 10,
-    "armor_cut": 6,
     "vision_day": 30,
     "vision_night": 7,
     "special_attacks": [
@@ -971,7 +944,8 @@
       "PUSH_MON",
       "SWARMS",
       "GROUP_MORALE"
-    ]
+    ],
+    "armor": { "bash": 10, "cut": 6 }
   },
   {
     "id": "mon_bear_mega_baby",
@@ -1002,15 +976,14 @@
       { "id": "rad_tenths", "duration": 10 },
       { "id": "rad_tenths", "duration": 60 }
     ],
-    "armor_bash": 10,
-    "armor_cut": 6,
     "vision_day": 30,
     "vision_night": 7,
     "special_attacks": [ { "type": "bite", "cooldown": 20, "accuracy": 5, "no_infection_chance": 18 } ],
     "anger_triggers": [ "PLAYER_WEAK", "FRIEND_ATTACKED", "FIRE" ],
     "fear_triggers": [ "HURT", "FRIEND_DIED", "FIRE", "PLAYER_CLOSE" ],
     "placate_triggers": [ "MEAT", "FRIEND_ATTACKED" ],
-    "flags": [ "SEES", "HEARS", "SMELLS", "ANIMAL", "WARM", "BASHES", "PUSH_MON", "SWARMS", "GROUP_MORALE", "STUMBLES" ]
+    "flags": [ "SEES", "HEARS", "SMELLS", "ANIMAL", "WARM", "BASHES", "PUSH_MON", "SWARMS", "GROUP_MORALE", "STUMBLES" ],
+    "armor": { "bash": 10, "cut": 6 }
   },
   {
     "id": "mon_coyote_small",
@@ -1036,7 +1009,6 @@
     "melee_damage": [ { "damage_type": "cut", "amount": 4 } ],
     "dodge": 6,
     "attack_effs": [ { "id": "rad_tenths", "duration": 10 }, { "id": "rad_tenths", "duration": 15 } ],
-    "armor_bash": 1,
     "vision_day": 40,
     "vision_night": 5,
     "path_settings": { "max_dist": 30 },
@@ -1055,7 +1027,8 @@
       "KEENNOSE",
       "SWARMS",
       "GROUP_MORALE"
-    ]
+    ],
+    "armor": { "bash": 1 }
   },
   {
     "id": "mon_pig_saber",
@@ -1081,8 +1054,6 @@
     "melee_damage": [ { "damage_type": "stab", "amount": 6 } ],
     "dodge": 2,
     "attack_effs": [ { "id": "rad_tenths", "duration": 5 }, { "id": "rad_tenths", "duration": 15 } ],
-    "armor_bash": 5,
-    "armor_cut": 1,
     "vision_day": 35,
     "vision_night": 10,
     "path_settings": { "max_dist": 20 },
@@ -1099,7 +1070,8 @@
     "flags": [ "SEES", "HEARS", "SMELLS", "KEENNOSE", "ANIMAL", "PATH_AVOID_DANGER_1", "WARM" ],
     "anger_triggers": [ "PLAYER_WEAK", "STALK", "PLAYER_CLOSE" ],
     "fear_triggers": [ "SOUND", "HURT", "FIRE" ],
-    "placate_triggers": [ "MEAT", "FRIEND_ATTACKED" ]
+    "placate_triggers": [ "MEAT", "FRIEND_ATTACKED" ],
+    "armor": { "bash": 5, "cut": 1 }
   },
   {
     "id": "mon_mole_large",
