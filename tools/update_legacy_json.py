@@ -166,28 +166,10 @@ def fix_integral_volume(content):
 def fix_weight(content):
     """
     "weight": N  ->  "weight": "N g"
-    NOTE: for "type": "mapgen" objects, fix_mapgen_weight is used instead
-    (removes the key entirely).  For "type": "speech" objects, weight is
-    left completely untouched (handled via per-object pipeline selection).
+    NOTE: selected object types (e.g. mapgen / mod_tileset) skip this
+    transform via per-object pipeline selection.
     """
     return _sub(r'"weight"\s*:\s*(\d+)', r'"weight": "\1 g"', content)
-
-
-def fix_mapgen_weight(content):
-    """
-    Remove "weight": N entirely from mapgen objects.
-    In mapgen entries "weight" is a legacy spawn-weight integer that is no
-    longer used and should be deleted rather than converted to "N g".
-    Handles both comma-before and comma-after positions so the surrounding
-    JSON remains valid after removal.
-    """
-    # Remove:  "weight": N,   (key is followed by a comma)
-    content = _sub(r'"weight"\s*:\s*\d+\s*,\s*', '', content)
-    # Remove:  , "weight": N  (key is preceded by a comma)
-    content = _sub(r',\s*"weight"\s*:\s*\d+', '', content)
-    # Remove any bare remainder (no surrounding commas)
-    content = _sub(r'"weight"\s*:\s*\d+', '', content)
-    return content
 
 
 def fix_effect(content):
@@ -511,10 +493,10 @@ TRANSFORMS = [
 # Per-type pipeline variants
 # ---------------------------------------------------------------------------
 
-# mapgen: remove weight entirely
+# mapgen: leave weight untouched
 _TRANSFORMS_MAPGEN = [
-    fix_mapgen_weight if t is fix_weight else t
-    for t in TRANSFORMS
+    t for t in TRANSFORMS
+    if t is not fix_weight
 ]
 
 # speech: leave volume completely alone ("volume" is loudness, not item size)
@@ -568,7 +550,7 @@ def update_json_content(content):
 
     Per-type special rules
     ----------------------
-    "mapgen"  : weight is removed entirely.
+    "mapgen"  : "weight" is left completely untouched.
     "speech"  : "volume" is left completely untouched.
     "mod_tileset": "weight" is left completely untouched.
     "fg" arrays: nested numeric "weight" entries are left untouched.
