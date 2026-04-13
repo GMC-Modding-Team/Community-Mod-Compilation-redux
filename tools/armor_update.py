@@ -30,14 +30,27 @@ def fix_armor_in_chunk(chunk):
     )
     armor_obj = f'"armor": {{ {armor_parts} }}'
 
-    # remove keys
+    # remove legacy keys (handle key at beginning, middle, or end)
     for legacy_key in found:
-        chunk = _sub(rf',?\s*"{legacy_key}"\s*:\s*\d+', '', chunk)
+        chunk = _sub(rf'\s*"{legacy_key}"\s*:\s*\d+\s*,', '', chunk)
+        chunk = _sub(rf',\s*"{legacy_key}"\s*:\s*\d+', '', chunk)
+        chunk = _sub(rf'\s*"{legacy_key}"\s*:\s*\d+', '', chunk)
 
-    # insert BEFORE final brace of THIS object
-    chunk = re.sub(r'(\n\s*\})', f',\n    {armor_obj}\\1', chunk, count=1)
+    # Insert at the bottom of this object (before the final closing brace).
+    closing = re.search(r'(\s*\})\s*$', chunk)
+    if not closing:
+        return chunk
+
+    body = chunk[1:closing.start()].strip()
+    separator = ',\n    ' if body else '\n    '
+    chunk = (
+        chunk[:closing.start()]
+        + f'{separator}{armor_obj}'
+        + chunk[closing.start():]
+    )
 
     return chunk
+
 
 def split_objects(text):
     depth = 0
