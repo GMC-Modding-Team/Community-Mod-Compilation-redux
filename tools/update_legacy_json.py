@@ -915,6 +915,82 @@ def _restore_companion_skill_practice_weights(content, originals):
     return content
 
 
+def _mask_search_data_material(content):
+    """
+    Mask "material" entries inside every "search_data": [ ... ] block so
+    fix_material does not alter search metadata.
+    Returns (masked_content, list_of_original_material_tokens).
+    """
+    originals = []
+    result = []
+    i = 0
+    pattern = re.compile(r'"search_data"\s*:\s*\[')
+    while i < len(content):
+        m = pattern.search(content, i)
+        if not m:
+            result.append(content[i:])
+            break
+        result.append(content[i:m.start()])
+
+        # Find matching closing bracket for this search_data array.
+        bracket_start = m.end() - 1
+        depth = 0
+        in_str = False
+        escape = False
+        j = bracket_start
+        while j < len(content):
+            ch = content[j]
+            if escape:
+                escape = False
+                j += 1
+                continue
+            if ch == '\\' and in_str:
+                escape = True
+                j += 1
+                continue
+            if ch == '"':
+                in_str = not in_str
+                j += 1
+                continue
+            if in_str:
+                j += 1
+                continue
+            if ch == '[':
+                depth += 1
+            elif ch == ']':
+                depth -= 1
+                if depth == 0:
+                    j += 1
+                    break
+            j += 1
+
+        key_prefix = content[m.start():bracket_start]
+        search_data_block = content[bracket_start:j]
+
+        def _replace_material_token(match):
+            idx = len(originals)
+            originals.append(match.group(0))
+            return f'\x00SDM{idx}\x00'
+
+        # Protect both string and array material forms.
+        search_data_block = re.sub(
+            r'"material"\s*:\s*"[^"]+"|"material"\s*:\s*\[[^\]]*\]',
+            _replace_material_token,
+            search_data_block,
+        )
+        result.append(key_prefix + search_data_block)
+        i = j
+
+    return ''.join(result), originals
+
+
+def _restore_search_data_material(content, originals):
+    """Restore masked search_data material tokens."""
+    for idx, original in enumerate(originals):
+        content = content.replace(f'\x00SDM{idx}\x00', original)
+    return content
+
+
 def fix_price(content):
     """
     "price": N          ->  "price": "N cent"
@@ -1138,6 +1214,7 @@ def update_json_content(content):
     "phases" arrays: nested numeric "weight" entries are left untouched.
     "price_rules" arrays: numeric "price"/"price_postapoc" are untouched.
     "companion_skill_practice" arrays: nested numeric "weight" are untouched.
+    "search_data" arrays: "material" entries are untouched.
     all types : nothing inside a "proportional": { ... } block is touched.
     """
     # ------------------------------------------------------------------
@@ -1154,6 +1231,7 @@ def update_json_content(content):
     content, phases_weight_originals = _mask_phases_weights(content)
     content, price_rules_originals = _mask_price_rules_prices(content)
     content, companion_skill_practice_originals = _mask_companion_skill_practice_weights(content)
+    content, search_data_material_originals = _mask_search_data_material(content)
 
     # ------------------------------------------------------------------
     # Step 2: split into individual top-level objects and apply the
@@ -1190,6 +1268,7 @@ def update_json_content(content):
     # ------------------------------------------------------------------
     # Step 3: restore the original proportional blocks.
     # ------------------------------------------------------------------
+    content = _restore_search_data_material(content, search_data_material_originals)
     content = _restore_companion_skill_practice_weights(content, companion_skill_practice_originals)
     content = _restore_price_rules_prices(content, price_rules_originals)
     content = _restore_phases_weights(content, phases_weight_originals)
