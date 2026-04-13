@@ -8,7 +8,7 @@
     "volume": "5 L",
     "price": "16500 USD",
     "to_hit": -4,
-    "bashing": 12,
+    "melee_damage": { "bash": 12 },
     "material": [ "steel", "superalloy" ],
     "skill": "rifle",
     "symbol": "(",
@@ -37,7 +37,7 @@
     "volume": "8 L",
     "price": "16500 USD",
     "to_hit": -4,
-    "bashing": 12,
+    "melee_damage": { "bash": 12 },
     "material": [ "steel", "superalloy" ],
     "skill": "rifle",
     "symbol": "(",
@@ -63,7 +63,8 @@
         "item_restriction": [ "cbma_em_railmag" ]
       }
     ],
-    "flags": [ "MODE_BURST", "NEVER_JAMS" ]
+    "flags": [ "NEVER_JAMS" ],
+    "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "BURST", "burst", 2 ], [ "AUTO", "auto", 4 ] ]
   },
   {
     "id": "cbma_pilehammer_exp",
@@ -74,8 +75,7 @@
     "volume": "7 L",
     "price": "16500 USD",
     "to_hit": 1,
-    "bashing": 12,
-    "cutting": 24,
+    "melee_damage": { "bash": 12, "cut": 24 },
     "material": [ "steel", "superalloy" ],
     "symbol": "|",
     "color": "dark_gray",
@@ -101,13 +101,11 @@
     "volume": "7 L",
     "price": "16500 USD",
     "to_hit": 1,
-    "bashing": 12,
-    "cutting": 24,
+    "melee_damage": { "bash": 12, "cut": 24 },
     "material": [ "steel", "superalloy" ],
     "symbol": "|",
     "color": "dark_gray",
     "skill": "melee",
-    "ups_charges": 250,
     "range": 2,
     "ranged_damage": { "damage_type": "stab", "amount": 125, "armor_penetration": 128 },
     "dispersion": 0,

@@ -1,0 +1,131 @@
+[
+  {
+    "type": "talk_topic",
+    "id": "TALK_BRIT_SOLDIER",
+    "dynamic_line": {
+      "u_is_wearing": "brit_mk7_helmet",
+      "yes": [
+        "Good to see another serviceman, mate.",
+        "Glad to see you're still in uniform, soldier.",
+        "Keeping it together in this bloody mess, are we?"
+      ],
+      "no": [
+        "Oi! Civilian, this is a restricted area.",
+        "State your business, civilian.",
+        "Careful now, this area isn't safe for civilians.",
+        "You shouldn't be wandering around here, mate."
+      ]
+    },
+    "responses": [
+      { "text": "Who are you?", "topic": "TALK_BRIT_SOLDIER_WHO" },
+      { "text": "What are you doing here?", "topic": "TALK_BRIT_SOLDIER_DOING" },
+      { "text": "What happened to the rest of the British forces?", "topic": "TALK_BRIT_SOLDIER_FORCES" },
+      {
+        "text": "Do you have any supplies to trade?",
+        "topic": "TALK_BRIT_SOLDIER_TRADE",
+        "condition": { "not": { "npc_has_var": "trade_refusal", "type": "general", "context": "chat", "value": "yes" } }
+      },
+      { "text": "I'll leave you be.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_BRIT_SOLDIER_WHO",
+    "dynamic_line": [
+      "Private Jenkins, 2nd Battalion, Royal Regiment of Fusiliers.",
+      "Lance Corporal Williams, Royal Anglian Regiment.",
+      "Corporal Smith, Duke of Lancaster's Regiment.",
+      "I'm with what's left of the British Army in this godforsaken place."
+    ],
+    "responses": [
+      { "text": "How did you end up here?", "topic": "TALK_BRIT_SOLDIER_HISTORY" },
+      { "text": "Let's talk about something else.", "topic": "TALK_BRIT_SOLDIER" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_BRIT_SOLDIER_DOING",
+    "dynamic_line": [
+      "Standing guard, what does it look like?",
+      "Keeping watch for hostiles. This whole bloody country's gone to hell.",
+      "Following orders. Supposed to secure this area and wait for reinforcements.",
+      "Trying to stay alive, same as everyone else these days."
+    ],
+    "responses": [
+      { "text": "Have you seen any other military units?", "topic": "TALK_BRIT_SOLDIER_FORCES" },
+      { "text": "Let's talk about something else.", "topic": "TALK_BRIT_SOLDIER" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_BRIT_SOLDIER_FORCES",
+    "dynamic_line": [
+      "Most of our lads were deployed when everything went pear-shaped. Lost contact with command days ago.",
+      "It's a right mess. Some units were trying to evacuate civilians, others were containing those... things. Haven't heard from HQ in weeks.",
+      "We were on a joint exercise with the Americans when it happened. Our CO ordered us to secure this position and wait for orders. Still waiting...",
+      "There's supposed to be a rally point at the nearest RAF base, but the roads are crawling with those monsters."
+    ],
+    "responses": [
+      { "text": "Is there any chain of command left?", "topic": "TALK_BRIT_SOLDIER_COMMAND" },
+      { "text": "Let's talk about something else.", "topic": "TALK_BRIT_SOLDIER" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_BRIT_SOLDIER_COMMAND",
+    "dynamic_line": [
+      "Last I heard, there was a Lieutenant Colonel trying to organize survivors near Manchester. Don't know if he's still alive.",
+      "Our Lieutenant is still giving orders, but I think he's making it up as he goes. Can't blame him, really.",
+      "Chain of command? That's a laugh. It's every unit for themselves now. Some of the lads have gone AWOL, can't say I blame them.",
+      "There's talk of some brass holed up in a bunker somewhere, but I'll believe it when I see it."
+    ],
+    "responses": [ { "text": "Let's talk about something else.", "topic": "TALK_BRIT_SOLDIER" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_BRIT_SOLDIER_HISTORY",
+    "dynamic_line": [
+      "Was stationed at a base not far from here when everything went to hell. Most of my unit didn't make it.",
+      "We were deployed as part of a NATO exercise. Then those things started appearing everywhere. It was chaos.",
+      "I was on leave when it happened. Tried to get back to my unit, but... well, here I am instead.",
+      "Our transport crashed after the pilot turned into one of those things mid-flight. Only a few of us survived."
+    ],
+    "responses": [
+      { "text": "That sounds rough.", "topic": "TALK_BRIT_SOLDIER_SYMPATHY" },
+      { "text": "Let's talk about something else.", "topic": "TALK_BRIT_SOLDIER" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_BRIT_SOLDIER_SYMPATHY",
+    "dynamic_line": [
+      "Yeah, well, that's life now, innit? Just got to crack on.",
+      "Could be worse. At least I'm still breathing.",
+      "Thanks. Lost a lot of good mates that day.",
+      "It is what it is. No use dwelling on it."
+    ],
+    "responses": [ { "text": "Let's talk about something else.", "topic": "TALK_BRIT_SOLDIER" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_BRIT_SOLDIER_TRADE",
+    "dynamic_line": {
+      "npc_has_effect": "asked_for_supplies",
+      "yes": "I've already told you, I can't spare anything right now.",
+      "no": [
+        "I'm not authorized to trade military supplies, mate.",
+        "Sorry, need everything I've got to stay alive.",
+        "Can't help you there. Supplies are strictly rationed.",
+        "I could lose my stripes for trading equipment. Talk to the Quartermaster if you find one."
+      ]
+    },
+    "responses": [
+      {
+        "text": "I understand.",
+        "topic": "TALK_BRIT_SOLDIER",
+        "effect": { "npc_add_effect": "asked_for_supplies", "duration": 600 }
+      },
+      { "text": "Let's talk about something else.", "topic": "TALK_BRIT_SOLDIER" }
+    ]
+  }
+]

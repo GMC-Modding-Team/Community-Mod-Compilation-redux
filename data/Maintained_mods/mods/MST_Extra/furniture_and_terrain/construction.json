@@ -1,7 +1,20 @@
 [
   {
-    "id": "constr_mst_door_frame",
     "type": "construction",
+    "id": "constr_mst_door_frame",
+    "group": "build_door",
+    "//": "Step 1: door frame",
+    "category": "CONSTRUCT",
+    "required_skills": [ [ "fabrication", 1 ] ],
+    "time": "60 m",
+    "qualities": [ [ { "id": "HAMMER", "level": 2 } ], [ { "id": "AXE", "level": 2 }, { "id": "SAW_W", "level": 1 } ] ],
+    "components": [ [ [ "2x4", 6 ] ], [ [ "nail", 12 ] ] ],
+    "pre_terrain": "t_window_empty",
+    "post_terrain": "t_door_frame"
+  },
+  {
+    "type": "construction",
+    "id": "constr_mst_door_frame_2",
     "group": "build_door",
     "//": "Step 1: door frame",
     "category": "CONSTRUCT",
@@ -17,11 +30,11 @@
     "post_terrain": "t_door_frame"
   },
   {
-    "id": "constr_mst_window_empty",
     "type": "construction",
-    "group": "build_window",
-    "//": "Step 1: window frame",
-    "category": "WINDOWS",
+    "id": "constr_mst_door_frame_3",
+    "group": "build_door",
+    "//": "Step 1: door frame",
+    "category": "CONSTRUCT",
     "required_skills": [ [ "fabrication", 2 ], [ "survival", 2 ] ],
     "time": "80 m",
     "qualities": [
@@ -34,8 +47,21 @@
     "post_terrain": "t_door_frame"
   },
   {
-    "id": "constr_mst_beehive",
     "type": "construction",
+    "id": "constr_mst_window_empty",
+    "group": "build_window",
+    "//": "Step 1: window frame",
+    "category": "WINDOWS",
+    "required_skills": [ [ "fabrication", 3 ], [ "survival", 3 ] ],
+    "time": "90 m",
+    "qualities": [ [ { "id": "HAMMER", "level": 2 } ] ],
+    "components": [ [ [ "2x4", 15 ], [ "stick", 15 ], [ "log", 2 ] ], [ [ "adhesive", 2, "LIST" ] ] ],
+    "pre_special": "check_empty",
+    "post_terrain": "t_window_empty"
+  },
+  {
+    "type": "construction",
+    "id": "constr_mst_beehive",
     "group": "build_beehive",
     "//": "Hive lure includes classic of sweet water, or a few other substitutes.  Bee balm tea however is because we don't have lemongrass.",
     "category": "CONSTRUCT",
@@ -57,8 +83,8 @@
     "post_terrain": "t_hive_young"
   },
   {
-    "id": "constr_mst_cpurifier",
     "type": "construction",
+    "id": "constr_mst_cpurifier",
     "group": "build_cpurifier",
     "category": "FURN",
     "required_skills": [ [ "survival", 2 ] ],
@@ -73,8 +99,8 @@
     "post_terrain": "f_char_purifier"
   },
   {
-    "id": "constr_mst_leather_curtain",
     "type": "construction",
+    "id": "constr_mst_leather_curtain",
     "group": "build_door_curtain_leather",
     "//": "Door frame not required",
     "category": "CONSTRUCT",
@@ -92,8 +118,8 @@
     "post_terrain": "t_door_curtain_leather_c"
   },
   {
-    "id": "constr_mst_makeshift_sill_dirt",
     "type": "construction",
+    "id": "constr_mst_makeshift_sill_dirt",
     "group": "build_still_dirt",
     "category": "CONSTRUCT",
     "required_skills": [ [ "fabrication", 2 ], [ "survival", 2 ] ],
@@ -105,8 +131,8 @@
     "post_terrain": "f_still_mounds"
   },
   {
-    "id": "constr_mst_makeshift_sill_sand",
     "type": "construction",
+    "id": "constr_mst_makeshift_sill_sand",
     "group": "build_still_dirt",
     "category": "CONSTRUCT",
     "required_skills": [ [ "fabrication", 2 ], [ "survival", 2 ] ],
@@ -117,8 +143,8 @@
     "post_terrain": "f_still_mounds"
   },
   {
-    "id": "constr_mst_pulley_lifter",
     "type": "construction",
+    "id": "constr_mst_pulley_lifter",
     "group": "build_pulley_lifter",
     "category": "CONSTRUCT",
     "required_skills": [ [ "fabrication", 5 ], [ "mechanics", 2 ] ],
@@ -134,8 +160,8 @@
     "post_terrain": "f_pulley_lifter"
   },
   {
-    "id": "constr_mst_well_bucket",
     "type": "construction",
+    "id": "constr_mst_well_bucket",
     "group": "build_bucket_pulley_well",
     "category": "CONSTRUCT",
     "required_skills": [ [ "fabrication", 4 ], [ "survival", 4 ] ],
@@ -151,8 +177,8 @@
     "post_terrain": "t_covered_well_bucket"
   },
   {
-    "id": "constr_mst_wood_windbreak",
     "type": "construction",
+    "id": "constr_mst_wood_windbreak",
     "group": "build_wood_windbreak",
     "category": "FURN",
     "required_skills": [ [ "fabrication", 0 ] ],
@@ -164,12 +190,11 @@
     "post_terrain": "f_barricade_windbreak"
   },
   {
-    "id": "constr_mst_tarp_leanto",
     "type": "construction",
+    "id": "constr_mst_tarp_leanto",
     "group": "build_tarp_leanto",
-    "skill": "survival",
     "category": "CONSTRUCT",
-    "difficulty": 1,
+    "required_skills": [ [ "survival", 1 ] ],
     "time": "50 m",
     "qualities": [ { "id": "HAMMER", "level": 1 } ],
     "components": [ [ [ "pointy_stick", 4 ] ], [ [ "cordage_short", 4, "LIST" ] ], [ [ "leather_tarp", 1 ] ] ],
@@ -178,8 +203,8 @@
     "post_terrain": "t_tarptent_leather"
   },
   {
-    "id": "constr_mst_makeshift_rack",
     "type": "construction",
+    "id": "constr_mst_makeshift_rack",
     "group": "build_makeshift_rack",
     "category": "FURN",
     "required_skills": [ [ "fabrication", 2 ], [ "survival", 2 ] ],
@@ -194,8 +219,8 @@
     "post_terrain": "f_rack_wood_makeshift"
   },
   {
-    "id": "constr_mst_makeshift_counter",
     "type": "construction",
+    "id": "constr_mst_makeshift_counter",
     "group": "build_makeshift_counter",
     "category": "FURN",
     "required_skills": [ [ "fabrication", 2 ], [ "survival", 2 ] ],
@@ -210,8 +235,8 @@
     "post_terrain": "f_counter_makeshift"
   },
   {
-    "id": "constr_mst_makeshift_table",
     "type": "construction",
+    "id": "constr_mst_makeshift_table",
     "group": "build_makeshift_table",
     "category": "FURN",
     "required_skills": [ [ "fabrication", 2 ], [ "survival", 2 ] ],
@@ -226,8 +251,8 @@
     "post_terrain": "f_table_makeshift"
   },
   {
-    "id": "constr_mst_makeshift_chair",
     "type": "construction",
+    "id": "constr_mst_makeshift_chair",
     "group": "build_makeshift_chair",
     "category": "FURN",
     "required_skills": [ [ "fabrication", 3 ], [ "survival", 3 ] ],
@@ -242,8 +267,8 @@
     "post_terrain": "f_chair_makeshift"
   },
   {
-    "id": "constr_mst_makeshift_bench",
     "type": "construction",
+    "id": "constr_mst_makeshift_bench",
     "group": "build_makeshift_bench",
     "category": "FURN",
     "required_skills": [ [ "fabrication", 3 ], [ "survival", 3 ] ],
@@ -258,8 +283,8 @@
     "post_terrain": "f_bench_makeshift"
   },
   {
-    "id": "constr_mst_wood_stairs_up_half",
     "type": "construction",
+    "id": "constr_mst_wood_stairs_up_half",
     "group": "build_wooden_staircase",
     "//": "Step 1: stairs frame in an empty space",
     "category": "CONSTRUCT",
@@ -267,12 +292,12 @@
     "time": "360 m",
     "qualities": [ [ { "id": "HAMMER", "level": 2 } ], [ { "id": "AXE", "level": 2 }, { "id": "SAW_W", "level": 1 } ] ],
     "components": [ [ [ "2x4", 8 ], [ "stick", 8 ] ], [ [ "log", 1 ] ] ],
-    "pre_special": "check_empty_up_OK",
+    "pre_special": [ "check_empty", "check_up_OK" ],
     "post_terrain": "t_wood_stairs_up_half"
   },
   {
-    "id": "constr_mst_wood_stairs_up",
     "type": "construction",
+    "id": "constr_mst_wood_stairs_up",
     "group": "build_wooden_staircase",
     "//": "Step 2: complete the half made stairs with timber framework",
     "category": "CONSTRUCT",
@@ -285,8 +310,8 @@
     "post_special": "done_wood_stairs"
   },
   {
-    "id": "constr_mst_wooden_platform_1",
     "type": "construction",
+    "id": "constr_mst_wooden_platform_1",
     "group": "build_wooden_platform",
     "category": "CONSTRUCT",
     "required_skills": [ [ "fabrication", 2 ], [ "survival", 2 ] ],
@@ -298,8 +323,8 @@
     "post_terrain": "t_wooden_scaffolding"
   },
   {
-    "id": "constr_mst_wooden_platform_2",
     "type": "construction",
+    "id": "constr_mst_wooden_platform_2",
     "group": "build_wooden_platform",
     "category": "CONSTRUCT",
     "required_skills": [ [ "fabrication", 2 ], [ "survival", 2 ] ],
@@ -311,8 +336,8 @@
     "post_terrain": "t_wooden_scaffolding"
   },
   {
-    "id": "constr_mst_wall_wattle_half_platform",
     "type": "construction",
+    "id": "constr_mst_wall_wattle_half_platform",
     "group": "build_wattle_and_daub_wall",
     "//": "Step 1: half of a wall on a wooden platform",
     "category": "CONSTRUCT",
@@ -330,8 +355,8 @@
     "post_terrain": "t_wall_wattle_half"
   },
   {
-    "id": "constr_mst_wall_half_platform",
     "type": "construction",
+    "id": "constr_mst_wall_half_platform",
     "group": "build_wood_wall",
     "//": "frame wall on a wooden platform",
     "category": "CONSTRUCT",
@@ -343,8 +368,8 @@
     "post_terrain": "t_wall_half"
   },
   {
-    "id": "constr_mst_wall_log_half_platform",
     "type": "construction",
+    "id": "constr_mst_wall_log_half_platform",
     "group": "build_log_wall",
     "//": "Step 1: half of a log wall on a wooden platform",
     "category": "CONSTRUCT",
@@ -356,8 +381,8 @@
     "post_terrain": "t_wall_log_half"
   },
   {
-    "id": "constr_mst_floor_noroof_platform",
     "type": "construction",
+    "id": "constr_mst_floor_noroof_platform",
     "group": "build_wooden_floor",
     "//": "Makes an outside wooden paving, similar to what would be used in patios.",
     "category": "CONSTRUCT",

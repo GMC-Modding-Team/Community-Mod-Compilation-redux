@@ -74,7 +74,6 @@
     "weight": "1360 g",
     "volume": "1500 ml",
     "price": "60 USD",
-    "bashing": 3,
     "to_hit": -2,
     "material": [ "plastic" ],
     "symbol": "0",
@@ -89,7 +88,8 @@
       "need_fire": 1,
       "need_charges_msg": "This machine is empty!  Deconstruct it and make a new one."
     },
-    "flags": [ "NO_RELOAD", "NO_REPAIR" ]
+    "flags": [ "NO_RELOAD", "NO_REPAIR" ],
+    "melee_damage": { "bash": 3 }
   },
   {
     "id": "smoke_machine_unpreped",
@@ -128,12 +128,12 @@
     "weight": "300 g",
     "volume": "750 ml",
     "price": "20 kUSD",
-    "bashing": 3,
     "material": [ "steel", "plastic" ],
     "symbol": "o",
     "color": "light_red",
     "properties": [ [ "monster_size_capacity", "HUGE" ] ],
-    "use_action": "CAPTURE_MONSTER_ACT"
+    "use_action": "CAPTURE_MONSTER_ACT",
+    "melee_damage": { "bash": 3 }
   },
   {
     "id": "e_tool_chinese",
@@ -144,14 +144,13 @@
     "volume": "1 L",
     "price": "40 USD",
     "to_hit": 1,
-    "bashing": 8,
-    "cutting": 8,
     "material": [ "budget_steel" ],
     "symbol": "/",
     "color": "light_gray",
     "qualities": [ [ "CUT", 1 ], [ "DIG", 3 ], [ "BUTCHER", -8 ], [ "SAW_W", 1 ], [ "SAW_M", 1 ] ],
     "use_action": "BOLTCUTTERS",
-    "flags": [ "DURABLE_MELEE" ]
+    "flags": [ "DURABLE_MELEE" ],
+    "melee_damage": { "bash": 8, "cut": 8 }
   },
   {
     "id": "broken_manhack_fire",
@@ -164,11 +163,10 @@
     "price": "90 USD",
     "price_postapoc": "10 USD",
     "to_hit": -3,
-    "bashing": 6,
-    "cutting": 6,
     "material": [ "aluminum", "plastic" ],
     "symbol": ",",
-    "color": "red"
+    "color": "red",
+    "melee_damage": { "bash": 6, "cut": 6 }
   },
   {
     "id": "bot_manhack_fire",
@@ -179,8 +177,6 @@
     "volume": "250 ml",
     "price": "800 USD",
     "to_hit": -3,
-    "bashing": 6,
-    "cutting": 6,
     "material": [ "aluminum", "plastic" ],
     "symbol": ",",
     "color": "red",
@@ -193,7 +189,8 @@
       "moves": 60,
       "place_randomly": true,
       "skills": [ "electronics", "computer" ]
-    }
+    },
+    "melee_damage": { "bash": 6, "cut": 6 }
   },
   {
     "id": "spess_chunk",
@@ -218,8 +215,6 @@
     "volume": "750 ml",
     "price": "600 USD",
     "to_hit": -3,
-    "bashing": 6,
-    "cutting": 6,
     "material": [ "aluminum", "plastic" ],
     "symbol": ",",
     "color": "light_green",
@@ -232,7 +227,8 @@
       "moves": 75,
       "place_randomly": true,
       "skills": [ "electronics", "computer" ]
-    }
+    },
+    "melee_damage": { "bash": 6, "cut": 6 }
   },
   {
     "id": "rocket_core",
@@ -243,13 +239,13 @@
     "weight": "240 g",
     "volume": "500 ml",
     "to_hit": -1,
-    "bashing": 6,
     "material": [ "steel", "plastic" ],
     "symbol": ",",
     "color": "light_blue",
     "explode_in_fire": true,
     "use_action": { "target": "rocket_core_act", "target_charges": 4, "active": true, "type": "transform" },
-    "flags": [ "TRADER_AVOID", "CUSTOM_EXPLOSION" ]
+    "flags": [ "TRADER_AVOID", "CUSTOM_EXPLOSION" ],
+    "melee_damage": { "bash": 6 }
   },
   {
     "id": "rocket_core_act",
@@ -260,7 +256,6 @@
     "weight": "240 g",
     "volume": "500 ml",
     "to_hit": -1,
-    "bashing": 6,
     "material": [ "steel", "plastic" ],
     "symbol": ",",
     "color": "light_red",
@@ -278,7 +273,8 @@
       "no_deactivate_msg": "There's a hole in this core; it's gonna blow!",
       "explosion": { "power": 12, "distance_factor": 0.5, "shrapnel": 1 }
     },
-    "flags": [ "BOMB", "TRADER_AVOID", "CUSTOM_EXPLOSION" ]
+    "flags": [ "BOMB", "TRADER_AVOID", "CUSTOM_EXPLOSION" ],
+    "melee_damage": { "bash": 6 }
   },
   {
     "id": "broken_soulcube",
@@ -289,8 +285,6 @@
     "volume": "500 ml",
     "price": "10 kUSD",
     "to_hit": -3,
-    "bashing": 6,
-    "cutting": 6,
     "material": [ "diamond" ],
     "symbol": ",",
     "color": "white",
@@ -301,7 +295,8 @@
       "active": true,
       "type": "transform"
     },
-    "flags": [ "LIGHT_50" ]
+    "flags": [ "LIGHT_50" ],
+    "melee_damage": { "bash": 6, "cut": 6 }
   },
   {
     "id": "soulcube_on",
@@ -312,8 +307,6 @@
     "volume": "500 ml",
     "price": "10 kUSD",
     "to_hit": -3,
-    "bashing": 6,
-    "cutting": 6,
     "material": [ "diamond" ],
     "symbol": ",",
     "color": "white",
@@ -325,7 +318,8 @@
       "passive_effects": [
         { "has": "WIELD", "condition": "ALWAYS", "hit_you_effect": [ { "id": "AEA_HEAL", "once_in": 3, "hit_self": true } ] }
       ]
-    }
+    },
+    "melee_damage": { "bash": 6, "cut": 6 }
   },
   {
     "id": "soulcube_charging",
@@ -336,8 +330,6 @@
     "volume": "500 ml",
     "price": "10 kUSD",
     "to_hit": -3,
-    "bashing": 6,
-    "cutting": 6,
     "material": [ "diamond" ],
     "symbol": ",",
     "color": "white",
@@ -349,7 +341,8 @@
       "transform_age": 4200,
       "not_ready_msg": "You fiddle with the cube, but nothing happens.",
       "//": "7 hours"
-    }
+    },
+    "melee_damage": { "bash": 6, "cut": 6 }
   },
   {
     "id": "soulcube",
@@ -360,8 +353,6 @@
     "volume": "500 ml",
     "price": "10 kUSD",
     "to_hit": -3,
-    "bashing": 6,
-    "cutting": 6,
     "material": [ "diamond" ],
     "symbol": ",",
     "color": "white",
@@ -373,7 +364,8 @@
       "moves": 50,
       "place_randomly": true,
       "skills": [ "survival" ]
-    }
+    },
+    "melee_damage": { "bash": 6, "cut": 6 }
   },
   {
     "id": "bot_fungal_boil_egg",
@@ -384,7 +376,6 @@
     "volume": "500 ml",
     "price": "50 USD",
     "to_hit": -1,
-    "bashing": 2,
     "material": [ "plastic", "veggy" ],
     "symbol": "o",
     "color": "dark_gray",
@@ -396,7 +387,8 @@
       "type": "delayed_transform",
       "transform_age": 21600,
       "not_ready_msg": "The boil requires 36 hours to mature.  It is not ready yet."
-    }
+    },
+    "melee_damage": { "bash": 2 }
   },
   {
     "id": "bot_turret_shockcannon",
@@ -407,7 +399,6 @@
     "volume": "3 L",
     "price": "6 kUSD",
     "to_hit": -3,
-    "bashing": 8,
     "material": [ "spess_plastic", "steel" ],
     "symbol": ";",
     "color": "white",
@@ -417,7 +408,8 @@
       "difficulty": 6,
       "moves": 100,
       "skills": [ "electronics", "computer" ]
-    }
+    },
+    "melee_damage": { "bash": 8 }
   },
   {
     "id": "triffid_sap_grenade",
@@ -509,12 +501,12 @@
     "weight": "226 g",
     "volume": "100 ml",
     "price": "140 USD",
-    "cutting": 12,
     "material": [ "steel", "plastic" ],
     "symbol": ";",
     "color": "yellow",
     "qualities": [ [ "CUT", 1 ], [ "PRY", 1 ], [ "BUTCHER", 15 ] ],
     "techniques": [ "RAPID" ],
-    "flags": [ "SHEATH_KNIFE" ]
+    "flags": [ "SHEATH_KNIFE" ],
+    "melee_damage": { "cut": 12 }
   }
 ]

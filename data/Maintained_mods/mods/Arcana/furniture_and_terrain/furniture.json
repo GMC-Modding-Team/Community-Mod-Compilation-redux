@@ -10,7 +10,7 @@
     "move_cost_mod": -2,
     "light_emitted": 240,
     "required_str": -1,
-    "flags": [ "NOITEM", "TRANSPARENT" ],
+    "flags": [ "TRANSPARENT" ],
     "deployed_item": "sun_sword",
     "examine_action": "deployed_furniture"
   },
@@ -26,9 +26,10 @@
     "light_emitted": 24,
     "required_str": -1,
     "crafting_pseudo_item": "candle_warding_active",
-    "flags": [ "NOITEM", "TRANSPARENT", "USABLE_FIRE" ],
+    "flags": [ "TRANSPARENT", "USABLE_FIRE" ],
     "deployed_item": "candle_barrier_aftermath",
-    "examine_action": "deployed_furniture"
+    "examine_action": "deployed_furniture",
+    "bash": { "str_min": 500, "str_max": 2500, "sound": "crash!", "sound_fail": "whump." }
   },
   {
     "id": "f_candle_barrier_playermade",
@@ -42,26 +43,27 @@
     "light_emitted": 12,
     "required_str": -1,
     "crafting_pseudo_item": "candle_warding_active",
-    "flags": [ "NOITEM", "TRANSPARENT", "USABLE_FIRE" ],
+    "flags": [ "TRANSPARENT", "USABLE_FIRE" ],
     "deployed_item": "candle_warding",
     "examine_action": "deployed_furniture",
     "bash": {
-      "str_min": 40,
-      "str_max": 210,
+      "str_min": 50,
+      "str_max": 250,
       "sound": "crash!",
       "sound_fail": "whump.",
       "items": [ { "item": "candle_warding", "count": [ 0, 1 ] } ]
     }
   },
   {
-    "id": "f_altar_arcana",
     "type": "furniture",
+    "id": "f_altar_arcana",
     "name": "stone hearth",
     "symbol": "n",
     "looks_like": "f_fireplace",
     "description": "A structure of flowing, living stone molded into an open fireplace, the surface cracking and reforming periodically.  It offers modest space to burn offerings safely, or a flat surface sufficient for more morbid rituals.",
     "color": "dark_gray",
     "move_cost_mod": 2,
+    "coverage": 60,
     "required_str": -1,
     "crafting_pseudo_item": "boulder_anvil",
     "flags": [
@@ -76,12 +78,12 @@
       "MINEABLE",
       "FLAT_SURF"
     ],
-    "bash": { "str_min": 10, "str_max": 20, "sound": "smash!", "sound_fail": "thump." },
+    "bash": { "str_min": 20, "str_max": 60, "sound": "smash!", "sound_fail": "thump." },
     "examine_action": "fireplace"
   },
   {
-    "id": "f_pozdol_arcana",
     "type": "furniture",
+    "id": "f_pozdol_arcana",
     "name": "forest bedding",
     "description": "A covering of twisted, warped, yet unnaturally green leaf litter from some unknown forest floor, with tangled spikes of molded stone and branches overhead.  Better than sleeping on open ground under a bare sky, at least.",
     "symbol": ",",
@@ -92,11 +94,11 @@
     "move_cost_mod": 0,
     "required_str": -1,
     "flags": [ "FLAMMABLE_HARD", "TRANSPARENT", "INDOORS", "SUN_ROOF_ABOVE", "NOCOLLIDE" ],
-    "bash": { "str_min": 5, "str_max": 30, "sound": "smash!", "sound_fail": "whump." }
+    "bash": { "str_min": 15, "str_max": 45, "sound": "smash!", "sound_fail": "whump." }
   },
   {
-    "id": "f_spires_arcana",
     "type": "furniture",
+    "id": "f_spires_arcana",
     "name": "molded stone wall",
     "symbol": "#",
     "looks_like": "t_drystone_wall",
@@ -105,11 +107,11 @@
     "move_cost_mod": -1,
     "required_str": -1,
     "flags": [ "NOITEM", "BLOCK_WIND", "SUN_ROOF_ABOVE" ],
-    "bash": { "str_min": 20, "str_max": 60, "sound": "crash!", "sound_fail": "thump!" }
+    "bash": { "str_min": 30, "str_max": 90, "sound": "crash!", "sound_fail": "thump!" }
   },
   {
-    "id": "f_door_arcana_c",
     "type": "furniture",
+    "id": "f_door_arcana_c",
     "name": "woven gate",
     "description": "A heavy curtain of strange vines, branches, and living stone.  It moves with surprising ease at your touch, flowing to weave its structure in and out of the surrounding mass of molded earth.",
     "looks_like": "t_door_curtain_c",
@@ -119,11 +121,11 @@
     "required_str": -1,
     "flags": [ "DOOR", "FLAMMABLE_HARD", "NOITEM", "BLOCK_WIND", "SUN_ROOF_ABOVE" ],
     "open": "f_door_arcana_o",
-    "bash": { "str_min": 4, "str_max": 40, "sound": "smash!", "sound_fail": "whump!" }
+    "bash": { "str_min": 15, "str_max": 45, "sound": "smash!", "sound_fail": "whump!" }
   },
   {
-    "id": "f_door_arcana_o",
     "type": "furniture",
+    "id": "f_door_arcana_o",
     "name": "open woven gate",
     "description": "A heavy curtain of strange vines, branches, and living stone.  It moves with surprising ease at your touch, flowing to weave its structure in and out of the surrounding mass of molded earth.  It is currently doing exactly that, giving the impression of an inviting, if unusual, doorway.",
     "looks_like": "t_door_curtain_o",
@@ -133,11 +135,11 @@
     "required_str": -1,
     "flags": [ "FLAMMABLE_HARD", "TRANSPARENT", "INDOORS", "SUN_ROOF_ABOVE" ],
     "close": "f_door_arcana_c",
-    "bash": { "str_min": 4, "str_max": 40, "sound": "smash!", "sound_fail": "whump!" }
+    "bash": { "str_min": 15, "str_max": 45, "sound": "smash!", "sound_fail": "whump!" }
   },
   {
-    "id": "f_arcane_candlestick",
     "type": "furniture",
+    "id": "f_arcane_candlestick",
     "name": "candle pedestal",
     "description": "A short stone pedestal with an ornate candle holder firmly mounted atop it.",
     "looks_like": "t_pedestal_wyrm",
@@ -156,8 +158,8 @@
     }
   },
   {
-    "id": "f_arcane_candlestick_lit",
     "type": "furniture",
+    "id": "f_arcane_candlestick_lit",
     "name": "lit candle pedestal",
     "description": "A short stone pedestal with an ornate candle holder firmly mounted atop it.  A eerie blue flame lingers where one would expect a candle to be mounted, giving off a soothing glow.",
     "looks_like": "t_pedestal_wyrm",
@@ -193,8 +195,8 @@
     "bash": { "str_min": 100, "str_max": 400, "sound": "crash!", "sound_fail": "whump!" }
   },
   {
-    "id": "f_alien_zapper_altered",
     "type": "furniture",
+    "id": "f_alien_zapper_altered",
     "looks_like": "f_alien_zapper",
     "name": "twitching frond",
     "description": "A spine like the antenna of a moth juts from the ground, swaying gently in the air.  Every so often, a cascade of energy arcs along it and discharges into the ceiling.",
@@ -208,22 +210,22 @@
     "bash": { "str_min": 30, "str_max": 60, "sound": "splorch!", "sound_fail": "whump!", "furn_set": "f_null" }
   },
   {
-    "id": "f_transmutation_crucible_deployed",
     "type": "furniture",
+    "id": "f_transmutation_crucible_deployed",
     "name": "deployed transmutation crucible",
     "description": "Shifting, flowing stones slithering around a strange stone crucible.  Serves as an anvil and crucible for metalworking, along with serving as a workbench and assisting with alchemy.  Can be reclaimed by examining it.\n\nProvides the following:\n* Level 3 anvil quality.\n* Level 2 boiling quality.\n* Level 2 chemical making quality.\n* Level 1 containing quality.\n* Level 1 food cooking quality.\n* Level 2 clean surface quality.\n* Additionally serves as a crucible.",
     "symbol": "n",
     "color": "dark_gray",
     "looks_like": "f_slab",
     "move_cost_mod": 2,
-    "coverage": 30,
+    "coverage": 50,
     "required_str": 12,
     "crafting_pseudo_item": "transmutation_crucible_deployed_fake",
     "flags": [ "PLACE_ITEM", "BLOCKSDOOR", "TRANSPARENT", "ALLOW_FIELD_EFFECT", "MOUNTABLE", "SHORT", "MINEABLE", "FLAT_SURF" ],
     "deployed_item": "transmutation_crucible",
     "bash": {
       "str_min": 20,
-      "str_max": 40,
+      "str_max": 60,
       "sound": "smash!",
       "sound_fail": "thump.",
       "items": [ { "item": "transmutation_crucible", "prob": 75 }, { "item": "rock", "count": [ 2, 7 ] } ]
