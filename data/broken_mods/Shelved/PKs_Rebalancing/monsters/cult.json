@@ -12,9 +12,6 @@
     "melee_skill": 5,
     "melee_dice_sides": 5,
     "dodge": 8,
-    "armor_bash": 14,
-    "armor_stab": 2,
-    "armor_cut": 14,
     "vision_day": 20,
     "vision_night": 40,
     "special_attacks": [
@@ -31,7 +28,8 @@
       }
     ],
     "anger_triggers": [ "FRIEND_ATTACKED", "HURT" ],
-    "fear_triggers": [ "FIRE" ]
+    "fear_triggers": [ "FIRE" ],
+    "armor": { "bash": 14, "cut": 14, "stab": 2 }
   },
   {
     "id": "mon_shadow",
@@ -115,9 +113,6 @@
     "melee_dice_sides": 8,
     "melee_damage": [ { "damage_type": "cut", "amount": 3 } ],
     "dodge": 6,
-    "armor_bash": 4,
-    "armor_cut": 2,
-    "armor_bullet": 2,
     "harvest": "human",
     "vision_day": 15,
     "vision_night": 15,
@@ -130,7 +125,8 @@
         "accuracy": 6,
         "damage_max_instance": [ { "damage_type": "bash", "amount": 20, "armor_multiplier": 0.85 } ]
       }
-    ]
+    ],
+    "armor": { "bash": 4, "cut": 2, "bullet": 2 }
   },
   {
     "id": "mon_cult_churl",
@@ -153,13 +149,12 @@
     "melee_dice_sides": 7,
     "melee_damage": [ { "damage_type": "cut", "amount": 8 } ],
     "dodge": 3,
-    "armor_bash": 5,
-    "armor_cut": 5,
     "attack_effs": [ { "id": "attention", "duration": 4400 }, { "id": "evil", "duration": 3000 } ],
     "death_drops": { "subtype": "collection", "groups": [ [ "spearmelee_pk", 50 ], [ "church", 95 ] ] },
     "flags": [ "SEES", "HEARS", "PATH_AVOID_DANGER_1", "WARM", "BASHES", "GROUP_BASH", "HUMAN", "CLIMBS" ],
     "anger_triggers": [ "PLAYER_WEAK", "HURT", "PLAYER_CLOSE" ],
-    "placate_triggers": [ "FRIEND_ATTACKED", "MEAT" ]
+    "placate_triggers": [ "FRIEND_ATTACKED", "MEAT" ],
+    "armor": { "bash": 5, "cut": 5 }
   },
   {
     "id": "mon_cult_slave",
@@ -182,14 +177,13 @@
     "melee_dice_sides": 4,
     "melee_damage": [ { "damage_type": "cut", "amount": 8 } ],
     "dodge": 2,
-    "armor_bash": 3,
-    "armor_cut": 3,
     "special_attacks": [ [ "impale", 20 ], [ "wound_minor", 5 ] ],
     "death_drops": { "subtype": "collection", "groups": [ [ "spearmelee_pk", 10 ], [ "church", 95 ] ] },
     "flags": [ "SEES", "HEARS", "PATH_AVOID_DANGER_1", "WARM", "BASHES", "GROUP_BASH", "HUMAN", "CLIMBS" ],
     "anger_triggers": [ "PLAYER_WEAK", "FRIEND_ATTACKED" ],
     "fear_triggers": [ "FRIEND_DIED" ],
-    "placate_triggers": [ "MEAT", "HURT" ]
+    "placate_triggers": [ "MEAT", "HURT" ],
+    "armor": { "bash": 3, "cut": 3 }
   },
   {
     "id": "mon_legion",
@@ -212,10 +206,6 @@
     "melee_dice_sides": 3,
     "melee_damage": [ { "damage_type": "cut", "amount": 10 } ],
     "dodge": 0,
-    "armor_bash": 9,
-    "armor_stab": 2,
-    "armor_cut": 5,
-    "armor_acid": 4,
     "armor_fire": 4,
     "vision_day": 8,
     "vision_night": 8,
@@ -232,7 +222,8 @@
     "upgrades": { "half_life": 700, "into": "mon_nuculais" },
     "death_function": { "corpse_type": "NO_CORPSE", "message": "The %s melts away." },
     "flags": [ "SEES", "SMELLS", "HEARS", "WARM", "GRABS", "QUEEN" ],
-    "placate_triggers": [ "MEAT" ]
+    "placate_triggers": [ "MEAT" ],
+    "armor": { "bash": 9, "cut": 5, "stab": 2, "acid": 4 }
   },
   {
     "id": "mon_nuculais",
@@ -255,10 +246,6 @@
     "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "dodge": 3,
     "melee_damage": [ { "damage_type": "biological", "amount": 6 } ],
-    "armor_bash": 6,
-    "armor_stab": 2,
-    "armor_cut": 6,
-    "armor_acid": 2,
     "armor_fire": 10,
     "vision_day": 13,
     "vision_night": 13,
@@ -274,6 +261,7 @@
       }
     ],
     "death_function": { "corpse_type": "NO_CORPSE", "message": "The %s melts away." },
-    "flags": [ "SEES", "HEARS", "WARM", "GRABS", "QUEEN" ]
+    "flags": [ "SEES", "HEARS", "WARM", "GRABS", "QUEEN" ],
+    "armor": { "bash": 6, "cut": 6, "stab": 2, "acid": 2 }
   }
 ]
