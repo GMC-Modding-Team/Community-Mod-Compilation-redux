@@ -12,6 +12,8 @@ def fix_armor_in_chunk(chunk):
         'armor_cut': 'cut',
         'armor_bullet': 'bullet',
         'armor_acid': 'acid',
+        'armor_stab': 'stab',
+        'armor_fire': 'fire',
     }
 
     found = {}
