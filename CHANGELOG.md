@@ -26,6 +26,7 @@
 
 **Merged pull requests:**
 
+- \[tool\] adds armor\_update.py [\#232](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/232) ([TheGoatGod](https://github.com/TheGoatGod))
 - Pr test changelog generator [\#231](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/231) ([TheGoatGod](https://github.com/TheGoatGod))
 - test [\#230](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/230) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[github\] update changelog generator [\#229](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/229) ([TheGoatGod](https://github.com/TheGoatGod))
