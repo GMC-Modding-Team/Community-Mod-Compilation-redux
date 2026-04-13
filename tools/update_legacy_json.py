@@ -481,6 +481,77 @@ def _restore_monsters_weights(content, originals):
     return content
 
 
+def _mask_mapgen_weights(content):
+    """
+    Mask numeric "weight" entries inside every "mapgen": [ ... ] block so
+    mapgen weighted entries are not converted to grams.
+    Returns (masked_content, list_of_original_weight_tokens).
+    """
+    originals = []
+    result = []
+    i = 0
+    pattern = re.compile(r'"mapgen"\s*:\s*\[')
+    while i < len(content):
+        m = pattern.search(content, i)
+        if not m:
+            result.append(content[i:])
+            break
+        result.append(content[i:m.start()])
+
+        # Find matching closing bracket for this mapgen array.
+        bracket_start = m.end() - 1
+        depth = 0
+        in_str = False
+        escape = False
+        j = bracket_start
+        while j < len(content):
+            ch = content[j]
+            if escape:
+                escape = False
+                j += 1
+                continue
+            if ch == '\\' and in_str:
+                escape = True
+                j += 1
+                continue
+            if ch == '"':
+                in_str = not in_str
+                j += 1
+                continue
+            if in_str:
+                j += 1
+                continue
+            if ch == '[':
+                depth += 1
+            elif ch == ']':
+                depth -= 1
+                if depth == 0:
+                    j += 1
+                    break
+            j += 1
+
+        key_prefix = content[m.start():bracket_start]
+        mapgen_block = content[bracket_start:j]
+
+        def _replace_weight_token(match):
+            idx = len(originals)
+            originals.append(match.group(0))
+            return f'\x00MGW{idx}\x00'
+
+        mapgen_block = re.sub(r'"weight"\s*:\s*\d+', _replace_weight_token, mapgen_block)
+        result.append(key_prefix + mapgen_block)
+        i = j
+
+    return ''.join(result), originals
+
+
+def _restore_mapgen_weights(content, originals):
+    """Restore masked numeric mapgen weight tokens."""
+    for idx, original in enumerate(originals):
+        content = content.replace(f'\x00MGW{idx}\x00', original)
+    return content
+
+
 def fix_price(content):
     """
     "price": N          ->  "price": "N cent"
@@ -698,6 +769,7 @@ def update_json_content(content):
     "fg" arrays: nested numeric "weight" entries are left untouched.
     "gun_data" objects: string "ammo" entries are left untouched.
     "monsters" arrays: nested numeric "weight" entries are left untouched.
+    "mapgen" arrays: nested numeric "weight" entries are left untouched.
     all types : nothing inside a "proportional": { ... } block is touched.
     """
     # ------------------------------------------------------------------
@@ -708,6 +780,7 @@ def update_json_content(content):
     content, fg_weight_originals = _mask_fg_weights(content)
     content, gun_data_ammo_originals = _mask_gun_data_ammo(content)
     content, monsters_weight_originals = _mask_monsters_weights(content)
+    content, mapgen_weight_originals = _mask_mapgen_weights(content)
 
     # ------------------------------------------------------------------
     # Step 2: split into individual top-level objects and apply the
@@ -744,6 +817,7 @@ def update_json_content(content):
     # ------------------------------------------------------------------
     # Step 3: restore the original proportional blocks.
     # ------------------------------------------------------------------
+    content = _restore_mapgen_weights(content, mapgen_weight_originals)
     content = _restore_monsters_weights(content, monsters_weight_originals)
     content = _restore_gun_data_ammo(content, gun_data_ammo_originals)
     content = _restore_fg_weights(content, fg_weight_originals)
