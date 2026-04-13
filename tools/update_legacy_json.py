@@ -451,6 +451,12 @@ _TRANSFORMS_SPEECH = [
     if t is not fix_volume
 ]
 
+# mod_tileset: leave weight untouched (metadata weighting, not item mass)
+_TRANSFORMS_MOD_TILESET = [
+    t for t in TRANSFORMS
+    if t is not fix_weight
+]
+
 
 def _split_top_level_objects(text):
     """
@@ -492,6 +498,7 @@ def update_json_content(content):
     ----------------------
     "mapgen"  : weight is removed entirely.
     "speech"  : "volume" is left completely untouched.
+    "mod_tileset": "weight" is left completely untouched.
     all types : nothing inside a "proportional": { ... } block is touched.
     """
     # ------------------------------------------------------------------
@@ -521,6 +528,8 @@ def update_json_content(content):
                 pipeline = _TRANSFORMS_MAPGEN
             elif re.search(r'"type"\s*:\s*"speech"', chunk):
                 pipeline = _TRANSFORMS_SPEECH
+            elif re.search(r'"type"\s*:\s*"mod_tileset"', chunk):
+                pipeline = _TRANSFORMS_MOD_TILESET
             else:
                 pipeline = TRANSFORMS
             for transform in pipeline:
