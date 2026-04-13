@@ -6,6 +6,34 @@ import os
 def _sub(pattern, repl, text, flags=0):
     return re.sub(pattern, repl, text, flags=flags)
 
+def _merge_into_existing_armor(chunk, updates):
+    def _replacer(match):
+        opening = match.group(1)
+        body = match.group(2)
+        closing = match.group(3)
+
+        merged_body = body
+        for modern_key, value in updates.items():
+            key_pattern = rf'"{modern_key}"\s*:\s*-?\d+'
+            replacement = f'"{modern_key}": {value}'
+
+            if re.search(key_pattern, merged_body):
+                merged_body = re.sub(key_pattern, replacement, merged_body, count=1)
+                continue
+
+            if merged_body.strip():
+                stripped = merged_body.rstrip()
+                if re.search(r',\s*$', stripped):
+                    merged_body = f'{stripped} {replacement}'
+                else:
+                    merged_body = f'{stripped}, {replacement}'
+            else:
+                merged_body = f' {replacement} '
+
+        return f"{opening}{merged_body}{closing}"
+
+    return re.sub(r'("armor"\s*:\s*\{)(.*?)(\})', _replacer, chunk, count=1, flags=re.S)
+
 def fix_armor_in_chunk(chunk):
     armor_keys = {
         'armor_bash': 'bash',
@@ -25,6 +53,8 @@ def fix_armor_in_chunk(chunk):
     if not found:
         return chunk
 
+    updates = {modern: val for _, (modern, val) in found.items()}
+
     armor_parts = ', '.join(
         f'"{modern}": {val}' for _, (modern, val) in found.items()
     )
@@ -35,6 +65,14 @@ def fix_armor_in_chunk(chunk):
         chunk = _sub(rf'\s*"{legacy_key}"\s*:\s*\d+\s*,', '', chunk)
         chunk = _sub(rf',\s*"{legacy_key}"\s*:\s*\d+', '', chunk)
         chunk = _sub(rf'\s*"{legacy_key}"\s*:\s*\d+', '', chunk)
+
+    if re.search(r'"armor"\s*:\s*\{', chunk):
+        return _merge_into_existing_armor(chunk, updates)
+
+    # If an armor key already exists but is not an object, do not create a
+    # second "armor" key.
+    if re.search(r'"armor"\s*:', chunk):
+        return chunk
 
     # Insert at the bottom of this object (before the final closing brace).
     closing = re.search(r'(\s*\})\s*$', chunk)
