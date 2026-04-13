@@ -339,6 +339,77 @@ def _restore_fg_weights(content, originals):
     return content
 
 
+def _mask_gun_data_ammo(content):
+    """
+    Mask string "ammo" entries inside every "gun_data": { ... } block so
+    fix_ammo_type cannot convert them to arrays.
+    Returns (masked_content, list_of_original_ammo_tokens).
+    """
+    originals = []
+    result = []
+    i = 0
+    pattern = re.compile(r'"gun_data"\s*:\s*\{')
+    while i < len(content):
+        m = pattern.search(content, i)
+        if not m:
+            result.append(content[i:])
+            break
+        result.append(content[i:m.start()])
+
+        # Find matching closing brace for this gun_data object.
+        brace_start = m.end() - 1
+        depth = 0
+        in_str = False
+        escape = False
+        j = brace_start
+        while j < len(content):
+            ch = content[j]
+            if escape:
+                escape = False
+                j += 1
+                continue
+            if ch == '\\' and in_str:
+                escape = True
+                j += 1
+                continue
+            if ch == '"':
+                in_str = not in_str
+                j += 1
+                continue
+            if in_str:
+                j += 1
+                continue
+            if ch == '{':
+                depth += 1
+            elif ch == '}':
+                depth -= 1
+                if depth == 0:
+                    j += 1
+                    break
+            j += 1
+
+        key_prefix = content[m.start():brace_start]
+        gun_data_block = content[brace_start:j]
+
+        def _replace_ammo_token(match):
+            idx = len(originals)
+            originals.append(match.group(0))
+            return f'\x00GDA{idx}\x00'
+
+        gun_data_block = re.sub(r'"ammo"\s*:\s*"[^"]+"', _replace_ammo_token, gun_data_block)
+        result.append(key_prefix + gun_data_block)
+        i = j
+
+    return ''.join(result), originals
+
+
+def _restore_gun_data_ammo(content, originals):
+    """Restore masked string gun_data ammo tokens."""
+    for idx, original in enumerate(originals):
+        content = content.replace(f'\x00GDA{idx}\x00', original)
+    return content
+
+
 def fix_price(content):
     """
     "price": N          ->  "price": "N cent"
@@ -554,6 +625,7 @@ def update_json_content(content):
     "speech"  : "volume" is left completely untouched.
     "mod_tileset": "weight" is left completely untouched.
     "fg" arrays: nested numeric "weight" entries are left untouched.
+    "gun_data" objects: string "ammo" entries are left untouched.
     all types : nothing inside a "proportional": { ... } block is touched.
     """
     # ------------------------------------------------------------------
@@ -562,6 +634,7 @@ def update_json_content(content):
     # ------------------------------------------------------------------
     content, prop_originals = _mask_proportional(content)
     content, fg_weight_originals = _mask_fg_weights(content)
+    content, gun_data_ammo_originals = _mask_gun_data_ammo(content)
 
     # ------------------------------------------------------------------
     # Step 2: split into individual top-level objects and apply the
@@ -598,6 +671,7 @@ def update_json_content(content):
     # ------------------------------------------------------------------
     # Step 3: restore the original proportional blocks.
     # ------------------------------------------------------------------
+    content = _restore_gun_data_ammo(content, gun_data_ammo_originals)
     content = _restore_fg_weights(content, fg_weight_originals)
     content = _restore_proportional(content, prop_originals)
     return content
