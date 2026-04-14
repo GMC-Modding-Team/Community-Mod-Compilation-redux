@@ -1,29 +1,8 @@
-on:
-  push:
-    branches:
-    - master
-    paths:
-    - '*.md'
-    - '**/*.md'
-    - '**/**/*.md'
-    - '**/**/**/**/*.md'
-    - '**/**/**/**/**/*.md'
-
+on: push
 name: TOC Generator
-
 jobs:
   generateTOC:
-    if: github.repository == 'GMC-Modding-Team/Community-Mod-Compilation-redux'
-    name: Update the table of contents
+    name: TOC Generator
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
-        with:
-          persist-credentials: false
-      - run: npx doctoc --github --title "*Contents*"
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@c5a7806660adbe173f04e3e038b0ccdcd758773c # v6
-        with:
-          commit-message: Update the table of contents
-          branch: update-toc
-          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: technote-space/toc-generator@v4
