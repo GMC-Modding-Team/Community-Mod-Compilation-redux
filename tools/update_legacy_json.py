@@ -1133,6 +1133,77 @@ def _restore_effect_volume(content, originals):
     return content
 
 
+def _mask_spawn_types_weights(content):
+    """
+    Mask numeric "weight" entries inside every "spawn_types": [ ... ] block so
+    spawn weighting metadata is not converted to grams.
+    Returns (masked_content, list_of_original_weight_tokens).
+    """
+    originals = []
+    result = []
+    i = 0
+    pattern = re.compile(r'"spawn_types"\s*:\s*\[')
+    while i < len(content):
+        m = pattern.search(content, i)
+        if not m:
+            result.append(content[i:])
+            break
+        result.append(content[i:m.start()])
+
+        # Find matching closing bracket for this spawn_types array.
+        bracket_start = m.end() - 1
+        depth = 0
+        in_str = False
+        escape = False
+        j = bracket_start
+        while j < len(content):
+            ch = content[j]
+            if escape:
+                escape = False
+                j += 1
+                continue
+            if ch == '\\' and in_str:
+                escape = True
+                j += 1
+                continue
+            if ch == '"':
+                in_str = not in_str
+                j += 1
+                continue
+            if in_str:
+                j += 1
+                continue
+            if ch == '[':
+                depth += 1
+            elif ch == ']':
+                depth -= 1
+                if depth == 0:
+                    j += 1
+                    break
+            j += 1
+
+        key_prefix = content[m.start():bracket_start]
+        spawn_types_block = content[bracket_start:j]
+
+        def _replace_weight_token(match):
+            idx = len(originals)
+            originals.append(match.group(0))
+            return f'\x00SPW{idx}\x00'
+
+        spawn_types_block = re.sub(r'"weight"\s*:\s*\d+', _replace_weight_token, spawn_types_block)
+        result.append(key_prefix + spawn_types_block)
+        i = j
+
+    return ''.join(result), originals
+
+
+def _restore_spawn_types_weights(content, originals):
+    """Restore masked numeric spawn_types weight tokens."""
+    for idx, original in enumerate(originals):
+        content = content.replace(f'\x00SPW{idx}\x00', original)
+    return content
+
+
 def fix_price(content):
     """
     "price": N          ->  "price": "N cent"
@@ -1359,6 +1430,7 @@ def update_json_content(content):
     "search_data" arrays: "material" entries are untouched.
     "item" objects: nested numeric "damage" entries are untouched.
     "effect" arrays: nested numeric "volume" entries are untouched.
+    "spawn_types" arrays: nested numeric "weight" entries are untouched.
     all types : nothing inside a "proportional": { ... } block is touched.
     """
     # ------------------------------------------------------------------
@@ -1378,6 +1450,7 @@ def update_json_content(content):
     content, search_data_material_originals = _mask_search_data_material(content)
     content, item_block_damage_originals = _mask_item_block_damage(content)
     content, effect_volume_originals = _mask_effect_volume(content)
+    content, spawn_types_weight_originals = _mask_spawn_types_weights(content)
 
     # ------------------------------------------------------------------
     # Step 2: split into individual top-level objects and apply the
@@ -1414,6 +1487,7 @@ def update_json_content(content):
     # ------------------------------------------------------------------
     # Step 3: restore the original proportional blocks.
     # ------------------------------------------------------------------
+    content = _restore_spawn_types_weights(content, spawn_types_weight_originals)
     content = _restore_effect_volume(content, effect_volume_originals)
     content = _restore_item_block_damage(content, item_block_damage_originals)
     content = _restore_search_data_material(content, search_data_material_originals)
