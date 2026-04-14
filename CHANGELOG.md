@@ -28,6 +28,7 @@
 
 **Merged pull requests:**
 
+- \[Github\] Generator\_toc.yml [\#250](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/250) ([TheGoatGod](https://github.com/TheGoatGod))
 - Pr workshop update [\#249](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/249) ([TheGoatGod](https://github.com/TheGoatGod))
 - Make name\_strings\_to\_objects.py independent of base\_script.py [\#245](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/245) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Tools\] update\_legacy\_json.py update 2 [\#244](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/244) ([TheGoatGod](https://github.com/TheGoatGod))
