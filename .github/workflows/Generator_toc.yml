@@ -9,23 +9,11 @@ on:
     - '**/**/**/**/*.md'
     - '**/**/**/**/**/*.md'
 
-name: Generator - TOC
+name: TOC Generator
 jobs:
   generateTOC:
-    if: github.repository == 'GMC-Modding-Team/Community-Mod-Compilation-redux'
-    name: Update TOC
+    name: TOC Generator
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2with:
-      - run: npx doctoc **.md --github | npx doctoc **/*.md --github | npx doctoc **/**/*.md --github | npx doctoc **/**/**/**/*.md --github | npx doctoc **/**/**/**/**/*.md --github
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
+      - uses: technote-space/toc-generator@v4
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          commit-message: "[Github] Update TOC"
-          branch: Update-TOC
-          title: "[Github] Update TOC"
-          body: |
-            ```md
-            - [x] Update TOC
-            ```
