@@ -1,0 +1,44 @@
+[
+  {
+    "id": "human_ovum",
+    "type": "TOOL_ARMOR",
+    "category": "clothing",
+    "symbol": "o",
+    "name": { "str": "ovum", "str_pl": "ovums" },
+    "description": "A meta item due to limitations. Think of it and its subsequent forms as something like a monitor of the pregnancy either you or the npc is having. This is a human ovum. Use it to fertilize and start pregnancy. Drop it or its subsequent if you don't want it.",
+    "flags": [ "ONLY_ONE", "INEDIBLE", "TRADER_AVOID", "NO_DROP", "ZERO_WEIGHT" ],
+    "weight": "0 g",
+    "volume": "1 ml",
+    "use_action": [
+      {
+        "type": "transform",
+        "msg": "Congratulations on the pregnancy.",
+        "target": "human_pregnancy_item",
+        "active": true,
+        "moves": 1
+      }
+    ],
+    "covers": [ "torso" ],
+    "warmth": 0,
+    "coverage": 0
+  },
+  {
+    "id": "human_pregnancy_item",
+    "type": "TOOL_ARMOR",
+    "category": "clothing",
+    "symbol": "O",
+    "name": { "str": "pregnancy", "str_pl": "pregnancies" },
+    "description": "This is a human pregnancy in development. Wait until its timer runs out.",
+    "flags": [ "ONLY_ONE", "TRADER_AVOID", "NO_DROP", "ZERO_WEIGHT" ],
+    "weight": "0 g",
+    "volume": "1 ml",
+    "covers": [ "torso" ],
+    "warmth": 10,
+    "coverage": 25,
+    "encumbrance": 15,
+    "max_charges": 9,
+    "initial_charges": 9,
+    "turns_per_charge": 2592000,
+    "revert_to": "human_birth_item"
+  }
+]
