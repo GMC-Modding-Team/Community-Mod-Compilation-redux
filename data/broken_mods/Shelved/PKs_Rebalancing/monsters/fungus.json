@@ -5,10 +5,6 @@
     "copy-from": "mon_fungal_hedgerow",
     "hp": 50,
     "attack_effs": [ { "id": "rad_tenths", "duration": 10 }, { "id": "rad_tenths", "duration": 20 } ],
-    "armor_bash": 8,
-    "armor_cut": 2,
-    "armor_acid": 2,
-    "armor_fire": 2,
     "vision_day": 2,
     "vision_night": 2,
     "starting_ammo": { "bot_fungal_boil": 4 },
@@ -21,7 +17,8 @@
       [ "scratch", 20 ]
     ],
     "death_function": [ "FUNGUS", "DISINTEGRATE" ],
-    "flags": [ "SEES", "NOHEAD", "POISON", "NO_BREATHE", "IMMOBILE" ]
+    "flags": [ "SEES", "NOHEAD", "POISON", "NO_BREATHE", "IMMOBILE" ],
+    "armor": { "bash": 8, "cut": 2, "acid": 2, "fire": 2 }
   },
   {
     "id": "mon_fungal_wall",
@@ -29,17 +26,14 @@
     "copy-from": "mon_fungal_wall",
     "hp": 30,
     "attack_effs": [ { "id": "rad_tenths", "duration": 20 }, { "id": "rad_tenths", "duration": 30 } ],
-    "armor_bash": 12,
-    "armor_cut": 3,
-    "armor_acid": 1,
-    "armor_fire": 1,
     "vision_day": 30,
     "vision_night": 30,
     "starting_ammo": { "bot_fungal_boil": 8 },
     "special_attacks": [ [ "FUNGUS_BRISTLE", 20 ], [ "FUNGUS", 30 ], [ "wound_minor", 30 ], [ "GRENADIER", 60 ] ],
     "death_function": [ "FUNGUS", "DISINTEGRATE" ],
     "regenerates": 1,
-    "flags": [ "SEES", "NOHEAD", "POISON", "NO_BREATHE", "IMMOBILE" ]
+    "flags": [ "SEES", "NOHEAD", "POISON", "NO_BREATHE", "IMMOBILE" ],
+    "armor": { "bash": 12, "cut": 3, "acid": 1, "fire": 1 }
   },
   {
     "id": "mon_fungaloid_young",
@@ -75,15 +69,14 @@
     "melee_dice_sides": 10,
     "melee_damage": [ { "damage_type": "cut", "amount": 1 } ],
     "dodge": 1,
-    "armor_bash": 7,
-    "armor_cut": 12,
     "vision_day": 3,
     "vision_night": 3,
     "special_attacks": [ [ "wound_minor", 30 ], [ "FUNGUS_INJECT", 30 ], [ "GRAB", 30 ], [ "FUNGUS", 300 ] ],
     "anger_triggers": [ "HURT", "FRIEND_ATTACKED" ],
     "death_function": [ "FUNGUS", "NORMAL" ],
     "upgrades": { "half_life": 21, "into": "mon_fant" },
-    "//": "The vanilla fungal ants are pretty awful at everything.  I get why, considering the real-world examples, but I'm trying to create a more combat-intensive experience while still having the interesting.  So they evolve now."
+    "//": "The vanilla fungal ants are pretty awful at everything.  I get why, considering the real-world examples, but I'm trying to create a more combat-intensive experience while still having the interesting.  So they evolve now.",
+    "armor": { "bash": 7, "cut": 12 }
   },
   {
     "id": "mon_zombie_fungus",
@@ -178,8 +171,6 @@
     "melee_dice_sides": 5,
     "melee_damage": [ { "damage_type": "cut", "amount": 5 } ],
     "dodge": 4,
-    "armor_bash": 3,
-    "armor_cut": 2,
     "vision_day": 30,
     "vision_night": 7,
     "special_attacks": [
@@ -191,7 +182,8 @@
     ],
     "anger_triggers": [ "PLAYER_WEAK", "HURT", "FRIEND_ATTACKED" ],
     "fear_triggers": [ "SOUND", "FIRE" ],
-    "flags": [ "SEES", "HEARS", "SMELLS", "PATH_AVOID_DANGER_1", "ANIMAL", "POISON", "WARM", "HIT_AND_RUN", "KEENNOSE", "ATTACKMON" ]
+    "flags": [ "SEES", "HEARS", "SMELLS", "PATH_AVOID_DANGER_1", "ANIMAL", "POISON", "WARM", "HIT_AND_RUN", "KEENNOSE", "ATTACKMON" ],
+    "armor": { "bash": 3, "cut": 2 }
   },
   {
     "id": "mon_feer",
@@ -247,9 +239,6 @@
     "melee_damage": [ { "damage_type": "cut", "amount": 1 } ],
     "dodge": 2,
     "attack_effs": [ { "id": "rad_tenths", "duration": 2 } ],
-    "armor_bash": 5,
-    "armor_cut": 3,
-    "armor_acid": 2,
     "vision_day": 35,
     "vision_night": 10,
     "special_attacks": [ [ "wound_minor", 30 ], [ "FUNGUS", 120 ], [ "HOWL", 60 ], [ "hammer", 40 ] ],
@@ -257,7 +246,8 @@
     "placate_triggers": [ "PLAYER_WEAK", "SOUND" ],
     "death_function": [ "NORMAL", "FUNGUS" ],
     "flags": [ "SEES", "HEARS", "SMELLS", "PATH_AVOID_DANGER_1", "ANIMAL", "POISON", "BASHES", "WARM", "ATTACKMON" ],
-    "//": "The mighty foose.  Not mighty enough.  Ever."
+    "//": "The mighty foose.  Not mighty enough.  Ever.",
+    "armor": { "bash": 5, "cut": 3, "acid": 2 }
   },
   {
     "id": "mon_folf",
@@ -283,8 +273,6 @@
     "melee_damage": [ { "damage_type": "cut", "amount": 3 } ],
     "dodge": 3,
     "attack_effs": [ { "id": "rad_tenths", "duration": 2 } ],
-    "armor_bash": 2,
-    "armor_cut": 1,
     "vision_day": 40,
     "vision_night": 3,
     "special_attacks": [
@@ -296,7 +284,8 @@
     "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "PLAYER_WEAK", "PLAYER_CLOSE" ],
     "fear_triggers": [ "FIRE" ],
     "placate_triggers": [ "MEAT" ],
-    "flags": [ "SEES", "HEARS", "SMELLS", "PATH_AVOID_DANGER_1", "ANIMAL", "WARM", "KEENNOSE" ]
+    "flags": [ "SEES", "HEARS", "SMELLS", "PATH_AVOID_DANGER_1", "ANIMAL", "WARM", "KEENNOSE" ],
+    "armor": { "bash": 2, "cut": 1 }
   },
   {
     "id": "mon_fant",
@@ -320,9 +309,6 @@
     "melee_dice_sides": 8,
     "melee_damage": [ { "damage_type": "cut", "amount": 2 } ],
     "dodge": 1,
-    "armor_bash": 10,
-    "armor_cut": 15,
-    "armor_acid": 2,
     "vision_day": 3,
     "vision_night": 3,
     "special_attacks": [
@@ -341,7 +327,8 @@
       }
     ],
     "death_function": [ "NORMAL", "FUNGUS" ],
-    "flags": [ "SEES", "SMELLS", "POISON", "CLIMBS" ]
+    "flags": [ "SEES", "SMELLS", "POISON", "CLIMBS" ],
+    "armor": { "bash": 10, "cut": 15, "acid": 2 }
   },
   {
     "id": "mon_fungaloid_pk",
@@ -367,8 +354,6 @@
     "melee_damage": [ { "damage_type": "cut", "amount": 1 } ],
     "dodge": 2,
     "attack_effs": [ { "id": "rad_tenths", "duration": 10 }, { "id": "rad_tenths", "duration": 10 } ],
-    "armor_bash": 6,
-    "armor_cut": 2,
     "vision_day": 2,
     "vision_night": 2,
     "special_attacks": [ [ "wound_minor", 40 ], [ "TENTACLE", 20 ], [ "FUNGUS_INJECT", 10 ], [ "FUNGUS", 240 ] ],
@@ -386,7 +371,8 @@
       "NO_BREATHE",
       "NOHEAD",
       "CAN_DIG"
-    ]
+    ],
+    "armor": { "bash": 6, "cut": 2 }
   },
   {
     "id": "mon_fardigrade",
@@ -409,10 +395,6 @@
     "melee_dice_sides": 15,
     "melee_damage": [ { "damage_type": "cut", "amount": 4 } ],
     "dodge": 0,
-    "armor_bash": 23,
-    "armor_cut": 23,
-    "armor_acid": 4,
-    "armor_fire": 6,
     "vision_day": 5,
     "vision_night": 3,
     "special_attacks": [
@@ -438,7 +420,8 @@
       "SWIMS",
       "ANIMAL"
     ],
-    "//": "As it currently stands this guy will whip at you even if it is peaceful.  The tentacle attacks were taken from the Dog-Thing, and can cover quite a distance.  So the reduced vision radius keeps the max distance of the tentacle down.  It's a neat effect caused by what I'm sure is an unintended bug."
+    "//": "As it currently stands this guy will whip at you even if it is peaceful.  The tentacle attacks were taken from the Dog-Thing, and can cover quite a distance.  So the reduced vision radius keeps the max distance of the tentacle down.  It's a neat effect caused by what I'm sure is an unintended bug.",
+    "armor": { "bash": 23, "cut": 23, "acid": 4, "fire": 6 }
   },
   {
     "id": "mon_furvivor",
@@ -463,9 +446,6 @@
     "melee_damage": [ { "damage_type": "cut", "amount": 2 } ],
     "dodge": 2,
     "attack_effs": [ { "id": "rad_tenths", "duration": 5 }, { "id": "rad_tenths", "duration": 10 } ],
-    "armor_bash": 9,
-    "armor_cut": 9,
-    "armor_stab": 5,
     "vision_day": 35,
     "vision_night": 3,
     "special_attacks": [
@@ -481,7 +461,8 @@
       "groups": [ [ "mon_zombie_survivor_death_drops", 30 ], [ "default_zombie_death_drops", 60 ] ]
     },
     "death_function": [ "NORMAL", "FUNGUS" ],
-    "flags": [ "SEES", "HEARS", "SMELLS", "WARM", "BASHES", "STUMBLES", "GROUP_BASH", "POISON", "HUMAN", "PUSH_MON" ]
+    "flags": [ "SEES", "HEARS", "SMELLS", "WARM", "BASHES", "STUMBLES", "GROUP_BASH", "POISON", "HUMAN", "PUSH_MON" ],
+    "armor": { "bash": 9, "cut": 9, "stab": 5 }
   },
   {
     "id": "mon_furvivor_glock",
@@ -506,10 +487,6 @@
     "melee_damage": [ { "damage_type": "cut", "amount": 8 } ],
     "dodge": 4,
     "attack_effs": [ { "id": "rad_tenths", "duration": 2 }, { "id": "rad_tenths", "duration": 5 } ],
-    "armor_bash": 7,
-    "armor_cut": 7,
-    "armor_stab": 3,
-    "armor_acid": 1,
     "vision_day": 50,
     "vision_night": 2,
     "starting_ammo": { "9mm": 31 },
@@ -542,7 +519,8 @@
     "death_drops": { "subtype": "collection", "groups": [ [ "furvivor_glock", 100 ] ] },
     "death_function": [ "NORMAL", "FUNGUS" ],
     "flags": [ "SEES", "HEARS", "PATH_AVOID_DANGER_2", "WARM", "BASHES", "GROUP_BASH", "POISON", "HUMAN", "PUSH_MON", "GUILT" ],
-    "//": "I'm vaguely aware that the way I compiled the loot item_groups for these gun-toting Zs is pretty inefficient.  Just sayin'''"
+    "//": "I'm vaguely aware that the way I compiled the loot item_groups for these gun-toting Zs is pretty inefficient.  Just sayin'''",
+    "armor": { "bash": 7, "cut": 7, "stab": 3, "acid": 1 }
   },
   {
     "id": "mon_furvivor_shotgun",
@@ -567,10 +545,6 @@
     "melee_damage": [ { "damage_type": "cut", "amount": 4 } ],
     "dodge": 4,
     "attack_effs": [ { "id": "rad_tenths", "duration": 2 }, { "id": "rad_tenths", "duration": 5 } ],
-    "armor_bash": 9,
-    "armor_cut": 7,
-    "armor_stab": 4,
-    "armor_acid": 2,
     "vision_day": 50,
     "vision_night": 2,
     "starting_ammo": { "shot_00": 10 },
@@ -602,7 +576,8 @@
     "placate_triggers": [ "FRIEND_ATTACKED" ],
     "death_drops": { "subtype": "collection", "groups": [ [ "furvivor_shotgun", 100 ] ] },
     "death_function": [ "NORMAL", "FUNGUS" ],
-    "flags": [ "SEES", "HEARS", "PATH_AVOID_DANGER_2", "WARM", "BASHES", "GROUP_BASH", "POISON", "HUMAN", "PUSH_MON", "GUILT" ]
+    "flags": [ "SEES", "HEARS", "PATH_AVOID_DANGER_2", "WARM", "BASHES", "GROUP_BASH", "POISON", "HUMAN", "PUSH_MON", "GUILT" ],
+    "armor": { "bash": 9, "cut": 7, "stab": 4, "acid": 2 }
   },
   {
     "id": "mon_furvivor_deagle",
@@ -627,10 +602,6 @@
     "melee_damage": [ { "damage_type": "cut", "amount": 2 } ],
     "dodge": 3,
     "attack_effs": [ { "id": "rad_tenths", "duration": 2 }, { "id": "rad_tenths", "duration": 5 } ],
-    "armor_bash": 5,
-    "armor_cut": 8,
-    "armor_stab": 6,
-    "armor_acid": 1,
     "vision_day": 50,
     "vision_night": 2,
     "starting_ammo": { "44fmj": 17 },
@@ -662,7 +633,8 @@
     "placate_triggers": [ "FRIEND_ATTACKED" ],
     "death_drops": { "subtype": "collection", "groups": [ [ "furvivor_deagle", 100 ] ] },
     "death_function": [ "NORMAL", "FUNGUS" ],
-    "flags": [ "SEES", "HEARS", "PATH_AVOID_DANGER_2", "WARM", "BASHES", "GROUP_BASH", "POISON", "HUMAN", "PUSH_MON", "GUILT" ]
+    "flags": [ "SEES", "HEARS", "PATH_AVOID_DANGER_2", "WARM", "BASHES", "GROUP_BASH", "POISON", "HUMAN", "PUSH_MON", "GUILT" ],
+    "armor": { "bash": 5, "cut": 8, "stab": 6, "acid": 1 }
   },
   {
     "id": "mon_furvivor_smg",
@@ -687,9 +659,6 @@
     "melee_damage": [ { "damage_type": "cut", "amount": 2 } ],
     "dodge": 5,
     "attack_effs": [ { "id": "rad_tenths", "duration": 2 }, { "id": "rad_tenths", "duration": 5 } ],
-    "armor_bash": 6,
-    "armor_cut": 6,
-    "armor_acid": 3,
     "vision_day": 50,
     "vision_night": 2,
     "starting_ammo": { "9mm": 128 },
@@ -721,7 +690,8 @@
     "placate_triggers": [ "FRIEND_ATTACKED" ],
     "death_drops": { "subtype": "collection", "groups": [ [ "furvivor_smg", 100 ] ] },
     "death_function": [ "NORMAL", "FUNGUS" ],
-    "flags": [ "SEES", "HEARS", "PATH_AVOID_DANGER_2", "WARM", "BASHES", "GROUP_BASH", "POISON", "HUMAN", "PUSH_MON", "GUILT" ]
+    "flags": [ "SEES", "HEARS", "PATH_AVOID_DANGER_2", "WARM", "BASHES", "GROUP_BASH", "POISON", "HUMAN", "PUSH_MON", "GUILT" ],
+    "armor": { "bash": 6, "cut": 6, "acid": 3 }
   },
   {
     "id": "mon_furvivor_pk",
@@ -747,10 +717,6 @@
     "melee_damage": [ { "damage_type": "cut", "amount": 5 } ],
     "dodge": 4,
     "attack_effs": [ { "id": "rad_tenths", "duration": 2 }, { "id": "rad_tenths", "duration": 5 } ],
-    "armor_bash": 13,
-    "armor_cut": 13,
-    "armor_acid": 4,
-    "armor_fire": 4,
     "vision_day": 50,
     "vision_night": 2,
     "special_attacks": [
@@ -763,7 +729,8 @@
     "placate_triggers": [ "FRIEND_ATTACKED" ],
     "death_drops": { "subtype": "collection", "groups": [ [ "spearmelee_pk", 95 ] ] },
     "death_function": [ "NORMAL", "FUNGUS" ],
-    "flags": [ "SEES", "HEARS", "PATH_AVOID_DANGER_2", "WARM", "BASHES", "GROUP_BASH", "POISON", "HUMAN", "PUSH_MON", "GUILT" ]
+    "flags": [ "SEES", "HEARS", "PATH_AVOID_DANGER_2", "WARM", "BASHES", "GROUP_BASH", "POISON", "HUMAN", "PUSH_MON", "GUILT" ],
+    "armor": { "bash": 13, "cut": 13, "acid": 4, "fire": 4 }
   },
   {
     "id": "mon_marloss_man",
@@ -788,9 +755,6 @@
     "melee_damage": [ { "damage_type": "cut", "amount": 5 } ],
     "dodge": 6,
     "attack_effs": [ { "id": "rad_tenths", "duration": 2 }, { "id": "rad_tenths", "duration": 5 } ],
-    "armor_bash": 16,
-    "armor_cut": 16,
-    "armor_acid": 6,
     "vision_day": 50,
     "vision_night": 7,
     "starting_ammo": { "223": 150 },
@@ -836,7 +800,8 @@
       "FIREPROOF",
       "PUSH_MON"
     ],
-    "//": "Very dangerous to anyone not in a PA suit.  Will be evolving into a laser-wielding monstrosity."
+    "//": "Very dangerous to anyone not in a PA suit.  Will be evolving into a laser-wielding monstrosity.",
+    "armor": { "bash": 16, "cut": 16, "acid": 6 }
   },
   {
     "id": "mon_finebeast",
@@ -859,9 +824,6 @@
     "melee_dice_sides": 9,
     "melee_damage": [ { "damage_type": "cut", "amount": 3 } ],
     "dodge": 3,
-    "armor_bash": 15,
-    "armor_cut": 2,
-    "armor_stab": 12,
     "special_attacks": [
       [ "wound_minor", 5 ],
       [ "FUNGUS", 100 ],
@@ -871,7 +833,8 @@
       { "id": "scratch", "cooldown": 30, "damage_max_instance": [ { "damage_type": "cut", "amount": 16 } ] }
     ],
     "death_function": [ "NORMAL", "FUNGUS" ],
-    "flags": [ "HEARS", "GOODHEARING", "SMELLS", "NOHEAD", "HARDTOSHOOT", "POISON", "GRABS", "PLASTIC" ]
+    "flags": [ "HEARS", "GOODHEARING", "SMELLS", "NOHEAD", "HARDTOSHOOT", "POISON", "GRABS", "PLASTIC" ],
+    "armor": { "bash": 15, "cut": 2, "stab": 12 }
   },
   {
     "id": "mon_fionaea",
@@ -896,10 +859,6 @@
     "melee_damage": [ { "damage_type": "cut", "amount": 3 } ],
     "dodge": 2,
     "attack_effs": [ { "id": "rad_tenths", "duration": 5 }, { "id": "rad_tenths", "duration": 15 } ],
-    "armor_bash": 10,
-    "armor_cut": 18,
-    "armor_acid": 3,
-    "armor_fire": 3,
     "vision_day": 30,
     "vision_night": 10,
     "special_attacks": [
@@ -911,7 +870,8 @@
       { "type": "bite", "cooldown": 30, "min_mul": 0.8, "no_infection_chance": 5 }
     ],
     "flags": [ "SEES", "HEARS", "STUMBLES", "POISON", "NO_BREATHE", "BASHES", "GROUP_BASH", "ATTACKMON", "NOHEAD" ],
-    "//": "This girl will create a 3x3 wall of fungus, then kill 1 or 2 of them to get out.  Over time this will create a hedgerow maze of sorts.  I am tempted to add one overmap, honestly."
+    "//": "This girl will create a 3x3 wall of fungus, then kill 1 or 2 of them to get out.  Over time this will create a hedgerow maze of sorts.  I am tempted to add one overmap, honestly.",
+    "armor": { "bash": 10, "cut": 18, "acid": 3, "fire": 3 }
   },
   {
     "id": "mon_finecraft",
@@ -935,9 +895,6 @@
     "melee_damage": [ { "damage_type": "cut", "amount": 5 } ],
     "dodge": 3,
     "attack_effs": [ { "id": "rad_tenths", "duration": 20 }, { "id": "rad_tenths", "duration": 30 } ],
-    "armor_bash": 8,
-    "armor_cut": 4,
-    "armor_fire": 4,
     "starting_ammo": { "EMPbomb": 3 },
     "special_attacks": [ [ "VINE", 5 ], [ "KAMIKAZE", 0 ], [ "RATTLE", 3 ], [ "FUNGUS_HAZE", 25 ], [ "FUNGUS_BRISTLE", 30 ] ],
     "anger_triggers": [ "SOUND", "PLAYER_WEAK", "PLAYER_CLOSE" ],
@@ -956,7 +913,8 @@
       "FUNGUS"
     ],
     "flags": [ "SEES", "HEARS", "GOODHEARING", "PATH_AVOID_DANGER_1", "CAN_DIG", "POISON", "ANIMAL", "SWIMS", "NOHEAD", "BASHES" ],
-    "//": "While I feel the triffid HB is somewhat forced into their fold, this guy works pretty well for the fungus and their themes.  Doesn't seem to want to blow up of his own volition though.  The fungal mdeaths def stack, but its diminishing returns."
+    "//": "While I feel the triffid HB is somewhat forced into their fold, this guy works pretty well for the fungus and their themes.  Doesn't seem to want to blow up of his own volition though.  The fungal mdeaths def stack, but its diminishing returns.",
+    "armor": { "bash": 8, "cut": 4, "fire": 4 }
   },
   {
     "id": "mon_zombie_electric_fungal",
@@ -980,8 +938,6 @@
     "melee_dice_sides": 6,
     "dodge": 2,
     "attack_effs": [ { "id": "rad_tenths", "duration": 10 }, { "id": "rad_tenths", "duration": 15 } ],
-    "armor_bash": 2,
-    "armor_cut": 2,
     "vision_day": 25,
     "vision_night": 3,
     "luminance": 5,
@@ -1003,7 +959,8 @@
       "BONES",
       "PUSH_MON"
     ],
-    "//": "A little out of place.  May replace with like a brute or w.e."
+    "//": "A little out of place.  May replace with like a brute or w.e.",
+    "armor": { "bash": 2, "cut": 2 }
   },
   {
     "id": "mon_fungus_pig",
@@ -1027,8 +984,6 @@
     "melee_dice_sides": 3,
     "melee_damage": [ { "damage_type": "cut", "amount": 12 } ],
     "dodge": 2,
-    "armor_bash": 3,
-    "armor_cut": 1,
     "vision_day": 35,
     "vision_night": 5,
     "special_attacks": [
@@ -1046,6 +1001,7 @@
     ],
     "anger_triggers": [ "PLAYER_WEAK", "PLAYER_CLOSE" ],
     "regenerates": 1,
-    "flags": [ "SEES", "HEARS", "SMELLS", "KEENNOSE", "STUMBLES", "WARM", "BASHES", "POISON", "PLASTIC" ]
+    "flags": [ "SEES", "HEARS", "SMELLS", "KEENNOSE", "STUMBLES", "WARM", "BASHES", "POISON", "PLASTIC" ],
+    "armor": { "bash": 3, "cut": 1 }
   }
 ]

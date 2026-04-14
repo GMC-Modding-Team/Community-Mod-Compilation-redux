@@ -1,30 +1,121 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  
-
-- [Changelog](#changelog)
-  - [Unreleased](#unreleased)
-  - [v0.2.0-beta-experimental (2021-07-19)](#v020-beta-experimental-2021-07-19)
-  - [V0.1.9 (2021-05-14)](#v019-2021-05-14)
-  - [V0.1.8 (2021-04-15)](#v018-2021-04-15)
-  - [0.1.8 (2021-04-03)](#018-2021-04-03)
-  - [V0.1.7 (2021-03-07)](#v017-2021-03-07)
-  - [v0.1.6 (2021-02-18)](#v016-2021-02-18)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # Changelog
 
 ## [Unreleased](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/tree/HEAD)
 
-[Full Changelog](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/compare/v0.2.0-beta-experimental...HEAD)
+[Full Changelog](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/compare/v0.2.1-beta-G-experimental...HEAD)
+
+**Fixed bugs:**
+
+- \[Discord\] Fix discord issue with webhooks [\#150](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/150)
+- \[Documentation\] Mod cataloging ids [\#50](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/50)
+- \[Workshop\] legacy update [\#248](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/248) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[H\] updates goats mods old pr and other mods for some reason [\#221](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/221) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[H\] unleash the mods update [\#220](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/220) ([TheGoatGod](https://github.com/TheGoatGod))
+- Goats mods update 01 - H stable - [\#209](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/209) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Experimental\] Routine update 8 [\#207](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/207) ([TheGoatGod](https://github.com/TheGoatGod))
+- update for goats mods [\#205](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/205) ([TheGoatGod](https://github.com/TheGoatGod))
 
 **Closed issues:**
 
+- Update Version Information in README [\#212](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/212)
+- 0.f release  [\#196](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/196)
+- \[Tools\] move registry from tools to new repo [\#155](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/155)
+- \[Experimental\] Tracking Issue for Breaking Changes [\#129](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/129)
+- \[Experimental\] remove tilesets from mods [\#125](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/125)
+- \[Documentation\] Professions.md [\#114](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/114)
+- \[Documentation\] Standardise json.md [\#72](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/72)
+- \[GitHub\] Refurbished makefile [\#25](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/25)
+
+**Merged pull requests:**
+
+- Pr workshop update [\#249](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/249) ([TheGoatGod](https://github.com/TheGoatGod))
+- Make name\_strings\_to\_objects.py independent of base\_script.py [\#245](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/245) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Tools\] update\_legacy\_json.py update 2 [\#244](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/244) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Tools\] updates update\_legacy\_json [\#243](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/243) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[H\] updates rebalance mods for armor to include fire [\#242](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/242) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Tools\] updates armor\_update.py [\#241](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/241) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[H\] maintained mods update [\#240](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/240) ([TheGoatGod](https://github.com/TheGoatGod))
+- pk rebalacing update armor [\#239](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/239) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[H\] armor update for mainline mods [\#238](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/238) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[H\] Armor update for rebalance mods [\#237](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/237) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[H\] update armor in legacy mods [\#236](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/236) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[H\] pk rebalacing update armor [\#235](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/235) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Tools\] armor\_update.py update [\#234](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/234) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[H\] update mainline mod with price updates [\#233](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/233) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[tool\] adds armor\_update.py [\#232](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/232) ([TheGoatGod](https://github.com/TheGoatGod))
+- Pr test changelog generator [\#231](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/231) ([TheGoatGod](https://github.com/TheGoatGod))
+- test [\#230](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/230) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[github\] update changelog generator [\#229](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/229) ([TheGoatGod](https://github.com/TheGoatGod))
+- Pr test changelog generator [\#228](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/228) ([TheGoatGod](https://github.com/TheGoatGod))
+- Changelog test [\#227](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/227) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[github\] adds Generator\_Changelog.yml [\#226](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/226) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[github\] Update gitattributes 2 [\#225](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/225) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[github\] Update .gitattributes [\#224](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/224) ([TheGoatGod](https://github.com/TheGoatGod))
+- Update .gitattributes [\#222](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/222) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[H\] price update for json [\#219](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/219) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[H\] updates legacy json from new script [\#218](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/218) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[H\] adds and updates the fallout mod [\#217](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/217) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[H\] add goats mods and update older mods [\#215](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/215) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Experimental\] Modernize Python tooling scripts [\#213](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/213) ([TheGoatGod](https://github.com/TheGoatGod))
+- Goats mods update 02 [\#211](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/211) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[H\] unleash the mods update [\#210](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/210) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Github\] Update TOC [\#208](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/208) ([github-actions[bot]](https://github.com/apps/github-actions))
+- \[Github\] Update TOC [\#206](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/206) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Fix 42's small mod. Experimental [\#204](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/204) ([therealestchoochoo](https://github.com/therealestchoochoo))
+- \[Github\] Update TOC [\#203](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/203) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Fixes advanced gear \[Experimental\] [\#202](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/202) ([therealestchoochoo](https://github.com/therealestchoochoo))
+- Abrahams recipes weapon category additions. \[Experimental\] [\#200](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/200) ([therealestchoochoo](https://github.com/therealestchoochoo))
+- Fix abramhams recipe mod {Experimental} [\#199](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/199) ([therealestchoochoo](https://github.com/therealestchoochoo))
+- Add activity levels to 42 small mod \[Experimental\]  [\#198](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/198) ([therealestchoochoo](https://github.com/therealestchoochoo))
+- \[Experimental\] Pr routine updates 7 [\#195](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/195) ([TheGoatGod](https://github.com/TheGoatGod))
+- Choo's work in progress  \#Experimental  [\#194](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/194) ([therealestchoochoo](https://github.com/therealestchoochoo))
+- Add CodeQL workflow for GitHub code scanning [\#193](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/193) ([lgtm-com[bot]](https://github.com/apps/lgtm-com))
+- \[Github\] Update TOC [\#192](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/192) ([github-actions[bot]](https://github.com/apps/github-actions))
+- \[Experimental\] Fix Dorf Life Wagon [\#191](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/191) ([321nick](https://github.com/321nick))
+- Fix AAA and Modular vest using hardsteel \[Experimental\] [\#190](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/190) ([therealestchoochoo](https://github.com/therealestchoochoo))
+- \[Experimental\] Fix leftover Holster tag \(oops\) [\#176](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/176) ([321nick](https://github.com/321nick))
+- \[Experimental\] Artyoms/LnL prices, lengths, speedloader [\#175](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/175) ([321nick](https://github.com/321nick))
+- \[Experimental\] Advanced Gear Technologies - Update to vanilla requirements base + mod additions [\#172](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/172) ([TheRafters](https://github.com/TheRafters))
+- \[Experimental\] \[Mutant\_Animals\] Extend eggs\_bird instead of overwrite [\#171](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/171) ([TheRafters](https://github.com/TheRafters))
+- \[Experimental\] Routine Updates 7 [\#169](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/169) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Github\] Update TOC [\#168](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/168) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Change required GLARE PROTECTION tool quality [\#167](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/167) ([Stretop](https://github.com/Stretop))
+- \[Documentation\] documents rework and update/deletes workflow [\#120](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/120) ([TheGoatGod](https://github.com/TheGoatGod))
+
+## [v0.2.1-beta-G-experimental](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/tree/v0.2.1-beta-G-experimental) (2022-04-06)
+
+[Full Changelog](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/compare/v0.2.0-beta-experimental...v0.2.1-beta-G-experimental)
+
+**Fixed bugs:**
+
+- Pr update primitive mod [\#160](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/160) ([TheGoatGod](https://github.com/TheGoatGod))
+- Pr routin updates 04 [\#159](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/159) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Experimental\] Routine Updates- \[3\] [\#136](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/136) ([TheGoatGod](https://github.com/TheGoatGod))
+
+**Closed issues:**
+
+- \[Github\] Fix Codefactor errors [\#148](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/148)
+- \[Github\] Workflow integration [\#144](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/144)
 - \[Documentation\] Keybindings.md [\#115](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/115)
 
 **Merged pull requests:**
 
+- \[Experimental\] routine updates 6 [\#166](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/166) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Github\] Update TOC [\#165](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/165) ([github-actions[bot]](https://github.com/apps/github-actions))
+- \[Experimental\] routine updates - \[5\] [\#164](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/164) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Github\] Update TOC [\#161](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/161) ([github-actions[bot]](https://github.com/apps/github-actions))
+- \[Github\] Update TOC [\#157](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/157) ([github-actions[bot]](https://github.com/apps/github-actions))
+- \[Documents\] fix up index [\#154](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/154) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Documents\] redo index folder [\#152](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/152) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Documents\] Move all documents to docs folder [\#151](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/151) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Github\] Update TOC [\#149](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/149) ([github-actions[bot]](https://github.com/apps/github-actions))
+- \[Github\] workflow update [\#147](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/147) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Github\] New tool - add take ownership of file [\#142](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/142) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Github\] Fix issues on codefactor [\#141](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/141) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Github\] Update TOC [\#140](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/140) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Update TOC [\#139](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/139) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Update TOC [\#138](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/138) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Update the table of contents in documents [\#137](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/137) ([github-actions[bot]](https://github.com/apps/github-actions))
 - \[Documentation\] Keybindings.md [\#116](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/116) ([TheGoatGod](https://github.com/TheGoatGod))
 
 ## [v0.2.0-beta-experimental](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/tree/v0.2.0-beta-experimental) (2021-07-19)
@@ -199,7 +290,7 @@
 - Update LICENSE.TXT [\#10](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/10) ([TheGoatGod](https://github.com/TheGoatGod))
 - Create LICENSE.TXT [\#9](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/9) ([TheGoatGod](https://github.com/TheGoatGod))
 - Delete LICENSE [\#8](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/8) ([TheGoatGod](https://github.com/TheGoatGod))
-- \[GitHub\] fix json validator [\#7](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/7) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[GitHub\] python script changes [\#7](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/7) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Github\] fix json validator [\#5](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/5) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Experimental\] All Prs from other repo [\#4](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/4) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[GitHub\] Update .typo-ci.yml [\#2](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/2) ([TheGoatGod](https://github.com/TheGoatGod))

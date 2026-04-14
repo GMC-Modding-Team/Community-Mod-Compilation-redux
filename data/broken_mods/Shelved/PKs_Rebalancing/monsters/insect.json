@@ -55,10 +55,8 @@
     "melee_dice_sides": 2,
     "melee_damage": [ { "damage_type": "cut", "amount": 1 } ],
     "dodge": 1,
-    "armor_bash": 0,
-    "armor_cut": 1,
-    "armor_acid": 1,
-    "flags": [ "HEARS", "SMELLS", "CAN_DIG", "LARVA" ]
+    "flags": [ "HEARS", "SMELLS", "CAN_DIG", "LARVA" ],
+    "armor": { "bash": 0, "cut": 1, "acid": 1 }
   },
   {
     "id": "mon_caterpillar",
@@ -82,13 +80,13 @@
     "melee_dice_sides": 2,
     "melee_damage": [ { "damage_type": "cut", "amount": 2 } ],
     "dodge": 1,
-    "armor_bash": 2,
     "vision_day": 5,
     "vision_night": 2,
     "special_attacks": [ [ "SHRIEK", 30 ] ],
     "anger_triggers": [ "PLAYER_CLOSE" ],
     "placate_triggers": [ "HURT", "FRIEND_DIED" ],
-    "flags": [ "SEES", "HEARS", "SMELLS", "LARVA", "NOHEAD", "CLIMBS", "WEBWALK" ]
+    "flags": [ "SEES", "HEARS", "SMELLS", "LARVA", "NOHEAD", "CLIMBS", "WEBWALK" ],
+    "armor": { "bash": 2 }
   },
   {
     "id": "mon_pupae",
@@ -112,13 +110,10 @@
     "melee_dice_sides": 0,
     "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "dodge": 0,
-    "armor_bash": 10,
-    "armor_cut": 14,
-    "armor_acid": 6,
-    "armor_fire": 7,
     "emit_fields": [ "emit_web" ],
     "special_when_hit": [ "ACIDSPLASH", 10 ],
-    "flags": [ "NOHEAD", "WEBWALK", "STUMBLES", "IMMOBILE" ]
+    "flags": [ "NOHEAD", "WEBWALK", "STUMBLES", "IMMOBILE" ],
+    "armor": { "bash": 10, "cut": 14, "acid": 6, "fire": 7 }
   },
   {
     "id": "mon_pupae_pk",
@@ -142,13 +137,10 @@
     "melee_dice_sides": 0,
     "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "dodge": 0,
-    "armor_bash": 10,
-    "armor_cut": 14,
-    "armor_acid": 6,
-    "armor_fire": 7,
     "emit_fields": [ "emit_web" ],
     "special_when_hit": [ "ACIDSPLASH", 10 ],
-    "flags": [ "NOHEAD", "WEBWALK", "STUMBLES", "IMMOBILE" ]
+    "flags": [ "NOHEAD", "WEBWALK", "STUMBLES", "IMMOBILE" ],
+    "armor": { "bash": 10, "cut": 14, "acid": 6, "fire": 7 }
   },
   {
     "id": "mon_butterfly",
@@ -258,10 +250,6 @@
     "melee_skill": 2,
     "melee_dice": 1,
     "melee_dice_sides": 24,
-    "armor_bash": 30,
-    "armor_cut": 35,
-    "armor_acid": 6,
-    "armor_fire": 9,
     "vision_day": 5,
     "vision_night": 3,
     "special_attacks": [ [ "wound_minor", 20 ], [ "GRAB", 30 ], [ "VINE", 15 ] ],
@@ -279,7 +267,8 @@
       "ANIMAL",
       "FAT",
       "CHITIN"
-    ]
+    ],
+    "armor": { "bash": 30, "cut": 35, "acid": 6, "fire": 9 }
   },
   {
     "id": "mon_spider_cellar_giant",
@@ -306,17 +295,14 @@
     "melee_damage": [ { "damage_type": "stab", "amount": 2 } ],
     "attack_effs": [ { "id": "badpoison", "duration": 800, "chance": 25 } ],
     "dodge": 7,
-    "armor_bash": 2,
-    "armor_cut": 4,
-    "armor_bullet": 2,
-    "armor_acid": 4,
     "vision_day": 5,
     "vision_night": 9,
     "harvest": "arachnid",
     "special_attacks": [ [ "wound_minor", 20 ] ],
     "anger_triggers": [ "STALK", "PLAYER_WEAK", "PLAYER_CLOSE" ],
     "flags": [ "SEES", "SMELLS", "HEARS", "VENOM", "WEBWALK", "CLIMBS", "HARDTOSHOOT", "PUSH_MON", "PATH_AVOID_FIRE" ],
-    "//": "No, they are not in fact the most venomous spider in the world."
+    "//": "No, they are not in fact the most venomous spider in the world.",
+    "armor": { "bash": 2, "cut": 4, "bullet": 2, "acid": 4 }
   },
   {
     "id": "mon_spider_widow_giant",
@@ -357,14 +343,12 @@
     "melee_damage": [ { "damage_type": "acid", "amount": 2 } ],
     "attack_effs": [ { "id": "poison", "duration": 400, "chance": 5 } ],
     "dodge": 2,
-    "armor_bash": 4,
-    "armor_cut": 8,
-    "armor_bullet": 6,
     "vision_day": 5,
     "vision_night": 7,
     "harvest": "arachnid",
     "upgrades": { "half_life": 19, "into_group": "TRAP_SPIDER_UPGRADE" },
-    "flags": [ "SEES", "SMELLS", "HEARS", "CAN_DIG", "WEBWALK", "CHITIN", "FAT", "CLIMBS", "PUSH_MON" ]
+    "flags": [ "SEES", "SMELLS", "HEARS", "CAN_DIG", "WEBWALK", "CHITIN", "FAT", "CLIMBS", "PUSH_MON" ],
+    "armor": { "bash": 4, "cut": 8, "bullet": 6 }
   },
   {
     "id": "mon_spider_jumping_giant",
@@ -378,15 +362,14 @@
     "dodge": 6,
     "melee_damage": [ { "damage_type": "stab", "amount": 2 }, { "damage_type": "acid", "amount": 2 } ],
     "attack_effs": [ { "id": "poison", "duration": 400, "chance": 30 } ],
-    "armor_bash": 2,
-    "armor_cut": 5,
     "vision_day": 20,
     "vision_night": 7,
     "special_attacks": [ [ "wound_minor", 20 ] ],
     "fear_triggers": [ "HURT", "FIRE" ],
     "upgrades": { "half_life": 17, "into": "mon_spider_jumping_giant_acid" },
     "flags": [ "SEES", "SMELLS", "KEENNOSE", "HEARS", "CHITIN", "CLIMBS", "ACIDPROOF", "PUSH_MON" ],
-    "anger_triggers": [ "PLAYER_CLOSE", "PLAYER_WEAK", "FRIEND_ATTACKED", "STALK" ]
+    "anger_triggers": [ "PLAYER_CLOSE", "PLAYER_WEAK", "FRIEND_ATTACKED", "STALK" ],
+    "armor": { "bash": 2, "cut": 5 }
   },
   {
     "id": "mon_spider_web_s",
@@ -410,15 +393,13 @@
     "melee_dice_sides": 2,
     "melee_damage": [ { "damage_type": "cut", "amount": 2 } ],
     "dodge": 1,
-    "armor_bash": 2,
-    "armor_cut": 6,
-    "armor_bullet": 5,
     "vision_day": 12,
     "vision_night": 5,
     "harvest": "arachnid",
     "special_attacks": [ [ "wound_minor", 30 ] ],
     "upgrades": { "half_life": 3, "into": "mon_spider_web_small" },
-    "flags": [ "SEES", "SMELLS", "HEARS", "WEBWALK", "STUMBLES", "CLIMBS", "PUSH_MON", "CHITIN" ]
+    "flags": [ "SEES", "SMELLS", "HEARS", "WEBWALK", "STUMBLES", "CLIMBS", "PUSH_MON", "CHITIN" ],
+    "armor": { "bash": 2, "cut": 6, "bullet": 5 }
   },
   {
     "id": "mon_spider_web_small",
@@ -443,14 +424,12 @@
     "melee_dice_sides": 6,
     "melee_damage": [ { "damage_type": "cut", "amount": 6 } ],
     "dodge": 2,
-    "armor_bash": 2,
-    "armor_cut": 6,
-    "armor_bullet": 5,
     "vision_day": 5,
     "vision_night": 5,
     "harvest": "arachnid",
     "upgrades": { "half_life": 14, "into": "mon_spider_web" },
-    "flags": [ "SEES", "SMELLS", "HEARS", "VENOM", "WEBWALK", "CLIMBS", "PATH_AVOID_FIRE", "PATH_AVOID_FALL" ]
+    "flags": [ "SEES", "SMELLS", "HEARS", "VENOM", "WEBWALK", "CLIMBS", "PATH_AVOID_FIRE", "PATH_AVOID_FALL" ],
+    "armor": { "bash": 2, "cut": 6, "bullet": 5 }
   },
   {
     "id": "mon_spider_web",
@@ -475,15 +454,13 @@
     "melee_dice_sides": 6,
     "melee_damage": [ { "damage_type": "cut", "amount": 4 } ],
     "dodge": 2,
-    "armor_bash": 2,
-    "armor_cut": 6,
-    "armor_bullet": 5,
     "vision_day": 5,
     "vision_night": 5,
     "harvest": "arachnid",
     "emit_fields": [ "emit_web_small" ],
     "upgrades": { "half_life": 19, "into_group": "WEB_SPIDER_UPGRADE" },
-    "flags": [ "SEES", "SMELLS", "HEARS", "WEBWALK", "CHITIN", "CLIMBS", "PUSH_MON" ]
+    "flags": [ "SEES", "SMELLS", "HEARS", "WEBWALK", "CHITIN", "CLIMBS", "PUSH_MON" ],
+    "armor": { "bash": 2, "cut": 6, "bullet": 5 }
   },
   {
     "id": "mon_spider_wolf_giant",
@@ -509,10 +486,6 @@
     "melee_damage": [ { "damage_type": "cut", "amount": 8 } ],
     "dodge": 4,
     "attack_effs": [ { "id": "poison", "duration": 650, "chance": 15 } ],
-    "armor_bash": 4,
-    "armor_cut": 8,
-    "armor_bullet": 6,
-    "armor_acid": 2,
     "vision_day": 7,
     "vision_night": 15,
     "harvest": "arachnid",
@@ -531,7 +504,8 @@
       "CLIMBS",
       "PATH_AVOID_FIRE",
       "PATH_AVOID_FALL"
-    ]
+    ],
+    "armor": { "bash": 4, "cut": 8, "bullet": 6, "acid": 2 }
   },
   {
     "id": "mon_spider_wolf_giant_pk",
@@ -555,15 +529,13 @@
     "melee_damage": [ { "damage_type": "cut", "amount": 8 } ],
     "dodge": 6,
     "attack_effs": [ { "id": "poison", "duration": 650, "chance": 15 } ],
-    "armor_bash": 9,
-    "armor_cut": 14,
-    "armor_acid": 4,
     "vision_day": 9,
     "vision_night": 20,
     "special_attacks": [ [ "wound_minor", 20 ] ],
     "flags": [ "SEES", "SMELLS", "HEARS", "CHITIN", "FAT", "CLIMBS", "PATH_AVOID_DANGER_1" ],
     "anger_triggers": [ "STALK", "PLAYER_WEAK", "PLAYER_CLOSE" ],
-    "fear_triggers": [ "HURT", "FRIEND_DIED" ]
+    "fear_triggers": [ "HURT", "FRIEND_DIED" ],
+    "armor": { "bash": 9, "cut": 14, "acid": 4 }
   },
   {
     "id": "mon_spider_web_queen",
@@ -585,15 +557,14 @@
     "melee_dice": 0,
     "melee_dice_sides": 0,
     "dodge": 0,
-    "armor_bash": 2,
-    "armor_acid": 3,
     "vision_day": 20,
     "vision_night": 20,
     "starting_ammo": { "bot_spider_web_omega": 10, "bot_spider_web_s": 40 },
     "special_attacks": [ [ "GRENADIER_ELITE", 30 ], [ "GRENADIER", 20 ] ],
     "death_drops": { "subtype": "collection", "groups": [ [ "spider_eggs", 100 ] ] },
     "death_function": [ "DISINTEGRATE" ],
-    "flags": [ "SEES", "NO_BREATHE", "IMMOBILE", "QUEEN" ]
+    "flags": [ "SEES", "NO_BREATHE", "IMMOBILE", "QUEEN" ],
+    "armor": { "bash": 2, "acid": 3 }
   },
   {
     "id": "mon_trapdoor_egg",
@@ -615,15 +586,14 @@
     "melee_dice": 0,
     "melee_dice_sides": 0,
     "dodge": 0,
-    "armor_bash": 2,
-    "armor_acid": 1,
     "vision_day": 20,
     "vision_night": 20,
     "starting_ammo": { "bot_spider_trapdoor_giant": 3, "bot_trapdoor_s": 17 },
     "special_attacks": [ [ "GRENADIER", 20 ] ],
     "death_drops": { "subtype": "collection", "groups": [ [ "spider_eggs", 100 ] ] },
     "death_function": [ "DISINTEGRATE" ],
-    "flags": [ "SEES", "NO_BREATHE", "IMMOBILE" ]
+    "flags": [ "SEES", "NO_BREATHE", "IMMOBILE" ],
+    "armor": { "bash": 2, "acid": 1 }
   },
   {
     "id": "mon_trapdoor_queen",
@@ -645,15 +615,14 @@
     "melee_dice": 0,
     "melee_dice_sides": 0,
     "dodge": 0,
-    "armor_bash": 2,
-    "armor_acid": 3,
     "vision_day": 20,
     "vision_night": 20,
     "starting_ammo": { "bot_spider_trapdoor_giant": 7, "bot_spider_trapdoor_giant_guardian": 3, "bot_trapdoor_s": 30 },
     "special_attacks": [ [ "GRENADIER_ELITE", 30 ], [ "GRENADIER", 20 ] ],
     "death_drops": { "subtype": "collection", "groups": [ [ "spider_eggs", 100 ] ] },
     "death_function": [ "DISINTEGRATE" ],
-    "flags": [ "SEES", "NO_BREATHE", "IMMOBILE", "QUEEN" ]
+    "flags": [ "SEES", "NO_BREATHE", "IMMOBILE", "QUEEN" ],
+    "armor": { "bash": 2, "acid": 3 }
   },
   {
     "id": "mon_spider_trapdoor_giant_s",
@@ -677,13 +646,12 @@
     "melee_damage": [ { "damage_type": "cut", "amount": 3 } ],
     "dodge": 0,
     "attack_effs": [ { "id": "poison", "duration": 400, "chance": 5 } ],
-    "armor_bash": 3,
-    "armor_cut": 7,
     "vision_day": 5,
     "vision_night": 7,
     "special_attacks": [ [ "wound_minor", 30 ] ],
     "upgrades": { "half_life": 3, "into": "mon_spider_trapdoor_giant" },
-    "flags": [ "SEES", "SMELLS", "STUMBLES", "HEARS", "GRABS", "CAN_DIG", "WEBWALK", "CHITIN", "FAT", "CLIMBS", "PUSH_MON" ]
+    "flags": [ "SEES", "SMELLS", "STUMBLES", "HEARS", "GRABS", "CAN_DIG", "WEBWALK", "CHITIN", "FAT", "CLIMBS", "PUSH_MON" ],
+    "armor": { "bash": 3, "cut": 7 }
   },
   {
     "id": "mon_spider_trapdoor_giant_guardian",
@@ -708,12 +676,11 @@
     "dodge": 3,
     "melee_damage": [ { "damage_type": "acid", "amount": 6 }, { "damage_type": "stab", "amount": 4 } ],
     "attack_effs": [ { "id": "poison", "duration": 400, "chance": 4 } ],
-    "armor_bash": 9,
-    "armor_cut": 14,
     "vision_day": 10,
     "vision_night": 13,
     "special_attacks": [ [ "wound_minor", 20 ], [ "wasp_sting", 20 ] ],
-    "flags": [ "SEES", "SMELLS", "HEARS", "CAN_DIG", "WEBWALK", "CHITIN", "FAT", "CLIMBS", "PUSH_MON", "PATH_AVOID_DANGER_1" ]
+    "flags": [ "SEES", "SMELLS", "HEARS", "CAN_DIG", "WEBWALK", "CHITIN", "FAT", "CLIMBS", "PUSH_MON", "PATH_AVOID_DANGER_1" ],
+    "armor": { "bash": 9, "cut": 14 }
   },
   {
     "id": "mon_spider_trapdoor_giant_pk",
@@ -738,12 +705,11 @@
     "dodge": 3,
     "melee_damage": [ { "damage_type": "acid", "amount": 3 } ],
     "attack_effs": [ { "id": "poison", "duration": 400, "chance": 5 } ],
-    "armor_bash": 4,
-    "armor_cut": 8,
     "vision_day": 5,
     "vision_night": 7,
     "special_attacks": [ [ "LUNGE", 30 ], [ "wound_minor", 20 ] ],
-    "flags": [ "SEES", "SMELLS", "HEARS", "CAN_DIG", "WEBWALK", "CHITIN", "FAT", "CLIMBS", "PUSH_MON" ]
+    "flags": [ "SEES", "SMELLS", "HEARS", "CAN_DIG", "WEBWALK", "CHITIN", "FAT", "CLIMBS", "PUSH_MON" ],
+    "armor": { "bash": 4, "cut": 8 }
   },
   {
     "id": "mon_spider_web_alpha",
@@ -772,12 +738,11 @@
       { "id": "spider_web_alpha", "duration": 360, "chance": 65 },
       { "id": "poison", "duration": 400, "chance": 50 }
     ],
-    "armor_bash": 4,
-    "armor_cut": 10,
     "vision_day": 15,
     "vision_night": 10,
     "emit_fields": [ "emit_web_small" ],
-    "flags": [ "SEES", "SMELLS", "HEARS", "WEBWALK", "CHITIN", "CLIMBS", "PUSH_MON" ]
+    "flags": [ "SEES", "SMELLS", "HEARS", "WEBWALK", "CHITIN", "CLIMBS", "PUSH_MON" ],
+    "armor": { "bash": 4, "cut": 10 }
   },
   {
     "id": "mon_spider_web_omega",
@@ -806,12 +771,11 @@
       { "id": "spider_web_omega", "duration": 360, "chance": 65 },
       { "id": "poison", "duration": 400, "chance": 50 }
     ],
-    "armor_bash": 3,
-    "armor_cut": 8,
     "vision_day": 15,
     "vision_night": 10,
     "emit_fields": [ "emit_web_small" ],
-    "flags": [ "SEES", "SMELLS", "HEARS", "WEBWALK", "CHITIN", "CLIMBS", "PUSH_MON", "PRIORITIZE_TARGETS" ]
+    "flags": [ "SEES", "SMELLS", "HEARS", "WEBWALK", "CHITIN", "CLIMBS", "PUSH_MON", "PRIORITIZE_TARGETS" ],
+    "armor": { "bash": 3, "cut": 8 }
   },
   {
     "id": "mon_spider_web_mu",
@@ -840,12 +804,11 @@
       { "id": "spider_web_mu", "duration": 360, "chance": 65 },
       { "id": "poison", "duration": 650, "chance": 50 }
     ],
-    "armor_bash": 3,
-    "armor_cut": 8,
     "vision_day": 20,
     "vision_night": 10,
     "emit_fields": [ "emit_web_small" ],
-    "flags": [ "SEES", "SMELLS", "HEARS", "WEBWALK", "CHITIN", "CLIMBS", "PARALYZEVENOM", "HIT_AND_RUN", "PUSH_MON" ]
+    "flags": [ "SEES", "SMELLS", "HEARS", "WEBWALK", "CHITIN", "CLIMBS", "PARALYZEVENOM", "HIT_AND_RUN", "PUSH_MON" ],
+    "armor": { "bash": 3, "cut": 8 }
   },
   {
     "id": "mon_spider_jumping_giant_acid",
@@ -870,8 +833,6 @@
     "dodge": 6,
     "melee_damage": [ { "damage_type": "stab", "amount": 6 }, { "damage_type": "acid", "amount": 3 } ],
     "attack_effs": [ { "id": "badpoison", "duration": 900, "chance": 50 } ],
-    "armor_bash": 3,
-    "armor_cut": 7,
     "vision_day": 20,
     "vision_night": 7,
     "special_attacks": [
@@ -883,7 +844,8 @@
     "special_when_hit": [ "ACIDSPLASH", 10 ],
     "flags": [ "SEES", "SMELLS", "KEENNOSE", "HEARS", "CHITIN", "CLIMBS", "ACIDPROOF", "ACID_BLOOD", "PUSH_MON" ],
     "anger_triggers": [ "PLAYER_CLOSE", "PLAYER_WEAK", "FRIEND_ATTACKED", "STALK" ],
-    "fear_triggers": [ "HURT", "FIRE" ]
+    "fear_triggers": [ "HURT", "FIRE" ],
+    "armor": { "bash": 3, "cut": 7 }
   },
   {
     "id": "mon_bee",
@@ -899,8 +861,6 @@
     "melee_damage": [ { "damage_type": "stab", "amount": 2 } ],
     "dodge": 4,
     "attack_effs": [ { "id": "poison", "duration": 50, "chance": 75 } ],
-    "armor_bash": 4,
-    "armor_cut": 6,
     "vision_day": 11,
     "vision_night": 5,
     "special_attacks": [
@@ -918,7 +878,8 @@
     "special_when_hit": [ "ZAPBACK", 20 ],
     "death_drops": { "subtype": "collection", "groups": [ [ "bees", 35 ] ] },
     "flags": [ "SEES", "SMELLS", "KEENNOSE", "FLIES", "STUMBLES", "CHITIN", "SWARMS", "GROUP_MORALE", "ELECTRIC" ],
-    "anger_triggers": [ "HURT", "FRIEND_ATTACKED" ]
+    "anger_triggers": [ "HURT", "FRIEND_ATTACKED" ],
+    "armor": { "bash": 4, "cut": 6 }
   },
   {
     "id": "mon_bee_scout",
@@ -941,8 +902,6 @@
     "melee_dice_sides": 3,
     "melee_damage": [ { "damage_type": "electric", "amount": 1 }, { "damage_type": "stab", "amount": 4 } ],
     "dodge": 5,
-    "armor_bash": 4,
-    "armor_cut": 6,
     "vision_day": 11,
     "vision_night": 5,
     "special_attacks": [
@@ -961,7 +920,8 @@
     "death_drops": { "subtype": "collection", "groups": [ [ "bees", 35 ] ] },
     "attack_effs": [ { "id": "poison", "duration": 400, "chance": 75 } ],
     "flags": [ "SEES", "SMELLS", "KEENNOSE", "FLIES", "STUMBLES", "CHITIN", "SWARMS", "GROUP_MORALE", "ELECTRIC" ],
-    "anger_triggers": [ "HURT", "FRIEND_DIED" ]
+    "anger_triggers": [ "HURT", "FRIEND_DIED" ],
+    "armor": { "bash": 4, "cut": 6 }
   },
   {
     "id": "mon_bee_soldier",
@@ -984,8 +944,6 @@
     "melee_dice_sides": 5,
     "melee_damage": [ { "damage_type": "stab", "amount": 6 } ],
     "dodge": 3,
-    "armor_bash": 5,
-    "armor_cut": 7,
     "vision_day": 11,
     "vision_night": 5,
     "special_attacks": [
@@ -1004,7 +962,8 @@
     "death_drops": { "subtype": "collection", "groups": [ [ "bees", 35 ] ] },
     "attack_effs": [ { "id": "poison", "duration": 400, "chance": 75 } ],
     "flags": [ "SEES", "SMELLS", "KEENNOSE", "FLIES", "STUMBLES", "CHITIN", "SWARMS", "GROUP_MORALE", "ELECTRIC" ],
-    "anger_triggers": [ "HURT", "FRIEND_ATTACKED", "PLAYER_CLOSE" ]
+    "anger_triggers": [ "HURT", "FRIEND_ATTACKED", "PLAYER_CLOSE" ],
+    "armor": { "bash": 5, "cut": 7 }
   },
   {
     "id": "mon_bee_queen",
@@ -1027,8 +986,6 @@
     "melee_dice_sides": 4,
     "melee_damage": [ { "damage_type": "electric", "amount": 4 }, { "damage_type": "stab", "amount": 6 } ],
     "dodge": 3,
-    "armor_bash": 4,
-    "armor_cut": 6,
     "vision_day": 10,
     "vision_night": 5,
     "special_attacks": [
@@ -1048,7 +1005,8 @@
     "anger_triggers": [ "HURT", "FRIEND_DIED", "PLAYER_CLOSE" ],
     "death_drops": { "subtype": "collection", "groups": [ [ "bees", 20 ] ] },
     "attack_effs": [ { "id": "poison", "duration": 400, "chance": 75 } ],
-    "flags": [ "SEES", "SMELLS", "FLIES", "STUMBLES", "CHITIN", "SWARMS", "GROUP_MORALE", "ELECTRIC", "QUEEN" ]
+    "flags": [ "SEES", "SMELLS", "FLIES", "STUMBLES", "CHITIN", "SWARMS", "GROUP_MORALE", "ELECTRIC", "QUEEN" ],
+    "armor": { "bash": 4, "cut": 6 }
   },
   {
     "id": "mon_bee_king",
@@ -1071,8 +1029,6 @@
     "melee_dice_sides": 4,
     "melee_damage": [ { "damage_type": "electric", "amount": 2 }, { "damage_type": "stab", "amount": 6 } ],
     "dodge": 4,
-    "armor_bash": 4,
-    "armor_cut": 6,
     "vision_day": 11,
     "vision_night": 5,
     "special_attacks": [
@@ -1092,7 +1048,8 @@
     "anger_triggers": [ "HURT", "FRIEND_ATTACKED", "PLAYER_CLOSE" ],
     "death_drops": { "subtype": "collection", "groups": [ [ "bees", 20 ] ] },
     "attack_effs": [ { "id": "poison", "duration": 400, "chance": 50 } ],
-    "flags": [ "SEES", "SMELLS", "KEENNOSE", "FLIES", "STUMBLES", "CHITIN", "SWARMS", "GROUP_MORALE", "ELECTRIC" ]
+    "flags": [ "SEES", "SMELLS", "KEENNOSE", "FLIES", "STUMBLES", "CHITIN", "SWARMS", "GROUP_MORALE", "ELECTRIC" ],
+    "armor": { "bash": 4, "cut": 6 }
   },
   {
     "id": "mon_bee_larvae",
@@ -1114,13 +1071,11 @@
     "melee_dice": 1,
     "melee_dice_sides": 2,
     "melee_damage": [ { "damage_type": "cut", "amount": 5 } ],
-    "armor_bash": 4,
-    "armor_cut": 4,
-    "armor_acid": 2,
     "anger_triggers": [ "HURT", "PLAYER_WEAK" ],
     "placate_triggers": [ "MEAT" ],
     "upgrades": { "half_life": 14, "into_group": "GROUP_BEE" },
-    "flags": [ "HEARS", "SMELLS", "LARVA", "CHITIN", "IMMOBILE" ]
+    "flags": [ "HEARS", "SMELLS", "LARVA", "CHITIN", "IMMOBILE" ],
+    "armor": { "bash": 4, "cut": 4, "acid": 2 }
   },
   {
     "id": "mon_wasp",
@@ -1146,12 +1101,11 @@
     "melee_dice_sides": 6,
     "melee_damage": [ { "damage_type": "cut", "amount": 8 } ],
     "dodge": 5,
-    "armor_bash": 6,
-    "armor_cut": 8,
     "vision_day": 12,
     "vision_night": 7,
     "special_attacks": [ [ "wasp_sting", 3 ], [ "ant_sinject", 3 ] ],
-    "flags": [ "SEES", "SMELLS", "FLIES", "CHITIN", "SWARMS", "GROUP_MORALE", "QUEEN" ]
+    "flags": [ "SEES", "SMELLS", "FLIES", "CHITIN", "SWARMS", "GROUP_MORALE", "QUEEN" ],
+    "armor": { "bash": 6, "cut": 8 }
   },
   {
     "id": "mon_wasp_larvae",

@@ -10,13 +10,11 @@
     "melee_dice": 2,
     "melee_dice_sides": 4,
     "melee_damage": [ { "damage_type": "cut", "amount": 3 } ],
-    "armor_bash": 16,
-    "armor_cut": 25,
-    "armor_acid": 2,
     "vision_day": 5,
     "vision_night": 5,
     "special_attacks": [ [ "ant_dinject", 40 ], [ "ANTQUEEN", 3 ], [ "FLAMETHROWER", 20 ], [ "SHRIEK_ALERT", 5 ], [ "UPGRADE", 3 ] ],
-    "extend": { "anger_triggers": [ "FIRE" ], "flags": [ "SEES", "KEENNOSE", "PATH_AVOID_DANGER_1", "FIREPROOF", "BASHES" ] }
+    "extend": { "anger_triggers": [ "FIRE" ], "flags": [ "SEES", "KEENNOSE", "PATH_AVOID_DANGER_1", "FIREPROOF", "BASHES" ] },
+    "armor": { "bash": 16, "cut": 25, "acid": 2 }
   },
   {
     "id": "mon_ant_queen_young",
@@ -40,14 +38,12 @@
     "melee_dice_sides": 4,
     "melee_damage": [ { "damage_type": "cut", "amount": 4 } ],
     "dodge": 1,
-    "armor_bash": 10,
-    "armor_cut": 14,
-    "armor_acid": 4,
     "vision_day": 20,
     "vision_night": 5,
     "special_attacks": [ [ "ant_dinject", 30 ], [ "ANTQUEEN", 90 ], [ "FLAMETHROWER", 50 ], [ "SHRIEK_ALERT", 15 ], [ "SHRIEK_STUN", 1 ] ],
     "anger_triggers": [ "FRIEND_DIED", "HURT", "FIRE" ],
-    "flags": [ "SEES", "SMELLS", "KEENNOSE", "PATH_AVOID_DANGER_1", "CLIMBS", "FIREPROOF", "FLIES", "BASHES" ]
+    "flags": [ "SEES", "SMELLS", "KEENNOSE", "PATH_AVOID_DANGER_1", "CLIMBS", "FIREPROOF", "FLIES", "BASHES" ],
+    "armor": { "bash": 10, "cut": 14, "acid": 4 }
   },
   {
     "id": "mon_ant_male",
@@ -71,17 +67,14 @@
     "melee_dice_sides": 10,
     "melee_damage": [ { "damage_type": "stab", "amount": 6 } ],
     "dodge": 2,
-    "armor_bash": 5,
-    "armor_cut": 8,
-    "armor_acid": 3,
-    "armor_fire": 12,
     "vision_day": 25,
     "vision_night": 7,
     "special_attacks": [ [ "ant_dinject", 40 ], [ "wound_minor", 30 ] ],
     "anger_triggers": [ "PLAYER_CLOSE", "PLAYER_WEAK", "FIRE" ],
     "fear_triggers": [ "FRIEND_DIED", "HURT" ],
     "placate_triggers": [ "FRIEND_ATTACKED" ],
-    "flags": [ "SEES", "SMELLS", "KEENNOSE", "CLIMBS", "FLIES", "BASHES" ]
+    "flags": [ "SEES", "SMELLS", "KEENNOSE", "CLIMBS", "FLIES", "BASHES" ],
+    "armor": { "bash": 5, "cut": 8, "acid": 3, "fire": 12 }
   },
   {
     "id": "mon_ant_larva",
@@ -91,14 +84,12 @@
     "description": "A writhing mass of yellowing flesh, this little guy is capable of only paltry self-defense.",
     "hp": 15,
     "melee_dice_sides": 2,
-    "armor_bash": 4,
-    "armor_cut": 4,
-    "armor_acid": 5,
     "harvest": "meatslug",
     "special_attacks": [ [ "ant_dinject", 30 ], [ "wound_minor", 20 ] ],
     "anger_triggers": [ "HURT", "PLAYER_WEAK" ],
     "placate_triggers": [ "MEAT" ],
-    "extend": { "flags": [ "HEARS", "SWARMS" ] }
+    "extend": { "flags": [ "HEARS", "SWARMS" ] },
+    "armor": { "bash": 4, "cut": 4, "acid": 5 }
   },
   {
     "id": "mon_ant",
@@ -108,9 +99,6 @@
     "melee_skill": 4,
     "melee_dice_sides": 8,
     "melee_damage": [ { "damage_type": "cut", "amount": 3 } ],
-    "armor_bash": 6,
-    "armor_cut": 10,
-    "armor_fire": 2,
     "special_attacks": [
       [ "ant_dinject", 40 ],
       [ "GRAB", 20 ],
@@ -127,7 +115,8 @@
       }
     ],
     "extend": { "upgrades": { "into_group": "GROUP_DRONE", "half_life": 5 } },
-    "delete": { "upgrades": { "age_grow": 14, "into": "mon_ant_soldier" } }
+    "delete": { "upgrades": { "age_grow": 14, "into": "mon_ant_soldier" } },
+    "armor": { "bash": 6, "cut": 10, "fire": 2 }
   },
   {
     "id": "mon_ant_soldier",
@@ -150,13 +139,12 @@
     "melee_dice_sides": 8,
     "melee_damage": [ { "damage_type": "cut", "amount": 6 } ],
     "dodge": 2,
-    "armor_bash": 10,
-    "armor_cut": 12,
     "vision_day": 5,
     "vision_night": 5,
     "harvest": "arachnid",
     "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT", "PLAYER_CLOSE" ],
-    "flags": [ "SEES", "HEARS", "SMELLS", "CLIMBS" ]
+    "flags": [ "SEES", "HEARS", "SMELLS", "CLIMBS" ],
+    "armor": { "bash": 10, "cut": 12 }
   },
   {
     "id": "mon_ant_soldier",
@@ -172,9 +160,6 @@
     "melee_damage": [ { "damage_type": "bash", "amount": 2 } ],
     "melee_damage": [ { "damage_type": "cut", "amount": 5 } ],
     "dodge": 2,
-    "armor_bash": 8,
-    "armor_cut": 14,
-    "armor_fire": 3,
     "vision_day": 5,
     "vision_night": 5,
     "special_attacks": [
@@ -192,7 +177,8 @@
       }
     ],
     "upgrades": { "half_life": 21, "into_group": "GROUP_SOLDIER" },
-    "extend": { "anger_triggers": [ "FIRE" ], "flags": [ "KEENNOSE" ] }
+    "extend": { "anger_triggers": [ "FIRE" ], "flags": [ "KEENNOSE" ] },
+    "armor": { "bash": 8, "cut": 14, "fire": 3 }
   },
   {
     "id": "mon_ant_scrib",
@@ -216,14 +202,12 @@
     "melee_dice_sides": 4,
     "melee_damage": [ { "damage_type": "cut", "amount": 2 } ],
     "dodge": 2,
-    "armor_bash": 5,
-    "armor_cut": 10,
-    "armor_fire": 5,
     "vision_day": 7,
     "vision_night": 7,
     "special_attacks": [ [ "scrib", 40 ], [ "SHRIEK_ALERT", 40 ], [ "SHRIEK_STUN", 1 ] ],
     "anger_triggers": [ "FRIEND_DIED", "HURT" ],
-    "flags": [ "SEES", "HEARS", "SMELLS", "KEENNOSE", "PATH_AVOID_DANGER_1", "CHITIN", "CLIMBS" ]
+    "flags": [ "SEES", "HEARS", "SMELLS", "KEENNOSE", "PATH_AVOID_DANGER_1", "CHITIN", "CLIMBS" ],
+    "armor": { "bash": 5, "cut": 10, "fire": 5 }
   },
   {
     "id": "mon_ant_terminal",
@@ -248,9 +232,6 @@
     "melee_damage": [ { "damage_type": "bash", "amount": 3 } ],
     "melee_damage": [ { "damage_type": "cut", "amount": 4 } ],
     "dodge": 1,
-    "armor_bash": 8,
-    "armor_cut": 14,
-    "armor_fire": 5,
     "vision_day": 5,
     "vision_night": 5,
     "special_attacks": [
@@ -269,7 +250,8 @@
       }
     ],
     "anger_triggers": [ "FRIEND_DIED", "HURT", "PLAYER_WEAK" ],
-    "flags": [ "SEES", "SMELLS", "KEENNOSE", "CHITIN", "CLIMBS" ]
+    "flags": [ "SEES", "SMELLS", "KEENNOSE", "CHITIN", "CLIMBS" ],
+    "armor": { "bash": 8, "cut": 14, "fire": 5 }
   },
   {
     "id": "mon_ant_soldier_terminal",
@@ -293,9 +275,6 @@
     "melee_dice_sides": 7,
     "melee_damage": [ { "damage_type": "cut", "amount": 6 } ],
     "dodge": 1,
-    "armor_bash": 10,
-    "armor_cut": 18,
-    "armor_acid": 3,
     "vision_day": 5,
     "vision_night": 5,
     "special_attacks": [
@@ -313,7 +292,8 @@
       }
     ],
     "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT", "PLAYER_CLOSE", "FIRE" ],
-    "flags": [ "SEES", "HEARS", "SMELLS", "KEENNOSE", "CHITIN", "CLIMBS" ]
+    "flags": [ "SEES", "HEARS", "SMELLS", "KEENNOSE", "CHITIN", "CLIMBS" ],
+    "armor": { "bash": 10, "cut": 18, "acid": 3 }
   },
   {
     "id": "mon_ant_soldier_pk_weak",
@@ -338,10 +318,6 @@
     "melee_damage": [ { "damage_type": "acid", "amount": 1 } ],
     "melee_damage": [ { "damage_type": "cut", "amount": 4 } ],
     "dodge": 2,
-    "armor_bash": 8,
-    "armor_cut": 12,
-    "armor_acid": 2,
-    "armor_fire": 2,
     "vision_day": 25,
     "vision_night": 5,
     "special_attacks": [
@@ -371,7 +347,8 @@
     ],
     "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT", "PLAYER_CLOSE", "PLAYER_WEAK", "FIRE" ],
     "upgrades": { "half_life": 28, "into": "mon_ant_soldier_pk" },
-    "flags": [ "SEES", "SMELLS", "KEENNOSE", "CHITIN", "CLIMBS", "BASHES" ]
+    "flags": [ "SEES", "SMELLS", "KEENNOSE", "CHITIN", "CLIMBS", "BASHES" ],
+    "armor": { "bash": 8, "cut": 12, "acid": 2, "fire": 2 }
   },
   {
     "id": "mon_ant_soldier_pk",
@@ -396,10 +373,6 @@
     "melee_damage": [ { "damage_type": "acid", "amount": 1 } ],
     "melee_damage": [ { "damage_type": "cut", "amount": 4 } ],
     "dodge": 3,
-    "armor_bash": 12,
-    "armor_cut": 16,
-    "armor_acid": 3,
-    "armor_fire": 2,
     "vision_day": 30,
     "vision_night": 5,
     "special_attacks": [
@@ -428,7 +401,8 @@
       { "type": "leap", "cooldown": 15, "max_range": 3 }
     ],
     "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT", "PLAYER_CLOSE", "PLAYER_WEAK", "FIRE" ],
-    "flags": [ "SEES", "SMELLS", "KEENNOSE", "CHITIN", "CLIMBS", "BASHES" ]
+    "flags": [ "SEES", "SMELLS", "KEENNOSE", "CHITIN", "CLIMBS", "BASHES" ],
+    "armor": { "bash": 12, "cut": 16, "acid": 3, "fire": 2 }
   },
   {
     "copy-from": "mon_ant_acid_queen",
@@ -447,14 +421,12 @@
     "melee_dice_sides": 3,
     "melee_damage": [ { "damage_type": "cut", "amount": 8 } ],
     "dodge": 0,
-    "armor_bash": 10,
-    "armor_stab": 14,
-    "armor_cut": 20,
     "vision_day": 5,
     "vision_night": 10,
     "starting_ammo": { "bot_ant_acid_ultralisk": 1 },
     "special_attacks": [ [ "GRENADIER_ELITE", 5 ], [ "ANTQUEEN", 3 ], [ "UPGRADE", 3 ], [ "scrib", 20 ] ],
-    "death_function": [ "NORMAL", "ACID" ]
+    "death_function": [ "NORMAL", "ACID" ],
+    "armor": { "bash": 10, "cut": 20, "stab": 14 }
   },
   {
     "id": "mon_ant_acid_larva",
@@ -481,9 +453,6 @@
     "speed": 75,
     "melee_skill": 4,
     "dodge": 0,
-    "armor_bash": 4,
-    "armor_stab": 5,
-    "armor_cut": 12,
     "vision_day": 3,
     "vision_night": 3,
     "special_attacks": [
@@ -520,7 +489,8 @@
     "delete": {
       "anger_triggers": [ "FRIEND_ATTACKED", "PLAYER_CLOSE" ],
       "upgrades": { "age_grow": 14, "into": "mon_ant_acid_soldier" }
-    }
+    },
+    "armor": { "bash": 4, "cut": 12, "stab": 5 }
   },
   {
     "id": "mon_ant_acid_terminal",
@@ -543,9 +513,6 @@
     "melee_dice_sides": 6,
     "melee_damage": [ { "damage_type": "cut", "amount": 6 } ],
     "dodge": 0,
-    "armor_bash": 5,
-    "armor_stab": 6,
-    "armor_cut": 14,
     "vision_day": 3,
     "vision_night": 3,
     "special_attacks": [
@@ -580,7 +547,8 @@
     ],
     "anger_triggers": [ "FRIEND_DIED", "HURT", "FIRE" ],
     "death_function": { "message": "The %s's body leaks acid.", "effect": { "id": "death_acid", "hit_self": true } },
-    "flags": [ "ACIDPROOF", "CLIMBS", "HEARS", "POISON", "SEES", "SMELLS" ]
+    "flags": [ "ACIDPROOF", "CLIMBS", "HEARS", "POISON", "SEES", "SMELLS" ],
+    "armor": { "bash": 5, "cut": 14, "stab": 6 }
   },
   {
     "id": "mon_ant_acid_soldier",
@@ -597,9 +565,6 @@
     "melee_dice": 2,
     "melee_dice_sides": 6,
     "dodge": 1,
-    "armor_bash": 9,
-    "armor_stab": 13,
-    "armor_cut": 20,
     "vision_day": 4,
     "vision_night": 4,
     "special_attacks": [
@@ -632,7 +597,8 @@
         "ranges": [ [ 2, 4, "DEFAULT" ] ]
       }
     ],
-    "harvest": "arachnid_acid"
+    "harvest": "arachnid_acid",
+    "armor": { "bash": 9, "cut": 20, "stab": 13 }
   },
   {
     "id": "mon_ant_acid_kwama",
@@ -655,16 +621,14 @@
     "melee_dice_sides": 7,
     "melee_damage": [ { "damage_type": "acid", "amount": 4 } ],
     "dodge": 2,
-    "armor_bash": 8,
-    "armor_stab": 9,
-    "armor_cut": 14,
     "vision_day": 25,
     "vision_night": 5,
     "special_attacks": [ [ "ACID", 60 ], [ "ACID_BARF", 60 ], [ "wound_minor", 40 ], [ "scrib", 60 ] ],
     "harvest": "arachnid_acid",
     "flags": [ "ACIDPROOF", "POISON", "SEES", "HEARS", "SMELLS", "CLIMBS" ],
     "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "PLAYER_CLOSE", "FIRE" ],
-    "fear_triggers": [ "HURT" ]
+    "fear_triggers": [ "HURT" ],
+    "armor": { "bash": 8, "cut": 14, "stab": 9 }
   },
   {
     "id": "mon_ant_acid_ultralisk",
@@ -688,10 +652,6 @@
     "melee_damage": [ { "damage_type": "cut", "amount": 10 } ],
     "melee_damage": [ { "damage_type": "acid", "amount": 4 } ],
     "dodge": 2,
-    "armor_bash": 14,
-    "armor_stab": 16,
-    "armor_cut": 24,
-    "armor_acid": 4,
     "vision_day": 7,
     "vision_night": 4,
     "special_attacks": [
@@ -719,6 +679,7 @@
     ],
     "harvest": "arachnid_acid",
     "flags": [ "SEES", "HEARS", "BASHES", "DESTROYS", "PUSH_MON", "CHITIN" ],
-    "anger_triggers": [ "FRIEND_DIED", "PLAYER_CLOSE", "FIRE", "HURT" ]
+    "anger_triggers": [ "FRIEND_DIED", "PLAYER_CLOSE", "FIRE", "HURT" ],
+    "armor": { "bash": 14, "cut": 24, "stab": 16, "acid": 4 }
   }
 ]
