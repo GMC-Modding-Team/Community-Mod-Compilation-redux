@@ -10,11 +10,20 @@ on:
     - '**/**/**/**/**/*.md'
 
 name: TOC Generator
+
 jobs:
   generateTOC:
-    name: TOC Generator
+    if: github.repository == 'CleverRaven/Cataclysm-DDA'
+    name: Update the table of contents
     runs-on: ubuntu-latest
     steps:
-      - uses: technote-space/toc-generator@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: false
+      - run: npx doctoc --github --title "*Contents*"
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@c5a7806660adbe173f04e3e038b0ccdcd758773c # v6
+        with:
+          commit-message: Update the table of contents
+          branch: update-toc
+          token: ${{ secrets.GITHUB_TOKEN }}
