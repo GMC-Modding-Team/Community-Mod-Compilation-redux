@@ -554,7 +554,7 @@ def _restore_mapgen_weights(content, originals):
 
 def _mask_relative_price_weight(content):
     """
-    Mask numeric "price", "price_postapoc", and "weight" entries inside every
+    Mask numeric "price", "price_postapoc", "weight", and "volume" entries inside every
     "relative": { ... } block so those relative modifiers stay unchanged.
     Returns (masked_content, list_of_original_tokens).
     """
@@ -610,7 +610,7 @@ def _mask_relative_price_weight(content):
             return f'\x00REL{idx}\x00'
 
         relative_block = re.sub(
-            r'"(?:price|price_postapoc|weight)"\s*:\s*\d+',
+            r'"(?:price|price_postapoc|weight|volume)"\s*:\s*\d+',
             _replace_token,
             relative_block,
         )
@@ -1659,6 +1659,71 @@ def _restore_passive_add_procgen_values_weights(content, originals):
     return content
 
 
+def _mask_action_object_volume(content):
+    """
+    Mask numeric "volume" entries inside "tick_action": { ... } and
+    "use_action": { ... } blocks.
+    Returns (masked_content, list_of_original_volume_tokens).
+    """
+    originals = []
+    result = []
+    i = 0
+    pattern = re.compile(r'"(?:tick_action|use_action)"\s*:\s*\{')
+    while i < len(content):
+        m = pattern.search(content, i)
+        if not m:
+            result.append(content[i:])
+            break
+        result.append(content[i:m.start()])
+        brace_start = m.end() - 1
+        depth = 0
+        in_str = False
+        escape = False
+        j = brace_start
+        while j < len(content):
+            ch = content[j]
+            if escape:
+                escape = False
+                j += 1
+                continue
+            if ch == '\\' and in_str:
+                escape = True
+                j += 1
+                continue
+            if ch == '"':
+                in_str = not in_str
+                j += 1
+                continue
+            if in_str:
+                j += 1
+                continue
+            if ch == '{':
+                depth += 1
+            elif ch == '}':
+                depth -= 1
+                if depth == 0:
+                    j += 1
+                    break
+            j += 1
+        key_prefix = content[m.start():brace_start]
+        block = content[brace_start:j]
+        def _replace(match):
+            idx = len(originals)
+            originals.append(match.group(0))
+            return f'\x00ACV{idx}\x00'
+        block = re.sub(r'"volume"\s*:\s*\d+', _replace, block)
+        result.append(key_prefix + block)
+        i = j
+    return ''.join(result), originals
+
+
+def _restore_action_object_volume(content, originals):
+    """Restore masked numeric volume tokens inside tick_action/use_action blocks."""
+    for idx, original in enumerate(originals):
+        content = content.replace(f'\x00ACV{idx}\x00', original)
+    return content
+
+
 def fix_price(content):
     """
     "price": N          ->  "price": "N cent"
@@ -1825,6 +1890,12 @@ _TRANSFORMS_SPEECH = [
     if t is not fix_volume
 ]
 
+# sound_effect: keep numeric "volume" as sound loudness metadata
+_TRANSFORMS_SOUND_EFFECT = [
+    t for t in TRANSFORMS
+    if t is not fix_volume
+]
+
 # mod_tileset: leave weight untouched (metadata weighting, not item mass)
 _TRANSFORMS_MOD_TILESET = [
     t for t in TRANSFORMS
@@ -1893,6 +1964,7 @@ def update_json_content(content):
     "type_weights" arrays: nested numeric "weight" entries are untouched.
     "items" arrays: nested numeric "weight" entries are untouched.
     "passive_add_procgen_values" arrays: nested numeric "weight" entries are untouched.
+    "tick_action"/"use_action" objects: nested numeric "volume" entries are untouched.
     all types : nothing inside a "proportional": { ... } block is touched.
     """
     # ------------------------------------------------------------------
@@ -1920,6 +1992,7 @@ def update_json_content(content):
     content, type_weights_originals = _mask_type_weights_weights(content)
     content, items_weight_originals = _mask_items_weights(content)
     content, passive_add_procgen_values_weight_originals = _mask_passive_add_procgen_values_weights(content)
+    content, action_volume_originals = _mask_action_object_volume(content)
 
     # ------------------------------------------------------------------
     # Step 2: split into individual top-level objects and apply the
@@ -1942,6 +2015,8 @@ def update_json_content(content):
                 pipeline = _TRANSFORMS_MAPGEN
             elif re.search(r'"type"\s*:\s*"speech"', chunk):
                 pipeline = _TRANSFORMS_SPEECH
+            elif re.search(r'"type"\s*:\s*"sound_effect"', chunk):
+                pipeline = _TRANSFORMS_SOUND_EFFECT
             elif re.search(r'"type"\s*:\s*"mod_tileset"', chunk):
                 pipeline = _TRANSFORMS_MOD_TILESET
             else:
@@ -1956,6 +2031,7 @@ def update_json_content(content):
     # ------------------------------------------------------------------
     # Step 3: restore the original proportional blocks.
     # ------------------------------------------------------------------
+    content = _restore_action_object_volume(content, action_volume_originals)
     content = _restore_passive_add_procgen_values_weights(content, passive_add_procgen_values_weight_originals)
     content = _restore_items_weights(content, items_weight_originals)
     content = _restore_type_weights_weights(content, type_weights_originals)
