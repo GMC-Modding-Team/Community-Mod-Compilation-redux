@@ -18,6 +18,7 @@
 
 - Update Version Information in README [\#212](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/212)
 - 0.f release  [\#196](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/196)
+- \[Tools\] move registry from tools to new repo [\#155](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/155)
 - \[Experimental\] Tracking Issue for Breaking Changes [\#129](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/129)
 - \[Experimental\] remove tilesets from mods [\#125](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/125)
 - \[Documentation\] Professions.md [\#114](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/114)
