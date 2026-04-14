@@ -17,8 +17,8 @@ https://www.verywellfamily.com/bare-necessities-basic-baby-needs-293962
     - [ ] baby formula
   - [ ] tool armor
     - [x] pacifier
-    - [ ] diapers & disposable diapers
-    - [ ] cloth diapers
+    - [ ] diapers
+    - [ ] disposable diapers
   - [ ] tools
     - [ ] disposable wipes
     - [ ] cloth wipes
@@ -51,9 +51,9 @@ https://www.verywellfamily.com/bare-necessities-basic-baby-needs-293962
     - [ ] Moses basket
     - [ ] Infant feeding spoons
     - [ ] Infant bowl
-  - [ ] vehicle parts
-    - [ ] car seat
-    - [ ] Sun shade for car windows?
+  - [x] vehicle parts
+    - [x] car seat
+    - [x] Sun shade for car windows?
   - [ ] clothes
     - [ ] baby sleepers
     - [ ] sleep sacks
@@ -97,15 +97,14 @@ https://www.verywellfamily.com/bare-necessities-basic-baby-needs-293962
     - [ ] High chair
     - [ ] Swing
     - [ ] Portable play yard
-  - [ ] Traps
-    - [ ] lego Trap - sort of an alarm
-    - [ ] marble trap - makes npc, monsters fall over
-    - [ ] toy cars trap - makes npc, monsters fall over
-    - [ ] screatching doll
-    - [ ] jerry rigged screatching doll
+  - [x] Traps
+    - [x] lego Trap - sort of an alarm
+    - [x] marble trap - makes npc, monsters fall over
+    - [x] toy cars trap - makes npc, monsters fall over
+    - [x] screatching doll
+    - [x] jerry rigged screatching doll
 - [ ] add mutations for marking toddlers, teens and adult. (born in the cata theme)
 - [ ] add mutations for marking parent (parents in the cata theme)
-- [ ] make sure the names are generated randomly and not just your kid
 - [ ] add menu for entertainment, cleaning, feeding and quieting your kid
 - [ ] add more TALK
     - [ ] add talk for kids future
