@@ -26,6 +26,9 @@
 
 **Merged pull requests:**
 
+- Make name\_strings\_to\_objects.py independent of base\_script.py [\#245](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/245) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Tools\] update\_legacy\_json.py update 2 [\#244](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/244) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Tools\] updates update\_legacy\_json [\#243](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/243) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[H\] updates rebalance mods for armor to include fire [\#242](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/242) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Tools\] updates armor\_update.py [\#241](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/241) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[H\] maintained mods update [\#240](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/240) ([TheGoatGod](https://github.com/TheGoatGod))
