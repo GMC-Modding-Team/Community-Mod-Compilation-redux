@@ -267,6 +267,73 @@ def _restore_proportional(content, originals):
     return content
 
 
+def _mask_in_array_block(content, array_key, value_pattern, token_prefix):
+    """
+    Generic helper: mask tokens matching value_pattern inside `array_key`: [ ... ].
+    Returns (masked_content, originals).
+    """
+    originals = []
+    result = []
+    i = 0
+    pattern = re.compile(rf'"{re.escape(array_key)}"\s*:\s*\[')
+    value_re = re.compile(value_pattern)
+    while i < len(content):
+        m = pattern.search(content, i)
+        if not m:
+            result.append(content[i:])
+            break
+        result.append(content[i:m.start()])
+        bracket_start = m.end() - 1
+        depth = 0
+        in_str = False
+        escape = False
+        j = bracket_start
+        while j < len(content):
+            ch = content[j]
+            if escape:
+                escape = False
+                j += 1
+                continue
+            if ch == '\\' and in_str:
+                escape = True
+                j += 1
+                continue
+            if ch == '"':
+                in_str = not in_str
+                j += 1
+                continue
+            if in_str:
+                j += 1
+                continue
+            if ch == '[':
+                depth += 1
+            elif ch == ']':
+                depth -= 1
+                if depth == 0:
+                    j += 1
+                    break
+            j += 1
+        key_prefix = content[m.start():bracket_start]
+        block = content[bracket_start:j]
+
+        def _replace(match):
+            idx = len(originals)
+            originals.append(match.group(0))
+            return f'\x00{token_prefix}{idx}\x00'
+
+        block = value_re.sub(_replace, block)
+        result.append(key_prefix + block)
+        i = j
+    return ''.join(result), originals
+
+
+def _restore_masked_tokens(content, originals, token_prefix):
+    """Generic token restore helper for _mask_in_array_block placeholders."""
+    for idx, original in enumerate(originals):
+        content = content.replace(f'\x00{token_prefix}{idx}\x00', original)
+    return content
+
+
 def _mask_fg_weights(content):
     """
     Mask numeric "weight" entries inside every "fg": [ ... ] block so that
@@ -1280,63 +1347,12 @@ def _mask_charge_types_weights(content):
     Mask numeric "weight" entries inside every "charge_types": [ ... ] block.
     Returns (masked_content, list_of_original_weight_tokens).
     """
-    originals = []
-    result = []
-    i = 0
-    pattern = re.compile(r'"charge_types"\s*:\s*\[')
-    while i < len(content):
-        m = pattern.search(content, i)
-        if not m:
-            result.append(content[i:])
-            break
-        result.append(content[i:m.start()])
-        bracket_start = m.end() - 1
-        depth = 0
-        in_str = False
-        escape = False
-        j = bracket_start
-        while j < len(content):
-            ch = content[j]
-            if escape:
-                escape = False
-                j += 1
-                continue
-            if ch == '\\' and in_str:
-                escape = True
-                j += 1
-                continue
-            if ch == '"':
-                in_str = not in_str
-                j += 1
-                continue
-            if in_str:
-                j += 1
-                continue
-            if ch == '[':
-                depth += 1
-            elif ch == ']':
-                depth -= 1
-                if depth == 0:
-                    j += 1
-                    break
-            j += 1
-        key_prefix = content[m.start():bracket_start]
-        block = content[bracket_start:j]
-        def _replace(match):
-            idx = len(originals)
-            originals.append(match.group(0))
-            return f'\x00CHW{idx}\x00'
-        block = re.sub(r'"weight"\s*:\s*\d+', _replace, block)
-        result.append(key_prefix + block)
-        i = j
-    return ''.join(result), originals
+    return _mask_in_array_block(content, "charge_types", r'"weight"\s*:\s*\d+', "CHW")
 
 
 def _restore_charge_types_weights(content, originals):
     """Restore masked numeric charge_types weight tokens."""
-    for idx, original in enumerate(originals):
-        content = content.replace(f'\x00CHW{idx}\x00', original)
-    return content
+    return _restore_masked_tokens(content, originals, "CHW")
 
 
 def _mask_active_procgen_values_weights(content):
@@ -1344,63 +1360,12 @@ def _mask_active_procgen_values_weights(content):
     Mask numeric "weight" entries inside every "active_procgen_values": [ ... ] block.
     Returns (masked_content, list_of_original_weight_tokens).
     """
-    originals = []
-    result = []
-    i = 0
-    pattern = re.compile(r'"active_procgen_values"\s*:\s*\[')
-    while i < len(content):
-        m = pattern.search(content, i)
-        if not m:
-            result.append(content[i:])
-            break
-        result.append(content[i:m.start()])
-        bracket_start = m.end() - 1
-        depth = 0
-        in_str = False
-        escape = False
-        j = bracket_start
-        while j < len(content):
-            ch = content[j]
-            if escape:
-                escape = False
-                j += 1
-                continue
-            if ch == '\\' and in_str:
-                escape = True
-                j += 1
-                continue
-            if ch == '"':
-                in_str = not in_str
-                j += 1
-                continue
-            if in_str:
-                j += 1
-                continue
-            if ch == '[':
-                depth += 1
-            elif ch == ']':
-                depth -= 1
-                if depth == 0:
-                    j += 1
-                    break
-            j += 1
-        key_prefix = content[m.start():bracket_start]
-        block = content[bracket_start:j]
-        def _replace(match):
-            idx = len(originals)
-            originals.append(match.group(0))
-            return f'\x00APW{idx}\x00'
-        block = re.sub(r'"weight"\s*:\s*\d+', _replace, block)
-        result.append(key_prefix + block)
-        i = j
-    return ''.join(result), originals
+    return _mask_in_array_block(content, "active_procgen_values", r'"weight"\s*:\s*\d+', "APW")
 
 
 def _restore_active_procgen_values_weights(content, originals):
     """Restore masked numeric active_procgen_values weight tokens."""
-    for idx, original in enumerate(originals):
-        content = content.replace(f'\x00APW{idx}\x00', original)
-    return content
+    return _restore_masked_tokens(content, originals, "APW")
 
 
 def _mask_passive_mult_procgen_values_weights(content):
@@ -1408,63 +1373,12 @@ def _mask_passive_mult_procgen_values_weights(content):
     Mask numeric "weight" entries inside every "passive_mult_procgen_values": [ ... ] block.
     Returns (masked_content, list_of_original_weight_tokens).
     """
-    originals = []
-    result = []
-    i = 0
-    pattern = re.compile(r'"passive_mult_procgen_values"\s*:\s*\[')
-    while i < len(content):
-        m = pattern.search(content, i)
-        if not m:
-            result.append(content[i:])
-            break
-        result.append(content[i:m.start()])
-        bracket_start = m.end() - 1
-        depth = 0
-        in_str = False
-        escape = False
-        j = bracket_start
-        while j < len(content):
-            ch = content[j]
-            if escape:
-                escape = False
-                j += 1
-                continue
-            if ch == '\\' and in_str:
-                escape = True
-                j += 1
-                continue
-            if ch == '"':
-                in_str = not in_str
-                j += 1
-                continue
-            if in_str:
-                j += 1
-                continue
-            if ch == '[':
-                depth += 1
-            elif ch == ']':
-                depth -= 1
-                if depth == 0:
-                    j += 1
-                    break
-            j += 1
-        key_prefix = content[m.start():bracket_start]
-        block = content[bracket_start:j]
-        def _replace(match):
-            idx = len(originals)
-            originals.append(match.group(0))
-            return f'\x00PMW{idx}\x00'
-        block = re.sub(r'"weight"\s*:\s*\d+', _replace, block)
-        result.append(key_prefix + block)
-        i = j
-    return ''.join(result), originals
+    return _mask_in_array_block(content, "passive_mult_procgen_values", r'"weight"\s*:\s*\d+', "PMW")
 
 
 def _restore_passive_mult_procgen_values_weights(content, originals):
     """Restore masked numeric passive_mult_procgen_values weight tokens."""
-    for idx, original in enumerate(originals):
-        content = content.replace(f'\x00PMW{idx}\x00', original)
-    return content
+    return _restore_masked_tokens(content, originals, "PMW")
 
 
 def _mask_type_weights_weights(content):
@@ -1472,63 +1386,12 @@ def _mask_type_weights_weights(content):
     Mask numeric "weight" entries inside every "type_weights": [ ... ] block.
     Returns (masked_content, list_of_original_weight_tokens).
     """
-    originals = []
-    result = []
-    i = 0
-    pattern = re.compile(r'"type_weights"\s*:\s*\[')
-    while i < len(content):
-        m = pattern.search(content, i)
-        if not m:
-            result.append(content[i:])
-            break
-        result.append(content[i:m.start()])
-        bracket_start = m.end() - 1
-        depth = 0
-        in_str = False
-        escape = False
-        j = bracket_start
-        while j < len(content):
-            ch = content[j]
-            if escape:
-                escape = False
-                j += 1
-                continue
-            if ch == '\\' and in_str:
-                escape = True
-                j += 1
-                continue
-            if ch == '"':
-                in_str = not in_str
-                j += 1
-                continue
-            if in_str:
-                j += 1
-                continue
-            if ch == '[':
-                depth += 1
-            elif ch == ']':
-                depth -= 1
-                if depth == 0:
-                    j += 1
-                    break
-            j += 1
-        key_prefix = content[m.start():bracket_start]
-        block = content[bracket_start:j]
-        def _replace(match):
-            idx = len(originals)
-            originals.append(match.group(0))
-            return f'\x00TYW{idx}\x00'
-        block = re.sub(r'"weight"\s*:\s*\d+', _replace, block)
-        result.append(key_prefix + block)
-        i = j
-    return ''.join(result), originals
+    return _mask_in_array_block(content, "type_weights", r'"weight"\s*:\s*\d+', "TYW")
 
 
 def _restore_type_weights_weights(content, originals):
     """Restore masked numeric type_weights weight tokens."""
-    for idx, original in enumerate(originals):
-        content = content.replace(f'\x00TYW{idx}\x00', original)
-    return content
+    return _restore_masked_tokens(content, originals, "TYW")
 
 
 def _mask_items_weights(content):
@@ -1536,63 +1399,12 @@ def _mask_items_weights(content):
     Mask numeric "weight" and "damage" entries inside every "items": [ ... ] block.
     Returns (masked_content, list_of_original_tokens).
     """
-    originals = []
-    result = []
-    i = 0
-    pattern = re.compile(r'"items"\s*:\s*\[')
-    while i < len(content):
-        m = pattern.search(content, i)
-        if not m:
-            result.append(content[i:])
-            break
-        result.append(content[i:m.start()])
-        bracket_start = m.end() - 1
-        depth = 0
-        in_str = False
-        escape = False
-        j = bracket_start
-        while j < len(content):
-            ch = content[j]
-            if escape:
-                escape = False
-                j += 1
-                continue
-            if ch == '\\' and in_str:
-                escape = True
-                j += 1
-                continue
-            if ch == '"':
-                in_str = not in_str
-                j += 1
-                continue
-            if in_str:
-                j += 1
-                continue
-            if ch == '[':
-                depth += 1
-            elif ch == ']':
-                depth -= 1
-                if depth == 0:
-                    j += 1
-                    break
-            j += 1
-        key_prefix = content[m.start():bracket_start]
-        block = content[bracket_start:j]
-        def _replace(match):
-            idx = len(originals)
-            originals.append(match.group(0))
-            return f'\x00ITW{idx}\x00'
-        block = re.sub(r'"(?:weight|damage)"\s*:\s*\d+', _replace, block)
-        result.append(key_prefix + block)
-        i = j
-    return ''.join(result), originals
+    return _mask_in_array_block(content, "items", r'"(?:weight|damage)"\s*:\s*\d+', "ITW")
 
 
 def _restore_items_weights(content, originals):
     """Restore masked numeric items weight/damage tokens."""
-    for idx, original in enumerate(originals):
-        content = content.replace(f'\x00ITW{idx}\x00', original)
-    return content
+    return _restore_masked_tokens(content, originals, "ITW")
 
 
 def _mask_passive_add_procgen_values_weights(content):
@@ -1600,63 +1412,12 @@ def _mask_passive_add_procgen_values_weights(content):
     Mask numeric "weight" entries inside every "passive_add_procgen_values": [ ... ] block.
     Returns (masked_content, list_of_original_weight_tokens).
     """
-    originals = []
-    result = []
-    i = 0
-    pattern = re.compile(r'"passive_add_procgen_values"\s*:\s*\[')
-    while i < len(content):
-        m = pattern.search(content, i)
-        if not m:
-            result.append(content[i:])
-            break
-        result.append(content[i:m.start()])
-        bracket_start = m.end() - 1
-        depth = 0
-        in_str = False
-        escape = False
-        j = bracket_start
-        while j < len(content):
-            ch = content[j]
-            if escape:
-                escape = False
-                j += 1
-                continue
-            if ch == '\\' and in_str:
-                escape = True
-                j += 1
-                continue
-            if ch == '"':
-                in_str = not in_str
-                j += 1
-                continue
-            if in_str:
-                j += 1
-                continue
-            if ch == '[':
-                depth += 1
-            elif ch == ']':
-                depth -= 1
-                if depth == 0:
-                    j += 1
-                    break
-            j += 1
-        key_prefix = content[m.start():bracket_start]
-        block = content[bracket_start:j]
-        def _replace(match):
-            idx = len(originals)
-            originals.append(match.group(0))
-            return f'\x00PAW{idx}\x00'
-        block = re.sub(r'"weight"\s*:\s*\d+', _replace, block)
-        result.append(key_prefix + block)
-        i = j
-    return ''.join(result), originals
+    return _mask_in_array_block(content, "passive_add_procgen_values", r'"weight"\s*:\s*\d+', "PAW")
 
 
 def _restore_passive_add_procgen_values_weights(content, originals):
     """Restore masked numeric passive_add_procgen_values weight tokens."""
-    for idx, original in enumerate(originals):
-        content = content.replace(f'\x00PAW{idx}\x00', original)
-    return content
+    return _restore_masked_tokens(content, originals, "PAW")
 
 
 def _mask_action_object_volume(content):
