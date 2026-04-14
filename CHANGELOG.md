@@ -8,6 +8,7 @@
 
 - \[Discord\] Fix discord issue with webhooks [\#150](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/150)
 - \[Documentation\] Mod cataloging ids [\#50](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/50)
+- \[Workshop\] legacy update [\#248](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/248) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[H\] updates goats mods old pr and other mods for some reason [\#221](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/221) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[H\] unleash the mods update [\#220](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/220) ([TheGoatGod](https://github.com/TheGoatGod))
 - Goats mods update 01 - H stable - [\#209](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/209) ([TheGoatGod](https://github.com/TheGoatGod))
