@@ -1533,8 +1533,8 @@ def _restore_type_weights_weights(content, originals):
 
 def _mask_items_weights(content):
     """
-    Mask numeric "weight" entries inside every "items": [ ... ] block.
-    Returns (masked_content, list_of_original_weight_tokens).
+    Mask numeric "weight" and "damage" entries inside every "items": [ ... ] block.
+    Returns (masked_content, list_of_original_tokens).
     """
     originals = []
     result = []
@@ -1582,14 +1582,14 @@ def _mask_items_weights(content):
             idx = len(originals)
             originals.append(match.group(0))
             return f'\x00ITW{idx}\x00'
-        block = re.sub(r'"weight"\s*:\s*\d+', _replace, block)
+        block = re.sub(r'"(?:weight|damage)"\s*:\s*\d+', _replace, block)
         result.append(key_prefix + block)
         i = j
     return ''.join(result), originals
 
 
 def _restore_items_weights(content, originals):
-    """Restore masked numeric items weight tokens."""
+    """Restore masked numeric items weight/damage tokens."""
     for idx, original in enumerate(originals):
         content = content.replace(f'\x00ITW{idx}\x00', original)
     return content
@@ -1962,7 +1962,7 @@ def update_json_content(content):
     "active_procgen_values" arrays: nested numeric "weight" entries are untouched.
     "passive_mult_procgen_values" arrays: nested numeric "weight" entries are untouched.
     "type_weights" arrays: nested numeric "weight" entries are untouched.
-    "items" arrays: nested numeric "weight" entries are untouched.
+    "items" arrays: nested numeric "weight"/"damage" entries are untouched.
     "passive_add_procgen_values" arrays: nested numeric "weight" entries are untouched.
     "tick_action"/"use_action" objects: nested numeric "volume" entries are untouched.
     all types : nothing inside a "proportional": { ... } block is touched.
