@@ -1552,13 +1552,45 @@ def fix_skill_requirements(content):
 
 def fix_melee_damage(content):
     """
-    "bashing": N, "cutting": M  ->  "melee_damage": { "bash": N, "cut": M }
+    Convert legacy:
+      "bashing": N
+      "cutting": M
+      "bashing": N, "cutting": M
+    into:
+      "melee_damage": { "bash": N, "cut": M }
+
+    Skips if melee_damage already exists.
     """
-    return _sub(
+
+    # Skip objects that already have melee_damage
+    content = re.sub(
+        r'"melee_damage"\s*:\s*\{[^}]*\}',
+        lambda m: m.group(0),  # leave unchanged
+        content
+    )
+
+    # Handle both bashing + cutting together
+    content = re.sub(
         r'"bashing"\s*:\s*(\d+)\s*,\s*"cutting"\s*:\s*(\d+)',
         r'"melee_damage": { "bash": \1, "cut": \2 }',
-        content,
+        content
     )
+
+    # Handle cutting alone
+    content = re.sub(
+        r'"cutting"\s*:\s*(\d+)',
+        r'"melee_damage": { "cut": \1 }',
+        content
+    )
+
+    # Handle bashing alone
+    content = re.sub(
+        r'"bashing"\s*:\s*(\d+)',
+        r'"melee_damage": { "bash": \1 }',
+        content
+    )
+
+    return content
 
 
 def fix_resist(content):
