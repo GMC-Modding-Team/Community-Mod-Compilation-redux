@@ -1766,8 +1766,6 @@ def fix_recipe_activity_level(content):
     Add activity_level to real recipe objects only (NOT inside effect arrays).
     """
 
-    import re
-
     def _replace(match):
         block = match.group(0)
 
