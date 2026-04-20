@@ -1485,6 +1485,77 @@ def _restore_action_object_volume(content, originals):
     return content
 
 
+
+
+def _mask_activity_noise_volume(content):
+    """
+    Mask numeric "volume" inside every "activity_noise": { ... } block
+    so it is not rewritten by fix_volume.
+    """
+    originals = []
+    result = []
+    i = 0
+    pattern = re.compile(r'"activity_noise"\s*:\s*\{')
+    while i < len(content):
+        m = pattern.search(content, i)
+        if not m:
+            result.append(content[i:])
+            break
+
+        result.append(content[i:m.start()])
+
+        brace_start = m.end() - 1
+        depth = 0
+        in_str = False
+        escape = False
+        j = brace_start
+
+        while j < len(content):
+            ch = content[j]
+            if escape:
+                escape = False
+                j += 1
+                continue
+            if ch == '\\' and in_str:
+                escape = True
+                j += 1
+                continue
+            if ch == '"':
+                in_str = not in_str
+                j += 1
+                continue
+            if in_str:
+                j += 1
+                continue
+            if ch == '{':
+                depth += 1
+            elif ch == '}':
+                depth -= 1
+                if depth == 0:
+                    j += 1
+                    break
+            j += 1
+
+        key_prefix = content[m.start():brace_start]
+        block = content[brace_start:j]
+
+        def _replace(match):
+            idx = len(originals)
+            originals.append(match.group(0))
+            return f'\x00ANV{idx}\x00'
+
+        block = re.sub(r'"volume"\s*:\s*\d+', _replace, block)
+        result.append(key_prefix + block)
+        i = j
+
+    return ''.join(result), originals
+
+
+def _restore_activity_noise_volume(content, originals):
+    for idx, original in enumerate(originals):
+        content = content.replace(f'\x00ANV{idx}\x00', original)
+    return content
+
 def fix_price(content):
     """
     "price": N          ->  "price": "N cent"
@@ -1552,13 +1623,45 @@ def fix_skill_requirements(content):
 
 def fix_melee_damage(content):
     """
-    "bashing": N, "cutting": M  ->  "melee_damage": { "bash": N, "cut": M }
+    Convert legacy:
+      "bashing": N
+      "cutting": M
+      "bashing": N, "cutting": M
+    into:
+      "melee_damage": { "bash": N, "cut": M }
+
+    Skips if melee_damage already exists.
     """
-    return _sub(
+
+    # Skip objects that already have melee_damage
+    content = re.sub(
+        r'"melee_damage"\s*:\s*\{[^}]*\}',
+        lambda m: m.group(0),  # leave unchanged
+        content
+    )
+
+    # Handle both bashing + cutting together
+    content = re.sub(
         r'"bashing"\s*:\s*(\d+)\s*,\s*"cutting"\s*:\s*(\d+)',
         r'"melee_damage": { "bash": \1, "cut": \2 }',
-        content,
+        content
     )
+
+    # Handle cutting alone
+    content = re.sub(
+        r'"cutting"\s*:\s*(\d+)',
+        r'"melee_damage": { "cut": \1 }',
+        content
+    )
+
+    # Handle bashing alone
+    content = re.sub(
+        r'"bashing"\s*:\s*(\d+)',
+        r'"melee_damage": { "bash": \1 }',
+        content
+    )
+
+    return content
 
 
 def fix_resist(content):
@@ -1754,6 +1857,7 @@ def update_json_content(content):
     content, items_weight_originals = _mask_items_weights(content)
     content, passive_add_procgen_values_weight_originals = _mask_passive_add_procgen_values_weights(content)
     content, action_volume_originals = _mask_action_object_volume(content)
+    content, activity_noise_originals = _mask_activity_noise_volume(content)
 
     # ------------------------------------------------------------------
     # Step 2: split into individual top-level objects and apply the
@@ -1793,6 +1897,7 @@ def update_json_content(content):
     # Step 3: restore the original proportional blocks.
     # ------------------------------------------------------------------
     content = _restore_action_object_volume(content, action_volume_originals)
+    content = _restore_activity_noise_volume(content, activity_noise_originals)
     content = _restore_passive_add_procgen_values_weights(content, passive_add_procgen_values_weight_originals)
     content = _restore_items_weights(content, items_weight_originals)
     content = _restore_type_weights_weights(content, type_weights_originals)
