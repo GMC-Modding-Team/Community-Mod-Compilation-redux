@@ -1763,7 +1763,7 @@ def fix_mutagen_use_action(content):
 
 def fix_recipe_activity_level(content):
     """
-    Add activity_level to recipes if missing, based on subcategory.
+    Add activity_level to real recipe objects only (NOT inside effect arrays).
     """
 
     import re
@@ -1772,6 +1772,14 @@ def fix_recipe_activity_level(content):
         block = match.group(0)
 
         if '"activity_level"' in block:
+            return block
+
+        # Skip effect arrays
+        if '"effect"' in block:
+            return block
+
+        # Ensure it's a real recipe (has result or typical fields)
+        if '"result"' not in block:
             return block
 
         sub_match = re.search(r'"subcategory"\s*:\s*"([^"]+)"', block)
