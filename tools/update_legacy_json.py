@@ -47,6 +47,29 @@ import re
 import argparse
 import sys
 
+# ---------------------------------------------------------------------------
+# Recipe activity level mapping
+# ---------------------------------------------------------------------------
+SUBCATEGORY_ACTIVITY = {
+    "CSC_OTHER_TOOLS": "MODERATE_EXERCISE",
+    "CSC_APPLIANCE_UTILITY": "MODERATE_EXERCISE",
+    "CSC_OTHER_PARTS": "MODERATE_EXERCISE",
+    "CSC_OTHER_VEHICLE": "MODERATE_EXERCISE",
+    "CSC_WEAPON_MAGAZINES": "MODERATE_EXERCISE",
+    "CSC_WEAPON_RANGED": "MODERATE_EXERCISE",
+
+    "CSC_WEAPON_UNARMED": "BRISK_EXERCISE",
+    "CSC_WEAPON_CUTTING": "BRISK_EXERCISE",
+    "CSC_WEAPON_PIERCING": "BRISK_EXERCISE",
+
+    "CSC_FOOD_DRINKS": "NO_EXERCISE",
+    "CSC_FOOD_DRY": "NO_EXERCISE",
+    "CSC_CHEM_FUEL": "NO_EXERCISE",
+    "CSC_FOOD_BREW": "NO_EXERCISE",
+    "CSC_FOOD_SEEDS": "NO_EXERCISE",
+}
+
+
 
 # ---------------------------------------------------------------------------
 # Individual transformation helpers
@@ -1709,6 +1732,73 @@ def fix_resist(content):
     return content
 
 
+
+def fix_mutagen_use_action(content):
+    """
+    Convert mutation-style use_action into consume_drug format.
+    """
+
+    pattern = re.compile(
+        r'"use_action"\s*:\s*\{\s*'
+        r'"type"\s*:\s*"([^"]+)"\s*,\s*'
+        r'"mutation_category"\s*:\s*"([^"]+)"\s*'
+        r'\}',
+        re.DOTALL
+    )
+
+    def _replace(m):
+        x = m.group(1)
+        y = m.group(2)
+        return (
+            '"use_action": { '
+            '"type": "consume_drug", '
+            '"activation_message": "You drink the mutagen.", '
+            f'"vitamins": [ [ "{y}", 175 ], [ "{x}", 125 ] ] '
+            '}'
+        )
+
+    return pattern.sub(_replace, content)
+
+
+
+def fix_recipe_activity_level(content):
+    """
+    Add activity_level to real recipe objects only (NOT inside effect arrays).
+    """
+
+    def _replace(match):
+        block = match.group(0)
+
+        if '"activity_level"' in block:
+            return block
+
+        # Skip effect arrays
+        if '"effect"' in block:
+            return block
+
+        # Ensure it's a real recipe (has result or typical fields)
+        if '"result"' not in block:
+            return block
+
+        sub_match = re.search(r'"subcategory"\s*:\s*"([^"]+)"', block)
+        sub = sub_match.group(1) if sub_match else "NONE"
+
+        level = SUBCATEGORY_ACTIVITY.get(sub, "LIGHT_EXERCISE")
+
+        return re.sub(
+            r'("type"\s*:\s*"recipe"\s*,)',
+            r'\1\n    "activity_level": "' + level + '",',
+            block,
+            count=1
+        )
+
+    return re.sub(
+        r'\{[^{}]*"type"\s*:\s*"recipe"[^{}]*\}',
+        _replace,
+        content,
+        flags=re.DOTALL
+    )
+
 # ---------------------------------------------------------------------------
 # Master pipeline
 # ---------------------------------------------------------------------------
@@ -1735,6 +1825,8 @@ TRANSFORMS = [
     fix_skill_requirements,
     fix_melee_damage,
     fix_resist,
+    fix_mutagen_use_action,
+    fix_recipe_activity_level,
 ]
 
 
@@ -1876,6 +1968,12 @@ def update_json_content(content):
             # Preserve whitespace / punctuation between objects verbatim.
             result.append(content[prev_end:start])
             chunk = content[start:end]
+
+            # Skip obsolete objects entirely
+            if re.search(r'"obsolete"\s*:\s*true', chunk):
+                result.append(chunk)
+                prev_end = end
+                continue
             if re.search(r'"type"\s*:\s*"mapgen"', chunk):
                 pipeline = _TRANSFORMS_MAPGEN
             elif re.search(r'"type"\s*:\s*"speech"', chunk):
