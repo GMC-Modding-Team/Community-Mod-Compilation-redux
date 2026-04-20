@@ -6,13 +6,21 @@
     "name": "necromantic serum",
     "description": "A super-concentrated mutagen that resembles a liquified corpse. You need a syringe to inject it...  if you really want to?",
     "color": "dark_gray",
-    "use_action": { "type": "mutagen_iv", "mutation_category": "NECROMANTIC" }
+    "use_action": {
+      "type": "consume_drug",
+      "activation_message": "You drink the mutagen.",
+      "vitamins": [ [ "NECROMANTIC", 175 ], [ "mutagen_iv", 125 ] ]
+    }
   },
   {
     "id": "mutagen_necromancy",
     "copy-from": "mutagen_flavor",
     "type": "COMESTIBLE",
     "name": "necromantic mutagen",
-    "use_action": { "type": "mutagen", "mutation_category": "NECROMANTIC" }
+    "use_action": {
+      "type": "consume_drug",
+      "activation_message": "You drink the mutagen.",
+      "vitamins": [ [ "NECROMANTIC", 175 ], [ "mutagen", 125 ] ]
+    }
   }
 ]
