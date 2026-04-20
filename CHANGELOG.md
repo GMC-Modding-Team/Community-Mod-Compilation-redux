@@ -30,6 +30,8 @@
 
 **Merged pull requests:**
 
+- \[tools\] fix\_mutagen\_use\_action and fix\_recipe\_activity\_level [\#256](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/256) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Tools\] Update\_legacy\_json.py update [\#254](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/254) ([TheGoatGod](https://github.com/TheGoatGod))
 - revert changes [\#253](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/253) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[H\] mainline mods legacy json update [\#252](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/252) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[H\] adds modular drones [\#251](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/251) ([TheGoatGod](https://github.com/TheGoatGod))
