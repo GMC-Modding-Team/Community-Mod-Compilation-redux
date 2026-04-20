@@ -1970,6 +1970,12 @@ def update_json_content(content):
             # Preserve whitespace / punctuation between objects verbatim.
             result.append(content[prev_end:start])
             chunk = content[start:end]
+
+            # Skip obsolete objects entirely
+            if re.search(r'"obsolete"\s*:\s*true', chunk):
+                result.append(chunk)
+                prev_end = end
+                continue
             if re.search(r'"type"\s*:\s*"mapgen"', chunk):
                 pipeline = _TRANSFORMS_MAPGEN
             elif re.search(r'"type"\s*:\s*"speech"', chunk):
