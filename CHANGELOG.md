@@ -32,6 +32,7 @@
 **Merged pull requests:**
 
 - \[Workflow\] updates workflow test [\#258](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/258) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Tools\] update melee damage [\#257](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/257) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[tools\] fix\_mutagen\_use\_action and fix\_recipe\_activity\_level [\#256](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/256) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Tools\] Update\_legacy\_json.py update [\#254](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/254) ([TheGoatGod](https://github.com/TheGoatGod))
 - revert changes [\#253](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/253) ([TheGoatGod](https://github.com/TheGoatGod))
