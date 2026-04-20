@@ -47,6 +47,29 @@ import re
 import argparse
 import sys
 
+# ---------------------------------------------------------------------------
+# Recipe activity level mapping
+# ---------------------------------------------------------------------------
+SUBCATEGORY_ACTIVITY = {
+    "CSC_OTHER_TOOLS": "MODERATE_EXERCISE",
+    "CSC_APPLIANCE_UTILITY": "MODERATE_EXERCISE",
+    "CSC_OTHER_PARTS": "MODERATE_EXERCISE",
+    "CSC_OTHER_VEHICLE": "MODERATE_EXERCISE",
+    "CSC_WEAPON_MAGAZINES": "MODERATE_EXERCISE",
+    "CSC_WEAPON_RANGED": "MODERATE_EXERCISE",
+
+    "CSC_WEAPON_UNARMED": "BRISK_EXERCISE",
+    "CSC_WEAPON_CUTTING": "BRISK_EXERCISE",
+    "CSC_WEAPON_PIERCING": "BRISK_EXERCISE",
+
+    "CSC_FOOD_DRINKS": "NO_EXERCISE",
+    "CSC_FOOD_DRY": "NO_EXERCISE",
+    "CSC_CHEM_FUEL": "NO_EXERCISE",
+    "CSC_FOOD_BREW": "NO_EXERCISE",
+    "CSC_FOOD_SEEDS": "NO_EXERCISE",
+}
+
+
 
 # ---------------------------------------------------------------------------
 # Individual transformation helpers
@@ -1736,6 +1759,40 @@ def fix_mutagen_use_action(content):
 
     return pattern.sub(_replace, content)
 
+
+
+def fix_recipe_activity_level(content):
+    """
+    Add activity_level to recipes if missing, based on subcategory.
+    """
+
+    import re
+
+    def _replace(match):
+        block = match.group(0)
+
+        if '"activity_level"' in block:
+            return block
+
+        sub_match = re.search(r'"subcategory"\s*:\s*"([^"]+)"', block)
+        sub = sub_match.group(1) if sub_match else "NONE"
+
+        level = SUBCATEGORY_ACTIVITY.get(sub, "LIGHT_EXERCISE")
+
+        return re.sub(
+            r'("type"\s*:\s*"recipe"\s*,)',
+            r'\1\n    "activity_level": "' + level + '",',
+            block,
+            count=1
+        )
+
+    return re.sub(
+        r'\{[^{}]*"type"\s*:\s*"recipe"[^{}]*\}',
+        _replace,
+        content,
+        flags=re.DOTALL
+    )
+
 # ---------------------------------------------------------------------------
 # Master pipeline
 # ---------------------------------------------------------------------------
@@ -1763,6 +1820,7 @@ TRANSFORMS = [
     fix_melee_damage,
     fix_resist,
     fix_mutagen_use_action,
+    fix_recipe_activity_level,
 ]
 
 
