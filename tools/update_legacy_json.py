@@ -1646,41 +1646,54 @@ def fix_skill_requirements(content):
 
 def fix_melee_damage(content):
     """
-    Convert legacy:
-      "bashing": N
-      "cutting": M
-      "bashing": N, "cutting": M
-    into:
-      "melee_damage": { "bash": N, "cut": M }
-
-    Skips if melee_damage already exists.
+    Fully robust melee merge.
+    Works regardless of nesting or formatting.
+    Does NOT delete surrounding content.
     """
 
-    # Skip objects that already have melee_damage
+    # Step 1: merge pairs (any order, anywhere)
+    def merge(match):
+        b1, c1, c2, b2 = match.groups()
+
+        bash = b1 or b2
+        cut = c1 or c2
+
+        return f'"melee_damage": {{ "bash": {bash}, "cut": {cut} }}'
+
     content = re.sub(
-        r'"melee_damage"\s*:\s*\{[^}]*\}',
-        lambda m: m.group(0),  # leave unchanged
-        content
+        r'"bashing"\s*:\s*(\d+)[^{}]*?"cutting"\s*:\s*(\d+)'
+        r'|'
+        r'"cutting"\s*:\s*(\d+)[^{}]*?"bashing"\s*:\s*(\d+)',
+        merge,
+        content,
+        flags=re.DOTALL
     )
 
-    # Handle both bashing + cutting together
+    # Step 2: remove leftover singles ONLY if already merged nearby
     content = re.sub(
-        r'"bashing"\s*:\s*(\d+)\s*,\s*"cutting"\s*:\s*(\d+)',
-        r'"melee_damage": { "bash": \1, "cut": \2 }',
-        content
+        r'("melee_damage"\s*:\s*\{[^}]*\})[^{}]*?"bashing"\s*:\s*\d+',
+        r'\1',
+        content,
+        flags=re.DOTALL
     )
 
-    # Handle cutting alone
     content = re.sub(
-        r'"cutting"\s*:\s*(\d+)',
-        r'"melee_damage": { "cut": \1 }',
-        content
+        r'("melee_damage"\s*:\s*\{[^}]*\})[^{}]*?"cutting"\s*:\s*\d+',
+        r'\1',
+        content,
+        flags=re.DOTALL
     )
 
-    # Handle bashing alone
+    # Step 3: handle remaining singles
     content = re.sub(
         r'"bashing"\s*:\s*(\d+)',
         r'"melee_damage": { "bash": \1 }',
+        content
+    )
+
+    content = re.sub(
+        r'"cutting"\s*:\s*(\d+)',
+        r'"melee_damage": { "cut": \1 }',
         content
     )
 
