@@ -1709,6 +1709,33 @@ def fix_resist(content):
     return content
 
 
+
+def fix_mutagen_use_action(content):
+    """
+    Convert mutation-style use_action into consume_drug format.
+    """
+
+    pattern = re.compile(
+        r'"use_action"\s*:\s*\{\s*'
+        r'"type"\s*:\s*"([^"]+)"\s*,\s*'
+        r'"mutation_category"\s*:\s*"([^"]+)"\s*'
+        r'\}',
+        re.DOTALL
+    )
+
+    def _replace(m):
+        x = m.group(1)
+        y = m.group(2)
+        return (
+            '"use_action": { '
+            '"type": "consume_drug", '
+            '"activation_message": "You drink the mutagen.", '
+            f'"vitamins": [ [ "{y}", 175 ], [ "{x}", 125 ] ] '
+            '}'
+        )
+
+    return pattern.sub(_replace, content)
+
 # ---------------------------------------------------------------------------
 # Master pipeline
 # ---------------------------------------------------------------------------
@@ -1735,6 +1762,7 @@ TRANSFORMS = [
     fix_skill_requirements,
     fix_melee_damage,
     fix_resist,
+    fix_mutagen_use_action,
 ]
 
 
