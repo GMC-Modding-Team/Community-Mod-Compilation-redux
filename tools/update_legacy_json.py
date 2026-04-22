@@ -1776,24 +1776,31 @@ def fix_mutagen_use_action(content):
 
 def fix_recipe_activity_level(content):
     """
-    Add activity_level to real recipe objects only (NOT inside effect arrays).
+    Add activity_level to recipe objects (robust, no regex object matching).
     """
 
-    def _replace(match):
-        block = match.group(0)
+    def process_chunk(chunk):
+        # Must be a recipe
+        if not re.search(r'"type"\s*:\s*"recipe"', chunk):
+            return chunk
 
-        if '"activity_level"' in block:
-            return block
+        # Skip obsolete
+        if re.search(r'"obsolete"\s*:\s*true', chunk):
+            return chunk
 
-        # Skip effect arrays
-        if '"effect"' in block:
-            return block
+        # Skip if already has it
+        if '"activity_level"' in chunk:
+            return chunk
 
-        # Ensure it's a real recipe (has result or typical fields)
-        if '"result"' not in block:
-            return block
+        # Skip fake recipe references
+        if '"effect"' in chunk:
+            return chunk
 
-        sub_match = re.search(r'"subcategory"\s*:\s*"([^"]+)"', block)
+        # Must be a real recipe
+        if '"result"' not in chunk:
+            return chunk
+
+        sub_match = re.search(r'"subcategory"\s*:\s*"([^"]+)"', chunk)
         sub = sub_match.group(1) if sub_match else "NONE"
 
         level = SUBCATEGORY_ACTIVITY.get(sub, "LIGHT_EXERCISE")
@@ -1801,16 +1808,30 @@ def fix_recipe_activity_level(content):
         return re.sub(
             r'("type"\s*:\s*"recipe"\s*,)',
             r'\1\n    "activity_level": "' + level + '",',
-            block,
+            chunk,
             count=1
         )
 
-    return re.sub(
-        r'\{[^{}]*"type"\s*:\s*"recipe"[^{}]*\}',
-        _replace,
-        content,
-        flags=re.DOTALL
-    )
+    # 🔑 Use YOUR existing object splitter (this is the fix)
+    spans = list(_split_top_level_objects(content))
+    if not spans:
+        return content
+
+    result = []
+    prev_end = 0
+
+    for start, end in spans:
+        result.append(content[prev_end:start])
+        chunk = content[start:end]
+
+        chunk = process_chunk(chunk)
+
+        result.append(chunk)
+        prev_end = end
+
+    result.append(content[prev_end:])
+    return ''.join(result)
+    
 
 # ---------------------------------------------------------------------------
 # Master pipeline
