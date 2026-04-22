@@ -9,6 +9,7 @@
 - \[Discord\] Fix discord issue with webhooks [\#150](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/150)
 - \[Experimental\] Crystallized Mutations CtD [\#146](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/146)
 - \[Documentation\] Mod cataloging ids [\#50](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/50)
+- \[Workflow\] delete toc and python workflows [\#259](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/259) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Workshop\] legacy update [\#248](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/248) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[H\] Unleash the mods [\#223](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/223) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[H\] updates goats mods old pr and other mods for some reason [\#221](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/221) ([TheGoatGod](https://github.com/TheGoatGod))
@@ -31,6 +32,7 @@
 **Merged pull requests:**
 
 - \[Workflow\] updates workflow test [\#258](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/258) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[Tools\] update melee damage [\#257](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/257) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[tools\] fix\_mutagen\_use\_action and fix\_recipe\_activity\_level [\#256](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/256) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Tools\] Update\_legacy\_json.py update [\#254](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/254) ([TheGoatGod](https://github.com/TheGoatGod))
 - revert changes [\#253](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/253) ([TheGoatGod](https://github.com/TheGoatGod))
