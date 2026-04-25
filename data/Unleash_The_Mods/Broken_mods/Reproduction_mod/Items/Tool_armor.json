@@ -1,0 +1,44 @@
+[
+  {
+    "id": "human_ovum",
+    "type": "TOOL_ARMOR",
+    "category": "clothing",
+    "symbol": "o",
+    "name": { "str": "ovum", "str_pl": "ovums" },
+    "description": "A meta item that represents the starting point of the pregnancy cycle. Use it to begin fertilization, or drop it if you do not want to keep it.",
+    "flags": [ "ONLY_ONE", "INEDIBLE", "TRADER_AVOID", "NO_DROP", "ZERO_WEIGHT" ],
+    "weight": "0 g",
+    "volume": "1 ml",
+    "use_action": [
+      {
+        "type": "transform",
+        "msg": "Congratulations on the pregnancy.",
+        "target": "human_pregnancy_item",
+        "active": true,
+        "moves": 1
+      }
+    ],
+    "covers": [ "torso" ],
+    "warmth": 0,
+    "coverage": 0
+  },
+  {
+    "id": "human_pregnancy_item",
+    "type": "TOOL_ARMOR",
+    "category": "clothing",
+    "symbol": "O",
+    "name": { "str": "pregnancy", "str_pl": "pregnancies" },
+    "description": "A human pregnancy in progress. Wait for the timer to run out before using the birth item.",
+    "flags": [ "ONLY_ONE", "TRADER_AVOID", "NO_DROP", "ZERO_WEIGHT" ],
+    "weight": "0 g",
+    "volume": "1 ml",
+    "covers": [ "torso" ],
+    "warmth": 10,
+    "coverage": 25,
+    "encumbrance": 15,
+    "max_charges": 9,
+    "initial_charges": 9,
+    "turns_per_charge": 2592000,
+    "revert_to": "human_birth_item"
+  }
+]
