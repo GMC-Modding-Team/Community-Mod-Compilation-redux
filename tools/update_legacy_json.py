@@ -1831,7 +1831,49 @@ def fix_recipe_activity_level(content):
 
     result.append(content[prev_end:])
     return ''.join(result)
-    
+
+
+
+def fix_ter_furn_fail_message(content):
+    """
+    Remove "fail_message" only from ter_furn_transform objects.
+    """
+
+    import re
+
+    def process_chunk(chunk):
+        if not re.search(r'"type"\s*:\s*"ter_furn_transform"', chunk):
+            return chunk
+
+        chunk = re.sub(
+            r',?\s*"fail_message"\s*:\s*"[^"]*"\s*,?',
+            lambda m: ',' if m.group(0).startswith(',') and m.group(0).endswith(',') else '',
+            chunk
+        )
+
+        chunk = re.sub(r',\s*,', ',', chunk)
+        chunk = re.sub(r',\s*}', '}', chunk)
+
+        return chunk
+
+    spans = list(_split_top_level_objects(content))
+    if not spans:
+        return content
+
+    result = []
+    prev_end = 0
+
+    for start, end in spans:
+        result.append(content[prev_end:start])
+        chunk = content[start:end]
+
+        chunk = process_chunk(chunk)
+
+        result.append(chunk)
+        prev_end = end
+
+    result.append(content[prev_end:])
+    return ''.join(result)
 
 # ---------------------------------------------------------------------------
 # Master pipeline
@@ -1861,6 +1903,7 @@ TRANSFORMS = [
     fix_resist,
     fix_mutagen_use_action,
     fix_recipe_activity_level,
+    fix_ter_furn_fail_message,
 ]
 
 
@@ -2163,4 +2206,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-    
