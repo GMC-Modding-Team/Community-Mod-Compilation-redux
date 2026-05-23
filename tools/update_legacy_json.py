@@ -2141,6 +2141,43 @@ def fix_mutation_category_chain(content):
     result.append(tail)
     return ''.join(result)
 
+
+def fix_bleed_resist(content):
+    """
+    Remove only the legacy "bleed_resist": x field.
+    Does not remove unrelated fields or blindly target commas.
+    """
+
+    # Field has trailing comma on its own line.
+    content = re.sub(
+        r'(\n[ \t]*)"bleed_resist"\s*:\s*[^,\n}]+,\s*',
+        r'\1',
+        content
+    )
+
+    # Field is last in object with leading comma.
+    content = re.sub(
+        r',(\s*\n[ \t]*)"bleed_resist"\s*:\s*[^,\n}]+',
+        '',
+        content
+    )
+
+    # Compact one-line field with trailing comma.
+    content = re.sub(
+        r'"bleed_resist"\s*:\s*[^,\n}]+,\s*',
+        '',
+        content
+    )
+
+    # Compact one-line field at end of object.
+    content = re.sub(
+        r',\s*"bleed_resist"\s*:\s*[^,\n}]+',
+        '',
+        content
+    )
+
+    return content
+
 # ---------------------------------------------------------------------------
 # Master pipeline
 # ---------------------------------------------------------------------------
@@ -2167,6 +2204,7 @@ TRANSFORMS = [
     fix_skill_requirements,
     fix_melee_damage,
     fix_resist,
+    fix_bleed_resist,
     fix_mutagen_use_action,
     fix_recipe_activity_level,
     fix_recipe_gold_silver_components,
