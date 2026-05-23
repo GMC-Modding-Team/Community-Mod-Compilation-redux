@@ -1839,8 +1839,6 @@ def fix_ter_furn_fail_message(content):
     Remove "fail_message" only from ter_furn_transform objects.
     """
 
-    import re
-
     def process_chunk(chunk):
         if not re.search(r'"type"\s*:\s*"ter_furn_transform"', chunk):
             return chunk
