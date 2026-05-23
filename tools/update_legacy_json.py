@@ -71,6 +71,18 @@ SUBCATEGORY_ACTIVITY = {
 
 
 
+
+# ---------------------------------------------------------------------------
+# Uncraft activity level mapping by skill_used
+# ---------------------------------------------------------------------------
+UNCRAFT_SKILL_ACTIVITY = {
+    "electronics": "MODERATE_EXERCISE",
+    "fabrication": "MODERATE_EXERCISE",
+    "gun": "MODERATE_EXERCISE",
+    "mechanics": "MODERATE_EXERCISE",
+    "tailor": "LIGHT_EXERCISE",
+}
+
 # ---------------------------------------------------------------------------
 # Individual transformation helpers
 # ---------------------------------------------------------------------------
@@ -1774,45 +1786,75 @@ def fix_mutagen_use_action(content):
 
 
 
+
 def fix_recipe_activity_level(content):
     """
-    Add activity_level to recipe objects (robust, no regex object matching).
+    Add or repair activity_level on recipe and uncraft objects.
+
+    Recipe:
+    - Uses SUBCATEGORY_ACTIVITY by subcategory
+    - Fallback: LIGHT_EXERCISE
+
+    Uncraft:
+    - Uses UNCRAFT_SKILL_ACTIVITY by skill_used
+    - Fallback: LIGHT_EXERCISE
+
+    Shared rules:
+    - Skips obsolete entries
+    - Does not touch effect arrays or fake recipe references
+    - If activity_level is missing, adds it after type
+    - If activity_level is "fake", replaces it with the mapped/default level
     """
 
     def process_chunk(chunk):
-        # Must be a recipe
-        if not re.search(r'"type"\s*:\s*"recipe"', chunk):
+        type_match = re.search(r'"type"\s*:\s*"(recipe|uncraft)"', chunk)
+        if not type_match:
             return chunk
+
+        entry_type = type_match.group(1)
 
         # Skip obsolete
         if re.search(r'"obsolete"\s*:\s*true', chunk):
             return chunk
 
-        # Skip if already has it
-        if '"activity_level"' in chunk:
-            return chunk
-
-        # Skip fake recipe references
+        # Skip fake recipe references / effect blocks
         if '"effect"' in chunk:
             return chunk
 
-        # Must be a real recipe
+        # Must be a real craft/uncraft entry
         if '"result"' not in chunk:
             return chunk
 
-        sub_match = re.search(r'"subcategory"\s*:\s*"([^"]+)"', chunk)
-        sub = sub_match.group(1) if sub_match else "NONE"
+        if entry_type == "uncraft":
+            skill_match = re.search(r'"skill_used"\s*:\s*"([^"]+)"', chunk)
+            skill = skill_match.group(1) if skill_match else "NONE"
+            level = UNCRAFT_SKILL_ACTIVITY.get(skill, "LIGHT_EXERCISE")
+        else:
+            sub_match = re.search(r'"subcategory"\s*:\s*"([^"]+)"', chunk)
+            sub = sub_match.group(1) if sub_match else "NONE"
+            level = SUBCATEGORY_ACTIVITY.get(sub, "LIGHT_EXERCISE")
 
-        level = SUBCATEGORY_ACTIVITY.get(sub, "LIGHT_EXERCISE")
+        # Replace fake activity level
+        if re.search(r'"activity_level"\s*:\s*"fake"', chunk):
+            return re.sub(
+                r'"activity_level"\s*:\s*"fake"',
+                '"activity_level": "' + level + '"',
+                chunk,
+                count=1
+            )
 
+        # Skip if already has a real activity_level
+        if '"activity_level"' in chunk:
+            return chunk
+
+        # Insert after type
         return re.sub(
-            r'("type"\s*:\s*"recipe"\s*,)',
+            r'("type"\s*:\s*"(?:recipe|uncraft)"\s*,)',
             r'\1\n    "activity_level": "' + level + '",',
             chunk,
             count=1
         )
 
-    # 🔑 Use YOUR existing object splitter (this is the fix)
     spans = list(_split_top_level_objects(content))
     if not spans:
         return content
@@ -1823,9 +1865,7 @@ def fix_recipe_activity_level(content):
     for start, end in spans:
         result.append(content[prev_end:start])
         chunk = content[start:end]
-
         chunk = process_chunk(chunk)
-
         result.append(chunk)
         prev_end = end
 
