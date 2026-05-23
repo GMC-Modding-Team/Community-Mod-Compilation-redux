@@ -31,6 +31,7 @@
 
 **Merged pull requests:**
 
+- \[Tools\] update legacy json [\#262](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/262) ([TheGoatGod](https://github.com/TheGoatGod))
 - Create CDDA Json Editor And Formatter bundle v1.rar [\#261](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/261) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Tools\] update legacy json to catch all recipes [\#260](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/260) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Workflow\] updates workflow test [\#258](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/258) ([TheGoatGod](https://github.com/TheGoatGod))
