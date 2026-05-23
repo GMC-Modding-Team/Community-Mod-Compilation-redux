@@ -1875,6 +1875,91 @@ def fix_ter_furn_fail_message(content):
     result.append(content[prev_end:])
     return ''.join(result)
 
+
+def fix_recipe_gold_silver_components(content):
+    """
+    In recipe components only:
+      "gold"   -> "gold_small"
+      "silver" -> "silver_small"
+
+    Quantity and position do not matter.
+    Does not touch non-recipe objects or non-components fields.
+    """
+
+    def process_chunk(chunk):
+        if not re.search(r'"type"\s*:\s*"recipe"', chunk):
+            return chunk
+
+        if re.search(r'"obsolete"\s*:\s*true', chunk):
+            return chunk
+
+        comp_match = re.search(r'"components"\s*:\s*\[', chunk)
+        if not comp_match:
+            return chunk
+
+        bracket_start = comp_match.end() - 1
+        depth = 0
+        in_str = False
+        escape = False
+        j = bracket_start
+
+        while j < len(chunk):
+            ch = chunk[j]
+
+            if escape:
+                escape = False
+                j += 1
+                continue
+
+            if ch == '\\' and in_str:
+                escape = True
+                j += 1
+                continue
+
+            if ch == '"':
+                in_str = not in_str
+                j += 1
+                continue
+
+            if in_str:
+                j += 1
+                continue
+
+            if ch == '[':
+                depth += 1
+            elif ch == ']':
+                depth -= 1
+                if depth == 0:
+                    j += 1
+                    break
+
+            j += 1
+
+        before = chunk[:bracket_start]
+        components_block = chunk[bracket_start:j]
+        after = chunk[j:]
+
+        components_block = re.sub(r'"silver"', '"silver_small"', components_block)
+        components_block = re.sub(r'"gold"', '"gold_small"', components_block)
+
+        return before + components_block + after
+
+    spans = list(_split_top_level_objects(content))
+    if not spans:
+        return content
+
+    result = []
+    prev_end = 0
+
+    for start, end in spans:
+        result.append(content[prev_end:start])
+        chunk = content[start:end]
+        result.append(process_chunk(chunk))
+        prev_end = end
+
+    result.append(content[prev_end:])
+    return ''.join(result)
+
 # ---------------------------------------------------------------------------
 # Master pipeline
 # ---------------------------------------------------------------------------
@@ -1903,7 +1988,7 @@ TRANSFORMS = [
     fix_resist,
     fix_mutagen_use_action,
     fix_recipe_activity_level,
-    fix_ter_furn_fail_message,
+    fix_recipe_gold_silver_components,
 ]
 
 
