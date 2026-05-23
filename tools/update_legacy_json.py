@@ -1960,6 +1960,187 @@ def fix_recipe_gold_silver_components(content):
     result.append(content[prev_end:])
     return ''.join(result)
 
+
+
+def fix_mutation_category_chain(content):
+    """
+    For mutation objects, pass later mutation CATEGORIES back up the changes_to chain.
+
+    Important:
+    - "changes_to" is used only to follow the chain.
+    - Added values come only from the later mutation's "category" list.
+    - Does not copy IDs from "changes_to".
+    - Does not copy flags or any other fields.
+    - Stops when there is no changes_to.
+    - Does not delete existing content.
+    """
+
+    def find_array_body(text, key):
+        m = re.search(rf'"{re.escape(key)}"\s*:\s*\[', text)
+        if not m:
+            return None
+
+        bracket_start = m.end() - 1
+        depth = 0
+        in_str = False
+        escape = False
+        j = bracket_start
+
+        while j < len(text):
+            ch = text[j]
+
+            if escape:
+                escape = False
+                j += 1
+                continue
+
+            if ch == '\\' and in_str:
+                escape = True
+                j += 1
+                continue
+
+            if ch == '"':
+                in_str = not in_str
+                j += 1
+                continue
+
+            if in_str:
+                j += 1
+                continue
+
+            if ch == '[':
+                depth += 1
+            elif ch == ']':
+                depth -= 1
+                if depth == 0:
+                    return text[bracket_start + 1:j], bracket_start, j + 1
+
+            j += 1
+
+        return None
+
+    spans = list(_split_top_level_objects(content))
+    if not spans:
+        return content
+
+    chunks = []
+    prev_end = 0
+
+    for start, end in spans:
+        chunks.append([content[prev_end:start], content[start:end]])
+        prev_end = end
+
+    tail = content[prev_end:]
+    mutations = {}
+
+    for idx, (_, chunk) in enumerate(chunks):
+        if not re.search(r'"type"\s*:\s*"mutation"', chunk):
+            continue
+
+        if re.search(r'"obsolete"\s*:\s*true', chunk):
+            continue
+
+        id_match = re.search(r'"id"\s*:\s*"([^"]+)"', chunk)
+        if not id_match:
+            continue
+
+        mut_id = id_match.group(1)
+
+        category_info = find_array_body(chunk, "category")
+        categories = []
+        if category_info:
+            category_body, _, _ = category_info
+            categories = re.findall(r'"([^"]+)"', category_body)
+
+        changes_info = find_array_body(chunk, "changes_to")
+        changes_to = []
+        if changes_info:
+            changes_body, _, _ = changes_info
+            changes_to = re.findall(r'"([^"]+)"', changes_body)
+
+        mutations[mut_id] = {
+            "chunk_index": idx,
+            "categories": categories,
+            "changes_to": changes_to,
+        }
+
+    def collect_downstream_categories(mut_id, seen=None):
+        if seen is None:
+            seen = set()
+
+        if mut_id in seen:
+            return []
+
+        seen.add(mut_id)
+        out = []
+
+        for next_id in mutations.get(mut_id, {}).get("changes_to", []):
+            next_data = mutations.get(next_id)
+            if not next_data:
+                continue
+
+            # Add ONLY the target mutation's category values.
+            for cat in next_data.get("categories", []):
+                if cat not in out:
+                    out.append(cat)
+
+            # Continue down the changes_to chain.
+            for later_cat in collect_downstream_categories(next_id, seen.copy()):
+                if later_cat not in out:
+                    out.append(later_cat)
+
+        return out
+
+    changed_any = False
+
+    for mut_id, data in mutations.items():
+        downstream_categories = collect_downstream_categories(mut_id)
+
+        if not downstream_categories:
+            continue
+
+        new_categories = list(data["categories"])
+
+        for cat in downstream_categories:
+            if cat not in new_categories:
+                new_categories.append(cat)
+
+        if new_categories == data["categories"]:
+            continue
+
+        chunk_index = data["chunk_index"]
+        chunk = chunks[chunk_index][1]
+
+        category_text = '"category": [ ' + ', '.join(f'"{cat}"' for cat in new_categories) + ' ]'
+
+        category_info = find_array_body(chunk, "category")
+        if category_info:
+            _, bracket_start, bracket_end = category_info
+            key_match = re.search(r'"category"\s*:\s*\[', chunk)
+            if key_match:
+                chunk = chunk[:key_match.start()] + category_text + chunk[bracket_end:]
+        else:
+            chunk = re.sub(
+                r'("id"\s*:\s*"[^"]+"\s*,)',
+                r'\1\n    ' + category_text + ',',
+                chunk,
+                count=1
+            )
+
+        chunks[chunk_index][1] = chunk
+        changed_any = True
+
+    if not changed_any:
+        return content
+
+    result = []
+    for sep, chunk in chunks:
+        result.append(sep)
+        result.append(chunk)
+
+    result.append(tail)
+    return ''.join(result)
+
 # ---------------------------------------------------------------------------
 # Master pipeline
 # ---------------------------------------------------------------------------
@@ -1989,6 +2170,7 @@ TRANSFORMS = [
     fix_mutagen_use_action,
     fix_recipe_activity_level,
     fix_recipe_gold_silver_components,
+    fix_mutation_category_chain,
 ]
 
 
@@ -2152,6 +2334,11 @@ def update_json_content(content):
             prev_end = end
         result.append(content[prev_end:])
         content = ''.join(result)
+
+    # Run mutation category-chain fix once on the whole file.
+    # This must happen after object-level transforms because it needs to see
+    # every mutation object in the file, not just one object at a time.
+    content = fix_mutation_category_chain(content)
 
     # ------------------------------------------------------------------
     # Step 3: restore the original proportional blocks.
