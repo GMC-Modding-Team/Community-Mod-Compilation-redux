@@ -2216,6 +2216,132 @@ def fix_bleed_resist(content):
 
     return content
 
+
+def fix_bash_items_amount_minamount(content):
+    """
+    Inside "bash": { ... } blocks only, convert item entries:
+
+      "amount": X, "minamount": Y
+
+    into:
+
+      "count": [ Y, X ]
+
+    Keeps all other bash fields untouched.
+    """
+
+    def find_matching(text, start, open_ch, close_ch):
+        depth = 0
+        in_str = False
+        escape = False
+        i = start
+
+        while i < len(text):
+            ch = text[i]
+
+            if escape:
+                escape = False
+                i += 1
+                continue
+
+            if ch == '\\' and in_str:
+                escape = True
+                i += 1
+                continue
+
+            if ch == '"':
+                in_str = not in_str
+                i += 1
+                continue
+
+            if in_str:
+                i += 1
+                continue
+
+            if ch == open_ch:
+                depth += 1
+            elif ch == close_ch:
+                depth -= 1
+                if depth == 0:
+                    return i + 1
+
+            i += 1
+
+        return None
+
+    def convert_items_block(items_block):
+        def convert_item_object(match):
+            obj = match.group(0)
+
+            amount_match = re.search(r'"amount"\s*:\s*(\d+)', obj)
+            minamount_match = re.search(r'"minamount"\s*:\s*(\d+)', obj)
+
+            if not amount_match or not minamount_match:
+                return obj
+
+            amount = amount_match.group(1)
+            minamount = minamount_match.group(1)
+
+            # Remove only amount and minamount.
+            obj = re.sub(r',?\s*"amount"\s*:\s*\d+', '', obj)
+            obj = re.sub(r',?\s*"minamount"\s*:\s*\d+', '', obj)
+
+            # Clean comma damage inside the item object.
+            obj = re.sub(r'\{\s*,', '{', obj)
+            obj = re.sub(r',\s*,', ',', obj)
+            obj = re.sub(r',\s*\}', ' }', obj)
+
+            # Insert count before closing brace.
+            obj = re.sub(
+                r'\s*\}$',
+                f', "count": [ {minamount}, {amount} ] }}',
+                obj,
+                count=1
+            )
+
+            return obj
+
+        # These item objects are normally flat: { "item": "...", ... }
+        return re.sub(r'\{[^{}]*"item"\s*:\s*"[^"]+"[^{}]*\}', convert_item_object, items_block)
+
+    result = []
+    i = 0
+    pattern = re.compile(r'"bash"\s*:\s*\{')
+
+    while True:
+        m = pattern.search(content, i)
+        if not m:
+            result.append(content[i:])
+            break
+
+        result.append(content[i:m.start()])
+
+        bash_brace_start = m.end() - 1
+        bash_end = find_matching(content, bash_brace_start, '{', '}')
+        if bash_end is None:
+            result.append(content[m.start():])
+            break
+
+        bash_block = content[m.start():bash_end]
+
+        items_match = re.search(r'"items"\s*:\s*\[', bash_block)
+        if items_match:
+            items_start = items_match.end() - 1
+            items_end = find_matching(bash_block, items_start, '[', ']')
+
+            if items_end is not None:
+                before_items = bash_block[:items_start]
+                items_block = bash_block[items_start:items_end]
+                after_items = bash_block[items_end:]
+
+                items_block = convert_items_block(items_block)
+                bash_block = before_items + items_block + after_items
+
+        result.append(bash_block)
+        i = bash_end
+
+    return ''.join(result)
+
 # ---------------------------------------------------------------------------
 # Master pipeline
 # ---------------------------------------------------------------------------
@@ -2243,6 +2369,7 @@ TRANSFORMS = [
     fix_melee_damage,
     fix_resist,
     fix_bleed_resist,
+    fix_bash_items_amount_minamount,
     fix_mutagen_use_action,
     fix_recipe_activity_level,
     fix_recipe_gold_silver_components,
