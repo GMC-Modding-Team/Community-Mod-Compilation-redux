@@ -2368,6 +2368,7 @@ TRANSFORMS = [
     fix_skill_requirements,
     fix_melee_damage,
     fix_resist,
+    fix_ter_furn_fail_message,
     fix_bleed_resist,
     fix_bash_items_amount_minamount,
     fix_mutagen_use_action,
