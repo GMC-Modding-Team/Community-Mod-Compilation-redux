@@ -2668,17 +2668,28 @@ def fix_variant_from_symbol_broken_symbol(content):
     """
     Vehicle-part only.
 
-    If a vehicle_part object has both:
+    Keeps vehicle_part variants valid by ensuring variants have symbols_broken.
 
-      "symbol": "=",
-      "broken_symbol": "#",
+    Rules:
+    - If "variants" already exists:
+        Every flat variant object with "symbols" but missing "symbols_broken"
+        gets "symbols_broken": "#", unless old "broken_symbol" exists, then it uses that value.
 
-    add this before broken_symbol/symbol are removed:
+        Example:
+          "variants": [ { "symbols": "o" } ]
+        becomes:
+          "variants": [ { "symbols": "o", "symbols_broken": "#" } ]
 
-      "variants": [ { "symbols": "=", "symbols_broken": "#" } ]
+    - If "variants" is missing:
+        "symbol": "=" + "broken_symbol": "#" -> { "symbols": "=", "symbols_broken": "#" }
+        "symbol": "=" only                   -> { "symbols": "=", "symbols_broken": "#" }
+        "broken_symbol": "#" only            -> { "symbols_broken": "#" }
 
-    If variants already exists, append the variant only if that exact
-    symbols/symbols_broken pair is not already present.
+    Later cleanup functions remove:
+      "symbol": "x"
+      "broken_symbol": "x"
+
+    Non-vehicle_part objects are untouched.
     """
 
     def find_matching(text, start, open_ch, close_ch):
@@ -2732,6 +2743,35 @@ def fix_variant_from_symbol_broken_symbol(content):
 
         return m.start(), bracket_start, bracket_end
 
+    def fill_symbols_broken_in_variants(variants_body, symbols_broken_value):
+        changed = False
+
+        def patch_variant(match):
+            nonlocal changed
+            obj = match.group(0)
+
+            has_symbols = re.search(r'"symbols"\s*:', obj) is not None
+            has_symbols_broken = re.search(r'"symbols_broken"\s*:', obj) is not None
+
+            # Only add symbols_broken when this variant has symbols and is missing symbols_broken.
+            if not has_symbols or has_symbols_broken:
+                return obj
+
+            changed = True
+
+            if obj.strip() == "{}":
+                return '{ "symbols_broken": "' + symbols_broken_value + '" }'
+
+            return re.sub(
+                r'\s*\}$',
+                ', "symbols_broken": "' + symbols_broken_value + '" }',
+                obj,
+                count=1
+            )
+
+        new_body = re.sub(r'\{[^{}]*\}', patch_variant, variants_body, flags=re.DOTALL)
+        return new_body, changed
+
     def process_chunk(chunk):
         if not re.search(r'"type"\s*:\s*"vehicle_part"', chunk):
             return chunk
@@ -2739,13 +2779,11 @@ def fix_variant_from_symbol_broken_symbol(content):
         symbol_match = re.search(r'"symbol"\s*:\s*"([^"]*)"', chunk)
         broken_match = re.search(r'"broken_symbol"\s*:\s*"([^"]*)"', chunk)
 
-        if not symbol_match or not broken_match:
-            return chunk
+        symbol = symbol_match.group(1) if symbol_match else None
+        broken_symbol = broken_match.group(1) if broken_match else None
 
-        symbol = symbol_match.group(1)
-        broken_symbol = broken_match.group(1)
-
-        variant_entry = '{ "symbols": "' + symbol + '", "symbols_broken": "' + broken_symbol + '" }'
+        # If no broken_symbol exists, missing symbols_broken should become "#".
+        symbols_broken_value = broken_symbol if broken_symbol is not None else "#"
 
         variants_info = find_array_for_key(chunk, "variants")
 
@@ -2753,24 +2791,29 @@ def fix_variant_from_symbol_broken_symbol(content):
             _, variants_bracket_start, variants_bracket_end = variants_info
             variants_body = chunk[variants_bracket_start + 1:variants_bracket_end - 1]
 
-            exact_pair = (
-                r'"symbols"\s*:\s*"' + re.escape(symbol) + r'"\s*,\s*'
-                r'"symbols_broken"\s*:\s*"' + re.escape(broken_symbol) + r'"'
-            )
+            new_body, changed = fill_symbols_broken_in_variants(variants_body, symbols_broken_value)
+            if changed:
+                return chunk[:variants_bracket_start + 1] + new_body + chunk[variants_bracket_end - 1:]
 
-            if re.search(exact_pair, variants_body):
-                return chunk
+            return chunk
 
-            if variants_body.strip():
-                insert = ', ' + variant_entry
-            else:
-                insert = ' ' + variant_entry + ' '
+        # No variants exists: only create variants if old symbol fields exist.
+        if symbol is None and broken_symbol is None:
+            return chunk
 
-            return chunk[:variants_bracket_end - 1] + insert + chunk[variants_bracket_end - 1:]
+        parts = []
+        if symbol is not None:
+            parts.append('"symbols": "' + symbol + '"')
 
+        if symbols_broken_value is not None:
+            parts.append('"symbols_broken": "' + symbols_broken_value + '"')
+
+        variant_entry = '{ ' + ', '.join(parts) + ' }'
+
+        insert_after = broken_match.end() if broken_match else symbol_match.end()
         insert_text = ',\n    "variants": [ ' + variant_entry + ' ]'
-        insert_pos = broken_match.end()
-        return chunk[:insert_pos] + insert_text + chunk[insert_pos:]
+
+        return chunk[:insert_after] + insert_text + chunk[insert_after:]
 
     spans = list(_split_top_level_objects(content))
     if not spans:
