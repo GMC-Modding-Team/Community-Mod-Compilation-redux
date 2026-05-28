@@ -10,6 +10,7 @@
 - \[Experimental\] Crystallized Mutations CtD [\#146](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/146)
 - \[Documentation\] Mod cataloging ids [\#50](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/50)
 - \[Workflow\] delete toc and python workflows [\#259](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/259) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[H\] updates unleash the mods [\#255](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/255) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Workshop\] legacy update [\#248](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/248) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[H\] Unleash the mods [\#223](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/223) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[H\] updates goats mods old pr and other mods for some reason [\#221](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/221) ([TheGoatGod](https://github.com/TheGoatGod))
@@ -31,6 +32,7 @@
 
 **Merged pull requests:**
 
+- \[Tools\] update pocket data [\#265](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/265) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[tools\] Add CDDA JSON in-place English translator [\#263](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/263) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Tools\] update legacy json [\#262](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/262) ([TheGoatGod](https://github.com/TheGoatGod))
 - Create CDDA Json Editor And Formatter bundle v1.rar [\#261](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/261) ([TheGoatGod](https://github.com/TheGoatGod))
