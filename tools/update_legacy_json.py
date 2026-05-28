@@ -2343,12 +2343,15 @@ def fix_bash_items_amount_minamount(content):
     return ''.join(result)
 
 
+
 def fix_console_broken_palette(content):
     """
-    Palette-only update:
+    Palette / overmap_terrain update:
+    - Works with "type": "palette" and "type": "overmap_terrain"
     - In "terrain", replace any symbol using "t_console_broken" with the most common terrain value
       in the same terrain block that contains "floor".
     - In "furniture", add that same symbol as "f_console_broken".
+    - If "furniture" is missing, add it.
     """
 
     from collections import Counter
@@ -2404,8 +2407,8 @@ def fix_console_broken_palette(content):
 
         return m.start(), brace_start, brace_end
 
-    def process_palette(chunk):
-        if not re.search(r'"type"\s*:\s*"palette"', chunk):
+    def process_chunk(chunk):
+        if not re.search(r'"type"\s*:\s*"(?:palette|overmap_terrain)"', chunk):
             return chunk
 
         terrain_info = find_object_for_key(chunk, "terrain")
@@ -2445,10 +2448,12 @@ def fix_console_broken_palette(content):
                 _, furniture_brace_start, furniture_brace_end = furniture_info
                 furniture_body = chunk[furniture_brace_start + 1:furniture_brace_end - 1]
 
+                # Do not overwrite existing furniture symbols.
                 if not re.search(rf'"{re.escape(symbol)}"\s*:', furniture_body):
                     insert = ',\n      "' + symbol + '": "f_console_broken"'
                     chunk = chunk[:furniture_brace_end - 1] + insert + chunk[furniture_brace_end - 1:]
             else:
+                # Add furniture block if missing, directly after terrain.
                 terrain_info_after = find_object_for_key(chunk, "terrain")
                 if terrain_info_after:
                     _, _, terrain_end_after = terrain_info_after
@@ -2459,7 +2464,7 @@ def fix_console_broken_palette(content):
 
     spans = list(_split_top_level_objects(content))
     if not spans:
-        return process_palette(content)
+        return process_chunk(content)
 
     result = []
     prev_end = 0
@@ -2467,7 +2472,7 @@ def fix_console_broken_palette(content):
     for start, end in spans:
         result.append(content[prev_end:start])
         chunk = content[start:end]
-        result.append(process_palette(chunk))
+        result.append(process_chunk(chunk))
         prev_end = end
 
     result.append(content[prev_end:])
