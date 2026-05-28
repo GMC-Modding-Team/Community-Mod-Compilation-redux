@@ -2346,8 +2346,8 @@ def fix_bash_items_amount_minamount(content):
 
 def fix_console_broken_palette(content):
     """
-    Palette / overmap_terrain update:
-    - Works with "type": "palette" and "type": "overmap_terrain"
+    Palette / overmap_terrain / mapgen update:
+    - Works with "type": "palette", "type": "overmap_terrain", and "type": "mapgen"
     - Finds symbols in "terrain" that use "t_console_broken"
     - Adds the same symbol to "furniture" as "f_console_broken"
     - If "furniture" is missing, creates it
@@ -2409,7 +2409,7 @@ def fix_console_broken_palette(content):
         return m.start(), brace_start, brace_end
 
     def process_chunk(chunk):
-        if not re.search(r'"type"\s*:\s*"(?:palette|overmap_terrain)"', chunk):
+        if not re.search(r'"type"\s*:\s*"(?:palette|overmap_terrain|mapgen)"', chunk):
             return chunk
 
         terrain_info = find_object_for_key(chunk, "terrain")
