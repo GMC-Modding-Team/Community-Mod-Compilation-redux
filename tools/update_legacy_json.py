@@ -2348,10 +2348,11 @@ def fix_console_broken_palette(content):
     """
     Palette / overmap_terrain update:
     - Works with "type": "palette" and "type": "overmap_terrain"
-    - In "terrain", replace any symbol using "t_console_broken" with the most common terrain value
-      in the same terrain block that contains "floor".
-    - In "furniture", add that same symbol as "f_console_broken".
-    - If "furniture" is missing, add it.
+    - Finds symbols in "terrain" that use "t_console_broken"
+    - Adds the same symbol to "furniture" as "f_console_broken"
+    - If "furniture" is missing, creates it
+    - Replaces "t_console_broken" in terrain with the most common terrain value containing "floor"
+    - If no common floor is found, uses "t_floor"
     """
 
     from collections import Counter
@@ -2428,17 +2429,13 @@ def fix_console_broken_palette(content):
             if value != "t_console_broken" and "floor" in value
         ]
 
-        if not floor_values:
-            return chunk
-
-        replacement_floor = Counter(floor_values).most_common(1)[0][0]
+        replacement_floor = Counter(floor_values).most_common(1)[0][0] if floor_values else "t_floor"
 
         new_terrain_body = re.sub(
             r'("([^"]+)"\s*:\s*)"t_console_broken"',
             lambda m: m.group(1) + '"' + replacement_floor + '"',
             terrain_body
         )
-
         chunk = chunk[:terrain_brace_start + 1] + new_terrain_body + chunk[terrain_brace_end - 1:]
 
         for symbol in symbols:
@@ -2448,12 +2445,13 @@ def fix_console_broken_palette(content):
                 _, furniture_brace_start, furniture_brace_end = furniture_info
                 furniture_body = chunk[furniture_brace_start + 1:furniture_brace_end - 1]
 
-                # Do not overwrite existing furniture symbols.
                 if not re.search(rf'"{re.escape(symbol)}"\s*:', furniture_body):
-                    insert = ',\n      "' + symbol + '": "f_console_broken"'
+                    if furniture_body.strip():
+                        insert = ',\n      "' + symbol + '": "f_console_broken"'
+                    else:
+                        insert = '\n      "' + symbol + '": "f_console_broken"\n    '
                     chunk = chunk[:furniture_brace_end - 1] + insert + chunk[furniture_brace_end - 1:]
             else:
-                # Add furniture block if missing, directly after terrain.
                 terrain_info_after = find_object_for_key(chunk, "terrain")
                 if terrain_info_after:
                     _, _, terrain_end_after = terrain_info_after
