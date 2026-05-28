@@ -2348,14 +2348,25 @@ def fix_console_broken_palette(content):
     """
     Palette / overmap_terrain / mapgen update:
     - Works with "type": "palette", "type": "overmap_terrain", and "type": "mapgen"
-    - Finds symbols in "terrain" that use "t_console_broken"
-    - Adds the same symbol to "furniture" as "f_console_broken"
+    - Finds terrain symbols using:
+        "t_console_broken" -> furniture "f_console_broken"
+        "t_console"        -> furniture "f_console"
+    - Works when terrain value is a string:
+        "x": "t_console"
+    - Also works when terrain value is an array:
+        "x": [ "t_console", "t_console_broken" ]
+    - Adds the same symbol to "furniture"
     - If "furniture" is missing, creates it
-    - Replaces "t_console_broken" in terrain with the most common terrain value containing "floor"
+    - Replaces console terrain values with the most common terrain value containing "floor"
     - If no common floor is found, uses "t_floor"
     """
 
     from collections import Counter
+
+    console_pairs = {
+        "t_console_broken": "f_console_broken",
+        "t_console": "f_console",
+    }
 
     def find_matching(text, start, open_ch, close_ch):
         depth = 0
@@ -2408,6 +2419,59 @@ def fix_console_broken_palette(content):
 
         return m.start(), brace_start, brace_end
 
+    def parse_entries(obj_body):
+        entries = []
+        i = 0
+        key_re = re.compile(r'"([^"]+)"\s*:\s*')
+
+        while i < len(obj_body):
+            m = key_re.search(obj_body, i)
+            if not m:
+                break
+
+            symbol = m.group(1)
+            value_start = m.end()
+
+            j = value_start
+            while j < len(obj_body) and obj_body[j].isspace():
+                j += 1
+
+            if j >= len(obj_body):
+                break
+
+            if obj_body[j] == '"':
+                value_match = re.match(r'"([^"]*)"', obj_body[j:])
+                if not value_match:
+                    i = j + 1
+                    continue
+
+                raw_end = j + value_match.end()
+                value = value_match.group(1)
+                entries.append((m.start(), raw_end, symbol, obj_body[j:raw_end], "string", [value]))
+                i = raw_end
+                continue
+
+            if obj_body[j] == '[':
+                arr_end = find_matching(obj_body, j, '[', ']')
+                if arr_end is None:
+                    i = j + 1
+                    continue
+
+                raw = obj_body[j:arr_end]
+                values = re.findall(r'"([^"]+)"', raw)
+                entries.append((m.start(), arr_end, symbol, raw, "array", values))
+                i = arr_end
+                continue
+
+            i = j + 1
+
+        return entries
+
+    def make_furniture_value(furniture_values):
+        if len(furniture_values) == 1:
+            return '"' + furniture_values[0] + '"'
+        return '[ ' + ', '.join('"' + value + '"' for value in furniture_values) + ' ]'
+
     def process_chunk(chunk):
         if not re.search(r'"type"\s*:\s*"(?:palette|overmap_terrain|mapgen)"', chunk):
             return chunk
@@ -2419,44 +2483,101 @@ def fix_console_broken_palette(content):
         _, terrain_brace_start, terrain_brace_end = terrain_info
         terrain_body = chunk[terrain_brace_start + 1:terrain_brace_end - 1]
 
-        symbols = re.findall(r'"([^"]+)"\s*:\s*"t_console_broken"', terrain_body)
-        if not symbols:
+        entries = parse_entries(terrain_body)
+
+        found_by_symbol = {}
+        for _start, _end, symbol, _raw, _kind, values in entries:
+            furniture_values = [console_pairs[value] for value in values if value in console_pairs]
+            if furniture_values:
+                found_by_symbol.setdefault(symbol, []).extend(furniture_values)
+
+        if not found_by_symbol:
             return chunk
 
-        terrain_values = re.findall(r'"[^"]+"\s*:\s*"([^"]+)"', terrain_body)
+        terrain_values = []
+        for _start, _end, _symbol, _raw, _kind, values in entries:
+            terrain_values.extend(values)
+
         floor_values = [
             value for value in terrain_values
-            if value != "t_console_broken" and "floor" in value
+            if value not in console_pairs and "floor" in value
         ]
 
         replacement_floor = Counter(floor_values).most_common(1)[0][0] if floor_values else "t_floor"
 
-        new_terrain_body = re.sub(
-            r'("([^"]+)"\s*:\s*)"t_console_broken"',
-            lambda m: m.group(1) + '"' + replacement_floor + '"',
-            terrain_body
-        )
-        chunk = chunk[:terrain_brace_start + 1] + new_terrain_body + chunk[terrain_brace_end - 1:]
+        new_parts = []
+        last = 0
 
-        for symbol in symbols:
-            furniture_info = find_object_for_key(chunk, "furniture")
+        for start, end, symbol, raw, kind, values in entries:
+            new_parts.append(terrain_body[last:start])
 
-            if furniture_info:
-                _, furniture_brace_start, furniture_brace_end = furniture_info
-                furniture_body = chunk[furniture_brace_start + 1:furniture_brace_end - 1]
+            if kind == "string":
+                value = values[0] if values else ""
+                if value in console_pairs:
+                    new_parts.append('"' + symbol + '": "' + replacement_floor + '"')
+                else:
+                    new_parts.append(terrain_body[start:end])
 
-                if not re.search(rf'"{re.escape(symbol)}"\s*:', furniture_body):
-                    if furniture_body.strip():
-                        insert = ',\n      "' + symbol + '": "f_console_broken"'
-                    else:
-                        insert = '\n      "' + symbol + '": "f_console_broken"\n    '
-                    chunk = chunk[:furniture_brace_end - 1] + insert + chunk[furniture_brace_end - 1:]
+            elif kind == "array":
+                if any(value in console_pairs for value in values):
+                    new_raw = raw
+                    for terrain_id in console_pairs:
+                        new_raw = re.sub(
+                            rf'"{re.escape(terrain_id)}"',
+                            '"' + replacement_floor + '"',
+                            new_raw
+                        )
+                    new_parts.append('"' + symbol + '": ' + new_raw)
+                else:
+                    new_parts.append(terrain_body[start:end])
+
             else:
-                terrain_info_after = find_object_for_key(chunk, "terrain")
-                if terrain_info_after:
-                    _, _, terrain_end_after = terrain_info_after
-                    furniture_block = ',\n    "furniture": {\n      "' + symbol + '": "f_console_broken"\n    }'
-                    chunk = chunk[:terrain_end_after] + furniture_block + chunk[terrain_end_after:]
+                new_parts.append(terrain_body[start:end])
+
+            last = end
+
+        new_parts.append(terrain_body[last:])
+        terrain_body = ''.join(new_parts)
+
+        chunk = chunk[:terrain_brace_start + 1] + terrain_body + chunk[terrain_brace_end - 1:]
+
+        furniture_info = find_object_for_key(chunk, "furniture")
+
+        if furniture_info:
+            _, furniture_brace_start, furniture_brace_end = furniture_info
+            furniture_body = chunk[furniture_brace_start + 1:furniture_brace_end - 1]
+
+            inserts = []
+            for symbol, furniture_values in found_by_symbol.items():
+                if not re.search(rf'"{re.escape(symbol)}"\s*:', furniture_body):
+                    inserts.append((symbol, furniture_values))
+
+            if inserts:
+                if furniture_body.strip():
+                    insert_text = ''.join(
+                        ',\n      "' + symbol + '": ' + make_furniture_value(furniture_values)
+                        for symbol, furniture_values in inserts
+                    )
+                else:
+                    insert_text = '\n' + ',\n'.join(
+                        '      "' + symbol + '": ' + make_furniture_value(furniture_values)
+                        for symbol, furniture_values in inserts
+                    ) + '\n    '
+
+                chunk = chunk[:furniture_brace_end - 1] + insert_text + chunk[furniture_brace_end - 1:]
+
+        else:
+            terrain_info_after = find_object_for_key(chunk, "terrain")
+            if terrain_info_after:
+                _, _, terrain_end_after = terrain_info_after
+
+                lines = [
+                    '      "' + symbol + '": ' + make_furniture_value(furniture_values)
+                    for symbol, furniture_values in found_by_symbol.items()
+                ]
+
+                furniture_block = ',\n    "furniture": {\n' + ',\n'.join(lines) + '\n    }'
+                chunk = chunk[:terrain_end_after] + furniture_block + chunk[terrain_end_after:]
 
         return chunk
 
