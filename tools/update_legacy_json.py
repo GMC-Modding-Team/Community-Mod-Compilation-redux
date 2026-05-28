@@ -2597,6 +2597,266 @@ def fix_console_broken_palette(content):
     result.append(content[prev_end:])
     return ''.join(result)
 
+
+
+def fix_broken_symbol(content):
+    """
+    Vehicle-part only.
+
+    Remove only the exact legacy field from vehicle_part objects:
+
+      "broken_symbol": "x"
+
+    Does NOT touch:
+      "symbols_broken": "#"
+      "variants": [ { "symbols": "=", "symbols_broken": "#" } ]
+
+    Non-vehicle_part objects are left untouched.
+    """
+
+    def remove_field(chunk):
+        chunk = re.sub(
+            r'(\n[ \t]*)"broken_symbol"\s*:\s*"[^"]*"\s*,\s*',
+            r'\1',
+            chunk
+        )
+
+        chunk = re.sub(
+            r',(\s*\n[ \t]*)"broken_symbol"\s*:\s*"[^"]*"',
+            '',
+            chunk
+        )
+
+        chunk = re.sub(
+            r'"broken_symbol"\s*:\s*"[^"]*"\s*,\s*',
+            '',
+            chunk
+        )
+
+        chunk = re.sub(
+            r',\s*"broken_symbol"\s*:\s*"[^"]*"',
+            '',
+            chunk
+        )
+
+        return chunk
+
+    def process_chunk(chunk):
+        if not re.search(r'"type"\s*:\s*"vehicle_part"', chunk):
+            return chunk
+        return remove_field(chunk)
+
+    spans = list(_split_top_level_objects(content))
+    if not spans:
+        return process_chunk(content)
+
+    result = []
+    prev_end = 0
+
+    for start, end in spans:
+        result.append(content[prev_end:start])
+        chunk = content[start:end]
+        result.append(process_chunk(chunk))
+        prev_end = end
+
+    result.append(content[prev_end:])
+    return ''.join(result)
+
+
+
+def fix_variant_from_symbol_broken_symbol(content):
+    """
+    Vehicle-part only.
+
+    If a vehicle_part object has both:
+
+      "symbol": "=",
+      "broken_symbol": "#",
+
+    add this before broken_symbol/symbol are removed:
+
+      "variants": [ { "symbols": "=", "symbols_broken": "#" } ]
+
+    If variants already exists, append the variant only if that exact
+    symbols/symbols_broken pair is not already present.
+    """
+
+    def find_matching(text, start, open_ch, close_ch):
+        depth = 0
+        in_str = False
+        escape = False
+        i = start
+
+        while i < len(text):
+            ch = text[i]
+
+            if escape:
+                escape = False
+                i += 1
+                continue
+
+            if ch == '\\' and in_str:
+                escape = True
+                i += 1
+                continue
+
+            if ch == '"':
+                in_str = not in_str
+                i += 1
+                continue
+
+            if in_str:
+                i += 1
+                continue
+
+            if ch == open_ch:
+                depth += 1
+            elif ch == close_ch:
+                depth -= 1
+                if depth == 0:
+                    return i + 1
+
+            i += 1
+
+        return None
+
+    def find_array_for_key(text, key):
+        m = re.search(rf'"{re.escape(key)}"\s*:\s*\[', text)
+        if not m:
+            return None
+
+        bracket_start = m.end() - 1
+        bracket_end = find_matching(text, bracket_start, '[', ']')
+        if bracket_end is None:
+            return None
+
+        return m.start(), bracket_start, bracket_end
+
+    def process_chunk(chunk):
+        if not re.search(r'"type"\s*:\s*"vehicle_part"', chunk):
+            return chunk
+
+        symbol_match = re.search(r'"symbol"\s*:\s*"([^"]*)"', chunk)
+        broken_match = re.search(r'"broken_symbol"\s*:\s*"([^"]*)"', chunk)
+
+        if not symbol_match or not broken_match:
+            return chunk
+
+        symbol = symbol_match.group(1)
+        broken_symbol = broken_match.group(1)
+
+        variant_entry = '{ "symbols": "' + symbol + '", "symbols_broken": "' + broken_symbol + '" }'
+
+        variants_info = find_array_for_key(chunk, "variants")
+
+        if variants_info:
+            _, variants_bracket_start, variants_bracket_end = variants_info
+            variants_body = chunk[variants_bracket_start + 1:variants_bracket_end - 1]
+
+            exact_pair = (
+                r'"symbols"\s*:\s*"' + re.escape(symbol) + r'"\s*,\s*'
+                r'"symbols_broken"\s*:\s*"' + re.escape(broken_symbol) + r'"'
+            )
+
+            if re.search(exact_pair, variants_body):
+                return chunk
+
+            if variants_body.strip():
+                insert = ', ' + variant_entry
+            else:
+                insert = ' ' + variant_entry + ' '
+
+            return chunk[:variants_bracket_end - 1] + insert + chunk[variants_bracket_end - 1:]
+
+        insert_text = ',\n    "variants": [ ' + variant_entry + ' ]'
+        insert_pos = broken_match.end()
+        return chunk[:insert_pos] + insert_text + chunk[insert_pos:]
+
+    spans = list(_split_top_level_objects(content))
+    if not spans:
+        return process_chunk(content)
+
+    result = []
+    prev_end = 0
+
+    for start, end in spans:
+        result.append(content[prev_end:start])
+        chunk = content[start:end]
+        result.append(process_chunk(chunk))
+        prev_end = end
+
+    result.append(content[prev_end:])
+    return ''.join(result)
+
+
+
+
+def fix_symbol(content):
+    """
+    Vehicle-part only.
+
+    Remove only the exact legacy field from vehicle_part objects:
+
+      "symbol": "x"
+
+    Does NOT touch:
+      "symbols": "="
+      "symbols_broken": "#"
+      "variants": [ { "symbols": "=", "symbols_broken": "#" } ]
+
+    Non-vehicle_part objects are left untouched.
+    """
+
+    def remove_field(chunk):
+        chunk = re.sub(
+            r'(\n[ \t]*)"symbol"\s*:\s*"[^"]*"\s*,\s*',
+            r'\1',
+            chunk
+        )
+
+        chunk = re.sub(
+            r',(\s*\n[ \t]*)"symbol"\s*:\s*"[^"]*"',
+            '',
+            chunk
+        )
+
+        chunk = re.sub(
+            r'"symbol"\s*:\s*"[^"]*"\s*,\s*',
+            '',
+            chunk
+        )
+
+        chunk = re.sub(
+            r',\s*"symbol"\s*:\s*"[^"]*"',
+            '',
+            chunk
+        )
+
+        return chunk
+
+    def process_chunk(chunk):
+        if not re.search(r'"type"\s*:\s*"vehicle_part"', chunk):
+            return chunk
+        return remove_field(chunk)
+
+    spans = list(_split_top_level_objects(content))
+    if not spans:
+        return process_chunk(content)
+
+    result = []
+    prev_end = 0
+
+    for start, end in spans:
+        result.append(content[prev_end:start])
+        chunk = content[start:end]
+        result.append(process_chunk(chunk))
+        prev_end = end
+
+    result.append(content[prev_end:])
+    return ''.join(result)
+
+
+
 # ---------------------------------------------------------------------------
 # Master pipeline
 # ---------------------------------------------------------------------------
@@ -2627,6 +2887,9 @@ TRANSFORMS = [
     fix_bleed_resist,
     fix_bash_items_amount_minamount,
     fix_console_broken_palette,
+    fix_variant_from_symbol_broken_symbol,
+    fix_broken_symbol,
+    fix_symbol,
     fix_mutagen_use_action,
     fix_recipe_activity_level,
     fix_recipe_gold_silver_components,
