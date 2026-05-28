@@ -2342,6 +2342,137 @@ def fix_bash_items_amount_minamount(content):
 
     return ''.join(result)
 
+
+def fix_console_broken_palette(content):
+    """
+    Palette-only update:
+    - In "terrain", replace any symbol using "t_console_broken" with the most common terrain value
+      in the same terrain block that contains "floor".
+    - In "furniture", add that same symbol as "f_console_broken".
+    """
+
+    from collections import Counter
+
+    def find_matching(text, start, open_ch, close_ch):
+        depth = 0
+        in_str = False
+        escape = False
+        i = start
+
+        while i < len(text):
+            ch = text[i]
+
+            if escape:
+                escape = False
+                i += 1
+                continue
+
+            if ch == '\\' and in_str:
+                escape = True
+                i += 1
+                continue
+
+            if ch == '"':
+                in_str = not in_str
+                i += 1
+                continue
+
+            if in_str:
+                i += 1
+                continue
+
+            if ch == open_ch:
+                depth += 1
+            elif ch == close_ch:
+                depth -= 1
+                if depth == 0:
+                    return i + 1
+
+            i += 1
+
+        return None
+
+    def find_object_for_key(text, key):
+        m = re.search(rf'"{re.escape(key)}"\s*:\s*\{{', text)
+        if not m:
+            return None
+
+        brace_start = m.end() - 1
+        brace_end = find_matching(text, brace_start, '{', '}')
+        if brace_end is None:
+            return None
+
+        return m.start(), brace_start, brace_end
+
+    def process_palette(chunk):
+        if not re.search(r'"type"\s*:\s*"palette"', chunk):
+            return chunk
+
+        terrain_info = find_object_for_key(chunk, "terrain")
+        if not terrain_info:
+            return chunk
+
+        _, terrain_brace_start, terrain_brace_end = terrain_info
+        terrain_body = chunk[terrain_brace_start + 1:terrain_brace_end - 1]
+
+        symbols = re.findall(r'"([^"]+)"\s*:\s*"t_console_broken"', terrain_body)
+        if not symbols:
+            return chunk
+
+        terrain_values = re.findall(r'"[^"]+"\s*:\s*"([^"]+)"', terrain_body)
+        floor_values = [
+            value for value in terrain_values
+            if value != "t_console_broken" and "floor" in value
+        ]
+
+        if not floor_values:
+            return chunk
+
+        replacement_floor = Counter(floor_values).most_common(1)[0][0]
+
+        new_terrain_body = re.sub(
+            r'("([^"]+)"\s*:\s*)"t_console_broken"',
+            lambda m: m.group(1) + '"' + replacement_floor + '"',
+            terrain_body
+        )
+
+        chunk = chunk[:terrain_brace_start + 1] + new_terrain_body + chunk[terrain_brace_end - 1:]
+
+        for symbol in symbols:
+            furniture_info = find_object_for_key(chunk, "furniture")
+
+            if furniture_info:
+                _, furniture_brace_start, furniture_brace_end = furniture_info
+                furniture_body = chunk[furniture_brace_start + 1:furniture_brace_end - 1]
+
+                if not re.search(rf'"{re.escape(symbol)}"\s*:', furniture_body):
+                    insert = ',\n      "' + symbol + '": "f_console_broken"'
+                    chunk = chunk[:furniture_brace_end - 1] + insert + chunk[furniture_brace_end - 1:]
+            else:
+                terrain_info_after = find_object_for_key(chunk, "terrain")
+                if terrain_info_after:
+                    _, _, terrain_end_after = terrain_info_after
+                    furniture_block = ',\n    "furniture": {\n      "' + symbol + '": "f_console_broken"\n    }'
+                    chunk = chunk[:terrain_end_after] + furniture_block + chunk[terrain_end_after:]
+
+        return chunk
+
+    spans = list(_split_top_level_objects(content))
+    if not spans:
+        return process_palette(content)
+
+    result = []
+    prev_end = 0
+
+    for start, end in spans:
+        result.append(content[prev_end:start])
+        chunk = content[start:end]
+        result.append(process_palette(chunk))
+        prev_end = end
+
+    result.append(content[prev_end:])
+    return ''.join(result)
+
 # ---------------------------------------------------------------------------
 # Master pipeline
 # ---------------------------------------------------------------------------
@@ -2371,6 +2502,7 @@ TRANSFORMS = [
     fix_ter_furn_fail_message,
     fix_bleed_resist,
     fix_bash_items_amount_minamount,
+    fix_console_broken_palette,
     fix_mutagen_use_action,
     fix_recipe_activity_level,
     fix_recipe_gold_silver_components,
