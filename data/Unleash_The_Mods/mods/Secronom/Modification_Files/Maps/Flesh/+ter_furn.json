@@ -973,31 +973,104 @@
     "bash": { "str_min": 8, "str_max": 16, "sound": "splash!", "sound_fail": "splat!", "ter_set": "t_column" }
   },
   {
-    "id": "t_secro_console_broken_flesh",
-    "type": "terrain",
+    "type": "furniture",
+    "id": "f_secro_console_broken_flesh",
     "name": "fleshed broken console",
+    "looks_like": "t_console_broken",
     "description": "This is a standalone computer terminal that is beyond broken. Veins crawl through the monitor.",
     "symbol": "6",
     "color": "light_red",
-    "move_cost": 0,
+    "move_cost_mod": -1,
     "coverage": 50,
-    "roof": "t_secro_flat_roof_flesh",
-    "flags": [ "TRANSPARENT", "NOITEM", "INDOORS", "SHORT", "PERMEABLE" ],
-    "bash": { "str_min": 8, "str_max": 16, "sound": "splash!", "sound_fail": "splat!", "ter_set": "t_console_broken" }
+    "required_str": -1,
+    "light_emitted": 10,
+    "flags": [ "TRANSPARENT", "CONSOLE", "NOITEM", "INDOORS", "SHORT", "PERMEABLE" ],
+    "connect_groups": "COUNTER",
+    "connects_to": "COUNTER",
+    "deconstruct": {
+      "furn_set": "f_counter",
+      "items": [
+        { "item": "processor", "count": [ 1, 2 ] },
+        { "item": "RAM", "count": [ 4, 8 ] },
+        { "item": "cable", "charges": [ 4, 6 ] },
+        { "item": "large_lcd_screen", "count": 1 },
+        { "item": "e_scrap", "count": [ 10, 16 ] },
+        { "item": "circuit", "count": [ 6, 10 ] },
+        { "item": "power_supply", "count": [ 2, 4 ] },
+        { "item": "amplifier", "count": [ 2, 4 ] },
+        { "item": "plastic_chunk", "count": [ 10, 12 ] },
+        { "item": "scrap", "count": [ 6, 8 ] }
+      ]
+    },
+    "bash": {
+      "str_min": 8,
+      "str_max": 150,
+      "sound": "splash!",
+      "sound_fail": "splat!",
+      "furn_set": "f_console_broken",
+      "items": [
+        { "item": "processor", "prob": 25 },
+        { "item": "RAM", "count": [ 0, 2 ], "prob": 50 },
+        { "item": "cable", "charges": [ 1, 2 ], "prob": 50 },
+        { "item": "large_lcd_screen", "prob": 25 },
+        { "item": "e_scrap", "count": [ 1, 4 ], "prob": 50 },
+        { "item": "circuit", "count": [ 0, 2 ], "prob": 50 },
+        { "item": "power_supply", "prob": 25 },
+        { "item": "amplifier", "prob": 25 },
+        { "item": "plastic_chunk", "count": [ 4, 10 ], "prob": 50 },
+        { "item": "scrap", "count": [ 2, 6 ], "prob": 50 }
+      ]
+    }
   },
   {
-    "id": "t_secro_console_flesh",
-    "type": "terrain",
+    "type": "furniture",
+    "id": "f_secro_console_flesh",
     "name": "fleshed computer console",
     "description": "This is a standalone computer terminal. Veins crawl through the monitor, but seems to work in its current condition.",
+    "looks_like": "t_console",
     "symbol": "6",
     "color": "red",
-    "move_cost": 0,
+    "move_cost_mod": -1,
     "coverage": 50,
-    "light_emitted": 5,
-    "roof": "t_secro_flat_roof_flesh",
+    "required_str": -1,
+    "light_emitted": 10,
     "flags": [ "TRANSPARENT", "CONSOLE", "S_FLESH", "NOITEM", "INDOORS", "SHORT", "PERMEABLE" ],
-    "bash": { "str_min": 8, "str_max": 16, "sound": "splash!", "sound_fail": "splat!", "ter_set": "t_console" }
+    "connect_groups": "COUNTER",
+    "connects_to": "COUNTER",
+    "deconstruct": {
+      "furn_set": "f_counter",
+      "items": [
+        { "item": "processor", "count": [ 1, 2 ] },
+        { "item": "RAM", "count": [ 4, 8 ] },
+        { "item": "cable", "charges": [ 4, 6 ] },
+        { "item": "large_lcd_screen", "count": 1 },
+        { "item": "e_scrap", "count": [ 10, 16 ] },
+        { "item": "circuit", "count": [ 6, 10 ] },
+        { "item": "power_supply", "count": [ 2, 4 ] },
+        { "item": "amplifier", "count": [ 2, 4 ] },
+        { "item": "plastic_chunk", "count": [ 10, 12 ] },
+        { "item": "scrap", "count": [ 6, 8 ] }
+      ]
+    },
+    "bash": {
+      "str_min": 8,
+      "str_max": 150,
+      "sound": "splash!",
+      "sound_fail": "splat!",
+      "furn_set": "f_console_broken",
+      "items": [
+        { "item": "processor", "prob": 25 },
+        { "item": "RAM", "count": [ 0, 2 ], "prob": 50 },
+        { "item": "cable", "charges": [ 1, 2 ], "prob": 50 },
+        { "item": "large_lcd_screen", "prob": 25 },
+        { "item": "e_scrap", "count": [ 1, 4 ], "prob": 50 },
+        { "item": "circuit", "count": [ 0, 2 ], "prob": 50 },
+        { "item": "power_supply", "prob": 25 },
+        { "item": "amplifier", "prob": 25 },
+        { "item": "plastic_chunk", "count": [ 4, 10 ], "prob": 50 },
+        { "item": "scrap", "count": [ 2, 6 ], "prob": 50 }
+      ]
+    }
   },
   {
     "id": "t_secro_gates_mech_control_flesh",
