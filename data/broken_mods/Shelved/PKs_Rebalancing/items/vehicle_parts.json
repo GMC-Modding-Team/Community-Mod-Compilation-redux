@@ -15,22 +15,19 @@
     "name": { "str": "aisle lights" },
     "item": "flashlight",
     "location": "on_ceiling",
-    "symbol": "*",
-    "broken_symbol": "*",
     "color": "white",
     "durability": 20,
     "epower": -40,
     "bonus": 30,
     "breaks_into": [ { "item": "scrap", "count": [ 0, 2 ] } ],
-    "flags": [ "TOOL_SCREWDRIVER", "AISLE_LIGHT", "REVERSIBLE", "ENABLED_DRAINS_EPOWER" ]
+    "flags": [ "TOOL_SCREWDRIVER", "AISLE_LIGHT", "REVERSIBLE", "ENABLED_DRAINS_EPOWER" ],
+    "variants": [ { "symbols": "*", "symbols_broken": "*" } ]
   },
   {
     "id": "saddle",
     "type": "vehicle_part",
     "name": { "str": "saddle" },
-    "symbol": "#",
     "color": "red",
-    "broken_symbol": "*",
     "broken_color": "red",
     "damage_modifier": 20,
     "durability": 80,
@@ -38,15 +35,14 @@
     "item": "saddle",
     "location": "center",
     "flags": [ "SEAT", "BOARDABLE", "FOLDABLE", "TOOL_WRENCH", "REVERSIBLE" ],
-    "breaks_into": [ { "item": "leather", "prob": 50 }, { "item": "scrap", "count": [ 1, 2 ] } ]
+    "breaks_into": [ { "item": "leather", "prob": 50 }, { "item": "scrap", "count": [ 1, 2 ] } ],
+    "variants": [ { "symbols": "#", "symbols_broken": "*" } ]
   },
   {
     "id": "frame_handle",
     "type": "vehicle_part",
     "name": { "str": "handle" },
-    "symbol": "^",
     "color": "light_cyan",
-    "broken_symbol": "#",
     "broken_color": "light_cyan",
     "durability": 30,
     "folded_volume": "750 ml",
@@ -57,30 +53,28 @@
       { "item": "steel_lump", "count": [ 4, 6 ] },
       { "item": "steel_chunk", "count": [ 4, 6 ] },
       { "item": "scrap", "count": [ 4, 6 ] }
-    ]
+    ],
+    "variants": [ { "symbols": "^", "symbols_broken": "#" } ]
   },
   {
     "id": "roof_cloth",
     "type": "vehicle_part",
     "name": { "str": "cloth roof" },
-    "symbol": "#",
     "color": "light_gray",
-    "broken_symbol": "#",
     "broken_color": "dark_gray",
     "durability": 15,
     "folded_volume": "3750 ml",
     "item": "sheet",
     "location": "roof",
     "flags": [ "ROOF", "FOLDABLE", "NAILABLE", "REVERSIBLE" ],
-    "breaks_into": "ig_vp_cloth"
+    "breaks_into": "ig_vp_cloth",
+    "variants": [ { "symbols": "#", "symbols_broken": "#" } ]
   },
   {
     "id": "horn_bicycle",
     "type": "vehicle_part",
     "name": { "str": "bicycle horn" },
-    "symbol": "*",
     "color": "light_gray",
-    "broken_symbol": "*",
     "broken_color": "red",
     "damage_modifier": 10,
     "durability": 75,
@@ -93,16 +87,15 @@
       "install": { "skills": [ [ "mechanics", 1 ] ], "time": "60 m", "using": [ [ "vehicle_wrench_2", 1 ] ] },
       "removal": { "skills": [ [ "mechanics", 1 ] ], "time": "45 m", "using": [ [ "vehicle_wrench_2", 1 ] ] },
       "repair": { "skills": [ [ "mechanics", 1 ] ], "time": "25 m", "using": [ [ "welding_standard", 5 ] ] }
-    }
+    },
+    "variants": [ { "symbols": "*", "symbols_broken": "*" } ]
   },
   {
     "id": "recharge_station",
     "type": "vehicle_part",
     "copy-from": "recharge_station",
     "name": { "str": "UPS-compatible recharging station" },
-    "symbol": "o",
     "color": "light_green",
-    "broken_symbol": "#",
     "broken_color": "blue",
     "damage_modifier": 10,
     "durability": 20,
@@ -121,15 +114,14 @@
       "install": { "skills": [ [ "mechanics", 5 ] ], "time": "60 m", "using": [ [ "vehicle_wrench_2", 1 ] ] },
       "removal": { "skills": [ [ "mechanics", 3 ] ], "time": "45 m", "using": [ [ "vehicle_wrench_2", 1 ] ] },
       "repair": { "skills": [ [ "mechanics", 4 ] ], "time": "25 m", "using": [ [ "welding_standard", 5 ] ] }
-    }
+    },
+    "variants": [ { "symbols": "o", "symbols_broken": "#" } ]
   },
   {
     "id": "wing_mirror",
     "type": "vehicle_part",
     "name": { "str": "wing mirror" },
-    "symbol": "o",
     "color": "light_cyan",
-    "broken_symbol": "*",
     "broken_color": "dark_gray",
     "damage_modifier": 10,
     "durability": 20,
@@ -137,7 +129,8 @@
     "item": "mirror",
     "location": "structure",
     "flags": [ "VISION", "PROTRUSION", "UNMOUNT_ON_DAMAGE", "FOLDABLE", "TOOL_SCREWDRIVER", "REVERSIBLE" ],
-    "breaks_into": [ { "item": "glass_shard", "count": [ 0, 2 ] } ]
+    "breaks_into": [ { "item": "glass_shard", "count": [ 0, 2 ] } ],
+    "variants": [ { "symbols": "o", "symbols_broken": "*" } ]
   },
   {
     "id": "shockcannon_mounted",
@@ -145,9 +138,7 @@
     "name": { "str": "mounted shockcannon" },
     "item": "shockcannon_ups",
     "location": "on_roof",
-    "symbol": "t",
     "looks_like": "mounted_coilgun",
-    "broken_symbol": "#",
     "color": "yellow",
     "broken_color": "dark_gray",
     "durability": 250,
@@ -158,7 +149,8 @@
       "removal": { "skills": [ [ "mechanics", 4 ] ], "time": "45 m", "using": [ [ "vehicle_wrench_2", 1 ] ] },
       "repair": { "skills": [ [ "mechanics", 5 ] ], "time": "25 m", "using": [ [ "welding_standard", 5 ] ] }
     },
-    "flags": [ "TURRET" ]
+    "flags": [ "TURRET" ],
+    "variants": [ { "symbols": "t", "symbols_broken": "#" } ]
   },
   {
     "id": "bfg_mounted",
@@ -167,7 +159,6 @@
     "name": { "str": "mounted bfg" },
     "item": "BFG",
     "looks_like": "mounted_plasma_gun",
-    "broken_symbol": "#",
     "color": "light_green",
     "broken_color": "dark_gray",
     "durability": 350,
@@ -181,10 +172,8 @@
     "id": "fridge_cargo",
     "type": "vehicle_part",
     "name": { "str": "ice box" },
-    "symbol": "Q",
     "looks_like": "minifridge",
     "color": "light_blue",
-    "broken_symbol": "#",
     "broken_color": "light_blue",
     "damage_modifier": 80,
     "durability": 300,
@@ -204,6 +193,7 @@
       { "item": "scrap", "count": [ 15, 24 ] },
       { "item": "hose", "prob": 50, "count": [ 1, 2 ] },
       { "item": "hose", "prob": 50, "count": [ 1, 2 ] }
-    ]
+    ],
+    "variants": [ { "symbols": "Q", "symbols_broken": "#" } ]
   }
 ]

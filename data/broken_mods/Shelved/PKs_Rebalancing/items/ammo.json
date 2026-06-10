@@ -8,10 +8,10 @@
     "category": "other",
     "color": "cyan",
     "container": "bottle_plastic",
-    "nutrition": 3,
     "quench": 9,
     "ammo_data": { "ammo_type": "smoke_juice" },
-    "flags": [ "EATEN_COLD" ]
+    "flags": [ "EATEN_COLD" ],
+    "calories": 3
   },
   {
     "id": "chime_scrap",
@@ -126,10 +126,7 @@
     "damage": { "damage_type": "stab", "amount": 3, "armor_penetration": 10 },
     "effects": [ "INCENDIARY", "NEVER_MISFIRES", "COOKOFF", "RECOVER_9", "ACT_ON_RANGED_HIT", "CUSTOM_EXPLOSION" ],
     "explode_in_fire": true,
-    "emits": [ "emit_smoke_bomblet", "emit_fire_bomblet", "emit_fire_bomblet_small" ],
-    "countdown_interval": 2,
-    "countdown_destroy": true,
-    "countdown_action": { "type": "explosion", "explosion": { "power": 4, "distance_factor": 0.1 } }
+    "emits": [ "emit_smoke_bomblet", "emit_fire_bomblet", "emit_fire_bomblet_small" ]
   },
   {
     "id": "bomblet_acid",
@@ -148,10 +145,7 @@
     "damage": { "damage_type": "stab", "amount": 3, "armor_penetration": 10 },
     "effects": [ "NEVER_MISFIRES", "COOKOFF", "RECOVER_9", "ACT_ON_RANGED_HIT", "CUSTOM_EXPLOSION" ],
     "explode_in_fire": true,
-    "emits": [ "emit_tgas_bomblet", "emit_acid_bomblet" ],
-    "countdown_interval": 2,
-    "countdown_destroy": true,
-    "countdown_action": { "type": "explosion", "explosion": { "power": 4, "distance_factor": 0.1 } }
+    "emits": [ "emit_tgas_bomblet", "emit_acid_bomblet" ]
   },
   {
     "id": "bomblet_stun",
@@ -170,10 +164,7 @@
     "damage": { "damage_type": "stab", "amount": 3, "armor_penetration": 10 },
     "effects": [ "LARGE_BEANBAG", "RECOVER_9", "NEVER_MISFIRES", "COOKOFF", "ACT_ON_RANGED_HIT", "CUSTOM_EXPLOSION" ],
     "explode_in_fire": true,
-    "emits": [ "emit_dazzle_bomblet", "emit_teargas_bomblet" ],
-    "countdown_interval": 2,
-    "countdown_destroy": true,
-    "countdown_action": { "target": "bomblet_stun_act", "target_charges": 1, "active": true, "type": "transform" }
+    "emits": [ "emit_dazzle_bomblet", "emit_teargas_bomblet" ]
   },
   {
     "id": "bomblet_stun_act",
@@ -208,9 +199,6 @@
     "effects": [ "RECOVER_9" ],
     "flags": [ "ACT_ON_RANGED_HIT" ],
     "emits": [ "emit_acid_large" ],
-    "countdown_interval": 8,
-    "countdown_destroy": true,
-    "countdown_action": { "type": "explosion", "explosion": {  } },
     "melee_damage": { "bash": 10 }
   },
   {
@@ -230,9 +218,6 @@
     "effects": [ "RECOVER_9" ],
     "flags": [ "ACT_ON_RANGED_HIT" ],
     "emits": [ "emit_acid_small", "emit_acid_trail_slow" ],
-    "countdown_interval": 21,
-    "countdown_destroy": true,
-    "countdown_action": { "type": "explosion", "no_deactivate_msg": "The acid bubbles caustically.", "explosion": {  } },
     "melee_damage": { "bash": 10 }
   },
   {
@@ -447,9 +432,7 @@
       "LEAK_DAM",
       "RADIOACTIVE"
     ],
-    "emits": [ "emit_bfg_rad", "emit_plasma", "emit_fatigue_big", "emit_fatigue" ],
-    "countdown_interval": 2,
-    "countdown_action": { "target": "bfg_shell_act", "target_charges": 1, "active": true, "type": "transform" }
+    "emits": [ "emit_bfg_rad", "emit_plasma", "emit_fatigue_big", "emit_fatigue" ]
   },
   {
     "id": "bfg_shell_act",
