@@ -9,6 +9,7 @@
 - \[Discord\] Fix discord issue with webhooks [\#150](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/150)
 - \[Experimental\] Crystallized Mutations CtD [\#146](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/146)
 - \[Documentation\] Mod cataloging ids [\#50](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/50)
+- \[Tools\] update legacy json [\#264](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/264) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Workflow\] delete toc and python workflows [\#259](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/259) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[H\] updates unleash the mods [\#255](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/255) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Workshop\] legacy update [\#248](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/248) ([TheGoatGod](https://github.com/TheGoatGod))
