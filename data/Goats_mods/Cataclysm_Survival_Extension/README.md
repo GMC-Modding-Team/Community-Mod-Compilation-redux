@@ -1,6 +1,6 @@
 # Cataclysm Survival Extension
 
-Version: 0.6.5 for CDDA H release
+Version: 0.7.3 for CDDA H release
 
 A grounded, vanilla-style survival expansion for the base game. It focuses on the kind of equipment desperate survivors could plausibly make after the first weeks of the Cataclysm: scrap plates, padding rolls, improvised tools, ugly melee weapons, rough armor, carry rigs, field manuals, and profession starts.
 
@@ -147,3 +147,24 @@ Updated item-group formatting so individual item entries use explicit count arra
 - Removed `subtype`/collection fields from vanilla integration patches inside the mod where present.
 - CSE-owned item groups keep their required `subtype` declarations.
 - Did not remove vanilla integration patches unless duplicated inside the mod.
+
+
+## v0.7
+
+- Redrew `tileset/cse_items_32.png` with more distinct silhouettes for armor, books, weapons, materials, and tools.
+- Kept all existing `mod_tileset.json` tile mappings unchanged.
+- Preserved clean alpha: transparent background only, with no ground halos or shadow pixels.
+
+
+## v0.7.1
+
+- Rebuilt `tileset/cse_items_32.png` with stricter unique-per-item sprites.
+- Preserved `mod_tileset.json` coordinates and item IDs.
+- Kept transparent backgrounds with binary alpha only; no halos, shadows, or semi-transparent pixels.
+
+
+## v0.7.3 - Tile cleanup
+
+- Removes detached coloured flecks/blotches around the item sprites.
+- Keeps the same tile coordinates and `mod_tileset.json` mappings.
+- Keeps clean fully transparent backgrounds with no halos or ground shadows.
