@@ -34,6 +34,7 @@
 **Merged pull requests:**
 
 - \[H\] Goats mods updates [\#272](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/272) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[H\] update No\_mods [\#271](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/271) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[H\] updates rebalance mods for compatibility  [\#270](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/270) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[h\] Update legacy mods for compatibility [\#269](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/269) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[H\] broken mods update [\#268](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/268) ([TheGoatGod](https://github.com/TheGoatGod))
