@@ -9,6 +9,7 @@
 - \[Discord\] Fix discord issue with webhooks [\#150](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/150)
 - \[Experimental\] Crystallized Mutations CtD [\#146](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/146)
 - \[Experimental\] Improved groups [\#109](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/109)
+- \[Experimental\] more city locations [\#108](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/108)
 - \[Experimental\] Main-lined content in mods removal [\#107](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/107)
 - \[Experimental\] Folder tags and mod category changes [\#91](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/91)
 - \[Documentation\] Mod cataloging ids [\#50](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/50)
