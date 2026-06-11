@@ -8,6 +8,7 @@
 
 - \[Discord\] Fix discord issue with webhooks [\#150](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/150)
 - \[Experimental\] Crystallized Mutations CtD [\#146](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/146)
+- \[Experimental\] Improved groups [\#109](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/109)
 - \[Experimental\] Folder tags and mod category changes [\#91](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/91)
 - \[Documentation\] Mod cataloging ids [\#50](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/50)
 - \[Tools\] update legacy json [\#264](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/264) ([TheGoatGod](https://github.com/TheGoatGod))
