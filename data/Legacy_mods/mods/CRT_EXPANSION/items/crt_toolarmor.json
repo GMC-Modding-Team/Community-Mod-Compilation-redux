@@ -20,9 +20,7 @@
     "material": [ "plastic", "kevlar" ],
     "symbol": "[",
     "color": "dark_gray",
-    "warmth": 20,
     "material_thickness": 5,
-    "environmental_protection": 16,
     "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "battery": 250 } } ],
     "flags": [
       "WATERPROOF",
@@ -36,7 +34,7 @@
       "NO_RELOAD",
       "SLEEP_IGNORE"
     ],
-    "armor": [ { "encumbrance": 50, "coverage": 100, "covers": [ "eyes", "mouth" ] } ]
+    "armor": [ { "encumbrance": 50, "coverage": 100, "covers": [ "eyes", "mouth" ], "environmental_protection": 16, "warmth": 20 } ]
   },
   {
     "id": "crt_gasmask_on",
@@ -51,10 +49,8 @@
     "material": [ "plastic", "kevlar" ],
     "symbol": "[",
     "color": "light_green",
-    "warmth": 75,
     "relic_data": { "passive_effects": [ { "has": "WORN", "condition": "ALWAYS", "values": [ { "value": "PERCEPTION", "add": 2 } ] } ] },
     "material_thickness": 5,
-    "environmental_protection": 20,
     "qualities": [ [ "GLARE", 1 ] ],
     "flags": [
       "WATERPROOF",
@@ -72,7 +68,7 @@
       "NO_RELOAD",
       "SLEEP_IGNORE"
     ],
-    "armor": [ { "encumbrance": 5, "coverage": 100, "covers": [ "eyes", "mouth" ] } ]
+    "armor": [ { "encumbrance": 5, "coverage": 100, "covers": [ "eyes", "mouth" ], "environmental_protection": 20, "warmth": 75 } ]
   },
   {
     "id": "crt_em_vest",
@@ -84,7 +80,7 @@
     "volume": "6250 ml",
     "price": "70000 USD",
     "to_hit": -3,
-    "material": [ "kevlar", "superalloy" ],
+    "material": [ "kevlar", "steel" ],
     "symbol": "[",
     "color": "light_gray",
     "charges_per_use": 1,
@@ -102,11 +98,9 @@
       { "pocket_type": "CONTAINER", "max_contains_volume": "2 L", "max_contains_weight": "6 kg", "moves": 80 },
       { "pocket_type": "CONTAINER", "max_contains_volume": "2 L", "max_contains_weight": "6 kg", "moves": 80 }
     ],
-    "warmth": 10,
     "material_thickness": 4,
-    "environmental_protection": 4,
     "flags": [ "WATER_FRIENDLY", "STURDY", "VARSIZE", "USE_UPS", "NO_UNLOAD", "NO_RELOAD", "OUTER" ],
-    "armor": [ { "encumbrance": 50, "coverage": 85, "covers": [ "torso" ] } ],
+    "armor": [ { "encumbrance": 50, "coverage": 85, "covers": [ "torso" ], "environmental_protection": 4, "warmth": 10 } ],
     "melee_damage": { "bash": 6 }
   },
   {
@@ -116,10 +110,8 @@
     "name": { "str": "C.R.I.T EM vest (on)", "str_pl": "C.R.I.T EM vests (on)" },
     "description": "The Spec Ops Enhanced Movement vest is embedded with high-tech filaments, reactive servos and a generator which pumps a crystallized liquid that protects its wearer from most heavy combat situations at the cost of extreme power usage.  It is commonly worn by C.R.I.T Spec Ops.  This vest is currently in suit form and draining your UPS power at high rates.",
     "color": "light_green",
-    "warmth": 100,
-    "material": [ "kevlar", "superalloy" ],
+    "material": [ "kevlar", "steel" ],
     "material_thickness": 7,
-    "environmental_protection": 16,
     "turns_per_charge": 1,
     "charges_per_use": 1,
     "revert_to": "crt_em_vest",
@@ -146,7 +138,15 @@
       "NO_RELOAD",
       "OUTER"
     ],
-    "armor": [ { "encumbrance": 5, "coverage": 100, "covers": [ "torso", "leg_l", "leg_r", "arm_l", "arm_r" ] } ]
+    "armor": [
+      {
+        "encumbrance": 5,
+        "coverage": 100,
+        "covers": [ "torso", "leg_l", "leg_r", "arm_l", "arm_r" ],
+        "environmental_protection": 16,
+        "warmth": 100
+      }
+    ]
   },
   {
     "id": "crt_helmet",
@@ -157,7 +157,6 @@
     "color": "light_gray",
     "material": [ "kevlar", "qt_steel" ],
     "material_thickness": 3,
-    "warmth": 20,
     "charges_per_use": 1,
     "ammo": [ "battery" ],
     "use_action": {
@@ -180,7 +179,8 @@
       "NO_RELOAD",
       "NO_UNLOAD",
       "OUTER"
-    ]
+    ],
+    "armor": [ { "warmth": 20 } ]
   },
   {
     "id": "crt_helmet_on",
@@ -204,14 +204,14 @@
       "TRADER_AVOID"
     ],
     "material_thickness": 3,
-    "warmth": 20,
     "revert_to": "crt_helmet",
     "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "battery": 100 } } ],
     "initial_charges": 0,
     "charges_per_use": 1,
     "turns_per_charge": 120,
     "ammo": [ "battery" ],
-    "use_action": { "type": "transform", "menu_text": "Turn off", "msg": "You turn the %s off.", "target": "crt_helmet" }
+    "use_action": { "type": "transform", "menu_text": "Turn off", "msg": "You turn the %s off.", "target": "crt_helmet" },
+    "armor": [ { "warmth": 20 } ]
   },
   {
     "id": "crt_canteen",
@@ -237,15 +237,13 @@
     "material": [ "cotton" ],
     "symbol": "[",
     "color": "blue",
-    "warmth": 0,
     "material_thickness": 1,
-    "environmental_protection": 3,
     "revert_to": "bandana",
     "max_charges": 60,
     "initial_charges": 50,
     "charges_per_use": 1,
     "turns_per_charge": 5,
     "flags": [ "WET" ],
-    "armor": [ { "encumbrance": 7, "coverage": 95, "covers": [ "mouth" ] } ]
+    "armor": [ { "encumbrance": 7, "coverage": 95, "covers": [ "mouth" ], "environmental_protection": 3, "warmth": 0 } ]
   }
 ]
