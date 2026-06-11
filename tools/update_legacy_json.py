@@ -71,6 +71,18 @@ SUBCATEGORY_ACTIVITY = {
 
 
 
+
+# ---------------------------------------------------------------------------
+# Uncraft activity level mapping by skill_used
+# ---------------------------------------------------------------------------
+UNCRAFT_SKILL_ACTIVITY = {
+    "electronics": "MODERATE_EXERCISE",
+    "fabrication": "MODERATE_EXERCISE",
+    "gun": "MODERATE_EXERCISE",
+    "mechanics": "MODERATE_EXERCISE",
+    "tailor": "LIGHT_EXERCISE",
+}
+
 # ---------------------------------------------------------------------------
 # Individual transformation helpers
 # ---------------------------------------------------------------------------
@@ -1774,45 +1786,75 @@ def fix_mutagen_use_action(content):
 
 
 
+
 def fix_recipe_activity_level(content):
     """
-    Add activity_level to recipe objects (robust, no regex object matching).
+    Add or repair activity_level on recipe and uncraft objects.
+
+    Recipe:
+    - Uses SUBCATEGORY_ACTIVITY by subcategory
+    - Fallback: LIGHT_EXERCISE
+
+    Uncraft:
+    - Uses UNCRAFT_SKILL_ACTIVITY by skill_used
+    - Fallback: LIGHT_EXERCISE
+
+    Shared rules:
+    - Skips obsolete entries
+    - Does not touch effect arrays or fake recipe references
+    - If activity_level is missing, adds it after type
+    - If activity_level is "fake", replaces it with the mapped/default level
     """
 
     def process_chunk(chunk):
-        # Must be a recipe
-        if not re.search(r'"type"\s*:\s*"recipe"', chunk):
+        type_match = re.search(r'"type"\s*:\s*"(recipe|uncraft)"', chunk)
+        if not type_match:
             return chunk
+
+        entry_type = type_match.group(1)
 
         # Skip obsolete
         if re.search(r'"obsolete"\s*:\s*true', chunk):
             return chunk
 
-        # Skip if already has it
-        if '"activity_level"' in chunk:
-            return chunk
-
-        # Skip fake recipe references
+        # Skip fake recipe references / effect blocks
         if '"effect"' in chunk:
             return chunk
 
-        # Must be a real recipe
+        # Must be a real craft/uncraft entry
         if '"result"' not in chunk:
             return chunk
 
-        sub_match = re.search(r'"subcategory"\s*:\s*"([^"]+)"', chunk)
-        sub = sub_match.group(1) if sub_match else "NONE"
+        if entry_type == "uncraft":
+            skill_match = re.search(r'"skill_used"\s*:\s*"([^"]+)"', chunk)
+            skill = skill_match.group(1) if skill_match else "NONE"
+            level = UNCRAFT_SKILL_ACTIVITY.get(skill, "LIGHT_EXERCISE")
+        else:
+            sub_match = re.search(r'"subcategory"\s*:\s*"([^"]+)"', chunk)
+            sub = sub_match.group(1) if sub_match else "NONE"
+            level = SUBCATEGORY_ACTIVITY.get(sub, "LIGHT_EXERCISE")
 
-        level = SUBCATEGORY_ACTIVITY.get(sub, "LIGHT_EXERCISE")
+        # Replace fake activity level
+        if re.search(r'"activity_level"\s*:\s*"fake"', chunk):
+            return re.sub(
+                r'"activity_level"\s*:\s*"fake"',
+                '"activity_level": "' + level + '"',
+                chunk,
+                count=1
+            )
 
+        # Skip if already has a real activity_level
+        if '"activity_level"' in chunk:
+            return chunk
+
+        # Insert after type
         return re.sub(
-            r'("type"\s*:\s*"recipe"\s*,)',
+            r'("type"\s*:\s*"(?:recipe|uncraft)"\s*,)',
             r'\1\n    "activity_level": "' + level + '",',
             chunk,
             count=1
         )
 
-    # 🔑 Use YOUR existing object splitter (this is the fix)
     spans = list(_split_top_level_objects(content))
     if not spans:
         return content
@@ -1823,9 +1865,7 @@ def fix_recipe_activity_level(content):
     for start, end in spans:
         result.append(content[prev_end:start])
         chunk = content[start:end]
-
         chunk = process_chunk(chunk)
-
         result.append(chunk)
         prev_end = end
 
@@ -2176,6 +2216,690 @@ def fix_bleed_resist(content):
 
     return content
 
+
+def fix_bash_items_amount_minamount(content):
+    """
+    Inside "bash": { ... } blocks only, convert item entries:
+
+      "amount": X, "minamount": Y
+
+    into:
+
+      "count": [ Y, X ]
+
+    Keeps all other bash fields untouched.
+    """
+
+    def find_matching(text, start, open_ch, close_ch):
+        depth = 0
+        in_str = False
+        escape = False
+        i = start
+
+        while i < len(text):
+            ch = text[i]
+
+            if escape:
+                escape = False
+                i += 1
+                continue
+
+            if ch == '\\' and in_str:
+                escape = True
+                i += 1
+                continue
+
+            if ch == '"':
+                in_str = not in_str
+                i += 1
+                continue
+
+            if in_str:
+                i += 1
+                continue
+
+            if ch == open_ch:
+                depth += 1
+            elif ch == close_ch:
+                depth -= 1
+                if depth == 0:
+                    return i + 1
+
+            i += 1
+
+        return None
+
+    def convert_items_block(items_block):
+        def convert_item_object(match):
+            obj = match.group(0)
+
+            amount_match = re.search(r'"amount"\s*:\s*(\d+)', obj)
+            minamount_match = re.search(r'"minamount"\s*:\s*(\d+)', obj)
+
+            if not amount_match or not minamount_match:
+                return obj
+
+            amount = amount_match.group(1)
+            minamount = minamount_match.group(1)
+
+            # Remove only amount and minamount.
+            obj = re.sub(r',?\s*"amount"\s*:\s*\d+', '', obj)
+            obj = re.sub(r',?\s*"minamount"\s*:\s*\d+', '', obj)
+
+            # Clean comma damage inside the item object.
+            obj = re.sub(r'\{\s*,', '{', obj)
+            obj = re.sub(r',\s*,', ',', obj)
+            obj = re.sub(r',\s*\}', ' }', obj)
+
+            # Insert count before closing brace.
+            obj = re.sub(
+                r'\s*\}$',
+                f', "count": [ {minamount}, {amount} ] }}',
+                obj,
+                count=1
+            )
+
+            return obj
+
+        # These item objects are normally flat: { "item": "...", ... }
+        return re.sub(r'\{[^{}]*"item"\s*:\s*"[^"]+"[^{}]*\}', convert_item_object, items_block)
+
+    result = []
+    i = 0
+    pattern = re.compile(r'"bash"\s*:\s*\{')
+
+    while True:
+        m = pattern.search(content, i)
+        if not m:
+            result.append(content[i:])
+            break
+
+        result.append(content[i:m.start()])
+
+        bash_brace_start = m.end() - 1
+        bash_end = find_matching(content, bash_brace_start, '{', '}')
+        if bash_end is None:
+            result.append(content[m.start():])
+            break
+
+        bash_block = content[m.start():bash_end]
+
+        items_match = re.search(r'"items"\s*:\s*\[', bash_block)
+        if items_match:
+            items_start = items_match.end() - 1
+            items_end = find_matching(bash_block, items_start, '[', ']')
+
+            if items_end is not None:
+                before_items = bash_block[:items_start]
+                items_block = bash_block[items_start:items_end]
+                after_items = bash_block[items_end:]
+
+                items_block = convert_items_block(items_block)
+                bash_block = before_items + items_block + after_items
+
+        result.append(bash_block)
+        i = bash_end
+
+    return ''.join(result)
+
+
+
+def fix_console_broken_palette(content):
+    """
+    Palette / overmap_terrain / mapgen update:
+    - Works with "type": "palette", "type": "overmap_terrain", and "type": "mapgen"
+    - Finds terrain symbols using:
+        "t_console_broken" -> furniture "f_console_broken"
+        "t_console"        -> furniture "f_console"
+    - Works when terrain value is a string:
+        "x": "t_console"
+    - Also works when terrain value is an array:
+        "x": [ "t_console", "t_console_broken" ]
+    - Adds the same symbol to "furniture"
+    - If "furniture" is missing, creates it
+    - Replaces console terrain values with the most common terrain value containing "floor"
+    - If no common floor is found, uses "t_floor"
+    """
+
+    from collections import Counter
+
+    console_pairs = {
+        "t_console_broken": "f_console_broken",
+        "t_console": "f_console",
+    }
+
+    def find_matching(text, start, open_ch, close_ch):
+        depth = 0
+        in_str = False
+        escape = False
+        i = start
+
+        while i < len(text):
+            ch = text[i]
+
+            if escape:
+                escape = False
+                i += 1
+                continue
+
+            if ch == '\\' and in_str:
+                escape = True
+                i += 1
+                continue
+
+            if ch == '"':
+                in_str = not in_str
+                i += 1
+                continue
+
+            if in_str:
+                i += 1
+                continue
+
+            if ch == open_ch:
+                depth += 1
+            elif ch == close_ch:
+                depth -= 1
+                if depth == 0:
+                    return i + 1
+
+            i += 1
+
+        return None
+
+    def find_object_for_key(text, key):
+        m = re.search(rf'"{re.escape(key)}"\s*:\s*\{{', text)
+        if not m:
+            return None
+
+        brace_start = m.end() - 1
+        brace_end = find_matching(text, brace_start, '{', '}')
+        if brace_end is None:
+            return None
+
+        return m.start(), brace_start, brace_end
+
+    def parse_entries(obj_body):
+        entries = []
+        i = 0
+        key_re = re.compile(r'"([^"]+)"\s*:\s*')
+
+        while i < len(obj_body):
+            m = key_re.search(obj_body, i)
+            if not m:
+                break
+
+            symbol = m.group(1)
+            value_start = m.end()
+
+            j = value_start
+            while j < len(obj_body) and obj_body[j].isspace():
+                j += 1
+
+            if j >= len(obj_body):
+                break
+
+            if obj_body[j] == '"':
+                value_match = re.match(r'"([^"]*)"', obj_body[j:])
+                if not value_match:
+                    i = j + 1
+                    continue
+
+                raw_end = j + value_match.end()
+                value = value_match.group(1)
+                entries.append((m.start(), raw_end, symbol, obj_body[j:raw_end], "string", [value]))
+                i = raw_end
+                continue
+
+            if obj_body[j] == '[':
+                arr_end = find_matching(obj_body, j, '[', ']')
+                if arr_end is None:
+                    i = j + 1
+                    continue
+
+                raw = obj_body[j:arr_end]
+                values = re.findall(r'"([^"]+)"', raw)
+                entries.append((m.start(), arr_end, symbol, raw, "array", values))
+                i = arr_end
+                continue
+
+            i = j + 1
+
+        return entries
+
+    def make_furniture_value(furniture_values):
+        if len(furniture_values) == 1:
+            return '"' + furniture_values[0] + '"'
+        return '[ ' + ', '.join('"' + value + '"' for value in furniture_values) + ' ]'
+
+    def process_chunk(chunk):
+        if not re.search(r'"type"\s*:\s*"(?:palette|overmap_terrain|mapgen)"', chunk):
+            return chunk
+
+        terrain_info = find_object_for_key(chunk, "terrain")
+        if not terrain_info:
+            return chunk
+
+        _, terrain_brace_start, terrain_brace_end = terrain_info
+        terrain_body = chunk[terrain_brace_start + 1:terrain_brace_end - 1]
+
+        entries = parse_entries(terrain_body)
+
+        found_by_symbol = {}
+        for _start, _end, symbol, _raw, _kind, values in entries:
+            furniture_values = [console_pairs[value] for value in values if value in console_pairs]
+            if furniture_values:
+                found_by_symbol.setdefault(symbol, []).extend(furniture_values)
+
+        if not found_by_symbol:
+            return chunk
+
+        terrain_values = []
+        for _start, _end, _symbol, _raw, _kind, values in entries:
+            terrain_values.extend(values)
+
+        floor_values = [
+            value for value in terrain_values
+            if value not in console_pairs and "floor" in value
+        ]
+
+        replacement_floor = Counter(floor_values).most_common(1)[0][0] if floor_values else "t_floor"
+
+        new_parts = []
+        last = 0
+
+        for start, end, symbol, raw, kind, values in entries:
+            new_parts.append(terrain_body[last:start])
+
+            if kind == "string":
+                value = values[0] if values else ""
+                if value in console_pairs:
+                    new_parts.append('"' + symbol + '": "' + replacement_floor + '"')
+                else:
+                    new_parts.append(terrain_body[start:end])
+
+            elif kind == "array":
+                if any(value in console_pairs for value in values):
+                    new_raw = raw
+                    for terrain_id in console_pairs:
+                        new_raw = re.sub(
+                            rf'"{re.escape(terrain_id)}"',
+                            '"' + replacement_floor + '"',
+                            new_raw
+                        )
+                    new_parts.append('"' + symbol + '": ' + new_raw)
+                else:
+                    new_parts.append(terrain_body[start:end])
+
+            else:
+                new_parts.append(terrain_body[start:end])
+
+            last = end
+
+        new_parts.append(terrain_body[last:])
+        terrain_body = ''.join(new_parts)
+
+        chunk = chunk[:terrain_brace_start + 1] + terrain_body + chunk[terrain_brace_end - 1:]
+
+        furniture_info = find_object_for_key(chunk, "furniture")
+
+        if furniture_info:
+            _, furniture_brace_start, furniture_brace_end = furniture_info
+            furniture_body = chunk[furniture_brace_start + 1:furniture_brace_end - 1]
+
+            inserts = []
+            for symbol, furniture_values in found_by_symbol.items():
+                if not re.search(rf'"{re.escape(symbol)}"\s*:', furniture_body):
+                    inserts.append((symbol, furniture_values))
+
+            if inserts:
+                if furniture_body.strip():
+                    insert_text = ''.join(
+                        ',\n      "' + symbol + '": ' + make_furniture_value(furniture_values)
+                        for symbol, furniture_values in inserts
+                    )
+                else:
+                    insert_text = '\n' + ',\n'.join(
+                        '      "' + symbol + '": ' + make_furniture_value(furniture_values)
+                        for symbol, furniture_values in inserts
+                    ) + '\n    '
+
+                chunk = chunk[:furniture_brace_end - 1] + insert_text + chunk[furniture_brace_end - 1:]
+
+        else:
+            terrain_info_after = find_object_for_key(chunk, "terrain")
+            if terrain_info_after:
+                _, _, terrain_end_after = terrain_info_after
+
+                lines = [
+                    '      "' + symbol + '": ' + make_furniture_value(furniture_values)
+                    for symbol, furniture_values in found_by_symbol.items()
+                ]
+
+                furniture_block = ',\n    "furniture": {\n' + ',\n'.join(lines) + '\n    }'
+                chunk = chunk[:terrain_end_after] + furniture_block + chunk[terrain_end_after:]
+
+        return chunk
+
+    spans = list(_split_top_level_objects(content))
+    if not spans:
+        return process_chunk(content)
+
+    result = []
+    prev_end = 0
+
+    for start, end in spans:
+        result.append(content[prev_end:start])
+        chunk = content[start:end]
+        result.append(process_chunk(chunk))
+        prev_end = end
+
+    result.append(content[prev_end:])
+    return ''.join(result)
+
+
+
+def fix_broken_symbol(content):
+    """
+    Vehicle-part only.
+
+    Remove only the exact legacy field from vehicle_part objects:
+
+      "broken_symbol": "x"
+
+    Does NOT touch:
+      "symbols_broken": "#"
+      "variants": [ { "symbols": "=", "symbols_broken": "#" } ]
+
+    Non-vehicle_part objects are left untouched.
+    """
+
+    def remove_field(chunk):
+        chunk = re.sub(
+            r'(\n[ \t]*)"broken_symbol"\s*:\s*"[^"]*"\s*,\s*',
+            r'\1',
+            chunk
+        )
+
+        chunk = re.sub(
+            r',(\s*\n[ \t]*)"broken_symbol"\s*:\s*"[^"]*"',
+            '',
+            chunk
+        )
+
+        chunk = re.sub(
+            r'"broken_symbol"\s*:\s*"[^"]*"\s*,\s*',
+            '',
+            chunk
+        )
+
+        chunk = re.sub(
+            r',\s*"broken_symbol"\s*:\s*"[^"]*"',
+            '',
+            chunk
+        )
+
+        return chunk
+
+    def process_chunk(chunk):
+        if not re.search(r'"type"\s*:\s*"vehicle_part"', chunk):
+            return chunk
+        return remove_field(chunk)
+
+    spans = list(_split_top_level_objects(content))
+    if not spans:
+        return process_chunk(content)
+
+    result = []
+    prev_end = 0
+
+    for start, end in spans:
+        result.append(content[prev_end:start])
+        chunk = content[start:end]
+        result.append(process_chunk(chunk))
+        prev_end = end
+
+    result.append(content[prev_end:])
+    return ''.join(result)
+
+
+
+def fix_variant_from_symbol_broken_symbol(content):
+    """
+    Vehicle-part only.
+
+    Keeps vehicle_part variants valid by ensuring variants have symbols_broken.
+
+    Rules:
+    - If "variants" already exists:
+        Every flat variant object with "symbols" but missing "symbols_broken"
+        gets "symbols_broken": "#", unless old "broken_symbol" exists, then it uses that value.
+
+        Example:
+          "variants": [ { "symbols": "o" } ]
+        becomes:
+          "variants": [ { "symbols": "o", "symbols_broken": "#" } ]
+
+    - If "variants" is missing:
+        "symbol": "=" + "broken_symbol": "#" -> { "symbols": "=", "symbols_broken": "#" }
+        "symbol": "=" only                   -> { "symbols": "=", "symbols_broken": "#" }
+        "broken_symbol": "#" only            -> { "symbols_broken": "#" }
+
+    Later cleanup functions remove:
+      "symbol": "x"
+      "broken_symbol": "x"
+
+    Non-vehicle_part objects are untouched.
+    """
+
+    def find_matching(text, start, open_ch, close_ch):
+        depth = 0
+        in_str = False
+        escape = False
+        i = start
+
+        while i < len(text):
+            ch = text[i]
+
+            if escape:
+                escape = False
+                i += 1
+                continue
+
+            if ch == '\\' and in_str:
+                escape = True
+                i += 1
+                continue
+
+            if ch == '"':
+                in_str = not in_str
+                i += 1
+                continue
+
+            if in_str:
+                i += 1
+                continue
+
+            if ch == open_ch:
+                depth += 1
+            elif ch == close_ch:
+                depth -= 1
+                if depth == 0:
+                    return i + 1
+
+            i += 1
+
+        return None
+
+    def find_array_for_key(text, key):
+        m = re.search(rf'"{re.escape(key)}"\s*:\s*\[', text)
+        if not m:
+            return None
+
+        bracket_start = m.end() - 1
+        bracket_end = find_matching(text, bracket_start, '[', ']')
+        if bracket_end is None:
+            return None
+
+        return m.start(), bracket_start, bracket_end
+
+    def fill_symbols_broken_in_variants(variants_body, symbols_broken_value):
+        changed = False
+
+        def patch_variant(match):
+            nonlocal changed
+            obj = match.group(0)
+
+            has_symbols = re.search(r'"symbols"\s*:', obj) is not None
+            has_symbols_broken = re.search(r'"symbols_broken"\s*:', obj) is not None
+
+            # Only add symbols_broken when this variant has symbols and is missing symbols_broken.
+            if not has_symbols or has_symbols_broken:
+                return obj
+
+            changed = True
+
+            if obj.strip() == "{}":
+                return '{ "symbols_broken": "' + symbols_broken_value + '" }'
+
+            return re.sub(
+                r'\s*\}$',
+                ', "symbols_broken": "' + symbols_broken_value + '" }',
+                obj,
+                count=1
+            )
+
+        new_body = re.sub(r'\{[^{}]*\}', patch_variant, variants_body, flags=re.DOTALL)
+        return new_body, changed
+
+    def process_chunk(chunk):
+        if not re.search(r'"type"\s*:\s*"vehicle_part"', chunk):
+            return chunk
+
+        symbol_match = re.search(r'"symbol"\s*:\s*"([^"]*)"', chunk)
+        broken_match = re.search(r'"broken_symbol"\s*:\s*"([^"]*)"', chunk)
+
+        symbol = symbol_match.group(1) if symbol_match else None
+        broken_symbol = broken_match.group(1) if broken_match else None
+
+        # If no broken_symbol exists, missing symbols_broken should become "#".
+        symbols_broken_value = broken_symbol if broken_symbol is not None else "#"
+
+        variants_info = find_array_for_key(chunk, "variants")
+
+        if variants_info:
+            _, variants_bracket_start, variants_bracket_end = variants_info
+            variants_body = chunk[variants_bracket_start + 1:variants_bracket_end - 1]
+
+            new_body, changed = fill_symbols_broken_in_variants(variants_body, symbols_broken_value)
+            if changed:
+                return chunk[:variants_bracket_start + 1] + new_body + chunk[variants_bracket_end - 1:]
+
+            return chunk
+
+        # No variants exists: only create variants if old symbol fields exist.
+        if symbol is None and broken_symbol is None:
+            return chunk
+
+        parts = []
+        if symbol is not None:
+            parts.append('"symbols": "' + symbol + '"')
+
+        if symbols_broken_value is not None:
+            parts.append('"symbols_broken": "' + symbols_broken_value + '"')
+
+        variant_entry = '{ ' + ', '.join(parts) + ' }'
+
+        insert_after = broken_match.end() if broken_match else symbol_match.end()
+        insert_text = ',\n    "variants": [ ' + variant_entry + ' ]'
+
+        return chunk[:insert_after] + insert_text + chunk[insert_after:]
+
+    spans = list(_split_top_level_objects(content))
+    if not spans:
+        return process_chunk(content)
+
+    result = []
+    prev_end = 0
+
+    for start, end in spans:
+        result.append(content[prev_end:start])
+        chunk = content[start:end]
+        result.append(process_chunk(chunk))
+        prev_end = end
+
+    result.append(content[prev_end:])
+    return ''.join(result)
+
+
+
+
+def fix_symbol(content):
+    """
+    Vehicle-part only.
+
+    Remove only the exact legacy field from vehicle_part objects:
+
+      "symbol": "x"
+
+    Does NOT touch:
+      "symbols": "="
+      "symbols_broken": "#"
+      "variants": [ { "symbols": "=", "symbols_broken": "#" } ]
+
+    Non-vehicle_part objects are left untouched.
+    """
+
+    def remove_field(chunk):
+        chunk = re.sub(
+            r'(\n[ \t]*)"symbol"\s*:\s*"[^"]*"\s*,\s*',
+            r'\1',
+            chunk
+        )
+
+        chunk = re.sub(
+            r',(\s*\n[ \t]*)"symbol"\s*:\s*"[^"]*"',
+            '',
+            chunk
+        )
+
+        chunk = re.sub(
+            r'"symbol"\s*:\s*"[^"]*"\s*,\s*',
+            '',
+            chunk
+        )
+
+        chunk = re.sub(
+            r',\s*"symbol"\s*:\s*"[^"]*"',
+            '',
+            chunk
+        )
+
+        return chunk
+
+    def process_chunk(chunk):
+        if not re.search(r'"type"\s*:\s*"vehicle_part"', chunk):
+            return chunk
+        return remove_field(chunk)
+
+    spans = list(_split_top_level_objects(content))
+    if not spans:
+        return process_chunk(content)
+
+    result = []
+    prev_end = 0
+
+    for start, end in spans:
+        result.append(content[prev_end:start])
+        chunk = content[start:end]
+        result.append(process_chunk(chunk))
+        prev_end = end
+
+    result.append(content[prev_end:])
+    return ''.join(result)
+
+
+
 # ---------------------------------------------------------------------------
 # Master pipeline
 # ---------------------------------------------------------------------------
@@ -2202,7 +2926,13 @@ TRANSFORMS = [
     fix_skill_requirements,
     fix_melee_damage,
     fix_resist,
+    fix_ter_furn_fail_message,
     fix_bleed_resist,
+    fix_bash_items_amount_minamount,
+    fix_console_broken_palette,
+    fix_variant_from_symbol_broken_symbol,
+    fix_broken_symbol,
+    fix_symbol,
     fix_mutagen_use_action,
     fix_recipe_activity_level,
     fix_recipe_gold_silver_components,

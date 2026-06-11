@@ -9,6 +9,7 @@
 - \[Discord\] Fix discord issue with webhooks [\#150](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/150)
 - \[Experimental\] Crystallized Mutations CtD [\#146](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/146)
 - \[Documentation\] Mod cataloging ids [\#50](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/50)
+- \[Tools\] update legacy json [\#264](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/264) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Workflow\] delete toc and python workflows [\#259](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/259) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[H\] updates unleash the mods [\#255](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/255) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Workshop\] legacy update [\#248](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/248) ([TheGoatGod](https://github.com/TheGoatGod))
@@ -32,6 +33,12 @@
 
 **Merged pull requests:**
 
+- \[H\] Goats mods updates [\#272](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/272) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[H\] update No\_mods [\#271](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/271) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[H\] updates rebalance mods for compatibility  [\#270](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/270) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[h\] Update legacy mods for compatibility [\#269](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/269) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[H\] broken mods update [\#268](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/268) ([TheGoatGod](https://github.com/TheGoatGod))
+- \[H\] Add H-release compat bridge and update maintained mods [\#267](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/267) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[H\] fix pocketdata [\#266](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/266) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Tools\] update pocket data [\#265](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/265) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[tools\] Add CDDA JSON in-place English translator [\#263](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/263) ([TheGoatGod](https://github.com/TheGoatGod))
