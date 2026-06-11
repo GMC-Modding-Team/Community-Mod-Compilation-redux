@@ -33,6 +33,7 @@
 
 **Merged pull requests:**
 
+- \[H\] Goats mods updates [\#272](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/272) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[H\] fix pocketdata [\#266](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/266) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Tools\] update pocket data [\#265](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/265) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[tools\] Add CDDA JSON in-place English translator [\#263](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/263) ([TheGoatGod](https://github.com/TheGoatGod))
