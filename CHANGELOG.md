@@ -8,6 +8,7 @@
 
 - \[Discord\] Fix discord issue with webhooks [\#150](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/150)
 - \[Experimental\] Crystallized Mutations CtD [\#146](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/146)
+- \[Experimental\] Miscellaneous Magiclysm Expansions [\#122](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/122)
 - \[Experimental\] Improved groups [\#109](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/109)
 - \[Experimental\] more city locations [\#108](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/108)
 - \[Experimental\] Main-lined content in mods removal [\#107](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/107)
