@@ -31,6 +31,7 @@
 - \[Documentation\] Professions.md [\#114](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/114)
 - \[Documentation\] Standardise json.md [\#72](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/72)
 - \[GitHub\] Refurbished makefile [\#25](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/25)
+- \[Experimental\] Car color variation larger project \(less important\) [\#13](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/13)
 
 **Merged pull requests:**
 
