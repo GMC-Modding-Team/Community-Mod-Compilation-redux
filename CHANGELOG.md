@@ -29,7 +29,6 @@
 
 - Update Version Information in README [\#212](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/212)
 - 0.f release  [\#196](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/196)
-- \[Experimental\] Locked and Loaded has multiple items defined multiple times, with different stats [\#174](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/174)
 - \[Tools\] move registry from tools to new repo [\#155](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/155)
 - \[Experimental\] Tracking Issue for Breaking Changes [\#129](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/129)
 - \[Experimental\] remove tilesets from mods [\#125](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/125)
@@ -40,6 +39,7 @@
 
 **Merged pull requests:**
 
+- \[H\] Goats mods  [\#277](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/277) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[H\] Goats mods update [\#274](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/274) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[H\] Goats mods updates [\#272](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/272) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[H\] update No\_mods [\#271](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/271) ([TheGoatGod](https://github.com/TheGoatGod))
