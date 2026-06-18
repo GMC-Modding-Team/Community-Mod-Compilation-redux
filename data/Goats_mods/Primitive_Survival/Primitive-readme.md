@@ -944,7 +944,7 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 *Vehicles:*
 
 ```markdown
-- [x] Raft - 6 Strapped wood, Tying equipment, Mast, Steering stick attached to steering wood
+- [ ] Raft - 6 Strapped wood, Tying equipment, Mast, Steering stick attached to steering wood
 - [ ] Large Raft - 16 Strapped wood, Tying equipment, Large mast, Steering stick attached to steering wood
 - [ ] Materials Cart - Sticks, Tying equipment
 ```
