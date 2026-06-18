@@ -39,6 +39,7 @@
 
 **Merged pull requests:**
 
+- Goats mods removal [\#280](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/280) ([TheGoatGod](https://github.com/TheGoatGod))
 - Goats mods update [\#279](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/279) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Docs\] Move documentation from documents/ to docs/ [\#278](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/278) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[H\] Goats mods  [\#277](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/277) ([TheGoatGod](https://github.com/TheGoatGod))
