@@ -2,136 +2,72 @@
   {
     "id": "base_turret",
     "type": "MONSTER",
-    "name": {
-      "str": "automated turret"
-    },
+    "name": { "str": "automated turret" },
     "default_faction": "defense_bot",
-    "species": [
-      "ROBOT"
-    ],
+    "species": [ "ROBOT" ],
     "volume": "30000 ml",
     "weight": "40750 g",
     "hp": 30,
     "speed": 100,
-    "material": [
-      "steel"
-    ],
+    "material": [ "steel" ],
     "symbol": "t",
     "looks_like": "mon_turret",
     "aggression": 100,
     "morale": 100,
-    "armor": {
-      "bash": 14,
-      "cut": 16,
-      "acid": 14
-    },
-    "death_function": {
-      "corpse_type": "BROKEN"
-    },
-    "flags": [
-      "SEES",
-      "NOHEAD",
-      "ELECTRONIC",
-      "IMMOBILE",
-      "NO_BREATHE"
-    ]
+    "armor": { "bash": 14, "cut": 16, "acid": 14 },
+    "death_function": { "corpse_type": "BROKEN" },
+    "flags": [ "SEES", "NOHEAD", "ELECTRONIC", "IMMOBILE", "NO_BREATHE" ]
   },
   {
     "id": "mon_turret_shot",
     "type": "MONSTER",
     "copy-from": "base_turret",
-    "name": {
-      "str": "shotgun turret"
-    },
+    "name": { "str": "shotgun turret" },
     "symbol": "t",
     "description": "A work of art and know-how of electronics, a modified standard CROWS turret with a shotgun.  It's a admirable work of art and at the same quite scary to look up.",
     "default_faction": "defense_bot",
     "diff": 10,
     "color": "red",
     "revert_to_itype": "bot_turret_shot",
-    "starting_ammo": {
-      "reloaded_shot_00": 100
-    },
+    "starting_ammo": { "reloaded_shot_00": 100 },
     "special_attacks": [
       {
         "type": "gun",
         "cooldown": 2,
         "gun_type": "robogun_shot",
         "ammo_type": "shot",
-        "fake_skills": [
-          [
-            "gun",
-            2
-          ],
-          [
-            "shotgun",
-            2
-          ]
-        ],
+        "fake_skills": [ [ "gun", 2 ], [ "shotgun", 2 ] ],
         "fake_dex": 8,
         "no_ammo_sound": "click click!",
-        "ranges": [
-          [
-            0,
-            10,
-            "DEFAULT"
-          ]
-        ]
+        "ranges": [ [ 0, 10, "DEFAULT" ] ]
       }
     ],
-    "extend": {
-      "flags": [
-        "DROPS_AMMO"
-      ]
-    }
+    "extend": { "flags": [ "DROPS_AMMO" ] }
   },
   {
     "id": "mon_milturret_flame",
     "type": "MONSTER",
     "copy-from": "base_turret",
-    "name": {
-      "str": "flame turret"
-    },
+    "name": { "str": "flame turret" },
     "symbol": "t",
     "description": "A work of art and know-how of electronics, a modified standard CROWS turret with a flamethrower.  It's a admirable work of art and at the same quite scary to look up.",
     "default_faction": "military",
     "diff": 20,
     "color": "red",
     "revert_to_itype": "bot_milturret_flame",
-    "starting_ammo": {
-      "napalm": 10000
-    },
+    "starting_ammo": { "napalm": 10000 },
     "special_attacks": [
       {
         "type": "gun",
         "cooldown": 2,
         "gun_type": "robogun_flame",
         "ammo_type": "napalm",
-        "fake_skills": [
-          [
-            "gun",
-            2
-          ],
-          [
-            "launcher",
-            2
-          ]
-        ],
+        "fake_skills": [ [ "gun", 2 ], [ "launcher", 2 ] ],
         "fake_dex": 8,
         "no_ammo_sound": "hiss!",
-        "ranges": [
-          [
-            0,
-            10,
-            "DEFAULT"
-          ]
-        ]
+        "ranges": [ [ 0, 10, "DEFAULT" ] ]
       }
     ],
-    "extend": {
-      "flags": [
-        "FIREPROOF"
-      ]
-    }
+    "extend": { "flags": [ "FIREPROOF" ] }
   }
 ]

@@ -11,62 +11,25 @@
     "faction": "no_faction"
   },
   {
-    "id": [
-      "TALK_pizzaiolo_1",
-      "TALK_pizzaiolo_Background"
-    ],
+    "id": [ "TALK_pizzaiolo_1", "TALK_pizzaiolo_Background" ],
     "type": "talk_topic",
     "dynamic_line": "<greet>",
     "responses": [
       {
         "text": "I got the cake.  Shall we move, <name_g>?",
-        "condition": {
-          "and": [
-            {
-              "u_has_item": "cake2"
-            },
-            {
-              "u_has_mission": "MISSION_pizzaiolo_4"
-            }
-          ]
-        },
+        "condition": { "and": [ { "u_has_item": "cake2" }, { "u_has_mission": "MISSION_pizzaiolo_4" } ] },
         "topic": "TALK_pizzaiolo_go"
       },
-      {
-        "text": "About that job…",
-        "condition": "mission_complete",
-        "topic": "TALK_MISSION_INQUIRE"
-      },
-      {
-        "text": "<BGSS_intro_question>",
-        "topic": "TALK_pizzaiolo_Background"
-      },
-      {
-        "text": "Do you need any help?",
-        "topic": "TALK_MISSION_LIST"
-      },
+      { "text": "About that job…", "condition": "mission_complete", "topic": "TALK_MISSION_INQUIRE" },
+      { "text": "<BGSS_intro_question>", "topic": "TALK_pizzaiolo_Background" },
+      { "text": "Do you need any help?", "topic": "TALK_MISSION_LIST" },
       {
         "text": "If you still want to travel with me, let's go.",
         "topic": "TALK_DONE",
-        "condition": {
-          "npc_has_var": "u_helped_pizzaiolo",
-          "type": "dialogue",
-          "context": "pizzaiolo",
-          "value": "yes"
-        },
-        "effect": [
-          "follow",
-          {
-            "npc_lose_var": "u_helped_pizzaiolo",
-            "type": "dialogue",
-            "context": "pizzaiolo"
-          }
-        ]
+        "condition": { "npc_has_var": "u_helped_pizzaiolo", "type": "dialogue", "context": "pizzaiolo", "value": "yes" },
+        "effect": [ "follow", { "npc_lose_var": "u_helped_pizzaiolo", "type": "dialogue", "context": "pizzaiolo" } ]
       },
-      {
-        "text": "Goodbye.",
-        "topic": "TALK_DONE"
-      }
+      { "text": "Goodbye.", "topic": "TALK_DONE" }
     ]
   },
   {
@@ -74,16 +37,7 @@
     "type": "talk_topic",
     "dynamic_line": "Lead the way, <name_g>.",
     "responses": [
-      {
-        "text": "…",
-        "topic": "TALK_DONE",
-        "effect": [
-          "follow_only",
-          {
-            "npc_first_topic": "TALK_pizzaiolo_following"
-          }
-        ]
-      }
+      { "text": "…", "topic": "TALK_DONE", "effect": [ "follow_only", { "npc_first_topic": "TALK_pizzaiolo_following" } ] }
     ]
   },
   {
@@ -94,70 +48,31 @@
       {
         "text": "We're here, <name_g>.  Let's celebrate.",
         "topic": "TALK_pizzaiolo_celebrate",
-        "condition": {
-          "and": [
-            "mission_complete",
-            {
-              "u_has_item": "cake2"
-            }
-          ]
-        },
-        "effect": [
-          "mission_success",
-          "clear_mission",
-          {
-            "u_consume_item": "cake2"
-          }
-        ]
+        "condition": { "and": [ "mission_complete", { "u_has_item": "cake2" } ] },
+        "effect": [ "mission_success", "clear_mission", { "u_consume_item": "cake2" } ]
       },
-      {
-        "text": "Be patient.  We'll be there soon, <name_g>",
-        "topic": "TALK_DONE"
-      }
+      { "text": "Be patient.  We'll be there soon, <name_g>", "topic": "TALK_DONE" }
     ]
   },
   {
     "id": "TALK_pizzaiolo_celebrate",
     "type": "talk_topic",
     "dynamic_line": "Ah, home sweet home.  It feels like I haven't been here for ages.  <swear>, it looks so horrible now.  I guess it's because of <the_cataclysm>.  Thank you for bringing me here, <name_g>.  Let's eat the cake.",
-    "responses": [
-      {
-        "text": "[*NOM-NOM*]",
-        "topic": "TALK_pizzaiolo_celebrate1"
-      }
-    ]
+    "responses": [ { "text": "[*NOM-NOM*]", "topic": "TALK_pizzaiolo_celebrate1" } ]
   },
   {
     "id": "TALK_pizzaiolo_celebrate1",
     "type": "talk_topic",
     "dynamic_line": "Mmm, delicious.  You know, you are good friend, and a good cook.  I'm glad that I'm with you at the day like this.  Say, what do you think about me going with you?  As you can see, my restaurant is thrashes, my house ruined, the only option left is to travel somewhere, and it's better if I do it with someone.",
-    "speaker_effect": {
-      "effect": [
-        "morale_chat",
-        {
-          "npc_add_trait": "BGSS_pizzaiolo"
-        }
-      ]
-    },
+    "speaker_effect": { "effect": [ "morale_chat", { "npc_add_trait": "BGSS_pizzaiolo" } ] },
     "responses": [
-      {
-        "text": "Sure, <name_g>.  <end_talking>",
-        "topic": "TALK_DONE",
-        "effect": "follow"
-      },
+      { "text": "Sure, <name_g>.  <end_talking>", "topic": "TALK_DONE", "effect": "follow" },
       {
         "text": "Maybe later.",
         "topic": "TALK_DONE",
         "effect": [
-          {
-            "npc_first_topic": "TALK_pizzaiolo_1"
-          },
-          {
-            "npc_add_var": "u_helped_pizzaiolo",
-            "type": "dialogue",
-            "context": "pizzaiolo",
-            "value": "yes"
-          }
+          { "npc_first_topic": "TALK_pizzaiolo_1" },
+          { "npc_add_var": "u_helped_pizzaiolo", "type": "dialogue", "context": "pizzaiolo", "value": "yes" }
         ]
       }
     ]
@@ -170,44 +85,24 @@
   {
     "id": "MISSION_pizzaiolo_1",
     "type": "mission_definition",
-    "name": {
-      "str": "Angry pizzaiolo"
-    },
+    "name": { "str": "Angry pizzaiolo" },
     "goal": "MGOAL_GO_TO",
     "difficulty": 0,
     "value": 10000,
     "has_generic_rewards": false,
     "start": {
-      "effect": [
-        "follow_only",
-        {
-          "npc_first_topic": "MISSION_BURNER"
-        }
-      ],
-      "assign_mission_target": {
-        "om_terrain": "s_restaurant",
-        "min_distance": 5,
-        "z": 0
-      }
+      "effect": [ "follow_only", { "npc_first_topic": "MISSION_BURNER" } ],
+      "assign_mission_target": { "om_terrain": "s_restaurant", "min_distance": 5, "z": 0 }
     },
     "end": {
       "effect": [
-        {
-          "npc_first_topic": "TALK_pizzaiolo_1"
-        },
+        { "npc_first_topic": "TALK_pizzaiolo_1" },
         "stop_following",
-        {
-          "u_consume_item": "gasoline",
-          "count": 200
-        },
-        {
-          "mapgen_update": "MISSION_BURNER_BURN"
-        }
+        { "u_consume_item": "gasoline", "count": 200 },
+        { "mapgen_update": "MISSION_BURNER_BURN" }
       ]
     },
-    "origins": [
-      "ORIGIN_SECONDARY"
-    ],
+    "origins": [ "ORIGIN_SECONDARY" ],
     "followup": "MISSION_pizzaiolo_2",
     "dialogue": {
       "describe": "-",
@@ -225,44 +120,21 @@
     "id": "MISSION_pizzaiolo_2",
     "type": "mission_definition",
     "has_generic_rewards": false,
-    "name": {
-      "str": "Find TrueFoodperson"
-    },
+    "name": { "str": "Find TrueFoodperson" },
     "description": "Help pizzaiolo find TrueFoodperson and kick his ass.",
     "goal": "MGOAL_ASSASSINATE",
     "difficulty": 0,
     "value": 10000,
     "start": {
-      "effect": [
-        "follow_only",
-        {
-          "u_buy_item": "bat",
-          "cost": 800
-        }
-      ],
-      "assign_mission_target": {
-        "om_terrain": "s_restaurant_foodplace",
-        "min_distance": 5,
-        "z": 0
-      },
+      "effect": [ "follow_only", { "u_buy_item": "bat", "cost": 800 } ],
+      "assign_mission_target": { "om_terrain": "s_restaurant_foodplace", "min_distance": 5, "z": 0 },
       "update_mapgen": {
         "om_terrain": "s_restaurant_foodplace_roof",
-        "place_npcs": [
-          {
-            "class": "true_foodperson",
-            "x": 12,
-            "y": 19,
-            "target": true
-          }
-        ]
+        "place_npcs": [ { "class": "true_foodperson", "x": 12, "y": 19, "target": true } ]
       }
     },
-    "end": {
-      "effect": "stop_following"
-    },
-    "origins": [
-      "ORIGIN_SECONDARY"
-    ],
+    "end": { "effect": "stop_following" },
+    "origins": [ "ORIGIN_SECONDARY" ],
     "followup": "MISSION_pizzaiolo_3",
     "dialogue": {
       "describe": "-",
@@ -280,72 +152,24 @@
     "id": "MISSION_pizzaiolo_3",
     "type": "mission_definition",
     "has_generic_rewards": false,
-    "name": {
-      "str": "Pizza parlor"
-    },
+    "name": { "str": "Pizza parlor" },
     "description": "Help pizzaiolo take back his restaurant.",
     "goal": "MGOAL_ASSASSINATE",
     "difficulty": 0,
     "value": 10000,
     "start": {
       "effect": "follow_only",
-      "assign_mission_target": {
-        "om_terrain": "s_pizza_parlor_1",
-        "z": 0
-      },
+      "assign_mission_target": { "om_terrain": "s_pizza_parlor_1", "z": 0 },
       "update_mapgen": {
         "place_npcs": [
-          {
-            "class": "bandit",
-            "x": [
-              7,
-              22
-            ],
-            "y": [
-              6,
-              19
-            ],
-            "target": true
-          },
-          {
-            "class": "bandit",
-            "x": [
-              7,
-              22
-            ],
-            "y": [
-              6,
-              19
-            ],
-            "repeat": [
-              1,
-              3
-            ]
-          },
-          {
-            "class": "thug",
-            "x": [
-              7,
-              22
-            ],
-            "y": [
-              6,
-              19
-            ],
-            "repeat": [
-              2,
-              4
-            ]
-          }
+          { "class": "bandit", "x": [ 7, 22 ], "y": [ 6, 19 ], "target": true },
+          { "class": "bandit", "x": [ 7, 22 ], "y": [ 6, 19 ], "repeat": [ 1, 3 ] },
+          { "class": "thug", "x": [ 7, 22 ], "y": [ 6, 19 ], "repeat": [ 2, 4 ] }
         ]
       }
     },
-    "end": {
-      "effect": "stop_following"
-    },
-    "origins": [
-      "ORIGIN_SECONDARY"
-    ],
+    "end": { "effect": "stop_following" },
+    "origins": [ "ORIGIN_SECONDARY" ],
     "followup": "MISSION_pizzaiolo_4",
     "dialogue": {
       "describe": "-",
@@ -363,15 +187,11 @@
     "id": "MISSION_pizzaiolo_4",
     "type": "mission_definition",
     "has_generic_rewards": false,
-    "name": {
-      "str": "Family house"
-    },
+    "name": { "str": "Family house" },
     "description": "Lead pizzaiolo to his family house.",
     "goal": "MGOAL_GO_TO",
     "start": {
-      "effect": {
-        "u_learn_recipe": "cake2"
-      },
+      "effect": { "u_learn_recipe": "cake2" },
       "assign_mission_target": {
         "om_terrain": "house",
         "om_terrain_match_type": "PREFIX",
@@ -381,14 +201,10 @@
         "z": 0
       }
     },
-    "fail": {
-      "effect": "end_conversation"
-    },
+    "fail": { "effect": "end_conversation" },
     "difficulty": 0,
     "value": 100,
-    "origins": [
-      "ORIGIN_SECONDARY"
-    ],
+    "origins": [ "ORIGIN_SECONDARY" ],
     "dialogue": {
       "describe": "-",
       "offer": "Now, as my competitors dead, their places are ruined, it's time to relax…  I know, let's celebrate it!  Lead me to my house.  Also, we need a cake for that.  What celebration without a cake, right?  I can teach you how to cook it, if you want.",

@@ -12,98 +12,20 @@
   {
     "id": "NC_meteorologist",
     "type": "npc_class",
-    "name": {
-      "str": "Meteorologist"
-    },
+    "name": { "str": "Meteorologist" },
     "job_description": "Meteorologist.",
     "common": false,
-    "bonus_str": {
-      "rng": [
-        -2,
-        2
-      ]
-    },
-    "bonus_dex": {
-      "rng": [
-        -2,
-        2
-      ]
-    },
-    "bonus_int": {
-      "rng": [
-        2,
-        5
-      ]
-    },
-    "bonus_per": {
-      "rng": [
-        -1,
-        3
-      ]
-    },
+    "bonus_str": { "rng": [ -2, 2 ] },
+    "bonus_dex": { "rng": [ -2, 2 ] },
+    "bonus_int": { "rng": [ 2, 5 ] },
+    "bonus_per": { "rng": [ -1, 3 ] },
     "worn_override": "NC_meteorologist_worn",
-    "traits": [
-      {
-        "group": "NPC_starting_traits"
-      },
-      {
-        "group": "Appearance_demographics"
-      },
-      {
-        "trait": "BGSS_METEOROLOGIST"
-      }
-    ],
+    "traits": [ { "group": "NPC_starting_traits" }, { "group": "Appearance_demographics" }, { "trait": "BGSS_METEOROLOGIST" } ],
     "skills": [
-      {
-        "skill": "ALL",
-        "level": {
-          "mul": [
-            {
-              "one_in": 3
-            },
-            {
-              "sum": [
-                {
-                  "dice": [
-                    2,
-                    2
-                  ]
-                },
-                {
-                  "constant": -4
-                }
-              ]
-            }
-          ]
-        }
-      },
-      {
-        "skill": "computer",
-        "bonus": {
-          "rng": [
-            2,
-            3
-          ]
-        }
-      },
-      {
-        "skill": "electronics",
-        "bonus": {
-          "rng": [
-            3,
-            6
-          ]
-        }
-      },
-      {
-        "skill": "chemistry",
-        "bonus": {
-          "rng": [
-            2,
-            3
-          ]
-        }
-      }
+      { "skill": "ALL", "level": { "mul": [ { "one_in": 3 }, { "sum": [ { "dice": [ 2, 2 ] }, { "constant": -4 } ] } ] } },
+      { "skill": "computer", "bonus": { "rng": [ 2, 3 ] } },
+      { "skill": "electronics", "bonus": { "rng": [ 3, 6 ] } },
+      { "skill": "chemistry", "bonus": { "rng": [ 2, 3 ] } }
     ]
   },
   {
@@ -111,39 +33,19 @@
     "type": "item_group",
     "subtype": "collection",
     "entries": [
-      {
-        "item": "briefs"
-      },
-      {
-        "item": "coat_lab"
-      },
-      {
-        "item": "dress_shirt"
-      },
-      {
-        "item": "pants"
-      },
-      {
-        "item": "socks"
-      },
-      {
-        "item": "boots"
-      },
-      {
-        "item": "gloves_rubber"
-      },
-      {
-        "item": "wristwatch"
-      },
-      {
-        "item": "glasses_safety"
-      }
+      { "item": "briefs" },
+      { "item": "coat_lab" },
+      { "item": "dress_shirt" },
+      { "item": "pants" },
+      { "item": "socks" },
+      { "item": "boots" },
+      { "item": "gloves_rubber" },
+      { "item": "wristwatch" },
+      { "item": "glasses_safety" }
     ]
   },
   {
-    "id": [
-      "TALK_meteorologist_1"
-    ],
+    "id": [ "TALK_meteorologist_1" ],
     "type": "talk_topic",
     "dynamic_line": {
       "npc_has_var": "u_helped_meteorologist",
@@ -162,34 +64,15 @@
     },
     "speaker_effect": {
       "sentinel": "u_met_meteorologist",
-      "effect": [
-        {
-          "npc_add_var": "u_met_meteorologist",
-          "type": "general",
-          "context": "meeting",
-          "value": "yes"
-        }
-      ]
+      "effect": [ { "npc_add_var": "u_met_meteorologist", "type": "general", "context": "meeting", "value": "yes" } ]
     },
     "responses": [
-      {
-        "text": "About that job…",
-        "condition": "has_assigned_mission",
-        "topic": "TALK_MISSION_INQUIRE"
-      },
-      {
-        "text": "<BGSS_intro_question>",
-        "topic": "TALK_meteorologist_Background"
-      },
+      { "text": "About that job…", "condition": "has_assigned_mission", "topic": "TALK_MISSION_INQUIRE" },
+      { "text": "<BGSS_intro_question>", "topic": "TALK_meteorologist_Background" },
       {
         "text": "Maybe I can help you with your problem?",
         "topic": "TALK_meteorologist_safety",
-        "condition": {
-          "npc_has_var": "u_helped_meteorologist",
-          "type": "flag",
-          "context": "mission",
-          "value": "yes"
-        },
+        "condition": { "npc_has_var": "u_helped_meteorologist", "type": "flag", "context": "mission", "value": "yes" },
         "switch": true
       },
       {
@@ -208,35 +91,19 @@
           }
         },
         "success": {
-          "effect": [
-            {
-              "npc_lose_var": "meteorologist_wait",
-              "type": "time",
-              "context": "mission"
-            }
-          ],
+          "effect": [ { "npc_lose_var": "meteorologist_wait", "type": "time", "context": "mission" } ],
           "topic": "TALK_MISSION_LIST"
         },
-        "failure": {
-          "topic": "TALK_meteorologist_wait"
-        }
+        "failure": { "topic": "TALK_meteorologist_wait" }
       },
-      {
-        "text": "Goodbye.",
-        "topic": "TALK_DONE"
-      }
+      { "text": "Goodbye.", "topic": "TALK_DONE" }
     ]
   },
   {
     "id": "TALK_meteorologist_wait",
     "type": "talk_topic",
     "dynamic_line": "I need more time.  Come back later.",
-    "responses": [
-      {
-        "text": "No problem.",
-        "topic": "TALK_DONE"
-      }
-    ]
+    "responses": [ { "text": "No problem.", "topic": "TALK_DONE" } ]
   },
   {
     "id": "TALK_meteorologist_safety",
@@ -246,21 +113,10 @@
       {
         "text": "Let's go.",
         "topic": "TALK_DONE",
-        "effect": [
-          "follow_only",
-          {
-            "npc_first_topic": "TALK_meteorologist_safety_lead"
-          }
-        ]
+        "effect": [ "follow_only", { "npc_first_topic": "TALK_meteorologist_safety_lead" } ]
       },
-      {
-        "text": "Want to travel with me?",
-        "topic": "TALK_SUGGEST_FOLLOW"
-      },
-      {
-        "text": "Maybe later.",
-        "topic": "TALK_NONE"
-      }
+      { "text": "Want to travel with me?", "topic": "TALK_SUGGEST_FOLLOW" },
+      { "text": "Maybe later.", "topic": "TALK_NONE" }
     ]
   },
   {
@@ -273,22 +129,13 @@
         "topic": "TALK_meteorologist_safety_done",
         "condition": {
           "or": [
-            {
-              "npc_at_om_location": "FACTION_CAMP_ANY"
-            },
-            {
-              "npc_at_om_location": "evac_center_18"
-            },
-            {
-              "npc_at_om_location": "robofachq_surface_entrance"
-            }
+            { "npc_at_om_location": "FACTION_CAMP_ANY" },
+            { "npc_at_om_location": "evac_center_18" },
+            { "npc_at_om_location": "robofachq_surface_entrance" }
           ]
         }
       },
-      {
-        "text": "Don't worry, we're getting there soon.",
-        "topic": "TALK_DONE"
-      }
+      { "text": "Don't worry, we're getting there soon.", "topic": "TALK_DONE" }
     ]
   },
   {
@@ -299,16 +146,7 @@
       {
         "text": "Bye.",
         "topic": "TALK_DONE",
-        "effect": [
-          {
-            "u_buy_item": "adv_chemistry",
-            "cost": 800
-          },
-          "stop_following",
-          {
-            "npc_first_topic": "TALK_meteorologist_safe"
-          }
-        ]
+        "effect": [ { "u_buy_item": "adv_chemistry", "cost": 800 }, "stop_following", { "npc_first_topic": "TALK_meteorologist_safe" } ]
       }
     ]
   },
@@ -316,40 +154,26 @@
     "id": "TALK_meteorologist_safe",
     "type": "talk_topic",
     "dynamic_line": "I'm glad you still alive.",
-    "responses": [
-      {
-        "text": "Me too.",
-        "topic": "TALK_DONE"
-      }
-    ]
+    "responses": [ { "text": "Me too.", "topic": "TALK_DONE" } ]
   },
   {
     "id": "TALK_meteorologist_Background",
     "type": "talk_topic",
     "dynamic_line": "I'm just a regular meteorologist.  In recent years I have worked at a weather station, monitored the weather, state of air, read and wrote reports, drew up schedules…  in general, complete boredom.  In my free time I was studying electronics and radio engineering, making various devices, some for work, some just for fun.  When the first riots began, I gathered all my things that I managed to take with me and settled here.  Since then I've been sitting here, wasting my time doing all sorts of nonsense.",
-    "responses": [
-      {
-        "text": "<done_conversation_section>",
-        "topic": "TALK_NONE"
-      }
-    ]
+    "responses": [ { "text": "<done_conversation_section>", "topic": "TALK_NONE" } ]
   },
   {
     "id": "MISSION_meteorologist_1",
     "type": "mission_definition",
     "has_generic_rewards": false,
-    "name": {
-      "str": "Find scrap for the meteorologist"
-    },
+    "name": { "str": "Find scrap for the meteorologist" },
     "description": "The meteorologist asked to bring him 50 pieces of scrap.",
     "goal": "MGOAL_FIND_ITEM",
     "item": "scrap",
     "count": 50,
     "difficulty": 0,
     "value": 100,
-    "origins": [
-      "ORIGIN_SECONDARY"
-    ],
+    "origins": [ "ORIGIN_SECONDARY" ],
     "followup": "MISSION_meteorologist_2",
     "dialogue": {
       "describe": "We need scrap metal to assemble a drone…",
@@ -367,18 +191,14 @@
     "id": "MISSION_meteorologist_2",
     "type": "mission_definition",
     "has_generic_rewards": false,
-    "name": {
-      "str": "Find batteries for the meteorologist"
-    },
+    "name": { "str": "Find batteries for the meteorologist" },
     "description": "The meteorologist asked to bring him 6 medium batteries.",
     "goal": "MGOAL_FIND_ITEM",
     "item": "medium_battery_cell",
     "count": 6,
     "difficulty": 0,
     "value": 100,
-    "origins": [
-      "ORIGIN_SECONDARY"
-    ],
+    "origins": [ "ORIGIN_SECONDARY" ],
     "followup": "MISSION_meteorologist_3",
     "dialogue": {
       "describe": "We need batteries to assemble a drone…",
@@ -396,18 +216,14 @@
     "id": "MISSION_meteorologist_3",
     "type": "mission_definition",
     "has_generic_rewards": false,
-    "name": {
-      "str": "Find lens_small 5"
-    },
+    "name": { "str": "Find lens_small 5" },
     "description": "The meteorologist asked to bring him 5 little high-quality lanses.",
     "goal": "MGOAL_FIND_ITEM",
     "item": "lens_small",
     "count": 6,
     "difficulty": 0,
     "value": 100,
-    "origins": [
-      "ORIGIN_SECONDARY"
-    ],
+    "origins": [ "ORIGIN_SECONDARY" ],
     "followup": "MISSION_meteorologist_4",
     "dialogue": {
       "describe": "We need high quality lenses for our drone…",
@@ -424,9 +240,7 @@
   {
     "id": "MISSION_meteorologist_4",
     "type": "mission_definition",
-    "name": {
-      "str": "Find radiocontrol"
-    },
+    "name": { "str": "Find radiocontrol" },
     "description": "The meteorologist asked to bring him a radio controller.",
     "goal": "MGOAL_FIND_ITEM",
     "item": "radiocontrol",
@@ -435,21 +249,11 @@
     "value": 100,
     "end": {
       "effect": [
-        {
-          "npc_add_var": "meteorologist_wait",
-          "type": "time",
-          "context": "mission",
-          "time": true
-        },
-        {
-          "u_buy_item": "textbook_electronics",
-          "cost": 800
-        }
+        { "npc_add_var": "meteorologist_wait", "type": "time", "context": "mission", "time": true },
+        { "u_buy_item": "textbook_electronics", "cost": 800 }
       ]
     },
-    "origins": [
-      "ORIGIN_SECONDARY"
-    ],
+    "origins": [ "ORIGIN_SECONDARY" ],
     "followup": "MISSION_meteorologist_5",
     "dialogue": {
       "describe": "We need an RC to assemble a drone…",
@@ -467,9 +271,7 @@
     "id": "MISSION_meteorologist_5",
     "type": "mission_definition",
     "has_generic_rewards": false,
-    "name": {
-      "str": "Find crashed drone"
-    },
+    "name": { "str": "Find crashed drone" },
     "description": "The meteorologist asked to bring him his crashed drone.",
     "goal": "MGOAL_FIND_ITEM",
     "item": "module_meteorologist",
@@ -477,109 +279,22 @@
     "difficulty": 0,
     "value": 100,
     "start": {
-      "assign_mission_target": {
-        "om_terrain": "field",
-        "reveal_radius": 1,
-        "search_range": 50,
-        "min_distance": 15,
-        "random": true
-      },
+      "assign_mission_target": { "om_terrain": "field", "reveal_radius": 1, "search_range": 50, "min_distance": 15, "random": true },
       "update_mapgen": {
         "place_item": [
-          {
-            "item": "module_meteorologist",
-            "x": [
-              5,
-              15
-            ],
-            "y": [
-              5,
-              15
-            ]
-          },
-          {
-            "item": "scrap",
-            "x": [
-              5,
-              15
-            ],
-            "y": [
-              5,
-              15
-            ],
-            "repeat": [
-              5,
-              30
-            ]
-          },
-          {
-            "item": "lens_small",
-            "x": [
-              5,
-              15
-            ],
-            "y": [
-              5,
-              15
-            ],
-            "chance": 45,
-            "repeat": [
-              1,
-              3
-            ]
-          },
-          {
-            "item": "cable",
-            "x": [
-              5,
-              15
-            ],
-            "y": [
-              5,
-              15
-            ],
-            "amount": 10,
-            "repeat": [
-              3,
-              10
-            ]
-          }
+          { "item": "module_meteorologist", "x": [ 5, 15 ], "y": [ 5, 15 ] },
+          { "item": "scrap", "x": [ 5, 15 ], "y": [ 5, 15 ], "repeat": [ 5, 30 ] },
+          { "item": "lens_small", "x": [ 5, 15 ], "y": [ 5, 15 ], "chance": 45, "repeat": [ 1, 3 ] },
+          { "item": "cable", "x": [ 5, 15 ], "y": [ 5, 15 ], "amount": 10, "repeat": [ 3, 10 ] }
         ],
-        "place_monster": [
-          {
-            "monster": "mon_mi_go",
-            "x": [
-              5,
-              15
-            ],
-            "y": [
-              5,
-              15
-            ],
-            "repeat": [
-              2,
-              5
-            ]
-          }
-        ]
+        "place_monster": [ { "monster": "mon_mi_go", "x": [ 5, 15 ], "y": [ 5, 15 ], "repeat": [ 2, 5 ] } ]
       }
     },
     "end": {
-      "effect": [
-        {
-          "npc_add_var": "u_helped_meteorologist",
-          "type": "flag",
-          "context": "mission",
-          "value": "yes"
-        }
-      ],
-      "opinion": {
-        "trust": 4
-      }
+      "effect": [ { "npc_add_var": "u_helped_meteorologist", "type": "flag", "context": "mission", "value": "yes" } ],
+      "opinion": { "trust": 4 }
     },
-    "origins": [
-      "ORIGIN_SECONDARY"
-    ],
+    "origins": [ "ORIGIN_SECONDARY" ],
     "dialogue": {
       "describe": "I've lost the drone, we should find out what happened…",
       "offer": "I'm glad that you are alive and that you haven't forgot about me.  The drone turned out to be great, it managed to take off and even was able to fly several hundred meters!  Unfortunately, after that, I lost control of it…  I don't know what happened to it, though.  Maybe you can check?  I'm a little afraid to go out there…",

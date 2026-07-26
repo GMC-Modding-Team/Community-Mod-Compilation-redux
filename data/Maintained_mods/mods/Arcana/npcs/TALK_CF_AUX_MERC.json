@@ -5,65 +5,24 @@
     "dynamic_line": {
       "u_is_wearing": "badge_marshal",
       "yes": "Howdy, marshal.",
-      "no": {
-        "u_male": true,
-        "yes": "Howdy, sir.",
-        "no": "Howdy, ma'am."
-      }
+      "no": { "u_male": true, "yes": "Howdy, sir.", "no": "Howdy, ma'am." }
     },
     "responses": [
       {
         "text": "I've been sent to ask about recent attacks on survivors by anomalous creatures.  Know anything about that?",
         "condition": {
           "and": [
-            {
-              "compare_string": [
-                "yes",
-                {
-                  "u_val": "johnathan_prelude_mid"
-                }
-              ]
-            },
-            {
-              "not": {
-                "compare_string": [
-                  "yes",
-                  {
-                    "npc_val": "johnathan_prelude_mid"
-                  }
-                ]
-              }
-            },
-            {
-              "not": {
-                "compare_string": [
-                  "yes",
-                  {
-                    "u_val": "johnathan_prelude_data_5"
-                  }
-                ]
-              }
-            }
+            { "compare_string": [ "yes", { "u_val": "johnathan_prelude_mid" } ] },
+            { "not": { "compare_string": [ "yes", { "npc_val": "johnathan_prelude_mid" } ] } },
+            { "not": { "compare_string": [ "yes", { "u_val": "johnathan_prelude_data_5" } ] } }
           ]
         },
         "topic": "TALK_CF_AUX_MERC_GM_PRELUDE"
       },
-      {
-        "text": "Who are you?",
-        "topic": "TALK_CF_AUX_MERC_WHO"
-      },
-      {
-        "text": "Any tips for surviving?",
-        "topic": "TALK_CF_AUX_MERC_TIPS"
-      },
-      {
-        "text": "Are you…  dressed up like a cowboy?",
-        "topic": "TALK_CF_AUX_MERC_YEEHAW"
-      },
-      {
-        "text": "Well, bye.",
-        "topic": "TALK_DONE"
-      }
+      { "text": "Who are you?", "topic": "TALK_CF_AUX_MERC_WHO" },
+      { "text": "Any tips for surviving?", "topic": "TALK_CF_AUX_MERC_TIPS" },
+      { "text": "Are you…  dressed up like a cowboy?", "topic": "TALK_CF_AUX_MERC_YEEHAW" },
+      { "text": "Well, bye.", "topic": "TALK_DONE" }
     ]
   },
   {
@@ -76,22 +35,10 @@
     "type": "talk_topic",
     "dynamic_line": "I'm just a ol' hired hand.  So long as there's good pay, I do what needs t' be done.",
     "responses": [
-      {
-        "text": "What kind of work do you do?",
-        "topic": "TALK_CF_AUX_MERC_WORK"
-      },
-      {
-        "text": "Can you tell me anything else about yourself?",
-        "topic": "TALK_CF_AUX_MERC_PERSONAL"
-      },
-      {
-        "text": "What would it cost to hire you?",
-        "topic": "TALK_CF_AUX_MERC_HIRE"
-      },
-      {
-        "text": "I see.",
-        "topic": "TALK_CF_AUX_MERC"
-      }
+      { "text": "What kind of work do you do?", "topic": "TALK_CF_AUX_MERC_WORK" },
+      { "text": "Can you tell me anything else about yourself?", "topic": "TALK_CF_AUX_MERC_PERSONAL" },
+      { "text": "What would it cost to hire you?", "topic": "TALK_CF_AUX_MERC_HIRE" },
+      { "text": "I see.", "topic": "TALK_CF_AUX_MERC" }
     ]
   },
   {
@@ -99,18 +46,9 @@
     "type": "talk_topic",
     "dynamic_line": "Mercenary work, these days.  Guarding caravans, bit of firepower for a posse, that sorta thing.  Still have a good eye with hunting rifles, even if it's getting harder to read clearly.",
     "responses": [
-      {
-        "text": "Can you tell me anything else about yourself?",
-        "topic": "TALK_CF_AUX_MERC_PERSONAL"
-      },
-      {
-        "text": "What would it cost to hire you?",
-        "topic": "TALK_CF_AUX_MERC_HIRE"
-      },
-      {
-        "text": "I see.",
-        "topic": "TALK_CF_AUX_MERC"
-      }
+      { "text": "Can you tell me anything else about yourself?", "topic": "TALK_CF_AUX_MERC_PERSONAL" },
+      { "text": "What would it cost to hire you?", "topic": "TALK_CF_AUX_MERC_HIRE" },
+      { "text": "I see.", "topic": "TALK_CF_AUX_MERC" }
     ]
   },
   {
@@ -118,18 +56,9 @@
     "type": "talk_topic",
     "dynamic_line": "Used to work on a ranch out of state, also grew up hunting.  Fought like hell to get up here, way everything went down I'm surprised I'm still kicking.  Lot of hard fights and strange shit along the way.",
     "responses": [
-      {
-        "text": "What kind of work do you do?",
-        "topic": "TALK_CF_AUX_MERC_WORK"
-      },
-      {
-        "text": "What would it cost to hire you?",
-        "topic": "TALK_CF_AUX_MERC_HIRE"
-      },
-      {
-        "text": "I see.",
-        "topic": "TALK_CF_AUX_MERC"
-      }
+      { "text": "What kind of work do you do?", "topic": "TALK_CF_AUX_MERC_WORK" },
+      { "text": "What would it cost to hire you?", "topic": "TALK_CF_AUX_MERC_HIRE" },
+      { "text": "I see.", "topic": "TALK_CF_AUX_MERC" }
     ]
   },
   {
@@ -145,48 +74,19 @@
         "text": "[GS15] You have a deal.",
         "topic": "TALK_CF_AUX_MERC_HIRE_SUCCESS",
         "switch": true,
-        "condition": {
-          "and": [
-            {
-              "u_is_wearing": "badge_marshal"
-            },
-            {
-              "u_has_items": {
-                "item": "CF_golden_scale",
-                "count": 15
-              }
-            }
-          ]
-        },
-        "effect": {
-          "u_consume_item": "CF_golden_scale",
-          "count": 15
-        }
+        "condition": { "and": [ { "u_is_wearing": "badge_marshal" }, { "u_has_items": { "item": "CF_golden_scale", "count": 15 } } ] },
+        "effect": { "u_consume_item": "CF_golden_scale", "count": 15 }
       },
       {
         "text": "[GS30] You have a deal.",
         "topic": "TALK_CF_AUX_MERC_HIRE_SUCCESS",
         "switch": true,
         "default": true,
-        "condition": {
-          "u_has_items": {
-            "item": "CF_golden_scale",
-            "count": 30
-          }
-        },
-        "effect": {
-          "u_consume_item": "CF_golden_scale",
-          "count": 30
-        }
+        "condition": { "u_has_items": { "item": "CF_golden_scale", "count": 30 } },
+        "effect": { "u_consume_item": "CF_golden_scale", "count": 30 }
       },
-      {
-        "text": "What can you tell me about Golden Scales?",
-        "topic": "TALK_CF_AUX_MERC_SCALES"
-      },
-      {
-        "text": "I might be back.",
-        "topic": "TALK_CF_AUX_MERC"
-      }
+      { "text": "What can you tell me about Golden Scales?", "topic": "TALK_CF_AUX_MERC_SCALES" },
+      { "text": "I might be back.", "topic": "TALK_CF_AUX_MERC" }
     ]
   },
   {
@@ -196,14 +96,7 @@
     "responses": [
       {
         "text": "Glad to have you aboard.",
-        "success": {
-          "effect": "follow",
-          "opinion": {
-            "trust": 1,
-            "value": 1
-          },
-          "topic": "TALK_DONE"
-        }
+        "success": { "effect": "follow", "opinion": { "trust": 1, "value": 1 }, "topic": "TALK_DONE" }
       }
     ]
   },
@@ -212,18 +105,9 @@
     "type": "talk_topic",
     "dynamic_line": "Golden Scales are those little coins the locals here use.  Seems it's picking up as a currency.  Personally I'd prefer silver dollars if we're talking hard cash, but you use what you can get if you don't like bartering your shirt away for a hot meal.  These people seem to have some other use for em, too.",
     "responses": [
-      {
-        "text": "I see.  Let's try this again from the start.",
-        "topic": "TALK_CF_AUX_MERC"
-      },
-      {
-        "text": "Okay, how much do I need?",
-        "topic": "TALK_CF_AUX_MERC_HIRE"
-      },
-      {
-        "text": "Well, thanks for the info.  Bye!",
-        "topic": "TALK_DONE"
-      }
+      { "text": "I see.  Let's try this again from the start.", "topic": "TALK_CF_AUX_MERC" },
+      { "text": "Okay, how much do I need?", "topic": "TALK_CF_AUX_MERC_HIRE" },
+      { "text": "Well, thanks for the info.  Bye!", "topic": "TALK_DONE" }
     ]
   },
   {
@@ -240,22 +124,12 @@
       "Take your time aiming if you have the chance to.  Some of the things out there are tough but slow, shot placement's what saves your hide against things like that.",
       "If you're gonna be fighting monsters, either gear up for any threat that might be out there, or stay light.  If it slows you down it needs to be worth it."
     ],
-    "responses": [
-      {
-        "text": "…",
-        "topic": "TALK_CF_AUX_MERC"
-      }
-    ]
+    "responses": [ { "text": "…", "topic": "TALK_CF_AUX_MERC" } ]
   },
   {
     "id": "TALK_CF_AUX_MERC_YEEHAW",
     "type": "talk_topic",
     "dynamic_line": "Yep.  Used to be a ranch hand, and it's still practical for wandering the wastes.  Unholy abominations don't care so much about fancy plate carriers, and anything that'll stop a rifle bullet slows you down.",
-    "responses": [
-      {
-        "text": "…",
-        "topic": "TALK_CF_AUX_MERC"
-      }
-    ]
+    "responses": [ { "text": "…", "topic": "TALK_CF_AUX_MERC" } ]
   }
 ]

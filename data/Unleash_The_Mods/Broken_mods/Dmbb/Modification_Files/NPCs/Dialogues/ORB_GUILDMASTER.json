@@ -15,179 +15,72 @@
       "context": "intro",
       "value": "yes",
       "no": "Ah!  Welcome, my fellow sentinel!",
-      "yes": [
-        "Need anything?",
-        "Speak up, sentinel."
-      ]
+      "yes": [ "Need anything?", "Speak up, sentinel." ]
     },
     "speaker_effect": {
-      "condition": {
-        "not": {
-          "u_has_var": "dmbb_orb",
-          "type": "guildmaster",
-          "context": "intro",
-          "value": "yes"
-        }
-      },
-      "effect": {
-        "u_add_var": "dmbb_orb",
-        "type": "guildmaster",
-        "context": "intro",
-        "value": "yes"
-      }
+      "condition": { "not": { "u_has_var": "dmbb_orb", "type": "guildmaster", "context": "intro", "value": "yes" } },
+      "effect": { "u_add_var": "dmbb_orb", "type": "guildmaster", "context": "intro", "value": "yes" }
     },
     "responses": [
       {
         "text": "Who are you?",
         "topic": "TALK_DMBB_ORB_GUILDMASTER_me",
-        "condition": {
-          "not": {
-            "u_has_var": "dmbb_orb",
-            "type": "guildmaster",
-            "context": "whoisu",
-            "value": "yes"
-          }
-        },
-        "effect": {
-          "u_add_var": "dmbb_orb",
-          "type": "guildmaster",
-          "context": "whoisu",
-          "value": "yes"
-        }
+        "condition": { "not": { "u_has_var": "dmbb_orb", "type": "guildmaster", "context": "whoisu", "value": "yes" } },
+        "effect": { "u_add_var": "dmbb_orb", "type": "guildmaster", "context": "whoisu", "value": "yes" }
       },
       {
         "text": "What's this place?",
         "topic": "TALK_DMBB_ORB_GUILDMASTER_place",
-        "condition": {
-          "not": {
-            "u_has_var": "dmbb_orb",
-            "type": "guildmaster",
-            "context": "whereisme",
-            "value": "yes"
-          }
-        },
-        "effect": {
-          "u_add_var": "dmbb_orb",
-          "type": "guildmaster",
-          "context": "whereisme",
-          "value": "yes"
-        }
+        "condition": { "not": { "u_has_var": "dmbb_orb", "type": "guildmaster", "context": "whereisme", "value": "yes" } },
+        "effect": { "u_add_var": "dmbb_orb", "type": "guildmaster", "context": "whereisme", "value": "yes" }
       },
       {
         "text": "Let's trade!",
         "topic": "TALK_DMBB_ORB_GUILDMASTER_tradelol",
-        "condition": {
-          "not": {
-            "u_has_var": "dmbb_orb",
-            "type": "guildmaster",
-            "context": "tradelol",
-            "value": "yes"
-          }
-        },
-        "effect": {
-          "u_add_var": "dmbb_orb",
-          "type": "guildmaster",
-          "context": "tradelol",
-          "value": "yes"
-        }
+        "condition": { "not": { "u_has_var": "dmbb_orb", "type": "guildmaster", "context": "tradelol", "value": "yes" } },
+        "effect": { "u_add_var": "dmbb_orb", "type": "guildmaster", "context": "tradelol", "value": "yes" }
       },
       {
         "text": "Is there anything you can do?",
         "topic": "TALK_DMBB_ORB_GUILDMASTER_quest",
         "condition": {
           "and": [
-            {
-              "u_has_var": "dmbb_orb",
-              "type": "guildmaster",
-              "context": "tradelol",
-              "value": "yes"
-            },
-            {
-              "not": {
-                "u_has_var": "dmbb_orb",
-                "type": "guildmaster",
-                "context": "quests",
-                "value": "yes"
-              }
-            }
+            { "u_has_var": "dmbb_orb", "type": "guildmaster", "context": "tradelol", "value": "yes" },
+            { "not": { "u_has_var": "dmbb_orb", "type": "guildmaster", "context": "quests", "value": "yes" } }
           ]
         },
-        "effect": {
-          "u_add_var": "dmbb_orb",
-          "type": "guildmaster",
-          "context": "quests",
-          "value": "yes"
-        }
+        "effect": { "u_add_var": "dmbb_orb", "type": "guildmaster", "context": "quests", "value": "yes" }
       },
       {
         "text": "How does this work?  Are these just like the normal waves?",
         "topic": "TALK_DMBB_ORB_GUILDMASTER_quest_info",
         "condition": {
           "and": [
-            {
-              "u_has_var": "dmbb_orb",
-              "type": "guildmaster",
-              "context": "quests",
-              "value": "yes"
-            },
-            {
-              "not": {
-                "u_has_var": "dmbb_orb",
-                "type": "guildmaster",
-                "context": "quests_info",
-                "value": "yes"
-              }
-            }
+            { "u_has_var": "dmbb_orb", "type": "guildmaster", "context": "quests", "value": "yes" },
+            { "not": { "u_has_var": "dmbb_orb", "type": "guildmaster", "context": "quests_info", "value": "yes" } }
           ]
         },
-        "effect": {
-          "u_add_var": "dmbb_orb",
-          "type": "guildmaster",
-          "context": "quests_info",
-          "value": "yes"
-        }
+        "effect": { "u_add_var": "dmbb_orb", "type": "guildmaster", "context": "quests_info", "value": "yes" }
       },
       {
         "text": "Show me the available quests.",
         "topic": "TALK_DMBB_ORB_GUILDMASTER_quest_list",
         "condition": {
           "and": [
-            {
-              "u_has_var": "dmbb_orb",
-              "type": "guildmaster",
-              "context": "quests_info",
-              "value": "yes"
-            },
-            {
-              "not": {
-                "u_has_var": "dmbb_orb",
-                "type": "guildmaster",
-                "context": "has_quest",
-                "value": "yes"
-              }
-            }
+            { "u_has_var": "dmbb_orb", "type": "guildmaster", "context": "quests_info", "value": "yes" },
+            { "not": { "u_has_var": "dmbb_orb", "type": "guildmaster", "context": "has_quest", "value": "yes" } }
           ]
         }
       },
       {
         "text": "About my quest…",
         "topic": "TALK_DMBB_ORB_GUILDMASTER_quest_inquire",
-        "condition": {
-          "u_has_var": "dmbb_orb",
-          "type": "guildmaster",
-          "context": "has_quest",
-          "value": "yes"
-        }
+        "condition": { "u_has_var": "dmbb_orb", "type": "guildmaster", "context": "has_quest", "value": "yes" }
       },
       {
         "text": "Bye.",
         "topic": "TALK_DONE",
-        "condition": {
-          "u_has_var": "dmbb_orb",
-          "type": "guildmaster",
-          "context": "quests_info",
-          "value": "yes"
-        }
+        "condition": { "u_has_var": "dmbb_orb", "type": "guildmaster", "context": "quests_info", "value": "yes" }
       }
     ]
   },

@@ -6,27 +6,10 @@
       {
         "text": "[SELECT WAVEPACK] Secronom",
         "topic": "TALK_DMBB_ORB_command_wave",
-        "condition": {
-          "not": {
-            "u_has_var": "dmbb_orb",
-            "type": "wavepack",
-            "context": "has_selected",
-            "value": "yes"
-          }
-        },
+        "condition": { "not": { "u_has_var": "dmbb_orb", "type": "wavepack", "context": "has_selected", "value": "yes" } },
         "effect": [
-          {
-            "u_add_var": "dmbb_orb",
-            "type": "wavepack",
-            "context": "secronom",
-            "value": "yes"
-          },
-          {
-            "u_add_var": "dmbb_orb",
-            "type": "wavepack",
-            "context": "has_selected",
-            "value": "yes"
-          }
+          { "u_add_var": "dmbb_orb", "type": "wavepack", "context": "secronom", "value": "yes" },
+          { "u_add_var": "dmbb_orb", "type": "wavepack", "context": "has_selected", "value": "yes" }
         ]
       },
       {
@@ -34,110 +17,28 @@
         "topic": "TALK_DONE",
         "condition": {
           "and": [
-            {
-              "u_has_var": "dmbb_orb",
-              "type": "wavepack",
-              "context": "secronom",
-              "value": "yes"
-            },
-            {
-              "u_has_var": "dmbb_orb",
-              "type": "wave5",
-              "context": "finish",
-              "value": "yes"
-            },
-            {
-              "not": {
-                "u_has_var": "dmbb_orb",
-                "type": "specsecroswa1",
-                "context": "finish",
-                "value": "yes"
-              }
-            }
+            { "u_has_var": "dmbb_orb", "type": "wavepack", "context": "secronom", "value": "yes" },
+            { "u_has_var": "dmbb_orb", "type": "wave5", "context": "finish", "value": "yes" },
+            { "not": { "u_has_var": "dmbb_orb", "type": "specsecroswa1", "context": "finish", "value": "yes" } }
           ]
         },
         "effect": [
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_1",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_2",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_3",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_4",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_5",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_6",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_7",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_8",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_9",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "u_add_effect": "dmbb_timelimit",
-            "duration": 200
-          },
-          {
-            "u_add_var": "dmbb_orb",
-            "type": "general",
-            "context": "in_combat",
-            "value": "yes"
-          },
-          {
-            "u_add_var": "dmbb_orb",
-            "type": "specsecroswa1",
-            "context": "in_combat",
-            "value": "yes"
-          },
-          {
-            "mapgen_update": "dmbb_orb_wave_secro_swa1",
-            "om_terrain": "dmbb_arena_2",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_wave_secro_swa1",
-            "om_terrain": "dmbb_arena_4",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_wave_secro_swa1",
-            "om_terrain": "dmbb_arena_6",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_wave_secro_swa1",
-            "om_terrain": "dmbb_arena_8",
-            "om_special": "DMBB Arena"
-          }
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_1", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_2", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_3", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_4", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_5", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_6", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_7", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_8", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_9", "om_special": "DMBB Arena" },
+          { "u_add_effect": "dmbb_timelimit", "duration": 200 },
+          { "u_add_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+          { "u_add_var": "dmbb_orb", "type": "specsecroswa1", "context": "in_combat", "value": "yes" },
+          { "mapgen_update": "dmbb_orb_wave_secro_swa1", "om_terrain": "dmbb_arena_2", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_wave_secro_swa1", "om_terrain": "dmbb_arena_4", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_wave_secro_swa1", "om_terrain": "dmbb_arena_6", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_wave_secro_swa1", "om_terrain": "dmbb_arena_8", "om_special": "DMBB Arena" }
         ]
       },
       {
@@ -145,110 +46,28 @@
         "topic": "TALK_DONE",
         "condition": {
           "and": [
-            {
-              "u_has_var": "dmbb_orb",
-              "type": "wavepack",
-              "context": "secronom",
-              "value": "yes"
-            },
-            {
-              "u_has_var": "dmbb_orb",
-              "type": "wave10",
-              "context": "finish",
-              "value": "yes"
-            },
-            {
-              "not": {
-                "u_has_var": "dmbb_orb",
-                "type": "specsecrosad1",
-                "context": "finish",
-                "value": "yes"
-              }
-            }
+            { "u_has_var": "dmbb_orb", "type": "wavepack", "context": "secronom", "value": "yes" },
+            { "u_has_var": "dmbb_orb", "type": "wave10", "context": "finish", "value": "yes" },
+            { "not": { "u_has_var": "dmbb_orb", "type": "specsecrosad1", "context": "finish", "value": "yes" } }
           ]
         },
         "effect": [
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_1",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_2",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_3",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_4",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_5",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_6",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_7",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_8",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_9",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "u_add_effect": "dmbb_timelimit",
-            "duration": 300
-          },
-          {
-            "u_add_var": "dmbb_orb",
-            "type": "general",
-            "context": "in_combat",
-            "value": "yes"
-          },
-          {
-            "u_add_var": "dmbb_orb",
-            "type": "specsecrosad1",
-            "context": "in_combat",
-            "value": "yes"
-          },
-          {
-            "mapgen_update": "dmbb_orb_wave_secro_sad1",
-            "om_terrain": "dmbb_arena_2",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_wave_secro_sad1",
-            "om_terrain": "dmbb_arena_4",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_wave_secro_sad1",
-            "om_terrain": "dmbb_arena_6",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_wave_secro_sad1",
-            "om_terrain": "dmbb_arena_8",
-            "om_special": "DMBB Arena"
-          }
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_1", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_2", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_3", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_4", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_5", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_6", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_7", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_8", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_9", "om_special": "DMBB Arena" },
+          { "u_add_effect": "dmbb_timelimit", "duration": 300 },
+          { "u_add_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+          { "u_add_var": "dmbb_orb", "type": "specsecrosad1", "context": "in_combat", "value": "yes" },
+          { "mapgen_update": "dmbb_orb_wave_secro_sad1", "om_terrain": "dmbb_arena_2", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_wave_secro_sad1", "om_terrain": "dmbb_arena_4", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_wave_secro_sad1", "om_terrain": "dmbb_arena_6", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_wave_secro_sad1", "om_terrain": "dmbb_arena_8", "om_special": "DMBB Arena" }
         ]
       },
       {
@@ -256,110 +75,28 @@
         "topic": "TALK_DONE",
         "condition": {
           "and": [
-            {
-              "u_has_var": "dmbb_orb",
-              "type": "wavepack",
-              "context": "secronom",
-              "value": "yes"
-            },
-            {
-              "u_has_var": "dmbb_orb",
-              "type": "wave10",
-              "context": "finish",
-              "value": "yes"
-            },
-            {
-              "not": {
-                "u_has_var": "dmbb_orb",
-                "type": "specsecrofbs1",
-                "context": "finish",
-                "value": "yes"
-              }
-            }
+            { "u_has_var": "dmbb_orb", "type": "wavepack", "context": "secronom", "value": "yes" },
+            { "u_has_var": "dmbb_orb", "type": "wave10", "context": "finish", "value": "yes" },
+            { "not": { "u_has_var": "dmbb_orb", "type": "specsecrofbs1", "context": "finish", "value": "yes" } }
           ]
         },
         "effect": [
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_1",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_2",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_3",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_4",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_5",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_6",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_7",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_8",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_9",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "u_add_effect": "dmbb_timelimit",
-            "duration": 300
-          },
-          {
-            "u_add_var": "dmbb_orb",
-            "type": "general",
-            "context": "in_combat",
-            "value": "yes"
-          },
-          {
-            "u_add_var": "dmbb_orb",
-            "type": "specsecrofbs1",
-            "context": "in_combat",
-            "value": "yes"
-          },
-          {
-            "mapgen_update": "dmbb_orb_wave_secro_fbs1",
-            "om_terrain": "dmbb_arena_2",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_wave_secro_fbs1",
-            "om_terrain": "dmbb_arena_4",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_wave_secro_fbs1",
-            "om_terrain": "dmbb_arena_6",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_wave_secro_fbs1",
-            "om_terrain": "dmbb_arena_8",
-            "om_special": "DMBB Arena"
-          }
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_1", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_2", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_3", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_4", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_5", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_6", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_7", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_8", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_9", "om_special": "DMBB Arena" },
+          { "u_add_effect": "dmbb_timelimit", "duration": 300 },
+          { "u_add_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+          { "u_add_var": "dmbb_orb", "type": "specsecrofbs1", "context": "in_combat", "value": "yes" },
+          { "mapgen_update": "dmbb_orb_wave_secro_fbs1", "om_terrain": "dmbb_arena_2", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_wave_secro_fbs1", "om_terrain": "dmbb_arena_4", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_wave_secro_fbs1", "om_terrain": "dmbb_arena_6", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_wave_secro_fbs1", "om_terrain": "dmbb_arena_8", "om_special": "DMBB Arena" }
         ]
       },
       {
@@ -367,110 +104,28 @@
         "topic": "TALK_DONE",
         "condition": {
           "and": [
-            {
-              "u_has_var": "dmbb_orb",
-              "type": "wavepack",
-              "context": "secronom",
-              "value": "yes"
-            },
-            {
-              "u_has_var": "dmbb_orb",
-              "type": "wave15",
-              "context": "finish",
-              "value": "yes"
-            },
-            {
-              "not": {
-                "u_has_var": "dmbb_orb",
-                "type": "specsecrocar1",
-                "context": "finish",
-                "value": "yes"
-              }
-            }
+            { "u_has_var": "dmbb_orb", "type": "wavepack", "context": "secronom", "value": "yes" },
+            { "u_has_var": "dmbb_orb", "type": "wave15", "context": "finish", "value": "yes" },
+            { "not": { "u_has_var": "dmbb_orb", "type": "specsecrocar1", "context": "finish", "value": "yes" } }
           ]
         },
         "effect": [
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_1",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_2",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_3",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_4",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_5",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_6",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_7",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_8",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_9",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "u_add_effect": "dmbb_timelimit",
-            "duration": 400
-          },
-          {
-            "u_add_var": "dmbb_orb",
-            "type": "general",
-            "context": "in_combat",
-            "value": "yes"
-          },
-          {
-            "u_add_var": "dmbb_orb",
-            "type": "specsecrocar1",
-            "context": "in_combat",
-            "value": "yes"
-          },
-          {
-            "mapgen_update": "dmbb_orb_wave_secro_car1",
-            "om_terrain": "dmbb_arena_2",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_wave_secro_car1",
-            "om_terrain": "dmbb_arena_4",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_wave_secro_car1",
-            "om_terrain": "dmbb_arena_6",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_wave_secro_car1",
-            "om_terrain": "dmbb_arena_8",
-            "om_special": "DMBB Arena"
-          }
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_1", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_2", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_3", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_4", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_5", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_6", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_7", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_8", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_9", "om_special": "DMBB Arena" },
+          { "u_add_effect": "dmbb_timelimit", "duration": 400 },
+          { "u_add_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+          { "u_add_var": "dmbb_orb", "type": "specsecrocar1", "context": "in_combat", "value": "yes" },
+          { "mapgen_update": "dmbb_orb_wave_secro_car1", "om_terrain": "dmbb_arena_2", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_wave_secro_car1", "om_terrain": "dmbb_arena_4", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_wave_secro_car1", "om_terrain": "dmbb_arena_6", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_wave_secro_car1", "om_terrain": "dmbb_arena_8", "om_special": "DMBB Arena" }
         ]
       },
       {
@@ -478,110 +133,28 @@
         "topic": "TALK_DONE",
         "condition": {
           "and": [
-            {
-              "u_has_var": "dmbb_orb",
-              "type": "wavepack",
-              "context": "secronom",
-              "value": "yes"
-            },
-            {
-              "u_has_var": "dmbb_orb",
-              "type": "wave15",
-              "context": "finish",
-              "value": "yes"
-            },
-            {
-              "not": {
-                "u_has_var": "dmbb_orb",
-                "type": "specsecrovec1",
-                "context": "finish",
-                "value": "yes"
-              }
-            }
+            { "u_has_var": "dmbb_orb", "type": "wavepack", "context": "secronom", "value": "yes" },
+            { "u_has_var": "dmbb_orb", "type": "wave15", "context": "finish", "value": "yes" },
+            { "not": { "u_has_var": "dmbb_orb", "type": "specsecrovec1", "context": "finish", "value": "yes" } }
           ]
         },
         "effect": [
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_1",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_2",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_3",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_4",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_5",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_6",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_7",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_8",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_9",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "u_add_effect": "dmbb_timelimit",
-            "duration": 400
-          },
-          {
-            "u_add_var": "dmbb_orb",
-            "type": "general",
-            "context": "in_combat",
-            "value": "yes"
-          },
-          {
-            "u_add_var": "dmbb_orb",
-            "type": "specsecrovec1",
-            "context": "in_combat",
-            "value": "yes"
-          },
-          {
-            "mapgen_update": "dmbb_orb_wave_secro_vec1",
-            "om_terrain": "dmbb_arena_2",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_wave_secro_vec1",
-            "om_terrain": "dmbb_arena_4",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_wave_secro_vec1",
-            "om_terrain": "dmbb_arena_6",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_wave_secro_vec1",
-            "om_terrain": "dmbb_arena_8",
-            "om_special": "DMBB Arena"
-          }
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_1", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_2", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_3", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_4", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_5", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_6", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_7", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_8", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_9", "om_special": "DMBB Arena" },
+          { "u_add_effect": "dmbb_timelimit", "duration": 400 },
+          { "u_add_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+          { "u_add_var": "dmbb_orb", "type": "specsecrovec1", "context": "in_combat", "value": "yes" },
+          { "mapgen_update": "dmbb_orb_wave_secro_vec1", "om_terrain": "dmbb_arena_2", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_wave_secro_vec1", "om_terrain": "dmbb_arena_4", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_wave_secro_vec1", "om_terrain": "dmbb_arena_6", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_wave_secro_vec1", "om_terrain": "dmbb_arena_8", "om_special": "DMBB Arena" }
         ]
       },
       {
@@ -589,110 +162,28 @@
         "topic": "TALK_DONE",
         "condition": {
           "and": [
-            {
-              "u_has_var": "dmbb_orb",
-              "type": "wavepack",
-              "context": "secronom",
-              "value": "yes"
-            },
-            {
-              "u_has_var": "dmbb_orb",
-              "type": "wave20",
-              "context": "finish",
-              "value": "yes"
-            },
-            {
-              "not": {
-                "u_has_var": "dmbb_orb",
-                "type": "specsecroeni1",
-                "context": "finish",
-                "value": "yes"
-              }
-            }
+            { "u_has_var": "dmbb_orb", "type": "wavepack", "context": "secronom", "value": "yes" },
+            { "u_has_var": "dmbb_orb", "type": "wave20", "context": "finish", "value": "yes" },
+            { "not": { "u_has_var": "dmbb_orb", "type": "specsecroeni1", "context": "finish", "value": "yes" } }
           ]
         },
         "effect": [
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_1",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_2",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_3",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_4",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_5",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_6",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_7",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_8",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_9",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "u_add_effect": "dmbb_timelimit",
-            "duration": 500
-          },
-          {
-            "u_add_var": "dmbb_orb",
-            "type": "general",
-            "context": "in_combat",
-            "value": "yes"
-          },
-          {
-            "u_add_var": "dmbb_orb",
-            "type": "specsecroeni1",
-            "context": "in_combat",
-            "value": "yes"
-          },
-          {
-            "mapgen_update": "dmbb_orb_wave_secro_eni1",
-            "om_terrain": "dmbb_arena_2",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_wave_secro_eni1",
-            "om_terrain": "dmbb_arena_4",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_wave_secro_eni1",
-            "om_terrain": "dmbb_arena_6",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_wave_secro_eni1",
-            "om_terrain": "dmbb_arena_8",
-            "om_special": "DMBB Arena"
-          }
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_1", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_2", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_3", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_4", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_5", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_6", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_7", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_8", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_9", "om_special": "DMBB Arena" },
+          { "u_add_effect": "dmbb_timelimit", "duration": 500 },
+          { "u_add_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+          { "u_add_var": "dmbb_orb", "type": "specsecroeni1", "context": "in_combat", "value": "yes" },
+          { "mapgen_update": "dmbb_orb_wave_secro_eni1", "om_terrain": "dmbb_arena_2", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_wave_secro_eni1", "om_terrain": "dmbb_arena_4", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_wave_secro_eni1", "om_terrain": "dmbb_arena_6", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_wave_secro_eni1", "om_terrain": "dmbb_arena_8", "om_special": "DMBB Arena" }
         ]
       },
       {
@@ -700,95 +191,25 @@
         "topic": "TALK_DONE",
         "condition": {
           "and": [
-            {
-              "u_has_var": "dmbb_orb",
-              "type": "wavepack",
-              "context": "secronom",
-              "value": "yes"
-            },
-            {
-              "u_has_var": "dmbb_orb",
-              "type": "wave50",
-              "context": "finish",
-              "value": "yes"
-            },
-            {
-              "not": {
-                "u_has_var": "dmbb_orb",
-                "type": "specsecrocms1",
-                "context": "finish",
-                "value": "yes"
-              }
-            }
+            { "u_has_var": "dmbb_orb", "type": "wavepack", "context": "secronom", "value": "yes" },
+            { "u_has_var": "dmbb_orb", "type": "wave50", "context": "finish", "value": "yes" },
+            { "not": { "u_has_var": "dmbb_orb", "type": "specsecrocms1", "context": "finish", "value": "yes" } }
           ]
         },
         "effect": [
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_1",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_2",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_3",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_4",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_5",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_6",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_7",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_8",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "mapgen_update": "dmbb_orb_arenacolor_purple",
-            "om_terrain": "dmbb_arena_9",
-            "om_special": "DMBB Arena"
-          },
-          {
-            "u_add_effect": "dmbb_timelimit",
-            "duration": 500
-          },
-          {
-            "u_add_var": "dmbb_orb",
-            "type": "general",
-            "context": "in_combat",
-            "value": "yes"
-          },
-          {
-            "u_add_var": "dmbb_orb",
-            "type": "specsecrocms1",
-            "context": "in_combat",
-            "value": "yes"
-          },
-          {
-            "mapgen_update": "dmbb_orb_wave_secro_cms1",
-            "om_terrain": "dmbb_arena_8",
-            "om_special": "DMBB Arena"
-          }
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_1", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_2", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_3", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_4", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_5", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_6", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_7", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_8", "om_special": "DMBB Arena" },
+          { "mapgen_update": "dmbb_orb_arenacolor_purple", "om_terrain": "dmbb_arena_9", "om_special": "DMBB Arena" },
+          { "u_add_effect": "dmbb_timelimit", "duration": 500 },
+          { "u_add_var": "dmbb_orb", "type": "general", "context": "in_combat", "value": "yes" },
+          { "u_add_var": "dmbb_orb", "type": "specsecrocms1", "context": "in_combat", "value": "yes" },
+          { "mapgen_update": "dmbb_orb_wave_secro_cms1", "om_terrain": "dmbb_arena_8", "om_special": "DMBB Arena" }
         ]
       }
     ]
