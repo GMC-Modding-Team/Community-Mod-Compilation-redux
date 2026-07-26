@@ -4,51 +4,85 @@
     "type": "TOOL",
     "symbol": "*",
     "color": "dark_gray",
-    "name": { "str": "Toy bomb" },
+    "name": {
+      "str": "Toy bomb"
+    },
     "description": "Sprinkle homemade white sticky matter.",
     "price": "5 USD",
-    "material": [ "steel" ],
+    "material": [
+      "steel"
+    ],
     "weight": "1264 g",
     "volume": "250 ml",
-    "melee_damage": { "bash": 6 },
+    "melee_damage": {
+      "bash": 6
+    },
     "to_hit": -1,
-    "flags": [ "BOMB" ],
+    "flags": [
+      "BOMB"
+    ],
     "category": "weapons",
-    "use_action": { "type": "transform", "target": "spider_bomb_vo_act", "target_charges": 3, "active": true, "msg": "I started a bomb." }
+    "use_action": {
+      "type": "transform",
+      "target": "spider_bomb_vo_act",
+      "target_charges": 3,
+      "active": true,
+      "msg": "I started a bomb."
+    }
   },
   {
     "id": "spider_bomb_vo_act",
     "type": "TOOL",
     "symbol": "*",
     "color": "dark_gray",
-    "name": { "str": "Trouble bomb (start)" },
-    "description": "Sprinkle homemade white sticky matter. Please throw it before you get caught!",
+    "name": {
+      "str_sp": "Trouble bomb (start)"
+    },
+    "description": "Sprinkle homemade white sticky matter.  Please throw it before you get caught!",
     "price": "0 cent",
-    "material": [ "steel" ],
-    "flags": [ "TRADER_AVOID" ],
+    "material": [
+      "steel"
+    ],
+    "flags": [
+      "TRADER_AVOID"
+    ],
     "weight": "1264 g",
     "volume": "250 ml",
-    "melee_damage": { "bash": 6 },
+    "melee_damage": {
+      "bash": 6
+    },
     "to_hit": -1,
     "max_charges": 3,
     "initial_charges": 3,
     "turns_per_charge": 1,
     "revert_to": "canister_empty",
     "category": "weapons",
-    "use_action": { "type": "explosion", "fields_radius": 1, "fields_type": "fd_web", "fields_min_density": 0 }
+    "use_action": {
+      "type": "explosion",
+      "fields_radius": 1,
+      "fields_type": "fd_web",
+      "fields_min_density": 0
+    }
   },
   {
     "id": "mop_vo",
     "type": "TOOL",
     "symbol": "/",
     "color": "light_gray",
-    "name": { "str": "Telescopic mop" },
-    "description": "It is a telescopic mop. Performance does not change even if it is less than half the size of conventional products.",
+    "name": {
+      "str": "Telescopic mop"
+    },
+    "description": "It is a telescopic mop.  Performance does not change even if it is less than half the size of conventional products.",
     "price": "10 USD",
-    "material": [ "iron", "plastic" ],
+    "material": [
+      "iron",
+      "plastic"
+    ],
     "weight": "529 g",
     "volume": "750 ml",
-    "melee_damage": { "bash": 3 },
+    "melee_damage": {
+      "bash": 3
+    },
     "to_hit": -1,
     "use_action": "MOP"
   },
@@ -57,23 +91,41 @@
     "type": "TOOL",
     "symbol": "b",
     "color": "red",
-    "name": { "str": "Autologous blood transfusion kit (off)" },
-    "description": "It is a kit for using blood for transfusion. Save it when you are healthy, and use it when you need it. Start turning blood on by turning it on.",
+    "name": {
+      "str_sp": "Autologous blood transfusion kit (off)"
+    },
+    "description": "It is a kit for using blood for transfusion.  Save it when you are healthy, and use it when you need it. Start turning blood on by turning it on.",
     "price": "800 USD",
-    "material": [ "plastic" ],
+    "material": [
+      "plastic"
+    ],
     "weight": "500 g",
     "volume": "500 ml",
-    "melee_damage": { "bash": 1 },
+    "melee_damage": {
+      "bash": 1
+    },
     "to_hit": 2,
-    "flags": [ "NO_UNLOAD" ],
-    "max_charges": 20,
-    "ammo": [ "blood_clearn_vo" ],
+    "flags": [
+      "NO_UNLOAD"
+    ],
+    "ammo": [
+      "blood_clearn_vo"
+    ],
     "use_action": [
       {
         "type": "transform",
         "msg": "I connected the blood collector to my body.",
         "target": "blood_transfusion_on_vo",
         "active": true
+      }
+    ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE",
+        "rigid": true,
+        "ammo_restriction": {
+          "blood_clearn_vo": 20
+        }
       }
     ]
   },
@@ -82,33 +134,72 @@
     "type": "TOOL",
     "symbol": "b",
     "color": "red",
-    "name": { "str": "Autologous blood transfusion kit (on)" },
-    "description": "It is a kit for using blood for transfusion. Blood is being accumulated ... · · ·. Saved blood can be used as it is, or it can be removed from production. Let's draw it out when it is full.",
+    "name": {
+      "str_sp": "Autologous blood transfusion kit (on)"
+    },
+    "description": "It is a kit for using blood for transfusion.  Blood is being accumulated … · · ·. Saved blood can be used as it is, or it can be removed from production.  Let's draw it out when it is full.",
     "price": "800 USD",
-    "material": [ "plastic" ],
+    "material": [
+      "plastic"
+    ],
     "weight": "500 g",
     "volume": "500 ml",
-    "melee_damage": { "bash": 1 },
+    "melee_damage": {
+      "bash": 1
+    },
     "to_hit": 2,
-    "flags": [ "NO_UNLOAD" ],
-    "max_charges": 20,
+    "flags": [
+      "NO_UNLOAD"
+    ],
     "charges_per_use": 2,
-    "ammo": [ "blood_clearn_vo" ],
+    "ammo": [
+      "blood_clearn_vo"
+    ],
     "revert_to": "blood_transfusion_off_vo",
-    "use_action": [ { "type": "transform", "msg": "I pulled out the blood collector.", "target": "blood_transfusion_off_vo" } ],
+    "use_action": [
+      {
+        "type": "transform",
+        "msg": "I pulled out the blood collector.",
+        "target": "blood_transfusion_off_vo"
+      }
+    ],
     "relic_data": {
-      "passive_effects": [ { "has": "WIELD", "condition": "ALWAYS", "hit_you_effect": [ { "id": "ARTC_HP", "once_in": 3 } ] } ]
-    }
+      "passive_effects": [
+        {
+          "has": "WIELD",
+          "condition": "ALWAYS",
+          "hit_you_effect": [
+            {
+              "id": "ARTC_HP",
+              "once_in": 3
+            }
+          ]
+        }
+      ]
+    },
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE",
+        "rigid": true,
+        "ammo_restriction": {
+          "blood_clearn_vo": 20
+        }
+      }
+    ]
   },
   {
     "id": "brainwash_off_vo",
     "type": "TOOL",
     "symbol": "*",
     "color": "white",
-    "name": { "str": "Brain washing device (off)" },
-    "description": "It is an electromagnetic wave weapon which acts on the opponent's brain using sunlight. Because of its nature, it can only be used while hitting the sun and once turned on it can not be turned off as long as the sun is out. You can defend by winding aluminum foil on the head.",
+    "name": {
+      "str_sp": "Brain washing device (off)"
+    },
+    "description": "It is an electromagnetic wave weapon which acts on the opponent's brain using sunlight.  Because of its nature, it can only be used while hitting the sun and once turned on it can not be turned off as long as the sun is out.  You can defend by winding aluminum foil on the head.",
     "price": "800 USD",
-    "material": [ "plastic" ],
+    "material": [
+      "plastic"
+    ],
     "weight": "500 g",
     "volume": "500 ml",
     "max_charges": 1,
@@ -124,7 +215,18 @@
       }
     ],
     "relic_data": {
-      "passive_effects": [ { "has": "WIELD", "condition": "ALWAYS", "hit_you_effect": [ { "id": "ARTC_SOLAR", "once_in": 3 } ] } ]
+      "passive_effects": [
+        {
+          "has": "WIELD",
+          "condition": "ALWAYS",
+          "hit_you_effect": [
+            {
+              "id": "ARTC_SOLAR",
+              "once_in": 3
+            }
+          ]
+        }
+      ]
     }
   },
   {
@@ -132,26 +234,50 @@
     "type": "TOOL",
     "symbol": "*",
     "color": "white",
-    "name": { "str": "Brain washing device (on）" },
-    "description": "It is an electromagnetic wave weapon which acts on the opponent's brain using sunlight. Because of its nature, it can only be used while hitting the sun and once turned on it can not be turned off as long as the sun is out. Why is it also effective for machines?",
+    "name": {
+      "str_sp": "Brain washing device (on）"
+    },
+    "description": "It is an electromagnetic wave weapon which acts on the opponent's brain using sunlight.  Because of its nature, it can only be used while hitting the sun and once turned on it can not be turned off as long as the sun is out.  Why is it also effective for machines?",
     "price": "800 USD",
-    "material": [ "plastic" ],
+    "material": [
+      "plastic"
+    ],
     "weight": "500 g",
     "volume": "500 ml",
     "max_charges": 1,
     "turns_per_charge": 201,
     "revert_to": "brainwash_off_vo",
-    "use_action": { "type": "artifact" },
+    "use_action": {
+      "type": "artifact"
+    },
     "relic_data": {
       "passive_effects": [
         {
           "has": "WIELD",
           "condition": "ALWAYS",
-          "hit_you_effect": [ { "id": "ARTC_SOLAR", "once_in": 3 } ],
-          "mutations": [ "AEP_SCHIZO" ]
+          "hit_you_effect": [
+            {
+              "id": "ARTC_SOLAR",
+              "once_in": 3
+            }
+          ],
+          "mutations": [
+            "AEP_SCHIZO"
+          ]
         }
       ]
     },
-    "intermittent_activation": { "effects": [ { "frequency": "2 minutes", "spell_effects": [ { "id": "AEA_ENTRANCE" } ] } ] }
+    "intermittent_activation": {
+      "effects": [
+        {
+          "frequency": "2 minutes",
+          "spell_effects": [
+            {
+              "id": "AEA_ENTRANCE"
+            }
+          ]
+        }
+      ]
+    }
   }
 ]

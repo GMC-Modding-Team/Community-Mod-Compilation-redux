@@ -2,13 +2,21 @@
   {
     "type": "overmap_terrain",
     "id": "lake_shore",
-    "copy-from": "lake_shore",
-    "sym": "\u00F7"
+    "copy-from": "generic_lake",
+    "name": "lake shore",
+    "color": "light_blue",
+    "delete": { "flags": [ "LAKE" ] },
+    "extend": { "flags": [ "LAKE_SHORE", "IGNORE_ROTATION_FOR_ADJACENCY" ] },
+    "extras": "lake_shore",
+    "travel_cost_type": "shore",
+    "mapgen": [ { "method": "builtin", "name": "lake_shore" } ],
+    "sym": "÷"
   },
   {
     "type": "overmap_terrain",
     "id": "lake_surface",
-    "copy-from": "lake_surface",
-    "sym": "\u00F7"
+    "copy-from": "generic_lake",
+    "travel_cost_type": "water",
+    "sym": "÷"
   }
 ]

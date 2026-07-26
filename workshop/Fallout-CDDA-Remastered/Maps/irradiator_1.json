@@ -34,9 +34,7 @@
     "items": [
       { "item": "iodine", "prob": 50 },
       { "item": "prussian_blue", "prob": 75 },
-      { "item": "1st_aid", "prob": 50 },
       { "item": "gloves_medical", "prob": 20 },
-      { "item": "rag_bloody", "prob": 30 },
       { "group": "drugs_emergency", "prob": 30 },
       { "group": "drugs_heal_simple", "prob": 20 },
       { "group": "drugs_analgesic", "prob": 10 }
@@ -200,12 +198,12 @@
         "f": [ "t_chainfence_h" ],
         "s": [ "t_sidewalk" ],
         "w": [ "t_window" ],
-        "x": [ "t_console_broken" ],
+        "x": [ "t_strconc_floor" ],
         "|": [ "t_strconc_wall" ],
         "U": [ "t_water_pool" ],
         "R": [ "t_reinforced_glass_shutter_open" ],
         "m": [ "t_oil_circ_brkr_s", "t_station_disc", "t_switchgear_s", "t_potential_trans", "t_current_trans", "t_lgtn_arrest" ],
-        "M": [ "t_machinery_heavy" ],
+        "M": [ "t_floor" ],
         "e": [ "t_gates_mech_control" ],
         "#": [ "t_sidewalk" ],
         "P": [ "t_sewage_pump", "t_sewage_pipe", "t_sewage_pipe", "t_sewage_pipe" ],
@@ -213,18 +211,18 @@
         "y": [ "t_door_metal_o" ],
         "N": [ "t_door_metal_locked" ],
         "%": [ "t_grate" ],
-        "/": [ "t_plut_generator" ],
+        "/": [ "t_floor" ],
         "}": [ "t_ladder_up" ],
         ")": [ "t_reinforced_glass" ],
         "!": [ "t_thconc_floor" ],
-        "0": [ "t_console" ],
+        "0": [ "t_strconc_floor" ],
         "1": [ "t_floor_red" ],
         "2": [ "t_floor_green" ],
         "3": [ "t_rad_platform" ],
         "4": [ "t_card_industrial" ],
-        "5": [ "t_console" ],
-        "6": [ "t_console" ],
-        "7": [ "t_console" ]
+        "5": [ "t_strconc_floor" ],
+        "6": [ "t_strconc_floor" ],
+        "7": [ "t_strconc_floor" ]
       },
       "furniture": {
         "#": [ "f_bench" ],
@@ -254,7 +252,12 @@
         "?": [ "f_toilet" ],
         ">": [ "f_vent_pipe" ],
         ".": [ "f_oven", "f_counter", "f_fridge", "f_trashcan", "f_cupboard" ],
-        "{": [ "f_washer", "f_dryer" ]
+        "{": [ "f_washer", "f_dryer" ],
+        "x": "f_console_broken",
+        "0": "f_console",
+        "5": "f_console",
+        "6": "f_console",
+        "7": "f_console"
       },
       "computers": {
         "0": {
@@ -329,7 +332,7 @@
       ],
       "liquids": { "T": { "liquid": "water_clean", "amount": [ 200, 600 ] } },
       "fields": { "U": { "field": "fd_nuke_gas", "intensity": 3, "age": 990 }, "/": { "field": "fd_shock_vent" } },
-      "monster": { "(": { "monster": "mon_turret_light" }, "!": { "monster": "mon_hazmatbot", "chance": 5 } },
+      "monster": { "(": { "monster": "mon_turret" }, "!": { "monster": "mon_hazmatbot", "chance": 5 } },
       "place_monsters": [
         { "monster": "GROUP_ZOMBIE_NUCLEAR_INDUSTRY", "x": [ 5, 23 ], "y": [ 4, 23 ], "density": 0.5 },
         { "monster": "GROUP_ZOMBIE_NUCLEAR_INDUSTRY", "x": [ 24, 47 ], "y": [ 4, 23 ], "density": 0.5 },
@@ -356,9 +359,9 @@
       ],
       "place_vehicles": [
         { "vehicle": "warehouse_vehicles", "chance": 50, "fuel": -1, "rotation": 0, "status": -1, "x": 8, "y": 48 },
-        { "vehicle": "warehouse_vehicles", "chance": 50, "fuel": -1, "rotation": 180, "status": 0, "x": 23, "y": 48 },
-        { "vehicle": "warehouse_vehicles", "chance": 50, "fuel": -1, "rotation": 0, "status": 1, "x": 47, "y": 48 },
-        { "vehicle": "warehouse_vehicles", "chance": 50, "fuel": -1, "rotation": 180, "status": -1, "x": 60, "y": 48 },
+        { "vehicle": "warehouse_vehicles", "chance": 50, "fuel": -1, "rotation": 180, "status": 0, "x": 21, "y": 50 },
+        { "vehicle": "warehouse_vehicles", "chance": 50, "fuel": -1, "rotation": 0, "status": 1, "x": 45, "y": 50 },
+        { "vehicle": "warehouse_vehicles", "chance": 50, "fuel": -1, "rotation": 180, "status": -1, "x": 60, "y": 50 },
         {
           "vehicle": "industrial_transport",
           "chance": 25,
@@ -458,11 +461,6 @@
         "                                                                        ",
         "                                                                        ",
         "                                                                        ",
-        "                                                                        ",
-        "                                                                        ",
-        "                                                                        ",
-        "                                                                        ",
-        "                                                                        ",
         "                           |----------------3                           ",
         "                           |................3                           ",
         "                           |................5                           ",
@@ -493,13 +491,12 @@
           "chunks": [
             [ "null", 5 ],
             [ "roof_4x4_survivor", 15 ],
-            [ "roof_16x16_help", 25 ],
             [ "roof_4x4_holdout", 5 ],
             [ "roof_6x6_utility", 45 ],
             [ "roof_5x5_coop", 5 ]
           ],
-          "x": [ 11, 23 ],
-          "y": [ 5, 23 ]
+          "x": [ 11, 18 ],
+          "y": [ 5, 18 ]
         }
       ]
     }

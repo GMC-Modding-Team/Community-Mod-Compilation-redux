@@ -1,35 +1,5 @@
 [
   {
-    "id": "mon_ant_queen",
-    "type": "MONSTER",
-    "name": { "str": "queen ant" },
-    "copy-from": "mon_ant_queen",
-    "description": "A colossal red ant with a bulging, bloated thorax.  It moves slowly and deliberately, tending to nearby eggs and continually laying more. You can feel tremendous heat radiating from her belly, shining in the darkness.",
-    "default_faction": "ant",
-    "species": [ "INSECT" ],
-    "diff": 18,
-    "hp": 140,
-    "speed": 40,
-    "material": [ "iflesh" ],
-    "symbol": "a",
-    "color": "light_red",
-    "aggression": 0,
-    "morale": 100,
-    "melee_skill": 4,
-    "melee_dice": 2,
-    "melee_dice_sides": 4,
-    "melee_damage": [ { "damage_type": "cut", "amount": 3 } ],
-    "dodge": 1,
-    "vision_day": 5,
-    "vision_night": 5,
-    "luminance": 48,
-    "special_attacks": [ [ "ant_dinject", 40 ], [ "ANTQUEEN", 3 ], [ "FLAMETHROWER", 20 ], [ "SHRIEK_ALERT", 5 ] ],
-    "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT", "FIRE" ],
-    "death_drops": "ant_drops",
-    "flags": [ "SEES", "SMELLS", "KEENNOSE", "PATH_AVOID_DANGER_1", "QUEEN", "CHITIN", "FAT", "CLIMBS", "FIREPROOF", "BASHES" ],
-    "armor": { "bash": 16, "cut": 25, "acid": 5 }
-  },
-  {
     "id": "mon_triffid_heart",
     "type": "MONSTER",
     "name": { "str": "triffid heart" },
@@ -44,9 +14,7 @@
     "color": "red",
     "aggression": 100,
     "morale": 100,
-    "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "special_attacks": [ [ "TRIFFID_HEARTBEAT", 5 ] ],
-    "death_function": [ "TRIFFID_HEART" ],
     "death_drops": "triffid_drops",
     "flags": [ "NOHEAD", "IMMOBILE", "QUEEN" ],
     "armor": { "bash": 12, "cut": 16 }
@@ -69,71 +37,10 @@
     "melee_skill": 5,
     "melee_dice": 2,
     "melee_dice_sides": 4,
-    "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "special_attacks": [ [ "CALLBLOBS", 0 ] ],
-    "death_function": [ "BRAINBLOB" ],
     "death_drops": "brain_drops",
     "flags": [ "SEES", "HEARS", "GOODHEARING", "NOHEAD", "POISON", "NO_BREATHE", "ACIDPROOF", "QUEEN" ],
     "armor": { "bash": 12 }
-  },
-  {
-    "id": "mon_jabberwock",
-    "type": "MONSTER",
-    "copy-from": "mon_jabberwock",
-    "name": { "str": "jabberwock" },
-    "description": "A putrid amalgamation of body parts from humans and other creatures have fused together in this aberration of flesh.  The eyes of all the heads dart about rapidly and the mouths form a chorus of groaning screams.  Its coming for you.",
-    "default_faction": "jabberwock",
-    "species": [ "ABERRATION" ],
-    "diff": 50,
-    "hp": 600,
-    "speed": 140,
-    "material": [ "flesh" ],
-    "symbol": "J",
-    "color": "dark_gray_red",
-    "aggression": 100,
-    "morale": 100,
-    "melee_skill": 13,
-    "melee_dice": 5,
-    "melee_dice_sides": 9,
-    "melee_damage": [ { "damage_type": "cut", "amount": 10 } ],
-    "dodge": 5,
-    "attack_effs": [ { "id": "rad_tenths", "duration": 40 } ],
-    "vision_day": 50,
-    "vision_night": 5,
-    "special_attacks": [
-      [ "FLESH_GOLEM", 10 ],
-      [ "FEAR_PARALYZE", 40 ],
-      [ "SMASH", 50 ],
-      {
-        "id": "slash",
-        "cooldown": 20,
-        "damage_max_instance": [
-          { "damage_type": "cut", "amount": 20, "armor_multiplier": 0.8 },
-          { "damage_type": "stab", "amount": 12, "armor_multiplier": 0.8 }
-        ]
-      }
-    ],
-    "death_function": [ "JABBERWOCKY" ],
-    "death_drops": "jabber_drops",
-    "flags": [
-      "SEES",
-      "HEARS",
-      "SMELLS",
-      "STUMBLES",
-      "WARM",
-      "BASHES",
-      "DESTROYS",
-      "ATTACKMON",
-      "FUR",
-      "LEATHER",
-      "BONES",
-      "POISON",
-      "BONES",
-      "FAT",
-      "REVIVES",
-      "NO_NECRO"
-    ],
-    "armor": { "bash": 18, "cut": 12 }
   },
   {
     "id": "mon_zombie_bear_mega",
@@ -175,13 +82,9 @@
       "PATH_AVOID_DANGER_1",
       "ANIMAL",
       "WARM",
-      "FUR",
       "BASHES",
       "DESTROYS",
       "ATTACKMON",
-      "BONES",
-      "FAT",
-      "LEATHER",
       "STUMBLES",
       "WARM",
       "POISON",
@@ -205,9 +108,7 @@
     "color": "light_gray",
     "aggression": 100,
     "morale": 100,
-    "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "special_attacks": [ [ "FUNGUS_SPROUT", 10 ] ],
-    "death_function": [ "FUNGUS", "NORMAL" ],
     "death_drops": "marloss_yellow_drops",
     "flags": [ "NOHEAD", "POISON", "IMMOBILE", "NO_BREATHE", "QUEEN" ],
     "armor": { "bash": 10, "cut": 10 }
@@ -227,10 +128,8 @@
     "color": "cyan",
     "aggression": 100,
     "morale": 100,
-    "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "luminance": 200,
     "special_attacks": [ [ "FUNGUS_BIG_BLOSSOM", 10 ] ],
-    "death_function": [ "FUNGUS", "NORMAL" ],
     "death_drops": "marloss_yellow_drops",
     "flags": [ "NOHEAD", "POISON", "IMMOBILE", "NO_BREATHE", "QUEEN" ],
     "armor": { "bash": 10, "cut": 10 }
@@ -263,7 +162,7 @@
       [ "GRENADIER", 10 ],
       { "id": "hammer", "damage_max_instance": [ { "damage_type": "bash", "amount": 35, "armor_multiplier": 0.8 } ] },
       {
-        "type": "GUN",
+        "type": "gun",
         "cooldown": 3,
         "move_cost": 350,
         "gun_type": "hell_laser_gun_queen",
@@ -281,7 +180,6 @@
         "no_ammo_sound": "-Beep-beep-beep-"
       }
     ],
-    "death_function": [ "SMOKEBURST", "MELT" ],
     "death_drops": "doom_drops",
     "flags": [
       "SEES",
@@ -296,6 +194,6 @@
       "INTERIOR_AMMO",
       "QUEEN"
     ],
-    "armor": { "bash": 15, "cut": 25, "acid": 5, "fire": 8 }
+    "armor": { "bash": 15, "cut": 25, "acid": 5, "heat": 8 }
   }
 ]

@@ -1,128 +1,5 @@
 [
   {
-    "id": "mon_fungal_hedgerow",
-    "type": "MONSTER",
-    "copy-from": "mon_fungal_hedgerow",
-    "hp": 50,
-    "attack_effs": [ { "id": "rad_tenths", "duration": 10 }, { "id": "rad_tenths", "duration": 20 } ],
-    "vision_day": 2,
-    "vision_night": 2,
-    "starting_ammo": { "bot_fungal_boil": 4 },
-    "special_attacks": [
-      [ "FUNGUS_BRISTLE", 5 ],
-      [ "FUNGUS", 240 ],
-      [ "TENTACLE", 50 ],
-      [ "GRENADIER", 120 ],
-      [ "wound_minor", 30 ],
-      [ "scratch", 20 ]
-    ],
-    "death_function": [ "FUNGUS", "DISINTEGRATE" ],
-    "flags": [ "SEES", "NOHEAD", "POISON", "NO_BREATHE", "IMMOBILE" ],
-    "armor": { "bash": 8, "cut": 2, "acid": 2, "fire": 2 }
-  },
-  {
-    "id": "mon_fungal_wall",
-    "type": "MONSTER",
-    "copy-from": "mon_fungal_wall",
-    "hp": 30,
-    "attack_effs": [ { "id": "rad_tenths", "duration": 20 }, { "id": "rad_tenths", "duration": 30 } ],
-    "vision_day": 30,
-    "vision_night": 30,
-    "starting_ammo": { "bot_fungal_boil": 8 },
-    "special_attacks": [ [ "FUNGUS_BRISTLE", 20 ], [ "FUNGUS", 30 ], [ "wound_minor", 30 ], [ "GRENADIER", 60 ] ],
-    "death_function": [ "FUNGUS", "DISINTEGRATE" ],
-    "regenerates": 1,
-    "flags": [ "SEES", "NOHEAD", "POISON", "NO_BREATHE", "IMMOBILE" ],
-    "armor": { "bash": 12, "cut": 3, "acid": 1, "fire": 1 }
-  },
-  {
-    "id": "mon_fungaloid_young",
-    "type": "MONSTER",
-    "copy-from": "mon_fungaloid_young",
-    "aggression": -25,
-    "attack_effs": [ { "id": "rad_tenths", "duration": 2 } ],
-    "special_attacks": [ [ "FUNGUS_GROWTH", 300 ], [ "wound_minor", 20 ] ],
-    "anger_triggers": [ "HURT", "FRIEND_ATTACKED" ],
-    "flags": [ "HEARS", "SMELLS", "STUMBLES", "POISON", "NO_BREATHE", "NOHEAD" ]
-  },
-  {
-    "id": "mon_fungaloid",
-    "type": "MONSTER",
-    "copy-from": "mon_fungaloid",
-    "aggression": -10,
-    "attack_effs": [ { "id": "rad_tenths", "duration": 2 } ],
-    "special_attacks": [ [ "FUNGUS", 20 ], [ "wound_minor", 30 ] ],
-    "anger_triggers": [ "HURT", "FRIEND_ATTACKED" ],
-    "flags": [ "HEARS", "SMELLS", "STUMBLES", "POISON", "NO_BREATHE", "NOHEAD" ]
-  },
-  {
-    "id": "mon_ant_fungus",
-    "type": "MONSTER",
-    "copy-from": "mon_ant_fungus",
-    "species": [ "INSECT", "FUNGUS" ],
-    "hp": 50,
-    "speed": 90,
-    "aggression": 0,
-    "morale": 40,
-    "melee_skill": 6,
-    "melee_dice": 1,
-    "melee_dice_sides": 10,
-    "melee_damage": [ { "damage_type": "cut", "amount": 1 } ],
-    "dodge": 1,
-    "vision_day": 3,
-    "vision_night": 3,
-    "special_attacks": [ [ "wound_minor", 30 ], [ "FUNGUS_INJECT", 30 ], [ "GRAB", 30 ], [ "FUNGUS", 300 ] ],
-    "anger_triggers": [ "HURT", "FRIEND_ATTACKED" ],
-    "death_function": [ "FUNGUS", "NORMAL" ],
-    "upgrades": { "half_life": 21, "into": "mon_fant" },
-    "//": "The vanilla fungal ants are pretty awful at everything.  I get why, considering the real-world examples, but I'm trying to create a more combat-intensive experience while still having the interesting.  So they evolve now.",
-    "armor": { "bash": 7, "cut": 12 }
-  },
-  {
-    "id": "mon_zombie_fungus",
-    "type": "MONSTER",
-    "copy-from": "mon_zombie_fungus",
-    "species": [ "ZOMBIE", "FUNGUS" ],
-    "attack_effs": [ { "id": "rad_tenths", "duration": 1 } ],
-    "vision_day": 7,
-    "vision_night": 7,
-    "special_attacks": [ [ "wound_minor", 30 ], [ "FUNGUS", 200 ], [ "scratch", 25 ], { "type": "bite", "cooldown": 5 } ],
-    "flags": [ "SEES", "SMELLS", "STUMBLES", "WARM", "BASHES", "REVIVES", "GROUP_BASH", "POISON", "NO_BREATHE", "BONES", "PUSH_MON" ]
-  },
-  {
-    "id": "mon_boomer_fungus",
-    "type": "MONSTER",
-    "copy-from": "mon_boomer_fungus",
-    "species": [ "ZOMBIE", "FUNGUS" ],
-    "attack_effs": [ { "id": "rad_tenths", "duration": 1 } ],
-    "vision_day": 25,
-    "vision_night": 3,
-    "special_attacks": [ [ "wound_minor", 30 ], [ "FUNGUS", 100 ], [ "BOOMER", 20 ], [ "scratch", 25 ] ],
-    "death_function": [ "FUNGUS", "FUNGUS", "BLOBSPLIT" ],
-    "flags": [
-      "SEES",
-      "HEARS",
-      "SMELLS",
-      "STUMBLES",
-      "WARM",
-      "BASHES",
-      "REVIVES",
-      "GROUP_BASH",
-      "POISON",
-      "NO_BREATHE",
-      "BONES",
-      "FAT",
-      "PUSH_MON"
-    ]
-  },
-  {
-    "id": "mon_spore",
-    "type": "MONSTER",
-    "copy-from": "mon_spore",
-    "name": { "str": "spore cloud" },
-    "default_faction": "spore"
-  },
-  {
     "id": "mon_fungus_boil",
     "type": "MONSTER",
     "name": { "str": "fungal boil" },
@@ -144,8 +21,7 @@
     "dodge": 2,
     "vision_day": 5,
     "vision_night": 5,
-    "special_attacks": [ [ "wound_minor", 30 ], [ "PLANT", 60 ], [ "SUICIDE", 90 ] ],
-    "death_function": [ "DISINTEGRATE", "FUNGUS", "FUNGUS", "FUNGUS" ],
+    "special_attacks": [ { "id": "wound_minor", "cooldown": 30 }, [ "PLANT", 60 ], [ "SUICIDE", 90 ] ],
     "upgrades": { "half_life": 1, "into": "mon_fungaloid_pk" },
     "flags": [ "SEES", "STUMBLES", "FLIES", "POISON", "NO_BREATHE", "NOHEAD", "NOGIB" ]
   },
@@ -154,7 +30,7 @@
     "type": "MONSTER",
     "name": { "str": "fungal cougar" },
     "description": "The Eastern cougar, now an aspiring fungaloid.  Although it appears its transformation has affected its agility some, it still bounds after targets with savagery.",
-    "default_faction": "finfected",
+    "default_faction": "fungus",
     "species": [ "MAMMAL" ],
     "diff": 12,
     "harvest": "zombie_fur",
@@ -178,7 +54,7 @@
       [ "FUNGUS", 180 ],
       [ "FUNGUS_INJECT", 60 ],
       { "type": "leap", "cooldown": 10, "max_range": 4 },
-      [ "slash", 25 ]
+      { "id": "slash", "cooldown": 25 }
     ],
     "anger_triggers": [ "PLAYER_WEAK", "HURT", "FRIEND_ATTACKED" ],
     "fear_triggers": [ "SOUND", "FIRE" ],
@@ -190,7 +66,7 @@
     "type": "MONSTER",
     "name": { "str": "deer" },
     "description": "A deer riddled with budding fungi.  Suicidally fast.  So fast you hardly have time to recognize its affliction.",
-    "default_faction": "finfected",
+    "default_faction": "fungus",
     "species": [ "MAMMAL" ],
     "diff": 3,
     "harvest": "zombie_leather",
@@ -209,11 +85,10 @@
     "dodge": 2,
     "vision_day": 50,
     "vision_night": 10,
-    "special_attacks": [ [ "wound_minor", 30 ], [ "LUNGE", 3 ], [ "SUICIDE", 90 ], [ "SHRIEK", 15 ], [ "FUNGUS", 60 ] ],
+    "special_attacks": [ { "id": "wound_minor", "cooldown": 30 }, [ "LUNGE", 3 ], [ "SUICIDE", 90 ], [ "SHRIEK", 15 ], [ "FUNGUS", 60 ] ],
     "anger_triggers": [ "SOUND", "PLAYER_CLOSE", "HURT", "FRIEND_ATTACKED", "FRIEND_DIED" ],
     "fear_triggers": [ "FIRE" ],
     "placate_triggers": [ "PLAYER_WEAK" ],
-    "death_function": [ "FUNGUS", "FUNGUS", "FUNGUS", "FUNGUS", "FUNGUS", "DISINTEGRATE", "SMOKEBURST" ],
     "flags": [ "SEES", "HEARS", "SMELLS", "ANIMAL", "POISON", "BASHES", "WARM" ],
     "//": "This deer is a great concept, but admittedly gamey.  Perhaps it'd be better to change its color to light_gray or to remove the suicide attack?"
   },
@@ -222,7 +97,7 @@
     "type": "MONSTER",
     "name": { "str": "foose" },
     "description": "The 'foose' is an ill-tempered beast, fighting a battle it must inevitably lose.  Occasionally it gives unearthly voice to its anguish.",
-    "default_faction": "finfected",
+    "default_faction": "fungus",
     "species": [ "MAMMAL" ],
     "diff": 8,
     "harvest": "zombie_fur",
@@ -241,10 +116,9 @@
     "attack_effs": [ { "id": "rad_tenths", "duration": 2 } ],
     "vision_day": 35,
     "vision_night": 10,
-    "special_attacks": [ [ "wound_minor", 30 ], [ "FUNGUS", 120 ], [ "HOWL", 60 ], [ "hammer", 40 ] ],
+    "special_attacks": [ { "id": "wound_minor", "cooldown": 30 }, [ "FUNGUS", 120 ], [ "HOWL", 60 ], { "id": "hammer", "cooldown": 40 } ],
     "anger_triggers": [ "FIRE", "HURT", "PLAYER_CLOSE", "FRIEND_ATTACKED" ],
-    "placate_triggers": [ "PLAYER_WEAK", "SOUND" ],
-    "death_function": [ "NORMAL", "FUNGUS" ],
+    "placate_triggers": [ "PLAYER_WEAK" ],
     "flags": [ "SEES", "HEARS", "SMELLS", "PATH_AVOID_DANGER_1", "ANIMAL", "POISON", "BASHES", "WARM", "ATTACKMON" ],
     "//": "The mighty foose.  Not mighty enough.  Ever.",
     "armor": { "bash": 5, "cut": 3, "acid": 2 }
@@ -254,7 +128,7 @@
     "type": "MONSTER",
     "name": { "str": "wolf", "str_pl": "wolves" },
     "description": "Whether wolf or dog, this canine is clearly sick.  The slavering of its mouth is consistent, at least.",
-    "default_faction": "finfected",
+    "default_faction": "fungus",
     "species": [ "FUNGUS" ],
     "diff": 12,
     "harvest": "zombie_fur",
@@ -275,14 +149,13 @@
     "vision_day": 40,
     "vision_night": 3,
     "special_attacks": [
-      [ "wound_minor", 30 ],
+      { "id": "wound_minor", "cooldown": 30 },
       [ "FUNGUS", 120 ],
       [ "FUNGUS_INJECT", 60 ],
-      { "type": "bite", "cooldown": 7, "min_mul": 0.65, "no_infection_chance": 9, "//": "strong jaws" }
+      { "type": "bite", "cooldown": 7, "min_mul": 0.65, "//": "strong jaws" }
     ],
     "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "PLAYER_WEAK", "PLAYER_CLOSE" ],
     "fear_triggers": [ "FIRE" ],
-    "placate_triggers": [ "MEAT" ],
     "flags": [ "SEES", "HEARS", "SMELLS", "PATH_AVOID_DANGER_1", "ANIMAL", "WARM", "KEENNOSE" ],
     "armor": { "bash": 2, "cut": 1 }
   },
@@ -291,7 +164,7 @@
     "type": "MONSTER",
     "name": { "str": "fant" },
     "description": "Pale and sickly gray in color, it's hard to believe this ant is still alive, much less moving to attack you.",
-    "default_faction": "finfected",
+    "default_faction": "fungus",
     "species": [ "INSECT", "FUNGUS" ],
     "diff": 15,
     "harvest": "arachnid_tainted",
@@ -311,21 +184,19 @@
     "vision_day": 3,
     "vision_night": 3,
     "special_attacks": [
-      [ "GRAB", 40 ],
+      { "id": "grab", "cooldown": 40 },
       [ "FUNGUS", 180 ],
       [ "FUNGUS_INJECT", 60 ],
       {
         "type": "bite",
         "cooldown": 40,
         "accuracy": 7,
-        "no_infection_chance": 9,
         "damage_max_instance": [
           { "damage_type": "stab", "amount": 8, "armor_multiplier": 0.7 },
           { "damage_type": "bash", "amount": 18, "armor_multiplier": 0.7 }
         ]
       }
     ],
-    "death_function": [ "NORMAL", "FUNGUS" ],
     "flags": [ "SEES", "SMELLS", "POISON", "CLIMBS" ],
     "armor": { "bash": 10, "cut": 15, "acid": 2 }
   },
@@ -354,10 +225,9 @@
     "attack_effs": [ { "id": "rad_tenths", "duration": 10 }, { "id": "rad_tenths", "duration": 10 } ],
     "vision_day": 2,
     "vision_night": 2,
-    "special_attacks": [ [ "wound_minor", 40 ], [ "TENTACLE", 20 ], [ "FUNGUS_INJECT", 10 ], [ "FUNGUS", 240 ] ],
+    "special_attacks": [ { "id": "wound_minor", "cooldown": 40 }, [ "TENTACLE", 20 ], [ "FUNGUS_INJECT", 10 ], [ "FUNGUS", 240 ] ],
     "anger_triggers": [ "SOUND", "HURT" ],
     "placate_triggers": [ "PLAYER_WEAK" ],
-    "death_function": [ "FUNGUS", "NORMAL" ],
     "flags": [
       "SEES",
       "HEARS",
@@ -377,7 +247,7 @@
     "type": "MONSTER",
     "name": { "str": "infected tardigrade" },
     "description": "A giant water bear that is host to the fungal invasion.  Its body has softened as a result of the infection, and its sensory tentacles have lengthened significantly where fungal buds have formed.  Even as this gentle beast ignores you the fungal tentacles seek new flesh to pollinate.",
-    "default_faction": "finfected",
+    "default_faction": "fungus",
     "species": [ "INSECT" ],
     "diff": 5,
     "harvest": "arachnid_tainted",
@@ -396,13 +266,13 @@
     "vision_day": 5,
     "vision_night": 3,
     "special_attacks": [
-      [ "wound_minor", 30 ],
-      [ "GRAB", 20 ],
+      { "id": "wound_minor", "cooldown": 30 },
+      { "id": "grab", "cooldown": 20 },
       [ "VINE", 7 ],
       [ "FUNGUS", 90 ],
       [ "TENTACLE", 20 ],
       [ "FUNGUS_BRISTLE", 30 ],
-      [ "para_poison", 15 ]
+      { "id": "para_poison", "cooldown": 15 }
     ],
     "anger_triggers": [ "HURT", "STALK", "FRIEND_ATTACKED" ],
     "placate_triggers": [ "PLAYER_WEAK" ],
@@ -419,7 +289,7 @@
       "ANIMAL"
     ],
     "//": "As it currently stands this guy will whip at you even if it is peaceful.  The tentacle attacks were taken from the Dog-Thing, and can cover quite a distance.  So the reduced vision radius keeps the max distance of the tentacle down.  It's a neat effect caused by what I'm sure is an unintended bug.",
-    "armor": { "bash": 23, "cut": 23, "acid": 4, "fire": 6 }
+    "armor": { "bash": 23, "cut": 23, "acid": 4, "heat": 6 }
   },
   {
     "id": "mon_furvivor",
@@ -447,18 +317,17 @@
     "vision_day": 35,
     "vision_night": 3,
     "special_attacks": [
-      [ "wound_minor", 30 ],
+      { "id": "wound_minor", "cooldown": 30 },
       [ "FUNGUS", 180 ],
       [ "SHRIEK", 120 ],
-      [ "GRAB", 15 ],
-      [ "scratch", 15 ],
-      { "type": "bite", "cooldown": 20, "min_mul": 0.85, "no_infection_chance": 5 }
+      { "id": "grab", "cooldown": 15 },
+      { "id": "scratch", "cooldown": 15 },
+      { "type": "bite", "cooldown": 20, "min_mul": 0.85 }
     ],
     "death_drops": {
       "subtype": "collection",
       "groups": [ [ "mon_zombie_survivor_death_drops", 30 ], [ "default_zombie_death_drops", 60 ] ]
     },
-    "death_function": [ "NORMAL", "FUNGUS" ],
     "flags": [ "SEES", "HEARS", "SMELLS", "WARM", "BASHES", "STUMBLES", "GROUP_BASH", "POISON", "HUMAN", "PUSH_MON" ],
     "armor": { "bash": 9, "cut": 9, "stab": 5 }
   },
@@ -466,8 +335,8 @@
     "id": "mon_furvivor_glock",
     "type": "MONSTER",
     "name": { "str": "infected survivor" },
-    "description": "A survivor of the apocalypse, this individual is succumbing to their infection; displaying paranoia, and incoherency.  Unpredictable and terminally-ill, they will not respond to any attempts to communicate.  You can't help but notice they still wear their armor and holster, despite the fresh fungal budding that threatens to rip through it  . . .",
-    "default_faction": "finfected",
+    "description": "A survivor of the apocalypse, this individual is succumbing to their infection; displaying paranoia, and incoherency.  Unpredictable and terminally-ill, they will not respond to any attempts to communicate.  You can't help but notice they still wear their armor and holster, despite the fresh fungal budding that threatens to rip through it  …",
+    "default_faction": "fungus",
     "species": [ "MAMMAL", "FUNGUS" ],
     "diff": 15,
     "harvest": "human",
@@ -491,8 +360,8 @@
     "special_attacks": [
       [ "PARROT", 40 ],
       [ "FUNGUS", 300 ],
-      [ "GRAB", 12 ],
-      { "type": "bite", "cooldown": 30, "min_mul": 0.8, "no_infection_chance": 5 },
+      { "id": "grab", "cooldown": 12 },
+      { "type": "bite", "cooldown": 30, "min_mul": 0.8 },
       {
         "type": "gun",
         "cooldown": 2,
@@ -513,10 +382,8 @@
       }
     ],
     "anger_triggers": [ "FRIEND_DIED", "FIRE", "PLAYER_CLOSE" ],
-    "placate_triggers": [ "FRIEND_ATTACKED" ],
     "death_drops": { "subtype": "collection", "groups": [ [ "furvivor_glock", 100 ] ] },
-    "death_function": [ "NORMAL", "FUNGUS" ],
-    "flags": [ "SEES", "HEARS", "PATH_AVOID_DANGER_2", "WARM", "BASHES", "GROUP_BASH", "POISON", "HUMAN", "PUSH_MON", "GUILT" ],
+    "flags": [ "SEES", "HEARS", "PATH_AVOID_DANGER_2", "WARM", "BASHES", "GROUP_BASH", "POISON", "HUMAN", "PUSH_MON" ],
     "//": "I'm vaguely aware that the way I compiled the loot item_groups for these gun-toting Zs is pretty inefficient.  Just sayin'''",
     "armor": { "bash": 7, "cut": 7, "stab": 3, "acid": 1 }
   },
@@ -524,8 +391,8 @@
     "id": "mon_furvivor_shotgun",
     "type": "MONSTER",
     "name": { "str": "infected survivor" },
-    "description": "A survivor of the apocalypse, this individual is succumbing to their infection; displaying paranoia, and incoherency.  Unpredictable and terminally-ill, they will not respond to any attempts to communicate.  You can't help but notice they still wear their armor and holster, despite the fresh fungal budding that threatens to rip through it  . . .",
-    "default_faction": "finfected",
+    "description": "A survivor of the apocalypse, this individual is succumbing to their infection; displaying paranoia, and incoherency.  Unpredictable and terminally-ill, they will not respond to any attempts to communicate.  You can't help but notice they still wear their armor and holster, despite the fresh fungal budding that threatens to rip through it  …",
+    "default_faction": "fungus",
     "species": [ "MAMMAL", "FUNGUS" ],
     "diff": 20,
     "harvest": "human",
@@ -549,8 +416,8 @@
     "special_attacks": [
       [ "PARROT", 40 ],
       [ "FUNGUS", 300 ],
-      [ "GRAB", 30 ],
-      { "type": "bite", "cooldown": 30, "min_mul": 0.8, "no_infection_chance": 5 },
+      { "id": "grab", "cooldown": 30 },
+      { "type": "bite", "cooldown": 30, "min_mul": 0.8 },
       {
         "type": "gun",
         "cooldown": 5,
@@ -571,17 +438,15 @@
       }
     ],
     "anger_triggers": [ "FRIEND_DIED", "FIRE", "PLAYER_CLOSE" ],
-    "placate_triggers": [ "FRIEND_ATTACKED" ],
     "death_drops": { "subtype": "collection", "groups": [ [ "furvivor_shotgun", 100 ] ] },
-    "death_function": [ "NORMAL", "FUNGUS" ],
-    "flags": [ "SEES", "HEARS", "PATH_AVOID_DANGER_2", "WARM", "BASHES", "GROUP_BASH", "POISON", "HUMAN", "PUSH_MON", "GUILT" ],
+    "flags": [ "SEES", "HEARS", "PATH_AVOID_DANGER_2", "WARM", "BASHES", "GROUP_BASH", "POISON", "HUMAN", "PUSH_MON" ],
     "armor": { "bash": 9, "cut": 7, "stab": 4, "acid": 2 }
   },
   {
     "id": "mon_furvivor_deagle",
     "type": "MONSTER",
     "name": { "str": "infected survivor" },
-    "description": "A survivor of the apocalypse, this individual is succumbing to their infection; displaying paranoia, and incoherency.  Unpredictable and terminally-ill, they will not respond to any attempts to communicate.  You can't help but notice they still wear their armor and holster, despite the fresh fungal budding that threatens to rip through it  . . .",
+    "description": "A survivor of the apocalypse, this individual is succumbing to their infection; displaying paranoia, and incoherency.  Unpredictable and terminally-ill, they will not respond to any attempts to communicate.  You can't help but notice they still wear their armor and holster, despite the fresh fungal budding that threatens to rip through it  …",
     "default_faction": "fungus",
     "species": [ "MAMMAL", "FUNGUS" ],
     "diff": 20,
@@ -604,10 +469,10 @@
     "vision_night": 2,
     "starting_ammo": { "44fmj": 17 },
     "special_attacks": [
-      [ "GRAB", 60 ],
+      { "id": "grab", "cooldown": 60 },
       [ "FUNGUS", 300 ],
       [ "PARROT", 40 ],
-      { "type": "bite", "cooldown": 30, "min_mul": 0.8, "no_infection_chance": 5 },
+      { "type": "bite", "cooldown": 30, "min_mul": 0.8 },
       {
         "type": "gun",
         "cooldown": 7,
@@ -623,23 +488,21 @@
         "targeting_cost": 150,
         "targeting_sound": "the survivor taking a moment to adjust their footing!",
         "targeting_volume": 12,
-        "description": "The .44 is fired!",
+        "description": "The.44 is fired!",
         "no_ammo_sound": "the survivor curses and resumes their attack!"
       }
     ],
     "anger_triggers": [ "FRIEND_DIED", "PLAYER_WEAK", "FIRE", "PLAYER_CLOSE" ],
-    "placate_triggers": [ "FRIEND_ATTACKED" ],
     "death_drops": { "subtype": "collection", "groups": [ [ "furvivor_deagle", 100 ] ] },
-    "death_function": [ "NORMAL", "FUNGUS" ],
-    "flags": [ "SEES", "HEARS", "PATH_AVOID_DANGER_2", "WARM", "BASHES", "GROUP_BASH", "POISON", "HUMAN", "PUSH_MON", "GUILT" ],
+    "flags": [ "SEES", "HEARS", "PATH_AVOID_DANGER_2", "WARM", "BASHES", "GROUP_BASH", "POISON", "HUMAN", "PUSH_MON" ],
     "armor": { "bash": 5, "cut": 8, "stab": 6, "acid": 1 }
   },
   {
     "id": "mon_furvivor_smg",
     "type": "MONSTER",
     "name": { "str": "infected survivor" },
-    "description": "A survivor of the apocalypse, this individual is succumbing to their infection; displaying paranoia, and incoherency.  Unpredictable and terminally-ill, they will not respond to any attempts to communicate.  You can't help but notice they still wear their armor and holster, despite the fresh fungal budding that threatens to rip through it  . . .",
-    "default_faction": "finfected",
+    "description": "A survivor of the apocalypse, this individual is succumbing to their infection; displaying paranoia, and incoherency.  Unpredictable and terminally-ill, they will not respond to any attempts to communicate.  You can't help but notice they still wear their armor and holster, despite the fresh fungal budding that threatens to rip through it  …",
+    "default_faction": "fungus",
     "species": [ "MAMMAL", "FUNGUS" ],
     "diff": 25,
     "harvest": "human",
@@ -663,8 +526,8 @@
     "special_attacks": [
       [ "FUNGUS", 300 ],
       [ "PARROT", 40 ],
-      [ "GRAB", 30 ],
-      { "type": "bite", "cooldown": 30, "min_mul": 0.8, "no_infection_chance": 5 },
+      { "id": "grab", "cooldown": 30 },
+      { "type": "bite", "cooldown": 30, "min_mul": 0.8 },
       {
         "type": "gun",
         "cooldown": 6,
@@ -685,18 +548,16 @@
       }
     ],
     "anger_triggers": [ "FRIEND_DIED", "FIRE", "PLAYER_CLOSE" ],
-    "placate_triggers": [ "FRIEND_ATTACKED" ],
     "death_drops": { "subtype": "collection", "groups": [ [ "furvivor_smg", 100 ] ] },
-    "death_function": [ "NORMAL", "FUNGUS" ],
-    "flags": [ "SEES", "HEARS", "PATH_AVOID_DANGER_2", "WARM", "BASHES", "GROUP_BASH", "POISON", "HUMAN", "PUSH_MON", "GUILT" ],
+    "flags": [ "SEES", "HEARS", "PATH_AVOID_DANGER_2", "WARM", "BASHES", "GROUP_BASH", "POISON", "HUMAN", "PUSH_MON" ],
     "armor": { "bash": 6, "cut": 6, "acid": 3 }
   },
   {
     "id": "mon_furvivor_pk",
     "type": "MONSTER",
     "name": { "str": "infected survivor" },
-    "description": "A survivor of the apocalypse, this individual is succumbing to their infection; displaying paranoia, and incoherency.  Unpredictable and terminally-ill, they will not respond to any attempts to communicate.  You can't help but notice they still wear their armor and holster, despite the fresh fungal budding that threatens to rip through it  . . .",
-    "default_faction": "finfected",
+    "description": "A survivor of the apocalypse, this individual is succumbing to their infection; displaying paranoia, and incoherency.  Unpredictable and terminally-ill, they will not respond to any attempts to communicate.  You can't help but notice they still wear their armor and holster, despite the fresh fungal budding that threatens to rip through it  …",
+    "default_faction": "fungus",
     "species": [ "MAMMAL", "FUNGUS" ],
     "diff": 23,
     "harvest": "human",
@@ -717,17 +578,15 @@
     "vision_day": 50,
     "vision_night": 2,
     "special_attacks": [
-      [ "GRAB", 30 ],
-      [ "impale", 30 ],
+      { "id": "grab", "cooldown": 30 },
+      { "id": "impale", "cooldown": 30 },
       [ "FUNGUS", 180 ],
-      { "type": "bite", "cooldown": 30, "min_mul": 0.8, "no_infection_chance": 5 }
+      { "type": "bite", "cooldown": 30, "min_mul": 0.8 }
     ],
     "anger_triggers": [ "FRIEND_DIED", "FIRE", "PLAYER_CLOSE" ],
-    "placate_triggers": [ "FRIEND_ATTACKED" ],
     "death_drops": { "subtype": "collection", "groups": [ [ "spearmelee_pk", 95 ] ] },
-    "death_function": [ "NORMAL", "FUNGUS" ],
-    "flags": [ "SEES", "HEARS", "PATH_AVOID_DANGER_2", "WARM", "BASHES", "GROUP_BASH", "POISON", "HUMAN", "PUSH_MON", "GUILT" ],
-    "armor": { "bash": 13, "cut": 13, "acid": 4, "fire": 4 }
+    "flags": [ "SEES", "HEARS", "PATH_AVOID_DANGER_2", "WARM", "BASHES", "GROUP_BASH", "POISON", "HUMAN", "PUSH_MON" ],
+    "armor": { "bash": 13, "cut": 13, "acid": 4, "heat": 4 }
   },
   {
     "id": "mon_marloss_man",
@@ -757,7 +616,7 @@
     "starting_ammo": { "223": 150 },
     "special_attacks": [
       [ "FUNGUS", 20 ],
-      [ "impale", 20 ],
+      { "id": "impale", "cooldown": 20 },
       [ "FUNGUS_INJECT", 40 ],
       [ "FEAR_PARALYZE", 15 ],
       [ "FUNGUS_BRISTLE", 40 ],
@@ -782,7 +641,6 @@
     ],
     "anger_triggers": [ "HURT", "FRIEND_ATTACKED", "FIRE", "PLAYER_CLOSE" ],
     "death_drops": { "subtype": "collection", "groups": [ [ "marloss_man_drops", 100 ] ] },
-    "death_function": [ "EXPLODE", "FUNGUS", "FUNGUS", "FUNGUS", "FUNGUS", "FUNGUS", "FUNGUS" ],
     "flags": [
       "SEES",
       "HEARS",
@@ -822,14 +680,13 @@
     "melee_damage": [ { "damage_type": "cut", "amount": 3 } ],
     "dodge": 3,
     "special_attacks": [
-      [ "wound_minor", 5 ],
+      { "id": "wound_minor", "cooldown": 5 },
       [ "FUNGUS", 100 ],
       [ "VINE", 7 ],
       [ "FUNGUS_INJECT", 50 ],
       [ "FUNGUS_BRISTLE", 50 ],
       { "id": "scratch", "cooldown": 30, "damage_max_instance": [ { "damage_type": "cut", "amount": 16 } ] }
     ],
-    "death_function": [ "NORMAL", "FUNGUS" ],
     "flags": [ "HEARS", "GOODHEARING", "SMELLS", "NOHEAD", "HARDTOSHOOT", "POISON", "GRABS", "PLASTIC" ],
     "armor": { "bash": 15, "cut": 2, "stab": 12 }
   },
@@ -859,15 +716,15 @@
     "vision_night": 10,
     "special_attacks": [
       [ "VINE", 15 ],
-      [ "RANGED_PULL", 7 ],
+      { "id": "ranged_pull", "cooldown": 7 },
       [ "FUNGUS_FORTIFY", 50 ],
       [ "FUNGUS", 60 ],
-      [ "hammer", 30 ],
-      { "type": "bite", "cooldown": 30, "min_mul": 0.8, "no_infection_chance": 5 }
+      { "id": "hammer", "cooldown": 30 },
+      { "type": "bite", "cooldown": 30, "min_mul": 0.8 }
     ],
     "flags": [ "SEES", "HEARS", "STUMBLES", "POISON", "NO_BREATHE", "BASHES", "GROUP_BASH", "ATTACKMON", "NOHEAD" ],
     "//": "This girl will create a 3x3 wall of fungus, then kill 1 or 2 of them to get out.  Over time this will create a hedgerow maze of sorts.  I am tempted to add one overmap, honestly.",
-    "armor": { "bash": 10, "cut": 18, "acid": 3, "fire": 3 }
+    "armor": { "bash": 10, "cut": 18, "acid": 3, "heat": 3 }
   },
   {
     "id": "mon_finecraft",
@@ -894,23 +751,9 @@
     "starting_ammo": { "EMPbomb": 3 },
     "special_attacks": [ [ "VINE", 5 ], [ "KAMIKAZE", 0 ], [ "RATTLE", 3 ], [ "FUNGUS_HAZE", 25 ], [ "FUNGUS_BRISTLE", 30 ] ],
     "anger_triggers": [ "SOUND", "PLAYER_WEAK", "PLAYER_CLOSE" ],
-    "death_function": [
-      "EXPLODE",
-      "ACID",
-      "FUNGUS",
-      "FUNGUS",
-      "FUNGUS",
-      "FUNGUS",
-      "FUNGUS",
-      "FUNGUS",
-      "FUNGUS",
-      "FUNGUS",
-      "FUNGUS",
-      "FUNGUS"
-    ],
     "flags": [ "SEES", "HEARS", "GOODHEARING", "PATH_AVOID_DANGER_1", "CAN_DIG", "POISON", "ANIMAL", "SWIMS", "NOHEAD", "BASHES" ],
     "//": "While I feel the triffid HB is somewhat forced into their fold, this guy works pretty well for the fungus and their themes.  Doesn't seem to want to blow up of his own volition though.  The fungal mdeaths def stack, but its diminishing returns.",
-    "armor": { "bash": 8, "cut": 4, "fire": 4 }
+    "armor": { "bash": 8, "cut": 4, "heat": 4 }
   },
   {
     "id": "mon_zombie_electric_fungal",
@@ -920,7 +763,7 @@
     "default_faction": "fungus",
     "species": [ "ZOMBIE", "FUNGUS" ],
     "diff": 16,
-    "harvest": "CBM_CIV",
+    "harvest": "human",
     "hp": 75,
     "speed": 85,
     "material": [ "flesh" ],
@@ -937,7 +780,7 @@
     "vision_day": 25,
     "vision_night": 3,
     "luminance": 5,
-    "special_attacks": [ [ "SHOCKSTORM", 45 ], { "type": "bite", "cooldown": 12, "no_infection_chance": 3 } ],
+    "special_attacks": [ [ "SHOCKSTORM", 45 ], { "type": "bite", "cooldown": 12 } ],
     "special_when_hit": [ "ZAPBACK", 40 ],
     "death_drops": "default_zombie_death_drops",
     "flags": [
@@ -949,10 +792,8 @@
       "REVIVES",
       "GROUP_BASH",
       "POISON",
-      "CBM_CIV",
       "NO_BREATHE",
       "REVIVES",
-      "BONES",
       "PUSH_MON"
     ],
     "//": "A little out of place.  May replace with like a brute or w.e.",
@@ -984,11 +825,10 @@
     "vision_night": 5,
     "special_attacks": [
       [ "FUNGUS", 60 ],
-      [ "wound_minor", 30 ],
+      { "id": "wound_minor", "cooldown": 30 },
       {
         "type": "bite",
         "cooldown": 20,
-        "no_infection_chance": 5,
         "damage_max_instance": [
           { "damage_type": "cut", "amount": 12, "armor_multiplier": 0.8 },
           { "damage_type": "stab", "amount": 6, "armor_multiplier": 0.8 }

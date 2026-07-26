@@ -5,7 +5,7 @@
     "looks_like": "ar15",
     "type": "GUN",
     "name": { "str_sp": "Makeshift Hunting Rifle: .38" },
-    "description": "A handmade bolt-action hunting rifle chambered in .38, though it can also use .38 super and .357 magnum. Popular among preppers due to ease of production, common ammo, and packing a punch, this should be able to put down almost any creature in the wasteland.",
+    "description": "A handmade bolt-action hunting rifle chambered in .38, though it can also use .38 super and .357 magnum.  Popular among preppers due to ease of production, common ammo, and packing a punch, this should be able to put down almost any creature in the wasteland.",
     "weight": "2993 g",
     "volume": "3 L",
     "price": "530 USD",
@@ -20,9 +20,9 @@
     "durability": 7,
     "handling": 50,
     "blackpowder_tolerance": 24,
-    "clip_size": 5,
     "flags": [ "RELOAD_ONE", "NEVER_JAMS" ],
-    "barrel_volume": "750 ml"
+    "barrel_volume": "750 ml",
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "357mag": 5, "38": 5 } } ]
   },
   {
     "id": "combatrifle_38",
@@ -30,7 +30,7 @@
     "type": "GUN",
     "reload_noise_volume": 10,
     "name": { "str": "CWA CR-38" },
-    "description": "A versatile rifle from Commonwealth Armories, the CR-38 is probably the worst of the CWA CR line. Being in the relatively wimpy .38 special round, the best thing about the CR-38 is that its special magazines have a 50% higher capacity. But is that really worth it?",
+    "description": "A versatile rifle from Commonwealth Armories, the CR-38 is probably the worst of the CWA CR line.  Being in the relatively wimpy .38 special round, the best thing about the CR-38 is that its special magazines have a 50% higher capacity.  But is that really worth it?",
     "weight": "5910 g",
     "volume": "2 L",
     "price": "4500 USD",
@@ -62,8 +62,13 @@
       [ "underbarrel", 1 ]
     ],
     "faults": [ "fault_gun_blackpowder", "fault_gun_dirt", "fault_gun_chamber_spent" ],
-    "magazines": [ [ "38", [ "combatrifle_mag_38", "combatrifle_bigmag_38", "combatrifle_drum_38" ] ] ],
-    "barrel_volume": "500 ml"
+    "barrel_volume": "500 ml",
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "item_restriction": [ "combatrifle_mag_38", "combatrifle_bigmag_38", "combatrifle_drum_38" ]
+      }
+    ]
   },
   {
     "id": "radrifle_38",
@@ -71,7 +76,7 @@
     "type": "GUN",
     "reload_noise_volume": 10,
     "name": { "str": ".38 Radium Rifle" },
-    "description": "A strange makeshift weapon, this appears to be a CWA CR-38 modified with a bunch of radioactive material and electronic components. A much heavier gun, but maybe that will make it more effective?",
+    "description": "A strange makeshift weapon, this appears to be a CWA CR-38 modified with a bunch of radioactive material and electronic components.  A much heavier gun, but maybe that will make it more effective?",
     "weight": "7800 g",
     "volume": "2 L",
     "price": "4500 USD",
@@ -103,8 +108,13 @@
       [ "underbarrel", 1 ]
     ],
     "faults": [ "fault_gun_blackpowder", "fault_gun_dirt", "fault_gun_chamber_spent" ],
-    "magazines": [ [ "38", [ "combatrifle_mag_38", "combatrifle_bigmag_38", "combatrifle_drum_38" ] ] ],
-    "barrel_volume": "500 ml"
+    "barrel_volume": "500 ml",
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "item_restriction": [ "combatrifle_mag_38", "combatrifle_bigmag_38", "combatrifle_drum_38" ]
+      }
+    ]
   },
   {
     "id": "tommygun_38",
@@ -144,7 +154,12 @@
       [ "underbarrel", 1 ]
     ],
     "faults": [ "fault_gun_blackpowder", "fault_gun_dirt", "fault_gun_chamber_spent" ],
-    "magazines": [ [ "38", [ "thompson_mag_38", "thompson_bigmag_38", "thompson_drum_38", "thompson_makeshiftmag_38" ] ] ],
-    "barrel_volume": "500 ml"
+    "barrel_volume": "500 ml",
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "item_restriction": [ "thompson_mag_38", "thompson_bigmag_38", "thompson_drum_38", "thompson_makeshiftmag_38" ]
+      }
+    ]
   }
 ]

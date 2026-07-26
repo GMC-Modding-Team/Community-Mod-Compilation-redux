@@ -1,19 +1,5 @@
 [
   {
-    "id": "mon_mutant_carp",
-    "type": "MONSTER",
-    "name": { "str": "giant carp" },
-    "copy-from": "mon_mutant_carp",
-    "default_faction": "fish_predator"
-  },
-  {
-    "id": "mon_mutant_salmon",
-    "type": "MONSTER",
-    "name": { "str": "giant carp" },
-    "copy-from": "mon_mutant_salmon",
-    "default_faction": "fish_predator"
-  },
-  {
     "id": "mon_fish_eel_large",
     "type": "MONSTER",
     "name": { "str": "giant freshwater eel" },
@@ -42,7 +28,6 @@
         "type": "bite",
         "cooldown": 15,
         "accuracy": 5,
-        "no_infection_chance": 15,
         "damage_max_instance": [
           { "damage_type": "bash", "amount": 18, "armor_multiplier": 0.8 },
           { "damage_type": "stab", "amount": 6, "armor_multiplier": 0.8 }
@@ -58,7 +43,7 @@
   {
     "id": "mon_fish_flying",
     "type": "MONSTER",
-    "name": { "str": "flying fish" },
+    "name": { "str": "flying fish", "str_pl": "flying fishes" },
     "description": "A fish with an incredible ability to leap from the water; its fins and teeth are large and powerful.",
     "default_faction": "rat",
     "categories": [ "WILDLIFE" ],
@@ -75,18 +60,16 @@
     "melee_skill": 4,
     "melee_dice": 1,
     "melee_dice_sides": 6,
-    "melee_damage": [ { "damage_type": "cut", "amount": 3 } ],
     "melee_damage": [ { "damage_type": "stab", "amount": 1 } ],
     "dodge": 2,
     "vision_day": 30,
     "special_attacks": [
-      [ "wound_minor", 30 ],
+      { "id": "wound_minor", "cooldown": 30 },
       { "type": "leap", "cooldown": 30, "max_range": 3 },
       {
         "type": "bite",
         "cooldown": 20,
         "accuracy": 5,
-        "no_infection_chance": 15,
         "damage_max_instance": [ { "damage_type": "cut", "amount": 9, "armor_multiplier": 0.85 } ]
       }
     ],
@@ -100,7 +83,7 @@
     "type": "MONSTER",
     "name": { "str": "giant lobster" },
     "description": "A sea cockroach, engorged to preposterous proportions.  With a large claw for crushing and a slightly smaller large claw for scooping out flesh from shells, this normally sluggish monster is surprisingly agile and predatory when a meal is nearby.",
-    "default_faction": "fish_predator",
+    "default_faction": "aquatic_predator",
     "categories": [ "WILDLIFE" ],
     "species": [ "FISH" ],
     "diff": 25,
@@ -120,9 +103,9 @@
     "vision_day": 35,
     "vision_night": 7,
     "special_attacks": [
-      [ "RANGED_PULL", 25 ],
-      [ "wound_minor", 40 ],
-      [ "slash", 25 ],
+      { "id": "ranged_pull", "cooldown": 25 },
+      { "id": "wound_minor", "cooldown": 40 },
+      { "id": "slash", "cooldown": 25 },
       {
         "id": "hammer",
         "cooldown": 20,
@@ -147,7 +130,6 @@
     "regen_morale": true,
     "flags": [ "SEES", "SMELLS", "SWIMS", "DESTROYS", "ARTHROPOD_BLOOD", "STUMBLES" ],
     "anger_triggers": [ "PLAYER_CLOSE", "STALK", "FIRE", "HURT" ],
-    "placate_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "SOUND" ],
-    "armor": { "bash": 8, "cut": 16, "acid": 4, "fire": 6 }
+    "armor": { "bash": 8, "cut": 16, "acid": 4, "heat": 6 }
   }
 ]

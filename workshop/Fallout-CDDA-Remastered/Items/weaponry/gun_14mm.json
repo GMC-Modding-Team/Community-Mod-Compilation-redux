@@ -5,7 +5,7 @@
     "type": "GUN",
     "reload_noise_volume": 10,
     "name": { "str_sp": "SIG-Sauer 14mm Pistol" },
-    "description": "A Sig-Sauer 14mm Auto Pistol, also known as the 'Lil' Devil'. Large, singleshot handgun. Excellent craftsmanship, high price.",
+    "description": "A Sig-Sauer 14mm Auto Pistol, also known as the 'Lil' Devil'. Large, singleshot handgun.  Excellent craftsmanship, high price.",
     "weight": "1700 g",
     "volume": "750 ml",
     "price": "875 USD",
@@ -35,8 +35,7 @@
       [ "underbarrel", 1 ]
     ],
     "faults": [ "fault_gun_blackpowder", "fault_gun_dirt", "fault_gun_chamber_spent" ],
-    "magazine_well": 1,
-    "magazines": [ [ "14mm", [ "14mmpistolmag" ] ], [ "127mm", [ "14mmpistolmag" ] ] ]
+    "pocket_data": [ { "pocket_type": "MAGAZINE_WELL", "item_restriction": [ "14mmpistolmag" ] } ]
   },
   {
     "id": "smg_14mm",
@@ -44,7 +43,7 @@
     "looks_like": "hk_mp5",
     "type": "GUN",
     "name": { "str_sp": "SIG-Sauer 14mm SMG" },
-    "description": "A SIG-Sauer 14mm SMG. Rare, valuable, and durable. The magazine loads from the top, with the sights on it, so sadly, it is incompatible with upgraded optics.",
+    "description": "A SIG-Sauer 14mm SMG.  Rare, valuable, and durable.  The magazine loads from the top, with the sights on it, so sadly, it is incompatible with upgraded optics.",
     "weight": "3274 g",
     "volume": "1750 ml",
     "price": "800 USD",
@@ -72,15 +71,15 @@
       [ "stock", 1 ],
       [ "underbarrel", 1 ]
     ],
-    "magazines": [ [ "14mm", [ "14mmsmgmag", "14mmsmgbigmag" ] ], [ "127mm", [ "14mmsmgmag", "14mmsmgbigmag" ] ] ],
-    "barrel_volume": "250 ml"
+    "barrel_volume": "250 ml",
+    "pocket_data": [ { "pocket_type": "MAGAZINE_WELL", "item_restriction": [ "14mmsmgmag", "14mmsmgbigmag" ] } ]
   },
   {
     "id": "rifle_survivalist",
     "copy-from": "rifle_semi",
     "type": "GUN",
     "name": { "str": "14mm Service Rifle" },
-    "description": "A variant of the ubiquitous NVA SR-223 Service Rifle, rechambered for 14mm. Semi auto only.",
+    "description": "A variant of the ubiquitous NVA SR-223 Service Rifle, rechambered for 14mm.  Semi auto only.",
     "weight": "3500 g",
     "volume": "2 L",
     "price": "1250 USD",
@@ -94,9 +93,11 @@
     "dispersion": 150,
     "durability": 7,
     "min_cycle_recoil": 1350,
-    "magazines": [
-      [ "14mm", [ "14mmriflemag10", "14mmriflemag20", "14mmriflemag30", "14mmriflemag60", "14mmriflemag90" ] ],
-      [ "127mm", [ "14mmriflemag10", "14mmriflemag20", "14mmriflemag30", "14mmriflemag60", "14mmriflemag90" ] ]
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "item_restriction": [ "14mmriflemag10", "14mmriflemag20", "14mmriflemag30", "14mmriflemag60", "14mmriflemag90" ]
+      }
     ]
   },
   {
@@ -122,7 +123,6 @@
     "durability": 6,
     "blackpowder_tolerance": 60,
     "loudness": 25,
-    "clip_size": 1,
     "reload": 200,
     "valid_mod_locations": [
       [ "accessories", 2 ],
@@ -136,6 +136,7 @@
     ],
     "faults": [ "fault_gun_blackpowder", "fault_gun_dirt" ],
     "flags": [ "RELOAD_EJECT" ],
-    "barrel_volume": "1000 ml"
+    "barrel_volume": "1000 ml",
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "14mm": 1, "127mm": 1 } } ]
   }
 ]

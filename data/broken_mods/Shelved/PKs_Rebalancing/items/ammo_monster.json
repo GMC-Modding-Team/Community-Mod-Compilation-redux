@@ -135,7 +135,7 @@
     "color": "magenta",
     "count": 1,
     "stack_size": 1,
-    "ammo_type": "fusion",
+    "ammo_type": "battery",
     "range": 55,
     "damage": { "damage_type": "stab", "amount": 9, "armor_penetration": 15 },
     "effects": [ "NEVER_MISFIRES", "RECYCLED", "ACT_ON_RANGED_HIT", "CUSTOM_EXPLOSION", "BEANBAG" ],
@@ -213,11 +213,8 @@
     "turns_per_charge": 1,
     "emits": [ "emit_fvent_vile", "emit_radiation_plume" ],
     "countdown_interval": 5,
-    "countdown_action": {
-      "type": "explosion",
-      "no_deactivate_msg": "A gout of flames erupts into existence!",
-      "explosion": { "power": 2, "distance_factor": 0.1 }
-    }
+    "countdown_action": { "type": "explosion", "explosion": { "power": 2, "distance_factor": 0.1 } },
+    "max_charges": 5
   },
   {
     "id": "bomblet_archvile",
@@ -251,11 +248,8 @@
     "turns_per_charge": 1,
     "emits": [ "emit_fvent_archvile", "emit_fvent_vile", "emit_radiation_plume" ],
     "countdown_interval": 5,
-    "countdown_action": {
-      "type": "explosion",
-      "no_deactivate_msg": "A hellmouth is ripped forth!",
-      "explosion": { "power": 2, "distance_factor": 0.1 }
-    }
+    "countdown_action": { "type": "explosion", "explosion": { "power": 2, "distance_factor": 0.1 } },
+    "max_charges": 5
   },
   {
     "id": "bomblet_archdemon",
@@ -302,7 +296,7 @@
     "id": "bomblet_chickenbot_act",
     "type": "TOOL",
     "category": "weapons",
-    "name": { "str": "chickenbomb (act)" },
+    "name": { "str_sp": "chickenbomb (act)" },
     "description": "bwaaack",
     "symbol": "*",
     "color": "light_red",
@@ -310,6 +304,7 @@
     "initial_charges": 2,
     "turns_per_charge": 1,
     "use_action": { "type": "explosion", "explosion": { "power": 40, "distance_factor": 0.5, "shrapnel": 1 } },
-    "flags": [ "LIGHT_15", "TRADER_AVOID", "NPC_THROW_NOW", "ZERO_WEIGHT" ]
+    "flags": [ "LIGHT_15", "TRADER_AVOID", "NPC_THROW_NOW", "ZERO_WEIGHT" ],
+    "max_charges": 2
   }
 ]

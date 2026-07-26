@@ -30,25 +30,26 @@
       "b": "t_door_metal_pickable",
       "e": "t_door_metal_locked",
       "D": "t_door_glass_c",
-      "6": "t_console_broken",
+      "6": "t_metal_floor",
       "+": "t_door_c",
       ",": "t_floor",
       "M": "t_metal_floor",
       "<": "t_ladder_up",
       ">": "t_stairs_down",
-      "%": "t_machinery_heavy",
-      "$": "t_machinery_light",
+      "%": "t_floor",
+      "$": "t_floor",
       "{": "t_thconc_floor",
       "R": "t_thconc_floor",
       "J": "t_current_trans",
       "U": "t_sai_box",
-      "G": "t_generator_broken",
+      "G": "t_floor",
       "F": "t_potential_trans",
       "7": "t_metal_floor",
       "4": "t_metal_floor",
       "g": "t_metal_floor",
       "Y": "t_switchgear_s"
-    }
+    },
+    "furniture": { "6": "f_console_broken" }
   },
   {
     "type": "palette",
@@ -86,7 +87,7 @@
       "H": "t_sconc_wall",
       "2": "t_sewage_pipe",
       "U": "t_sai_box",
-      "G": "t_generator_broken",
+      "G": "t_floor",
       "Y": "t_switchgear_s",
       "&": "t_sewage_pump",
       "-": "t_wall_glass",
@@ -94,44 +95,35 @@
       "a": "t_railing_v",
       "|": "t_chainfence",
       "C": "t_chaingate_l",
-      "$": "t_machinery_light",
-      "@": "t_machinery_heavy",
-      "v": "t_machinery_old",
+      "$": "t_floor",
+      "@": "t_floor",
+      "v": "t_floor",
       "+": "t_door_c",
-      "6": "t_console_broken"
-    }
+      "6": "t_thconc_floor"
+    },
+    "furniture": { "6": "f_console_broken" }
   },
   {
     "id": "treatment_chemicals",
     "type": "item_group",
     "items": [
-      { "item": "bleach", "container-item": "55gal_drum", "charges-min": 10, "charges-max": 126, "prob": 50 },
-      {
-        "item": "chem_sulphuric_acid",
-        "container-item": "55gal_drum",
-        "charges-min": 2,
-        "charges-max": 50,
-        "prob": 20
-      },
-      {
-        "item": "material_quicklime",
-        "container-item": "55gal_drum",
-        "charges-min": 2,
-        "charges-max": 50,
-        "prob": 20
-      },
+      { "item": "bleach", "charges-min": 10, "charges-max": 126, "prob": 50 },
+      { "item": "chem_sulphuric_acid", "charges-min": 2, "charges-max": 50, "prob": 20 },
+      { "item": "material_quicklime", "charges-min": 2, "charges-max": 50, "prob": 20 },
       { "item": "55gal_drum", "prob": 50 }
-    ]
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "sewage_samples",
     "type": "item_group",
     "items": [
-      { "item": "sewage", "container-item": "flask_glass", "charges": 1, "prob": 50 },
-      { "item": "water", "container-item": "flask_glass", "charges": 1, "prob": 50 },
-      { "item": "water_clean", "container-item": "flask_glass", "charges": 1, "prob": 30 },
-      { "item": "slime_scrap", "container-item": "flask_glass", "charges": 1, "prob": 10 }
-    ]
+      { "item": "sewage", "charges": 1, "prob": 50 },
+      { "item": "water", "charges": 1, "prob": 50 },
+      { "item": "water_clean", "charges": 1, "prob": 30 },
+      { "item": "slime_scrap", "prob": 10 }
+    ],
+    "subtype": "distribution"
   },
   {
     "type": "monstergroup",
@@ -353,7 +345,15 @@
         "                                                "
       ],
       "palettes": [ "roof_palette" ],
-      "terrain": { ">": "t_ladder_down", "X": "t_radio_tower", "H": "t_sconc_wall", "B": "t_door_metal_pickable" },
+      "terrain": {
+        ">": "t_ladder_down",
+        "X": "t_radio_tower",
+        "H": "t_sconc_wall",
+        "B": "t_door_metal_pickable",
+        "2": "t_gutter",
+        "3": "t_gutter",
+        "|": "t_gutter"
+      },
       "place_nested": [
         {
           "chunks": [ [ "null", 20 ], [ "roof_4x4_utility", 50 ], [ "roof_4x4_utility_1", 40 ] ],
@@ -614,8 +614,7 @@
       { "item": "human_flesh", "prob": 70, "count-min": 1, "count-max": 10 },
       { "item": "hstomach_large", "prob": 60 },
       { "item": "hstomach", "prob": 60 },
-      { "item": "bone_human", "prob": 90, "count-min": 1, "count-max": 5 },
-      { "item": "rag_bloody", "prob": 90, "count-min": 1, "count-max": 4 }
+      { "item": "bone_human", "prob": 90, "count-min": 1, "count-max": 5 }
     ]
   }
 ]

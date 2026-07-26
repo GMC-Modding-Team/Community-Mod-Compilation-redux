@@ -22,7 +22,7 @@
       { "ammo_restriction": { "arrow": 50, "bolt": 50 }, "moves": 20 },
       { "pocket_type": "CONTAINER", "max_contains_volume": "16 L", "max_contains_weight": "32 kg", "moves": 300 }
     ],
-    "flags": [ "WATER_FRIENDLY", "STURDY", "BELTED" ],
+    "flags": [ "WATER_FRIENDLY", "STURDY", "BELTED", "TARDIS" ],
     "armor": [ { "encumbrance": [ 4, 16 ], "coverage": 35, "covers": [ "torso" ] } ]
   },
   {
@@ -63,11 +63,11 @@
         "max_contains_weight": "4 kg",
         "moves": 10,
         "flag_restriction": [ "SHEATH_KNIFE", "SHEATH_SWORD", "BELT_CLIP" ]
-      }
+      },
+      { "pocket_type": "CONTAINER", "rigid": true, "max_contains_volume": "2 L", "max_contains_weight": "5 kg" }
     ],
     "warmth": 25,
     "valid_mods": [ "steel_padded" ],
-    "use_action": { "type": "holster", "holster_prompt": "Sheath knife/sword", "holster_msg": "You sheath your %s" },
     "flags": [
       "VARSIZE",
       "OVERSIZE",
@@ -128,11 +128,11 @@
         "max_contains_weight": "4 kg",
         "moves": 10,
         "flag_restriction": [ "SHEATH_KNIFE", "SHEATH_SWORD", "BELT_CLIP" ]
-      }
+      },
+      { "pocket_type": "CONTAINER", "rigid": true, "max_contains_volume": "2 L", "max_contains_weight": "5 kg" }
     ],
     "warmth": 25,
     "valid_mods": [ "steel_padded" ],
-    "use_action": { "type": "holster", "holster_prompt": "Sheath knife/sword", "holster_msg": "You sheath your %s" },
     "flags": [
       "VARSIZE",
       "OVERSIZE",
@@ -187,7 +187,7 @@
     "id": "armguard_lightplate_surv",
     "copy-from": "armor_qt_lightarmguard",
     "type": "ARMOR",
-    "name": { "str": "survivor steel arm guards", "str_pl": "survivor steel arm guards" },
+    "name": { "str_sp": "survivor steel arm guards" },
     "description": "A full assembly of medieval arm protection.  Rerebraces, couters, and vambraces, subsequently modified with kevlar and leather to better protect the joints.",
     "weight": "2992 g",
     "price": "300 USD",
@@ -201,7 +201,7 @@
     "id": "legguard_lightplate_surv",
     "copy-from": "legguard_lightplate",
     "type": "ARMOR",
-    "name": { "str": "survivor steel leg guards", "str_pl": "survivor steel leg guards" },
+    "name": { "str_sp": "survivor steel leg guards" },
     "description": "A full assembly of medieval leg protection.  Cuisses, poleyns, and greaves, subsequently modified with kevlar and leather to better protect the joints.",
     "weight": "4488 g",
     "price": "300 USD",
@@ -426,9 +426,9 @@
         "max_contains_weight": "5 kg",
         "holster": true,
         "flag_restriction": [ "MAG_COMPACT" ]
-      }
+      },
+      { "pocket_type": "CONTAINER", "rigid": true, "max_contains_volume": "2 L", "max_contains_weight": "5 kg" }
     ],
-    "use_action": { "type": "holster", "holster_prompt": "Stash magazine", "holster_msg": "You stash your %s" },
     "flags": [ "STURDY", "NO_SALVAGE" ],
     "armor": [
       {
@@ -472,9 +472,9 @@
         "max_contains_weight": "5 kg",
         "holster": true,
         "flag_restriction": [ "MAG_COMPACT" ]
-      }
+      },
+      { "pocket_type": "CONTAINER", "rigid": true, "max_contains_volume": "2 L", "max_contains_weight": "5 kg" }
     ],
-    "use_action": { "type": "holster", "holster_prompt": "Stash magazine", "holster_msg": "You stash your %s" },
     "flags": [ "STURDY", "NO_SALVAGE" ],
     "armor": [
       {
@@ -518,9 +518,9 @@
         "max_contains_weight": "5 kg",
         "holster": true,
         "flag_restriction": [ "MAG_COMPACT", "MAG_BULKY" ]
-      }
+      },
+      { "pocket_type": "CONTAINER", "rigid": true, "max_contains_volume": "2 L", "max_contains_weight": "5 kg" }
     ],
-    "use_action": { "type": "holster", "holster_prompt": "Stash magazine", "holster_msg": "You stash your %s" },
     "flags": [ "STURDY", "NONCONDUCTIVE", "NO_SALVAGE" ],
     "armor": [
       {
@@ -614,7 +614,7 @@
     "repairs_like": "panties",
     "type": "ARMOR",
     "name": { "str_sp": "designer panties" },
-    "description": "A luxurious set of designer panties. Preserves your modesty and feels good on you.",
+    "description": "A luxurious set of designer panties.  Preserves your modesty and feels good on you.",
     "extend": { "flags": [ "FANCY" ] }
   },
   {
@@ -956,10 +956,10 @@
         "max_item_length": "762 mm",
         "holster": true,
         "flag_restriction": [ "SHEATH_KNIFE", "BELT_CLIP", "SHEATH_SWORD", "MAG_COMPACT", "MAG_BULKY", "SPEEDLOADER" ]
-      }
+      },
+      { "pocket_type": "CONTAINER", "rigid": true, "max_contains_volume": "2 L", "max_contains_weight": "5 kg" }
     ],
-    "use_action": { "type": "holster", "holster_prompt": "Stash item", "holster_msg": "You stash your %s" },
-    "flags": [ "WATER_FRIENDLY", "BELTED", "OVERSIZE" ],
+    "flags": [ "WATER_FRIENDLY", "BELTED", "OVERSIZE", "TARDIS" ],
     "armor": [
       {
         "encumbrance": [ 2, 6 ],
@@ -980,8 +980,8 @@
     "player_display": false,
     "scent_intensity": 1200,
     "enchantments": [
-      { "melee_damage_bonus": [ { "type": "bash", "add": 4.5 } ] },
-      { "values": [ { "value": "STEALTH_MODIFIER", "add": -10 }, { "value": "FOOTSTEP_NOISE", "multiply": 4.0 } ] }
+      { "values": [ { "value": "EXTRA_BASH", "add": 4.5 } ] },
+      { "values": [ { "value": "FOOTSTEP_NOISE", "multiply": 4.0 } ] }
     ]
   },
   {

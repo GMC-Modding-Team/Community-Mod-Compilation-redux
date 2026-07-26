@@ -2,43 +2,91 @@
   {
     "id": "TALK_FRIEND",
     "type": "talk_topic",
-    "speaker_effect": { "effect": { "npc_lose_trait": "DMBB_ORB_BARD_interrupt" } },
+    "speaker_effect": {
+      "effect": {
+        "npc_lose_trait": "DMBB_ORB_BARD_interrupt"
+      }
+    },
     "responses": [
       {
         "text": "*View SENTINEL upgrades on this mercenary*",
         "topic": "TALK_FRIEND_DMBB_MERC_sentinel",
         "condition": {
           "or": [
-            { "u_has_var": "dmbb_orb", "type": "wave5", "context": "finish", "value": "yes" },
-            { "npc_has_class": "NC_DMBB_merc_knight" },
-            { "npc_has_class": "NC_DMBB_merc_berserker" },
-            { "npc_has_class": "NC_DMBB_merc_mutant" },
-            { "npc_has_class": "NC_DMBB_merc_ranger" },
-            { "npc_has_class": "NC_DMBB_merc_bard" },
-            { "npc_has_class": "NC_DMBB_merc_mage" },
-            { "npc_has_class": "NC_DMBB_merc_cleric" },
-            { "npc_has_class": "NC_DMBB_merc_priest" }
+            {
+              "u_has_var": "dmbb_orb",
+              "type": "wave5",
+              "context": "finish",
+              "value": "yes"
+            },
+            {
+              "npc_has_class": "NC_DMBB_merc_knight"
+            },
+            {
+              "npc_has_class": "NC_DMBB_merc_berserker"
+            },
+            {
+              "npc_has_class": "NC_DMBB_merc_mutant"
+            },
+            {
+              "npc_has_class": "NC_DMBB_merc_ranger"
+            },
+            {
+              "npc_has_class": "NC_DMBB_merc_bard"
+            },
+            {
+              "npc_has_class": "NC_DMBB_merc_mage"
+            },
+            {
+              "npc_has_class": "NC_DMBB_merc_cleric"
+            },
+            {
+              "npc_has_class": "NC_DMBB_merc_priest"
+            }
           ]
         }
       },
       {
         "text": "*Request supplies for the ranger*",
         "topic": "TALK_FRIEND_DMBB_MERC_RANGER_request",
-        "condition": { "npc_has_class": "NC_DMBB_merc_ranger" }
+        "condition": {
+          "npc_has_class": "NC_DMBB_merc_ranger"
+        }
       },
       {
         "text": "*Set musical commands*",
         "topic": "TALK_FRIEND_DMBB_MERC_BARD_command",
-        "condition": { "and": [ { "npc_has_class": "NC_DMBB_merc_bard" }, { "not": { "u_has_effect": "mon_dmbb_orb_merc_bard_wait" } } ] }
+        "condition": {
+          "and": [
+            {
+              "npc_has_class": "NC_DMBB_merc_bard"
+            },
+            {
+              "not": {
+                "u_has_effect": "mon_dmbb_orb_merc_bard_wait"
+              }
+            }
+          ]
+        }
       },
       {
         "text": "*Set spellcasting commands*",
         "topic": "TALK_FRIEND_DMBB_MERC_MAGE_command",
         "condition": {
           "and": [
-            { "npc_has_class": "NC_DMBB_merc_mage" },
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_battle" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_necro" } }
+            {
+              "npc_has_class": "NC_DMBB_merc_mage"
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_battle"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_necro"
+              }
+            }
           ]
         }
       },
@@ -47,32 +95,69 @@
         "topic": "TALK_FRIEND_DMBB_MERC_MAGE_upgrade",
         "condition": {
           "and": [
-            { "npc_has_class": "NC_DMBB_merc_mage" },
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_battle" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_necro" } },
-            { "u_has_var": "dmbb_orb", "type": "bosswave2", "context": "finish", "value": "yes" }
+            {
+              "npc_has_class": "NC_DMBB_merc_mage"
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_battle"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_necro"
+              }
+            },
+            {
+              "u_has_var": "dmbb_orb",
+              "type": "bosswave2",
+              "context": "finish",
+              "value": "yes"
+            }
           ]
         }
       },
       {
         "text": "*Set spellcasting commands*",
         "topic": "TALK_FRIEND_DMBB_MERC_MAGE_BATTLE_command",
-        "condition": { "and": [ { "npc_has_class": "NC_DMBB_merc_mage" }, { "npc_has_trait": "DMBB_ORB_MAGE_battle" } ] }
+        "condition": {
+          "and": [
+            {
+              "npc_has_class": "NC_DMBB_merc_mage"
+            },
+            {
+              "npc_has_trait": "DMBB_ORB_MAGE_battle"
+            }
+          ]
+        }
       },
       {
         "text": "*Set spellcasting commands*",
         "topic": "TALK_FRIEND_DMBB_MERC_MAGE_NECRO_command",
-        "condition": { "and": [ { "npc_has_class": "NC_DMBB_merc_mage" }, { "npc_has_trait": "DMBB_ORB_MAGE_necro" } ] }
+        "condition": {
+          "and": [
+            {
+              "npc_has_class": "NC_DMBB_merc_mage"
+            },
+            {
+              "npc_has_trait": "DMBB_ORB_MAGE_necro"
+            }
+          ]
+        }
       },
       {
         "text": "*Set spellcasting commands*",
         "topic": "TALK_FRIEND_DMBB_MERC_CLERIC_command",
-        "condition": { "npc_has_class": "NC_DMBB_merc_cleric" }
+        "condition": {
+          "npc_has_class": "NC_DMBB_merc_cleric"
+        }
       },
       {
         "text": "*Set spellcasting commands*",
         "topic": "TALK_FRIEND_DMBB_MERC_PRIEST_command",
-        "condition": { "npc_has_class": "NC_DMBB_merc_priest" }
+        "condition": {
+          "npc_has_class": "NC_DMBB_merc_priest"
+        }
       }
     ]
   },
@@ -87,7 +172,11 @@
           "yes": {
             "npc_has_trait": "DMBB_ORB_PC_str_plus",
             "no": "\n* SENTINEL - Strength+",
-            "yes": { "npc_has_trait": "DMBB_ORB_PC_str_plusultra", "no": "\n* SENTINEL - Strength++", "yes": "\n* SENTINEL - Strength+++" }
+            "yes": {
+              "npc_has_trait": "DMBB_ORB_PC_str_plusultra",
+              "no": "\n* SENTINEL - Strength++",
+              "yes": "\n* SENTINEL - Strength+++"
+            }
           }
         },
         {
@@ -131,7 +220,11 @@
           "yes": {
             "npc_has_trait": "DMBB_ORB_PC_speed_plus",
             "no": "\n* SENTINEL - Speed+",
-            "yes": { "npc_has_trait": "DMBB_ORB_PC_speed_plusultra", "no": "\n* SENTINEL - Speed++", "yes": "\n* SENTINEL - Speed+++" }
+            "yes": {
+              "npc_has_trait": "DMBB_ORB_PC_speed_plusultra",
+              "no": "\n* SENTINEL - Speed++",
+              "yes": "\n* SENTINEL - Speed+++"
+            }
           }
         },
         {
@@ -139,7 +232,11 @@
           "yes": {
             "npc_has_trait": "DMBB_ORB_PC_hp_plus",
             "no": "\n* SENTINEL - HP+",
-            "yes": { "npc_has_trait": "DMBB_ORB_PC_hp_plusultra", "no": "\n* SENTINEL - HP++", "yes": "\n* SENTINEL - HP+++" }
+            "yes": {
+              "npc_has_trait": "DMBB_ORB_PC_hp_plusultra",
+              "no": "\n* SENTINEL - HP++",
+              "yes": "\n* SENTINEL - HP+++"
+            }
           }
         },
         {
@@ -178,56 +275,129 @@
             }
           }
         },
-        { "npc_has_trait": "DMBB_ORB_PC_hevpro", "yes": "\n* SENTINEL - Heavenly Protection" },
-        { "npc_has_trait": "DMBB_ORB_PC_consecrate", "yes": "\n* SENTINEL - Consecrate" }
+        {
+          "npc_has_trait": "DMBB_ORB_PC_hevpro",
+          "yes": "\n* SENTINEL - Heavenly Protection"
+        },
+        {
+          "npc_has_trait": "DMBB_ORB_PC_consecrate",
+          "yes": "\n* SENTINEL - Consecrate"
+        }
       ]
     },
     "responses": [
-      { "text": "*Grant SENTINEL upgrades to this mercenary*", "topic": "TALK_DMBB_ORB_command_upgrade_sen_merc" },
-      { "text": "Nothing.", "topic": "TALK_FRIEND" },
-      { "text": "Bye.", "topic": "TALK_DONE" }
+      {
+        "text": "*Grant SENTINEL upgrades to this mercenary*",
+        "topic": "TALK_DMBB_ORB_command_upgrade_sen_merc"
+      },
+      {
+        "text": "Nothing.",
+        "topic": "TALK_FRIEND"
+      },
+      {
+        "text": "Bye.",
+        "topic": "TALK_DONE"
+      }
     ]
   },
   {
-    "id": [ "TALK_FRIEND_DMBB_MERC_RANGER_request", "TALK_FRIEND_DMBB_MERC_RANGER_request_done" ],
+    "id": [
+      "TALK_FRIEND_DMBB_MERC_RANGER_request",
+      "TALK_FRIEND_DMBB_MERC_RANGER_request_done"
+    ],
     "dynamic_line": "What will you give to me?",
     "type": "talk_topic",
     "responses": [
       {
         "text": "[120 essence] shortbow",
         "topic": "TALK_FRIEND_DMBB_MERC_RANGER_request_done",
-        "condition": { "u_has_items": { "item": "dmbb_essence", "count": 120 } },
+        "condition": {
+          "u_has_items": {
+            "item": "dmbb_essence",
+            "count": 120
+          }
+        },
         "effect": [
-          { "u_sell_item": "dmbb_essence", "count": 120 },
-          { "npc_consume_item": "dmbb_essence", "count": 120 },
-          { "u_buy_item": "dmbb_ranger_shortbow" },
-          { "u_sell_item": "dmbb_ranger_shortbow" }
+          {
+            "u_sell_item": "dmbb_essence",
+            "count": 120
+          },
+          {
+            "npc_consume_item": "dmbb_essence",
+            "count": 120
+          },
+          {
+            "u_buy_item": "dmbb_ranger_shortbow"
+          },
+          {
+            "u_sell_item": "dmbb_ranger_shortbow"
+          }
         ]
       },
       {
         "text": "[20 essence] wooden broadhead arrows x 10",
         "topic": "TALK_FRIEND_DMBB_MERC_RANGER_request_done",
-        "condition": { "u_has_items": { "item": "dmbb_essence", "count": 20 } },
+        "condition": {
+          "u_has_items": {
+            "item": "dmbb_essence",
+            "count": 20
+          }
+        },
         "effect": [
-          { "u_sell_item": "dmbb_essence", "count": 5 },
-          { "npc_consume_item": "dmbb_essence", "count": 5 },
-          { "u_buy_item": "dmbb_ranger_arrow_wood", "count": 20 },
-          { "u_sell_item": "dmbb_ranger_arrow_wood", "count": 20 }
+          {
+            "u_sell_item": "dmbb_essence",
+            "count": 5
+          },
+          {
+            "npc_consume_item": "dmbb_essence",
+            "count": 5
+          },
+          {
+            "u_buy_item": "dmbb_ranger_arrow_wood",
+            "count": 20
+          },
+          {
+            "u_sell_item": "dmbb_ranger_arrow_wood",
+            "count": 20
+          }
         ]
       },
       {
         "text": "[200 essence] wooden broadhead arrows x 100",
         "topic": "TALK_FRIEND_DMBB_MERC_RANGER_request_done",
-        "condition": { "u_has_items": { "item": "dmbb_essence", "count": 200 } },
+        "condition": {
+          "u_has_items": {
+            "item": "dmbb_essence",
+            "count": 200
+          }
+        },
         "effect": [
-          { "u_sell_item": "dmbb_essence", "count": 200 },
-          { "npc_consume_item": "dmbb_essence", "count": 200 },
-          { "u_buy_item": "dmbb_ranger_arrow_wood", "count": 100 },
-          { "u_sell_item": "dmbb_ranger_arrow_wood", "count": 100 }
+          {
+            "u_sell_item": "dmbb_essence",
+            "count": 200
+          },
+          {
+            "npc_consume_item": "dmbb_essence",
+            "count": 200
+          },
+          {
+            "u_buy_item": "dmbb_ranger_arrow_wood",
+            "count": 100
+          },
+          {
+            "u_sell_item": "dmbb_ranger_arrow_wood",
+            "count": 100
+          }
         ]
       },
-      { "text": "Nevermind...", "topic": "TALK_FRIEND" },
-      { "text": "Bye.", "topic": "TALK_DONE" }
+      {
+        "text": "Nevermind…",
+        "topic": "TALK_FRIEND"
+      },
+      {
+        "text": "Bye.",
+        "topic": "TALK_DONE"
+      }
     ]
   },
   {
@@ -246,7 +416,7 @@
         "no": {
           "npc_has_trait": "DMBB_ORB_BARD_adagio",
           "yes": "I'm playing \"Adagio\".",
-          "no": "What should I play? Everyone gets to hear my music.\"\n\n* Battle Trance\nAn instrumental song played with hard strums in a moderate tempo. Increases combat effectiveness.\n\n* Allegro\nAn intrumental song with a fast-paced rhythm. Increases speed and stamina regeneration.\n\n* Adagio\nA slow - and a bit solemn - type of song. Alleviates pain little by little.\n\n\"If a monster interrupts me, I will stop and retaliate."
+          "no": "What should I play?  Everyone gets to hear my music.\"\n\n* Battle Trance\nAn instrumental song played with hard strums in a moderate tempo.  Increases combat effectiveness.\n\n* Allegro\nAn intrumental song with a fast-paced rhythm.  Increases speed and stamina regeneration.\n\n* Adagio\nA slow - and a bit solemn - type of song.  Alleviates pain little by little.\n\n\"If a monster interrupts me, I will stop and retaliate."
         }
       }
     },
@@ -257,151 +427,330 @@
         "topic": "TALK_FRIEND_DMBB_MERC_BARD_command_set",
         "condition": {
           "and": [
-            { "not": { "npc_has_trait": "DMBB_ORB_BARD_battletrance" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_BARD_allegro" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_BARD_adagio" } }
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_BARD_battletrance"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_BARD_allegro"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_BARD_adagio"
+              }
+            }
           ]
         },
-        "effect": { "npc_add_trait": "DMBB_ORB_BARD_battletrance_cast" }
+        "effect": {
+          "npc_add_trait": "DMBB_ORB_BARD_battletrance_cast"
+        }
       },
       {
         "text": "Stop playing \"Battle Trance\".",
         "topic": "TALK_FRIEND_DMBB_MERC_BARD_command_set",
         "condition": {
           "and": [
-            { "npc_has_trait": "DMBB_ORB_BARD_battletrance" },
-            { "not": { "npc_has_trait": "DMBB_ORB_BARD_allegro" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_BARD_adagio" } }
+            {
+              "npc_has_trait": "DMBB_ORB_BARD_battletrance"
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_BARD_allegro"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_BARD_adagio"
+              }
+            }
           ]
         },
-        "effect": { "npc_lose_trait": "DMBB_ORB_BARD_battletrance" }
+        "effect": {
+          "npc_lose_trait": "DMBB_ORB_BARD_battletrance"
+        }
       },
       {
         "text": "Play the \"Allegro\".",
         "topic": "TALK_FRIEND_DMBB_MERC_BARD_command_set",
         "condition": {
           "and": [
-            { "not": { "npc_has_trait": "DMBB_ORB_BARD_battletrance" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_BARD_allegro" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_BARD_adagio" } }
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_BARD_battletrance"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_BARD_allegro"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_BARD_adagio"
+              }
+            }
           ]
         },
-        "effect": { "npc_add_trait": "DMBB_ORB_BARD_allegro_cast" }
+        "effect": {
+          "npc_add_trait": "DMBB_ORB_BARD_allegro_cast"
+        }
       },
       {
         "text": "Stop playing \"Allegro\".",
         "topic": "TALK_FRIEND_DMBB_MERC_BARD_command_set",
         "condition": {
           "and": [
-            { "npc_has_trait": "DMBB_ORB_BARD_allegro" },
-            { "not": { "npc_has_trait": "DMBB_ORB_BARD_battletrance" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_BARD_adagio" } }
+            {
+              "npc_has_trait": "DMBB_ORB_BARD_allegro"
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_BARD_battletrance"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_BARD_adagio"
+              }
+            }
           ]
         },
-        "effect": { "npc_lose_trait": "DMBB_ORB_BARD_allegro" }
+        "effect": {
+          "npc_lose_trait": "DMBB_ORB_BARD_allegro"
+        }
       },
       {
         "text": "Play the \"Adagio\".",
         "topic": "TALK_FRIEND_DMBB_MERC_BARD_command_set",
         "condition": {
           "and": [
-            { "not": { "npc_has_trait": "DMBB_ORB_BARD_battletrance" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_BARD_allegro" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_BARD_adagio" } }
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_BARD_battletrance"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_BARD_allegro"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_BARD_adagio"
+              }
+            }
           ]
         },
-        "effect": { "npc_add_trait": "DMBB_ORB_BARD_adagio_cast" }
+        "effect": {
+          "npc_add_trait": "DMBB_ORB_BARD_adagio_cast"
+        }
       },
       {
         "text": "Stop playing \"Adagio\".",
         "topic": "TALK_FRIEND_DMBB_MERC_BARD_command_set",
         "condition": {
           "and": [
-            { "npc_has_trait": "DMBB_ORB_BARD_adagio" },
-            { "not": { "npc_has_trait": "DMBB_ORB_BARD_battletrance" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_BARD_allegro" } }
+            {
+              "npc_has_trait": "DMBB_ORB_BARD_adagio"
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_BARD_battletrance"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_BARD_allegro"
+              }
+            }
           ]
         },
-        "effect": { "npc_lose_trait": "DMBB_ORB_BARD_adagio" }
+        "effect": {
+          "npc_lose_trait": "DMBB_ORB_BARD_adagio"
+        }
       },
-      { "text": "Nevermind...", "topic": "TALK_FRIEND" },
-      { "text": "Bye.", "topic": "TALK_DONE" }
+      {
+        "text": "Nevermind…",
+        "topic": "TALK_FRIEND"
+      },
+      {
+        "text": "Bye.",
+        "topic": "TALK_DONE"
+      }
     ]
   },
   {
     "id": "TALK_FRIEND_DMBB_MERC_BARD_command_set",
     "type": "talk_topic",
-    "dynamic_line": "Understood. Buy me some time.",
+    "dynamic_line": "Understood.  Buy me some time.",
     "speaker_effect": [
       {
         "condition": {
           "or": [
-            { "npc_has_trait": "DMBB_ORB_BARD_battletrance" },
-            { "npc_has_trait": "DMBB_ORB_BARD_allegro" },
-            { "npc_has_trait": "DMBB_ORB_BARD_adagio" }
+            {
+              "npc_has_trait": "DMBB_ORB_BARD_battletrance"
+            },
+            {
+              "npc_has_trait": "DMBB_ORB_BARD_allegro"
+            },
+            {
+              "npc_has_trait": "DMBB_ORB_BARD_adagio"
+            }
           ]
         },
-        "effect": [ { "npc_add_trait": "DMBB_ORB_BARD_play" }, { "u_add_effect": "mon_dmbb_orb_merc_bard_wait", "duration": 5 } ]
+        "effect": [
+          {
+            "npc_add_trait": "DMBB_ORB_BARD_play"
+          },
+          {
+            "u_add_effect": "mon_dmbb_orb_merc_bard_wait",
+            "duration": 5
+          }
+        ]
       },
       {
         "condition": {
           "and": [
-            { "not": { "npc_has_trait": "DMBB_ORB_BARD_battletrance" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_BARD_allegro" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_BARD_adagio" } }
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_BARD_battletrance"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_BARD_allegro"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_BARD_adagio"
+              }
+            }
           ]
         },
         "effect": [
-          { "npc_lose_trait": "DMBB_ORB_BARD_play" },
-          { "u_add_effect": "mon_dmbb_orb_merc_bard_wait", "duration": 5 },
-          { "mapgen_update": "dmbb_orb_bless_bard_stop", "om_terrain": "dmbb_arena_2", "om_special": "DMBB Arena" }
+          {
+            "npc_lose_trait": "DMBB_ORB_BARD_play"
+          },
+          {
+            "u_add_effect": "mon_dmbb_orb_merc_bard_wait",
+            "duration": 5
+          },
+          {
+            "mapgen_update": "dmbb_orb_bless_bard_stop",
+            "om_terrain": "dmbb_arena_2",
+            "om_special": "DMBB Arena"
+          }
         ]
       }
     ],
-    "responses": [ { "text": "Bye.", "topic": "TALK_DONE" } ]
+    "responses": [
+      {
+        "text": "Bye.",
+        "topic": "TALK_DONE"
+      }
+    ]
   },
   {
     "//": "Base for spellcasting chances. 5m above: extremely low, 5m-3m: very low, 3m-2m: low, 2m-1m: medium, 1m-30s: high, 30s-15s: very high, 15s below: extremely high.",
     "id": "TALK_FRIEND_DMBB_MERC_MAGE_upgrade",
-    "dynamic_line": "You want to change my class?\"\n\nThe orb will instantly change the class of this mercenary, and costs 5000 essences for the process. This mercenary turns into:\n\n* Battlemage\nCasts extremely powerful and often devastating Magus spells.\n\n* Necromancer\nCasts Animist spells, which involves reanimation and manipulation of the undead. Zombies will no longer target this mercenary.\n\n\"Be aware that I will no longer be able to cast my former spells after an upgrade.",
+    "dynamic_line": "You want to change my class?\"\n\nThe orb will instantly change the class of this mercenary, and costs 5000 essences for the process.  This mercenary turns into:\n\n* Battlemage\nCasts extremely powerful and often devastating Magus spells.\n\n* Necromancer\nCasts Animist spells, which involves reanimation and manipulation of the undead.  Zombies will no longer target this mercenary.\n\n\"Be aware that I will no longer be able to cast my former spells after an upgrade.",
     "type": "talk_topic",
     "responses": [
       {
         "text": "Change your class into \"Battlemage\".",
         "topic": "TALK_DONE",
-        "condition": { "u_has_items": { "item": "dmbb_essence", "count": 5000 } },
+        "condition": {
+          "u_has_items": {
+            "item": "dmbb_essence",
+            "count": 5000
+          }
+        },
         "effect": [
-          { "u_sell_item": "dmbb_essence", "count": 5000 },
-          { "npc_consume_item": "dmbb_essence", "count": 5000 },
-          { "npc_lose_trait": "DMBB_ORB_MAGE_manabeam" },
-          { "npc_lose_trait": "DMBB_ORB_MAGE_manaburst" },
-          { "npc_lose_trait": "DMBB_ORB_MAGE_stunlock" },
-          { "npc_lose_effect": "blind" },
-          { "npc_lose_trait": "DMBB_ORB_CASTER_vulnerable" },
-          { "npc_add_trait": "DMBB_ORB_MAGE_battle" }
+          {
+            "u_sell_item": "dmbb_essence",
+            "count": 5000
+          },
+          {
+            "npc_consume_item": "dmbb_essence",
+            "count": 5000
+          },
+          {
+            "npc_lose_trait": "DMBB_ORB_MAGE_manabeam"
+          },
+          {
+            "npc_lose_trait": "DMBB_ORB_MAGE_manaburst"
+          },
+          {
+            "npc_lose_trait": "DMBB_ORB_MAGE_stunlock"
+          },
+          {
+            "npc_lose_effect": "blind"
+          },
+          {
+            "npc_lose_trait": "DMBB_ORB_CASTER_vulnerable"
+          },
+          {
+            "npc_add_trait": "DMBB_ORB_MAGE_battle"
+          }
         ]
       },
       {
         "text": "Change your class into \"Necromancer\".",
         "topic": "TALK_DONE",
-        "condition": { "u_has_items": { "item": "dmbb_essence", "count": 5000 } },
+        "condition": {
+          "u_has_items": {
+            "item": "dmbb_essence",
+            "count": 5000
+          }
+        },
         "effect": [
-          { "u_sell_item": "dmbb_essence", "count": 5000 },
-          { "npc_consume_item": "dmbb_essence", "count": 5000 },
-          { "npc_lose_trait": "DMBB_ORB_MAGE_manabeam" },
-          { "npc_lose_trait": "DMBB_ORB_MAGE_manaburst" },
-          { "npc_lose_trait": "DMBB_ORB_MAGE_stunlock" },
-          { "npc_lose_effect": "blind" },
-          { "npc_lose_trait": "DMBB_ORB_CASTER_vulnerable" },
-          { "npc_add_trait": "DMBB_ORB_MAGE_necro" }
+          {
+            "u_sell_item": "dmbb_essence",
+            "count": 5000
+          },
+          {
+            "npc_consume_item": "dmbb_essence",
+            "count": 5000
+          },
+          {
+            "npc_lose_trait": "DMBB_ORB_MAGE_manabeam"
+          },
+          {
+            "npc_lose_trait": "DMBB_ORB_MAGE_manaburst"
+          },
+          {
+            "npc_lose_trait": "DMBB_ORB_MAGE_stunlock"
+          },
+          {
+            "npc_lose_effect": "blind"
+          },
+          {
+            "npc_lose_trait": "DMBB_ORB_CASTER_vulnerable"
+          },
+          {
+            "npc_add_trait": "DMBB_ORB_MAGE_necro"
+          }
         ]
       },
-      { "text": "Nevermind...", "topic": "TALK_FRIEND" },
-      { "text": "Bye.", "topic": "TALK_DONE" }
+      {
+        "text": "Nevermind…",
+        "topic": "TALK_FRIEND"
+      },
+      {
+        "text": "Bye.",
+        "topic": "TALK_DONE"
+      }
     ]
   },
   {
-    "id": [ "TALK_FRIEND_DMBB_MERC_MAGE_command", "TALK_FRIEND_DMBB_MERC_MAGE_command_set" ],
+    "id": [
+      "TALK_FRIEND_DMBB_MERC_MAGE_command",
+      "TALK_FRIEND_DMBB_MERC_MAGE_command_set"
+    ],
     "dynamic_line": {
       "npc_has_trait": "DMBB_ORB_MAGE_manabeam",
       "yes": "I'm currently casting \"Mana Beam\".",
@@ -422,75 +771,159 @@
         "topic": "TALK_FRIEND_DMBB_MERC_MAGE_command_set",
         "condition": {
           "and": [
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_manabeam" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_manaburst" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_stunlock" } }
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_manabeam"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_manaburst"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_stunlock"
+              }
+            }
           ]
         },
-        "effect": { "npc_add_trait": "DMBB_ORB_MAGE_manabeam" }
+        "effect": {
+          "npc_add_trait": "DMBB_ORB_MAGE_manabeam"
+        }
       },
       {
         "text": "Stop casting \"Mana Beam\".",
         "topic": "TALK_FRIEND_DMBB_MERC_MAGE_command_set",
         "condition": {
           "and": [
-            { "npc_has_trait": "DMBB_ORB_MAGE_manabeam" },
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_manaburst" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_stunlock" } }
+            {
+              "npc_has_trait": "DMBB_ORB_MAGE_manabeam"
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_manaburst"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_stunlock"
+              }
+            }
           ]
         },
-        "effect": { "npc_lose_trait": "DMBB_ORB_MAGE_manabeam" }
+        "effect": {
+          "npc_lose_trait": "DMBB_ORB_MAGE_manabeam"
+        }
       },
       {
         "text": "Focus on casting \"Mana Burst\".",
         "topic": "TALK_FRIEND_DMBB_MERC_MAGE_command_set",
         "condition": {
           "and": [
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_manabeam" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_manaburst" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_stunlock" } }
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_manabeam"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_manaburst"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_stunlock"
+              }
+            }
           ]
         },
-        "effect": { "npc_add_trait": "DMBB_ORB_MAGE_manaburst" }
+        "effect": {
+          "npc_add_trait": "DMBB_ORB_MAGE_manaburst"
+        }
       },
       {
         "text": "Stop casting \"Mana Burst\".",
         "topic": "TALK_FRIEND_DMBB_MERC_MAGE_command_set",
         "condition": {
           "and": [
-            { "npc_has_trait": "DMBB_ORB_MAGE_manaburst" },
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_manabeam" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_stunlock" } }
+            {
+              "npc_has_trait": "DMBB_ORB_MAGE_manaburst"
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_manabeam"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_stunlock"
+              }
+            }
           ]
         },
-        "effect": { "npc_lose_trait": "DMBB_ORB_MAGE_manaburst" }
+        "effect": {
+          "npc_lose_trait": "DMBB_ORB_MAGE_manaburst"
+        }
       },
       {
         "text": "Focus on casting \"Stunlock\".",
         "topic": "TALK_FRIEND_DMBB_MERC_MAGE_command_set",
         "condition": {
           "and": [
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_manabeam" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_manaburst" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_stunlock" } }
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_manabeam"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_manaburst"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_stunlock"
+              }
+            }
           ]
         },
-        "effect": { "npc_add_trait": "DMBB_ORB_MAGE_stunlock" }
+        "effect": {
+          "npc_add_trait": "DMBB_ORB_MAGE_stunlock"
+        }
       },
       {
         "text": "Stop casting \"Stunlock\".",
         "topic": "TALK_FRIEND_DMBB_MERC_MAGE_command_set",
         "condition": {
           "and": [
-            { "npc_has_trait": "DMBB_ORB_MAGE_stunlock" },
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_manabeam" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_manaburst" } }
+            {
+              "npc_has_trait": "DMBB_ORB_MAGE_stunlock"
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_manabeam"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_manaburst"
+              }
+            }
           ]
         },
-        "effect": { "npc_lose_trait": "DMBB_ORB_MAGE_stunlock" }
+        "effect": {
+          "npc_lose_trait": "DMBB_ORB_MAGE_stunlock"
+        }
       },
-      { "text": "Nevermind...", "topic": "TALK_FRIEND" },
-      { "text": "Bye.", "topic": "TALK_DONE" }
+      {
+        "text": "Nevermind…",
+        "topic": "TALK_FRIEND"
+      },
+      {
+        "text": "Bye.",
+        "topic": "TALK_DONE"
+      }
     ]
   },
   {
@@ -501,27 +934,63 @@
       {
         "condition": {
           "or": [
-            { "npc_has_trait": "DMBB_ORB_MAGE_manabeam" },
-            { "npc_has_trait": "DMBB_ORB_MAGE_manaburst" },
-            { "npc_has_trait": "DMBB_ORB_MAGE_stunlock" }
+            {
+              "npc_has_trait": "DMBB_ORB_MAGE_manabeam"
+            },
+            {
+              "npc_has_trait": "DMBB_ORB_MAGE_manaburst"
+            },
+            {
+              "npc_has_trait": "DMBB_ORB_MAGE_stunlock"
+            }
           ]
         },
-        "effect": [ { "npc_add_trait": "DMBB_ORB_CASTER_vulnerable" }, { "npc_add_effect": "blind", "duration": "PERMANENT" } ]
+        "effect": [
+          {
+            "npc_add_trait": "DMBB_ORB_CASTER_vulnerable"
+          },
+          {
+            "npc_add_effect": "blind",
+            "duration": "PERMANENT"
+          }
+        ]
       },
       {
         "condition": {
           "and": [
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_manabeam" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_manaburst" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_stunlock" } }
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_manabeam"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_manaburst"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_stunlock"
+              }
+            }
           ]
         },
-        "effect": [ { "npc_lose_trait": "DMBB_ORB_CASTER_vulnerable" }, { "npc_lose_effect": "blind" } ]
+        "effect": [
+          {
+            "npc_lose_trait": "DMBB_ORB_CASTER_vulnerable"
+          },
+          {
+            "npc_lose_effect": "blind"
+          }
+        ]
       }
     ]
   },
   {
-    "id": [ "TALK_FRIEND_DMBB_MERC_MAGE_BATTLE_command", "TALK_FRIEND_DMBB_MERC_MAGE_BATTLE_command_set" ],
+    "id": [
+      "TALK_FRIEND_DMBB_MERC_MAGE_BATTLE_command",
+      "TALK_FRIEND_DMBB_MERC_MAGE_BATTLE_command_set"
+    ],
     "dynamic_line": {
       "npc_has_trait": "DMBB_ORB_MAGE_battle_megamagic",
       "yes": "I'm currently casting \"Megamagic\".",
@@ -542,27 +1011,57 @@
         "topic": "TALK_FRIEND_DMBB_MERC_MAGE_BATTLE_command_set",
         "condition": {
           "and": [
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_battle_megamagic" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_battle_manabeam_plus" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_battle_manaburst_plus" } }
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_battle_megamagic"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_battle_manabeam_plus"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_battle_manaburst_plus"
+              }
+            }
           ]
         },
-        "effect": { "npc_add_trait": "DMBB_ORB_MAGE_battle_megamagic" }
+        "effect": {
+          "npc_add_trait": "DMBB_ORB_MAGE_battle_megamagic"
+        }
       },
       {
         "text": "Stop casting \"Megamagic\".",
         "topic": "TALK_FRIEND_DMBB_MERC_MAGE_BATTLE_command_set",
         "condition": {
           "and": [
-            { "npc_has_trait": "DMBB_ORB_MAGE_battle_megamagic" },
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_battle_manabeam_plus" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_battle_manaburst_plus" } }
+            {
+              "npc_has_trait": "DMBB_ORB_MAGE_battle_megamagic"
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_battle_manabeam_plus"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_battle_manaburst_plus"
+              }
+            }
           ]
         },
         "effect": [
-          { "npc_lose_trait": "DMBB_ORB_MAGE_battle_megamagic" },
-          { "npc_lose_effect": "blind" },
-          { "npc_lose_trait": "DMBB_ORB_CASTER_vulnerable" }
+          {
+            "npc_lose_trait": "DMBB_ORB_MAGE_battle_megamagic"
+          },
+          {
+            "npc_lose_effect": "blind"
+          },
+          {
+            "npc_lose_trait": "DMBB_ORB_CASTER_vulnerable"
+          }
         ]
       },
       {
@@ -570,27 +1069,57 @@
         "topic": "TALK_FRIEND_DMBB_MERC_MAGE_BATTLE_command_set",
         "condition": {
           "and": [
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_battle_megamagic" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_battle_manabeam_plus" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_battle_manaburst_plus" } }
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_battle_megamagic"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_battle_manabeam_plus"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_battle_manaburst_plus"
+              }
+            }
           ]
         },
-        "effect": { "npc_add_trait": "DMBB_ORB_MAGE_battle_manabeam_plus" }
+        "effect": {
+          "npc_add_trait": "DMBB_ORB_MAGE_battle_manabeam_plus"
+        }
       },
       {
         "text": "Stop casting \"Dance of the Mana Beams\".",
         "topic": "TALK_FRIEND_DMBB_MERC_MAGE_BATTLE_command_set",
         "condition": {
           "and": [
-            { "npc_has_trait": "DMBB_ORB_MAGE_battle_manabeam_plus" },
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_battle_megamagic" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_battle_manaburst_plus" } }
+            {
+              "npc_has_trait": "DMBB_ORB_MAGE_battle_manabeam_plus"
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_battle_megamagic"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_battle_manaburst_plus"
+              }
+            }
           ]
         },
         "effect": [
-          { "npc_lose_trait": "DMBB_ORB_MAGE_battle_manabeam_plus" },
-          { "npc_lose_effect": "blind" },
-          { "npc_lose_trait": "DMBB_ORB_CASTER_vulnerable" }
+          {
+            "npc_lose_trait": "DMBB_ORB_MAGE_battle_manabeam_plus"
+          },
+          {
+            "npc_lose_effect": "blind"
+          },
+          {
+            "npc_lose_trait": "DMBB_ORB_CASTER_vulnerable"
+          }
         ]
       },
       {
@@ -598,31 +1127,67 @@
         "topic": "TALK_FRIEND_DMBB_MERC_MAGE_BATTLE_command_set",
         "condition": {
           "and": [
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_battle_megamagic" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_battle_manabeam_plus" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_battle_manaburst_plus" } }
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_battle_megamagic"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_battle_manabeam_plus"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_battle_manaburst_plus"
+              }
+            }
           ]
         },
-        "effect": { "npc_add_trait": "DMBB_ORB_MAGE_battle_manaburst_plus" }
+        "effect": {
+          "npc_add_trait": "DMBB_ORB_MAGE_battle_manaburst_plus"
+        }
       },
       {
         "text": "Stop casting \"Chaotic Obliteration\".",
         "topic": "TALK_FRIEND_DMBB_MERC_MAGE_BATTLE_command_set",
         "condition": {
           "and": [
-            { "npc_has_trait": "DMBB_ORB_MAGE_battle_manaburst_plus" },
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_battle_megamagic" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_battle_manabeam_plus" } }
+            {
+              "npc_has_trait": "DMBB_ORB_MAGE_battle_manaburst_plus"
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_battle_megamagic"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_battle_manabeam_plus"
+              }
+            }
           ]
         },
         "effect": [
-          { "npc_lose_trait": "DMBB_ORB_MAGE_battle_manaburst_plus" },
-          { "npc_lose_effect": "blind" },
-          { "npc_lose_trait": "DMBB_ORB_CASTER_vulnerable" }
+          {
+            "npc_lose_trait": "DMBB_ORB_MAGE_battle_manaburst_plus"
+          },
+          {
+            "npc_lose_effect": "blind"
+          },
+          {
+            "npc_lose_trait": "DMBB_ORB_CASTER_vulnerable"
+          }
         ]
       },
-      { "text": "Nevermind...", "topic": "TALK_FRIEND" },
-      { "text": "Bye.", "topic": "TALK_DONE" }
+      {
+        "text": "Nevermind…",
+        "topic": "TALK_FRIEND"
+      },
+      {
+        "text": "Bye.",
+        "topic": "TALK_DONE"
+      }
     ]
   },
   {
@@ -633,34 +1198,70 @@
       {
         "condition": {
           "or": [
-            { "npc_has_trait": "DMBB_ORB_MAGE_battle_megamagic" },
-            { "npc_has_trait": "DMBB_ORB_MAGE_battle_manabeam_plus" },
-            { "npc_has_trait": "DMBB_ORB_MAGE_battle_manaburst_plus" }
+            {
+              "npc_has_trait": "DMBB_ORB_MAGE_battle_megamagic"
+            },
+            {
+              "npc_has_trait": "DMBB_ORB_MAGE_battle_manabeam_plus"
+            },
+            {
+              "npc_has_trait": "DMBB_ORB_MAGE_battle_manaburst_plus"
+            }
           ]
         },
-        "effect": [ { "npc_add_trait": "DMBB_ORB_CASTER_vulnerable" }, { "npc_add_effect": "blind", "duration": "PERMANENT" } ]
+        "effect": [
+          {
+            "npc_add_trait": "DMBB_ORB_CASTER_vulnerable"
+          },
+          {
+            "npc_add_effect": "blind",
+            "duration": "PERMANENT"
+          }
+        ]
       },
       {
         "condition": {
           "and": [
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_battle_megamagic" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_battle_manabeam_plus" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_battle_manaburst_plus" } }
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_battle_megamagic"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_battle_manabeam_plus"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_battle_manaburst_plus"
+              }
+            }
           ]
         },
-        "effect": [ { "npc_lose_trait": "DMBB_ORB_CASTER_vulnerable" }, { "npc_lose_effect": "blind" } ]
+        "effect": [
+          {
+            "npc_lose_trait": "DMBB_ORB_CASTER_vulnerable"
+          },
+          {
+            "npc_lose_effect": "blind"
+          }
+        ]
       }
     ]
   },
   {
-    "id": [ "TALK_FRIEND_DMBB_MERC_MAGE_NECRO_command", "TALK_FRIEND_DMBB_MERC_MAGE_NECRO_command_set" ],
+    "id": [
+      "TALK_FRIEND_DMBB_MERC_MAGE_NECRO_command",
+      "TALK_FRIEND_DMBB_MERC_MAGE_NECRO_command_set"
+    ],
     "dynamic_line": {
       "npc_has_trait": "DMBB_ORB_MAGE_necro_spawn",
       "yes": "I'm currently casting \"Summon Horde\".",
       "no": {
         "npc_has_trait": "DMBB_ORB_MAGE_necro_vamp",
         "yes": "I'm currently casting \"Widespread Transfusion\".",
-        "no": "What should I focus on casting?\"\n\n* Summon Horde\nSummons 4-12 zombies around the target which lasts for 30-60 turns. These zombies are hostile to everything excluding their master.\nCasting probability is medium.\n\n* Widespread Transfusion\nDrains the living target's lifeforce, dealing 30 biological damage and restoring all allies' health by 3.\nCasting probability is high.\n\n\"Remember that I will become vulnerable to attacks while spellcasting."
+        "no": "What should I focus on casting?\"\n\n* Summon Horde\nSummons 4-12 zombies around the target which lasts for 30-60 turns.  These zombies are hostile to everything excluding their master.\nCasting probability is medium.\n\n* Widespread Transfusion\nDrains the living target's lifeforce, dealing 30 biological damage and restoring all allies' health by 3.\nCasting probability is high.\n\n\"Remember that I will become vulnerable to attacks while spellcasting."
       }
     },
     "type": "talk_topic",
@@ -670,22 +1271,47 @@
         "topic": "TALK_FRIEND_DMBB_MERC_MAGE_NECRO_command_set",
         "condition": {
           "and": [
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_necro_spawn" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_necro_vamp" } }
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_necro_spawn"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_necro_vamp"
+              }
+            }
           ]
         },
-        "effect": { "npc_add_trait": "DMBB_ORB_MAGE_necro_spawn" }
+        "effect": {
+          "npc_add_trait": "DMBB_ORB_MAGE_necro_spawn"
+        }
       },
       {
         "text": "Stop casting \"Summon Horde\".",
         "topic": "TALK_FRIEND_DMBB_MERC_MAGE_NECRO_command_set",
         "condition": {
-          "and": [ { "npc_has_trait": "DMBB_ORB_MAGE_necro_spawn" }, { "not": { "npc_has_trait": "DMBB_ORB_MAGE_necro_vamp" } } ]
+          "and": [
+            {
+              "npc_has_trait": "DMBB_ORB_MAGE_necro_spawn"
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_necro_vamp"
+              }
+            }
+          ]
         },
         "effect": [
-          { "npc_lose_trait": "DMBB_ORB_MAGE_necro_spawn" },
-          { "npc_lose_effect": "blind" },
-          { "npc_lose_trait": "DMBB_ORB_CASTER_vulnerable" }
+          {
+            "npc_lose_trait": "DMBB_ORB_MAGE_necro_spawn"
+          },
+          {
+            "npc_lose_effect": "blind"
+          },
+          {
+            "npc_lose_trait": "DMBB_ORB_CASTER_vulnerable"
+          }
         ]
       },
       {
@@ -693,26 +1319,57 @@
         "topic": "TALK_FRIEND_DMBB_MERC_MAGE_NECRO_command_set",
         "condition": {
           "and": [
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_necro_spawn" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_necro_vamp" } }
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_necro_spawn"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_necro_vamp"
+              }
+            }
           ]
         },
-        "effect": { "npc_add_trait": "DMBB_ORB_MAGE_necro_vamp" }
+        "effect": {
+          "npc_add_trait": "DMBB_ORB_MAGE_necro_vamp"
+        }
       },
       {
         "text": "Stop casting \"Widespread Transfusion\".",
         "topic": "TALK_FRIEND_DMBB_MERC_MAGE_NECRO_command_set",
         "condition": {
-          "and": [ { "npc_has_trait": "DMBB_ORB_MAGE_necro_vamp" }, { "not": { "npc_has_trait": "DMBB_ORB_MAGE_necro_spawn" } } ]
+          "and": [
+            {
+              "npc_has_trait": "DMBB_ORB_MAGE_necro_vamp"
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_necro_spawn"
+              }
+            }
+          ]
         },
         "effect": [
-          { "npc_lose_trait": "DMBB_ORB_MAGE_necro_vamp" },
-          { "npc_lose_effect": "blind" },
-          { "npc_lose_trait": "DMBB_ORB_CASTER_vulnerable" }
+          {
+            "npc_lose_trait": "DMBB_ORB_MAGE_necro_vamp"
+          },
+          {
+            "npc_lose_effect": "blind"
+          },
+          {
+            "npc_lose_trait": "DMBB_ORB_CASTER_vulnerable"
+          }
         ]
       },
-      { "text": "Nevermind...", "topic": "TALK_FRIEND" },
-      { "text": "Bye.", "topic": "TALK_DONE" }
+      {
+        "text": "Nevermind…",
+        "topic": "TALK_FRIEND"
+      },
+      {
+        "text": "Bye.",
+        "topic": "TALK_DONE"
+      }
     ]
   },
   {
@@ -721,22 +1378,57 @@
     "dynamic_line": "Understood.",
     "speaker_effect": [
       {
-        "condition": { "or": [ { "npc_has_trait": "DMBB_ORB_MAGE_necro_spawn" }, { "npc_has_trait": "DMBB_ORB_MAGE_necro_vamp" } ] },
-        "effect": [ { "npc_add_trait": "DMBB_ORB_CASTER_vulnerable" }, { "npc_add_effect": "blind", "duration": "PERMANENT" } ]
+        "condition": {
+          "or": [
+            {
+              "npc_has_trait": "DMBB_ORB_MAGE_necro_spawn"
+            },
+            {
+              "npc_has_trait": "DMBB_ORB_MAGE_necro_vamp"
+            }
+          ]
+        },
+        "effect": [
+          {
+            "npc_add_trait": "DMBB_ORB_CASTER_vulnerable"
+          },
+          {
+            "npc_add_effect": "blind",
+            "duration": "PERMANENT"
+          }
+        ]
       },
       {
         "condition": {
           "and": [
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_necro_spawn" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_MAGE_necro_vamp" } }
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_necro_spawn"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_MAGE_necro_vamp"
+              }
+            }
           ]
         },
-        "effect": [ { "npc_lose_trait": "DMBB_ORB_CASTER_vulnerable" }, { "npc_lose_effect": "blind" } ]
+        "effect": [
+          {
+            "npc_lose_trait": "DMBB_ORB_CASTER_vulnerable"
+          },
+          {
+            "npc_lose_effect": "blind"
+          }
+        ]
       }
     ]
   },
   {
-    "id": [ "TALK_FRIEND_DMBB_MERC_CLERIC_command", "TALK_FRIEND_DMBB_MERC_CLERIC_command_set" ],
+    "id": [
+      "TALK_FRIEND_DMBB_MERC_CLERIC_command",
+      "TALK_FRIEND_DMBB_MERC_CLERIC_command_set"
+    ],
     "dynamic_line": {
       "npc_has_trait": "DMBB_ORB_CLERIC_heal",
       "yes": "I'm currently casting \"Heal\".",
@@ -757,27 +1449,57 @@
         "topic": "TALK_FRIEND_DMBB_MERC_CLERIC_command_set",
         "condition": {
           "and": [
-            { "not": { "npc_has_trait": "DMBB_ORB_CLERIC_heal" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_CLERIC_buff" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_CLERIC_debuff" } }
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_CLERIC_heal"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_CLERIC_buff"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_CLERIC_debuff"
+              }
+            }
           ]
         },
-        "effect": { "npc_add_trait": "DMBB_ORB_CLERIC_heal" }
+        "effect": {
+          "npc_add_trait": "DMBB_ORB_CLERIC_heal"
+        }
       },
       {
         "text": "Stop casting \"Heal\".",
         "topic": "TALK_FRIEND_DMBB_MERC_CLERIC_command_set",
         "condition": {
           "and": [
-            { "npc_has_trait": "DMBB_ORB_CLERIC_heal" },
-            { "not": { "npc_has_trait": "DMBB_ORB_CLERIC_buff" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_CLERIC_debuff" } }
+            {
+              "npc_has_trait": "DMBB_ORB_CLERIC_heal"
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_CLERIC_buff"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_CLERIC_debuff"
+              }
+            }
           ]
         },
         "effect": [
-          { "npc_lose_trait": "DMBB_ORB_CLERIC_heal" },
-          { "npc_lose_effect": "blind" },
-          { "npc_lose_trait": "DMBB_ORB_CASTER_vulnerable" }
+          {
+            "npc_lose_trait": "DMBB_ORB_CLERIC_heal"
+          },
+          {
+            "npc_lose_effect": "blind"
+          },
+          {
+            "npc_lose_trait": "DMBB_ORB_CASTER_vulnerable"
+          }
         ]
       },
       {
@@ -785,27 +1507,57 @@
         "topic": "TALK_FRIEND_DMBB_MERC_CLERIC_command_set",
         "condition": {
           "and": [
-            { "not": { "npc_has_trait": "DMBB_ORB_CLERIC_heal" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_CLERIC_buff" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_CLERIC_debuff" } }
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_CLERIC_heal"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_CLERIC_buff"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_CLERIC_debuff"
+              }
+            }
           ]
         },
-        "effect": { "npc_add_trait": "DMBB_ORB_CLERIC_buff" }
+        "effect": {
+          "npc_add_trait": "DMBB_ORB_CLERIC_buff"
+        }
       },
       {
         "text": "Stop casting \"Celestial Blessing\".",
         "topic": "TALK_FRIEND_DMBB_MERC_CLERIC_command_set",
         "condition": {
           "and": [
-            { "npc_has_trait": "DMBB_ORB_CLERIC_buff" },
-            { "not": { "npc_has_trait": "DMBB_ORB_CLERIC_heal" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_CLERIC_debuff" } }
+            {
+              "npc_has_trait": "DMBB_ORB_CLERIC_buff"
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_CLERIC_heal"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_CLERIC_debuff"
+              }
+            }
           ]
         },
         "effect": [
-          { "npc_lose_trait": "DMBB_ORB_CLERIC_buff" },
-          { "npc_lose_effect": "blind" },
-          { "npc_lose_trait": "DMBB_ORB_CASTER_vulnerable" }
+          {
+            "npc_lose_trait": "DMBB_ORB_CLERIC_buff"
+          },
+          {
+            "npc_lose_effect": "blind"
+          },
+          {
+            "npc_lose_trait": "DMBB_ORB_CASTER_vulnerable"
+          }
         ]
       },
       {
@@ -813,31 +1565,67 @@
         "topic": "TALK_FRIEND_DMBB_MERC_CLERIC_command_set",
         "condition": {
           "and": [
-            { "not": { "npc_has_trait": "DMBB_ORB_CLERIC_heal" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_CLERIC_buff" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_CLERIC_debuff" } }
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_CLERIC_heal"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_CLERIC_buff"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_CLERIC_debuff"
+              }
+            }
           ]
         },
-        "effect": { "npc_add_trait": "DMBB_ORB_CLERIC_debuff" }
+        "effect": {
+          "npc_add_trait": "DMBB_ORB_CLERIC_debuff"
+        }
       },
       {
         "text": "Stop casting \"Scorn\".",
         "topic": "TALK_FRIEND_DMBB_MERC_CLERIC_command_set",
         "condition": {
           "and": [
-            { "npc_has_trait": "DMBB_ORB_CLERIC_debuff" },
-            { "not": { "npc_has_trait": "DMBB_ORB_CLERIC_heal" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_CLERIC_buff" } }
+            {
+              "npc_has_trait": "DMBB_ORB_CLERIC_debuff"
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_CLERIC_heal"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_CLERIC_buff"
+              }
+            }
           ]
         },
         "effect": [
-          { "npc_lose_trait": "DMBB_ORB_CLERIC_debuff" },
-          { "npc_lose_effect": "blind" },
-          { "npc_lose_trait": "DMBB_ORB_CASTER_vulnerable" }
+          {
+            "npc_lose_trait": "DMBB_ORB_CLERIC_debuff"
+          },
+          {
+            "npc_lose_effect": "blind"
+          },
+          {
+            "npc_lose_trait": "DMBB_ORB_CASTER_vulnerable"
+          }
         ]
       },
-      { "text": "Nevermind...", "topic": "TALK_FRIEND" },
-      { "text": "Bye.", "topic": "TALK_DONE" }
+      {
+        "text": "Nevermind…",
+        "topic": "TALK_FRIEND"
+      },
+      {
+        "text": "Bye.",
+        "topic": "TALK_DONE"
+      }
     ]
   },
   {
@@ -848,27 +1636,63 @@
       {
         "condition": {
           "or": [
-            { "npc_has_trait": "DMBB_ORB_CLERIC_heal" },
-            { "npc_has_trait": "DMBB_ORB_CLERIC_buff" },
-            { "npc_has_trait": "DMBB_ORB_CLERIC_debuff" }
+            {
+              "npc_has_trait": "DMBB_ORB_CLERIC_heal"
+            },
+            {
+              "npc_has_trait": "DMBB_ORB_CLERIC_buff"
+            },
+            {
+              "npc_has_trait": "DMBB_ORB_CLERIC_debuff"
+            }
           ]
         },
-        "effect": [ { "npc_add_trait": "DMBB_ORB_CASTER_vulnerable" }, { "npc_add_effect": "blind", "duration": "PERMANENT" } ]
+        "effect": [
+          {
+            "npc_add_trait": "DMBB_ORB_CASTER_vulnerable"
+          },
+          {
+            "npc_add_effect": "blind",
+            "duration": "PERMANENT"
+          }
+        ]
       },
       {
         "condition": {
           "and": [
-            { "not": { "npc_has_trait": "DMBB_ORB_CLERIC_heal" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_CLERIC_buff" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_CLERIC_debuff" } }
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_CLERIC_heal"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_CLERIC_buff"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_CLERIC_debuff"
+              }
+            }
           ]
         },
-        "effect": [ { "npc_lose_trait": "DMBB_ORB_CASTER_vulnerable" }, { "npc_lose_effect": "blind" } ]
+        "effect": [
+          {
+            "npc_lose_trait": "DMBB_ORB_CASTER_vulnerable"
+          },
+          {
+            "npc_lose_effect": "blind"
+          }
+        ]
       }
     ]
   },
   {
-    "id": [ "TALK_FRIEND_DMBB_MERC_PRIEST_command", "TALK_FRIEND_DMBB_MERC_PRIEST_command_set" ],
+    "id": [
+      "TALK_FRIEND_DMBB_MERC_PRIEST_command",
+      "TALK_FRIEND_DMBB_MERC_PRIEST_command_set"
+    ],
     "dynamic_line": {
       "npc_has_trait": "DMBB_ORB_PRIEST_heal",
       "yes": "I'm currently casting \"Strong Heal\".",
@@ -889,27 +1713,57 @@
         "topic": "TALK_FRIEND_DMBB_MERC_PRIEST_command_set",
         "condition": {
           "and": [
-            { "not": { "npc_has_trait": "DMBB_ORB_PRIEST_heal" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_PRIEST_qheal" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_PRIEST_pure" } }
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_PRIEST_heal"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_PRIEST_qheal"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_PRIEST_pure"
+              }
+            }
           ]
         },
-        "effect": { "npc_add_trait": "DMBB_ORB_PRIEST_heal" }
+        "effect": {
+          "npc_add_trait": "DMBB_ORB_PRIEST_heal"
+        }
       },
       {
         "text": "Stop casting \"Strong Heal\".",
         "topic": "TALK_FRIEND_DMBB_MERC_PRIEST_command_set",
         "condition": {
           "and": [
-            { "npc_has_trait": "DMBB_ORB_PRIEST_heal" },
-            { "not": { "npc_has_trait": "DMBB_ORB_PRIEST_qheal" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_PRIEST_pure" } }
+            {
+              "npc_has_trait": "DMBB_ORB_PRIEST_heal"
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_PRIEST_qheal"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_PRIEST_pure"
+              }
+            }
           ]
         },
         "effect": [
-          { "npc_lose_trait": "DMBB_ORB_PRIEST_heal" },
-          { "npc_lose_effect": "blind" },
-          { "npc_lose_trait": "DMBB_ORB_CASTER_vulnerable" }
+          {
+            "npc_lose_trait": "DMBB_ORB_PRIEST_heal"
+          },
+          {
+            "npc_lose_effect": "blind"
+          },
+          {
+            "npc_lose_trait": "DMBB_ORB_CASTER_vulnerable"
+          }
         ]
       },
       {
@@ -917,27 +1771,57 @@
         "topic": "TALK_FRIEND_DMBB_MERC_PRIEST_command_set",
         "condition": {
           "and": [
-            { "not": { "npc_has_trait": "DMBB_ORB_PRIEST_heal" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_PRIEST_qheal" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_PRIEST_pure" } }
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_PRIEST_heal"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_PRIEST_qheal"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_PRIEST_pure"
+              }
+            }
           ]
         },
-        "effect": { "npc_add_trait": "DMBB_ORB_PRIEST_qheal" }
+        "effect": {
+          "npc_add_trait": "DMBB_ORB_PRIEST_qheal"
+        }
       },
       {
         "text": "Stop casting \"Quick Heal\".",
         "topic": "TALK_FRIEND_DMBB_MERC_PRIEST_command_set",
         "condition": {
           "and": [
-            { "npc_has_trait": "DMBB_ORB_PRIEST_qheal" },
-            { "not": { "npc_has_trait": "DMBB_ORB_PRIEST_heal" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_PRIEST_pure" } }
+            {
+              "npc_has_trait": "DMBB_ORB_PRIEST_qheal"
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_PRIEST_heal"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_PRIEST_pure"
+              }
+            }
           ]
         },
         "effect": [
-          { "npc_lose_trait": "DMBB_ORB_PRIEST_qheal" },
-          { "npc_lose_effect": "blind" },
-          { "npc_lose_trait": "DMBB_ORB_CASTER_vulnerable" }
+          {
+            "npc_lose_trait": "DMBB_ORB_PRIEST_qheal"
+          },
+          {
+            "npc_lose_effect": "blind"
+          },
+          {
+            "npc_lose_trait": "DMBB_ORB_CASTER_vulnerable"
+          }
         ]
       },
       {
@@ -945,31 +1829,67 @@
         "topic": "TALK_FRIEND_DMBB_MERC_PRIEST_command_set",
         "condition": {
           "and": [
-            { "not": { "npc_has_trait": "DMBB_ORB_PRIEST_heal" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_PRIEST_qheal" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_PRIEST_pure" } }
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_PRIEST_heal"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_PRIEST_qheal"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_PRIEST_pure"
+              }
+            }
           ]
         },
-        "effect": { "npc_add_trait": "DMBB_ORB_PRIEST_pure" }
+        "effect": {
+          "npc_add_trait": "DMBB_ORB_PRIEST_pure"
+        }
       },
       {
         "text": "Stop casting \"Purify\".",
         "topic": "TALK_FRIEND_DMBB_MERC_PRIEST_command_set",
         "condition": {
           "and": [
-            { "npc_has_trait": "DMBB_ORB_PRIEST_pure" },
-            { "not": { "npc_has_trait": "DMBB_ORB_PRIEST_heal" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_PRIEST_qheal" } }
+            {
+              "npc_has_trait": "DMBB_ORB_PRIEST_pure"
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_PRIEST_heal"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_PRIEST_qheal"
+              }
+            }
           ]
         },
         "effect": [
-          { "npc_lose_trait": "DMBB_ORB_PRIEST_pure" },
-          { "npc_lose_effect": "blind" },
-          { "npc_lose_trait": "DMBB_ORB_CASTER_vulnerable" }
+          {
+            "npc_lose_trait": "DMBB_ORB_PRIEST_pure"
+          },
+          {
+            "npc_lose_effect": "blind"
+          },
+          {
+            "npc_lose_trait": "DMBB_ORB_CASTER_vulnerable"
+          }
         ]
       },
-      { "text": "Nevermind...", "topic": "TALK_FRIEND" },
-      { "text": "Bye.", "topic": "TALK_DONE" }
+      {
+        "text": "Nevermind…",
+        "topic": "TALK_FRIEND"
+      },
+      {
+        "text": "Bye.",
+        "topic": "TALK_DONE"
+      }
     ]
   },
   {
@@ -980,22 +1900,55 @@
       {
         "condition": {
           "or": [
-            { "npc_has_trait": "DMBB_ORB_PRIEST_heal" },
-            { "npc_has_trait": "DMBB_ORB_PRIEST_qheal" },
-            { "npc_has_trait": "DMBB_ORB_PRIEST_pure" }
+            {
+              "npc_has_trait": "DMBB_ORB_PRIEST_heal"
+            },
+            {
+              "npc_has_trait": "DMBB_ORB_PRIEST_qheal"
+            },
+            {
+              "npc_has_trait": "DMBB_ORB_PRIEST_pure"
+            }
           ]
         },
-        "effect": [ { "npc_add_trait": "DMBB_ORB_CASTER_vulnerable" }, { "npc_add_effect": "blind", "duration": "PERMANENT" } ]
+        "effect": [
+          {
+            "npc_add_trait": "DMBB_ORB_CASTER_vulnerable"
+          },
+          {
+            "npc_add_effect": "blind",
+            "duration": "PERMANENT"
+          }
+        ]
       },
       {
         "condition": {
           "and": [
-            { "not": { "npc_has_trait": "DMBB_ORB_PRIEST_heal" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_PRIEST_qheal" } },
-            { "not": { "npc_has_trait": "DMBB_ORB_PRIEST_pure" } }
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_PRIEST_heal"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_PRIEST_qheal"
+              }
+            },
+            {
+              "not": {
+                "npc_has_trait": "DMBB_ORB_PRIEST_pure"
+              }
+            }
           ]
         },
-        "effect": [ { "npc_lose_trait": "DMBB_ORB_CASTER_vulnerable" }, { "npc_lose_effect": "blind" } ]
+        "effect": [
+          {
+            "npc_lose_trait": "DMBB_ORB_CASTER_vulnerable"
+          },
+          {
+            "npc_lose_effect": "blind"
+          }
+        ]
       }
     ]
   }

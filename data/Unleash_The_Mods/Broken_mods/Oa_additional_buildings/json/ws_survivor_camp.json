@@ -4,67 +4,188 @@
     "name": "GROUP_ZOMBIE_SURVIVOR_CAMP",
     "default": "mon_zombie_survivor",
     "monsters": [
-      { "monster": "mon_zombie_survivor", "freq": 250, "cost_multiplier": 0 },
-      { "monster": "mon_zombie_soldier", "freq": 100, "cost_multiplier": 2 },
-      { "monster": "mon_zombie_dog", "freq": 100, "cost_multiplier": 0 },
-      { "monster": "mon_dog_zombie_rot", "freq": 150, "cost_multiplier": 0 },
-      { "monster": "mon_dog_zombie_cop", "freq": 100, "cost_multiplier": 0 }
+      {
+        "monster": "mon_zombie_survivor",
+        "freq": 250,
+        "cost_multiplier": 0
+      },
+      {
+        "monster": "mon_zombie_soldier",
+        "freq": 100,
+        "cost_multiplier": 2
+      },
+      {
+        "monster": "mon_zombie_dog",
+        "freq": 100,
+        "cost_multiplier": 0
+      },
+      {
+        "monster": "mon_dog_zombie_rot",
+        "freq": 150,
+        "cost_multiplier": 0
+      },
+      {
+        "monster": "mon_dog_zombie_cop",
+        "freq": 100,
+        "cost_multiplier": 0
+      }
     ]
   },
   {
     "id": "sc_loot_general",
     "type": "item_group",
     "items": [
-      [ "rock", 20 ],
-      [ "sharp_rock", 20 ],
-      [ "dry_meat", 20 ],
-      [ "dry_veggy", 20 ],
-      [ "stick", 20 ],
-      [ "pointy_stick", 20 ],
-      [ "bottle_plastic", 20 ],
-      [ "carrot", 20 ],
-      [ "hotdogs_campfire", 20 ],
-      [ "birchbark", 20 ]
-    ]
+      {
+        "item": "rock",
+        "prob": 20
+      },
+      {
+        "item": "sharp_rock",
+        "prob": 20
+      },
+      {
+        "item": "dry_meat",
+        "prob": 20
+      },
+      {
+        "item": "dry_veggy",
+        "prob": 20
+      },
+      {
+        "item": "stick",
+        "prob": 20
+      },
+      {
+        "item": "pointy_stick",
+        "prob": 20
+      },
+      {
+        "item": "bottle_plastic",
+        "prob": 20
+      },
+      {
+        "item": "carrot",
+        "prob": 20
+      },
+      {
+        "item": "hotdogs_campfire",
+        "prob": 20
+      },
+      {
+        "item": "birchbark",
+        "prob": 20
+      }
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "sc_loot_equipment",
     "type": "item_group",
     "items": [
-      [ "flask_hip", 20 ],
-      [ "shortbow", 20 ],
-      [ "arrow_wood_heavy", 20 ],
-      [ "arrow_fire_hardened_fletched", 20 ],
-      [ "quiver_birchbark", 30 ],
-      [ "fire_drill", 30 ],
-      [ "lighter", 30 ],
-      [ "matches", 30 ],
-      [ "sunglasses", 30 ],
-      [ "fitover_sunglasses", 20 ],
-      [ "ax", 10 ],
-      [ "saw", 10 ]
-    ]
+      {
+        "item": "flask_hip",
+        "prob": 20
+      },
+      {
+        "item": "shortbow",
+        "prob": 20
+      },
+      {
+        "item": "arrow_wood_heavy",
+        "prob": 20
+      },
+      {
+        "item": "arrow_fire_hardened_fletched",
+        "prob": 20
+      },
+      {
+        "item": "quiver_birchbark",
+        "prob": 30
+      },
+      {
+        "item": "fire_drill",
+        "prob": 30
+      },
+      {
+        "item": "lighter",
+        "prob": 30
+      },
+      {
+        "item": "matches",
+        "prob": 30
+      },
+      {
+        "item": "sunglasses",
+        "prob": 30
+      },
+      {
+        "item": "fitover_sunglasses",
+        "prob": 20
+      },
+      {
+        "item": "ax",
+        "prob": 10
+      },
+      {
+        "item": "saw",
+        "prob": 10
+      }
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "sc_loot_rare",
     "type": "item_group",
     "items": [
-      [ "compositebow", 20 ],
-      [ "quiver", 20 ],
-      [ "book_archery", 20 ],
-      [ "canteen", 20 ],
-      [ "knife_hunting", 30 ],
-      [ "binoculars", 20 ],
-      [ "ref_lighter", 30 ],
-      [ "backpack", 30 ],
-      [ "backpack_leather", 30 ],
-      [ "e_tool", 30 ]
-    ]
+      {
+        "item": "compositebow",
+        "prob": 20
+      },
+      {
+        "item": "quiver",
+        "prob": 20
+      },
+      {
+        "item": "book_archery",
+        "prob": 20
+      },
+      {
+        "item": "canteen",
+        "prob": 20
+      },
+      {
+        "item": "knife_hunting",
+        "prob": 30
+      },
+      {
+        "item": "binoculars",
+        "prob": 20
+      },
+      {
+        "item": "ref_lighter",
+        "prob": 30
+      },
+      {
+        "item": "backpack",
+        "prob": 30
+      },
+      {
+        "item": "backpack_leather",
+        "prob": 30
+      },
+      {
+        "item": "e_tool",
+        "prob": 30
+      }
+    ],
+    "subtype": "distribution"
   },
   {
     "type": "mapgen",
     "method": "json",
-    "om_terrain": [ "ws_survivor_camp" ],
+    "om_terrain": [
+      "ws_survivor_camp"
+    ],
     "weight": 1000,
     "object": {
       "rows": [
@@ -105,19 +226,66 @@
         "s": "t_dirt",
         "w": "t_dirt"
       },
-      "furniture": { "c": "f_groundsheet", "C": "f_canvas_wall", "d": "f_canvas_door" },
-      "items": {
-        "c": { "item": "sc_loot_rare", "chance": 30 },
-        "r": { "item": "sc_loot_general", "chance": 30 },
-        "s": { "item": "sc_loot_equipment", "chance": 30 },
-        "w": { "item": "stash_wood", "chance": 30 }
+      "furniture": {
+        "c": "f_groundsheet",
+        "C": "f_canvas_wall",
+        "d": "f_canvas_door"
       },
-      "add": [ { "item": "ash", "chance": 2, "x": 11, "y": 11, "repeat": 2 }, { "item": "charcoal", "chance": 3, "x": 11, "y": 11 } ],
-      "traps": { "p": { "trap": "tr_spike_pit", "chance": 70 } },
+      "items": {
+        "c": {
+          "item": "sc_loot_rare",
+          "chance": 30
+        },
+        "r": {
+          "item": "sc_loot_general",
+          "chance": 30
+        },
+        "s": {
+          "item": "sc_loot_equipment",
+          "chance": 30
+        },
+        "w": {
+          "item": "stash_wood",
+          "chance": 30
+        }
+      },
+      "add": [
+        {
+          "item": "ash",
+          "chance": 2,
+          "x": 11,
+          "y": 11,
+          "repeat": 2
+        },
+        {
+          "item": "charcoal",
+          "chance": 3,
+          "x": 11,
+          "y": 11
+        }
+      ],
+      "traps": {
+        "p": {
+          "trap": "tr_spike_pit",
+          "chance": 70
+        }
+      },
       "place_monsters": [
-        { "monster": "GROUP_ZOMBIE_SURVIVOR_CAMP", "x": 11, "y": 10 },
-        { "monster": "GROUP_ZOMBIE_SURVIVOR_CAMP", "x": 10, "y": 9 },
-        { "monster": "GROUP_ZOMBIE_SURVIVOR_CAMP", "x": 12, "y": 8 }
+        {
+          "monster": "GROUP_ZOMBIE_SURVIVOR_CAMP",
+          "x": 11,
+          "y": 10
+        },
+        {
+          "monster": "GROUP_ZOMBIE_SURVIVOR_CAMP",
+          "x": 10,
+          "y": 9
+        },
+        {
+          "monster": "GROUP_ZOMBIE_SURVIVOR_CAMP",
+          "x": 12,
+          "y": 8
+        }
       ]
     }
   }

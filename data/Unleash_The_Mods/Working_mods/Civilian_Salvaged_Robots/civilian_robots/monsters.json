@@ -2,33 +2,57 @@
   {
     "id": "mon_utilibot",
     "type": "MONSTER",
-    "name": { "str": "utility robot" },
+    "name": {
+      "str": "utility robot"
+    },
     "looks_like": "mon_hazmatbot",
     "description": "One of the many models of utility robot formerly in use by government agencies, private corporations, and civilians alike.",
     "default_faction": "utility_bot",
-    "species": [ "ROBOT" ],
+    "species": [
+      "ROBOT"
+    ],
     "weight": "140 kg",
     "volume": "65 L",
     "hp": 120,
     "speed": 70,
-    "material": [ "steel" ],
+    "material": [
+      "steel"
+    ],
     "symbol": "R",
     "color": "green",
     "bodytype": "human",
     "morale": 80,
     "aggression": 0,
-    "anger_triggers": [ "HURT" ],
-    "armor": { "bash": 8, "cut": 8, "heat": 4, "acid": 6 },
+    "anger_triggers": [
+      "HURT"
+    ],
+    "armor": {
+      "bash": 8,
+      "cut": 8,
+      "heat": 4,
+      "acid": 6
+    },
     "vision_day": 50,
-    "death_function": { "corpse_type": "BROKEN" },
+    "death_function": {
+      "corpse_type": "BROKEN"
+    },
     "revert_to_itype": "bot_utilibot",
-    "flags": [ "SEES", "HEARS", "ELECTRONIC", "NO_BREATHE", "PRIORITIZE_TARGETS", "PATH_AVOID_DANGER_1" ]
+    "flags": [
+      "SEES",
+      "HEARS",
+      "ELECTRONIC",
+      "NO_BREATHE",
+      "PRIORITIZE_TARGETS",
+      "PATH_AVOID_DANGER_1"
+    ]
   },
   {
     "id": "mon_utilibot_butler",
     "type": "MONSTER",
     "copy-from": "mon_utilibot",
-    "name": { "str": "butler robot" },
+    "name": {
+      "str": "butler robot"
+    },
     "color": "dark_gray",
     "symbol": "R",
     "revert_to_itype": "bot_utilibot_butler",
@@ -38,7 +62,9 @@
     "id": "mon_utilibot_const",
     "type": "MONSTER",
     "copy-from": "mon_utilibot",
-    "name": { "str": "construction robot" },
+    "name": {
+      "str": "construction robot"
+    },
     "description": "One of the many models of construction robot formerly in use by government agencies and private corporations.  It is equipped with an integrated welder, flashlight, nailgun, and jackhammer.",
     "color": "yellow",
     "symbol": "R",
@@ -46,26 +72,54 @@
     "melee_skill": 2,
     "melee_dice": 4,
     "melee_dice_sides": 6,
-    "melee_damage": [ { "damage_type": "cut", "amount": 1 } ],
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 1
+      }
+    ],
     "revert_to_itype": "bot_utilibot_const",
-    "starting_ammo": { "nail": 1000 },
+    "starting_ammo": {
+      "nail": 1000
+    },
     "special_attacks": [
       {
         "type": "gun",
         "move_cost": 150,
         "gun_type": "robogun_nail",
-        "fake_skills": [ [ "gun", 0 ], [ "pistol", 2 ] ],
+        "fake_skills": [
+          [
+            "gun",
+            0
+          ],
+          [
+            "pistol",
+            2
+          ]
+        ],
         "fake_dex": 8,
-        "ranges": [ [ 0, 3, "AUTO" ] ]
+        "ranges": [
+          [
+            0,
+            3,
+            "AUTO"
+          ]
+        ]
       }
     ],
-    "extend": { "flags": [ "DROPS_AMMO" ] }
+    "extend": {
+      "flags": [
+        "DROPS_AMMO"
+      ]
+    }
   },
   {
     "id": "mon_utilibot_fire",
     "type": "MONSTER",
     "copy-from": "mon_utilibot",
-    "name": { "str": "firefighter robot" },
+    "name": {
+      "str": "firefighter robot"
+    },
     "description": "One of the many models of fire-fighting robot formerly in use by local fire departments and emergency services.  Designed for entering burning buildings and other situations deemed too dangerous for human firefighters.",
     "color": "red",
     "symbol": "R",
@@ -73,42 +127,91 @@
     "melee_skill": 3,
     "melee_dice": 4,
     "melee_dice_sides": 5,
-    "melee_damage": [ { "damage_type": "cut", "amount": 1 } ],
-    "starting_ammo": { "water": 1000 },
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 1
+      }
+    ],
+    "starting_ammo": {
+      "water": 1000
+    },
     "revert_to_itype": "bot_utilibot_fire",
     "special_attacks": [
       {
         "type": "gun",
         "move_cost": 250,
         "gun_type": "watercannon",
-        "fake_skills": [ [ "gun", 2 ], [ "launcher", 2 ] ],
+        "fake_skills": [
+          [
+            "gun",
+            2
+          ],
+          [
+            "launcher",
+            2
+          ]
+        ],
         "fake_dex": 8,
-        "ranges": [ [ 0, 5, "BURST" ] ]
+        "ranges": [
+          [
+            0,
+            5,
+            "BURST"
+          ]
+        ]
       }
     ],
-    "extend": { "flags": [ "FIREPROOF", "BASHES" ] }
+    "extend": {
+      "flags": [
+        "FIREPROOF",
+        "BASHES"
+      ]
+    }
   },
   {
     "id": "mon_roomba",
     "type": "MONSTER",
-    "name": { "str": "roomba" },
-    "description": "A roomba, cleans floor for the owner constantly. Now it's quite useless except for those who like their floors clean.",
+    "name": {
+      "str": "roomba"
+    },
+    "description": "A roomba, cleans floor for the owner constantly.  Now it's quite useless except for those who like their floors clean.",
     "default_faction": "utility_bot",
-    "species": [ "ROBOT" ],
+    "species": [
+      "ROBOT"
+    ],
     "weight": "15 kg",
     "volume": "30 L",
     "hp": 45,
     "speed": 150,
-    "material": [ "plastic" ],
+    "material": [
+      "plastic"
+    ],
     "symbol": "O",
     "color": "light_blue",
     "morale": 80,
     "aggression": 0,
-    "anger_triggers": [ "HURT" ],
-    "armor": { "bash": 4, "cut": 4, "heat": 0, "acid": 0 },
+    "anger_triggers": [
+      "HURT"
+    ],
+    "armor": {
+      "bash": 4,
+      "cut": 4,
+      "heat": 0,
+      "acid": 0
+    },
     "vision_day": 25,
-    "death_function": { "corpse_type": "BROKEN" },
+    "death_function": {
+      "corpse_type": "BROKEN"
+    },
     "revert_to_itype": "bot_roomba",
-    "flags": [ "SEES", "HEARS", "ELECTRONIC", "NO_BREATHE", "PRIORITIZE_TARGETS", "PATH_AVOID_DANGER_1" ]
+    "flags": [
+      "SEES",
+      "HEARS",
+      "ELECTRONIC",
+      "NO_BREATHE",
+      "PRIORITIZE_TARGETS",
+      "PATH_AVOID_DANGER_1"
+    ]
   }
 ]

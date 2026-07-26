@@ -1,55 +1,5 @@
 [
   {
-    "id": "mon_zombie",
-    "type": "MONSTER",
-    "copy-from": "mon_zombie",
-    "special_attacks": [ { "type": "bite", "cooldown": 5 }, [ "GRAB", 50 ], [ "scratch", 20 ] ],
-    "upgrades": { "half_life": 8, "into_group": "GROUP_ZOMBIE_UPGRADE" }
-  },
-  {
-    "id": "mon_zombie_runner",
-    "type": "MONSTER",
-    "copy-from": "mon_zombie_runner",
-    "attack_effs": [ { "id": "flu_zed", "duration": 8000, "chance": 1 } ],
-    "special_attacks": [
-      [ "scratch", 5 ],
-      {
-        "type": "bite",
-        "cooldown": 5,
-        "damage_max_instance": [ { "damage_type": "stab", "amount": 9, "armor_multiplier": 0.9 } ]
-      }
-    ]
-  },
-  {
-    "id": "mon_zombie_hunter",
-    "type": "MONSTER",
-    "copy-from": "mon_zombie_hunter",
-    "special_attacks": [
-      [ "scratch", 10 ],
-      { "type": "leap", "cooldown": 15, "max_range": 4 },
-      {
-        "type": "bite",
-        "cooldown": 10,
-        "damage_max_instance": [ { "damage_type": "stab", "amount": 12, "armor_multiplier": 0.8 } ]
-      }
-    ]
-  },
-  {
-    "id": "mon_zombie_predator",
-    "type": "MONSTER",
-    "copy-from": "mon_zombie_predator",
-    "special_attacks": [
-      [ "scratch", 10 ],
-      [ "impale", 30 ],
-      { "type": "leap", "cooldown": 15, "max_range": 7, "allow_no_target": false },
-      {
-        "type": "bite",
-        "cooldown": 10,
-        "damage_max_instance": [ { "damage_type": "stab", "amount": 10, "armor_multiplier": 0.7 } ]
-      }
-    ]
-  },
-  {
     "id": "mon_zombie_runner_pk",
     "type": "MONSTER",
     "copy-from": "mon_zombie",
@@ -65,8 +15,8 @@
     "melee_damage": [ { "damage_type": "cut", "amount": 1 } ],
     "attack_effs": [ { "id": "flu_zed", "duration": 8000, "chance": 1 } ],
     "special_attacks": [
-      [ "GRAB", 10 ],
-      [ "scratch", 5 ],
+      { "id": "grab", "cooldown": 10 },
+      { "id": "scratch", "cooldown": 5 },
       {
         "type": "bite",
         "cooldown": 15,
@@ -74,63 +24,6 @@
       }
     ],
     "upgrades": { "half_life": 7, "into_group": "GROUP_ZOMBIE_GRAB" }
-  },
-  {
-    "id": "mon_zombie_grabber",
-    "type": "MONSTER",
-    "copy-from": "mon_zombie_grabber",
-    "attack_effs": [ { "id": "flu_zed", "duration": 8000, "chance": 2 } ],
-    "special_attacks": [ [ "GRAB", 10 ], [ "scratch", 15 ], [ "PARROT", 50 ], { "type": "bite", "cooldown": 10 } ]
-  },
-  {
-    "id": "mon_zombie_hazmat",
-    "type": "MONSTER",
-    "copy-from": "mon_zombie_hazmat",
-    "hp": 70,
-    "melee_skill": 3,
-    "melee_dice": 2,
-    "melee_dice_sides": 5,
-    "attack_effs": [ { "id": "rad_tenths", "duration": 5 } ],
-    "flags": [
-      "SEES",
-      "HEARS",
-      "STUMBLES",
-      "WARM",
-      "BASHES",
-      "GROUP_BASH",
-      "POISON",
-      "ACIDPROOF",
-      "NO_BREATHE",
-      "NO_NECRO",
-      "REVIVES",
-      "BONES",
-      "PUSH_MON",
-      "ELECTRIC",
-      "FILTHY"
-    ],
-    "armor": { "bash": 8, "cut": 5 }
-  },
-  {
-    "id": "mon_zombie_armored",
-    "type": "MONSTER",
-    "name": { "str": "armored zombie" },
-    "copy-from": "mon_zombie_armored",
-    "description": "Despite being encased in this malfunctioning wreck of what was once a nigh-impenetrable suit of power armor, something still managed to kill this soldier.",
-    "melee_skill": 5,
-    "melee_dice": 2,
-    "melee_dice_sides": 8,
-    "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
-    "melee_damage": [ { "damage_type": "electric", "amount": 2 } ],
-    "special_attacks": [ [ "hammer", 20 ] ]
-  },
-  {
-    "id": "mon_beekeeper",
-    "type": "MONSTER",
-    "copy-from": "mon_beekeeper",
-    "attack_effs": [ { "id": "flu_zed", "duration": 8000, "chance": 1 }, { "id": "rad_tenths", "duration": 5 } ],
-    "vision_day": 30,
-    "vision_night": 5,
-    "upgrades": { "half_life": 4, "into": "mon_beekeeper_pk" }
   },
   {
     "id": "mon_zombie_rot_pk",
@@ -153,7 +46,6 @@
     "melee_skill": 4,
     "melee_dice": 2,
     "melee_dice_sides": 3,
-    "melee_damage": [ { "damage_type": "cut", "amount": 1 } ],
     "melee_damage": [ { "damage_type": "stab", "amount": 6 } ],
     "attack_effs": [ { "id": "rad_fives", "duration": 2 }, { "id": "rad_tenths", "duration": 20 }, { "id": "rad_tenths", "duration": 30 } ],
     "dodge": 1,
@@ -161,43 +53,16 @@
     "vision_night": 9,
     "emit_fields": [ "emit_gas_plume" ],
     "special_attacks": [
-      [ "GRAB", 10 ],
-      [ "scratch", 20 ],
-      [ "slash", 60 ],
+      { "id": "grab", "cooldown": 10 },
+      { "id": "scratch", "cooldown": 20 },
+      { "id": "slash", "cooldown": 60 },
       { "type": "bite", "cooldown": 5, "accuracy": 6 },
       { "id": "diseased swipe", "cooldown": 12, "accuracy": 4 }
     ],
     "death_drops": "default_zombie_death_drops",
     "burn_into": "mon_zombie_crawler_pk_weak",
-    "flags": [ "SEES", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "NO_BREATHE", "REVIVES", "BONES", "PUSH_MON", "FILTHY" ],
+    "flags": [ "SEES", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "NO_BREATHE", "REVIVES", "PUSH_MON", "FILTHY" ],
     "armor": { "bash": 9, "cut": 1, "stab": 6 }
-  },
-  {
-    "id": "mon_zombie_rot",
-    "type": "MONSTER",
-    "copy-from": "mon_zombie_rot",
-    "speed": 60,
-    "vision_day": 30,
-    "vision_night": 9,
-    "melee_skill": 2,
-    "melee_dice": 2,
-    "melee_dice_sides": 3,
-    "melee_damage": [ { "damage_type": "cut", "amount": 5 } ],
-    "special_attacks": [
-      { "type": "bite", "cooldown": 3, "accuracy": 4 },
-      [ "GRAB", 15 ],
-      [ "scratch", 20 ],
-      {
-        "id": "diseased swipe",
-        "cooldown": 12,
-        "accuracy": 3,
-        "damage_max_instance": [
-          { "damage_type": "bash", "amount": 5, "armor_multiplier": 0.75 },
-          { "damage_type": "cut", "amount": 5, "armor_multiplier": 0.75 }
-        ]
-      }
-    ],
-    "attack_effs": [ { "id": "rad_tenths", "duration": 10 }, { "id": "rad_tenths", "duration": 15 } ]
   },
   {
     "id": "mon_zombie_rot_flu",
@@ -205,8 +70,8 @@
     "copy-from": "mon_zombie_rot",
     "special_attacks": [
       { "type": "bite", "cooldown": 3, "accuracy": 4 },
-      [ "GRAB", 15 ],
-      [ "scratch", 20 ],
+      { "id": "grab", "cooldown": 15 },
+      { "id": "scratch", "cooldown": 20 },
       {
         "id": "diseased swipe",
         "cooldown": 12,
@@ -224,9 +89,9 @@
     "type": "MONSTER",
     "copy-from": "mon_zombie_rot_pk",
     "special_attacks": [
-      [ "GRAB", 10 ],
-      [ "scratch", 20 ],
-      [ "slash", 60 ],
+      { "id": "grab", "cooldown": 10 },
+      { "id": "scratch", "cooldown": 20 },
+      { "id": "slash", "cooldown": 60 },
       { "type": "bite", "cooldown": 5, "accuracy": 6 },
       {
         "id": "diseased swipe",
@@ -246,8 +111,8 @@
     "copy-from": "mon_zombie_rot",
     "special_attacks": [
       { "type": "bite", "cooldown": 3, "accuracy": 4 },
-      [ "GRAB", 15 ],
-      [ "scratch", 20 ],
+      { "id": "grab", "cooldown": 15 },
+      { "id": "scratch", "cooldown": 20 },
       {
         "id": "diseased swipe",
         "cooldown": 12,
@@ -265,9 +130,9 @@
     "type": "MONSTER",
     "copy-from": "mon_zombie_rot_pk",
     "special_attacks": [
-      [ "GRAB", 10 ],
-      [ "scratch", 20 ],
-      [ "slash", 60 ],
+      { "id": "grab", "cooldown": 10 },
+      { "id": "scratch", "cooldown": 20 },
+      { "id": "slash", "cooldown": 60 },
       { "type": "bite", "cooldown": 5, "accuracy": 6 },
       {
         "id": "diseased swipe",
@@ -283,8 +148,8 @@
     "copy-from": "mon_zombie_rot",
     "special_attacks": [
       { "type": "bite", "cooldown": 3, "accuracy": 4 },
-      [ "GRAB", 15 ],
-      [ "scratch", 20 ],
+      { "id": "grab", "cooldown": 15 },
+      { "id": "scratch", "cooldown": 20 },
       {
         "id": "diseased swipe",
         "cooldown": 12,
@@ -302,9 +167,9 @@
     "type": "MONSTER",
     "copy-from": "mon_zombie_rot_pk",
     "special_attacks": [
-      [ "GRAB", 10 ],
-      [ "scratch", 20 ],
-      [ "slash", 60 ],
+      { "id": "grab", "cooldown": 10 },
+      { "id": "scratch", "cooldown": 20 },
+      { "id": "slash", "cooldown": 60 },
       { "type": "bite", "cooldown": 5, "accuracy": 6 },
       {
         "id": "diseased swipe",
@@ -315,28 +180,11 @@
     ]
   },
   {
-    "id": "mon_zombie_shrieker",
-    "type": "MONSTER",
-    "copy-from": "mon_zombie_shrieker",
-    "vision_day": 45,
-    "vision_night": 2,
-    "attack_effs": [ { "id": "flu_zed", "duration": 8000, "chance": 1 } ],
-    "special_attacks": [ [ "SHRIEK", 10 ], [ "GRAB", 30 ], [ "scratch", 20 ] ]
-  },
-  {
-    "id": "mon_zombie_screecher",
-    "type": "MONSTER",
-    "copy-from": "mon_zombie_screecher",
-    "vision_day": 45,
-    "vision_night": 3,
-    "special_attacks": [ [ "SHRIEK_ALERT", 20 ], [ "SHRIEK_STUN", 1 ], [ "scratch", 20 ] ]
-  },
-  {
     "id": "mon_zombie_acidic_pk",
     "type": "MONSTER",
     "name": { "str": "acidic zombie" },
     "copy-from": "mon_zombie_acidic",
-    "description": "A pale zombie with foul fluids dribbling from its orifaces.  perhaps its best not to get too close to this one ...",
+    "description": "A pale zombie with foul fluids dribbling from its orifaces.  perhaps its best not to get too close to this one …",
     "diff": 18,
     "harvest": "zombie",
     "hp": 75,
@@ -349,7 +197,7 @@
     "vision_day": 40,
     "vision_night": 5,
     "emit_fields": [ "emit_acid_small" ],
-    "special_attacks": [ [ "ACID_BARF", 10 ], [ "GRAB", 7 ] ],
+    "special_attacks": [ [ "ACID_BARF", 10 ], { "id": "grab", "cooldown": 7 } ],
     "special_when_hit": [ "ACIDSPLASH", 65 ],
     "death_function": { "message": "The %s's body leaks acid.", "effect": { "id": "death_acid", "hit_self": true } },
     "burn_into": "mon_zombie_scorched",
@@ -366,30 +214,10 @@
       "ACID_BLOOD",
       "NO_BREATHE",
       "REVIVES",
-      "BONES",
       "PUSH_MON",
       "FILTHY"
     ],
     "armor": { "bash": 6, "cut": 3, "stab": 0 }
-  },
-  {
-    "id": "mon_zombie_acidic",
-    "type": "MONSTER",
-    "copy-from": "mon_zombie_acidic",
-    "attack_effs": [ { "id": "rad_tenths", "duration": 10 } ]
-  },
-  {
-    "id": "mon_zombie_spitter",
-    "type": "MONSTER",
-    "copy-from": "mon_zombie_spitter",
-    "attack_effs": [ { "id": "rad_tenths", "duration": 20 } ]
-  },
-  {
-    "id": "mon_zombie_corrosive",
-    "type": "MONSTER",
-    "copy-from": "mon_zombie_corrosive",
-    "attack_effs": [ { "id": "rad_tenths", "duration": 30 } ],
-    "emit_fields": [ "emit_acid_small" ]
   },
   {
     "id": "mon_zombie_cripple",
@@ -411,29 +239,15 @@
     "melee_skill": 4,
     "melee_dice": 2,
     "melee_dice_sides": 3,
-    "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "dodge": 0,
     "vision_day": 40,
     "vision_night": 3,
     "attack_effs": [ { "id": "flu_zed", "duration": 8000, "chance": 2 } ],
-    "special_attacks": [ [ "GRAB", 5 ], [ "scratch", 20 ], { "type": "bite", "cooldown": 5 } ],
+    "special_attacks": [ { "id": "grab", "cooldown": 5 }, { "id": "scratch", "cooldown": 20 }, { "type": "bite", "cooldown": 5 } ],
     "death_drops": "default_zombie_death_drops",
     "burn_into": "mon_zombie_scorched",
     "upgrades": { "half_life": 5, "into_group": "GROUP_ZOMBIE_DECAY" },
-    "flags": [
-      "SEES",
-      "HEARS",
-      "SMELLS",
-      "STUMBLES",
-      "WARM",
-      "BASHES",
-      "GROUP_BASH",
-      "POISON",
-      "NO_BREATHE",
-      "REVIVES",
-      "BONES",
-      "FILTHY"
-    ],
+    "flags": [ "SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "POISON", "NO_BREATHE", "REVIVES", "FILTHY" ],
     "armor": { "bash": 0, "cut": 0 }
   },
   {
@@ -459,7 +273,7 @@
     "melee_dice_sides": 4,
     "melee_damage": [ { "damage_type": "cut", "amount": 1 } ],
     "dodge": 0,
-    "special_attacks": [ [ "GRAB_DRAG", 25 ], [ "scratch", 15 ], { "type": "bite", "cooldown": 3 } ],
+    "special_attacks": [ { "id": "grab", "cooldown": 25 }, { "id": "scratch", "cooldown": 15 }, { "type": "bite", "cooldown": 3 } ],
     "death_drops": "default_zombie_death_drops",
     "burn_into": "mon_zombie_scorched",
     "upgrades": { "half_life": 5, "into": "mon_zombie_blind_pk" },
@@ -473,7 +287,6 @@
       "POISON",
       "NO_BREATHE",
       "REVIVES",
-      "BONES",
       "PUSH_MON",
       "FILTHY"
     ],
@@ -502,7 +315,7 @@
     "melee_dice_sides": 6,
     "melee_damage": [ { "damage_type": "cut", "amount": 1 } ],
     "dodge": 4,
-    "special_attacks": [ [ "GRAB_DRAG", 10 ], [ "scratch", 15 ], { "type": "bite", "cooldown": 3 } ],
+    "special_attacks": [ { "id": "grab", "cooldown": 10 }, { "id": "scratch", "cooldown": 15 }, { "type": "bite", "cooldown": 3 } ],
     "death_drops": { "subtype": "collection", "groups": [ [ "default_zombie_death_drops", 90 ], [ "pk_melee", 10 ] ] },
     "burn_into": "mon_zombie_scorched",
     "flags": [
@@ -518,7 +331,6 @@
       "POISON",
       "NO_BREATHE",
       "REVIVES",
-      "BONES",
       "PUSH_MON",
       "FILTHY"
     ],
@@ -545,12 +357,11 @@
     "melee_skill": 3,
     "melee_dice": 1,
     "melee_dice_sides": 4,
-    "melee_damage": [ { "damage_type": "bash", "amount": 1 } ],
     "melee_damage": [ { "damage_type": "cut", "amount": 1 } ],
     "dodge": 1,
     "vision_day": 40,
     "vision_night": 3,
-    "special_attacks": [ [ "GRAB", 15 ], [ "scratch", 20 ], { "type": "bite", "cooldown": 5 } ],
+    "special_attacks": [ { "id": "grab", "cooldown": 15 }, { "id": "scratch", "cooldown": 20 }, { "type": "bite", "cooldown": 5 } ],
     "death_drops": "default_zombie_death_drops",
     "burn_into": "mon_zombie_scorched",
     "upgrades": { "half_life": 10, "into_group": "GROUP_ZOMBIE_UPGRADE" },
@@ -565,7 +376,6 @@
       "POISON",
       "NO_BREATHE",
       "REVIVES",
-      "BONES",
       "PUSH_MON",
       "FILTHY"
     ],
@@ -592,12 +402,11 @@
     "melee_skill": 5,
     "melee_dice": 2,
     "melee_dice_sides": 4,
-    "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "dodge": 0,
     "vision_day": 35,
     "vision_night": 3,
     "attack_effs": [ { "id": "flu_zed", "duration": 8000, "chance": 1 } ],
-    "special_attacks": [ [ "GRAB", 15 ], [ "scratch", 20 ], { "type": "bite", "cooldown": 15 } ],
+    "special_attacks": [ { "id": "grab", "cooldown": 15 }, { "id": "scratch", "cooldown": 20 }, { "type": "bite", "cooldown": 15 } ],
     "death_drops": "default_zombie_death_drops",
     "burn_into": "mon_zombie_scorched",
     "upgrades": { "half_life": 10, "into_group": "GROUP_ZOMBIE_UPGRADE" },
@@ -612,7 +421,6 @@
       "POISON",
       "NO_BREATHE",
       "REVIVES",
-      "BONES",
       "PUSH_MON",
       "FILTHY"
     ],
@@ -622,7 +430,7 @@
     "id": "mon_zombie_pk",
     "type": "MONSTER",
     "name": { "str": "hungry zombie" },
-    "description": "A human body that seems to have . . . tightened into something more dangerous.  While it still stumbles around slowly, there is little doubt about what it would do to you if you let it.",
+    "description": "A human body that seems to have … tightened into something more dangerous.  While it still stumbles around slowly, there is little doubt about what it would do to you if you let it.",
     "default_faction": "zombie",
     "categories": [ "CLASSIC" ],
     "species": [ "ZOMBIE" ],
@@ -644,7 +452,7 @@
     "dodge": 2,
     "vision_day": 40,
     "vision_night": 3,
-    "special_attacks": [ [ "GRAB", 20 ], [ "scratch", 20 ], { "type": "bite", "cooldown": 5 } ],
+    "special_attacks": [ { "id": "grab", "cooldown": 20 }, { "id": "scratch", "cooldown": 20 }, { "type": "bite", "cooldown": 5 } ],
     "death_drops": "default_zombie_death_drops",
     "burn_into": "mon_zombie_scorched_pk",
     "upgrades": { "half_life": 30, "into_group": "GROUP_ZOMBIE_EVO" },
@@ -659,18 +467,10 @@
       "POISON",
       "NO_BREATHE",
       "REVIVES",
-      "BONES",
       "PUSH_MON",
       "FILTHY"
     ],
     "armor": { "bash": 3, "cut": 3 }
-  },
-  {
-    "id": "mon_zombie_child",
-    "type": "MONSTER",
-    "copy-from": "mon_zombie_child",
-    "special_attacks": [ [ "scratch", 15 ], { "type": "bite", "cooldown": 5 } ],
-    "upgrades": { "half_life": 14, "into_group": "GROUP_CHILD_ZOMBIE_UPGRADE" }
   },
   {
     "id": "mon_zombie_child_2",
@@ -697,24 +497,11 @@
     "dodge": 3,
     "vision_day": 35,
     "vision_night": 3,
-    "special_attacks": [ [ "scratch", 15 ], { "type": "bite", "cooldown": 5 } ],
+    "special_attacks": [ { "id": "scratch", "cooldown": 15 }, { "type": "bite", "cooldown": 5 } ],
     "death_drops": { "subtype": "collection", "groups": [ [ "default_zombie_clothes", 100 ], [ "child_items", 65 ] ] },
     "burn_into": "mon_zombie_child_scorched",
     "upgrades": { "half_life": 14, "into_group": "GROUP_CHILD_ZOMBIE_UPGRADE" },
-    "flags": [
-      "SEES",
-      "HEARS",
-      "SMELLS",
-      "STUMBLES",
-      "WARM",
-      "BASHES",
-      "POISON",
-      "GUILT",
-      "NO_BREATHE",
-      "REVIVES",
-      "BONES",
-      "FILTHY"
-    ],
+    "flags": [ "SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "POISON", "NO_BREATHE", "REVIVES", "FILTHY" ],
     "armor": { "bash": 2, "cut": 0 }
   },
   {
@@ -743,24 +530,11 @@
     "vision_day": 35,
     "vision_night": 3,
     "attack_effs": [ { "id": "flu_zed", "duration": 8000, "chance": 1 } ],
-    "special_attacks": [ [ "scratch", 15 ], { "type": "bite", "cooldown": 5 } ],
+    "special_attacks": [ { "id": "scratch", "cooldown": 15 }, { "type": "bite", "cooldown": 5 } ],
     "death_drops": { "subtype": "collection", "groups": [ [ "default_zombie_clothes", 100 ], [ "child_items", 65 ] ] },
     "burn_into": "mon_zombie_child_scorched",
     "upgrades": { "half_life": 14, "into_group": "GROUP_CHILD_ZOMBIE_UPGRADE" },
-    "flags": [
-      "SEES",
-      "HEARS",
-      "SMELLS",
-      "STUMBLES",
-      "WARM",
-      "BASHES",
-      "POISON",
-      "GUILT",
-      "NO_BREATHE",
-      "REVIVES",
-      "BONES",
-      "FILTHY"
-    ],
+    "flags": [ "SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "POISON", "NO_BREATHE", "REVIVES", "FILTHY" ],
     "armor": { "bash": 2, "cut": 2 }
   },
   {
@@ -790,7 +564,7 @@
     "vision_night": 5,
     "special_attacks": [ [ "STRETCH_BITE", 15 ], [ "STRETCH_ATTACK", 10 ] ],
     "flags": [ "SEES", "HEARS", "SMELLS", "REVIVES", "WARM", "BASHES", "GRABS", "GROUP_BASH", "POISON", "NO_BREATHE", "FILTHY" ],
-    "armor": { "bash": 10, "cut": 6, "acid": 2, "fire": 2 }
+    "armor": { "bash": 10, "cut": 6, "acid": 2, "heat": 2 }
   },
   {
     "id": "mon_zombie_fat_2",
@@ -832,8 +606,6 @@
       "POISON",
       "NO_BREATHE",
       "REVIVES",
-      "BONES",
-      "FAT",
       "PUSH_MON",
       "FILTHY"
     ],
@@ -860,7 +632,6 @@
     "melee_skill": 4,
     "melee_dice": 2,
     "melee_dice_sides": 5,
-    "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "dodge": 0,
     "vision_day": 40,
     "vision_night": 3,
@@ -880,8 +651,6 @@
       "POISON",
       "NO_BREATHE",
       "REVIVES",
-      "BONES",
-      "FAT",
       "PUSH_MON",
       "FILTHY"
     ],
@@ -913,7 +682,7 @@
     "vision_night": 5,
     "attack_effs": [ { "id": "poison", "duration": 400 }, { "id": "rad_tenths", "duration": 3 } ],
     "emit_fields": [ "emit_flesh_slough" ],
-    "special_attacks": [ [ "GRAB", 20 ], { "type": "bite", "cooldown": 5 } ],
+    "special_attacks": [ { "id": "grab", "cooldown": 20 }, { "type": "bite", "cooldown": 5 } ],
     "death_drops": { "subtype": "collection", "groups": [ [ "default_zombie_clothes", 50 ], [ "hive", 30 ] ] },
     "burn_into": "mon_zombie_scorched_pk",
     "flags": [
@@ -926,7 +695,6 @@
       "POISON",
       "NO_BREATHE",
       "REVIVES",
-      "BONES",
       "PUSH_MON",
       "ELECTRIC",
       "FILTHY"
@@ -937,7 +705,7 @@
     "id": "mon_zombie_child_pk",
     "type": "MONSTER",
     "name": { "str": "zombie scrapper" },
-    "description": "Although it has the face of a child, its knuckles bear oozing calluses.  It appears to take joy in combat, evident by a slick smile and a gleam in its eye...",
+    "description": "Although it has the face of a child, its knuckles bear oozing calluses.  It appears to take joy in combat, evident by a slick smile and a gleam in its eye…",
     "default_faction": "zombie",
     "categories": [ "CLASSIC" ],
     "species": [ "ZOMBIE" ],
@@ -958,11 +726,11 @@
     "dodge": 2,
     "vision_day": 30,
     "vision_night": 3,
-    "special_attacks": [ [ "scratch", 10 ], { "type": "bite", "cooldown": 10, "min_mul": 0.3 } ],
+    "special_attacks": [ { "id": "scratch", "cooldown": 10 }, { "type": "bite", "cooldown": 10, "min_mul": 0.3 } ],
     "death_drops": { "subtype": "collection", "groups": [ [ "default_zombie_clothes", 80 ], [ "child_items", 25 ] ] },
     "burn_into": "mon_zombie_child_scorched",
     "upgrades": { "half_life": 24, "into": "mon_zombie_child_reaver" },
-    "flags": [ "GRABS", "SEES", "HEARS", "SMELLS", "WARM", "BASHES", "POISON", "GUILT", "NO_BREATHE", "REVIVES", "BONES", "FILTHY" ],
+    "flags": [ "GRABS", "SEES", "HEARS", "SMELLS", "WARM", "BASHES", "POISON", "NO_BREATHE", "REVIVES", "FILTHY" ],
     "armor": { "bash": 1, "cut": 1 }
   },
   {
@@ -991,81 +759,11 @@
     "attack_effs": [ { "id": "rad_tenths", "duration": 3 } ],
     "vision_day": 35,
     "vision_night": 4,
-    "special_attacks": [ [ "slash", 10 ], { "type": "bite", "cooldown": 5, "min_mul": 0.5 } ],
+    "special_attacks": [ { "id": "slash", "cooldown": 10 }, { "type": "bite", "cooldown": 5, "min_mul": 0.5 } ],
     "death_drops": { "subtype": "collection", "groups": [ [ "default_zombie_clothes", 25 ], [ "child_items", 15 ] ] },
     "burn_into": "mon_zombie_child_scorched_pk",
-    "flags": [
-      "SEES",
-      "HEARS",
-      "SMELLS",
-      "PATH_AVOID_DANGER_1",
-      "WARM",
-      "BASHES",
-      "POISON",
-      "NO_BREATHE",
-      "REVIVES",
-      "BONES",
-      "FILTHY"
-    ],
-    "armor": { "bash": 8, "cut": 6, "acid": 4, "fire": 4 }
-  },
-  {
-    "id": "mon_zombie_survivor",
-    "type": "MONSTER",
-    "copy-from": "mon_zombie_survivor",
-    "hp": 160,
-    "attack_effs": [ { "id": "flu_zed", "duration": 8000, "chance": 1 } ],
-    "special_attacks": [
-      [ "GRAB", 15 ],
-      [ "SHRIEK", 20 ],
-      [ "scratch", 20 ],
-      [ "slash", 30 ],
-      { "type": "bite", "cooldown": 15, "min_mul": 0.5 }
-    ],
-    "burn_into": "mon_zombie_scorched_pk"
-  },
-  {
-    "id": "mon_zombie_crawler",
-    "type": "MONSTER",
-    "name": { "str": "crawling zombie" },
-    "description": "This human corpse drags itself along slowly with its arms.  Its legs are damaged beyond repair.",
-    "default_faction": "zombie",
-    "bodytype": "human",
-    "categories": [ "CLASSIC" ],
-    "species": [ "ZOMBIE", "HUMAN" ],
-    "volume": "62500 ml",
-    "weight": "81500 g",
-    "hp": 60,
-    "speed": 20,
-    "material": [ "flesh" ],
-    "symbol": "Z",
-    "color": "pink_green",
-    "aggression": 100,
-    "morale": 100,
-    "melee_skill": 2,
-    "melee_dice": 2,
-    "melee_dice_sides": 3,
-    "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
-    "vision_day": 30,
-    "vision_night": 5,
-    "harvest": "zombie",
-    "special_attacks": [ [ "scratch", 15 ], { "type": "bite", "cooldown": 15 } ],
-    "attack_effs": [ { "id": "flu_zed", "duration": 8000, "chance": 2 } ],
-    "death_drops": "default_zombie_death_drops",
-    "burn_into": "mon_zombie_crawler_scorched",
-    "upgrades": { "half_life": 21, "into": "mon_zombie_crawler_pk_weak" },
-    "flags": [ "SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "GRABS", "POISON", "NO_BREATHE", "REVIVES", "FILTHY" ]
-  },
-  {
-    "id": "mon_zombie_tough",
-    "copy-from": "mon_zombie_tough",
-    "type": "MONSTER",
-    "name": { "str": "tough zombie" },
-    "description": "Once an athletic human, now a brutal monster.  Its facial features are twisted into an expression of pure rage.",
-    "special_attacks": [ { "type": "bite", "cooldown": 5, "min_mul": 0.7 }, [ "GRAB", 60 ], [ "scratch", 20 ] ],
-    "burn_into": "mon_zombie_smoker",
-    "extend": { "upgrades": { "half_life": 24, "into_group": "GROUP_ZOMBIE_TOUGH" } },
-    "delete": { "upgrades": { "half_life": 28, "into_group": "GROUP_ZOMBIE_UPGRADE" } }
+    "flags": [ "SEES", "HEARS", "SMELLS", "PATH_AVOID_DANGER_1", "WARM", "BASHES", "POISON", "NO_BREATHE", "REVIVES", "FILTHY" ],
+    "armor": { "bash": 8, "cut": 6, "acid": 4, "heat": 4 }
   },
   {
     "id": "mon_zombie_tough_2",
@@ -1092,7 +790,11 @@
     "dodge": 2,
     "vision_day": 40,
     "vision_night": 3,
-    "special_attacks": [ [ "GRAB", 15 ], [ "scratch", 20 ], { "type": "bite", "cooldown": 5, "min_mul": 0.7 } ],
+    "special_attacks": [
+      { "id": "grab", "cooldown": 15 },
+      { "id": "scratch", "cooldown": 20 },
+      { "type": "bite", "cooldown": 5, "min_mul": 0.7 }
+    ],
     "death_drops": "default_zombie_death_drops",
     "burn_into": "mon_zombie_smoker",
     "upgrades": { "half_life": 22, "into_group": "GROUP_ZOMBIE_TOUGH" },
@@ -1107,7 +809,6 @@
       "POISON",
       "NO_BREATHE",
       "REVIVES",
-      "BONES",
       "PUSH_MON",
       "FILTHY"
     ],
@@ -1134,12 +835,15 @@
     "melee_skill": 6,
     "melee_dice": 3,
     "melee_dice_sides": 4,
-    "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "dodge": 1,
     "vision_day": 40,
     "vision_night": 3,
     "attack_effs": [ { "id": "flu_zed", "duration": 8000, "chance": 1 } ],
-    "special_attacks": [ [ "GRAB", 15 ], [ "scratch", 20 ], { "type": "bite", "cooldown": 5, "min_mul": 0.7 } ],
+    "special_attacks": [
+      { "id": "grab", "cooldown": 15 },
+      { "id": "scratch", "cooldown": 20 },
+      { "type": "bite", "cooldown": 5, "min_mul": 0.7 }
+    ],
     "death_drops": "default_zombie_death_drops",
     "burn_into": "mon_zombie_smoker",
     "upgrades": { "half_life": 22, "into_group": "GROUP_ZOMBIE_TOUGH" },
@@ -1154,52 +858,10 @@
       "POISON",
       "NO_BREATHE",
       "REVIVES",
-      "BONES",
       "PUSH_MON",
       "FILTHY"
     ],
     "armor": { "bash": 5, "cut": 3 }
-  },
-  {
-    "id": "mon_zombie_master",
-    "type": "MONSTER",
-    "copy-from": "mon_zombie_master",
-    "vision_day": 50,
-    "vision_night": 9,
-    "special_attacks": [ [ "UPGRADE", 0 ], [ "FORMBLOB", 1200 ], [ "slash", 20 ] ],
-    "death_function": [ "BLOBSPLIT" ],
-    "burn_into": "mon_zombie_scorched_master",
-    "upgrades": { "half_life": 21, "into": "mon_zombie_master_pk" }
-  },
-  {
-    "id": "mon_zombie_necro",
-    "type": "MONSTER",
-    "copy-from": "mon_zombie_necro",
-    "vision_day": 50,
-    "vision_night": 9,
-    "special_attacks": [ [ "RESURRECT", 0 ], [ "FORMBLOB", 1200 ], [ "slash", 20 ] ],
-    "death_function": [ "BLOBSPLIT" ],
-    "burn_into": "mon_zombie_scorched_necro",
-    "upgrades": { "half_life": 24, "into": "mon_zombie_necro_pk" }
-  },
-  {
-    "id": "mon_zombie_hulk",
-    "type": "MONSTER",
-    "copy-from": "mon_zombie_hulk",
-    "speed": 135,
-    "burn_into": "mon_zombie_fiend_pk",
-    "upgrades": { "half_life": 56, "into": "mon_zombie_hulk_pk" }
-  },
-  {
-    "id": "mon_zombie_electric",
-    "copy-from": "mon_zombie_electric",
-    "type": "MONSTER",
-    "name": { "str": "shocker zombie" },
-    "description": "A human body with pale blue flesh, crackling with electrical energy.",
-    "diff": 12,
-    "burn_into": "mon_zombie_scorched_shocker",
-    "extend": { "upgrades": { "half_life": 22, "into_group": "GROUP_ZOMBIE_ELECTRIC" } },
-    "delete": { "upgrades": { "half_life": 28, "into": "mon_zombie_nullfield" } }
   },
   {
     "id": "mon_zombie_electric_pk",
@@ -1212,7 +874,7 @@
     "hp": 125,
     "speed": 105,
     "material": [ "flesh" ],
-    "harvest": "CBM_CIV",
+    "harvest": "human",
     "symbol": "Z",
     "color": "light_cyan",
     "looks_like": "mon_zombie_electric",
@@ -1241,190 +903,12 @@
       "GROUP_BASH",
       "POISON",
       "ELECTRIC",
-      "CBM_CIV",
       "NO_BREATHE",
       "REVIVES",
-      "BONES",
       "PUSH_MON",
       "FILTHY"
     ],
     "armor": { "bash": 3, "cut": 3 }
-  },
-  {
-    "id": "mon_zombie_brute",
-    "type": "MONSTER",
-    "copy-from": "mon_zombie_brute",
-    "speed": 80,
-    "special_attacks": [
-      [ "SMASH", 30 ],
-      [ "GRAB", 7 ],
-      {
-        "id": "hammer",
-        "cooldown": 30,
-        "accuracy": 3,
-        "damage_max_instance": [ { "damage_type": "bash", "amount": 24, "armor_multiplier": 0.75 } ]
-      }
-    ]
-  },
-  {
-    "id": "mon_zombie_brute_shocker",
-    "type": "MONSTER",
-    "copy-from": "mon_zombie_brute_shocker",
-    "speed": 75,
-    "hp": 240,
-    "melee_skill": 4,
-    "melee_dice": 3,
-    "melee_dice_sides": 8,
-    "melee_damage": [ { "damage_type": "cut", "amount": 2 } ],
-    "melee_damage": [ { "damage_type": "electric", "amount": 8 } ],
-    "dodge": 1,
-    "special_attacks": [ [ "SHOCKSTORM", 15 ], [ "SMASH", 30 ], [ "hammer", 30 ] ],
-    "emit_fields": [ "emit_spark" ],
-    "special_when_hit": [ "ZAPBACK", 75 ],
-    "burn_into": "mon_zombie_fiend_shocker",
-    "armor": { "bash": 6, "cut": 8 }
-  },
-  {
-    "id": "mon_zombie_brute_ninja",
-    "type": "MONSTER",
-    "copy-from": "mon_zombie_brute_ninja",
-    "hp": 220,
-    "speed": 110,
-    "aggression": 75,
-    "melee_skill": 8,
-    "melee_dice": 6,
-    "melee_dice_sides": 3,
-    "melee_damage": [ { "damage_type": "cut", "amount": 5 } ],
-    "dodge": 4,
-    "vision_day": 25,
-    "vision_night": 20,
-    "special_attacks": [
-      [ "SMASH", 40 ],
-      [ "STRETCH_ATTACK", 30 ],
-      [ "LONGSWIPE", 30 ],
-      {
-        "id": "hammer",
-        "cooldown": 40,
-        "accuracy": 5,
-        "damage_max_instance": [ { "damage_type": "bash", "amount": 24, "armor_multiplier": 0.75 } ]
-      }
-    ],
-    "burn_into": "mon_zombie_fiend_pk",
-    "armor": { "bash": 8, "cut": 4 }
-  },
-  {
-    "id": "mon_zombie_brute_grappler",
-    "type": "MONSTER",
-    "copy-from": "mon_zombie_brute_grappler",
-    "hp": 280,
-    "speed": 80,
-    "melee_skill": 7,
-    "melee_dice": 8,
-    "melee_dice_sides": 3,
-    "dodge": 3,
-    "vision_day": 40,
-    "vision_night": 3,
-    "special_attacks": [
-      [ "SMASH", 30 ],
-      [ "BIO_OP_TAKEDOWN", 20 ],
-      [ "RANGED_PULL", 20 ],
-      [ "GRAB_DRAG", 10 ],
-      { "type": "bite", "cooldown": 15, "min_mul": 0.2, "no_infection_chance": 3 },
-      {
-        "id": "hammer",
-        "cooldown": 30,
-        "accuracy": 5,
-        "damage_max_instance": [ { "damage_type": "bash", "amount": 28, "armor_multiplier": 0.7 } ]
-      }
-    ],
-    "burn_into": "mon_zombie_fiend_pk",
-    "armor": { "bash": 10, "cut": 14, "stab": 6 }
-  },
-  {
-    "id": "mon_zombie_biter",
-    "type": "MONSTER",
-    "copy-from": "mon_zombie_biter",
-    "description": "A distorted human body with sleek muscles.  Its jaws have elongated into a ursine-like snout, dripping with foul smelling saliva.",
-    "diff": 16,
-    "hp": 100,
-    "speed": 110,
-    "aggression": 100,
-    "morale": 100,
-    "melee_skill": 6,
-    "melee_dice": 3,
-    "melee_dice_sides": 7,
-    "melee_damage": [ { "damage_type": "cut", "amount": 4 } ],
-    "dodge": 3,
-    "attack_effs": [ { "id": "flu_zed", "duration": 8000, "chance": 1 } ],
-    "vision_day": 25,
-    "vision_night": 15,
-    "burn_into": "mon_zombie_scorched",
-    "armor": { "bash": 5, "cut": 1 }
-  },
-  {
-    "id": "mon_zombie_gasbag",
-    "type": "MONSTER",
-    "copy-from": "mon_zombie_gasbag",
-    "attack_effs": [ { "id": "rad_fives", "duration": 1 }, { "id": "rad_tenths", "duration": 10 }, { "id": "rad_tenths", "duration": 30 } ],
-    "emit_fields": [ "emit_radiation_plume", "emit_gas_stream", "emit_gas_plume" ],
-    "upgrades": { "half_life": 21, "into": "mon_zombie_gasbag_pk" }
-  },
-  {
-    "id": "mon_zombie_smoker",
-    "type": "MONSTER",
-    "name": { "str": "smoker zombie" },
-    "description": "A blackened and twisted naked human body, strips of flesh hang from its body, and it emits a constant haze of thick black smoke.",
-    "default_faction": "zombie",
-    "bodytype": "human",
-    "species": [ "ZOMBIE", "HUMAN" ],
-    "volume": "62500 ml",
-    "weight": "81500 g",
-    "hp": 75,
-    "speed": 110,
-    "material": [ "flesh" ],
-    "symbol": "Z",
-    "color": "dark_gray",
-    "aggression": 100,
-    "morale": 100,
-    "melee_skill": 4,
-    "melee_dice": 1,
-    "melee_dice_sides": 6,
-    "melee_damage": [ { "damage_type": "cut", "amount": 2 } ],
-    "dodge": 4,
-    "vision_day": 50,
-    "vision_night": 3,
-    "harvest": "exempt",
-    "attack_effs": [ { "id": "rad_fives", "duration": 5 }, { "id": "rad_tenths", "duration": 30 } ],
-    "burn_into": "mon_zombie_scorched_pk",
-    "emit_fields": [ { "emit_id": "emit_smoke_stream", "delay": "1 s" } ],
-    "special_attacks": [ { "type": "bite", "cooldown": 5 }, [ "scratch", 15 ] ],
-    "death_function": [ "SMOKEBURST" ],
-    "upgrades": { "half_life": 35, "into_group": "GROUP_ZOMBIE_SMOKER" },
-    "flags": [
-      "SEES",
-      "HEARS",
-      "STUMBLES",
-      "WARM",
-      "BASHES",
-      "GROUP_BASH",
-      "POISON",
-      "HARDTOSHOOT",
-      "NO_BREATHE",
-      "REVIVES",
-      "PUSH_MON",
-      "FILTHY"
-    ],
-    "armor": { "fire": 5 }
-  },
-  {
-    "id": "mon_zombie_shady",
-    "type": "MONSTER",
-    "copy-from": "mon_zombie_shady",
-    "aggression": 75,
-    "vision_day": 6,
-    "vision_night": 40,
-    "special_attacks": [ [ "GRAB", 10 ], [ "scratch", 20 ], { "type": "bite", "cooldown": 15 } ],
-    "burn_into": "mon_zombie_crawler_pk_weak"
   },
   {
     "id": "mon_zombie_shady_pk",
@@ -1451,7 +935,7 @@
     "dodge": 3,
     "vision_day": 5,
     "vision_night": 40,
-    "special_attacks": [ [ "scratch", 20 ], [ "GRAB", 15 ], { "type": "bite", "cooldown": 15 } ],
+    "special_attacks": [ { "id": "scratch", "cooldown": 20 }, { "id": "grab", "cooldown": 15 }, { "type": "bite", "cooldown": 15 } ],
     "anger_triggers": [ "PLAYER_CLOSE", "FRIEND_DIED", "HURT" ],
     "death_drops": "default_zombie_death_drops",
     "burn_into": "mon_zombie_scorched",
@@ -1467,7 +951,6 @@
       "POISON",
       "NO_BREATHE",
       "REVIVES",
-      "BONES",
       "PUSH_MON",
       "NIGHT_INVISIBILITY",
       "FILTHY"
@@ -1500,9 +983,8 @@
     "dodge": 6,
     "vision_day": 10,
     "vision_night": 50,
-    "special_attacks": [ [ "GRAB", 5 ], [ "slash", 20 ], { "type": "bite", "cooldown": 20 } ],
+    "special_attacks": [ { "id": "grab", "cooldown": 5 }, { "id": "slash", "cooldown": 20 }, { "type": "bite", "cooldown": 20 } ],
     "anger_triggers": [ "PLAYER_CLOSE", "FRIEND_DIED", "STALK", "HURT" ],
-    "placate_triggers": [ "FIRE" ],
     "flags": [
       "HARDTOSHOOT",
       "SEES",
@@ -1515,43 +997,13 @@
       "POISON",
       "NO_BREATHE",
       "REVIVES",
-      "BONES",
       "PUSH_MON",
       "NIGHT_INVISIBILITY",
       "SWIMS",
       "PLASTIC",
       "FILTHY"
     ],
-    "armor": { "bash": 6, "cut": 16, "acid": 2, "fire": 5 }
-  },
-  {
-    "id": "mon_zombie_hollow",
-    "type": "MONSTER",
-    "copy-from": "mon_zombie_hollow",
-    "hp": 100,
-    "speed": 80,
-    "melee_skill": 6,
-    "melee_dice": 2,
-    "melee_dice_sides": 7,
-    "melee_damage": [ { "damage_type": "cut", "amount": 2 } ],
-    "dodge": 4,
-    "burn_into": "mon_zombie_scorched_pk",
-    "upgrades": { "half_life": 44, "into": "mon_zombie_hollow_pk" },
-    "flags": [
-      "SEES",
-      "HEARS",
-      "REVIVES",
-      "STUMBLES",
-      "SMELLS",
-      "WARM",
-      "BASHES",
-      "GRABS",
-      "GROUP_BASH",
-      "POISON",
-      "NO_BREATHE",
-      "FILTHY"
-    ],
-    "armor": { "bash": 7, "cut": 5, "stab": 10 }
+    "armor": { "bash": 6, "cut": 16, "acid": 2, "heat": 5 }
   },
   {
     "id": "mon_zombie_master_pk",
@@ -1577,11 +1029,10 @@
     "dodge": 4,
     "vision_day": 50,
     "vision_night": 10,
-    "special_attacks": [ [ "UPGRADE", 10 ], [ "FORMBLOB", 900 ], [ "LONGSWIPE", 90 ], [ "slash", 20 ] ],
+    "special_attacks": [ [ "UPGRADE", 10 ], [ "FORMBLOB", 900 ], [ "LONGSWIPE", 90 ], { "id": "slash", "cooldown": 20 } ],
     "anger_triggers": [ "PLAYER_CLOSE", "PLAYER_WEAK" ],
     "fear_triggers": [ "HURT" ],
     "death_drops": "default_zombie_death_drops",
-    "death_function": [ "NORMAL", "BLOBSPLIT" ],
     "burn_into": "mon_zombie_scorched_necro",
     "flags": [
       "SEES",
@@ -1596,10 +1047,9 @@
       "NO_BREATHE",
       "NO_NECRO",
       "REVIVES",
-      "BONES",
       "FILTHY"
     ],
-    "armor": { "bash": 6, "cut": 3, "acid": 2, "fire": 3 }
+    "armor": { "bash": 6, "cut": 3, "acid": 2, "heat": 3 }
   },
   {
     "id": "mon_zombie_necro_pk",
@@ -1625,11 +1075,10 @@
     "dodge": 6,
     "vision_day": 50,
     "vision_night": 10,
-    "special_attacks": [ [ "RESURRECT", 10 ], [ "FORMBLOB", 960 ], [ "slash", 20 ] ],
+    "special_attacks": [ [ "RESURRECT", 10 ], [ "FORMBLOB", 960 ], { "id": "slash", "cooldown": 20 } ],
     "anger_triggers": [ "PLAYER_CLOSE", "PLAYER_WEAK" ],
     "fear_triggers": [ "HURT" ],
     "death_drops": "default_zombie_death_drops",
-    "death_function": [ "NORMAL", "BLOBSPLIT" ],
     "burn_into": "mon_zombie_scorched_necro",
     "flags": [
       "SEES",
@@ -1644,10 +1093,9 @@
       "NO_BREATHE",
       "NO_NECRO",
       "REVIVES",
-      "BONES",
       "FILTHY"
     ],
-    "armor": { "bash": 8, "cut": 4, "acid": 3, "fire": 3 }
+    "armor": { "bash": 8, "cut": 4, "acid": 3, "heat": 3 }
   },
   {
     "id": "mon_zombie_lord",
@@ -1678,11 +1126,10 @@
     ],
     "vision_day": 50,
     "vision_night": 10,
-    "special_attacks": [ [ "UPGRADE", 20 ], [ "RESURRECT", 20 ], [ "FORMBLOB", 320 ], [ "LONGSWIPE", 15 ], [ "slash", 20 ] ],
+    "special_attacks": [ [ "UPGRADE", 20 ], [ "RESURRECT", 20 ], [ "FORMBLOB", 320 ], [ "LONGSWIPE", 15 ], { "id": "slash", "cooldown": 20 } ],
     "anger_triggers": [ "PLAYER_CLOSE", "PLAYER_WEAK" ],
     "fear_triggers": [ "HURT" ],
     "death_drops": "default_zombie_death_drops",
-    "death_function": [ "NORMAL", "BLOBSPLIT" ],
     "burn_into": "mon_zombie_scorched_necro",
     "flags": [
       "SEES",
@@ -1697,19 +1144,9 @@
       "NO_BREATHE",
       "NO_NECRO",
       "REVIVES",
-      "BONES",
       "FILTHY"
     ],
-    "armor": { "bash": 12, "cut": 8, "acid": 3, "fire": 3 }
-  },
-  {
-    "id": "mon_zombie_swimmer",
-    "type": "MONSTER",
-    "copy-from": "mon_zombie_swimmer",
-    "burn_into": "mon_zombie_scorched",
-    "attack_effs": [ { "id": "flu_zed", "duration": 8000, "chance": 2 } ],
-    "special_attacks": [ [ "GRAB", 15 ], [ "scratch", 15 ], { "type": "bite", "cooldown": 5 } ],
-    "upgrades": { "half_life": 17, "into": "mon_zombie_mancroc" }
+    "armor": { "bash": 12, "cut": 8, "acid": 3, "heat": 3 }
   },
   {
     "id": "mon_zombie_swimmer_pk",
@@ -1736,7 +1173,7 @@
     "attack_effs": [ { "id": "rad_tenths", "duration": 5 } ],
     "vision_day": 40,
     "vision_night": 5,
-    "special_attacks": [ [ "GRAB", 10 ], [ "scratch", 10 ], { "type": "bite", "cooldown": 20 } ],
+    "special_attacks": [ { "id": "grab", "cooldown": 10 }, { "id": "scratch", "cooldown": 10 }, { "type": "bite", "cooldown": 20 } ],
     "death_drops": "mon_zombie_swimmer_death_drops",
     "burn_into": "mon_zombie_scorched",
     "upgrades": { "half_life": 17, "into": "mon_zombie_scales" },
@@ -1752,7 +1189,6 @@
       "NO_BREATHE",
       "SWIMS",
       "REVIVES",
-      "BONES",
       "PUSH_MON",
       "FILTHY"
     ],
@@ -1783,11 +1219,10 @@
     "attack_effs": [ { "id": "rad_tenths", "duration": 15 } ],
     "vision_day": 40,
     "vision_night": 4,
-    "special_attacks": [ [ "GRAB_DRAG", 20 ], [ "slash", 20 ], { "type": "bite", "cooldown": 8 } ],
+    "special_attacks": [ { "id": "grab", "cooldown": 20 }, { "id": "slash", "cooldown": 20 }, { "type": "bite", "cooldown": 8 } ],
     "death_drops": { "subtype": "collection", "groups": [ [ "mon_zombie_swimmer_death_drops", 20 ] ] },
     "burn_into": "mon_zombie_fiend",
     "flags": [
-      "CHITIN",
       "SEES",
       "HEARS",
       "GOODHEARING",
@@ -1800,41 +1235,10 @@
       "NO_BREATHE",
       "SWIMS",
       "REVIVES",
-      "BONES",
       "PUSH_MON",
       "FILTHY"
     ],
-    "armor": { "bash": 10, "cut": 18, "stab": 12, "fire": 8 }
-  },
-  {
-    "id": "mon_zombie_mancroc",
-    "type": "MONSTER",
-    "copy-from": "mon_zombie_mancroc",
-    "hp": 120,
-    "speed": 100,
-    "melee_skill": 4,
-    "melee_dice": 3,
-    "melee_dice_sides": 5,
-    "melee_damage": [ { "damage_type": "cut", "amount": 8 } ],
-    "dodge": 2,
-    "vision_day": 25,
-    "vision_night": 5,
-    "attack_effs": [ { "id": "flu_zed", "duration": 8000, "chance": 1 } ],
-    "special_attacks": [
-      [ "GRAB_DRAG", 25 ],
-      [ "slash", 20 ],
-      {
-        "type": "bite",
-        "cooldown": 10,
-        "accuracy": 7,
-        "damage_max_instance": [
-          { "damage_type": "stab", "amount": 8, "armor_multiplier": 0.5 },
-          { "damage_type": "bash", "amount": 18, "armor_multiplier": 0.5 }
-        ]
-      }
-    ],
-    "burn_into": "mon_zombie_scorched_pk",
-    "armor": { "bash": 3, "cut": 6 }
+    "armor": { "bash": 10, "cut": 18, "stab": 12, "heat": 8 }
   },
   {
     "id": "mon_zombie_crawler_pk_weak",
@@ -1861,7 +1265,7 @@
     "vision_day": 10,
     "vision_night": 20,
     "emit_fields": [ "emit_sludge_small" ],
-    "special_attacks": [ [ "ACID_BARF", 30 ], [ "GRAB", 60 ], [ "PARROT", 50 ], [ "FORMBLOB", 2200 ] ],
+    "special_attacks": [ [ "ACID_BARF", 30 ], { "id": "grab", "cooldown": 60 }, [ "PARROT", 50 ], [ "FORMBLOB", 2200 ] ],
     "special_when_hit": [ "ACIDSPLASH", 25 ],
     "burn_into": "mon_zombie_crawler_pk",
     "flags": [
@@ -1879,7 +1283,7 @@
       "SWIMS",
       "FILTHY"
     ],
-    "armor": { "bash": 7, "cut": 4, "fire": 1 }
+    "armor": { "bash": 7, "cut": 4, "heat": 1 }
   },
   {
     "id": "mon_zombie_crawler_pk",
@@ -1906,7 +1310,7 @@
     "vision_day": 5,
     "vision_night": 15,
     "emit_fields": [ "emit_sludge" ],
-    "special_attacks": [ [ "ACID_BARF", 30 ], [ "GRAB", 60 ], [ "PARROT", 40 ], [ "FORMBLOB", 2000 ] ],
+    "special_attacks": [ [ "ACID_BARF", 30 ], { "id": "grab", "cooldown": 60 }, [ "PARROT", 40 ], [ "FORMBLOB", 2000 ] ],
     "special_when_hit": [ "ACIDSPLASH", 10 ],
     "burn_into": "mon_zombie_crawler_scorched",
     "flags": [
@@ -1922,11 +1326,10 @@
       "PLASTIC",
       "SLUDGEPROOF",
       "FLAMMABLE",
-      "ABSORBS",
       "SWIMS",
       "FILTHY"
     ],
-    "armor": { "bash": 7, "cut": 4, "fire": 3 }
+    "armor": { "bash": 7, "cut": 4, "heat": 3 }
   },
   {
     "id": "mon_zombie_hulk_pk",
@@ -1965,21 +1368,18 @@
       "DESTROYS",
       "POISON",
       "ATTACKMON",
-      "LEATHER",
       "NO_BREATHE",
       "REVIVES",
-      "BONES",
-      "FAT",
       "PUSH_MON",
       "FILTHY"
     ],
-    "armor": { "bash": 14, "cut": 20, "stab": 10, "fire": 5 }
+    "armor": { "bash": 14, "cut": 20, "stab": 10, "heat": 5 }
   },
   {
     "id": "mon_boomer_huge_pk",
     "type": "MONSTER",
     "name": { "str": "huge boomer" },
-    "description": "This boomer, normally swollen and ready to burst, has strengthened and solidified.  The bile dribbling from its mouth also appears to have changed...",
+    "description": "This boomer, normally swollen and ready to burst, has strengthened and solidified.  The bile dribbling from its mouth also appears to have changed…",
     "default_faction": "zombie",
     "species": [ "ZOMBIE" ],
     "diff": 15,
@@ -2001,9 +1401,8 @@
     "vision_night": 5,
     "emit_fields": [ "emit_radiation_plume", "emit_bile" ],
     "luminance": 2,
-    "special_attacks": [ [ "scratch", 20 ], [ "BOOMER_GLOW", 20 ], [ "BREATHE", 8 ] ],
+    "special_attacks": [ { "id": "scratch", "cooldown": 20 }, [ "BOOMER_GLOW", 20 ], [ "BREATHE", 8 ] ],
     "death_drops": "default_zombie_items",
-    "death_function": [ "BOOMER_GLOW" ],
     "flags": [
       "SEES",
       "GOODHEARING",
@@ -2015,49 +1414,11 @@
       "NO_BREATHE",
       "REVIVES",
       "BILE_BLOOD",
-      "BONES",
-      "FAT",
       "PUSH_MON",
       "PATH_AVOID_DANGER_1",
       "FILTHY"
     ],
     "armor": { "bash": 5, "cut": 5 }
-  },
-  {
-    "id": "mon_charred_nightmare",
-    "type": "MONSTER",
-    "copy-from": "mon_charred_nightmare",
-    "attack_effs": [ { "id": "rad_fives", "duration": 20 } ],
-    "emit_fields": [ "emit_radiation_plume" ],
-    "flags": [ "SEES", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "NOGIB", "BONES", "POISON", "NO_BREATHE", "FILTHY" ]
-  },
-  {
-    "id": "mon_irradiated_wanderer_1",
-    "type": "MONSTER",
-    "copy-from": "mon_irradiated_wanderer_1",
-    "attack_effs": [ { "id": "rad_tenths", "duration": 10 } ],
-    "flags": [ "SEES", "HEARS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "NOGIB", "BONES", "POISON", "NO_BREATHE", "FILTHY" ]
-  },
-  {
-    "id": "mon_irradiated_wanderer_2",
-    "type": "MONSTER",
-    "copy-from": "mon_irradiated_wanderer_2",
-    "attack_effs": [ { "id": "rad_tenths", "duration": 12 } ],
-    "flags": [ "SEES", "HEARS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "NOGIB", "BONES", "POISON", "NO_BREATHE", "FILTHY" ]
-  },
-  {
-    "id": "mon_irradiated_wanderer_3",
-    "type": "MONSTER",
-    "copy-from": "mon_irradiated_wanderer_3",
-    "attack_effs": [ { "id": "rad_tenths", "duration": 20 } ],
-    "flags": [ "SEES", "HEARS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "NOGIB", "BONES", "POISON", "NO_BREATHE", "FILTHY" ]
-  },
-  {
-    "id": "mon_irradiated_wanderer_4",
-    "type": "MONSTER",
-    "copy-from": "mon_irradiated_wanderer_4",
-    "attack_effs": [ { "id": "rad_fives", "duration": 5 } ],
-    "flags": [ "SEES", "HEARS", "STUMBLES", "WARM", "BASHES", "GROUP_BASH", "NOGIB", "BONES", "POISON", "NO_BREATHE", "FILTHY" ]
   },
   {
     "id": "mon_zombie_gasbag_pk",
@@ -2084,8 +1445,7 @@
     "vision_day": 40,
     "vision_night": 4,
     "emit_fields": [ "emit_gas_plume", "emit_radiation_plume" ],
-    "special_attacks": [ [ "GRAB_DRAG", 12 ], [ "STRETCH_ATTACK", 15 ] ],
-    "death_function": [ "GAS", "BOOMER_GLOW" ],
+    "special_attacks": [ { "id": "grab", "cooldown": 12 }, [ "STRETCH_ATTACK", 15 ] ],
     "flags": [
       "SEES",
       "HEARS",
@@ -2096,12 +1456,11 @@
       "HARDTOSHOOT",
       "NO_BREATHE",
       "REVIVES",
-      "BONES",
       "PUSH_MON",
       "PATH_AVOID_DANGER_1",
       "FILTHY"
     ],
-    "armor": { "bash": 16, "cut": 2, "stab": 12, "acid": 2, "fire": 10 }
+    "armor": { "bash": 16, "cut": 2, "stab": 12, "acid": 2, "heat": 10 }
   },
   {
     "id": "mon_zombie_radbag",
@@ -2123,7 +1482,6 @@
     "melee_skill": 5,
     "melee_dice": 2,
     "melee_dice_sides": 5,
-    "melee_damage": [ { "damage_type": "cut", "amount": 3 } ],
     "melee_damage": [ { "damage_type": "heat", "amount": 2 } ],
     "attack_effs": [ { "id": "rad_tenths", "duration": 120 }, { "id": "rad_fives", "duration": 10 } ],
     "dodge": 5,
@@ -2131,16 +1489,16 @@
     "vision_night": 9,
     "luminance": 3,
     "emit_fields": [ "emit_radiation_plume", "emit_gas_plume" ],
-    "special_attacks": [ [ "GRAB", 20 ] ],
+    "special_attacks": [ { "id": "grab", "cooldown": 20 } ],
     "death_drops": "mon_zombie_hulk_death_drops",
     "death_function": { "effect": { "id": "death_fireball", "hit_self": true } },
-    "flags": [ "SEES", "HEARS", "STUMBLES", "WARM", "POISON", "NO_BREATHE", "REVIVES", "BONES", "NIGHT_INVISIBILITY", "FILTHY" ],
+    "flags": [ "SEES", "HEARS", "STUMBLES", "WARM", "POISON", "NO_BREATHE", "REVIVES", "NIGHT_INVISIBILITY", "FILTHY" ],
     "armor": { "bash": 8, "cut": 2 }
   },
   {
     "id": "mon_zombie_smoker_pk",
     "type": "MONSTER",
-    "name": { "str": "zombie incus" },
+    "name": { "str": "zombie incus", "str_pl": "zombie incuses" },
     "description": "A stout, shadowy humanoid that emits a constant aura of smog around it.  This thick smoke hides its allies and obscures vision through it.",
     "default_faction": "zombie",
     "species": [ "ZOMBIE" ],
@@ -2164,8 +1522,8 @@
     "vision_night": 9,
     "emit_fields": [ "emit_smoke_blast", "emit_radiation_plume" ],
     "special_attacks": [
-      [ "GRAB", 20 ],
-      [ "slash", 20 ],
+      { "id": "grab", "cooldown": 20 },
+      { "id": "slash", "cooldown": 20 },
       {
         "id": "scratch",
         "cooldown": 15,
@@ -2175,7 +1533,7 @@
     ],
     "death_drops": "mon_zombie_hulk_death_drops",
     "death_function": { "effect": { "id": "death_fireball", "hit_self": true } },
-    "flags": [ "SEES", "HEARS", "STUMBLES", "WARM", "POISON", "NO_BREATHE", "REVIVES", "BONES", "NIGHT_INVISIBILITY", "FILTHY" ],
+    "flags": [ "SEES", "HEARS", "STUMBLES", "WARM", "POISON", "NO_BREATHE", "REVIVES", "NIGHT_INVISIBILITY", "FILTHY" ],
     "armor": { "bash": 8, "cut": 2 }
   }
 ]

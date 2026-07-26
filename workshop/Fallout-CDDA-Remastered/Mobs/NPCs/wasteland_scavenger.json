@@ -3,14 +3,14 @@
     "type": "npc",
     "id": "fo_wasteland_scavenger",
     "name_suffix": "Wasteland Scavenger",
-    "class": "fo_deathclaw_hunter_npc",
+    "class": "fo_wasteland_scavenger_npc",
     "attitude": 0,
     "mission": 0,
     "chat": "TALK_wastescav_start"
   },
   {
     "type": "npc_class",
-    "id": "fo_deathclaw_hunter_npc",
+    "id": "fo_wasteland_scavenger_npc",
     "name": { "str": "Deathclaw Hunter" },
     "job_description": "A hunter who is as stupid as they are brave.",
     "traits": [ { "group": "NPC_starting_traits" }, { "group": "Hair_Any" } ],
@@ -56,17 +56,17 @@
     "id": "NC_WASSCAV_carry",
     "subtype": "collection",
     "entries": [
-      { "group": "mon_vault_equipment_armory", "repeat": [ 3, 5 ], "prob": 65 },
-      { "group": "drugs_heal_simple", "repeat": [ 1, 2 ], "prob": 75 },
-      { "group": "fallout_misc_itemgroup_food", "prob": 70, "repeat": [ 3, 5 ] },
-      { "group": "drops_superdupermart_drinks", "prob": 50, "repeat": [ 3, 5 ] },
-      { "group": "ammo_any_batteries_full", "prob": 85, "repeat": [ 2, 4 ] },
-      { "group": "stash_food", "prob": 65, "repeat": [ 2, 4 ] },
-      { "group": "supplies_electronics", "prob": 65, "repeat": [ 2, 4 ] },
-      { "group": "supplies_reagents_lab", "prob": 45, "repeat": [ 2, 4 ] },
-      { "group": "ammo_pistol_fallout_common", "prob": 65, "repeat": [ 1, 2 ] },
-      { "group": "ammo_heavy_fallout", "prob": 65, "repeat": [ 1, 2 ] },
-      { "group": "ammo_shotgun_fallout", "prob": 65, "repeat": [ 1, 2 ] },
+      { "group": "mon_vault_equipment_armory", "prob": 65 },
+      { "group": "drugs_heal_simple", "prob": 75 },
+      { "group": "fallout_misc_itemgroup_food", "prob": 70 },
+      { "group": "drops_superdupermart_drinks", "prob": 50 },
+      { "group": "ammo_any_batteries_full", "prob": 85 },
+      { "group": "stash_food", "prob": 65 },
+      { "group": "supplies_electronics", "prob": 65 },
+      { "group": "supplies_reagents_lab", "prob": 45 },
+      { "group": "ammo_pistol_fallout_common", "prob": 65 },
+      { "group": "ammo_heavy_fallout", "prob": 65 },
+      { "group": "ammo_shotgun_fallout", "prob": 65 },
       { "item": "item_fo_waterchip", "prob": 15 },
       { "item": "item_fo_glow_holotape", "prob": 15 }
     ]
@@ -144,12 +144,10 @@
       { "item": "sleeveless_duster_survivor", "prob": 15 },
       { "item": "trenchcoat_survivor", "prob": 15 },
       { "item": "jacket_leather", "prob": 15 },
-      { "item": "aep_suit", "prob": 5 },
       { "item": "armor_larmor", "prob": 15 },
       { "item": "armor_nomad", "prob": 45 },
       { "item": "armor_nomad_light", "prob": 35 },
       { "item": "armor_plarmor", "prob": 30 },
-      { "item": "armor_scavenger", "prob": 90 },
       { "item": "armor_scrapsuit", "prob": 80 },
       { "item": "armor_combat_light", "prob": 15 },
       { "item": "hazmat_suit", "prob": 5 },
@@ -224,42 +222,11 @@
     "id": "wasteland_scav_ranged",
     "subtype": "distribution",
     "entries": [
-      {
-        "item": "light_plus_battery_cell",
-        "ammo-item": "battery",
-        "charges": 150,
-        "container-item": "wattz_1000",
-        "prob": 10
-      },
-      {
-        "item": "medium_battery_cell",
-        "ammo-item": "battery",
-        "charges": 500,
-        "container-item": "wattz_1000_magneto",
-        "prob": 10
-      },
-      {
-        "item": "light_plus_battery_cell",
-        "ammo-item": "battery",
-        "charges": 150,
-        "container-item": "laser_pistol_aep",
-        "prob": 20
-      },
-      { "item": "medium_battery_cell", "ammo-item": "battery", "charges": 500, "container-item": "aer9", "prob": 75 },
-      {
-        "item": "heavy_battery_cell",
-        "ammo-item": "battery",
-        "charges": 1000,
-        "container-item": "aer9_tribeam",
-        "prob": 10
-      },
-      {
-        "item": "heavy_battery_cell",
-        "ammo-item": "battery",
-        "charges": 1000,
-        "container-item": "aer14_prototype",
-        "prob": 10
-      }
+      { "item": "light_plus_battery_cell", "charges": 150, "prob": 10 },
+      { "item": "medium_battery_cell", "charges": 500, "prob": 10 },
+      { "item": "light_plus_battery_cell", "charges": 150, "prob": 20 },
+      { "item": "medium_battery_cell", "charges": 500, "prob": 75 },
+      { "item": "heavy_battery_cell", "charges": 1000, "prob": 10 }
     ]
   },
   {
@@ -281,8 +248,8 @@
     "type": "talk_topic",
     "dynamic_line": {
       "u_female": true,
-      "yes": "Oh, I'm just scavenging out here for various odds and ends: food, canned goods, old robots, weapons, things of that nature. It's somewhat difficult at times, but I think it's fulfilling.",
-      "no": "Oh, I'm just scavenging out here for various odds and ends: food, canned goods, old robots, weapons, things of that nature. It's somewhat difficult at times, but I think it's fulfilling."
+      "yes": "Oh, I'm just scavenging out here for various odds and ends: food, canned goods, old robots, weapons, things of that nature.  It's somewhat difficult at times, but I think it's fulfilling.",
+      "no": "Oh, I'm just scavenging out here for various odds and ends: food, canned goods, old robots, weapons, things of that nature.  It's somewhat difficult at times, but I think it's fulfilling."
     },
     "responses": [ { "text": "Got it.", "topic": "TALK_wastescav_start" } ]
   },

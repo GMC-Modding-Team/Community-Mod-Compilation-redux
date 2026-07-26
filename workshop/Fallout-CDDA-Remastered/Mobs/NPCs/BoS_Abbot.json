@@ -49,7 +49,7 @@
     "id": "NC_BOSPAL_carry",
     "subtype": "collection",
     "entries": [
-      { "group": "drugs_heal_simple", "repeat": [ 1, 2 ], "prob": 75 },
+      { "group": "drugs_heal_simple", "prob": 75 },
       { "group": "ammo_any_batteries_full", "prob": 15 },
       { "group": "fallout_misc_itemgroup_food", "prob": 40 }
     ]
@@ -76,7 +76,7 @@
         "Hello there, fellow member of the brotherhood."
       ],
       "no": [
-        "Who are you? What are you doing here?",
+        "Who are you?  What are you doing here?",
         "Shouldn't you be banging rocks together, local?",
         "If you think you're getting in, think again."
       ]
@@ -95,7 +95,7 @@
   {
     "id": "TALK_bos_abbot_2",
     "type": "talk_topic",
-    "dynamic_line": "I'm a paladin for the Brotherhood of Steel. I have been posted at this outpost's gate to defend it from all potential assailants.",
+    "dynamic_line": "I'm a paladin for the Brotherhood of Steel.  I have been posted at this outpost's gate to defend it from all potential assailants.",
     "responses": [ { "text": "Thanks for the info.", "topic": "TALK_DONE" } ]
   },
   {
@@ -107,9 +107,9 @@
       "context": "meeting",
       "value": "yes",
       "yes": [
-        "As I'm sure you know, we're an organization principally devoted to the preservation of the old world's technology. As I'm sure you can tell, most people out in the wastes now can't appreciate the more refined arts and sciences of the past, and the herculean task of maintaining such delicate technology falls to us and us alone."
+        "As I'm sure you know, we're an organization principally devoted to the preservation of the old world's technology.  As I'm sure you can tell, most people out in the wastes now can't appreciate the more refined arts and sciences of the past, and the herculean task of maintaining such delicate technology falls to us and us alone."
       ],
-      "no": "We're an organization principally devoted to the preservation of the old world's technology. As I'm sure you can tell, most people out in the wastes now can't appreciate the more refined arts and sciences of the past, and the herculean task of maintaining such delicate technology falls to us and us alone. You're not a member, so you're not privy to the resources our outpost can provide."
+      "no": "We're an organization principally devoted to the preservation of the old world's technology.  As I'm sure you can tell, most people out in the wastes now can't appreciate the more refined arts and sciences of the past, and the herculean task of maintaining such delicate technology falls to us and us alone.  You're not a member, so you're not privy to the resources our outpost can provide."
     },
     "responses": [ { "text": "Thanks for the info.", "topic": "TALK_DONE" } ]
   },
@@ -121,14 +121,13 @@
     "goal": "MGOAL_FIND_ITEM",
     "difficulty": 3,
     "value": 150000,
-    "assign_mission_target": { "om_terrain": "FO_WESTTEK_2_roof_2", "search_range": 300, "reveal_radius": 3 },
     "item": "item_fo_glow_holotape",
     "count": 1,
     "end": {
       "update_mapgen": [ { "om_terrain": "FO_BOSOUTPOST_1", "place_nested": [ { "chunks": [ "fo_bos_postdoor" ], "x": 11, "y": 12 } ] } ],
       "effect": [
         { "u_add_var": "u_are_bos_member", "type": "general", "context": "meeting", "value": "yes" },
-        { "u_buy_item": "medium_battery_cell", "ammo-item": "battery", "charges": 500, "container-item": "aer9" },
+        { "u_buy_item": "medium_battery_cell" },
         { "u_buy_item": "armor_combat_light", "count": 1 },
         { "u_buy_item": "helmet_combat_light", "count": 1 },
         { "u_buy_item": "N99_pistol", "count": 1 },
@@ -141,15 +140,16 @@
     },
     "origins": [ "ORIGIN_SECONDARY" ],
     "dialogue": {
-      "describe": "Uh, well, I talked to the High Elder, and he said that not just anyone can join. He, um, he said you have to complete a quest first. I need you to go to a special location and retrieve a holotape. This place is high tech. There's things inside like you've never seen before. Oh, uh, it's also radioactive. Aheh.",
-      "offer": "Uh, well, I talked to the High Elder, and he said that not just anyone can join. He, um, he said you have to complete a quest first. I need you to go to a special location and retrieve a holotape. This place is high tech. There's things inside like you've never seen before. Oh, uh, it's also radioactive. Aheh.",
-      "accepted": "Heh, now go and get it for the Elder, good luck! You'll need it.",
+      "describe": "Uh, well, I talked to the High Elder, and he said that not just anyone can join.  He, um, he said you have to complete a quest first.  I need you to go to a special location and retrieve a holotape.  This place is high tech.  There's things inside like you've never seen before.  Oh, uh, it's also radioactive.  Aheh.",
+      "offer": "Uh, well, I talked to the High Elder, and he said that not just anyone can join.  He, um, he said you have to complete a quest first.  I need you to go to a special location and retrieve a holotape.  This place is high tech.  There's things inside like you've never seen before.  Oh, uh, it's also radioactive.  Aheh.",
+      "accepted": "Heh, now go and get it for the Elder, good luck!  You'll need it.",
       "rejected": "Oh well, just another potential aspirant that doens't have to be weede- I mean rejected during training.",
-      "advice": "Look bring a rope and some form of radiation resistance. You'll need it.",
+      "advice": "Look bring a rope and some form of radiation resistance.  You'll need it.",
       "inquire": "Have you found the holotape yet?",
-      "success": "I-I can't actually believe you did that. I can say little more than this: welcome to the Brotherhood of Steel, initiate.",
+      "success": "I-I can't actually believe you did that.  I can say little more than this: welcome to the Brotherhood of Steel, initiate.",
       "success_lie": "Did you actually think that I would fall for something so stupid?",
-      "failure": "Oh well, at least you tried. You're not going to be accepted into the BoS, though."
-    }
+      "failure": "Oh well, at least you tried.  You're not going to be accepted into the BoS, though."
+    },
+    "start": { "assign_mission_target": { "om_terrain": "FO_WESTTEK_2_roof_2", "search_range": 300, "reveal_radius": 3 } }
   }
 ]

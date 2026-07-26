@@ -4,7 +4,7 @@
     "copy-from": "rifle_semi",
     "type": "GUN",
     "name": { "str": "Varmint Rifle" },
-    "description": "A bolt-action .223 rifle. It's popular for hunting vermin.",
+    "description": "A bolt-action .223 rifle.  It's popular for hunting vermin.",
     "weight": "2800 g",
     "volume": "2 L",
     "price": "921 USD",
@@ -27,34 +27,32 @@
       [ "sling", 1 ],
       [ "sights", 1 ]
     ],
-    "magazines": [
-      [
-        "223",
-        [
+    "barrel_volume": "250 ml",
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "item_restriction": [
           "rangemastermag",
           "rangemastermag2",
           "survivor223mag",
           "stanag30",
           "stanag10",
           "stanag50",
-          "stanag50",
           "stanag60drum",
           "stanag90",
           "stanag100",
           "stanag100drum",
-          "stanag150",
-          "survivor223mag"
+          "stanag150"
         ]
-      ]
-    ],
-    "barrel_volume": "250 ml"
+      }
+    ]
   },
   {
     "id": "varmint_rifle_ratslayer",
     "copy-from": "rifle_semi",
     "type": "GUN",
-    "name": "Rat Slayer's Rifle",
-    "description": "A varmint rifle that appears to have been customized by an exterminator to stealthily hunt vermin. It has a black finish, with a rat skull engraved upon it",
+    "name": { "str": "Rat Slayer's Rifle" },
+    "description": "A varmint rifle that appears to have been customized by an exterminator to stealthily hunt vermin.  It has a black finish, with a rat skull engraved upon it",
     "weight": "2800 g",
     "volume": "2000 ml",
     "price": "921 USD",
@@ -65,7 +63,7 @@
     "symbol": "(",
     "color": "black",
     "ammo": [ "223" ],
-    "ranged_damage": 4,
+    "ranged_damage": { "damage_type": "bullet", "amount": 4 },
     "dispersion": 100,
     "durability": 10,
     "barrel_volume": "750 ml",
@@ -79,15 +77,20 @@
       [ "sling", 1 ],
       [ "sights", 1 ]
     ],
-    "magazines": [ [ "223", [ "rangemastermag", "rangemastermag2", "survivor223mag", "stanag30", "stanag10", "stanag50" ] ] ]
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "item_restriction": [ "rangemastermag", "rangemastermag2", "survivor223mag", "stanag30", "stanag10", "stanag50" ]
+      }
+    ]
   },
   {
     "id": "rf2076",
     "copy-from": "rifle_auto",
     "looks_like": "ar15",
     "type": "GUN",
-    "name": "Derringer RF2076",
-    "description": "A throwback to water-cooled machine guns of old, the Derringer RF2076 is a side-loading light machine gun. Its incredibly bulky, meant to be used in power armor. It can, however, be wielded without power armor.",
+    "name": { "str": "Derringer RF2076" },
+    "description": "A throwback to water-cooled machine guns of old, the Derringer RF2076 is a side-loading light machine gun.  Its incredibly bulky, meant to be used in power armor.  It can, however, be wielded without power armor.",
     "weight": "7330 g",
     "volume": "6 L",
     "price": "7500 USD",
@@ -97,7 +100,7 @@
     "symbol": "(",
     "color": "dark_gray",
     "ammo": [ "223" ],
-    "ranged_damage": 1,
+    "ranged_damage": { "damage_type": "bullet", "amount": 1 },
     "dispersion": 150,
     "durability": 8,
     "min_cycle_recoil": 1350,
@@ -116,15 +119,15 @@
       [ "sling", 1 ],
       [ "stock", 1 ]
     ],
-    "magazines": [ [ "223", [ "belt223", "rf2076mag", "rf2076drummag" ] ] ]
+    "pocket_data": [ { "pocket_type": "MAGAZINE_WELL", "item_restriction": [ "belt223", "rf2076mag", "rf2076drummag" ] } ]
   },
   {
     "id": "r91",
     "copy-from": "rifle_auto",
     "looks_like": "ar15",
     "type": "GUN",
-    "name": "R91 Assault Rifle",
-    "description": "The Stent Security Solutions R91. This baby was used all throughout Anchorage, as well as by the national guard, before the cataclysm. It has a classic wooden stock.",
+    "name": { "str": "R91 Assault Rifle" },
+    "description": "The Stent Security Solutions R91.  This baby was used all throughout Anchorage, as well as by the national guard, before the cataclysm.  It has a classic wooden stock.",
     "weight": "3160 g",
     "volume": "1750 ml",
     "price": "2400 USD",
@@ -134,20 +137,20 @@
     "symbol": "(",
     "color": "dark_gray",
     "ammo": [ "223" ],
-    "ranged_damage": -2,
+    "ranged_damage": { "damage_type": "bullet", "amount": -2 },
     "dispersion": 180,
     "durability": 9,
     "min_cycle_recoil": 1350,
     "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "AUTO", "auto", 4 ] ],
-    "magazines": [ [ "223", [ "stanag30", "stanag50", "survivor223mag" ] ] ]
+    "pocket_data": [ { "pocket_type": "MAGAZINE_WELL", "item_restriction": [ "stanag30", "stanag50", "survivor223mag" ] } ]
   },
   {
     "id": "carbine_marksman",
     "copy-from": "rifle_auto",
     "looks_like": "ar15",
     "type": "GUN",
-    "name": "Gun Runners MC-223",
-    "description": "A popular compact carbine, long used by paradroopers in the U.S. air force. Its incredibly accurate and fires in decently sized bursts.",
+    "name": { "str": "Gun Runners MC-223" },
+    "description": "A popular compact carbine, long used by paradroopers in the U.S. air force.  Its incredibly accurate and fires in decently sized bursts.",
     "weight": "3160 g",
     "volume": "1750 ml",
     "price": "2400 USD",
@@ -157,20 +160,20 @@
     "symbol": "(",
     "color": "dark_gray",
     "ammo": [ "223" ],
-    "ranged_damage": -2,
+    "ranged_damage": { "damage_type": "bullet", "amount": -2 },
     "dispersion": 180,
     "durability": 8,
     "min_cycle_recoil": 1350,
     "default_mods": [ "rifle_scope" ],
     "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "AUTO", "auto", 3 ] ],
-    "magazines": [ [ "223", [ "stanag30", "stanag50", "survivor223mag" ] ] ]
+    "pocket_data": [ { "pocket_type": "MAGAZINE_WELL", "item_restriction": [ "stanag30", "stanag50", "survivor223mag" ] } ]
   },
   {
     "id": "type93",
     "copy-from": "rifle_auto",
     "looks_like": "ar15",
     "type": "GUN",
-    "name": "Type 93 assault rifle",
+    "name": { "str": "Type 93 assault rifle" },
     "description": "A chinese make of assault rifle, rechambered to .223 to allow infiltrators to easily restock ammo at american gun stores.",
     "weight": "3160 g",
     "volume": "1750 ml",
@@ -181,19 +184,19 @@
     "symbol": "(",
     "color": "dark_gray",
     "ammo": [ "223" ],
-    "ranged_damage": -2,
+    "ranged_damage": { "damage_type": "bullet", "amount": -2 },
     "dispersion": 180,
     "durability": 5,
     "min_cycle_recoil": 1350,
     "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "AUTO", "auto", 5 ] ],
-    "magazines": [ [ "223", [ "stanag30", "stanag50", "survivor223mag" ] ] ]
+    "pocket_data": [ { "pocket_type": "MAGAZINE_WELL", "item_restriction": [ "stanag30", "stanag50", "survivor223mag" ] } ]
   },
   {
     "id": "bot_colt_rangemaster",
     "copy-from": "rifle_semi",
     "type": "GUN",
     "name": { "str": "Colt Rangemaster" },
-    "description": "A Colt Rangemaster, used for monster attacks. If you see this, you're experiencing a bug.",
+    "description": "A Colt Rangemaster, used for monster attacks.  If you see this, you're experiencing a bug.",
     "weight": "2800 g",
     "volume": "2 L",
     "price": "921 USD",
@@ -216,23 +219,21 @@
       [ "sling", 1 ],
       [ "sights", 1 ]
     ],
-    "magazines": [
-      [ "223", [ "rangemastermag" ] ],
-      [ "223", [ "rangemastermag2" ] ],
-      [ "223", [ "survivor223mag" ] ],
-      [ "223", [ "stanag30" ] ],
-      [ "223", [ "stanag10" ] ],
-      [ "223", [ "stanag50" ] ]
-    ],
-    "barrel_volume": "500 ml"
+    "barrel_volume": "500 ml",
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "item_restriction": [ "rangemastermag", "rangemastermag2", "survivor223mag", "stanag30", "stanag10", "stanag50" ]
+      }
+    ]
   },
   {
     "id": "rangemaster_ruger",
     "copy-from": "rifle_semi",
     "looks_like": "ar15",
     "type": "GUN",
-    "name": { "str": "Colt Rangemaster (Ruger)" },
-    "description": "A Colt Rangemaster semi-automatic hunting rifle, in .223 caliber. Single-shot only. Uses standard Ruger mags. Popular with hunters due to its reliability and price.",
+    "name": { "str_sp": "Colt Rangemaster (Ruger)" },
+    "description": "A Colt Rangemaster semi-automatic hunting rifle, in .223 caliber.  Single-shot only.  Uses standard Ruger mags.  Popular with hunters due to its reliability and price.",
     "weight": "3180 g",
     "volume": "2 L",
     "price": "721 USD",
@@ -261,8 +262,13 @@
       [ "stock mount", 1 ],
       [ "underbarrel mount", 1 ]
     ],
-    "magazines": [ [ "223", [ "ruger10", "ruger5", "ruger20", "ruger30", "ruger90", "ruger100" ] ] ],
-    "barrel_volume": "500 ml"
+    "barrel_volume": "500 ml",
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "item_restriction": [ "ruger10", "ruger5", "ruger20", "ruger30", "ruger90", "ruger100" ]
+      }
+    ]
   },
   {
     "id": "colt_rangemaster",
@@ -270,7 +276,7 @@
     "looks_like": "ar15",
     "type": "GUN",
     "name": { "str": "Colt Rangemaster" },
-    "description": "A Colt Rangemaster semi-automatic hunting rifle, in .223 caliber. Single-shot only. Uses standard STANAG mags. Popular with hunters due to its reliability and price.",
+    "description": "A Colt Rangemaster semi-automatic hunting rifle, in .223 caliber.  Single-shot only.  Uses standard STANAG mags.  Popular with hunters due to its reliability and price.",
     "weight": "3180 g",
     "volume": "2 L",
     "price": "721 USD",
@@ -299,8 +305,13 @@
       [ "stock mount", 1 ],
       [ "underbarrel mount", 1 ]
     ],
-    "magazines": [ [ "223", [ "stanag10", "stanag5", "stanag20", "stanag30", "stanag90", "stanag100" ] ] ],
-    "barrel_volume": "500 ml"
+    "barrel_volume": "500 ml",
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "item_restriction": [ "stanag10", "stanag5", "stanag20", "stanag30", "stanag90", "stanag100" ]
+      }
+    ]
   },
   {
     "id": "rangemaster_stanag",
@@ -308,7 +319,7 @@
     "looks_like": "ar15",
     "type": "GUN",
     "name": { "str": "Colt Rangemaster" },
-    "description": "A Colt Rangemaster semi-automatic hunting rifle, in .223 caliber. Single-shot only. Uses standard STANAG mags. Popular with hunters due to its reliability and price.",
+    "description": "A Colt Rangemaster semi-automatic hunting rifle, in .223 caliber.  Single-shot only.  Uses standard STANAG mags.  Popular with hunters due to its reliability and price.",
     "weight": "3180 g",
     "volume": "2 L",
     "price": "721 USD",
@@ -337,8 +348,13 @@
       [ "stock mount", 1 ],
       [ "underbarrel mount", 1 ]
     ],
-    "magazines": [ [ "223", [ "stanag10", "stanag5", "stanag20", "stanag30", "stanag90", "stanag100" ] ] ],
-    "barrel_volume": "500 ml"
+    "barrel_volume": "500 ml",
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "item_restriction": [ "stanag10", "stanag5", "stanag20", "stanag30", "stanag90", "stanag100" ]
+      }
+    ]
   },
   {
     "id": "dks501_223",
@@ -346,7 +362,7 @@
     "looks_like": "ar15",
     "type": "GUN",
     "name": { "str": "DKS-501 .223" },
-    "description": "A DKS-501 Sniper Rifle. Excellent long range projectile weapon. Originally .308, this one is chambered in the more common .223 caliber for civilian use. It saw heavy use in the army before the Great War.",
+    "description": "A DKS-501 Sniper Rifle.  Excellent long range projectile weapon.  Originally .308, this one is chambered in the more common .223 caliber for civilian use.  It saw heavy use in the army before the Great War.",
     "weight": "3180 g",
     "volume": "2 L",
     "price": "721 USD",
@@ -375,10 +391,11 @@
       [ "stock mount", 1 ],
       [ "underbarrel mount", 1 ]
     ],
-    "magazines": [
-      [
-        "223",
-        [
+    "barrel_volume": "750 ml",
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "item_restriction": [
           "stanag5",
           "stanag10",
           "stanag20",
@@ -393,9 +410,8 @@
           "stanag150",
           "survivor223mag"
         ]
-      ]
-    ],
-    "barrel_volume": "750 ml"
+      }
+    ]
   },
   {
     "id": "revolver_223",
@@ -403,7 +419,7 @@
     "looks_like": "sw_619",
     "type": "GUN",
     "name": { "str_sp": ".223 Revolver" },
-    "description": "A .223 revolver rifle modified and cut down to a pistol. This is a beautiful hand-made firearm, obviously made with love and skill. It's got a small LED light by the cylinder to help remind you that its empty. Popular among officer and criminal alike, it got the reputation of 'That Gun', due to it's recognizable appearance.",
+    "description": "A .223 revolver rifle modified and cut down to a pistol.  This is a beautiful hand-made firearm, obviously made with love and skill.  It's got a small LED light by the cylinder to help remind you that its empty.  Popular among officer and criminal alike, it got the reputation of 'That Gun', due to it's recognizable appearance.",
     "weight": "1502 g",
     "volume": "565 ml",
     "price": "641 USD",
@@ -417,8 +433,6 @@
     "dispersion": 280,
     "durability": 8,
     "blackpowder_tolerance": 56,
-    "clip_size": 5,
-    "magazines": [ [ "223", [ "223_speedloader5" ] ] ],
     "valid_mod_locations": [
       [ "accessories", 2 ],
       [ "grip", 1 ],
@@ -427,7 +441,8 @@
       [ "sights", 1 ],
       [ "stock mount", 1 ],
       [ "underbarrel mount", 1 ]
-    ]
+    ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE_WELL", "item_restriction": [ "223_speedloader5" ] } ]
   },
   {
     "id": "combatrifle_223",
@@ -435,7 +450,7 @@
     "type": "GUN",
     "reload_noise_volume": 10,
     "name": { "str": "CWA CR-223" },
-    "description": "A versatile rifle from Commonwealth Armories, the CR-223 is probably the most standard of the CWA CR lineup. Accepts STANAG.",
+    "description": "A versatile rifle from Commonwealth Armories, the CR-223 is probably the most standard of the CWA CR lineup.  Accepts STANAG.",
     "weight": "5910 g",
     "volume": "2 L",
     "price": "4500 USD",
@@ -467,10 +482,11 @@
       [ "underbarrel", 1 ]
     ],
     "faults": [ "fault_gun_blackpowder", "fault_gun_dirt", "fault_gun_chamber_spent" ],
-    "magazines": [
-      [
-        "223",
-        [
+    "barrel_volume": "500 ml",
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "item_restriction": [
           "stanag5",
           "stanag10",
           "stanag20",
@@ -485,9 +501,8 @@
           "stanag150",
           "survivor223mag"
         ]
-      ]
-    ],
-    "barrel_volume": "500 ml"
+      }
+    ]
   },
   {
     "id": "radrifle_223",
@@ -495,7 +510,7 @@
     "type": "GUN",
     "reload_noise_volume": 10,
     "name": { "str": ".223 Radium Rifle" },
-    "description": "A strange makeshift weapon, this appears to be a CWA CR-223 modified with a bunch of radioactive material and electronic components. A much heavier gun, but maybe that will make it more effective?",
+    "description": "A strange makeshift weapon, this appears to be a CWA CR-223 modified with a bunch of radioactive material and electronic components.  A much heavier gun, but maybe that will make it more effective?",
     "weight": "7800 g",
     "volume": "2 L",
     "price": "4500 USD",
@@ -527,10 +542,11 @@
       [ "underbarrel", 1 ]
     ],
     "faults": [ "fault_gun_blackpowder", "fault_gun_dirt", "fault_gun_chamber_spent" ],
-    "magazines": [
-      [
-        "223",
-        [
+    "barrel_volume": "500 ml",
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "item_restriction": [
           "stanag5",
           "stanag10",
           "stanag20",
@@ -545,9 +561,8 @@
           "stanag150",
           "survivor223mag"
         ]
-      ]
-    ],
-    "barrel_volume": "500 ml"
+      }
+    ]
   },
   {
     "id": "bozar",
@@ -555,14 +570,14 @@
     "looks_like": "m249",
     "type": "GUN",
     "name": { "str": "Bozar" },
-    "description": "The ultimate refinement of the sniper's art. Although, somewhat finicky and prone to jamming if not kept scrupulously clean, the big weapon's accuracy more than makes up for its extra maintenance requirements.",
+    "description": "The ultimate refinement of the sniper's art.  Although, somewhat finicky and prone to jamming if not kept scrupulously clean, the big weapon's accuracy more than makes up for its extra maintenance requirements.",
     "weight": "7330 g",
     "volume": "3 L",
     "price": "7500 USD",
     "price_postapoc": "80 USD",
     "to_hit": -1,
     "melee_damage": { "bash": 12 },
-    "material": [ "hardsteel", "plastic" ],
+    "material": [ "steel", "plastic" ],
     "symbol": "(",
     "color": "brown",
     "ammo": [ "223" ],
@@ -586,10 +601,11 @@
       [ "sling", 1 ],
       [ "stock", 1 ]
     ],
-    "magazines": [
-      [
-        "223",
-        [
+    "barrel_volume": "500 ml",
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "item_restriction": [
           "stanag30",
           "stanag5",
           "stanag10",
@@ -605,9 +621,8 @@
           "survivor223mag",
           "belt223"
         ]
-      ]
-    ],
-    "barrel_volume": "500 ml"
+      }
+    ]
   },
   {
     "id": "fo_ncr_service_rifle",
@@ -615,7 +630,7 @@
     "type": "GUN",
     "name": { "str": "NCR Service Rifle" },
     "//": "This is assumed to be the standard model matching the (currently not in-game) M16. Tileset whitelist for rifles",
-    "description": "The New California Republic service rifle is a lightweight, air-cooled, magazine-fed, gas-operated rifle that uses the direct impingement gas principle with a rotary bolt locking mechanism. This rifle is designed by the Gun Runners for use with the infantry of the New California Republic. Wherever Shady Sands sends its soldiers, this rifle will soon follow, and for good reason.",
+    "description": "The New California Republic service rifle is a lightweight, air-cooled, magazine-fed, gas-operated rifle that uses the direct impingement gas principle with a rotary bolt locking mechanism.  This rifle is designed by the Gun Runners for use with the infantry of the New California Republic.  Wherever Shady Sands sends its soldiers, this rifle will soon follow, and for good reason.",
     "weight": "3600 g",
     "volume": "2 L",
     "price": "1250 USD",
@@ -631,10 +646,10 @@
     "dispersion": 170,
     "durability": 7,
     "min_cycle_recoil": 1350,
-    "magazines": [
-      [
-        "223",
-        [
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "item_restriction": [
           "stanag30",
           "stanag5",
           "stanag10",
@@ -649,7 +664,7 @@
           "stanag150",
           "survivor223mag"
         ]
-      ]
+      }
     ]
   }
 ]

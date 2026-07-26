@@ -3,8 +3,8 @@
     "id": "punt_gun",
     "type": "GUN",
     "reload_noise_volume": 10,
-    "name": "punt gun",
-    "description": "An ancient shotgun type, banned in many countries and states! The .50 caliber of the shotgun world.",
+    "name": { "str": "punt gun" },
+    "description": "An ancient shotgun type, banned in many countries and states!  The .50 caliber of the shotgun world.",
     "weight": "1950 g",
     "volume": "2500 ml",
     "price": "410 USD",
@@ -15,19 +15,19 @@
     "color": "brown",
     "ammo": [ "puntshot" ],
     "skill": "shotgun",
-    "ranged_damage": 10,
+    "ranged_damage": { "damage_type": "bullet", "amount": 10 },
     "dispersion": 180,
     "durability": 6,
-    "clip_size": 1,
     "reload": 1200,
     "valid_mod_locations": [ [ "accessories", 1 ], [ "sling", 1 ], [ "underbarrel", 1 ] ],
-    "flags": [ "NEVER_JAMS", "DURABLE_MELEE" ]
+    "flags": [ "NEVER_JAMS", "DURABLE_MELEE" ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "puntshot": 1 } } ]
   },
   {
     "id": "punt_gun_homemade",
     "type": "GUN",
     "reload_noise_volume": 10,
-    "name": "handmade punt gun",
+    "name": { "str": "handmade punt gun" },
     "description": "A punt gun made by hand with loving care.",
     "weight": "1950 g",
     "volume": "2500 ml",
@@ -39,20 +39,19 @@
     "color": "brown",
     "ammo": [ "puntshot" ],
     "skill": "shotgun",
-    "ranged_damage": 10,
+    "ranged_damage": { "damage_type": "bullet", "amount": 10 },
     "dispersion": 180,
     "durability": 5,
-    "clip_size": 1,
     "reload": 1200,
     "valid_mod_locations": [ [ "accessories", 1 ], [ "sling", 1 ], [ "underbarrel", 1 ] ],
-    "flags": [ "NEVER_JAMS", "DURABLE_MELEE" ]
+    "flags": [ "NEVER_JAMS", "DURABLE_MELEE" ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "puntshot": 1 } } ]
   },
   {
     "id": "shotgun_pump_12",
     "copy-from": "rifle_manual",
     "type": "GUN",
-    "name": "homemade pump-action boomstick",
-    "name_plural": "homemade pump-action boomsticks",
+    "name": { "str": "homemade pump-action boomstick" },
     "description": "A handmade 12 gauge shotgun that utilizes a pump-action mechanism.",
     "weight": "2311 g",
     "volume": "2000 ml",
@@ -66,7 +65,6 @@
     "ammo": [ "shot" ],
     "dispersion": 90,
     "durability": 8,
-    "clip_size": 8,
     "reload": 200,
     "barrel_volume": "500 ml",
     "valid_mod_locations": [
@@ -80,14 +78,14 @@
       [ "sights", 1 ],
       [ "sling", 1 ]
     ],
-    "flags": [ "RELOAD_ONE" ]
+    "flags": [ "RELOAD_ONE" ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "shot": 8 } } ]
   },
   {
     "id": "shotgun_pump_20",
     "copy-from": "rifle_manual",
     "type": "GUN",
-    "name": "homemade 20 gauge boomstick",
-    "name_plural": "homemade 20 gauge boomsticks",
+    "name": { "str": "homemade 20 gauge boomstick" },
     "description": "A handmade 20 gauge shotgun that utilizes a pump-action mechanism.",
     "weight": "2311 g",
     "volume": "2000 ml",
@@ -101,7 +99,6 @@
     "ammo": [ "20ga" ],
     "dispersion": 90,
     "durability": 10,
-    "clip_size": 12,
     "reload": 200,
     "barrel_volume": "500 ml",
     "valid_mod_locations": [
@@ -115,6 +112,7 @@
       [ "sights", 1 ],
       [ "sling", 1 ]
     ],
-    "flags": [ "RELOAD_ONE" ]
+    "flags": [ "RELOAD_ONE" ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "20ga": 12 } } ]
   }
 ]

@@ -3,7 +3,9 @@
     "id": "mon_light_hack",
     "copy-from": "base_drone",
     "type": "MONSTER",
-    "name": "floating lantern",
+    "name": {
+      "str": "floating lantern"
+    },
     "looks_like": "bot_manhack",
     "description": "A salvaged drone repurposed into a mobile lightsource.",
     "speed": 250,
@@ -13,14 +15,23 @@
     "morale": 50,
     "dodge": 8,
     "revert_to_itype": "bot_light_hack",
-    "extend": { "flags": [ "STUMBLES", "HARDTOSHOOT" ] },
-    "armor": { "cut": 4 }
+    "extend": {
+      "flags": [
+        "STUMBLES",
+        "HARDTOSHOOT"
+      ]
+    },
+    "armor": {
+      "cut": 4
+    }
   },
   {
     "id": "mon_bloodhound_drone",
     "copy-from": "base_drone",
     "type": "MONSTER",
-    "name": { "str": "bloodhound drone" },
+    "name": {
+      "str": "bloodhound drone"
+    },
     "description": "A small, spiked quadcopter robot equipped with a high-power spotlight.  This automated seeker drone was originally designed to harry and harass fugitives while maintaining visual contact for other pursuers.",
     "diff": 2,
     "default_faction": "science",
@@ -29,13 +40,48 @@
     "melee_skill": 2,
     "melee_dice": 1,
     "melee_dice_sides": 4,
-    "melee_damage": [ { "damage_type": "cut", "amount": 12 } ],
-    "special_attacks": [ [ "SEARCHLIGHT", 1 ] ],
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 12
+      }
+    ],
+    "special_attacks": [
+      [
+        "SEARCHLIGHT",
+        1
+      ]
+    ],
     "luminance": 60,
     "revert_to_itype": "bot_bloodhound_drone",
-    "death_drops": { "groups": [ [ "robots", 4 ], [ "manhack", 1 ], [ "turret_searchlight", 1 ] ] },
-    "death_function": { "corpse_type": "BROKEN" },
-    "extend": { "flags": [ "HIT_AND_RUN" ] },
-    "armor": { "bash": 2, "cut": 8, "bullet": 6 }
+    "death_drops": {
+      "groups": [
+        [
+          "robots",
+          4
+        ],
+        [
+          "manhack",
+          1
+        ],
+        [
+          "turret_searchlight",
+          1
+        ]
+      ]
+    },
+    "death_function": {
+      "corpse_type": "BROKEN"
+    },
+    "extend": {
+      "flags": [
+        "HIT_AND_RUN"
+      ]
+    },
+    "armor": {
+      "bash": 2,
+      "cut": 8,
+      "bullet": 6
+    }
   }
 ]

@@ -1658,58 +1658,55 @@ def fix_skill_requirements(content):
 
 def fix_melee_damage(content):
     """
-    Fully robust melee merge.
-    Works regardless of nesting or formatting.
-    Does NOT delete surrounding content.
+    Merge legacy top-level bashing/cutting members without consuming fields
+    that happen to appear between them.
     """
 
-    # Step 1: merge pairs (any order, anywhere)
-    def merge(match):
-        b1, c1, c2, b2 = match.groups()
+    legacy_re = re.compile(r'"(bashing|cutting)"\s*:\s*(-?\d+)')
 
-        bash = b1 or b2
-        cut = c1 or c2
+    def remove_member(chunk, key):
+        key_value = rf'"{key}"\s*:\s*-?\d+'
+        updated, count = re.subn(rf'{key_value}\s*,\s*', '', chunk, count=1)
+        if count:
+            return updated
+        return re.sub(rf',\s*{key_value}', '', chunk, count=1)
 
-        return f'"melee_damage": {{ "bash": {bash}, "cut": {cut} }}'
+    def process_chunk(chunk):
+        matches = list(legacy_re.finditer(chunk))
+        if not matches:
+            return chunk
 
-    content = re.sub(
-        r'"bashing"\s*:\s*(\d+)[^{}]*?"cutting"\s*:\s*(\d+)'
-        r'|'
-        r'"cutting"\s*:\s*(\d+)[^{}]*?"bashing"\s*:\s*(\d+)',
-        merge,
-        content,
-        flags=re.DOTALL
-    )
+        values = {}
+        for match in matches:
+            values.setdefault(match.group(1), int(match.group(2)))
 
-    # Step 2: remove leftover singles ONLY if already merged nearby
-    content = re.sub(
-        r'("melee_damage"\s*:\s*\{[^}]*\})[^{}]*?"bashing"\s*:\s*\d+',
-        r'\1',
-        content,
-        flags=re.DOTALL
-    )
+        parts = []
+        if "bashing" in values:
+            parts.append(f'"bash": {values["bashing"]}')
+        if "cutting" in values:
+            parts.append(f'"cut": {values["cutting"]}')
+        replacement = '"melee_damage": { ' + ', '.join(parts) + ' }'
 
-    content = re.sub(
-        r'("melee_damage"\s*:\s*\{[^}]*\})[^{}]*?"cutting"\s*:\s*\d+',
-        r'\1',
-        content,
-        flags=re.DOTALL
-    )
+        first = matches[0]
+        chunk = chunk[:first.start()] + replacement + chunk[first.end():]
+        first_key = first.group(1)
+        for key in values:
+            if key != first_key:
+                chunk = remove_member(chunk, key)
+        return chunk
 
-    # Step 3: handle remaining singles
-    content = re.sub(
-        r'"bashing"\s*:\s*(\d+)',
-        r'"melee_damage": { "bash": \1 }',
-        content
-    )
+    spans = list(_split_top_level_objects(content))
+    if not spans:
+        return process_chunk(content)
 
-    content = re.sub(
-        r'"cutting"\s*:\s*(\d+)',
-        r'"melee_damage": { "cut": \1 }',
-        content
-    )
-
-    return content
+    result = []
+    previous = 0
+    for start, end in spans:
+        result.append(content[previous:start])
+        result.append(process_chunk(content[start:end]))
+        previous = end
+    result.append(content[previous:])
+    return ''.join(result)
 
 
 def fix_resist(content):

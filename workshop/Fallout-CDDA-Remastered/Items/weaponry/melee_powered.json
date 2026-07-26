@@ -4,18 +4,20 @@
     "id": "fo_powfist",
     "symbol": "P",
     "color": "light_gray",
-    "name": { "str": "power fist", "str_pl": "power fists" },
+    "name": { "str": "power fist" },
     "category": "weapons",
-    "description": "An armored pneumatic fist. It appears as an armored gauntlet, like that of a suit of power armor. However, it appears to use a pneumatic ram instead of kinetic energy devices, making it function in a manner closer to that of the impact gloves.",
+    "description": "An armored pneumatic fist.  It appears as an armored gauntlet, like that of a suit of power armor.  However, it appears to use a pneumatic ram instead of kinetic energy devices, making it function in a manner closer to that of the impact gloves.",
     "material": [ "brass" ],
     "weight": "820 g",
+    "volume": "500 ml",
     "melee_damage": { "bash": 23 },
     "to_hit": 1,
     "price_postapoc": "250 cent",
-    "flags": [ "UNARMED_WEAPON", "DURABLE_MELEE" ]
+    "flags": [ "DURABLE_MELEE" ]
   },
   {
     "type": "recipe",
+    "activity_level": "LIGHT_EXERCISE",
     "result": "fo_powfist",
     "category": "CC_WEAPON",
     "subcategory": "CSC_WEAPON_BASHING",
@@ -44,8 +46,8 @@
   {
     "id": "ripper_off",
     "type": "TOOL",
-    "name": { "str": "Ripper™ (off)", "str_pl": "Ripper™ (off)" },
-    "description": "A Ripper™ vibroblade. Powered by a small energy cell, the chainblade rips and tears into its target. Used by militaries as a combination knife and chainsaw, ripping and tearings never been easier.",
+    "name": { "str_sp": "Ripper™ (off)" },
+    "description": "A Ripper™ vibroblade.  Powered by a small energy cell, the chainblade rips and tears into its target.  Used by militaries as a combination knife and chainsaw, ripping and tearings never been easier.",
     "weight": "1208 g",
     "volume": "650 ml",
     "price": "400 USD",
@@ -68,8 +70,12 @@
     },
     "qualities": [ [ "CUT", 1 ], [ "CUT_FINE", 1 ], [ "BUTCHER", 19 ] ],
     "flags": [ "NONCONDUCTIVE", "DURABLE_MELEE", "SHEATH_KNIFE" ],
-    "magazines": [ [ "battery", [ "small_energy_cell", "small_energy_cell_bulk", "small_energy_cell_oc", "small_energy_cell_mc" ] ] ],
-    "magazine_well": 2
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "item_restriction": [ "small_energy_cell", "small_energy_cell_bulk", "small_energy_cell_oc", "small_energy_cell_mc" ]
+      }
+    ]
   },
   {
     "id": "ripper_on",
@@ -87,16 +93,15 @@
       "menu_text": "Turn off",
       "type": "transform",
       "target": "ripper_off",
-      "msg": "You turn the Ripper™ off. Fun times over."
+      "msg": "You turn the Ripper™ off.  Fun times over."
     },
-    "flags": [ "MESSY", "TRADER_AVOID", "NONCONDUCTIVE", "POWERED", "DURABLE_MELEE" ],
-    "magazine_well": 2
+    "flags": [ "MESSY", "TRADER_AVOID", "NONCONDUCTIVE", "POWERED", "DURABLE_MELEE" ]
   },
   {
     "id": "handysaw_off",
     "type": "TOOL",
     "name": { "str": "Mr. Handy saw (off)", "str_pl": "Mr. Handy saws (off)" },
-    "description": "A lightweight circular saw attached to a long robot limb. You could use it to fight zombies from a distance.",
+    "description": "A lightweight circular saw attached to a long robot limb.  You could use it to fight zombies from a distance.",
     "weight": "2940 g",
     "volume": "750 ml",
     "price": "50 USD",
@@ -110,15 +115,19 @@
     "charges_per_use": 5,
     "use_action": { "target": "handysaw_on", "msg": "You turn on the circular saw.", "active": true, "type": "transform" },
     "flags": [ "NONCONDUCTIVE", "REACH_ATTACK" ],
-    "magazines": [ [ "battery", [ "small_energy_cell", "small_energy_cell_bulk", "small_energy_cell_oc", "small_energy_cell_mc" ] ] ],
-    "magazine_well": 2
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "item_restriction": [ "small_energy_cell", "small_energy_cell_bulk", "small_energy_cell_oc", "small_energy_cell_mc" ]
+      }
+    ]
   },
   {
     "id": "handysaw_on",
     "copy-from": "handysaw_off",
     "type": "TOOL",
     "name": { "str": "Mr. Handy saw (on)", "str_pl": "Mr. Handy saws (on)" },
-    "description": "A lightweight circular saw attached to a long robot limb. You could use it to fight zombies from a distance. This one is turning on, lightly buzzing.",
+    "description": "A lightweight circular saw attached to a long robot limb.  You could use it to fight zombies from a distance.  This one is turning on, lightly buzzing.",
     "melee_damage": { "cut": 50 },
     "to_hit": -1,
     "power_draw": 1200000,
@@ -126,7 +135,6 @@
     "revert_to": "handysaw_off",
     "qualities": [ [ "CUT", 1 ], [ "SAW_W", 2 ], [ "BUTCHER", -20 ] ],
     "use_action": { "target": "handysaw_off", "msg": "You turn off the circular saw.", "type": "transform" },
-    "flags": [ "MESSY", "TRADER_AVOID", "NONCONDUCTIVE", "REACH_ATTACK" ],
-    "magazine_well": 2
+    "flags": [ "MESSY", "TRADER_AVOID", "NONCONDUCTIVE", "REACH_ATTACK" ]
   }
 ]

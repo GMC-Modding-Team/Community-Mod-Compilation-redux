@@ -37,8 +37,10 @@
       [ "underbarrel", 1 ]
     ],
     "faults": [ "fault_gun_blackpowder", "fault_gun_dirt", "fault_gun_chamber_spent" ],
-    "magazines": [ [ "45", [ "combatrifle_mag", "combatrifle_bigmag", "combatrifle_drum" ] ] ],
-    "barrel_volume": "500 ml"
+    "barrel_volume": "500 ml",
+    "pocket_data": [
+      { "pocket_type": "MAGAZINE_WELL", "item_restriction": [ "combatrifle_mag", "combatrifle_bigmag", "combatrifle_drum" ] }
+    ]
   },
   {
     "id": "radrifle_45",
@@ -46,7 +48,7 @@
     "type": "GUN",
     "reload_noise_volume": 10,
     "name": { "str": ".45 Radium Rifle" },
-    "description": "A strange makeshift weapon, this appears to be a CWA CR-45 modified with a bunch of radioactive material and electronic components. A much heavier gun, but maybe that will make it more effective?",
+    "description": "A strange makeshift weapon, this appears to be a CWA CR-45 modified with a bunch of radioactive material and electronic components.  A much heavier gun, but maybe that will make it more effective?",
     "weight": "7800 g",
     "volume": "2 L",
     "price": "4500 USD",
@@ -78,8 +80,10 @@
       [ "underbarrel", 1 ]
     ],
     "faults": [ "fault_gun_blackpowder", "fault_gun_dirt", "fault_gun_chamber_spent" ],
-    "magazines": [ [ "45", [ "combatrifle_mag", "combatrifle_bigmag", "combatrifle_drum" ] ] ],
-    "barrel_volume": "500 ml"
+    "barrel_volume": "500 ml",
+    "pocket_data": [
+      { "pocket_type": "MAGAZINE_WELL", "item_restriction": [ "combatrifle_mag", "combatrifle_bigmag", "combatrifle_drum" ] }
+    ]
   },
   {
     "id": "tommygun_silver",
@@ -87,7 +91,7 @@
     "type": "GUN",
     "reload_noise_volume": 10,
     "name": { "str": "Silver submachine gun" },
-    "description": "When evil walks the streets of boston, one man lurks in the shadows. Shielding the innocent, judging the guilty. That guardian is... The Silver Shroud! This silver-plated thompson submachine gun is a special promotional item, sold in incredibly limited quantities. Just wielding it, you feel like a modern paladin of justice, cleaning the streets of boston with the blood of the guilty.",
+    "description": "When evil walks the streets of boston, one man lurks in the shadows.  Shielding the innocent, judging the guilty.  That guardian is…  The Silver Shroud!  This silver-plated thompson submachine gun is a special promotional item, sold in incredibly limited quantities.  Just wielding it, you feel like a modern paladin of justice, cleaning the streets of boston with the blood of the guilty.",
     "weight": "5910 g",
     "volume": "2 L",
     "price": "9000 USD",
@@ -119,15 +123,20 @@
       [ "underbarrel", 1 ]
     ],
     "faults": [ "fault_gun_blackpowder", "fault_gun_dirt", "fault_gun_chamber_spent" ],
-    "magazines": [ [ "45", [ "thompson_mag", "thompson_bigmag", "thompson_drum", "thompson_makeshiftmag" ] ] ],
-    "barrel_volume": "500 ml"
+    "barrel_volume": "500 ml",
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "item_restriction": [ "thompson_mag", "thompson_bigmag", "thompson_drum", "thompson_makeshiftmag" ]
+      }
+    ]
   },
   {
     "id": "greasegun",
     "type": "GUN",
     "reload_noise_volume": 10,
-    "name": "M3A1 'Grease Gun' SMG",
-    "description": "This submachine gun filled National Guard arsenals after the Army replaced it with newer weapons. However, the 'Grease Gun' was simple and cheap to manufacture so there are still quite a few still in use.",
+    "name": { "str": "M3A1 'Grease Gun' SMG" },
+    "description": "This submachine gun filled National Guard arsenals after the Army replaced it with newer weapons.  However, the 'Grease Gun' was simple and cheap to manufacture so there are still quite a few still in use.",
     "weight": "2945 g",
     "volume": "1750 ml",
     "price": "400 USD",
@@ -138,11 +147,11 @@
     "looks_like": "sten",
     "ammo": [ "45" ],
     "skill": "smg",
-    "ranged_damage": 1,
+    "ranged_damage": { "damage_type": "bullet", "amount": 1 },
     "dispersion": 360,
     "durability": 5,
-    "burst": 10,
     "valid_mod_locations": [ [ "accessories", 2 ], [ "muzzle", 1 ], [ "stock", 1 ], [ "grip", 1 ] ],
-    "magazines": [ [ "45", [ "mac10mag" ] ], [ "9mm", [ "stenmag", "survivor9mm_mag" ] ] ]
+    "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "BURST", "burst", 10 ] ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE_WELL", "item_restriction": [ "mac10mag", "stenmag", "survivor9mm_mag" ] } ]
   }
 ]

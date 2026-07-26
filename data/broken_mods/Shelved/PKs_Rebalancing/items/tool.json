@@ -30,14 +30,15 @@
     "material": [ "aluminum" ],
     "symbol": ",",
     "color": "light_gray",
-    "armor": [ { "encumbrance": 0, "coverage": 1, "warmth": 0 } ],
+    "armor": [ { "encumbrance": 0, "coverage": 1, "covers": [ "torso" ] } ],
     "material_thickness": 1,
     "ammo": [ "gasoline" ],
     "pocket_data": [ { "pocket_type": "MAGAZINE", "watertight": true, "ammo_restriction": { "gasoline": 50 } } ],
     "rand_charges": [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 5, 7, 11, 13, 17, 21, 27 ],
     "charges_per_use": 1,
     "use_action": [ { "type": "firestarter", "moves": 60, "moves_slow": 600 } ],
-    "flags": [ "FIRE", "FLAMING" ]
+    "flags": [ "FIRE", "FLAMING" ],
+    "warmth": 0
   },
   {
     "id": "candle_smoke",
@@ -77,7 +78,6 @@
     "material": [ "plastic" ],
     "symbol": "0",
     "color": "i_white",
-    "max_charges": 100,
     "ammo": [ "smoke_juice" ],
     "use_action": {
       "type": "transform",
@@ -88,16 +88,15 @@
       "need_charges_msg": "This machine is empty!  Deconstruct it and make a new one."
     },
     "flags": [ "NO_RELOAD", "NO_REPAIR" ],
-    "melee_damage": { "bash": 3 }
+    "melee_damage": { "bash": 3 },
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "smoke_juice": 100 }, "watertight": true } ]
   },
   {
     "id": "smoke_machine_unpreped",
     "type": "TOOL",
-    "name": { "str": "smoke machine", "str_pl": "smoke machines" },
+    "name": { "str": "smoke machine" },
     "copy-from": "smoke_machine",
     "description": "This is a candle-operated smoke machine.  When turned on it will produce a fog-like smoke in the immediete area, obscuring vision and scent.  It can be turned off at will, but when empty will need to be deconstructed and recrafted.  Use it once to set it up for use, then again to activate it.",
-    "max_charges": 100,
-    "initial_charges": 100,
     "use_action": {
       "type": "transform",
       "target": "smoke_machine",
@@ -111,8 +110,6 @@
     "copy-from": "smoke_machine",
     "type": "TOOL",
     "name": { "str": "smoke machine (on)", "str_pl": "smoke machines (on)" },
-    "max_charges": 100,
-    "initial_charges": 100,
     "turns_per_charge": 158,
     "revert_to": "smoke_machine",
     "emits": [ "emit_smoke_flare", "emit_smoke_machine" ],
@@ -123,14 +120,14 @@
     "id": "pokeball",
     "type": "TOOL",
     "name": { "str": "pocket-creature warp container" },
-    "description": "Creature holding container in the form of a  small ball based on highly experimental PRM warp packing technology. Allows the safe transport of creatures; but seems to conserve weight, making its use impractical.",
+    "description": "Creature holding container in the form of a  small ball based on highly experimental PRM warp packing technology.  Allows the safe transport of creatures; but seems to conserve weight, making its use impractical.",
     "weight": "300 g",
     "volume": "750 ml",
     "price": "20 kUSD",
     "material": [ "steel", "plastic" ],
     "symbol": "o",
     "color": "light_red",
-    "properties": [ [ "monster_size_capacity", "HUGE" ] ],
+    "properties": { "monster_size_capacity": "HUGE" },
     "use_action": "CAPTURE_MONSTER_ACT",
     "melee_damage": { "bash": 3 }
   },
@@ -267,9 +264,6 @@
       "draw_explosion_radius": 2,
       "draw_explosion_color": "light_blue",
       "emp_blast_radius": 2,
-      "sound_volume": 0,
-      "sound_msg": "Tick.",
-      "no_deactivate_msg": "There's a hole in this core; it's gonna blow!",
       "explosion": { "power": 12, "distance_factor": 0.5, "shrapnel": 1 }
     },
     "flags": [ "BOMB", "TRADER_AVOID", "CUSTOM_EXPLOSION" ],
@@ -359,7 +353,7 @@
       "type": "place_monster",
       "monster_id": "mon_soulcube",
       "friendly_msg": "As you fiddle with the cube, it flies from your hands!",
-      "hostile_msg": "Oh, it's hostile. That's probably not supposed to happen.  Probably.",
+      "hostile_msg": "Oh, it's hostile.  That's probably not supposed to happen.  Probably.",
       "moves": 50,
       "place_randomly": true,
       "skills": [ "survival" ]
@@ -445,7 +439,7 @@
     "id": "bot_robot_drone",
     "type": "TOOL",
     "name": { "str": "inactive helicopter drone" },
-    "description": "This helicopter drone is awaiting resupply and reactivation.  If you have .223 ammunition or equivalent on your person when you activate it it will be armed with it and fly off to use it on something up to 16 tiles away.",
+    "description": "This helicopter drone is awaiting resupply and reactivation.  If you have.223 ammunition or equivalent on your person when you activate it it will be armed with it and fly off to use it on something up to 16 tiles away.",
     "weight": "4250 g",
     "volume": "8750 ml",
     "price": "30 kUSD",
@@ -478,7 +472,7 @@
   {
     "id": "fridge_cargo",
     "type": "GENERIC",
-    "name": { "str": "ice box" },
+    "name": { "str": "ice box", "str_pl": "ice boxes" },
     "description": "A large fridge unit spacious enough you you to stand in and stow copious amounts of food safely.  Shelves are smaller and well-covered, and various homemade straps and holders exist to secure materials.",
     "weight": "27752 g",
     "to_hit": -10,
@@ -488,23 +482,5 @@
     "volume": "5500 ml",
     "category": "veh_parts",
     "price": "900 USD"
-  },
-  {
-    "id": "diveknife",
-    "type": "TOOL",
-    "category": "weapons",
-    "name": { "str": "dive knife", "str_pl": "dive knives" },
-    "//": "Too small to be effectively used for butchering, still not bad at it due to serrated edge.",
-    "description": "This is a short, sturdy knife with a serrated edge for cutting lines and straps, and a blunt tip for prying.  Used primarily by divers, it is very light and takes up virtually no space in one's pockets.",
-    "weight": "226 g",
-    "volume": "100 ml",
-    "price": "140 USD",
-    "material": [ "steel", "plastic" ],
-    "symbol": ";",
-    "color": "yellow",
-    "qualities": [ [ "CUT", 1 ], [ "PRY", 1 ], [ "BUTCHER", 15 ] ],
-    "techniques": [ "RAPID" ],
-    "flags": [ "SHEATH_KNIFE" ],
-    "melee_damage": { "cut": 12 }
   }
 ]

@@ -36,7 +36,7 @@
       { "skill": "mechanics", "bonus": { "rng": [ 1, 4 ] } },
       { "skill": "fabrication", "bonus": { "rng": [ 1, 4 ] } },
       { "skill": "electronics", "bonus": { "rng": [ 1, 4 ] } },
-      { "skill": "barter", "bonus": { "rng": [ 0, 2 ] } },
+      { "skill": "speech", "bonus": { "rng": [ 0, 2 ] } },
       { "skill": "computer", "bonus": { "rng": [ 1, 4 ] } },
       { "skill": "firstaid", "bonus": { "rng": [ 0, 2 ] } },
       { "skill": "gun", "bonus": { "rng": [ 0, 2 ] } }
@@ -53,9 +53,9 @@
     "id": "NC_OVERVAULT_carry",
     "subtype": "collection",
     "entries": [
-      { "group": "drugs_heal_simple", "repeat": [ 1, 2 ], "prob": 75 },
-      { "group": "fallout_misc_itemgroup_food", "repeat": [ 1, 2 ], "prob": 40 },
-      { "item": "10mmsmallmag", "charges": 12, "repeat": [ 2, 3 ] },
+      { "group": "drugs_heal_simple", "prob": 75 },
+      { "group": "fallout_misc_itemgroup_food", "prob": 40 },
+      { "item": "10mmsmallmag", "charges": 12 },
       { "item": "10mm", "prob": 85, "charges": [ 5, 35 ] }
     ]
   },
@@ -73,7 +73,7 @@
       "yes": [
         "What are you doing around here, what do you want from me?",
         "Just another day in the vault, huh?",
-        "I heard some people talking about leaving the vault, they better watch what they say. It gives people bad ideas.",
+        "I heard some people talking about leaving the vault, they better watch what they say.  It gives people bad ideas.",
         "Hello, how's it going?",
         "Do you need anything?",
         "Is there a problem, miss?",
@@ -82,7 +82,7 @@
       "no": [
         "What are you doing around here, what do you want from me?",
         "Just another day in the vault, huh?",
-        "I heard some people talking about leaving the vault, they better watch what they say. It gives people bad ideas.",
+        "I heard some people talking about leaving the vault, they better watch what they say.  It gives people bad ideas.",
         "Hello, how's it going?",
         "Do you need anything?",
         "Is there a problem?",
@@ -98,7 +98,7 @@
   {
     "id": "TALK_amg_overseer_vault_go",
     "type": "talk_topic",
-    "dynamic_line": "It's by no means an easy job, much as people might think that Overseers like me and those before me just sit at a desk and lazily push papers all day while others bear the brunt of daily vault tasks. Administration, morale, personnel management - there's a lot more that goes into this job than people think. It's an immense burden that can strain even the most naturally talented of leaders. I almost envy those beneath me, it's not all their fault if somebody messes up or the vault collapses in itself.",
+    "dynamic_line": "It's by no means an easy job, much as people might think that Overseers like me and those before me just sit at a desk and lazily push papers all day while others bear the brunt of daily vault tasks.  Administration, morale, personnel management - there's a lot more that goes into this job than people think.  It's an immense burden that can strain even the most naturally talented of leaders.  I almost envy those beneath me, it's not all their fault if somebody messes up or the vault collapses in itself.",
     "responses": [ { "text": "Thanks for the info.", "topic": "TALK_DONE" } ]
   },
   {
@@ -109,7 +109,6 @@
     "goal": "MGOAL_FIND_ITEM",
     "difficulty": 3,
     "value": 150000,
-    "assign_mission_target": { "om_special": "Irradiated Vault", "reveal_radius": 2, "search_range": 180 },
     "item": "item_fo_waterchip",
     "count": 1,
     "end": {
@@ -128,15 +127,16 @@
     },
     "origins": [ "ORIGIN_SECONDARY" ],
     "dialogue": {
-      "describe": "I need you to go outside of our vault in order to retrieve a very rare item that is of crucial importance to our continued survival. I'll be blunt: we're running out of water since our old water chip finally died, and we lack any spares. Without that chip, our vault can't process water, and without water we will perish. I can't risk sending out a large party when, so you'll need to do it. We know that other vaults in the area have extra water chips, there's one on our old maps that has at least one spare, and we would like you to investigate it.",
-      "offer": "I need you to go outside of our vault in order to retrieve a very rare item that is of crucial importance to our continued survival. I'll be blunt: we're running out of water since our old water chip finally died, and we lack any spares. Without that chip, our vault can't process water, and without water we will perish. I can't risk sending out a large party when, so you'll need to do it. We know that other vaults in the area have extra water chips, there's one on our old maps that has at least one spare, and we would like you to investigate it.",
+      "describe": "I need you to go outside of our vault in order to retrieve a very rare item that is of crucial importance to our continued survival.  I'll be blunt: we're running out of water since our old water chip finally died, and we lack any spares.  Without that chip, our vault can't process water, and without water we will perish.  I can't risk sending out a large party when, so you'll need to do it. We know that other vaults in the area have extra water chips, there's one on our old maps that has at least one spare, and we would like you to investigate it.",
+      "offer": "I need you to go outside of our vault in order to retrieve a very rare item that is of crucial importance to our continued survival.  I'll be blunt: we're running out of water since our old water chip finally died, and we lack any spares.  Without that chip, our vault can't process water, and without water we will perish.  I can't risk sending out a large party when, so you'll need to do it. We know that other vaults in the area have extra water chips, there's one on our old maps that has at least one spare, and we would like you to investigate it.",
       "accepted": "Great news, now go out and find it for me, for all of us, really.",
-      "rejected": "Oh great! I'll just find somebody else then since you're so selfish.",
-      "advice": "Look around at other various vaults in our vicinity. One of them is bound to have an extra water chip laying around somewhere.",
+      "rejected": "Oh great!  I'll just find somebody else then since you're so selfish.",
+      "advice": "Look around at other various vaults in our vicinity.  One of them is bound to have an extra water chip laying around somewhere.",
       "inquire": "Have you found the chip yet?",
-      "success": "Amazing work, you've saved our vault. I cannot thank you enough",
+      "success": "Amazing work, you've saved our vault.  I cannot thank you enough",
       "success_lie": "That's odd, I don't really know what to say.",
-      "failure": "Oh well, at least you tried. That's more than what most people do around here."
-    }
+      "failure": "Oh well, at least you tried.  That's more than what most people do around here."
+    },
+    "start": { "assign_mission_target": { "om_special": "Irradiated Vault", "reveal_radius": 2, "search_range": 180 } }
   }
 ]
