@@ -2,13 +2,15 @@
   {
     "type": "mapgen",
     "method": "json",
-    "om_terrain": [ "arcology_exterior_nw_corner_uplifts", "arcology_exterior_nw_corner_robots" ],
+    "om_terrain": [
+      "arcology_exterior_nw_corner_uplifts",
+      "arcology_exterior_nw_corner_robots"
+    ],
     "weight": 100,
     "//": "Arcology general principles.  Ground floor will be mostly shops and the like.  Living quarters and administration/white collar goes up.  Manufacturing and secure locations go down. Mostly filled with nested chunks respecting hallways. Stairs and elevators are in center generally.  Make separate specials that have unique locations inside of them.",
     "//2": "There 19 rows vertically and 16 horizontally inside the walls this tile. This will house 2 8x8 nested chunks.",
     "//3": "Once dev master becomes 0.F experimental convert reinforced glass to whatever glass we are using for prepnet orchard.",
     "object": {
-      "fill_ter": "t_thconc_floor",
       "rows": [
         ",,,,,,,,,,,,,,,,,,,,,,,,",
         ",,,,,,,,,,,,,,,,,,,,,,,,",
@@ -35,19 +37,76 @@
         ",,,,,,||________________",
         ",,,,,,óó________________"
       ],
-      "palettes": [ "arcology_exterior" ],
-      "nested": { "1": { "chunks": [ [ "arcology_8x8_foodplace", 20 ], [ "arcology_8x8_electronic", 20 ] ] } },
-      "place_loot": [ { "group": "office_mess", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 50, "repeat": [ 1, 4 ] } ],
-      "place_monsters": [ { "monster": "AFS_GROUP_ROBOT_LOW_RISK", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 10, "density": 0.1 } ]
+      "palettes": [
+        "arcology_exterior"
+      ],
+      "nested": {
+        "1": {
+          "chunks": [
+            [
+              "arcology_8x8_foodplace",
+              20
+            ],
+            [
+              "arcology_8x8_electronic",
+              20
+            ]
+          ]
+        }
+      },
+      "place_loot": [
+        {
+          "group": "office_mess",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 50,
+          "repeat": [
+            1,
+            4
+          ]
+        }
+      ],
+      "place_monsters": [
+        {
+          "monster": "AFS_GROUP_ROBOT_LOW_RISK",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 10,
+          "density": 0.1
+        }
+      ],
+      "terrain": {
+        ",": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "1": "t_region_groundcover",
+        "_": "t_region_groundcover",
+        "(": "t_region_groundcover",
+        "ó": "t_region_groundcover"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
     "type": "mapgen",
     "method": "json",
-    "om_terrain": [ "arcology_exterior_w_side_robots", "arcology_exterior_w_side_uplifts" ],
+    "om_terrain": [
+      "arcology_exterior_w_side_robots",
+      "arcology_exterior_w_side_uplifts"
+    ],
     "weight": 100,
     "object": {
-      "fill_ter": "t_thconc_floor",
       "rows": [
         ",,,,,,óó________________",
         ",,,,,,||1_______________",
@@ -74,20 +133,77 @@
         ",,,,,,||________________",
         ",,,,,,óó________________"
       ],
-      "palettes": [ "arcology_exterior" ],
-      "nested": { "1": { "chunks": [ [ "room_10x10_junk_S", 20 ], [ "room_10x10_junk_N", 20 ] ] } },
-      "place_loot": [ { "group": "office_mess", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 50, "repeat": [ 1, 4 ] } ],
-      "place_monsters": [ { "monster": "AFS_GROUP_ROBOT_LOW_RISK", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 10, "density": 0.1 } ]
+      "palettes": [
+        "arcology_exterior"
+      ],
+      "nested": {
+        "1": {
+          "chunks": [
+            [
+              "room_10x10_junk_S",
+              20
+            ],
+            [
+              "room_10x10_junk_N",
+              20
+            ]
+          ]
+        }
+      },
+      "place_loot": [
+        {
+          "group": "office_mess",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 50,
+          "repeat": [
+            1,
+            4
+          ]
+        }
+      ],
+      "place_monsters": [
+        {
+          "monster": "AFS_GROUP_ROBOT_LOW_RISK",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 10,
+          "density": 0.1
+        }
+      ],
+      "terrain": {
+        "ó": "t_region_groundcover",
+        "_": "t_region_groundcover",
+        ",": "t_region_groundcover",
+        "1": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "(": "t_region_groundcover"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
     "type": "mapgen",
     "method": "json",
-    "om_terrain": [ "arcology_exterior_w_entrance_robots", "arcology_exterior_w_entrance_uplifts" ],
+    "om_terrain": [
+      "arcology_exterior_w_entrance_robots",
+      "arcology_exterior_w_entrance_uplifts"
+    ],
     "weight": 100,
     "//": "Turn gate into a 8x8 nested chunk that can be a closed gate working console, closed gate broken console, broken gate working console, broken gate broken console, open gate working console, open gate broken console.",
     "object": {
-      "fill_ter": "t_thconc_floor",
       "rows": [
         ",,,,,,||________________",
         ",,,,,,||1_______________",
@@ -114,32 +230,117 @@
         ",,,,,,||________________",
         ",,,,,,||________________"
       ],
-      "palettes": [ "arcology_exterior" ],
+      "palettes": [
+        "arcology_exterior"
+      ],
       "nested": {
-        "1": { "chunks": [ [ "greenhouse_6x6_herbal", 20 ], [ "greenhouse_6x6_vegetable", 20 ] ] },
-        "2": { "chunks": [ [ "greenhouse_6x6_herbal", 20 ], [ "greenhouse_6x6_vegetable", 20 ] ] },
+        "1": {
+          "chunks": [
+            [
+              "greenhouse_6x6_herbal",
+              20
+            ],
+            [
+              "greenhouse_6x6_vegetable",
+              20
+            ]
+          ]
+        },
+        "2": {
+          "chunks": [
+            [
+              "greenhouse_6x6_herbal",
+              20
+            ],
+            [
+              "greenhouse_6x6_vegetable",
+              20
+            ]
+          ]
+        },
         "3": {
           "chunks": [
-            [ "arcology_8x8_gate_w_1", 10 ],
-            [ "arcology_8x8_gate_w_2", 20 ],
-            [ "arcology_8x8_gate_w_3", 20 ],
-            [ "arcology_8x8_gate_w_4", 10 ],
-            [ "arcology_8x8_gate_w_5", 20 ],
-            [ "arcology_8x8_gate_w_6", 10 ]
+            [
+              "arcology_8x8_gate_w_1",
+              10
+            ],
+            [
+              "arcology_8x8_gate_w_2",
+              20
+            ],
+            [
+              "arcology_8x8_gate_w_3",
+              20
+            ],
+            [
+              "arcology_8x8_gate_w_4",
+              10
+            ],
+            [
+              "arcology_8x8_gate_w_5",
+              20
+            ],
+            [
+              "arcology_8x8_gate_w_6",
+              10
+            ]
           ]
         }
       },
-      "place_loot": [ { "group": "office_mess", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 50, "repeat": [ 1, 4 ] } ],
-      "place_monsters": [ { "monster": "AFS_GROUP_ROBOT_LOW_RISK", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 10, "density": 0.1 } ]
+      "place_loot": [
+        {
+          "group": "office_mess",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 50,
+          "repeat": [
+            1,
+            4
+          ]
+        }
+      ],
+      "place_monsters": [
+        {
+          "monster": "AFS_GROUP_ROBOT_LOW_RISK",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 10,
+          "density": 0.1
+        }
+      ],
+      "terrain": {
+        "_": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        ",": "t_region_groundcover",
+        "1": "t_region_groundcover",
+        "3": "t_region_groundcover",
+        "O": "t_region_groundcover",
+        "2": "t_region_groundcover"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
     "type": "mapgen",
     "method": "json",
-    "om_terrain": [ "arcology_exterior_sw_corner_robots", "arcology_exterior_sw_corner_uplifts" ],
+    "om_terrain": [
+      "arcology_exterior_sw_corner_robots",
+      "arcology_exterior_sw_corner_uplifts"
+    ],
     "weight": 100,
     "object": {
-      "fill_ter": "t_thconc_floor",
       "rows": [
         ",,,,,,||________________",
         ",,,,,,||1_______________",
@@ -166,22 +367,89 @@
         ",,,,,,,,,,,,,,,,,,,,,,,,",
         ",,,,,,,,,,,,,,,,,,,,,,,,"
       ],
-      "palettes": [ "arcology_exterior" ],
+      "palettes": [
+        "arcology_exterior"
+      ],
       "nested": {
-        "1": { "chunks": [ [ "arcology_8x8_electronic", 20 ], [ "arcology_8x8_foodplace", 20 ] ] },
-        "2": { "chunks": [ [ "lab_spawn_7x7", 20 ], [ "lab_spawn_7x7_crossdoors", 20 ] ] }
+        "1": {
+          "chunks": [
+            [
+              "arcology_8x8_electronic",
+              20
+            ],
+            [
+              "arcology_8x8_foodplace",
+              20
+            ]
+          ]
+        },
+        "2": {
+          "chunks": [
+            [
+              "lab_spawn_7x7",
+              20
+            ],
+            [
+              "lab_spawn_7x7_crossdoors",
+              20
+            ]
+          ]
+        }
       },
-      "place_loot": [ { "group": "office_mess", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 50, "repeat": [ 1, 4 ] } ],
-      "place_monsters": [ { "monster": "AFS_GROUP_ROBOT_LOW_RISK", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 10, "density": 0.1 } ]
+      "place_loot": [
+        {
+          "group": "office_mess",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 50,
+          "repeat": [
+            1,
+            4
+          ]
+        }
+      ],
+      "place_monsters": [
+        {
+          "monster": "AFS_GROUP_ROBOT_LOW_RISK",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 10,
+          "density": 0.1
+        }
+      ],
+      "terrain": {
+        "_": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        ",": "t_region_groundcover",
+        "1": "t_region_groundcover",
+        "(": "t_region_groundcover",
+        "ó": "t_region_groundcover",
+        "2": "t_region_groundcover"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
     "type": "mapgen",
     "method": "json",
-    "om_terrain": [ "arcology_exterior_s_side_robots", "arcology_exterior_s_side_uplifts" ],
+    "om_terrain": [
+      "arcology_exterior_s_side_robots",
+      "arcology_exterior_s_side_uplifts"
+    ],
     "weight": 100,
     "object": {
-      "fill_ter": "t_thconc_floor",
       "rows": [
         "1_______________________",
         "________________________",
@@ -208,19 +476,75 @@
         ",,,,,,,,,,,,,,,,,,,,,,,,",
         ",,,,,,,,,,,,,,,,,,,,,,,,"
       ],
-      "palettes": [ "arcology_exterior" ],
-      "nested": { "1": { "chunks": [ [ "arcology_24x24_s", 20 ], [ "arcology_24x24_s", 20 ] ] } },
-      "place_loot": [ { "group": "office_mess", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 50, "repeat": [ 1, 4 ] } ],
-      "place_monsters": [ { "monster": "AFS_GROUP_ROBOT_LOW_RISK", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 10, "density": 0.1 } ]
+      "palettes": [
+        "arcology_exterior"
+      ],
+      "nested": {
+        "1": {
+          "chunks": [
+            [
+              "arcology_24x24_s",
+              20
+            ],
+            [
+              "arcology_24x24_s",
+              20
+            ]
+          ]
+        }
+      },
+      "place_loot": [
+        {
+          "group": "office_mess",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 50,
+          "repeat": [
+            1,
+            4
+          ]
+        }
+      ],
+      "place_monsters": [
+        {
+          "monster": "AFS_GROUP_ROBOT_LOW_RISK",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 10,
+          "density": 0.1
+        }
+      ],
+      "terrain": {
+        "1": "t_region_groundcover",
+        "_": "t_region_groundcover",
+        "ó": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        ",": "t_region_groundcover"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
     "type": "mapgen",
     "method": "json",
-    "om_terrain": [ "arcology_exterior_s_entrance_robots", "arcology_exterior_s_entrance_uplifts" ],
+    "om_terrain": [
+      "arcology_exterior_s_entrance_robots",
+      "arcology_exterior_s_entrance_uplifts"
+    ],
     "weight": 100,
     "object": {
-      "fill_ter": "t_thconc_floor",
       "rows": [
         "2_____________2_________",
         "________________________",
@@ -247,32 +571,117 @@
         ",,,,,,,,,,,,,,,,,,,,,,,,",
         ",,,,,,,,,,,,,,,,,,,,,,,,"
       ],
-      "palettes": [ "arcology_exterior" ],
+      "palettes": [
+        "arcology_exterior"
+      ],
       "nested": {
-        "1": { "chunks": [ [ "arcology_8x8_foodplace", 20 ], [ "arcology_8x8_electronic", 20 ] ] },
-        "2": { "chunks": [ [ "room_10x10_junk_S", 20 ], [ "room_10x10_junk_N", 20 ] ] },
+        "1": {
+          "chunks": [
+            [
+              "arcology_8x8_foodplace",
+              20
+            ],
+            [
+              "arcology_8x8_electronic",
+              20
+            ]
+          ]
+        },
+        "2": {
+          "chunks": [
+            [
+              "room_10x10_junk_S",
+              20
+            ],
+            [
+              "room_10x10_junk_N",
+              20
+            ]
+          ]
+        },
         "3": {
           "chunks": [
-            [ "arcology_8x8_gate_s_1", 10 ],
-            [ "arcology_8x8_gate_s_2", 20 ],
-            [ "arcology_8x8_gate_s_3", 20 ],
-            [ "arcology_8x8_gate_s_4", 10 ],
-            [ "arcology_8x8_gate_s_5", 20 ],
-            [ "arcology_8x8_gate_s_6", 10 ]
+            [
+              "arcology_8x8_gate_s_1",
+              10
+            ],
+            [
+              "arcology_8x8_gate_s_2",
+              20
+            ],
+            [
+              "arcology_8x8_gate_s_3",
+              20
+            ],
+            [
+              "arcology_8x8_gate_s_4",
+              10
+            ],
+            [
+              "arcology_8x8_gate_s_5",
+              20
+            ],
+            [
+              "arcology_8x8_gate_s_6",
+              10
+            ]
           ]
         }
       },
-      "place_loot": [ { "group": "office_mess", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 50, "repeat": [ 1, 4 ] } ],
-      "place_monsters": [ { "monster": "AFS_GROUP_ROBOT_LOW_RISK", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 10, "density": 0.1 } ]
+      "place_loot": [
+        {
+          "group": "office_mess",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 50,
+          "repeat": [
+            1,
+            4
+          ]
+        }
+      ],
+      "place_monsters": [
+        {
+          "monster": "AFS_GROUP_ROBOT_LOW_RISK",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 10,
+          "density": 0.1
+        }
+      ],
+      "terrain": {
+        "2": "t_region_groundcover",
+        "_": "t_region_groundcover",
+        "1": "t_region_groundcover",
+        "3": "t_region_groundcover",
+        "O": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        ",": "t_region_groundcover"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
     "type": "mapgen",
     "method": "json",
-    "om_terrain": [ "arcology_exterior_se_corner_robots", "arcology_exterior_se_corner_uplifts" ],
+    "om_terrain": [
+      "arcology_exterior_se_corner_robots",
+      "arcology_exterior_se_corner_uplifts"
+    ],
     "weight": 100,
     "object": {
-      "fill_ter": "t_thconc_floor",
       "rows": [
         "________________||,,,,,,",
         "________1_______||,,,,,,",
@@ -299,25 +708,106 @@
         ",,,,,,,,,,,,,,,,,,,,,,,,",
         ",,,,,,,,,,,,,,,,,,,,,,,,"
       ],
-      "palettes": [ "arcology_exterior" ],
+      "palettes": [
+        "arcology_exterior"
+      ],
       "nested": {
-        "1": { "chunks": [ [ "arcology_8x8_electronic", 20 ], [ "arcology_8x8_foodplace", 20 ] ] },
-        "2": {
-          "chunks": [ [ "arcology_9x9_candy_shop", 20 ], [ "arcology_9x9_beauty_shop", 20 ], [ "arcology_9x9_vitamin_shop", 20 ] ]
+        "1": {
+          "chunks": [
+            [
+              "arcology_8x8_electronic",
+              20
+            ],
+            [
+              "arcology_8x8_foodplace",
+              20
+            ]
+          ]
         },
-        "3": { "chunks": [ [ "lab_spawn_7x7", 20 ], [ "lab_spawn_7x7_crossdoors", 20 ] ] }
+        "2": {
+          "chunks": [
+            [
+              "arcology_9x9_candy_shop",
+              20
+            ],
+            [
+              "arcology_9x9_beauty_shop",
+              20
+            ],
+            [
+              "arcology_9x9_vitamin_shop",
+              20
+            ]
+          ]
+        },
+        "3": {
+          "chunks": [
+            [
+              "lab_spawn_7x7",
+              20
+            ],
+            [
+              "lab_spawn_7x7_crossdoors",
+              20
+            ]
+          ]
+        }
       },
-      "place_loot": [ { "group": "office_mess", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 50, "repeat": [ 1, 4 ] } ],
-      "place_monsters": [ { "monster": "AFS_GROUP_ROBOT_LOW_RISK", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 10, "density": 0.1 } ]
+      "place_loot": [
+        {
+          "group": "office_mess",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 50,
+          "repeat": [
+            1,
+            4
+          ]
+        }
+      ],
+      "place_monsters": [
+        {
+          "monster": "AFS_GROUP_ROBOT_LOW_RISK",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 10,
+          "density": 0.1
+        }
+      ],
+      "terrain": {
+        ",": "t_region_groundcover",
+        "_": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "1": "t_region_groundcover",
+        "(": "t_region_groundcover",
+        "ó": "t_region_groundcover",
+        "2": "t_region_groundcover",
+        "3": "t_region_groundcover"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
     "type": "mapgen",
     "method": "json",
-    "om_terrain": [ "arcology_exterior_e_side_robots", "arcology_exterior_e_side_uplifts" ],
+    "om_terrain": [
+      "arcology_exterior_e_side_robots",
+      "arcology_exterior_e_side_uplifts"
+    ],
     "weight": 100,
     "object": {
-      "fill_ter": "t_thconc_floor",
       "rows": [
         "____1___________óó,,,,,,",
         "________________||,,,,,,",
@@ -344,19 +834,76 @@
         "________________||,,,,,,",
         "________________óó,,,,,,"
       ],
-      "palettes": [ "arcology_exterior" ],
-      "nested": { "1": { "chunks": [ [ "workoutroom_12x12", 20 ], [ "tvroom_12x12", 20 ] ] } },
-      "place_loot": [ { "group": "office_mess", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 50, "repeat": [ 1, 4 ] } ],
-      "place_monsters": [ { "monster": "AFS_GROUP_ROBOT_LOW_RISK", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 10, "density": 0.1 } ]
+      "palettes": [
+        "arcology_exterior"
+      ],
+      "nested": {
+        "1": {
+          "chunks": [
+            [
+              "workoutroom_12x12",
+              20
+            ],
+            [
+              "tvroom_12x12",
+              20
+            ]
+          ]
+        }
+      },
+      "place_loot": [
+        {
+          "group": "office_mess",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 50,
+          "repeat": [
+            1,
+            4
+          ]
+        }
+      ],
+      "place_monsters": [
+        {
+          "monster": "AFS_GROUP_ROBOT_LOW_RISK",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 10,
+          "density": 0.1
+        }
+      ],
+      "terrain": {
+        "1": "t_region_groundcover",
+        "ó": "t_region_groundcover",
+        "_": "t_region_groundcover",
+        ",": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "(": "t_region_groundcover"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
     "type": "mapgen",
     "method": "json",
-    "om_terrain": [ "arcology_exterior_e_entrance_robots", "arcology_exterior_e_entrance_uplifts" ],
+    "om_terrain": [
+      "arcology_exterior_e_entrance_robots",
+      "arcology_exterior_e_entrance_uplifts"
+    ],
     "weight": 100,
     "object": {
-      "fill_ter": "t_thconc_floor",
       "rows": [
         "________________óó,,,,,,",
         "_________1______||,,,,,,",
@@ -383,19 +930,77 @@
         "________________||,,,,,,",
         "________________óó,,,,,,"
       ],
-      "palettes": [ "arcology_exterior" ],
-      "nested": { "1": { "chunks": [ [ "lab_spawn_7x7", 20 ], [ "lab_spawn_7x7_crossdoors", 20 ] ] } },
-      "place_loot": [ { "group": "office_mess", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 50, "repeat": [ 1, 4 ] } ],
-      "place_monsters": [ { "monster": "AFS_GROUP_ROBOT_LOW_RISK", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 10, "density": 0.1 } ]
+      "palettes": [
+        "arcology_exterior"
+      ],
+      "nested": {
+        "1": {
+          "chunks": [
+            [
+              "lab_spawn_7x7",
+              20
+            ],
+            [
+              "lab_spawn_7x7_crossdoors",
+              20
+            ]
+          ]
+        }
+      },
+      "place_loot": [
+        {
+          "group": "office_mess",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 50,
+          "repeat": [
+            1,
+            4
+          ]
+        }
+      ],
+      "place_monsters": [
+        {
+          "monster": "AFS_GROUP_ROBOT_LOW_RISK",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 10,
+          "density": 0.1
+        }
+      ],
+      "terrain": {
+        "ó": "t_region_groundcover",
+        "_": "t_region_groundcover",
+        ",": "t_region_groundcover",
+        "1": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "3": "t_region_groundcover",
+        "O": "t_region_groundcover"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
     "type": "mapgen",
     "method": "json",
-    "om_terrain": [ "arcology_exterior_ne_corner_robots", "arcology_exterior_ne_corner_uplifts" ],
+    "om_terrain": [
+      "arcology_exterior_ne_corner_robots",
+      "arcology_exterior_ne_corner_uplifts"
+    ],
     "weight": 100,
     "object": {
-      "fill_ter": "t_thconc_floor",
       "rows": [
         ",,,,,,,,,,,,,,,,,,,,,,,,",
         ",,,,,,,,,,,,,,,,,,,,,,,,",
@@ -422,22 +1027,88 @@
         "________________||,,,,,,",
         "________________óó,,,,,,"
       ],
-      "palettes": [ "arcology_exterior" ],
+      "palettes": [
+        "arcology_exterior"
+      ],
       "nested": {
-        "1": { "chunks": [ [ "arcology_8x8_foodplace", 20 ], [ "arcology_8x8_electronic", 20 ] ] },
-        "2": { "chunks": [ [ "room_10x10_junk_S", 20 ], [ "room_10x10_junk_N", 20 ] ] }
+        "1": {
+          "chunks": [
+            [
+              "arcology_8x8_foodplace",
+              20
+            ],
+            [
+              "arcology_8x8_electronic",
+              20
+            ]
+          ]
+        },
+        "2": {
+          "chunks": [
+            [
+              "room_10x10_junk_S",
+              20
+            ],
+            [
+              "room_10x10_junk_N",
+              20
+            ]
+          ]
+        }
       },
-      "place_loot": [ { "group": "office_mess", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 50, "repeat": [ 1, 4 ] } ],
-      "place_monsters": [ { "monster": "AFS_GROUP_ROBOT_LOW_RISK", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 10, "density": 0.1 } ]
+      "place_loot": [
+        {
+          "group": "office_mess",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 50,
+          "repeat": [
+            1,
+            4
+          ]
+        }
+      ],
+      "place_monsters": [
+        {
+          "monster": "AFS_GROUP_ROBOT_LOW_RISK",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 10,
+          "density": 0.1
+        }
+      ],
+      "terrain": {
+        ",": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "1": "t_region_groundcover",
+        "_": "t_region_groundcover",
+        "2": "t_region_groundcover",
+        "ó": "t_region_groundcover"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
     "type": "mapgen",
     "method": "json",
-    "om_terrain": [ "arcology_exterior_n_entrance_robots", "arcology_exterior_n_entrance_uplifts" ],
+    "om_terrain": [
+      "arcology_exterior_n_entrance_robots",
+      "arcology_exterior_n_entrance_uplifts"
+    ],
     "weight": 100,
     "object": {
-      "fill_ter": "t_thconc_floor",
       "rows": [
         ",,,,,,,,3,,,,,,,,,,,,,,,",
         ",,,,,,,,,,,,,,,,,,,,,,,,",
@@ -464,32 +1135,117 @@
         "________________________",
         "________________________"
       ],
-      "palettes": [ "arcology_exterior" ],
+      "palettes": [
+        "arcology_exterior"
+      ],
       "nested": {
-        "1": { "chunks": [ [ "arcology_8x8_electronic", 20 ], [ "arcology_8x8_foodplace", 20 ] ] },
-        "2": { "chunks": [ [ "room_10x10_junk_S", 20 ], [ "room_10x10_junk_N", 20 ] ] },
+        "1": {
+          "chunks": [
+            [
+              "arcology_8x8_electronic",
+              20
+            ],
+            [
+              "arcology_8x8_foodplace",
+              20
+            ]
+          ]
+        },
+        "2": {
+          "chunks": [
+            [
+              "room_10x10_junk_S",
+              20
+            ],
+            [
+              "room_10x10_junk_N",
+              20
+            ]
+          ]
+        },
         "3": {
           "chunks": [
-            [ "arcology_8x8_gate_n_1", 10 ],
-            [ "arcology_8x8_gate_n_2", 20 ],
-            [ "arcology_8x8_gate_n_3", 20 ],
-            [ "arcology_8x8_gate_n_4", 10 ],
-            [ "arcology_8x8_gate_n_5", 20 ],
-            [ "arcology_8x8_gate_n_6", 10 ]
+            [
+              "arcology_8x8_gate_n_1",
+              10
+            ],
+            [
+              "arcology_8x8_gate_n_2",
+              20
+            ],
+            [
+              "arcology_8x8_gate_n_3",
+              20
+            ],
+            [
+              "arcology_8x8_gate_n_4",
+              10
+            ],
+            [
+              "arcology_8x8_gate_n_5",
+              20
+            ],
+            [
+              "arcology_8x8_gate_n_6",
+              10
+            ]
           ]
         }
       },
-      "place_loot": [ { "group": "office_mess", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 50, "repeat": [ 1, 4 ] } ],
-      "place_monsters": [ { "monster": "AFS_GROUP_ROBOT_LOW_RISK", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 10, "density": 0.1 } ]
+      "place_loot": [
+        {
+          "group": "office_mess",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 50,
+          "repeat": [
+            1,
+            4
+          ]
+        }
+      ],
+      "place_monsters": [
+        {
+          "monster": "AFS_GROUP_ROBOT_LOW_RISK",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 10,
+          "density": 0.1
+        }
+      ],
+      "terrain": {
+        "3": "t_region_groundcover",
+        ",": "t_region_groundcover",
+        "O": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "1": "t_region_groundcover",
+        "_": "t_region_groundcover",
+        "2": "t_region_groundcover"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
     "type": "mapgen",
     "method": "json",
-    "om_terrain": [ "arcology_exterior_n_side_robots", "arcology_exterior_n_side_uplifts" ],
+    "om_terrain": [
+      "arcology_exterior_n_side_robots",
+      "arcology_exterior_n_side_uplifts"
+    ],
     "weight": 100,
     "object": {
-      "fill_ter": "t_thconc_floor",
       "rows": [
         ",,,,,,,,,,,,,,,,,,,,,,,,",
         ",,,,,,,,,,,,,,,,,,,,,,,,",
@@ -516,19 +1272,73 @@
         "________________________",
         "________________________"
       ],
-      "palettes": [ "arcology_exterior" ],
-      "nested": { "1": { "chunks": [ [ "arcology_24x24_s", 20 ], [ "arcology_24x24_s", 20 ] ] } },
-      "place_loot": [ { "group": "office_mess", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 50, "repeat": [ 1, 4 ] } ],
-      "place_monsters": [ { "monster": "AFS_GROUP_ROBOT_LOW_RISK", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 10, "density": 0.1 } ]
+      "palettes": [
+        "arcology_exterior"
+      ],
+      "nested": {
+        "1": {
+          "chunks": [
+            [
+              "arcology_24x24_s",
+              20
+            ],
+            [
+              "arcology_24x24_s",
+              20
+            ]
+          ]
+        }
+      },
+      "place_loot": [
+        {
+          "group": "office_mess",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 50,
+          "repeat": [
+            1,
+            4
+          ]
+        }
+      ],
+      "place_monsters": [
+        {
+          "monster": "AFS_GROUP_ROBOT_LOW_RISK",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 10,
+          "density": 0.1
+        }
+      ],
+      "terrain": {
+        ",": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "_": "t_region_groundcover"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
     "type": "mapgen",
     "method": "json",
-    "om_terrain": [ "arcology_interior_ne_corner_robots", "arcology_interior_ne_corner_uplifts" ],
+    "om_terrain": [
+      "arcology_interior_ne_corner_robots",
+      "arcology_interior_ne_corner_uplifts"
+    ],
     "weight": 100,
     "object": {
-      "fill_ter": "t_thconc_floor",
       "rows": [
         "________________________",
         "________________________",
@@ -555,18 +1365,57 @@
         "________________________",
         "________________________"
       ],
-      "palettes": [ "arcology_exterior" ],
-      "place_loot": [ { "group": "office_mess", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 50, "repeat": [ 1, 4 ] } ],
-      "place_monsters": [ { "monster": "AFS_GROUP_ROBOT_LOW_RISK", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 10, "density": 0.1 } ]
+      "palettes": [
+        "arcology_exterior"
+      ],
+      "place_loot": [
+        {
+          "group": "office_mess",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 50,
+          "repeat": [
+            1,
+            4
+          ]
+        }
+      ],
+      "place_monsters": [
+        {
+          "monster": "AFS_GROUP_ROBOT_LOW_RISK",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 10,
+          "density": 0.1
+        }
+      ],
+      "terrain": {
+        "_": "t_region_groundcover"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
     "type": "mapgen",
     "method": "json",
-    "om_terrain": [ "arcology_interior_n_side_robots", "arcology_interior_n_side_uplifts" ],
+    "om_terrain": [
+      "arcology_interior_n_side_robots",
+      "arcology_interior_n_side_uplifts"
+    ],
     "weight": 100,
     "object": {
-      "fill_ter": "t_thconc_floor",
       "rows": [
         "________________________",
         "________________________",
@@ -593,18 +1442,57 @@
         "________________________",
         "________________________"
       ],
-      "palettes": [ "arcology_exterior" ],
-      "place_loot": [ { "group": "office_mess", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 50, "repeat": [ 1, 4 ] } ],
-      "place_monsters": [ { "monster": "AFS_GROUP_ROBOT_LOW_RISK", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 10, "density": 0.1 } ]
+      "palettes": [
+        "arcology_exterior"
+      ],
+      "place_loot": [
+        {
+          "group": "office_mess",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 50,
+          "repeat": [
+            1,
+            4
+          ]
+        }
+      ],
+      "place_monsters": [
+        {
+          "monster": "AFS_GROUP_ROBOT_LOW_RISK",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 10,
+          "density": 0.1
+        }
+      ],
+      "terrain": {
+        "_": "t_region_groundcover"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
     "type": "mapgen",
     "method": "json",
-    "om_terrain": [ "arcology_interior_nw_corner_robots", "arcology_interior_nw_corner_uplifts" ],
+    "om_terrain": [
+      "arcology_interior_nw_corner_robots",
+      "arcology_interior_nw_corner_uplifts"
+    ],
     "weight": 100,
     "object": {
-      "fill_ter": "t_thconc_floor",
       "rows": [
         "________________________",
         "________________________",
@@ -631,18 +1519,57 @@
         "________________________",
         "________________________"
       ],
-      "palettes": [ "arcology_exterior" ],
-      "place_loot": [ { "group": "office_mess", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 50, "repeat": [ 1, 4 ] } ],
-      "place_monsters": [ { "monster": "AFS_GROUP_ROBOT_LOW_RISK", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 10, "density": 0.1 } ]
+      "palettes": [
+        "arcology_exterior"
+      ],
+      "place_loot": [
+        {
+          "group": "office_mess",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 50,
+          "repeat": [
+            1,
+            4
+          ]
+        }
+      ],
+      "place_monsters": [
+        {
+          "monster": "AFS_GROUP_ROBOT_LOW_RISK",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 10,
+          "density": 0.1
+        }
+      ],
+      "terrain": {
+        "_": "t_region_groundcover"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
     "type": "mapgen",
     "method": "json",
-    "om_terrain": [ "arcology_interior_w_side_robots", "arcology_interior_w_side_uplifts" ],
+    "om_terrain": [
+      "arcology_interior_w_side_robots",
+      "arcology_interior_w_side_uplifts"
+    ],
     "weight": 100,
     "object": {
-      "fill_ter": "t_thconc_floor",
       "rows": [
         "________________________",
         "________________________",
@@ -669,18 +1596,57 @@
         "________________________",
         "________________________"
       ],
-      "palettes": [ "arcology_exterior" ],
-      "place_loot": [ { "group": "office_mess", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 50, "repeat": [ 1, 4 ] } ],
-      "place_monsters": [ { "monster": "AFS_GROUP_ROBOT_LOW_RISK", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 10, "density": 0.1 } ]
+      "palettes": [
+        "arcology_exterior"
+      ],
+      "place_loot": [
+        {
+          "group": "office_mess",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 50,
+          "repeat": [
+            1,
+            4
+          ]
+        }
+      ],
+      "place_monsters": [
+        {
+          "monster": "AFS_GROUP_ROBOT_LOW_RISK",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 10,
+          "density": 0.1
+        }
+      ],
+      "terrain": {
+        "_": "t_region_groundcover"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
     "type": "mapgen",
     "method": "json",
-    "om_terrain": [ "arcology_interior_sw_corner_robots", "arcology_interior_sw_corner_uplifts" ],
+    "om_terrain": [
+      "arcology_interior_sw_corner_robots",
+      "arcology_interior_sw_corner_uplifts"
+    ],
     "weight": 100,
     "object": {
-      "fill_ter": "t_thconc_floor",
       "rows": [
         "________________________",
         "________________________",
@@ -707,18 +1673,57 @@
         "________________________",
         "________________________"
       ],
-      "palettes": [ "arcology_exterior" ],
-      "place_loot": [ { "group": "office_mess", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 50, "repeat": [ 1, 4 ] } ],
-      "place_monsters": [ { "monster": "AFS_GROUP_ROBOT_LOW_RISK", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 10, "density": 0.1 } ]
+      "palettes": [
+        "arcology_exterior"
+      ],
+      "place_loot": [
+        {
+          "group": "office_mess",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 50,
+          "repeat": [
+            1,
+            4
+          ]
+        }
+      ],
+      "place_monsters": [
+        {
+          "monster": "AFS_GROUP_ROBOT_LOW_RISK",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 10,
+          "density": 0.1
+        }
+      ],
+      "terrain": {
+        "_": "t_region_groundcover"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
     "type": "mapgen",
     "method": "json",
-    "om_terrain": [ "arcology_interior_s_side_robots", "arcology_interior_s_side_uplifts" ],
+    "om_terrain": [
+      "arcology_interior_s_side_robots",
+      "arcology_interior_s_side_uplifts"
+    ],
     "weight": 100,
     "object": {
-      "fill_ter": "t_thconc_floor",
       "rows": [
         "________________________",
         "________________________",
@@ -745,18 +1750,57 @@
         "________________________",
         "________________________"
       ],
-      "palettes": [ "arcology_exterior" ],
-      "place_loot": [ { "group": "office_mess", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 50, "repeat": [ 1, 4 ] } ],
-      "place_monsters": [ { "monster": "AFS_GROUP_ROBOT_LOW_RISK", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 10, "density": 0.1 } ]
+      "palettes": [
+        "arcology_exterior"
+      ],
+      "place_loot": [
+        {
+          "group": "office_mess",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 50,
+          "repeat": [
+            1,
+            4
+          ]
+        }
+      ],
+      "place_monsters": [
+        {
+          "monster": "AFS_GROUP_ROBOT_LOW_RISK",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 10,
+          "density": 0.1
+        }
+      ],
+      "terrain": {
+        "_": "t_region_groundcover"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
     "type": "mapgen",
     "method": "json",
-    "om_terrain": [ "arcology_interior_se_corner_robots", "arcology_interior_se_corner_uplifts" ],
+    "om_terrain": [
+      "arcology_interior_se_corner_robots",
+      "arcology_interior_se_corner_uplifts"
+    ],
     "weight": 100,
     "object": {
-      "fill_ter": "t_thconc_floor",
       "rows": [
         "________________________",
         "________________________",
@@ -783,18 +1827,57 @@
         "________________________",
         "________________________"
       ],
-      "palettes": [ "arcology_exterior" ],
-      "place_loot": [ { "group": "office_mess", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 50, "repeat": [ 1, 4 ] } ],
-      "place_monsters": [ { "monster": "AFS_GROUP_ROBOT_LOW_RISK", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 10, "density": 0.1 } ]
+      "palettes": [
+        "arcology_exterior"
+      ],
+      "place_loot": [
+        {
+          "group": "office_mess",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 50,
+          "repeat": [
+            1,
+            4
+          ]
+        }
+      ],
+      "place_monsters": [
+        {
+          "monster": "AFS_GROUP_ROBOT_LOW_RISK",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 10,
+          "density": 0.1
+        }
+      ],
+      "terrain": {
+        "_": "t_region_groundcover"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
     "type": "mapgen",
     "method": "json",
-    "om_terrain": [ "arcology_interior_e_side_robots", "arcology_interior_e_side_uplifts" ],
+    "om_terrain": [
+      "arcology_interior_e_side_robots",
+      "arcology_interior_e_side_uplifts"
+    ],
     "weight": 100,
     "object": {
-      "fill_ter": "t_thconc_floor",
       "rows": [
         "________________________",
         "________________________",
@@ -821,18 +1904,57 @@
         "________________________",
         "________________________"
       ],
-      "palettes": [ "arcology_exterior" ],
-      "place_loot": [ { "group": "office_mess", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 50, "repeat": [ 1, 4 ] } ],
-      "place_monsters": [ { "monster": "AFS_GROUP_ROBOT_LOW_RISK", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 10, "density": 0.1 } ]
+      "palettes": [
+        "arcology_exterior"
+      ],
+      "place_loot": [
+        {
+          "group": "office_mess",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 50,
+          "repeat": [
+            1,
+            4
+          ]
+        }
+      ],
+      "place_monsters": [
+        {
+          "monster": "AFS_GROUP_ROBOT_LOW_RISK",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 10,
+          "density": 0.1
+        }
+      ],
+      "terrain": {
+        "_": "t_region_groundcover"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
     "type": "mapgen",
     "method": "json",
-    "om_terrain": [ "arcology_interior_center_robots", "arcology_interior_center_uplifts" ],
+    "om_terrain": [
+      "arcology_interior_center_robots",
+      "arcology_interior_center_uplifts"
+    ],
     "weight": 100,
     "object": {
-      "fill_ter": "t_thconc_floor",
       "rows": [
         "________________________",
         "________________________",
@@ -859,9 +1981,46 @@
         "________________________",
         "________________________"
       ],
-      "palettes": [ "arcology_exterior" ],
-      "place_loot": [ { "group": "office_mess", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 50, "repeat": [ 1, 4 ] } ],
-      "place_monsters": [ { "monster": "AFS_GROUP_ROBOT_LOW_RISK", "x": [ 0, 23 ], "y": [ 0, 23 ], "chance": 10, "density": 0.1 } ]
+      "palettes": [
+        "arcology_exterior"
+      ],
+      "place_loot": [
+        {
+          "group": "office_mess",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 50,
+          "repeat": [
+            1,
+            4
+          ]
+        }
+      ],
+      "place_monsters": [
+        {
+          "monster": "AFS_GROUP_ROBOT_LOW_RISK",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "chance": 10,
+          "density": 0.1
+        }
+      ],
+      "terrain": {
+        "_": "t_region_groundcover"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   }
 ]

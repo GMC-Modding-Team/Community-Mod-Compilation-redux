@@ -2,15 +2,21 @@
   {
     "id": "mon_tanglevine",
     "type": "MONSTER",
-    "name": { "str": "tanglevine" },
+    "name": {
+      "str": "tanglevine"
+    },
     "description": "A thick mass of animated vine, lashing back and forth at anything that comes within reach.  Long thorns grow from its sides.",
-    "species": [ "PLANT" ],
+    "species": [
+      "PLANT"
+    ],
     "default_faction": "magical_plant",
     "volume": "92500 ml",
     "weight": "120 kg",
     "hp": 60,
     "speed": 80,
-    "material": [ "veggy" ],
+    "material": [
+      "veggy"
+    ],
     "symbol": "V",
     "color": "green",
     "aggression": 60,
@@ -25,8 +31,12 @@
       {
         "id": "ranged_pull",
         "cooldown": 6,
-        "range": 4,
-        "damage_max_instance": [ { "damage_type": "stab", "amount": 2 } ],
+        "damage_max_instance": [
+          {
+            "damage_type": "stab",
+            "amount": 2
+          }
+        ],
         "hit_dmg_u": "%1$s lashes out and curls around your %2$s!",
         "hit_dmg_npc": "%1$s lashes out and curls around <npcname>'s %2$s!",
         "miss_msg_u": "%s lashes out at you, but you dodge!",
@@ -40,9 +50,24 @@
         "id": "thorn_squeeze",
         "cooldown": 3,
         "move_cost": 100,
-        "damage_max_instance": [ { "damage_type": "stab", "amount": 6, "armor_penetration": 30 } ],
+        "damage_max_instance": [
+          {
+            "damage_type": "stab",
+            "amount": 6,
+            "armor_penetration": 30
+          }
+        ],
         "//": "armor penetration here represents that you'll literally surrounded by thorns",
-        "condition": { "and": [ { "u_has_flag": "GRAB_FILTER" }, { "npc_has_flag": "GRAB" } ] },
+        "condition": {
+          "and": [
+            {
+              "u_has_flag": "GRAB_FILTER"
+            },
+            {
+              "npc_has_flag": "GRAB"
+            }
+          ]
+        },
         "hit_dmg_u": "%1$s squeezes and its thorns dig into your %2$s!",
         "hit_dmg_npc": "%1$s squeezes <npcname>!",
         "miss_msg_u": "%1$s tries to squeeze you, but you fight back!",
@@ -52,8 +77,24 @@
       }
     ],
     "dodge": 4,
-    "death_function": { "message": "The %s rots into nothingness in moments.", "corpse_type": "NO_CORPSE" },
-    "flags": [ "HEARS", "GOODHEARING", "IMMOBILE", "NOHEAD", "HARDTOSHOOT", "GRABS", "PLASTIC" ],
-    "armor": { "bash": 18, "stab": 10, "electric": 3, "bullet": 22 }
+    "death_function": {
+      "message": "The %s rots into nothingness in moments.",
+      "corpse_type": "NO_CORPSE"
+    },
+    "flags": [
+      "HEARS",
+      "GOODHEARING",
+      "IMMOBILE",
+      "NOHEAD",
+      "HARDTOSHOOT",
+      "GRABS",
+      "PLASTIC"
+    ],
+    "armor": {
+      "bash": 18,
+      "stab": 10,
+      "electric": 3,
+      "bullet": 22
+    }
   }
 ]

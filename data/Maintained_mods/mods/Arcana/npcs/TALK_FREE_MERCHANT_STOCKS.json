@@ -8,8 +8,19 @@
         "topic": "TALK_FREE_MERCHANT_STOCKS_CF_REP_MISSION_4",
         "condition": {
           "and": [
-            { "not": { "compare_string": [ "yes", { "u_val": "sofia_allies_secured" } ] } },
-            { "u_has_mission": "MISSION_CF_REP_4" }
+            {
+              "not": {
+                "compare_string": [
+                  "yes",
+                  {
+                    "u_val": "sofia_allies_secured"
+                  }
+                ]
+              }
+            },
+            {
+              "u_has_mission": "MISSION_CF_REP_4"
+            }
           ]
         }
       }
@@ -18,24 +29,39 @@
   {
     "id": "TALK_FREE_MERCHANT_STOCKS_CF_REP_MISSION_4",
     "type": "talk_topic",
-    "dynamic_line": {
-      "compare_string": [ "yes", { "u_val": "knowledge_flag_tacoma_started" } ],
-      "yes": "I wouldn't mind sending a few spare mouths to feed somewhere else.  With the commune out there, at least supplies are a little less of a concern, and people are getting a bit braver about venturing out in search of work.  It's still risky sending potential labor somewhere else instead of our new lifeline though.  What can you tell me about this community?",
-      "no": "While I'd love to send you a few spare mouths to feed and make logistics a bit less worrisome here, I'm not sure if we can afford whatever kind of deal you're looking for.  We need both labor and supplies, it's just that we're shorter on the latter than the former.  Speak with someone else and maybe things will work out."
-    },
+    "dynamic_line": "I wouldn't mind sending a few spare mouths to feed somewhere else.  With the commune out there, at least supplies are a little less of a concern, and people are getting a bit braver about venturing out in search of work.  It's still risky sending potential labor somewhere else instead of our new lifeline though.  What can you tell me about this community?  While I'd love to send you a few spare mouths to feed and make logistics a bit less worrisome here, I'm not sure if we can afford whatever kind of deal you're looking for.  We need both labor and supplies, it's just that we're shorter on the latter than the former.  Speak with someone else and maybe things will work out.",
     "responses": [
       {
         "text": "It's a small community building up a rural church, that's starting to become self-sufficient.",
-        "condition": { "compare_string": [ "yes", { "u_val": "knowledge_flag_tacoma_started" } ] },
+        "condition": {
+          "compare_string": [
+            "yes",
+            {
+              "u_val": "knowledge_flag_tacoma_started"
+            }
+          ]
+        },
         "topic": "TALK_FREE_MERCHANT_STOCKS_CF_REP_MISSION_4_EXPLAIN"
       },
       {
         "text": "I'll figure something else out.  Thank you, though.",
         "switch": true,
-        "condition": { "compare_string": [ "yes", { "u_val": "knowledge_flag_tacoma_started" } ] },
+        "condition": {
+          "compare_string": [
+            "yes",
+            {
+              "u_val": "knowledge_flag_tacoma_started"
+            }
+          ]
+        },
         "topic": "TALK_DONE"
       },
-      { "text": "Oh, okay.", "switch": true, "default": true, "topic": "TALK_DONE" }
+      {
+        "text": "Oh, okay.",
+        "switch": true,
+        "default": true,
+        "topic": "TALK_DONE"
+      }
     ]
   },
   {
@@ -46,7 +72,10 @@
       {
         "text": "You have a deal, then.",
         "effect": [
-          { "u_add_var": "sofia_allies_secured", "value": "yes" },
+          {
+            "u_add_var": "sofia_allies_secured",
+            "value": "yes"
+          },
           {
             "mapgen_update": "arcana_cf_4_free_merchants_1",
             "om_terrain": "cf_church_1",
@@ -78,7 +107,10 @@
         ],
         "topic": "TALK_FREE_MERCHANT_STOCKS_CF_REP_MISSION_4_DEAL"
       },
-      { "text": "I'm not sure yet, let's talk about something else.", "topic": "TALK_FREE_MERCHANT_STOCKS" }
+      {
+        "text": "I'm not sure yet, let's talk about something else.",
+        "topic": "TALK_FREE_MERCHANT_STOCKS"
+      }
     ]
   },
   {
@@ -86,8 +118,14 @@
     "id": "TALK_FREE_MERCHANT_STOCKS_CF_REP_MISSION_4_DEAL",
     "dynamic_line": "I'll have my contact set up a party to get things set up.  Pleasure doing business with you, hoping this pans out.",
     "responses": [
-      { "text": "Thank you, let's talk about something else.", "topic": "TALK_FREE_MERCHANT_STOCKS" },
-      { "text": "Thank you.  That's all for now, goodbye.", "topic": "TALK_DONE" }
+      {
+        "text": "Thank you, let's talk about something else.",
+        "topic": "TALK_FREE_MERCHANT_STOCKS"
+      },
+      {
+        "text": "Thank you.  That's all for now, goodbye.",
+        "topic": "TALK_DONE"
+      }
     ]
   }
 ]

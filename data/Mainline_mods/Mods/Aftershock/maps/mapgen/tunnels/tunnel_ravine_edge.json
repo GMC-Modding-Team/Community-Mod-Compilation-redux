@@ -2,7 +2,9 @@
   {
     "type": "mapgen",
     "method": "json",
-    "om_terrain": [ "afs_tunnel_ravine_edge" ],
+    "om_terrain": [
+      "afs_tunnel_ravine_edge"
+    ],
     "weight": 5000000,
     "object": {
       "rows": [
@@ -31,11 +33,38 @@
         "''''''''''''''''''''''''",
         "''''''''''''''''''''''''"
       ],
-      "palettes": [ "afs_tunnel_any" ],
+      "palettes": [
+        "afs_tunnel_any"
+      ],
       "place_nested": [
-        { "else_chunks": [ "tunnel_corner_l" ], "x": 0, "y": 15, "neighbors": { "west": "ravine" } },
-        { "else_chunks": [ "tunnel_corner_r" ], "x": 15, "y": 15, "neighbors": { "east": "ravine" } }
-      ]
+        {
+          "else_chunks": [
+            "tunnel_corner_l"
+          ],
+          "x": 0,
+          "y": 15,
+          "neighbors": {
+            "west": "ravine"
+          }
+        },
+        {
+          "else_chunks": [
+            "tunnel_corner_r"
+          ],
+          "x": 15,
+          "y": 15,
+          "neighbors": {
+            "east": "ravine"
+          }
+        }
+      ],
+      "terrain": {
+        "#": "t_region_groundcover",
+        "0": "t_region_groundcover",
+        ".": "t_region_groundcover",
+        "'": "t_region_groundcover"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -43,7 +72,10 @@
     "method": "json",
     "nested_mapgen_id": "tunnel_corner_l",
     "object": {
-      "mapgensize": [ 9, 9 ],
+      "mapgensize": [
+        9,
+        9
+      ],
       "rows": [
         "#####    ",
         "####     ",
@@ -55,8 +87,15 @@
         "#####    ",
         "######## "
       ],
-      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ],
-      "palettes": [ "afs_tunnel" ]
+      "flags": [
+        "ALLOW_TERRAIN_UNDER_OTHER_DATA"
+      ],
+      "palettes": [
+        "afs_tunnel"
+      ],
+      "terrain": {
+        "#": "t_region_groundcover"
+      }
     }
   },
   {
@@ -64,7 +103,10 @@
     "method": "json",
     "nested_mapgen_id": "tunnel_corner_r",
     "object": {
-      "mapgensize": [ 9, 9 ],
+      "mapgensize": [
+        9,
+        9
+      ],
       "rows": [
         "  #######",
         "    #####",
@@ -76,8 +118,15 @@
         "    #####",
         " ## #####"
       ],
-      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ],
-      "palettes": [ "afs_tunnel" ]
+      "flags": [
+        "ALLOW_TERRAIN_UNDER_OTHER_DATA"
+      ],
+      "palettes": [
+        "afs_tunnel"
+      ],
+      "terrain": {
+        "#": "t_region_groundcover"
+      }
     }
   }
 ]

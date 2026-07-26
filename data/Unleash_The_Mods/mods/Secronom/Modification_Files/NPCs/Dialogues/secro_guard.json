@@ -2,76 +2,87 @@
   {
     "id": "TALK_SECRO_GUARD_main",
     "type": "talk_topic",
-    "dynamic_line": {
-      "u_has_effect": "secro_scientist_mission1_progress",
-      "no": "You are not suppose to be in here, survivor.",
-      "yes": {
-        "u_has_effect": "secro_guard_mission1_help",
-        "no": "I heard it. We will protect these people from the mutant hordes.",
-        "yes": {
-          "u_has_effect": "secro_scientist_partake_mission1",
-          "no": "Focus on our path!  There's no time for chit-chats!",
-          "yes": {
-            "u_has_effect": "secro_guard_mission1_help_done",
-            "no": "You're skilled more than what I've expected from you.  Good job!",
-            "yes": {
-              "u_has_effect": "secro_guard_mission1_progress",
-              "no": "What is it, survivor?",
-              "yes": {
-                "u_has_effect": "secro_guard_partake_mission1",
-                "no": "We've got to go to the enigma chamber.",
-                "yes": {
-                  "u_has_effect": "secro_guard_partake_mission2",
-                  "no": "You need something, survivor?",
-                  "yes": {
-                    "u_has_effect": "secro_guard_backfrom_mission2",
-                    "no": "We seem to find nothing…\nWe should go back.",
-                    "yes": "What do you want?"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
+    "dynamic_line": "You are not suppose to be in here, survivor.  I heard it. We will protect these people from the mutant hordes.  Focus on our path!  There's no time for chit-chats!  You're skilled more than what I've expected from you.  Good job!  What is it, survivor?  We've got to go to the enigma chamber.  You need something, survivor?  We seem to find nothing…\nWe should go back.  What do you want?",
     "responses": [
       {
         "text": "Okay.  Follow my lead.",
         "topic": "TALK_DONE",
         "condition": {
-          "and": [ { "not": { "u_has_effect": "secro_guard_mission1_help" } }, { "u_has_effect": "secro_scientist_mission1_progress" } ]
+          "and": [
+            {
+              "not": {
+                "u_has_effect": "secro_guard_mission1_help"
+              }
+            },
+            {
+              "u_has_effect": "secro_scientist_mission1_progress"
+            }
+          ]
         },
-        "effect": [ { "duration": "PERMANENT", "u_add_effect": "secro_guard_mission1_help" }, "follow_only" ]
+        "effect": [
+          {
+            "duration": "PERMANENT",
+            "u_add_effect": "secro_guard_mission1_help"
+          },
+          "follow_only"
+        ]
       },
       {
         "text": "I know, now stand still and be a real guard.",
         "topic": "TALK_DONE",
         "condition": {
           "and": [
-            { "not": { "u_has_effect": "secro_guard_mission1_help_done" } },
-            { "u_has_effect": "secro_scientist_partake_mission1" }
+            {
+              "not": {
+                "u_has_effect": "secro_guard_mission1_help_done"
+              }
+            },
+            {
+              "u_has_effect": "secro_scientist_partake_mission1"
+            }
           ]
         },
-        "effect": [ { "duration": "PERMANENT", "u_add_effect": "secro_guard_mission1_help_done" }, "stop_following" ]
+        "effect": [
+          {
+            "duration": "PERMANENT",
+            "u_add_effect": "secro_guard_mission1_help_done"
+          },
+          "stop_following"
+        ]
       },
       {
         "truefalsetext": {
-          "condition": { "u_has_effect": "secro_scientist_mission1_progress" },
+          "condition": {
+            "u_has_effect": "secro_scientist_mission1_progress"
+          },
           "true": "No, you're staying here.",
           "false": "…"
         },
         "topic": "TALK_DONE",
-        "condition": { "not": { "u_has_effect": "secro_guard_mission1_help" } }
+        "condition": {
+          "not": {
+            "u_has_effect": "secro_guard_mission1_help"
+          }
+        }
       },
       {
         "text": "Do you need help?",
         "topic": "TALK_SECRO_GUARD_jobs",
         "condition": {
           "and": [
-            { "not": { "u_has_effect": "secro_guard_mission1_gonnastart" } },
-            { "not": { "u_has_effect": "secro_guard_mission1_startnow" } },
-            { "u_has_effect": "secro_guard_mission1_help_done" }
+            {
+              "not": {
+                "u_has_effect": "secro_guard_mission1_gonnastart"
+              }
+            },
+            {
+              "not": {
+                "u_has_effect": "secro_guard_mission1_startnow"
+              }
+            },
+            {
+              "u_has_effect": "secro_guard_mission1_help_done"
+            }
           ]
         }
       },
@@ -79,18 +90,38 @@
         "text": "I need to go to enigma chamber.",
         "topic": "TALK_MISSION_OFFER",
         "condition": {
-          "and": [ { "not": { "u_has_effect": "secro_guard_mission1_progress" } }, { "u_has_effect": "secro_guard_mission1_startnow" } ]
+          "and": [
+            {
+              "not": {
+                "u_has_effect": "secro_guard_mission1_progress"
+              }
+            },
+            {
+              "u_has_effect": "secro_guard_mission1_startnow"
+            }
+          ]
         }
       },
       {
         "truefalsetext": {
-          "condition": { "npc_at_om_location": "SecronomSSLab_bowspecs" },
+          "condition": {
+            "npc_at_om_location": "SecronomSSLab_bowspecs"
+          },
           "true": "We're here now.",
           "false": "Do you need help?"
         },
         "topic": "TALK_SECRO_GUARD_backfrom_mission1",
         "condition": {
-          "and": [ { "not": { "u_has_effect": "secro_guard_backfrom_mission1" } }, { "u_has_effect": "secro_guard_partake_mission1" } ]
+          "and": [
+            {
+              "not": {
+                "u_has_effect": "secro_guard_backfrom_mission1"
+              }
+            },
+            {
+              "u_has_effect": "secro_guard_partake_mission1"
+            }
+          ]
         }
       },
       {
@@ -98,8 +129,14 @@
         "topic": "TALK_MISSION_OFFER",
         "condition": {
           "and": [
-            { "not": { "u_has_effect": "secro_guard_mission2_progress" } },
-            { "u_has_effect": "secro_researcher_mission1_progress" }
+            {
+              "not": {
+                "u_has_effect": "secro_guard_mission2_progress"
+              }
+            },
+            {
+              "u_has_effect": "secro_researcher_mission1_progress"
+            }
           ]
         }
       },
@@ -107,46 +144,112 @@
         "text": "We're here…",
         "topic": "TALK_DONE",
         "condition": {
-          "and": [ { "not": { "u_has_effect": "secro_guard_backfrom_mission2" } }, { "npc_at_om_location": "SecronomSSLab_bowspecs" } ]
+          "and": [
+            {
+              "not": {
+                "u_has_effect": "secro_guard_backfrom_mission2"
+              }
+            },
+            {
+              "npc_at_om_location": "SecronomSSLab_bowspecs"
+            }
+          ]
         },
-        "effect": [ { "duration": "PERMANENT", "u_add_effect": "secro_guard_backfrom_mission2" }, "stop_following" ]
+        "effect": [
+          {
+            "duration": "PERMANENT",
+            "u_add_effect": "secro_guard_backfrom_mission2"
+          },
+          "stop_following"
+        ]
       },
       {
         "text": "Okay then…",
         "topic": "TALK_DONE",
         "condition": {
-          "and": [ { "not": { "u_has_effect": "secro_guard_mission1_help_done" } }, { "u_has_effect": "secro_guard_mission1_help" } ]
+          "and": [
+            {
+              "not": {
+                "u_has_effect": "secro_guard_mission1_help_done"
+              }
+            },
+            {
+              "u_has_effect": "secro_guard_mission1_help"
+            }
+          ]
         }
       },
       {
         "text": "Nothing…",
         "topic": "TALK_DONE",
         "condition": {
-          "and": [ { "not": { "u_has_effect": "secro_guard_mission1_progress" } }, { "u_has_effect": "secro_guard_mission1_help_done" } ]
+          "and": [
+            {
+              "not": {
+                "u_has_effect": "secro_guard_mission1_progress"
+              }
+            },
+            {
+              "u_has_effect": "secro_guard_mission1_help_done"
+            }
+          ]
         }
       },
       {
         "text": "We better go…",
         "topic": "TALK_DONE",
         "condition": {
-          "and": [ { "not": { "u_has_effect": "secro_guard_partake_mission1" } }, { "u_has_effect": "secro_guard_mission1_progress" } ]
+          "and": [
+            {
+              "not": {
+                "u_has_effect": "secro_guard_partake_mission1"
+              }
+            },
+            {
+              "u_has_effect": "secro_guard_mission1_progress"
+            }
+          ]
         }
       },
       {
         "text": "Nope.  Bye.",
         "topic": "TALK_DONE",
         "condition": {
-          "and": [ { "not": { "u_has_effect": "secro_guard_partake_mission2" } }, { "u_has_effect": "secro_guard_partake_mission1" } ]
+          "and": [
+            {
+              "not": {
+                "u_has_effect": "secro_guard_partake_mission2"
+              }
+            },
+            {
+              "u_has_effect": "secro_guard_partake_mission1"
+            }
+          ]
         }
       },
       {
         "text": "Not yet.",
         "topic": "TALK_DONE",
         "condition": {
-          "and": [ { "not": { "u_has_effect": "secro_guard_backfrom_mission2" } }, { "u_has_effect": "secro_guard_partake_mission2" } ]
+          "and": [
+            {
+              "not": {
+                "u_has_effect": "secro_guard_backfrom_mission2"
+              }
+            },
+            {
+              "u_has_effect": "secro_guard_partake_mission2"
+            }
+          ]
         }
       },
-      { "text": "Nothing.", "topic": "TALK_DONE", "condition": { "u_has_effect": "secro_guard_backfrom_mission2" } }
+      {
+        "text": "Nothing.",
+        "topic": "TALK_DONE",
+        "condition": {
+          "u_has_effect": "secro_guard_backfrom_mission2"
+        }
+      }
     ]
   },
   {
@@ -157,29 +260,37 @@
       {
         "text": "I will.",
         "topic": "TALK_DONE",
-        "effect": { "duration": "PERMANENT", "u_add_effect": "secro_guard_mission1_gonnastart" }
+        "effect": {
+          "duration": "PERMANENT",
+          "u_add_effect": "secro_guard_mission1_gonnastart"
+        }
       }
     ]
   },
   {
     "id": "TALK_SECRO_GUARD_backfrom_mission1",
     "type": "talk_topic",
-    "dynamic_line": {
-      "npc_at_om_location": "SecronomSSLab_bowspecs",
-      "no": "Not until we get back to the others.",
-      "yes": "Good.  Since I don't have any problems at all, you should check others of their needs."
-    },
+    "dynamic_line": "Not until we get back to the others.  Good.  Since I don't have any problems at all, you should check others of their needs.",
     "responses": [
       {
         "text": "Okay then…",
         "topic": "TALK_DONE",
-        "condition": { "not": { "npc_at_om_location": "SecronomSSLab_bowspecs" } }
+        "condition": {
+          "not": {
+            "npc_at_om_location": "SecronomSSLab_bowspecs"
+          }
+        }
       },
       {
         "text": "Will do.",
         "topic": "TALK_DONE",
-        "condition": { "npc_at_om_location": "SecronomSSLab_bowspecs" },
-        "effect": { "duration": "PERMANENT", "u_add_effect": "secro_guard_backfrom_mission1" }
+        "condition": {
+          "npc_at_om_location": "SecronomSSLab_bowspecs"
+        },
+        "effect": {
+          "duration": "PERMANENT",
+          "u_add_effect": "secro_guard_backfrom_mission1"
+        }
       }
     ]
   }

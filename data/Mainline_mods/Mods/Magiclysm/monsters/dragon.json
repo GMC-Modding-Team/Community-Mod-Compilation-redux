@@ -52,7 +52,14 @@
     "dirty_transparency_cache": true,
     "percent_spread": 40,
     "outdoor_age_speedup": "0 turns",
-    "immunity_data": { "body_part_env_resistance": [ [ "sensor", 12 ] ] },
+    "immunity_data": {
+      "body_part_env_resistance": [
+        [
+          "sensor",
+          12
+        ]
+      ]
+    },
     "priority": 8,
     "half_life": "2 minutes",
     "phase": "gas",
@@ -69,16 +76,22 @@
   {
     "id": "mon_dragon_black_wyrmling",
     "type": "MONSTER",
-    "name": "black dragon wyrmling",
+    "name": {
+      "str": "black dragon wyrmling"
+    },
     "description": "This is a small black dragon, less than five years old.  Its scales are glossy, and its horns barely peek out of its head.  Even from one so young, you see the glint of sadism in its eyes.",
     "default_faction": "dragon_black",
     "bodytype": "angel",
-    "species": [ "DRAGON" ],
+    "species": [
+      "DRAGON"
+    ],
     "volume": "80 L",
     "weight": "65 kg",
     "hp": 180,
     "speed": 150,
-    "material": [ "flesh" ],
+    "material": [
+      "flesh"
+    ],
     "symbol": "D",
     "color": "black_white",
     "aggression": 100,
@@ -86,28 +99,51 @@
     "melee_skill": 2,
     "melee_dice": 2,
     "melee_dice_sides": 4,
-    "melee_damage": [ { "damage_type": "cut", "amount": 9 } ],
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 9
+      }
+    ],
     "dodge": 5,
     "vision_day": 30,
     "vision_night": 20,
-    "path_settings": { "//min_dist": 8, "avoid_traps": true, "avoid_sharp": true },
+    "path_settings": {
+      "//min_dist": 8,
+      "avoid_traps": true,
+      "avoid_sharp": true
+    },
     "harvest": "dragon_black",
     "special_attacks": [
-      { "type": "bite", "cooldown": 10 },
-      { "id": "scratch", "cooldown": 7 },
+      {
+        "type": "bite",
+        "cooldown": 10
+      },
+      {
+        "id": "scratch",
+        "cooldown": 7
+      },
       {
         "id": "black_whelp_breath_prep",
         "type": "spell",
-        "spell_data": { "id": "dragon_deep_breath", "min_level": 4 },
+        "spell_data": {
+          "id": "dragon_deep_breath",
+          "min_level": 4
+        },
         "cooldown": 20,
         "monster_message": "%1$s takes a deep breath!"
       },
       {
         "id": "black_whelp_breath",
         "type": "spell",
-        "spell_data": { "id": "dragon_breath_black", "min_level": 4 },
+        "spell_data": {
+          "id": "dragon_breath_black",
+          "min_level": 4
+        },
         "cooldown": 1,
-        "condition": { "u_has_effect": "effect_dragon_deep_breath" },
+        "condition": {
+          "u_has_effect": "effect_dragon_deep_breath"
+        },
         "monster_message": "%1$s breathes a stream of caustic acid!"
       }
     ],
@@ -124,12 +160,19 @@
       "PUSH_MON",
       "FLIES"
     ],
-    "armor": { "bash": 2, "cut": 12, "acid": 600, "bullet": 10 }
+    "armor": {
+      "bash": 2,
+      "cut": 12,
+      "acid": 600,
+      "bullet": 10
+    }
   },
   {
     "id": "mon_dragon_black_young",
     "type": "MONSTER",
-    "name": "young black dragon",
+    "name": {
+      "str": "young black dragon"
+    },
     "description": "This black dragon appears to still be in the early stages of life.  Its eyes have just started to sink in its sockets, and its curved, segmented horns have just begun to darken at the tips.  You can tell just by looking at it, this creature is evil to its very core.  Even though this dragon is not fully grown, it is the size of a full-grown bull.",
     "copy-from": "mon_dragon_black_wyrmling",
     "//": "should be roughly 4000 L, as that's the size of a large cow.",
@@ -139,32 +182,58 @@
     "melee_skill": 5,
     "melee_dice": 3,
     "melee_dice_sides": 10,
-    "melee_damage": [ { "damage_type": "cut", "amount": 16 } ],
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 16
+      }
+    ],
     "special_attacks": [
-      { "type": "bite", "cooldown": 10 },
-      { "id": "scratch", "cooldown": 3 },
+      {
+        "type": "bite",
+        "cooldown": 10
+      },
+      {
+        "id": "scratch",
+        "cooldown": 3
+      },
       {
         "id": "black_young_breath_prep",
         "type": "spell",
-        "spell_data": { "id": "dragon_deep_breath", "min_level": 12 },
+        "spell_data": {
+          "id": "dragon_deep_breath",
+          "min_level": 12
+        },
         "cooldown": 20,
         "monster_message": "%1$s takes a deep breath!"
       },
       {
         "id": "black_young_breath",
         "type": "spell",
-        "spell_data": { "id": "dragon_breath_black", "min_level": 12 },
+        "spell_data": {
+          "id": "dragon_breath_black",
+          "min_level": 12
+        },
         "cooldown": 1,
-        "condition": { "u_has_effect": "effect_dragon_deep_breath" },
+        "condition": {
+          "u_has_effect": "effect_dragon_deep_breath"
+        },
         "monster_message": "%1$s breathes a stream of caustic acid!"
       }
     ],
-    "armor": { "acid": 600, "bash": 8, "cut": 20, "bullet": 16 }
+    "armor": {
+      "acid": 600,
+      "bash": 8,
+      "cut": 20,
+      "bullet": 16
+    }
   },
   {
     "id": "mon_dragon_black_adult",
     "type": "MONSTER",
-    "name": "adult black dragon",
+    "name": {
+      "str": "adult black dragon"
+    },
     "description": "A black-scaled monstrosity with deep-set eye sockets glowing green with evil.  Its face and skull appear skeletal, and acid drips from its dagger-like jaws.",
     "copy-from": "mon_dragon_black_young",
     "//": "If it were possible, the adult would be about double the size of a young version or so.",
@@ -172,31 +241,64 @@
     "hp": 3500,
     "melee_dice": 4,
     "melee_dice_sides": 12,
-    "melee_damage": [ { "damage_type": "cut", "amount": 28 } ],
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 28
+      }
+    ],
     "dodge": 3,
     "//2": "Large means powerful, but it does not mean fast.",
     "speed": 100,
-    "delete": { "flags": [ "PATH_AVOID_DANGER_1" ] },
-    "emit_fields": [ { "emit_id": "emit_dragon_adult_fright", "delay": "1 s" } ],
+    "delete": {
+      "flags": [
+        "PATH_AVOID_DANGER_1"
+      ]
+    },
+    "emit_fields": [
+      {
+        "emit_id": "emit_dragon_adult_fright",
+        "delay": "1 s"
+      }
+    ],
     "special_attacks": [
-      { "type": "bite", "cooldown": 10 },
-      { "id": "scratch", "cooldown": 3 },
+      {
+        "type": "bite",
+        "cooldown": 10
+      },
+      {
+        "id": "scratch",
+        "cooldown": 3
+      },
       {
         "id": "black_wyrm_breath_prep",
         "type": "spell",
-        "spell_data": { "id": "dragon_deep_breath", "min_level": 22 },
+        "spell_data": {
+          "id": "dragon_deep_breath",
+          "min_level": 22
+        },
         "cooldown": 30,
         "monster_message": "%1$s takes a deep breath!"
       },
       {
         "id": "black_wyrm_breath",
         "type": "spell",
-        "spell_data": { "id": "dragon_breath_black", "min_level": 22 },
+        "spell_data": {
+          "id": "dragon_breath_black",
+          "min_level": 22
+        },
         "cooldown": 1,
-        "condition": { "u_has_effect": "effect_dragon_deep_breath" },
+        "condition": {
+          "u_has_effect": "effect_dragon_deep_breath"
+        },
         "monster_message": "%1$s breathes a stream of caustic acid!"
       }
     ],
-    "armor": { "acid": 600, "bash": 14, "cut": 30, "bullet": 24 }
+    "armor": {
+      "acid": 600,
+      "bash": 14,
+      "cut": 30,
+      "bullet": 24
+    }
   }
 ]

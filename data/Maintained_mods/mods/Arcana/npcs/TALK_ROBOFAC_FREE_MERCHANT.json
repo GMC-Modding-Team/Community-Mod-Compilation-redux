@@ -7,9 +7,34 @@
         "text": "I've been sent to ask about recent attacks on survivors by anomalous creatures.  Know anything about that?",
         "condition": {
           "and": [
-            { "compare_string": [ "yes", { "u_val": "johnathan_prelude_mid" } ] },
-            { "not": { "compare_string": [ "yes", { "npc_val": "johnathan_prelude_mid" } ] } },
-            { "not": { "compare_string": [ "yes", { "u_val": "johnathan_prelude_data_5" } ] } }
+            {
+              "compare_string": [
+                "yes",
+                {
+                  "u_val": "johnathan_prelude_mid"
+                }
+              ]
+            },
+            {
+              "not": {
+                "compare_string": [
+                  "yes",
+                  {
+                    "npc_val": "johnathan_prelude_mid"
+                  }
+                ]
+              }
+            },
+            {
+              "not": {
+                "compare_string": [
+                  "yes",
+                  {
+                    "u_val": "johnathan_prelude_data_5"
+                  }
+                ]
+              }
+            }
           ]
         },
         "topic": "TALK_ROBOFAC_FREE_MERCHANT_GM_PRELUDE"
@@ -19,8 +44,19 @@
         "topic": "TALK_ROBOFAC_FREE_MERCHANT_CF_REP_MISSION_4",
         "condition": {
           "and": [
-            { "not": { "compare_string": [ "yes", { "u_val": "sofia_allies_secured" } ] } },
-            { "u_has_mission": "MISSION_CF_REP_4" }
+            {
+              "not": {
+                "compare_string": [
+                  "yes",
+                  {
+                    "u_val": "sofia_allies_secured"
+                  }
+                ]
+              }
+            },
+            {
+              "u_has_mission": "MISSION_CF_REP_4"
+            }
           ]
         }
       }
@@ -29,11 +65,7 @@
   {
     "id": "TALK_ROBOFAC_FREE_MERCHANT_GM_PRELUDE",
     "type": "talk_topic",
-    "dynamic_line": {
-      "u_is_wearing": "badge_marshal",
-      "yes": "Makin' yourself useful, Marshal?  Well, it happens one of my supply caravans got hit recently, the survivors came back with stories of weird living shadows.  I guess I'll send along what they told me, just don't yourself killed.",
-      "no": "That sounds like something we've run afoul of a while back.  One of my supply caravans got ambushed by some creatures unlike what you normally see out there.  I'll send over the reports or whatever it is you're looking for."
-    }
+    "dynamic_line": "Makin' yourself useful, Marshal?  Well, it happens one of my supply caravans got hit recently, the survivors came back with stories of weird living shadows.  I guess I'll send along what they told me, just don't yourself killed.  That sounds like something we've run afoul of a while back.  One of my supply caravans got ambushed by some creatures unlike what you normally see out there.  I'll send over the reports or whatever it is you're looking for."
   },
   {
     "type": "talk_topic",
@@ -44,7 +76,10 @@
         "text": "They're interested in trade contacts as well, so that might prove useful.",
         "topic": "TALK_ROBOFAC_FREE_MERCHANT_CF_REP_MISSION_4_TRADE"
       },
-      { "text": "I'll keep asking around.", "topic": "TALK_ROBOFAC_FREE_MERCHANT" }
+      {
+        "text": "I'll keep asking around.",
+        "topic": "TALK_ROBOFAC_FREE_MERCHANT"
+      }
     ]
   },
   {
@@ -56,7 +91,10 @@
         "text": "A local settlement in a fortified roadside church.  It's not too far from the refugee center.",
         "topic": "TALK_ROBOFAC_FREE_MERCHANT_CF_REP_MISSION_4_DEAL"
       },
-      { "text": "On second thought, I might be back later.", "topic": "TALK_ROBOFAC_FREE_MERCHANT" }
+      {
+        "text": "On second thought, I might be back later.",
+        "topic": "TALK_ROBOFAC_FREE_MERCHANT"
+      }
     ]
   },
   {
@@ -66,7 +104,10 @@
     "speaker_effect": [
       {
         "effect": [
-          { "u_add_var": "sofia_allies_secured", "value": "yes" },
+          {
+            "u_add_var": "sofia_allies_secured",
+            "value": "yes"
+          },
           {
             "mapgen_update": "arcana_cf_4_tacoma_commune_1b",
             "om_terrain": "cf_church_1",
@@ -98,6 +139,11 @@
         ]
       }
     ],
-    "responses": [ { "text": "Thank you.  I should go check on them.", "topic": "TALK_DONE" } ]
+    "responses": [
+      {
+        "text": "Thank you.  I should go check on them.",
+        "topic": "TALK_DONE"
+      }
+    ]
   }
 ]

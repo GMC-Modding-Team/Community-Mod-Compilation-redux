@@ -4,9 +4,23 @@
     "id": "TALK_PERK_MENU_MAIN",
     "responses": [
       {
-        "condition": { "not": { "u_has_trait": "perk_ALCHEMY1" } },
-        "text": "Gain [<trait_name:perk_ALCHEMY1>]",
-        "topic": "TALK_PERK_MENU_ALCHEMY1"
+        "condition": {
+          "and": [
+            {
+              "u_has_trait": "perk_ALCHEMY3"
+            },
+            {
+              "u_know_recipe": "cold_iron_ingot"
+            },
+            {
+              "not": {
+                "u_has_trait": "perk_ALCHEMY3_COLD_IRON"
+              }
+            }
+          ]
+        },
+        "text": "Gain [<trait_name:perk_ALCHEMY3_COLD_IRON>]",
+        "topic": "TALK_PERK_MENU_ALCHEMY3_COLD_IRON"
       }
     ]
   },
@@ -18,28 +32,50 @@
       {
         "text": "Select Perk.",
         "topic": "TALK_PERK_MENU_MAIN",
-        "condition": { "compare_num": [ { "u_val": "var", "var_name": "num_perks" }, ">", { "const": 0 } ] },
+        "condition": {
+          "compare_num": [
+            {
+              "u_val": "var",
+              "var_name": "num_perks"
+            },
+            ">",
+            {
+              "const": 0
+            }
+          ]
+        },
         "failure_explanation": "Requirements Not Met",
         "failure_topic": "TALK_PERK_MENU_FAIL",
         "effect": [
-          { "u_add_trait": "perk_ALCHEMY1" },
           {
-            "arithmetic": [ { "u_val": "var", "var_name": "num_perks" }, "=", { "u_val": "var", "var_name": "num_perks" }, "-", { "const": 1 } ]
+            "u_add_trait": "perk_ALCHEMY1"
+          },
+          {
+            "arithmetic": [
+              {
+                "u_val": "var",
+                "var_name": "num_perks"
+              },
+              "=",
+              {
+                "u_val": "var",
+                "var_name": "num_perks"
+              },
+              "-",
+              {
+                "const": 1
+              }
+            ]
           }
         ]
       },
-      { "text": "Go Back.", "topic": "TALK_PERK_MENU_MAIN" },
-      { "text": "Quit.", "topic": "TALK_DONE" }
-    ]
-  },
-  {
-    "type": "talk_topic",
-    "id": "TALK_PERK_MENU_MAIN",
-    "responses": [
       {
-        "condition": { "and": [ { "u_has_trait": "perk_ALCHEMY1" }, { "not": { "u_has_trait": "perk_ALCHEMY2" } } ] },
-        "text": "Gain [<trait_name:perk_ALCHEMY2>]",
-        "topic": "TALK_PERK_MENU_ALCHEMY2"
+        "text": "Go Back.",
+        "topic": "TALK_PERK_MENU_MAIN"
+      },
+      {
+        "text": "Quit.",
+        "topic": "TALK_DONE"
       }
     ]
   },
@@ -51,28 +87,50 @@
       {
         "text": "Select Perk.",
         "topic": "TALK_PERK_MENU_MAIN",
-        "condition": { "compare_num": [ { "u_val": "var", "var_name": "num_perks" }, ">", { "const": 0 } ] },
+        "condition": {
+          "compare_num": [
+            {
+              "u_val": "var",
+              "var_name": "num_perks"
+            },
+            ">",
+            {
+              "const": 0
+            }
+          ]
+        },
         "failure_explanation": "Requirements Not Met",
         "failure_topic": "TALK_PERK_MENU_FAIL",
         "effect": [
-          { "u_add_trait": "perk_ALCHEMY2" },
           {
-            "arithmetic": [ { "u_val": "var", "var_name": "num_perks" }, "=", { "u_val": "var", "var_name": "num_perks" }, "-", { "const": 1 } ]
+            "u_add_trait": "perk_ALCHEMY2"
+          },
+          {
+            "arithmetic": [
+              {
+                "u_val": "var",
+                "var_name": "num_perks"
+              },
+              "=",
+              {
+                "u_val": "var",
+                "var_name": "num_perks"
+              },
+              "-",
+              {
+                "const": 1
+              }
+            ]
           }
         ]
       },
-      { "text": "Go Back.", "topic": "TALK_PERK_MENU_MAIN" },
-      { "text": "Quit.", "topic": "TALK_DONE" }
-    ]
-  },
-  {
-    "type": "talk_topic",
-    "id": "TALK_PERK_MENU_MAIN",
-    "responses": [
       {
-        "condition": { "and": [ { "u_has_trait": "perk_ALCHEMY2" }, { "not": { "u_has_trait": "perk_ALCHEMY3" } } ] },
-        "text": "Gain [<trait_name:perk_ALCHEMY3>]",
-        "topic": "TALK_PERK_MENU_ALCHEMY3"
+        "text": "Go Back.",
+        "topic": "TALK_PERK_MENU_MAIN"
+      },
+      {
+        "text": "Quit.",
+        "topic": "TALK_DONE"
       }
     ]
   },
@@ -84,34 +142,50 @@
       {
         "text": "Select Perk.",
         "topic": "TALK_PERK_MENU_MAIN",
-        "condition": { "compare_num": [ { "u_val": "var", "var_name": "num_perks" }, ">", { "const": 0 } ] },
+        "condition": {
+          "compare_num": [
+            {
+              "u_val": "var",
+              "var_name": "num_perks"
+            },
+            ">",
+            {
+              "const": 0
+            }
+          ]
+        },
         "failure_explanation": "Requirements Not Met",
         "failure_topic": "TALK_PERK_MENU_FAIL",
         "effect": [
-          { "u_add_trait": "perk_ALCHEMY3" },
           {
-            "arithmetic": [ { "u_val": "var", "var_name": "num_perks" }, "=", { "u_val": "var", "var_name": "num_perks" }, "-", { "const": 1 } ]
+            "u_add_trait": "perk_ALCHEMY3"
+          },
+          {
+            "arithmetic": [
+              {
+                "u_val": "var",
+                "var_name": "num_perks"
+              },
+              "=",
+              {
+                "u_val": "var",
+                "var_name": "num_perks"
+              },
+              "-",
+              {
+                "const": 1
+              }
+            ]
           }
         ]
       },
-      { "text": "Go Back.", "topic": "TALK_PERK_MENU_MAIN" },
-      { "text": "Quit.", "topic": "TALK_DONE" }
-    ]
-  },
-  {
-    "type": "talk_topic",
-    "id": "TALK_PERK_MENU_MAIN",
-    "responses": [
       {
-        "condition": {
-          "and": [
-            { "u_has_trait": "perk_ALCHEMY3" },
-            { "u_know_recipe": "cold_iron_ingot" },
-            { "not": { "u_has_trait": "perk_ALCHEMY3_COLD_IRON" } }
-          ]
-        },
-        "text": "Gain [<trait_name:perk_ALCHEMY3_COLD_IRON>]",
-        "topic": "TALK_PERK_MENU_ALCHEMY3_COLD_IRON"
+        "text": "Go Back.",
+        "topic": "TALK_PERK_MENU_MAIN"
+      },
+      {
+        "text": "Quit.",
+        "topic": "TALK_DONE"
       }
     ]
   },
@@ -123,28 +197,50 @@
       {
         "text": "Select Perk.",
         "topic": "TALK_PERK_MENU_MAIN",
-        "condition": { "compare_num": [ { "u_val": "var", "var_name": "num_perks" }, ">", { "const": 0 } ] },
+        "condition": {
+          "compare_num": [
+            {
+              "u_val": "var",
+              "var_name": "num_perks"
+            },
+            ">",
+            {
+              "const": 0
+            }
+          ]
+        },
         "failure_explanation": "Requirements Not Met",
         "failure_topic": "TALK_PERK_MENU_FAIL",
         "effect": [
-          { "u_add_trait": "perk_ALCHEMY3_COLD_IRON" },
           {
-            "arithmetic": [ { "u_val": "var", "var_name": "num_perks" }, "=", { "u_val": "var", "var_name": "num_perks" }, "-", { "const": 1 } ]
+            "u_add_trait": "perk_ALCHEMY3_COLD_IRON"
+          },
+          {
+            "arithmetic": [
+              {
+                "u_val": "var",
+                "var_name": "num_perks"
+              },
+              "=",
+              {
+                "u_val": "var",
+                "var_name": "num_perks"
+              },
+              "-",
+              {
+                "const": 1
+              }
+            ]
           }
         ]
       },
-      { "text": "Go Back.", "topic": "TALK_PERK_MENU_MAIN" },
-      { "text": "Quit.", "topic": "TALK_DONE" }
-    ]
-  },
-  {
-    "type": "talk_topic",
-    "id": "TALK_PERK_MENU_MAIN",
-    "responses": [
       {
-        "condition": { "and": [ { "u_has_trait": "perk_ALCHEMY3" }, { "not": { "u_has_trait": "perk_ALCHEMY4" } } ] },
-        "text": "Gain [<trait_name:perk_ALCHEMY4>]",
-        "topic": "TALK_PERK_MENU_ALCHEMY4"
+        "text": "Go Back.",
+        "topic": "TALK_PERK_MENU_MAIN"
+      },
+      {
+        "text": "Quit.",
+        "topic": "TALK_DONE"
       }
     ]
   },
@@ -156,28 +252,50 @@
       {
         "text": "Select Perk.",
         "topic": "TALK_PERK_MENU_MAIN",
-        "condition": { "compare_num": [ { "u_val": "var", "var_name": "num_perks" }, ">", { "const": 0 } ] },
+        "condition": {
+          "compare_num": [
+            {
+              "u_val": "var",
+              "var_name": "num_perks"
+            },
+            ">",
+            {
+              "const": 0
+            }
+          ]
+        },
         "failure_explanation": "Requirements Not Met",
         "failure_topic": "TALK_PERK_MENU_FAIL",
         "effect": [
-          { "u_add_trait": "perk_ALCHEMY4" },
           {
-            "arithmetic": [ { "u_val": "var", "var_name": "num_perks" }, "=", { "u_val": "var", "var_name": "num_perks" }, "-", { "const": 1 } ]
+            "u_add_trait": "perk_ALCHEMY4"
+          },
+          {
+            "arithmetic": [
+              {
+                "u_val": "var",
+                "var_name": "num_perks"
+              },
+              "=",
+              {
+                "u_val": "var",
+                "var_name": "num_perks"
+              },
+              "-",
+              {
+                "const": 1
+              }
+            ]
           }
         ]
       },
-      { "text": "Go Back.", "topic": "TALK_PERK_MENU_MAIN" },
-      { "text": "Quit.", "topic": "TALK_DONE" }
-    ]
-  },
-  {
-    "type": "talk_topic",
-    "id": "TALK_PERK_MENU_MAIN",
-    "responses": [
       {
-        "condition": { "and": [ { "u_has_trait": "perk_ALCHEMY4" }, { "not": { "u_has_trait": "perk_ALCHEMY5" } } ] },
-        "text": "Gain [<trait_name:perk_ALCHEMY5>]",
-        "topic": "TALK_PERK_MENU_ALCHEMY5"
+        "text": "Go Back.",
+        "topic": "TALK_PERK_MENU_MAIN"
+      },
+      {
+        "text": "Quit.",
+        "topic": "TALK_DONE"
       }
     ]
   },
@@ -189,28 +307,50 @@
       {
         "text": "Select Perk.",
         "topic": "TALK_PERK_MENU_MAIN",
-        "condition": { "compare_num": [ { "u_val": "var", "var_name": "num_perks" }, ">", { "const": 0 } ] },
+        "condition": {
+          "compare_num": [
+            {
+              "u_val": "var",
+              "var_name": "num_perks"
+            },
+            ">",
+            {
+              "const": 0
+            }
+          ]
+        },
         "failure_explanation": "Requirements Not Met",
         "failure_topic": "TALK_PERK_MENU_FAIL",
         "effect": [
-          { "u_add_trait": "perk_ALCHEMY5" },
           {
-            "arithmetic": [ { "u_val": "var", "var_name": "num_perks" }, "=", { "u_val": "var", "var_name": "num_perks" }, "-", { "const": 1 } ]
+            "u_add_trait": "perk_ALCHEMY5"
+          },
+          {
+            "arithmetic": [
+              {
+                "u_val": "var",
+                "var_name": "num_perks"
+              },
+              "=",
+              {
+                "u_val": "var",
+                "var_name": "num_perks"
+              },
+              "-",
+              {
+                "const": 1
+              }
+            ]
           }
         ]
       },
-      { "text": "Go Back.", "topic": "TALK_PERK_MENU_MAIN" },
-      { "text": "Quit.", "topic": "TALK_DONE" }
-    ]
-  },
-  {
-    "type": "talk_topic",
-    "id": "TALK_PERK_MENU_MAIN",
-    "responses": [
       {
-        "condition": { "not": { "u_has_trait": "perk_LOW_INT_MANA" } },
-        "text": "Gain [<trait_name:perk_LOW_INT_MANA>]",
-        "topic": "TALK_PERK_MENU_LOW_INT_MANA"
+        "text": "Go Back.",
+        "topic": "TALK_PERK_MENU_MAIN"
+      },
+      {
+        "text": "Quit.",
+        "topic": "TALK_DONE"
       }
     ]
   },
@@ -222,18 +362,51 @@
       {
         "text": "Select Perk.",
         "topic": "TALK_PERK_MENU_MAIN",
-        "condition": { "compare_num": [ { "u_val": "var", "var_name": "num_perks" }, ">", { "const": 0 } ] },
+        "condition": {
+          "compare_num": [
+            {
+              "u_val": "var",
+              "var_name": "num_perks"
+            },
+            ">",
+            {
+              "const": 0
+            }
+          ]
+        },
         "failure_explanation": "Requirements Not Met",
         "failure_topic": "TALK_PERK_MENU_FAIL",
         "effect": [
-          { "u_add_trait": "perk_LOW_INT_MANA" },
           {
-            "arithmetic": [ { "u_val": "var", "var_name": "num_perks" }, "=", { "u_val": "var", "var_name": "num_perks" }, "-", { "const": 1 } ]
+            "u_add_trait": "perk_LOW_INT_MANA"
+          },
+          {
+            "arithmetic": [
+              {
+                "u_val": "var",
+                "var_name": "num_perks"
+              },
+              "=",
+              {
+                "u_val": "var",
+                "var_name": "num_perks"
+              },
+              "-",
+              {
+                "const": 1
+              }
+            ]
           }
         ]
       },
-      { "text": "Go Back.", "topic": "TALK_PERK_MENU_MAIN" },
-      { "text": "Quit.", "topic": "TALK_DONE" }
+      {
+        "text": "Go Back.",
+        "topic": "TALK_PERK_MENU_MAIN"
+      },
+      {
+        "text": "Quit.",
+        "topic": "TALK_DONE"
+      }
     ]
   }
 ]

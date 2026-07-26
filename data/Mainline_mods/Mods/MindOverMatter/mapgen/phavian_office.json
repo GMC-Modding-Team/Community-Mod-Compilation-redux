@@ -2,7 +2,9 @@
   {
     "type": "mapgen",
     "method": "json",
-    "om_terrain": [ "office_cubical_phavian" ],
+    "om_terrain": [
+      "office_cubical_phavian"
+    ],
     "weight": 50000,
     "object": {
       "fill_ter": "t_floor",
@@ -41,7 +43,11 @@
         "+": "t_door_c",
         "D": "t_door_locked",
         "4": "t_gutter_downspout",
-        ">": "t_ladder_down"
+        ">": "t_ladder_down",
+        ".": "t_floor",
+        "h": "t_floor",
+        "T": "t_floor",
+        "V": "t_floor"
       },
       "furniture": {
         "-": "f_room_divider",
@@ -52,7 +58,10 @@
         "c": "f_counter",
         "Y": "f_rack_coat",
         "S": "f_sink",
-        "^": [ "f_indoor_plant", "f_indoor_plant_y" ],
+        "^": [
+          "f_indoor_plant",
+          "f_indoor_plant_y"
+        ],
         "R": "f_utility_shelf",
         "e": "f_fridge",
         "H": "f_armchair",
@@ -60,23 +69,102 @@
         "o": "f_bookcase",
         "t": "f_table"
       },
-      "vendingmachines": { "V": { "lootable": true } },
-      "toilets": { "T": {  } },
-      "items": {
-        "e": { "item": "SUS_fridge_breakroom", "chance": 55, "repeat": [ 2, 3 ] },
-        "l": { "item": "SUS_janitors_closet", "chance": 100 },
-        "d": { "item": "SUS_office_desk", "chance": 20 },
-        "I": { "item": "SUS_office_filing_cabinet", "chance": 80 },
-        "R": [
-          { "item": "office_supplies", "chance": 80, "repeat": [ 1, 2 ] },
-          { "item": "cleaning", "chance": 70, "repeat": [ 2, 4 ] }
-        ],
-        "Y": { "item": "jackets", "chance": 33, "repeat": [ 1, 2 ] },
-        "a": { "item": "trash", "chance": 60, "repeat": [ 1, 2 ] },
-        "o": { "item": "novels", "chance": 80, "repeat": [ 4, 8 ] }
+      "vendingmachines": {
+        "V": {
+          "lootable": true
+        }
       },
-      "vehicles": { "h": { "vehicle": "swivel_chair", "chance": 100 } },
-      "place_monster": [ { "group": "GROUP_ZOMBIE", "x": [ 0, 23 ], "y": [ 0, 23 ], "repeat": [ 6, 10 ], "chance": 60 } ]
+      "toilets": {
+        "T": {}
+      },
+      "items": {
+        "e": {
+          "item": "SUS_fridge_breakroom",
+          "chance": 55,
+          "repeat": [
+            2,
+            3
+          ]
+        },
+        "l": {
+          "item": "SUS_janitors_closet",
+          "chance": 100
+        },
+        "d": {
+          "item": "SUS_office_desk",
+          "chance": 20
+        },
+        "I": {
+          "item": "SUS_office_filing_cabinet",
+          "chance": 80
+        },
+        "R": [
+          {
+            "item": "office_supplies",
+            "chance": 80,
+            "repeat": [
+              1,
+              2
+            ]
+          },
+          {
+            "item": "cleaning",
+            "chance": 70,
+            "repeat": [
+              2,
+              4
+            ]
+          }
+        ],
+        "Y": {
+          "item": "jackets",
+          "chance": 33,
+          "repeat": [
+            1,
+            2
+          ]
+        },
+        "a": {
+          "item": "trash",
+          "chance": 60,
+          "repeat": [
+            1,
+            2
+          ]
+        },
+        "o": {
+          "item": "novels",
+          "chance": 80,
+          "repeat": [
+            4,
+            8
+          ]
+        }
+      },
+      "vehicles": {
+        "h": {
+          "vehicle": "swivel_chair",
+          "chance": 100
+        }
+      },
+      "place_monster": [
+        {
+          "group": "GROUP_ZOMBIE",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            0,
+            23
+          ],
+          "repeat": [
+            6,
+            10
+          ],
+          "chance": 60
+        }
+      ]
     }
   },
   {
@@ -84,7 +172,6 @@
     "method": "json",
     "om_terrain": "office_cubical_phavian_roof",
     "object": {
-      "fill_ter": "t_flat_roof",
       "rows": [
         "                        ",
         " --------      -------- ",
@@ -111,31 +198,78 @@
         "                        ",
         "                        "
       ],
-      "palettes": [ "roof_palette" ],
+      "palettes": [
+        "roof_palette"
+      ],
       "nested": {
-        "U": { "chunks": [ "roof_2x2_infrastructure" ] },
-        "M": { "chunks": [ "roof_2x2_infrastructure_1" ] },
-        "Z": { "chunks": [ "roof_2x2_infrastructure_2" ] }
+        "U": {
+          "chunks": [
+            "roof_2x2_infrastructure"
+          ]
+        },
+        "M": {
+          "chunks": [
+            "roof_2x2_infrastructure_1"
+          ]
+        },
+        "Z": {
+          "chunks": [
+            "roof_2x2_infrastructure_2"
+          ]
+        }
       },
       "place_nested": [
         {
           "chunks": [
-            [ "null", 20 ],
-            [ "roof_2x2_utilities_b", 15 ],
-            [ "roof_2x2_utilities_c", 50 ],
-            [ "roof_2x2_utilities_d", 30 ],
-            [ "roof_2x2_utilities", 40 ]
+            [
+              "null",
+              20
+            ],
+            [
+              "roof_2x2_utilities_b",
+              15
+            ],
+            [
+              "roof_2x2_utilities_c",
+              50
+            ],
+            [
+              "roof_2x2_utilities_d",
+              30
+            ],
+            [
+              "roof_2x2_utilities",
+              40
+            ]
           ],
-          "x": [ 4, 17 ],
-          "y": [ 10, 19 ]
+          "x": [
+            4,
+            17
+          ],
+          "y": [
+            10,
+            19
+          ]
         }
-      ]
+      ],
+      "terrain": {
+        "-": "t_region_groundcover",
+        ".": "t_region_groundcover",
+        "U": "t_region_groundcover",
+        "o": "t_region_groundcover",
+        "M": "t_region_groundcover",
+        "Z": "t_region_groundcover",
+        "5": "t_region_groundcover"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
     "type": "mapgen",
     "method": "json",
-    "om_terrain": [ "office_cubical_phavian_basement" ],
+    "om_terrain": [
+      "office_cubical_phavian_basement"
+    ],
     "object": {
       "fill_ter": "t_strconc_floor",
       "rows": [
@@ -177,27 +311,94 @@
         "-": "t_reinforced_door_glass_lab_c",
         "⁷": "t_reinforced_glass",
         "+": "t_door_c",
-        "s": "t_soil"
+        "s": "t_soil",
+        "T": "t_strconc_floor"
       },
-      "vendingmachines": { "V": { "lootable": true } },
-      "toilets": { "T": {  } },
-      "furniture": { "9": "f_metal_bench", "S": "f_sink", "J": "f_counter" },
+      "vendingmachines": {
+        "V": {
+          "lootable": true
+        }
+      },
+      "toilets": {
+        "T": {}
+      },
+      "furniture": {
+        "9": "f_metal_bench",
+        "S": "f_sink",
+        "J": "f_counter"
+      },
       "place_nested": [
-        { "chunks": [ "office_phavian_lab_DN8x8" ], "x": 14, "y": 14 },
-        { "chunks": [ "office_phavian_lab_DN8x8" ], "x": 5, "y": 14 },
-        { "chunks": [ "office_phavian_lab_DS8x8" ], "x": 5, "y": 2 },
-        { "chunks": [ "office_phavian_security_DS8x8" ], "x": 14, "y": 2 }
+        {
+          "chunks": [
+            "office_phavian_lab_DN8x8"
+          ],
+          "x": 14,
+          "y": 14
+        },
+        {
+          "chunks": [
+            "office_phavian_lab_DN8x8"
+          ],
+          "x": 5,
+          "y": 14
+        },
+        {
+          "chunks": [
+            "office_phavian_lab_DS8x8"
+          ],
+          "x": 5,
+          "y": 2
+        },
+        {
+          "chunks": [
+            "office_phavian_security_DS8x8"
+          ],
+          "x": 14,
+          "y": 2
+        }
       ],
       "place_monster": [
-        { "group": "GROUP_PHAVIAN_OFFICE", "x": [ 2, 3 ], "y": [ 1, 22 ], "repeat": [ 2, 5 ], "chance": 60 },
-        { "group": "GROUP_PHAVIAN_OFFICE", "x": [ 2, 18 ], "y": [ 11, 12 ], "repeat": [ 2, 5 ], "chance": 60 }
+        {
+          "group": "GROUP_PHAVIAN_OFFICE",
+          "x": [
+            2,
+            3
+          ],
+          "y": [
+            1,
+            22
+          ],
+          "repeat": [
+            2,
+            5
+          ],
+          "chance": 60
+        },
+        {
+          "group": "GROUP_PHAVIAN_OFFICE",
+          "x": [
+            2,
+            18
+          ],
+          "y": [
+            11,
+            12
+          ],
+          "repeat": [
+            2,
+            5
+          ],
+          "chance": 60
+        }
       ]
     }
   },
   {
     "type": "mapgen",
     "method": "json",
-    "om_terrain": [ "office_cubical_phavian_subbasement" ],
+    "om_terrain": [
+      "office_cubical_phavian_subbasement"
+    ],
     "object": {
       "fill_ter": "t_strconc_floor",
       "rows": [
@@ -240,23 +441,101 @@
         "|": "t_concrete_wall",
         "-": "t_reinforced_door_glass_lab_c",
         "⁷": "t_reinforced_glass",
-        "s": "t_rock"
+        "s": "t_rock",
+        "J": "t_strconc_floor"
       },
-      "furniture": { "f": "f_table", "h": "f_chair", "R": "f_bookcase", "F": "f_fridge", "S": "f_sink" },
+      "furniture": {
+        "f": "f_table",
+        "h": "f_chair",
+        "R": "f_bookcase",
+        "F": "f_fridge",
+        "S": "f_sink"
+      },
       "items": {
-        "F": { "item": "SUS_fridge_breakroom", "chance": 55, "repeat": [ 2, 3 ] },
-        "J": { "item": "dishes_dining", "chance": 30 },
-        "R": { "item": "lab_bookshelves", "chance": 60, "repeat": [ 1, 3 ] }
+        "F": {
+          "item": "SUS_fridge_breakroom",
+          "chance": 55,
+          "repeat": [
+            2,
+            3
+          ]
+        },
+        "J": {
+          "item": "dishes_dining",
+          "chance": 30
+        },
+        "R": {
+          "item": "lab_bookshelves",
+          "chance": 60,
+          "repeat": [
+            1,
+            3
+          ]
+        }
       },
       "place_nested": [
-        { "chunks": [ "office_phavian_lab_DS8x8" ], "x": 5, "y": 2 },
-        { "chunks": [ "office_phavian_lab_DS8x8" ], "x": 14, "y": 2 },
-        { "chunks": [ "office_phavian_lab_DN8x8" ], "x": 6, "y": 14 },
-        { "chunks": [ "office_phavian_lab_DN8x8" ], "x": 15, "y": 14 }
+        {
+          "chunks": [
+            "office_phavian_lab_DS8x8"
+          ],
+          "x": 5,
+          "y": 2
+        },
+        {
+          "chunks": [
+            "office_phavian_lab_DS8x8"
+          ],
+          "x": 14,
+          "y": 2
+        },
+        {
+          "chunks": [
+            "office_phavian_lab_DN8x8"
+          ],
+          "x": 6,
+          "y": 14
+        },
+        {
+          "chunks": [
+            "office_phavian_lab_DN8x8"
+          ],
+          "x": 15,
+          "y": 14
+        }
       ],
       "place_monster": [
-        { "group": "GROUP_PHAVIAN_OFFICE", "x": [ 2, 18 ], "y": [ 11, 12 ], "repeat": [ 2, 5 ], "chance": 60 },
-        { "group": "GROUP_PHAVIAN_OFFICE", "x": [ 1, 4 ], "y": [ 14, 22 ], "repeat": [ 2, 5 ], "chance": 60 }
+        {
+          "group": "GROUP_PHAVIAN_OFFICE",
+          "x": [
+            2,
+            18
+          ],
+          "y": [
+            11,
+            12
+          ],
+          "repeat": [
+            2,
+            5
+          ],
+          "chance": 60
+        },
+        {
+          "group": "GROUP_PHAVIAN_OFFICE",
+          "x": [
+            1,
+            4
+          ],
+          "y": [
+            14,
+            22
+          ],
+          "repeat": [
+            2,
+            5
+          ],
+          "chance": 60
+        }
       ]
     }
   }

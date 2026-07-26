@@ -194,6 +194,7 @@ OBSOLETE_ITEM_FLAGS = {
     "RAPID",
     "UNARMED_WEAPON",
     "UNSAFE_CONSUME",
+    "WATER_FRIENDLY",
 }
 UNCHARGED_GROUP_ITEMS = {
     "apple_canned",
@@ -284,6 +285,15 @@ AMMO_TYPE_MIGRATIONS = {
 ITEM_ID_MIGRATIONS = {
     "700nx": "458wm",
     "762_m43": "762_m87",
+    "kitchen_unit": "veh_tools_kitchen",
+    "weldrig": "welder",
+    "mess_tin": "mess_kit",
+    "jar_3l_glass": "jar_3l_glass_sealed",
+    "chem_match_head_powder": "chem_black_powder",
+    "ammonia": "ammonia_hydroxide",
+    "rebar_rail": "rebar",
+    "steel_rail": "railroad_track_small",
+    "90two": "m9",
     "acid": "chem_muriatic_acid",
     "adv_UPS_off": "UPS_off",
     "m4a1": "modular_m4_carbine",
@@ -400,6 +410,11 @@ MONSTER_FACTION_MIGRATIONS = {
 }
 OBSOLETE_BIONIC_IDS = {"bio_furnace"}
 OBSOLETE_RECIPE_RESULT_IDS = {"broken_tripod"}
+LOOPING_ACID_RECIPE_RESULTS = {
+    "chem_muriatic_acid",
+    "chem_sulphuric_acid",
+    "chem_nitric_acid",
+}
 LEGACY_VARIANT_PART_BASES = {
     "aisle",
     "clothboard",
@@ -580,10 +595,13 @@ def normalize_coordinate_ranges(value: Any) -> int:
                 and isinstance(child, list)
                 and len(child) == 2
                 and all(isinstance(number, (int, float)) for number in child)
-                and child[0] > child[1]
             ):
-                child[0], child[1] = child[1], child[0]
-                changed += 1
+                if child[0] > child[1]:
+                    child[0], child[1] = child[1], child[0]
+                    changed += 1
+                if all(isinstance(number, int) for number in child) and child[0] // 24 != child[1] // 24:
+                    child[1] = (child[0] // 24 + 1) * 24 - 1
+                    changed += 1
             else:
                 changed += normalize_coordinate_ranges(child)
     elif isinstance(value, list):
@@ -695,6 +713,29 @@ def normalize_human_text(value: Any, counts: collections.Counter[str], human: bo
                     counts["text_style"] += 1
             else:
                 normalize_human_text(child, counts, human)
+
+
+def flatten_dynamic_line(value: Any) -> str:
+    """Convert legacy conditional dynamic-line objects to H's string form."""
+    parts: list[str] = []
+    allowed_keys = {"and", "or", "yes", "no", "then", "else", "text", "message"}
+
+    def collect(child: Any, key: str | None = None) -> None:
+        if isinstance(child, str):
+            if key is None or key in allowed_keys:
+                parts.append(child)
+            return
+        if isinstance(child, list):
+            for entry in child:
+                collect(entry)
+            return
+        if isinstance(child, dict):
+            for child_key, entry in child.items():
+                if child_key in allowed_keys:
+                    collect(entry, child_key)
+
+    collect(value)
+    return " ".join(part.strip() for part in parts if part.strip()) or "..."
 
 
 def migrate_terrain_ids(value: Any, counts: collections.Counter[str], terrain_context: bool = False) -> None:
@@ -1574,6 +1615,99 @@ def convert_comestible(obj: dict[str, Any], counts: collections.Counter[str]) ->
     counts["nutrition"] += 1
 
 
+def normalize_optional_mod_item_groups(
+    data: Any, path: Path, counts: collections.Counter[str]
+) -> None:
+    """Keep optional-mod item-group files loadable without importing dependencies.
+
+    Arcana ships compatibility item groups for Cata++ and Magiclysm, but its
+    modinfo does not require either dependency.  H still parses those files
+    when Arcana is enabled, so retain the group definitions while removing
+    unavailable cross-mod entries and converting Magiclysm extensions into
+    standalone groups.
+    """
+    normalized_path = path.as_posix().lower()
+    entries = data if isinstance(data, list) else [data]
+    if normalized_path.endswith("/arcana/mod_interactions/cata++/item_groups_modcompat.json"):
+        unavailable = {
+            "megamap",
+            "stim",
+            "boots_stealth",
+            "acs_74_stealth_cloak_on",
+            "goggles_nv_clairvoyance",
+            "blood_m",
+            "blood_p",
+        }
+        for entry in entries:
+            if not isinstance(entry, dict) or entry.get("type") not in {"ITEM_GROUP", "item_group"}:
+                continue
+            items = entry.get("items")
+            if isinstance(items, list):
+                kept = [
+                    item for item in items
+                    if not (isinstance(item, dict) and item.get("item") in unavailable)
+                ]
+                if kept != items:
+                    entry["items"] = kept
+                    counts["optional_group_entries"] += len(items) - len(kept)
+    elif normalized_path.endswith("/arcana/mod_interactions/magiclysm/item_groups_modcompat.json"):
+        unavailable_items = {
+            "wizard_beginner",
+            "wizard_advanced",
+            "priest_beginner",
+            "priest_advanced",
+            "techno_fundamentals",
+        }
+        unavailable_groups = {"dragon_books", "spellbook_loot_0", "spellbook_loot_1"}
+        for entry in entries:
+            if not isinstance(entry, dict) or entry.get("type") not in {"ITEM_GROUP", "item_group"}:
+                continue
+            if "copy-from" in entry:
+                del entry["copy-from"]
+                counts["optional_group_copy_from"] += 1
+            extend = entry.pop("extend", None)
+            if isinstance(extend, dict) and isinstance(extend.get("items"), list):
+                existing = entry.get("items")
+                if not isinstance(existing, list):
+                    existing = []
+                entry["items"] = existing + extend["items"]
+                counts["optional_group_extensions"] += 1
+            items = entry.get("items")
+            if isinstance(items, list):
+                kept = [
+                    item for item in items
+                    if not (
+                        isinstance(item, dict)
+                        and (
+                            item.get("item") in unavailable_items
+                            or item.get("group") in unavailable_groups
+                        )
+                    )
+                ]
+                if kept != items:
+                    entry["items"] = kept
+                    counts["optional_group_entries"] += len(items) - len(kept)
+
+
+def clean_fantasy_blacklist_refs(
+    data: Any, path: Path, valid_ids: set[str], counts: collections.Counter[str]
+) -> None:
+    """Drop stale blacklist IDs that H would otherwise report as errors."""
+    if "/fantasy/" not in path.as_posix().lower():
+        return
+    entries = data if isinstance(data, list) else [data]
+    for entry in entries:
+        if not isinstance(entry, dict) or entry.get("type") != "ITEM_BLACKLIST":
+            continue
+        items = entry.get("items")
+        if not isinstance(items, list):
+            continue
+        kept = [item for item in items if not isinstance(item, str) or item in valid_ids]
+        if kept != items:
+            entry["items"] = kept
+            counts["fantasy_blacklist_entries"] += len(items) - len(kept)
+
+
 def transform_object(
     obj: dict[str, Any],
     counts: collections.Counter[str],
@@ -2358,9 +2492,20 @@ def transform_object(
             counts["recipe_secondary_skills"] += 1
         components = obj.get("components")
         if isinstance(components, list):
-            for group in components:
+            for group_index, group in enumerate(components):
                 if not isinstance(group, list):
                     continue
+                valid_group = [
+                    component
+                    for component in group
+                    if not (
+                        isinstance(component, list)
+                        and (not component or not isinstance(component[0], str))
+                    )
+                ]
+                if len(valid_group) != len(group):
+                    components[group_index] = valid_group
+                    counts["recipe_component_entries"] += len(group) - len(valid_group)
                 for component in group:
                     if (
                         isinstance(component, list)
@@ -2370,6 +2515,34 @@ def transform_object(
                     ):
                         component[1] = max(1, abs(component[1]))
                         counts["recipe_component_counts"] += 1
+            components[:] = [group for group in components if not isinstance(group, list) or group]
+        for key in ("tools", "using"):
+            tool_groups = obj.get(key)
+            if not isinstance(tool_groups, list):
+                continue
+            for group_index, group in enumerate(tool_groups):
+                if not isinstance(group, list):
+                    continue
+                valid_group = [
+                    tool
+                    for tool in group
+                    if not (isinstance(tool, list) and (not tool or not isinstance(tool[0], str)))
+                ]
+                if len(valid_group) != len(group):
+                    tool_groups[group_index] = valid_group
+                    counts["recipe_tool_entries"] += len(group) - len(valid_group)
+            tool_groups[:] = [group for group in tool_groups if not isinstance(group, list) or group]
+        byproducts = obj.get("byproducts")
+        if isinstance(byproducts, list):
+            valid_byproducts = [
+                byproduct
+                for byproduct in byproducts
+                if isinstance(byproduct, dict)
+                and ("item" in byproduct or "group" in byproduct)
+            ]
+            if len(valid_byproducts) != len(byproducts):
+                obj["byproducts"] = valid_byproducts
+                counts["recipe_byproduct_entries"] += len(byproducts) - len(valid_byproducts)
         if obj.get("type") == "uncraft":
             for key in ("id_suffix", "reversible", "autolearn", "difficulty"):
                 if key in obj:
@@ -2401,10 +2574,19 @@ def transform_object(
         if "subtype" not in obj:
             obj["subtype"] = "distribution"
             counts["item_group_subtypes"] += 1
+        extend = obj.get("extend")
+        if isinstance(extend, dict) and "entries" in extend and "items" not in extend:
+            extend["items"] = extend.pop("entries")
+            counts["item_group_extend_entries"] += 1
+        group_lists: list[list[Any]] = []
         for key in ("items", "entries"):
             if isinstance(obj.get(key), list):
+                group_lists.append(obj[key])
+        if isinstance(extend, dict) and isinstance(extend.get("items"), list):
+            group_lists.append(extend["items"])
+        for group_entries in group_lists:
                 normalized_entries: list[Any] = []
-                for group_entry in obj[key]:
+                for group_entry in group_entries:
                     if (
                         isinstance(group_entry, list)
                         and len(group_entry) >= 2
@@ -2418,10 +2600,20 @@ def transform_object(
                         counts["item_group_string_entries"] += 1
                     else:
                         normalized_entries.append(group_entry)
-                obj[key] = normalized_entries
-                obj[key], removed = dedupe(obj[key])
+                normalized_entries = [
+                    entry
+                    for entry in normalized_entries
+                    if (
+                        not isinstance(entry, dict)
+                        or "item" in entry
+                        or "group" in entry
+                        or "collection" in entry
+                        or "distribution" in entry
+                    )
+                ]
+                normalized_entries, removed = dedupe(normalized_entries)
                 counts["item_group_entries"] += removed
-                for entry in obj[key]:
+                for entry in normalized_entries:
                     if not isinstance(entry, dict):
                         continue
                     for obsolete in ("repeat", "ammo-item", "container-item"):
@@ -2434,6 +2626,69 @@ def transform_object(
                     if "chance" in entry and "prob" not in entry:
                         entry["prob"] = entry.pop("chance")
                         counts["item_group_chance"] += 1
+                    if "entry-wrapper" in entry and "container-item" not in entry:
+                        entry["container-item"] = "null"
+                        counts["item_group_wrappers"] += 1
+                if isinstance(obj.get("items"), list) and obj["items"] is group_entries:
+                    obj["items"] = normalized_entries
+                elif isinstance(obj.get("entries"), list) and obj["entries"] is group_entries:
+                    obj["entries"] = normalized_entries
+                elif isinstance(extend, dict) and extend.get("items") is group_entries:
+                    extend["items"] = normalized_entries
+
+    if obj.get("type") == "monstergroup" and isinstance(obj.get("monsters"), list):
+        original_monster_count = len(obj["monsters"])
+        valid_monsters = [
+            entry
+            for entry in obj["monsters"]
+            if not isinstance(entry, dict) or "monster" in entry or "group" in entry
+        ]
+        if len(valid_monsters) != len(obj["monsters"]):
+            obj["monsters"] = valid_monsters
+            counts["monstergroup_entries"] += original_monster_count - len(valid_monsters)
+
+    if obj.get("type") == "vehicle_group" and isinstance(obj.get("vehicles"), list):
+        # Older vehicle groups used a synthetic "none" entry to represent no
+        # spawn.  H tries to instantiate it during validation and hits an
+        # empty-parts assertion; retain the group and all real vehicle IDs.
+        vehicles = obj["vehicles"]
+        kept_vehicles = [
+            entry
+            for entry in vehicles
+            if not (
+                isinstance(entry, list)
+                and entry
+                and entry[0] == "none"
+            )
+        ]
+        if kept_vehicles != vehicles:
+            obj["vehicles"] = kept_vehicles
+            counts["vehicle_group_none_entries"] += len(vehicles) - len(kept_vehicles)
+
+    if obj.get("type") == "mapgen":
+        map_object = obj.get("object") if isinstance(obj.get("object"), dict) else obj
+        for key in ("place_loot", "place_items"):
+            entries = map_object.get(key)
+            if not isinstance(entries, list):
+                continue
+            valid_entries = [
+                entry
+                for entry in entries
+                if not isinstance(entry, dict) or "item" in entry or "group" in entry
+            ]
+            if len(valid_entries) != len(entries):
+                map_object[key] = valid_entries
+                counts["mapgen_item_entries"] += len(entries) - len(valid_entries)
+        palette = map_object.get("items")
+        if isinstance(palette, dict):
+            valid_palette = {
+                symbol: entry
+                for symbol, entry in palette.items()
+                if not isinstance(entry, dict) or "item" in entry or "group" in entry
+            }
+            if len(valid_palette) != len(palette):
+                map_object["items"] = valid_palette
+                counts["mapgen_palette_entries"] += len(palette) - len(valid_palette)
 
     if obj.get("type") == "mutation_category":
         for key in list(obj):
@@ -2462,6 +2717,72 @@ def transform_object(
     if obj.get("type") == "ITEM_BLACKLIST" and isinstance(obj.get("items"), list):
         obj["items"], removed = dedupe(obj["items"])
         counts["blacklist_entries"] += removed
+
+    if isinstance(obj.get("dynamic_line"), (dict, list)):
+        obj["dynamic_line"] = flatten_dynamic_line(obj["dynamic_line"])
+        counts["dynamic_line_objects"] += 1
+
+    if obj.get("type") == "mapgen" and isinstance(obj.get("object"), dict):
+        map_object = obj["object"]
+        rows = map_object.get("rows")
+        if isinstance(rows, list):
+            # Nested mapgens inherit their terrain from the caller and H does
+            # not accept a fill_ter member in their object payload.
+            if obj.get("nested_mapgen_id"):
+                map_object.pop("fill_ter", None)
+            # H requires a fill terrain whenever a row glyph is not explicitly
+            # mapped, including mapgens that also reference a palette or nested
+            # mapgen.  Preserve any explicit fill_ter and add a harmless
+            # regional fallback to legacy row maps that omit one.
+            if "fill_ter" not in map_object and not obj.get("nested_mapgen_id"):
+                map_object["fill_ter"] = "t_region_groundcover"
+                counts["mapgen_fill_terrain"] += 1
+            # Some legacy mapgens reference palettes that are no longer
+            # shipped by the mod.  H then rejects every glyph not covered by
+            # a local terrain/furniture mapping.  Keep the map layout intact
+            # and give only those orphan glyphs a harmless terrain fallback;
+            # valid palette mappings continue to take precedence.
+            if rows:
+                fallback = map_object.get("fill_ter") or "t_region_groundcover"
+                terrain = map_object.setdefault("terrain", {})
+                furniture = map_object.get("furniture", {})
+                known = set(terrain) | set(furniture)
+                for row in rows:
+                    if not isinstance(row, str):
+                        continue
+                    for glyph in set(row):
+                        if glyph != " " and glyph not in known:
+                            terrain[glyph] = fallback
+                            known.add(glyph)
+            mapgensize = map_object.get("mapgensize") or obj.get("mapgensize")
+            expected_height = None
+            expected_width = None
+            if isinstance(mapgensize, list) and len(mapgensize) == 2 and isinstance(mapgensize[1], int):
+                expected_height = mapgensize[1]
+                if isinstance(mapgensize[0], int):
+                    expected_width = mapgensize[0]
+            else:
+                om_terrain = obj.get("om_terrain")
+                if isinstance(om_terrain, list) and om_terrain and all(isinstance(entry, list) for entry in om_terrain):
+                    expected_height = len(om_terrain) * 24
+                    expected_width = max((len(entry) for entry in om_terrain), default=1) * 24
+                elif isinstance(om_terrain, (list, str)):
+                    expected_height = 24
+                    expected_width = 24
+            if expected_height is not None and len(rows) > expected_height:
+                trailing = rows[expected_height:]
+                if all(isinstance(row, str) and not row.strip() for row in trailing):
+                    del rows[expected_height:]
+                    counts["mapgen_rows_trimmed"] += len(trailing)
+            elif expected_height is not None and len(rows) < expected_height:
+                missing_rows = expected_height - len(rows)
+                rows.extend([" " * (expected_width or 24) for _ in range(missing_rows)])
+                counts["mapgen_rows_padded"] += missing_rows
+            if expected_width is not None:
+                for index, row in enumerate(rows):
+                    if isinstance(row, str) and len(row) < expected_width:
+                        rows[index] = row + " " * (expected_width - len(row))
+                        counts["mapgen_columns_padded"] += 1
 
     normalize_comment_keys(obj, counts)
     clean_explosion_actions(obj, counts)
@@ -2648,6 +2969,8 @@ def general_pass(
         if isinstance(data, dict) and data.get("type") == "MOD_INFO":
             data = [data]
             totals["modinfo_wrapped"] += 1
+        normalize_optional_mod_item_groups(data, path, totals)
+        clean_fantasy_blacklist_refs(data, path, set(h_index), totals)
         if isinstance(data, list):
             original_length = len(data)
             data, removed = dedupe(data)
@@ -2661,6 +2984,7 @@ def general_pass(
                     if (
                         isinstance(entry.get("id"), str)
                         and entry.get("copy-from") == entry.get("id")
+                        and entry.get("type") not in {"ITEM_GROUP", "item_group"}
                     ):
                         self_copy_entries.add(id(entry))
                         continue
@@ -2677,6 +3001,13 @@ def general_pass(
                 entry_type = entry.get("type") if isinstance(entry, dict) else None
                 entry_ident = entry.get("id", entry.get("abstract")) if isinstance(entry, dict) else None
                 if (
+                    entry_type in {"recipe", "uncraft"}
+                    and isinstance(entry, dict)
+                    and (entry.get("obsolete") is True or not isinstance(entry.get("result"), str))
+                ):
+                    totals["invalid_recipe_entries"] += 1
+                    continue
+                if (
                     entry_type == "MONSTER_FACTION"
                     and isinstance(entry, dict)
                     and (
@@ -2689,7 +3020,10 @@ def general_pass(
                 if (
                     entry_type in {"recipe", "uncraft"}
                     and isinstance(entry, dict)
-                    and entry.get("result") in OBSOLETE_RECIPE_RESULT_IDS
+                    and (
+                        entry.get("result") in OBSOLETE_RECIPE_RESULT_IDS
+                        or entry.get("result") in LOOPING_ACID_RECIPE_RESULTS
+                    )
                 ):
                     totals["obsolete_recipe_results"] += 1
                     continue

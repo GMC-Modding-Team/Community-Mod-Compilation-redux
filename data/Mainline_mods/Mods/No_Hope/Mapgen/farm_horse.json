@@ -3,14 +3,33 @@
     "type": "mapgen",
     "method": "json",
     "om_terrain": [
-      [ "horse_farm_1", "horse_farm_2", "horse_farm_3", "horse_farm_4" ],
-      [ "horse_farm_5", "horse_farm_6", "horse_farm_7", "horse_farm_8" ],
-      [ "horse_farm_9", "horse_farm_10", "horse_farm_11", "horse_farm_12" ],
-      [ "horse_farm_13", "horse_farm_14", "horse_farm_15", "horse_farm_16" ]
+      [
+        "horse_farm_1",
+        "horse_farm_2",
+        "horse_farm_3",
+        "horse_farm_4"
+      ],
+      [
+        "horse_farm_5",
+        "horse_farm_6",
+        "horse_farm_7",
+        "horse_farm_8"
+      ],
+      [
+        "horse_farm_9",
+        "horse_farm_10",
+        "horse_farm_11",
+        "horse_farm_12"
+      ],
+      [
+        "horse_farm_13",
+        "horse_farm_14",
+        "horse_farm_15",
+        "horse_farm_16"
+      ]
     ],
     "weight": 25000,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "........................X.......................X.......................X.......................",
         "................................................................................................",
@@ -109,52 +128,459 @@
         "..%%%%%%%%%%%%%%%%%%%%%%%%%%,,..,,%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%..",
         "..%.........................,,..,,...........................................................%.."
       ],
-      "palettes": [ "farm_horse" ],
-      "terrain": { "p": "t_grass", "0": "t_grass", "6": "t_grass" },
-      "sealed_item": { "Q": { "item": { "item": "seed_rose" }, "furniture": "f_planter_mature" } },
+      "palettes": [
+        "farm_horse"
+      ],
+      "terrain": {
+        "p": "t_grass",
+        "0": "t_grass",
+        "6": "t_grass",
+        "X": "t_region_groundcover",
+        ".": "t_region_groundcover",
+        "%": "t_region_groundcover",
+        "+": "t_region_groundcover",
+        "W": "t_region_groundcover",
+        "L": "t_region_groundcover",
+        "^": "t_region_groundcover",
+        ";": "t_region_groundcover",
+        "9": "t_region_groundcover",
+        "7": "t_region_groundcover",
+        "/": "t_region_groundcover",
+        "G": "t_region_groundcover",
+        "5": "t_region_groundcover",
+        "3": "t_region_groundcover",
+        "#": "t_region_groundcover",
+        "~": "t_region_groundcover",
+        "`": "t_region_groundcover",
+        "8": "t_region_groundcover",
+        "1": "t_region_groundcover",
+        "h": "t_region_groundcover",
+        "v": "t_region_groundcover",
+        "H": "t_region_groundcover",
+        "k": "t_region_groundcover",
+        "A": "t_region_groundcover",
+        "T": "t_region_groundcover",
+        "K": "t_region_groundcover",
+        ",": "t_region_groundcover",
+        "*": "t_region_groundcover",
+        "$": "t_region_groundcover",
+        "O": "t_region_groundcover",
+        "Q": "t_region_groundcover",
+        "b": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "-": "t_region_groundcover",
+        "S": "t_region_groundcover",
+        "c": "t_region_groundcover",
+        "f": "t_region_groundcover",
+        "o": "t_region_groundcover",
+        "n": "t_region_groundcover",
+        "y": "t_region_groundcover",
+        "D": "t_region_groundcover",
+        "i": "t_region_groundcover",
+        "t": "t_region_groundcover",
+        "r": "t_region_groundcover",
+        "g": "t_region_groundcover",
+        "a": "t_region_groundcover",
+        "<": "t_region_groundcover",
+        "Y": "t_region_groundcover",
+        "4": "t_region_groundcover"
+      },
+      "sealed_item": {
+        "Q": {
+          "item": {
+            "item": "seed_rose"
+          },
+          "furniture": "f_planter_mature"
+        }
+      },
       "items": {
-        "k": { "item": "office", "chance": 30 },
-        "f": { "item": "fridge", "chance": 30 },
-        "o": { "item": "oven", "chance": 30 },
-        "8": { "item": "ranch_homebooks", "chance": 30 },
-        "r": { "item": "restaur_kitchen", "chance": 30 },
-        "c": { "item": "kitchen_counters", "chance": 30 },
-        "D": { "item": "trash", "chance": 20, "repeat": [ 2, 4 ] },
-        "7": { "item": "horse_gear", "chance": 30 },
-        "^": { "item": "horse_gear", "chance": 30 }
+        "k": {
+          "item": "office",
+          "chance": 30
+        },
+        "f": {
+          "item": "fridge",
+          "chance": 30
+        },
+        "o": {
+          "item": "oven",
+          "chance": 30
+        },
+        "8": {
+          "item": "ranch_homebooks",
+          "chance": 30
+        },
+        "r": {
+          "item": "restaur_kitchen",
+          "chance": 30
+        },
+        "c": {
+          "item": "kitchen_counters",
+          "chance": 30
+        },
+        "D": {
+          "item": "trash",
+          "chance": 20,
+          "repeat": [
+            2,
+            4
+          ]
+        },
+        "7": {
+          "item": "horse_gear",
+          "chance": 30
+        },
+        "^": {
+          "item": "horse_gear",
+          "chance": 30
+        }
       },
       "place_loot": [
-        { "item": "television", "x": 17, "y": 88, "chance": 50 },
-        { "item": "stepladder", "x": 67, "y": 43, "chance": 50 },
-        { "item": "straw_pile", "x": [ 40, 44 ], "y": [ 48, 52 ], "chance": 30, "repeat": [ 2, 4 ] },
-        { "item": "straw_pile", "x": [ 52, 54 ], "y": [ 31, 33 ], "chance": 30, "repeat": [ 2, 4 ] },
-        { "item": "straw_pile", "x": [ 52, 54 ], "y": [ 35, 37 ], "chance": 30, "repeat": [ 2, 4 ] },
-        { "item": "straw_pile", "x": [ 52, 54 ], "y": [ 39, 41 ], "chance": 30, "repeat": [ 2, 4 ] },
-        { "item": "straw_pile", "x": [ 66, 68 ], "y": [ 31, 33 ], "chance": 30, "repeat": [ 2, 4 ] },
-        { "item": "straw_pile", "x": [ 66, 68 ], "y": [ 35, 37 ], "chance": 30, "repeat": [ 2, 4 ] },
-        { "item": "straw_pile", "x": [ 66, 68 ], "y": [ 39, 41 ], "chance": 30, "repeat": [ 2, 4 ] },
-        { "group": "farming_seeds", "x": [ 9, 18 ], "y": [ 61, 65 ], "chance": 80, "repeat": [ 2, 4 ] },
-        { "group": "farming_tools", "x": [ 74, 77 ], "y": 15, "chance": 40, "repeat": [ 2, 4 ] },
-        { "group": "farming_tools", "x": [ 79, 81 ], "y": 15, "chance": 40, "repeat": [ 2, 4 ] },
-        { "group": "farming_tools", "x": [ 75, 81 ], "y": [ 17, 22 ], "chance": 50, "repeat": [ 2, 4 ] },
-        { "item": "bucket", "x": 46, "y": 48, "chance": 20 },
-        { "item": "bucket", "x": 56, "y": 52, "chance": 30 },
-        { "item": "bucket", "x": 56, "y": 33, "chance": 30 },
-        { "item": "bucket", "x": 56, "y": 37, "chance": 30 },
-        { "item": "bucket", "x": 64, "y": 41, "chance": 30 },
-        { "item": "cattlefodder", "x": [ 52, 68 ], "y": [ 31, 41 ], "chance": 80, "repeat": [ 6, 10 ] },
-        { "item": "birdfood", "x": [ 40, 44 ], "y": [ 48, 52 ], "chance": 80, "repeat": [ 2, 4 ] }
+        {
+          "item": "television",
+          "x": 17,
+          "y": 88,
+          "chance": 50
+        },
+        {
+          "item": "stepladder",
+          "x": 67,
+          "y": 43,
+          "chance": 50
+        },
+        {
+          "item": "straw_pile",
+          "x": [
+            40,
+            44
+          ],
+          "y": [
+            48,
+            52
+          ],
+          "chance": 30,
+          "repeat": [
+            2,
+            4
+          ]
+        },
+        {
+          "item": "straw_pile",
+          "x": [
+            52,
+            54
+          ],
+          "y": [
+            31,
+            33
+          ],
+          "chance": 30,
+          "repeat": [
+            2,
+            4
+          ]
+        },
+        {
+          "item": "straw_pile",
+          "x": [
+            52,
+            54
+          ],
+          "y": [
+            35,
+            37
+          ],
+          "chance": 30,
+          "repeat": [
+            2,
+            4
+          ]
+        },
+        {
+          "item": "straw_pile",
+          "x": [
+            52,
+            54
+          ],
+          "y": [
+            39,
+            41
+          ],
+          "chance": 30,
+          "repeat": [
+            2,
+            4
+          ]
+        },
+        {
+          "item": "straw_pile",
+          "x": [
+            66,
+            68
+          ],
+          "y": [
+            31,
+            33
+          ],
+          "chance": 30,
+          "repeat": [
+            2,
+            4
+          ]
+        },
+        {
+          "item": "straw_pile",
+          "x": [
+            66,
+            68
+          ],
+          "y": [
+            35,
+            37
+          ],
+          "chance": 30,
+          "repeat": [
+            2,
+            4
+          ]
+        },
+        {
+          "item": "straw_pile",
+          "x": [
+            66,
+            68
+          ],
+          "y": [
+            39,
+            41
+          ],
+          "chance": 30,
+          "repeat": [
+            2,
+            4
+          ]
+        },
+        {
+          "group": "farming_seeds",
+          "x": [
+            9,
+            18
+          ],
+          "y": [
+            61,
+            65
+          ],
+          "chance": 80,
+          "repeat": [
+            2,
+            4
+          ]
+        },
+        {
+          "group": "farming_tools",
+          "x": [
+            74,
+            77
+          ],
+          "y": 15,
+          "chance": 40,
+          "repeat": [
+            2,
+            4
+          ]
+        },
+        {
+          "group": "farming_tools",
+          "x": [
+            79,
+            81
+          ],
+          "y": 15,
+          "chance": 40,
+          "repeat": [
+            2,
+            4
+          ]
+        },
+        {
+          "group": "farming_tools",
+          "x": [
+            75,
+            81
+          ],
+          "y": [
+            17,
+            22
+          ],
+          "chance": 50,
+          "repeat": [
+            2,
+            4
+          ]
+        },
+        {
+          "item": "bucket",
+          "x": 46,
+          "y": 48,
+          "chance": 20
+        },
+        {
+          "item": "bucket",
+          "x": 56,
+          "y": 52,
+          "chance": 30
+        },
+        {
+          "item": "bucket",
+          "x": 56,
+          "y": 33,
+          "chance": 30
+        },
+        {
+          "item": "bucket",
+          "x": 56,
+          "y": 37,
+          "chance": 30
+        },
+        {
+          "item": "bucket",
+          "x": 64,
+          "y": 41,
+          "chance": 30
+        },
+        {
+          "item": "cattlefodder",
+          "x": [
+            52,
+            68
+          ],
+          "y": [
+            31,
+            41
+          ],
+          "chance": 80,
+          "repeat": [
+            6,
+            10
+          ]
+        },
+        {
+          "item": "birdfood",
+          "x": [
+            40,
+            44
+          ],
+          "y": [
+            48,
+            52
+          ],
+          "chance": 80,
+          "repeat": [
+            2,
+            4
+          ]
+        }
       ],
       "place_monster": [
-        { "monster": "mon_chicken", "x": [ 40, 44 ], "y": [ 48, 52 ], "repeat": [ 2, 6 ], "chance": 30 },
-        { "monster": "mon_horse", "x": [ 52, 54 ], "y": [ 31, 33 ], "chance": 30 },
-        { "monster": "mon_horse", "x": [ 52, 54 ], "y": [ 35, 37 ], "chance": 30 },
-        { "monster": "mon_horse", "x": [ 52, 54 ], "y": [ 39, 41 ], "chance": 30 },
-        { "monster": "mon_horse", "x": [ 66, 68 ], "y": [ 31, 33 ], "chance": 30 },
-        { "monster": "mon_horse", "x": [ 66, 68 ], "y": [ 35, 37 ], "chance": 30 },
-        { "monster": "mon_horse", "x": [ 66, 68 ], "y": [ 39, 41 ], "chance": 30 }
+        {
+          "monster": "mon_chicken",
+          "x": [
+            40,
+            44
+          ],
+          "y": [
+            48,
+            52
+          ],
+          "repeat": [
+            2,
+            6
+          ],
+          "chance": 30
+        },
+        {
+          "monster": "mon_horse",
+          "x": [
+            52,
+            54
+          ],
+          "y": [
+            31,
+            33
+          ],
+          "chance": 30
+        },
+        {
+          "monster": "mon_horse",
+          "x": [
+            52,
+            54
+          ],
+          "y": [
+            35,
+            37
+          ],
+          "chance": 30
+        },
+        {
+          "monster": "mon_horse",
+          "x": [
+            52,
+            54
+          ],
+          "y": [
+            39,
+            41
+          ],
+          "chance": 30
+        },
+        {
+          "monster": "mon_horse",
+          "x": [
+            66,
+            68
+          ],
+          "y": [
+            31,
+            33
+          ],
+          "chance": 30
+        },
+        {
+          "monster": "mon_horse",
+          "x": [
+            66,
+            68
+          ],
+          "y": [
+            35,
+            37
+          ],
+          "chance": 30
+        },
+        {
+          "monster": "mon_horse",
+          "x": [
+            66,
+            68
+          ],
+          "y": [
+            39,
+            41
+          ],
+          "chance": 30
+        }
       ],
-      "place_vehicles": [ { "vehicle": "uncovered_wagon", "x": 78, "y": 20, "rotation": 180, "chance": 30 } ]
+      "place_vehicles": [
+        {
+          "vehicle": "uncovered_wagon",
+          "x": 78,
+          "y": 20,
+          "rotation": 180,
+          "chance": 30
+        }
+      ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -162,7 +588,6 @@
     "method": "json",
     "om_terrain": "horse_farm_4_roof",
     "object": {
-      "fill_ter": "t_shingle_flat_roof",
       "rows": [
         "                        ",
         "                        ",
@@ -189,8 +614,13 @@
         "  ..........            ",
         "  ..........            "
       ],
-      "palettes": [ "roof_palette" ],
-      "terrain": { ".": "t_shingle_flat_roof" }
+      "palettes": [
+        "roof_palette"
+      ],
+      "terrain": {
+        ".": "t_shingle_flat_roof"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -225,8 +655,16 @@
         "   wwwwwww.....wwwwwww  ",
         "                        "
       ],
-      "terrain": { ">": "t_ladder_down", ".": "t_floor", "*": "t_open_air_rooved", "w": "t_wall_wood", " ": "t_open_air" },
-      "furniture": { "6": "f_hay" }
+      "terrain": {
+        ">": "t_ladder_down",
+        ".": "t_floor",
+        "*": "t_open_air_rooved",
+        "w": "t_wall_wood",
+        " ": "t_open_air"
+      },
+      "furniture": {
+        "6": "f_hay"
+      }
     }
   },
   {
@@ -234,7 +672,6 @@
     "method": "json",
     "om_terrain": "horse_farm_7_roof",
     "object": {
-      "fill_ter": "t_shingle_flat_roof",
       "rows": [
         "                        ",
         "                        ",
@@ -261,8 +698,13 @@
         "   ...................  ",
         "                        "
       ],
-      "palettes": [ "roof_palette" ],
-      "terrain": { ".": "t_shingle_flat_roof" }
+      "palettes": [
+        "roof_palette"
+      ],
+      "terrain": {
+        ".": "t_shingle_flat_roof"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -270,7 +712,6 @@
     "method": "json",
     "om_terrain": "horse_farm_9_roof",
     "object": {
-      "fill_ter": "t_glass_roof",
       "rows": [
         "                        ",
         "                        ",
@@ -297,7 +738,13 @@
         "                        ",
         "                        "
       ],
-      "palettes": [ "roof_palette" ]
+      "palettes": [
+        "roof_palette"
+      ],
+      "terrain": {
+        "o": "t_region_groundcover"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -305,7 +752,6 @@
     "method": "json",
     "om_terrain": "horse_farm_10_roof",
     "object": {
-      "fill_ter": "t_shingle_flat_roof",
       "rows": [
         "               .......  ",
         "               .......  ",
@@ -332,8 +778,13 @@
         "                        ",
         "                        "
       ],
-      "palettes": [ "roof_palette" ],
-      "terrain": { ".": "t_shingle_flat_roof" }
+      "palettes": [
+        "roof_palette"
+      ],
+      "terrain": {
+        ".": "t_shingle_flat_roof"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -341,7 +792,6 @@
     "method": "json",
     "om_terrain": "horse_farm_13_2ndfloor",
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "                        ",
         "     |-vv-|-v-v-|_____  ",
@@ -368,17 +818,86 @@
         "                        ",
         "                        "
       ],
-      "palettes": [ "farm_horse" ],
-      "terrain": { "_": "t_shingle_flat_roof", "*": "t_floor", " ": "t_open_air", ">": "t_stairs_down" },
+      "palettes": [
+        "farm_horse"
+      ],
+      "terrain": {
+        "_": "t_shingle_flat_roof",
+        "*": "t_floor",
+        " ": "t_open_air",
+        ">": "t_stairs_down",
+        "|": "t_region_groundcover",
+        "v": "t_region_groundcover",
+        "-": "t_region_groundcover",
+        "h": "t_region_groundcover",
+        "k": "t_region_groundcover",
+        "@": "t_region_groundcover",
+        "d": "t_region_groundcover",
+        "8": "t_region_groundcover",
+        "+": "t_region_groundcover",
+        "t": "t_region_groundcover",
+        "S": "t_region_groundcover",
+        "y": "t_region_groundcover",
+        "B": "t_region_groundcover",
+        "D": "t_region_groundcover",
+        "n": "t_region_groundcover",
+        "1": "t_region_groundcover"
+      },
       "items": {
-        "@": { "item": "bed", "chance": 50, "repeat": [ 1, 2 ] },
-        "D": { "item": "trash_cart", "chance": 50 },
-        "B": { "item": "shower", "chance": 40, "repeat": [ 2, 4 ] },
-        "d": { "item": "dresser", "chance": 70, "repeat": [ 2, 4 ] },
-        "8": { "item": "ranch_homebooks", "chance": 70, "repeat": [ 2, 4 ] },
-        "k": { "item": "bedroom", "chance": 60, "repeat": [ 2, 4 ] },
-        "S": { "item": "softdrugs", "chance": 60, "repeat": [ 2, 4 ] }
-      }
+        "@": {
+          "item": "bed",
+          "chance": 50,
+          "repeat": [
+            1,
+            2
+          ]
+        },
+        "D": {
+          "item": "trash_cart",
+          "chance": 50
+        },
+        "B": {
+          "item": "shower",
+          "chance": 40,
+          "repeat": [
+            2,
+            4
+          ]
+        },
+        "d": {
+          "item": "dresser",
+          "chance": 70,
+          "repeat": [
+            2,
+            4
+          ]
+        },
+        "8": {
+          "item": "ranch_homebooks",
+          "chance": 70,
+          "repeat": [
+            2,
+            4
+          ]
+        },
+        "k": {
+          "item": "bedroom",
+          "chance": 60,
+          "repeat": [
+            2,
+            4
+          ]
+        },
+        "S": {
+          "item": "softdrugs",
+          "chance": 60,
+          "repeat": [
+            2,
+            4
+          ]
+        }
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -386,7 +905,6 @@
     "method": "json",
     "om_terrain": "horse_farm_13_roof",
     "object": {
-      "fill_ter": "t_shingle_flat_roof",
       "rows": [
         "                        ",
         "     ------------       ",
@@ -413,8 +931,14 @@
         "                        ",
         "                        "
       ],
-      "palettes": [ "roof_palette" ],
-      "terrain": { ".": "t_shingle_flat_roof" }
+      "palettes": [
+        "roof_palette"
+      ],
+      "terrain": {
+        ".": "t_shingle_flat_roof",
+        "-": "t_region_groundcover"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   }
 ]
