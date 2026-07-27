@@ -126,6 +126,7 @@ HUMAN_TEXT_KEYS = {
     "info",
     "menu_text",
     "message",
+    "messages",
     "msg",
     "mutagen_message",
     "name",
@@ -626,6 +627,55 @@ def normalize_text_style(text: str) -> str:
         ":": (1, 1, 1, 1),
         ",": (1, 1, 2, 1),
         "…": (1, 0, 2, 2),
+    }
+    result: list[str] = []
+    i = 0
+    while i < len(text):
+        char = text[i]
+        if char not in punctuation:
+            result.append(char)
+            i += 1
+            continue
+        word_length = 0
+        j = len(result) - 1
+        while j >= 0 and (result[j].isalnum() or result[j] == "-"):
+            word_length += 1
+            j -= 1
+        result.append(char)
+        i += 1
+        if char in "!?":
+            while i < len(text) and text[i] in "!?":
+                result.append(text[i])
+                i += 1
+        start_spaces = i
+        while i < len(text) and text[i] == " ":
+            i += 1
+        spaces = i - start_spaces
+        min_word, min_spaces, max_spaces, wanted = punctuation[char]
+        if i < len(text) and text[i] != "\n" and word_length >= min_word:
+            if min_spaces <= spaces <= max_spaces and spaces != wanted:
+                spaces = wanted
+        result.extend(" " * spaces)
+    return "".join(result)
+
+
+# The original helper above was retained for compatibility with older reports;
+# this H-safe implementation uses the actual Unicode ellipsis instead of the
+# mojibake sequence present in legacy copies of the script.
+def normalize_text_style(text: str) -> str:
+    ellipsis = chr(0x2026)
+    text = text.replace("\r\n", "\n").replace("\r", "\n").replace("\t", "    ")
+    text = re.sub(r"\.\s+\.\s+\.", ellipsis, text).replace("...", ellipsis)
+    text = re.sub(r" +([!?.,;:])", r"\1", text)
+    text = re.sub(r" +\n", "\n", text).rstrip(" ")
+    punctuation = {
+        ".": (3, 1, 3, 2),
+        ";": (1, 1, 2, 1),
+        "!": (1, 1, 3, 2),
+        "?": (1, 1, 3, 2),
+        ":": (1, 1, 1, 1),
+        ",": (1, 1, 2, 1),
+        ellipsis: (1, 0, 2, 2),
     }
     result: list[str] = []
     i = 0
@@ -2699,6 +2749,66 @@ def transform_object(
         del obj["healing_resting"]
         counts["mutation_obsolete_fields"] += 1
 
+    if obj.get("type") == "technique":
+        # These target-state selectors were removed from the H technique
+        # schema.  Keep the technique itself and its supported effects.
+        for obsolete in ("stunned_target", "downed_target", "req_buffs"):
+            if obsolete in obj:
+                del obj[obsolete]
+                counts["technique_obsolete_fields"] += 1
+
+    if obj.get("type") == "terrain":
+        bash = obj.get("bash")
+        bash_items = bash.get("items") if isinstance(bash, dict) else None
+        if isinstance(bash_items, list):
+            default_charge_items = {"t_rock_coal": "coal_lump"}
+            kept_bash_items: list[Any] = []
+            for bash_item in bash_items:
+                if isinstance(bash_item, dict) and "charges" in bash_item and "item" not in bash_item:
+                    default_item = default_charge_items.get(obj.get("id"))
+                    if default_item:
+                        bash_item["item"] = default_item
+                        counts["terrain_bash_charge_items"] += 1
+                    else:
+                        counts["terrain_bash_entries"] += 1
+                        continue
+                kept_bash_items.append(bash_item)
+            bash["items"] = kept_bash_items
+
+    if obj.get("type") == "profession":
+        def clean_profession_inventory(value: Any) -> None:
+            if isinstance(value, dict):
+                for key, child in list(value.items()):
+                    if key == "entries" and isinstance(child, list):
+                        kept_entries = [
+                            entry
+                            for entry in child
+                            if not isinstance(entry, dict) or "item" in entry or "group" in entry
+                        ]
+                        counts["profession_item_entries"] += len(child) - len(kept_entries)
+                        value[key] = kept_entries
+                    else:
+                        clean_profession_inventory(child)
+            elif isinstance(value, list):
+                for child in value:
+                    clean_profession_inventory(child)
+
+        clean_profession_inventory(obj.get("items"))
+
+    if obj.get("type") == "region_settings":
+        # H no longer reads these legacy trail/weather controls.  Removing
+        # only the obsolete members preserves the region and mapgen data.
+        regional_obsolete = {
+            "clear_trail_terrain",
+            "trail_center_variance",
+            "trail_terrain",
+            "trail_width_offset_max",
+            "trail_width_offset_min",
+            "weather_types",
+            "field_coverage",
+        }
+        counts["region_obsolete_fields"] += remove_keys_recursive(obj, regional_obsolete)
+
     counts["obsolete_nested_fields"] += remove_keys_recursive(obj, {"no_infection_chance"})
 
     if obj.get("type") == "material":
@@ -3000,6 +3110,18 @@ def general_pass(
                     continue
                 entry_type = entry.get("type") if isinstance(entry, dict) else None
                 entry_ident = entry.get("id", entry.get("abstract")) if isinstance(entry, dict) else None
+                if entry_type == "sound_effect":
+                    # H loads sounds from its built-in registry; legacy JSON
+                    # sound_effect objects are rejected by the H factory.
+                    totals["obsolete_sound_effects"] += 1
+                    continue
+                if (
+                    entry_type in {"BOOK", "SPELL"}
+                    and isinstance(entry, dict)
+                    and entry.get("//") == "obsoleted"
+                ):
+                    totals["obsolete_migration_entries"] += 1
+                    continue
                 if (
                     entry_type in {"recipe", "uncraft"}
                     and isinstance(entry, dict)
