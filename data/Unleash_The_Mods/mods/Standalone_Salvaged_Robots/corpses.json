@@ -2,7 +2,6 @@
   {
     "id": "broken_milturret_disarmed",
     "type": "GENERIC",
-    "copy-from": "broken_milturret_base",
     "color": "light_gray",
     "name": {
       "str": "broken military turret"
@@ -12,7 +11,6 @@
   {
     "id": "broken_milturret_556",
     "type": "GENERIC",
-    "copy-from": "broken_milturret_base",
     "color": "light_green",
     "name": {
       "str": "broken 5.56mm turret"
@@ -22,7 +20,6 @@
   {
     "id": "broken_turret_rifle",
     "type": "GENERIC",
-    "copy-from": "broken_milturret_base",
     "color": "light_green",
     "name": {
       "str": "broken 5.56mm turret"
@@ -32,7 +29,6 @@
   {
     "id": "broken_milturret_50bmg",
     "type": "GENERIC",
-    "copy-from": "broken_milturret_base",
     "color": "green",
     "name": {
       "str": "broken 50cal turret"
@@ -42,7 +38,6 @@
   {
     "id": "broken_turret_bmg",
     "type": "GENERIC",
-    "copy-from": "broken_milturret_base",
     "color": "green",
     "name": {
       "str": "broken 50cal turret"
@@ -52,7 +47,6 @@
   {
     "id": "broken_milturret_40mm",
     "type": "GENERIC",
-    "copy-from": "broken_milturret_base",
     "color": "light_green",
     "name": {
       "str": "broken 40mm turret"
@@ -62,7 +56,6 @@
   {
     "id": "broken_milturret_needle",
     "type": "GENERIC",
-    "copy-from": "broken_milturret_base",
     "color": "light_red",
     "name": {
       "str": "broken 5.56mm turret"
@@ -72,7 +65,6 @@
   {
     "id": "broken_milturret_8x40mm",
     "type": "GENERIC",
-    "copy-from": "broken_milturret_base",
     "color": "red",
     "name": {
       "str": "broken 8x40mm turret"
@@ -82,7 +74,6 @@
   {
     "id": "broken_milturret_flame",
     "type": "GENERIC",
-    "copy-from": "broken_milturret_base",
     "color": "red",
     "name": {
       "str": "broken flamethrower turret"
@@ -92,7 +83,6 @@
   {
     "id": "broken_advturret_laser",
     "type": "GENERIC",
-    "copy-from": "broken_advturret_base",
     "color": "yellow",
     "name": {
       "str": "broken laser turret"
@@ -102,7 +92,6 @@
   {
     "id": "broken_laserturret",
     "type": "GENERIC",
-    "copy-from": "broken_advturret_base",
     "color": "yellow",
     "name": {
       "str": "broken laser turret"
@@ -112,7 +101,6 @@
   {
     "id": "broken_advturret_acid",
     "type": "GENERIC",
-    "copy-from": "broken_advturret_base",
     "color": "light_green",
     "name": {
       "str": "broken acid turret"
@@ -122,7 +110,6 @@
   {
     "id": "broken_advturret_plasma",
     "type": "GENERIC",
-    "copy-from": "broken_advturret_base",
     "color": "magenta",
     "name": {
       "str": "broken plasma turret"
@@ -132,7 +119,6 @@
   {
     "id": "broken_advturret_rail",
     "type": "GENERIC",
-    "copy-from": "broken_advturret_base",
     "color": "yellow",
     "name": {
       "str": "broken rail gun turret"
@@ -142,7 +128,6 @@
   {
     "id": "broken_advturret_acid1",
     "type": "GENERIC",
-    "copy-from": "broken_advturret_base",
     "color": "light_green",
     "name": {
       "str": "broken acid turret"
@@ -152,7 +137,6 @@
   {
     "id": "broken_advturret_lightning",
     "type": "GENERIC",
-    "copy-from": "broken_advturret_base",
     "color": "white",
     "name": {
       "str": "broken electro turret"
@@ -162,7 +146,6 @@
   {
     "id": "broken_advturret_emp",
     "type": "GENERIC",
-    "copy-from": "broken_advturret_base",
     "color": "yellow",
     "name": {
       "str": "broken EMP turret"
@@ -179,7 +162,7 @@
     },
     "category": "other",
     "description": "A broken eyebot.  Much less threatening now that it won't be calling for backup.  Could be gutted for parts.",
-    "price": "10 USD",
+    "price": 10,
     "material": [
       "steel",
       "plastic"
@@ -206,7 +189,7 @@
     "looks_like": "broken_eyebot",
     "category": "other",
     "description": "A broken eyebot, now dark and motionless.  Could be stripped down for parts.",
-    "price": "10 USD",
+    "price": 10,
     "material": [
       "steel",
       "plastic"
@@ -255,11 +238,31 @@
   {
     "id": "broken_hazmatbot",
     "type": "GENERIC",
+    "copy-from": "broken_utilibot",
+    "symbol": ",",
+    "color": "green",
+    "looks_like": "broken_cleanerbot",
     "name": {
       "str": "broken utility robot"
     },
-    "copy-from": "broken_utilibot",
-    "color": "green"
+    "category": "other",
+    "description": "A broken utility robot, now limp and unmoving.  Could be gutted for parts or crafted into a salvaged robot.",
+    "material": [
+      "steel",
+      "plastic"
+    ],
+    "weight": "140000 g",
+    "volume": "62500 ml",
+    "melee_damage": {
+      "bash": 6,
+      "cut": 6
+    },
+    "to_hit": -3,
+    "flags": [
+      "TRADER_AVOID",
+      "LEAK_DAM",
+      "RADIOACTIVE"
+    ]
   },
   {
     "id": "broken_defbot_disarmed",
@@ -272,8 +275,8 @@
     },
     "category": "other",
     "description": "A broken defense robot.  Its internal weapons have been removed.  Could be gutted for parts or crafted into a salvaged robot.",
-    "price": "300 USD",
-    "price_postapoc": "10 USD",
+    "price": 300,
+    "price_postapoc": 10,
     "material": [
       "steel",
       "plastic"
@@ -295,41 +298,125 @@
     "id": "broken_secubot",
     "type": "GENERIC",
     "copy-from": "broken_defbot_disarmed",
+    "symbol": ",",
     "color": "light_gray",
+    "looks_like": "broken_riotbot",
     "name": {
       "str": "broken security robot"
     },
-    "description": "A broken defense robot.  Its internal weapons have been removed.  Could be gutted for parts or crafted into a salvaged robot."
+    "category": "other",
+    "description": "A broken defense robot.  Its internal weapons have been removed.  Could be gutted for parts or crafted into a salvaged robot.",
+    "price": 300,
+    "price_postapoc": 10,
+    "material": [
+      "steel",
+      "plastic"
+    ],
+    "weight": "140000 g",
+    "volume": "62500 ml",
+    "melee_damage": {
+      "bash": 6,
+      "cut": 6
+    },
+    "to_hit": -3,
+    "flags": [
+      "TRADER_AVOID",
+      "LEAK_DAM",
+      "RADIOACTIVE"
+    ]
   },
   {
     "id": "broken_riotbot",
     "type": "GENERIC",
     "copy-from": "broken_defbot_disarmed",
+    "symbol": ",",
     "color": "light_gray",
+    "looks_like": "broken_riotbot",
     "name": {
       "str": "broken riotcontrol robot"
     },
-    "description": "A broken defense robot.  Its internal weapons have been removed.  Could be gutted for parts or crafted into a salvaged robot."
+    "category": "other",
+    "description": "A broken defense robot.  Its internal weapons have been removed.  Could be gutted for parts or crafted into a salvaged robot.",
+    "price": 300,
+    "price_postapoc": 10,
+    "material": [
+      "steel",
+      "plastic"
+    ],
+    "weight": "140000 g",
+    "volume": "62500 ml",
+    "melee_damage": {
+      "bash": 6,
+      "cut": 6
+    },
+    "to_hit": -3,
+    "flags": [
+      "TRADER_AVOID",
+      "LEAK_DAM",
+      "RADIOACTIVE"
+    ]
   },
   {
     "id": "broken_defbot_riotcontrol",
     "type": "GENERIC",
     "copy-from": "broken_defbot_disarmed",
+    "symbol": ",",
     "color": "light_gray",
+    "looks_like": "broken_riotbot",
     "name": {
       "str": "broken riotcontrol robot"
     },
-    "description": "A broken defense robot.  Its internal weapons have been removed.  Could be gutted for parts or crafted into a salvaged robot."
+    "category": "other",
+    "description": "A broken defense robot.  Its internal weapons have been removed.  Could be gutted for parts or crafted into a salvaged robot.",
+    "price": 300,
+    "price_postapoc": 10,
+    "material": [
+      "steel",
+      "plastic"
+    ],
+    "weight": "140000 g",
+    "volume": "62500 ml",
+    "melee_damage": {
+      "bash": 6,
+      "cut": 6
+    },
+    "to_hit": -3,
+    "flags": [
+      "TRADER_AVOID",
+      "LEAK_DAM",
+      "RADIOACTIVE"
+    ]
   },
   {
     "id": "broken_copbot",
     "type": "GENERIC",
     "copy-from": "broken_defbot_disarmed",
+    "symbol": ",",
     "color": "light_gray",
+    "looks_like": "broken_riotbot",
     "name": {
       "str": "broken riotcontrol robot"
     },
-    "description": "A broken defense robot.  Its internal weapons have been removed.  Could be gutted for parts or crafted into a salvaged robot."
+    "category": "other",
+    "description": "A broken defense robot.  Its internal weapons have been removed.  Could be gutted for parts or crafted into a salvaged robot.",
+    "price": 300,
+    "price_postapoc": 10,
+    "material": [
+      "steel",
+      "plastic"
+    ],
+    "weight": "140000 g",
+    "volume": "62500 ml",
+    "melee_damage": {
+      "bash": 6,
+      "cut": 6
+    },
+    "to_hit": -3,
+    "flags": [
+      "TRADER_AVOID",
+      "LEAK_DAM",
+      "RADIOACTIVE"
+    ]
   },
   {
     "id": "broken_molebot",
@@ -341,8 +428,8 @@
     },
     "category": "other",
     "description": "A broken miner bot.  Much less threatening now that it's no longer capable of drilling anything.  Could be gutted for parts.",
-    "price": "200 USD",
-    "price_postapoc": "10 USD",
+    "price": 200,
+    "price_postapoc": 10,
     "material": [
       "steel",
       "plastic"
@@ -368,7 +455,7 @@
     },
     "category": "other",
     "description": "A broken tank drone.  Could be stripped down for parts.",
-    "price": "10 USD",
+    "price": 10,
     "material": [
       "steel",
       "plastic"

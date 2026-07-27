@@ -2,7 +2,9 @@
   {
     "type": "TOOL",
     "id": "mace_magic",
-    "name": { "str": "wolf sledge" },
+    "name": {
+      "str": "wolf sledge"
+    },
     "description": "A long, solid, crafted steel haft, and a bulky, comma-like head.  It feels really massive, but it is surprisingly easy to swing, and you will do more damage as your level increases.  You can throw it like a boomerang, and the damage of throw depend on your throwing skill level.",
     "weight": "2150 g",
     "volume": "1750 ml",
@@ -10,33 +12,94 @@
     "color": "dark_gray",
     "symbol": "/",
     "looks_like": "sledge",
-    "material": [ "steel" ],
-    "techniques": [ "WBLOCK_1", "SWEEP", "BRUTAL" ],
-    "flags": [ "SHEATH_SPEAR", "DURABLE_MELEE", "MUNDANE", "INVENTOR_CRAFTED" ],
-    "weapon_category": [ "GREAT_HAMMERS" ],
-    "melee_damage": { "bash": 27 },
-    "relic_data": { "passive_effects": [ { "id": "WOLF_SLEDGE" } ] },
-    "to_hit": { "grip": "solid", "length": "long", "surface": "any", "balance": "neutral" },
-    "use_action": { "type": "effect_on_conditions", "effect_on_conditions": [ "EOC_WOLF_SLEDGE_TRHOW" ] }
+    "material": [
+      "steel"
+    ],
+    "techniques": [
+      "WBLOCK_1",
+      "SWEEP",
+      "BRUTAL"
+    ],
+    "flags": [
+      "SHEATH_SPEAR",
+      "DURABLE_MELEE",
+      "MUNDANE",
+      "INVENTOR_CRAFTED"
+    ],
+    "weapon_category": [
+      "GREAT_HAMMERS"
+    ],
+    "melee_damage": {
+      "bash": 27
+    },
+    "relic_data": {
+      "passive_effects": [
+        {
+          "id": "WOLF_SLEDGE"
+        }
+      ]
+    },
+    "to_hit": {
+      "grip": "solid",
+      "length": "long",
+      "surface": "any",
+      "balance": "neutral"
+    },
+    "use_action": {
+      "type": "effect_on_conditions",
+      "effect_on_conditions": [
+        "EOC_WOLF_SLEDGE_TRHOW"
+      ]
+    }
   },
   {
     "id": "combatsaw_spear_off",
     "type": "TOOL",
     "category": "weapons",
-    "name": { "str": "chainsaw spear (off)", "str_pl": "chainsaw spears (off)" },
+    "name": {
+      "str": "chainsaw spear (off)",
+      "str_pl": "chainsaw spears (off)"
+    },
     "description": "A hand-made lightened engine, with chain blades on a long stick.  The only reason it works without falling apart is because your calculations can't be wrong.",
     "weight": "3300 g",
     "volume": "2250 ml",
     "longest_side": "220 cm",
-    "melee_damage": { "bash": 8, "cut": 1 },
-    "to_hit": { "grip": "solid", "length": "long", "surface": "line", "balance": "uneven" },
-    "material": [ "aluminum", "plastic" ],
+    "melee_damage": {
+      "bash": 8,
+      "cut": 1
+    },
+    "to_hit": {
+      "grip": "solid",
+      "length": "long",
+      "surface": "line",
+      "balance": "uneven"
+    },
+    "material": [
+      "aluminum",
+      "plastic"
+    ],
     "symbol": "/",
     "color": "light_gray",
     "ammo": "battery",
     "charges_per_use": 1,
-    "charged_qualities": [ [ "CUT", 1 ], [ "SAW_W", 2 ], [ "BUTCHER", -50 ] ],
-    "weapon_category": [ "POLEARMS", "SPEARS" ],
+    "charged_qualities": [
+      [
+        "CUT",
+        1
+      ],
+      [
+        "SAW_W",
+        2
+      ],
+      [
+        "BUTCHER",
+        -50
+      ]
+    ],
+    "weapon_category": [
+      "POLEARMS",
+      "SPEARS"
+    ],
     "use_action": {
       "target": "combatsaw_spear_on",
       "msg": "You turn on the chainsaw spear.",
@@ -45,7 +108,11 @@
       "need_charges": 1,
       "need_charges_msg": "The chainsaw spear battery is dead."
     },
-    "techniques": [ "SWEEP", "IMPALE", "SPIN" ],
+    "techniques": [
+      "SWEEP",
+      "IMPALE",
+      "SPIN"
+    ],
     "flags": [
       "SPEAR",
       "REACH_ATTACK",
@@ -60,7 +127,10 @@
       {
         "pocket_type": "MAGAZINE_WELL",
         "rigid": true,
-        "flag_restriction": [ "BATTERY_MEDIUM", "BATTERY_HEAVY" ],
+        "flag_restriction": [
+          "BATTERY_MEDIUM",
+          "BATTERY_HEAVY"
+        ],
         "max_contains_volume": "20 L",
         "max_contains_weight": "20 kg",
         "default_magazine": "medium_battery_cell"
@@ -69,22 +139,99 @@
   },
   {
     "id": "combatsaw_spear_on",
-    "copy-from": "combatsaw_spear_off",
     "type": "TOOL",
-    "name": { "str": "chainsaw spear (on)", "str_pl": "chainsaw spears (on)" },
+    "copy-from": "combatsaw_spear_off",
+    "category": "weapons",
+    "name": {
+      "str": "chainsaw spear (on)",
+      "str_pl": "chainsaw spears (on)"
+    },
     "description": "A lightweight, handheld cordless circular saw.  It is currently on and the blade is spinning; use this item to turn it off.",
-    "melee_damage": { "bash": 8, "cut": 36 },
+    "weight": "3300 g",
+    "volume": "2250 ml",
+    "longest_side": "220 cm",
+    "melee_damage": {
+      "bash": 8,
+      "cut": 36
+    },
+    "to_hit": {
+      "grip": "solid",
+      "length": "long",
+      "surface": "line",
+      "balance": "uneven"
+    },
+    "material": [
+      "aluminum",
+      "plastic"
+    ],
+    "symbol": "/",
+    "color": "light_gray",
+    "ammo": "battery",
+    "charges_per_use": 1,
+    "charged_qualities": [
+      [
+        "CUT",
+        1
+      ],
+      [
+        "SAW_W",
+        2
+      ],
+      [
+        "BUTCHER",
+        -50
+      ]
+    ],
+    "weapon_category": [
+      "POLEARMS",
+      "SPEARS"
+    ],
+    "use_action": {
+      "target": "combatsaw_spear_off",
+      "msg": "You turn off the chainsaw spear.",
+      "active": false,
+      "type": "transform"
+    },
+    "techniques": [
+      "SWEEP",
+      "IMPALE",
+      "SPIN"
+    ],
+    "flags": [
+      "SPEAR",
+      "REACH_ATTACK",
+      "SHEATH_SPEAR",
+      "DURABLE_MELEE",
+      "TRADER_AVOID",
+      "NONCONDUCTIVE",
+      "MUNDANE",
+      "INVENTOR_CRAFTED",
+      "MESSY"
+    ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "rigid": true,
+        "flag_restriction": [
+          "BATTERY_MEDIUM",
+          "BATTERY_HEAVY"
+        ],
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "default_magazine": "medium_battery_cell"
+      }
+    ],
     "power_draw": "350 W",
-    "revert_to": "combatsaw_spear_off",
-    "use_action": { "target": "combatsaw_spear_off", "msg": "You turn off the chainsaw spear.", "active": false, "type": "transform" },
-    "extend": { "flags": [ "MESSY" ] }
+    "revert_to": "combatsaw_spear_off"
   },
   {
     "type": "GENERIC",
     "id": "megachette_folded",
-    "copy-from": "megachette",
     "category": "weapons",
-    "name": { "str": "megachette (folded)", "str_pl": "megachettes (folded)" },
+    "name": {
+      "str": "megachette (folded)",
+      "str_pl": "megachettes (folded)"
+    },
     "description": "Probably a great weapon, it is folded now.",
     "volume": "160 ml",
     "longest_side": "14 cm",
@@ -96,45 +243,183 @@
       "msg": "With a quiet click, the megachette is unfolded."
     },
     "to_hit": -1,
-    "techniques": [  ],
-    "melee_damage": { "cut": 0, "bash": 3 }
+    "techniques": [],
+    "melee_damage": {
+      "cut": 0,
+      "bash": 3
+    }
   },
   {
     "id": "megachette",
-    "copy-from": "mc_broadsword",
     "type": "TOOL",
-    "name": { "str": "megachette (extended)", "str_pl": "megachettes (extended)" },
+    "copy-from": "mc_broadsword",
+    "category": "weapons",
+    "name": {
+      "str": "megachette (extended)",
+      "str_pl": "megachettes (extended)"
+    },
     "description": "A completely flat, single-edged blade.  While very visually appealing, it is no less deadly.  Can be folded more than it make sense.",
-    "replace_materials": { "mc_steel": "steel", "leather": "steel" },
+    "weight": "1223 g",
+    "volume": "1750 ml",
+    "longest_side": "100 cm",
+    "symbol": "/",
+    "color": "light_gray",
+    "looks_like": "broadsword",
+    "price": 120000,
+    "price_postapoc": 5000,
+    "material": [
+      {
+        "type": "leather",
+        "portion": 1.1
+      },
+      {
+        "type": "mc_steel",
+        "portion": 112
+      }
+    ],
+    "repairs_with": [
+      "mc_steel"
+    ],
+    "flags": [
+      "DURABLE_MELEE",
+      "CONDUCTIVE",
+      "SHEATH_SWORD"
+    ],
+    "techniques": [
+      "WBLOCK_2"
+    ],
+    "to_hit": {
+      "grip": "weapon",
+      "length": "long",
+      "surface": "line",
+      "balance": "good"
+    },
+    "qualities": [
+      [
+        "CUT",
+        1
+      ],
+      [
+        "BUTCHER",
+        9
+      ]
+    ],
+    "weapon_category": [
+      "MEDIUM_SWORDS",
+      "FENCING_WEAPONRY"
+    ],
+    "melee_damage": {
+      "bash": 6,
+      "cut": 31
+    },
+    "replace_materials": {
+      "mc_steel": "steel",
+      "leather": "steel"
+    },
     "use_action": {
       "menu_text": "Fold",
       "type": "transform",
       "target": "megachette_folded",
       "msg": "With a few moves, the megachette is folded."
-    },
-    "relative": { "melee_damage": { "cut": 3 } }
+    }
   },
   {
     "id": "binary_sword",
-    "copy-from": "qt_zweihander",
     "type": "TOOL",
-    "name": { "str": "binary sword" },
+    "copy-from": "qt_zweihander",
+    "category": "weapons",
+    "name": {
+      "str": "binary sword"
+    },
     "description": "A relatively heavy two-handed sword with \"100111100\" inscribed on the blade, perhaps to appear fancier than it truly is.  Still, it is a surprisingly good weapon.",
-    "replace_materials": { "qt_steel": "steel", "kevlar": "kevlar" },
-    "relative": { "melee_damage": { "pure": 6 } }
+    "weight": "3356 g",
+    "volume": "3250 ml",
+    "longest_side": "180 cm",
+    "symbol": "/",
+    "color": "light_gray",
+    "looks_like": "zweihander",
+    "price": 184000.0,
+    "price_postapoc": 10925.0,
+    "material": [
+      {
+        "type": "leather",
+        "portion": 1.1
+      },
+      {
+        "type": "mc_steel",
+        "portion": 160
+      }
+    ],
+    "repairs_with": [
+      "mc_steel"
+    ],
+    "flags": [
+      "ALWAYS_TWOHAND",
+      "DURABLE_MELEE",
+      "CONDUCTIVE",
+      "SHEATH_SWORD",
+      "REACH_ATTACK"
+    ],
+    "techniques": [
+      "WBLOCK_1",
+      "WIDE",
+      "BRUTAL",
+      "SWEEP"
+    ],
+    "to_hit": {
+      "grip": "weapon",
+      "length": "long",
+      "surface": "line",
+      "balance": "good"
+    },
+    "qualities": [
+      [
+        "CUT",
+        1
+      ],
+      [
+        "BUTCHER",
+        -30
+      ]
+    ],
+    "weapon_category": [
+      "LONG_THRUSTING_SWORDS",
+      "GREAT_SWORDS"
+    ],
+    "melee_damage": {
+      "bash": 10,
+      "cut": 36,
+      "pure": 6
+    },
+    "replace_materials": {
+      "qt_steel": "steel",
+      "kevlar": "kevlar"
+    }
   },
   {
     "id": "inventor_plasma_axe_off",
     "type": "TOOL",
     "category": "weapons",
-    "name": { "str": "\"Neon Angle\" (off)", "str_pl": "\"Neon Angles\" (off)" },
+    "name": {
+      "str": "\"Neon Angle\" (off)",
+      "str_pl": "\"Neon Angles\" (off)"
+    },
     "description": "Light, hollow aluminum bar with an installed plasma torch on the end in the form of a circle that emits 28000 centrigrade of heat on demand.  Probably violate dozens of OSHA regulations.",
     "weight": "1883 g",
     "volume": "2221 ml",
     "longest_side": "100 cm",
-    "melee_damage": { "bash": 6 },
-    "to_hit": { "grip": "weapon", "length": "long", "surface": "every", "balance": "uneven" },
-    "material": [ "aluminum" ],
+    "melee_damage": {
+      "bash": 6
+    },
+    "to_hit": {
+      "grip": "weapon",
+      "length": "long",
+      "surface": "every",
+      "balance": "uneven"
+    },
+    "material": [
+      "aluminum"
+    ],
     "symbol": "/",
     "color": "light_gray",
     "ammo": "battery",
@@ -146,14 +431,31 @@
       "need_charges": 1,
       "need_charges_msg": "\"Neon Angle\" battery is dead."
     },
-    "techniques": [ "WBLOCK_1", "BRUTAL", "SWEEP", "PLASMA_AXE_WIDE" ],
-    "flags": [ "DURABLE_MELEE", "NONCONDUCTIVE", "SHEATH_AXE", "MUNDANE", "INVENTOR_CRAFTED" ],
-    "weapon_category": [ "HOOKING_WEAPONRY", "GREAT_AXES" ],
+    "techniques": [
+      "WBLOCK_1",
+      "BRUTAL",
+      "SWEEP",
+      "PLASMA_AXE_WIDE"
+    ],
+    "flags": [
+      "DURABLE_MELEE",
+      "NONCONDUCTIVE",
+      "SHEATH_AXE",
+      "MUNDANE",
+      "INVENTOR_CRAFTED"
+    ],
+    "weapon_category": [
+      "HOOKING_WEAPONRY",
+      "GREAT_AXES"
+    ],
     "pocket_data": [
       {
         "pocket_type": "MAGAZINE_WELL",
         "rigid": true,
-        "flag_restriction": [ "BATTERY_MEDIUM", "BATTERY_HEAVY" ],
+        "flag_restriction": [
+          "BATTERY_MEDIUM",
+          "BATTERY_HEAVY"
+        ],
         "max_contains_volume": "20 L",
         "max_contains_weight": "20 kg",
         "default_magazine": "medium_battery_cell"
@@ -162,18 +464,70 @@
   },
   {
     "id": "inventor_plasma_axe",
-    "copy-from": "inventor_plasma_axe_off",
     "type": "TOOL",
-    "name": { "str": "\"Neon Angle\" (on)", "str_pl": "\"Neon Angles\" (on)" },
+    "copy-from": "inventor_plasma_axe_off",
+    "category": "weapons",
+    "name": {
+      "str": "\"Neon Angle\" (on)",
+      "str_pl": "\"Neon Angles\" (on)"
+    },
     "description": "Light, hollow aluminum bar with an installed plasma torch on the end in the form of a circle that emits 28000 centrigrade of heat on demand.  Probably violate dozens of OSHA regulations.",
-    "melee_damage": { "bash": 8, "heat": 46 },
-    "power_draw": "900 W",
-    "revert_to": "inventor_plasma_axe_off",
+    "weight": "1883 g",
+    "volume": "2221 ml",
+    "longest_side": "100 cm",
+    "melee_damage": {
+      "bash": 8,
+      "heat": 46
+    },
+    "to_hit": {
+      "grip": "weapon",
+      "length": "long",
+      "surface": "every",
+      "balance": "uneven"
+    },
+    "material": [
+      "aluminum"
+    ],
+    "symbol": "/",
+    "color": "light_gray",
+    "ammo": "battery",
     "use_action": {
       "target": "inventor_plasma_axe_off",
       "msg": "You turn off your \"Neon Angle\".",
       "active": false,
       "type": "transform"
-    }
+    },
+    "techniques": [
+      "WBLOCK_1",
+      "BRUTAL",
+      "SWEEP",
+      "PLASMA_AXE_WIDE"
+    ],
+    "flags": [
+      "DURABLE_MELEE",
+      "NONCONDUCTIVE",
+      "SHEATH_AXE",
+      "MUNDANE",
+      "INVENTOR_CRAFTED"
+    ],
+    "weapon_category": [
+      "HOOKING_WEAPONRY",
+      "GREAT_AXES"
+    ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "rigid": true,
+        "flag_restriction": [
+          "BATTERY_MEDIUM",
+          "BATTERY_HEAVY"
+        ],
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "default_magazine": "medium_battery_cell"
+      }
+    ],
+    "power_draw": "900 W",
+    "revert_to": "inventor_plasma_axe_off"
   }
 ]

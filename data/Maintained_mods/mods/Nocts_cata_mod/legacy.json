@@ -86,39 +86,543 @@
   },
   {
     "id": "mon_zombie_bio_infantry",
-    "copy-from": "mon_zombie_bio_infantry_rifle",
     "type": "MONSTER",
+    "copy-from": "mon_zombie_bio_infantry_rifle",
+    "looks_like": "mon_zombie_bio_infantry",
     "name": {
       "str": "zombie super soldier"
-    }
+    },
+    "description": "An advanced, well-equipped member of the military that still succumbed to the cataclysm.  This one is wielding some kind of rifle, and appears to recall how to use it.",
+    "default_faction": "super_soldat",
+    "species": [
+      "ZOMBIE"
+    ],
+    "diff": 10,
+    "volume": "62500 ml",
+    "weight": "81500 g",
+    "hp": 100,
+    "speed": 100,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "Z",
+    "color": "red",
+    "aggression": 0,
+    "morale": 100,
+    "melee_skill": 5,
+    "melee_dice": 2,
+    "melee_dice_sides": 6,
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 2
+      }
+    ],
+    "dodge": 3,
+    "armor": {
+      "bash": 10,
+      "cut": 20,
+      "stab": 20,
+      "bullet": 30,
+      "acid": 5,
+      "heat": 20
+    },
+    "vision_day": 40,
+    "vision_night": 15,
+    "path_settings": {
+      "max_dist": 10
+    },
+    "luminance": 2,
+    "regenerates": 1,
+    "regeneration_modifiers": [
+      [
+        "onfire",
+        -1
+      ],
+      [
+        "corroding",
+        -1
+      ]
+    ],
+    "regen_morale": true,
+    "starting_ammo": {
+      "battery": 100
+    },
+    "harvest": "CBM_SOLDAT_ZOMBIE",
+    "dissect": "dissect_CBM_SOLDAT_ZOMBIE",
+    "special_attacks": [
+      {
+        "type": "gun",
+        "cooldown": 5,
+        "move_cost": 200,
+        "gun_type": "arc_laser_rifle_monster",
+        "fake_str": 4,
+        "fake_dex": 5,
+        "fake_per": 3,
+        "fake_int": 1,
+        "max_ammo": 100,
+        "ranges": [
+          [
+            5,
+            25,
+            "DEFAULT"
+          ],
+          [
+            5,
+            25,
+            "BURST"
+          ],
+          [
+            5,
+            25,
+            "AUTO"
+          ]
+        ],
+        "require_targeting_player": true,
+        "require_targeting_npc": true,
+        "require_targeting_monster": true,
+        "targeting_cost": 200,
+        "targeting_sound": "argh!",
+        "targeting_volume": 20,
+        "description": "The super soldier fires its ARC rifle!",
+        "no_ammo_sound": "beep-beep-beep!"
+      },
+      {
+        "id": "grab",
+        "cooldown": 10
+      },
+      {
+        "id": "bio_op_takedown",
+        "cooldown": 30
+      }
+    ],
+    "special_when_hit": [
+      "ZAPBACK",
+      60
+    ],
+    "anger_triggers": [
+      "FRIEND_DIED",
+      "FRIEND_ATTACKED",
+      "HURT",
+      "STALK",
+      "PLAYER_CLOSE"
+    ],
+    "placate_triggers": [
+      "PLAYER_WEAK"
+    ],
+    "death_drops": "wild_bio_infantry_rifle",
+    "zombify_into": "mon_zombie_bio_reanimated",
+    "flags": [
+      "SEES",
+      "HEARS",
+      "SMELLS",
+      "POISON",
+      "NO_BREATHE",
+      "FILTHY",
+      "PATH_AVOID_DANGER_1"
+    ]
   },
   {
     "id": "mon_zombie_bio_knight",
-    "copy-from": "mon_zombie_bio_knight_lmg",
     "type": "MONSTER",
+    "copy-from": "mon_zombie_bio_knight_lmg",
+    "looks_like": "mon_zombie_bio_knight",
     "name": {
       "str": "zombie super jauggernaut"
-    }
+    },
+    "description": "An advanced, well-equipped member of the military that still succumbed to the cataclysm.  This one is relatively well-armored, wielding some sort of LMG as though it recalls how to use it.",
+    "default_faction": "super_soldat",
+    "species": [
+      "ZOMBIE"
+    ],
+    "diff": 20,
+    "volume": "62500 ml",
+    "weight": "81500 g",
+    "hp": 100,
+    "speed": 80,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "Z",
+    "color": "red",
+    "aggression": 0,
+    "morale": 100,
+    "melee_skill": 7,
+    "melee_dice": 3,
+    "melee_dice_sides": 6,
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 2
+      },
+      {
+        "damage_type": "electric",
+        "amount": 4
+      }
+    ],
+    "dodge": 3,
+    "armor": {
+      "bash": 15,
+      "cut": 30,
+      "stab": 30,
+      "bullet": 45,
+      "acid": 5,
+      "heat": 30
+    },
+    "vision_day": 40,
+    "vision_night": 3,
+    "luminance": 2,
+    "regenerates": 3,
+    "regeneration_modifiers": [
+      [
+        "onfire",
+        -2
+      ],
+      [
+        "corroding",
+        -2
+      ]
+    ],
+    "regen_morale": true,
+    "starting_ammo": {
+      "battery": 200
+    },
+    "harvest": "CBM_SOLDAT_KNIGHT_ZOMBIE",
+    "dissect": "dissect_CBM_SOLDAT_KNIGHT_ZOMBIE",
+    "special_attacks": [
+      {
+        "type": "gun",
+        "cooldown": 5,
+        "move_cost": 200,
+        "gun_type": "krx_laser_lmg_monster",
+        "fake_str": 4,
+        "fake_dex": 3,
+        "fake_per": 3,
+        "max_ammo": 200,
+        "ranges": [
+          [
+            10,
+            30,
+            "DEFAULT"
+          ],
+          [
+            10,
+            30,
+            "BURST"
+          ],
+          [
+            10,
+            30,
+            "AUTO"
+          ]
+        ],
+        "require_targeting_player": true,
+        "require_targeting_npc": true,
+        "require_targeting_monster": true,
+        "targeting_cost": 200,
+        "targeting_sound": "argh!",
+        "targeting_volume": 20,
+        "description": "The super soldier fires its LMG!",
+        "no_ammo_sound": "beep-beep-beep!"
+      },
+      {
+        "id": "grab_drag",
+        "cooldown": 10
+      },
+      [
+        "SMASH",
+        30
+      ],
+      {
+        "id": "slam"
+      }
+    ],
+    "special_when_hit": [
+      "ZAPBACK",
+      60
+    ],
+    "anger_triggers": [
+      "FRIEND_DIED",
+      "HURT",
+      "PLAYER_CLOSE",
+      "STALK"
+    ],
+    "death_drops": "wild_bio_knight_lmg",
+    "zombify_into": "mon_zombie_bio_reanimated",
+    "flags": [
+      "SEES",
+      "HEARS",
+      "SMELLS",
+      "POISON",
+      "NO_BREATHE",
+      "FILTHY",
+      "BASHES",
+      "PUSH_MON",
+      "PUSH_VEH",
+      "PATH_AVOID_FIRE"
+    ]
   },
   {
     "id": "mon_zombie_bio_scout",
-    "copy-from": "mon_zombie_bio_scout_sniper",
     "type": "MONSTER",
+    "copy-from": "mon_zombie_bio_scout_sniper",
+    "looks_like": "mon_zombie_bio_scout",
     "name": {
       "str": "zombie super scout"
-    }
+    },
+    "description": "An advanced, well-equipped member of the military that still succumbed to the cataclysm.  This one is wielding what seems to be a sniper rifle, and it seems unusually alert for a zombie…",
+    "default_faction": "super_soldat",
+    "species": [
+      "ZOMBIE"
+    ],
+    "diff": 25,
+    "volume": "62500 ml",
+    "weight": "81500 g",
+    "hp": 100,
+    "speed": 100,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "Z",
+    "color": "red",
+    "aggression": 0,
+    "morale": 100,
+    "melee_skill": 5,
+    "melee_dice": 2,
+    "melee_dice_sides": 6,
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 2
+      }
+    ],
+    "dodge": 3,
+    "armor": {
+      "bash": 5,
+      "cut": 10,
+      "stab": 10,
+      "bullet": 15,
+      "acid": 5,
+      "heat": 10
+    },
+    "vision_day": 40,
+    "vision_night": 40,
+    "path_settings": {
+      "max_dist": 20
+    },
+    "luminance": 2,
+    "regenerates": 1,
+    "regeneration_modifiers": [
+      [
+        "onfire",
+        -1
+      ],
+      [
+        "corroding",
+        -1
+      ]
+    ],
+    "regen_morale": true,
+    "starting_ammo": {
+      "battery": 50
+    },
+    "harvest": "CBM_SOLDAT_SNIPER_ZOMBIE",
+    "dissect": "dissect_CBM_SOLDAT_SNIPER_ZOMBIE",
+    "special_attacks": [
+      {
+        "type": "gun",
+        "cooldown": 5,
+        "move_cost": 200,
+        "gun_type": "laser_sniper_monster",
+        "fake_str": 4,
+        "fake_dex": 5,
+        "fake_per": 4,
+        "max_ammo": 50,
+        "ranges": [
+          [
+            10,
+            40,
+            "DEFAULT"
+          ]
+        ],
+        "require_targeting_player": true,
+        "require_targeting_npc": true,
+        "require_targeting_monster": true,
+        "laser_lock": true,
+        "targeting_cost": 200,
+        "targeting_sound": "argh!",
+        "targeting_volume": 20,
+        "description": "The super scout fires its rifle!",
+        "no_ammo_sound": "beep-beep-beep!"
+      },
+      {
+        "id": "grab",
+        "cooldown": 10
+      },
+      {
+        "id": "bio_op_takedown",
+        "cooldown": 30
+      },
+      [
+        "LUNGE",
+        20
+      ]
+    ],
+    "special_when_hit": [
+      "ZAPBACK",
+      60
+    ],
+    "anger_triggers": [
+      "FRIEND_DIED",
+      "HURT",
+      "PLAYER_CLOSE",
+      "STALK"
+    ],
+    "placate_triggers": [
+      "PLAYER_WEAK"
+    ],
+    "death_drops": "wild_bio_scout_sniper",
+    "zombify_into": "mon_zombie_bio_reanimated",
+    "flags": [
+      "SEES",
+      "HEARS",
+      "SMELLS",
+      "POISON",
+      "NO_BREATHE",
+      "FILTHY",
+      "PATH_AVOID_DANGER_1"
+    ]
   },
   {
     "id": "mon_zombie_bio_tool",
-    "copy-from": "mon_zombie_bio_tool_pistol",
     "type": "MONSTER",
+    "copy-from": "mon_zombie_bio_tool_pistol",
+    "looks_like": "mon_zombie_bio_tool",
     "name": {
       "str": "zombie super B.A.M.R.U"
-    }
+    },
+    "description": "An advanced, well-equipped member of the military that still succumbed to the cataclysm.  This one is wielding some kind of pistol, and appears to recall how to use it.",
+    "default_faction": "super_soldat",
+    "species": [
+      "ZOMBIE"
+    ],
+    "diff": 5,
+    "volume": "62500 ml",
+    "weight": "81500 g",
+    "hp": 100,
+    "speed": 100,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "Z",
+    "color": "red",
+    "aggression": 0,
+    "morale": 100,
+    "melee_skill": 3,
+    "melee_dice": 2,
+    "melee_dice_sides": 4,
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 2
+      }
+    ],
+    "dodge": 3,
+    "armor": {
+      "bash": 5,
+      "cut": 10,
+      "stab": 10,
+      "bullet": 15,
+      "acid": 5,
+      "heat": 10
+    },
+    "vision_day": 40,
+    "vision_night": 15,
+    "path_settings": {
+      "max_dist": 30,
+      "avoid_traps": true
+    },
+    "luminance": 2,
+    "regenerates": 3,
+    "regeneration_modifiers": [
+      [
+        "onfire",
+        -2
+      ],
+      [
+        "corroding",
+        -2
+      ]
+    ],
+    "regen_morale": true,
+    "starting_ammo": {
+      "battery": 25
+    },
+    "harvest": "CBM_SOLDAT_TOOL_ZOMBIE",
+    "dissect": "dissect_CBM_SOLDAT_TOOL_ZOMBIE",
+    "special_attacks": [
+      {
+        "type": "gun",
+        "cooldown": 5,
+        "move_cost": 200,
+        "gun_type": "neo_laser_pistol_monster",
+        "fake_str": 3,
+        "fake_dex": 4,
+        "fake_per": 5,
+        "max_ammo": 25,
+        "ranges": [
+          [
+            1,
+            15,
+            "DEFAULT"
+          ]
+        ],
+        "require_targeting_player": true,
+        "require_targeting_npc": true,
+        "require_targeting_monster": true,
+        "targeting_cost": 200,
+        "targeting_sound": "argh!",
+        "targeting_volume": 20,
+        "description": "The super soldier fires its pistol!",
+        "no_ammo_sound": "beep-beep-beep!"
+      },
+      {
+        "id": "grab",
+        "cooldown": 10
+      },
+      {
+        "id": "scratch",
+        "cooldown": 20
+      }
+    ],
+    "special_when_hit": [
+      "ZAPBACK",
+      60
+    ],
+    "anger_triggers": [
+      "FRIEND_DIED",
+      "FRIEND_ATTACKED",
+      "HURT",
+      "STALK",
+      "PLAYER_CLOSE"
+    ],
+    "placate_triggers": [
+      "PLAYER_WEAK"
+    ],
+    "death_drops": "wild_bio_tool_pistol",
+    "zombify_into": "mon_zombie_bio_reanimated",
+    "flags": [
+      "SEES",
+      "HEARS",
+      "SMELLS",
+      "POISON",
+      "NO_BREATHE",
+      "FILTHY",
+      "PATH_AVOID_DANGER_1"
+    ]
   },
   {
     "id": "stealth_cloak_f",
-    "copy-from": "acs_74_stealth_cloak_on",
     "type": "ARMOR",
     "name": {
       "str": "obsolete stealth cloak"
@@ -126,7 +630,6 @@
   },
   {
     "id": "stealth_cloak",
-    "copy-from": "acs_74_stealth_cloak_on",
     "type": "ARMOR",
     "name": {
       "str_sp": "obsolete stealth cloak (on)"
@@ -134,7 +637,6 @@
   },
   {
     "id": "flesh_blade_on",
-    "copy-from": "flesh_blade",
     "type": "ARMOR",
     "name": {
       "str": "obsolete biological sword"
@@ -149,7 +651,7 @@
       "str": "metal mold"
     },
     "description": "This is a makeshift mold made from plastic.  It could be shaped and used to craft items made of metal.",
-    "price": "10 USD",
+    "price": 10,
     "material": [
       "plastic"
     ],
@@ -166,8 +668,8 @@
     "description": "The bartering volume of the Rebuilding Civilization encyclopedia.  This book contains everything from what supplies are worth more after the cataclysm to what economic system to use in your new society in fine detail.  This book is so technical, longwinded and dry that even bookworms and fast readers would find it hard to read.  Literally any other book on the subject would be a more efficient way to learn but if the books you have are missing specific information then this is a good substitute until you find something better.",
     "weight": "1800 g",
     "volume": "2000 ml",
-    "price": "100 USD",
-    "price_postapoc": "10 USD",
+    "price": 100,
+    "price_postapoc": 10,
     "melee_damage": {
       "bash": 4
     },
@@ -240,8 +742,8 @@
     "description": "The mechanics volume of the Rebuilding Civilization encyclopedia.  This book contains everything from simple machines to the inner workings of submarine engines in extremly fine detail no practical exam.  This book is so technical, longwinded and dry that even bookworms and fast readers would find it hard to read.  Literally any other book on the subject would be a more efficient way to learn but if the books you have are missing specific information then this is a good substitute until you find something better.",
     "weight": "1800 g",
     "volume": "2000 ml",
-    "price": "100 USD",
-    "price_postapoc": "10 USD",
+    "price": 100,
+    "price_postapoc": 10,
     "melee_damage": {
       "bash": 4
     },
@@ -267,8 +769,8 @@
     "description": "The fabrication volume of the Rebuilding Civilization encyclopedia.  This book contains everything from creating how to create simple stone tools to the creation of the pyramids of Egypt in fine detail.  This book is so technical, longwinded and dry that even bookworms and fast readers would find it hard to read.  Literally any other book on the subject would be a more efficient way to learn but if the books you have are missing specific information then this is a good substitute until you find something better.",
     "weight": "1800 g",
     "volume": "2000 ml",
-    "price": "100 USD",
-    "price_postapoc": "10 USD",
+    "price": 100,
+    "price_postapoc": 10,
     "melee_damage": {
       "bash": 4
     },
@@ -294,8 +796,8 @@
     "description": "The archery volume of the Rebuilding Civilization encyclopedia.  This book contains everything from correct positioning to the usage of advanced bows in fine detail.  This book is so technical, longwinded and dry that even bookworms and fast readers would find it hard to read.  Literally any other book on the subject would be a more efficient way to learn but if the books you have are missing specific information then this is a good substitute until you find something better.",
     "weight": "1800 g",
     "volume": "2000 ml",
-    "price": "100 USD",
-    "price_postapoc": "10 USD",
+    "price": 100,
+    "price_postapoc": 10,
     "melee_damage": {
       "bash": 4
     },
@@ -321,8 +823,8 @@
     "description": "The bartering volume of the Rebuilding Civilization encyclopedia.  This book contains everything from what supplies are worth more after the cataclysm to what economic system to use in your new society in fine detail.  This book is so technical, longwinded and dry that even bookworms and fast readers would find it hard to read.  Literally any other book on the subject would be a more efficient way to learn but if the books you have are missing specific information then this is a good substitute until you find something better.",
     "weight": "1800 g",
     "volume": "2000 ml",
-    "price": "100 USD",
-    "price_postapoc": "10 USD",
+    "price": 100,
+    "price_postapoc": 10,
     "melee_damage": {
       "bash": 4
     },
@@ -348,8 +850,8 @@
     "description": "The bashing weapons volume of the Rebuilding Civilization encyclopedia.  This book contains everything from self defense with a pipe to the proper swinging technique for a sledge hammer in fine detail.  This book is so technical, longwinded and dry that even bookworms and fast readers would find it hard to read.  Literally any other book on the subject would be a more efficient way to learn but if the books you have are missing specific information then this is a good substitute until you find something better.",
     "weight": "1800 g",
     "volume": "2000 ml",
-    "price": "100 USD",
-    "price_postapoc": "10 USD",
+    "price": 100,
+    "price_postapoc": 10,
     "melee_damage": {
       "bash": 4
     },
@@ -375,8 +877,8 @@
     "description": "The computer volume of the Rebuilding Civilization encyclopedia.  This book contains everything from basic programing to cyber security algorithms in fine detail.  This book is so technical, longwinded and dry that even bookworms and fast readers would find it hard to read.  Literally any other book on the subject would be a more efficient way to learn but if the books you have are missing specific information then this is a good substitute until you find something better.",
     "weight": "1800 g",
     "volume": "2000 ml",
-    "price": "100 USD",
-    "price_postapoc": "10 USD",
+    "price": 100,
+    "price_postapoc": 10,
     "melee_damage": {
       "bash": 4
     },
@@ -402,8 +904,8 @@
     "description": "The cooking volume of the Rebuilding Civilization encyclopedia.  This book contains everything from cooking small game to basic chemistry in fine detail.  This book is so technical, longwinded and dry that even bookworms and fast readers would find it hard to read.  Literally any other book on the subject would be a more efficient way to learn but if the books you have are missing specific information then this is a good substitute until you find something better.",
     "weight": "1800 g",
     "volume": "2000 ml",
-    "price": "100 USD",
-    "price_postapoc": "10 USD",
+    "price": 100,
+    "price_postapoc": 10,
     "melee_damage": {
       "bash": 4
     },
@@ -429,8 +931,8 @@
     "description": "The cutting weapons volume of the Rebuilding Civilization encyclopedia.  This book contains everything from using a glass shiv to medieval swordsmanship in fine detail.  This book is so technical, longwinded and dry that even bookworms and fast readers would find it hard to read.  Literally any other book on the subject would be a more efficient way to learn but if the books you have are missing specific information then this is a good substitute until you find something better.",
     "weight": "1800 g",
     "volume": "2000 ml",
-    "price": "100 USD",
-    "price_postapoc": "10 USD",
+    "price": 100,
+    "price_postapoc": 10,
     "melee_damage": {
       "bash": 4
     },
@@ -456,8 +958,8 @@
     "description": "The dodging volume of the Rebuilding Civilization encyclopedia.  This book contains everything from dancing for beginners to parkour in fine detail.  This book is so technical, longwinded and dry that even bookworms and fast readers would find it hard to read.  Literally any other book on the subject would be a more efficient way to learn but if the books you have are missing specific information then this is a good substitute until you find something better.",
     "weight": "1800 g",
     "volume": "2000 ml",
-    "price": "100 USD",
-    "price_postapoc": "10 USD",
+    "price": 100,
+    "price_postapoc": 10,
     "melee_damage": {
       "bash": 4
     },
@@ -483,8 +985,8 @@
     "description": "The driving volume of the Rebuilding Civilization encyclopedia.  This book contains everything from acquiring a driving license to professional racing in fine detail.  This book is so technical, longwinded and dry that even bookworms and fast readers would find it hard to read.  Literally any other book on the subject would be a more efficient way to learn but if the books you have are missing specific information then this is a good substitute until you find something better.",
     "weight": "1800 g",
     "volume": "2000 ml",
-    "price": "100 USD",
-    "price_postapoc": "10 USD",
+    "price": 100,
+    "price_postapoc": 10,
     "melee_damage": {
       "bash": 4
     },
@@ -510,8 +1012,8 @@
     "description": "The electronics volume of the Rebuilding Civilization encyclopedia.  This book contains everything from simple circuits to military robotics in fine detail.  This book is so technical, longwinded and dry that even bookworms and fast readers would find it hard to read.  Literally any other book on the subject would be a more efficient way to learn but if the books you have are missing specific information then this is a good substitute until you find something better.",
     "weight": "1800 g",
     "volume": "2000 ml",
-    "price": "100 USD",
-    "price_postapoc": "10 USD",
+    "price": 100,
+    "price_postapoc": 10,
     "melee_damage": {
       "bash": 4
     },
@@ -537,8 +1039,8 @@
     "description": "The first aid volume of the Rebuilding Civilization encyclopedia.  This book contains everything from proper bandage application to exploratory surgery in fine detail.  This book is so technical, longwinded and dry that even bookworms and fast readers would find it hard to read.  Literally any other book on the subject would be a more efficient way to learn but if the books you have are missing specific information then this is a good substitute until you find something better.",
     "weight": "1800 g",
     "volume": "2000 ml",
-    "price": "100 USD",
-    "price_postapoc": "10 USD",
+    "price": 100,
+    "price_postapoc": 10,
     "melee_damage": {
       "bash": 4
     },
@@ -564,8 +1066,8 @@
     "description": "The marksmanship volume of the Rebuilding Civilization encyclopedia.  This book contains everything from proper iron sight aiming to military sniper techniques in fine detail.  This book is so technical, longwinded and dry that even bookworms and fast readers would find it hard to read.  Literally any other book on the subject would be a more efficient way to learn but if the books you have are missing specific information then this is a good substitute until you find something better.",
     "weight": "1800 g",
     "volume": "2000 ml",
-    "price": "100 USD",
-    "price_postapoc": "10 USD",
+    "price": 100,
+    "price_postapoc": 10,
     "melee_damage": {
       "bash": 4
     },
@@ -591,8 +1093,8 @@
     "description": "The launchers volume of the Rebuilding Civilization encyclopedia.  This book contains everything from the use of spraycan flamethrowers to recoiless rifles in fine detail.  This book is so technical, longwinded and dry that even bookworms and fast readers would find it hard to read.  Literally any other book on the subject would be a more efficient way to learn but if the books you have are missing specific information then this is a good substitute until you find something better.",
     "weight": "1800 g",
     "volume": "2000 ml",
-    "price": "100 USD",
-    "price_postapoc": "10 USD",
+    "price": 100,
+    "price_postapoc": 10,
     "melee_damage": {
       "bash": 4
     },
@@ -618,8 +1120,8 @@
     "description": "The melee combat volume of the Rebuilding Civilization encyclopedia.  This book contains everything from using a branch to martial arts techniques in fine detail.  This book is so technical, longwinded and dry that even bookworms and fast readers would find it hard to read.  Literally any other book on the subject would be a more efficient way to learn but if the books you have are missing specific information then this is a good substitute until you find something better.",
     "weight": "1800 g",
     "volume": "2000 ml",
-    "price": "100 USD",
-    "price_postapoc": "10 USD",
+    "price": 100,
+    "price_postapoc": 10,
     "melee_damage": {
       "bash": 4
     },
@@ -645,8 +1147,8 @@
     "description": "The pistols volume of the Rebuilding Civilization encyclopedia.  This book contains everything from using zip pistols to laser pistols in fine detail.  This book is so technical, longwinded and dry that even bookworms and fast readers would find it hard to read.  Literally any other book on the subject would be a more efficient way to learn but if the books you have are missing specific information then this is a good substitute until you find something better.",
     "weight": "1800 g",
     "volume": "2000 ml",
-    "price": "100 USD",
-    "price_postapoc": "10 USD",
+    "price": 100,
+    "price_postapoc": 10,
     "melee_damage": {
       "bash": 4
     },
@@ -672,8 +1174,8 @@
     "description": "The rifles volume of the Rebuilding Civilization encyclopedia.  This book contains everything from using zip rifles to laser rifles in fine detail.  This book is so technical, longwinded and dry that even bookworms and fast readers would find it hard to read.  Literally any other book on the subject would be a more efficient way to learn but if the books you have are missing specific information then this is a good substitute until you find something better.",
     "weight": "1800 g",
     "volume": "2000 ml",
-    "price": "100 USD",
-    "price_postapoc": "10 USD",
+    "price": 100,
+    "price_postapoc": 10,
     "melee_damage": {
       "bash": 4
     },
@@ -699,8 +1201,8 @@
     "description": "The shotguns volume of the Rebuilding Civilization encyclopedia.  This book contains everything from using zip shotguns to laser scatter guns in fine detail.  This book is so technical, longwinded and dry that even bookworms and fast readers would find it hard to read.  Literally any other book on the subject would be a more efficient way to learn but if the books you have are missing specific information then this is a good substitute until you find something better.",
     "weight": "1800 g",
     "volume": "2000 ml",
-    "price": "100 USD",
-    "price_postapoc": "10 USD",
+    "price": 100,
+    "price_postapoc": 10,
     "melee_damage": {
       "bash": 4
     },
@@ -726,8 +1228,8 @@
     "description": "The sub machineguns volume of the Rebuilding Civilization encyclopedia.  This book contains everything from using makeshift smgs to automatic laser carbines in fine detail.  This book is so technical, longwinded and dry that even bookworms and fast readers would find it hard to read.  Literally any other book on the subject would be a more efficient way to learn but if the books you have are missing specific information then this is a good substitute until you find something better.",
     "weight": "1800 g",
     "volume": "2000 ml",
-    "price": "100 USD",
-    "price_postapoc": "10 USD",
+    "price": 100,
+    "price_postapoc": 10,
     "melee_damage": {
       "bash": 4
     },
@@ -753,8 +1255,8 @@
     "description": "The speech volume of the Rebuilding Civilization encyclopedia.  This book contains everything from recruiting survivors to running for political office in fine detail.  This book is so technical, longwinded and dry that even bookworms and fast readers would find it hard to read.  Literally any other book on the subject would be a more efficient way to learn but if the books you have are missing specific information then this is a good substitute until you find something better.",
     "weight": "1800 g",
     "volume": "2000 ml",
-    "price": "100 USD",
-    "price_postapoc": "10 USD",
+    "price": 100,
+    "price_postapoc": 10,
     "melee_damage": {
       "bash": 4
     },
@@ -780,8 +1282,8 @@
     "description": "The piercing weapons volume of the Rebuilding Civilization encyclopedia.  This book contains everything from using switchblades to spear combat in fine detail.  This book is so technical, longwinded and dry that even bookworms and fast readers would find it hard to read.  Literally any other book on the subject would be a more efficient way to learn but if the books you have are missing specific information then this is a good substitute until you find something better.",
     "weight": "1800 g",
     "volume": "2000 ml",
-    "price": "100 USD",
-    "price_postapoc": "10 USD",
+    "price": 100,
+    "price_postapoc": 10,
     "melee_damage": {
       "bash": 4
     },
@@ -807,8 +1309,8 @@
     "description": "The survival volume of the Rebuilding Civilization encyclopedia.  This book contains everything from camping to survival on a deserted island in fine detail.  This book is so technical, longwinded and dry that even bookworms and fast readers would find it hard to read.  Literally any other book on the subject would be a more efficient way to learn but if the books you have are missing specific information then this is a good substitute until you find something better.",
     "weight": "1800 g",
     "volume": "2000 ml",
-    "price": "100 USD",
-    "price_postapoc": "10 USD",
+    "price": 100,
+    "price_postapoc": 10,
     "melee_damage": {
       "bash": 4
     },
@@ -834,8 +1336,8 @@
     "description": "The swimming volume of the Rebuilding Civilization encyclopedia.  This book contains everything from recreational swimming to crossing rivers in fine detail.  This book is so technical, longwinded and dry that even bookworms and fast readers would find it hard to read.  Literally any other book on the subject would be a more efficient way to learn but if the books you have are missing specific information then this is a good substitute until you find something better.",
     "weight": "1800 g",
     "volume": "2000 ml",
-    "price": "100 USD",
-    "price_postapoc": "10 USD",
+    "price": 100,
+    "price_postapoc": 10,
     "melee_damage": {
       "bash": 4
     },
@@ -861,8 +1363,8 @@
     "description": "The tailoring volume of the Rebuilding Civilization encyclopedia.  This book contains everything from fixing clothing tears to fashion designing in fine detail.  This book is so technical, longwinded and dry that even bookworms and fast readers would find it hard to read.  Literally any other book on the subject would be a more efficient way to learn but if the books you have are missing specific information then this is a good substitute until you find something better.",
     "weight": "1800 g",
     "volume": "2000 ml",
-    "price": "100 USD",
-    "price_postapoc": "10 USD",
+    "price": 100,
+    "price_postapoc": 10,
     "melee_damage": {
       "bash": 4
     },
@@ -888,8 +1390,8 @@
     "description": "The throwing volume of the Rebuilding Civilization encyclopedia.  This book contains everything from throwing stones to spear hunting in fine detail.  This book is so technical, longwinded and dry that even bookworms and fast readers would find it hard to read.  Literally any other book on the subject would be a more efficient way to learn but if the books you have are missing specific information then this is a good substitute until you find something better.",
     "weight": "1800 g",
     "volume": "2000 ml",
-    "price": "100 USD",
-    "price_postapoc": "10 USD",
+    "price": 100,
+    "price_postapoc": 10,
     "melee_damage": {
       "bash": 4
     },
@@ -915,8 +1417,8 @@
     "description": "The traps volume of the Rebuilding Civilization encyclopedia.  This book contains everything from spike pits to disarming landmines in fine detail.  This book is so technical, longwinded and dry that even bookworms and fast readers would find it hard to read.  Literally any other book on the subject would be a more efficient way to learn but if the books you have are missing specific information then this is a good substitute until you find something better.",
     "weight": "1800 g",
     "volume": "2000 ml",
-    "price": "100 USD",
-    "price_postapoc": "10 USD",
+    "price": 100,
+    "price_postapoc": 10,
     "melee_damage": {
       "bash": 4
     },
@@ -942,8 +1444,8 @@
     "description": "The unarmed volume of the Rebuilding Civilization encyclopedia.  This book contains everything from self defense techniques to MMA fighting in fine detail.  This book is so technical, longwinded and dry that even bookworms and fast readers would find it hard to read.  Literally any other book on the subject would be a more efficient way to learn but if the books you have are missing specific information then this is a good substitute until you find something better.",
     "weight": "1800 g",
     "volume": "2000 ml",
-    "price": "100 USD",
-    "price_postapoc": "10 USD",
+    "price": 100,
+    "price_postapoc": 10,
     "melee_damage": {
       "bash": 4
     },
@@ -1456,10 +1958,33 @@
   },
   {
     "id": "bio_atomic_battery_2",
-    "copy-from": "bionic_general",
     "type": "BIONIC_ITEM",
+    "copy-from": "bionic_general",
+    "category": "bionics",
     "name": {
       "str": "Obsolete CBM"
+    },
+    "weight": "2041 g",
+    "volume": "2500 ml",
+    "material": [
+      "steel",
+      "plastic"
+    ],
+    "symbol": ":",
+    "color": "yellow",
+    "price_postapoc": 1000,
+    "use_action": [
+      "install_bionic"
+    ],
+    "flags": [
+      "CBM"
+    ],
+    "is_upgrade": false,
+    "faults": [
+      "fault_bionic_salvaged"
+    ],
+    "melee_damage": {
+      "bash": 8
     },
     "description": "This is a now-unneeded holdover from back when Atomic Battery had to work around code bugs and would only generate power when turned off instead of when turned on."
   },
@@ -1473,8 +1998,8 @@
     "weight": "380 g",
     "volume": "250 ml",
     "integral_volume": "0 ml",
-    "price": "1000 USD",
-    "price_postapoc": "5 USD",
+    "price": 1000,
+    "price_postapoc": 5,
     "material": [
       "steel"
     ],
@@ -1636,7 +2161,7 @@
       "str_pl": "survival kits in cans"
     },
     "description": "A large tin can held together by a tab and seal.  Remove the seal to split the container into two smaller cans and reveal its contents.  It contains carefully packed survival items with a list of them on the side of the can.  You could not possibly put its contents back together.",
-    "price": "6 USD",
+    "price": 6,
     "material": [
       "steel"
     ],

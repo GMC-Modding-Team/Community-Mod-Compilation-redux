@@ -63,8 +63,24 @@
     "id": "mon_cryokinetic",
     "type": "MONSTER",
     "copy-from": "mon_mutant_cryo",
+    "name": {
+      "str": "frost maddened human"
+    },
     "description": "Sky blue irises with gray floating flecks cover the entirety of the eye.  Flurries seem to emanate from around them.",
+    "default_faction": "cryo",
+    "looks_like": "chud",
+    "bodytype": "human",
+    "species": [
+      "HUMAN"
+    ],
+    "volume": "62500 ml",
+    "weight": "81500 g",
     "hp": 90,
+    "speed": 100,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "@",
     "color": "light_blue",
     "aggression": 30,
     "morale": 100,
@@ -78,6 +94,31 @@
       }
     ],
     "dodge": 3,
+    "harvest": "human",
+    "dissect": "dissect_human",
+    "vision_day": 30,
+    "vision_night": 3,
+    "path_settings": {
+      "avoid_traps": true,
+      "avoid_sharp": true
+    },
+    "death_drops": "cryo_lab_drops",
+    "anger_triggers": [
+      "FRIEND_DIED",
+      "FRIEND_ATTACKED",
+      "HURT"
+    ],
+    "flags": [
+      "SEES",
+      "HEARS",
+      "SMELLS",
+      "BASHES",
+      "GROUP_BASH",
+      "HUMAN",
+      "CAN_OPEN_DOORS",
+      "PATH_AVOID_DANGER_1",
+      "COLDPROOF"
+    ],
     "special_attacks": [
       {
         "type": "spell",
@@ -94,10 +135,42 @@
     "id": "mon_flesh_golem_afs",
     "type": "MONSTER",
     "copy-from": "mon_flesh_golem",
-    "upgrades": {
-      "half_life": 15,
-      "into": "mon_flesh_golem_afs"
+    "name": {
+      "str": "flesh golem"
     },
+    "description": "A seeping conglomeration of spasming muscle and organs have fused together into this towering caricature of the human form.  Various organs fall off of its hulking body only to be reabsorbed moments later.",
+    "default_faction": "jabberwock",
+    "species": [
+      "ABERRATION"
+    ],
+    "volume": "300000 ml",
+    "weight": "120 kg",
+    "hp": 200,
+    "speed": 80,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "j",
+    "color": "dark_gray",
+    "aggression": 100,
+    "morale": 100,
+    "melee_skill": 6,
+    "melee_dice": 4,
+    "melee_dice_sides": 6,
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 2
+      }
+    ],
+    "families": [
+      "prof_intro_biology",
+      "prof_physiology",
+      "prof_wp_demihuman"
+    ],
+    "bleed_rate": 60,
+    "vision_day": 50,
+    "vision_night": 3,
     "special_attacks": [
       [
         "FLESH_GOLEM",
@@ -112,6 +185,28 @@
         "cooldown": 1
       }
     ],
+    "harvest": "flesh_golem",
+    "dissect": "dissect_beast_sample_small",
+    "upgrades": {
+      "half_life": 15,
+      "into": "mon_flesh_golem_afs"
+    },
+    "zombify_into": "mon_meat_cocoon_med",
+    "flags": [
+      "SEES",
+      "HEARS",
+      "SMELLS",
+      "STUMBLES",
+      "WARM",
+      "ATTACKMON",
+      "POISON"
+    ],
+    "armor": {
+      "bash": 6,
+      "cut": 4,
+      "bullet": 3,
+      "electric": 1
+    },
     "death_drops": "mon_zombie_scientist_death_drops"
   }
 ]

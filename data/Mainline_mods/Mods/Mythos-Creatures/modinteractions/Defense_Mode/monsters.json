@@ -1,57 +1,344 @@
 [
   {
     "id": "mon_rat_thing_dm",
-    "copy-from": "mon_rat_thing",
     "type": "MONSTER",
-    "species": [ "MYTHOS_DM" ],
+    "copy-from": "mon_rat_thing",
+    "name": {
+      "str": "rat-thing"
+    },
+    "looks_like": "mon_sewer_rat",
+    "description": "A small brown rodent with long whiskers and beady eyes.  Its face is strangely human-like, as are its tiny hands.",
     "default_faction": "witches",
+    "bodytype": "pig",
+    "species": [
+      "MYTHOS_DM"
+    ],
+    "volume": "750 ml",
+    "weight": "1 kg",
+    "hp": 10,
+    "speed": 100,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "r",
+    "color": "brown",
+    "aggression": 100,
+    "morale": 100,
+    "melee_skill": 5,
+    "melee_dice": 1,
+    "melee_dice_sides": 2,
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 1
+      }
+    ],
+    "dodge": 2,
     "vision_day": 99,
     "vision_night": 99,
-    "aggression": 100,
-    "morale": 100
+    "harvest": "mammal_tiny",
+    "path_settings": {
+      "max_dist": 10
+    },
+    "fear_triggers": [
+      "FIRE",
+      "HURT"
+    ],
+    "anger_triggers": [
+      "PLAYER_WEAK",
+      "FRIEND_ATTACKED",
+      "FRIEND_DIED"
+    ],
+    "flags": [
+      "SEES",
+      "SMELLS",
+      "HEARS",
+      "HAS_MIND",
+      "WARM",
+      "SWIMS",
+      "CLIMBS",
+      "SWARMS",
+      "PATH_AVOID_DANGER_1"
+    ]
   },
   {
     "id": "mon_ghoul_dm",
-    "copy-from": "mon_ghoul",
     "type": "MONSTER",
-    "species": [ "MYTHOS_DM" ],
+    "copy-from": "mon_ghoul",
+    "name": {
+      "str": "ghoul"
+    },
+    "looks_like": "mon_chud",
+    "description": "This humanoid creature has a semi-canine head, hooved feet, and claws.  Its rubbery skin is pale and covered with grave-mold.",
     "default_faction": "witches",
-    "vision_day": 99,
-    "vision_night": 99,
+    "bodytype": "human",
+    "species": [
+      "MYTHOS_DM"
+    ],
+    "volume": "62500 ml",
+    "weight": "81500 g",
+    "hp": 80,
+    "speed": 70,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "g",
+    "color": "light_gray",
     "aggression": 100,
-    "morale": 100
+    "morale": 100,
+    "melee_skill": 4,
+    "melee_dice": 2,
+    "melee_dice_sides": 3,
+    "vision_night": 99,
+    "harvest": "demihuman",
+    "grab_strength": 20,
+    "special_attacks": [
+      {
+        "id": "bite_humanoid",
+        "cooldown": 5
+      },
+      {
+        "id": "grab",
+        "cooldown": 7
+      },
+      {
+        "id": "scratch_humanoid",
+        "cooldown": 20
+      }
+    ],
+    "flags": [
+      "SEES",
+      "HEARS",
+      "SMELLS",
+      "HAS_MIND",
+      "GRABS",
+      "WARM",
+      "BASHES",
+      "GROUP_BASH",
+      "SWARMS",
+      "PUSH_MON"
+    ],
+    "vision_day": 99
   },
   {
     "id": "mon_ghast_dm",
-    "copy-from": "mon_ghast",
     "type": "MONSTER",
-    "species": [ "MYTHOS_DM" ],
+    "copy-from": "mon_ghast",
+    "name": {
+      "str": "ghast"
+    },
+    "looks_like": "mon_zombie_biter",
+    "description": "This vaguely humanoid creature is almost as big as a pony.  It has long hooved legs on which it hops, clawed hands, and a hideous noseless head with oversized teeth.",
     "default_faction": "witches",
-    "vision_day": 99,
-    "vision_night": 99,
+    "bodytype": "bear",
+    "species": [
+      "MYTHOS_DM"
+    ],
+    "volume": "62500 ml",
+    "weight": "81500 g",
+    "hp": 95,
+    "speed": 55,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "g",
+    "color": "dark_gray",
     "aggression": 100,
-    "morale": 100
+    "morale": 100,
+    "melee_skill": 3,
+    "melee_dice": 2,
+    "melee_dice_sides": 4,
+    "weakpoints": [
+      {
+        "name": "the leg",
+        "armor_mult": {
+          "physical": 0.5
+        },
+        "coverage": 18
+      },
+      {
+        "name": "the head",
+        "armor_mult": {
+          "physical": 0.5
+        },
+        "coverage": 3
+      },
+      {
+        "name": "the eye",
+        "armor_mult": {
+          "physical": 0
+        },
+        "coverage": 1
+      }
+    ],
+    "vision_night": 99,
+    "harvest": "demihuman",
+    "special_attacks": [
+      {
+        "type": "bite",
+        "cooldown": 5,
+        "min_mul": 0.75
+      },
+      {
+        "id": "scratch",
+        "cooldown": 20
+      }
+    ],
+    "flags": [
+      "SEES",
+      "HEARS",
+      "HAS_MIND",
+      "SMELLS",
+      "WARM",
+      "BASHES",
+      "GROUP_BASH",
+      "SUNDEATH",
+      "PUSH_MON"
+    ],
+    "armor": {
+      "bash": 5,
+      "cut": 3,
+      "bullet": 2
+    },
+    "vision_day": 99
   },
   {
     "id": "mon_nightgaunt_dm",
-    "copy-from": "mon_nightgaunt",
     "type": "MONSTER",
-    "species": [ "MYTHOS_DM" ],
+    "copy-from": "mon_nightgaunt",
+    "name": {
+      "str": "nightgaunt"
+    },
+    "looks_like": "mon_zombie_winged",
+    "description": "This lanky ebon humanoid has batlike wings and a long prehensile tail, yet its most unsettling feature is its lack of a face.",
     "default_faction": "witches",
-    "vision_day": 99,
-    "vision_night": 99,
+    "bodytype": "angel",
+    "species": [
+      "MYTHOS_DM"
+    ],
+    "volume": "62500 ml",
+    "weight": "81500 g",
+    "hp": 80,
+    "speed": 70,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "8",
+    "color": "light_gray",
     "aggression": 100,
-    "morale": 100
+    "morale": 100,
+    "melee_skill": 4,
+    "melee_dice": 2,
+    "melee_dice_sides": 3,
+    "vision_night": 99,
+    "harvest": "exempt",
+    "death_function": {
+      "corpse_type": "NO_CORPSE",
+      "message": "The %s melts into wisps of darkness."
+    },
+    "grab_strength": 20,
+    "special_attacks": [
+      {
+        "id": "grab"
+      },
+      {
+        "id": "scratch",
+        "cooldown": 20
+      }
+    ],
+    "flags": [
+      "SEES",
+      "HEARS",
+      "GRABS",
+      "SMELLS",
+      "FLIES",
+      "SWARMS",
+      "NIGHT_INVISIBILITY"
+    ],
+    "vision_day": 99
   },
   {
     "id": "mon_deep_one_dm",
-    "copy-from": "mon_deep_one",
     "type": "MONSTER",
-    "species": [ "MYTHOS_DM" ],
+    "copy-from": "mon_deep_one",
+    "name": {
+      "str": "deep one"
+    },
+    "looks_like": "mon_irradiated_wanderer_2",
+    "description": "A large, greenish-gray amphibious humanoid with webbed hands and feet.  It's wide, flabby head is distinctly fish like with wide staring eyes and its gangling limbs end in wickedly sharp claws.  It moves with an odd hopping gait, occasionally dropping down to walk on four limbs.",
     "default_faction": "witches",
+    "bodytype": "human",
+    "species": [
+      "MYTHOS_DM"
+    ],
+    "//": "Stats matched with Deep One from Aftershock :)",
+    "volume": "92500 ml",
+    "weight": "120 kg",
+    "hp": 210,
+    "speed": 120,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "&",
+    "color": "light_gray",
+    "aggression": 100,
+    "morale": 100,
+    "melee_skill": 7,
+    "melee_dice": 4,
+    "melee_dice_sides": 6,
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 6
+      }
+    ],
+    "dodge": 4,
     "vision_day": 99,
     "vision_night": 99,
-    "aggression": 100,
-    "morale": 100
+    "harvest": "zombie_meatslug",
+    "path_settings": {
+      "max_dist": 50,
+      "avoid_traps": true,
+      "avoid_sharp": true
+    },
+    "scents_ignored": [
+      "sc_fetid"
+    ],
+    "grab_strength": 30,
+    "special_attacks": [
+      {
+        "id": "bite_humanoid",
+        "cooldown": 6
+      },
+      {
+        "id": "scratch_humanoid"
+      },
+      {
+        "id": "grab",
+        "cooldown": 20
+      }
+    ],
+    "flags": [
+      "SEES",
+      "SMELLS",
+      "HEARS",
+      "HAS_MIND",
+      "WARM",
+      "BASHES",
+      "GRABS",
+      "POISON",
+      "NO_BREATHE",
+      "ARTHROPOD_BLOOD",
+      "PATH_AVOID_DANGER_1",
+      "CAN_OPEN_DOORS",
+      "PRIORITIZE_TARGETS",
+      "SWIMS",
+      "WATER_CAMOUFLAGE"
+    ],
+    "armor": {
+      "bash": 4,
+      "cut": 12,
+      "bullet": 10
+    }
   }
 ]

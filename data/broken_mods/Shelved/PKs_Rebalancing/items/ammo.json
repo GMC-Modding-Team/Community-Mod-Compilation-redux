@@ -1,21 +1,36 @@
 [
   {
     "id": "water_smoke",
-    "copy-from": "water",
     "type": "COMESTIBLE",
+    "copy-from": "water",
+    "comestible_type": "DRINK",
+    "category": "other",
     "name": {
       "str_sp": "smoke solution"
     },
     "description": "a thickened water solution, primed to evaporate into smoke.  Probably safer not to consume",
-    "category": "other",
+    "material": [
+      "water"
+    ],
+    "weight": "250 g",
+    "volume": "250 ml",
+    "charges": 1,
+    "price": 50,
+    "price_postapoc": 1,
+    "symbol": "~",
     "color": "cyan",
+    "phase": "liquid",
     "container": "bottle_plastic",
+    "sealed": false,
     "quench": 9,
     "ammo_data": {
       "ammo_type": "smoke_juice"
     },
     "flags": [
       "EATEN_COLD"
+    ],
+    "use_action": [
+      "BLECH_BECAUSE_UNCLEAN"
     ],
     "calories": 3
   },
@@ -30,7 +45,7 @@
     "description": "Several pieces of crudely shaped metal tied to a string.  The item is unfurled and thrown to create a local distraction.",
     "weight": "440 g",
     "volume": "250 ml",
-    "price": "3 USD",
+    "price": 3,
     "material": [
       "steel"
     ],
@@ -63,7 +78,7 @@
     "description": "Several pieces of crudely shaped metal tied to a string.  The item is unfurled and thrown to create a local distraction.",
     "weight": "440 g",
     "volume": "250 ml",
-    "price": "3 USD",
+    "price": 3,
     "material": [
       "steel"
     ],
@@ -80,7 +95,6 @@
   {
     "id": "bomblet_casing",
     "type": "AMMO",
-    "copy-from": "casing",
     "category": "spare_parts",
     "name": {
       "str": "bomblet case"
@@ -88,7 +102,7 @@
     "description": "An empty bomblet case.",
     "weight": "12 g",
     "volume": "500 ml",
-    "price": "100 USD",
+    "price": 100,
     "material": [
       "plastic",
       "steel"
@@ -107,7 +121,7 @@
     "description": "A small cylinder filled with explosive putty.  Designed to be used in bursts.",
     "weight": "80 g",
     "volume": "500 ml",
-    "price": "400 USD",
+    "price": 400,
     "material": [
       "plastic",
       "powder"
@@ -145,7 +159,7 @@
     "description": "A small cylinder filled with shaped putty and brittle metal.  Quite powerful, but relatively unpredictable and dangerous for the wielder to use.",
     "weight": "80 g",
     "volume": "500 ml",
-    "price": "650 USD",
+    "price": 650,
     "material": [
       "plastic",
       "powder"
@@ -183,7 +197,7 @@
     "description": "A small cylinder filled with powerful accelerants.  Produces a loud bang, smoke, and fire when it impacts.  Dangerous unless used carfully.",
     "weight": "80 g",
     "volume": "500 ml",
-    "price": "550 USD",
+    "price": 550,
     "material": [
       "plastic",
       "powder"
@@ -222,7 +236,7 @@
     "description": "A small cylinder filled with potent acids and toxic chemicals.  Produces a large amount of liquid and airborne corrosives.",
     "weight": "80 g",
     "volume": "500 ml",
-    "price": "500 USD",
+    "price": 500,
     "material": [
       "plastic",
       "powder"
@@ -259,7 +273,7 @@
     "description": "An active stun bomblet, ready to explode.",
     "weight": "80 g",
     "volume": "500 ml",
-    "price": "450 USD",
+    "price": 450,
     "material": [
       "plastic",
       "powder"
@@ -289,13 +303,13 @@
     "description": "There is enough frothing fluid inside this acidbomb to coat a relatively large area with sprays of acid.",
     "weight": "1231 g",
     "volume": "750 ml",
-    "price": "75 USD",
+    "price": 75,
     "to_hit": -1,
     "material": [
       "glass"
     ],
     "symbol": "*",
-    "color": "i_light_green",
+    "color": "light_green",
     "ammo_type": "thrown",
     "effects": [
       "RECOVER_9"
@@ -320,7 +334,7 @@
     "description": "A glass jar or tied-together flasks filled with caustic chemicals.  When exposed to the air they will spray out in every direction, creating modest fields of acid.",
     "weight": "813 g",
     "volume": "500 ml",
-    "price": "50 USD",
+    "price": 50,
     "to_hit": -1,
     "material": [
       "glass"
@@ -352,7 +366,7 @@
     "description": "A small container filled with gasoline and tied off with a fuse.  When lit and thrown it may catch, or may dowse out and be useless.",
     "weight": "295 g",
     "volume": "250 ml",
-    "price": "45 USD",
+    "price": 45,
     "to_hit": -1,
     "material": [
       "hydrocarbons",
@@ -413,7 +427,6 @@
   {
     "id": "shot_410_hull",
     "type": "AMMO",
-    "copy-from": "casing",
     "category": "spare_parts",
     "name": {
       "str": "410-bore shotgun shell"
@@ -421,7 +434,7 @@
     "description": "An empty 410 bore shotgun shell.",
     "weight": "12 g",
     "volume": "500 ml",
-    "price": "100 USD",
+    "price": 100,
     "material": [
       "plastic",
       "steel"
@@ -439,7 +452,7 @@
     "description": "A small caliber shotgun shell full of damaging iron pellets.  The dimensions of the shell have grown over the past 40 years, to match.45 rounds closely enough to be interchangable, although it is both less accurate and less damaging than its larger cousins.",
     "weight": "24 g",
     "volume": "250 ml",
-    "price": "50 USD",
+    "price": 50,
     "material": [
       "plastic",
       "powder"
@@ -455,13 +468,14 @@
       "damage_type": "stab",
       "amount": 32
     },
-    "dispersion": 25,
     "recoil": 250,
     "effects": [
       "COOKOFF",
       "SHOT",
       "BEANBAG"
-    ]
+    ],
+    "loudness": 0,
+    "//legacy_dispersion": 25
   },
   {
     "id": "shot_410_slug",
@@ -472,7 +486,7 @@
     "description": "A solid-shot small-bore shotgun shell designed to punch through armor.  The dimensions of the shell match.45 rounds closely enough to be interchangable, although it is both less accurate and less damaging than its larger cousins.",
     "weight": "22 g",
     "volume": "250 ml",
-    "price": "75 USD",
+    "price": 75,
     "material": [
       "plastic",
       "powder"
@@ -489,13 +503,13 @@
       "amount": 34,
       "armor_penetration": 8
     },
-    "dispersion": 40,
     "recoil": 550,
     "loudness": 140,
     "effects": [
       "COOKOFF",
       "BEANBAG"
-    ]
+    ],
+    "//legacy_dispersion": 40
   },
   {
     "id": "shot_410_flechette",
@@ -506,7 +520,7 @@
     "description": "A small-bore shotgun shell with exactly 4 pointed slugs and copious amounts of explosive powder.  The dimensions of the shell match.45 rounds closely enough to be interchangable, although it is both less accurate and less damaging than its larger cousins.",
     "weight": "22 g",
     "volume": "250 ml",
-    "price": "75 USD",
+    "price": 75,
     "material": [
       "plastic",
       "powder"
@@ -523,12 +537,13 @@
       "amount": 26,
       "armor_penetration": 12
     },
-    "dispersion": 10,
     "recoil": 350,
     "effects": [
       "COOKOFF",
       "SHOT"
-    ]
+    ],
+    "loudness": 0,
+    "//legacy_dispersion": 10
   },
   {
     "id": "shot_410_inc",
@@ -539,7 +554,7 @@
     "description": "A small-bore shotgun shell with a reserve of explosive incendiary that violently ingnites upon impact.  The dimensions of the shell match.45 rounds closely enough to be interchangable, although it is both less accurate and less damaging than its larger cousins.",
     "weight": "26 g",
     "volume": "250 ml",
-    "price": "75 USD",
+    "price": 75,
     "material": [
       "plastic",
       "powder"
@@ -555,14 +570,14 @@
       "damage_type": "stab",
       "amount": 8
     },
-    "dispersion": 40,
     "recoil": 300,
     "loudness": 180,
     "effects": [
       "COOKOFF",
       "BEANBAG",
       "INCENDIARY"
-    ]
+    ],
+    "//legacy_dispersion": 40
   },
   {
     "id": "shot_410_reloaded",
@@ -572,19 +587,33 @@
       "str_sp": "reloaded 410 shot"
     },
     "description": "A hand-reloaded small caliber shotgun shell full of damaging iron pellets.  The dimensions of the shell match.45 rounds closely enough to be interchangable, although it is both less accurate and less damaging than its larger cousins.",
-    "proportional": {
-      "price": 0.7,
-      "damage": {
-        "damage_type": "stab",
-        "amount": 0.8
-      },
-      "dispersion": 1.2
+    "weight": "24 g",
+    "volume": "250 ml",
+    "price": 35.0,
+    "material": [
+      "plastic",
+      "powder"
+    ],
+    "symbol": "=",
+    "color": "light_red",
+    "count": 20,
+    "stack_size": 20,
+    "ammo_type": "45",
+    "casing": "shot_410_hull",
+    "range": 8,
+    "damage": {
+      "damage_type": "stab",
+      "amount": 25.6
     },
-    "extend": {
-      "effects": [
-        "RECYCLED"
-      ]
-    }
+    "recoil": 250,
+    "effects": [
+      "COOKOFF",
+      "SHOT",
+      "BEANBAG",
+      "RECYCLED"
+    ],
+    "loudness": 0,
+    "//legacy_dispersion": 30.0
   },
   {
     "id": "shot_410_slug_reloaded",
@@ -594,19 +623,33 @@
       "str_sp": "reloaded 410 slug"
     },
     "description": "A hand-reloaded solid-shot small-bore shotgun shell designed to punch through armor.  The dimensions of the shell match.45 rounds closely enough to be interchangable, although it is both less accurate and less damaging than its larger cousins.",
-    "proportional": {
-      "price": 0.7,
-      "damage": {
-        "damage_type": "stab",
-        "amount": 0.8
-      },
-      "dispersion": 1.2
+    "weight": "22 g",
+    "volume": "250 ml",
+    "price": 52.5,
+    "material": [
+      "plastic",
+      "powder"
+    ],
+    "symbol": "=",
+    "color": "light_red",
+    "count": 20,
+    "stack_size": 20,
+    "ammo_type": "45",
+    "casing": "shot_410_hull",
+    "range": 16,
+    "damage": {
+      "damage_type": "stab",
+      "amount": 27.200000000000003,
+      "armor_penetration": 8
     },
-    "extend": {
-      "effects": [
-        "RECYCLED"
-      ]
-    }
+    "recoil": 550,
+    "loudness": 140,
+    "effects": [
+      "COOKOFF",
+      "BEANBAG",
+      "RECYCLED"
+    ],
+    "//legacy_dispersion": 48.0
   },
   {
     "id": "shot_410_flechette_reloaded",
@@ -616,19 +659,33 @@
       "str_sp": "reloaded 410 flechette"
     },
     "description": "A hand-reloaded small-bore shotgun shell with exactly 4 pointed slugs and copious amounts of explosive powder.  The dimensions of the shell match.45 rounds closely enough to be interchangable, although it is both less accurate and less damaging than its larger cousins.",
-    "proportional": {
-      "price": 0.7,
-      "damage": {
-        "damage_type": "stab",
-        "amount": 0.8
-      },
-      "dispersion": 1.2
+    "weight": "22 g",
+    "volume": "250 ml",
+    "price": 52.5,
+    "material": [
+      "plastic",
+      "powder"
+    ],
+    "symbol": "=",
+    "color": "light_red",
+    "count": 20,
+    "stack_size": 20,
+    "ammo_type": "45",
+    "casing": "shot_410_hull",
+    "range": 12,
+    "damage": {
+      "damage_type": "stab",
+      "amount": 20.8,
+      "armor_penetration": 12
     },
-    "extend": {
-      "effects": [
-        "RECYCLED"
-      ]
-    }
+    "recoil": 350,
+    "effects": [
+      "COOKOFF",
+      "SHOT",
+      "RECYCLED"
+    ],
+    "loudness": 0,
+    "//legacy_dispersion": 12.0
   },
   {
     "id": "shot_410_inc_reloaded",
@@ -638,19 +695,33 @@
       "str_sp": "reloaded 410 incendiary"
     },
     "description": "A hand-reloaded small-bore shotgun shell with a reserve of explosive incendiary that violently ingnites upon impact.  The dimensions of the shell match.45 rounds closely enough to be interchangable, although it is both less accurate and less damaging than its larger cousins.",
-    "proportional": {
-      "price": 0.7,
-      "damage": {
-        "damage_type": "stab",
-        "amount": 0.8
-      },
-      "dispersion": 1.2
+    "weight": "26 g",
+    "volume": "250 ml",
+    "price": 52.5,
+    "material": [
+      "plastic",
+      "powder"
+    ],
+    "symbol": "=",
+    "color": "light_red",
+    "count": 20,
+    "stack_size": 20,
+    "ammo_type": "45",
+    "casing": "shot_410_hull",
+    "range": 8,
+    "damage": {
+      "damage_type": "stab",
+      "amount": 6.4
     },
-    "extend": {
-      "effects": [
-        "RECYCLED"
-      ]
-    }
+    "recoil": 300,
+    "loudness": 180,
+    "effects": [
+      "COOKOFF",
+      "BEANBAG",
+      "INCENDIARY",
+      "RECYCLED"
+    ],
+    "//legacy_dispersion": 48.0
   },
   {
     "id": "bfg_shell",
@@ -661,7 +732,7 @@
     "description": "A large green sphere, glowing very faintly and runed with a swirling pattern that flows beneath the surface.  Upon violent impact, its internal mechanisms will destabilize the material within.  Notably, it is fireproof.",
     "weight": "150 g",
     "volume": "2 L",
-    "price": "450 USD",
+    "price": 450,
     "material": [
       "spess_plastic",
       "powder"
@@ -703,7 +774,7 @@
     "description": "A Glowing Sphere of concentrated energy, unfurling and writhing as it destroys the fabric of reality.",
     "weight": "80 g",
     "volume": "500 ml",
-    "price": "450 USD",
+    "price": 450,
     "material": [
       "plastic",
       "powder"
@@ -736,7 +807,7 @@
     "description": "A bit of scrap metal crafted to quickly insert bomblets into a type 25 bomblet launcher.",
     "weight": "210 g",
     "volume": "750 ml",
-    "price": "20 USD",
+    "price": 20,
     "material": [
       "steel"
     ],

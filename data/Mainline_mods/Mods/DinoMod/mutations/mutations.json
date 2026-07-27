@@ -298,16 +298,28 @@
     }
   },
   {
-    "type": "mutation",
     "id": "HORNS_TRI",
+    "type": "mutation",
+    "copy-from": "HORNS_POINTED",
     "name": {
       "str": "Triceratops Horns"
     },
+    "points": 1,
+    "visibility": 8,
+    "ugliness": 2,
+    "mixed_effect": true,
     "description": "You have three long, pointed horns, like those of a triceratops.  They allow you to make a strong piercing headbutt attack, but prevent wearing headwear that is not made of fabric.",
+    "types": [
+      "HORNS"
+    ],
     "prereqs": [
       "HORNS_POINTED",
       "HORNS_CURLED"
     ],
+    "restricts_gear": [
+      "head_crown"
+    ],
+    "allow_soft_gear": true,
     "attacks": {
       "attack_text_u": "You stab %s with your three pointed horns!",
       "attack_text_npc": "%1$s stabs %2$s with their three pointed horns!",
@@ -317,15 +329,12 @@
         "amount": 36
       }
     },
-    "copy-from": "HORNS_POINTED",
-    "extend": {
-      "category": [
-        "HORNS"
-      ],
-      "threshreq": [
-        "THRESH_HORNS"
-      ]
-    }
+    "category": [
+      "HORNS"
+    ],
+    "threshreq": [
+      "THRESH_HORNS"
+    ]
   },
   {
     "type": "mutation",

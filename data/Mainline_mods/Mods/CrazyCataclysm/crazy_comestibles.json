@@ -1,20 +1,42 @@
 [
   {
-    "copy-from": "cookies",
-    "type": "COMESTIBLE",
     "id": "sporeos",
-    "name": { "str_sp": "SpOreos" },
+    "type": "COMESTIBLE",
+    "copy-from": "cookies",
+    "name": {
+      "str_sp": "SpOreos"
+    },
+    "weight": "33 g",
     "color": "dark_gray",
     "spoils_in": 0,
+    "container": "box_snack",
+    "comestible_type": "FOOD",
     "symbol": "%",
     "quench": 25,
     "calories": 217,
     "description": "The hit cookie from Mycus Industries!  Now comes in addicting flavors such as Marloss, Chanterelle, and The Encroaching, Unavoidable Death of Human Civilization.",
     "price": "1 cent",
-    "material": [ "wheat", "fruit" ],
-    "fun": 10,
-    "flags": [ "MYCUS_OK", "FUNGAL_VECTOR" ],
-    "volume": "12 ml"
+    "price_postapoc": "7 cent",
+    "material": [
+      "wheat",
+      "fruit"
+    ],
+    "volume": "12 ml",
+    "flags": [
+      "MYCUS_OK",
+      "FUNGAL_VECTOR"
+    ],
+    "vitamins": [
+      [
+        "calcium",
+        2
+      ],
+      [
+        "iron",
+        6
+      ]
+    ],
+    "fun": 10
   },
   {
     "type": "recipe",
@@ -26,46 +48,184 @@
     "difficulty": 1,
     "autolearn": true,
     "time": "10 s",
-    "qualities": [ { "id": "COOK", "level": 2 } ],
-    "components": [ [ [ "cookies", 4 ] ], [ [ "marloss_berry", 1 ], [ "marloss_seed", 1 ], [ "mycus_fruit", 1 ] ] ],
+    "qualities": [
+      {
+        "id": "COOK",
+        "level": 2
+      }
+    ],
+    "components": [
+      [
+        [
+          "cookies",
+          4
+        ]
+      ],
+      [
+        [
+          "marloss_berry",
+          1
+        ],
+        [
+          "marloss_seed",
+          1
+        ],
+        [
+          "mycus_fruit",
+          1
+        ]
+      ]
+    ],
     "charges": 4
   },
   {
     "id": "powerthirst1",
-    "copy-from": "energy_drink",
     "type": "COMESTIBLE",
-    "comestible_type": "DRINK",
-    "addiction_potential": 50,
+    "copy-from": "energy_drink",
+    "looks_like": "cola",
+    "name": {
+      "str_sp": "Powerthirst - Manana Flavor"
+    },
+    "weight": "253 g",
+    "color": "magenta",
     "addiction_type": "amphetamine",
-    "container": "rocket_can_drink",
+    "fatigue_mod": 24,
     "stim": 40,
-    "name": { "str_sp": "Powerthirst - Manana Flavor" },
+    "container": "rocket_can_drink",
+    "comestible_type": "DRINK",
+    "symbol": "~",
+    "quench": 15,
+    "healthy": -1,
+    "addiction_potential": 50,
+    "calories": 157,
     "description": "POWERTHIRST in new Manana flavor.  Contains preposterous amounts of testosterone.  PREPOSTERONE.  It's like crystal meth in a can.  It's crystal meth in a can.  Powerthirst is crystal meth.",
-    "vitamins": [ [ "mutagen", 2000 ], [ "mutagen_chimera", 800 ], [ "mutagen_raptor", 800 ] ]
+    "price": 170,
+    "price_postapoc": 50,
+    "material": [
+      "junk"
+    ],
+    "primary_material": "water",
+    "volume": "250 ml",
+    "charges": 1,
+    "phase": "liquid",
+    "flags": [
+      "EATEN_COLD",
+      "NO_AUTO_CONSUME"
+    ],
+    "vitamins": [
+      [
+        "mutagen",
+        2000
+      ],
+      [
+        "mutagen_chimera",
+        800
+      ],
+      [
+        "mutagen_raptor",
+        800
+      ]
+    ],
+    "fun": 5
   },
   {
     "id": "powerthirst2",
-    "copy-from": "powerthirst1",
     "type": "COMESTIBLE",
-    "comestible_type": "DRINK",
-    "addiction_potential": 55,
+    "copy-from": "powerthirst1",
+    "looks_like": "cola",
+    "name": {
+      "str_sp": "Powerthirst - Fizzbitch Flavor"
+    },
+    "weight": "253 g",
+    "color": "magenta",
     "addiction_type": "amphetamine",
-    "container": "rocket_can_drink",
+    "fatigue_mod": 24,
     "stim": 30,
-    "name": { "str_sp": "Powerthirst - Fizzbitch Flavor" },
+    "container": "rocket_can_drink",
+    "comestible_type": "DRINK",
+    "symbol": "~",
+    "quench": 15,
+    "healthy": -1,
+    "addiction_potential": 55,
+    "calories": 157,
     "description": "POWERTHIRST in new Fizzbitch flavor.  Contains preposterous amounts of testosterone.  PREPOSTERONE.  It's like crystal meth in a can.  It's crystal meth in a can.  Powerthirst is crystal meth.",
-    "vitamins": [ [ "mutagen", 2000 ], [ "mutagen_chimera", 1000 ], [ "mutagen_raptor", 1000 ] ]
+    "price": 170,
+    "price_postapoc": 50,
+    "material": [
+      "junk"
+    ],
+    "primary_material": "water",
+    "volume": "250 ml",
+    "charges": 1,
+    "phase": "liquid",
+    "flags": [
+      "EATEN_COLD",
+      "NO_AUTO_CONSUME"
+    ],
+    "vitamins": [
+      [
+        "mutagen",
+        2000
+      ],
+      [
+        "mutagen_chimera",
+        1000
+      ],
+      [
+        "mutagen_raptor",
+        1000
+      ]
+    ],
+    "fun": 5
   },
   {
     "id": "powerthirst3",
-    "copy-from": "powerthirst1",
     "type": "COMESTIBLE",
-    "comestible_type": "DRINK",
-    "addiction_potential": 60,
+    "copy-from": "powerthirst1",
+    "looks_like": "cola",
+    "name": {
+      "str_sp": "Powerthirst - Gun Flavor"
+    },
+    "weight": "253 g",
+    "color": "magenta",
     "addiction_type": "amphetamine",
+    "fatigue_mod": 24,
     "stim": 20,
-    "name": { "str_sp": "Powerthirst - Gun Flavor" },
+    "container": "rocket_can_drink",
+    "comestible_type": "DRINK",
+    "symbol": "~",
+    "quench": 15,
+    "healthy": -1,
+    "addiction_potential": 60,
+    "calories": 157,
     "description": "POWERTHIRST in new Gun flavor.  Contains preposterous amounts of testosterone.  PREPOSTERONE.  It's like crystal meth in a can.  It's crystal meth in a can.  Powerthirst is crystal meth.",
-    "vitamins": [ [ "mutagen", 2000 ], [ "mutagen_chimera", 1200 ], [ "mutagen_raptor", 1200 ] ]
+    "price": 170,
+    "price_postapoc": 50,
+    "material": [
+      "junk"
+    ],
+    "primary_material": "water",
+    "volume": "250 ml",
+    "charges": 1,
+    "phase": "liquid",
+    "flags": [
+      "EATEN_COLD",
+      "NO_AUTO_CONSUME"
+    ],
+    "vitamins": [
+      [
+        "mutagen",
+        2000
+      ],
+      [
+        "mutagen_chimera",
+        1200
+      ],
+      [
+        "mutagen_raptor",
+        1200
+      ]
+    ],
+    "fun": 5
   }
 ]

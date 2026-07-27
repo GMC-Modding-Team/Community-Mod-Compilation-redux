@@ -1,15 +1,107 @@
 [
   {
     "id": "pistol_tiny_rifle",
-    "copy-from": "marlin_9a",
     "type": "GUN",
+    "copy-from": "marlin_9a",
+    "looks_like": "ar15",
+    "reload_noise_volume": 10,
     "name": {
       "str": "plinker carbine"
     },
+    "description": "With near non-existent recoil and inexpensive ammunition, rifles like this one are popular introductory firearms.  It has a built in magazine, capable of holding an impressive amount of its small cartridges.  You could take small game with this, but anything bigger might not even notice.",
+    "variant_type": "gun",
+    "variants": [
+      {
+        "id": "marlin_9a",
+        "name": {
+          "str_sp": "Marlin 39A"
+        },
+        "description": "The oldest and longest-produced shoulder firearm in the world.  Though it fires the weak.22 round, it is highly accurate and damaging, and has essentially no recoil."
+      }
+    ],
+    "ascii_picture": "marlin_39a",
+    "weight": "2948 g",
+    "volume": "2180 ml",
+    "longest_side": "1029 mm",
+    "barrel_length": "609 mm",
+    "price": 23000,
+    "price_postapoc": 2000,
+    "to_hit": -1,
+    "material": [
+      "iron",
+      "wood"
+    ],
+    "symbol": "(",
+    "color": "brown",
+    "range": 7,
     "ammo": [
       "ammo_pistol_tiny"
     ],
-    "description": "With near non-existent recoil and inexpensive ammunition, rifles like this one are popular introductory firearms.  It has a built in magazine, capable of holding an impressive amount of its small cartridges.  You could take small game with this, but anything bigger might not even notice.",
+    "skill": "rifle",
+    "ranged_damage": {
+      "damage_type": "bullet",
+      "amount": 5
+    },
+    "dispersion": 90,
+    "durability": 8,
+    "blackpowder_tolerance": 56,
+    "valid_mod_locations": [
+      [
+        "barrel",
+        1
+      ],
+      [
+        "bore",
+        1
+      ],
+      [
+        "brass catcher",
+        1
+      ],
+      [
+        "grip",
+        1
+      ],
+      [
+        "mechanism",
+        4
+      ],
+      [
+        "muzzle",
+        1
+      ],
+      [
+        "rail mount",
+        1
+      ],
+      [
+        "sights",
+        1
+      ],
+      [
+        "sling",
+        1
+      ],
+      [
+        "stock mount",
+        1
+      ],
+      [
+        "stock accessory",
+        2
+      ],
+      [
+        "underbarrel mount",
+        1
+      ]
+    ],
+    "faults": [
+      "fault_gun_blackpowder",
+      "fault_gun_dirt"
+    ],
+    "flags": [
+      "RELOAD_ONE"
+    ],
     "pocket_data": [
       {
         "pocket_type": "MAGAZINE_WELL",
@@ -21,19 +113,102 @@
         ],
         "rigid": true
       }
-    ]
+    ],
+    "melee_damage": {
+      "bash": 12
+    }
   },
   {
     "id": "pistol_tiny_target",
-    "copy-from": "sw_22",
     "type": "GUN",
+    "copy-from": "sw_22",
     "name": {
       "str": "target pistol"
     },
+    "skill": "pistol",
+    "sight_dispersion": 60,
+    "//": "default handling for anything without a stock",
+    "handling": 10,
+    "valid_mod_locations": [
+      [
+        "barrel",
+        1
+      ],
+      [
+        "bore",
+        1
+      ],
+      [
+        "brass catcher",
+        1
+      ],
+      [
+        "grip",
+        1
+      ],
+      [
+        "mechanism",
+        4
+      ],
+      [
+        "muzzle",
+        1
+      ],
+      [
+        "rail mount",
+        1
+      ],
+      [
+        "sights",
+        1
+      ],
+      [
+        "stock",
+        1
+      ],
+      [
+        "underbarrel mount",
+        1
+      ]
+    ],
+    "looks_like": "glock_17",
+    "description": "This medium sized pistol fires cheap and plentiful plinking ammo, and is exceptionally popular for practice or target shooting.  This pistol is unsuited for taking on anything but small game, as it is meant to poke holes in paper.  Accepts box magazines.",
+    "variant_type": "gun",
+    "variants": [
+      {
+        "id": "sw_22",
+        "name": {
+          "str_sp": "S&W 22A"
+        },
+        "description": "A modest offering from the Smith and Wesson (S&W) gun company, this is a medium sized pistol that fires the.22 LR cartridge.  Featuring an integrated rail for optics mounting, it was a popular.22 handgun amongst target shooters."
+      }
+    ],
+    "ascii_picture": "sw_22a",
+    "weight": "975 g",
+    "volume": "560 ml",
+    "longest_side": "259 mm",
+    "barrel_length": "139 mm",
+    "price": 35000,
+    "price_postapoc": 750,
+    "to_hit": -2,
+    "material": [
+      "aluminum",
+      "steel",
+      "plastic"
+    ],
+    "color": "dark_gray",
     "ammo": [
       "ammo_pistol_tiny"
     ],
-    "description": "This medium sized pistol fires cheap and plentiful plinking ammo, and is exceptionally popular for practice or target shooting.  This pistol is unsuited for taking on anything but small game, as it is meant to poke holes in paper.  Accepts box magazines.",
+    "dispersion": 480,
+    "durability": 7,
+    "min_cycle_recoil": 39,
+    "flags": [
+      "ALLOWS_BODY_BLOCK"
+    ],
+    "weapon_category": [
+      "AUTOMATIC_PISTOLS"
+    ],
     "pocket_data": [
       {
         "pocket_type": "MAGAZINE_WELL",
@@ -45,19 +220,100 @@
         ],
         "rigid": true
       }
-    ]
+    ],
+    "melee_damage": {
+      "bash": 9
+    }
   },
   {
     "id": "pistol_tiny_zip",
-    "copy-from": "moss_brownie",
     "type": "GUN",
+    "copy-from": "moss_brownie",
     "name": {
       "str": "zip gun"
     },
+    "skill": "pistol",
+    "sight_dispersion": 60,
+    "//": "default handling for anything without a stock",
+    "handling": 10,
+    "valid_mod_locations": [
+      [
+        "barrel",
+        1
+      ],
+      [
+        "belt clip",
+        1
+      ],
+      [
+        "bore",
+        1
+      ],
+      [
+        "grip",
+        1
+      ],
+      [
+        "mechanism",
+        2
+      ],
+      [
+        "sights mount",
+        1
+      ],
+      [
+        "stock mount",
+        1
+      ],
+      [
+        "underbarrel mount",
+        1
+      ]
+    ],
+    "looks_like": "glock_17",
+    "description": "A crude single shot firearm made from improvised or homemade components, chambered for tiny plinking ammunition.  Zip guns like these often turned up in the hands of criminals and insurgents.  There's no extractor, so it might be slow to reload, and its construction leaves its longevity in question.",
+    "variant_type": "gun",
+    "variants": [
+      {
+        "id": "moss_brownie",
+        "name": {
+          "str_sp": "Mossberg Brownie"
+        },
+        "description": "The first gun produced by O.F. Mossberg & Sons, the Brownie is a small pocket pistol marketed to trappers during the early 20th century.  Its four barrels can accept.22 Short and.22 LR cartridges."
+      }
+    ],
+    "weight": "286 g",
+    "volume": "100 ml",
+    "longest_side": "129 mm",
+    "barrel_length": "64 mm",
+    "price": 110000,
+    "price_postapoc": 500,
+    "to_hit": -1,
+    "material": [
+      "steel",
+      "wood"
+    ],
+    "color": "dark_gray",
     "ammo": [
       "ammo_pistol_tiny"
     ],
-    "description": "A crude single shot firearm made from improvised or homemade components, chambered for tiny plinking ammunition.  Zip guns like these often turned up in the hands of criminals and insurgents.  There's no extractor, so it might be slow to reload, and its construction leaves its longevity in question.",
+    "ranged_damage": {
+      "damage_type": "bullet",
+      "amount": -2
+    },
+    "dispersion": 520,
+    "durability": 6,
+    "blackpowder_tolerance": 96,
+    "faults": [
+      "fault_gun_blackpowder",
+      "fault_gun_dirt"
+    ],
+    "flags": [
+      "RELOAD_ONE",
+      "NEVER_JAMS",
+      "RELOAD_EJECT",
+      "EASY_CLEAN"
+    ],
     "pocket_data": [
       {
         "pocket_type": "MAGAZINE",
@@ -66,6 +322,9 @@
         },
         "rigid": true
       }
-    ]
+    ],
+    "melee_damage": {
+      "bash": 1
+    }
   }
 ]

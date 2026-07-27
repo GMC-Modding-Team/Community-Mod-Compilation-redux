@@ -13,7 +13,7 @@
     "calories": 444,
     "description": "Dry pasta and cheese powder.  Gross to eat on its own, but great cooked!.",
     "price": "150 cent",
-    "price_postapoc": "1 USD",
+    "price_postapoc": 1,
     "material": [
       "wheat",
       "milk"
@@ -89,8 +89,8 @@
     "quench": -3,
     "calories": 360,
     "description": "Good old CRAM.  A supposedly meat product thats edible, and basically never goes off.",
-    "price": "4 USD",
-    "price_postapoc": "3 USD",
+    "price": 4,
+    "price_postapoc": 3,
     "material": [
       "flesh"
     ],
@@ -107,23 +107,43 @@
     ]
   },
   {
-    "type": "COMESTIBLE",
     "id": "apple_dandy",
+    "type": "COMESTIBLE",
     "copy-from": "apple",
     "name": {
       "str": "Dandy Boy apple"
     },
-    "description": "Delicious, irradiated apples.  Sterilized using radiation, so it's safe to eat.  If, less healthy.",
-    "proportional": {
-      "price": 2.0
-    },
+    "weight": "182 g",
+    "color": "red",
     "spoils_in": "0 hours",
+    "comestible_type": "FOOD",
+    "symbol": "%",
+    "quench": 3,
+    "calories": 190,
+    "description": "Delicious, irradiated apples.  Sterilized using radiation, so it's safe to eat.  If, less healthy.",
+    "price": 80.0,
+    "price_postapoc": 100,
     "material": [
       "fruit",
       "junk"
     ],
-    "calories": 190,
+    "volume": "232 ml",
     "fun": 5,
+    "flags": [
+      "FREEZERBURN",
+      "SMOKABLE"
+    ],
+    "smoking_result": "dry_fruit",
+    "vitamins": [
+      [
+        "vitC",
+        9
+      ],
+      [
+        "iron",
+        1
+      ]
+    ],
     "healthy": 0,
     "container": "box_small"
   },
@@ -141,8 +161,8 @@
     "quench": -8,
     "calories": 400,
     "description": "Delicious snack cakes!  These should last forever.",
-    "price": "4 USD",
-    "price_postapoc": "10 USD",
+    "price": 4,
+    "price_postapoc": 10,
     "material": [
       "wheat",
       "junk"
@@ -178,7 +198,7 @@
     "calories": 170,
     "description": "Delicious, irradiated gumdrops.  Edible for basically forever.",
     "price": "180 cent",
-    "price_postapoc": "2 USD",
+    "price_postapoc": 2,
     "material": [
       "junk"
     ],
@@ -254,7 +274,7 @@
     "calories": 300,
     "description": "delicious potato crisps, irradiated for sterilization before being stored in an airtight can so they can last through the ages.",
     "price": "180 cent",
-    "price_postapoc": "2 USD",
+    "price_postapoc": 2,
     "material": [
       "junk"
     ],
@@ -294,8 +314,8 @@
     "quench": -8,
     "calories": 566,
     "description": "Greasy Prospector improved pork and beans with hickory smoked pig fat chunks.  A staple of new world scavengers, and, fittingly enough, prospectors; while it doesnt have many uses in more advanced cooking, its good alone.",
-    "price": "2 USD",
-    "price_postapoc": "3 USD",
+    "price": 2,
+    "price_postapoc": 3,
     "material": [
       "flesh",
       "bean"
@@ -336,7 +356,7 @@
     "calories": 626,
     "description": "Saddle Up Salisbury Steak; irradiated, sterilized, sealed salisbury steak and gravy, able to keep for decades, possibly even centuries, without going off.  Kinda unappealing uncooked, though.",
     "price": "320 cent",
-    "price_postapoc": "3 USD",
+    "price_postapoc": 3,
     "material": [
       "flesh",
       "junk"
@@ -361,7 +381,7 @@
     "calories": 626,
     "description": "Saddle Up Salisbury Steak; irradiated, sterilized, sealed salisbury steak and gravy, able to keep for decades, possibly even centuries, without going off.  Nice and heated up.  It's tastier and more filling, but the seal has been broken, and spoilage is coming.",
     "price": "90 cent",
-    "price_postapoc": "3 USD",
+    "price_postapoc": 3,
     "material": [
       "flesh",
       "junk"
@@ -388,8 +408,8 @@
     "calories": 290,
     "stim": 24,
     "description": "The sugariest breakfast cereal of them all.  Just eating them fills you with the energy of a miniature nuclear warhead.",
-    "price": "4 USD",
-    "price_postapoc": "1 USD",
+    "price": 4,
+    "price_postapoc": 1,
     "material": [
       "junk"
     ],
@@ -418,18 +438,19 @@
     "fun": 20
   },
   {
-    "type": "COMESTIBLE",
     "id": "yumyum_devilled_egg",
+    "type": "COMESTIBLE",
+    "copy-from": "egg_chicken",
     "name": {
       "str": "YumYum devilled egg"
     },
-    "copy-from": "egg_chicken",
+    "weight": "75 g",
     "color": "white",
     "spoils_in": "0 days",
-    "calories": 240,
-    "//": "Unlike most items, this has 3x the calories of its vanilla counterpart, pickled eggs. This is due to pickled eggs not having all the stuff devilled eggs would",
+    "comestible_type": "FOOD",
     "symbol": "%",
     "quench": -1,
+    "calories": 240,
     "description": "A YumYum brand devilled egg, sterilized by radiation and sealed in an airtight container within.",
     "price": "95 cent",
     "price_postapoc": "75 cent",
@@ -437,10 +458,26 @@
       "egg",
       "junk"
     ],
+    "volume": "250 ml",
     "fun": 2,
     "flags": [
       "FREEZERBURN"
-    ]
+    ],
+    "rot_spawn": "GROUP_EGG_CHICKEN",
+    "vitamins": [
+      [
+        "calcium",
+        3
+      ],
+      [
+        "iron",
+        4
+      ]
+    ],
+    "rot_spawn_chance": 70,
+    "healthy": 1,
+    "stack_size": 4,
+    "//": "Unlike most items, this has 3x the calories of its vanilla counterpart, pickled eggs. This is due to pickled eggs not having all the stuff devilled eggs would"
   },
   {
     "id": "dogfood_prewar",
@@ -454,7 +491,7 @@
     "spoils_in": "1 day",
     "container": "can_medium",
     "volume": "500 ml",
-    "price": "3 USD",
+    "price": 3,
     "price_postapoc": "250 cent",
     "to_hit": -5,
     "material": [
@@ -503,7 +540,7 @@
     "calories": 190,
     "description": "Delicious, airy cotton candy, radiation-sterilized and kept sealed.",
     "price": "180 cent",
-    "price_postapoc": "2 USD",
+    "price_postapoc": 2,
     "material": [
       "junk"
     ],
@@ -527,8 +564,8 @@
     "quench": -8,
     "calories": 400,
     "description": "pre-war funnel cakes, radiation sterilized to keep indefinately.",
-    "price": "4 USD",
-    "price_postapoc": "10 USD",
+    "price": 4,
+    "price_postapoc": 10,
     "material": [
       "wheat",
       "junk"
@@ -569,7 +606,7 @@
     "addiction_potential": 2,
     "description": "Hollow donut holes, filled with delicious coffee.  A breakfast made for those on the go, to get their motor running.  Slocums Joe is not to be held responsible for burns accquired from hot coffee.",
     "price": "550 cent",
-    "price_postapoc": "2 USD",
+    "price_postapoc": 2,
     "material": [
       "wheat",
       "milk",
@@ -606,7 +643,7 @@
     "description": "A disgusting pink paste.  You dont even think its edible.",
     "weight": "150 g",
     "volume": "223 ml",
-    "price": "5 USD",
+    "price": 5,
     "price_postapoc": "50 cent",
     "flags": [
       "EDIBLE_FROZEN"
@@ -644,7 +681,7 @@
     "healthy": 1,
     "calories": 850,
     "description": "A serving of beans and rice that has been cooked together pre-war with plenty of spices, and put into a can.  Delicious and healthy!",
-    "price": "5 USD",
+    "price": 5,
     "price_postapoc": "150 cent",
     "material": [
       "veggy",
@@ -686,7 +723,7 @@
     "container": "can_food",
     "healthy": -1,
     "fun": 5,
-    "price": "5 USD",
+    "price": 5,
     "spoils_in": "24 days",
     "vitamins": [
       [
@@ -731,7 +768,7 @@
     "calories": 592,
     "description": "A delicious baked pie with a sweet fruit filling, packed with preservatives and blasted with sterilizing radiation until it became literally incapable of rotting.  Are you sure you want this in your body?",
     "price": "1250 cent",
-    "price_postapoc": "8 USD",
+    "price_postapoc": 8,
     "material": [
       "wheat",
       "fruit"
@@ -775,8 +812,8 @@
     "quench": -3,
     "calories": 360,
     "description": "They did it. They made something more disgusting than CRAM.  Are you sure you want to eat this?",
-    "price": "4 USD",
-    "price_postapoc": "3 USD",
+    "price": 4,
+    "price_postapoc": 3,
     "material": [
       "veggy",
       "junk"
@@ -803,8 +840,8 @@
     "description": "Dehydrated chunks of meat-flavored soy.  Inedible alone, but meant to be used in factories.",
     "weight": "2 g",
     "volume": "25 ml",
-    "price": "11 USD",
-    "price_postapoc": "1 USD",
+    "price": 11,
+    "price_postapoc": 1,
     "flags": [
       "EDIBLE_FROZEN"
     ],
@@ -827,8 +864,8 @@
     "description": "Dehydrated beef powder, used as stock in canned stews.  Inedible alone, but meant to be used in factories.",
     "weight": "2 g",
     "volume": "25 ml",
-    "price": "11 USD",
-    "price_postapoc": "1 USD",
+    "price": 11,
+    "price_postapoc": 1,
     "flags": [
       "EDIBLE_FROZEN"
     ],
@@ -851,8 +888,8 @@
     "description": "Dehydrated, diced vegetables.  Inedible alone, but meant to be used in factories.",
     "weight": "2 g",
     "volume": "25 ml",
-    "price": "11 USD",
-    "price_postapoc": "1 USD",
+    "price": 11,
+    "price_postapoc": 1,
     "flags": [
       "EDIBLE_FROZEN"
     ],
@@ -882,7 +919,7 @@
     "calories": 608,
     "description": "A delicious stew made from questionable materials, just like mama used to make.  You dont recognize practically any ingredients on the label.",
     "price": "350 cent",
-    "price_postapoc": "1 USD",
+    "price_postapoc": 1,
     "material": [
       "flesh",
       "veggy"

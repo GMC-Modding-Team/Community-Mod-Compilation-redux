@@ -16,7 +16,7 @@
     "healthy": -2,
     "calories": 208,
     "description": "Carl JR. appreciates your business.  Enjoy your order of 'EXTRA BIG-ASS FRIES'.  Please come back when you can afford to make another purchase of 'EXTRA BIG-ASS FRIES'.",
-    "price": "5 USD",
+    "price": 5,
     "material": [
       "junk"
     ],
@@ -35,7 +35,7 @@
     "description": "A PRM brand medikit.  Can be quickly applied in battlefield situations; though it is designed to quickly attach itself to damaged tissue, not disinfect.",
     "weight": "400 g",
     "volume": "500 ml",
-    "price": "500 USD",
+    "price": 500,
     "material": [
       "spess_plastic"
     ],
@@ -129,7 +129,7 @@
       "plastic"
     ],
     "symbol": "|",
-    "color": "i_dark_gray",
+    "color": "dark_gray",
     "initial_charges": 7,
     "max_charges": 7,
     "turns_per_charge": 1,
@@ -213,7 +213,7 @@
     "description": "A desperate concoction of materials found in the wilderness, that will hopefully treat a wound and halt or prevent infection.  It may be susperstition, but it may also have healing properties too.  It had better, for all the stinging it does.",
     "weight": "450 g",
     "volume": "250 ml",
-    "price": "5 USD",
+    "price": 5,
     "symbol": "%",
     "color": "light_green",
     "fun": -8,
@@ -244,7 +244,7 @@
     "description": "A handmade brew to ward off basic poisons.  Works on a wide variety of known poisons, but may not be up to the task of the nastier venoms.  Cures and blocks biological poisons.",
     "weight": "175 g",
     "volume": "250 ml",
-    "price": "350 USD",
+    "price": 350,
     "phase": "liquid",
     "container": "flask_glass",
     "material": [
@@ -283,7 +283,7 @@
     "description": "A concentrated medical brew to neutralize most known toxins and flush them out of the system.  Unlike royal jelly, it blocks future attacks for a time.",
     "weight": "175 g",
     "volume": "250 ml",
-    "price": "350 USD",
+    "price": 350,
     "phase": "liquid",
     "container": "flask_glass",
     "material": [
@@ -312,7 +312,6 @@
   {
     "id": "clay_boiled",
     "type": "COMESTIBLE",
-    "copy-from": "clay_lump",
     "name": {
       "str": "boiled clay"
     },
@@ -352,17 +351,16 @@
     "id": "fertilizer_chelated",
     "type": "COMESTIBLE",
     "copy-from": "fungicide",
+    "category": "chems",
     "name": {
       "str_sp": "aquarium fertilizer"
     },
+    "weight": "1 g",
+    "//": "Typically sold in larger quantities, but that's handled in the charge count.",
     "color": "light_red",
-    "calories": 35,
-    "stim": -2,
-    "healthy": -4,
-    "fun": -20,
-    "stack_size": 16,
-    "description": "Agricultural grade, ionically-treated fertilizer for cleansing minerals from aquariums.  Could remove radiation from the body in a pinch.",
-    "price": "15 USD",
+    "flags": [
+      "NPC_SAFE"
+    ],
     "use_action": {
       "type": "consume_drug",
       "activation_message": "You consume a helping of the %s.",
@@ -396,9 +394,22 @@
         ]
       ]
     },
-    "flags": [
-      "NPC_SAFE"
-    ]
+    "stim": -2,
+    "container": "bag_plastic",
+    "comestible_type": "MED",
+    "symbol": "!",
+    "healthy": -4,
+    "description": "Agricultural grade, ionically-treated fertilizer for cleansing minerals from aquariums.  Could remove radiation from the body in a pinch.",
+    "price": 15,
+    "price_postapoc": "5 cent",
+    "material": [
+      "powder"
+    ],
+    "volume": "1 ml",
+    "//2": "Previously 10 doses to a gram, so about 400 to the pound.",
+    "fun": -20,
+    "calories": 35,
+    "stack_size": 16
   },
   {
     "id": "dr_stem_cell",
@@ -409,7 +420,7 @@
     "description": "A heavily regulated dose of stem cells.  Though availible for sporting and industrial accidents, the majority of treatments are reserved for those who can afford its hefty cost.  Users may experience crippling pain.  Not all users may experience the same level of results.  Use as directed.  Consult your doctor if you have artifical limbs, plan to live past the age of 30, or are already over the age of 30.",
     "weight": "175 g",
     "volume": "250 ml",
-    "price": "7770 USD",
+    "price": 7770,
     "phase": "liquid",
     "container": "flask_glass",
     "material": [

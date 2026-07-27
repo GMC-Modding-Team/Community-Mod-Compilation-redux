@@ -1,28 +1,42 @@
 [
   {
     "id": "mon_shyanhai",
-    "copy-from": "base_drone",
     "type": "MONSTER",
+    "copy-from": "base_drone",
     "name": {
       "str": "Shanghai doll"
     },
-    "description": "It is a small doll in the form of a girl.  With a pretty figure, a crescent that is disproportionately held is held in hand, attacking the enemy inexorably.",
-    "diff": 8,
-    "speed": 100,
-    "color": "light_blue",
-    "symbol": "R",
+    "default_faction": "alice_bot",
     "species": [
       "ROBOT"
     ],
-    "default_faction": "alice_bot",
+    "volume": "750 ml",
+    "weight": "1 kg",
+    "hp": 30,
     "material": [
       "cotton",
       "wood"
     ],
-    "luminance": 5,
-    "hp": 30,
+    "symbol": "R",
     "aggression": 100,
     "morale": 100,
+    "luminance": 5,
+    "death_function": {
+      "corpse_type": "BROKEN"
+    },
+    "flags": [
+      "SEES",
+      "FLIES",
+      "PATH_AVOID_DANGER_2",
+      "ELECTRONIC",
+      "NO_BREATHE",
+      "INTERIOR_AMMO",
+      "SWARMS"
+    ],
+    "description": "It is a small doll in the form of a girl.  With a pretty figure, a crescent that is disproportionately held is held in hand, attacking the enemy inexorably.",
+    "diff": 8,
+    "speed": 100,
+    "color": "light_blue",
     "dodge": 1,
     "melee_skill": 4,
     "melee_dice": 2,
@@ -47,21 +61,9 @@
         ]
       ]
     },
-    "death_function": {
-      "corpse_type": "BROKEN"
-    },
     "anger_triggers": [
       "FRIEND_ATTACKED",
       "FRIEND_DIED"
-    ],
-    "flags": [
-      "SEES",
-      "FLIES",
-      "PATH_AVOID_DANGER_2",
-      "ELECTRONIC",
-      "NO_BREATHE",
-      "INTERIOR_AMMO",
-      "SWARMS"
     ],
     "special_attacks": [
       [
@@ -76,48 +78,28 @@
   },
   {
     "id": "mon_grenade_ooedo",
-    "copy-from": "base_drone",
     "type": "MONSTER",
+    "copy-from": "base_drone",
     "name": {
       "str": "Oedo explosive mechanical doll"
     },
-    "description": "It is a small doll in the form of a girl.  It holds a grenade with both hands and will self-destruct as soon as it finds an enemy.",
-    "diff": 10,
-    "speed": 250,
-    "symbol": "R",
+    "default_faction": "alice_bot",
     "species": [
       "ROBOT"
     ],
-    "default_faction": "alice_bot",
+    "volume": "750 ml",
+    "weight": "1 kg",
+    "hp": 105,
     "material": [
       "cotton",
       "wood"
     ],
-    "hp": 105,
-    "luminance": 5,
+    "symbol": "R",
     "aggression": 100,
     "morale": 100,
-    "death_drops": {
-      "subtype": "collection",
-      "groups": [
-        [
-          "robots",
-          80
-        ]
-      ],
-      "//": "80% chance of an item from group robots"
-    },
+    "luminance": 5,
     "death_function": {
       "corpse_type": "BROKEN"
-    },
-    "anger_triggers": [
-      "FRIEND_ATTACKED",
-      "FRIEND_DIED"
-    ],
-    "color": "i_blue",
-    "revert_to_itype": "bot_grenade_ooedo",
-    "starting_ammo": {
-      "c4": 1
     },
     "flags": [
       "SEES",
@@ -128,6 +110,28 @@
       "INTERIOR_AMMO",
       "SWARMS"
     ],
+    "description": "It is a small doll in the form of a girl.  It holds a grenade with both hands and will self-destruct as soon as it finds an enemy.",
+    "diff": 10,
+    "speed": 250,
+    "death_drops": {
+      "subtype": "collection",
+      "groups": [
+        [
+          "robots",
+          80
+        ]
+      ],
+      "//": "80% chance of an item from group robots"
+    },
+    "anger_triggers": [
+      "FRIEND_ATTACKED",
+      "FRIEND_DIED"
+    ],
+    "color": "blue",
+    "revert_to_itype": "bot_grenade_ooedo",
+    "starting_ammo": {
+      "c4": 1
+    },
     "special_attacks": [
       [
         "KAMIKAZE",
@@ -140,29 +144,43 @@
   },
   {
     "id": "mon_golyat",
-    "copy-from": "base_drone",
     "type": "MONSTER",
+    "copy-from": "base_drone",
     "name": {
       "str": "Goliath doll"
     },
-    "description": "It is a huge doll in the form of a girl.  It has a pretty figure, but with both hands holding a sword, it will attack relentlessly against external enemies.",
-    "diff": 50,
-    "speed": 90,
-    "color": "dark_gray",
-    "symbol": "R",
+    "default_faction": "alice_bot",
     "species": [
       "ROBOT"
     ],
-    "default_faction": "alice_bot",
+    "volume": "750 ml",
+    "weight": "1 kg",
+    "hp": 400,
     "material": [
       "cotton",
       "steel",
       "wood"
     ],
-    "luminance": 5,
-    "hp": 400,
+    "symbol": "R",
     "aggression": 100,
     "morale": 100,
+    "luminance": 5,
+    "death_function": {
+      "corpse_type": "BROKEN"
+    },
+    "flags": [
+      "SEES",
+      "FLIES",
+      "ELECTRONIC",
+      "PATH_AVOID_DANGER_2",
+      "NO_BREATHE",
+      "INTERIOR_AMMO",
+      "SWARMS"
+    ],
+    "description": "It is a huge doll in the form of a girl.  It has a pretty figure, but with both hands holding a sword, it will attack relentlessly against external enemies.",
+    "diff": 50,
+    "speed": 90,
+    "color": "dark_gray",
     "dodge": 4,
     "melee_skill": 8,
     "melee_dice": 4,
@@ -188,21 +206,9 @@
         ]
       ]
     },
-    "death_function": {
-      "corpse_type": "BROKEN"
-    },
     "anger_triggers": [
       "FRIEND_ATTACKED",
       "FRIEND_DIED"
-    ],
-    "flags": [
-      "SEES",
-      "FLIES",
-      "ELECTRONIC",
-      "PATH_AVOID_DANGER_2",
-      "NO_BREATHE",
-      "INTERIOR_AMMO",
-      "SWARMS"
     ],
     "armor": {
       "bash": 8,
@@ -212,29 +218,44 @@
   },
   {
     "id": "mon_golyat2",
-    "copy-from": "base_drone",
     "type": "MONSTER",
+    "copy-from": "base_drone",
     "name": {
       "str": "Goliath doll"
     },
-    "description": "It is a huge doll in the form of a girl.  She is heavily armored and holds a large chainsaw and a large shield.  It can be said that it is an overtechnology that combines magic and science.",
-    "diff": 50,
-    "speed": 90,
-    "color": "dark_gray",
-    "symbol": "R",
+    "default_faction": "alice_bot",
     "species": [
       "ROBOT"
     ],
-    "default_faction": "alice_bot",
+    "volume": "750 ml",
+    "weight": "1 kg",
+    "hp": 400,
     "material": [
       "cotton",
       "steel",
       "wood"
     ],
-    "luminance": 16,
-    "hp": 400,
+    "symbol": "R",
     "aggression": 100,
     "morale": 100,
+    "luminance": 16,
+    "death_function": {
+      "corpse_type": "BROKEN"
+    },
+    "flags": [
+      "SEES",
+      "FLIES",
+      "ELECTRONIC",
+      "PATH_AVOID_DANGER_2",
+      "NO_BREATHE",
+      "INTERIOR_AMMO",
+      "HARDTOSHOOT",
+      "SWARMS"
+    ],
+    "description": "It is a huge doll in the form of a girl.  She is heavily armored and holds a large chainsaw and a large shield.  It can be said that it is an overtechnology that combines magic and science.",
+    "diff": 50,
+    "speed": 90,
+    "color": "dark_gray",
     "dodge": 8,
     "melee_skill": 12,
     "melee_dice": 6,
@@ -290,22 +311,9 @@
         ]
       ]
     },
-    "death_function": {
-      "corpse_type": "BROKEN"
-    },
     "anger_triggers": [
       "FRIEND_ATTACKED",
       "FRIEND_DIED"
-    ],
-    "flags": [
-      "SEES",
-      "FLIES",
-      "ELECTRONIC",
-      "PATH_AVOID_DANGER_2",
-      "NO_BREATHE",
-      "INTERIOR_AMMO",
-      "HARDTOSHOOT",
-      "SWARMS"
     ],
     "armor": {
       "bash": 40,
@@ -316,29 +324,44 @@
   },
   {
     "id": "mon_golyat2l",
-    "copy-from": "base_drone",
     "type": "MONSTER",
+    "copy-from": "base_drone",
     "name": {
       "str": "Goliath doll"
     },
-    "description": "It is a huge doll in the form of a girl.  She is heavily armored and holds a large chainsaw and a large shield.  Since it is in the wide area alert mode, it moves to the pursuit of the enemy who entered the view to anywhere.",
-    "diff": 50,
-    "speed": 90,
-    "color": "dark_gray",
-    "symbol": "R",
+    "default_faction": "alice_bot",
     "species": [
       "ROBOT"
     ],
-    "default_faction": "alice_bot",
+    "volume": "750 ml",
+    "weight": "1 kg",
+    "hp": 400,
     "material": [
       "cotton",
       "steel",
       "wood"
     ],
-    "luminance": 680,
-    "hp": 400,
+    "symbol": "R",
     "aggression": 100,
     "morale": 100,
+    "luminance": 680,
+    "death_function": {
+      "corpse_type": "BROKEN"
+    },
+    "flags": [
+      "SEES",
+      "FLIES",
+      "ELECTRONIC",
+      "PATH_AVOID_DANGER_2",
+      "NO_BREATHE",
+      "INTERIOR_AMMO",
+      "HARDTOSHOOT",
+      "SWARMS"
+    ],
+    "description": "It is a huge doll in the form of a girl.  She is heavily armored and holds a large chainsaw and a large shield.  Since it is in the wide area alert mode, it moves to the pursuit of the enemy who entered the view to anywhere.",
+    "diff": 50,
+    "speed": 90,
+    "color": "dark_gray",
     "dodge": 8,
     "melee_skill": 12,
     "melee_dice": 6,
@@ -394,22 +417,9 @@
         ]
       ]
     },
-    "death_function": {
-      "corpse_type": "BROKEN"
-    },
     "anger_triggers": [
       "FRIEND_ATTACKED",
       "FRIEND_DIED"
-    ],
-    "flags": [
-      "SEES",
-      "FLIES",
-      "ELECTRONIC",
-      "PATH_AVOID_DANGER_2",
-      "NO_BREATHE",
-      "INTERIOR_AMMO",
-      "HARDTOSHOOT",
-      "SWARMS"
     ],
     "armor": {
       "bash": 40,
@@ -512,7 +522,7 @@
       "flesh"
     ],
     "symbol": "@",
-    "color": "red_green",
+    "color": "red",
     "aggression": 10,
     "morale": 100,
     "melee_skill": 8,
@@ -906,7 +916,7 @@
       "flesh"
     ],
     "symbol": "@",
-    "color": "blue_white",
+    "color": "blue",
     "aggression": -30,
     "morale": 100,
     "melee_skill": 6,
@@ -997,7 +1007,7 @@
       "flesh"
     ],
     "symbol": "V",
-    "color": "cyan_red",
+    "color": "cyan",
     "aggression": 100,
     "morale": 100,
     "melee_skill": 7,
@@ -1079,7 +1089,7 @@
       "flesh"
     ],
     "symbol": "V",
-    "color": "yellow_red",
+    "color": "yellow",
     "aggression": 100,
     "morale": 100,
     "melee_skill": 7,

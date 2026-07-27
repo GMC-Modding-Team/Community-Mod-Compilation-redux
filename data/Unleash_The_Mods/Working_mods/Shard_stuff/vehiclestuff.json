@@ -10,7 +10,7 @@
     "description": "Intended to be part of a building, this air raid siren is ungodly loud.",
     "weight": "6210 g",
     "volume": "25 L",
-    "price": "1200 USD",
+    "price": 1200,
     "to_hit": -3,
     "melee_damage": {
       "bash": 22
@@ -215,14 +215,51 @@
   },
   {
     "id": "internal_tank_xxl",
-    "copy-from": "internal_tank_xl",
     "type": "vehicle_part",
+    "copy-from": "internal_tank_xl",
     "name": {
       "str": "internal tank (200L)"
     },
-    "looks_like": "external_tank",
     "item": "55gal_drum",
-    "description": "A large drum hooked into the fuel system."
+    "looks_like": "external_tank",
+    "location": "center",
+    "variants": [
+      {
+        "symbols": "O",
+        "symbols_broken": "o"
+      }
+    ],
+    "broken_color": "red",
+    "durability": 160,
+    "description": "A large drum hooked into the fuel system.",
+    "damage_modifier": 80,
+    "flags": [
+      "FLUIDTANK",
+      "BOARDABLE"
+    ],
+    "breaks_into": [
+      {
+        "item": "steel_lump",
+        "count": [
+          2,
+          2
+        ]
+      },
+      {
+        "item": "steel_chunk",
+        "count": [
+          1,
+          2
+        ]
+      },
+      {
+        "item": "scrap",
+        "count": [
+          1,
+          5
+        ]
+      }
+    ]
   },
   {
     "id": "cargo_racks",
@@ -293,7 +330,7 @@
       "bash": 27
     },
     "category": "veh_parts",
-    "price": "280 USD"
+    "price": 280
   },
   {
     "result": "storage_rack",
@@ -442,7 +479,7 @@
     "weight": "1275000 g",
     "volume": "100 L",
     "price": "20 kUSD",
-    "price_postapoc": "2400 USD",
+    "price_postapoc": 2400,
     "to_hit": -4,
     "melee_damage": {
       "bash": 60
@@ -560,20 +597,101 @@
   },
   {
     "id": "engine_electric_massive",
-    "copy-from": "engine_electric_large",
     "type": "vehicle_part",
+    "copy-from": "engine_electric_large",
     "name": {
       "str": "massive electric motor"
     },
-    "looks_like": "engine_electric_large",
     "item": "motor_massive",
-    "proportional": {
-      "energy_consumption": 3.5,
-      "power": 2.5
-    },
-    "durability": 600,
+    "categories": [
+      "movement"
+    ],
+    "location": "engine_block",
     "description": "A massive and incredibly powerful electric motor.",
+    "noise_factor": 5,
+    "m2c": 90,
+    "fuel_type": "battery",
+    "color": "yellow",
+    "broken_color": "red",
+    "flags": [
+      "ENGINE",
+      "E_HIGHER_SKILL",
+      "E_HEATER"
+    ],
+    "variants": [
+      {
+        "symbols": "*",
+        "symbols_broken": "#"
+      }
+    ],
+    "durability": 600,
+    "power": "150000 W",
+    "energy_consumption": "163 kW",
     "damage_modifier": 80,
+    "//": "30 cm weld per quadrant of damage",
+    "requirements": {
+      "install": {
+        "skills": [
+          [
+            "mechanics",
+            3
+          ]
+        ],
+        "time": "60 m",
+        "using": [
+          [
+            "vehicle_wrench_2",
+            1
+          ]
+        ]
+      },
+      "removal": {
+        "skills": [
+          [
+            "mechanics",
+            2
+          ]
+        ],
+        "time": "30 m",
+        "using": [
+          [
+            "vehicle_wrench_2",
+            1
+          ]
+        ]
+      },
+      "repair": {
+        "skills": [
+          [
+            "mechanics",
+            4
+          ]
+        ],
+        "time": "60 m",
+        "using": [
+          [
+            "repair_welding_standard",
+            3
+          ],
+          [
+            "soldering_standard",
+            15
+          ],
+          [
+            "repair_welding_alloys",
+            2
+          ],
+          [
+            "vehicle_wrench_2",
+            1
+          ],
+          [
+            "vehicle_screw",
+            1
+          ]
+        ]
+      }
+    },
     "breaks_into": [
       {
         "item": "steel_lump",
@@ -603,7 +721,11 @@
           15
         ]
       }
-    ]
+    ],
+    "damage_reduction": {
+      "all": 43
+    },
+    "looks_like": "engine_electric_large"
   },
   {
     "id": "motor_massive",
@@ -625,7 +747,7 @@
       "bash": 27
     },
     "category": "veh_parts",
-    "price": "540 USD"
+    "price": 540
   },
   {
     "result": "motor_massive",

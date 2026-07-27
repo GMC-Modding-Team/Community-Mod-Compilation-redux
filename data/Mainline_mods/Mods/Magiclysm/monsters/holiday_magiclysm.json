@@ -86,13 +86,24 @@
       "str": "Yulecat Cub"
     },
     "description": "The child of a yulecat, this catlike creature looks as if it poses no threat to you, but looks can be deceiving.",
+    "bodytype": "lion",
+    "default_faction": "magical_beast",
+    "species": [
+      "MAGICAL_BEAST"
+    ],
     "volume": "120 ml",
     "weight": "345 g",
     "hp": 56,
     "speed": 120,
+    "material": [
+      "flesh"
+    ],
     "symbol": "y",
+    "color": "white",
+    "aggression": 50,
     "morale": 23,
     "melee_skill": 4,
+    "melee_dice": 7,
     "melee_dice_sides": 6,
     "melee_damage": [
       {
@@ -101,24 +112,49 @@
       }
     ],
     "dodge": 6,
+    "vision_night": 12,
+    "path_settings": {
+      "max_dist": 21,
+      "avoid_traps": true,
+      "avoid_sharp": true
+    },
     "harvest": "mutant_mammal_fur",
+    "reproduction": {
+      "baby_monster": "mon_yulecat_cub",
+      "baby_count": 6,
+      "baby_timer": 234
+    },
+    "baby_flags": [
+      "WINTER"
+    ],
+    "grab_strength": 50,
     "special_attacks": [
       [
         "EAT_FOOD",
         71
       ]
     ],
+    "flags": [
+      "SEES",
+      "HEARS",
+      "SMELLS",
+      "GRABS",
+      "KEENNOSE",
+      "PATH_AVOID_DANGER_1",
+      "WARM",
+      "NO_BREED"
+    ],
+    "zombify_into": "mon_yulecat_zombie",
+    "armor": {
+      "bash": 4,
+      "cut": 1,
+      "bullet": 4
+    },
     "extend": {
-      "flags": [
-        "NO_BREED"
-      ],
       "fear_triggers": [
         "PLAYER_CLOSE",
         "HURT"
       ]
-    },
-    "delete": {
-      "anger_triggers": "PLAYER_NEAR_BABY"
     },
     "upgrades": {
       "age_grow": 234,

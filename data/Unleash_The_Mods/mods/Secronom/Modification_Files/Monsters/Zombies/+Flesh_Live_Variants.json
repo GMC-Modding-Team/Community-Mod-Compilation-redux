@@ -1,6 +1,5 @@
 [
   {
-    "//": "The taken (or flesh variants) - flesh version of vanilla creatures. This file contains wildlife variants. Secronom creatures or anything related are immune to flesh infection.",
     "id": "mon_sflesh_bear_cub",
     "type": "MONSTER",
     "copy-from": "mon_sflesh_taken_bear",
@@ -8,11 +7,24 @@
       "str": "black bear cub"
     },
     "description": "A juvenile American black bear.  This one isn't much of a threat, but be wary of its parent; black bears are known for their protectiveness.\nInfested by flesh, this once living creature no longer act as an animal, but a bloodthirsty fiend.",
+    "default_faction": "secro_flesh",
+    "bodytype": "bear",
+    "species": [
+      "SFLESH",
+      "ABERRATION"
+    ],
     "volume": "40750 ml",
     "weight": "40750 g",
     "hp": 25,
     "speed": 90,
+    "emit_fields": [
+      "emit_sflesh_fleshling_maybe"
+    ],
+    "material": [
+      "flesh"
+    ],
     "symbol": "b",
+    "color": "dark_gray",
     "aggression": 100,
     "morale": 100,
     "melee_skill": 2,
@@ -28,11 +40,23 @@
         "amount": 1
       }
     ],
+    "dodge": 2,
     "armor": {
       "bash": 3
     },
-    "dodge": 2,
-    "harvest": "mammal_fur"
+    "vision_day": 30,
+    "vision_night": 10,
+    "//": "The taken (or flesh variants) - flesh version of vanilla creatures. This file contains wildlife variants. Secronom creatures or anything related are immune to flesh infection.",
+    "harvest": "mammal_fur",
+    "flags": [
+      "SEES",
+      "HEARS",
+      "SMELLS",
+      "WARM",
+      "POISON",
+      "NO_BREATHE",
+      "BASHES"
+    ]
   },
   {
     "id": "mon_sflesh_taken_bear",
@@ -441,6 +465,7 @@
     "volume": "1000 ml",
     "weight": "1 kg",
     "hp": 8,
+    "speed": 150,
     "emit_fields": [
       "emit_sflesh_fleshling_maybe"
     ],
@@ -449,19 +474,22 @@
     ],
     "symbol": "c",
     "color": "light_gray",
+    "aggression": 100,
+    "morale": 100,
+    "melee_skill": 6,
+    "melee_dice": 1,
+    "melee_dice_sides": 6,
     "melee_damage": [
       {
         "damage_type": "cut",
         "amount": 2
       }
     ],
+    "armor": {
+      "bash": 3
+    },
     "dodge": 14,
-    "special_attacks": [
-      {
-        "id": "scratch",
-        "cooldown": 10
-      }
-    ],
+    "vision_night": 20,
     "harvest": "mammal_tiny",
     "flags": [
       "SEES",
@@ -469,6 +497,12 @@
       "GOODHEARING",
       "SMELLS",
       "WARM"
+    ],
+    "special_attacks": [
+      {
+        "id": "scratch",
+        "cooldown": 10
+      }
     ]
   },
   {
@@ -925,10 +959,25 @@
       "str_pl": "Labrador puppies"
     },
     "description": "A puppy, nothing more like a bloody fuzball.\nInfested by flesh, this once living creature no longer act as an animal, but a bloodthirsty fiend.",
+    "default_faction": "secro_flesh",
+    "bodytype": "dog",
+    "species": [
+      "SFLESH",
+      "ABERRATION"
+    ],
     "volume": "750 ml",
     "weight": "1 kg",
+    "harvest": "mammal_tiny",
     "hp": 10,
     "speed": 98,
+    "emit_fields": [
+      "emit_sflesh_fleshling_maybe"
+    ],
+    "material": [
+      "flesh"
+    ],
+    "symbol": "d",
+    "color": "light_gray",
     "aggression": 100,
     "morale": 100,
     "melee_skill": 2,
@@ -949,7 +998,17 @@
     },
     "dodge": 1,
     "vision_night": 4,
-    "harvest": "mammal_tiny"
+    "path_settings": {
+      "max_dist": 10
+    },
+    "flags": [
+      "HEARS",
+      "KEENNOSE",
+      "SEES",
+      "SMELLS",
+      "SWARMS",
+      "WARM"
+    ]
   },
   {
     "id": "mon_sflesh_fox",

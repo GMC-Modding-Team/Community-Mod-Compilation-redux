@@ -1,15 +1,35 @@
 [
   {
     "id": "cachemap",
-    "copy-from": "abstractmap",
     "type": "GENERIC",
-    "name": { "str": "prepper's map" },
+    "copy-from": "abstractmap",
+    "//": "Match type options in iuse_actor.cpp",
+    "//1": "Add maps/brochures/pamphlets as appopriate to itemgroups/books.json 's groups",
+    "category": "maps",
+    "name": {
+      "str": "prepper's map"
+    },
     "description": "A surprisingly well-drawn map outlining the locations of prepper cache's.",
+    "weight": "30 g",
+    "volume": "250 ml",
+    "flags": [
+      "PAPER_SHAPED"
+    ],
+    "price": 1000,
+    "price_postapoc": 1000,
+    "to_hit": -1,
+    "material": [
+      "paper"
+    ],
+    "symbol": ";",
     "color": "green",
     "use_action": {
       "type": "reveal_map",
       "radius": 180,
-      "terrain": [ "cache_main", "forest_trail" ],
+      "terrain": [
+        "cache_main",
+        "forest_trail"
+      ],
       "message": "You update your map with the prepper locations."
     }
   }

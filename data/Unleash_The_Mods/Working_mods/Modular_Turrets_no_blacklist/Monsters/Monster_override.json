@@ -2,34 +2,331 @@
   {
     "id": "mon_turret",
     "type": "MONSTER",
+    "copy-from": "mon_turret_9mm",
     "name": {
       "str": "9mm turret"
     },
-    "copy-from": "mon_turret_9mm"
+    "default_faction": "defense_bot",
+    "species": [
+      "ROBOT"
+    ],
+    "volume": "30000 ml",
+    "weight": "40750 g",
+    "hp": 30,
+    "speed": 100,
+    "material": [
+      "steel"
+    ],
+    "symbol": "t",
+    "looks_like": "mon_turret",
+    "aggression": 100,
+    "morale": 100,
+    "armor": {
+      "bash": 14,
+      "cut": 16,
+      "acid": 14
+    },
+    "death_function": {
+      "corpse_type": "BROKEN"
+    },
+    "flags": [
+      "SEES",
+      "NOHEAD",
+      "ELECTRONIC",
+      "IMMOBILE",
+      "NO_BREATHE"
+    ],
+    "description": "The General Atomics TX-1 Guardian, a small, pill-shaped automated gun turret using state of the art ATR systems to dynamically reorient itself to new friends and enemies alike.  Its integrated 9mm sub machinegun can swivel a full 360 degrees.",
+    "diff": 10,
+    "color": "light_gray",
+    "luminance": 200,
+    "revert_to_itype": "bot_turret_9mm",
+    "special_attacks": [
+      {
+        "type": "gun",
+        "cooldown": 2,
+        "gun_type": "robogun_9mm",
+        "fake_skills": [
+          [
+            "gun",
+            2
+          ],
+          [
+            "smg",
+            2
+          ]
+        ],
+        "fake_dex": 9,
+        "ranges": [
+          [
+            0,
+            2,
+            "BURST"
+          ],
+          [
+            3,
+            6,
+            "AUTO"
+          ],
+          [
+            7,
+            12,
+            "DEFAULT"
+          ]
+        ]
+      }
+    ]
   },
   {
     "id": "mon_turret_rifle",
     "type": "MONSTER",
+    "copy-from": "mon_milturret_556",
     "name": {
       "str": "5.56mm turret"
     },
-    "copy-from": "mon_milturret_556"
+    "default_faction": "military",
+    "species": [
+      "ROBOT"
+    ],
+    "volume": "30000 ml",
+    "weight": "40750 g",
+    "hp": 30,
+    "speed": 100,
+    "material": [
+      "steel"
+    ],
+    "symbol": "t",
+    "looks_like": "mon_turret",
+    "aggression": 100,
+    "morale": 100,
+    "armor": {
+      "bash": 14,
+      "cut": 16,
+      "acid": 14
+    },
+    "death_function": {
+      "corpse_type": "BROKEN"
+    },
+    "flags": [
+      "SEES",
+      "NOHEAD",
+      "ELECTRONIC",
+      "IMMOBILE",
+      "NO_BREATHE"
+    ],
+    "description": "The Leadworks LLC's TX-32L Sentry, a military-grade automated machinegun turret using state of the art ATR systems to dynamically reorient itself to new friends and enemies alike.  Its integrated 5.56 rifle can swivel a full 360 degrees.",
+    "diff": 20,
+    "color": "green",
+    "luminance": 200,
+    "revert_to_itype": "bot_milturret_556",
+    "special_attacks": [
+      {
+        "type": "gun",
+        "cooldown": 2,
+        "gun_type": "robogun_556",
+        "fake_skills": [
+          [
+            "gun",
+            5
+          ],
+          [
+            "rifle",
+            5
+          ]
+        ],
+        "fake_dex": 10,
+        "ranges": [
+          [
+            0,
+            4,
+            "BURST"
+          ],
+          [
+            4,
+            8,
+            "AUTO"
+          ],
+          [
+            9,
+            16,
+            "DEFAULT"
+          ]
+        ],
+        "require_targeting_player": true,
+        "require_targeting_npc": true,
+        "require_targeting_monster": true,
+        "targeting_cost": 10,
+        "targeting_timeout_extend": -1,
+        "targeting_sound": "\"Hostile Detected.\"",
+        "targeting_volume": 10
+      }
+    ]
   },
   {
     "id": "mon_turret_bmg",
     "type": "MONSTER",
+    "copy-from": "mon_milturret_50bmg",
     "name": {
       "str": "50cal turret"
     },
-    "copy-from": "mon_milturret_50bmg"
+    "default_faction": "military",
+    "species": [
+      "ROBOT"
+    ],
+    "volume": "30000 ml",
+    "weight": "40750 g",
+    "hp": 30,
+    "speed": 100,
+    "material": [
+      "steel"
+    ],
+    "symbol": "t",
+    "looks_like": "mon_turret",
+    "aggression": 100,
+    "morale": 100,
+    "armor": {
+      "bash": 14,
+      "cut": 16,
+      "acid": 14
+    },
+    "death_function": {
+      "corpse_type": "BROKEN"
+    },
+    "flags": [
+      "SEES",
+      "NOHEAD",
+      "ELECTRONIC",
+      "IMMOBILE",
+      "NO_BREATHE"
+    ],
+    "description": "The Leadworks LLC's TX-13 Sentry, a military-grade automated machinegun turret using state of the art ATR systems to dynamically reorient itself to new friends and enemies alike.  Its integrated 50 caliber machinegun can swivel a full 360 degrees.",
+    "diff": 30,
+    "color": "green",
+    "luminance": 200,
+    "revert_to_itype": "bot_milturret_50bmg",
+    "special_attacks": [
+      {
+        "type": "gun",
+        "cooldown": 3,
+        "move_cost": 150,
+        "gun_type": "robogun_50bmg",
+        "fake_skills": [
+          [
+            "gun",
+            5
+          ],
+          [
+            "rifle",
+            5
+          ]
+        ],
+        "fake_dex": 10,
+        "ranges": [
+          [
+            0,
+            5,
+            "DEFAULT"
+          ],
+          [
+            6,
+            10,
+            "BURST"
+          ],
+          [
+            11,
+            20,
+            "DEFAULT"
+          ]
+        ],
+        "require_targeting_player": true,
+        "require_targeting_npc": true,
+        "require_targeting_monster": true,
+        "targeting_cost": 10,
+        "targeting_timeout_extend": -1,
+        "targeting_sound": "\"Hostile Detected.\"",
+        "targeting_volume": 10
+      }
+    ]
   },
   {
     "id": "mon_laserturret",
     "type": "MONSTER",
+    "copy-from": "mon_advturret_laser",
     "name": {
       "str": "laser turret"
     },
-    "copy-from": "mon_advturret_laser"
+    "default_faction": "military",
+    "species": [
+      "ROBOT"
+    ],
+    "volume": "30000 ml",
+    "weight": "40750 g",
+    "hp": 30,
+    "speed": 100,
+    "material": [
+      "steel"
+    ],
+    "symbol": "t",
+    "looks_like": "mon_turret",
+    "aggression": 100,
+    "morale": 100,
+    "armor": {
+      "bash": 14,
+      "cut": 16,
+      "acid": 14
+    },
+    "death_function": {
+      "corpse_type": "BROKEN"
+    },
+    "flags": [
+      "SEES",
+      "NOHEAD",
+      "ELECTRONIC",
+      "IMMOBILE",
+      "NO_BREATHE"
+    ],
+    "description": "The DoubleTech T-L3 Scintillator, an advanced automated laser turret using state of the art ATR systems to dynamically reorient itself to new friends and enemies alike.  Its integrated laser emitter can swivel a full 360 degrees.",
+    "diff": 20,
+    "color": "yellow",
+    "luminance": 300,
+    "revert_to_itype": "bot_advturret_laser",
+    "special_attacks": [
+      {
+        "type": "gun",
+        "cooldown": 4,
+        "gun_type": "robogun_laser",
+        "fake_skills": [
+          [
+            "gun",
+            5
+          ],
+          [
+            "rifle",
+            5
+          ]
+        ],
+        "fake_dex": 10,
+        "ranges": [
+          [
+            0,
+            8,
+            "AUTO"
+          ],
+          [
+            8,
+            16,
+            "BURST"
+          ]
+        ],
+        "require_targeting_player": true,
+        "require_targeting_npc": true,
+        "require_targeting_monster": true,
+        "targeting_cost": 10,
+        "targeting_timeout_extend": -5,
+        "targeting_sound": "\"Hostile Detected.\"",
+        "targeting_volume": 20
+      }
+    ]
   },
   {
     "id": "mon_hazmatbot",

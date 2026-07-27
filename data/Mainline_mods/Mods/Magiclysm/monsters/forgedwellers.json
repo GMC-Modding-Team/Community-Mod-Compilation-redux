@@ -75,16 +75,45 @@
     "id": "mon_forgemaster1",
     "type": "MONSTER",
     "copy-from": "mon_goblin_chieftain",
-    "species": [
-      "GOBLIN_FORGE"
-    ],
     "name": {
       "str": "goblin forgemaster"
     },
-    "default_faction": "wonder_forge",
-    "aggression": 0,
-    "aggro_character": false,
     "description": "A goblin like none you've ever seen before.  He directs workers and automatons with confidence and style.",
+    "default_faction": "wonder_forge",
+    "bodytype": "human",
+    "species": [
+      "GOBLIN_FORGE"
+    ],
+    "volume": "32 L",
+    "weight": "42 kg",
+    "hp": 135,
+    "speed": 105,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "g",
+    "color": "brown",
+    "aggression": 0,
+    "morale": 100,
+    "melee_skill": 4,
+    "melee_dice": 2,
+    "melee_dice_sides": 8,
+    "dodge": 6,
+    "harvest": "demihuman",
+    "families": [
+      "prof_wp_demihuman"
+    ],
+    "weakpoint_sets": [
+      "wps_humanoid_body",
+      "wps_humanoid_body_armor",
+      "wps_humanoid_open_helmet"
+    ],
+    "vision_day": 30,
+    "vision_night": 8,
+    "path_settings": {
+      "avoid_traps": true,
+      "avoid_sharp": true
+    },
     "death_drops": {
       "subtype": "collection",
       "groups": [
@@ -106,6 +135,23 @@
         ]
       ]
     },
+    "flags": [
+      "SEES",
+      "HEARS",
+      "HAS_MIND",
+      "WARM",
+      "BASHES",
+      "FILTHY",
+      "PATH_AVOID_DANGER_1",
+      "WIELDED_WEAPON"
+    ],
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 4
+      }
+    ],
+    "aggro_character": false,
     "armor": {
       "heat": 40
     }
@@ -113,19 +159,67 @@
   {
     "id": "mon_forgemaster2",
     "type": "MONSTER",
+    "copy-from": "mon_lizardfolk_shaman",
     "name": {
       "str": "lizardfolk forgemaster"
     },
     "description": "Lizardfolk rarely live outside of their tribes.  This one has found freedom and purpose beyond serving their draconic masters.",
-    "copy-from": "mon_lizardfolk_shaman",
     "default_faction": "wonder_forge",
-    "aggression": 0,
-    "aggro_character": false,
-    "anger_triggers": [
-      "FRIEND_ATTACKED",
-      "FRIEND_DIED",
-      "HURT"
+    "bodytype": "human",
+    "species": [
+      "LIZARDFOLK"
     ],
+    "volume": "80 L",
+    "weight": "100 kg",
+    "hp": 80,
+    "speed": 105,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "L",
+    "color": "green",
+    "aggression": 0,
+    "morale": 80,
+    "vision_day": 10,
+    "vision_night": 20,
+    "path_settings": {
+      "avoid_traps": true,
+      "avoid_sharp": true
+    },
+    "melee_skill": 3,
+    "melee_dice": 2,
+    "melee_dice_sides": 6,
+    "dodge": 5,
+    "harvest": "lizardfolk",
+    "weakpoint_sets": [
+      "wps_humanoid_body",
+      "wps_humanoid_body_armor",
+      "wps_humanoid_open_helmet"
+    ],
+    "families": [
+      "prof_wp_demihuman"
+    ],
+    "death_drops": {
+      "subtype": "collection",
+      "groups": [
+        [
+          "forge_life",
+          40
+        ],
+        [
+          "bedroom",
+          1
+        ],
+        [
+          "dresser",
+          5
+        ],
+        [
+          "ammo",
+          18
+        ]
+      ]
+    },
     "special_attacks": [
       {
         "type": "spell",
@@ -139,44 +233,91 @@
         "cooldown": 5
       }
     ],
-    "death_drops": {
-      "subtype": "collection",
-      "groups": [
-        [
-          "forge_life",
-          40
-        ],
-        [
-          "bedroom",
-          1
-        ],
-        [
-          "dresser",
-          5
-        ],
-        [
-          "ammo",
-          18
-        ]
-      ]
-    },
+    "flags": [
+      "SEES",
+      "HEARS",
+      "SMELLS",
+      "KEENNOSE",
+      "HAS_MIND",
+      "PATH_AVOID_DANGER_1",
+      "CLIMBS",
+      "GROUP_MORALE",
+      "SWIMS",
+      "PUSH_MON",
+      "SWARMS",
+      "CAN_OPEN_DOORS",
+      "NO_BREATHE",
+      "WIELDED_WEAPON"
+    ],
     "armor": {
       "bash": 2,
       "cut": 12,
       "stab": 6,
       "bullet": 10,
       "heat": 40
-    }
+    },
+    "aggro_character": false,
+    "anger_triggers": [
+      "FRIEND_ATTACKED",
+      "FRIEND_DIED",
+      "HURT"
+    ]
   },
   {
     "id": "mon_forgemaster3",
     "type": "MONSTER",
+    "copy-from": "mon_gracke",
     "name": {
       "str": "gracken forgemaster"
     },
     "description": "This is some form of eldritch monstrosity; an uncouth black being with smooth, oily, skin and unpleasant horns that curve inward toward each other.  Tall and thin, the shadows cling unnaturally to its vaguely defined humanoid form as it shuffles along, its hands twitching and spasming so rapidly as to appear a little more than a black blur of claws.  This one politely asks you to mind your step as this is a working environment.",
     "default_faction": "wonder_forge",
-    "copy-from": "mon_gracke",
+    "bodytype": "human",
+    "species": [
+      "NETHER"
+    ],
+    "diff": 2,
+    "volume": "62500 ml",
+    "weight": "81500 g",
+    "hp": 100,
+    "speed": 180,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "h",
+    "color": "light_red",
+    "morale": 100,
+    "melee_skill": 10,
+    "melee_dice": 4,
+    "melee_dice_sides": 4,
+    "dodge": 4,
+    "bleed_rate": 60,
+    "path_settings": {
+      "avoid_traps": true,
+      "avoid_sharp": true
+    },
+    "harvest": "demihuman",
+    "families": [
+      "prof_intro_biology",
+      "prof_physiology",
+      "prof_wp_demihuman"
+    ],
+    "weakpoint_sets": [
+      "wps_humanoid_body"
+    ],
+    "flags": [
+      "SMELLS",
+      "HEARS",
+      "WARM",
+      "HAS_MIND",
+      "NO_BREATHE",
+      "PRIORITIZE_TARGETS",
+      "PATH_AVOID_DANGER_1"
+    ],
+    "armor": {
+      "electric": 1,
+      "heat": 40
+    },
     "aggro_character": false,
     "special_attacks": [
       {
@@ -213,10 +354,6 @@
           18
         ]
       ]
-    },
-    "armor": {
-      "electric": 1,
-      "heat": 40
     }
   },
   {
@@ -317,7 +454,7 @@
       "powder"
     ],
     "symbol": "g",
-    "color": "green_yellow",
+    "color": "green",
     "aggression": 100,
     "morale": 100,
     "regenerates": 25,
@@ -466,11 +603,83 @@
   {
     "id": "mon_forgehounds",
     "type": "MONSTER",
+    "copy-from": "mon_hound_tindalos",
     "name": {
       "str_sp": "forge hounds"
     },
     "description": "A metallic hound steps out of a nearby angle and growls at you.  Run!!!",
     "default_faction": "wonder_forge",
-    "copy-from": "mon_hound_tindalos"
+    "bodytype": "dog",
+    "species": [
+      "NETHER"
+    ],
+    "volume": "30000 ml",
+    "weight": "40750 g",
+    "hp": 300,
+    "speed": 70,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "h",
+    "color": "red",
+    "aggression": 100,
+    "morale": 100,
+    "melee_skill": 8,
+    "melee_dice": 4,
+    "melee_dice_sides": 6,
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 5
+      }
+    ],
+    "dodge": 5,
+    "bleed_rate": 20,
+    "vision_day": 50,
+    "vision_night": 50,
+    "families": [
+      "prof_wp_netherium_abomination"
+    ],
+    "weakpoint_sets": [
+      "wps_netherium_abomination"
+    ],
+    "harvest": "exempt",
+    "special_attacks": [
+      [
+        "TINDALOS_TELEPORT",
+        5
+      ]
+    ],
+    "emit_fields": [
+      {
+        "emit_id": "emit_tindalos_gas_leak",
+        "delay": "1 s"
+      }
+    ],
+    "path_settings": {
+      "max_dist": 10
+    },
+    "death_function": {
+      "corpse_type": "NO_CORPSE",
+      "message": "The %s melts away."
+    },
+    "flags": [
+      "SEES",
+      "SMELLS",
+      "GOODHEARING",
+      "HAS_MIND",
+      "PRIORITIZE_TARGETS",
+      "KEENNOSE",
+      "WARM",
+      "BASHES",
+      "ARTHROPOD_BLOOD",
+      "NO_BREATHE",
+      "HARDTOSHOOT"
+    ],
+    "armor": {
+      "cut": 50,
+      "bullet": 40,
+      "electric": 1
+    }
   }
 ]

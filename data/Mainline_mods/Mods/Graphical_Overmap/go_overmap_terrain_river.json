@@ -1,26 +1,49 @@
 [
   {
-    "type": "overmap_terrain",
     "abstract": "generic_river",
+    "type": "overmap_terrain",
     "copy-from": "generic_water",
+    "name": "generic_water",
+    "land_use_code": "water",
     "sym": "÷"
   },
   {
-    "type": "overmap_terrain",
     "abstract": "generic_river_bank",
+    "type": "overmap_terrain",
     "copy-from": "generic_river",
-    "travel_cost_type": "shore",
     "name": "river bank",
+    "land_use_code": "water",
+    "sym": "÷",
     "color": "light_blue",
-    "sym": "÷"
+    "see_cost": 1,
+    "flags": [
+      "RIVER",
+      "NO_ROTATE",
+      "SOURCE_DRINK",
+      "WATER"
+    ],
+    "travel_cost_type": "shore"
   },
   {
-    "type": "overmap_terrain",
     "id": "river",
+    "type": "overmap_terrain",
     "copy-from": "generic_river_bank",
+    "name": "river bank",
+    "sym": "÷",
+    "color": "light_blue",
+    "see_cost": 1,
+    "flags": [
+      "RIVER",
+      "SOURCE_DRINK",
+      "WATER"
+    ],
+    "travel_cost_type": "shore",
     "extras": "river",
-    "mapgen": [ { "method": "builtin", "name": "river_straight" } ],
-    "delete": { "flags": [ "NO_ROTATE" ] },
-    "sym": "÷"
+    "mapgen": [
+      {
+        "method": "builtin",
+        "name": "river_straight"
+      }
+    ]
   }
 ]

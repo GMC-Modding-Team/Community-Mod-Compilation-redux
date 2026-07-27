@@ -10,7 +10,7 @@
     "description": "A sealed small waterskin filled with milk that is undergoing the process to become a crude form of cheese, having had vinegar and natural rennet added.",
     "weight": "1870 g",
     "volume": "1750 ml",
-    "price": "20 USD",
+    "price": 20,
     "to_hit": -1,
     "melee_damage": {
       "bash": 1
@@ -43,7 +43,7 @@
     "description": "A sealed waterskin filled with milk that is undergoing the process to become a crude form of cheese, having had vinegar and natural rennet added.",
     "weight": "3617 g",
     "volume": "3500 ml",
-    "price": "40 USD",
+    "price": 40,
     "to_hit": -1,
     "melee_damage": {
       "bash": 2
@@ -76,7 +76,7 @@
     "description": "A sealed large waterskin filled with milk that is undergoing the process to become a crude form of cheese, having had vinegar and natural rennet added.",
     "weight": "5241 g",
     "volume": "5250 ml",
-    "price": "60 USD",
+    "price": 60,
     "to_hit": -1,
     "melee_damage": {
       "bash": 3
@@ -99,42 +99,73 @@
     }
   },
   {
-    "type": "GENERIC",
     "id": "cured_hide_small",
+    "type": "GENERIC",
     "copy-from": "cured_hide",
-    "looks_like": "leather",
+    "symbol": ",",
+    "color": "white",
     "name": {
       "str": "cured hide patch",
       "str_pl": "cured hide patches"
     },
     "description": "A scrap of animal hide, scraped of extraneous hair and flesh and treated to prevent decay.",
-    "price": "5 USD",
+    "price": 5,
+    "price_postapoc": 150,
+    "material": [
+      "flesh"
+    ],
+    "flags": [
+      "NO_SALVAGE"
+    ],
     "weight": "120 g",
-    "volume": "150 ml"
+    "volume": "150 ml",
+    "category": "spare_parts",
+    "to_hit": -1,
+    "looks_like": "leather"
   },
   {
-    "type": "GENERIC",
     "id": "cured_pelt_small",
+    "type": "GENERIC",
     "copy-from": "cured_pelt",
-    "looks_like": "leather",
+    "symbol": ",",
+    "color": "brown",
     "name": {
       "str": "cured pelt patch",
       "str_pl": "cured pelt patches"
     },
     "description": "A scrap of animal pelt, scraped of extraneous hair and flesh and treated to prevent decay.",
-    "price": "5 USD",
+    "price": 5,
+    "price_postapoc": 150,
+    "material": [
+      "fur",
+      "flesh"
+    ],
+    "flags": [
+      "NO_SALVAGE"
+    ],
     "weight": "135 g",
-    "volume": "200 ml"
+    "volume": "200 ml",
+    "category": "spare_parts",
+    "to_hit": -1,
+    "looks_like": "leather"
   },
   {
     "id": "jar_clay_sealed",
-    "copy-from": "jar_clay",
     "type": "GENERIC",
+    "copy-from": "jar_clay",
     "category": "container",
     "name": {
       "str": "sealed clay jar"
     },
     "description": "A half-liter clay jar, glazed for waterproofing with a tight-fitting wooden stopper.  Sealed tightly with wax, to preserve contents from rot.",
+    "weight": "150 g",
+    "volume": "502 ml",
+    "melee_damage": {
+      "bash": 4
+    },
+    "material": [
+      "clay"
+    ],
     "symbol": ")",
     "color": "brown",
     "pocket_data": [
@@ -148,6 +179,16 @@
           "spoil_multiplier": 0.0
         }
       }
+    ],
+    "qualities": [
+      [
+        "CONTAIN",
+        1
+      ],
+      [
+        "BOIL",
+        1
+      ]
     ]
   },
   {
@@ -159,7 +200,7 @@
     "description": "A large hand made straw basket, with shoulder straps to wear like a backpack.",
     "weight": "300 g",
     "volume": "8004 ml",
-    "price": "10 USD",
+    "price": 10,
     "to_hit": -1,
     "material": [
       "paper"

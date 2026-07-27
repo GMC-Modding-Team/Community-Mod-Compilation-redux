@@ -1,8 +1,9 @@
 [
   {
     "id": "laser_rifle_secro",
-    "copy-from": "laser_rifle",
     "type": "GUN",
+    "copy-from": "laser_rifle",
+    "looks_like": "modular_ar15",
     "reload_noise_volume": 10,
     "name": {
       "str": "SS laser rifle"
@@ -10,11 +11,10 @@
     "description": "Thought it was known inferior to other laser rifles, SS laser rifle displays efficiency in barraging shots for cheap UPS charges, along with reduced weight and volume.",
     "weight": "520 g",
     "volume": "750 ml",
-    "price": "7100 USD",
+    "longest_side": "900 mm",
+    "price": 7100,
+    "price_postapoc": 7500,
     "to_hit": -2,
-    "melee_damage": {
-      "bash": 5
-    },
     "material": [
       "steel",
       "plastic"
@@ -30,8 +30,23 @@
     },
     "dispersion": 185,
     "durability": 6,
+    "modes": [
+      [
+        "DEFAULT",
+        "semi-auto",
+        1
+      ],
+      [
+        "AUTO",
+        "auto",
+        4
+      ]
+    ],
+    "overheat_threshold": 100,
+    "cooling_value": 2,
+    "heat_per_shot": 5,
     "loudness": 7,
-    "sight_dispersion": 200,
+    "energy_drain": "40 kJ",
     "reload": 200,
     "valid_mod_locations": [
       [
@@ -74,7 +89,15 @@
     "flags": [
       "NEVER_JAMS",
       "NO_UNLOAD"
-    ]
+    ],
+    "faults": [
+      "fault_overheat_melting",
+      "fault_overheat_safety"
+    ],
+    "melee_damage": {
+      "bash": 5
+    },
+    "sight_dispersion": 200
   },
   {
     "//": "VERY WIP, CURRENTLY UNOBTAINABLE. NEEDS MORE IDEAL FIXING BEFORE USE, ESP. ITS AMMO.",
@@ -86,7 +109,7 @@
     "description": "A simple grenade launcher for the use of exceptional SS grenades.",
     "weight": "2654 g",
     "volume": "1500 ml",
-    "price": "5220 USD",
+    "price": 5220,
     "to_hit": -1,
     "melee_damage": {
       "bash": 12
@@ -132,15 +155,84 @@
   },
   {
     "id": "cheytac",
-    "copy-from": "rifle_base",
     "type": "GUN",
+    "copy-from": "rifle_base",
+    "reload_noise_volume": 10,
+    "//": "A weaker version of Barrett.",
+    "handling": 20,
     "name": {
       "str_sp": "CheyTac M200"
     },
+    "symbol": "(",
+    "color": "light_gray",
+    "faults": [
+      "fault_gun_blackpowder",
+      "fault_gun_dirt",
+      "fault_gun_chamber_spent"
+    ],
+    "ranged_damage": {
+      "damage_type": "stab",
+      "amount": -15
+    },
+    "skill": "rifle",
+    "valid_mod_locations": [
+      [
+        "barrel",
+        1
+      ],
+      [
+        "bore",
+        1
+      ],
+      [
+        "brass catcher",
+        1
+      ],
+      [
+        "grip",
+        1
+      ],
+      [
+        "mechanism",
+        4
+      ],
+      [
+        "magazine",
+        1
+      ],
+      [
+        "muzzle",
+        1
+      ],
+      [
+        "rail",
+        2
+      ],
+      [
+        "sights",
+        1
+      ],
+      [
+        "sling",
+        1
+      ],
+      [
+        "stock",
+        1
+      ],
+      [
+        "stock accessory",
+        2
+      ],
+      [
+        "underbarrel",
+        1
+      ]
+    ],
     "description": "A large, high precision anti-personnel sniper rifle.  Its large size, recoil, and noise is offset by its damage and range.",
     "weight": "12878 g",
     "volume": "3500 ml",
-    "price": "12665 USD",
+    "price": 12665,
     "to_hit": -1,
     "melee_damage": {
       "bash": 12
@@ -152,11 +244,6 @@
       "50"
     ],
     "range": 50,
-    "ranged_damage": {
-      "damage_type": "stab",
-      "amount": -15
-    },
-    "//": "A weaker version of Barrett.",
     "dispersion": 92,
     "durability": 8,
     "barrel_volume": "1250 ml",
@@ -189,7 +276,7 @@
     "description": "Standard 7-round box magazine for a CheyTac M200 sniper rifle.",
     "weight": "727 g",
     "volume": "500 ml",
-    "price": "100 USD",
+    "price": 100,
     "material": [
       "steel"
     ],
@@ -216,16 +303,84 @@
   },
   {
     "id": "hecate",
-    "copy-from": "rifle_base",
     "type": "GUN",
+    "copy-from": "rifle_base",
+    "reload_noise_volume": 10,
+    "//": "IDK how this gun became cheap on the market. Its effing powerful, so WTF PPL!",
+    "handling": 20,
     "name": {
       "str_sp": "Hecate II"
     },
+    "symbol": "(",
+    "color": "light_gray",
+    "faults": [
+      "fault_gun_blackpowder",
+      "fault_gun_dirt",
+      "fault_gun_chamber_spent"
+    ],
+    "ranged_damage": {
+      "damage_type": "stab",
+      "amount": 0
+    },
+    "skill": "rifle",
+    "valid_mod_locations": [
+      [
+        "barrel",
+        1
+      ],
+      [
+        "bore",
+        1
+      ],
+      [
+        "brass catcher",
+        1
+      ],
+      [
+        "grip",
+        1
+      ],
+      [
+        "mechanism",
+        4
+      ],
+      [
+        "magazine",
+        1
+      ],
+      [
+        "muzzle",
+        1
+      ],
+      [
+        "rail",
+        2
+      ],
+      [
+        "sights",
+        1
+      ],
+      [
+        "sling",
+        1
+      ],
+      [
+        "stock",
+        1
+      ],
+      [
+        "stock accessory",
+        2
+      ],
+      [
+        "underbarrel",
+        1
+      ]
+    ],
     "description": "A large and heavy anti-material sniper rifle.  Its large size, recoil, and noise is offset by its damage and range.",
     "weight": "13807 g",
     "volume": "4 L",
-    "price": "7909 USD",
-    "//": "IDK how this gun became cheap on the market. Its effing powerful, so WTF PPL!",
+    "price": 7909,
     "to_hit": -1,
     "melee_damage": {
       "bash": 12
@@ -237,10 +392,6 @@
       "50"
     ],
     "range": 50,
-    "ranged_damage": {
-      "damage_type": "stab",
-      "amount": 0
-    },
     "dispersion": 80,
     "durability": 8,
     "barrel_volume": "1500 ml",
@@ -274,7 +425,7 @@
     "description": "A box-shaped muzzle brake distinct to Hecate II sniper rifle.  It greatly reduces perceived recoil, but increases both bulk and generated noise.",
     "weight": "420 g",
     "volume": "250 ml",
-    "price": "840 USD",
+    "price": 840,
     "install_time": "15 m",
     "material": [
       "steel"
@@ -305,7 +456,7 @@
     "description": "Standard 7-round box magazine for a Hecate II sniper rifle.",
     "weight": "727 g",
     "volume": "500 ml",
-    "price": "100 USD",
+    "price": 100,
     "material": [
       "steel"
     ],
@@ -332,11 +483,21 @@
   },
   {
     "id": "kacc",
-    "copy-from": "rifle_auto",
     "type": "GUN",
+    "copy-from": "rifle_auto",
     "name": {
       "str": "KAC ChainSAW"
     },
+    "skill": "rifle",
+    "valid_mod_locations": [
+      [
+        "accessories",
+        4
+      ]
+    ],
+    "weapon_category": [
+      "AUTOMATIC_RIFLES"
+    ],
     "description": "The KAC ChainSAW is a light weight machine gun designed to be fired from the hip.  It is named before the chainsaw, as if the user is actually wielding an actual chainsaw.",
     "weight": "4586 g",
     "//": "IDK if they're joking with this -_-.",
@@ -370,12 +531,6 @@
         50
       ]
     ],
-    "valid_mod_locations": [
-      [
-        "accessories",
-        4
-      ]
-    ],
     "pocket_data": [
       {
         "pocket_type": "MAGAZINE_WELL",
@@ -392,36 +547,12 @@
   },
   {
     "id": "psg1",
-    "copy-from": "rifle_semi",
     "type": "GUN",
+    "copy-from": "rifle_semi",
     "name": {
       "str_sp": "PSG-1"
     },
-    "description": "The PSG-1 is popular for its performance towards long range acquisition and was commonly used in counter-terrorism for police forces.",
-    "weight": "7420 g",
-    "volume": "2500 ml",
-    "price": "13885 USD",
-    "to_hit": -1,
-    "melee_damage": {
-      "bash": 10
-    },
-    "material": [
-      "steel",
-      "wood"
-    ],
-    "symbol": "(",
-    "color": "light_gray",
-    "ammo": [
-      "223"
-    ],
-    "range": 40,
-    "ranged_damage": {
-      "damage_type": "stab",
-      "amount": 8
-    },
-    "dispersion": 85,
-    "durability": 8,
-    "barrel_volume": "500 ml",
+    "skill": "rifle",
     "valid_mod_locations": [
       [
         "accessories",
@@ -448,6 +579,34 @@
         1
       ]
     ],
+    "weapon_category": [
+      "AUTOMATIC_RIFLES"
+    ],
+    "description": "The PSG-1 is popular for its performance towards long range acquisition and was commonly used in counter-terrorism for police forces.",
+    "weight": "7420 g",
+    "volume": "2500 ml",
+    "price": 13885,
+    "to_hit": -1,
+    "melee_damage": {
+      "bash": 10
+    },
+    "material": [
+      "steel",
+      "wood"
+    ],
+    "symbol": "(",
+    "color": "light_gray",
+    "ammo": [
+      "223"
+    ],
+    "range": 40,
+    "ranged_damage": {
+      "damage_type": "stab",
+      "amount": 8
+    },
+    "dispersion": 85,
+    "durability": 8,
+    "barrel_volume": "500 ml",
     "pocket_data": [
       {
         "pocket_type": "MAGAZINE_WELL",
@@ -467,16 +626,84 @@
   },
   {
     "id": "walther2000",
-    "copy-from": "rifle_base",
     "type": "GUN",
+    "copy-from": "rifle_base",
+    "reload_noise_volume": 10,
+    "//": "The price was actually a wooping 75,000$. IDK if that's true, but lets bend the rules of money here -_-.",
+    "handling": 20,
     "name": {
       "str_sp": "Walther 2000"
     },
+    "symbol": "(",
+    "color": "light_gray",
+    "faults": [
+      "fault_gun_blackpowder",
+      "fault_gun_dirt",
+      "fault_gun_chamber_spent"
+    ],
+    "ranged_damage": {
+      "damage_type": "stab",
+      "amount": 10
+    },
+    "skill": "rifle",
+    "valid_mod_locations": [
+      [
+        "barrel",
+        1
+      ],
+      [
+        "bore",
+        1
+      ],
+      [
+        "brass catcher",
+        1
+      ],
+      [
+        "grip",
+        1
+      ],
+      [
+        "mechanism",
+        4
+      ],
+      [
+        "magazine",
+        1
+      ],
+      [
+        "muzzle",
+        1
+      ],
+      [
+        "rail",
+        2
+      ],
+      [
+        "sights",
+        1
+      ],
+      [
+        "sling",
+        1
+      ],
+      [
+        "stock",
+        1
+      ],
+      [
+        "stock accessory",
+        2
+      ],
+      [
+        "underbarrel",
+        1
+      ]
+    ],
     "description": "A semi-automatic bullpup sniper rifle.  The usage of.300 winchester magnum made it particularly accurate in extreme distances.  Its rarity in the market was crazed by gun nuts as collectibles.",
     "weight": "6962 g",
     "volume": "2500 ml",
-    "price": "18290 USD",
-    "//": "The price was actually a wooping 75,000$. IDK if that's true, but lets bend the rules of money here -_-.",
+    "price": 18290,
     "to_hit": -1,
     "melee_damage": {
       "bash": 12
@@ -488,10 +715,6 @@
       "300"
     ],
     "range": 50,
-    "ranged_damage": {
-      "damage_type": "stab",
-      "amount": 10
-    },
     "dispersion": 80,
     "durability": 8,
     "barrel_volume": "1000 ml",
@@ -524,7 +747,7 @@
     "description": "Standard 6-round box magazine for a Walther 2000 sniper rifle.",
     "weight": "727 g",
     "volume": "500 ml",
-    "price": "100 USD",
+    "price": 100,
     "material": [
       "steel"
     ],
@@ -550,17 +773,27 @@
     ]
   },
   {
-    "//": "Also a hip-fired weapon, but with barrel-rotation.",
     "id": "xm556",
-    "copy-from": "rifle_auto",
     "type": "GUN",
+    "copy-from": "rifle_auto",
     "name": {
       "str": "XM556"
     },
+    "skill": "rifle",
+    "valid_mod_locations": [
+      [
+        "accessories",
+        4
+      ]
+    ],
+    "weapon_category": [
+      "AUTOMATIC_RIFLES"
+    ],
+    "//": "Also a hip-fired weapon, but with barrel-rotation.",
     "description": "The XM556 Microgun is a light-weight machine gun designed to be fired from the hip.  It uses a large sum of UPS to function, if so, its electrically-driven gatling system barrages a vast amount of projectile at a glance.",
     "weight": "6240 g",
     "volume": "2500 ml",
-    "price": "21440 USD",
+    "price": 21440,
     "to_hit": -1,
     "melee_damage": {
       "bash": 12
@@ -587,12 +820,6 @@
     "built_in_mods": [
       "bipod"
     ],
-    "valid_mod_locations": [
-      [
-        "accessories",
-        4
-      ]
-    ],
     "pocket_data": [
       {
         "pocket_type": "MAGAZINE_WELL",
@@ -609,15 +836,73 @@
   },
   {
     "id": "xm8",
-    "copy-from": "rifle_auto",
     "type": "GUN",
+    "copy-from": "rifle_auto",
     "name": {
       "str": "XM8"
     },
+    "skill": "rifle",
+    "valid_mod_locations": [
+      [
+        "barrel",
+        1
+      ],
+      [
+        "bore",
+        1
+      ],
+      [
+        "brass catcher",
+        1
+      ],
+      [
+        "grip",
+        1
+      ],
+      [
+        "mechanism",
+        4
+      ],
+      [
+        "magazine",
+        1
+      ],
+      [
+        "muzzle",
+        1
+      ],
+      [
+        "rail",
+        2
+      ],
+      [
+        "sights",
+        1
+      ],
+      [
+        "sling",
+        1
+      ],
+      [
+        "stock",
+        1
+      ],
+      [
+        "stock accessory",
+        2
+      ],
+      [
+        "underbarrel",
+        1
+      ]
+    ],
+    "weapon_category": [
+      "AUTOMATIC_RIFLES"
+    ],
     "description": "A lightweight assault rifle, with shared similarities to the G36 rifle.  It is known accurate and modifiable, but requires sustained attention to prevent malfunctions.",
     "weight": "3560 g",
     "volume": "1750 ml",
-    "price": "1970 USD",
+    "price": 1970,
     "to_hit": -1,
     "melee_damage": {
       "bash": 12
@@ -658,16 +943,84 @@
   },
   {
     "id": "zx1sniper",
-    "copy-from": "rifle_base",
     "type": "GUN",
+    "copy-from": "rifle_base",
+    "reload_noise_volume": 10,
+    "//": "this is the default handling for anything with a stock",
+    "handling": 20,
     "name": {
       "str": "ZX-1 Sniper Rifle"
     },
+    "symbol": "(",
+    "color": "dark_gray",
+    "faults": [
+      "fault_gun_blackpowder",
+      "fault_gun_dirt",
+      "fault_gun_chamber_spent"
+    ],
+    "ranged_damage": {
+      "damage_type": "stab",
+      "amount": 90
+    },
     "skill": "rifle",
+    "valid_mod_locations": [
+      [
+        "barrel",
+        1
+      ],
+      [
+        "bore",
+        1
+      ],
+      [
+        "brass catcher",
+        1
+      ],
+      [
+        "grip",
+        1
+      ],
+      [
+        "mechanism",
+        4
+      ],
+      [
+        "magazine",
+        1
+      ],
+      [
+        "muzzle",
+        1
+      ],
+      [
+        "rail",
+        2
+      ],
+      [
+        "sights",
+        1
+      ],
+      [
+        "sling",
+        1
+      ],
+      [
+        "stock",
+        1
+      ],
+      [
+        "stock accessory",
+        2
+      ],
+      [
+        "underbarrel",
+        1
+      ]
+    ],
     "description": "Anti-material sniper rifle, designed for anti-personnel against armored terrorist.  capable of piercing even the most thickest metal of armor, this weapon will surely put zombies down to bits, although it requires the user to reload the bullet one by one as it doesn't have magazine system like others.",
     "weight": "4550 g",
     "volume": "2000 ml",
-    "price": "4550 USD",
+    "price": 4550,
     "to_hit": -1,
     "melee_damage": {
       "bash": 11
@@ -675,16 +1028,10 @@
     "material": [
       "steel"
     ],
-    "symbol": "(",
-    "color": "dark_gray",
     "ammo": [
       "50"
     ],
     "range": 60,
-    "ranged_damage": {
-      "damage_type": "stab",
-      "amount": 90
-    },
     "dispersion": 180,
     "durability": 8,
     "pocket_data": [
@@ -715,7 +1062,7 @@
     "description": "Sleek, futuristic laser rifle, the LMI stands for Living Matter Incinerator, and as the name suggest, capable of delivering superheated laser energy towards zombies and humans.  the only warning this weapon has is to not aim it at your eyes.",
     "weight": "3800 g",
     "volume": "1750 ml",
-    "price": "3950 USD",
+    "price": 3950,
     "to_hit": -1,
     "melee_damage": {
       "bash": 11

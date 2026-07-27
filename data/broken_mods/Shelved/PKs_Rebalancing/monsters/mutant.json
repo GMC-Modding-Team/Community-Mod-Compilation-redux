@@ -8,10 +8,13 @@
     },
     "description": "A large sluglike creature, nine feet long and the width of a refrigerator.  Its black body glistens as it oozes its way along the ground.  Eye stalks occasionally push their way out of the oily mass and look around.  This big mama looks important.",
     "default_faction": "mutant",
+    "bodytype": "snake",
     "species": [
       "MUTANT"
     ],
     "diff": 13,
+    "volume": "92500 ml",
+    "weight": "120 kg",
     "hp": 420,
     "speed": 60,
     "material": [
@@ -19,7 +22,6 @@
     ],
     "symbol": "S",
     "color": "light_gray",
-    "looks_like": "mon_gelatin",
     "aggression": 40,
     "morale": 90,
     "melee_skill": 5,
@@ -31,6 +33,38 @@
         "amount": 6
       }
     ],
+    "dodge": 5,
+    "bleed_rate": 30,
+    "vision_day": 10,
+    "vision_night": 30,
+    "families": [
+      "prof_intro_biology",
+      "prof_physiology",
+      "prof_wp_basic_bug"
+    ],
+    "harvest": "mutant_mollusk",
+    "fear_triggers": [
+      "FIRE"
+    ],
+    "dissect": "dissect_gastropod_sample_huge",
+    "regenerates": 1,
+    "zombify_into": "mon_meat_cocoon_med",
+    "flags": [
+      "NOHEAD",
+      "SEES",
+      "POISON",
+      "HEARS",
+      "SMELLS",
+      "SLUDGEPROOF",
+      "SWIMS",
+      "FLAMMABLE",
+      "NOGIB",
+      "HARDTOSHOOT"
+    ],
+    "armor": {
+      "bash": 8
+    },
+    "looks_like": "mon_gelatin",
     "attack_effs": [
       {
         "id": "rad_tenths",
@@ -46,28 +80,9 @@
     "emit_fields": [
       "emit_sludge"
     ],
-    "dodge": 5,
-    "vision_day": 10,
-    "vision_night": 30,
     "death_function": {
       "corpse_type": "NO_CORPSE",
       "message": "The %s melts away."
-    },
-    "regenerates": 1,
-    "flags": [
-      "NOHEAD",
-      "SEES",
-      "POISON",
-      "HEARS",
-      "SMELLS",
-      "SLUDGEPROOF",
-      "SWIMS",
-      "FLAMMABLE",
-      "NOGIB",
-      "HARDTOSHOOT"
-    ],
-    "armor": {
-      "bash": 8
     }
   },
   {
@@ -231,7 +246,7 @@
       "flesh"
     ],
     "symbol": "J",
-    "color": "dark_gray_red",
+    "color": "dark_gray",
     "looks_like": "mon_jabberwock",
     "aggression": 100,
     "morale": 100,
@@ -324,7 +339,7 @@
     ],
     "harvest": "mammal_small_fur",
     "symbol": "w",
-    "color": "brown_red",
+    "color": "brown",
     "looks_like": "mon_bat",
     "aggression": -5,
     "morale": 20,
@@ -421,7 +436,7 @@
     ],
     "harvest": "mammal_fur",
     "symbol": "d",
-    "color": "brown_white",
+    "color": "brown",
     "looks_like": "mon_wolf",
     "aggression": 0,
     "morale": 15,
@@ -516,7 +531,7 @@
     ],
     "harvest": "arachnid",
     "symbol": "T",
-    "color": "red_green",
+    "color": "red",
     "aggression": 6,
     "morale": 95,
     "melee_skill": 7,
@@ -609,13 +624,24 @@
   {
     "id": "mon_donatello",
     "type": "MONSTER",
+    "copy-from": "mon_raphael",
     "name": {
       "str": "turtle man"
     },
-    "copy-from": "mon_raphael",
+    "description": "A large green humanoid with bloated-looking skin and a hardened brown shell surrounding its midrift.  Though muscular and agile, both skin and carapace shimmer with a sickening sheen.  It wears a crude blindfold with large hole to allow vision.",
+    "default_faction": "mutant",
+    "species": [
+      "REPTILE"
+    ],
+    "diff": 28,
     "hp": 160,
     "speed": 110,
-    "color": "pink_green",
+    "material": [
+      "flesh"
+    ],
+    "harvest": "arachnid",
+    "symbol": "T",
+    "color": "pink",
     "aggression": 0,
     "morale": 80,
     "melee_skill": 7,
@@ -628,6 +654,8 @@
       }
     ],
     "dodge": 6,
+    "vision_day": 40,
+    "vision_night": 15,
     "special_attacks": [
       [
         "SMASH",
@@ -675,9 +703,7 @@
         "no_ammo_sound": "kowwabunga!"
       }
     ],
-    "starting_ammo": {
-      "pebble": 1000
-    },
+    "death_drops": "mon_zombie_hulk_death_drops",
     "regen_morale": true,
     "flags": [
       "SEES",
@@ -698,19 +724,39 @@
     "placate_triggers": [
       "HURT",
       "PLAYER_WEAK"
-    ]
+    ],
+    "armor": {
+      "bash": 6,
+      "cut": 14,
+      "stab": 8,
+      "acid": 5,
+      "heat": 8
+    },
+    "starting_ammo": {
+      "pebble": 1000
+    }
   },
   {
     "id": "mon_leonardo",
     "type": "MONSTER",
+    "copy-from": "mon_raphael",
     "name": {
       "str": "turtle man"
     },
-    "copy-from": "mon_raphael",
+    "description": "A large green humanoid with bloated-looking skin and a hardened brown shell surrounding its midrift.  Though muscular and agile, both skin and carapace shimmer with a sickening sheen.  It wears a crude blindfold with large hole to allow vision.",
+    "default_faction": "mutant",
+    "species": [
+      "REPTILE"
+    ],
+    "diff": 28,
     "hp": 180,
     "speed": 115,
+    "material": [
+      "flesh"
+    ],
+    "harvest": "arachnid",
     "symbol": "T",
-    "color": "light_blue_green",
+    "color": "light_blue",
     "aggression": 0,
     "morale": 90,
     "melee_skill": 7,
@@ -723,6 +769,8 @@
       }
     ],
     "dodge": 6,
+    "vision_day": 40,
+    "vision_night": 15,
     "special_attacks": [
       [
         "BIO_OP_TAKEDOWN",
@@ -776,9 +824,7 @@
         "description": "The blue turtle ignites the darkness!"
       }
     ],
-    "starting_ammo": {
-      "signal_flare": 2
-    },
+    "death_drops": "mon_zombie_hulk_death_drops",
     "regen_morale": true,
     "flags": [
       "SEES",
@@ -799,18 +845,39 @@
     ],
     "placate_triggers": [
       "PLAYER_WEAK"
-    ]
+    ],
+    "armor": {
+      "bash": 6,
+      "cut": 14,
+      "stab": 8,
+      "acid": 5,
+      "heat": 8
+    },
+    "starting_ammo": {
+      "signal_flare": 2
+    }
   },
   {
     "id": "mon_michelangelo",
     "type": "MONSTER",
+    "copy-from": "mon_raphael",
     "name": {
       "str": "turtle man"
     },
-    "copy-from": "mon_raphael",
+    "description": "A large green humanoid with bloated-looking skin and a hardened brown shell surrounding its midrift.  Though muscular and agile, both skin and carapace shimmer with a sickening sheen.  It wears a crude blindfold with large hole to allow vision.",
+    "default_faction": "mutant",
+    "species": [
+      "REPTILE"
+    ],
+    "diff": 28,
     "hp": 160,
     "speed": 120,
-    "color": "yellow_green",
+    "material": [
+      "flesh"
+    ],
+    "harvest": "arachnid",
+    "symbol": "T",
+    "color": "yellow",
     "aggression": -5,
     "morale": 80,
     "melee_skill": 6,
@@ -823,6 +890,8 @@
       }
     ],
     "dodge": 7,
+    "vision_day": 40,
+    "vision_night": 15,
     "special_attacks": [
       {
         "id": "ranged_pull",
@@ -848,6 +917,7 @@
         "max_range": 2
       }
     ],
+    "death_drops": "mon_zombie_hulk_death_drops",
     "regen_morale": true,
     "flags": [
       "SEES",
@@ -867,7 +937,14 @@
     ],
     "placate_triggers": [
       "PLAYER_WEAK"
-    ]
+    ],
+    "armor": {
+      "bash": 6,
+      "cut": 14,
+      "stab": 8,
+      "acid": 5,
+      "heat": 8
+    }
   },
   {
     "id": "mon_ratman_ninja",

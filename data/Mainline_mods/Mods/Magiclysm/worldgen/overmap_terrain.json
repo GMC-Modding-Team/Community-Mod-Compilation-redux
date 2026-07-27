@@ -9,7 +9,9 @@
     "see_cost": 5,
     "extras": "build",
     "mondensity": 2,
-    "flags": [ "SIDEWALK" ]
+    "flags": [
+      "SIDEWALK"
+    ]
   },
   {
     "type": "overmap_terrain",
@@ -72,7 +74,9 @@
     "see_cost": 5,
     "extras": "build",
     "mondensity": 1,
-    "flags": [ "SIDEWALK" ]
+    "flags": [
+      "SIDEWALK"
+    ]
   },
   {
     "type": "overmap_terrain",
@@ -87,50 +91,144 @@
   },
   {
     "type": "overmap_terrain",
-    "id": [ "house_technomancer_1", "house_technomancer_2" ],
-    "copy-from": "generic_city_house"
+    "abstract": "generic_city_house",
+    "sym": "å",
+    "name": "house",
+    "color": "light_green",
+    "see_cost": 2,
+    "spawns": {
+      "group": "GROUP_VANILLA",
+      "population": [
+        1,
+        4
+      ],
+      "chance": 80
+    },
+    "id": [
+      "house_technomancer_1",
+      "house_technomancer_2"
+    ],
+    "flags": [
+      "GENERIC_LOOT"
+    ]
   },
   {
     "type": "overmap_terrain",
-    "id": [ "house_technomancer_3", "house_technomancer_4", "house_technomancer_5", "house_technomancer_6" ],
-    "copy-from": "generic_city_house_no_sidewalk"
+    "abstract": "generic_city_house_no_sidewalk",
+    "name": "house",
+    "color": "light_green",
+    "see_cost": 2,
+    "spawns": {
+      "group": "GROUP_VANILLA",
+      "population": [
+        1,
+        4
+      ],
+      "chance": 80
+    },
+    "sym": "å",
+    "id": [
+      "house_technomancer_3",
+      "house_technomancer_4",
+      "house_technomancer_5",
+      "house_technomancer_6"
+    ],
+    "flags": [
+      "GENERIC_LOOT"
+    ]
   },
   {
     "type": "overmap_terrain",
-    "id": [ "magic_basement", "house_technomancer_7", "house_technomancer_8" ],
-    "copy-from": "generic_city_house_basement"
+    "abstract": "generic_city_house_basement",
+    "name": "basement",
+    "sym": "O",
+    "see_cost": 5,
+    "extras": "build",
+    "mondensity": 2,
+    "color": "dark_gray",
+    "flags": [
+      "KNOWN_UP",
+      "GENERIC_LOOT"
+    ],
+    "id": [
+      "magic_basement",
+      "house_technomancer_7",
+      "house_technomancer_8"
+    ]
   },
   {
     "type": "overmap_terrain",
-    "id": [ "house_detatched5_basement" ],
-    "//": "overridden by the magic basement, so suppress warnings about it not spawning",
-    "copy-from": "generic_city_house_basement",
-    "extend": { "flags": [ "SHOULD_NOT_SPAWN" ] }
+    "abstract": "generic_city_house_basement",
+    "name": "basement",
+    "sym": "O",
+    "see_cost": 5,
+    "extras": "build",
+    "mondensity": 2,
+    "color": "dark_gray",
+    "flags": [
+      "KNOWN_UP",
+      "GENERIC_LOOT",
+      "SHOULD_NOT_SPAWN"
+    ],
+    "id": [
+      "house_detatched5_basement"
+    ],
+    "//": "overridden by the magic basement, so suppress warnings about it not spawning"
   },
   {
     "type": "overmap_terrain",
     "id": "black_dragon_lair_z-0_NW",
     "name": "swamp?",
     "sym": "F",
-    "color": "c_light_cyan",
+    "color": "light_cyan",
     "looks_like": "forest_water",
     "see_cost": 5,
-    "flags": [ "SOURCE_FORAGE", "RISK_HIGH" ]
+    "flags": [
+      "SOURCE_FORAGE",
+      "RISK_HIGH"
+    ]
   },
   {
-    "type": "overmap_terrain",
     "id": "black_dragon_lair_z-0_NE",
-    "copy-from": "black_dragon_lair_z-0_NW"
+    "type": "overmap_terrain",
+    "copy-from": "black_dragon_lair_z-0_NW",
+    "name": "swamp?",
+    "sym": "F",
+    "color": "light_cyan",
+    "looks_like": "forest_water",
+    "see_cost": 5,
+    "flags": [
+      "SOURCE_FORAGE",
+      "RISK_HIGH"
+    ]
   },
   {
-    "type": "overmap_terrain",
     "id": "black_dragon_lair_z-0_SE",
-    "copy-from": "black_dragon_lair_z-0_NW"
+    "type": "overmap_terrain",
+    "copy-from": "black_dragon_lair_z-0_NW",
+    "name": "swamp?",
+    "sym": "F",
+    "color": "light_cyan",
+    "looks_like": "forest_water",
+    "see_cost": 5,
+    "flags": [
+      "SOURCE_FORAGE",
+      "RISK_HIGH"
+    ]
   },
   {
-    "type": "overmap_terrain",
     "id": "black_dragon_lair_z-0_SW",
-    "copy-from": "black_dragon_lair_z-0_NW"
+    "type": "overmap_terrain",
+    "copy-from": "black_dragon_lair_z-0_NW",
+    "name": "swamp?",
+    "sym": "F",
+    "color": "light_cyan",
+    "looks_like": "forest_water",
+    "see_cost": 5,
+    "flags": [
+      "SOURCE_FORAGE",
+      "RISK_HIGH"
+    ]
   },
   {
     "type": "overmap_terrain",
@@ -142,19 +240,34 @@
     "see_cost": 5
   },
   {
-    "type": "overmap_terrain",
     "id": "black_dragon_lair_z-1_NE",
-    "copy-from": "black_dragon_lair_z-1_NW"
+    "type": "overmap_terrain",
+    "copy-from": "black_dragon_lair_z-1_NW",
+    "name": "solid earth",
+    "sym": "#",
+    "color": "brown",
+    "looks_like": "solid_earth",
+    "see_cost": 5
   },
   {
-    "type": "overmap_terrain",
     "id": "black_dragon_lair_z-1_SE",
-    "copy-from": "black_dragon_lair_z-1_NW"
+    "type": "overmap_terrain",
+    "copy-from": "black_dragon_lair_z-1_NW",
+    "name": "solid earth",
+    "sym": "#",
+    "color": "brown",
+    "looks_like": "solid_earth",
+    "see_cost": 5
   },
   {
-    "type": "overmap_terrain",
     "id": "black_dragon_lair_z-1_SW",
-    "copy-from": "black_dragon_lair_z-1_NW"
+    "type": "overmap_terrain",
+    "copy-from": "black_dragon_lair_z-1_NW",
+    "name": "solid earth",
+    "sym": "#",
+    "color": "brown",
+    "looks_like": "solid_earth",
+    "see_cost": 5
   },
   {
     "type": "overmap_terrain",
@@ -166,19 +279,34 @@
     "see_cost": 5
   },
   {
-    "type": "overmap_terrain",
     "id": "black_dragon_lair_z-2_NE",
-    "copy-from": "black_dragon_lair_z-2_NW"
+    "type": "overmap_terrain",
+    "copy-from": "black_dragon_lair_z-2_NW",
+    "name": "solid rock",
+    "sym": "%",
+    "color": "dark_gray",
+    "looks_like": "empty_rock",
+    "see_cost": 5
   },
   {
-    "type": "overmap_terrain",
     "id": "black_dragon_lair_z-2_SE",
-    "copy-from": "black_dragon_lair_z-2_NW"
+    "type": "overmap_terrain",
+    "copy-from": "black_dragon_lair_z-2_NW",
+    "name": "solid rock",
+    "sym": "%",
+    "color": "dark_gray",
+    "looks_like": "empty_rock",
+    "see_cost": 5
   },
   {
-    "type": "overmap_terrain",
     "id": "black_dragon_lair_z-2_SW",
-    "copy-from": "black_dragon_lair_z-2_NW"
+    "type": "overmap_terrain",
+    "copy-from": "black_dragon_lair_z-2_NW",
+    "name": "solid rock",
+    "sym": "%",
+    "color": "dark_gray",
+    "looks_like": "empty_rock",
+    "see_cost": 5
   },
   {
     "type": "overmap_terrain",
@@ -190,19 +318,34 @@
     "see_cost": 5
   },
   {
-    "type": "overmap_terrain",
     "id": "black_dragon_lair_z-3_NE",
-    "copy-from": "black_dragon_lair_z-3_NW"
+    "type": "overmap_terrain",
+    "copy-from": "black_dragon_lair_z-3_NW",
+    "name": "solid rock",
+    "sym": "%",
+    "color": "dark_gray",
+    "looks_like": "deep_rock",
+    "see_cost": 5
   },
   {
-    "type": "overmap_terrain",
     "id": "black_dragon_lair_z-3_SE",
-    "copy-from": "black_dragon_lair_z-3_NW"
+    "type": "overmap_terrain",
+    "copy-from": "black_dragon_lair_z-3_NW",
+    "name": "solid rock",
+    "sym": "%",
+    "color": "dark_gray",
+    "looks_like": "deep_rock",
+    "see_cost": 5
   },
   {
-    "type": "overmap_terrain",
     "id": "black_dragon_lair_z-3_SW",
-    "copy-from": "black_dragon_lair_z-3_NW"
+    "type": "overmap_terrain",
+    "copy-from": "black_dragon_lair_z-3_NW",
+    "name": "solid rock",
+    "sym": "%",
+    "color": "dark_gray",
+    "looks_like": "deep_rock",
+    "see_cost": 5
   },
   {
     "type": "overmap_terrain",
@@ -214,26 +357,41 @@
     "see_cost": 5
   },
   {
-    "type": "overmap_terrain",
     "id": "black_dragon_lair_z-4_NE",
-    "copy-from": "black_dragon_lair_z-4_NW"
+    "type": "overmap_terrain",
+    "copy-from": "black_dragon_lair_z-4_NW",
+    "name": "solid rock",
+    "sym": "%",
+    "color": "dark_gray",
+    "looks_like": "deep_rock",
+    "see_cost": 5
   },
   {
-    "type": "overmap_terrain",
     "id": "black_dragon_lair_z-4_SE",
-    "copy-from": "black_dragon_lair_z-4_NW"
+    "type": "overmap_terrain",
+    "copy-from": "black_dragon_lair_z-4_NW",
+    "name": "solid rock",
+    "sym": "%",
+    "color": "dark_gray",
+    "looks_like": "deep_rock",
+    "see_cost": 5
   },
   {
-    "type": "overmap_terrain",
     "id": "black_dragon_lair_z-4_SW",
-    "copy-from": "black_dragon_lair_z-4_NW"
+    "type": "overmap_terrain",
+    "copy-from": "black_dragon_lair_z-4_NW",
+    "name": "solid rock",
+    "sym": "%",
+    "color": "dark_gray",
+    "looks_like": "deep_rock",
+    "see_cost": 5
   },
   {
     "type": "overmap_terrain",
     "id": "lake_retreat_ground",
     "name": "forest?",
     "sym": "F",
-    "color": "c_light_green",
+    "color": "light_green",
     "looks_like": "forest",
     "see_cost": 5
   },
@@ -292,58 +450,137 @@
     "see_cost": 5
   },
   {
-    "type": "overmap_terrain",
     "id": "wizardtower1_ground",
+    "type": "overmap_terrain",
     "copy-from": "generic_city_building",
+    "name": "wizard tower",
+    "sym": "W",
+    "see_cost": 5,
+    "extras": "build",
+    "mondensity": 2,
+    "color": "light_blue",
+    "flags": [
+      "SOURCE_LUXURY",
+      "RISK_HIGH",
+      "SIDEWALK"
+    ]
+  },
+  {
+    "id": "wizardtower1_living",
+    "type": "overmap_terrain",
+    "copy-from": "wizardtower1_ground",
     "sym": "W",
     "color": "light_blue",
     "name": "wizard tower",
-    "flags": [ "SOURCE_LUXURY", "RISK_HIGH", "SIDEWALK" ]
+    "flags": [
+      "SOURCE_LUXURY",
+      "RISK_HIGH",
+      "SIDEWALK"
+    ]
   },
   {
-    "type": "overmap_terrain",
-    "id": "wizardtower1_living",
-    "copy-from": "wizardtower1_ground"
-  },
-  {
-    "type": "overmap_terrain",
     "id": "wizardtower1_golems",
-    "copy-from": "wizardtower1_ground"
+    "type": "overmap_terrain",
+    "copy-from": "wizardtower1_ground",
+    "sym": "W",
+    "color": "light_blue",
+    "name": "wizard tower",
+    "flags": [
+      "SOURCE_LUXURY",
+      "RISK_HIGH",
+      "SIDEWALK"
+    ]
   },
   {
-    "type": "overmap_terrain",
     "id": "wizardtower1_study",
-    "copy-from": "wizardtower1_ground"
+    "type": "overmap_terrain",
+    "copy-from": "wizardtower1_ground",
+    "sym": "W",
+    "color": "light_blue",
+    "name": "wizard tower",
+    "flags": [
+      "SOURCE_LUXURY",
+      "RISK_HIGH",
+      "SIDEWALK"
+    ]
   },
   {
-    "type": "overmap_terrain",
     "id": "wizardtower1_roof",
-    "copy-from": "wizardtower1_ground"
+    "type": "overmap_terrain",
+    "copy-from": "wizardtower1_ground",
+    "sym": "W",
+    "color": "light_blue",
+    "name": "wizard tower",
+    "flags": [
+      "SOURCE_LUXURY",
+      "RISK_HIGH",
+      "SIDEWALK"
+    ]
   },
   {
-    "type": "overmap_terrain",
     "id": "wizardtower2_ground",
-    "copy-from": "wizardtower1_ground"
+    "type": "overmap_terrain",
+    "copy-from": "wizardtower1_ground",
+    "sym": "W",
+    "color": "light_blue",
+    "name": "wizard tower",
+    "flags": [
+      "SOURCE_LUXURY",
+      "RISK_HIGH",
+      "SIDEWALK"
+    ]
   },
   {
-    "type": "overmap_terrain",
     "id": "wizardtower2_stairs1",
-    "copy-from": "wizardtower1_ground"
+    "type": "overmap_terrain",
+    "copy-from": "wizardtower1_ground",
+    "sym": "W",
+    "color": "light_blue",
+    "name": "wizard tower",
+    "flags": [
+      "SOURCE_LUXURY",
+      "RISK_HIGH",
+      "SIDEWALK"
+    ]
   },
   {
-    "type": "overmap_terrain",
     "id": "wizardtower2_stairs2",
-    "copy-from": "wizardtower1_ground"
+    "type": "overmap_terrain",
+    "copy-from": "wizardtower1_ground",
+    "sym": "W",
+    "color": "light_blue",
+    "name": "wizard tower",
+    "flags": [
+      "SOURCE_LUXURY",
+      "RISK_HIGH",
+      "SIDEWALK"
+    ]
   },
   {
-    "type": "overmap_terrain",
     "id": "wizardtower2_study",
-    "copy-from": "wizardtower1_ground"
+    "type": "overmap_terrain",
+    "copy-from": "wizardtower1_ground",
+    "sym": "W",
+    "color": "light_blue",
+    "name": "wizard tower",
+    "flags": [
+      "SOURCE_LUXURY",
+      "RISK_HIGH",
+      "SIDEWALK"
+    ]
   },
   {
-    "type": "overmap_terrain",
     "id": "wizardtower2_roof",
-    "copy-from": "wizardtower1_ground"
+    "type": "overmap_terrain",
+    "copy-from": "wizardtower1_ground",
+    "sym": "W",
+    "color": "light_blue",
+    "name": "wizard tower",
+    "flags": [
+      "SOURCE_LUXURY",
+      "RISK_HIGH",
+      "SIDEWALK"
+    ]
   },
   {
     "type": "overmap_terrain",
@@ -355,14 +592,24 @@
     "see_cost": 5
   },
   {
-    "type": "overmap_terrain",
     "id": "forest_tomb_roof",
-    "copy-from": "forest_tomb"
+    "type": "overmap_terrain",
+    "copy-from": "forest_tomb",
+    "name": "forest",
+    "sym": "F",
+    "color": "brown",
+    "looks_like": "cemetery_small",
+    "see_cost": 5
   },
   {
-    "type": "overmap_terrain",
     "id": "forest_tomb_bottom",
-    "copy-from": "forest_tomb"
+    "type": "overmap_terrain",
+    "copy-from": "forest_tomb",
+    "name": "forest",
+    "sym": "F",
+    "color": "brown",
+    "looks_like": "cemetery_small",
+    "see_cost": 5
   },
   {
     "type": "overmap_terrain",
@@ -373,7 +620,9 @@
     "looks_like": "campus_lecture_0_0_0",
     "see_cost": 5,
     "mondensity": 2,
-    "flags": [ "SIDEWALK" ]
+    "flags": [
+      "SIDEWALK"
+    ]
   },
   {
     "type": "overmap_terrain",
@@ -386,39 +635,81 @@
     "see_cost": 5
   },
   {
-    "type": "overmap_terrain",
     "id": "magic_academy_3rd",
-    "copy-from": "magic_academy_2nd"
+    "type": "overmap_terrain",
+    "copy-from": "magic_academy_2nd",
+    "name": "magic academy",
+    "sym": "#",
+    "color": "light_blue",
+    "looks_like": "campus_lecture_0_0_1",
+    "mondensity": 2,
+    "see_cost": 5
   },
   {
-    "type": "overmap_terrain",
     "id": "magic_academy_4th",
-    "copy-from": "magic_academy_3rd"
+    "type": "overmap_terrain",
+    "copy-from": "magic_academy_3rd",
+    "name": "magic academy",
+    "sym": "#",
+    "color": "light_blue",
+    "looks_like": "campus_lecture_0_0_1",
+    "mondensity": 2,
+    "see_cost": 5
   },
   {
-    "type": "overmap_terrain",
     "id": "magic_academy_5th",
-    "copy-from": "magic_academy_4th"
+    "type": "overmap_terrain",
+    "copy-from": "magic_academy_4th",
+    "name": "magic academy",
+    "sym": "#",
+    "color": "light_blue",
+    "looks_like": "campus_lecture_0_0_1",
+    "mondensity": 2,
+    "see_cost": 5
   },
   {
-    "type": "overmap_terrain",
     "id": "magic_academy_6th",
-    "copy-from": "magic_academy_5th"
+    "type": "overmap_terrain",
+    "copy-from": "magic_academy_5th",
+    "name": "magic academy",
+    "sym": "#",
+    "color": "light_blue",
+    "looks_like": "campus_lecture_0_0_1",
+    "mondensity": 2,
+    "see_cost": 5
   },
   {
-    "type": "overmap_terrain",
     "id": "magic_academy_7th",
-    "copy-from": "magic_academy_6th"
+    "type": "overmap_terrain",
+    "copy-from": "magic_academy_6th",
+    "name": "magic academy",
+    "sym": "#",
+    "color": "light_blue",
+    "looks_like": "campus_lecture_0_0_1",
+    "mondensity": 2,
+    "see_cost": 5
   },
   {
-    "type": "overmap_terrain",
     "id": "magic_academy_8th",
-    "copy-from": "magic_academy_7th"
+    "type": "overmap_terrain",
+    "copy-from": "magic_academy_7th",
+    "name": "magic academy",
+    "sym": "#",
+    "color": "light_blue",
+    "looks_like": "campus_lecture_0_0_1",
+    "mondensity": 2,
+    "see_cost": 5
   },
   {
-    "type": "overmap_terrain",
     "id": "magic_academy_basement",
-    "copy-from": "magic_academy_2nd"
+    "type": "overmap_terrain",
+    "copy-from": "magic_academy_2nd",
+    "name": "magic academy",
+    "sym": "#",
+    "color": "light_blue",
+    "looks_like": "campus_lecture_0_0_1",
+    "mondensity": 2,
+    "see_cost": 5
   },
   {
     "type": "overmap_terrain",
@@ -470,33 +761,51 @@
     "sym": "O",
     "color": "dark_gray",
     "see_cost": 5,
-    "flags": [ "KNOWN_UP" ]
+    "flags": [
+      "KNOWN_UP"
+    ]
   },
   {
     "type": "overmap_terrain",
-    "id": [ "magic_field_a1", "magic_field_a2", "magic_field_b1", "magic_field_b2" ],
+    "id": [
+      "magic_field_a1",
+      "magic_field_a2",
+      "magic_field_b1",
+      "magic_field_b2"
+    ],
     "name": "big magic meadow",
     "sym": "*",
     "color": "blue",
-    "flags": [ "NO_ROTATE" ],
+    "flags": [
+      "NO_ROTATE"
+    ],
     "see_cost": 5
   },
   {
     "type": "overmap_terrain",
-    "id": [ "small_magic_field" ],
+    "id": [
+      "small_magic_field"
+    ],
     "name": "magic meadow",
     "sym": "*",
     "color": "blue",
-    "flags": [ "NO_ROTATE" ],
+    "flags": [
+      "NO_ROTATE"
+    ],
     "see_cost": 5
   },
   {
     "type": "overmap_terrain",
-    "id": [ "standing_teleport_stones" ],
+    "id": [
+      "standing_teleport_stones"
+    ],
     "name": "ancient ring of stones",
     "sym": "O",
     "color": "dark_gray",
-    "flags": [ "NO_ROTATE", "REQUIRES_PREDECESSOR" ],
+    "flags": [
+      "NO_ROTATE",
+      "REQUIRES_PREDECESSOR"
+    ],
     "see_cost": 5
   }
 ]

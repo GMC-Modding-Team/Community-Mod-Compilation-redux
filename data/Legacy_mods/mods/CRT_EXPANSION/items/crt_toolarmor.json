@@ -10,7 +10,7 @@
     "description": "This is a heavily modified Spec Ops modified gas mask, fitted with top-of-the-line electronics and lined with Kevlar for extra protection in order to keep one's head where it should be.  Various filters and other high tech wizardry allow for enhanced oxygen intake and safety even under bombardment.  It has an integrated HUD and the option to turn it on for more features.",
     "weight": "5 kg",
     "volume": "1 L",
-    "price": "25000 USD",
+    "price": 25000,
     "to_hit": 1,
     "use_action": {
       "type": "transform",
@@ -63,16 +63,18 @@
   },
   {
     "id": "crt_gasmask_on",
-    "copy-from": "crt_gasmask",
     "type": "TOOL_ARMOR",
+    "copy-from": "crt_gasmask",
+    "category": "armor",
     "name": {
       "str": "C.R.I.T gas mask (on)",
       "str_pl": "C.R.I.T gas masks (on)"
     },
     "description": "This a heavily modified gas mask.  It is currently on and draining power for the HUD, low-level night vision and other protective elements.",
+    "weight": "5 kg",
+    "volume": "1 L",
+    "price": 25000,
     "to_hit": -3,
-    "turns_per_charge": 1,
-    "revert_to": "crt_gasmask",
     "use_action": {
       "type": "transform",
       "menu_text": "Turn off",
@@ -85,26 +87,15 @@
     ],
     "symbol": "[",
     "color": "light_green",
-    "relic_data": {
-      "passive_effects": [
-        {
-          "has": "WORN",
-          "condition": "ALWAYS",
-          "values": [
-            {
-              "value": "PERCEPTION",
-              "add": 2
-            }
-          ]
-        }
-      ]
-    },
     "material_thickness": 5,
-    "qualities": [
-      [
-        "GLARE",
-        1
-      ]
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE",
+        "rigid": true,
+        "ammo_restriction": {
+          "battery": 250
+        }
+      }
     ],
     "flags": [
       "WATERPROOF",
@@ -133,7 +124,29 @@
         ]
       }
     ],
-    "environmental_protection": 20
+    "environmental_protection": 20,
+    "turns_per_charge": 1,
+    "revert_to": "crt_gasmask",
+    "relic_data": {
+      "passive_effects": [
+        {
+          "has": "WORN",
+          "condition": "ALWAYS",
+          "values": [
+            {
+              "value": "PERCEPTION",
+              "add": 2
+            }
+          ]
+        }
+      ]
+    },
+    "qualities": [
+      [
+        "GLARE",
+        1
+      ]
+    ]
   },
   {
     "id": "crt_em_vest",
@@ -146,7 +159,7 @@
     "description": "The Enhanced Movement vest is embedded with high-tech filaments and reactive servos which protects its wearer and assists in movement at the cost high  power usage.  It is commonly worn by C.R.I.T Spec Ops for its ease of use and maneuverability.  Turn it on for suit mode, extra protection and movement.",
     "weight": "10 kg",
     "volume": "6250 ml",
-    "price": "70000 USD",
+    "price": 70000,
     "to_hit": -3,
     "material": [
       "kevlar",
@@ -211,50 +224,54 @@
   },
   {
     "id": "crt_em_vest_on",
-    "copy-from": "crt_em_vest",
     "type": "TOOL_ARMOR",
+    "copy-from": "crt_em_vest",
+    "category": "armor",
     "name": {
       "str": "C.R.I.T EM vest (on)",
       "str_pl": "C.R.I.T EM vests (on)"
     },
     "description": "The Spec Ops Enhanced Movement vest is embedded with high-tech filaments, reactive servos and a generator which pumps a crystallized liquid that protects its wearer from most heavy combat situations at the cost of extreme power usage.  It is commonly worn by C.R.I.T Spec Ops.  This vest is currently in suit form and draining your UPS power at high rates.",
-    "color": "light_green",
+    "weight": "10 kg",
+    "volume": "6250 ml",
+    "price": 70000,
+    "to_hit": -3,
     "material": [
       "kevlar",
       "steel"
     ],
-    "material_thickness": 7,
-    "turns_per_charge": 1,
+    "symbol": "[",
+    "color": "light_green",
     "charges_per_use": 1,
-    "revert_to": "crt_em_vest",
     "use_action": {
       "type": "transform",
       "menu_text": "Turn off armor",
       "msg": "C.R.I.T EM powering off…",
       "target": "crt_em_vest"
     },
-    "relic_data": {
-      "passive_effects": [
-        {
-          "has": "WORN",
-          "condition": "ALWAYS",
-          "values": [
-            {
-              "value": "STRENGTH",
-              "add": 2
-            },
-            {
-              "value": "SPEED",
-              "add": 20
-            },
-            {
-              "value": "DEXTERITY",
-              "add": 2
-            }
-          ]
+    "//": "Artifact data is charge_type solar",
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE",
+        "rigid": true,
+        "ammo_restriction": {
+          "battery": 300
         }
-      ]
-    },
+      },
+      {
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "2 L",
+        "max_contains_weight": "6 kg",
+        "moves": 80
+      },
+      {
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "2 L",
+        "max_contains_weight": "6 kg",
+        "moves": 80
+      }
+    ],
+    "material_thickness": 7,
     "flags": [
       "WATERPROOF",
       "STURDY",
@@ -282,11 +299,37 @@
         ]
       }
     ],
-    "environmental_protection": 16
+    "melee_damage": {
+      "bash": 6
+    },
+    "environmental_protection": 16,
+    "turns_per_charge": 1,
+    "revert_to": "crt_em_vest",
+    "relic_data": {
+      "passive_effects": [
+        {
+          "has": "WORN",
+          "condition": "ALWAYS",
+          "values": [
+            {
+              "value": "STRENGTH",
+              "add": 2
+            },
+            {
+              "value": "SPEED",
+              "add": 20
+            },
+            {
+              "value": "DEXTERITY",
+              "add": 2
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     "id": "crt_helmet",
-    "copy-from": "helmet_army",
     "type": "TOOL_ARMOR",
     "name": {
       "str": "C.R.I.T helmet (off)",
@@ -333,7 +376,6 @@
   },
   {
     "id": "crt_helmet_on",
-    "copy-from": "helmet_army",
     "type": "TOOL_ARMOR",
     "name": {
       "str": "C.R.I.T helmet (on)",
@@ -382,7 +424,6 @@
   },
   {
     "id": "crt_canteen",
-    "copy-from": "canteen",
     "type": "ARMOR",
     "name": {
       "str": "C.R.I.T canteen"
@@ -416,7 +457,7 @@
     "description": "A dampened cotton bandana, worn over the mouth for a extra protection from dust and other contaminants.",
     "weight": "42 g",
     "volume": "250 ml",
-    "price": "6 USD",
+    "price": 6,
     "to_hit": -1,
     "material": [
       "cotton"

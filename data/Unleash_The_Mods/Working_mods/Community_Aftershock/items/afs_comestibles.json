@@ -2,15 +2,42 @@
   {
     "id": "cake2",
     "type": "COMESTIBLE",
-    "name": { "str": "plain cake" },
     "copy-from": "jihelucake",
+    "name": {
+      "str": "plain cake"
+    },
+    "weight": "38 g",
+    "color": "white",
+    "spoils_in": "52 hours",
+    "comestible_type": "FOOD",
+    "symbol": "%",
+    "calories": 280,
     "description": "A modest chocolate cake with no icing added.  Nothing special, but some of the best you can get nowadays.  Besides, cake is cake!",
+    "price": "10 cent",
+    "price_postapoc": "16 cent",
+    "material": [
+      "wheat",
+      "junk"
+    ],
+    "volume": "166 ml",
+    "vitamins": [
+      [
+        "calcium",
+        3
+      ],
+      [
+        "iron",
+        6
+      ]
+    ],
     "fun": 15
   },
   {
     "id": "afs_calorie_pill",
     "type": "COMESTIBLE",
-    "name": { "str": "nutriment" },
+    "name": {
+      "str": "nutriment"
+    },
     "weight": "10 g",
     "volume": "10 ml",
     "color": "white",
@@ -20,31 +47,108 @@
     "healthy": 3,
     "quench": -5,
     "description": "A crumbly white pill half the size of your thumb, packed with vitamins and calories.  Provides a whole day's nutrition in portable form, but it's a little hard to keep down, thanks to the rancid taste and chalky texture.",
-    "price": "100 USD",
+    "price": 100,
     "looks_like": "vitamins",
     "fun": -8,
     "freezing_point": -9999,
-    "vitamins": [ [ "calcium", 24, 48 ], [ "iron", 24, 48 ], [ "vitA", 24, 48 ], [ "vitB", 24, 48 ], [ "vitC", 24, 48 ] ]
+    "vitamins": [
+      [
+        "calcium",
+        24,
+        48
+      ],
+      [
+        "iron",
+        24,
+        48
+      ],
+      [
+        "vitA",
+        24,
+        48
+      ],
+      [
+        "vitB",
+        24,
+        48
+      ],
+      [
+        "vitC",
+        24,
+        48
+      ]
+    ]
   },
   {
     "id": "afs_calorie_water",
     "type": "COMESTIBLE",
-    "name": { "str": "nutriment water" },
     "copy-from": "water_clean",
     "comestible_type": "DRINK",
+    "category": "food",
+    "name": {
+      "str": "nutriment water"
+    },
+    "description": "Nutriment that has been dissolved in water to dilute its taste.  Unnervingly resembles spoiled milk.",
+    "material": [
+      "water"
+    ],
+    "weight": "250 g",
+    "volume": "250 ml",
+    "charges": 1,
+    "price": 100,
+    "price_postapoc": 1,
+    "symbol": "~",
     "color": "white",
+    "phase": "liquid",
+    "container": "bottle_plastic",
+    "sealed": true,
+    "quench": 50,
+    "ammo_data": {
+      "ammo_type": "water"
+    },
+    "flags": [
+      "EATEN_COLD",
+      "NUTRIENT_OVERRIDE"
+    ],
+    "use_action": [],
     "calories": 2000,
     "healthy": 3,
-    "description": "Nutriment that has been dissolved in water to dilute its taste.  Unnervingly resembles spoiled milk.",
-    "price": "100 USD",
     "looks_like": "bleach",
     "fun": -2,
-    "vitamins": [ [ "calcium", 24, 48 ], [ "iron", 24, 48 ], [ "vitA", 24, 48 ], [ "vitB", 24, 48 ], [ "vitC", 24, 48 ] ]
+    "vitamins": [
+      [
+        "calcium",
+        24,
+        48
+      ],
+      [
+        "iron",
+        24,
+        48
+      ],
+      [
+        "vitA",
+        24,
+        48
+      ],
+      [
+        "vitB",
+        24,
+        48
+      ],
+      [
+        "vitC",
+        24,
+        48
+      ]
+    ]
   },
   {
     "id": "afs_dough",
     "type": "COMESTIBLE",
-    "name": { "str": "dough" },
+    "name": {
+      "str": "dough"
+    },
     "weight": "226 g",
     "color": "yellow",
     "comestible_type": "FOOD",
@@ -52,16 +156,20 @@
     "calories": 86,
     "quench": -5,
     "description": "Flour mixed with water, kneaded into a gooey paste.  This dough can be used to bake bread more efficiently than with just flour.",
-    "price": "1 USD",
+    "price": 1,
     "volume": "500 ml",
-    "flags": [ "EATEN_HOT" ],
+    "flags": [
+      "EATEN_HOT"
+    ],
     "looks_like": "flour",
     "fun": -5
   },
   {
     "id": "donut_holes",
     "type": "COMESTIBLE",
-    "name": { "str_sp": "fried donut holes" },
+    "name": {
+      "str_sp": "fried donut holes"
+    },
     "weight": "226 g",
     "color": "yellow",
     "comestible_type": "FOOD",
@@ -70,66 +178,165 @@
     "quench": -1,
     "healthy": -1,
     "description": "These balls of dough have been cut into shape, covered with sugar, and cooked to a crisp.  A staple of fairgrounds everywhere.",
-    "price": "1 USD",
+    "price": 1,
     "volume": "250 ml",
-    "flags": [ "EATEN_HOT" ],
+    "flags": [
+      "EATEN_HOT"
+    ],
     "looks_like": "bread",
     "fun": 4
   },
   {
     "id": "afs_sundew",
     "type": "COMESTIBLE",
-    "name": { "str": "sundew" },
     "copy-from": "water_clean",
-    "weight": "10 g",
-    "color": "yellow",
-    "healthy": 2,
+    "comestible_type": "DRINK",
+    "category": "food",
+    "name": {
+      "str": "sundew"
+    },
     "description": "Water treated with some sort of chemical compound.  It's incapable of freezing, is very light, and glows faintly.  Drinking it seems to sharpen the senses.",
-    "price": "10 USD",
-    "looks_like": "diesel",
+    "material": [
+      "water"
+    ],
+    "weight": "10 g",
+    "volume": "250 ml",
+    "charges": 1,
+    "price": 10,
+    "price_postapoc": 1,
+    "symbol": "~",
+    "color": "yellow",
+    "phase": "liquid",
     "container": "flask_glass",
+    "sealed": true,
+    "quench": 50,
+    "ammo_data": {
+      "ammo_type": "water"
+    },
+    "flags": [
+      "LIGHT_2",
+      "EATEN_HOT",
+      "NUTRIENT_OVERRIDE"
+    ],
+    "use_action": [],
+    "healthy": 2,
+    "looks_like": "diesel",
     "stim": 4,
-    "flags": [ "LIGHT_2", "EATEN_HOT" ],
     "freezing_point": -9999
   },
   {
     "id": "afs_sungel",
     "type": "COMESTIBLE",
-    "name": { "str": "sungel" },
     "copy-from": "afs_sundew",
+    "comestible_type": "DRINK",
+    "category": "food",
+    "name": {
+      "str": "sungel"
+    },
     "description": "Mixed with morphine, this sundew has congealed, and has an immense stimulative and pain-numbing effect.  With sufficient tools, it could be used to create anesthesia.",
-    "stim": 50,
+    "material": [
+      "water"
+    ],
+    "weight": "10 g",
+    "volume": "250 ml",
+    "price": 10,
+    "price_postapoc": 1,
+    "symbol": "~",
+    "color": "yellow",
     "phase": "solid",
-    "fun": 20,
+    "container": "flask_glass",
+    "sealed": true,
+    "quench": 50,
+    "ammo_data": {
+      "ammo_type": "water"
+    },
+    "flags": [
+      "LIGHT_2",
+      "EATEN_HOT",
+      "NUTRIENT_OVERRIDE"
+    ],
     "use_action": {
       "type": "consume_drug",
       "activation_message": "Your vision sharpens and your eyes widen as the sungel slams your senses.",
       "effects": [
-        { "id": "pkill3", "duration": 20 },
-        { "id": "pkill2", "duration": 200 },
-        { "id": "cough_suppress", "duration": 1000 }
+        {
+          "id": "pkill3",
+          "duration": 20
+        },
+        {
+          "id": "pkill2",
+          "duration": 200
+        },
+        {
+          "id": "cough_suppress",
+          "duration": 1000
+        }
       ]
-    }
+    },
+    "healthy": 2,
+    "looks_like": "diesel",
+    "stim": 50,
+    "freezing_point": -9999,
+    "fun": 20
   },
   {
     "id": "afs_sunesthesia",
     "type": "COMESTIBLE",
-    "name": { "str": "sunesthesia" },
     "copy-from": "afs_sungel",
+    "comestible_type": "DRINK",
+    "category": "food",
+    "name": {
+      "str": "sunesthesia"
+    },
     "description": "This sungel has been mixed with several drugs and yet inherits none of their effects.  Its painkilling effect hasn't changed, but its stimulative properties have been reversed, and it could be used as anesthesia for installation of bionics.",
-    "stim": -30,
-    "phase": "solid",
+    "material": [
+      "water"
+    ],
+    "weight": "10 g",
+    "volume": "250 ml",
+    "price": 10,
+    "price_postapoc": 1,
+    "symbol": "~",
     "color": "light_red",
-    "flags": [ "ANESTHESIA", "LIGHT_4", "EATEN_HOT" ],
+    "phase": "solid",
+    "container": "flask_glass",
+    "sealed": true,
+    "quench": 50,
+    "ammo_data": {
+      "ammo_type": "water"
+    },
+    "flags": [
+      "ANESTHESIA",
+      "LIGHT_4",
+      "EATEN_HOT",
+      "NUTRIENT_OVERRIDE"
+    ],
     "use_action": {
       "type": "consume_drug",
       "activation_message": "You go limp and collapse as the sunesthesia knocks you senseless.",
       "effects": [
-        { "id": "pkill3", "duration": 80 },
-        { "id": "pkill2", "duration": 200 },
-        { "id": "cough_suppress", "duration": 1000 },
-        { "id": "downed", "duration": 1 }
+        {
+          "id": "pkill3",
+          "duration": 80
+        },
+        {
+          "id": "pkill2",
+          "duration": 200
+        },
+        {
+          "id": "cough_suppress",
+          "duration": 1000
+        },
+        {
+          "id": "downed",
+          "duration": 1
+        }
       ]
-    }
+    },
+    "healthy": 2,
+    "looks_like": "diesel",
+    "stim": -30,
+    "freezing_point": -9999,
+    "fun": 20
   }
 ]

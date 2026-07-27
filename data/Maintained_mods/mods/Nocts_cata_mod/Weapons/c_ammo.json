@@ -1,30 +1,41 @@
 [
   {
     "id": "flintlock_ammo_mine",
-    "copy-from": "flintlock_ammo",
     "type": "AMMO",
+    "copy-from": "flintlock_ammo",
     "name": {
       "str": "paper Minie ball cartridge"
     },
-    "//": "meant as a companion to the Survivor's Flintlock Sniper.",
     "description": "A paper cartridge containing black powder and a Minie ball.  A paper enclosed version of the historic projectile of the USA Civil war.  The Minie ball is still as deadly and accurate as ever.",
+    "ascii_picture": "flintlock_ammo",
     "weight": "55 g",
-    "price": "25 USD",
-    "price_postapoc": "15 USD",
+    "volume": "10 ml",
+    "price": 25,
+    "price_postapoc": 15,
+    "material": [
+      "lead",
+      "powder"
+    ],
+    "symbol": "=",
+    "color": "white",
+    "count": 30,
+    "stack_size": 10,
+    "ammo_type": "flintlock",
+    "range": 12.0,
     "damage": {
       "damage_type": "bullet",
       "armor_penetration": 12
     },
-    "proportional": {
-      "range": 2.0,
-      "dispersion": 0.89,
-      "recoil": 2.0
-    },
-    "extend": {
-      "effects": [
-        "RECYCLED"
-      ]
-    }
+    "recoil": 3000.0,
+    "loudness": 70,
+    "effects": [
+      "COOKOFF",
+      "MUZZLE_SMOKE",
+      "BLACKPOWDER",
+      "RECYCLED"
+    ],
+    "//": "meant as a companion to the Survivor's Flintlock Sniper.",
+    "//legacy_dispersion": 80.1
   },
   {
     "id": "c_hydrogen_gas",
@@ -47,7 +58,6 @@
       "armor_penetration": 2
     },
     "range": 6,
-    "dispersion": 120,
     "stack_size": 10,
     "material": [
       "c_hydrogen_gas"
@@ -60,7 +70,9 @@
     "flags": [
       "NO_DROP",
       "IRREMOVABLE"
-    ]
+    ],
+    "loudness": 0,
+    "//legacy_dispersion": 120
   },
   {
     "type": "AMMO",
@@ -107,70 +119,109 @@
     ]
   },
   {
-    "type": "AMMO",
     "id": "c_alien_resin_bullet_makeshift",
+    "type": "AMMO",
     "copy-from": "c_alien_resin_bullet",
+    "price_postapoc": "20 cent",
     "name": {
       "str": "molded projector bullet"
     },
+    "symbol": "=",
     "color": "light_gray",
     "description": "A molded metal projectile for an exotic pneumatic weapon, resembling an elongated rifle bullet.  Inferior to purpose-built resin bullets, but easier to make.",
     "material": [
       "iron"
     ],
+    "volume": "250 ml",
     "weight": "5 g",
+    "ammo_type": "c_alien_resin_bullet_type",
     "damage": {
       "damage_type": "bullet",
       "amount": 20,
       "armor_penetration": 5
     },
     "range": 30,
-    "dispersion": 100
+    "loudness": 2,
+    "count": 20,
+    "effects": [
+      "NEVER_MISFIRES",
+      "NON_FOULING",
+      "RECOVER_10"
+    ],
+    "//legacy_dispersion": 100
   },
   {
     "id": "36navy_makeshift_magnum",
-    "copy-from": "36navy",
     "type": "AMMO",
+    "copy-from": "36navy",
     "name": {
       "str": ".36 paper overpressure cartridge"
     },
     "description": "A paper cartridge containing an increased measure of any available powder, and a.36 projectile for the Colt M1861 Navy.  A bit more powerful but less accurate, and potentially unreliable.",
-    "proportional": {
-      "damage": {
-        "damage_type": "bullet",
-        "amount": 1.25
-      },
-      "range": 1.1,
-      "dispersion": 1.5,
-      "recoil": 2.0
+    "ascii_picture": "36navy",
+    "weight": "6 g",
+    "volume": "11 ml",
+    "price": 400,
+    "price_postapoc": 1000,
+    "material": [
+      "paper",
+      "powder",
+      "lead"
+    ],
+    "symbol": "=",
+    "color": "white",
+    "count": 25,
+    "ammo_type": "36paper",
+    "range": 16.5,
+    "damage": {
+      "damage_type": "bullet",
+      "amount": 23.75
     },
-    "extend": {
-      "effects": [
-        "RECYCLED"
-      ]
-    }
+    "recoil": 420.0,
+    "effects": [
+      "COOKOFF",
+      "RECYCLED",
+      "MUZZLE_SMOKE",
+      "BLACKPOWDER"
+    ],
+    "loudness": 0,
+    "//legacy_dispersion": 120.0
   },
   {
     "id": "44army_makeshift_magnum",
-    "copy-from": "44army",
     "type": "AMMO",
+    "copy-from": "44army",
     "name": {
       "str": ".44 paper overpressure cartridge"
     },
     "description": "A paper cartridge containing an increased measure of any available powder, and a.44 projectile for the Colt M1860 Army.  A bit more powerful but less accurate, and potentially unreliable.",
-    "proportional": {
-      "damage": {
-        "damage_type": "bullet",
-        "amount": 1.25
-      },
-      "range": 1.1,
-      "dispersion": 1.5,
-      "recoil": 2.0
+    "ascii_picture": "44army",
+    "weight": "7 g",
+    "volume": "20 ml",
+    "price": 350,
+    "price_postapoc": 1000,
+    "material": [
+      "paper",
+      "powder",
+      "lead"
+    ],
+    "symbol": "=",
+    "color": "white",
+    "count": 25,
+    "ammo_type": "44paper",
+    "range": 19.8,
+    "damage": {
+      "damage_type": "bullet",
+      "amount": 33.75
     },
-    "extend": {
-      "effects": [
-        "RECYCLED"
-      ]
-    }
+    "recoil": 1160.0,
+    "effects": [
+      "COOKOFF",
+      "RECYCLED",
+      "MUZZLE_SMOKE",
+      "BLACKPOWDER"
+    ],
+    "loudness": 0,
+    "//legacy_dispersion": 105.0
   }
 ]

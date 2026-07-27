@@ -1,31 +1,15 @@
 [
   {
     "id": "357_magnum_revolver",
-    "copy-from": "pistol_revolver",
     "type": "GUN",
+    "copy-from": "pistol_revolver",
     "name": {
       "str": ".357 Magnum Revolver"
     },
-    "description": "A common.357 six-shooter, used by crooks and the likes.  It is very popular due to it's modular nature.",
-    "weight": "1074 g",
-    "volume": "500 ml",
-    "price": "620 USD",
-    "to_hit": -2,
-    "melee_damage": {
-      "bash": 9
-    },
-    "looks_like": "sw_619",
-    "material": [
-      "steel",
-      "plastic"
-    ],
-    "symbol": "(",
-    "color": "light_gray",
-    "ammo": [
-      "38"
-    ],
-    "dispersion": 320,
-    "durability": 10,
+    "skill": "pistol",
+    "sight_dispersion": 60,
+    "//": "Revolvers exclude the muzzle location preventing installation of suppressors",
+    "handling": 10,
     "valid_mod_locations": [
       [
         "accessories",
@@ -64,6 +48,38 @@
         1
       ]
     ],
+    "extend": {
+      "flags": [
+        "RELOAD_ONE",
+        "RELOAD_EJECT",
+        "NEVER_JAMS",
+        "EASY_CLEAN"
+      ]
+    },
+    "faults": [
+      "fault_gun_blackpowder",
+      "fault_gun_dirt"
+    ],
+    "description": "A common.357 six-shooter, used by crooks and the likes.  It is very popular due to it's modular nature.",
+    "weight": "1074 g",
+    "volume": "500 ml",
+    "price": 620,
+    "to_hit": -2,
+    "melee_damage": {
+      "bash": 9
+    },
+    "looks_like": "sw_619",
+    "material": [
+      "steel",
+      "plastic"
+    ],
+    "symbol": "(",
+    "color": "light_gray",
+    "ammo": [
+      "38"
+    ],
+    "dispersion": 320,
+    "durability": 10,
     "pocket_data": [
       {
         "pocket_type": "MAGAZINE",
@@ -72,35 +88,20 @@
           "38": 6
         }
       }
-    ]
+    ],
+    "reload": 0.7
   },
   {
     "id": "357_magnum_revolver_lucky",
-    "copy-from": "pistol_revolver",
     "type": "GUN",
+    "copy-from": "pistol_revolver",
     "name": {
       "str": "Lucky Revolver"
     },
-    "description": "A common.357 magnum revolver, customized at the core.  This design is somewhat more compact, and feels strange when you hold it at the ready.  It has a playing card pattern on the grip.",
-    "weight": "1074 g",
-    "volume": "250 ml",
-    "price": "620 USD",
-    "to_hit": -2,
-    "melee_damage": {
-      "bash": 12
-    },
-    "looks_like": "sw_619",
-    "material": [
-      "steel",
-      "plastic"
-    ],
-    "symbol": "(",
-    "color": "black",
-    "ammo": [
-      "38"
-    ],
-    "dispersion": 80,
-    "durability": 10,
+    "skill": "pistol",
+    "sight_dispersion": 60,
+    "//": "Revolvers exclude the muzzle location preventing installation of suppressors",
+    "handling": 10,
     "valid_mod_locations": [
       [
         "accessories",
@@ -135,6 +136,38 @@
         1
       ]
     ],
+    "extend": {
+      "flags": [
+        "RELOAD_ONE",
+        "RELOAD_EJECT",
+        "NEVER_JAMS",
+        "EASY_CLEAN"
+      ]
+    },
+    "faults": [
+      "fault_gun_blackpowder",
+      "fault_gun_dirt"
+    ],
+    "description": "A common.357 magnum revolver, customized at the core.  This design is somewhat more compact, and feels strange when you hold it at the ready.  It has a playing card pattern on the grip.",
+    "weight": "1074 g",
+    "volume": "250 ml",
+    "price": 620,
+    "to_hit": -2,
+    "melee_damage": {
+      "bash": 12
+    },
+    "looks_like": "sw_619",
+    "material": [
+      "steel",
+      "plastic"
+    ],
+    "symbol": "(",
+    "color": "black",
+    "ammo": [
+      "38"
+    ],
+    "dispersion": 80,
+    "durability": 10,
     "pocket_data": [
       {
         "pocket_type": "MAGAZINE",
@@ -143,15 +176,68 @@
           "38": 6
         }
       }
-    ]
+    ],
+    "reload": 0.7
   },
   {
     "id": "cowboy_repeater",
-    "copy-from": "rifle_manual",
     "type": "GUN",
+    "copy-from": "rifle_manual",
     "name": {
       "str": "Cowboy Repeater"
     },
+    "skill": "rifle",
+    "valid_mod_locations": [
+      [
+        "accessories",
+        2
+      ],
+      [
+        "barrel",
+        1
+      ],
+      [
+        "bore",
+        1
+      ],
+      [
+        "grip",
+        1
+      ],
+      [
+        "mechanism",
+        4
+      ],
+      [
+        "sights",
+        1
+      ],
+      [
+        "stock",
+        1
+      ],
+      [
+        "barrel",
+        1
+      ],
+      [
+        "sling",
+        1
+      ],
+      [
+        "muzzle",
+        1
+      ],
+      [
+        "underbarrel",
+        1
+      ]
+    ],
+    "//": "Manual actions exclude the magazine location preventing installation of belt-feed adaptors",
+    "faults": [
+      "fault_gun_blackpowder",
+      "fault_gun_dirt"
+    ],
     "description": "This fine lever action rifle is chambered in the powerful.357 magnum cartridge and features a sleek barrel with a tube fed magazine.  Popular among wild west re-enactors.",
     "weight": "3937 g",
     "volume": "3 L",
@@ -176,6 +262,27 @@
     "dispersion": 180,
     "durability": 8,
     "barrel_volume": "500 ml",
+    "flags": [
+      "RELOAD_ONE"
+    ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE",
+        "rigid": true,
+        "ammo_restriction": {
+          "38": 7
+        }
+      }
+    ]
+  },
+  {
+    "id": "cowboy_repeater_longue",
+    "type": "GUN",
+    "copy-from": "rifle_manual",
+    "name": {
+      "str_sp": "La Longue Carabine"
+    },
+    "skill": "rifle",
     "valid_mod_locations": [
       [
         "accessories",
@@ -198,6 +305,10 @@
         4
       ],
       [
+        "sling",
+        1
+      ],
+      [
         "sights",
         1
       ],
@@ -210,10 +321,6 @@
         1
       ],
       [
-        "sling",
-        1
-      ],
-      [
         "muzzle",
         1
       ],
@@ -222,26 +329,11 @@
         1
       ]
     ],
-    "flags": [
-      "RELOAD_ONE"
+    "//": "Manual actions exclude the magazine location preventing installation of belt-feed adaptors",
+    "faults": [
+      "fault_gun_blackpowder",
+      "fault_gun_dirt"
     ],
-    "pocket_data": [
-      {
-        "pocket_type": "MAGAZINE",
-        "rigid": true,
-        "ammo_restriction": {
-          "38": 7
-        }
-      }
-    ]
-  },
-  {
-    "id": "cowboy_repeater_longue",
-    "copy-from": "rifle_manual",
-    "type": "GUN",
-    "name": {
-      "str_sp": "La Longue Carabine"
-    },
     "description": "A custom, heavily modified Cowboy Repeater.  Has more room for ammo, and is generally more optimized.",
     "weight": "3937 g",
     "volume": "3 L",
@@ -266,6 +358,27 @@
     "dispersion": 80,
     "durability": 10,
     "barrel_volume": "500 ml",
+    "flags": [
+      "RELOAD_ONE"
+    ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE",
+        "rigid": true,
+        "ammo_restriction": {
+          "38": 11
+        }
+      }
+    ]
+  },
+  {
+    "id": "brush_gun",
+    "type": "GUN",
+    "copy-from": "rifle_manual",
+    "name": {
+      "str": "Brush Gun"
+    },
+    "skill": "rifle",
     "valid_mod_locations": [
       [
         "accessories",
@@ -288,10 +401,6 @@
         4
       ],
       [
-        "sling",
-        1
-      ],
-      [
         "sights",
         1
       ],
@@ -308,30 +417,19 @@
         1
       ],
       [
+        "sling",
+        1
+      ],
+      [
         "underbarrel",
         1
       ]
     ],
-    "flags": [
-      "RELOAD_ONE"
+    "//": "Manual actions exclude the magazine location preventing installation of belt-feed adaptors",
+    "faults": [
+      "fault_gun_blackpowder",
+      "fault_gun_dirt"
     ],
-    "pocket_data": [
-      {
-        "pocket_type": "MAGAZINE",
-        "rigid": true,
-        "ammo_restriction": {
-          "38": 11
-        }
-      }
-    ]
-  },
-  {
-    "id": "brush_gun",
-    "copy-from": "rifle_manual",
-    "type": "GUN",
-    "name": {
-      "str": "Brush Gun"
-    },
     "description": "A classic rifle, chambered in.45-70 ammunition.  The ammo sacrifices long ranged accuracy for sheer damage.  Popular among Veteran Desert Rangers.",
     "weight": "3937 g",
     "volume": "3 L",
@@ -355,6 +453,27 @@
     },
     "dispersion": 240,
     "durability": 8,
+    "flags": [
+      "RELOAD_ONE"
+    ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE",
+        "rigid": true,
+        "ammo_restriction": {
+          "4570": 6
+        }
+      }
+    ]
+  },
+  {
+    "id": "brush_gun_medicine",
+    "type": "GUN",
+    "copy-from": "rifle_manual",
+    "name": {
+      "str_sp": "Medicine Stick"
+    },
+    "skill": "rifle",
     "valid_mod_locations": [
       [
         "accessories",
@@ -385,6 +504,10 @@
         1
       ],
       [
+        "sling",
+        1
+      ],
+      [
         "barrel",
         1
       ],
@@ -393,34 +516,15 @@
         1
       ],
       [
-        "sling",
-        1
-      ],
-      [
         "underbarrel",
         1
       ]
     ],
-    "flags": [
-      "RELOAD_ONE"
+    "//": "Manual actions exclude the magazine location preventing installation of belt-feed adaptors",
+    "faults": [
+      "fault_gun_blackpowder",
+      "fault_gun_dirt"
     ],
-    "pocket_data": [
-      {
-        "pocket_type": "MAGAZINE",
-        "rigid": true,
-        "ammo_restriction": {
-          "4570": 6
-        }
-      }
-    ]
-  },
-  {
-    "id": "brush_gun_medicine",
-    "copy-from": "rifle_manual",
-    "type": "GUN",
-    "name": {
-      "str_sp": "Medicine Stick"
-    },
     "description": "A classic rifle, chambered in.45-70 ammunition.  The ammo sacrifices long ranged accuracy for sheer damage.  Popular among Veteran Desert Rangers, this one is an experimental model produced by the Gun Runners.",
     "weight": "3937 g",
     "volume": "3 L",
@@ -445,52 +549,6 @@
     "dispersion": 240,
     "durability": 10,
     "barrel_volume": "250 ml",
-    "valid_mod_locations": [
-      [
-        "accessories",
-        2
-      ],
-      [
-        "barrel",
-        1
-      ],
-      [
-        "bore",
-        1
-      ],
-      [
-        "grip",
-        1
-      ],
-      [
-        "mechanism",
-        4
-      ],
-      [
-        "sights",
-        1
-      ],
-      [
-        "stock",
-        1
-      ],
-      [
-        "sling",
-        1
-      ],
-      [
-        "barrel",
-        1
-      ],
-      [
-        "muzzle",
-        1
-      ],
-      [
-        "underbarrel",
-        1
-      ]
-    ],
     "flags": [
       "RELOAD_ONE"
     ],
@@ -506,31 +564,15 @@
   },
   {
     "id": "revolver_ranger",
-    "copy-from": "pistol_revolver",
     "type": "GUN",
+    "copy-from": "pistol_revolver",
     "name": {
       "str_sp": "Ranger Sequoia"
     },
-    "description": "A common.45-70 five-shooter, used by Desert Rangers, big surprise.  It is engraved with gold.  They are given to veteran rangers as a thank you for service.",
-    "weight": "1074 g",
-    "volume": "500 ml",
-    "price": "620 USD",
-    "to_hit": -1,
-    "melee_damage": {
-      "bash": 12
-    },
-    "looks_like": "lemat_revolver",
-    "material": [
-      "steel",
-      "plastic"
-    ],
-    "symbol": "(",
-    "color": "black",
-    "ammo": [
-      "4570"
-    ],
-    "dispersion": 320,
-    "durability": 10,
+    "skill": "pistol",
+    "sight_dispersion": 60,
+    "//": "Revolvers exclude the muzzle location preventing installation of suppressors",
+    "handling": 10,
     "valid_mod_locations": [
       [
         "accessories",
@@ -569,6 +611,38 @@
         1
       ]
     ],
+    "extend": {
+      "flags": [
+        "RELOAD_ONE",
+        "RELOAD_EJECT",
+        "NEVER_JAMS",
+        "EASY_CLEAN"
+      ]
+    },
+    "faults": [
+      "fault_gun_blackpowder",
+      "fault_gun_dirt"
+    ],
+    "description": "A common.45-70 five-shooter, used by Desert Rangers, big surprise.  It is engraved with gold.  They are given to veteran rangers as a thank you for service.",
+    "weight": "1074 g",
+    "volume": "500 ml",
+    "price": 620,
+    "to_hit": -1,
+    "melee_damage": {
+      "bash": 12
+    },
+    "looks_like": "lemat_revolver",
+    "material": [
+      "steel",
+      "plastic"
+    ],
+    "symbol": "(",
+    "color": "black",
+    "ammo": [
+      "4570"
+    ],
+    "dispersion": 320,
+    "durability": 10,
     "pocket_data": [
       {
         "pocket_type": "MAGAZINE",
@@ -577,6 +651,7 @@
           "4570": 5
         }
       }
-    ]
+    ],
+    "reload": 0.7
   }
 ]

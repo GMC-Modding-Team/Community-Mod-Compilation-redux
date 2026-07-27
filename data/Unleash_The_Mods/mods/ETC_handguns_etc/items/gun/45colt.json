@@ -1,39 +1,15 @@
 [
   {
     "id": "ocgl_45_sixpack",
-    "copy-from": "pistol_revolver",
     "type": "GUN",
+    "copy-from": "pistol_revolver",
     "name": {
       "str_sp": "OCG-Leadworks 45 Sixpack"
     },
-    "description": "A big double action only revolver for modern smokeless.45 colt loads with long enough chambers to shoot.410 shotgun shells, an integrated holographic sight and detachable laser sight.  Rumored to be a redesign of a previously scrapped.460 Rowland revolver prototype, while relatively successful during its short production run, it was met with disgust from Colt Single Action Army purists because they see it as an attempt to \"modernize\" a timeless classic despite the fact it was not intended as a reproduction or \"modern replacement\" of the Colt SAA.",
-    "weight": "1150 g",
-    "volume": "460 ml",
-    "price": "600 USD",
-    "price_postapoc": "27 USD",
-    "to_hit": -2,
-    "melee_damage": {
-      "bash": 7
-    },
-    "material": [
-      "steel",
-      "wood"
-    ],
-    "symbol": "(",
-    "color": "light_gray",
-    "ammo": [
-      "410shot",
-      "45colt"
-    ],
-    "ranged_damage": {
-      "damage_type": "bullet",
-      "amount": 1
-    },
-    "dispersion": 360,
-    "durability": 8,
-    "built_in_mods": "holo_sight",
-    "default_mods": "laser_sight",
-    "looks_like": "colt_saa",
+    "skill": "pistol",
+    "sight_dispersion": 60,
+    "//": "Revolvers exclude the muzzle location preventing installation of suppressors",
+    "handling": 10,
     "valid_mod_locations": [
       [
         "accessories",
@@ -72,6 +48,46 @@
         1
       ]
     ],
+    "extend": {
+      "flags": [
+        "RELOAD_ONE",
+        "RELOAD_EJECT",
+        "NEVER_JAMS",
+        "EASY_CLEAN"
+      ]
+    },
+    "faults": [
+      "fault_gun_blackpowder",
+      "fault_gun_dirt"
+    ],
+    "description": "A big double action only revolver for modern smokeless.45 colt loads with long enough chambers to shoot.410 shotgun shells, an integrated holographic sight and detachable laser sight.  Rumored to be a redesign of a previously scrapped.460 Rowland revolver prototype, while relatively successful during its short production run, it was met with disgust from Colt Single Action Army purists because they see it as an attempt to \"modernize\" a timeless classic despite the fact it was not intended as a reproduction or \"modern replacement\" of the Colt SAA.",
+    "weight": "1150 g",
+    "volume": "460 ml",
+    "price": 600,
+    "price_postapoc": 27,
+    "to_hit": -2,
+    "melee_damage": {
+      "bash": 7
+    },
+    "material": [
+      "steel",
+      "wood"
+    ],
+    "symbol": "(",
+    "color": "light_gray",
+    "ammo": [
+      "410shot",
+      "45colt"
+    ],
+    "ranged_damage": {
+      "damage_type": "bullet",
+      "amount": 1
+    },
+    "dispersion": 360,
+    "durability": 8,
+    "built_in_mods": "holo_sight",
+    "default_mods": "laser_sight",
+    "looks_like": "colt_saa",
     "pocket_data": [
       {
         "pocket_type": "MAGAZINE_WELL",
@@ -82,6 +98,7 @@
           "ocgl_410speedloader6"
         ]
       }
-    ]
+    ],
+    "reload": 0.7
   }
 ]

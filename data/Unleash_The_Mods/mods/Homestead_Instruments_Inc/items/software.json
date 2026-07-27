@@ -2,11 +2,27 @@
   {
     "id": "pd_sd_card",
     "type": "GENERIC",
-    "category": "container",
     "copy-from": "memory_card_unread",
-    "//": "local copy of the native SD card sans all the random data flags",
-    "name": { "str": "SD-Memory card" },
-    "flags": [ "IRREMOVABLE", "NO_DROP", "TARDIS" ],
+    "name": {
+      "str": "SD-Memory card"
+    },
+    "description": "A memory card, can be used to store data.  Looks like it has been in use, might be worth taking a look.",
+    "looks_like": "mobile_memory_card",
+    "weight": "1 g",
+    "volume": "1 ml",
+    "symbol": ",",
+    "color": "white",
+    "price": 1000,
+    "price_postapoc": 10,
+    "material": [
+      "plastic"
+    ],
+    "ascii_picture": "memory_card",
+    "flags": [
+      "IRREMOVABLE",
+      "NO_DROP",
+      "TARDIS"
+    ],
     "pocket_data": [
       {
         "pocket_type": "CONTAINER",
@@ -15,32 +31,72 @@
         "max_item_volume": "2 ml",
         "max_contains_weight": "100 g"
       }
-    ]
+    ],
+    "memory_card": {
+      "data_chance": 0.875,
+      "on_read_convert_to": "memory_card",
+      "photos_chance": 0.33,
+      "photos_amount": 30,
+      "songs_chance": 0.33,
+      "songs_amount": 15,
+      "recipes_chance": 0.33,
+      "recipes_amount": 3,
+      "recipes_categories": [
+        "CC_AMMO",
+        "CC_ARMOR",
+        "CC_CHEM",
+        "CC_ELECTRONIC",
+        "CC_FOOD",
+        "CC_WEAPON"
+      ],
+      "recipes_level_max": 5
+    },
+    "category": "container",
+    "//": "local copy of the native SD card sans all the random data flags"
   },
   {
+    "id": "software",
     "type": "GENERIC",
-    "abstract": "software_os",
-    "copy-from": "software",
-    "name": { "str": "an operating system", "str_pl": "operating systems" },
+    "name": {
+      "str": "an operating system",
+      "str_pl": "operating systems"
+    },
+    "symbol": "#",
+    "container": "usb_drive",
     "description": "it's a bug if you see this",
-    "flags": [ "IRREMOVABLE", "NO_DROP" ]
+    "flags": [
+      "IRREMOVABLE",
+      "NO_DROP"
+    ]
   },
   {
     "id": "software_os_ubuntu",
     "type": "GENERIC",
-    "copy-from": "software_os",
-    "name": { "str_sp": "Ubuntu" },
-    "description": "Popular Linux distributive, known to be merciful towards new users."
+    "name": {
+      "str_sp": "Ubuntu"
+    },
+    "symbol": "#",
+    "container": "usb_drive",
+    "description": "Popular Linux distributive, known to be merciful towards new users.",
+    "flags": [
+      "IRREMOVABLE",
+      "NO_DROP"
+    ]
   },
   {
     "type": "GENERIC",
-    "name": { "str": "CAD file" },
+    "name": {
+      "str": "CAD file"
+    },
     "abstract": "cad",
     "container": "pd_sd_card",
     "volume": "2 ml",
     "weight": "2 g",
     "description": "it's a bug if you see this",
     "symbol": "#",
-    "flags": [ "IRREMOVABLE", "NO_DROP" ]
+    "flags": [
+      "IRREMOVABLE",
+      "NO_DROP"
+    ]
   }
 ]

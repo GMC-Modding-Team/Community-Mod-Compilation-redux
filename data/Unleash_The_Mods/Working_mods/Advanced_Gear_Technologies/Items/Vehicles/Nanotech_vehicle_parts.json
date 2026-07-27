@@ -78,11 +78,79 @@
   {
     "id": "nanovp_fold",
     "type": "vehicle_part",
+    "copy-from": "nanovp",
     "name": {
       "str": "nanotech vehicle part (foldable)"
     },
+    "color": "light_gray",
+    "broken_color": "dark_gray",
+    "variants": [
+      {
+        "symbols": "]",
+        "symbols_broken": "]"
+      }
+    ],
+    "durability": 1500,
+    "item": "xl_nanite_cluster",
     "description": "Seeing this is a bug - nanovp_fold",
-    "copy-from": "nanovp",
+    "requirements": {
+      "install": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "removal": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "repair": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      }
+    },
+    "breaks_into": [
+      {
+        "item": "xl_nanite_cluster",
+        "count": [
+          1,
+          1
+        ]
+      }
+    ],
+    "damage_reduction": {
+      "all": 200
+    },
     "folding_time": "1 minute",
     "unfolding_time": "1 minute",
     "folded_volume": "2000 ml"
@@ -90,21 +158,84 @@
   {
     "id": "nano_door",
     "type": "vehicle_part",
+    "copy-from": "nanovp_fold",
     "name": {
       "str": "nanotech door"
     },
-    "copy-from": "nanovp_fold",
-    "looks_like": "hdhatch",
+    "color": "light_gray",
+    "broken_color": "dark_gray",
     "variants": [
       {
         "symbols": "+",
         "symbols_broken": "&"
       }
     ],
-    "description": "A very durable barrier composed of nanites acting as a door, it also contains a fine mesh that acts as a window.",
-    "location": "center",
     "durability": 5000,
+    "item": "xl_nanite_cluster",
+    "description": "A very durable barrier composed of nanites acting as a door, it also contains a fine mesh that acts as a window.",
+    "requirements": {
+      "install": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "removal": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "repair": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      }
+    },
+    "breaks_into": [
+      {
+        "item": "xl_nanite_cluster",
+        "count": [
+          1,
+          1
+        ]
+      }
+    ],
+    "damage_reduction": {
+      "all": 400
+    },
+    "folding_time": "1 minute",
+    "unfolding_time": "1 minute",
     "folded_volume": "6250 ml",
+    "looks_like": "hdhatch",
+    "location": "center",
     "size": 200,
     "flags": [
       "AISLE",
@@ -113,48 +244,180 @@
       "OPENABLE",
       "BOARDABLE",
       "WINDOW"
-    ],
-    "damage_reduction": {
-      "all": 400
-    }
+    ]
   },
   {
     "id": "nano_door_opaque",
     "type": "vehicle_part",
+    "copy-from": "nano_door",
     "name": {
       "str": "nanotech iris"
     },
-    "copy-from": "nano_door",
-    "looks_like": "hdhatch_opaque",
+    "color": "light_gray",
+    "broken_color": "dark_gray",
+    "variants": [
+      {
+        "symbols": "+",
+        "symbols_broken": "&"
+      }
+    ],
+    "durability": 5000,
+    "item": "xl_nanite_cluster",
     "description": "A highly durable iris composed of nanites, this blocks sight while also acting as a combination of door and armor.",
-    "location": "center",
-    "extend": {
-      "flags": [
-        "OPAQUE"
-      ]
+    "requirements": {
+      "install": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "removal": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "repair": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      }
     },
-    "delete": {
-      "flags": [
-        "WINDOW"
-      ]
-    }
+    "breaks_into": [
+      {
+        "item": "xl_nanite_cluster",
+        "count": [
+          1,
+          1
+        ]
+      }
+    ],
+    "damage_reduction": {
+      "all": 400
+    },
+    "folding_time": "1 minute",
+    "unfolding_time": "1 minute",
+    "folded_volume": "6250 ml",
+    "looks_like": "hdhatch_opaque",
+    "location": "center",
+    "size": 200,
+    "flags": [
+      "AISLE",
+      "CARGO",
+      "OBSTACLE",
+      "OPENABLE",
+      "BOARDABLE",
+      "OPAQUE"
+    ]
   },
   {
     "id": "nano_boat",
     "type": "vehicle_part",
+    "copy-from": "nanovp_fold",
     "name": {
       "str": "nanotech boat coating"
     },
-    "copy-from": "nanovp_fold",
-    "description": "An outer coating of nanites that work together to seal out water while also providing another layer of protection.",
-    "location": "under",
-    "looks_like": "metal_boat_hull",
+    "color": "light_gray",
+    "broken_color": "dark_gray",
     "variants": [
       {
         "symbols": "H",
         "symbols_broken": "#"
       }
     ],
+    "durability": 1500,
+    "item": "xl_nanite_cluster",
+    "description": "An outer coating of nanites that work together to seal out water while also providing another layer of protection.",
+    "requirements": {
+      "install": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "removal": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "repair": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      }
+    },
+    "breaks_into": [
+      {
+        "item": "xl_nanite_cluster",
+        "count": [
+          1,
+          1
+        ]
+      }
+    ],
+    "damage_reduction": {
+      "all": 200
+    },
+    "folding_time": "1 minute",
+    "unfolding_time": "1 minute",
+    "folded_volume": "2000 ml",
+    "location": "under",
+    "looks_like": "metal_boat_hull",
     "flags": [
       "FLOATS"
     ]
@@ -162,16 +425,82 @@
   {
     "id": "nanovp_turret",
     "type": "vehicle_part",
+    "copy-from": "nanovp_fold",
     "name": {
       "str": "nanotech vehicle turret"
     },
-    "copy-from": "nanovp_fold",
+    "color": "light_gray",
+    "broken_color": "dark_gray",
     "variants": [
       {
         "symbols": "t",
         "symbols_broken": "#"
       }
     ],
+    "durability": 1500,
+    "item": "xl_nanite_cluster",
+    "description": "Seeing this is a bug - nanovp_fold",
+    "requirements": {
+      "install": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "removal": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "repair": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      }
+    },
+    "breaks_into": [
+      {
+        "item": "xl_nanite_cluster",
+        "count": [
+          1,
+          1
+        ]
+      }
+    ],
+    "damage_reduction": {
+      "all": 200
+    },
+    "folding_time": "1 minute",
+    "unfolding_time": "1 minute",
+    "folded_volume": "2000 ml",
     "location": "on_roof",
     "default_ammo": "metal_nanopowder",
     "flags": [
@@ -180,12 +509,68 @@
   },
   {
     "id": "nano_turret_shredder",
-    "copy-from": "nanovp_turret",
     "type": "vehicle_part",
+    "copy-from": "nanovp_turret",
     "name": {
       "str": "nanotech shredder turret"
     },
+    "color": "light_gray",
+    "broken_color": "dark_gray",
+    "variants": [
+      {
+        "symbols": "t",
+        "symbols_broken": "#"
+      }
+    ],
+    "durability": 1500,
+    "item": "nano_turret_shredder",
     "description": "A nanotech shredder adapted for vehicular usage.",
+    "requirements": {
+      "install": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "removal": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "repair": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      }
+    },
     "breaks_into": [
       {
         "item": "nano_turret_shredder",
@@ -195,16 +580,82 @@
         ]
       }
     ],
-    "item": "nano_turret_shredder"
+    "damage_reduction": {
+      "all": 200
+    },
+    "folding_time": "1 minute",
+    "unfolding_time": "1 minute",
+    "folded_volume": "2000 ml",
+    "location": "on_roof",
+    "default_ammo": "metal_nanopowder",
+    "flags": [
+      "USE_TANKS"
+    ]
   },
   {
     "id": "nano_turret_pistol",
-    "copy-from": "nanovp_turret",
     "type": "vehicle_part",
+    "copy-from": "nanovp_turret",
     "name": {
       "str": "nanotech pistol turret"
     },
+    "color": "light_gray",
+    "broken_color": "dark_gray",
+    "variants": [
+      {
+        "symbols": "t",
+        "symbols_broken": "#"
+      }
+    ],
+    "durability": 1500,
+    "item": "nano_turret_pistol",
     "description": "A nanotech pistol adapted for vehicular usage.",
+    "requirements": {
+      "install": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "removal": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "repair": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      }
+    },
     "breaks_into": [
       {
         "item": "nano_turret_pistol",
@@ -214,16 +665,82 @@
         ]
       }
     ],
-    "item": "nano_turret_pistol"
+    "damage_reduction": {
+      "all": 200
+    },
+    "folding_time": "1 minute",
+    "unfolding_time": "1 minute",
+    "folded_volume": "2000 ml",
+    "location": "on_roof",
+    "default_ammo": "metal_nanopowder",
+    "flags": [
+      "USE_TANKS"
+    ]
   },
   {
     "id": "nano_turret_rifle",
-    "copy-from": "nanovp_turret",
     "type": "vehicle_part",
+    "copy-from": "nanovp_turret",
     "name": {
       "str": "nanotech rifle turret"
     },
+    "color": "light_gray",
+    "broken_color": "dark_gray",
+    "variants": [
+      {
+        "symbols": "t",
+        "symbols_broken": "#"
+      }
+    ],
+    "durability": 1500,
+    "item": "nano_turret_rifle",
     "description": "A nanotech rifle adapted for vehicular usage.",
+    "requirements": {
+      "install": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "removal": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "repair": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      }
+    },
     "breaks_into": [
       {
         "item": "nano_turret_rifle",
@@ -233,16 +750,82 @@
         ]
       }
     ],
-    "item": "nano_turret_rifle"
+    "damage_reduction": {
+      "all": 200
+    },
+    "folding_time": "1 minute",
+    "unfolding_time": "1 minute",
+    "folded_volume": "2000 ml",
+    "location": "on_roof",
+    "default_ammo": "metal_nanopowder",
+    "flags": [
+      "USE_TANKS"
+    ]
   },
   {
     "id": "nano_turret_smg",
-    "copy-from": "nanovp_turret",
     "type": "vehicle_part",
+    "copy-from": "nanovp_turret",
     "name": {
       "str": "nanotech SMG turret"
     },
+    "color": "light_gray",
+    "broken_color": "dark_gray",
+    "variants": [
+      {
+        "symbols": "t",
+        "symbols_broken": "#"
+      }
+    ],
+    "durability": 1500,
+    "item": "nano_turret_smg",
     "description": "A nanotech smg adapted for vehicular usage.",
+    "requirements": {
+      "install": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "removal": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "repair": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      }
+    },
     "breaks_into": [
       {
         "item": "nano_turret_smg",
@@ -252,23 +835,98 @@
         ]
       }
     ],
-    "item": "nano_turret_smg"
+    "damage_reduction": {
+      "all": 200
+    },
+    "folding_time": "1 minute",
+    "unfolding_time": "1 minute",
+    "folded_volume": "2000 ml",
+    "location": "on_roof",
+    "default_ammo": "metal_nanopowder",
+    "flags": [
+      "USE_TANKS"
+    ]
   },
   {
     "id": "nano_aisle",
     "type": "vehicle_part",
+    "copy-from": "nanovp_fold",
     "name": {
       "str": "nanotech aisle"
     },
-    "looks_like": "aisle_horizontal",
-    "copy-from": "nanovp_fold",
+    "color": "light_gray",
+    "broken_color": "dark_gray",
     "variants": [
       {
         "symbols": "H",
         "symbols_broken": "#"
       }
     ],
+    "durability": 1500,
+    "item": "xl_nanite_cluster",
     "description": "A nanotech aisle, capable of assisting with lifting nearby objects.",
+    "requirements": {
+      "install": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "removal": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "repair": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      }
+    },
+    "breaks_into": [
+      {
+        "item": "xl_nanite_cluster",
+        "count": [
+          1,
+          1
+        ]
+      }
+    ],
+    "damage_reduction": {
+      "all": 200
+    },
+    "folding_time": "1 minute",
+    "unfolding_time": "1 minute",
+    "folded_volume": "2000 ml",
+    "looks_like": "aisle_horizontal",
     "location": "center",
     "size": 200,
     "flags": [
@@ -288,17 +946,82 @@
   {
     "id": "nano_roof",
     "type": "vehicle_part",
+    "copy-from": "nanovp_fold",
     "name": {
       "str": "nanotech roof"
     },
-    "copy-from": "nanovp_fold",
+    "color": "light_gray",
+    "broken_color": "dark_gray",
     "variants": [
       {
         "symbols": "#",
         "symbols_broken": "#"
       }
     ],
+    "durability": 1500,
+    "item": "xl_nanite_cluster",
     "description": "A nanotech roof that is capable of interfacing with a turret.",
+    "requirements": {
+      "install": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "removal": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "repair": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      }
+    },
+    "breaks_into": [
+      {
+        "item": "xl_nanite_cluster",
+        "count": [
+          1,
+          1
+        ]
+      }
+    ],
+    "damage_reduction": {
+      "all": 200
+    },
+    "folding_time": "1 minute",
+    "unfolding_time": "1 minute",
+    "folded_volume": "2000 ml",
     "location": "roof",
     "flags": [
       "ROOF",
@@ -309,20 +1032,83 @@
   {
     "id": "nt_solar_1",
     "type": "vehicle_part",
+    "copy-from": "nanovp_fold",
     "name": {
       "str": "nanotech solar panel"
     },
-    "copy-from": "nanovp_fold",
+    "color": "yellow",
+    "broken_color": "light_gray",
     "variants": [
       {
         "symbols": "#",
         "symbols_broken": "x"
       }
     ],
-    "color": "yellow",
-    "broken_color": "light_gray",
-    "damage_modifier": 10,
+    "durability": 1500,
+    "item": "xl_nanite_cluster",
     "description": "A large sheet of nanites arranged to capture sunlight and convert it to electrical energy.",
+    "requirements": {
+      "install": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "removal": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "repair": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      }
+    },
+    "breaks_into": [
+      {
+        "item": "xl_nanite_cluster",
+        "count": [
+          1,
+          1
+        ]
+      }
+    ],
+    "damage_reduction": {
+      "all": 200
+    },
+    "folding_time": "1 minute",
+    "unfolding_time": "1 minute",
+    "folded_volume": "2000 ml",
+    "damage_modifier": 10,
     "epower": 5000,
     "location": "on_roof",
     "flags": [
@@ -332,52 +1118,152 @@
   {
     "id": "nt_armor_1",
     "type": "vehicle_part",
+    "copy-from": "nanovp_fold",
     "name": {
       "str": "nanotech passive plating"
     },
-    "copy-from": "nanovp_fold",
+    "color": "green",
+    "broken_color": "light_gray",
     "variants": [
       {
         "symbols": ")",
         "symbols_broken": ")"
       }
     ],
-    "color": "green",
-    "broken_color": "light_gray",
     "durability": 15000,
+    "item": "xl_nanite_cluster",
     "description": "Nanites formed into a self-reinforcing mesh designed to reduce incoming damage.",
+    "requirements": {
+      "install": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "removal": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "repair": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      }
+    },
+    "breaks_into": [
+      {
+        "item": "xl_nanite_cluster",
+        "count": [
+          1,
+          1
+        ]
+      }
+    ],
+    "damage_reduction": {
+      "all": 1600
+    },
+    "folding_time": "1 minute",
+    "unfolding_time": "1 minute",
+    "folded_volume": "2000 ml",
     "damage_modifier": 100,
     "location": "armor",
     "flags": [
       "ARMOR"
-    ],
-    "damage_reduction": {
-      "all": 1600
-    }
+    ]
   },
   {
     "id": "nt_armor_2",
     "type": "vehicle_part",
+    "copy-from": "nanovp_fold",
     "name": {
       "str": "nanotech active plating"
     },
-    "copy-from": "nanovp_fold",
+    "color": "green",
+    "broken_color": "light_gray",
     "variants": [
       {
         "symbols": ")",
         "symbols_broken": ")"
       }
     ],
-    "color": "green",
-    "broken_color": "light_gray",
     "durability": 10000,
-    "description": "Nanites formed into a highly active mesh designed to shred anything they collide with.",
-    "damage_modifier": 1000,
     "item": "xl_nanite_ai",
-    "location": "armor",
-    "flags": [
-      "ARMOR"
-    ],
+    "description": "Nanites formed into a highly active mesh designed to shred anything they collide with.",
+    "requirements": {
+      "install": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "removal": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "repair": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      }
+    },
     "breaks_into": [
       {
         "item": "xl_nanite_ai",
@@ -389,31 +1275,80 @@
     ],
     "damage_reduction": {
       "all": 500
-    }
+    },
+    "folding_time": "1 minute",
+    "unfolding_time": "1 minute",
+    "folded_volume": "2000 ml",
+    "damage_modifier": 1000,
+    "location": "armor",
+    "flags": [
+      "ARMOR"
+    ]
   },
   {
     "id": "nt_fluid_tank_1",
     "type": "vehicle_part",
+    "copy-from": "nanovp_fold",
     "name": {
       "str": "nanotech compression tank (1000L )"
     },
-    "copy-from": "nanovp_fold",
+    "color": "light_blue",
+    "broken_color": "red",
     "variants": [
       {
         "symbols": "O",
         "symbols_broken": ")"
       }
     ],
-    "color": "light_blue",
-    "broken_color": "red",
-    "damage_modifier": 80,
-    "folded_volume": "4 L",
-    "description": "Collection of nanites formed into a hollow sphere with a complex mechanism to compress and decompress liquid to extreme levels.",
+    "durability": 1500,
     "item": "nano_container",
-    "location": "fuel_source",
-    "flags": [
-      "FLUIDTANK"
-    ],
+    "description": "Collection of nanites formed into a hollow sphere with a complex mechanism to compress and decompress liquid to extreme levels.",
+    "requirements": {
+      "install": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "removal": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "repair": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      }
+    },
     "breaks_into": [
       {
         "item": "nano_container",
@@ -422,29 +1357,83 @@
           1
         ]
       }
+    ],
+    "damage_reduction": {
+      "all": 200
+    },
+    "folding_time": "1 minute",
+    "unfolding_time": "1 minute",
+    "folded_volume": "4 L",
+    "damage_modifier": 80,
+    "location": "fuel_source",
+    "flags": [
+      "FLUIDTANK"
     ]
   },
   {
     "id": "nt_storage",
     "type": "vehicle_part",
+    "copy-from": "nanovp_fold",
     "name": {
       "str": "nanotech 'shoggoth' storage node"
     },
-    "copy-from": "nanovp_fold",
+    "color": "light_gray",
+    "broken_color": "dark_gray",
     "variants": [
       {
         "symbols": "=",
         "symbols_broken": "#"
       }
     ],
-    "description": "A large blob of nanites with an AI, it actively branches out pseudopods to grasp items held near it and supports them as optimally as possible",
-    "size": 5000,
+    "durability": 1500,
     "item": "nano_storage",
-    "location": "center",
-    "flags": [
-      "BOARDABLE",
-      "CARGO"
-    ],
+    "description": "A large blob of nanites with an AI, it actively branches out pseudopods to grasp items held near it and supports them as optimally as possible",
+    "requirements": {
+      "install": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "removal": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "repair": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      }
+    },
     "breaks_into": [
       {
         "item": "nano_storage",
@@ -453,17 +1442,101 @@
           1
         ]
       }
+    ],
+    "damage_reduction": {
+      "all": 200
+    },
+    "folding_time": "1 minute",
+    "unfolding_time": "1 minute",
+    "folded_volume": "2000 ml",
+    "size": 5000,
+    "location": "center",
+    "flags": [
+      "BOARDABLE",
+      "CARGO"
     ]
   },
   {
     "id": "nt_crafter",
     "type": "vehicle_part",
+    "copy-from": "nt_storage",
     "name": {
       "str": "nanotech crafting node"
     },
-    "copy-from": "nt_storage",
+    "color": "light_gray",
+    "broken_color": "dark_gray",
+    "variants": [
+      {
+        "symbols": "=",
+        "symbols_broken": "#"
+      }
+    ],
+    "durability": 1500,
+    "item": "nano_storage",
     "description": "A large blob of nanites with an AI, it actively branches out pseudopods to assist with crafting efforts performed nearby.  Additionally, it will act as most tools upon command.",
+    "requirements": {
+      "install": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "removal": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "repair": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      }
+    },
+    "breaks_into": [
+      {
+        "item": "nano_storage",
+        "count": [
+          1,
+          1
+        ]
+      }
+    ],
+    "damage_reduction": {
+      "all": 200
+    },
+    "folding_time": "1 minute",
+    "unfolding_time": "1 minute",
+    "folded_volume": "2000 ml",
     "size": 3000,
+    "location": "center",
     "flags": [
       "BOARDABLE",
       "KITCHEN",
@@ -486,18 +1559,83 @@
   {
     "id": "nano_fridge",
     "type": "vehicle_part",
+    "copy-from": "nanovp_fold",
     "name": {
       "str": "nanotech fridge"
     },
-    "looks_like": "minifridge",
-    "copy-from": "nanovp_fold",
+    "color": "light_gray",
+    "broken_color": "dark_gray",
     "variants": [
       {
         "symbols": "=",
         "symbols_broken": "#"
       }
     ],
+    "durability": 1500,
+    "item": "xl_nanite_cluster",
     "description": "Collection of nanites formed into a hollow container, a large portion of their power is devoted to maintaining a cool temperature, leading to them being immobile and blocking passage.",
+    "requirements": {
+      "install": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "removal": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "repair": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      }
+    },
+    "breaks_into": [
+      {
+        "item": "xl_nanite_cluster",
+        "count": [
+          1,
+          1
+        ]
+      }
+    ],
+    "damage_reduction": {
+      "all": 200
+    },
+    "folding_time": "1 minute",
+    "unfolding_time": "1 minute",
+    "folded_volume": "2000 ml",
+    "looks_like": "minifridge",
     "size": 2000,
     "location": "center",
     "flags": [
@@ -510,12 +1648,85 @@
   {
     "id": "nano_freezer",
     "type": "vehicle_part",
+    "copy-from": "nano_fridge",
     "name": {
       "str": "nanotech freezer"
     },
-    "looks_like": "minifreezer",
-    "copy-from": "nano_fridge",
+    "color": "light_gray",
+    "broken_color": "dark_gray",
+    "variants": [
+      {
+        "symbols": "=",
+        "symbols_broken": "#"
+      }
+    ],
+    "durability": 1500,
+    "item": "xl_nanite_cluster",
     "description": "Collection of nanites formed into a hollow container, a large portion of their power is devoted to maintaining a frozen temperature, leading to them being immobile and blocking passage.",
+    "requirements": {
+      "install": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "removal": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "repair": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      }
+    },
+    "breaks_into": [
+      {
+        "item": "xl_nanite_cluster",
+        "count": [
+          1,
+          1
+        ]
+      }
+    ],
+    "damage_reduction": {
+      "all": 200
+    },
+    "folding_time": "1 minute",
+    "unfolding_time": "1 minute",
+    "folded_volume": "2000 ml",
+    "looks_like": "minifreezer",
+    "size": 2000,
+    "location": "center",
     "flags": [
       "OBSTACLE",
       "CARGO",
@@ -526,106 +1737,67 @@
   {
     "id": "nanofactory_vehicle_1",
     "type": "vehicle_part",
+    "copy-from": "nanovp",
     "name": {
       "str": "installed nanofactory MK I"
     },
-    "copy-from": "nanovp",
+    "color": "light_green",
+    "broken_color": "blue",
     "variants": [
       {
         "symbols": "#",
         "symbols_broken": "0"
       }
     ],
-    "color": "light_green",
-    "broken_color": "blue",
-    "damage_modifier": 10,
     "durability": 2000,
-    "description": "A large and bulky prototype nanofactory sitting on a frame somehow not functioning properly",
-    "epower": -1,
-    "bonus": 600,
     "item": "nanofactory_1",
-    "location": "center",
-    "flags": [
-      "RECHARGE",
-      "FORGE",
-      "CHEMLAB",
-      "CRAFTRIG",
-      "WELDRIG",
-      "KITCHEN",
-      "ENABLED_DRAINS_EPOWER",
-      "WATER_PURIFIER",
-      "FAUCET",
-      "NO_INSTALL_HIDDEN"
-    ],
-    "pseudo_tools": [
-      {
-        "id": "hotplate",
-        "hotkey": "h"
+    "description": "A large and bulky prototype nanofactory sitting on a frame somehow not functioning properly",
+    "requirements": {
+      "install": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
       },
-      {
-        "id": "pot",
-        "hotkey": "p"
+      "removal": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
       },
-      {
-        "id": "pan"
-      },
-      {
-        "id": "welder",
-        "hotkey": "w"
-      },
-      {
-        "id": "soldering_iron",
-        "hotkey": "s"
-      },
-      {
-        "id": "anvil",
-        "hotkey": "a"
-      },
-      {
-        "id": "can_sealer"
-      },
-      {
-        "id": "crucible",
-        "hotkey": "c"
-      },
-      {
-        "id": "mold_plastic",
-        "hotkey": "w"
-      },
-      {
-        "id": "pastaextruder"
-      },
-      {
-        "id": "polisher"
-      },
-      {
-        "id": "puller"
-      },
-      {
-        "id": "swage"
-      },
-      {
-        "id": "tongs"
-      },
-      {
-        "id": "vac_sealer"
-      },
-      {
-        "id": "dehydrator"
-      },
-      {
-        "id": "press"
-      },
-      {
-        "id": "chemistry_set"
-      },
-      {
-        "id": "forge"
-      },
-      {
-        "id": "nanofactory_1"
+      "repair": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
       }
-    ],
+    },
     "breaks_into": [
       {
         "item": "nanofactory_1",
@@ -634,29 +1806,13 @@
           1
         ]
       }
-    ]
-  },
-  {
-    "id": "nanofactory_vehicle_2",
-    "type": "vehicle_part",
-    "name": {
-      "str": "installed nanofactory MK II"
-    },
-    "copy-from": "nanovp",
-    "variants": [
-      {
-        "symbols": "=",
-        "symbols_broken": "0"
-      }
     ],
-    "color": "light_green",
-    "broken_color": "blue",
+    "damage_reduction": {
+      "all": 200
+    },
     "damage_modifier": 10,
-    "durability": 2000,
-    "description": "A large and bulky nanofactory sitting on a frame somehow not functioning properly.",
     "epower": -1,
     "bonus": 600,
-    "item": "nanofactory_2",
     "location": "center",
     "flags": [
       "RECHARGE",
@@ -738,7 +1894,72 @@
       {
         "id": "nanofactory_1"
       }
+    ]
+  },
+  {
+    "id": "nanofactory_vehicle_2",
+    "type": "vehicle_part",
+    "copy-from": "nanovp",
+    "name": {
+      "str": "installed nanofactory MK II"
+    },
+    "color": "light_green",
+    "broken_color": "blue",
+    "variants": [
+      {
+        "symbols": "=",
+        "symbols_broken": "0"
+      }
     ],
+    "durability": 2000,
+    "item": "nanofactory_2",
+    "description": "A large and bulky nanofactory sitting on a frame somehow not functioning properly.",
+    "requirements": {
+      "install": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "removal": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "repair": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      }
+    },
     "breaks_into": [
       {
         "item": "nanofactory_2",
@@ -747,30 +1968,160 @@
           1
         ]
       }
+    ],
+    "damage_reduction": {
+      "all": 200
+    },
+    "damage_modifier": 10,
+    "epower": -1,
+    "bonus": 600,
+    "location": "center",
+    "flags": [
+      "RECHARGE",
+      "FORGE",
+      "CHEMLAB",
+      "CRAFTRIG",
+      "WELDRIG",
+      "KITCHEN",
+      "ENABLED_DRAINS_EPOWER",
+      "WATER_PURIFIER",
+      "FAUCET",
+      "NO_INSTALL_HIDDEN"
+    ],
+    "pseudo_tools": [
+      {
+        "id": "hotplate",
+        "hotkey": "h"
+      },
+      {
+        "id": "pot",
+        "hotkey": "p"
+      },
+      {
+        "id": "pan"
+      },
+      {
+        "id": "welder",
+        "hotkey": "w"
+      },
+      {
+        "id": "soldering_iron",
+        "hotkey": "s"
+      },
+      {
+        "id": "anvil",
+        "hotkey": "a"
+      },
+      {
+        "id": "can_sealer"
+      },
+      {
+        "id": "crucible",
+        "hotkey": "c"
+      },
+      {
+        "id": "mold_plastic",
+        "hotkey": "w"
+      },
+      {
+        "id": "pastaextruder"
+      },
+      {
+        "id": "polisher"
+      },
+      {
+        "id": "puller"
+      },
+      {
+        "id": "swage"
+      },
+      {
+        "id": "tongs"
+      },
+      {
+        "id": "vac_sealer"
+      },
+      {
+        "id": "dehydrator"
+      },
+      {
+        "id": "press"
+      },
+      {
+        "id": "chemistry_set"
+      },
+      {
+        "id": "forge"
+      },
+      {
+        "id": "nanofactory_1"
+      }
     ]
   },
   {
     "id": "nanotech_battery",
     "type": "vehicle_part",
+    "copy-from": "nanovp_fold",
     "name": {
       "str": "nanotech storage array"
     },
-    "copy-from": "nanovp_fold",
-    "item": "nanotech_battery",
-    "location": "fuel_source",
+    "color": "yellow",
+    "broken_color": "red",
     "variants": [
       {
         "symbols": "O",
         "symbols_broken": "#"
       }
     ],
-    "color": "yellow",
-    "broken_color": "red",
+    "durability": 1500,
+    "item": "nanotech_battery",
     "description": "A mass of nanites programmed to store vast amounts of power.",
-    "damage_modifier": 50,
-    "flags": [
-      "RECHARGE"
-    ],
+    "requirements": {
+      "install": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "removal": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "repair": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      }
+    },
     "breaks_into": [
       {
         "item": "nanotech_battery",
@@ -779,36 +2130,83 @@
           1
         ]
       }
+    ],
+    "damage_reduction": {
+      "all": 200
+    },
+    "folding_time": "1 minute",
+    "unfolding_time": "1 minute",
+    "folded_volume": "2000 ml",
+    "location": "fuel_source",
+    "damage_modifier": 50,
+    "flags": [
+      "RECHARGE"
     ]
   },
   {
     "id": "nanotech_generator",
     "type": "vehicle_part",
+    "copy-from": "nanovp_fold",
     "name": {
       "str": "nanotech power generator"
     },
-    "copy-from": "nanovp_fold",
-    "item": "nanotech_generator",
-    "location": "engine_block",
-    "fuel_type": "null",
-    "power": 100,
+    "color": "yellow",
+    "broken_color": "red",
     "variants": [
       {
         "symbols": "O",
         "symbols_broken": "#"
       }
     ],
-    "color": "yellow",
-    "broken_color": "red",
-    "epower": 45000,
-    "size": 100,
+    "durability": 1500,
+    "item": "nanotech_generator",
     "description": "A mass of nanites and power cells optimized for generating power.",
-    "damage_modifier": 50,
-    "flags": [
-      "REACTOR",
-      "PERPETUAL",
-      "CARGO"
-    ],
+    "requirements": {
+      "install": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "removal": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "repair": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      }
+    },
     "breaks_into": [
       {
         "item": "nanotech_generator",
@@ -817,27 +2215,59 @@
           1
         ]
       }
+    ],
+    "damage_reduction": {
+      "all": 200
+    },
+    "folding_time": "1 minute",
+    "unfolding_time": "1 minute",
+    "folded_volume": "2000 ml",
+    "location": "engine_block",
+    "fuel_type": "null",
+    "power": 100,
+    "epower": 45000,
+    "size": 100,
+    "damage_modifier": 50,
+    "flags": [
+      "REACTOR",
+      "PERPETUAL",
+      "CARGO"
     ]
   },
   {
     "id": "nanotech_anima",
-    "copy-from": "engine_electric_large",
     "type": "vehicle_part",
+    "copy-from": "engine_electric_large",
     "name": {
       "str": "nanotech anima"
     },
-    "proportional": {
-      "energy_consumption": 0.25,
-      "power": 9
-    },
     "item": "xl_nanite_ai",
-    "durability": 5000,
+    "categories": [
+      "movement"
+    ],
+    "location": "engine_block",
     "description": "A mass of nanites programmed to locate mechanical power systems and interface with them to provide mechanical power.",
     "noise_factor": 0,
+    "m2c": 90,
+    "fuel_type": "battery",
+    "color": "yellow",
+    "broken_color": "red",
+    "flags": [
+      "ENGINE",
+      "E_HEATER",
+      "E_STARTS_INSTANTLY"
+    ],
+    "variants": [
+      {
+        "symbols": "*",
+        "symbols_broken": "#"
+      }
+    ],
+    "durability": 5000,
+    "power": "150000 W",
+    "energy_consumption": "163 kW",
     "damage_modifier": 80,
-    "folding_time": "1 minute",
-    "unfolding_time": "1 minute",
-    "folded_volume": "2 L",
+    "//": "30 cm weld per quadrant of damage",
     "requirements": {
       "install": {
         "skills": [
@@ -882,14 +2312,6 @@
         ]
       }
     },
-    "damage_reduction": {
-      "all": 200
-    },
-    "flags": [
-      "ENGINE",
-      "E_HEATER",
-      "E_STARTS_INSTANTLY"
-    ],
     "breaks_into": [
       {
         "item": "xl_nanite_ai",
@@ -898,16 +2320,23 @@
           1
         ]
       }
-    ]
+    ],
+    "damage_reduction": {
+      "all": 200
+    },
+    "folding_time": "1 minute",
+    "unfolding_time": "1 minute",
+    "folded_volume": "2 L"
   },
   {
     "id": "nanotech_crawler",
     "type": "vehicle_part",
+    "copy-from": "nanovp_fold",
     "name": {
       "str": "nanotech crawler"
     },
-    "copy-from": "nanovp_fold",
-    "item": "nano_crawler",
+    "color": "light_gray",
+    "broken_color": "dark_gray",
     "variants": [
       {
         "symbols": "|",
@@ -915,14 +2344,54 @@
       }
     ],
     "durability": 15000,
+    "item": "nano_crawler",
     "description": "A mass of nanites optimized for travel across any land-based surface while lifting a larger object.",
-    "damage_modifier": 120,
-    "qualities": [
-      [
-        "SELF_JACK",
-        40
-      ]
-    ],
+    "requirements": {
+      "install": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "removal": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "repair": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      }
+    },
     "breaks_into": [
       {
         "item": "nano_crawler",
@@ -931,6 +2400,19 @@
           1
         ]
       }
+    ],
+    "damage_reduction": {
+      "all": 200
+    },
+    "folding_time": "1 minute",
+    "unfolding_time": "1 minute",
+    "folded_volume": "2000 ml",
+    "damage_modifier": 120,
+    "qualities": [
+      [
+        "SELF_JACK",
+        40
+      ]
     ],
     "rolling_resistance": 1.25,
     "wheel_offroad_rating": 1,
@@ -958,21 +2440,85 @@
   {
     "id": "nanotech_control",
     "type": "vehicle_part",
+    "copy-from": "nanovp_fold",
     "name": {
       "str": "nanotech control pod"
     },
-    "copy-from": "nanovp_fold",
-    "looks_like": "seat",
+    "color": "light_gray",
+    "broken_color": "dark_gray",
     "variants": [
       {
         "symbols": "#",
         "symbols_broken": "#"
       }
     ],
+    "durability": 1500,
+    "item": "xl_nanite_ai",
+    "description": "A large blob of nanites you can enter, it acts as a combined control system, chair, and camera control system all in one.",
+    "requirements": {
+      "install": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "removal": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "repair": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      }
+    },
+    "breaks_into": [
+      {
+        "item": "xl_nanite_ai",
+        "count": [
+          1,
+          1
+        ]
+      }
+    ],
+    "damage_reduction": {
+      "all": 200
+    },
+    "folding_time": "1 minute",
+    "unfolding_time": "1 minute",
+    "folded_volume": "2000 ml",
+    "looks_like": "seat",
     "damage_modifier": 20,
     "bonus": 50,
-    "description": "A large blob of nanites you can enter, it acts as a combined control system, chair, and camera control system all in one.",
-    "item": "xl_nanite_ai",
     "epower": -500,
     "location": "center",
     "flags": [
@@ -987,32 +2533,88 @@
       "CAMERA",
       "CAMERA_CONTROL",
       "ENABLED_DRAINS_EPOWER"
-    ],
-    "breaks_into": [
-      {
-        "item": "xl_nanite_ai",
-        "count": [
-          1,
-          1
-        ]
-      }
     ]
   },
   {
     "id": "nanotech_shockmesh",
     "type": "vehicle_part",
+    "copy-from": "nanovp_fold",
     "name": {
       "str": "nanotech shock mesh"
     },
-    "copy-from": "nanovp_fold",
+    "color": "light_gray",
+    "broken_color": "dark_gray",
     "variants": [
       {
         "symbols": ",",
         "symbols_broken": ","
       }
     ],
-    "damage_modifier": 10,
+    "durability": 1500,
+    "item": "xl_nanite_cluster",
     "description": "A series of straps attached to the seat, intended to fasten together after going over your shoulders and hips and between your legs.",
+    "requirements": {
+      "install": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "removal": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "repair": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      }
+    },
+    "breaks_into": [
+      {
+        "item": "xl_nanite_cluster",
+        "count": [
+          1,
+          1
+        ]
+      }
+    ],
+    "damage_reduction": {
+      "all": 200
+    },
+    "folding_time": "1 minute",
+    "unfolding_time": "1 minute",
+    "folded_volume": "2000 ml",
+    "damage_modifier": 10,
     "bonus": 150,
     "location": "on_seat",
     "flags": [
@@ -1022,19 +2624,84 @@
   {
     "id": "nanocam",
     "type": "vehicle_part",
+    "copy-from": "nanovp_fold",
     "name": {
       "str": "nanotech sensor array"
     },
-    "copy-from": "nanovp_fold",
-    "looks_like": "omnicam",
+    "color": "light_gray",
+    "broken_color": "dark_gray",
     "variants": [
       {
         "symbols": "o",
         "symbols_broken": "o"
       }
     ],
-    "damage_modifier": 10,
+    "durability": 1500,
+    "item": "xl_nanite_cluster",
     "description": "Advanced nanotech sensor array with basic armor, can transmit video to a camera control system or a nanotech control pod.",
+    "requirements": {
+      "install": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "removal": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      },
+      "repair": {
+        "skills": [
+          [
+            "computer",
+            0
+          ]
+        ],
+        "time": "6 m",
+        "qualities": [
+          {
+            "id": "NANO_PRO",
+            "level": 1
+          }
+        ]
+      }
+    },
+    "breaks_into": [
+      {
+        "item": "xl_nanite_cluster",
+        "count": [
+          1,
+          1
+        ]
+      }
+    ],
+    "damage_reduction": {
+      "all": 200
+    },
+    "folding_time": "1 minute",
+    "unfolding_time": "1 minute",
+    "folded_volume": "2000 ml",
+    "looks_like": "omnicam",
+    "damage_modifier": 10,
     "bonus": 60,
     "epower": -275,
     "location": "on_roof",

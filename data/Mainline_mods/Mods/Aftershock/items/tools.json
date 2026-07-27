@@ -179,13 +179,72 @@
       "str_pl": "motion scanners (on)"
     },
     "description": "This active motion scanner will survey your surroundings every ten seconds and audibly alert you when movement is detected.  Wielding it will accurately reveal the location of motion sources.",
-    "revert_to": "afs_motion_sensor",
+    "weight": "680 g",
+    "volume": "650 ml",
+    "price": "6 kUSD",
+    "longest_side": "20 cm",
+    "to_hit": -2,
+    "material": [
+      "plastic",
+      "steel"
+    ],
+    "symbol": "(",
+    "color": "yellow",
+    "ammo": [
+      "battery"
+    ],
+    "charges_per_use": 1,
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "rigid": true,
+        "flag_restriction": [
+          "BATTERY_MEDIUM"
+        ],
+        "default_magazine": "medium_battery_cell"
+      }
+    ],
+    "relic_data": {
+      "passive_effects": [
+        {
+          "id": "afs_motion_sensor_wield"
+        },
+        {
+          "has": "HELD",
+          "condition": "ALWAYS",
+          "name": {
+            "str": "Passive Motion Detection"
+          },
+          "description": "Passively detects movement at 10 second intervals.",
+          "intermittent_activation": {
+            "effects": [
+              {
+                "frequency": "10 seconds",
+                "spell_effects": [
+                  {
+                    "id": "afs_motion_sensor_spell"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "flags": [
+      "BELT_CLIP",
+      "MUNDANE"
+    ],
     "use_action": {
       "menu_text": "Deactivate",
       "type": "transform",
       "target": "afs_motion_sensor",
       "msg": "The %s screen flashes briefly before fading out."
-    }
+    },
+    "melee_damage": {
+      "bash": 6
+    },
+    "revert_to": "afs_motion_sensor"
   },
   {
     "id": "afs_plasma_torch",
@@ -198,8 +257,8 @@
     "weight": "4200 g",
     "volume": "4500 ml",
     "longest_side": "60 cm",
-    "price": "350 USD",
-    "price_postapoc": "350 USD",
+    "price": 350,
+    "price_postapoc": 350,
     "material": [
       "steel",
       "plastic"
@@ -237,13 +296,24 @@
   },
   {
     "id": "afs_atomic_smartphone_music",
-    "copy-from": "afs_atomic_smartphone",
     "type": "TOOL",
+    "copy-from": "afs_atomic_smartphone",
     "name": {
       "str": "atomic smartphone - music",
       "str_pl": "atomic smartphones - music"
     },
     "description": "This phone is playing music, steadily raising your morale.  You can't hear anything else while you're listening.",
+    "weight": "300 g",
+    "volume": "50 ml",
+    "price": "2 kUSD",
+    "price_postapoc": 25,
+    "material": [
+      "plastic",
+      "aluminum"
+    ],
+    "looks_like": "cell_phone",
+    "symbol": ";",
+    "color": "light_green",
     "revert_to": "afs_atomic_smartphone",
     "use_action": [
       "PORTABLE_GAME",
@@ -252,23 +322,35 @@
       "EBOOKREAD",
       "MP3_DEACTIVATE"
     ],
+    "flags": [
+      "WATCH",
+      "ALARMCLOCK",
+      "TRADER_AVOID"
+    ],
     "tick_action": [
       "MP3_ON"
-    ],
-    "extend": {
-      "flags": [
-        "TRADER_AVOID"
-      ]
-    }
+    ]
   },
   {
     "id": "afs_atomic_smartphone_flashlight",
-    "copy-from": "afs_atomic_smartphone",
     "type": "TOOL",
+    "copy-from": "afs_atomic_smartphone",
     "name": {
       "str": "atomic smartphone - Flashlight",
       "str_pl": "atomic smartphones - Flashlight"
     },
+    "description": "Never charge your phone again with the Rivtech atomic smartphone.  Rated for 10 million years of use, this cutting-edge gadget had been on public markets for less than a week when the Cataclysm hit, and their eye-watering price made them a rarity.  It includes an alarm clock, a high-resolution camera, and a bright flashlight.",
+    "weight": "300 g",
+    "volume": "50 ml",
+    "price": "2 kUSD",
+    "price_postapoc": 25,
+    "material": [
+      "plastic",
+      "aluminum"
+    ],
+    "looks_like": "cell_phone",
+    "symbol": ";",
+    "color": "light_green",
     "revert_to": "afs_atomic_smartphone",
     "use_action": [
       "PORTABLE_GAME",
@@ -282,30 +364,36 @@
         "type": "transform"
       }
     ],
+    "flags": [
+      "WATCH",
+      "ALARMCLOCK",
+      "TRADER_AVOID",
+      "LIGHT_25"
+    ],
     "tick_action": [
       "MP3_ON"
-    ],
-    "extend": {
-      "flags": [
-        "TRADER_AVOID",
-        "LIGHT_25"
-      ]
-    }
+    ]
   },
   {
     "id": "afs_wraitheon_smartphone",
     "type": "TOOL",
+    "copy-from": "afs_atomic_smartphone",
     "name": {
       "str": "Wraitheon executive's smartphone"
     },
-    "copy-from": "afs_atomic_smartphone",
     "description": "Your custom crafted atomic smartphone.  Most notably a confidential executive-level override program allows you to remotely control most robots.",
+    "weight": "300 g",
+    "volume": "50 ml",
     "price": 20000000,
     "price_postapoc": 250000,
     "material": [
       "superalloy",
       "aluminum"
     ],
+    "looks_like": "cell_phone",
+    "symbol": ";",
+    "color": "light_green",
+    "revert_to": "afs_atomic_smartphone_flashlight",
     "use_action": [
       {
         "target": "afs_atomic_wraitheon_flashlight",
@@ -323,6 +411,10 @@
       "EBOOKSAVE",
       "EBOOKREAD"
     ],
+    "flags": [
+      "WATCH",
+      "ALARMCLOCK"
+    ],
     "pocket_data": [
       {
         "pocket_type": "EBOOK",
@@ -335,13 +427,24 @@
   },
   {
     "id": "afs_atomic_wraitheon_music",
-    "copy-from": "afs_wraitheon_smartphone",
     "type": "TOOL",
+    "copy-from": "afs_wraitheon_smartphone",
     "name": {
       "str": "Wraitheon executive's smartphone - music",
       "str_pl": "Wraitheon executive's smartphones - music"
     },
     "description": "This phone is playing music, steadily raising your morale.  You can't hear anything else while you're listening.",
+    "weight": "300 g",
+    "volume": "50 ml",
+    "price": 20000000,
+    "price_postapoc": 250000,
+    "material": [
+      "superalloy",
+      "aluminum"
+    ],
+    "looks_like": "cell_phone",
+    "symbol": ";",
+    "color": "light_green",
     "revert_to": "afs_atomic_smartphone",
     "use_action": [
       "PORTABLE_GAME",
@@ -350,23 +453,44 @@
       "EBOOKREAD",
       "MP3_DEACTIVATE"
     ],
-    "extend": {
-      "flags": [
-        "TRADER_AVOID"
-      ]
-    },
+    "flags": [
+      "WATCH",
+      "ALARMCLOCK",
+      "TRADER_AVOID"
+    ],
+    "pocket_data": [
+      {
+        "pocket_type": "EBOOK",
+        "rigid": true,
+        "max_contains_volume": "1 ml",
+        "max_contains_weight": "1 g",
+        "weight_multiplier": 0.0
+      }
+    ],
     "tick_action": [
       "MP3_ON"
     ]
   },
   {
     "id": "afs_atomic_wraitheon_flashlight",
-    "copy-from": "afs_atomic_smartphone_flashlight",
     "type": "TOOL",
+    "copy-from": "afs_atomic_smartphone_flashlight",
     "name": {
       "str": "Executive's smartphone - Flashlight",
       "str_pl": "Executive's smartphones - Flashlight"
     },
+    "description": "Never charge your phone again with the Rivtech atomic smartphone.  Rated for 10 million years of use, this cutting-edge gadget had been on public markets for less than a week when the Cataclysm hit, and their eye-watering price made them a rarity.  It includes an alarm clock, a high-resolution camera, and a bright flashlight.",
+    "weight": "300 g",
+    "volume": "50 ml",
+    "price": "2 kUSD",
+    "price_postapoc": 25,
+    "material": [
+      "plastic",
+      "aluminum"
+    ],
+    "looks_like": "cell_phone",
+    "symbol": ";",
+    "color": "light_green",
     "revert_to": "afs_atomic_smartphone",
     "use_action": [
       "PORTABLE_GAME",
@@ -379,7 +503,13 @@
         "menu_text": "Turn off flashlight",
         "type": "transform"
       }
-    ]
+    ],
+    "flags": [
+      "WATCH",
+      "ALARMCLOCK",
+      "LIGHT_25"
+    ],
+    "//": "since we cost no battery, no reason not to keep these"
   },
   {
     "id": "afs_atompot",
@@ -387,7 +517,6 @@
     "name": {
       "str": "atompot"
     },
-    "copy-from": "pressure_cooker",
     "description": "Rivtech's premiere self-heating kitchen appliance, complete with lid, hand-crafted with the power of the atom to reach any temperature in thirty seconds.  As bulky as it is, its plutonium power source means that it can be used to cook an absurd amount of meals without ever worrying about running low on power.  Unsurprisingly, sales weren't particularly good because of the prospect of irradiating your food, but internal shielding ensures that only trace amounts find their way into the center.",
     "price": 30000,
     "price_postapoc": 5000,
@@ -496,21 +625,58 @@
   },
   {
     "id": "afs_power_cutter_on",
-    "copy-from": "afs_power_cutter",
     "type": "TOOL",
+    "copy-from": "afs_power_cutter",
     "name": {
       "str": "power cutter (on)",
       "str_pl": "power cutters (on)"
     },
     "description": "A huge, gas-powered saw with a diamond blade, currently a whirling blur.  It's consuming gasoline, but can be used as a fantastic tool for cutting metal.  You can also use it as a terrifying weapon, if you're into that sort of thing.",
-    "turns_per_charge": 3,
-    "revert_to": "afs_power_cutter",
+    "weight": "9979 g",
+    "volume": "3 L",
+    "price": "100000 cent",
+    "price_postapoc": "10000 cent",
+    "to_hit": -3,
+    "material": [
+      "steel",
+      "plastic",
+      "diamond"
+    ],
+    "symbol": "/",
+    "looks_like": "circsaw_off",
+    "color": "light_red",
+    "ammo": [
+      "gasoline"
+    ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE",
+        "rigid": true,
+        "watertight": true,
+        "ammo_restriction": {
+          "gasoline": 500
+        }
+      }
+    ],
+    "charges_per_use": 1,
     "use_action": {
       "target": "afs_power_cutter",
       "msg": "Your power cutter falls quiet.",
       "menu_text": "Turn off",
       "type": "transform"
     },
+    "flags": [
+      "ALWAYS_TWOHAND",
+      "MESSY",
+      "TRADER_AVOID",
+      "NONCONDUCTIVE"
+    ],
+    "melee_damage": {
+      "bash": 7,
+      "cut": 80
+    },
+    "turns_per_charge": 3,
+    "revert_to": "afs_power_cutter",
     "qualities": [
       [
         "CUT",
@@ -528,17 +694,7 @@
         "BUTCHER",
         -70
       ]
-    ],
-    "flags": [
-      "ALWAYS_TWOHAND",
-      "MESSY",
-      "TRADER_AVOID",
-      "NONCONDUCTIVE"
-    ],
-    "melee_damage": {
-      "bash": 7,
-      "cut": 80
-    }
+    ]
   },
   {
     "id": "afs_murdersaw",
@@ -592,22 +748,58 @@
   },
   {
     "id": "afs_murdersaw_on",
-    "copy-from": "afs_murdersaw",
     "type": "TOOL",
+    "copy-from": "afs_murdersaw",
     "name": {
       "str": "murdersaw (on)",
       "str_pl": "murdersaws (on)"
     },
     "description": "This fearsome weapon is currently whirring loudly and shaking with the force of its own power.  Use it to turn it off.",
+    "weight": "4301 g",
+    "volume": "2 L",
+    "price": "100000 cent",
+    "price_postapoc": "30000 cent",
     "to_hit": 2,
-    "turns_per_charge": 5,
-    "revert_to": "afs_murdersaw",
+    "material": [
+      "steel",
+      "plastic",
+      "diamond"
+    ],
+    "symbol": "/",
+    "looks_like": "circsaw_off",
+    "color": "yellow",
+    "ammo": [
+      "gasoline"
+    ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE",
+        "rigid": true,
+        "watertight": true,
+        "ammo_restriction": {
+          "gasoline": 500
+        }
+      }
+    ],
+    "charges_per_use": 1,
     "use_action": {
       "target": "afs_murdersaw",
       "msg": "Your murdersaw falls quiet.",
       "menu_text": "Turn off",
       "type": "transform"
     },
+    "flags": [
+      "ALWAYS_TWOHAND",
+      "MESSY",
+      "TRADER_AVOID",
+      "NONCONDUCTIVE"
+    ],
+    "melee_damage": {
+      "bash": 6,
+      "cut": 80
+    },
+    "turns_per_charge": 5,
+    "revert_to": "afs_murdersaw",
     "qualities": [
       [
         "CUT",
@@ -621,17 +813,7 @@
         "BUTCHER",
         -50
       ]
-    ],
-    "flags": [
-      "ALWAYS_TWOHAND",
-      "MESSY",
-      "TRADER_AVOID",
-      "NONCONDUCTIVE"
-    ],
-    "melee_damage": {
-      "bash": 6,
-      "cut": 80
-    }
+    ]
   },
   {
     "type": "GENERIC",
@@ -654,12 +836,25 @@
   },
   {
     "id": "bionic_maintenance_toolkit",
-    "copy-from": "screwdriver_set",
     "type": "TOOL",
+    "copy-from": "screwdriver_set",
     "name": {
       "str": "bionic maintenance toolkit"
     },
     "description": "A set of very small tools and encrypted digital keys normally used to repair bionic modules in clinical settings.  They will allow you to disassemble simple bionics, but anything more complex would require even more specialized tools.",
+    "ascii_picture": "screwdriver_set",
+    "weight": "340 g",
+    "volume": "500 ml",
+    "longest_side": "28 cm",
+    "price": 2000,
+    "price_postapoc": 250,
+    "to_hit": -1,
+    "material": [
+      "steel",
+      "plastic"
+    ],
+    "symbol": ";",
+    "color": "yellow",
     "qualities": [
       [
         "BIONIC_ASSEMBLY",
@@ -673,16 +868,37 @@
         "WRENCH_FINE",
         1
       ]
-    ]
+    ],
+    "flags": [
+      "BELT_CLIP",
+      "NO_SALVAGE"
+    ],
+    "melee_damage": {
+      "bash": 2,
+      "cut": 6
+    }
   },
   {
     "id": "afs_complete_bionic_toolkit",
-    "copy-from": "screwdriver_set",
     "type": "TOOL",
+    "copy-from": "screwdriver_set",
     "name": {
       "str": "complete bionic toolkit"
     },
     "description": "A set of very small robotic tools and encrypted digital keys originally designed to disassemble and test the quality of industrially produced bionics.  A highly skilled and patient engineer could use them to manually assemble new cybernetics.",
+    "ascii_picture": "screwdriver_set",
+    "weight": "340 g",
+    "volume": "500 ml",
+    "longest_side": "28 cm",
+    "price": 2000,
+    "price_postapoc": 250,
+    "to_hit": -1,
+    "material": [
+      "steel",
+      "plastic"
+    ],
+    "symbol": ";",
+    "color": "yellow",
     "qualities": [
       [
         "BIONIC_ASSEMBLY",
@@ -696,16 +912,36 @@
         "WRENCH_FINE",
         1
       ]
-    ]
+    ],
+    "flags": [
+      "BELT_CLIP",
+      "NO_SALVAGE"
+    ],
+    "melee_damage": {
+      "bash": 2,
+      "cut": 6
+    }
   },
   {
     "id": "afs_bionic_power_mod",
-    "copy-from": "mod_battery",
     "type": "TOOLMOD",
-    "category": "spare_parts",
+    "copy-from": "mod_battery",
     "name": {
       "str": "cybernetic power port mod"
     },
+    "weight": "142 g",
+    "volume": "250 ml",
+    "material": [
+      "plastic",
+      "ceramic"
+    ],
+    "symbol": ";",
+    "color": "dark_gray",
+    "price": 100,
+    "acceptable_ammo": [
+      "battery"
+    ],
+    "category": "spare_parts",
     "description": "This device replaces standard power connections and battery ports for electronic devices with a carefully-shaped port that hooks into bionic implants.  When applied, it will convert an item to run directly off of bionic power.",
     "ammo_modifier": "battery",
     "flags": [
@@ -765,27 +1001,54 @@
   },
   {
     "id": "control_laptop_screen_lit",
-    "copy-from": "control_laptop",
     "type": "TOOL",
+    "copy-from": "control_laptop",
     "name": {
       "str": "control laptop - lit screen",
       "str_pl": "control laptops - lit screen"
     },
-    "power_draw": "1 W",
-    "revert_to": "control_laptop",
+    "description": "A modified laptop, now additionally capable of transmitting in the ultra-high frequencies utilized by robots.  Activate it to command robots from afar.",
+    "weight": "2721 g",
+    "volume": "1 L",
+    "price": 100,
+    "price_postapoc": 80,
+    "material": [
+      "plastic",
+      "aluminum"
+    ],
+    "symbol": ",",
+    "color": "yellow",
+    "charges_per_use": 2,
     "use_action": {
       "target": "control_laptop",
       "msg": "You stop lighting up the screen.",
       "menu_text": "Turn off",
       "type": "transform"
     },
-    "tick_action": [
-      "EPIC_MUSIC"
-    ],
     "flags": [
       "WATCH",
       "LIGHT_10",
       "TRADER_AVOID"
+    ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "rigid": true,
+        "holster": true,
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [
+          "medium_battery_cell",
+          "medium_plus_battery_cell",
+          "medium_atomic_battery_cell",
+          "medium_disposable_cell"
+        ]
+      }
+    ],
+    "power_draw": "1 W",
+    "revert_to": "control_laptop",
+    "tick_action": [
+      "EPIC_MUSIC"
     ]
   },
   {
@@ -802,7 +1065,6 @@
       "glass",
       "titanium"
     ],
-    "copy-from": "fancy_sunglasses",
     "ammo": [
       "battery"
     ],
@@ -845,14 +1107,24 @@
   },
   {
     "id": "vr_laptop_holosuite",
-    "copy-from": "vr_laptop",
     "type": "TOOL_ARMOR",
+    "copy-from": "vr_laptop",
+    "category": "tools",
     "name": {
       "str": "vr rig - holosuite deployed",
       "str_pl": "vr rigs - holosuite deployed"
     },
-    "power_draw": "1 W",
-    "revert_to": "vr_laptop",
+    "description": "A portable virtual reality rig with glasses for the HUD and the computing functions wrapped around the torso.  When powered on it will provide an overlay on everything you experience.",
+    "symbol": ",",
+    "color": "dark_gray",
+    "material": [
+      "glass",
+      "titanium"
+    ],
+    "ammo": [
+      "battery"
+    ],
+    "charges_per_use": 2,
     "use_action": {
       "target": "vr_laptop",
       "msg": "You power down the virtual overlay.",
@@ -863,6 +1135,26 @@
       "WATCH",
       "TRADER_AVOID"
     ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "rigid": true,
+        "flag_restriction": [
+          "BATTERY_MEDIUM"
+        ],
+        "default_magazine": "medium_battery_cell"
+      }
+    ],
+    "armor": [
+      {
+        "covers": [
+          "eyes",
+          "torso"
+        ]
+      }
+    ],
+    "power_draw": "1 W",
+    "revert_to": "vr_laptop",
     "relic_data": {
       "passive_effects": [
         {
@@ -980,8 +1272,8 @@
       "surface": "point",
       "balance": "neutral"
     },
-    "price": "2 USD",
-    "price_postapoc": "2 USD",
+    "price": 2,
+    "price_postapoc": 2,
     "material": [
       "plastic"
     ],

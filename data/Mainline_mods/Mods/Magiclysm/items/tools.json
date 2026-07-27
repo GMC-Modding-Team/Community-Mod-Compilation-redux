@@ -66,7 +66,7 @@
     "description": "This is an alchemical cauldron made of orichalcum.  The metal is especially resistant to the unique types of corrosion caused by alchemy.",
     "weight": "15 kg",
     "volume": "20 L",
-    "price": "750 USD",
+    "price": 750,
     "to_hit": -4,
     "looks_like": "canning_pot",
     "material": [
@@ -190,9 +190,11 @@
     ]
   },
   {
-    "type": "TOOL",
     "id": "glassteel_shard",
+    "type": "TOOL",
     "copy-from": "glass_shard",
+    "symbol": ",",
+    "color": "light_cyan",
     "name": {
       "str": "glassteel shard"
     },
@@ -201,9 +203,29 @@
     "material": [
       "glassteel"
     ],
+    "weight": "75 g",
+    "volume": "30 ml",
+    "use_action": {
+      "type": "place_trap",
+      "trap": "tr_glass",
+      "moves": 150,
+      "practice": 2,
+      "done_message": "You carefully place the shards on the ground, ready to be cracked by something passing by."
+    },
+    "flags": [
+      "HURT_WHEN_WIELDED",
+      "TRADER_AVOID",
+      "SINGLE_USE",
+      "FRAGILE_MELEE",
+      "ALLOWS_BODY_BLOCK"
+    ],
+    "to_hit": -1,
     "melee_damage": {
       "cut": 7
-    }
+    },
+    "weapon_category": [
+      "SHIVS"
+    ]
   },
   {
     "id": "magic_circle_rank_1",

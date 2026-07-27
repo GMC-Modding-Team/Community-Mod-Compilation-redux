@@ -624,25 +624,92 @@
   },
   {
     "id": "inventor_sniper",
-    "copy-from": "modular_m27_assault_rifle",
-    "looks_like": "ar15",
     "type": "GUN",
+    "copy-from": "modular_m27_assault_rifle",
     "name": {
       "str_sp": "\"Repeater\""
     },
+    "skill": "rifle",
+    "valid_mod_locations": [
+      [
+        "bore",
+        1
+      ],
+      [
+        "bayonet lug",
+        1
+      ],
+      [
+        "grip",
+        1
+      ],
+      [
+        "mechanism",
+        4
+      ],
+      [
+        "sling",
+        1
+      ],
+      [
+        "stock accessory",
+        2
+      ],
+      [
+        "stock",
+        1
+      ]
+    ],
+    "weapon_category": [
+      "AUTOMATIC_RIFLES"
+    ],
+    "//": "Groups all 'H&K416' related rifles together. Used M27 due to it being the most popular of the three in the US.",
+    "looks_like": "ar15",
     "description": "Hand-made lever action sniper rifle with an extremely long barrel.  By logic such long barrel can not work properly, but somehow it not only works fine enough, it also accelerates the bullet much more than anyone can expect.  Two internal magazine tubes under the barrel accept 15 7.62x51 rounds each.",
     "weight": "3630 g",
     "volume": "5427 ml",
     "longest_side": "1678 mm",
-    "barrel_length": "1236 mm",
-    "barrel_volume": "250 ml",
+    "//2": "Numbers for weight, volume, and length calculations are based upon an AR-15’s complete lower receiver. The difference will be made up for with integrated stats from the installable modular upper receivers.",
+    "price": 540000,
+    "price_postapoc": 2250,
+    "variant_type": "gun",
+    "variants": [
+      {
+        "id": "modular_h&k416a5",
+        "name": {
+          "str": "H&K416 A5"
+        },
+        "description": "Designed to replace the M4A1, the Heckler and Koch 416A5 features most of the former's strengths, while being considerably more durable."
+      },
+      {
+        "id": "modular_m27iar",
+        "name": {
+          "str": "M27 IAR"
+        },
+        "description": "A H&K416 carbine outfitted with a heavier barrel to enable higher amounts of suppressive fire while retaining a good degree of mobility.",
+        "ascii_picture": "m27_iar"
+      },
+      {
+        "id": "modular_m38dmr",
+        "name": {
+          "str": "M38 DMR"
+        },
+        "description": "The M38 Designated Marksman Rifle is an M27 IAR, itself derived from a H&K416, selected for accuracy, and outfitted with a variable power scope and a QDSS suppressor."
+      }
+    ],
+    "to_hit": -1,
+    "material": [
+      "aluminum",
+      "steel",
+      "plastic"
+    ],
+    "symbol": "(",
+    "color": "dark_gray",
     "ammo": [
       "308"
     ],
-    "ranged_damage": {
-      "damage_type": "bullet",
-      "amount": 6
-    },
+    "dispersion": 180,
+    "durability": 8,
     "min_cycle_recoil": 2700,
     "default_mods": [
       "bipod"
@@ -654,10 +721,16 @@
         1
       ]
     ],
-    "extend": {
-      "flags": [
-        "INVENTOR_CRAFTED"
-      ]
+    "flags": [
+      "NO_TURRET",
+      "INVENTOR_CRAFTED"
+    ],
+    "//3": "This should be removed once vehicle turrets are capable of mounting guns with mods attached. As it stands, trying to mount this style of weapon would require the player to remove the conversion kit, thus rendering it unusable anyhow.",
+    "barrel_length": "1236 mm",
+    "barrel_volume": "250 ml",
+    "ranged_damage": {
+      "damage_type": "bullet",
+      "amount": 6
     },
     "pocket_data": [
       {
@@ -671,12 +744,80 @@
   },
   {
     "id": "inventor_shotgun",
-    "copy-from": "shotgun_base",
-    "looks_like": "m134",
     "type": "GUN",
+    "copy-from": "shotgun_base",
+    "reload_noise_volume": 10,
+    "//": "this is the default handling for anything with a stock",
+    "handling": 20,
     "name": {
       "str": "shredder shotgun"
     },
+    "symbol": "(",
+    "color": "dark_gray",
+    "faults": [
+      "fault_gun_blackpowder",
+      "fault_gun_dirt",
+      "fault_gun_chamber_spent"
+    ],
+    "ranged_damage": {
+      "damage_type": "bullet",
+      "amount": 0
+    },
+    "skill": "shotgun",
+    "ammo": [
+      "shot"
+    ],
+    "valid_mod_locations": [
+      [
+        "barrel",
+        1
+      ],
+      [
+        "bore",
+        1
+      ],
+      [
+        "brass catcher",
+        1
+      ],
+      [
+        "grip mount",
+        1
+      ],
+      [
+        "mechanism",
+        4
+      ],
+      [
+        "muzzle",
+        1
+      ],
+      [
+        "rail mount",
+        1
+      ],
+      [
+        "sights mount",
+        1
+      ],
+      [
+        "sling",
+        1
+      ],
+      [
+        "stock mount",
+        1
+      ],
+      [
+        "stock accessory",
+        2
+      ],
+      [
+        "underbarrel mount",
+        1
+      ]
+    ],
+    "looks_like": "m134",
     "description": "An abominably huge, two barrel Gast system shotgun.  Recoil from the first shot powers the piston that loads a shell into the second barrel, and vice versa, making it shoot approximately 1000rpm at max.  The biggest part of a weapon is a giant, multi tube magazine, which can store 240 shells at once.  It makes the weapon extremely bulky, so the only way you can utilize it is by handling it like a chainsaw, or installing it on a turret base.",
     "weight": "12970 g",
     "volume": "11920 ml",
@@ -688,11 +829,6 @@
     },
     "material": [
       "qt_steel"
-    ],
-    "symbol": "(",
-    "color": "dark_gray",
-    "ammo": [
-      "shot"
     ],
     "dispersion": 200,
     "recoil": 300,
@@ -790,12 +926,50 @@
   },
   {
     "id": "inventor_glauncher",
-    "copy-from": "rifle_semi",
-    "looks_like": "ar15",
     "type": "GUN",
+    "copy-from": "rifle_semi",
     "name": {
       "str": "inventor's grenade launcher"
     },
+    "skill": "rifle",
+    "valid_mod_locations": [
+      [
+        "underbarrel",
+        1
+      ],
+      [
+        "rail",
+        1
+      ],
+      [
+        "sling",
+        1
+      ],
+      [
+        "grip",
+        1
+      ],
+      [
+        "energy transformer",
+        1
+      ],
+      [
+        "sights",
+        1
+      ],
+      [
+        "stock",
+        1
+      ],
+      [
+        "stock accessory",
+        1
+      ]
+    ],
+    "weapon_category": [
+      "AUTOMATIC_RIFLES"
+    ],
+    "looks_like": "ar15",
     "description": "Transformed from a tool, this weapon can emit a giant clouds of energy, destroying everything on their path.",
     "weight": "2670 g",
     "volume": "3560 ml",
@@ -830,40 +1004,6 @@
     "durability": 9,
     "default_mods": [
       "inventor_glauncher_expl"
-    ],
-    "valid_mod_locations": [
-      [
-        "underbarrel",
-        1
-      ],
-      [
-        "rail",
-        1
-      ],
-      [
-        "sling",
-        1
-      ],
-      [
-        "grip",
-        1
-      ],
-      [
-        "energy transformer",
-        1
-      ],
-      [
-        "sights",
-        1
-      ],
-      [
-        "stock",
-        1
-      ],
-      [
-        "stock accessory",
-        1
-      ]
     ],
     "pocket_data": [
       {
@@ -1388,11 +1528,49 @@
   },
   {
     "id": "inventor_pistol",
-    "copy-from": "pistol_revolver",
     "type": "GUN",
+    "copy-from": "pistol_revolver",
     "name": {
       "str": "blocky pistol"
     },
+    "skill": "pistol",
+    "sight_dispersion": 60,
+    "//": "Revolvers exclude the muzzle location preventing installation of suppressors",
+    "handling": 10,
+    "valid_mod_locations": [
+      [
+        "mechanism",
+        2
+      ],
+      [
+        "barrel",
+        1
+      ],
+      [
+        "grip",
+        1
+      ],
+      [
+        "rail mount",
+        1
+      ],
+      [
+        "sights",
+        1
+      ],
+      [
+        "muzzle",
+        1
+      ],
+      [
+        "underbarrel",
+        1
+      ]
+    ],
+    "faults": [
+      "fault_gun_blackpowder",
+      "fault_gun_dirt"
+    ],
     "description": "A square abomination resembling the shape of a pistol, but with a collapsible outer magazine under the barrel.  This overengineered piece of metal is able to vary the size of chamber, which makes it able to shoot any round up to shotgun shells.  You spent a really long time to make it fit into a common holster.",
     "weight": "1790 g",
     "volume": "970 ml",
@@ -1440,41 +1618,12 @@
     "durability": 7,
     "blackpowder_tolerance": 66,
     "loudness": 23,
-    "valid_mod_locations": [
-      [
-        "mechanism",
-        2
-      ],
-      [
-        "barrel",
-        1
-      ],
-      [
-        "grip",
-        1
-      ],
-      [
-        "rail mount",
-        1
-      ],
-      [
-        "sights",
-        1
-      ],
-      [
-        "muzzle",
-        1
-      ],
-      [
-        "underbarrel",
-        1
-      ]
-    ],
     "flags": [
       "RELOAD_ONE",
       "NEVER_JAMS",
       "RELOAD_EJECT",
-      "INVENTOR_CRAFTED"
+      "INVENTOR_CRAFTED",
+      "EASY_CLEAN"
     ],
     "pocket_data": [
       {
@@ -1502,6 +1651,7 @@
           "shot": 6
         }
       }
-    ]
+    ],
+    "reload": 0.7
   }
 ]

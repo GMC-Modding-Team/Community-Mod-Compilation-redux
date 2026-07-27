@@ -113,26 +113,79 @@
     },
     "description": "A juvenile dire wolf.  It runs around as excited as aimless, occasionally barking joyously.",
     "default_faction": "dog",
+    "bodytype": "dog",
+    "categories": [
+      "WILDLIFE"
+    ],
+    "species": [
+      "MAMMAL"
+    ],
+    "families": [
+      "prof_intro_biology",
+      "prof_wp_megafauna"
+    ],
     "volume": "31 L",
     "weight": "31 kg",
     "hp": 30,
     "speed": 110,
+    "material": [
+      "flesh"
+    ],
     "symbol": "w",
+    "color": "light_gray",
+    "aggression": 5,
     "morale": 20,
     "melee_skill": 2,
     "melee_dice": 1,
     "melee_dice_sides": 4,
+    "dodge": 2,
     "melee_damage": [
       {
         "damage_type": "stab",
         "amount": 4.0
       }
     ],
-    "dodge": 2,
-    "upgrades": {
-      "age_grow": 270,
-      "into": "mon_direwolf"
+    "special_attacks": [
+      {
+        "id": "cut_throat"
+      },
+      {
+        "type": "leap",
+        "cooldown": 10,
+        "max_range": 4
+      }
+    ],
+    "vision_day": 30,
+    "vision_night": 5,
+    "harvest": "mammal_fur",
+    "path_settings": {
+      "max_dist": 10
     },
+    "anger_triggers": [
+      "STALK",
+      "FRIEND_ATTACKED",
+      "FRIEND_DIED",
+      "PLAYER_WEAK",
+      "PLAYER_CLOSE"
+    ],
+    "fear_triggers": [
+      "FIRE"
+    ],
+    "petfood": {
+      "food": [
+        "DOGFOOD"
+      ],
+      "feed": "The %s seems to tolerate you.  It cautiously lets you pat its head and seems friendly for now.",
+      "pet": "The %s reluctantly wags its tail while you pat their massive head."
+    },
+    "reproduction": {
+      "baby_monster": "mon_direwolf_cub",
+      "baby_count": 2,
+      "baby_timer": 360
+    },
+    "baby_flags": [
+      "SPRING"
+    ],
     "flags": [
       "SEES",
       "HEARS",
@@ -143,7 +196,16 @@
       "WARM",
       "CANPLAY",
       "KEENNOSE"
-    ]
+    ],
+    "armor": {
+      "bash": 5,
+      "cut": 10,
+      "stab": 5
+    },
+    "upgrades": {
+      "age_grow": 270,
+      "into": "mon_direwolf"
+    }
   },
   {
     "id": "mon_sabcat",
@@ -274,11 +336,26 @@
     },
     "description": "A juvenile sabre-toothed cat.  Still sizable, but much less dangerous than its parent, which will fight fiercely to protect its offspring.",
     "default_faction": "cat",
+    "bodytype": "bear",
+    "categories": [
+      "WILDLIFE"
+    ],
+    "species": [
+      "MAMMAL"
+    ],
+    "families": [
+      "prof_intro_biology",
+      "prof_wp_megafauna"
+    ],
     "volume": "40 L",
     "weight": "40 kg",
     "hp": 40,
     "speed": 110,
+    "material": [
+      "flesh"
+    ],
     "symbol": "s",
+    "color": "brown",
     "aggression": -30,
     "morale": 20,
     "melee_skill": 2,
@@ -290,11 +367,61 @@
         "amount": 4.0
       }
     ],
+    "grab_strength": 35,
+    "special_attacks": [
+      {
+        "id": "cut_throat"
+      },
+      {
+        "id": "impale",
+        "cooldown": 10
+      },
+      [
+        "LUNGE",
+        10
+      ],
+      {
+        "id": "bite_grab"
+      },
+      {
+        "type": "leap",
+        "cooldown": 10,
+        "max_range": 4
+      }
+    ],
     "dodge": 2,
+    "vision_day": 30,
+    "vision_night": 15,
+    "tracking_distance": 5,
+    "path_settings": {
+      "max_dist": 10
+    },
+    "anger_triggers": [
+      "STALK",
+      "PLAYER_WEAK",
+      "HURT",
+      "PLAYER_CLOSE",
+      "FRIEND_ATTACKED",
+      "PLAYER_NEAR_BABY"
+    ],
+    "fear_triggers": [
+      "FIRE"
+    ],
     "harvest": "mammal_fur",
-    "upgrades": {
-      "age_grow": 360,
-      "into": "mon_sabcat"
+    "reproduction": {
+      "baby_monster": "mon_sabcat_cub",
+      "baby_count": 2,
+      "baby_timer": 720
+    },
+    "baby_flags": [
+      "SPRING"
+    ],
+    "dissect": "dissect_feline_sample_single",
+    "petfood": {
+      "food": [
+        "CATFOOD"
+      ],
+      "feed": "The %s seems to like you!  It emits a growling purr as you pet it."
     },
     "flags": [
       "NO_BREED",
@@ -309,7 +436,16 @@
       "KEEP_DISTANCE",
       "WARM",
       "CANPLAY"
-    ]
+    ],
+    "armor": {
+      "bash": 6,
+      "cut": 10,
+      "stab": 5
+    },
+    "upgrades": {
+      "age_grow": 360,
+      "into": "mon_sabcat"
+    }
   },
   {
     "id": "mon_cave_lion",
@@ -418,11 +554,26 @@
     },
     "description": "A juvenile cave lion.  Still sizable, but much less dangerous than its parent, which will fight fiercely to protect its offspring.",
     "default_faction": "cat",
+    "bodytype": "bear",
+    "categories": [
+      "WILDLIFE"
+    ],
+    "species": [
+      "MAMMAL"
+    ],
+    "families": [
+      "prof_intro_biology",
+      "prof_wp_megafauna"
+    ],
     "volume": "30 L",
     "weight": "30 kg",
     "hp": 30,
     "speed": 90,
+    "material": [
+      "flesh"
+    ],
     "symbol": "l",
+    "color": "brown",
     "aggression": -40,
     "morale": 20,
     "melee_skill": 2,
@@ -435,11 +586,46 @@
       }
     ],
     "dodge": 2,
-    "harvest": "mammal_fur",
-    "upgrades": {
-      "age_grow": 360,
-      "into": "mon_cave_lion"
+    "vision_day": 22,
+    "vision_night": 10,
+    "path_settings": {
+      "max_dist": 10
     },
+    "special_attacks": [
+      {
+        "id": "cut_throat"
+      },
+      [
+        "LUNGE",
+        10
+      ],
+      {
+        "type": "leap",
+        "cooldown": 15,
+        "max_range": 5
+      }
+    ],
+    "anger_triggers": [
+      "STALK",
+      "PLAYER_WEAK",
+      "HURT",
+      "PLAYER_CLOSE",
+      "FRIEND_ATTACKED",
+      "PLAYER_NEAR_BABY"
+    ],
+    "fear_triggers": [
+      "FIRE"
+    ],
+    "harvest": "mammal_fur",
+    "dissect": "dissect_feline_sample_single",
+    "reproduction": {
+      "baby_monster": "mon_cave_lion_cub",
+      "baby_count": 3,
+      "baby_timer": 720
+    },
+    "baby_flags": [
+      "SPRING"
+    ],
     "flags": [
       "NO_BREED",
       "SEES",
@@ -452,7 +638,16 @@
       "WARM",
       "HIT_AND_RUN",
       "KEENNOSE"
-    ]
+    ],
+    "armor": {
+      "bash": 5,
+      "cut": 10,
+      "stab": 5
+    },
+    "upgrades": {
+      "age_grow": 360,
+      "into": "mon_cave_lion"
+    }
   },
   {
     "id": "mon_bobcat",
@@ -533,12 +728,26 @@
       "str": "bobcat cub"
     },
     "description": "A juvenile bobcat.  It already moves with enthusiasm, but with much less grace and dexterity than its parent.",
+    "default_faction": "cat",
+    "bodytype": "dog",
+    "categories": [
+      "WILDLIFE"
+    ],
+    "species": [
+      "MAMMAL"
+    ],
     "volume": "1600 ml",
     "weight": "1600 g",
     "hp": 4,
     "speed": 90,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "c",
     "color": "white",
     "aggression": -50,
+    "morale": 1,
+    "aggro_character": false,
     "melee_skill": 2,
     "melee_dice": 1,
     "melee_dice_sides": 4,
@@ -549,10 +758,17 @@
       }
     ],
     "dodge": 2,
-    "upgrades": {
-      "age_grow": 90,
-      "into": "mon_bobcat"
-    },
+    "vision_night": 20,
+    "fear_triggers": [
+      "SOUND",
+      "PLAYER_CLOSE"
+    ],
+    "harvest": "cat_medium_with_skull",
+    "families": [
+      "prof_intro_biology",
+      "prof_physiology"
+    ],
+    "dissect": "dissect_feline_sample_single",
     "flags": [
       "NO_BREED",
       "SEES",
@@ -563,7 +779,11 @@
       "PATH_AVOID_DANGER_1",
       "WARM",
       "HIT_AND_RUN"
-    ]
+    ],
+    "upgrades": {
+      "age_grow": 90,
+      "into": "mon_bobcat"
+    }
   },
   {
     "type": "MONSTER",
@@ -576,7 +796,7 @@
     "default_faction": "mega_bird",
     "bodytype": "ostrich",
     "symbol": "T",
-    "color": "blue_green",
+    "color": "blue",
     "volume": "150 L",
     "weight": "150 kg",
     "material": "flesh",
@@ -699,14 +919,17 @@
     "name": {
       "str": "titanis walleri chick"
     },
-    "description": "A juvenile titanis walleri.  It is already large for a bird, but it is still far from its parent.",
+    "species": "BIRD",
     "default_faction": "mega_bird",
+    "bodytype": "ostrich",
+    "symbol": "t",
+    "color": "blue",
     "volume": "36 L",
     "weight": "36 kg",
-    "hp": 35,
-    "speed": 130,
-    "symbol": "t",
+    "material": "flesh",
+    "aggression": 0,
     "morale": 20,
+    "speed": 130,
     "melee_skill": 2,
     "melee_dice": 1,
     "melee_dice_sides": 6,
@@ -716,11 +939,62 @@
         "amount": 4.0
       }
     ],
+    "grab_strength": 5,
     "dodge": 3,
-    "upgrades": {
-      "age_grow": 315,
-      "into": "mon_titanis_walleri"
+    "luminance": 0,
+    "hp": 35,
+    "special_attacks": [
+      {
+        "type": "leap",
+        "cooldown": 5,
+        "max_range": 5,
+        "allow_no_target": true
+      },
+      [
+        "LUNGE",
+        10
+      ],
+      {
+        "id": "bite_grab"
+      },
+      {
+        "id": "bio_op_takedown",
+        "cooldown": 20
+      },
+      {
+        "id": "grab_drag",
+        "cooldown": 15,
+        "grab_data": {
+          "drag_distance": 2,
+          "drag_movecost_mod": 0.5
+        }
+      },
+      {
+        "id": "drag_followup",
+        "grab_data": {
+          "drag_distance": 2,
+          "drag_movecost_mod": 0.5
+        }
+      },
+      {
+        "id": "mutant_hoof",
+        "dodgeable": true
+      },
+      {
+        "id": "scratch_grab_required",
+        "min_mul": 1,
+        "max_mul": 1.5
+      }
+    ],
+    "description": "A juvenile titanis walleri.  It is already large for a bird, but it is still far from its parent.",
+    "reproduction": {
+      "baby_egg": "egg_titanis_walleri",
+      "baby_count": 1,
+      "baby_timer": 540
     },
+    "baby_flags": [
+      "SUMMER"
+    ],
     "flags": [
       "SEES",
       "HEARS",
@@ -732,6 +1006,39 @@
       "WARM",
       "KEENNOSE",
       "CANPLAY"
-    ]
+    ],
+    "biosignature": {
+      "biosig_item": "feces_bird",
+      "biosig_timer": 3
+    },
+    "harvest": "bird_large",
+    "anger_triggers": [
+      "PLAYER_WEAK",
+      "HURT",
+      "FRIEND_ATTACKED",
+      "PLAYER_CLOSE"
+    ],
+    "fear_triggers": [
+      "FIRE",
+      "FRIEND_DIED"
+    ],
+    "petfood": {
+      "food": [
+        "CATFOOD"
+      ],
+      "feed": "The %s seems to like you!  It clicks its beak a few times and lowers its head, allowing you to pet it.",
+      "pet": "The %s bows to you, clicking its beak while you pat their massive head."
+    },
+    "categories": [
+      "WILDLIFE"
+    ],
+    "armor": {
+      "bash": 3,
+      "cut": 2
+    },
+    "upgrades": {
+      "age_grow": 315,
+      "into": "mon_titanis_walleri"
+    }
   }
 ]

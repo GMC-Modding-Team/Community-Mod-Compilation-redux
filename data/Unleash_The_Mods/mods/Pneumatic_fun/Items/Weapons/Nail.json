@@ -1,65 +1,144 @@
 [
   {
     "id": "coilgun1",
-    "copy-from": "coilgun",
-    "looks_like": "modular_ar15",
     "type": "GUN",
-    "name": { "str": "coilgun" },
+    "copy-from": "coilgun",
+    "reload_noise_volume": 10,
     "//": "Hard to make, plentiful and cheap ammo, and silent - people will want this thing.",
+    "handling": 20,
+    "name": {
+      "str": "coilgun"
+    },
+    "symbol": "(",
+    "color": "light_gray",
+    "faults": [
+      "fault_gun_blackpowder",
+      "fault_gun_dirt",
+      "fault_gun_chamber_spent"
+    ],
+    "ranged_damage": {
+      "damage_type": "stab",
+      "amount": 4,
+      "armor_penetration": 20
+    },
+    "looks_like": "modular_ar15",
     "description": "A homemade gun, using electromagnets to accelerate a ferromagnetic projectile to high velocity.  Powered by UPS.",
     "weight": "3341 g",
     "volume": "2750 ml",
-    "price": "750 USD",
-    "price_postapoc": "50 USD",
+    "longest_side": "80 cm",
+    "price": 750,
+    "price_postapoc": 50,
     "to_hit": -2,
-    "melee_damage": { "bash": 10 },
-    "material": [ "copper", "steel" ],
-    "ammo": [ "nail" ],
+    "material": [
+      "copper",
+      "steel"
+    ],
     "skill": "rifle",
     "range": 12,
-    "ranged_damage": { "damage_type": "stab", "amount": 4, "armor_penetration": 20 },
     "dispersion": 180,
     "durability": 5,
+    "loudness": 12,
+    "energy_drain": "2 kJ",
     "valid_mod_locations": [
-      [ "accessories", 4 ],
-      [ "grip", 1 ],
-      [ "sights", 1 ],
-      [ "sling", 1 ],
-      [ "stock", 1 ],
-      [ "rail mount", 1 ],
-      [ "underbarrel mount", 1 ]
+      [
+        "accessories",
+        4
+      ],
+      [
+        "grip",
+        1
+      ],
+      [
+        "sights",
+        1
+      ],
+      [
+        "sling",
+        1
+      ],
+      [
+        "stock",
+        1
+      ],
+      [
+        "rail mount",
+        1
+      ],
+      [
+        "underbarrel mount",
+        1
+      ]
     ],
-    "pocket_data": [
-      {
-        "pocket_type": "MAGAZINE_WELL",
-        "holster": true,
-        "max_contains_volume": "20 L",
-        "max_contains_weight": "20 kg",
-        "item_restriction": [ "nailmag", "nailmag_s", "naildrum" ]
-      }
-    ]
+    "flags": [
+      "USE_UPS"
+    ],
+    "melee_damage": {
+      "bash": 10
+    }
   },
   {
     "id": "nailrifle",
+    "type": "GUN",
     "copy-from": "nailgun",
     "looks_like": "modular_ar15",
-    "type": "GUN",
-    "name": { "str": "nail rifle" },
+    "reload_noise_volume": 10,
+    "name": {
+      "str": "nail rifle"
+    },
     "description": "This is a nailgun that has been extensively modified with the addition of a short barrel, stock and hand guard.  It can be reloaded using detachable magazines and is an overall much more effective weapon.",
-    "to_hit": -1,
-    "melee_damage": { "bash": 12 },
+    "weight": "3904 g",
+    "volume": "750 ml",
+    "longest_side": "45 cm",
+    "price": 39000,
     "price_postapoc": "750 cent",
+    "to_hit": -1,
+    "material": [
+      "plastic",
+      "steel"
+    ],
+    "symbol": "(",
+    "color": "yellow",
+    "ammo": [
+      "nail"
+    ],
     "skill": "rifle",
-    "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "AUTO", "auto", 3 ] ],
+    "dispersion": 400.0,
+    "durability": 8,
+    "loudness": 5,
+    "reload": 50,
     "valid_mod_locations": [
-      [ "accessories", 4 ],
-      [ "barrel", 1 ],
-      [ "grip", 1 ],
-      [ "sights", 1 ],
-      [ "sling", 1 ],
-      [ "stock", 1 ],
-      [ "rail mount", 1 ],
-      [ "underbarrel mount", 1 ]
+      [
+        "accessories",
+        4
+      ],
+      [
+        "barrel",
+        1
+      ],
+      [
+        "grip",
+        1
+      ],
+      [
+        "sights",
+        1
+      ],
+      [
+        "sling",
+        1
+      ],
+      [
+        "stock",
+        1
+      ],
+      [
+        "rail mount",
+        1
+      ],
+      [
+        "underbarrel mount",
+        1
+      ]
     ],
     "pocket_data": [
       {
@@ -67,10 +146,35 @@
         "holster": true,
         "max_contains_volume": "20 L",
         "max_contains_weight": "20 kg",
-        "item_restriction": [ "nailmag", "nailmag_s", "naildrum" ]
+        "item_restriction": [
+          "nailmag",
+          "nailmag_s",
+          "naildrum"
+        ]
       }
     ],
-    "relative": { "weight": 1000, "volume": 6, "range": 3, "ranged_damage": { "damage_type": "stab", "amount": 4 } },
-    "proportional": { "price": 3, "dispersion": 0.5 }
+    "melee_damage": {
+      "bash": 12
+    },
+    "flags": [
+      "WONT_TRAIN_MARKSMANSHIP"
+    ],
+    "modes": [
+      [
+        "DEFAULT",
+        "semi-auto",
+        1
+      ],
+      [
+        "AUTO",
+        "auto",
+        3
+      ]
+    ],
+    "range": 3,
+    "ranged_damage": {
+      "damage_type": "stab",
+      "amount": 4
+    }
   }
 ]

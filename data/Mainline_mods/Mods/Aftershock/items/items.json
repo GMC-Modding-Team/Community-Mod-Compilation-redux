@@ -105,40 +105,94 @@
     ]
   },
   {
-    "type": "AMMO",
     "id": "clearcrete_chunk",
+    "type": "AMMO",
     "copy-from": "rock",
+    "symbol": "*",
+    "color": "light_gray",
     "name": {
       "str": "clearcrete chunk"
     },
-    "category": "other",
     "description": "A broken chunk of clearcrete.  Basically a clear rock.",
+    "category": "other",
     "material": [
       "clearcrete"
-    ]
+    ],
+    "ammo_type": "rock",
+    "flags": [
+      "TRADER_AVOID",
+      "NPC_THROWN"
+    ],
+    "weight": "657 g",
+    "volume": "250 ml",
+    "damage": {
+      "damage_type": "bash",
+      "amount": 7
+    },
+    "range": 10,
+    "loudness": 0,
+    "to_hit": -1,
+    "effects": [
+      "NEVER_MISFIRES",
+      "NON_FOULING",
+      "RECOVER_80",
+      "ALLOWS_BODY_BLOCK"
+    ],
+    "qualities": [
+      [
+        "HAMMER",
+        1
+      ]
+    ],
+    "melee_damage": {
+      "bash": 7
+    },
+    "//legacy_dispersion": 14
   },
   {
     "id": "nuclear_fuel",
-    "copy-from": "nuclear_waste",
     "type": "GENERIC",
+    "copy-from": "nuclear_waste",
     "name": {
       "str": "nuclear fuel pellet"
     },
-    "description": "A small pellet of fissile material.  Handle carefully."
+    "description": "A small pellet of fissile material.  Handle carefully.",
+    "weight": "30 g",
+    "volume": "250 ml",
+    "price": "0 cent",
+    "material": [
+      "iron"
+    ],
+    "symbol": "*",
+    "color": [
+      "light_green"
+    ],
+    "flags": [
+      "RADIOACTIVE",
+      "LEAK_ALWAYS"
+    ]
   },
   {
     "id": "hazardous_waste_drum",
-    "copy-from": "55gal_drum",
     "type": "GENERIC",
+    "copy-from": "55gal_drum",
+    "category": "container",
+    "looks_like": "30gal_drum",
     "name": {
       "str": "hazardous waste drum"
     },
     "description": "A yellow drum meant for the storage of hazardous substances.",
+    "weight": "20 kg",
+    "volume": "210 L",
+    "price": 10000,
+    "price_postapoc": 250,
+    "to_hit": -5,
     "material": [
       "steel",
       "lead"
     ],
     "symbol": "0",
+    "color": "yellow",
     "pocket_data": [
       {
         "pocket_type": "CONTAINER",
@@ -149,7 +203,22 @@
         "moves": 400
       }
     ],
-    "color": "yellow"
+    "qualities": [
+      [
+        "BOIL",
+        2
+      ],
+      [
+        "CONTAIN",
+        1
+      ]
+    ],
+    "flags": [
+      "COLLAPSE_CONTENTS"
+    ],
+    "melee_damage": {
+      "bash": 8
+    }
   },
   {
     "id": "atomic_butterchurn",

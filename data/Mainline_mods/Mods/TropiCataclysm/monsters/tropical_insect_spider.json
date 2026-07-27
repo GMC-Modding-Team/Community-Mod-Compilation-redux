@@ -2,19 +2,58 @@
   {
     "id": "mon_large_scorpion",
     "type": "MONSTER",
+    "copy-from": "mon_scorpion_giant",
     "name": {
       "str": "large scorpion"
     },
     "description": "A mutated scorpion the size of a dog.",
-    "copy-from": "mon_scorpion_giant",
-    "proportional": {
-      "hp": 0.5,
-      "speed": 1.1,
-      "morale": 0.67,
-      "melee_dice_sides": 0.67
-    },
+    "default_faction": "scorpion",
+    "bodytype": "insect",
+    "species": [
+      "INSECT"
+    ],
     "volume": "32 L",
     "weight": "40 kg",
+    "hp": 42.5,
+    "speed": 110.00000000000001,
+    "material": [
+      "iflesh"
+    ],
+    "symbol": "s",
+    "color": "brown",
+    "aggression": 40,
+    "morale": 67.0,
+    "melee_skill": 6,
+    "melee_dice": 1,
+    "melee_dice_sides": 5.36,
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 6
+      }
+    ],
+    "dodge": 1,
+    "vision_day": 5,
+    "vision_night": 5,
+    "harvest": "arachnid",
+    "special_attacks": [
+      {
+        "id": "impale"
+      }
+    ],
+    "fungalize_into": "mon_scorpion_fungus",
+    "flags": [
+      "SEES",
+      "SMELLS",
+      "HEARS",
+      "BADVENOM",
+      "PARALYZEVENOM",
+      "GRABS"
+    ],
+    "armor": {
+      "bash": 4,
+      "cut": 10
+    },
     "upgrades": {
       "half_life": 14,
       "into": "mon_scorpion_giant"
@@ -430,24 +469,47 @@
   {
     "id": "mon_termite_king",
     "type": "MONSTER",
+    "copy-from": "mon_termite_soldier",
     "name": {
       "str": "termite king"
     },
     "description": "A gigantic termite dedicated to protecting the queen and their offspring.  While its main role is breeding the king is certainly well armed.",
-    "copy-from": "mon_termite_soldier",
-    "proportional": {
-      "hp": 10,
-      "speed": 0.25,
-      "dodge": 0.5,
-      "vision_day": 2
-    },
+    "default_faction": "termite",
+    "bodytype": "insect",
+    "species": [
+      "INSECT"
+    ],
     "volume": "625 L",
     "weight": "815 kg",
+    "hp": 800,
+    "speed": 25.0,
+    "material": [
+      "iflesh"
+    ],
     "symbol": "T",
     "color": "light_gray",
+    "aggression": 30,
+    "melee_skill": 7,
     "melee_dice": 2,
+    "melee_dice_sides": 8,
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 6
+      }
+    ],
+    "dodge": 1.0,
     "bleed_rate": 60,
-    "grab_strength": 75,
+    "weakpoint_sets": [
+      "wps_arthropod"
+    ],
+    "families": [
+      "prof_intro_biology",
+      "prof_wp_basic_bug"
+    ],
+    "vision_day": 10,
+    "vision_night": 5,
+    "harvest": "arachnid",
     "special_attacks": [
       {
         "id": "smash",
@@ -467,21 +529,32 @@
         "cooldown": 5
       }
     ],
-    "extend": {
-      "flags": [
-        "DESTROYS",
-        "GRABS",
-        "PUSH_MON",
-        "PUSH_VEH",
-        "RANGED_ATTACKER"
-      ]
-    },
+    "anger_triggers": [
+      "FRIEND_ATTACKED",
+      "FRIEND_DIED",
+      "HURT",
+      "PLAYER_CLOSE"
+    ],
+    "flags": [
+      "SEES",
+      "HEARS",
+      "SMELLS",
+      "GRABS",
+      "CLIMBS",
+      "PATH_AVOID_FIRE",
+      "PATH_AVOID_FALL",
+      "DESTROYS",
+      "PUSH_MON",
+      "PUSH_VEH",
+      "RANGED_ATTACKER"
+    ],
     "armor": {
       "bash": 10,
       "cut": 12,
       "bullet": 10,
       "electric": 4
-    }
+    },
+    "grab_strength": 75
   },
   {
     "id": "mon_termite_queen",

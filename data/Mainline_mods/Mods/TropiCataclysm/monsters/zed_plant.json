@@ -2,29 +2,49 @@
   {
     "id": "mon_zombie_garden",
     "type": "MONSTER",
+    "copy-from": "mon_beekeeper",
     "name": {
       "str": "garden zombie"
     },
     "description": "A zombie wearing some kind of gardening or botanic attire and is smeared full of vines, thorns, pollen and sap.  The triffids have it controlled somehow but its purpose remains unclear.",
-    "copy-from": "mon_beekeeper",
     "default_faction": "triffid",
-    "harvest": "zombie_thorny",
+    "bodytype": "human",
     "species": [
       "ZOMBIE",
       "PLANT"
     ],
+    "volume": "62500 ml",
+    "weight": "81500 g",
+    "hp": 70,
+    "speed": 60,
     "material": [
       "veggy"
     ],
     "symbol": "Z",
     "color": "light_green",
-    "death_drops": "mon_zombie_thorny_death_drops",
-    "attack_effs": [
+    "aggression": 100,
+    "morale": 100,
+    "melee_skill": 3,
+    "melee_dice": 2,
+    "melee_dice_sides": 4,
+    "melee_damage": [
       {
-        "id": "paralyzepoison",
-        "duration": 33
+        "damage_type": "cut",
+        "amount": 2
       }
     ],
+    "weakpoint_sets": [
+      "wps_humanoid_body",
+      "wps_natural_armor"
+    ],
+    "families": [
+      "prof_intro_biology",
+      "prof_physiology",
+      "prof_wp_zombie",
+      "prof_wp_nat_armored"
+    ],
+    "harvest": "zombie_thorny",
+    "grab_strength": 20,
     "special_attacks": [
       {
         "type": "spell",
@@ -36,10 +56,9 @@
         "monster_message": "The zombie spews a cloud of pollen!"
       }
     ],
-    "upgrades": {
-      "half_life": 20,
-      "into_group": "GROUP_GARDEN_ZOMBIE_UPGRADE"
-    },
+    "death_drops": "mon_zombie_thorny_death_drops",
+    "burn_into": "mon_zombie_scorched",
+    "fungalize_into": "mon_beekeeper_fungal",
     "flags": [
       "SEES",
       "HEARS",
@@ -54,7 +73,23 @@
       "PUSH_MON",
       "FILTHY",
       "PARALYZEVENOM"
-    ]
+    ],
+    "armor": {
+      "bash": 6,
+      "cut": 8,
+      "bullet": 6,
+      "electric": 1
+    },
+    "attack_effs": [
+      {
+        "id": "paralyzepoison",
+        "duration": 33
+      }
+    ],
+    "upgrades": {
+      "half_life": 20,
+      "into_group": "GROUP_GARDEN_ZOMBIE_UPGRADE"
+    }
   },
   {
     "id": "mon_zombie_seedling",
@@ -144,11 +179,87 @@
   {
     "id": "mon_zombie_flowerchild",
     "type": "MONSTER",
+    "copy-from": "mon_zombie_seedling",
     "name": {
       "str": "spriteling"
     },
-    "copy-from": "mon_zombie_seedling",
     "description": "An undead child mutated by alien flora.  It has several colorful flowers on its scalp and an unsettling serene expression.",
+    "default_faction": "triffid",
+    "bodytype": "human",
+    "species": [
+      "ZOMBIE",
+      "PLANT"
+    ],
+    "volume": "30000 ml",
+    "weight": "40750 g",
+    "hp": 40,
+    "speed": 65,
+    "material": [
+      "veggy"
+    ],
+    "symbol": "z",
+    "color": "light_green",
+    "aggression": 60,
+    "morale": 100,
+    "melee_skill": 2,
+    "melee_dice": 2,
+    "melee_dice_sides": 4,
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 2
+      }
+    ],
+    "dodge": 2,
+    "vision_day": 30,
+    "vision_night": 3,
+    "harvest": "zombie_thorny",
+    "special_attacks": [
+      {
+        "id": "scratch",
+        "attack_upper": false,
+        "cooldown": 15
+      }
+    ],
+    "death_drops": {
+      "subtype": "collection",
+      "groups": [
+        [
+          "default_zombie_children_clothes",
+          100
+        ],
+        [
+          "child_items",
+          65
+        ]
+      ],
+      "//": "default zombie children clothing (always), additional items from child_items (sometimes)"
+    },
+    "death_function": {
+      "effect": {
+        "id": "death_guilt",
+        "min_level": 4
+      }
+    },
+    "burn_into": "mon_zombie_child_scorched",
+    "fungalize_into": "mon_zombie_child_fungus",
+    "upgrades": {
+      "half_life": 20,
+      "into": "mon_zombie_flowerchild"
+    },
+    "flags": [
+      "SEES",
+      "HEARS",
+      "SMELLS",
+      "STUMBLES",
+      "WARM",
+      "BASHES",
+      "POISON",
+      "NO_BREATHE",
+      "REVIVES",
+      "FILTHY",
+      "PARALYZEVENOM"
+    ],
     "attack_effs": [
       {
         "id": "paralyzepoison",

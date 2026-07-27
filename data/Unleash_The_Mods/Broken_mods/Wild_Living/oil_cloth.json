@@ -89,7 +89,6 @@
   {
     "id": "turpentine",
     "type": "COMESTIBLE",
-    "copy-from": "rosin",
     "weight": "15 g",
     "volume": "250 ml",
     "name": {
@@ -121,7 +120,6 @@
   {
     "id": "canvas",
     "type": "GENERIC",
-    "copy-from": "sheet",
     "name": {
       "str": "thick canvas",
       "str_pl": "thick canvasses"
@@ -130,11 +128,9 @@
     "material": [
       "canvas"
     ],
-    "proportional": {
-      "weight": 2.0,
-      "volume": 2.0,
-      "price": 1.5
-    }
+    "weight": 2.0,
+    "volume": 2.0,
+    "price": 1.5
   },
   {
     "id": "oilcloth_canvas",
@@ -144,21 +140,20 @@
       "str": "oilcloth canvas",
       "str_pl": "oilcloth canvasses"
     },
-    "proportional": {
-      "price": 1.8
-    },
-    "description": "A large waterproofed canvas, a dark grey in colour"
+    "description": "A large waterproofed canvas, a dark grey in colour",
+    "material": [
+      "canvas"
+    ],
+    "price": 1.8
   },
   {
     "id": "drying_oilcloth_frame",
     "type": "GENERIC",
     "copy-from": "canvas",
-    "proportional": {
-      "weight": 2.0
-    },
     "name": {
       "str": "drying oilcloth"
     },
+    "description": "A large reinforced sheet of cloth",
     "material": [
       "oilcloth",
       "wood"
@@ -170,23 +165,23 @@
       "type": "delayed_transform",
       "transform_age": 180000,
       "not_ready_msg": "The paint isn't quite dry just yet."
-    }
+    },
+    "weight": 2.0
   },
   {
     "id": "oilcloth_canvas_dry",
     "type": "GENERIC",
+    "copy-from": "canvas",
     "name": {
       "str": "dried oilcloth"
     },
-    "copy-from": "canvas",
+    "description": "A large reinforced sheet of cloth",
     "material": [
       "oilcloth"
     ],
-    "proportional": {
-      "weight": 1.1,
-      "price": 1.2
-    },
-    "use_action": "DISASSEMBLE"
+    "use_action": "DISASSEMBLE",
+    "weight": 1.1,
+    "price": 1.2
   },
   {
     "id": "canola_oil",
@@ -195,7 +190,34 @@
     "name": {
       "str": "canola oil"
     },
-    "description": "Oil extracted from canola seeds"
+    "weight": "15 g",
+    "color": "yellow",
+    "container": "jug_plastic",
+    "sealed": false,
+    "comestible_type": "DRINK",
+    "symbol": "~",
+    "quench": -1,
+    "calories": 127,
+    "description": "Oil extracted from canola seeds",
+    "price": 40,
+    "price_postapoc": 5,
+    "material": [
+      "oil",
+      "veggy"
+    ],
+    "volume": "250 ml",
+    "charges": 16,
+    "phase": "liquid",
+    "fun": -25,
+    "use_action": [
+      "BLECH"
+    ],
+    "flags": [
+      "NUTRIENT_OVERRIDE",
+      "NO_AUTO_CONSUME"
+    ],
+    "vitamins": [],
+    "freezing_point": -26
   },
   {
     "result": "canola_oil",
@@ -460,7 +482,7 @@
     "description": "This is a small personal tent kit made from oilcloth, it's just big enough to fit you comfortably.",
     "weight": "1833 g",
     "volume": "2800 ml",
-    "price": "150 USD",
+    "price": 150,
     "to_hit": -3,
     "melee_damage": {
       "bash": 4

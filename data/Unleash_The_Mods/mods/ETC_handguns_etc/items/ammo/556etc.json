@@ -1,67 +1,52 @@
 [
   {
     "id": "556eb",
-    "type": "AMMO",
+    "type": "GENERIC",
     "name": {
       "str": "5.56 Electro Blackout"
     },
     "description": "Test item.  A preternaturally dense, subsonic 5.56x45mm electrothermal-chemical ammunition with 1466gr AP bullets made from some extradimensional unobtainium.",
-    "copy-from": "556dk",
     "//": "270m/s muzzle velocity",
-    "proportional": {
-      "weight": 19,
-      "price": 1000,
-      "range": 0.83,
-      "damage": {
-        "damage_type": "stab",
-        "amount": 1.52,
-        "armor_penetration": 0.98
-      },
-      "dispersion": 1.66,
-      "recoil": 0.92
-    },
     "loudness": 78,
-    "effects": [
-      "COOKOFF"
-    ]
+    "weight": 19,
+    "price": 1000,
+    "range": 0.83,
+    "damage": {
+      "damage_type": "stab",
+      "amount": 1.52,
+      "armor_penetration": 0.98
+    },
+    "recoil": 0.92
   },
   {
     "id": "556sap",
-    "type": "AMMO",
+    "type": "GENERIC",
     "name": {
       "str": "5.56 SAP"
     },
     "description": "5.56x45mm electrothermal-chemical ammunition with a depleted uranium 185gr subsonic armor piercing bullet.  OCG quickly made a conventional 5.56 NATO version of this round with some compromises and kept producing both before the Cataclysm.",
-    "copy-from": "556dk",
     "material": [
       "brass",
       "powder",
       "uranium"
     ],
     "//": "320m/s muzzle velocity. Pitiful muzzle energy for a ETC rifle round but great ballistic coefficient, terminal ballistics and very dense round make up for it.",
-    "proportional": {
-      "weight": 0.95,
-      "price": 2,
-      "price_postapoc": 1.1,
-      "range": 0.55,
-      "damage": {
-        "damage_type": "stab",
-        "amount": 0.77,
-        "armor_penetration": 0.55
-      },
-      "dispersion": 2.5,
-      "recoil": 0.27
-    },
     "loudness": 68,
     "looks_like": "223",
-    "effects": [
-      "COOKOFF"
-    ]
+    "weight": 0.95,
+    "price": 2,
+    "price_postapoc": 1.1,
+    "range": 0.55,
+    "damage": {
+      "damage_type": "stab",
+      "amount": 0.77,
+      "armor_penetration": 0.55
+    },
+    "recoil": 0.27
   },
   {
     "id": "556dk_incendiary",
-    "copy-from": "556dk",
-    "type": "AMMO",
+    "type": "GENERIC",
     "name": {
       "str": "5.56 DK tracer"
     },
@@ -75,18 +60,9 @@
   },
   {
     "id": "reloaded_556dk",
-    "copy-from": "556dk",
-    "type": "AMMO",
+    "type": "GENERIC",
     "name": {
       "str": "reloaded 5.56 DK"
-    },
-    "proportional": {
-      "price": 0.7,
-      "damage": {
-        "damage_type": "stab",
-        "amount": 0.9
-      },
-      "dispersion": 1.1
     },
     "extend": {
       "effects": [
@@ -94,80 +70,223 @@
       ]
     },
     "looks_like": "reloaded_556",
-    "delete": {
-      "effects": [
-        "NEVER_MISFIRES"
-      ],
-      "flags": [
-        "IRREPLACEABLE_CONSUMABLE"
-      ]
+    "price": 0.7,
+    "damage": {
+      "damage_type": "stab",
+      "amount": 0.9
     }
   },
   {
     "id": "reloaded_556dk_incendiary",
-    "copy-from": "556dk_incendiary",
-    "type": "AMMO",
+    "type": "GENERIC",
     "name": {
       "str": "reloaded 5.56 DK tracer"
     },
-    "proportional": {
-      "price": 0.7,
-      "damage": {
-        "damage_type": "stab",
-        "amount": 0.9
-      },
-      "dispersion": 1.1
-    },
+    "description": "This ammunition is a one-in-five mix of tracer rounds to help keep the weapon they are fired from on target.",
+    "looks_like": "reloaded_556_incendiary",
     "extend": {
       "effects": [
         "RECYCLED"
       ]
     },
-    "looks_like": "reloaded_556_incendiary",
-    "delete": {
-      "effects": [
-        "NEVER_MISFIRES"
-      ],
-      "flags": [
-        "IRREPLACEABLE_CONSUMABLE"
-      ]
+    "price": 0.7,
+    "damage": {
+      "damage_type": "stab",
+      "amount": 0.9
     }
   },
   {
     "id": "556blackout",
-    "copy-from": "223",
     "type": "AMMO",
+    "copy-from": "223",
     "name": {
       "str": "5.56 OCG Noctis",
       "str_pl": "5.56 OCG Noctises"
     },
     "description": "5.56x45mm ammunition with subsonic 154gr depleted uranium bullets.  While weaker and shorter ranged than dedicated subsonic rounds such as 9x39mm, they are more compact and can cut armor like a hot knife through butter.",
+    "ascii_picture": "223",
+    "weight": "13 g",
+    "volume": "194 ml",
+    "longest_side": "57 mm",
+    "price": "11160 cent",
+    "price_postapoc": 17,
+    "flags": [
+      "IRREPLACEABLE_CONSUMABLE"
+    ],
     "material": [
       "brass",
       "powder",
       "uranium"
     ],
-    "//": "320 m/s muzzle velocity.",
-    "weight": "13 g",
-    "price": "11160 cent",
-    "price_postapoc": "17 USD",
-    "relative": {
-      "damage": {
-        "damage_type": "stab",
-        "amount": -17,
-        "armor_penetration": 26
-      },
-      "dispersion": 7
-    },
-    "proportional": {
-      "range": 0.73,
-      "recoil": 0.45
-    },
-    "loudness": 68,
-    "extend": {
-      "effects": [
-        "NEVER_MISFIRES"
+    "symbol": "=",
+    "color": "yellow",
+    "count": 30,
+    "stack_size": 47,
+    "ammo_type": "223",
+    "casing": "223_casing",
+    "range": 26.28,
+    "damage": {
+      "damage_type": "bullet",
+      "amount": 22,
+      "armor_penetration": 28,
+      "barrels": [
+        {
+          "barrel_length": "28 mm",
+          "amount": 13
+        },
+        {
+          "barrel_length": "30 mm",
+          "amount": 14
+        },
+        {
+          "barrel_length": "35 mm",
+          "amount": 15
+        },
+        {
+          "barrel_length": "39 mm",
+          "amount": 16
+        },
+        {
+          "barrel_length": "43 mm",
+          "amount": 17
+        },
+        {
+          "barrel_length": "47 mm",
+          "amount": 18
+        },
+        {
+          "barrel_length": "52 mm",
+          "amount": 19
+        },
+        {
+          "barrel_length": "57 mm",
+          "amount": 20
+        },
+        {
+          "barrel_length": "65 mm",
+          "amount": 21
+        },
+        {
+          "barrel_length": "71 mm",
+          "amount": 22
+        },
+        {
+          "barrel_length": "77 mm",
+          "amount": 23
+        },
+        {
+          "barrel_length": "84 mm",
+          "amount": 24
+        },
+        {
+          "barrel_length": "92 mm",
+          "amount": 25
+        },
+        {
+          "barrel_length": "101 mm",
+          "amount": 26
+        },
+        {
+          "barrel_length": "110 mm",
+          "amount": 27
+        },
+        {
+          "barrel_length": "120 mm",
+          "amount": 28
+        },
+        {
+          "barrel_length": "131 mm",
+          "amount": 29
+        },
+        {
+          "barrel_length": "144 mm",
+          "amount": 30
+        },
+        {
+          "barrel_length": "157 mm",
+          "amount": 31
+        },
+        {
+          "barrel_length": "172 mm",
+          "amount": 32
+        },
+        {
+          "barrel_length": "189 mm",
+          "amount": 33
+        },
+        {
+          "barrel_length": "208 mm",
+          "amount": 34
+        },
+        {
+          "barrel_length": "229 mm",
+          "amount": 35
+        },
+        {
+          "barrel_length": "252 mm",
+          "amount": 36
+        },
+        {
+          "barrel_length": "288 mm",
+          "amount": 37
+        },
+        {
+          "barrel_length": "319 mm",
+          "amount": 38
+        },
+        {
+          "barrel_length": "354 mm",
+          "amount": 39
+        },
+        {
+          "barrel_length": "395 mm",
+          "amount": 40
+        },
+        {
+          "barrel_length": "441 mm",
+          "amount": 41
+        },
+        {
+          "barrel_length": "494 mm",
+          "amount": 42
+        },
+        {
+          "barrel_length": "557 mm",
+          "amount": 43
+        },
+        {
+          "barrel_length": "629 mm",
+          "amount": 44
+        },
+        {
+          "barrel_length": "715 mm",
+          "amount": 45
+        },
+        {
+          "barrel_length": "816 mm",
+          "amount": 46
+        },
+        {
+          "barrel_length": "937 mm",
+          "amount": 47
+        },
+        {
+          "barrel_length": "1105 mm",
+          "amount": 48
+        },
+        {
+          "barrel_length": "1232 mm",
+          "amount": 49
+        }
       ]
-    }
+    },
+    "recoil": 675.0,
+    "effects": [
+      "COOKOFF",
+      "NEVER_MISFIRES"
+    ],
+    "//": "320 m/s muzzle velocity.",
+    "loudness": 68,
+    "//legacy_dispersion": 37
   }
 ]

@@ -1,52 +1,83 @@
 [
   {
+    "id": "sd_card",
     "type": "GENERIC",
     "copy-from": "memory_card_unread",
-    "id": "sd_card",
-    "//": "local copy of the native SD card sans all the random data flags",
-    "name": { "str": "SD-Memory card" },
-    "flags": [  ]
+    "name": {
+      "str": "SD-Memory card"
+    },
+    "description": "A memory card, can be used to store data.  Looks like it has been in use, might be worth taking a look.",
+    "looks_like": "mobile_memory_card",
+    "weight": "1 g",
+    "volume": "1 ml",
+    "symbol": ",",
+    "color": "white",
+    "price": 1000,
+    "price_postapoc": 10,
+    "material": [
+      "plastic"
+    ],
+    "ascii_picture": "memory_card",
+    "flags": [],
+    "pocket_data": [],
+    "memory_card": {
+      "data_chance": 0.875,
+      "on_read_convert_to": "memory_card",
+      "photos_chance": 0.33,
+      "photos_amount": 30,
+      "songs_chance": 0.33,
+      "songs_amount": 15,
+      "recipes_chance": 0.33,
+      "recipes_amount": 3,
+      "recipes_categories": [
+        "CC_AMMO",
+        "CC_ARMOR",
+        "CC_CHEM",
+        "CC_ELECTRONIC",
+        "CC_FOOD",
+        "CC_WEAPON"
+      ],
+      "recipes_level_max": 5
+    },
+    "//": "local copy of the native SD card sans all the random data flags"
   },
   {
+    "id": "software",
     "type": "GENERIC",
-    "copy-from": "software",
-    "abstract": "file",
-    "name": { "str": "a file", "str_pl": "files" },
+    "name": {
+      "str": "a file",
+      "str_pl": "files"
+    },
     "symbol": "#",
     "container": "sd_card",
-    "flags": [ "IRREMOVABLE", "NO_DROP" ]
+    "description": "IF YOU ARE SEEING THIS IT IS A BUG.",
+    "flags": [
+      "IRREMOVABLE",
+      "NO_DROP"
+    ]
   },
   {
+    "id": "file",
     "type": "GENERIC",
-    "abstract": "cad",
-    "copy-from": "file",
-    "name": { "str": "CAD file" },
-    "//": "to be used for 3D printing recipes",
-    "symbol": "#"
-  },
-  {
-    "type": "GENERIC",
-    "abstract": "gcode",
-    "copy-from": "file",
-    "name": { "str": "GCODE file" },
-    "//": "to be used for CNC machining recipes",
-    "symbol": "#"
-  },
-  {
-    "type": "GENERIC",
-    "abstract": "qsar",
-    "copy-from": "file",
-    "name": { "str": "QSAR file" },
-    "//": "to be used for biomedical printing, particular drug printing",
-    "symbol": "#"
-  },
-  {
-    "type": "GENERIC",
-    "abstract": "xler",
-    "copy-from": "file",
-    "name": { "str": "XLER file" },
+    "copy-from": "software",
+    "name": {
+      "str": "XLER file"
+    },
+    "category": "books",
+    "description": "Several documents containing all kinds of information, customer data, and charts, kept together in a manila folder.  Pretty useless now.",
+    "weight": "15 g",
+    "to_hit": -3,
+    "color": "white",
+    "symbol": "#",
+    "material": [
+      "paper"
+    ],
+    "volume": "50 ml",
+    "flags": [
+      "TRADER_AVOID",
+      "TINDER"
+    ],
     "//": "to be used in molecular assembly; named after K. Eric Drexler, an early pioneer of the root nanoassembly technology",
-    "container": "usb_drive",
-    "symbol": "#"
+    "container": "usb_drive"
   }
 ]

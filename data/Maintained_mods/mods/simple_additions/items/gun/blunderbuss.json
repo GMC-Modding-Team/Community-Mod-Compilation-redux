@@ -12,7 +12,7 @@
     "weight": "6443 g",
     "volume": "3 L",
     "longest_side": "60 cm",
-    "price": "750 USD",
+    "price": 750,
     "price_postapoc": "1250 cent",
     "to_hit": -1,
     "melee_damage": {
@@ -74,39 +74,26 @@
   },
   {
     "id": "blunderbuss_pistol",
-    "copy-from": "pistol_base",
-    "looks_like": "glock_17",
     "type": "GUN",
+    "copy-from": "pistol_base",
+    "reload_noise_volume": 10,
+    "//": "default handling for anything without a stock",
+    "handling": 10,
     "name": {
       "str": "blunderbuss pistol"
     },
-    "description": "A single shot pistol that loads homemade ammo, handcrafted from scrap.",
-    "ascii_picture": "shotgun_pistol",
-    "weight": "1 kg",
-    "volume": "800 ml",
-    "longest_side": "35 cm",
-    "price": "1000 USD",
-    "price_postapoc": "5 USD",
-    "to_hit": -2,
-    "melee_damage": {
-      "bash": 6
-    },
-    "material": [
-      "steel",
-      "wood"
-    ],
     "symbol": "(",
     "color": "brown",
-    "ammo": [
-      "blunderbuss"
+    "faults": [
+      "fault_gun_blackpowder",
+      "fault_gun_dirt"
     ],
     "ranged_damage": {
       "damage_type": "bullet",
       "amount": -11
     },
-    "dispersion": 900,
-    "durability": 6,
-    "reload": 200,
+    "skill": "pistol",
+    "sight_dispersion": 60,
     "valid_mod_locations": [
       [
         "accessories",
@@ -137,10 +124,28 @@
         1
       ]
     ],
-    "faults": [
-      "fault_gun_blackpowder",
-      "fault_gun_dirt"
+    "looks_like": "glock_17",
+    "description": "A single shot pistol that loads homemade ammo, handcrafted from scrap.",
+    "ascii_picture": "shotgun_pistol",
+    "weight": "1 kg",
+    "volume": "800 ml",
+    "longest_side": "35 cm",
+    "price": 1000,
+    "price_postapoc": 5,
+    "to_hit": -2,
+    "melee_damage": {
+      "bash": 6
+    },
+    "material": [
+      "steel",
+      "wood"
     ],
+    "ammo": [
+      "blunderbuss"
+    ],
+    "dispersion": 900,
+    "durability": 6,
+    "reload": 200,
     "flags": [
       "NEVER_JAMS",
       "RELOAD_EJECT"

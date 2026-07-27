@@ -11,8 +11,8 @@
     "weight": "14254 g",
     "volume": "7500 ml",
     "longest_side": "290 cm",
-    "price": "400 USD",
-    "price_postapoc": "20 USD",
+    "price": 400,
+    "price_postapoc": 20,
     "to_hit": -2,
     "melee_damage": {
       "bash": 20
@@ -53,24 +53,61 @@
   },
   {
     "id": "cs_lajatang_on",
-    "copy-from": "cs_lajatang_off",
     "type": "TOOL",
+    "copy-from": "cs_lajatang_off",
+    "category": "weapons",
     "name": {
       "str": "chainsaw lajatang (on)",
       "str_pl": "chainsaw lajatangs (on)"
     },
     "description": "A long wooden pole with chainsaws impractically attached to both ends.  They are currently on and draining gasoline; use this item to turn them off.",
+    "weight": "14254 g",
+    "volume": "7500 ml",
+    "longest_side": "290 cm",
+    "price": 400,
+    "price_postapoc": 20,
+    "to_hit": -4,
     "melee_damage": {
       "bash": 4,
       "cut": 140
     },
-    "to_hit": -4,
-    "revert_to": "cs_lajatang_off",
+    "material": [
+      "plastic",
+      "steel"
+    ],
+    "symbol": "/",
+    "color": "red",
+    "ammo": [
+      "gasoline"
+    ],
+    "charges_per_use": 0,
+    "techniques": [
+      "WBLOCK_1",
+      "SPIN",
+      "SWEEP"
+    ],
     "use_action": [
       "CS_LAJATANG_ON"
     ],
+    "flags": [
+      "MESSY",
+      "FRAGILE_MELEE",
+      "TRADER_AVOID",
+      "NONCONDUCTIVE",
+      "ALWAYS_TWOHAND"
+    ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE",
+        "rigid": true,
+        "ammo_restriction": {
+          "gasoline": 800
+        },
+        "watertight": true
+      }
+    ],
+    "revert_to": "cs_lajatang_off",
     "turns_per_charge": 1,
-    "charges_per_use": 0,
     "qualities": [
       [
         "AXE",
@@ -80,13 +117,6 @@
         "BUTCHER",
         -250
       ]
-    ],
-    "flags": [
-      "MESSY",
-      "FRAGILE_MELEE",
-      "TRADER_AVOID",
-      "NONCONDUCTIVE",
-      "ALWAYS_TWOHAND"
     ]
   },
   {
@@ -100,8 +130,8 @@
     "weight": "14254 g",
     "volume": "7500 ml",
     "longest_side": "290 cm",
-    "price": "400 USD",
-    "price_postapoc": "20 USD",
+    "price": 400,
+    "price_postapoc": 20,
     "to_hit": -2,
     "melee_damage": {
       "bash": 20
@@ -144,21 +174,35 @@
   },
   {
     "id": "ecs_lajatang_on",
-    "copy-from": "ecs_lajatang_off",
     "type": "TOOL",
+    "copy-from": "ecs_lajatang_off",
     "name": {
       "str": "electric chainsaw lajatang (on)",
       "str_pl": "electric chainsaw lajatangs (on)"
     },
     "description": "A long wooden pole with electric chainsaws impractically attached to both ends.  They are currently on and draining power; use this item to turn them off.",
+    "weight": "14254 g",
+    "volume": "7500 ml",
+    "longest_side": "290 cm",
+    "price": 400,
+    "price_postapoc": 20,
     "to_hit": -4,
     "melee_damage": {
       "bash": 4,
       "cut": 140
     },
-    "power_draw": 4000000,
+    "material": [
+      "plastic",
+      "steel"
+    ],
+    "symbol": "/",
+    "color": "red",
     "charges_per_use": 0,
-    "revert_to": "ecs_lajatang_off",
+    "techniques": [
+      "WBLOCK_1",
+      "SPIN",
+      "SWEEP"
+    ],
     "use_action": [
       "ECS_LAJATANG_ON"
     ],
@@ -168,6 +212,23 @@
       "TRADER_AVOID",
       "NONCONDUCTIVE",
       "ALWAYS_TWOHAND"
-    ]
+    ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "holster": true,
+        "magazine_well": "500 ml",
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [
+          "heavy_battery_cell",
+          "heavy_plus_battery_cell",
+          "heavy_atomic_battery_cell",
+          "heavy_disposable_cell"
+        ]
+      }
+    ],
+    "power_draw": 4000000,
+    "revert_to": "ecs_lajatang_off"
   }
 ]

@@ -73,13 +73,74 @@
   {
     "id": "mon_migoturret_whately",
     "type": "MONSTER",
+    "copy-from": "afs_mon_migoturret",
     "name": {
       "str": "Whately family brain blaster"
     },
     "description": "The Whately family deploys mi-go style techno-organic defensive turrets.  They claim that these turrets are made from family members near death, but you have doubts.",
     "default_faction": "whately",
-    "copy-from": "afs_mon_migoturret",
-    "aggression": 1
+    "species": [
+      "ROBOT"
+    ],
+    "diff": 20,
+    "volume": "30000 ml",
+    "weight": "40750 g",
+    "hp": 45,
+    "speed": 100,
+    "material": [
+      "alien_resin"
+    ],
+    "symbol": "2",
+    "color": "green",
+    "aggression": 1,
+    "morale": 100,
+    "vision_day": 50,
+    "starting_ammo": {
+      "acidic_bore": 500
+    },
+    "revert_to_itype": "bot_migoturret",
+    "special_attacks": [
+      [
+        "PARROT",
+        0
+      ],
+      {
+        "type": "gun",
+        "cooldown": 1,
+        "gun_type": "vibrating_blaster",
+        "fake_skills": [
+          [
+            "gun",
+            2
+          ],
+          [
+            "rifle",
+            3
+          ]
+        ],
+        "ranges": [
+          [
+            0,
+            20,
+            "DEFAULT"
+          ]
+        ]
+      }
+    ],
+    "death_drops": {},
+    "death_function": {
+      "corpse_type": "BROKEN"
+    },
+    "flags": [
+      "SEES",
+      "ELECTRONIC",
+      "IMMOBILE",
+      "NO_BREATHE"
+    ],
+    "armor": {
+      "bash": 14,
+      "cut": 16
+    }
   },
   {
     "id": "mon_chickenbot",
@@ -404,14 +465,42 @@
   },
   {
     "id": "mon_bloodhound_drone",
-    "copy-from": "base_drone",
     "type": "MONSTER",
+    "copy-from": "base_drone",
     "name": {
       "str": "bloodhound drone"
     },
+    "default_faction": "science",
+    "species": [
+      "ROBOT"
+    ],
+    "volume": "750 ml",
+    "weight": "1 kg",
+    "hp": 10,
+    "material": [
+      "steel"
+    ],
+    "symbol": "e",
+    "aggression": 100,
+    "morale": 100,
+    "luminance": 60,
+    "death_function": {
+      "corpse_type": "BROKEN"
+    },
+    "flags": [
+      "SEES",
+      "FLIES",
+      "NOHEAD",
+      "ELECTRONIC",
+      "NO_BREATHE",
+      "BIOLOGICALPROOF",
+      "INTERIOR_AMMO",
+      "STUN_IMMUNE",
+      "HIT_AND_RUN",
+      "SMELLS"
+    ],
     "description": "A small, spiked quadcopter robot equipped with a high-power spotlight.  This automated seeker drone was originally designed to harry and harass fugitives while maintaining visual contact for other pursuers.",
     "diff": 2,
-    "default_faction": "science",
     "speed": 150,
     "color": "light_gray",
     "scents_tracked": [
@@ -427,7 +516,6 @@
         1
       ]
     ],
-    "luminance": 60,
     "melee_damage": [
       {
         "damage_type": "cut",
@@ -449,20 +537,6 @@
           "turret_searchlight",
           1
         ]
-      ]
-    },
-    "death_function": {
-      "corpse_type": "BROKEN"
-    },
-    "extend": {
-      "flags": [
-        "HIT_AND_RUN",
-        "SMELLS"
-      ]
-    },
-    "delete": {
-      "flags": [
-        "PACIFIST"
       ]
     },
     "armor": {
@@ -531,7 +605,46 @@
     "name": {
       "str": "TsKBEM Likvidator"
     },
-    "description": "A now ancient industrial robot line first made by the Soviet TsKBEM, and still in use thanks to its easily obtained fabrication schematics.  Built to operate within nuclear reactors and waste repositories, the Likvidator is assembled around an armored bipedal chassis that mounts several heavy manipulator arms.  Legend claims it was originally designed after a nuclear disaster during early space-age Earth."
+    "looks_like": "mon_hazmatbot",
+    "description": "A now ancient industrial robot line first made by the Soviet TsKBEM, and still in use thanks to its easily obtained fabrication schematics.  Built to operate within nuclear reactors and waste repositories, the Likvidator is assembled around an armored bipedal chassis that mounts several heavy manipulator arms.  Legend claims it was originally designed after a nuclear disaster during early space-age Earth.",
+    "default_faction": "utility_bot",
+    "species": [
+      "ROBOT"
+    ],
+    "weight": "140 kg",
+    "volume": "65 L",
+    "hp": 120,
+    "speed": 70,
+    "material": [
+      "steel"
+    ],
+    "symbol": "R",
+    "color": "green",
+    "bodytype": "human",
+    "morale": 80,
+    "aggression": 0,
+    "anger_triggers": [
+      "HURT"
+    ],
+    "armor": {
+      "bash": 8,
+      "cut": 8,
+      "heat": 4,
+      "acid": 6
+    },
+    "vision_day": 50,
+    "death_function": {
+      "corpse_type": "BROKEN"
+    },
+    "revert_to_itype": "bot_utilibot",
+    "flags": [
+      "SEES",
+      "HEARS",
+      "ELECTRONIC",
+      "NO_BREATHE",
+      "PRIORITIZE_TARGETS",
+      "PATH_AVOID_DANGER_1"
+    ]
   },
   {
     "id": "mon_utilibot_butler",
@@ -541,8 +654,46 @@
       "str": "ENIAC Famulus",
       "str_pl": "ENIAC Famuli"
     },
+    "looks_like": "mon_hazmatbot",
+    "description": "A top of the line luxury model, the Famulus is a humaniform robot, derived from Wraitheon schematics with slight alterations to give it a more human appearance.  Designed to be a robotic servant, its AI tailored for the needs of each customer, it is arguably one of the few commercial robots to pass the Turing test.",
+    "default_faction": "utility_bot",
+    "species": [
+      "ROBOT"
+    ],
+    "weight": "140 kg",
+    "volume": "65 L",
+    "hp": 120,
+    "speed": 70,
+    "material": [
+      "steel"
+    ],
+    "symbol": "R",
     "color": "dark_gray",
-    "description": "A top of the line luxury model, the Famulus is a humaniform robot, derived from Wraitheon schematics with slight alterations to give it a more human appearance.  Designed to be a robotic servant, its AI tailored for the needs of each customer, it is arguably one of the few commercial robots to pass the Turing test."
+    "bodytype": "human",
+    "morale": 80,
+    "aggression": 0,
+    "anger_triggers": [
+      "HURT"
+    ],
+    "armor": {
+      "bash": 8,
+      "cut": 8,
+      "heat": 4,
+      "acid": 6
+    },
+    "vision_day": 50,
+    "death_function": {
+      "corpse_type": "BROKEN"
+    },
+    "revert_to_itype": "bot_utilibot",
+    "flags": [
+      "SEES",
+      "HEARS",
+      "ELECTRONIC",
+      "NO_BREATHE",
+      "PRIORITIZE_TARGETS",
+      "PATH_AVOID_DANGER_1"
+    ]
   },
   {
     "id": "mon_utilibot_const",
@@ -551,8 +702,47 @@
     "name": {
       "str": "TsKBEM Udarnik"
     },
+    "looks_like": "mon_hazmatbot",
     "description": "A highly customizable light industrial and agricultural robot.  Its original design dates back to the ancient Soviet Union; the aptly named Udarnik \"shock worker\" was the trigger behind the automation revolution, and with subsequent adaptations, became the workhorse of early human space colonization.  Although outdated by modern standards, the Udarnik is still commonly seen in frontier worlds - thanks to its easily obtainable fabrication schematics.\n\nThis particular version is equipped with a mix of construction and heavy cargo-handling tools and was likely involved in the construction of colony buildings.",
+    "default_faction": "utility_bot",
+    "species": [
+      "ROBOT"
+    ],
+    "weight": "140 kg",
+    "volume": "65 L",
+    "hp": 120,
+    "speed": 70,
+    "material": [
+      "steel"
+    ],
+    "symbol": "R",
     "color": "yellow",
+    "bodytype": "human",
+    "morale": 80,
+    "aggression": 0,
+    "anger_triggers": [
+      "HURT"
+    ],
+    "armor": {
+      "bash": 8,
+      "cut": 8,
+      "heat": 4,
+      "acid": 6
+    },
+    "vision_day": 50,
+    "death_function": {
+      "corpse_type": "BROKEN"
+    },
+    "revert_to_itype": "bot_utilibot",
+    "flags": [
+      "SEES",
+      "HEARS",
+      "ELECTRONIC",
+      "NO_BREATHE",
+      "PRIORITIZE_TARGETS",
+      "PATH_AVOID_DANGER_1",
+      "DROPS_AMMO"
+    ],
     "luminance": 10,
     "melee_skill": 2,
     "melee_dice": 4,
@@ -590,12 +780,7 @@
           ]
         ]
       }
-    ],
-    "extend": {
-      "flags": [
-        "DROPS_AMMO"
-      ]
-    }
+    ]
   },
   {
     "id": "mon_utilibot_fire",
@@ -604,8 +789,48 @@
     "name": {
       "str": "TsKBEM Brandspojt"
     },
+    "looks_like": "mon_hazmatbot",
     "description": "An old and decidedly uncommon firefighter robot of Soviet design.  Crab-like in form, its back mounts a squat water tank beneath a turreted water cannon.  While effective for its original function, the design lacks the flexibility of others from the TsKBEM, and most Brandspojt units still in existence are museum pieces.",
+    "default_faction": "utility_bot",
+    "species": [
+      "ROBOT"
+    ],
+    "weight": "140 kg",
+    "volume": "65 L",
+    "hp": 120,
+    "speed": 70,
+    "material": [
+      "steel"
+    ],
+    "symbol": "R",
     "color": "yellow",
+    "bodytype": "human",
+    "morale": 80,
+    "aggression": 0,
+    "anger_triggers": [
+      "HURT"
+    ],
+    "armor": {
+      "bash": 8,
+      "cut": 8,
+      "heat": 4,
+      "acid": 6
+    },
+    "vision_day": 50,
+    "death_function": {
+      "corpse_type": "BROKEN"
+    },
+    "revert_to_itype": "bot_utilibot",
+    "flags": [
+      "SEES",
+      "HEARS",
+      "ELECTRONIC",
+      "NO_BREATHE",
+      "PRIORITIZE_TARGETS",
+      "PATH_AVOID_DANGER_1",
+      "FIREPROOF",
+      "BASHES"
+    ],
     "luminance": 100,
     "melee_skill": 3,
     "melee_dice": 4,
@@ -643,13 +868,7 @@
           ]
         ]
       }
-    ],
-    "extend": {
-      "flags": [
-        "FIREPROOF",
-        "BASHES"
-      ]
-    }
+    ]
   },
   {
     "id": "mon_medibot",
@@ -736,20 +955,28 @@
       "str": "rat snatcher"
     },
     "description": "A small and flimsy hexapod drone that relies on sheer speed to hunt rats and other small pests.  It has either gone rampant or been maliciously reprogrammed.",
+    "default_faction": "defense_bot",
+    "species": [
+      "ROBOT"
+    ],
+    "diff": 2,
     "volume": "750 ml",
     "weight": "1 kg",
-    "color": "light_gray",
-    "scents_tracked": [
-      "sc_human"
-    ],
-    "speed": 100,
-    "attack_cost": 500,
     "hp": 10,
-    "vision_night": 10,
+    "speed": 100,
+    "material": [
+      "steel"
+    ],
+    "symbol": "a",
+    "color": "light_gray",
+    "aggression": 100,
+    "morale": 100,
+    "bleed_rate": 0,
+    "vision_day": 50,
     "revert_to_itype": "bot_skitterbot_rat",
-    "melee_skill": 3,
-    "melee_dice": 2,
-    "melee_dice_sides": 2,
+    "path_settings": {
+      "max_dist": 5
+    },
     "special_attacks": [
       {
         "type": "leap",
@@ -763,19 +990,48 @@
         10
       ]
     ],
-    "extend": {
-      "flags": [
-        "CLIMBS",
-        "HIT_AND_RUN",
-        "SMELLS"
+    "death_drops": {
+      "groups": [
+        [
+          "robots",
+          4
+        ],
+        [
+          "skitterbot",
+          1
+        ]
       ]
     },
+    "death_function": {
+      "corpse_type": "BROKEN"
+    },
+    "flags": [
+      "SEES",
+      "HEARS",
+      "GOODHEARING",
+      "ELECTRONIC",
+      "COLDPROOF",
+      "NO_BREATHE",
+      "PATH_AVOID_DANGER_1",
+      "STUN_IMMUNE",
+      "CLIMBS",
+      "HIT_AND_RUN",
+      "SMELLS"
+    ],
     "armor": {
       "bullet": 10,
       "electric": 5,
       "bash": 4,
       "cut": 4
-    }
+    },
+    "scents_tracked": [
+      "sc_human"
+    ],
+    "attack_cost": 500,
+    "vision_night": 10,
+    "melee_skill": 3,
+    "melee_dice": 2,
+    "melee_dice_sides": 2
   },
   {
     "id": "mon_skitterbot_grab",
@@ -785,15 +1041,72 @@
       "str": "grab-bot"
     },
     "description": "A salvaged skitterbot repurposed to grab onto and immobilize enemies.  It's meant to work in a pack.",
-    "aggression": 50,
+    "default_faction": "defense_bot",
+    "species": [
+      "ROBOT"
+    ],
+    "diff": 2,
+    "volume": "105 L",
+    "weight": "32700 g",
+    "hp": 30,
+    "speed": 200,
+    "material": [
+      "steel"
+    ],
+    "symbol": "a",
     "color": "light_green",
+    "aggression": 50,
+    "morale": 100,
+    "bleed_rate": 0,
+    "vision_day": 20,
+    "revert_to_itype": "bot_skitterbot_grab",
+    "path_settings": {
+      "max_dist": 5
+    },
+    "special_attacks": [
+      {
+        "id": "grab",
+        "cooldown": 2
+      }
+    ],
+    "death_drops": {
+      "groups": [
+        [
+          "robots",
+          4
+        ],
+        [
+          "skitterbot",
+          1
+        ]
+      ]
+    },
+    "death_function": {
+      "corpse_type": "BROKEN"
+    },
+    "flags": [
+      "SEES",
+      "HEARS",
+      "GOODHEARING",
+      "ELECTRONIC",
+      "COLDPROOF",
+      "NO_BREATHE",
+      "PATH_AVOID_DANGER_1",
+      "STUN_IMMUNE",
+      "SWARMS",
+      "GRABS",
+      "GROUP_BASH",
+      "SMELLS"
+    ],
+    "armor": {
+      "bullet": 10,
+      "electric": 5,
+      "bash": 8,
+      "cut": 8
+    },
     "scents_tracked": [
       "sc_human"
     ],
-    "speed": 200,
-    "hp": 30,
-    "vision_day": 20,
-    "revert_to_itype": "bot_skitterbot_grab",
     "melee_skill": 3,
     "melee_dice": 4,
     "melee_dice_sides": 2,
@@ -804,27 +1117,7 @@
         "duration": 5
       }
     ],
-    "grab_strength": 50,
-    "special_attacks": [
-      {
-        "id": "grab",
-        "cooldown": 2
-      }
-    ],
-    "extend": {
-      "flags": [
-        "SWARMS",
-        "GRABS",
-        "GROUP_BASH",
-        "SMELLS"
-      ]
-    },
-    "armor": {
-      "bullet": 10,
-      "electric": 5,
-      "bash": 8,
-      "cut": 8
-    }
+    "grab_strength": 50
   },
   {
     "id": "mon_skitterbot_hunter",
@@ -834,17 +1127,27 @@
       "str": "pest hunter"
     },
     "description": "A salvaged skitterbot refitted with an 8mm integrated firearm.  The robot's small size precludes rapid-fire, due to recoil, and requires the use of lightweight caseless ammo.",
-    "color": "dark_gray",
-    "scents_tracked": [
-      "sc_human"
+    "default_faction": "defense_bot",
+    "species": [
+      "ROBOT"
     ],
-    "aggression": 50,
-    "speed": 200,
+    "diff": 2,
+    "volume": "105 L",
+    "weight": "32700 g",
     "hp": 30,
+    "speed": 200,
+    "material": [
+      "steel"
+    ],
+    "symbol": "a",
+    "color": "dark_gray",
+    "aggression": 50,
+    "morale": 100,
+    "bleed_rate": 0,
     "vision_day": 20,
     "revert_to_itype": "bot_skitterbot_hunter",
-    "starting_ammo": {
-      "8mm_caseless": 120
+    "path_settings": {
+      "max_dist": 5
     },
     "special_attacks": [
       {
@@ -874,17 +1177,47 @@
         ]
       }
     ],
+    "death_drops": {
+      "groups": [
+        [
+          "robots",
+          4
+        ],
+        [
+          "skitterbot",
+          1
+        ]
+      ]
+    },
+    "death_function": {
+      "corpse_type": "BROKEN"
+    },
+    "flags": [
+      "SEES",
+      "HEARS",
+      "GOODHEARING",
+      "ELECTRONIC",
+      "COLDPROOF",
+      "NO_BREATHE",
+      "PATH_AVOID_DANGER_1",
+      "STUN_IMMUNE"
+    ],
     "armor": {
       "bullet": 10,
       "electric": 5,
       "bash": 8,
       "cut": 8
+    },
+    "scents_tracked": [
+      "sc_human"
+    ],
+    "starting_ammo": {
+      "8mm_caseless": 120
     }
   },
   {
     "id": "mon_defbot_shot",
     "type": "MONSTER",
-    "copy-from": "mon_defbot_base",
     "default_faction": "WraitheonRobotics",
     "name": {
       "str": "Wraitheon Aegis",
@@ -937,7 +1270,6 @@
   {
     "id": "mon_milbot_556",
     "type": "MONSTER",
-    "copy-from": "mon_milbot_base",
     "name": {
       "str": "Wraitheon Imaginifer"
     },
@@ -1006,7 +1338,6 @@
   {
     "id": "mon_milbot_needle",
     "type": "MONSTER",
-    "copy-from": "mon_milbot_base",
     "name": {
       "str": "Wraitheon Hashashiyyin"
     },
@@ -1075,7 +1406,6 @@
   {
     "id": "mon_milbot_40mm",
     "type": "MONSTER",
-    "copy-from": "mon_milbot_base",
     "name": {
       "str": "Wraitheon Suppressor"
     },
@@ -1087,7 +1417,7 @@
         "amount": 6
       }
     ],
-    "color": "dark_gray_red",
+    "color": "dark_gray",
     "starting_ammo": {
       "40x46mm_m433": 100
     },
@@ -1135,12 +1465,28 @@
   {
     "id": "mon_advbot_laser",
     "type": "MONSTER",
-    "copy-from": "mon_advbot_base",
+    "looks_like": "mon_copbot",
     "name": {
       "str": "Wraitheon Fulgent"
     },
     "description": "An autonomous anti-personnel weapons platform, mounting a laser on an insectoid chassis.  The Fulgent designation excels at 'controlling' riots and (sometimes simultaneously) putting down potential freedom fighters.",
     "default_faction": "WraitheonRobotics",
+    "species": [
+      "ROBOT"
+    ],
+    "hp": 100,
+    "armor": {
+      "bash": 8,
+      "cut": 6,
+      "bullet": 6,
+      "heat": 8,
+      "acid": 12
+    },
+    "vision_day": 50,
+    "speed": 110,
+    "color": "white",
+    "aggression": 100,
+    "dodge": 5,
     "diff": 20,
     "special_attacks": [
       {
@@ -1184,15 +1530,30 @@
   {
     "id": "mon_wraitheon_irradiant",
     "type": "MONSTER",
-    "copy-from": "mon_advbot_base",
+    "looks_like": "mon_copbot",
     "name": {
       "str": "Wraitheon Irradiant"
     },
     "description": "An autonomous anti-armor weapons platform, mounting a 5kg plasma railgun over an insectoid chassis.  The Irradiant designation excels at ambush and midrange combat, where it can leverage its superior agility and reduced sensor profile to successfully engage technologically advanced foes.",
     "default_faction": "WraitheonRobotics",
-    "diff": 40,
+    "species": [
+      "ROBOT"
+    ],
+    "hp": 100,
+    "armor": {
+      "stab": 6,
+      "acid": 12,
+      "bash": 20,
+      "cut": 30,
+      "heat": 15,
+      "bullet": 35
+    },
+    "vision_day": 50,
     "speed": 150,
     "color": "pink",
+    "aggression": 100,
+    "dodge": 5,
+    "diff": 40,
     "luminance": 20,
     "extend": {
       "flags": [
@@ -1242,7 +1603,21 @@
         "cooldown": 10,
         "max_range": 8
       }
+    ]
+  },
+  {
+    "id": "mon_wraitheon_isohypsa",
+    "type": "MONSTER",
+    "looks_like": "mon_copbot",
+    "name": {
+      "str": "Wraitheon Isohypsa"
+    },
+    "description": "A bulky if not particularly large aerial drone, with an advanced AI overwatch unit and a bulbous carapace, mostly dedicated to mounting high-resolution sensors.  As an autonomous drone control platform, the Isohypsa is principally meant to coordinate and enhance the combat capabilities of simpler Wraitheon robots in lieu of human operators.",
+    "default_faction": "WraitheonRobotics",
+    "species": [
+      "ROBOT"
     ],
+    "hp": 100,
     "armor": {
       "stab": 6,
       "acid": 12,
@@ -1250,21 +1625,14 @@
       "cut": 30,
       "heat": 15,
       "bullet": 35
-    }
-  },
-  {
-    "id": "mon_wraitheon_isohypsa",
-    "type": "MONSTER",
-    "copy-from": "mon_advbot_base",
-    "name": {
-      "str": "Wraitheon Isohypsa"
     },
-    "description": "A bulky if not particularly large aerial drone, with an advanced AI overwatch unit and a bulbous carapace, mostly dedicated to mounting high-resolution sensors.  As an autonomous drone control platform, the Isohypsa is principally meant to coordinate and enhance the combat capabilities of simpler Wraitheon robots in lieu of human operators.",
-    "default_faction": "WraitheonRobotics",
-    "symbol": "y",
-    "diff": 20,
+    "vision_day": 50,
     "speed": 100,
     "color": "light_red",
+    "aggression": 100,
+    "dodge": 5,
+    "symbol": "y",
+    "diff": 20,
     "morale": 20,
     "luminance": 20,
     "tracking_distance": 20,
@@ -1286,25 +1654,45 @@
         "cooldown": 5,
         "monster_message": "The Isohypsa emits a rapid sequence of sibilant tones!"
       }
-    ],
-    "armor": {
-      "stab": 6,
-      "acid": 12,
-      "bash": 20,
-      "cut": 30,
-      "heat": 15,
-      "bullet": 35
-    }
+    ]
   },
   {
     "id": "mon_wraitheon_kaburaya",
-    "copy-from": "base_drone",
     "type": "MONSTER",
+    "copy-from": "base_drone",
     "name": {
       "str": "Wraitheon Kabura-ya"
     },
-    "description": "A microplane drone designed to seek enemy personnel before detonating at close range.",
     "default_faction": "WraitheonRobotics",
+    "species": [
+      "ROBOT"
+    ],
+    "volume": "750 ml",
+    "weight": "1 kg",
+    "hp": 10,
+    "material": [
+      "steel"
+    ],
+    "symbol": "e",
+    "aggression": 100,
+    "morale": 100,
+    "luminance": 5,
+    "death_function": {
+      "message": "The %s's interior compartment sizzles with destructive energy.",
+      "corpse_type": "BROKEN"
+    },
+    "flags": [
+      "SEES",
+      "FLIES",
+      "NOHEAD",
+      "ELECTRONIC",
+      "NO_BREATHE",
+      "BIOLOGICALPROOF",
+      "INTERIOR_AMMO",
+      "STUN_IMMUNE",
+      "PACIFIST"
+    ],
+    "description": "A microplane drone designed to seek enemy personnel before detonating at close range.",
     "diff": 10,
     "speed": 250,
     "color": "green",
@@ -1326,13 +1714,29 @@
   {
     "id": "mon_advbot_emp",
     "type": "MONSTER",
-    "copy-from": "mon_advbot_base",
+    "looks_like": "mon_copbot",
     "name": {
       "str": "Wraitheon Frequency",
       "str_pl": "Wraitheon Frequencies"
     },
     "description": "An autonomous weapons platform, made to disrupt or disable electronics - especially other robots - with an electromagnetic pulse.",
     "default_faction": "WraitheonRobotics",
+    "species": [
+      "ROBOT"
+    ],
+    "hp": 100,
+    "armor": {
+      "bash": 8,
+      "cut": 6,
+      "bullet": 6,
+      "heat": 8,
+      "acid": 12
+    },
+    "vision_day": 50,
+    "speed": 110,
+    "color": "white",
+    "aggression": 100,
+    "dodge": 5,
     "diff": 10,
     "special_attacks": [
       {

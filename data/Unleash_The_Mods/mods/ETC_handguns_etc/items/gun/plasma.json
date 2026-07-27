@@ -20,8 +20,8 @@
     "ammo": [
       "plasma"
     ],
-    "price": "20000 USD",
-    "price_postapoc": "100 USD",
+    "price": 20000,
+    "price_postapoc": 100,
     "reload_noise_volume": 10,
     "melee_damage": {
       "bash": 12
@@ -106,34 +106,36 @@
   },
   {
     "id": "ocg_xnu_laser",
+    "type": "GUN",
     "copy-from": "laser_rifle",
     "looks_like": "laser_rifle",
-    "type": "GUN",
+    "reload_noise_volume": 10,
     "name": {
       "str": "OCG XNU laser rifle"
     },
     "description": "A titanium:sapphire near-ultraviolet laser powered with a rechargeable hydrogen fuel cell fed by a solid hydrogen canister, the XNU is deadly invisible.  While technically it is not a rifle because there is no rifling, pedants in OmniCorp R&D were speechless in awe of its firepower, drinking atomic coffee brewed using water byproduct from a freshly recharged cell and so the misnomer carried on.",
-    "//": "It's not possible to make the laser both invisible and capable of passing through transparent barriers in-game without hardcoded changes",
     "weight": "2500 g",
     "volume": "2900 ml",
+    "longest_side": "900 mm",
+    "price": 19000,
+    "price_postapoc": 100,
+    "to_hit": -1,
     "material": [
       "superalloy",
       "plastic",
       "aluminum"
     ],
+    "symbol": "(",
     "color": "magenta",
-    "price": "19000 USD",
-    "price_postapoc": "100 USD",
-    "loudness": 12,
-    "reload": 100,
+    "skill": "rifle",
     "range": 40,
-    "dispersion": 5,
-    "durability": 8,
     "ranged_damage": {
       "damage_type": "heat",
       "amount": 66,
       "armor_penetration": 20
     },
+    "dispersion": 5,
+    "durability": 8,
     "modes": [
       [
         "DEFAULT",
@@ -151,12 +153,12 @@
         4
       ]
     ],
-    "flags": [
-      "NEVER_JAMS",
-      "NON_FOULING",
-      "NEEDS_NO_LUBE",
-      "WATERPROOF_GUN"
-    ],
+    "overheat_threshold": 100,
+    "cooling_value": 2,
+    "heat_per_shot": 5,
+    "loudness": 12,
+    "energy_drain": "40 kJ",
+    "reload": 100,
     "valid_mod_locations": [
       [
         "lens",
@@ -191,6 +193,24 @@
         1
       ]
     ],
+    "ammo_effects": [
+      "LASER",
+      "INCENDIARY"
+    ],
+    "flags": [
+      "NEVER_JAMS",
+      "NON_FOULING",
+      "NEEDS_NO_LUBE",
+      "WATERPROOF_GUN"
+    ],
+    "faults": [
+      "fault_overheat_melting",
+      "fault_overheat_safety"
+    ],
+    "melee_damage": {
+      "bash": 12
+    },
+    "//": "It's not possible to make the laser both invisible and capable of passing through transparent barriers in-game without hardcoded changes",
     "pocket_data": [
       {
         "magazine_well": "750 ml",

@@ -3,102 +3,345 @@
     "id": "marloss_coffee",
     "type": "COMESTIBLE",
     "copy-from": "coffee",
+    "name": {
+      "str": "cremini coffee",
+      "str_pl": "cremini coffee cups"
+    },
+    "weight": "250 g",
     "color": "cyan",
-    "healthy": 5,
+    "addiction_type": "caffeine",
+    "fatigue_mod": 36,
     "stim": 15,
-    "fun": 20,
+    "container": "bottle_plastic",
+    "comestible_type": "DRINK",
+    "symbol": "~",
+    "quench": 40,
     "addiction_potential": 0,
-    "name": { "str": "cremini coffee", "str_pl": "cremini coffee cups" },
+    "calories": 2,
     "description": "Plain black coffee, made creamy and nutty through the addition of alien fruits.  It's…  probably healthy.",
-    "flags": [ "EATEN_HOT", "MYCUS_OK" ]
+    "price": 100,
+    "price_postapoc": 50,
+    "material": [
+      "water"
+    ],
+    "volume": "250 ml",
+    "charges": 1,
+    "phase": "liquid",
+    "flags": [
+      "EATEN_HOT",
+      "MYCUS_OK"
+    ],
+    "fun": 20,
+    "healthy": 5
   },
   {
     "id": "marloss_atomic_coffee",
     "type": "COMESTIBLE",
     "copy-from": "atomic_coffee",
+    "name": {
+      "str": "marloss mocha",
+      "str_pl": "marloss mocha cups"
+    },
+    "weight": "250 g",
     "color": "cyan",
-    "healthy": 5,
-    "fun": 30,
+    "addiction_type": "caffeine",
+    "fatigue_mod": 90,
+    "stim": 30,
+    "container": "bottle_plastic",
+    "comestible_type": "DRINK",
+    "symbol": "~",
+    "quench": 40,
     "addiction_potential": 0,
-    "name": { "str": "marloss mocha", "str_pl": "marloss mocha cups" },
+    "calories": 35,
     "description": "The best way for a local guide to start off their morning.",
-    "flags": [ "EATEN_HOT", "MYCUS_OK" ]
+    "price": 300,
+    "price_postapoc": 100,
+    "material": [
+      "water"
+    ],
+    "volume": "250 ml",
+    "charges": 1,
+    "phase": "liquid",
+    "flags": [
+      "EATEN_HOT",
+      "MYCUS_OK"
+    ],
+    "fun": 30,
+    "healthy": 5
   },
   {
     "id": "mycus_pie",
     "type": "COMESTIBLE",
     "copy-from": "pie",
+    "name": {
+      "str": "portobello pie",
+      "str_pl": "portobello pie slices"
+    },
+    "weight": "125 g",
     "color": "light_gray",
     "spoils_in": "0 hours",
+    "container": "box_small",
+    "comestible_type": "FOOD",
+    "symbol": "%",
     "quench": 20,
-    "healthy": 2,
-    "fun": 10,
-    "name": { "str": "portobello pie", "str_pl": "portobello pie slices" },
+    "calories": 20,
     "description": "A sweet, filling pie baked with unorthodox filling.  Palatable to mushrooms.",
-    "use_action": "MYCUS",
-    "flags": [ "EATEN_HOT", "MYCUS_OK" ],
-    "calories": 20
+    "price": "156 cent",
+    "price_postapoc": 1,
+    "material": [
+      "wheat",
+      "fruit"
+    ],
+    "volume": "250 ml",
+    "flags": [
+      "EATEN_HOT",
+      "MYCUS_OK"
+    ],
+    "fun": 10,
+    "//": "these vitamins are only for pies that may spawn.  generally they will be inherited from the fruit used.",
+    "vitamins": [
+      [
+        "vitC",
+        6
+      ],
+      [
+        "calcium",
+        1
+      ],
+      [
+        "iron",
+        3
+      ]
+    ],
+    "healthy": 2,
+    "use_action": "MYCUS"
   },
   {
     "id": "mycus_pizza",
     "type": "COMESTIBLE",
     "copy-from": "pizza_meat",
+    "name": {
+      "str": "porcini pizza",
+      "str_pl": "porcini pizza slices"
+    },
+    "conditional_names": [
+      {
+        "type": "FLAG",
+        "condition": "CANNIBALISM",
+        "name": {
+          "str": "poser pizza"
+        }
+      },
+      {
+        "type": "FLAG",
+        "condition": "STRICT_HUMANITARIANISM",
+        "name": {
+          "str": "protesting pizza"
+        }
+      },
+      {
+        "type": "COMPONENT_ID_SUBSTRING",
+        "condition": "mutant",
+        "name": {
+          "str_sp": "miserable %s"
+        }
+      }
+    ],
+    "weight": "230 g",
     "color": "light_gray",
     "spoils_in": "0 hours",
+    "container": "box_small",
+    "comestible_type": "FOOD",
+    "symbol": "%",
+    "calories": 30,
+    "description": "All the savory flavors of classic Friday-night pizza, now adaptable to alien hiveminds everywhere!",
+    "price": "272 cent",
+    "price_postapoc": "250 cent",
+    "material": [
+      "wheat",
+      "fruit"
+    ],
+    "volume": "250 ml",
+    "flags": [
+      "EATEN_HOT",
+      "MYCUS_OK"
+    ],
+    "fun": 15,
+    "vitamins": [
+      [
+        "vitC",
+        0
+      ],
+      [
+        "calcium",
+        44
+      ],
+      [
+        "iron",
+        36
+      ]
+    ],
     "quench": 30,
     "healthy": 4,
-    "fun": 15,
-    "name": { "str": "porcini pizza", "str_pl": "porcini pizza slices" },
-    "description": "All the savory flavors of classic Friday-night pizza, now adaptable to alien hiveminds everywhere!",
-    "use_action": "MYCUS",
-    "material": [ "wheat", "fruit" ],
-    "flags": [ "EATEN_HOT", "MYCUS_OK" ],
-    "calories": 30
+    "use_action": "MYCUS"
   },
   {
     "id": "mycus_soup",
     "type": "COMESTIBLE",
     "copy-from": "soup_veggy",
+    "looks_like": "water",
+    "name": {
+      "str_sp": "shiitake soup"
+    },
+    "weight": "254 g",
     "color": "light_gray",
     "spoils_in": "0 hours",
+    "container": "can_medium",
+    "comestible_type": "DRINK",
+    "symbol": "~",
     "quench": 50,
-    "healthy": 10,
-    "fun": 30,
-    "name": { "str_sp": "shiitake soup" },
+    "calories": 50,
     "description": "Fungal fruits, diced and mixed with other ingredients to make a nutritious, tasty soup.  For mushrooms.",
-    "use_action": "MYCUS",
-    "material": [ "veggy", "fruit" ],
-    "flags": [ "EATEN_HOT", "MYCUS_OK" ],
-    "calories": 50
+    "price": 400,
+    "price_postapoc": 25,
+    "material": [
+      "veggy",
+      "fruit"
+    ],
+    "volume": "500 ml",
+    "charges": 2,
+    "phase": "liquid",
+    "flags": [
+      "EATEN_HOT",
+      "MYCUS_OK"
+    ],
+    "vitamins": [
+      [
+        "vitC",
+        4
+      ],
+      [
+        "calcium",
+        1
+      ],
+      [
+        "iron",
+        5
+      ]
+    ],
+    "fun": 30,
+    "healthy": 10,
+    "use_action": "MYCUS"
   },
   {
     "id": "mycus_eggs",
     "type": "COMESTIBLE",
     "copy-from": "deluxe_eggs",
+    "name": {
+      "str_sp": "enoki eggs"
+    },
+    "conditional_names": [
+      {
+        "type": "FLAG",
+        "condition": "CANNIBALISM",
+        "name": {
+          "str_sp": "deluxe scrambled eggheads"
+        }
+      },
+      {
+        "type": "FLAG",
+        "condition": "STRICT_HUMANITARIANISM",
+        "name": {
+          "str_sp": "birdman's scrambled eggs"
+        }
+      },
+      {
+        "type": "COMPONENT_ID_SUBSTRING",
+        "condition": "mutant",
+        "name": {
+          "str_sp": "\"deluxe\" scrambled eggs"
+        }
+      }
+    ],
+    "weight": "198 g",
     "color": "light_gray",
     "spoils_in": "0 hours",
+    "comestible_type": "FOOD",
+    "symbol": "%",
+    "calories": 80,
+    "description": "Scrambled eggs with alien plants sprinkled on top for seasoning.  This probably isn't edible unless you're an alien…",
+    "price": "233 cent",
+    "price_postapoc": "150 cent",
+    "material": [
+      "egg",
+      "fruit"
+    ],
+    "volume": "83 ml",
+    "flags": [
+      "EATEN_HOT",
+      "MYCUS_OK"
+    ],
+    "fun": 15,
+    "vitamins": [
+      [
+        "vitC",
+        2
+      ],
+      [
+        "calcium",
+        4
+      ],
+      [
+        "iron",
+        39
+      ]
+    ],
     "quench": 80,
     "healthy": 10,
-    "fun": 15,
-    "name": { "str_sp": "enoki eggs" },
-    "description": "Scrambled eggs with alien plants sprinkled on top for seasoning.  This probably isn't edible unless you're an alien…",
-    "use_action": "MYCUS",
-    "material": [ "egg", "fruit" ],
-    "flags": [ "EATEN_HOT", "MYCUS_OK" ],
-    "calories": 80
+    "use_action": "MYCUS"
   },
   {
     "id": "mycus_rations",
     "type": "COMESTIBLE",
     "copy-from": "mycus_fruit",
-    "color": "dark_gray",
-    "quench": 60,
-    "fun": 10,
+    "name": {
+      "str_sp": "mycus rations"
+    },
     "weight": "75 g",
-    "stack_size": 8,
-    "//": "Half as bulky and almost four times as light as normal mycus fruits; these are the kind of things you bring into labs!",
-    "name": { "str_sp": "mycus rations" },
+    "color": "dark_gray",
+    "use_action": [
+      "MYCUS"
+    ],
+    "comestible_type": "FOOD",
+    "symbol": "%",
+    "quench": 60,
+    "calories": 60,
     "description": "Mycus fruits whose moisture has been drained.  These dehydrated flakes lack the nutrition of their ingredient fruits, but are lighter and easier to carry in bulk.",
-    "calories": 60
+    "price": "1 cent",
+    "price_postapoc": "1 cent",
+    "material": [
+      "fruit"
+    ],
+    "volume": "62 ml",
+    "flags": [
+      "MYCUS_OK"
+    ],
+    "vitamins": [
+      [
+        "vitC",
+        25
+      ],
+      [
+        "calcium",
+        25
+      ],
+      [
+        "iron",
+        25
+      ]
+    ],
+    "fun": 10,
+    "stack_size": 8,
+    "//": "Half as bulky and almost four times as light as normal mycus fruits; these are the kind of things you bring into labs!"
   }
 ]

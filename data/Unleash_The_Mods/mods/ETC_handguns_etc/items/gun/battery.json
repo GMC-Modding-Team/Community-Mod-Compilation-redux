@@ -1,22 +1,28 @@
 [
   {
     "id": "ocg_xe50_ionmace",
+    "type": "GUN",
     "copy-from": "v29",
     "looks_like": "v29",
-    "type": "GUN",
+    "reload_noise_volume": 10,
     "name": {
       "str": "OCG XE50 Ion Mace"
     },
     "description": "OmniCorp XE50 is a battery-fed electrolaser \"shotgun\" with extremely limited range, one less-lethal and two lethal fire modes.  Its scatter beams have the capability of stunning targets, disabling electronics with EMP, depleting a rechargeable battery in less than one second and ignore almost any armor.",
-    "//": "High DPS potential despite its stats. Usefulness depends on the availability of spare batteries, for only one 450ms 'burst' is enough to deplete a standard medium battery.",
     "weight": "500 g",
     "volume": "1125 ml",
-    "price": "9000 USD",
-    "price_postapoc": "30 USD",
+    "longest_side": "233 mm",
+    "//": "High DPS potential despite its stats. Usefulness depends on the availability of spare batteries, for only one 450ms 'burst' is enough to deplete a standard medium battery.",
+    "price": 9000,
+    "price_postapoc": 30,
+    "to_hit": -2,
     "material": [
       "superalloy",
       "plastic"
     ],
+    "symbol": "(",
+    "color": "magenta",
+    "skill": "pistol",
     "range": 7,
     "ranged_damage": {
       "damage_type": "electric",
@@ -24,8 +30,13 @@
       "armor_penetration": 5
     },
     "dispersion": 200,
+    "durability": 8,
     "loudness": 10,
+    "energy_drain": "10 kJ",
     "reload": 100,
+    "overheat_threshold": 60,
+    "cooling_value": 2,
+    "heat_per_shot": 6,
     "valid_mod_locations": [
       [
         "accessories",
@@ -60,6 +71,26 @@
         1
       ]
     ],
+    "ammo_effects": [
+      "DRAW_LASER_BEAM",
+      "SHOT",
+      "NOGIB",
+      "INCENDIARY",
+      "BEANBAG",
+      "EMP"
+    ],
+    "flags": [
+      "NEVER_JAMS",
+      "NON_FOULING",
+      "NEEDS_NO_LUBE"
+    ],
+    "faults": [
+      "fault_overheat_melting",
+      "fault_overheat_safety"
+    ],
+    "melee_damage": {
+      "bash": 5
+    },
     "modes": [
       [
         "DEFAULT",
@@ -76,19 +107,6 @@
         "cont.",
         22
       ]
-    ],
-    "ammo_effects": [
-      "DRAW_LASER_BEAM",
-      "SHOT",
-      "NOGIB",
-      "INCENDIARY",
-      "BEANBAG",
-      "EMP"
-    ],
-    "flags": [
-      "NEVER_JAMS",
-      "NON_FOULING",
-      "NEEDS_NO_LUBE"
     ],
     "pocket_data": [
       {

@@ -1,10 +1,36 @@
 [
   {
     "id": "wave_rider_engine",
-    "copy-from": "engine_combustion",
     "type": "vehicle_part",
-    "fuel_type": "mana",
+    "copy-from": "engine_combustion",
+    "categories": [
+      "movement"
+    ],
+    "location": "engine_block",
+    "color": "light_red",
+    "broken_color": "red",
+    "damage_modifier": 80,
+    "backfire_threshold": 0.25,
+    "backfire_freq": 20,
+    "noise_factor": 15,
+    "damaged_power_factor": 0.25,
     "m2c": 60,
+    "flags": [
+      "ENGINE",
+      "E_COMBUSTION",
+      "E_ALTERNATOR",
+      "E_HIGHER_SKILL",
+      "E_HEATER",
+      "NO_INSTALL_HIDDEN"
+    ],
+    "description": "A combustion engine.  Burns fuel from a tank in the vehicle.",
+    "variants": [
+      {
+        "symbols": "*",
+        "symbols_broken": "#"
+      }
+    ],
+    "fuel_type": "mana",
     "item": "unloaded_wave_rider_engine",
     "durability": 200,
     "epower": "-50 W",
@@ -12,17 +38,78 @@
     "energy_consumption": "124500 W",
     "folded_volume": "2 L",
     "breaks_into": [
-      { "item": "steel_lump", "count": [ 10, 20 ] },
-      { "item": "steel_chunk", "count": [ 10, 20 ] },
-      { "item": "scrap", "count": [ 10, 20 ] }
+      {
+        "item": "steel_lump",
+        "count": [
+          10,
+          20
+        ]
+      },
+      {
+        "item": "steel_chunk",
+        "count": [
+          10,
+          20
+        ]
+      },
+      {
+        "item": "scrap",
+        "count": [
+          10,
+          20
+        ]
+      }
     ],
     "requirements": {
-      "install": { "skills": [ [ "mechanics", 2 ] ], "time": "60 m", "using": [ [ "vehicle_wrench_2", 1 ] ] },
-      "removal": { "skills": [ [ "mechanics", 2 ] ], "time": "30 m", "using": [ [ "vehicle_wrench_2", 1 ] ] },
-      "repair": { "skills": [ [ "mechanics", 3 ] ], "time": "60 m", "using": [ [ "welding_standard", 5 ] ] }
+      "install": {
+        "skills": [
+          [
+            "mechanics",
+            2
+          ]
+        ],
+        "time": "60 m",
+        "using": [
+          [
+            "vehicle_wrench_2",
+            1
+          ]
+        ]
+      },
+      "removal": {
+        "skills": [
+          [
+            "mechanics",
+            2
+          ]
+        ],
+        "time": "30 m",
+        "using": [
+          [
+            "vehicle_wrench_2",
+            1
+          ]
+        ]
+      },
+      "repair": {
+        "skills": [
+          [
+            "mechanics",
+            3
+          ]
+        ],
+        "time": "60 m",
+        "using": [
+          [
+            "welding_standard",
+            5
+          ]
+        ]
+      }
     },
-    "damage_reduction": { "all": 60 },
-    "extend": { "flags": [ "NO_INSTALL_HIDDEN" ] }
+    "damage_reduction": {
+      "all": 60
+    }
   },
   {
     "id": "mana",
@@ -34,17 +121,26 @@
     "id": "mana",
     "type": "AMMO",
     "category": "chems",
-    "name": { "str_sp": "mana core power" },
+    "name": {
+      "str_sp": "mana core power"
+    },
     "description": "Seeing this is a bug.",
     "weight": "10 g",
     "volume": "10 ml",
     "phase": "solid",
-    "material": [ "mana" ],
-    "flags": [ "PSEUDO", "PERPETUAL" ],
+    "material": [
+      "mana"
+    ],
+    "flags": [
+      "PSEUDO",
+      "PERPETUAL"
+    ],
     "symbol": "?",
     "color": "magenta",
     "count": 1,
     "ammo_type": "mana",
-    "melee_damage": { "bash": 1 }
+    "melee_damage": {
+      "bash": 1
+    }
   }
 ]

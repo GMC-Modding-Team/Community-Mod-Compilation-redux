@@ -1,9 +1,18 @@
 [
   {
     "id": "SRC_Case",
-    "copy-from": "casing",
     "type": "GENERIC",
-    "name": { "str": "M1926 SRC Casing" },
+    "copy-from": "casing",
+    "category": "spare_parts",
+    "name": {
+      "str": "M1926 SRC Casing"
+    },
+    "stackable": true,
+    "material": [
+      "brass"
+    ],
+    "symbol": "=",
+    "color": "yellow",
     "description": "An empty case for M1926 SRC rounds.",
     "weight": "6 g",
     "volume": "8 ml"
@@ -11,13 +20,20 @@
   {
     "id": "SRC26",
     "type": "AMMO",
-    "name": { "str_sp": "M1926 SRC" },
+    "name": {
+      "str_sp": "M1926 SRC"
+    },
     "description": "Round(s) of M1926 Short Rifle Cartridge.  Initially designed for the M1926 QFW, itself designed as a light support weapon, the round now sees service in the far superior SSRA.",
     "weight": "12 g",
     "volume": "250 ml",
-    "price": "22 USD",
-    "flags": [ "IRREPLACEABLE_CONSUMABLE" ],
-    "material": [ "brass", "powder" ],
+    "price": 22,
+    "flags": [
+      "IRREPLACEABLE_CONSUMABLE"
+    ],
+    "material": [
+      "brass",
+      "powder"
+    ],
     "symbol": "=",
     "color": "yellow",
     "count": 40,
@@ -25,58 +41,127 @@
     "ammo_type": "SRC",
     "casing": "SRC_Case",
     "range": 50,
-    "damage": { "damage_type": "bullet", "amount": 45, "armor_penetration": 6 },
-    "dispersion": 35,
+    "damage": {
+      "damage_type": "bullet",
+      "amount": 45,
+      "armor_penetration": 6
+    },
     "recoil": 1500,
-    "effects": [ "COOKOFF", "NEVER_MISFIRES" ]
+    "effects": [
+      "COOKOFF",
+      "NEVER_MISFIRES"
+    ],
+    "loudness": 0,
+    "//legacy_dispersion": 35
   },
   {
     "id": "reloaded_SRC26",
-    "copy-from": "SRC26",
     "type": "AMMO",
-    "name": { "str": "reloaded M1926 SRC", "str_pl": "reloaded SRC" },
-    "proportional": { "price": 0.7, "damage": { "damage_type": "bullet", "amount": 0.9 }, "dispersion": 1.1 },
-    "extend": { "effects": [ "RECYCLED" ] },
-    "delete": { "effects": [ "NEVER_MISFIRES" ], "flags": [ "IRREPLACEABLE_CONSUMABLE" ] }
+    "copy-from": "SRC26",
+    "name": {
+      "str": "reloaded M1926 SRC",
+      "str_pl": "reloaded SRC"
+    },
+    "description": "Round(s) of M1926 Short Rifle Cartridge.  Initially designed for the M1926 QFW, itself designed as a light support weapon, the round now sees service in the far superior SSRA.",
+    "weight": "12 g",
+    "volume": "250 ml",
+    "price": 15.399999999999999,
+    "flags": [],
+    "material": [
+      "brass",
+      "powder"
+    ],
+    "symbol": "=",
+    "color": "yellow",
+    "count": 40,
+    "stack_size": 40,
+    "ammo_type": "SRC",
+    "casing": "SRC_Case",
+    "range": 50,
+    "damage": {
+      "damage_type": "bullet",
+      "amount": 40.5,
+      "armor_penetration": 6
+    },
+    "recoil": 1500,
+    "effects": [
+      "COOKOFF",
+      "RECYCLED"
+    ],
+    "loudness": 0,
+    "//legacy_dispersion": 38.5
   },
   {
     "id": "blackpowder_SRC26",
-    "copy-from": "SRC26",
     "type": "AMMO",
-    "name": { "str": "M1926 SRC, Reloaded, Blackpowder" },
-    "proportional": {
-      "price": 0.7,
-      "damage": { "damage_type": "bullet", "amount": 0.76 },
-      "recoil": 0.76,
-      "armor_penetration": 0.5,
-      "dispersion": 1.3
+    "copy-from": "SRC26",
+    "name": {
+      "str": "M1926 SRC, Reloaded, Blackpowder"
     },
-    "extend": { "effects": [ "RECYCLED", "BLACKPOWDER", "MUZZLE_SMOKE" ] },
-    "delete": { "effects": [ "NEVER_MISFIRES" ], "flags": [ "IRREPLACEABLE_CONSUMABLE" ] }
+    "description": "Round(s) of M1926 Short Rifle Cartridge.  Initially designed for the M1926 QFW, itself designed as a light support weapon, the round now sees service in the far superior SSRA.",
+    "weight": "12 g",
+    "volume": "250 ml",
+    "price": 15.399999999999999,
+    "flags": [],
+    "material": [
+      "brass",
+      "powder"
+    ],
+    "symbol": "=",
+    "color": "yellow",
+    "count": 40,
+    "stack_size": 40,
+    "ammo_type": "SRC",
+    "casing": "SRC_Case",
+    "range": 50,
+    "damage": {
+      "damage_type": "bullet",
+      "amount": 34.2,
+      "armor_penetration": 6
+    },
+    "recoil": 1140.0,
+    "effects": [
+      "COOKOFF",
+      "RECYCLED",
+      "BLACKPOWDER",
+      "MUZZLE_SMOKE"
+    ],
+    "loudness": 0,
+    "armor_penetration": 0.5,
+    "//legacy_dispersion": 45.5
   },
   {
     "id": "BRC_Case",
     "type": "GENERIC",
     "category": "spare_parts",
-    "name": { "str": "M1913 BRC Casing" },
+    "name": {
+      "str": "M1913 BRC Casing"
+    },
     "description": "An empty case for M19 Basic Rifle Cartrages.",
     "weight": "10 g",
     "volume": "15ml",
     "stackable": true,
-    "material": [ "brass" ],
+    "material": [
+      "brass"
+    ],
     "symbol": "=",
     "color": "yellow"
   },
   {
     "id": "BRC_FMJ",
     "type": "AMMO",
-    "name": { "str": "M1913 BRC" },
+    "name": {
+      "str": "M1913 BRC"
+    },
     "description": "The basic Rifle Cartrage was, due to measurement errors, one of the most powerful service rifle rounds of its era.  On par with some(and sold as) big-game rounds, this thing will probally work fine for taking down a hard target or two.",
     "weight": "45 g",
     "volume": "25 ml",
     "price": "125 cent",
-    "price_postapoc": "40 USD",
-    "material": [ "brass", "powder" ],
+    "price_postapoc": 40,
+    "material": [
+      "brass",
+      "powder"
+    ],
     "symbol": "=",
     "color": "yellow",
     "count": 20,
@@ -84,53 +169,174 @@
     "ammo_type": "BRC",
     "casing": "BRC_Case",
     "range": 55,
-    "damage": { "damage_type": "bullet", "amount": 60, "armor_penetration": 12 },
-    "dispersion": 25,
+    "damage": {
+      "damage_type": "bullet",
+      "amount": 60,
+      "armor_penetration": 12
+    },
     "recoil": 5000,
-    "flags": [ "IRREPLACEABLE_CONSUMABLE" ],
-    "effects": [ "COOKOFF", "NEVER_MISFIRES" ]
+    "flags": [
+      "IRREPLACEABLE_CONSUMABLE"
+    ],
+    "effects": [
+      "COOKOFF",
+      "NEVER_MISFIRES"
+    ],
+    "loudness": 0,
+    "//legacy_dispersion": 25
   },
   {
     "id": "BRC_Reloaded",
-    "copy-from": "BRC_FMJ",
     "type": "AMMO",
-    "name": { "str": "Reloaded BRC round" },
-    "proportional": { "price": 0.7, "damage": { "damage_type": "bullet", "amount": 0.9 }, "dispersion": 1.1 },
-    "extend": { "effects": [ "RECYCLED" ] },
-    "delete": { "effects": [ "NEVER_MISFIRES" ], "flags": [ "IRREPLACEABLE_CONSUMABLE" ] }
+    "copy-from": "BRC_FMJ",
+    "name": {
+      "str": "Reloaded BRC round"
+    },
+    "description": "The basic Rifle Cartrage was, due to measurement errors, one of the most powerful service rifle rounds of its era.  On par with some(and sold as) big-game rounds, this thing will probally work fine for taking down a hard target or two.",
+    "weight": "45 g",
+    "volume": "25 ml",
+    "price": "125 cent",
+    "price_postapoc": 40,
+    "material": [
+      "brass",
+      "powder"
+    ],
+    "symbol": "=",
+    "color": "yellow",
+    "count": 20,
+    "stack_size": 20,
+    "ammo_type": "BRC",
+    "casing": "BRC_Case",
+    "range": 55,
+    "damage": {
+      "damage_type": "bullet",
+      "amount": 54.0,
+      "armor_penetration": 12
+    },
+    "recoil": 5000,
+    "flags": [],
+    "effects": [
+      "COOKOFF",
+      "RECYCLED"
+    ],
+    "loudness": 0,
+    "//legacy_dispersion": 27.500000000000004
   },
   {
     "id": "BRC_Blackpowder",
-    "copy-from": "BRC_FMJ",
     "type": "AMMO",
-    "name": { "str": "Blackpowder BRC round" },
-    "proportional": {
-      "price": 0.7,
-      "damage": { "damage_type": "bullet", "amount": 0.75 },
-      "recoil": 0.76,
-      "armor_penetration": 0.5,
-      "dispersion": 1.3
+    "copy-from": "BRC_FMJ",
+    "name": {
+      "str": "Blackpowder BRC round"
     },
-    "extend": { "effects": [ "RECYCLED", "BLACKPOWDER", "MUZZLE_SMOKE" ] },
-    "delete": { "effects": [ "NEVER_MISFIRES" ], "flags": [ "IRREPLACEABLE_CONSUMABLE" ] }
+    "description": "The basic Rifle Cartrage was, due to measurement errors, one of the most powerful service rifle rounds of its era.  On par with some(and sold as) big-game rounds, this thing will probally work fine for taking down a hard target or two.",
+    "weight": "45 g",
+    "volume": "25 ml",
+    "price": "125 cent",
+    "price_postapoc": 40,
+    "material": [
+      "brass",
+      "powder"
+    ],
+    "symbol": "=",
+    "color": "yellow",
+    "count": 20,
+    "stack_size": 20,
+    "ammo_type": "BRC",
+    "casing": "BRC_Case",
+    "range": 55,
+    "damage": {
+      "damage_type": "bullet",
+      "amount": 45.0,
+      "armor_penetration": 12
+    },
+    "recoil": 3800.0,
+    "flags": [],
+    "effects": [
+      "COOKOFF",
+      "RECYCLED",
+      "BLACKPOWDER",
+      "MUZZLE_SMOKE"
+    ],
+    "loudness": 0,
+    "armor_penetration": 0.5,
+    "//legacy_dispersion": 32.5
   },
   {
     "id": "BRC_Match",
-    "copy-from": "BRC_FMJ",
     "type": "AMMO",
-    "name": { "str": "Match-loaded BRC round" },
+    "copy-from": "BRC_FMJ",
+    "name": {
+      "str": "Match-loaded BRC round"
+    },
     "description": "Carefully loaded rounds of M19 BRC, giving greater precision and reliability.",
-    "proportional": { "dispersion": 0.75 },
-    "delete": { "flags": [ "IRREPLACEABLE_CONSUMABLE" ] }
+    "weight": "45 g",
+    "volume": "25 ml",
+    "price": "125 cent",
+    "price_postapoc": 40,
+    "material": [
+      "brass",
+      "powder"
+    ],
+    "symbol": "=",
+    "color": "yellow",
+    "count": 20,
+    "stack_size": 20,
+    "ammo_type": "BRC",
+    "casing": "BRC_Case",
+    "range": 55,
+    "damage": {
+      "damage_type": "bullet",
+      "amount": 60,
+      "armor_penetration": 12
+    },
+    "recoil": 5000,
+    "flags": [],
+    "effects": [
+      "COOKOFF",
+      "NEVER_MISFIRES"
+    ],
+    "loudness": 0,
+    "//legacy_dispersion": 18.75
   },
   {
     "id": "BRC_Tracer",
-    "copy-from": "BRC_FMJ",
     "type": "AMMO",
-    "name": { "str": "BRC Tracer Ammunition" },
+    "copy-from": "BRC_FMJ",
+    "name": {
+      "str": "BRC Tracer Ammunition"
+    },
     "description": "Basic Rifle Cartrage rounds with a pyrotechnic compisition on the base, aiding the firer spot fall of shot.  May also be used to set things on fire, but sadly unable to be reloaded.",
-    "flags": [ "IRREPLACEABLE_CONSUMABLE" ],
-    "proportional": { "price": 1.5 },
-    "extend": { "effects": [ "INCENDIARY" ] }
+    "weight": "45 g",
+    "volume": "25 ml",
+    "price": "125 cent",
+    "price_postapoc": 40,
+    "material": [
+      "brass",
+      "powder"
+    ],
+    "symbol": "=",
+    "color": "yellow",
+    "count": 20,
+    "stack_size": 20,
+    "ammo_type": "BRC",
+    "casing": "BRC_Case",
+    "range": 55,
+    "damage": {
+      "damage_type": "bullet",
+      "amount": 60,
+      "armor_penetration": 12
+    },
+    "recoil": 5000,
+    "flags": [
+      "IRREPLACEABLE_CONSUMABLE"
+    ],
+    "effects": [
+      "COOKOFF",
+      "NEVER_MISFIRES",
+      "INCENDIARY"
+    ],
+    "loudness": 0,
+    "//legacy_dispersion": 25
   }
 ]

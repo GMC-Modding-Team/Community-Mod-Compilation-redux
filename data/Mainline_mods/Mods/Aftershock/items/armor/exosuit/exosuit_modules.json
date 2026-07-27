@@ -347,11 +347,24 @@
     "id": "exo_carry_on",
     "type": "TOOL_ARMOR",
     "copy-from": "exo_carry",
+    "category": "exosuit",
     "name": {
       "str": "exosuit load support module (on)",
       "str_pl": "exosuit load support modules (on)"
     },
     "description": "This module significantly increases the exosuit's weight bearing at the cost of increased power consumption.  It is turned on and continually drawing power.  Use it to turn it off.",
+    "weight": "5 kg",
+    "volume": "2500 ml",
+    "material": [
+      "plastic",
+      "qt_steel"
+    ],
+    "symbol": "=",
+    "looks_like": "storage_battery",
+    "color": "light_gray",
+    "ammo": [
+      "battery"
+    ],
     "flags": [
       "FRAGILE",
       "CANT_WEAR",
@@ -360,15 +373,22 @@
       "EXO_MEDIUM_GADGET",
       "ONLY_ONE"
     ],
-    "power_draw": "1 W",
-    "revert_to": "exo_carry",
+    "relic_data": {
+      "passive_effects": [
+        {
+          "id": "afs_ench_exo_big_carry"
+        }
+      ]
+    },
     "use_action": {
       "ammo_scale": 0,
       "target": "exo_carry",
       "msg": "You deactivate the module.",
       "menu_text": "Turn off module",
       "type": "transform"
-    }
+    },
+    "power_draw": "1 W",
+    "revert_to": "exo_carry"
   },
   {
     "id": "exo_small_carry",
@@ -419,11 +439,24 @@
     "id": "exo_small_carry_on",
     "type": "TOOL_ARMOR",
     "copy-from": "exo_small_carry",
+    "category": "exosuit",
     "name": {
       "str": "exosuit small load support module (on)",
       "str_pl": "exosuit small load support modules (on)"
     },
     "description": "This module increases the exosuit's weight bearing at the cost of increased power consumption.  It is turned on and continually drawing power.  Use it to turn it off.",
+    "weight": "500 g",
+    "volume": "500 ml",
+    "material": [
+      "plastic",
+      "qt_steel"
+    ],
+    "symbol": "=",
+    "looks_like": "storage_battery",
+    "color": "light_gray",
+    "ammo": [
+      "battery"
+    ],
     "flags": [
       "FRAGILE",
       "CANT_WEAR",
@@ -431,15 +464,22 @@
       "USE_UPS",
       "EXO_SMALL_GADGET"
     ],
-    "power_draw": "500 mW",
-    "revert_to": "exo_small_carry",
+    "relic_data": {
+      "passive_effects": [
+        {
+          "id": "afs_ench_exo_small_carry"
+        }
+      ]
+    },
     "use_action": {
       "ammo_scale": 0,
       "target": "exo_small_carry",
       "msg": "You deactivate the module.",
       "menu_text": "Turn off module",
       "type": "transform"
-    }
+    },
+    "power_draw": "500 mW",
+    "revert_to": "exo_small_carry"
   },
   {
     "id": "exo_lense_module",
@@ -506,7 +546,6 @@
   },
   {
     "id": "exo_flashlight_low",
-    "copy-from": "exo_flashlight",
     "type": "TOOL",
     "name": {
       "str": "mounted lamp (low)",
@@ -530,7 +569,6 @@
   },
   {
     "id": "exo_flashlight_high",
-    "copy-from": "exo_flashlight",
     "type": "TOOL",
     "name": {
       "str": "mounted lamp (high)",
@@ -597,7 +635,6 @@
   },
   {
     "id": "exo_recoil_on",
-    "copy-from": "exo_recoil",
     "type": "TOOL",
     "name": {
       "str": "recoil mitigation system (on)",
@@ -1188,14 +1225,35 @@
       "str": "exosuit AR research module (on)",
       "str_pl": "exosuit AR research modules (on)"
     },
-    "power_draw": "250 mW",
-    "revert_to": "exo_AR_module",
+    "description": "An augmented reality module interfaces with the exosuit's HUD, assisting you with research and study.",
+    "weight": "500 g",
+    "volume": "250 ml",
+    "price": "10 kUSD",
+    "material": [
+      "lvl4ballisticglass",
+      "qt_steel"
+    ],
+    "symbol": "(",
+    "color": "yellow",
+    "flags": [
+      "CANT_WEAR",
+      "EXO_HELMET_GADGET"
+    ],
+    "relic_data": {
+      "passive_effects": [
+        {
+          "id": "afs_ench_exo_AR_module"
+        }
+      ]
+    },
     "use_action": {
       "ammo_scale": 0,
       "target": "exo_AR_module",
       "msg": "You deactivate the module.",
       "menu_text": "Turn off module",
       "type": "transform"
-    }
+    },
+    "power_draw": "250 mW",
+    "revert_to": "exo_AR_module"
   }
 ]

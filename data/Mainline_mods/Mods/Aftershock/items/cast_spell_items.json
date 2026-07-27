@@ -37,7 +37,6 @@
     "name": {
       "str": "hologram transposition caster"
     },
-    "copy-from": "afs_caster",
     "description": "A small metallic sphere with a recessed bottom up top.  When activated it will allow you to swap positions with an existing hologram.",
     "pocket_data": [
       {
@@ -64,7 +63,6 @@
   {
     "id": "afs_holo_flare_caster",
     "type": "TOOL_ARMOR",
-    "copy-from": "afs_caster",
     "name": {
       "str": "hologram flare caster"
     },
@@ -94,7 +92,6 @@
   {
     "id": "afs_holo_decoy_caster",
     "type": "TOOL_ARMOR",
-    "copy-from": "afs_caster",
     "name": {
       "str": "decoy caster"
     },
@@ -124,7 +121,6 @@
   {
     "id": "afs_holo_field_caster",
     "type": "TOOL_ARMOR",
-    "copy-from": "afs_caster",
     "name": {
       "str": "decoy field caster"
     },
@@ -155,11 +151,22 @@
     "id": "afs_recall_rig",
     "type": "TOOL_ARMOR",
     "copy-from": "dimensional_anchor",
+    "category": "clothing",
+    "symbol": "[",
+    "color": "light_gray",
     "name": {
       "str": "recall rig"
     },
+    "looks_like": "chestguard_hard",
     "description": "A complex antennae assembly worn around the upper torso that allows its user to home and teleport towards previously configured teleport pads.  Although relatively functional, it's much inferior to the translocation systems of old, and a successful teleport requires standing perfectly still for several minutes.",
-    "charges_per_use": 1000,
+    "price": 150000,
+    "price_postapoc": 8000,
+    "material": [
+      "ceramic",
+      "kevlar"
+    ],
+    "weight": "1250 g",
+    "volume": "4500 ml",
     "pocket_data": [
       {
         "pocket_type": "MAGAZINE_WELL",
@@ -170,26 +177,67 @@
         "default_magazine": "heavy_atomic_battery_cell"
       }
     ],
+    "ammo": "battery",
     "use_action": {
       "type": "cast_spell",
       "spell_id": "afs_translocation_slow",
       "no_fail": true,
       "level": 1
-    }
+    },
+    "warmth": 10,
+    "material_thickness": 2,
+    "flags": [
+      "OVERSIZE",
+      "BELTED",
+      "SOFT"
+    ],
+    "armor": [
+      {
+        "encumbrance": 2,
+        "coverage": 50,
+        "covers": [
+          "torso"
+        ]
+      }
+    ],
+    "charges_per_use": 1000
   },
   {
     "id": "afs_translocation_device",
     "type": "TOOL_ARMOR",
+    "copy-from": "afs_wrist_computer",
+    "category": "armor",
     "name": {
       "str": "translocator"
     },
-    "copy-from": "afs_wrist_computer",
     "description": "An arcane device from the late Hyperspace Era, vaguely resembling a wrist computer made from malleable glass.  It can be activated to quickly deploy a translocator buoy or to teleport to previously activated buoys.",
+    "weight": "315 g",
+    "volume": "1200 ml",
     "price": "100 kUSD",
-    "charges_per_use": 1000,
+    "to_hit": -1,
     "material": [
       "diamond"
     ],
+    "symbol": "[",
+    "color": "light_gray",
+    "sided": true,
+    "armor": [
+      {
+        "encumbrance": 10,
+        "coverage": 45,
+        "covers": [
+          "arm_l",
+          "arm_r"
+        ]
+      }
+    ],
+    "warmth": 10,
+    "material_thickness": 2,
+    "flags": [
+      "BELTED",
+      "STURDY"
+    ],
+    "charges_per_use": 1000,
     "ammo": [
       "battery"
     ],

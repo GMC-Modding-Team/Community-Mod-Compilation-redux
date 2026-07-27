@@ -1,0 +1,2379 @@
+[
+  {
+    "id": "mon_alpha_razorclaw",
+    "type": "MONSTER",
+    "name": {
+      "str": "alpha razorclaw"
+    },
+    "description": "A blood-red, gigantic razorclaw.  With its sword-like pincers, it serves as a protector of the nest.",
+    "default_faction": "razorclaw",
+    "bodytype": "crab",
+    "species": [
+      "MUTANT"
+    ],
+    "diff": 2,
+    "volume": "92500 ml",
+    "weight": "120 kg",
+    "hp": 120,
+    "speed": 95,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "Y",
+    "color": "red",
+    "aggression": 15,
+    "morale": 100,
+    "aggro_character": false,
+    "melee_skill": 6,
+    "melee_dice": 4,
+    "melee_dice_sides": 10,
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 15
+      }
+    ],
+    "dodge": 2,
+    "bleed_rate": 60,
+    "vision_day": 30,
+    "vision_night": 20,
+    "path_settings": {
+      "max_dist": 50,
+      "avoid_traps": true,
+      "avoid_sharp": true
+    },
+    "harvest": "mutant_shellfish",
+    "dissect": "dissect_crustacean_large",
+    "stomach_size": 1200,
+    "weakpoint_sets": [
+      "wps_arthropod"
+    ],
+    "families": [
+      "prof_intro_biology",
+      "prof_physiology",
+      "prof_wp_basic_bug",
+      "prof_wp_nat_armored"
+    ],
+    "grab_strength": 50,
+    "special_attacks": [
+      {
+        "id": "grab",
+        "cooldown": 5
+      },
+      [
+        "SHRIEK_ALERT",
+        6
+      ],
+      [
+        "SHRIEK_STUN",
+        1
+      ],
+      [
+        "EAT_CARRION",
+        120
+      ],
+      {
+        "type": "spell",
+        "spell_data": {
+          "id": "monspell_fear"
+        },
+        "cooldown": 40
+      }
+    ],
+    "anger_triggers": [
+      "PLAYER_CLOSE",
+      "HURT"
+    ],
+    "fear_triggers": [
+      "FIRE"
+    ],
+    "zombify_into": "mon_meat_cocoon_med",
+    "flags": [
+      "SMELLS",
+      "HEARS",
+      "SEES",
+      "SWIMS",
+      "GRABS",
+      "ARTHROPOD_BLOOD",
+      "QUEEN",
+      "PATH_AVOID_DANGER_1",
+      "EATS"
+    ],
+    "armor": {
+      "bash": 20,
+      "cut": 30,
+      "bullet": 24
+    }
+  },
+  {
+    "id": "mon_amigara_horror",
+    "type": "MONSTER",
+    "name": {
+      "str": "amigara horror"
+    },
+    "description": "A hellish, vaguely humanoid horror, two stories tall.  Its face is grotesquely stretched out, its limbs deformed to unrecognizable outgrowths.",
+    "default_faction": "amigara",
+    "bodytype": "human",
+    "species": [
+      "HORROR"
+    ],
+    "diff": 5,
+    "volume": "92500 ml",
+    "weight": "120 kg",
+    "hp": 250,
+    "speed": 70,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "&",
+    "color": "white",
+    "aggression": 100,
+    "morale": 100,
+    "melee_skill": 8,
+    "melee_dice": 2,
+    "melee_dice_sides": 4,
+    "dodge": 2,
+    "bleed_rate": 50,
+    "harvest": "demihuman",
+    "families": [
+      "prof_intro_biology",
+      "prof_physiology"
+    ],
+    "weakpoint_sets": [
+      "wps_humanoid_body"
+    ],
+    "special_attacks": [
+      {
+        "type": "spell",
+        "spell_data": {
+          "id": "monspell_fear"
+        },
+        "cooldown": 5
+      }
+    ],
+    "death_function": {
+      "effect": {
+        "id": "death_amigara"
+      }
+    },
+    "dissect": "dissect_human_sample_single",
+    "flags": [
+      "SMELLS",
+      "HEARS",
+      "SEES",
+      "STUMBLES",
+      "HARDTOSHOOT"
+    ],
+    "armor": {
+      "electric": 1
+    }
+  },
+  {
+    "id": "mon_blank",
+    "type": "MONSTER",
+    "name": {
+      "str": "blank body",
+      "str_pl": "blank bodies"
+    },
+    "description": "This is some form of unnatural changeling creature; its appearance is a bland mockery of the human form.  Featureless and pale, its repugnant countenance is all the more unsettling due to its lack of eyes and distinguishing features except for a perfectly round mouth.  Adding to its unearthly appearance is the way it moves, stiff and doll-like as though it was only feigning knowing how to walk.",
+    "default_faction": "nether",
+    "bodytype": "human",
+    "species": [
+      "NETHER"
+    ],
+    "diff": 2,
+    "volume": "62500 ml",
+    "weight": "81500 g",
+    "hp": 100,
+    "speed": 80,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "@",
+    "color": "white",
+    "morale": 100,
+    "melee_skill": 6,
+    "melee_dice": 1,
+    "melee_dice_sides": 4,
+    "dodge": 1,
+    "harvest": "demihuman",
+    "families": [
+      "prof_wp_netherium_abomination"
+    ],
+    "weakpoint_sets": [
+      "wps_humanoid_body"
+    ],
+    "special_attacks": [
+      [
+        "SHRIEK",
+        10
+      ],
+      {
+        "type": "spell",
+        "spell_data": {
+          "id": "monspell_fear"
+        },
+        "cooldown": 40
+      }
+    ],
+    "flags": [
+      "SMELLS",
+      "HEARS",
+      "HAS_MIND",
+      "WARM",
+      "ANIMAL",
+      "PATH_AVOID_DANGER_1",
+      "SUNDEATH",
+      "NO_BREATHE",
+      "HUMAN"
+    ]
+  },
+  {
+    "id": "mon_blob_brain",
+    "type": "MONSTER",
+    "name": {
+      "str": "brain blob"
+    },
+    "description": "A gigantic black blob of viscous goo, oozing across the ground like a glob of living oil.  Other slimes seem to swarm around it.",
+    "default_faction": "slime",
+    "bodytype": "blob",
+    "species": [
+      "SLIME"
+    ],
+    "diff": 5,
+    "volume": "875000 ml",
+    "weight": "200 kg",
+    "hp": 400,
+    "speed": 50,
+    "material": [
+      "slime"
+    ],
+    "symbol": "O",
+    "color": "black",
+    "phase": "LIQUID",
+    "aggression": 50,
+    "morale": 100,
+    "melee_skill": 5,
+    "melee_dice": 2,
+    "melee_dice_sides": 4,
+    "bleed_rate": 20,
+    "weakpoint_sets": [
+      "wps_slime"
+    ],
+    "families": [
+      "prof_intro_biology",
+      "prof_wp_slime_basic",
+      "prof_wp_slime_advanced"
+    ],
+    "harvest": "exempt",
+    "special_attacks": [
+      [
+        "CALLBLOBS",
+        0
+      ],
+      {
+        "type": "spell",
+        "spell_data": {
+          "id": "monspell_psychic_stress"
+        },
+        "cooldown": 20
+      }
+    ],
+    "death_function": {
+      "message": "The %s splits in two!",
+      "corpse_type": "NO_CORPSE",
+      "effect": {
+        "id": "death_blob_brain",
+        "hit_self": true
+      }
+    },
+    "death_drops": "slime_sample_huge",
+    "flags": [
+      "SEES",
+      "HEARS",
+      "GOODHEARING",
+      "NOHEAD",
+      "POISON",
+      "NO_BREATHE",
+      "ACIDPROOF",
+      "QUEEN"
+    ],
+    "armor": {
+      "bash": 12,
+      "electric": 5
+    }
+  },
+  {
+    "id": "mon_blob_large",
+    "type": "MONSTER",
+    "name": {
+      "str": "big blob"
+    },
+    "description": "A large black blob of viscous goo, oozing across the ground like a glob of living oil.",
+    "default_faction": "slime",
+    "bodytype": "blob",
+    "species": [
+      "SLIME"
+    ],
+    "diff": 1,
+    "volume": "92500 ml",
+    "weight": "120 kg",
+    "hp": 160,
+    "speed": 90,
+    "material": [
+      "slime"
+    ],
+    "symbol": "O",
+    "color": "light_gray",
+    "phase": "LIQUID",
+    "aggression": 100,
+    "morale": 100,
+    "melee_skill": 6,
+    "melee_dice": 2,
+    "melee_dice_sides": 6,
+    "bleed_rate": 30,
+    "weakpoint_sets": [
+      "wps_slime"
+    ],
+    "families": [
+      "prof_intro_biology",
+      "prof_wp_slime_basic",
+      "prof_wp_slime_advanced"
+    ],
+    "harvest": "exempt",
+    "special_attacks": [
+      [
+        "FORMBLOB",
+        20
+      ],
+      {
+        "type": "spell",
+        "spell_data": {
+          "id": "monspell_psychic_stress"
+        },
+        "cooldown": 40
+      }
+    ],
+    "death_function": {
+      "message": "The %s splits in two!",
+      "corpse_type": "NO_CORPSE",
+      "effect": {
+        "id": "death_blobsplit_large",
+        "hit_self": true
+      }
+    },
+    "flags": [
+      "HEARS",
+      "GOODHEARING",
+      "NOHEAD",
+      "POISON",
+      "NO_BREATHE",
+      "ACIDPROOF"
+    ],
+    "armor": {
+      "bash": 14,
+      "cut": 4,
+      "stab": 20,
+      "acid": 20,
+      "bullet": 3,
+      "electric": 4
+    }
+  },
+  {
+    "id": "mon_blood_sacrifice",
+    "type": "MONSTER",
+    "name": {
+      "str": "blood sacrifice"
+    },
+    "description": "A defiled human body, once living.  Tortured to death long ago, it remains chained to the altar, the putrescent flays of its peeled skin quivering like so much flotsam upon a murky pond.",
+    "default_faction": "cult",
+    "bodytype": "human",
+    "species": [
+      "ZOMBIE",
+      "HUMAN"
+    ],
+    "volume": "62500 ml",
+    "weight": "81500 g",
+    "hp": 40,
+    "speed": 200,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "Z",
+    "color": "light_red",
+    "aggression": 100,
+    "morale": 100,
+    "melee_dice": 1,
+    "melee_dice_sides": 5,
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 2
+      }
+    ],
+    "families": [
+      "prof_intro_biology",
+      "prof_physiology"
+    ],
+    "harvest": "zombie",
+    "special_attacks": [
+      [
+        "FEAR_PARALYZE",
+        0
+      ],
+      {
+        "type": "bite",
+        "cooldown": 5
+      },
+      {
+        "type": "spell",
+        "spell_data": {
+          "id": "monspell_psychic_stress"
+        },
+        "cooldown": 20
+      }
+    ],
+    "death_function": {
+      "effect": {
+        "id": "death_guilt",
+        "min_level": 6
+      }
+    },
+    "death_drops": "default_zombie_clothes",
+    "flags": [
+      "SEES",
+      "HEARS",
+      "SMELLS",
+      "WARM",
+      "IMMOBILE",
+      "POISON",
+      "REVIVES",
+      "FILTHY"
+    ]
+  },
+  {
+    "id": "mon_dark_wyrm",
+    "type": "MONSTER",
+    "name": {
+      "str": "dark wyrm"
+    },
+    "description": "A huge mutated worm living deep underground.  It has a round, gaping mouth lined with dagger-like teeth, and its flesh is slick with bubbling blue slime.",
+    "default_faction": "dark_wyrm",
+    "bodytype": "snake",
+    "species": [
+      "MUTANT"
+    ],
+    "volume": "92500 ml",
+    "weight": "120 kg",
+    "hp": 120,
+    "speed": 100,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "S",
+    "color": "blue",
+    "aggression": 100,
+    "morale": 100,
+    "melee_skill": 8,
+    "melee_dice": 2,
+    "melee_dice_sides": 6,
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 4
+      }
+    ],
+    "dodge": 4,
+    "bleed_rate": 60,
+    "families": [
+      "prof_intro_biology",
+      "prof_physiology",
+      "prof_wp_basic_bug"
+    ],
+    "harvest": "underground_acid",
+    "dissect": "dissect_troglobite_sample_small",
+    "fear_triggers": [
+      "FIRE"
+    ],
+    "zombify_into": "mon_meat_cocoon_med",
+    "flags": [
+      "SMELLS",
+      "HEARS",
+      "GOODHEARING",
+      "BASHES",
+      "BORES",
+      "POISON",
+      "SUNDEATH",
+      "ACIDPROOF",
+      "ACIDTRAIL"
+    ],
+    "armor": {
+      "bash": 6,
+      "electric": 3
+    },
+    "extend": {
+      "special_attacks": [
+        {
+          "type": "spell",
+          "spell_data": {
+            "id": "monspell_psychic_feedback"
+          },
+          "cooldown": 20
+        }
+      ]
+    }
+  },
+  {
+    "id": "mon_darkman",
+    "type": "MONSTER",
+    "name": {
+      "str": "wraith"
+    },
+    "description": "A gigantic shadow, chaotically changing in shape and volume.  Two piercing orbs of light dominate what can only be described as its head.",
+    "default_faction": "nether",
+    "species": [
+      "NETHER"
+    ],
+    "diff": 2,
+    "volume": "875000 ml",
+    "weight": "200 kg",
+    "hp": 800,
+    "speed": 140,
+    "symbol": "S",
+    "color": "dark_gray",
+    "aggression": 2,
+    "morale": 500,
+    "melee_skill": 6,
+    "melee_dice": 3,
+    "melee_dice_sides": 8,
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 3
+      }
+    ],
+    "dodge": 3,
+    "vision_day": 50,
+    "luminance": 6,
+    "families": [
+      "prof_wp_netherium_abomination"
+    ],
+    "weakpoint_sets": [
+      "wps_netherium_abomination"
+    ],
+    "harvest": "exempt",
+    "special_attacks": [
+      [
+        "DARKMAN",
+        5
+      ],
+      {
+        "id": "scratch",
+        "cooldown": 15
+      },
+      {
+        "type": "spell",
+        "spell_data": {
+          "id": "monspell_psychic_feedback"
+        },
+        "cooldown": 20
+      }
+    ],
+    "death_function": {
+      "corpse_type": "NO_CORPSE",
+      "message": "The %s melts away.",
+      "effect": {
+        "id": "death_darkman"
+      }
+    },
+    "regenerates_in_dark": true,
+    "flags": [
+      "NOHEAD",
+      "HARDTOSHOOT",
+      "WEBWALK",
+      "FLIES",
+      "PLASTIC",
+      "ELECTRIC",
+      "ACIDPROOF",
+      "SUNDEATH",
+      "NO_BREATHE"
+    ],
+    "armor": {
+      "bash": 12,
+      "cut": 8,
+      "bullet": 6,
+      "electric": 3
+    }
+  },
+  {
+    "id": "mon_dementia",
+    "type": "MONSTER",
+    "name": {
+      "str": "dementia"
+    },
+    "description": "A crazed individual, the bloody scars on the side of its shaved head suggest some sort of partial lobotomy.",
+    "default_faction": "cult",
+    "bodytype": "human",
+    "species": [
+      "ZOMBIE"
+    ],
+    "volume": "62500 ml",
+    "weight": "81500 g",
+    "hp": 80,
+    "speed": 100,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "@",
+    "color": "light_gray",
+    "aggression": 100,
+    "morale": 100,
+    "melee_skill": 5,
+    "melee_dice": 3,
+    "melee_dice_sides": 4,
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 2
+      }
+    ],
+    "dodge": 1,
+    "families": [
+      "prof_intro_biology",
+      "prof_physiology"
+    ],
+    "harvest": "zombie_leather",
+    "special_attacks": [
+      {
+        "id": "scratch",
+        "cooldown": 15
+      },
+      {
+        "type": "spell",
+        "spell_data": {
+          "id": "monspell_psychic_stress"
+        },
+        "cooldown": 50
+      }
+    ],
+    "death_drops": "default_zombie_death_drops",
+    "flags": [
+      "SEES",
+      "HEARS",
+      "SMELLS",
+      "WARM",
+      "BASHES",
+      "GROUP_BASH",
+      "HUMAN",
+      "POISON",
+      "REVIVES",
+      "FILTHY"
+    ]
+  },
+  {
+    "id": "mon_flaming_eye",
+    "type": "MONSTER",
+    "name": {
+      "str": "flaming eye"
+    },
+    "description": "An enormous disembodied eyeball the size of a person, flying through the air through some unknown agency.  Wreathed in unnatural flickering blue flame, it possesses a blazing yellow iris with a slitted pupil like that of a cat, and trails a set of flailing black tendrils as it slowly drifts about.  You involuntarily get a heavy, sinking feeling deep in your gut as you watch its gaze comb over the world around it.",
+    "default_faction": "nether",
+    "species": [
+      "NETHER"
+    ],
+    "diff": 20,
+    "volume": "62500 ml",
+    "weight": "81500 g",
+    "hp": 300,
+    "speed": 90,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "e",
+    "color": "light_blue",
+    "morale": 100,
+    "aggression": 100,
+    "dodge": 1,
+    "bleed_rate": 20,
+    "vision_day": 50,
+    "vision_night": 40,
+    "luminance": 25,
+    "families": [
+      "prof_wp_netherium_abomination"
+    ],
+    "weakpoint_sets": [
+      "wps_netherium_abomination"
+    ],
+    "harvest": "zombie_meatslug",
+    "//": "Add a demihuman alien anatomy for things like flaming eye's and Mi-go, polyps and other lovecraftian horrors from other dimensions",
+    "special_attacks": [
+      {
+        "type": "spell",
+        "spell_data": {
+          "id": "monspell_flaming_eye"
+        },
+        "cooldown": 10
+      }
+    ],
+    "flags": [
+      "SEES",
+      "WARM",
+      "FLIES",
+      "NO_BREATHE",
+      "IMMOBILE",
+      "NOHEAD"
+    ],
+    "armor": {
+      "bash": 4
+    }
+  },
+  {
+    "id": "mon_flesh_angel",
+    "//": "Formerly a vanilla monster that never actually spawned anywhere, they got the axe instead of ever actually getting a place to spawn in.",
+    "type": "MONSTER",
+    "name": {
+      "str": "flesh angel"
+    },
+    "description": "A tall and slender man lacking skin and any normalcy of countenance.  Wings of muscle curl forth from its back and a third eye dominates the forehead.",
+    "default_faction": "cult",
+    "bodytype": "angel",
+    "species": [
+      "ZOMBIE"
+    ],
+    "categories": [
+      "CLASSIC"
+    ],
+    "diff": 5,
+    "volume": "92500 ml",
+    "weight": "120 kg",
+    "hp": 200,
+    "speed": 120,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "H",
+    "color": "red",
+    "aggression": 100,
+    "morale": 100,
+    "melee_skill": 9,
+    "melee_dice": 3,
+    "melee_dice_sides": 4,
+    "dodge": 2,
+    "harvest": "zombie_humanoid",
+    "special_attacks": [
+      {
+        "type": "spell",
+        "spell_data": {
+          "id": "fear_paralyze"
+        },
+        "monster_message": "",
+        "id": "spell_1"
+      },
+      {
+        "type": "bite",
+        "cooldown": 5
+      },
+      {
+        "type": "spell",
+        "spell_data": {
+          "id": "monspell_psychic_stress"
+        },
+        "cooldown": 20,
+        "id": "spell_2"
+      }
+    ],
+    "death_drops": "mon_flesh_angel_death_drops",
+    "flags": [
+      "SEES",
+      "HEARS",
+      "SMELLS",
+      "WARM",
+      "HARDTOSHOOT",
+      "ATTACKMON",
+      "FLIES",
+      "HUMAN",
+      "POISON",
+      "REVIVES",
+      "FILTHY"
+    ]
+  },
+  {
+    "id": "mon_flying_polyp",
+    "type": "MONSTER",
+    "name": {
+      "str": "flying polyp"
+    },
+    "description": "A half-polypous, utterly alien creature.  It's only partly material and has the ability to fly, despite the absence of wings.  It produces strange whistling noises which dominate every other sound.",
+    "default_faction": "nether",
+    "bodytype": "blob",
+    "species": [
+      "NETHER"
+    ],
+    "diff": 20,
+    "volume": "875000 ml",
+    "weight": "200 kg",
+    "hp": 350,
+    "speed": 280,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "8",
+    "color": "dark_gray",
+    "aggression": 100,
+    "morale": 100,
+    "melee_skill": 7,
+    "melee_dice": 3,
+    "melee_dice_sides": 8,
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 6
+      }
+    ],
+    "dodge": 7,
+    "bleed_rate": 40,
+    "families": [
+      "prof_wp_netherium_abomination"
+    ],
+    "weakpoint_sets": [
+      "wps_netherium_abomination"
+    ],
+    "harvest": "exempt",
+    "death_function": {
+      "corpse_type": "NO_CORPSE",
+      "message": "The %s melts away."
+    },
+    "flags": [
+      "SMELLS",
+      "HEARS",
+      "GOODHEARING",
+      "HAS_MIND",
+      "NOHEAD",
+      "BASHES",
+      "FLIES",
+      "PUSH_MON",
+      "PUSH_VEH",
+      "PLASTIC",
+      "NO_BREATHE",
+      "HIT_AND_RUN",
+      "NOGIB"
+    ],
+    "armor": {
+      "bash": 8,
+      "electric": 3
+    },
+    "extend": {
+      "special_attacks": [
+        {
+          "type": "spell",
+          "spell_data": {
+            "id": "monspell_psychic_feedback"
+          },
+          "cooldown": 20
+        }
+      ]
+    }
+  },
+  {
+    "id": "mon_gozu",
+    "type": "MONSTER",
+    "name": {
+      "str": "gozu"
+    },
+    "description": "This is some sort of unnatural cross between a bull and a man.  Quite different from the minotaur of legend, it possesses a shaggy white bull’s head on an otherwise unremarkable human body.  Clad in sagging socks and stained jockey shorts, it grunts and snuffles, drooling ropey strands of white slobber down its chest.  You occasionally catch a glint in its eyes and freeze up involuntarily, like a deer in headlights.",
+    "default_faction": "nether",
+    "bodytype": "human",
+    "species": [
+      "NETHER"
+    ],
+    "diff": 5,
+    "volume": "62500 ml",
+    "weight": "81500 g",
+    "hp": 400,
+    "speed": 80,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "&",
+    "color": "white",
+    "aggression": 10,
+    "morale": 100,
+    "melee_skill": 6,
+    "melee_dice": 2,
+    "melee_dice_sides": 6,
+    "dodge": 4,
+    "bleed_rate": 60,
+    "vision_day": 30,
+    "harvest": "gozu",
+    "families": [
+      "prof_intro_biology",
+      "prof_physiology",
+      "prof_wp_demihuman"
+    ],
+    "weakpoint_sets": [
+      "wps_humanoid_body"
+    ],
+    "special_attacks": [
+      {
+        "type": "spell",
+        "spell_data": {
+          "id": "monspell_fear"
+        },
+        "cooldown": 5
+      }
+    ],
+    "flags": [
+      "SEES",
+      "SMELLS",
+      "HEARS",
+      "HAS_MIND",
+      "WARM",
+      "BASHES",
+      "GROUP_BASH",
+      "ANIMAL",
+      "NO_BREATHE",
+      "PATH_AVOID_DANGER_1"
+    ]
+  },
+  {
+    "id": "mon_gracke",
+    "type": "MONSTER",
+    "name": {
+      "str": "gracke"
+    },
+    "description": "This is some form of eldritch monstrosity; an uncouth black being with smooth, oily skin and unpleasant horns that curve inward toward each other.  Tall and thin, the shadows cling unnaturally to its vaguely defined humanoid form as it shuffles along, its hands twitching and spasming so rapidly as to appear a little more than a black blur of claws.  Despite the night-terror esque appearance, it doesn't appear aggressive.",
+    "default_faction": "nether",
+    "bodytype": "human",
+    "species": [
+      "NETHER"
+    ],
+    "diff": 2,
+    "volume": "62500 ml",
+    "weight": "81500 g",
+    "hp": 100,
+    "speed": 180,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "h",
+    "color": "light_red",
+    "morale": 100,
+    "melee_skill": 10,
+    "melee_dice": 4,
+    "melee_dice_sides": 4,
+    "dodge": 4,
+    "bleed_rate": 60,
+    "path_settings": {
+      "avoid_traps": true,
+      "avoid_sharp": true
+    },
+    "harvest": "demihuman",
+    "families": [
+      "prof_intro_biology",
+      "prof_physiology",
+      "prof_wp_demihuman"
+    ],
+    "weakpoint_sets": [
+      "wps_humanoid_body"
+    ],
+    "flags": [
+      "SMELLS",
+      "HEARS",
+      "WARM",
+      "HAS_MIND",
+      "NO_BREATHE",
+      "PRIORITIZE_TARGETS",
+      "PATH_AVOID_DANGER_1"
+    ],
+    "armor": {
+      "electric": 1
+    },
+    "extend": {
+      "special_attacks": [
+        {
+          "type": "spell",
+          "spell_data": {
+            "id": "monspell_fear"
+          },
+          "cooldown": 50
+        }
+      ]
+    }
+  },
+  {
+    "id": "mon_headless_dog_thing",
+    "type": "MONSTER",
+    "name": {
+      "str": "tentacle dog"
+    },
+    "description": "A dog's body with a mass of ropey, black tentacles reaching out from its head.",
+    "default_faction": "mutant",
+    "bodytype": "dog",
+    "species": [
+      "NETHER"
+    ],
+    "diff": 2,
+    "volume": "62500 ml",
+    "weight": "81500 g",
+    "hp": 120,
+    "speed": 120,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "d",
+    "color": "dark_gray",
+    "aggression": 100,
+    "morale": 100,
+    "melee_skill": 8,
+    "melee_dice": 4,
+    "melee_dice_sides": 6,
+    "dodge": 4,
+    "families": [
+      "prof_wp_netherium_abomination"
+    ],
+    "weakpoint_sets": [
+      "wps_netherium_abomination"
+    ],
+    "harvest": "exempt",
+    "special_attacks": [
+      {
+        "id": "tentacle"
+      },
+      {
+        "type": "spell",
+        "spell_data": {
+          "id": "monspell_psychic_stress"
+        },
+        "cooldown": 20
+      }
+    ],
+    "death_function": {
+      "effect": {
+        "id": "death_thing",
+        "hit_self": true
+      },
+      "corpse_type": "NO_CORPSE",
+      "message": "The %s emerges!"
+    },
+    "flags": [
+      "SEES",
+      "SMELLS",
+      "HEARS",
+      "BASHES"
+    ],
+    "armor": {
+      "electric": 1
+    }
+  },
+  {
+    "id": "mon_homunculus",
+    "//": "Formerly a vanilla monster that never actually spawned anywhere, they got the axe instead of ever actually getting a place to spawn in.",
+    "type": "MONSTER",
+    "name": {
+      "str": "homunculus",
+      "str_pl": "homunculi"
+    },
+    "description": "A pale hairless man with an impressive athletic physique.  Its lidless eyes are totally black, and seeping with blood.",
+    "default_faction": "cult",
+    "bodytype": "human",
+    "species": [
+      "ZOMBIE"
+    ],
+    "categories": [
+      "CLASSIC"
+    ],
+    "volume": "62500 ml",
+    "weight": "81500 g",
+    "hp": 120,
+    "speed": 110,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "h",
+    "color": "white",
+    "aggression": 100,
+    "morale": 100,
+    "melee_skill": 8,
+    "melee_dice": 3,
+    "melee_dice_sides": 12,
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 4
+      }
+    ],
+    "dodge": 6,
+    "armor": {
+      "bash": 4,
+      "cut": 2,
+      "bullet": 2
+    },
+    "harvest": "human",
+    "death_drops": "mon_homunculus_death_drops",
+    "flags": [
+      "SEES",
+      "HEARS",
+      "SMELLS",
+      "WARM",
+      "BASHES",
+      "GROUP_BASH",
+      "HUMAN",
+      "REVIVES",
+      "CLIMBS",
+      "FILTHY"
+    ],
+    "extend": {
+      "special_attacks": [
+        {
+          "type": "spell",
+          "spell_data": {
+            "id": "monspell_psychic_stress"
+          },
+          "cooldown": 20
+        }
+      ]
+    }
+  },
+  {
+    "id": "mon_human_snail",
+    "type": "MONSTER",
+    "name": {
+      "str": "human snail"
+    },
+    "description": "An enormous fleshy snail, with an oddly human face.  Eyestalks protrude from where the eyes should be.",
+    "default_faction": "mutant_with_vortex",
+    "species": [
+      "ABERRATION"
+    ],
+    "diff": 5,
+    "volume": "92500 ml",
+    "weight": "120 kg",
+    "hp": 80,
+    "speed": 50,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "S",
+    "color": "brown",
+    "morale": 30,
+    "melee_skill": 4,
+    "melee_dice": 1,
+    "melee_dice_sides": 4,
+    "harvest": "demihuman_snail",
+    "families": [
+      "prof_intro_biology",
+      "prof_physiology"
+    ],
+    "dissect": "dissect_gastropod_sample_large",
+    "special_attacks": [
+      [
+        "ACID",
+        15
+      ],
+      {
+        "type": "spell",
+        "spell_data": {
+          "id": "monspell_psychic_feedback"
+        },
+        "cooldown": 20
+      }
+    ],
+    "anger_triggers": [
+      "PLAYER_WEAK",
+      "FRIEND_DIED"
+    ],
+    "flags": [
+      "SEES",
+      "SMELLS",
+      "HEARS",
+      "POISON",
+      "ACIDPROOF",
+      "ACID_BLOOD"
+    ],
+    "armor": {
+      "bash": 6,
+      "cut": 12,
+      "bullet": 10
+    }
+  },
+  {
+    "id": "mon_hunting_horror",
+    "type": "MONSTER",
+    "name": {
+      "str": "hunting horror"
+    },
+    "description": "This is some sort of great viperine creature, possessed of a curiously distorted head and massive clawed appendages.  It partially supports itself with the aid of black, rubbery wings of monstrous dimensions.  The wings beat slowly like an eagle while the body coils through the air like how an eel swims in water.",
+    "default_faction": "nether",
+    "species": [
+      "NETHER"
+    ],
+    "volume": "62500 ml",
+    "weight": "81500 g",
+    "hp": 280,
+    "speed": 180,
+    "symbol": "s",
+    "color": "pink",
+    "aggression": 100,
+    "morale": 100,
+    "melee_skill": 7,
+    "melee_dice": 1,
+    "melee_dice_sides": 12,
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 6
+      }
+    ],
+    "dodge": 8,
+    "families": [
+      "prof_wp_netherium_abomination"
+    ],
+    "weakpoint_sets": [
+      "wps_netherium_abomination"
+    ],
+    "harvest": "exempt",
+    "anger_triggers": [
+      "STALK",
+      "PLAYER_WEAK",
+      "PLAYER_CLOSE",
+      "FRIEND_ATTACKED"
+    ],
+    "death_function": {
+      "corpse_type": "NO_CORPSE",
+      "message": "The %s melts away."
+    },
+    "flags": [
+      "SEES",
+      "SMELLS",
+      "HEARS",
+      "HAS_MIND",
+      "NOHEAD",
+      "HARDTOSHOOT",
+      "FLIES",
+      "PLASTIC",
+      "SUNDEATH",
+      "NO_BREATHE",
+      "HIT_AND_RUN",
+      "NOGIB"
+    ],
+    "armor": {
+      "electric": 1
+    },
+    "extend": {
+      "special_attacks": [
+        {
+          "type": "spell",
+          "spell_data": {
+            "id": "monspell_psychic_feedback"
+          },
+          "cooldown": 50
+        }
+      ]
+    }
+  },
+  {
+    "id": "mon_fleshy_shambler",
+    "type": "MONSTER",
+    "name": {
+      "str": "fleshy shambler"
+    },
+    "description": "An amalgamation of throbbing organs from various creatures have fused together into this lurching, vaguely-humanoid shape.  Its myriad roughly-formed mouths susurrate in a chorus of sibilant groans and whispers.",
+    "default_faction": "jabberwock",
+    "species": [
+      "ABERRATION"
+    ],
+    "volume": "80000 ml",
+    "weight": "90 kg",
+    "hp": 100,
+    "speed": 50,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "j",
+    "color": "dark_gray",
+    "aggression": 100,
+    "morale": 100,
+    "melee_skill": 4,
+    "melee_dice": 2,
+    "melee_dice_sides": 4,
+    "families": [
+      "prof_intro_biology",
+      "prof_physiology",
+      "prof_wp_demihuman"
+    ],
+    "bleed_rate": 80,
+    "vision_day": 50,
+    "vision_night": 3,
+    "special_attacks": [
+      [
+        "FLESH_GOLEM",
+        10
+      ],
+      [
+        "ABSORB_MEAT",
+        10
+      ],
+      {
+        "type": "spell",
+        "spell_data": {
+          "id": "monspell_psychic_stress"
+        },
+        "cooldown": 50
+      }
+    ],
+    "harvest": "zombie_humanoid",
+    "dissect": "dissect_beast_sample_small",
+    "upgrades": {
+      "half_life": 42,
+      "into": "mon_flesh_golem"
+    },
+    "zombify_into": "mon_meat_cocoon_small",
+    "flags": [
+      "SEES",
+      "HEARS",
+      "SMELLS",
+      "STUMBLES",
+      "WARM",
+      "ATTACKMON",
+      "POISON"
+    ],
+    "armor": {
+      "bash": 2,
+      "cut": 2,
+      "bullet": 2,
+      "electric": 1
+    }
+  },
+  {
+    "id": "mon_flesh_golem",
+    "type": "MONSTER",
+    "name": {
+      "str": "flesh golem"
+    },
+    "description": "A seeping conglomeration of spasming muscle and organs have fused together into this towering caricature of the human form.  Various organs fall off of its hulking body only to be reabsorbed moments later.",
+    "default_faction": "jabberwock",
+    "species": [
+      "ABERRATION"
+    ],
+    "volume": "300000 ml",
+    "weight": "120 kg",
+    "hp": 200,
+    "speed": 80,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "j",
+    "color": "dark_gray",
+    "aggression": 100,
+    "morale": 100,
+    "melee_skill": 6,
+    "melee_dice": 4,
+    "melee_dice_sides": 6,
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 2
+      }
+    ],
+    "families": [
+      "prof_intro_biology",
+      "prof_physiology",
+      "prof_wp_demihuman"
+    ],
+    "bleed_rate": 60,
+    "vision_day": 50,
+    "vision_night": 3,
+    "special_attacks": [
+      [
+        "FLESH_GOLEM",
+        8
+      ],
+      [
+        "ABSORB_MEAT",
+        1
+      ],
+      {
+        "type": "spell",
+        "spell_data": {
+          "id": "monspell_psychic_stress"
+        },
+        "cooldown": 50
+      }
+    ],
+    "harvest": "flesh_golem",
+    "dissect": "dissect_beast_sample_small",
+    "upgrades": {
+      "half_life": 60,
+      "into": "mon_jabberwock"
+    },
+    "zombify_into": "mon_meat_cocoon_med",
+    "flags": [
+      "SEES",
+      "HEARS",
+      "SMELLS",
+      "STUMBLES",
+      "WARM",
+      "ATTACKMON",
+      "POISON"
+    ],
+    "armor": {
+      "bash": 6,
+      "cut": 4,
+      "bullet": 3,
+      "electric": 1
+    }
+  },
+  {
+    "id": "mon_jabberwock",
+    "type": "MONSTER",
+    "name": {
+      "str": "jabberwock"
+    },
+    "description": "A putrid amalgamation of body parts from humans and other creatures have fused together in this aberration of flesh.  The eyes of all the heads dart about rapidly and the mouths form a chorus of groaning screams.",
+    "default_faction": "jabberwock",
+    "species": [
+      "ABERRATION"
+    ],
+    "volume": "875000 ml",
+    "weight": "200 kg",
+    "hp": 400,
+    "speed": 140,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "J",
+    "color": "dark_gray",
+    "aggression": 100,
+    "morale": 100,
+    "melee_skill": 10,
+    "melee_dice": 4,
+    "melee_dice_sides": 8,
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 3
+      }
+    ],
+    "families": [
+      "prof_intro_biology",
+      "prof_physiology",
+      "prof_wp_demihuman"
+    ],
+    "dodge": 3,
+    "bleed_rate": 40,
+    "vision_day": 50,
+    "vision_night": 3,
+    "special_attacks": [
+      [
+        "FLESH_GOLEM",
+        5
+      ],
+      {
+        "type": "spell",
+        "spell_data": {
+          "id": "monspell_psychic_stress"
+        },
+        "cooldown": 20
+      }
+    ],
+    "harvest": "jabberwock",
+    "dissect": "dissect_beast_sample_large",
+    "zombify_into": "mon_meat_cocoon_med",
+    "flags": [
+      "SEES",
+      "HEARS",
+      "SMELLS",
+      "STUMBLES",
+      "WARM",
+      "BASHES",
+      "DESTROYS",
+      "ATTACKMON",
+      "POISON",
+      "NEVER_WANDER"
+    ],
+    "armor": {
+      "bash": 12,
+      "cut": 8,
+      "bullet": 6,
+      "electric": 3
+    }
+  },
+  {
+    "id": "mon_kreck",
+    "type": "MONSTER",
+    "name": {
+      "str": "kreck"
+    },
+    "description": "This is some form of otherworldly hound.  Lean and hungry-looking, its twisted red flesh is stretched tightly across its misshapen, angular frame.  Loping grotesquely along, its unusually long neck stretches forward, its skull-like head near the ground as it sniffs out its prey.  Its foulness partially veiled by some arcane force, it seems to almost flicker in and out of your perceptions as if you were looking at it from the corner of your vision.",
+    "default_faction": "nether",
+    "bodytype": "dog",
+    "species": [
+      "NETHER"
+    ],
+    "volume": "30000 ml",
+    "weight": "40750 g",
+    "hp": 30,
+    "speed": 100,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "k",
+    "color": "red",
+    "aggression": 100,
+    "morale": 100,
+    "melee_skill": 6,
+    "melee_dice": 1,
+    "melee_dice_sides": 4,
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 1
+      }
+    ],
+    "dodge": 8,
+    "bleed_rate": 40,
+    "vision_day": 50,
+    "//": "a good candidate for an alien anatomy harvest",
+    "families": [
+      "prof_wp_netherium_abomination"
+    ],
+    "weakpoint_sets": [
+      "wps_netherium_abomination"
+    ],
+    "harvest": "exempt",
+    "path_settings": {
+      "max_dist": 10
+    },
+    "death_function": {
+      "corpse_type": "NO_CORPSE",
+      "message": "The %s melts away."
+    },
+    "flags": [
+      "SEES",
+      "SMELLS",
+      "HEARS",
+      "WARM",
+      "BASHES",
+      "HIT_AND_RUN",
+      "NO_BREATHE",
+      "NOGIB"
+    ],
+    "armor": {
+      "cut": 5,
+      "bullet": 4
+    },
+    "extend": {
+      "special_attacks": [
+        {
+          "type": "spell",
+          "spell_data": {
+            "id": "monspell_fear"
+          },
+          "cooldown": 50
+        }
+      ]
+    }
+  },
+  {
+    "id": "mon_mi_go",
+    "type": "MONSTER",
+    "name": {
+      "str": "mi-go"
+    },
+    "description": "An alien creature of uncertain origin.  Its shapeless pink body bears numerous sets of paired appendages of unknown function, and a pair of ribbed, membranous wings which seem to be quite useless.  Its odd, vaguely pyramid-shaped head bristles with numerous wavering antennae, and it moves with an uncanny fluidity on its many legs.",
+    "default_faction": "mi-go",
+    "bodytype": "migo",
+    "species": [
+      "MIGO"
+    ],
+    "volume": "92500 ml",
+    "weight": "120 kg",
+    "hp": 210,
+    "speed": 120,
+    "material": [
+      "mi-go_flesh"
+    ],
+    "symbol": "&",
+    "color": "pink",
+    "aggression": 20,
+    "morale": 30,
+    "melee_skill": 5,
+    "melee_dice": 4,
+    "melee_dice_sides": 6,
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 6
+      }
+    ],
+    "dodge": 4,
+    "bleed_rate": 75,
+    "vision_day": 50,
+    "vision_night": 20,
+    "weakpoint_sets": [
+      "wps_mi-go",
+      "wps_natural_armor"
+    ],
+    "families": [
+      "prof_wp_mi-go_basic",
+      "prof_wp_mi-go_advanced",
+      "prof_wp_nat_armored"
+    ],
+    "harvest": "mi-go",
+    "path_settings": {
+      "max_dist": 50,
+      "allow_open_doors": true,
+      "avoid_traps": true,
+      "avoid_sharp": true
+    },
+    "scents_ignored": [
+      "sc_fetid"
+    ],
+    "special_attacks": [
+      [
+        "PARROT",
+        100
+      ],
+      {
+        "id": "scratch",
+        "damage_max_instance": [
+          {
+            "damage_type": "cut",
+            "amount": 23,
+            "armor_multiplier": 0.8
+          }
+        ]
+      },
+      {
+        "type": "spell",
+        "spell_data": {
+          "id": "monspell_fear"
+        },
+        "cooldown": 50
+      }
+    ],
+    "flags": [
+      "SEES",
+      "SMELLS",
+      "HEARS",
+      "WARM",
+      "HAS_MIND",
+      "BASHES",
+      "POISON",
+      "NO_BREATHE",
+      "ARTHROPOD_BLOOD",
+      "PATH_AVOID_DANGER_1",
+      "CAN_OPEN_DOORS",
+      "PRIORITIZE_TARGETS",
+      "CORNERED_FIGHTER"
+    ],
+    "armor": {
+      "bash": 4,
+      "cut": 12,
+      "bullet": 10,
+      "electric": 2
+    }
+  },
+  {
+    "id": "mon_shadow",
+    "type": "MONSTER",
+    "name": {
+      "str": "shadow"
+    },
+    "description": "An animate shadow.  Looking like nothing more than an errant patch of normal shadow, it draws your attention by the way it moves subtly and whispers softly in the back of your mind.  Strange intrusive thoughts accompany the quiet murmur, trying to forcefully supplant your own.",
+    "default_faction": "nether",
+    "species": [
+      "NETHER"
+    ],
+    "diff": 2,
+    "volume": "750 ml",
+    "weight": "1 kg",
+    "hp": 60,
+    "speed": 90,
+    "symbol": "A",
+    "color": "dark_gray",
+    "aggression": 100,
+    "morale": 100,
+    "melee_skill": 6,
+    "melee_dice": 1,
+    "melee_dice_sides": 2,
+    "dodge": 4,
+    "vision_day": 50,
+    "families": [
+      "prof_wp_netherium_abomination"
+    ],
+    "weakpoint_sets": [
+      "wps_netherium_abomination"
+    ],
+    "harvest": "exempt",
+    "special_attacks": [
+      [
+        "DISAPPEAR",
+        200
+      ],
+      {
+        "type": "spell",
+        "spell_data": {
+          "id": "monspell_fear"
+        },
+        "cooldown": 20
+      }
+    ],
+    "special_when_hit": [
+      "ZAPBACK",
+      100
+    ],
+    "death_function": {
+      "corpse_type": "NO_CORPSE",
+      "message": "The %s melts away."
+    },
+    "flags": [
+      "SEES",
+      "HEARS",
+      "GOODHEARING",
+      "SMELLS",
+      "NOHEAD",
+      "HARDTOSHOOT",
+      "WEBWALK",
+      "FLIES",
+      "PLASTIC",
+      "SUNDEATH",
+      "ELECTRIC",
+      "ACIDPROOF",
+      "HIT_AND_RUN",
+      "NO_BREATHE",
+      "NOGIB"
+    ]
+  },
+  {
+    "id": "mon_shoggoth",
+    "type": "MONSTER",
+    "name": {
+      "str": "shoggoth"
+    },
+    "description": "A gargantuan protoplasmic blob, constantly reshaping, forming new pseudopods seemingly at will.  All over its body are eyes that form and disappear.  The rapid and chaotic way it reconstitutes itself gives the impression of it boiling over with some kind of primordial fury.",
+    "default_faction": "nether",
+    "bodytype": "blob",
+    "species": [
+      "NETHER"
+    ],
+    "volume": "875000 ml",
+    "weight": "200 kg",
+    "hp": 400,
+    "speed": 90,
+    "symbol": "&",
+    "color": "dark_gray",
+    "aggression": 100,
+    "morale": 100,
+    "melee_skill": 10,
+    "melee_dice": 7,
+    "melee_dice_sides": 5,
+    "melee_damage": [
+      {
+        "damage_type": "acid",
+        "amount": 20
+      },
+      {
+        "damage_type": "cut",
+        "amount": 6
+      }
+    ],
+    "families": [
+      "prof_wp_netherium_abomination"
+    ],
+    "weakpoint_sets": [
+      "wps_netherium_abomination"
+    ],
+    "harvest": "exempt",
+    "path_settings": {
+      "max_dist": 5
+    },
+    "special_attacks": [
+      [
+        "PARROT",
+        400
+      ],
+      [
+        "ABSORB_ITEMS",
+        0
+      ],
+      [
+        "SPLIT",
+        5
+      ],
+      {
+        "type": "spell",
+        "spell_data": {
+          "id": "monspell_psychic_stress"
+        },
+        "cooldown": 10
+      }
+    ],
+    "death_function": {
+      "corpse_type": "NO_CORPSE",
+      "message": "The %s melts away."
+    },
+    "regenerates": 50,
+    "regen_morale": true,
+    "absorb_ml_per_hp": 250,
+    "split_move_cost": 180,
+    "absorb_move_cost_max": 300,
+    "absorb_move_cost_per_ml": 0.025,
+    "flags": [
+      "SEES",
+      "SMELLS",
+      "HAS_MIND",
+      "SWIMS",
+      "PLASTIC",
+      "SLUDGEPROOF",
+      "ACID_BLOOD",
+      "ACIDPROOF",
+      "NOHEAD",
+      "NOGIB"
+    ],
+    "armor": {
+      "bash": 10,
+      "cut": 30,
+      "bullet": 24,
+      "electric": 4
+    }
+  },
+  {
+    "id": "mon_thing",
+    "type": "MONSTER",
+    "name": {
+      "str": "thing"
+    },
+    "description": "An amorphous black creature, detaching and sprouting tentacles without any apparent pause.",
+    "default_faction": "mutant",
+    "bodytype": "blob",
+    "species": [
+      "NETHER"
+    ],
+    "diff": 2,
+    "volume": "92500 ml",
+    "weight": "120 kg",
+    "hp": 160,
+    "speed": 140,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "&",
+    "color": "dark_gray",
+    "aggression": 100,
+    "morale": 100,
+    "melee_skill": 8,
+    "melee_dice": 4,
+    "melee_dice_sides": 8,
+    "dodge": 2,
+    "bleed_rate": 20,
+    "families": [
+      "prof_wp_netherium_abomination"
+    ],
+    "weakpoint_sets": [
+      "wps_netherium_abomination"
+    ],
+    "harvest": "exempt",
+    "special_attacks": [
+      {
+        "id": "tentacle"
+      },
+      {
+        "type": "spell",
+        "spell_data": {
+          "id": "monspell_psychic_stress"
+        },
+        "cooldown": 20
+      }
+    ],
+    "death_function": {
+      "corpse_type": "NO_CORPSE",
+      "message": "The %s melts away."
+    },
+    "flags": [
+      "SMELLS",
+      "HEARS",
+      "HAS_MIND",
+      "NOHEAD",
+      "BASHES",
+      "GROUP_BASH",
+      "SWIMS",
+      "ATTACKMON",
+      "PLASTIC",
+      "ACIDPROOF",
+      "NOGIB",
+      "CLIMBS"
+    ],
+    "armor": {
+      "bash": 8,
+      "electric": 1
+    }
+  },
+  {
+    "id": "mon_twisted_body",
+    "type": "MONSTER",
+    "name": {
+      "str": "twisted body",
+      "str_pl": "twisted bodies"
+    },
+    "description": "A human body, but with its limbs, neck, and hair impossibly twisted.  It clambers around swiftly, making awful screeching sounds.",
+    "default_faction": "mutant_with_vortex",
+    "bodytype": "human",
+    "species": [
+      "HORROR"
+    ],
+    "volume": "62500 ml",
+    "weight": "81500 g",
+    "hp": 70,
+    "speed": 90,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "h",
+    "color": "light_red",
+    "aggression": 100,
+    "morale": 100,
+    "melee_skill": 4,
+    "melee_dice": 2,
+    "melee_dice_sides": 4,
+    "dodge": 6,
+    "harvest": "demihuman",
+    "families": [
+      "prof_intro_biology",
+      "prof_physiology",
+      "prof_wp_demihuman"
+    ],
+    "weakpoint_sets": [
+      "wps_humanoid_body"
+    ],
+    "flags": [
+      "SEES",
+      "HEARS",
+      "GOODHEARING",
+      "POISON",
+      "HUMAN",
+      "CLIMBS"
+    ],
+    "extend": {
+      "special_attacks": [
+        {
+          "type": "spell",
+          "spell_data": {
+            "id": "monspell_psychic_stress"
+          },
+          "cooldown": 70
+        }
+      ]
+    }
+  },
+  {
+    "id": "mon_vortex",
+    "type": "MONSTER",
+    "name": {
+      "str": "vortex",
+      "str_pl": "vortexes"
+    },
+    "description": "A twisting spot in the air, with some kind of morphing mass at its center.",
+    "default_faction": "vortex",
+    "species": [
+      "UNKNOWN"
+    ],
+    "diff": 2,
+    "volume": "30000 ml",
+    "weight": "40750 g",
+    "hp": 20,
+    "speed": 120,
+    "material": [
+      "powder"
+    ],
+    "symbol": "V",
+    "color": "white",
+    "aggression": 100,
+    "morale": 100,
+    "harvest": "exempt",
+    "death_function": {
+      "corpse_type": "NO_CORPSE",
+      "message": "The %s melts away."
+    },
+    "flags": [
+      "HEARS",
+      "GOODHEARING",
+      "STUMBLES",
+      "BIOLOGICALPROOF",
+      "NOHEAD",
+      "HARDTOSHOOT",
+      "FLIES",
+      "PLASTIC",
+      "NO_BREATHE",
+      "NOGIB"
+    ],
+    "extend": {
+      "special_attacks": [
+        {
+          "type": "spell",
+          "spell_data": {
+            "id": "monspell_psychic_stress"
+          },
+          "cooldown": 10
+        }
+      ]
+    }
+  },
+  {
+    "id": "mon_yugg",
+    "type": "MONSTER",
+    "name": {
+      "str": "yugg"
+    },
+    "description": "A huge, slimy worm-like creature.  Its pale, flattened head drips an oily mucus as it breaches the ground, searching for prey.  Its pinkish mouth opens and closes, revealing long fangs glistening with ropey strands of saliva, which leave smoldering stains wherever they drip.",
+    "default_faction": "nether",
+    "bodytype": "snake",
+    "species": [
+      "NETHER"
+    ],
+    "diff": 10,
+    "volume": "875000 ml",
+    "weight": "200 kg",
+    "hp": 320,
+    "speed": 80,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "W",
+    "color": "white",
+    "aggression": 100,
+    "morale": 100,
+    "melee_skill": 6,
+    "melee_dice": 3,
+    "melee_dice_sides": 5,
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 8
+      }
+    ],
+    "dodge": 1,
+    "bleed_rate": 50,
+    "families": [
+      "prof_wp_netherium_abomination"
+    ],
+    "weakpoint_sets": [
+      "wps_netherium_abomination"
+    ],
+    "harvest": "meatslug",
+    "special_attacks": [
+      {
+        "type": "spell",
+        "spell_data": {
+          "id": "monspell_psychic_feedback"
+        },
+        "cooldown": 20
+      }
+    ],
+    "flags": [
+      "SEES",
+      "SMELLS",
+      "HEARS",
+      "HAS_MIND",
+      "BASHES",
+      "DESTROYS",
+      "POISON",
+      "VENOM",
+      "NO_BREATHE",
+      "DIGS"
+    ],
+    "armor": {
+      "bash": 6,
+      "electric": 3
+    }
+  },
+  {
+    "id": "mon_zombie_hollow",
+    "type": "MONSTER",
+    "name": {
+      "str": "zombie hollow"
+    },
+    "description": "This zombie's hollow black eyes survey its surroundings as it stretches and bends in ways that whoever the original body belonged to never could.  The only things that seem solid on this flexible, black-veined body are the rows of sharp, black teeth.  You get the feeling that the only human thing remaining is the skin, worn as one might wear clothes.",
+    "default_faction": "zombie",
+    "bodytype": "human",
+    "species": [
+      "ZOMBIE",
+      "HUMAN"
+    ],
+    "volume": "62500 ml",
+    "weight": "81500 g",
+    "hp": 100,
+    "speed": 70,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "Z",
+    "color": "black",
+    "scents_tracked": [
+      "sc_human",
+      "sc_fetid"
+    ],
+    "aggression": 100,
+    "morale": 100,
+    "melee_skill": 6,
+    "melee_dice": 2,
+    "melee_dice_sides": 6,
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 4
+      }
+    ],
+    "dodge": 4,
+    "weakpoint_sets": [
+      "wps_humanoid_body"
+    ],
+    "families": [
+      "prof_intro_biology",
+      "prof_physiology",
+      "prof_wp_zombie"
+    ],
+    "bleed_rate": 0,
+    "vision_day": 30,
+    "vision_night": 3,
+    "harvest": "zombie_meatslug",
+    "grab_strength": 20,
+    "special_attacks": [
+      {
+        "id": "grab"
+      },
+      {
+        "id": "scratch_humanoid"
+      },
+      {
+        "id": "stretch_bite"
+      },
+      {
+        "id": "stretch_attack",
+        "cooldown": 5
+      },
+      {
+        "type": "spell",
+        "spell_data": {
+          "id": "monspell_psychic_stress"
+        },
+        "cooldown": 70
+      }
+    ],
+    "death_function": {
+      "message": "The %s splits in two!",
+      "corpse_type": "NO_CORPSE",
+      "effect": {
+        "id": "death_blobsplit",
+        "hit_self": true
+      }
+    },
+    "flags": [
+      "SEES",
+      "HEARS",
+      "SMELLS",
+      "WARM",
+      "BASHES",
+      "GROUP_BASH",
+      "POISON",
+      "NO_BREATHE",
+      "FILTHY"
+    ],
+    "armor": {
+      "bash": 8,
+      "cut": 4,
+      "stab": 10,
+      "bullet": 10,
+      "electric": 1
+    }
+  },
+  {
+    "id": "mon_zombie_master",
+    "type": "MONSTER",
+    "name": {
+      "str": "zombie master"
+    },
+    "description": "This zombie's features have tightened, its lips pulled back into an unnatural grin, revealing rows of blackened teeth beneath large, piercing eyes.  It stands tall and its movements are fluid and tightly controlled.  A feeling of danger permeates the surrounding air, and the light that falls on it seems somehow harsher and more glaring.",
+    "default_faction": "zombie",
+    "bodytype": "human",
+    "species": [
+      "ZOMBIE",
+      "HUMAN"
+    ],
+    "diff": 20,
+    "volume": "62500 ml",
+    "weight": "81500 g",
+    "hp": 180,
+    "speed": 90,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "Z",
+    "color": "red",
+    "scents_tracked": [
+      "sc_human",
+      "sc_fetid"
+    ],
+    "aggression": 5,
+    "morale": 100,
+    "melee_skill": 5,
+    "melee_dice": 2,
+    "melee_dice_sides": 6,
+    "dodge": 4,
+    "weakpoint_sets": [
+      "wps_humanoid_body"
+    ],
+    "families": [
+      "prof_intro_biology",
+      "prof_physiology",
+      "prof_wp_zombie"
+    ],
+    "bleed_rate": 0,
+    "vision_day": 50,
+    "vision_night": 5,
+    "harvest": "zombie_humanoid",
+    "path_settings": {
+      "max_dist": 10,
+      "allow_open_doors": true,
+      "avoid_traps": true,
+      "avoid_sharp": true
+    },
+    "special_attacks": [
+      [
+        "UPGRADE",
+        10
+      ],
+      {
+        "type": "spell",
+        "spell_data": {
+          "id": "monspell_psychic_stress"
+        },
+        "cooldown": 70
+      }
+    ],
+    "anger_triggers": [
+      "HURT",
+      "PLAYER_CLOSE",
+      "PLAYER_WEAK"
+    ],
+    "death_drops": "default_zombie_death_drops",
+    "burn_into": "mon_zombie_scorched",
+    "flags": [
+      "SEES",
+      "HEARS",
+      "SMELLS",
+      "HAS_MIND",
+      "WARM",
+      "BASHES",
+      "POISON",
+      "NO_BREATHE",
+      "REVIVES",
+      "CAN_OPEN_DOORS",
+      "PRIORITIZE_TARGETS",
+      "NO_FUNG_DMG",
+      "FILTHY",
+      "PATH_AVOID_DANGER_1"
+    ],
+    "armor": {
+      "bash": 2,
+      "cut": 2,
+      "bullet": 2,
+      "electric": 3
+    }
+  },
+  {
+    "id": "mon_zombie_necro",
+    "type": "MONSTER",
+    "name": {
+      "str": "zombie necromancer"
+    },
+    "description": "A twisted mockery of the human form, emaciated, with jet-black skin and glowing red eyes.  It is somehow painful to look at, awakening fears deep within your psyche, and even the surrounding air seems more sinister, somehow darker and more dangerous.",
+    "default_faction": "zombie",
+    "bodytype": "human",
+    "species": [
+      "ZOMBIE",
+      "HUMAN"
+    ],
+    "diff": 20,
+    "volume": "62500 ml",
+    "weight": "81500 g",
+    "hp": 100,
+    "speed": 100,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "Z",
+    "color": "dark_gray",
+    "scents_tracked": [
+      "sc_human",
+      "sc_fetid"
+    ],
+    "aggression": 5,
+    "morale": 100,
+    "melee_skill": 4,
+    "melee_dice": 3,
+    "melee_dice_sides": 6,
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 2
+      }
+    ],
+    "dodge": 2,
+    "bleed_rate": 0,
+    "vision_day": 50,
+    "vision_night": 5,
+    "weakpoint_sets": [
+      "wps_humanoid_body"
+    ],
+    "families": [
+      "prof_intro_biology",
+      "prof_physiology",
+      "prof_wp_zombie"
+    ],
+    "harvest": "zombie_humanoid",
+    "path_settings": {
+      "max_dist": 10
+    },
+    "special_attacks": [
+      [
+        "RESURRECT",
+        0
+      ],
+      {
+        "type": "spell",
+        "spell_data": {
+          "id": "monspell_fear"
+        },
+        "cooldown": 70
+      }
+    ],
+    "anger_triggers": [
+      "HURT",
+      "PLAYER_CLOSE",
+      "PLAYER_WEAK"
+    ],
+    "death_drops": "default_zombie_death_drops",
+    "burn_into": "mon_zombie_scorched",
+    "flags": [
+      "SEES",
+      "HEARS",
+      "SMELLS",
+      "HAS_MIND",
+      "STUMBLES",
+      "WARM",
+      "BASHES",
+      "POISON",
+      "NO_BREATHE",
+      "REVIVES",
+      "PATH_AVOID_DANGER_1",
+      "CAN_OPEN_DOORS",
+      "PRIORITIZE_TARGETS",
+      "NO_FUNG_DMG",
+      "FILTHY"
+    ],
+    "armor": {
+      "electric": 2
+    }
+  }
+]

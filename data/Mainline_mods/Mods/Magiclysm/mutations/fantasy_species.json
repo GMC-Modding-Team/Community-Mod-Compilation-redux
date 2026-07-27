@@ -814,18 +814,42 @@
     ]
   },
   {
-    "type": "mutation",
     "id": "RAVENFOLK_LEGS",
+    "type": "mutation",
     "copy-from": "BIRD_LEGS",
     "name": {
       "str": "Ravenfolk Legs"
     },
+    "points": 0,
+    "visibility": 4,
+    "ugliness": 2,
+    "mixed_effect": true,
     "description": "Your legs and feet are those of a raven, with three long talons at the front and one at the back, ending in wicked claws and preventing you from wearing shoes.  Fortunately they don't impede your movement.",
-    "category": [
-      "SPECIES_RAVENFOLK"
+    "active": true,
+    "activated_is_setup": false,
+    "activated_eocs": [
+      "EOC_AVIAN_LEAP"
+    ],
+    "types": [
+      "LEGS",
+      "FEET"
+    ],
+    "prereqs": [
+      "WINGS_BIRD"
     ],
     "threshreq": [
       "THRESH_SPECIES_RAVENFOLK"
+    ],
+    "category": [
+      "SPECIES_RAVENFOLK"
+    ],
+    "restricts_gear": [
+      "foot_l",
+      "foot_r"
+    ],
+    "destroys_gear": true,
+    "allowed_items": [
+      "ALLOWS_TALONS"
     ]
   },
   {
@@ -879,12 +903,37 @@
     ]
   },
   {
-    "type": "mutation",
     "id": "RAVEN_BONES",
+    "type": "mutation",
     "copy-from": "HOLLOW_BONES",
+    "name": {
+      "str": "Hollow Bones"
+    },
+    "points": 1,
+    "mixed_effect": true,
     "description": "Your bones are nearly hollow, a remnant of your people's past as creatures of the air.  Your body is very light as a result, enabling you to move and attack 20% faster, but also frail; you can carry 40% less, and bashing attacks injure you more.",
+    "types": [
+      "BONES"
+    ],
+    "prereqs": [
+      "LIGHT_BONES"
+    ],
     "category": [
       "SPECIES_RAVENFOLK"
+    ],
+    "movecost_modifier": 0.8,
+    "attackcost_modifier": 0.8,
+    "weight_capacity_modifier": 0.6,
+    "enchantments": [
+      {
+        "condition": "ALWAYS",
+        "values": [
+          {
+            "value": "EXTRA_BASH",
+            "multiply": 0.8
+          }
+        ]
+      }
     ]
   }
 ]

@@ -823,16 +823,34 @@
     "name": {
       "str": "nature's arrow"
     },
+    "symbol": "=",
+    "color": "green",
     "looks_like": "arrow_heavy_fire_hardened_fletched",
     "description": "A magically conjured arrow made of twisted wood.",
+    "material": [
+      "wood"
+    ],
+    "volume": "250 ml",
+    "price": 300,
+    "price_postapoc": "50 cent",
+    "weight": "30 g",
+    "longest_side": "76 cm",
+    "ammo_type": "arrow",
     "damage": {
       "damage_type": "stab",
       "armor_penetration": 3
     },
-    "count": 1,
+    "loudness": 0,
+    "critical_multiplier": 10,
     "effects": [
       "RECOVER_8"
-    ]
+    ],
+    "melee_damage": {
+      "bash": 3
+    },
+    "count": 1,
+    "range": 10,
+    "//legacy_dispersion": 150
   },
   {
     "id": "arrow_druid",
@@ -841,17 +859,35 @@
     "name": {
       "str": "twisted wooden arrow"
     },
+    "symbol": "=",
+    "color": "green",
     "looks_like": "arrow_heavy_fire_hardened_fletched",
     "description": "A arrow that looks more like it was grown than carved.  Despite that, it flies straight and true.  It explodes into a mass of entangling vegetation when it hits its target.",
+    "material": [
+      "wood"
+    ],
+    "volume": "250 ml",
+    "price": 300,
+    "price_postapoc": "50 cent",
+    "weight": "30 g",
+    "longest_side": "76 cm",
+    "ammo_type": "arrow",
     "damage": {
       "damage_type": "stab",
       "armor_penetration": 2
     },
-    "count": 1,
+    "loudness": 0,
+    "critical_multiplier": 10,
     "effects": [
       "RECOVER_6",
       "TANGLE"
-    ]
+    ],
+    "melee_damage": {
+      "bash": 3
+    },
+    "count": 1,
+    "range": 10,
+    "//legacy_dispersion": 150
   },
   {
     "type": "TOOL",
@@ -1609,17 +1645,25 @@
   {
     "id": "armor_spirit",
     "type": "ARMOR",
-    "category": "armor",
     "copy-from": "armor_lightplate",
+    "category": "armor",
     "name": {
       "str_sp": "mage armor"
     },
     "description": "A summoned magic armor.  It gets shinier and sturdier with each spell level and is affected by your intelligence.",
     "weight": "1 g",
+    "volume": "17500 ml",
+    "price": 60000,
+    "price_postapoc": 12000,
+    "to_hit": -5,
     "material": [
       "concentrated_mana"
     ],
+    "symbol": "[",
+    "looks_like": "armor_larmor",
+    "color": "light_gray",
     "warmth": 0,
+    "longest_side": "60 cm",
     "material_thickness": 0,
     "flags": [
       "ONLY_ONE",
@@ -1631,13 +1675,6 @@
       "TRADER_AVOID",
       "PADDED"
     ],
-    "relic_data": {
-      "passive_effects": [
-        {
-          "id": "ench_armor_spirit"
-        }
-      ]
-    },
     "armor": [
       {
         "encumbrance": 0,
@@ -1657,7 +1694,17 @@
           "foot_r"
         ]
       }
-    ]
+    ],
+    "melee_damage": {
+      "bash": 8
+    },
+    "relic_data": {
+      "passive_effects": [
+        {
+          "id": "ench_armor_spirit"
+        }
+      ]
+    }
   },
   {
     "id": "jar_3l_force",
@@ -1728,7 +1775,6 @@
   {
     "id": "longsword_holy",
     "type": "GENERIC",
-    "copy-from": "longsword",
     "name": {
       "str": "mage blade"
     },
@@ -1933,45 +1979,81 @@
     ]
   },
   {
-    "type": "GENERIC",
     "id": "magical_throwing_knife",
+    "type": "GENERIC",
     "copy-from": "throwing_knife",
+    "category": "weapons",
     "price": 0,
     "price_postapoc": 0,
     "name": {
       "str": "magical throwing knife",
       "str_pl": "magical throwing knives"
     },
+    "symbol": ";",
+    "color": "light_gray",
     "description": "A thin and flat knife made for throwing.  Its ineffective cutting edge and odd shape make it unsuitable for use as a tool.",
     "material": [
       "concentrated_mana"
     ],
-    "extend": {
-      "flags": [
-        "UNBREAKABLE_MELEE",
-        "NONCONDUCTIVE",
-        "NO_REPAIR",
-        "NO_SALVAGE",
-        "TRADER_AVOID"
-      ]
-    },
+    "volume": "100 ml",
+    "weight": "460 g",
+    "to_hit": -2,
+    "flags": [
+      "SHEATH_KNIFE",
+      "ALLOWS_BODY_BLOCK",
+      "UNBREAKABLE_MELEE",
+      "NONCONDUCTIVE",
+      "NO_REPAIR",
+      "NO_SALVAGE",
+      "TRADER_AVOID"
+    ],
+    "weapon_category": [
+      "KNIVES"
+    ],
     "thrown_damage": [
       {
         "damage_type": "stab",
         "amount": 20,
         "armor_penetration": 5
       }
-    ]
+    ],
+    "melee_damage": {
+      "bash": 1,
+      "stab": 10
+    }
   },
   {
-    "type": "GENERIC",
     "id": "magical_throwing_knife_fire",
+    "type": "GENERIC",
     "copy-from": "magical_throwing_knife",
+    "category": "weapons",
+    "price": 0,
+    "price_postapoc": 0,
     "name": {
       "str": "magical throwing knife",
       "str_pl": "magical throwing knives"
     },
+    "symbol": ";",
+    "color": "light_gray",
     "description": "A thin and flat knife made for throwing, wrapped in ethereal flames.  Its ineffective cutting edge and odd shape make it unsuitable for use as a tool.",
+    "material": [
+      "concentrated_mana"
+    ],
+    "volume": "100 ml",
+    "weight": "460 g",
+    "to_hit": -2,
+    "flags": [
+      "SHEATH_KNIFE",
+      "ALLOWS_BODY_BLOCK",
+      "UNBREAKABLE_MELEE",
+      "NONCONDUCTIVE",
+      "NO_REPAIR",
+      "NO_SALVAGE",
+      "TRADER_AVOID"
+    ],
+    "weapon_category": [
+      "KNIVES"
+    ],
     "thrown_damage": [
       {
         "damage_type": "heat",
@@ -1981,17 +2063,44 @@
         "damage_type": "stab",
         "amount": 5
       }
-    ]
+    ],
+    "melee_damage": {
+      "bash": 1,
+      "stab": 10
+    }
   },
   {
-    "type": "GENERIC",
     "id": "magical_throwing_knife_cold",
+    "type": "GENERIC",
     "copy-from": "magical_throwing_knife",
+    "category": "weapons",
+    "price": 0,
+    "price_postapoc": 0,
     "name": {
       "str": "magical throwing knife",
       "str_pl": "magical throwing knives"
     },
+    "symbol": ";",
+    "color": "light_gray",
     "description": "A thin and flat knife made for throwing, emanating frigid cold.  Its ineffective cutting edge and odd shape make it unsuitable for use as a tool.",
+    "material": [
+      "concentrated_mana"
+    ],
+    "volume": "100 ml",
+    "weight": "460 g",
+    "to_hit": -2,
+    "flags": [
+      "SHEATH_KNIFE",
+      "ALLOWS_BODY_BLOCK",
+      "UNBREAKABLE_MELEE",
+      "NONCONDUCTIVE",
+      "NO_REPAIR",
+      "NO_SALVAGE",
+      "TRADER_AVOID"
+    ],
+    "weapon_category": [
+      "KNIVES"
+    ],
     "thrown_damage": [
       {
         "damage_type": "cold",
@@ -2001,17 +2110,44 @@
         "damage_type": "stab",
         "amount": 5
       }
-    ]
+    ],
+    "melee_damage": {
+      "bash": 1,
+      "stab": 10
+    }
   },
   {
-    "type": "GENERIC",
     "id": "magical_throwing_knife_cut",
+    "type": "GENERIC",
     "copy-from": "magical_throwing_knife",
+    "category": "weapons",
+    "price": 0,
+    "price_postapoc": 0,
     "name": {
       "str": "magical throwing knife",
       "str_pl": "magical throwing knives"
     },
+    "symbol": ";",
+    "color": "light_gray",
     "description": "A thin and flat knife with wide edge made for throwing, seems unnaturally sharp.  Its ineffective cutting edge and odd shape make it unsuitable for use as a tool.",
+    "material": [
+      "concentrated_mana"
+    ],
+    "volume": "100 ml",
+    "weight": "460 g",
+    "to_hit": -2,
+    "flags": [
+      "SHEATH_KNIFE",
+      "ALLOWS_BODY_BLOCK",
+      "UNBREAKABLE_MELEE",
+      "NONCONDUCTIVE",
+      "NO_REPAIR",
+      "NO_SALVAGE",
+      "TRADER_AVOID"
+    ],
+    "weapon_category": [
+      "KNIVES"
+    ],
     "thrown_damage": [
       {
         "damage_type": "cut",
@@ -2022,17 +2158,44 @@
         "damage_type": "stab",
         "amount": 5
       }
-    ]
+    ],
+    "melee_damage": {
+      "bash": 1,
+      "stab": 10
+    }
   },
   {
-    "type": "GENERIC",
     "id": "magical_throwing_knife_biological",
+    "type": "GENERIC",
     "copy-from": "magical_throwing_knife",
+    "category": "weapons",
+    "price": 0,
+    "price_postapoc": 0,
     "name": {
       "str": "magical throwing knife",
       "str_pl": "magical throwing knives"
     },
+    "symbol": ";",
+    "color": "light_gray",
     "description": "A thin and flat knife made for throwing, made of porous substance and covered in dark ooze.  Its ineffective cutting edge and odd shape make it unsuitable for use as a tool.",
+    "material": [
+      "concentrated_mana"
+    ],
+    "volume": "100 ml",
+    "weight": "460 g",
+    "to_hit": -2,
+    "flags": [
+      "SHEATH_KNIFE",
+      "ALLOWS_BODY_BLOCK",
+      "UNBREAKABLE_MELEE",
+      "NONCONDUCTIVE",
+      "NO_REPAIR",
+      "NO_SALVAGE",
+      "TRADER_AVOID"
+    ],
+    "weapon_category": [
+      "KNIVES"
+    ],
     "thrown_damage": [
       {
         "damage_type": "biological",
@@ -2042,38 +2205,93 @@
         "damage_type": "stab",
         "amount": 5
       }
-    ]
+    ],
+    "melee_damage": {
+      "bash": 1,
+      "stab": 10
+    }
   },
   {
-    "type": "GENERIC",
     "id": "magical_throwing_knife_pure_special",
+    "type": "GENERIC",
     "copy-from": "magical_throwing_knife",
+    "category": "weapons",
+    "price": 0,
+    "price_postapoc": 0,
     "name": {
       "str": "magical throwing knife",
       "str_pl": "magical throwing knives"
     },
+    "symbol": ";",
+    "color": "light_gray",
     "description": "A transparent blade that seems to radiate intent to be thrown.  Its ineffective cutting edge and odd shape make it unsuitable for use as a tool.",
+    "material": [
+      "concentrated_mana"
+    ],
+    "volume": "100 ml",
+    "weight": "460 g",
+    "to_hit": -2,
+    "flags": [
+      "SHEATH_KNIFE",
+      "ALLOWS_BODY_BLOCK",
+      "UNBREAKABLE_MELEE",
+      "NONCONDUCTIVE",
+      "NO_REPAIR",
+      "NO_SALVAGE",
+      "TRADER_AVOID"
+    ],
+    "weapon_category": [
+      "KNIVES"
+    ],
     "thrown_damage": [
       {
         "damage_type": "pure",
         "amount": 40
       }
-    ]
+    ],
+    "melee_damage": {
+      "bash": 1,
+      "stab": 10
+    }
   },
   {
     "id": "eshaper_hammer",
-    "copy-from": "hammer",
-    "looks_like": "hammer",
     "type": "TOOL",
+    "copy-from": "hammer",
     "name": {
       "str": "earthshaper's hammer"
     },
     "description": "Shaped with your own magic, this tool has the same abilities as the common hammer.",
+    "ascii_picture": "hammer",
+    "longest_side": "25 cm",
+    "weight": "566 g",
+    "volume": "320 ml",
+    "price": 700,
+    "price_postapoc": 100,
+    "to_hit": -1,
     "material": [
       "stone"
     ],
     "symbol": ";",
     "color": "dark_gray",
+    "qualities": [
+      [
+        "HAMMER",
+        3
+      ],
+      [
+        "PRY",
+        1
+      ],
+      [
+        "HAMMER_FINE",
+        1
+      ],
+      [
+        "PRYING_NAIL",
+        1
+      ]
+    ],
     "use_action": {
       "type": "transform",
       "need_wielding": true,
@@ -2081,24 +2299,37 @@
       "menu_text": "Transform",
       "msg": "Your hammer transforms into a pickaxe!"
     },
-    "extend": {
-      "flags": [
-        "TRADER_AVOID",
-        "NO_REPAIR",
-        "NO_SALVAGE",
-        "MAGIC_FOCUS"
-      ]
-    }
+    "flags": [
+      "BELT_CLIP",
+      "NONCONDUCTIVE",
+      "ALLOWS_BODY_BLOCK",
+      "TRADER_AVOID",
+      "NO_REPAIR",
+      "NO_SALVAGE",
+      "MAGIC_FOCUS"
+    ],
+    "weapon_category": [
+      "BATONS"
+    ],
+    "melee_damage": {
+      "bash": 9
+    },
+    "looks_like": "hammer"
   },
   {
     "id": "eshaper_pickaxe",
-    "copy-from": "pickaxe",
-    "looks_like": "pickaxe",
     "type": "TOOL",
+    "copy-from": "pickaxe",
     "name": {
       "str": "earthshaper's pickaxe"
     },
     "description": "Shaped with your own magic, this tool has the same abilities as the common pickaxe.",
+    "weight": "4535 g",
+    "volume": "3 L",
+    "longest_side": "91 cm",
+    "price": 16000,
+    "price_postapoc": 1250,
+    "to_hit": -2,
     "material": [
       "stone"
     ],
@@ -2114,110 +2345,218 @@
       },
       "PICKAXE"
     ],
-    "extend": {
-      "flags": [
-        "TRADER_AVOID",
-        "NO_REPAIR",
-        "NO_SALVAGE",
-        "MAGIC_FOCUS"
-      ]
-    }
+    "techniques": [
+      "WBLOCK_1"
+    ],
+    "flags": [
+      "DURABLE_MELEE",
+      "NONCONDUCTIVE",
+      "DIG_TOOL",
+      "SHEATH_AXE",
+      "TRADER_AVOID",
+      "NO_REPAIR",
+      "NO_SALVAGE",
+      "MAGIC_FOCUS"
+    ],
+    "weapon_category": [
+      "HOOKING_WEAPONRY"
+    ],
+    "melee_damage": {
+      "bash": 30,
+      "stab": 15
+    },
+    "looks_like": "pickaxe"
   },
   {
     "id": "eshaper_ax",
-    "copy-from": "ax",
-    "looks_like": "ax",
     "type": "TOOL",
+    "copy-from": "ax",
     "name": {
       "str": "earthshaper's axe"
     },
     "description": "Shaped with your own magic, this tool has the same abilities as the common axe.",
+    "weight": "2227 g",
+    "volume": "2000 ml",
+    "longest_side": "78 cm",
+    "price": 10500,
+    "price_postapoc": 750,
+    "to_hit": {
+      "grip": "weapon",
+      "length": "long",
+      "surface": "line",
+      "balance": "uneven"
+    },
     "material": [
       "stone"
     ],
     "symbol": "/",
     "color": "dark_gray",
+    "qualities": [
+      [
+        "CUT",
+        1
+      ],
+      [
+        "AXE",
+        3
+      ],
+      [
+        "BUTCHER",
+        -36
+      ]
+    ],
+    "techniques": [
+      "WBLOCK_1",
+      "BRUTAL",
+      "SWEEP"
+    ],
+    "flags": [
+      "DURABLE_MELEE",
+      "NONCONDUCTIVE",
+      "SHEATH_AXE",
+      "NO_SALVAGE",
+      "TRADER_AVOID",
+      "NO_REPAIR",
+      "MAGIC_FOCUS"
+    ],
+    "weapon_category": [
+      "HOOKING_WEAPONRY",
+      "GREAT_AXES"
+    ],
+    "melee_damage": {
+      "bash": 11,
+      "cut": 7
+    },
+    "looks_like": "ax",
     "use_action": {
       "type": "transform",
       "need_wielding": true,
       "target": "eshaper_knife",
       "menu_text": "Transform",
       "msg": "Your ax transforms into a knife!"
-    },
-    "extend": {
-      "flags": [
-        "TRADER_AVOID",
-        "NO_REPAIR",
-        "NO_SALVAGE",
-        "MAGIC_FOCUS"
-      ]
-    },
-    "melee_damage": {
-      "bash": 11,
-      "cut": 7
     }
   },
   {
     "id": "eshaper_knife",
-    "copy-from": "knife_hunting",
-    "looks_like": "knife_hunting",
     "type": "TOOL",
+    "copy-from": "knife_hunting",
     "category": "weapons",
     "name": {
       "str": "earthshaper's knife",
       "str_pl": "earthshaper's knives"
     },
+    "//": "Highest non-powertool butchering quality.  It's made for skinning and butchering game, which is what you're generally doing.  Based on Buck 103 skinner.",
     "description": "Shaped with your own magic, this tool has the same abilities as the common knife.",
+    "weight": "121 g",
+    "volume": "100 ml",
+    "longest_side": "20 cm",
+    "price": 4000,
+    "price_postapoc": 750,
+    "to_hit": {
+      "grip": "weapon",
+      "length": "hand",
+      "surface": "point",
+      "balance": "good"
+    },
     "material": [
       "stone"
     ],
     "repairs_with": [],
     "symbol": "/",
     "color": "dark_gray",
+    "qualities": [
+      [
+        "CUT",
+        2
+      ],
+      [
+        "CUT_FINE",
+        1
+      ],
+      [
+        "BUTCHER",
+        30
+      ]
+    ],
+    "flags": [
+      "SHEATH_KNIFE",
+      "ALLOWS_BODY_BLOCK",
+      "CONDUCTIVE",
+      "DURABLE_MELEE",
+      "TRADER_AVOID",
+      "NO_REPAIR",
+      "NO_SALVAGE",
+      "MAGIC_FOCUS"
+    ],
+    "weapon_category": [
+      "KNIVES"
+    ],
+    "melee_damage": {
+      "cut": 12
+    },
+    "looks_like": "knife_hunting",
     "use_action": {
       "type": "transform",
       "need_wielding": true,
       "target": "eshaper_shovel",
       "menu_text": "Transform",
       "msg": "Your knife transforms into a shovel!"
-    },
-    "extend": {
-      "flags": [
-        "TRADER_AVOID",
-        "NO_REPAIR",
-        "NO_SALVAGE",
-        "MAGIC_FOCUS"
-      ]
     }
   },
   {
     "id": "eshaper_shovel",
-    "copy-from": "shovel",
-    "looks_like": "shovel",
     "type": "TOOL",
+    "copy-from": "shovel",
     "name": {
       "str": "earthshaper's shovel"
     },
     "description": "Shaped with your own magic, this tool has the same abilities as the common shovel.",
+    "weight": "2032 g",
+    "volume": "3500 ml",
+    "longest_side": "140 cm",
+    "price": 2000,
+    "price_postapoc": 250,
+    "to_hit": 3,
     "material": [
       "stone"
     ],
     "symbol": "/",
     "color": "dark_gray",
+    "qualities": [
+      [
+        "DIG",
+        3
+      ],
+      [
+        "COOK",
+        1
+      ],
+      [
+        "BUTCHER",
+        -70
+      ]
+    ],
+    "techniques": [
+      "WBLOCK_1"
+    ],
+    "flags": [
+      "NONCONDUCTIVE",
+      "NO_SALVAGE",
+      "TRADER_AVOID",
+      "NO_REPAIR",
+      "MAGIC_FOCUS"
+    ],
+    "melee_damage": {
+      "bash": 14,
+      "cut": 3
+    },
+    "looks_like": "shovel",
     "use_action": {
       "type": "transform",
       "need_wielding": true,
       "target": "eshaper_hammer",
       "menu_text": "Transform",
       "msg": "Your shovel transforms into a hammer!"
-    },
-    "extend": {
-      "flags": [
-        "TRADER_AVOID",
-        "NO_REPAIR",
-        "NO_SALVAGE",
-        "MAGIC_FOCUS"
-      ]
     }
   },
   {
@@ -2443,13 +2782,26 @@
   },
   {
     "id": "technomancer_summoned_radio_on",
-    "copy-from": "technomancer_summoned_radio",
     "type": "TOOL",
+    "copy-from": "technomancer_summoned_radio",
     "name": {
       "str": "aetherspeaker (scanning)",
       "str_pl": "aetherspeakers (scanning)"
     },
     "description": "An aetherspeaker tuned to listen for radio signals from the surrounding area.  With a command word, it may change frequency or switch to communicating with other aetherspeakers or radios.",
+    "weight": "295 g",
+    "volume": "125 ml",
+    "to_hit": -1,
+    "material": [
+      "concentrated_mana"
+    ],
+    "symbol": ";",
+    "color": "cyan",
+    "flags": [
+      "TRADER_AVOID",
+      "ONLY_ONE",
+      "NO_DROP"
+    ],
     "use_action": [
       "RADIO_ON",
       {
@@ -2458,13 +2810,11 @@
         "menu_text": "Turn to speaking mode"
       }
     ],
+    "melee_damage": {
+      "bash": 4
+    },
     "tick_action": [
       "RADIO_TICK"
-    ],
-    "flags": [
-      "TRADER_AVOID",
-      "ONLY_ONE",
-      "NO_DROP"
     ]
   },
   {

@@ -1,15 +1,63 @@
 [
   {
     "id": "revolver_shotgun",
-    "copy-from": "shotgun_base",
     "type": "GUN",
+    "copy-from": "shotgun_base",
+    "reload_noise_volume": 10,
+    "//": "this is the default handling for anything with a stock",
+    "handling": 20,
     "name": {
       "str": "shotgun revolver"
     },
+    "symbol": "(",
+    "color": "light_gray",
+    "faults": [
+      "fault_gun_blackpowder",
+      "fault_gun_dirt",
+      "fault_gun_chamber_spent"
+    ],
+    "ranged_damage": {
+      "damage_type": "bullet",
+      "amount": 0
+    },
+    "skill": "shotgun",
+    "ammo": [
+      "shot"
+    ],
+    "valid_mod_locations": [
+      [
+        "accessories",
+        4
+      ],
+      [
+        "barrel",
+        1
+      ],
+      [
+        "grip",
+        1
+      ],
+      [
+        "muzzle",
+        1
+      ],
+      [
+        "rail",
+        1
+      ],
+      [
+        "sights",
+        1
+      ],
+      [
+        "stock",
+        1
+      ]
+    ],
     "description": "A shotgun modified to use a revolver cylinder mechanism, it can hold 6 cartridges.",
     "weight": "5443 g",
     "volume": "3000 ml",
-    "price": "750 USD",
+    "price": 750,
     "to_hit": -1,
     "melee_damage": {
       "bash": 12
@@ -21,36 +69,6 @@
     "dispersion": 435,
     "durability": 6,
     "barrel_volume": "1000 ml",
-    "valid_mod_locations": [
-      [
-        "accessories",
-        4
-      ],
-      [
-        "barrel",
-        1
-      ],
-      [
-        "grip",
-        1
-      ],
-      [
-        "muzzle",
-        1
-      ],
-      [
-        "rail",
-        1
-      ],
-      [
-        "sights",
-        1
-      ],
-      [
-        "stock",
-        1
-      ]
-    ],
     "flags": [
       "RELOAD_ONE",
       "NEVER_JAMS",
@@ -59,21 +77,13 @@
   },
   {
     "id": "revolver_rifle_3006",
-    "copy-from": "remington_700",
     "type": "GUN",
+    "copy-from": "remington_700",
     "name": {
       "str": "revolver pipe rifle:.30-06",
       "str_pl": "revolver pipe rifles:.30-06"
     },
-    "description": "A homemade.30-06 pipe rifle modified to use a revolver cylinder mechanism, it can hold 6 cartridges.",
-    "material": [
-      "steel",
-      "wood"
-    ],
-    "relative": {
-      "weight": 2000,
-      "volume": 3
-    },
+    "skill": "rifle",
     "valid_mod_locations": [
       [
         "accessories",
@@ -104,29 +114,90 @@
         1
       ]
     ],
+    "//": "Manual actions exclude the magazine location preventing installation of belt-feed adaptors",
+    "faults": [
+      "fault_gun_blackpowder",
+      "fault_gun_dirt"
+    ],
+    "looks_like": "modular_ar15",
+    "description": "A homemade.30-06 pipe rifle modified to use a revolver cylinder mechanism, it can hold 6 cartridges.",
+    "ascii_picture": "rem700_3006",
+    "weight": "3350 g",
+    "volume": "3190 ml",
+    "longest_side": "1141 mm",
+    "barrel_length": "635 mm",
+    "price": 87000,
+    "price_postapoc": 3500,
+    "to_hit": -1,
+    "material": [
+      "steel",
+      "wood"
+    ],
+    "color": "brown",
+    "ammo": [
+      "3006"
+    ],
+    "dispersion": 90,
+    "durability": 8,
+    "blackpowder_tolerance": 24,
+    "barrel_volume": "750 ml",
     "flags": [
       "RELOAD_ONE",
       "NEVER_JAMS",
       "RELOAD_EJECT"
-    ]
+    ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE",
+        "rigid": true,
+        "ammo_restriction": {
+          "3006": 4
+        }
+      }
+    ],
+    "melee_damage": {
+      "bash": 12
+    }
   },
   {
     "id": "revolver_rifle_22",
-    "copy-from": "rifle_22",
     "type": "GUN",
+    "copy-from": "rifle_22",
+    "looks_like": "ar15",
+    "reload_noise_volume": 10,
     "name": {
       "str": "revolver pipe rifle:.22",
       "str_pl": "revolver pipe rifles:.22"
     },
     "description": "A homemade.22 pipe rifle modified to use a revolver cylinder mechanism, it can hold 6 cartridges.",
+    "ascii_picture": "sm_pipe_gun",
+    "weight": "1953 g",
+    "volume": "1610 ml",
+    "longest_side": "1000 mm",
+    "barrel_length": "610 mm",
+    "price": 10000,
+    "price_postapoc": 500,
+    "to_hit": -1,
     "material": [
       "steel",
       "wood"
     ],
-    "relative": {
-      "weight": 2000,
-      "volume": 3
+    "symbol": "(",
+    "color": "brown",
+    "ammo": [
+      "22"
+    ],
+    "skill": "rifle",
+    "ranged_damage": {
+      "damage_type": "bullet",
+      "amount": 1
     },
+    "dispersion": 550,
+    "durability": 6,
+    "blackpowder_tolerance": 60,
+    "loudness": 25,
+    "reload": 200,
+    "barrel_volume": "360 ml",
     "valid_mod_locations": [
       [
         "accessories",
@@ -157,29 +228,68 @@
         1
       ]
     ],
+    "faults": [
+      "fault_gun_blackpowder",
+      "fault_gun_dirt"
+    ],
     "flags": [
       "RELOAD_ONE",
       "NEVER_JAMS",
       "RELOAD_EJECT"
-    ]
+    ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE",
+        "rigid": true,
+        "ammo_restriction": {
+          "22": 1
+        }
+      }
+    ],
+    "melee_damage": {
+      "bash": 10
+    }
   },
   {
     "id": "revolver_rifle_9mm",
-    "copy-from": "rifle_9mm",
     "type": "GUN",
+    "copy-from": "rifle_9mm",
+    "looks_like": "modular_ar15",
+    "reload_noise_volume": 10,
     "name": {
       "str": "revolver pipe rifle: 9x19mm",
       "str_pl": "revolver pipe rifles: 9x19mm"
     },
+    "//": "Despite its quality, it IS a small rifle, although not as effective as a genuine pistol carbine.",
     "description": "A homemade 9x19mm pipe rifle modified to use a revolver cylinder mechanism, it can hold 6 cartridges.",
+    "ascii_picture": "ps_pipe_gun",
+    "weight": "2114 g",
+    "volume": "1610 ml",
+    "longest_side": "100 cm",
+    "price": 10000,
+    "price_postapoc": 500,
+    "to_hit": -1,
     "material": [
       "steel",
       "wood"
     ],
-    "relative": {
-      "weight": 2000,
-      "volume": 3
+    "symbol": "(",
+    "color": "brown",
+    "ammo": [
+      "9mm"
+    ],
+    "skill": "rifle",
+    "ranged_damage": {
+      "damage_type": "bullet",
+      "amount": 1
     },
+    "dispersion": 550,
+    "durability": 6,
+    "blackpowder_tolerance": 60,
+    "loudness": 25,
+    "reload": 200,
+    "barrel_volume": "360 ml",
+    "barrel_length": "600 mm",
     "valid_mod_locations": [
       [
         "accessories",
@@ -210,29 +320,67 @@
         1
       ]
     ],
+    "faults": [
+      "fault_gun_blackpowder",
+      "fault_gun_dirt"
+    ],
     "flags": [
       "RELOAD_ONE",
       "NEVER_JAMS",
       "RELOAD_EJECT"
-    ]
+    ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE",
+        "rigid": true,
+        "ammo_restriction": {
+          "9mm": 1
+        }
+      }
+    ],
+    "melee_damage": {
+      "bash": 10
+    }
   },
   {
     "id": "revolver_rifle_45",
-    "copy-from": "rifle_45",
     "type": "GUN",
+    "copy-from": "rifle_45",
+    "looks_like": "modular_ar15",
+    "reload_noise_volume": 10,
     "name": {
       "str": "revolver pipe rifle:.45",
       "str_pl": "revolver pipe rifles:.45"
     },
     "description": "A homemade.45 pipe rifle modified to use a revolver cylinder mechanism, it can hold 6 cartridges.",
+    "ascii_picture": "ps_pipe_gun",
+    "weight": "2114 g",
+    "volume": "1610 ml",
+    "longest_side": "100 cm",
+    "price": 10000,
+    "price_postapoc": 500,
+    "to_hit": -1,
     "material": [
       "steel",
       "wood"
     ],
-    "relative": {
-      "weight": 2000,
-      "volume": 3
+    "symbol": "(",
+    "color": "brown",
+    "ammo": [
+      "45"
+    ],
+    "skill": "rifle",
+    "ranged_damage": {
+      "damage_type": "bullet",
+      "amount": -1
     },
+    "dispersion": 550,
+    "durability": 6,
+    "blackpowder_tolerance": 60,
+    "loudness": 25,
+    "reload": 200,
+    "barrel_volume": "360 ml",
+    "barrel_length": "600 mm",
     "valid_mod_locations": [
       [
         "accessories",
@@ -263,29 +411,73 @@
         1
       ]
     ],
+    "faults": [
+      "fault_gun_blackpowder",
+      "fault_gun_dirt"
+    ],
     "flags": [
       "RELOAD_ONE",
       "NEVER_JAMS",
       "RELOAD_EJECT"
-    ]
+    ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE",
+        "rigid": true,
+        "ammo_restriction": {
+          "45": 1
+        }
+      }
+    ],
+    "melee_damage": {
+      "bash": 10
+    }
   },
   {
     "id": "revolver_rifle_38",
-    "copy-from": "rifle_38",
     "type": "GUN",
+    "copy-from": "rifle_38",
+    "reload_noise_volume": 10,
+    "//": "this is the default handling for anything with a stock",
+    "handling": 20,
     "name": {
       "str": "revolver pipe rifle:.38",
       "str_pl": "revolver pipe rifles:.38"
     },
+    "symbol": "(",
+    "color": "brown",
+    "faults": [
+      "fault_gun_blackpowder",
+      "fault_gun_dirt"
+    ],
+    "ranged_damage": {
+      "damage_type": "bullet",
+      "amount": 1
+    },
+    "looks_like": "modular_ar15",
     "description": "A homemade.38 pipe rifle modified to use a revolver cylinder mechanism, it can hold 6 cartridges.",
+    "ascii_picture": "ps_pipe_gun",
+    "weight": "2114 g",
+    "volume": "1610 ml",
+    "longest_side": "100 cm",
+    "price": 10000,
+    "price_postapoc": 500,
+    "to_hit": -1,
     "material": [
       "steel",
       "wood"
     ],
-    "relative": {
-      "weight": 2000,
-      "volume": 3
-    },
+    "ammo": [
+      "38"
+    ],
+    "skill": "rifle",
+    "dispersion": 550,
+    "durability": 6,
+    "blackpowder_tolerance": 60,
+    "loudness": 25,
+    "reload": 200,
+    "barrel_volume": "360 ml",
+    "barrel_length": "600 mm",
     "valid_mod_locations": [
       [
         "accessories",
@@ -320,25 +512,65 @@
       "RELOAD_ONE",
       "NEVER_JAMS",
       "RELOAD_EJECT"
-    ]
+    ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE",
+        "rigid": true,
+        "ammo_restriction": {
+          "38": 1
+        }
+      }
+    ],
+    "melee_damage": {
+      "bash": 10
+    }
   },
   {
     "id": "revolver_rifle_44",
-    "copy-from": "rifle_44",
     "type": "GUN",
+    "copy-from": "rifle_44",
+    "reload_noise_volume": 10,
+    "//": "this is the default handling for anything with a stock",
+    "handling": 20,
     "name": {
       "str": "revolver pipe rifle:.44",
       "str_pl": "revolver pipe rifles:.44"
     },
+    "symbol": "(",
+    "color": "brown",
+    "faults": [
+      "fault_gun_blackpowder",
+      "fault_gun_dirt"
+    ],
+    "ranged_damage": {
+      "damage_type": "bullet",
+      "amount": -1
+    },
+    "looks_like": "modular_ar15",
     "description": "A homemade.44 pipe rifle modified to use a revolver cylinder mechanism, it can hold 6 cartridges.",
+    "ascii_picture": "lg_pipe_gun",
+    "weight": "2114 g",
+    "volume": "2 L",
+    "longest_side": "100 cm",
+    "price": 10000,
+    "price_postapoc": 500,
+    "to_hit": -1,
     "material": [
       "steel",
       "wood"
     ],
-    "relative": {
-      "weight": 2000,
-      "volume": 3
-    },
+    "ammo": [
+      "44"
+    ],
+    "skill": "rifle",
+    "dispersion": 550,
+    "durability": 6,
+    "blackpowder_tolerance": 60,
+    "loudness": 25,
+    "reload": 200,
+    "barrel_volume": "750 ml",
+    "barrel_length": "600 mm",
     "valid_mod_locations": [
       [
         "accessories",
@@ -373,25 +605,65 @@
       "RELOAD_ONE",
       "NEVER_JAMS",
       "RELOAD_EJECT"
-    ]
+    ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE",
+        "rigid": true,
+        "ammo_restriction": {
+          "44": 1
+        }
+      }
+    ],
+    "melee_damage": {
+      "bash": 10
+    }
   },
   {
     "id": "revolver_rifle_40",
-    "copy-from": "rifle_40",
     "type": "GUN",
+    "copy-from": "rifle_40",
+    "reload_noise_volume": 10,
+    "//": "this is the default handling for anything with a stock",
+    "handling": 20,
     "name": {
       "str": "revolver pipe rifle:.40",
       "str_pl": "revolver pipe rifles:.40"
     },
+    "symbol": "(",
+    "color": "brown",
+    "faults": [
+      "fault_gun_blackpowder",
+      "fault_gun_dirt"
+    ],
+    "ranged_damage": {
+      "damage_type": "bullet",
+      "amount": 0
+    },
+    "looks_like": "modular_ar15",
     "description": "A homemade.40 pipe rifle modified to use a revolver cylinder mechanism, it can hold 6 cartridges.",
+    "ascii_picture": "ps_pipe_gun",
+    "weight": "2114 g",
+    "volume": "1610 ml",
+    "longest_side": "100 cm",
+    "price": 10000,
+    "price_postapoc": 500,
+    "to_hit": -1,
     "material": [
       "steel",
       "wood"
     ],
-    "relative": {
-      "weight": 2000,
-      "volume": 3
-    },
+    "ammo": [
+      "40"
+    ],
+    "skill": "rifle",
+    "dispersion": 550,
+    "durability": 6,
+    "blackpowder_tolerance": 60,
+    "loudness": 25,
+    "reload": 200,
+    "barrel_volume": "360 ml",
+    "barrel_length": "600 mm",
     "valid_mod_locations": [
       [
         "accessories",
@@ -426,11 +698,22 @@
       "RELOAD_ONE",
       "NEVER_JAMS",
       "RELOAD_EJECT"
-    ]
+    ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE",
+        "rigid": true,
+        "ammo_restriction": {
+          "40": 1
+        }
+      }
+    ],
+    "melee_damage": {
+      "bash": 10
+    }
   },
   {
     "id": "revolver_rifle_223",
-    "copy-from": "rifle_223",
     "type": "GUN",
     "name": {
       "str": "revolver pipe rifle: 5.56mm",
@@ -441,10 +724,6 @@
       "steel",
       "wood"
     ],
-    "relative": {
-      "weight": 2000,
-      "volume": 3
-    },
     "valid_mod_locations": [
       [
         "accessories",
@@ -479,6 +758,8 @@
       "RELOAD_ONE",
       "NEVER_JAMS",
       "RELOAD_EJECT"
-    ]
+    ],
+    "weight": 2000,
+    "volume": 3
   }
 ]

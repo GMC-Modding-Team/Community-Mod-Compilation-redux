@@ -80,8 +80,39 @@
     "description": "The CE-4, commonly known as \"The Claw\", is a popular self-defense weapon used by corporate enforcers everywhere, especially on dangerous frontier planets.  Made from a cylinder of heat activated memory-alloy, the flick of a switch allows it to morph between a less-lethal bludgeon form and a sharpened, super heated blade.  Currently, it is in its lethal configuration, and looks like a sleek sword, humming softly as its blade glows from heat.",
     "weight": "760 g",
     "volume": "2 L",
-    "longest_side": "90 cm",
+    "price": "100 kUSD",
+    "price_postapoc": 200,
+    "material": [
+      "superalloy",
+      "diamond"
+    ],
+    "symbol": "[",
     "color": "light_blue",
+    "charges_per_use": 1,
+    "use_action": {
+      "menu_text": "Deactivate",
+      "type": "transform",
+      "target": "afs_energy_saber_off",
+      "msg": "The blade stops humming, and its edge dissipates into a smooth curve as it cools."
+    },
+    "flags": [
+      "DURABLE_MELEE"
+    ],
+    "pocket_data": [
+      {
+        "magazine_well": "250 ml",
+        "pocket_type": "MAGAZINE_WELL",
+        "holster": true,
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [
+          "light_battery_cell",
+          "light_minus_battery_cell",
+          "light_plus_battery_cell"
+        ]
+      }
+    ],
+    "longest_side": "90 cm",
     "looks_like": "arming_sword",
     "turns_per_charge": 4,
     "relic_data": {
@@ -92,19 +123,10 @@
       ]
     },
     "to_hit": 2,
-    "flags": [
-      "DURABLE_MELEE"
-    ],
     "techniques": [
       "WBLOCK_2"
     ],
     "revert_to": "afs_energy_saber_off",
-    "use_action": {
-      "menu_text": "Deactivate",
-      "type": "transform",
-      "target": "afs_energy_saber_off",
-      "msg": "The blade stops humming, and its edge dissipates into a smooth curve as it cools."
-    },
     "melee_damage": {
       "bash": 8
     }
@@ -357,28 +379,50 @@
     }
   },
   {
-    "type": "GENERIC",
     "id": "afs_titanium_bat",
+    "type": "GENERIC",
     "copy-from": "bat_metal",
-    "looks_like": "bat_metal",
     "name": {
       "str": "titanium bat"
     },
     "description": "A luxury baseball bat made out of titanium that was banned from competitive sport due to the increased performance that put defenders at risk.",
     "weight": "680 g",
+    "longest_side": "90 cm",
+    "to_hit": {
+      "grip": "weapon",
+      "length": "long",
+      "surface": "any",
+      "balance": "good"
+    },
     "color": "light_gray",
     "symbol": "/",
+    "price_postapoc": 1750,
     "material": [
       "titanium"
     ],
+    "techniques": [
+      "WBLOCK_1",
+      "BRUTAL"
+    ],
+    "qualities": [
+      [
+        "HAMMER",
+        1
+      ]
+    ],
+    "flags": [
+      "DURABLE_MELEE",
+      "BELT_CLIP"
+    ],
+    "volume": "1750 ml",
     "price": 20000,
-    "price_postapoc": 1750,
     "melee_damage": {
       "bash": 22
     },
     "weapon_category": [
       "MACES"
-    ]
+    ],
+    "looks_like": "bat_metal"
   },
   {
     "id": "ceramic_knife",
@@ -468,60 +512,173 @@
   {
     "id": "azabow_off",
     "type": "GUN",
+    "copy-from": "compbow",
+    "looks_like": "longbow",
     "symbol": "(",
     "color": "white",
-    "copy-from": "compbow",
     "name": {
       "str": "Aztlani bow"
     },
     "description": "An ornate bow used by Aztlani nobility during hunting rituals.  Designed to fell the plated creatures of Aztlan, its articulated and power assisted limbs allow it to fire projectiles with a strength comparable to modern assault rifles.\n\nWith its drawing aid system currently disabled, firing it will require truly superhuman strength.  It can be activated to toggle it drawing assist functionality.",
     "price": 50000,
+    "//": "60 lb draw weight 24in draw, 100J, 0.55 slugs of momentum with a 30g arrow.",
     "material": [
       "superalloy",
       "qt_steel",
       "wood"
     ],
+    "flags": [
+      "FIRE_TWOHAND",
+      "RELOAD_AND_SHOOT",
+      "PRIMITIVE_RANGED_WEAPON",
+      "SHEATH_BOW",
+      "WATERPROOF_GUN",
+      "NEVER_JAMS"
+    ],
+    "ammo_effects": [
+      "NEVER_MISFIRES"
+    ],
+    "skill": "archery",
     "min_strength": 40,
+    "ammo": [
+      "arrow"
+    ],
+    "weight": "907 g",
+    "volume": "1500 ml",
+    "longest_side": "150 cm",
     "price_postapoc": 40000,
+    "to_hit": 1,
+    "reload_noise_volume": 3,
+    "loudness": 10,
     "ranged_damage": {
       "damage_type": "stab",
       "amount": 17
     },
     "range": 25,
     "dispersion": 1000,
+    "sight_dispersion": 3000,
+    "durability": 6,
+    "valid_mod_locations": [
+      [
+        "underbarrel",
+        1
+      ],
+      [
+        "sights",
+        1
+      ],
+      [
+        "stabilizer",
+        1
+      ],
+      [
+        "dampening",
+        1
+      ],
+      [
+        "arrow rest",
+        1
+      ]
+    ],
     "use_action": {
       "menu_text": "Activate",
       "type": "transform",
       "target": "azabow_on",
       "msg": "You connect the bow to your UPS.",
       "ammo_scale": 0
+    },
+    "reload": 50,
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE",
+        "ammo_restriction": {
+          "arrow": 1
+        }
+      }
+    ],
+    "melee_damage": {
+      "bash": 8
     }
   },
   {
     "id": "azabow_on",
     "type": "GUN",
+    "copy-from": "azabow_off",
+    "looks_like": "longbow",
     "symbol": "(",
     "color": "white",
-    "copy-from": "azabow_off",
     "name": {
       "str": "Aztlani bow (active)",
       "str_pl": "Aztlani bows (active)"
     },
     "description": "An ornate bow used by Aztlani nobility during hunting rituals.  Designed to fell the plated creatures of Aztlan, its articulated and power assisted limbs allow it to fire projectiles with a strength comparable to modern assault rifles.\n\nWith its drawing aid system enabled, it can be much more easily drawn, at the cost of a modest amount of UPS power consumption per arrow.  It can be activated to toggle it drawing assist functionality.",
+    "price": 50000,
+    "//": "60 lb draw weight 24in draw, 100J, 0.55 slugs of momentum with a 30g arrow.",
+    "material": [
+      "superalloy",
+      "qt_steel",
+      "wood"
+    ],
+    "flags": [
+      "FIRE_TWOHAND",
+      "RELOAD_AND_SHOOT",
+      "PRIMITIVE_RANGED_WEAPON",
+      "USE_UPS"
+    ],
+    "ammo_effects": [
+      "NEVER_MISFIRES"
+    ],
+    "skill": "archery",
     "min_strength": 20,
-    "energy_drain": "12 kJ",
-    "extend": {
-      "flags": [
-        "USE_UPS"
-      ]
+    "weight": "907 g",
+    "volume": "1500 ml",
+    "longest_side": "150 cm",
+    "price_postapoc": 40000,
+    "to_hit": 1,
+    "reload_noise_volume": 3,
+    "loudness": 10,
+    "ranged_damage": {
+      "damage_type": "stab",
+      "amount": 17
     },
+    "range": 25,
+    "dispersion": 1000,
+    "sight_dispersion": 3000,
+    "durability": 6,
+    "valid_mod_locations": [
+      [
+        "underbarrel",
+        1
+      ],
+      [
+        "sights",
+        1
+      ],
+      [
+        "accessories",
+        2
+      ],
+      [
+        "stabilizer",
+        1
+      ],
+      [
+        "dampening",
+        1
+      ]
+    ],
     "use_action": {
       "menu_text": "Deactivate",
       "ammo_scale": 0,
       "type": "transform",
       "target": "azabow_off",
       "msg": "You disconnect the UPS."
-    }
+    },
+    "reload": 50,
+    "melee_damage": {
+      "bash": 8
+    },
+    "energy_drain": "12 kJ"
   },
   {
     "id": "aza_sword",
@@ -571,29 +728,49 @@
   },
   {
     "id": "scrapbow",
-    "looks_like": "longbow",
-    "copy-from": "compositebow",
     "type": "GUN",
+    "copy-from": "compositebow",
+    "looks_like": "longbow",
+    "symbol": "(",
+    "color": "yellow",
     "name": {
       "str": "salvage bow"
     },
     "description": "A bow made from readily-available materials, and quickly and cheaply put together.  It is not made to be pretty, but to get a job done.  Its nocks and string are made of shape-memory alloy that help increase string tension in the string.  The memory alloy requires a UPS source to be activated.",
     "price": 38000,
+    "//": "90 lb draw weight, 28in draw, 70J, 0.464 slugs of momentum with a 0.066lb arrow.",
     "material": [
       "steel",
       "plastic"
     ],
-    "energy_drain": "4 kJ",
+    "flags": [
+      "FIRE_TWOHAND",
+      "RELOAD_AND_SHOOT",
+      "PRIMITIVE_RANGED_WEAPON",
+      "BELTED",
+      "SHEATH_BOW",
+      "WATERPROOF_GUN",
+      "NEVER_JAMS",
+      "USE_UPS"
+    ],
+    "ammo_effects": [
+      "NEVER_MISFIRES"
+    ],
+    "skill": "archery",
+    "min_strength": 12,
     "weight": "540 g",
     "volume": "2500 ml",
     "longest_side": "152 cm",
     "price_postapoc": 2000,
+    "reload_noise_volume": 3,
+    "loudness": 6,
     "ranged_damage": {
       "damage_type": "stab",
       "amount": 12
     },
     "range": 14,
     "dispersion": 850,
+    "sight_dispersion": 3000,
     "durability": 6,
     "valid_mod_locations": [
       [
@@ -613,22 +790,11 @@
         1
       ]
     ],
-    "pocket_data": [
-      {
-        "pocket_type": "MAGAZINE",
-        "ammo_restriction": {
-          "arrow": 1
-        }
-      }
-    ],
-    "extend": {
-      "flags": [
-        "USE_UPS"
-      ]
-    },
+    "reload": 50,
     "melee_damage": {
       "bash": 12
-    }
+    },
+    "energy_drain": "4 kJ"
   },
   {
     "id": "scrapcrossbow",

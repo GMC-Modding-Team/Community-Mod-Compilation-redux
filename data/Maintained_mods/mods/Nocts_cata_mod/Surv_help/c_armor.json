@@ -17,8 +17,8 @@
     "description": "A custom-built backpack modified further to be an archer's best friend.  Lots of storage, manageable encumbrance and a built in quiver.",
     "weight": "1200 g",
     "volume": "3 L",
-    "price": "360 USD",
-    "price_postapoc": "36 USD",
+    "price": 360,
+    "price_postapoc": 36,
     "phase": "solid",
     "material": [
       "leather",
@@ -70,8 +70,8 @@
     "description": "A home-made suit built to live off the land.  Comes with ample storage, fur lining, environmental and physical protection, a built-in watch, and a makeshift sheath ring.  It requires a separate gas mask for full protection.",
     "weight": "12840 g",
     "volume": "12500 ml",
-    "price": "1800 USD",
-    "price_postapoc": "70 USD",
+    "price": 1800,
+    "price_postapoc": 70,
     "to_hit": -3,
     "melee_damage": {
       "bash": 6
@@ -192,8 +192,8 @@
     "description": "A home-made suit built to live off the land.  Comes with ample storage, warm fur lining, environmental and physical protection, a built in watch, and a makeshift sheath ring.  The suit is carefully crafted of Kevlar fabric and reinforced with metal.  It requires a separate gas mask for full protection.",
     "weight": "26360 g",
     "volume": "12500 ml",
-    "price": "1800 USD",
-    "price_postapoc": "90 USD",
+    "price": 1800,
+    "price_postapoc": 90,
     "to_hit": -3,
     "melee_damage": {
       "bash": 6
@@ -305,27 +305,37 @@
   },
   {
     "id": "armor_lightplate_surv",
-    "copy-from": "armor_qt_lightplate",
-    "//": "No storage or other amenities, but a modest increase in protection relative to the added encumbrance.",
     "type": "ARMOR",
+    "copy-from": "armor_qt_lightplate",
+    "category": "armor",
     "name": {
       "str": "survivor plate armor"
     },
     "description": "A suit of Gothic plate armor modified with kevlar and leather, altered to better protect the gaps between plates and provide better protection from the elements.",
     "weight": "12100 g",
-    "price": "900 USD",
-    "price_postapoc": "130 USD",
+    "volume": "17500 ml",
+    "price": 900,
+    "price_postapoc": 130,
+    "to_hit": -5,
     "material": [
       "qt_steel",
       "qt_steel_chain",
       "kevlar"
     ],
+    "symbol": "[",
+    "looks_like": "armor_larmor",
+    "color": "light_gray",
     "warmth": 30,
-    "extend": {
-      "flags": [
-        "WATERPROOF"
-      ]
-    },
+    "longest_side": "60 cm",
+    "material_thickness": 2,
+    "flags": [
+      "OUTER",
+      "STURDY",
+      "CONDUCTIVE",
+      "ONLY_ONE",
+      "BLOCK_WHILE_WORN",
+      "WATERPROOF"
+    ],
     "armor": [
       {
         "encumbrance": 25,
@@ -338,31 +348,49 @@
           "arm_r"
         ]
       }
-    ]
+    ],
+    "melee_damage": {
+      "bash": 8
+    },
+    "replace_materials": {
+      "lc_steel": "qt_steel",
+      "lc_steel_chain": "qt_steel_chain"
+    },
+    "//": "No storage or other amenities, but a modest increase in protection relative to the added encumbrance."
   },
   {
     "id": "cuirass_lightplate_surv",
-    "copy-from": "armor_qt_light_chestplate",
     "type": "ARMOR",
+    "copy-from": "armor_qt_light_chestplate",
+    "category": "armor",
     "name": {
       "str": "survivor cuirass",
       "str_pl": "survivor cuirasses"
     },
     "description": "A medieval steel breastplate, modified with kevlar and leather to better protect from the elements.",
     "weight": "4620 g",
-    "price": "300 USD",
-    "price_postapoc": "45 USD",
+    "volume": "8750 ml",
+    "price": 300,
+    "price_postapoc": 45,
+    "to_hit": -5,
     "material": [
       "qt_steel",
       "qt_steel_chain",
       "kevlar"
     ],
+    "symbol": "[",
+    "looks_like": "cuirass_lightplate",
+    "color": "light_gray",
     "warmth": 30,
-    "extend": {
-      "flags": [
-        "WATERPROOF"
-      ]
-    },
+    "longest_side": "60 cm",
+    "material_thickness": 2,
+    "flags": [
+      "OUTER",
+      "STURDY",
+      "CONDUCTIVE",
+      "ONLY_ONE",
+      "WATERPROOF"
+    ],
     "armor": [
       {
         "encumbrance": 25,
@@ -371,30 +399,48 @@
           "torso"
         ]
       }
-    ]
+    ],
+    "melee_damage": {
+      "bash": 8
+    },
+    "replace_materials": {
+      "lc_steel": "qt_steel",
+      "lc_steel_chain": "qt_steel_chain"
+    }
   },
   {
     "id": "armguard_lightplate_surv",
-    "copy-from": "armor_qt_lightarmguard",
     "type": "ARMOR",
+    "copy-from": "armor_qt_lightarmguard",
+    "category": "armor",
     "name": {
       "str_sp": "survivor steel arm guards"
     },
     "description": "A full assembly of medieval arm protection.  Rerebraces, couters, and vambraces, subsequently modified with kevlar and leather to better protect the joints.",
     "weight": "2992 g",
-    "price": "300 USD",
-    "price_postapoc": "130 USD",
+    "volume": "2916 ml",
+    "price": 300,
+    "price_postapoc": 130,
+    "to_hit": -5,
+    "symbol": "[",
+    "looks_like": "armguard_metal",
     "material": [
       "qt_steel",
       "qt_steel_chain",
       "kevlar"
     ],
+    "color": "light_gray",
     "warmth": 30,
-    "extend": {
-      "flags": [
-        "WATERPROOF"
-      ]
-    },
+    "longest_side": "60 cm",
+    "sided": true,
+    "material_thickness": 2,
+    "flags": [
+      "OUTER",
+      "STURDY",
+      "CONDUCTIVE",
+      "BLOCK_WHILE_WORN",
+      "WATERPROOF"
+    ],
     "armor": [
       {
         "encumbrance": 25,
@@ -404,30 +450,41 @@
           "arm_r"
         ]
       }
-    ]
+    ],
+    "melee_damage": {
+      "bash": 8
+    }
   },
   {
     "id": "legguard_lightplate_surv",
-    "copy-from": "legguard_lightplate",
     "type": "ARMOR",
+    "copy-from": "legguard_lightplate",
+    "category": "armor",
     "name": {
       "str_sp": "survivor steel leg guards"
     },
     "description": "A full assembly of medieval leg protection.  Cuisses, poleyns, and greaves, subsequently modified with kevlar and leather to better protect the joints.",
     "weight": "4488 g",
-    "price": "300 USD",
-    "price_postapoc": "45 USD",
+    "volume": "6 L",
+    "price": 300,
+    "price_postapoc": 45,
+    "to_hit": -1,
     "material": [
       "qt_steel",
       "qt_steel_chain",
       "kevlar"
     ],
+    "symbol": "[",
+    "looks_like": "legguard_hard",
+    "color": "light_gray",
     "warmth": 30,
-    "extend": {
-      "flags": [
-        "WATERPROOF"
-      ]
-    },
+    "material_thickness": 4,
+    "flags": [
+      "VARSIZE",
+      "OUTER",
+      "STURDY",
+      "WATERPROOF"
+    ],
     "armor": [
       {
         "encumbrance": 25,
@@ -441,27 +498,25 @@
   },
   {
     "id": "helmet_plate_surv",
-    "copy-from": "helmet_plate",
     "type": "ARMOR",
+    "copy-from": "helmet_plate",
+    "category": "armor",
     "name": {
       "str": "survivor great helm"
     },
     "description": "A medieval helmet that has been heavily modified, widening the eye slits and breaths, with ballistic lenses and a kevlar aventail helping make up for the increased vulnerability.",
     "weight": "2395 g",
-    "price": "500 USD",
-    "price_postapoc": "50 USD",
+    "volume": "2750 ml",
+    "price": 500,
+    "price_postapoc": 50,
     "material": [
       "steel",
       "kevlar",
       "leather"
     ],
-    "warmth": 20,
-    "extend": {
-      "flags": [
-        "WATERPROOF",
-        "SUN_GLASSES"
-      ]
-    },
+    "symbol": "[",
+    "looks_like": "helmet_barbute",
+    "color": "light_gray",
     "armor": [
       {
         "encumbrance": 35,
@@ -472,31 +527,55 @@
           "mouth"
         ]
       }
-    ]
+    ],
+    "warmth": 20,
+    "material_thickness": 5,
+    "environmental_protection": 1,
+    "techniques": [
+      "WBLOCK_1"
+    ],
+    "flags": [
+      "VARSIZE",
+      "STURDY",
+      "WATERPROOF",
+      "SUN_GLASSES"
+    ],
+    "melee_damage": {
+      "bash": 3
+    }
   },
   {
     "id": "gloves_plate_surv",
-    "copy-from": "gloves_plate",
     "type": "ARMOR",
+    "copy-from": "gloves_plate",
+    "category": "armor",
     "name": {
       "str": "pair of survivor armored gauntlets",
       "str_pl": "pairs of survivor armored gauntlets"
     },
     "description": "A heavy set of medieval gauntlets, modified with kevlar reinforcements to increase protection from the elements.",
     "weight": "1080 g",
-    "price": "500 USD",
-    "price_postapoc": "50 USD",
+    "volume": "1500 ml",
+    "price": 500,
+    "price_postapoc": 50,
+    "to_hit": -2,
     "material": [
       "iron",
       "kevlar",
       "leather"
     ],
+    "symbol": "[",
+    "looks_like": "fire_gauntlets",
+    "color": "light_gray",
     "warmth": 25,
-    "extend": {
-      "flags": [
-        "WATERPROOF"
-      ]
-    },
+    "material_thickness": 4,
+    "environmental_protection": 1,
+    "flags": [
+      "VARSIZE",
+      "STURDY",
+      "DURABLE_MELEE",
+      "WATERPROOF"
+    ],
     "armor": [
       {
         "encumbrance": 25,
@@ -506,26 +585,37 @@
           "hand_r"
         ]
       }
-    ]
+    ],
+    "melee_damage": {
+      "bash": 7
+    }
   },
   {
     "id": "boots_plate_surv",
-    "copy-from": "boots_plate",
     "type": "ARMOR",
+    "copy-from": "boots_plate",
+    "category": "armor",
     "name": {
       "str": "pair of survivor armored boots",
       "str_pl": "pairs of survivor armored boots"
     },
     "description": "A heavy set of armor plated boots, modified with kevlar to better protect from the elements.",
     "weight": "2080 g",
-    "price": "600 USD",
-    "price_postapoc": "60 USD",
-    "material": [
-      "iron",
-      "kevlar",
-      "leather"
-    ],
+    "volume": "3250 ml",
+    "price": 600,
+    "price_postapoc": 60,
+    "to_hit": -2,
+    "symbol": "[",
+    "looks_like": "boots_steel",
+    "color": "light_gray",
     "warmth": 25,
+    "material_thickness": 4,
+    "environmental_protection": 1,
+    "flags": [
+      "VARSIZE",
+      "WATERPROOF",
+      "STURDY"
+    ],
     "armor": [
       {
         "encumbrance": 30,
@@ -535,6 +625,14 @@
           "foot_r"
         ]
       }
+    ],
+    "melee_damage": {
+      "bash": 7
+    },
+    "material": [
+      "iron",
+      "kevlar",
+      "leather"
     ]
   },
   {
@@ -546,8 +644,8 @@
     "description": "A round silver medallion that identifies the wearer as a part of the Bio-Weapon project.",
     "weight": "60 g",
     "volume": "5 ml",
-    "price": "50 USD",
-    "price_postapoc": "5 USD",
+    "price": 50,
+    "price_postapoc": 5,
     "phase": "solid",
     "material": [
       "silver"
@@ -565,7 +663,7 @@
     "description": "A round silver medallion that identifies the wearer as a part of the Bio-Weapon project.  This one has the name 'Apophis' inscribed on the front.",
     "weight": "60 g",
     "volume": "5 ml",
-    "price": "100 USD",
+    "price": 100,
     "phase": "solid",
     "material": [
       "silver"
@@ -587,7 +685,7 @@
     "description": "A round silver medallion with a RFID chip embedded in the front.  The markings seem to identify the wearer as a part of the Bio-Weapon project.",
     "weight": "60 g",
     "volume": "5 ml",
-    "price": "100 USD",
+    "price": 100,
     "phase": "solid",
     "material": [
       "silver"
@@ -609,8 +707,8 @@
     "description": "An experimental cloak that uses a highly sophisticated network of cameras and LEDs to render the user fully invisible.  It is powered by built-in torsion ratchets.  Due to particularities of its construction, it is very difficult to move in, hampering wearer's strength, dexterity and movement speed.",
     "weight": "1556 g",
     "volume": "3 L",
-    "price": "84000 USD",
-    "price_postapoc": "84 USD",
+    "price": 84000,
+    "price_postapoc": 84,
     "to_hit": -1,
     "phase": "solid",
     "material": [
@@ -706,8 +804,8 @@
     "description": "Experimental reinforced boots that completely silence your steps, but also slow your movement.",
     "weight": "1280 g",
     "volume": "2500 ml",
-    "price": "260 USD",
-    "price_postapoc": "26 USD",
+    "price": 260,
+    "price_postapoc": 26,
     "to_hit": -1,
     "melee_damage": {
       "bash": 1
@@ -774,7 +872,7 @@
     "description": "Experimental goggles that use gamma radiation emitters, allowing the user to see through walls and in the dark.  Prolonged use is not recommended due to danger of radiation poisoning.",
     "weight": "158 g",
     "volume": "500 ml",
-    "price": "260 USD",
+    "price": 260,
     "to_hit": -3,
     "phase": "solid",
     "material": [
@@ -825,8 +923,8 @@
     "description": "A fairly light full-body suit of gray ballistic armor, one size fits most, with separate helmet.  Made from a fabric bodysuit with advanced composite plates, it is relatively easy to move in but protection is minimal, only rated for pistol-caliber rounds and fragmentation.  It also has two pouches for various sizes of small and medium magazines.",
     "weight": "9045 g",
     "volume": "10250 ml",
-    "price": "1600 USD",
-    "price_postapoc": "16 USD",
+    "price": 1600,
+    "price_postapoc": 16,
     "to_hit": -3,
     "melee_damage": {
       "bash": 5
@@ -900,7 +998,7 @@
     "description": "A full-body suit of gray ballistic armor, one size fits most, with separate helmet.  Made with leather lining and advanced composite plates, it provides adequate protection against anything up to intermediate caliber ammunition, but may fail against full-power rifle rounds.  It also has two pouches for various sizes of small and medium magazines.",
     "weight": "11700 g",
     "volume": "11250 ml",
-    "price": "1750 USD",
+    "price": 1750,
     "price_postapoc": "1750 cent",
     "to_hit": -3,
     "melee_damage": {
@@ -975,8 +1073,8 @@
     "description": "A heavy-duty full-body suit of gray ballistic armor, one size fits most, with separate helmet.  Made from heavy-duty lining with advanced plating, it protects the body rather well against most rifle rounds, but may be too cumbersome for most situations.  It also has two pouches for various sizes of medium and large magazines.",
     "weight": "20250 g",
     "volume": "13500 ml",
-    "price": "2000 USD",
-    "price_postapoc": "20 USD",
+    "price": 2000,
+    "price_postapoc": 20,
     "to_hit": -3,
     "melee_damage": {
       "bash": 5
@@ -1053,8 +1151,8 @@
     "description": "A fairly light full-face ballistic helmet, one size fits most.  Made from a fabric lining with advanced composite plates, it is only rated for pistol-caliber rounds and fragmentation.",
     "weight": "1005 g",
     "volume": "1 L",
-    "price": "1600 USD",
-    "price_postapoc": "16 USD",
+    "price": 1600,
+    "price_postapoc": 16,
     "to_hit": -2,
     "melee_damage": {
       "bash": 2
@@ -1093,7 +1191,7 @@
     "description": "A full-face ballistic helmet, one size fits most.  Made with leather lining and advanced composite plates, it provides adequate protection against anything up to intermediate caliber ammunition.",
     "weight": "1300 g",
     "volume": "1250 ml",
-    "price": "1750 USD",
+    "price": 1750,
     "price_postapoc": "1750 cent",
     "to_hit": -2,
     "melee_damage": {
@@ -1133,8 +1231,8 @@
     "description": "A heavy-duty full-face ballistic helmet, one size fits most.  Made from heavy-duty lining with advanced plating, it protects the head rather well against most rifle rounds.",
     "weight": "2250 g",
     "volume": "1500 ml",
-    "price": "2000 USD",
-    "price_postapoc": "20 USD",
+    "price": 2000,
+    "price_postapoc": 20,
     "to_hit": -2,
     "melee_damage": {
       "bash": 2
@@ -1167,142 +1265,676 @@
   },
   {
     "id": "fancy_house_coat",
-    "copy-from": "house_coat",
-    "repairs_like": "house_coat",
     "type": "ARMOR",
+    "copy-from": "house_coat",
     "name": {
       "str": "designer bathrobe"
     },
     "description": "An outer garment of absorbent, towel-like material traditionally worn to cover one's nakedness to and from the bath.  It makes you wish you had running water to bathe with.  This one has a golden logo of a now irrelevant fashion company sewn on.",
-    "extend": {
-      "flags": [
-        "FANCY"
-      ]
-    }
+    "weight": "580 g",
+    "volume": "2 L",
+    "price": 2200,
+    "price_postapoc": 50,
+    "to_hit": -1,
+    "material": [
+      "cotton"
+    ],
+    "symbol": "[",
+    "looks_like": "coat_lab",
+    "color": "blue",
+    "armor": [
+      {
+        "covers": [
+          "torso"
+        ],
+        "specifically_covers": [
+          "torso_lower"
+        ],
+        "coverage": 100,
+        "encumbrance": [
+          0,
+          0
+        ]
+      },
+      {
+        "covers": [
+          "torso"
+        ],
+        "specifically_covers": [
+          "torso_upper"
+        ],
+        "coverage": 95,
+        "encumbrance": [
+          5,
+          10
+        ]
+      },
+      {
+        "covers": [
+          "leg_l",
+          "leg_r"
+        ],
+        "coverage": 75,
+        "encumbrance": [
+          5,
+          5
+        ],
+        "specifically_covers": [
+          "leg_draped_l",
+          "leg_draped_r"
+        ],
+        "layers": [
+          "BELTED"
+        ]
+      },
+      {
+        "covers": [
+          "arm_l",
+          "arm_r"
+        ],
+        "coverage": 100,
+        "encumbrance": [
+          5,
+          5
+        ]
+      }
+    ],
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "750 ml",
+        "max_contains_weight": "2 kg",
+        "max_item_length": "13 cm",
+        "moves": 80
+      },
+      {
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "750 ml",
+        "max_contains_weight": "2 kg",
+        "max_item_length": "13 cm",
+        "moves": 80
+      }
+    ],
+    "warmth": 20,
+    "material_thickness": 0.8,
+    "environmental_protection": 1,
+    "flags": [
+      "OUTER",
+      "OVERSIZE",
+      "FANCY"
+    ],
+    "repairs_like": "house_coat"
   },
   {
     "id": "fancy_bra",
-    "copy-from": "bra",
-    "repairs_like": "bra",
     "type": "ARMOR",
+    "copy-from": "bra",
     "name": {
       "str": "designer bra"
     },
     "description": "A luxurious designer bra.  Serves its purpose and feels good on you.",
-    "extend": {
-      "flags": [
-        "FANCY"
-      ]
-    }
+    "weight": "32 g",
+    "volume": "250 ml",
+    "price": 1000,
+    "price_postapoc": 50,
+    "material": [
+      "cotton"
+    ],
+    "symbol": "[",
+    "looks_like": "tank_top",
+    "color": "white",
+    "warmth": 5,
+    "material_thickness": 0.1,
+    "flags": [
+      "VARSIZE",
+      "SKINTIGHT",
+      "FANCY"
+    ],
+    "armor": [
+      {
+        "coverage": 25,
+        "covers": [
+          "torso"
+        ],
+        "specifically_covers": [
+          "torso_upper"
+        ]
+      }
+    ],
+    "repairs_like": "bra"
   },
   {
     "id": "fancy_panties",
-    "copy-from": "panties",
-    "repairs_like": "panties",
     "type": "ARMOR",
+    "copy-from": "panties",
     "name": {
       "str_sp": "designer panties"
     },
     "description": "A luxurious set of designer panties.  Preserves your modesty and feels good on you.",
-    "extend": {
-      "flags": [
-        "FANCY"
-      ]
-    }
+    "weight": "32 g",
+    "volume": "250 ml",
+    "price": 1000,
+    "price_postapoc": 50,
+    "material": [
+      "cotton"
+    ],
+    "symbol": "[",
+    "looks_like": "briefs",
+    "color": "white",
+    "warmth": 5,
+    "material_thickness": 0.1,
+    "flags": [
+      "VARSIZE",
+      "SKINTIGHT",
+      "FANCY"
+    ],
+    "armor": [
+      {
+        "coverage": 75,
+        "covers": [
+          "leg_l",
+          "leg_r"
+        ],
+        "specifically_covers": [
+          "leg_hip_l",
+          "leg_hip_r"
+        ]
+      }
+    ],
+    "repairs_like": "panties"
   },
   {
     "id": "fancy_briefs",
-    "copy-from": "briefs",
-    "repairs_like": "briefs",
     "type": "ARMOR",
+    "copy-from": "briefs",
     "name": {
       "str_sp": "designer briefs"
     },
     "description": "A pair of designer briefs.  Comfortable and fashionable underwear worn by men.",
-    "extend": {
-      "flags": [
-        "FANCY"
-      ]
-    }
+    "weight": "32 g",
+    "volume": "250 ml",
+    "price": 1000,
+    "price_postapoc": 50,
+    "material": [
+      "cotton"
+    ],
+    "symbol": "[",
+    "looks_like": "boxer_briefs",
+    "color": "white",
+    "warmth": 5,
+    "material_thickness": 0.1,
+    "flags": [
+      "VARSIZE",
+      "SKINTIGHT",
+      "FANCY"
+    ],
+    "armor": [
+      {
+        "coverage": 75,
+        "covers": [
+          "leg_l",
+          "leg_r"
+        ],
+        "specifically_covers": [
+          "leg_hip_l",
+          "leg_hip_r"
+        ]
+      }
+    ],
+    "repairs_like": "briefs"
   },
   {
     "id": "fancy_boxer_shorts",
-    "copy-from": "boxer_shorts",
-    "repairs_like": "boxer_shorts",
     "type": "ARMOR",
+    "copy-from": "boxer_shorts",
     "name": {
       "str_sp": "designer boxer shorts"
     },
     "description": "Men's designer boxer shorts.  Much more fashionable than briefs and just as comfortable.",
-    "extend": {
-      "flags": [
-        "FANCY"
-      ]
-    }
+    "variant_type": "generic",
+    "variants": [
+      {
+        "id": "generic_boxer_shorts",
+        "name": {
+          "str_sp": "boxer shorts"
+        },
+        "description": "Men's boxer shorts.  More fashionable than briefs and just as comfortable.",
+        "weight": 30
+      },
+      {
+        "id": "flag_boxer_shorts",
+        "name": {
+          "str_sp": "star-spangled boxer shorts"
+        },
+        "description": "This pair has been printed with the pattern of an American flag, with stars and miniature eagles embroidered at strategic positions.",
+        "append": true
+      }
+    ],
+    "weight": "42 g",
+    "volume": "250 ml",
+    "price": 1000,
+    "price_postapoc": 50,
+    "material": [
+      "cotton"
+    ],
+    "symbol": "[",
+    "looks_like": "boxer_briefs",
+    "color": "light_gray",
+    "warmth": 5,
+    "material_thickness": 0.01,
+    "flags": [
+      "VARSIZE",
+      "SKINTIGHT",
+      "FANCY"
+    ],
+    "armor": [
+      {
+        "coverage": 100,
+        "covers": [
+          "leg_l",
+          "leg_r"
+        ],
+        "specifically_covers": [
+          "leg_hip_l",
+          "leg_hip_r"
+        ]
+      },
+      {
+        "coverage": 20,
+        "covers": [
+          "leg_l",
+          "leg_r"
+        ],
+        "specifically_covers": [
+          "leg_upper_l",
+          "leg_upper_r"
+        ]
+      }
+    ],
+    "repairs_like": "boxer_shorts"
   },
   {
     "id": "fancy_boxer_briefs",
-    "copy-from": "boxer_briefs",
-    "repairs_like": "boxer_briefs",
     "type": "ARMOR",
+    "copy-from": "boxer_briefs",
     "name": {
       "str_sp": "designer boxer briefs"
     },
     "description": "The age-old question, boxers or briefs?  Your answer?  Yes, the fancy kind.",
-    "extend": {
-      "flags": [
-        "FANCY"
-      ]
-    }
+    "weight": "37 g",
+    "volume": "250 ml",
+    "price": 1000,
+    "price_postapoc": 50,
+    "material": [
+      "cotton"
+    ],
+    "symbol": "[",
+    "looks_like": "shorts",
+    "color": "light_gray",
+    "warmth": 5,
+    "material_thickness": 0.1,
+    "flags": [
+      "VARSIZE",
+      "SKINTIGHT",
+      "FANCY"
+    ],
+    "armor": [
+      {
+        "coverage": 100,
+        "covers": [
+          "leg_l",
+          "leg_r"
+        ],
+        "specifically_covers": [
+          "leg_hip_l",
+          "leg_hip_r"
+        ]
+      }
+    ],
+    "repairs_like": "boxer_briefs"
   },
   {
     "id": "bikini_bottom_leather",
-    "copy-from": "bikini_bottom",
-    "repairs_like": "bikini_bottom",
     "type": "ARMOR",
+    "copy-from": "bikini_bottom",
     "name": {
       "str": "leather bikini bottom"
     },
     "description": "A simple leather bikini bottom.",
+    "variant_type": "generic",
+    "variants": [
+      {
+        "id": "generic_bikini_bottom",
+        "name": {
+          "str": "bikini bottom"
+        },
+        "description": "A simple bikini bottom.",
+        "weight": 30
+      },
+      {
+        "id": "black_bikini_bottom",
+        "name": {
+          "str": "black bikini bottom"
+        },
+        "description": "It's colored black.",
+        "color": "dark_gray",
+        "weight": 10,
+        "append": true
+      },
+      {
+        "id": "white_bikini_bottom",
+        "name": {
+          "str": "white bikini bottom"
+        },
+        "description": "It's colored white.",
+        "color": "white",
+        "weight": 10,
+        "append": true
+      },
+      {
+        "id": "red_bikini_bottom",
+        "name": {
+          "str": "red bikini bottom"
+        },
+        "description": "It's colored red.",
+        "color": "red",
+        "weight": 10,
+        "append": true
+      },
+      {
+        "id": "blue_bikini_bottom",
+        "name": {
+          "str": "blue bikini bottom"
+        },
+        "description": "It's colored blue.",
+        "color": "blue",
+        "weight": 10,
+        "append": true
+      },
+      {
+        "id": "flag_bikini_bottom",
+        "name": {
+          "str": "flag bikini bottom"
+        },
+        "description": "It's printed with an American flag pattern.",
+        "weight": 7,
+        "append": true
+      },
+      {
+        "id": "pink_bikini_bottom",
+        "name": {
+          "str": "pink bikini bottom"
+        },
+        "description": "It's colored neon pink.  Pretty flashy.",
+        "color": "pink",
+        "weight": 6,
+        "append": true
+      },
+      {
+        "id": "tropical_bikini_bottom",
+        "name": {
+          "str": "tropical bikini bottom"
+        },
+        "description": "It's green and has a tropical design.",
+        "color": "light_green",
+        "weight": 5,
+        "append": true
+      },
+      {
+        "id": "floral_bikini_bottom",
+        "name": {
+          "str": "floral bikini bottom"
+        },
+        "description": "It's colored yellow and has a floral design.",
+        "color": "yellow",
+        "weight": 5,
+        "append": true
+      },
+      {
+        "id": "camo_bikini_bottom",
+        "name": {
+          "str": "camo bikini bottom"
+        },
+        "description": "It has a camouflage pattern, perfect for a soldier on beach leave.",
+        "color": "green",
+        "weight": 4,
+        "append": true
+      },
+      {
+        "id": "skull_bikini_bottom",
+        "name": {
+          "str": "skull bikini bottom"
+        },
+        "description": "It's colored black and printed with a skull pattern.  Works wonders to communicate your happiness on the beach.",
+        "symbol": "S",
+        "color": "dark_gray",
+        "weight": 2,
+        "append": true
+      },
+      {
+        "id": "maid_bikini_bottom",
+        "name": {
+          "str": "maid bikini bottom"
+        },
+        "description": "It's colored black with white frilly decorations.  You are not sure that this is common attire for the beach.",
+        "color": "dark_gray",
+        "append": true
+      }
+    ],
+    "weight": "32 g",
+    "volume": "250 ml",
+    "price": 1000,
+    "price_postapoc": 50,
     "material": [
       "leather"
     ],
-    "warmth": 5,
-    "delete": {
-      "flags": [
-        "WATER_FRIENDLY"
-      ]
-    }
+    "symbol": "[",
+    "looks_like": "panties",
+    "color": "light_red",
+    "material_thickness": 0.1,
+    "flags": [
+      "VARSIZE",
+      "SKINTIGHT"
+    ],
+    "armor": [
+      {
+        "coverage": 75,
+        "covers": [
+          "leg_l",
+          "leg_r"
+        ],
+        "specifically_covers": [
+          "leg_hip_l",
+          "leg_hip_r"
+        ]
+      }
+    ],
+    "repairs_like": "bikini_bottom",
+    "warmth": 5
   },
   {
     "id": "bikini_bottom_fur",
-    "copy-from": "bikini_bottom",
-    "repairs_like": "bikini_bottom",
     "type": "ARMOR",
+    "copy-from": "bikini_bottom",
     "name": {
       "str": "fur bikini bottom"
     },
     "description": "A simple fur bikini bottom.",
+    "variant_type": "generic",
+    "variants": [
+      {
+        "id": "generic_bikini_bottom",
+        "name": {
+          "str": "bikini bottom"
+        },
+        "description": "A simple bikini bottom.",
+        "weight": 30
+      },
+      {
+        "id": "black_bikini_bottom",
+        "name": {
+          "str": "black bikini bottom"
+        },
+        "description": "It's colored black.",
+        "color": "dark_gray",
+        "weight": 10,
+        "append": true
+      },
+      {
+        "id": "white_bikini_bottom",
+        "name": {
+          "str": "white bikini bottom"
+        },
+        "description": "It's colored white.",
+        "color": "white",
+        "weight": 10,
+        "append": true
+      },
+      {
+        "id": "red_bikini_bottom",
+        "name": {
+          "str": "red bikini bottom"
+        },
+        "description": "It's colored red.",
+        "color": "red",
+        "weight": 10,
+        "append": true
+      },
+      {
+        "id": "blue_bikini_bottom",
+        "name": {
+          "str": "blue bikini bottom"
+        },
+        "description": "It's colored blue.",
+        "color": "blue",
+        "weight": 10,
+        "append": true
+      },
+      {
+        "id": "flag_bikini_bottom",
+        "name": {
+          "str": "flag bikini bottom"
+        },
+        "description": "It's printed with an American flag pattern.",
+        "weight": 7,
+        "append": true
+      },
+      {
+        "id": "pink_bikini_bottom",
+        "name": {
+          "str": "pink bikini bottom"
+        },
+        "description": "It's colored neon pink.  Pretty flashy.",
+        "color": "pink",
+        "weight": 6,
+        "append": true
+      },
+      {
+        "id": "tropical_bikini_bottom",
+        "name": {
+          "str": "tropical bikini bottom"
+        },
+        "description": "It's green and has a tropical design.",
+        "color": "light_green",
+        "weight": 5,
+        "append": true
+      },
+      {
+        "id": "floral_bikini_bottom",
+        "name": {
+          "str": "floral bikini bottom"
+        },
+        "description": "It's colored yellow and has a floral design.",
+        "color": "yellow",
+        "weight": 5,
+        "append": true
+      },
+      {
+        "id": "camo_bikini_bottom",
+        "name": {
+          "str": "camo bikini bottom"
+        },
+        "description": "It has a camouflage pattern, perfect for a soldier on beach leave.",
+        "color": "green",
+        "weight": 4,
+        "append": true
+      },
+      {
+        "id": "skull_bikini_bottom",
+        "name": {
+          "str": "skull bikini bottom"
+        },
+        "description": "It's colored black and printed with a skull pattern.  Works wonders to communicate your happiness on the beach.",
+        "symbol": "S",
+        "color": "dark_gray",
+        "weight": 2,
+        "append": true
+      },
+      {
+        "id": "maid_bikini_bottom",
+        "name": {
+          "str": "maid bikini bottom"
+        },
+        "description": "It's colored black with white frilly decorations.  You are not sure that this is common attire for the beach.",
+        "color": "dark_gray",
+        "append": true
+      }
+    ],
+    "weight": "32 g",
+    "volume": "250 ml",
+    "price": 1000,
+    "price_postapoc": 50,
     "material": [
       "fur"
     ],
-    "warmth": 10,
-    "delete": {
-      "flags": [
-        "WATER_FRIENDLY"
-      ]
-    }
+    "symbol": "[",
+    "looks_like": "panties",
+    "color": "light_red",
+    "material_thickness": 0.1,
+    "flags": [
+      "VARSIZE",
+      "SKINTIGHT"
+    ],
+    "armor": [
+      {
+        "coverage": 75,
+        "covers": [
+          "leg_l",
+          "leg_r"
+        ],
+        "specifically_covers": [
+          "leg_hip_l",
+          "leg_hip_r"
+        ]
+      }
+    ],
+    "repairs_like": "bikini_bottom",
+    "warmth": 10
   },
   {
     "id": "thong",
-    "copy-from": "panties",
-    "repairs_like": "panties",
     "type": "ARMOR",
+    "copy-from": "panties",
     "name": {
       "str": "thong"
     },
     "description": "Women's underwear that covers a little less than normal in exchange for stares.",
+    "weight": "32 g",
+    "volume": "250 ml",
+    "price": 1000,
+    "price_postapoc": 50,
+    "material": [
+      "cotton"
+    ],
+    "symbol": "[",
+    "looks_like": "briefs",
+    "color": "white",
     "warmth": 0,
+    "material_thickness": 0.1,
+    "flags": [
+      "VARSIZE",
+      "SKINTIGHT"
+    ],
     "armor": [
       {
         "coverage": 40,
@@ -1315,32 +1947,203 @@
           "leg_hip_r"
         ]
       }
-    ]
+    ],
+    "repairs_like": "panties"
   },
   {
     "id": "dress_skirt",
-    "copy-from": "skirt",
-    "repairs_like": "jeans",
     "type": "ARMOR",
+    "copy-from": "skirt",
     "name": {
       "str": "dress skirt"
     },
     "description": "A short yet professional looking cotton skirt.  Somewhat easy to move in, but has no pockets.",
-    "extend": {
-      "flags": [
-        "FANCY"
-      ]
-    }
+    "weight": "225 g",
+    "volume": "250 ml",
+    "price": 6500,
+    "price_postapoc": 50,
+    "material": [
+      "cotton"
+    ],
+    "symbol": "[",
+    "looks_like": "kilt",
+    "color": "dark_gray",
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "250 ml",
+        "max_contains_weight": "1 kg",
+        "moves": 80
+      }
+    ],
+    "warmth": 5,
+    "material_thickness": 0.1,
+    "flags": [
+      "VARSIZE",
+      "TARDIS",
+      "FANCY"
+    ],
+    "armor": [
+      {
+        "coverage": 100,
+        "covers": [
+          "leg_l",
+          "leg_r"
+        ],
+        "specifically_covers": [
+          "leg_hip_l",
+          "leg_hip_r"
+        ]
+      },
+      {
+        "coverage": 75,
+        "covers": [
+          "leg_l",
+          "leg_r"
+        ],
+        "specifically_covers": [
+          "leg_upper_l",
+          "leg_upper_r"
+        ]
+      }
+    ],
+    "variant_type": "generic",
+    "variants": [
+      {
+        "id": "skirt_red",
+        "name": {
+          "str": "red skirt"
+        },
+        "description": "This one is colored red.",
+        "color": "red",
+        "append": true,
+        "weight": 40
+      },
+      {
+        "id": "skirt_blue",
+        "name": {
+          "str": "blue skirt"
+        },
+        "color": "blue",
+        "description": "This one is colored blue.",
+        "append": true,
+        "weight": 24
+      },
+      {
+        "id": "skirt_yellow",
+        "name": {
+          "str": "yellow skirt"
+        },
+        "color": "yellow",
+        "description": "This one is colored yellow.",
+        "append": true,
+        "weight": 24
+      },
+      {
+        "id": "skirt_green",
+        "name": {
+          "str": "green skirt"
+        },
+        "color": "green",
+        "description": "This one is colored green.",
+        "append": true,
+        "weight": 24
+      },
+      {
+        "id": "skirt_purple",
+        "name": {
+          "str": "purple skirt"
+        },
+        "color": "magenta",
+        "description": "This one is colored purple.",
+        "append": true,
+        "weight": 24
+      },
+      {
+        "id": "skirt_pink",
+        "name": {
+          "str": "pink skirt"
+        },
+        "color": "magenta",
+        "description": "This one is colored pink.",
+        "append": true,
+        "weight": 24
+      },
+      {
+        "id": "skirt_cyan",
+        "name": {
+          "str": "cyan skirt"
+        },
+        "color": "cyan",
+        "description": "This one is colored cyan.",
+        "append": true,
+        "weight": 24
+      },
+      {
+        "id": "skirt_black",
+        "name": {
+          "str": "black skirt"
+        },
+        "color": "dark_gray",
+        "description": "This one is colored black.",
+        "append": true,
+        "weight": 24
+      },
+      {
+        "id": "skirt_white",
+        "name": {
+          "str": "white skirt"
+        },
+        "color": "light_gray",
+        "description": "This one is colored white.",
+        "append": true,
+        "weight": 24
+      },
+      {
+        "id": "skirt_brown",
+        "name": {
+          "str": "brown skirt"
+        },
+        "color": "brown",
+        "description": "This one is colored brown.",
+        "append": true,
+        "weight": 24
+      }
+    ],
+    "repairs_like": "jeans"
   },
   {
     "id": "microskirt",
-    "copy-from": "skirt",
-    "repairs_like": "jeans",
     "type": "ARMOR",
+    "copy-from": "skirt",
     "name": {
       "str": "microskirt"
     },
     "description": "A skirt that is on the short side.  No pockets but it is comfortable to wear.",
+    "weight": "225 g",
+    "volume": "250 ml",
+    "price": 6500,
+    "price_postapoc": 50,
+    "material": [
+      "cotton"
+    ],
+    "symbol": "[",
+    "looks_like": "kilt",
+    "color": "dark_gray",
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "250 ml",
+        "max_contains_weight": "1 kg",
+        "moves": 80
+      }
+    ],
+    "warmth": 5,
+    "material_thickness": 0.1,
+    "flags": [
+      "VARSIZE",
+      "TARDIS"
+    ],
     "armor": [
       {
         "coverage": 80,
@@ -1353,7 +2156,111 @@
           "leg_hip_r"
         ]
       }
-    ]
+    ],
+    "variant_type": "generic",
+    "variants": [
+      {
+        "id": "skirt_red",
+        "name": {
+          "str": "red skirt"
+        },
+        "description": "This one is colored red.",
+        "color": "red",
+        "append": true,
+        "weight": 40
+      },
+      {
+        "id": "skirt_blue",
+        "name": {
+          "str": "blue skirt"
+        },
+        "color": "blue",
+        "description": "This one is colored blue.",
+        "append": true,
+        "weight": 24
+      },
+      {
+        "id": "skirt_yellow",
+        "name": {
+          "str": "yellow skirt"
+        },
+        "color": "yellow",
+        "description": "This one is colored yellow.",
+        "append": true,
+        "weight": 24
+      },
+      {
+        "id": "skirt_green",
+        "name": {
+          "str": "green skirt"
+        },
+        "color": "green",
+        "description": "This one is colored green.",
+        "append": true,
+        "weight": 24
+      },
+      {
+        "id": "skirt_purple",
+        "name": {
+          "str": "purple skirt"
+        },
+        "color": "magenta",
+        "description": "This one is colored purple.",
+        "append": true,
+        "weight": 24
+      },
+      {
+        "id": "skirt_pink",
+        "name": {
+          "str": "pink skirt"
+        },
+        "color": "magenta",
+        "description": "This one is colored pink.",
+        "append": true,
+        "weight": 24
+      },
+      {
+        "id": "skirt_cyan",
+        "name": {
+          "str": "cyan skirt"
+        },
+        "color": "cyan",
+        "description": "This one is colored cyan.",
+        "append": true,
+        "weight": 24
+      },
+      {
+        "id": "skirt_black",
+        "name": {
+          "str": "black skirt"
+        },
+        "color": "dark_gray",
+        "description": "This one is colored black.",
+        "append": true,
+        "weight": 24
+      },
+      {
+        "id": "skirt_white",
+        "name": {
+          "str": "white skirt"
+        },
+        "color": "light_gray",
+        "description": "This one is colored white.",
+        "append": true,
+        "weight": 24
+      },
+      {
+        "id": "skirt_brown",
+        "name": {
+          "str": "brown skirt"
+        },
+        "color": "brown",
+        "description": "This one is colored brown.",
+        "append": true,
+        "weight": 24
+      }
+    ],
+    "repairs_like": "jeans"
   },
   {
     "type": "mutation",
@@ -1390,7 +2297,7 @@
       "SUN_GLASSES",
       "ONLY_ONE"
     ],
-    "price_postapoc": "80 USD",
+    "price_postapoc": 80,
     "material": [
       "alien_resin",
       "flesh",
@@ -1495,35 +2402,107 @@
   },
   {
     "id": "c_mi_go_carapace_salvaged_on",
-    "copy-from": "c_mi_go_carapace_salvaged",
     "type": "TOOL_ARMOR",
+    "copy-from": "c_mi_go_carapace_salvaged",
+    "looks_like": "rm13_armor",
+    "category": "armor",
+    "symbol": "[",
+    "color": "green",
     "name": {
       "str": "salvaged carapace armor (on)",
       "str_pl": "salvaged carapace armors (on)"
     },
     "description": "A second skin of alien sinew and steel support, covered in armor plates made of resin.  Salvaged using pre-cataclysm research into other living weaponry, it's been practically mutilated to fit a human (or mutant) wearer.  Currently active, it enhances strength and dexterity, make your attacks faster, protects the wearer from toxic gas, serves as a rebreather, enhances stamina and carry capacity, and provides some protection from outside temperature.  Recharges in sunlight, being active also gradually fatigues the user and affects healthiness, plus renders them more vulnerable to electric shocks.",
-    "turns_per_charge": 150,
-    "revert_to": "c_mi_go_carapace_salvaged",
+    "flags": [
+      "OVERSIZE",
+      "STURDY",
+      "SKINTIGHT",
+      "PADDED",
+      "SWIM_GOGGLES",
+      "SUN_GLASSES",
+      "ONLY_ONE",
+      "WATERPROOF",
+      "RAINPROOF",
+      "GAS_PROOF",
+      "REBREATHER",
+      "NO_TAKEOFF"
+    ],
+    "price_postapoc": 80,
+    "material": [
+      "alien_resin",
+      "flesh",
+      "steel"
+    ],
+    "weight": "20 kg",
+    "volume": "25 L",
+    "to_hit": -3,
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE",
+        "rigid": true,
+        "ammo_restriction": {
+          "battery": 100
+        }
+      }
+    ],
     "use_action": {
       "target": "c_mi_go_carapace_salvaged",
       "msg": "The suit's sinews go slack, releasing you from its grasp.",
       "type": "transform",
       "ammo_scale": 0
     },
-    "extend": {
-      "flags": [
-        "WATERPROOF",
-        "RAINPROOF",
-        "GAS_PROOF",
-        "REBREATHER",
-        "NO_TAKEOFF"
+    "relic_data": {
+      "charge_info": {
+        "recharge_type": "solar_sunny",
+        "time": "1 m",
+        "regenerate_ammo": true
+      },
+      "passive_effects": [
+        {
+          "has": "WORN",
+          "condition": "ACTIVE",
+          "values": [
+            {
+              "value": "STRENGTH",
+              "add": 2
+            },
+            {
+              "value": "DEXTERITY",
+              "add": 1
+            },
+            {
+              "value": "ATTACK_SPEED",
+              "multiply": -0.25
+            },
+            {
+              "value": "ARMOR_ELEC",
+              "multiply": 0.5
+            },
+            {
+              "value": "CARRY_WEIGHT",
+              "multiply": 1.5
+            },
+            {
+              "value": "CLIMATE_CONTROL_HEAT",
+              "add": 50
+            },
+            {
+              "value": "CLIMATE_CONTROL_CHILL",
+              "add": 50
+            }
+          ],
+          "ench_effects": [
+            {
+              "effect": "c_mi_go_carapace_stamina",
+              "intensity": 1
+            }
+          ],
+          "mutations": [
+            "C_MIGO_HEAT_BONUS"
+          ]
+        }
       ]
     },
-    "material": [
-      "alien_resin",
-      "flesh",
-      "steel"
-    ],
     "warmth": 0,
     "material_thickness": 4,
     "environmental_protection": 15,
@@ -1546,7 +2525,9 @@
           "foot_r"
         ]
       }
-    ]
+    ],
+    "turns_per_charge": 150,
+    "revert_to": "c_mi_go_carapace_salvaged"
   },
   {
     "id": "c_mi_go_wings_salvaged",
@@ -1565,7 +2546,7 @@
       "PADDED",
       "ONLY_ONE"
     ],
-    "price_postapoc": "40 USD",
+    "price_postapoc": 40,
     "material": [
       "alien_resin",
       "flesh",
@@ -1637,26 +2618,77 @@
   },
   {
     "id": "c_mi_go_wings_salvaged_on",
-    "copy-from": "c_mi_go_wings_salvaged",
     "type": "TOOL_ARMOR",
+    "copy-from": "c_mi_go_wings_salvaged",
+    "symbol": "[",
+    "color": "green",
     "name": {
       "str": "set of salvaged exo-wings (on)",
       "str_pl": "sets of salvaged exo-wings (on)"
     },
     "description": "A set of thin, green iridescent wings, steel wires and joints meshed with thick alien nervous cords.  They are currently buzzing with life, greatly speeding up movement and enhancing dodge as well as granting immunity to falling damage, in exchange for increased fatigue gain.",
-    "turns_per_charge": 75,
-    "revert_to": "c_mi_go_wings_salvaged",
+    "flags": [
+      "OVERSIZE",
+      "STURDY",
+      "BELTED",
+      "PADDED",
+      "ONLY_ONE",
+      "NO_TAKEOFF"
+    ],
+    "price_postapoc": 40,
+    "material": [
+      "alien_resin",
+      "flesh",
+      "steel"
+    ],
+    "weight": "2 kg",
+    "volume": "5 L",
+    "to_hit": -3,
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE",
+        "rigid": true,
+        "ammo_restriction": {
+          "battery": 100
+        }
+      }
+    ],
     "use_action": {
       "target": "c_mi_go_wings_salvaged",
       "msg": "The exo-wings go limp as they shut down.",
       "type": "transform",
       "ammo_scale": 0
     },
-    "extend": {
-      "flags": [
-        "NO_TAKEOFF"
+    "relic_data": {
+      "charge_info": {
+        "recharge_type": "solar_sunny",
+        "time": "1 m",
+        "regenerate_ammo": true
+      },
+      "passive_effects": [
+        {
+          "has": "WORN",
+          "condition": "ACTIVE",
+          "values": [
+            {
+              "value": "MOVE_COST",
+              "multiply": -0.5
+            },
+            {
+              "value": "BONUS_DODGE",
+              "add": 5
+            }
+          ],
+          "ench_effects": [
+            {
+              "effect": "c_mi_go_wings_immunity",
+              "intensity": 1
+            }
+          ]
+        }
       ]
     },
+    "material_thickness": 2,
     "armor": [
       {
         "encumbrance": 0,
@@ -1668,24 +2700,65 @@
           "torso_waist"
         ]
       }
-    ]
+    ],
+    "turns_per_charge": 75,
+    "revert_to": "c_mi_go_wings_salvaged"
   },
   {
     "id": "cowboy_hat_surv",
-    "copy-from": "cowboy_hat",
     "type": "ARMOR",
+    "copy-from": "cowboy_hat",
     "name": {
       "str": "survivor cowboy hat"
     },
     "description": "A wide-brimmed hat that's been modified with kevlar padding, and bandolier loops sewn onto the hat band.  Perfect for holding a few cartridges somewhere out of the way, its adjustable loops fitting a wide variety of ammunition.",
+    "variant_type": "generic",
+    "variants": [
+      {
+        "id": "generic_cowboy_hat",
+        "name": {
+          "str": "cowboy hat"
+        },
+        "description": "Whether yer hunting varmints, fixing up the ranch, or heading into the sunset, this is the hat for the job.",
+        "weight": 30
+      },
+      {
+        "id": "flag_cowboy_hat",
+        "name": {
+          "str_sp": "American cowboy hat"
+        },
+        "description": "This hat has traded its original classic looks for a red, white, and blue pattern with a band of golden stars embossed about its lip; suitable headwear for only the most serious of patriots.",
+        "append": true
+      }
+    ],
     "weight": "420 g",
-    "price_postapoc": "5 USD",
+    "volume": "2 L",
+    "price": 9500,
+    "price_postapoc": 5,
     "material": [
       "leather",
       "cotton",
       "kevlar"
     ],
+    "symbol": "[",
+    "looks_like": "bowhat",
+    "color": "brown",
     "warmth": 10,
+    "material_thickness": 0.3,
+    "environmental_protection": 1,
+    "flags": [
+      "VARSIZE",
+      "SUN_GLASSES"
+    ],
+    "armor": [
+      {
+        "encumbrance": 20,
+        "coverage": 75,
+        "covers": [
+          "head"
+        ]
+      }
+    ],
     "valid_mods": [
       "steel_padded"
     ],
@@ -1737,15 +2810,6 @@
         "moves": 30
       }
     ],
-    "armor": [
-      {
-        "encumbrance": 20,
-        "coverage": 75,
-        "covers": [
-          "head"
-        ]
-      }
-    ],
     "extend": {
       "effects": [
         "STURDY"
@@ -1761,8 +2825,8 @@
     "description": "A custom set of low-slung adjustable straps and rings, designed to secure a variety of equipment strapped to the legs.  Its straps can handle a wide range of short blades, firearms, magazines, and most items that would fit on a tool belt.  Activate it to store up to 4 items.",
     "weight": "250 g",
     "volume": "1500 ml",
-    "price": "100 USD",
-    "price_postapoc": "5 USD",
+    "price": 100,
+    "price_postapoc": 5,
     "material": [
       "cotton",
       "leather"
@@ -1910,8 +2974,8 @@
       "ALLOWS_NATURAL_ATTACKS",
       "PADDED"
     ],
-    "price": "500 USD",
-    "price_postapoc": "50 USD",
+    "price": 500,
+    "price_postapoc": 50,
     "material": [
       "steel",
       "kevlar_rigid"
@@ -2001,23 +3065,80 @@
   },
   {
     "id": "c_power_armor_surv_on",
-    "copy-from": "c_power_armor_surv",
-    "repairs_like": "c_power_armor_surv",
     "type": "TOOL_ARMOR",
+    "copy-from": "c_power_armor_surv",
+    "category": "clothing",
+    "symbol": "[",
+    "color": "dark_gray",
+    "looks_like": "rm13_armor",
     "name": {
       "str": "makeshift hydraulic armor (on)",
       "str_pl": "makeshift hydraulic armors (on)"
     },
     "description": "An incredibly heavy suit of steel and kevlar plates covering a network of hydraulics, driven by pieces of a stripped-down diesel engine jury-rigged to assist the wearer's movements.  It's currently active, strengthening the wearer, increasing raw speed and making the armor less encumbering, but also being warmer and making stealth more difficult.",
-    "extend": {
-      "effects": [
-        "TRADER_AVOID"
+    "flags": [
+      "OVERSIZE",
+      "STURDY",
+      "OUTER",
+      "ALLOWS_NATURAL_ATTACKS",
+      "PADDED"
+    ],
+    "price": 500,
+    "price_postapoc": 50,
+    "material": [
+      "steel",
+      "kevlar_rigid"
+    ],
+    "weight": "50 kg",
+    "volume": "40 L",
+    "to_hit": -3,
+    "ammo": [
+      "diesel",
+      "lamp_oil",
+      "crude_lamp_oil",
+      "motor_oil",
+      "jp8"
+    ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE",
+        "rigid": true,
+        "watertight": true,
+        "ammo_restriction": {
+          "diesel": 2000,
+          "lamp_oil": 2000,
+          "crude_lamp_oil": 2000,
+          "motor_oil": 2000,
+          "jp8": 2000
+        }
+      }
+    ],
+    "relic_data": {
+      "passive_effects": [
+        {
+          "has": "WORN",
+          "condition": "ACTIVE",
+          "values": [
+            {
+              "value": "STRENGTH",
+              "add": 4
+            },
+            {
+              "value": "SPEED",
+              "add": 10
+            },
+            {
+              "value": "CARRY_WEIGHT",
+              "multiply": 2.0
+            }
+          ],
+          "mutations": [
+            "C_MOVE_NOISE"
+          ]
+        }
       ]
     },
-    "//": "power_draw does not actually work sanely for non-battery items, so value fits for roughly how many turns one unit of the weakest allowed fuel would last at twice the power draw of vanilla power armor, rounded down.",
-    "turns_per_charge": 6,
-    "revert_to": "c_power_armor_surv",
-    "revert_msg": "Your makeshift hydraulic armor sputters and dies!",
+    "charges_per_use": 1,
     "use_action": [
       {
         "type": "transform",
@@ -2026,16 +3147,9 @@
         "menu_text": "Turn off"
       }
     ],
-    "tick_action": [
-      {
-        "type": "fireweapon_on",
-        "noise_chance": 5,
-        "noise_message": "Your armor whirs with activity.",
-        "charges_extinguish_message": "Your makeshift hydraulic armor sputters and dies!",
-        "water_extinguish_message": "Your armor's engine floods and cuts out!"
-      }
-    ],
     "warmth": 45,
+    "environmental_protection": 3,
+    "material_thickness": 8,
     "armor": [
       {
         "encumbrance": 15,
@@ -2054,6 +3168,25 @@
           "foot_l",
           "foot_r"
         ]
+      }
+    ],
+    "repairs_like": "c_power_armor_surv",
+    "extend": {
+      "effects": [
+        "TRADER_AVOID"
+      ]
+    },
+    "//": "power_draw does not actually work sanely for non-battery items, so value fits for roughly how many turns one unit of the weakest allowed fuel would last at twice the power draw of vanilla power armor, rounded down.",
+    "turns_per_charge": 6,
+    "revert_to": "c_power_armor_surv",
+    "revert_msg": "Your makeshift hydraulic armor sputters and dies!",
+    "tick_action": [
+      {
+        "type": "fireweapon_on",
+        "noise_chance": 5,
+        "noise_message": "Your armor whirs with activity.",
+        "charges_extinguish_message": "Your makeshift hydraulic armor sputters and dies!",
+        "water_extinguish_message": "Your armor's engine floods and cuts out!"
       }
     ]
   }

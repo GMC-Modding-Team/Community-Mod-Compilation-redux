@@ -2,21 +2,60 @@
   {
     "id": "tailors_kit",
     "type": "TOOL",
-    "name": { "str": "tailor's kit" },
+    "name": {
+      "str": "tailor's kit"
+    },
     "description": "This is a high quality kit consisting of a variety of needles, some wooden spools for thread, some small scissors, and an awl.  Use a tailor's kit to customize your clothing and armor.  This uses your tailoring skill.",
     "weight": "100 g",
     "volume": "500 ml",
     "price": 1000,
     "price_postapoc": 1000,
     "to_hit": -2,
-    "material": [ "wood", "steel" ],
+    "material": [
+      "wood",
+      "steel"
+    ],
     "symbol": ";",
     "color": "red",
-    "ammo": [ "thread" ],
+    "ammo": [
+      "thread"
+    ],
     "sub": "sewing_kit",
     "charges_per_use": 1,
-    "qualities": [ [ "SEW", 4 ], [ "SEW_CURVED", 1 ], [ "KNIT", 1 ], [ "LEATHER_AWL", 2 ], [ "CUT", 2 ], [ "FABRIC_CUT", 2 ] ],
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "ammo_restriction": { "thread": 400 } } ],
+    "qualities": [
+      [
+        "SEW",
+        4
+      ],
+      [
+        "SEW_CURVED",
+        1
+      ],
+      [
+        "KNIT",
+        1
+      ],
+      [
+        "LEATHER_AWL",
+        2
+      ],
+      [
+        "CUT",
+        2
+      ],
+      [
+        "FABRIC_CUT",
+        2
+      ]
+    ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE",
+        "ammo_restriction": {
+          "thread": 400
+        }
+      }
+    ],
     "use_action": [
       {
         "type": "repair_item",
@@ -44,142 +83,440 @@
         "move_cost": 800
       }
     ],
-    "flags": [ "ALLOWS_REMOTE_USE" ]
+    "flags": [
+      "ALLOWS_REMOTE_USE"
+    ]
   },
   {
     "id": "dreamforged_hacksaw",
     "type": "TOOL",
     "copy-from": "hacksaw",
-    "name": { "str": "dreamforged hacksaw" },
+    "name": {
+      "str": "dreamforged hacksaw"
+    },
     "description": "A sturdy saw, useful for cutting through metal objects.  Forged from dreamdross, which makes it much lighter.",
-    "proportional": { "weight": 0.25, "melee_damage": { "bash": 0.25 } },
+    "weight": "952 g",
+    "volume": "1 L",
+    "longest_side": "30 cm",
     "price": 0,
     "price_postapoc": 0,
-    "material": [ "forged_dreamstuff" ],
+    "to_hit": -1,
+    "material": [
+      "forged_dreamstuff"
+    ],
     "symbol": ";",
-    "color": "light_gray"
+    "color": "light_gray",
+    "qualities": [
+      [
+        "SAW_M",
+        2
+      ],
+      [
+        "SAW_W",
+        1
+      ],
+      [
+        "SAW_M_FINE",
+        1
+      ],
+      [
+        "BUTCHER",
+        -90
+      ]
+    ],
+    "flags": [
+      "BELT_CLIP"
+    ],
+    "melee_damage": {
+      "bash": 0.25,
+      "cut": 1
+    }
   },
   {
     "id": "dreamforged_hammer",
     "type": "TOOL",
     "copy-from": "hammer",
-    "name": { "str": "dreamforged hammer" },
+    "name": {
+      "str": "dreamforged hammer"
+    },
     "description": "Classic carpenter hammer with claw.  Forged from dreamdross, which makes it much lighter.",
-    "proportional": { "weight": 0.75, "melee_damage": { "bash": 0.25 } },
-    "//": "0.75 for both metal and wooden parts",
+    "ascii_picture": "hammer",
+    "longest_side": "25 cm",
+    "weight": "566 g",
+    "volume": "320 ml",
     "price": 0,
     "price_postapoc": 0,
-    "material": [ "forged_dreamstuff" ],
+    "to_hit": -1,
+    "material": [
+      "forged_dreamstuff"
+    ],
     "symbol": ";",
-    "color": "light_gray"
+    "color": "light_gray",
+    "qualities": [
+      [
+        "HAMMER",
+        3
+      ],
+      [
+        "PRY",
+        1
+      ],
+      [
+        "HAMMER_FINE",
+        1
+      ],
+      [
+        "PRYING_NAIL",
+        1
+      ]
+    ],
+    "use_action": [
+      "CROWBAR"
+    ],
+    "flags": [
+      "BELT_CLIP",
+      "NONCONDUCTIVE",
+      "ALLOWS_BODY_BLOCK"
+    ],
+    "weapon_category": [
+      "BATONS"
+    ],
+    "melee_damage": {
+      "bash": 2.25
+    },
+    "//": "0.75 for both metal and wooden parts"
   },
   {
     "id": "dreamforged_halligan",
     "type": "TOOL",
     "copy-from": "halligan",
-    "name": { "str": "dreamforged Halligan bar" },
+    "name": {
+      "str": "dreamforged Halligan bar"
+    },
     "description": "Small tool for breaking into closed locations, forged from dreamdross, which makes it really light.",
-    "proportional": { "weight": 0.25, "melee_damage": { "bash": 0.25 } },
+    "weight": "4772 g",
+    "volume": "550 ml",
+    "longest_side": "76 cm",
     "price": 0,
     "price_postapoc": 0,
-    "material": [ "forged_dreamstuff" ],
+    "material": [
+      "forged_dreamstuff"
+    ],
     "symbol": ";",
-    "color": "light_gray"
+    "color": "light_gray",
+    "techniques": [
+      "WBLOCK_1",
+      "BRUTAL",
+      "SWEEP"
+    ],
+    "qualities": [
+      [
+        "PRY",
+        4
+      ],
+      [
+        "HAMMER",
+        2
+      ],
+      [
+        "DIG",
+        1
+      ],
+      [
+        "PRYING_NAIL",
+        1
+      ]
+    ],
+    "use_action": [
+      "CROWBAR"
+    ],
+    "flags": [
+      "DURABLE_MELEE",
+      "BELT_CLIP",
+      "SHEATH_AXE"
+    ],
+    "melee_damage": {
+      "bash": 10.5,
+      "stab": 5
+    }
   },
   {
     "id": "dreamforged_pliers_locking",
     "type": "TOOL",
     "copy-from": "pliers_locking",
-    "name": { "str_sp": "dreamforged locking pliers" },
+    "name": {
+      "str_sp": "dreamforged locking pliers"
+    },
     "description": "Strong pilers with adjustable mechanism.  Forged entirely from dreamdross, which makes it much lighter.",
-    "proportional": { "weight": 0.25, "melee_damage": { "bash": 0.25 } },
+    "looks_like": "pliers",
+    "weight": "320 g",
+    "volume": "222 ml",
+    "longest_side": "18 cm",
     "price": 0,
     "price_postapoc": 0,
-    "material": [ "forged_dreamstuff" ],
+    "material": [
+      "forged_dreamstuff"
+    ],
     "symbol": ";",
-    "color": "light_gray"
+    "color": "light_gray",
+    "qualities": [
+      [
+        "WRENCH",
+        2
+      ],
+      [
+        "VISE",
+        1
+      ]
+    ],
+    "flags": [
+      "BELT_CLIP"
+    ],
+    "melee_damage": {
+      "bash": 0.75
+    }
   },
   {
     "id": "dreamforged_pickaxe",
     "type": "TOOL",
     "copy-from": "pickaxe",
-    "name": { "str": "dreamforged pickaxe" },
+    "name": {
+      "str": "dreamforged pickaxe"
+    },
     "description": "Classic pickaxe, used for digging.  Forged from dreamdross, which makes it really light, albeit a bit weaker.",
-    "proportional": { "weight": 0.3, "melee_damage": { "bash": 0.25 } },
+    "weight": "4535 g",
+    "volume": "3 L",
+    "longest_side": "91 cm",
     "price": 0,
     "price_postapoc": 0,
-    "material": [ "forged_dreamstuff" ],
-    "use_action": [ "PICKAXE" ],
+    "to_hit": -2,
+    "material": [
+      "forged_dreamstuff"
+    ],
     "symbol": ";",
-    "color": "light_gray"
+    "color": "light_gray",
+    "use_action": [
+      "PICKAXE"
+    ],
+    "techniques": [
+      "WBLOCK_1"
+    ],
+    "flags": [
+      "DURABLE_MELEE",
+      "NONCONDUCTIVE",
+      "DIG_TOOL",
+      "SHEATH_AXE"
+    ],
+    "weapon_category": [
+      "HOOKING_WEAPONRY"
+    ],
+    "melee_damage": {
+      "bash": 7.5,
+      "stab": 15
+    }
   },
   {
     "id": "dreamforged_picklocks",
     "type": "TOOL",
     "copy-from": "picklocks",
-    "name": { "str": "dreamforged locksmith kit" },
+    "name": {
+      "str": "dreamforged locksmith kit"
+    },
     "description": "A set of light and sturdy dreamforged lockpicks and wrenches.",
-    "proportional": { "weight": 0.25 },
     "ascii_picture": "picklocks",
-    "material": [ "forged_dreamstuff" ],
+    "weight": "544 g",
+    "volume": "100 ml",
+    "price": 20000,
+    "price_postapoc": 1000,
+    "material": [
+      "forged_dreamstuff"
+    ],
     "symbol": ";",
     "color": "light_gray",
-    "qualities": [ [ "LOCKPICK", 10 ] ]
+    "qualities": [
+      [
+        "LOCKPICK",
+        10
+      ]
+    ]
   },
   {
     "id": "dreamforged_scalpel",
     "type": "TOOL",
     "copy-from": "scalpel",
-    "name": { "str": "dreamforged scalpel" },
+    "name": {
+      "str": "dreamforged scalpel"
+    },
     "description": "A very sharp medical knife for surgeon operations.  Almost weightless.",
-    "proportional": { "weight": 0.25 },
+    "ascii_picture": "scalpel",
+    "weight": "23 g",
+    "volume": "15 ml",
+    "longest_side": "13 cm",
     "price": 0,
     "price_postapoc": 0,
-    "material": [ "forged_dreamstuff" ],
+    "to_hit": -3,
+    "material": [
+      "forged_dreamstuff"
+    ],
     "symbol": ";",
-    "color": "light_gray"
+    "color": "light_gray",
+    "qualities": [
+      [
+        "CUT",
+        2
+      ],
+      [
+        "CUT_FINE",
+        3
+      ],
+      [
+        "BUTCHER",
+        8
+      ],
+      [
+        "FABRIC_CUT",
+        1
+      ]
+    ],
+    "flags": [
+      "FRAGILE_MELEE",
+      "ALLOWS_BODY_BLOCK"
+    ],
+    "melee_damage": {
+      "cut": 7
+    },
+    "weapon_category": [
+      "SHIVS"
+    ]
   },
   {
     "id": "dreamforged_e_tool",
     "type": "TOOL",
     "copy-from": "e_tool",
-    "name": { "str": "dreamforged entrenching tool" },
+    "name": {
+      "str": "dreamforged entrenching tool"
+    },
     "description": "Collapsible spade to dig small pits, forged from dreamdross, to make it even lighter than before.",
-    "proportional": { "weight": 0.25 },
+    "weight": "453 g",
+    "volume": "1 L",
+    "longest_side": "23 cm",
     "price": 0,
     "price_postapoc": 0,
-    "material": [ "forged_dreamstuff" ],
+    "material": [
+      "forged_dreamstuff"
+    ],
     "symbol": ";",
-    "color": "light_gray"
+    "color": "light_gray",
+    "qualities": [
+      [
+        "CUT",
+        1
+      ],
+      [
+        "DIG",
+        3
+      ],
+      [
+        "BUTCHER",
+        -8
+      ],
+      [
+        "COOK",
+        1
+      ]
+    ],
+    "flags": [
+      "DURABLE_MELEE",
+      "NEEDS_UNFOLD",
+      "BELT_CLIP"
+    ],
+    "melee_damage": {
+      "bash": 10,
+      "cut": 8
+    }
   },
   {
     "id": "dreamforged_ax",
     "type": "TOOL",
     "copy-from": "ax",
-    "name": { "str": "dreamforged axe" },
+    "name": {
+      "str": "dreamforged axe"
+    },
     "description": "Large, two hand axe to chop some wood.  Light, but still useful.",
-    "proportional": { "weight": 0.4, "melee_damage": { "bash": 0.25, "cut": 0.5 } },
+    "weight": "2227 g",
+    "volume": "2000 ml",
+    "longest_side": "78 cm",
     "price": 0,
     "price_postapoc": 0,
-    "material": [ "forged_dreamstuff" ],
+    "to_hit": {
+      "grip": "weapon",
+      "length": "long",
+      "surface": "line",
+      "balance": "uneven"
+    },
+    "material": [
+      "forged_dreamstuff"
+    ],
     "symbol": ";",
-    "color": "light_gray"
+    "color": "light_gray",
+    "qualities": [
+      [
+        "CUT",
+        1
+      ],
+      [
+        "AXE",
+        3
+      ],
+      [
+        "BUTCHER",
+        -36
+      ]
+    ],
+    "techniques": [
+      "WBLOCK_1",
+      "BRUTAL",
+      "SWEEP"
+    ],
+    "flags": [
+      "DURABLE_MELEE",
+      "NONCONDUCTIVE",
+      "SHEATH_AXE",
+      "NO_SALVAGE"
+    ],
+    "weapon_category": [
+      "HOOKING_WEAPONRY",
+      "GREAT_AXES"
+    ],
+    "melee_damage": {
+      "bash": 3.5,
+      "cut": 14.0
+    }
   },
   {
     "id": "sacrifice_table",
     "type": "TOOL",
     "category": "tools",
-    "name": { "str": "sacrifice table" },
+    "name": {
+      "str": "sacrifice table"
+    },
     "description": "A magickal space where offerings are sacrificed and transformed.",
     "weight": "1000 g",
     "volume": "5000ml",
     "price": 2000,
     "price_postapoc": 750,
     "to_hit": -5,
-    "material": [ "stone" ],
+    "material": [
+      "stone"
+    ],
     "looks_like": "glass_tube_small",
     "symbol": "N",
     "color": "light_blue",
-    "qualities": [ [ "SACRIFICE", 1 ] ]
+    "qualities": [
+      [
+        "SACRIFICE",
+        1
+      ]
+    ]
   }
 ]

@@ -783,15 +783,29 @@
   {
     "id": "mon_scotts_foal",
     "type": "MONSTER",
+    "copy-from": "mon_scotts_horse",
     "name": {
       "str": "Scott's horse foal"
     },
     "description": "A juvenile horse.  It gallops around its parent excitedly, throwing around its head joyously.",
-    "copy-from": "mon_scotts_horse",
+    "default_faction": "herbivore",
+    "bodytype": "horse",
+    "categories": [
+      "WILDLIFE"
+    ],
+    "species": [
+      "MAMMAL"
+    ],
+    "families": [
+      "prof_intro_biology"
+    ],
     "volume": "80 L",
     "weight": "80 kg",
     "hp": 40,
     "speed": 200,
+    "material": [
+      "flesh"
+    ],
     "symbol": "h",
     "color": "brown",
     "morale": 20,
@@ -806,7 +820,17 @@
     ],
     "dodge": 3,
     "anger_triggers": [],
+    "fear_triggers": [
+      "SOUND",
+      "FIRE"
+    ],
+    "placate_triggers": [
+      "PLAYER_WEAK"
+    ],
     "harvest": "leather_megafauna",
+    "starting_ammo": {
+      "milk_raw": 2
+    },
     "biosignature": {
       "biosig_item": "feces_manure",
       "biosig_timer": 2
@@ -817,16 +841,21 @@
         60
       ]
     ],
-    "upgrades": {
-      "age_grow": 240,
-      "into": "mon_scotts_horse"
+    "reproduction": {
+      "baby_monster": "mon_scotts_foal",
+      "baby_count": 1,
+      "baby_timer": 360
     },
+    "baby_flags": [
+      "AUTUMN"
+    ],
     "petfood": {
       "food": [
         "CATTLEFOOD"
       ],
       "feed": "The %s seems to like you!  It lets you pat its head and seems friendly."
     },
+    "mountable_weight_ratio": 0.35,
     "flags": [
       "SEES",
       "HEARS",
@@ -838,7 +867,16 @@
       "WARM",
       "NO_BREED",
       "CANPLAY"
-    ]
+    ],
+    "armor": {
+      "bash": 3,
+      "cut": 4,
+      "stab": 3
+    },
+    "upgrades": {
+      "age_grow": 240,
+      "into": "mon_scotts_horse"
+    }
   },
   {
     "id": "mon_giant_horse",
@@ -937,15 +975,29 @@
   {
     "id": "mon_giant_foal",
     "type": "MONSTER",
+    "copy-from": "mon_scotts_horse",
     "name": {
       "str": "Giant horse foal"
     },
     "description": "A juvenile giant horse.  It gallops around its parent excitedly, throwing around its head joyously.",
-    "copy-from": "mon_scotts_horse",
+    "default_faction": "herbivore",
+    "bodytype": "horse",
+    "categories": [
+      "WILDLIFE"
+    ],
+    "species": [
+      "MAMMAL"
+    ],
+    "families": [
+      "prof_intro_biology"
+    ],
     "volume": "180 L",
     "weight": "180 kg",
     "hp": 140,
     "speed": 150,
+    "material": [
+      "flesh"
+    ],
     "symbol": "h",
     "color": "brown",
     "morale": 40,
@@ -960,7 +1012,17 @@
     ],
     "dodge": 3,
     "anger_triggers": [],
+    "fear_triggers": [
+      "SOUND",
+      "FIRE"
+    ],
+    "placate_triggers": [
+      "PLAYER_WEAK"
+    ],
     "harvest": "leather_megafauna",
+    "starting_ammo": {
+      "milk_raw": 2
+    },
     "biosignature": {
       "biosig_item": "feces_manure",
       "biosig_timer": 2
@@ -971,16 +1033,21 @@
         60
       ]
     ],
-    "upgrades": {
-      "age_grow": 240,
-      "into": "mon_giant_horse"
+    "reproduction": {
+      "baby_monster": "mon_scotts_foal",
+      "baby_count": 1,
+      "baby_timer": 360
     },
+    "baby_flags": [
+      "AUTUMN"
+    ],
     "petfood": {
       "food": [
         "CATTLEFOOD"
       ],
       "feed": "The %s seems to like you!  It lets you pat its head and seems friendly."
     },
+    "mountable_weight_ratio": 0.35,
     "flags": [
       "SEES",
       "HEARS",
@@ -992,7 +1059,16 @@
       "WARM",
       "NO_BREED",
       "CANPLAY"
-    ]
+    ],
+    "armor": {
+      "bash": 3,
+      "cut": 4,
+      "stab": 3
+    },
+    "upgrades": {
+      "age_grow": 240,
+      "into": "mon_giant_horse"
+    }
   },
   {
     "id": "mon_camelops",
@@ -1100,15 +1176,29 @@
   {
     "id": "mon_camelops_foal",
     "type": "MONSTER",
+    "copy-from": "mon_scotts_horse",
     "name": {
       "str": "Camelops foal"
     },
     "description": "A juvenile camelops.  Its humps haven't grown to full size yet, but it is already covered in a thin layer of wool.",
-    "copy-from": "mon_scotts_horse",
+    "default_faction": "herbivore",
+    "bodytype": "horse",
+    "categories": [
+      "WILDLIFE"
+    ],
+    "species": [
+      "MAMMAL"
+    ],
+    "families": [
+      "prof_intro_biology"
+    ],
     "volume": "180 L",
     "weight": "180 kg",
     "hp": 40,
     "speed": 160,
+    "material": [
+      "flesh"
+    ],
     "symbol": "c",
     "color": "yellow",
     "morale": 20,
@@ -1123,13 +1213,17 @@
     ],
     "dodge": 3,
     "anger_triggers": [],
-    "harvest": "pelt_megafauna",
-    "shearing": [
-      {
-        "result": "wool_staple",
-        "ratio_volume": 0.6
-      }
+    "fear_triggers": [
+      "SOUND",
+      "FIRE"
     ],
+    "placate_triggers": [
+      "PLAYER_WEAK"
+    ],
+    "harvest": "pelt_megafauna",
+    "starting_ammo": {
+      "milk_raw": 2
+    },
     "biosignature": {
       "biosig_item": "feces_manure",
       "biosig_timer": 2
@@ -1140,16 +1234,21 @@
         60
       ]
     ],
-    "upgrades": {
-      "age_grow": 240,
-      "into": "mon_camelops"
+    "reproduction": {
+      "baby_monster": "mon_scotts_foal",
+      "baby_count": 1,
+      "baby_timer": 360
     },
+    "baby_flags": [
+      "AUTUMN"
+    ],
     "petfood": {
       "food": [
         "CATTLEFOOD"
       ],
       "feed": "The %s seems to like you!  It lets you pat its head and seems friendly."
     },
+    "mountable_weight_ratio": 0.35,
     "flags": [
       "SEES",
       "HEARS",
@@ -1160,7 +1259,22 @@
       "PATH_AVOID_DANGER_1",
       "WARM",
       "NO_BREED"
-    ]
+    ],
+    "armor": {
+      "bash": 3,
+      "cut": 4,
+      "stab": 3
+    },
+    "shearing": [
+      {
+        "result": "wool_staple",
+        "ratio_volume": 0.6
+      }
+    ],
+    "upgrades": {
+      "age_grow": 240,
+      "into": "mon_camelops"
+    }
   },
   {
     "id": "mon_peccary_flathead",
@@ -1271,11 +1385,28 @@
       "str": "flat-headed peccary piglet"
     },
     "description": "A juvenile flat-headed peccary - a stocky, short-legged, pig-like animal.  Its playful squeaks delight your heart.",
+    "looks_like": "mon_boar_wild",
+    "default_faction": "herbivore",
+    "bodytype": "pig",
+    "categories": [
+      "WILDLIFE"
+    ],
+    "species": [
+      "MAMMAL"
+    ],
+    "families": [
+      "prof_intro_biology"
+    ],
     "volume": "17 L",
     "weight": "12 kg",
     "hp": 10,
     "speed": 80,
+    "material": [
+      "flesh"
+    ],
     "symbol": "p",
+    "color": "brown",
+    "aggression": -1,
     "morale": 30,
     "melee_skill": 2,
     "melee_dice": 1,
@@ -1287,10 +1418,38 @@
       }
     ],
     "dodge": 2,
+    "harvest": "mammal_small_boar",
+    "reproduction": {
+      "baby_monster": "mon_flathead_piglet",
+      "baby_count": 5,
+      "baby_timer": 135
+    },
+    "baby_flags": [
+      "SPRING",
+      "SUMMER",
+      "AUTUMN"
+    ],
+    "biosignature": {
+      "biosig_item": "feces_manure",
+      "biosig_timer": 2
+    },
+    "path_settings": {
+      "max_dist": 10
+    },
+    "anger_triggers": [
+      "PLAYER_NEAR_BABY",
+      "FRIEND_ATTACKED"
+    ],
     "fear_triggers": [
       "SOUND",
       "PLAYER_CLOSE",
       "FIRE"
+    ],
+    "special_attacks": [
+      [
+        "EAT_FOOD",
+        20
+      ]
     ],
     "petfood": {
       "food": [
@@ -1310,6 +1469,11 @@
       "KEENNOSE",
       "CANPLAY"
     ],
+    "armor": {
+      "bash": 2,
+      "cut": 3,
+      "stab": 2
+    },
     "upgrades": {
       "age_grow": 90,
       "into": "mon_peccary_flathead"
@@ -1324,10 +1488,27 @@
       "str_pl": "long-nosed peccaries"
     },
     "description": "A stocky, short-legged, pig-like animal with coarse brown fur.  It just a bit smaller than a wild boar, its distant European cousin, but considerably bigger than its close relative, the flat-headed peccary.  Different to the latter, they are solitary and more aggressive, but still appreciate good food.",
+    "looks_like": "mon_boar_wild",
+    "default_faction": "herbivore",
+    "bodytype": "pig",
+    "categories": [
+      "WILDLIFE"
+    ],
+    "species": [
+      "MAMMAL"
+    ],
+    "families": [
+      "prof_intro_biology"
+    ],
     "volume": "90 L",
     "weight": "70 kg",
     "hp": 79,
     "speed": 110,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "P",
+    "color": "brown",
     "aggression": 10,
     "morale": 40,
     "melee_skill": 5,
@@ -1344,6 +1525,32 @@
       }
     ],
     "dodge": 2,
+    "harvest": "mammal_small_boar",
+    "reproduction": {
+      "baby_monster": "mon_longnose_piglet",
+      "baby_count": 1,
+      "baby_timer": 200
+    },
+    "baby_flags": [
+      "SPRING",
+      "SUMMER",
+      "AUTUMN"
+    ],
+    "biosignature": {
+      "biosig_item": "feces_manure",
+      "biosig_timer": 2
+    },
+    "path_settings": {
+      "max_dist": 10
+    },
+    "anger_triggers": [
+      "PLAYER_NEAR_BABY",
+      "FRIEND_ATTACKED"
+    ],
+    "fear_triggers": [
+      "SOUND",
+      "FIRE"
+    ],
     "special_attacks": [
       [
         "EAT_FOOD",
@@ -1354,18 +1561,11 @@
         "cooldown": 10
       }
     ],
-    "anger_triggers": [
-      "PLAYER_NEAR_BABY",
-      "FRIEND_ATTACKED"
-    ],
-    "fear_triggers": [
-      "SOUND",
-      "FIRE"
-    ],
-    "reproduction": {
-      "baby_monster": "mon_longnose_piglet",
-      "baby_count": 1,
-      "baby_timer": 200
+    "petfood": {
+      "food": [
+        "CATTLEFOOD"
+      ],
+      "feed": "The %s seems to like you!  It squeals happily as you pet it."
     },
     "flags": [
       "SEES",
@@ -1392,6 +1592,78 @@
       "str": "long-nosed peccary piglet"
     },
     "description": "A juvenile long-nosed peccary - a stocky, short-legged, pig-like animal.  Its playful squeals delight your heart.",
+    "looks_like": "mon_boar_wild",
+    "default_faction": "herbivore",
+    "bodytype": "pig",
+    "categories": [
+      "WILDLIFE"
+    ],
+    "species": [
+      "MAMMAL"
+    ],
+    "families": [
+      "prof_intro_biology"
+    ],
+    "volume": "17 L",
+    "weight": "12 kg",
+    "hp": 10,
+    "speed": 80,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "p",
+    "color": "brown",
+    "aggression": -1,
+    "morale": 30,
+    "melee_skill": 2,
+    "melee_dice": 1,
+    "melee_dice_sides": 2,
+    "melee_damage": [
+      {
+        "damage_type": "bash",
+        "amount": 4.0
+      }
+    ],
+    "dodge": 2,
+    "harvest": "mammal_small_boar",
+    "reproduction": {
+      "baby_monster": "mon_flathead_piglet",
+      "baby_count": 5,
+      "baby_timer": 135
+    },
+    "baby_flags": [
+      "SPRING",
+      "SUMMER",
+      "AUTUMN"
+    ],
+    "biosignature": {
+      "biosig_item": "feces_manure",
+      "biosig_timer": 2
+    },
+    "path_settings": {
+      "max_dist": 10
+    },
+    "anger_triggers": [
+      "PLAYER_NEAR_BABY",
+      "FRIEND_ATTACKED"
+    ],
+    "fear_triggers": [
+      "SOUND",
+      "PLAYER_CLOSE",
+      "FIRE"
+    ],
+    "special_attacks": [
+      [
+        "EAT_FOOD",
+        20
+      ]
+    ],
+    "petfood": {
+      "food": [
+        "CATTLEFOOD"
+      ],
+      "feed": "The %s seems to like you!  It squeals happily as you pet it.."
+    },
     "flags": [
       "NO_BREED",
       "SEES",
@@ -1402,6 +1674,15 @@
       "WARM",
       "KEENNOSE",
       "CANPLAY"
-    ]
+    ],
+    "armor": {
+      "bash": 2,
+      "cut": 3,
+      "stab": 2
+    },
+    "upgrades": {
+      "age_grow": 90,
+      "into": "mon_peccary_flathead"
+    }
   }
 ]

@@ -77,15 +77,18 @@
     }
   },
   {
-    "type": "profession",
     "id": "afs_rating",
+    "type": "profession",
+    "copy-from": "mechanic",
     "name": "Rating",
     "description": "You were a junior crewmember on a freight spaceship.  Without any exceptionally valuable abilities, you spent your workshifts performing miscellaneous maintenance tasks within the ship.  As such, you are moderately skilled at performing all sorts of minor electrical and mechanical repairs, a skillset you hope remains useful planetside…",
-    "points": 0,
-    "copy-from": "mechanic",
-    "flags": [
-      "SCEN_ONLY"
+    "proficiencies": [
+      "prof_metalworking",
+      "prof_welding_basic",
+      "prof_elec_soldering",
+      "prof_driver"
     ],
+    "points": 0,
     "skills": [
       {
         "level": 3,
@@ -147,25 +150,27 @@
           }
         ]
       }
-    }
-  },
-  {
-    "type": "profession",
-    "id": "afs_espatier",
-    "name": "Espatier",
-    "description": "You are a well experienced mercenary espatier, a soldier rated for both orbital and planetary combat.  Until the crash, you were part of a minor mercenary outfit that provided on-board and landing-site security for freight corporations, although it seems that your last contractor required more protection than what you could provide.  Unfortunately, most of your more specialized gear was left behind in your hasty evacuation…",
-    "points": 6,
+    },
     "flags": [
       "SCEN_ONLY"
-    ],
+    ]
+  },
+  {
+    "id": "afs_espatier",
+    "type": "profession",
     "copy-from": "specops",
-    "CBMs": [
-      "bio_targeting",
-      "bio_purifier",
-      "bio_geiger",
-      "bio_adrenaline",
-      "bio_ethanol",
-      "bio_power_storage_mkII"
+    "name": "Espatier",
+    "requirement": "achievement_reach_military_base",
+    "description": "You are a well experienced mercenary espatier, a soldier rated for both orbital and planetary combat.  Until the crash, you were part of a minor mercenary outfit that provided on-board and landing-site security for freight corporations, although it seems that your last contractor required more protection than what you could provide.  Unfortunately, most of your more specialized gear was left behind in your hasty evacuation…",
+    "points": 6,
+    "proficiencies": [
+      "prof_gunsmithing_basic",
+      "prof_traps",
+      "prof_disarming",
+      "prof_spotting",
+      "prof_gun_cleaning",
+      "prof_knives_familiar",
+      "prof_auto_rifles_familiar"
     ],
     "skills": [
       {
@@ -278,7 +283,18 @@
           }
         ]
       }
-    }
+    },
+    "flags": [
+      "SCEN_ONLY"
+    ],
+    "CBMs": [
+      "bio_targeting",
+      "bio_purifier",
+      "bio_geiger",
+      "bio_adrenaline",
+      "bio_ethanol",
+      "bio_power_storage_mkII"
+    ]
   },
   {
     "type": "profession",
@@ -1530,10 +1546,82 @@
     }
   },
   {
-    "type": "profession",
     "id": "afs_ship_escape",
+    "type": "profession",
     "copy-from": "afs_rating",
     "name": "Escaping Crew",
-    "description": "You awake in your cabin to the sound of emergency sirens and the ship's computer calmly announcing in a posh English voice 'Abandon the vessel immediately.', and then counting down from five minutes.  You've got just enough time to hit a supply locker before you need to activate the escape pod down the hall."
+    "description": "You awake in your cabin to the sound of emergency sirens and the ship's computer calmly announcing in a posh English voice 'Abandon the vessel immediately.', and then counting down from five minutes.  You've got just enough time to hit a supply locker before you need to activate the escape pod down the hall.",
+    "proficiencies": [
+      "prof_metalworking",
+      "prof_welding_basic",
+      "prof_elec_soldering",
+      "prof_driver"
+    ],
+    "points": 0,
+    "skills": [
+      {
+        "level": 3,
+        "name": "electronics"
+      },
+      {
+        "level": 3,
+        "name": "mechanics"
+      }
+    ],
+    "items": {
+      "both": {
+        "entries": [
+          {
+            "item": "spacer_jumpsuit"
+          },
+          {
+            "item": "spacer_cap"
+          },
+          {
+            "item": "socks"
+          },
+          {
+            "item": "boots"
+          },
+          {
+            "item": "duct_tape"
+          },
+          {
+            "item": "screwdriver"
+          },
+          {
+            "item": "wristwatch"
+          },
+          {
+            "item": "hat_hard",
+            "variant": "orange_hat_hard"
+          },
+          {
+            "item": "wrench",
+            "container-item": "tool_belt"
+          }
+        ]
+      },
+      "male": {
+        "entries": [
+          {
+            "item": "briefs"
+          }
+        ]
+      },
+      "female": {
+        "entries": [
+          {
+            "item": "sports_bra"
+          },
+          {
+            "item": "boy_shorts"
+          }
+        ]
+      }
+    },
+    "flags": [
+      "SCEN_ONLY"
+    ]
   }
 ]

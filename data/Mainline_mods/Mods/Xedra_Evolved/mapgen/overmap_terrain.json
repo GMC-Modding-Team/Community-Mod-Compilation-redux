@@ -1,7 +1,10 @@
 [
   {
     "type": "overmap_terrain",
+    "abstract": "generic_large_office_tower",
+    "sym": "T",
     "name": "border patrol office",
+    "color": "white",
     "id": [
       "field_office_1",
       "field_office_2",
@@ -40,14 +43,16 @@
       "field_office_19",
       "field_office_20"
     ],
-    "copy-from": "generic_large_office_tower"
+    "flags": [
+      "SIDEWALK"
+    ]
   },
   {
     "type": "overmap_terrain",
     "id": "boann_sidhe_island",
     "name": "forest?",
     "sym": "F",
-    "color": "c_light_green",
+    "color": "light_green",
     "looks_like": "forest",
     "see_cost": 5
   },
@@ -62,18 +67,62 @@
   },
   {
     "type": "overmap_terrain",
-    "id": [ "safe_house" ],
-    "copy-from": "generic_city_house"
+    "abstract": "generic_city_house",
+    "sym": "å",
+    "name": "house",
+    "color": "light_green",
+    "see_cost": 2,
+    "spawns": {
+      "group": "GROUP_VANILLA",
+      "population": [
+        1,
+        4
+      ],
+      "chance": 80
+    },
+    "id": [
+      "safe_house"
+    ],
+    "flags": [
+      "GENERIC_LOOT"
+    ]
   },
   {
     "type": "overmap_terrain",
-    "id": [ "safe_house_roof" ],
-    "copy-from": "generic_city_house_roof"
+    "abstract": "generic_city_house_roof",
+    "name": "house roof",
+    "color": "light_green",
+    "see_cost": 2,
+    "spawns": {
+      "group": "GROUP_ROOF_ANIMAL",
+      "population": [
+        0,
+        3
+      ],
+      "chance": 2
+    },
+    "sym": "å",
+    "id": [
+      "safe_house_roof"
+    ],
+    "flags": []
   },
   {
     "type": "overmap_terrain",
-    "id": [ "safe_house_basement" ],
-    "copy-from": "generic_city_house_basement"
+    "abstract": "generic_city_house_basement",
+    "name": "basement",
+    "sym": "O",
+    "see_cost": 5,
+    "extras": "build",
+    "mondensity": 2,
+    "color": "dark_gray",
+    "flags": [
+      "KNOWN_UP",
+      "GENERIC_LOOT"
+    ],
+    "id": [
+      "safe_house_basement"
+    ]
   },
   {
     "type": "overmap_terrain",
@@ -93,10 +142,12 @@
     ],
     "name": "cathedral",
     "sym": "C",
-    "color": "i_light_red",
+    "color": "light_red",
     "see_cost": 5,
     "mondensity": 2,
-    "flags": [ "SIDEWALK" ]
+    "flags": [
+      "SIDEWALK"
+    ]
   },
   {
     "type": "overmap_terrain",
@@ -110,16 +161,27 @@
       "cathedralv_7_NW",
       "cathedralv_7_NE"
     ],
-    "copy-from": "cathedral_1_NW",
     "name": "cathedral tower",
-    "delete": { "flags": [ "SIDEWALK" ] }
+    "sym": "ò",
+    "color": "white",
+    "see_cost": 5,
+    "mondensity": 2,
+    "flags": []
   },
   {
     "type": "overmap_terrain",
-    "id": [ "cathedralv_b_NW", "cathedralv_b_NE", "cathedralv_b_SW", "cathedralv_b_SE" ],
-    "copy-from": "cathedral_1_NW",
+    "id": [
+      "cathedralv_b_NW",
+      "cathedralv_b_NE",
+      "cathedralv_b_SW",
+      "cathedralv_b_SE"
+    ],
     "name": "cathedral basement",
-    "delete": { "flags": [ "SIDEWALK" ] }
+    "sym": "ò",
+    "color": "white",
+    "see_cost": 5,
+    "mondensity": 2,
+    "flags": []
   },
   {
     "type": "overmap_terrain",
@@ -162,22 +224,30 @@
   },
   {
     "type": "overmap_terrain",
-    "id": [ "lodgev_ground1", "lodgev_ground2" ],
-    "copy-from": "lodge_ground1"
+    "id": [
+      "lodgev_ground1",
+      "lodgev_ground2"
+    ]
   },
   {
     "type": "overmap_terrain",
-    "id": [ "lodgev_2ndfloor1", "lodgev_2ndfloor2" ],
-    "copy-from": "lodge_2ndfloor1"
+    "id": [
+      "lodgev_2ndfloor1",
+      "lodgev_2ndfloor2"
+    ]
   },
   {
     "type": "overmap_terrain",
-    "id": [ "lodgev_roof1", "lodgev_roof2" ],
-    "copy-from": "lodge_roof1"
+    "id": [
+      "lodgev_roof1",
+      "lodgev_roof2"
+    ]
   },
   {
     "type": "overmap_terrain",
-    "id": [ "lodgev_basement_residential1", "lodgev_basement_residential2" ],
-    "copy-from": "lodge_basement_residential1"
+    "id": [
+      "lodgev_basement_residential1",
+      "lodgev_basement_residential2"
+    ]
   }
 ]

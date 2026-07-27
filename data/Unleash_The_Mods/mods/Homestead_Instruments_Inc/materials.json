@@ -1,15 +1,54 @@
 [
   {
+    "id": "polymer",
     "type": "material",
     "copy-from": "plastic",
-    "id": "polymer",
     "name": "Polymer",
     "//": "high-quality plastic compound",
+    "//2": "This one represents various non-resistant household plastics, found in your pen, keyboard, charger etc.",
     "density": 16,
-    "resist": { "bash": 4, "cut": 4, "acid": 18, "heat": 3, "bullet": 0, "electric": 5 },
+    "specific_heat_liquid": 1.6,
+    "specific_heat_solid": 1.6,
+    "latent_heat": 50,
     "chip_resist": 11,
+    "wind_resist": 90,
     "repaired_with": "chunk_polymer",
-    "salvaged_into": "chunk_polymer"
+    "salvaged_into": "chunk_polymer",
+    "dmg_adj": [
+      "scratched",
+      "cut",
+      "cracked",
+      "shattered"
+    ],
+    "bash_dmg_verb": "dented",
+    "cut_dmg_verb": "gouged",
+    "//1": "Most consumer polymers and plastics receive a UL94 rating for flammability and the lowest UL94 rating is HB, generally considered self-extinguishing. Plastics are flammable but should only contribute significant fuel in intense fires.",
+    "burn_data": [
+      {
+        "fuel": 0.1,
+        "smoke": 2,
+        "burn": 0.001
+      },
+      {
+        "fuel": 0.4,
+        "smoke": 3,
+        "burn": 0.003
+      },
+      {
+        "fuel": 1,
+        "smoke": 5,
+        "burn": 0.008
+      }
+    ],
+    "resist": {
+      "bash": 4,
+      "cut": 4,
+      "acid": 18,
+      "heat": 3,
+      "bullet": 0,
+      "electric": 5
+    },
+    "repair_difficulty": 3
   },
   {
     "id": "rubber",
@@ -17,13 +56,41 @@
     "name": "Rubber",
     "density": 12,
     "soft": false,
-    "resist": { "bash": 5, "cut": 1, "acid": 8, "heat": 1, "bullet": 0, "electric": 20 },
+    "resist": {
+      "bash": 5,
+      "cut": 1,
+      "acid": 8,
+      "heat": 1,
+      "bullet": 0,
+      "electric": 20
+    },
     "chip_resist": 9,
     "repaired_with": "chunk_rubber",
     "salvaged_into": "chunk_rubber",
-    "dmg_adj": [ "ripped", "torn", "shredded", "tattered" ],
+    "dmg_adj": [
+      "ripped",
+      "torn",
+      "shredded",
+      "tattered"
+    ],
     "bash_dmg_verb": "ripped",
     "cut_dmg_verb": "cut",
-    "burn_data": [ { "fuel": 1, "smoke": 3, "burn": 1 }, { "fuel": 1, "smoke": 3, "burn": 2 }, { "fuel": 1, "smoke": 3, "burn": 3 } ]
+    "burn_data": [
+      {
+        "fuel": 1,
+        "smoke": 3,
+        "burn": 1
+      },
+      {
+        "fuel": 1,
+        "smoke": 3,
+        "burn": 2
+      },
+      {
+        "fuel": 1,
+        "smoke": 3,
+        "burn": 3
+      }
+    ]
   }
 ]

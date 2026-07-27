@@ -169,7 +169,7 @@
       "flesh"
     ],
     "symbol": "S",
-    "color": "light_green_green",
+    "color": "light_green",
     "aggression": 100,
     "morale": 100,
     "melee_skill": 5,
@@ -311,7 +311,7 @@
       "flesh"
     ],
     "symbol": "S",
-    "color": "i_white",
+    "color": "white",
     "aggression": 100,
     "morale": 100,
     "melee_skill": 3,
@@ -380,7 +380,7 @@
       "flesh"
     ],
     "symbol": "S",
-    "color": "pink_white",
+    "color": "pink",
     "aggression": 100,
     "morale": 100,
     "melee_skill": 3,
@@ -462,7 +462,7 @@
       "flesh"
     ],
     "symbol": "S",
-    "color": "cyan_white",
+    "color": "cyan",
     "aggression": 5,
     "morale": 100,
     "melee_skill": 2,
@@ -550,7 +550,7 @@
       "flesh"
     ],
     "symbol": "S",
-    "color": "blue_white",
+    "color": "blue",
     "aggression": 100,
     "morale": 100,
     "melee_skill": 4,
@@ -768,7 +768,7 @@
       "flesh"
     ],
     "symbol": "S",
-    "color": "light_gray_green",
+    "color": "light_gray",
     "aggression": 100,
     "morale": 100,
     "melee_skill": 5,
@@ -854,7 +854,7 @@
       "flesh"
     ],
     "symbol": "S",
-    "color": "light_gray_red",
+    "color": "light_gray",
     "aggression": 100,
     "morale": 100,
     "melee_skill": 6,
@@ -1022,7 +1022,7 @@
       "flesh"
     ],
     "symbol": "S",
-    "color": "light_red_white",
+    "color": "light_red",
     "aggression": 100,
     "morale": 100,
     "melee_skill": 4,
@@ -1100,7 +1100,7 @@
       "flesh"
     ],
     "symbol": "S",
-    "color": "red_white",
+    "color": "red",
     "aggression": 100,
     "morale": 100,
     "melee_skill": 5,
@@ -1504,7 +1504,7 @@
       "flesh"
     ],
     "symbol": "s",
-    "color": "dark_gray_green",
+    "color": "dark_gray",
     "aggression": 100,
     "morale": 100,
     "melee_skill": 6,
@@ -1999,7 +1999,7 @@
     "hp": 200,
     "speed": 100,
     "symbol": "#",
-    "color": "light_cyan_white",
+    "color": "light_cyan",
     "aggression": 5,
     "morale": 100,
     "vision_day": 5,
@@ -2160,20 +2160,58 @@
   },
   {
     "id": "dks_mon_crystal_mite_fat",
-    "copy-from": "dks_mon_crystal_mite",
     "type": "MONSTER",
+    "copy-from": "dks_mon_crystal_mite",
     "name": {
       "str": "engorged crystal seed"
     },
     "description": "A swollen crystal seed, now grown to about the size of a cat, heavy enough with accumulated biomass to settle down and begin germinating into a proper crystal mass.",
+    "default_faction": "stray",
+    "bodytype": "spider",
+    "categories": [
+      "ALIEN"
+    ],
+    "species": [
+      "BIOCRYSTAL"
+    ],
     "volume": "3840 ml",
     "weight": "4608 g",
+    "hp": 10,
     "speed": 20,
     "symbol": "o",
     "color": "light_blue",
+    "aggression": -90,
+    "morale": -55,
+    "melee_skill": 1,
+    "melee_dice": 1,
+    "melee_dice_sides": 1,
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 1
+      }
+    ],
+    "dodge": 4,
+    "harvest": "exempt",
     "upgrades": {
       "half_life": 3,
       "into": "dks_mon_crystal_baby"
-    }
+    },
+    "fear_triggers": [
+      "SOUND",
+      "PLAYER_CLOSE"
+    ],
+    "flags": [
+      "SEES",
+      "HEARS",
+      "WARM",
+      "NOGIB",
+      "ELECTRIC",
+      "PATH_AVOID_DANGER_1",
+      "NO_BREATHE",
+      "NOHEAD",
+      "ARTHROPOD_BLOOD",
+      "CLIMBS"
+    ]
   }
 ]

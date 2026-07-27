@@ -60,7 +60,7 @@
       "str": "short bow"
     },
     "description": "Though not as powerful as the longbow, this bow is quicker and easier to draw, and can be used effectively by those of average strength.  Good for small game or the survivor on the go.",
-    "price": "160 USD",
+    "price": 160,
     "//": "52in Elm Shortbow at 24in draw with 26in, 0.077 lb aspen arrow: 45J, 50 lbs draw, 0.35 slugs with 30g arrow.",
     "material": [
       "wood"
@@ -78,7 +78,7 @@
     ],
     "weight": "340 g",
     "volume": "1500 ml",
-    "price_postapoc": "5 USD",
+    "price_postapoc": 5,
     "melee_damage": {
       "bash": 6
     },
@@ -117,7 +117,7 @@
       "str": "compound bow"
     },
     "description": "A high-power bow with shaped cams and extra cables for high velocity shots that can be used effectively by fairly strong archers.  Currently set to a medium weight.",
-    "price": "550 USD",
+    "price": 550,
     "//": "60 lb draw weight 24in draw, 100J, 0.55 slugs of momentum with a 30g arrow.",
     "material": [
       "steel",
@@ -135,7 +135,7 @@
     ],
     "weight": "907 g",
     "volume": "1500 ml",
-    "price_postapoc": "35 USD",
+    "price_postapoc": 35,
     "melee_damage": {
       "bash": 8
     },
@@ -189,46 +189,182 @@
   },
   {
     "id": "compbow_high",
-    "copy-from": "compbow",
     "type": "GUN",
+    "copy-from": "compbow",
+    "looks_like": "longbow",
+    "symbol": "(",
+    "color": "yellow",
     "name": {
       "str": "compound bow (high)",
       "str_pl": "compound bows (high)"
     },
     "description": "A high-power bow with shaped cams and extra cables for high velocity shots that can be used effectively by very strong archers.  Currently set to a high weight, and ready to cause some real damage - if you can draw it.",
+    "price": 55000,
     "//": "80 lb draw weight, efficient, 0.62 slugs of momentum with a 30g arrow.",
+    "material": [
+      "steel",
+      "plastic"
+    ],
+    "flags": [
+      "FIRE_TWOHAND",
+      "RELOAD_AND_SHOOT",
+      "PRIMITIVE_RANGED_WEAPON",
+      "SHEATH_BOW",
+      "WATERPROOF_GUN",
+      "NEVER_JAMS"
+    ],
+    "ammo_effects": [
+      "NEVER_MISFIRES"
+    ],
+    "skill": "archery",
     "min_strength": 10,
+    "ammo": [
+      "arrow"
+    ],
+    "weight": "907 g",
+    "volume": "1500 ml",
+    "longest_side": "150 cm",
+    "price_postapoc": 3500,
+    "to_hit": 1,
+    "reload_noise_volume": 3,
+    "loudness": 10,
     "ranged_damage": {
       "damage_type": "stab",
       "amount": 24
     },
+    "range": 18,
+    "dispersion": 850,
+    "sight_dispersion": 3000,
+    "durability": 6,
+    "valid_mod_locations": [
+      [
+        "underbarrel",
+        1
+      ],
+      [
+        "sights",
+        1
+      ],
+      [
+        "stabilizer",
+        1
+      ],
+      [
+        "dampening",
+        1
+      ],
+      [
+        "arrow rest",
+        1
+      ]
+    ],
     "use_action": {
       "menu_text": "Loosen Limbs",
       "type": "transform",
       "target": "compbow_low",
       "msg": "You loosen the limbs, decreasing the strength of the bow."
+    },
+    "reload": 50,
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE",
+        "ammo_restriction": {
+          "arrow": 1
+        }
+      }
+    ],
+    "melee_damage": {
+      "bash": 8
     }
   },
   {
     "id": "compbow_low",
-    "copy-from": "compbow",
     "type": "GUN",
+    "copy-from": "compbow",
+    "looks_like": "longbow",
+    "symbol": "(",
+    "color": "yellow",
     "name": {
       "str": "compound bow (low)",
       "str_pl": "compound bows (low)"
     },
     "description": "A high-power bow with shaped cams and extra cables for high velocity shots that can be used effectively by average archers.  Currently set to a low weight, making it much easier to draw.",
+    "price": 55000,
     "//": "40 lb draw weight, efficient, 0.45 slugs of momentum with a 30g arrow.",
+    "material": [
+      "steel",
+      "plastic"
+    ],
+    "flags": [
+      "FIRE_TWOHAND",
+      "RELOAD_AND_SHOOT",
+      "PRIMITIVE_RANGED_WEAPON",
+      "SHEATH_BOW",
+      "WATERPROOF_GUN",
+      "NEVER_JAMS"
+    ],
+    "ammo_effects": [
+      "NEVER_MISFIRES"
+    ],
+    "skill": "archery",
     "min_strength": 6,
+    "ammo": [
+      "arrow"
+    ],
+    "weight": "907 g",
+    "volume": "1500 ml",
+    "longest_side": "150 cm",
+    "price_postapoc": 3500,
+    "to_hit": 1,
+    "reload_noise_volume": 3,
+    "loudness": 10,
     "ranged_damage": {
       "damage_type": "stab",
       "amount": 12
     },
+    "range": 18,
+    "dispersion": 850,
+    "sight_dispersion": 3000,
+    "durability": 6,
+    "valid_mod_locations": [
+      [
+        "underbarrel",
+        1
+      ],
+      [
+        "sights",
+        1
+      ],
+      [
+        "stabilizer",
+        1
+      ],
+      [
+        "dampening",
+        1
+      ],
+      [
+        "arrow rest",
+        1
+      ]
+    ],
     "use_action": {
       "menu_text": "Tighten Limbs",
       "type": "transform",
       "target": "compbow",
       "msg": "You tighten the limbs, increasing the strength of the bow."
+    },
+    "reload": 50,
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE",
+        "ammo_restriction": {
+          "arrow": 1
+        }
+      }
+    ],
+    "melee_damage": {
+      "bash": 8
     }
   },
   {
@@ -241,7 +377,7 @@
       "str": "composite bow"
     },
     "description": "A bow made from multiple materials for increased energy efficiency.  Complicated to make, but stronger than an all-wood short bow.",
-    "price": "320 USD",
+    "price": 320,
     "//": "90 lb draw weight, 28in draw, 70J, 0.464 slugs of momentum with a 0.066lb arrow.",
     "material": [
       "wood",
@@ -260,7 +396,7 @@
     ],
     "weight": "400 g",
     "volume": "1750 ml",
-    "price_postapoc": "30 USD",
+    "price_postapoc": 30,
     "melee_damage": {
       "bash": 8
     },
@@ -299,7 +435,7 @@
       "str": "recurve bow"
     },
     "description": "A modern bow that curves away from the archer at the tips for increased power, which can be used effectively by those of somewhat above-average strength.  Good and easy to use, but nothing special.",
-    "price": "380 USD",
+    "price": 380,
     "//": "60in Fiberglass recurved bow at 26in draw, 80lb draw, 54J, 0.403 slugs with 30g arrow.",
     "material": [
       "steel",
@@ -318,7 +454,7 @@
     ],
     "weight": "540 g",
     "volume": "2500 ml",
-    "price_postapoc": "20 USD",
+    "price_postapoc": 20,
     "melee_damage": {
       "bash": 12
     },
@@ -373,7 +509,7 @@
       "str": "reflex bow"
     },
     "description": "A bow with limbs that curve away from the archer near the riser for power.  Smaller than some bows, but decently powerful and quick.",
-    "price": "420 USD",
+    "price": 420,
     "//": "60in fine wood (e.g. ossage orange) reflex bow, 60 lbs draw, 60J, 0.41 slugs with a 30g arrow.",
     "material": [
       "wood"
@@ -391,7 +527,7 @@
     "min_strength": 8,
     "weight": "400 g",
     "volume": "1500 ml",
-    "price_postapoc": "20 USD",
+    "price_postapoc": 20,
     "melee_damage": {
       "bash": 12
     },
@@ -430,7 +566,7 @@
       "str": "hybrid longbow"
     },
     "description": "A modernized, six-foot longbow that curves away from the archer at the tips for increased power.  It can be used effectively by those of somewhat above-average strength.  Designed for archers that appreciate the smoothness of a traditional longbow, but desire the superior power of a modern recurve.",
-    "price": "380 USD",
+    "price": 380,
     "material": [
       "steel",
       "plastic",
@@ -451,7 +587,7 @@
     ],
     "weight": "600 g",
     "volume": "3500 ml",
-    "price_postapoc": "50 USD",
+    "price_postapoc": 50,
     "melee_damage": {
       "bash": 12
     },
@@ -505,7 +641,7 @@
       "str": "longbow"
     },
     "description": "A six-foot wooden bow that takes a fair amount of strength to draw.  It can be used effectively by those of somewhat above-average strength.  Used mainly in medieval England in wartime, but pierces zombie hide just as well as chainmail.",
-    "price": "500 USD",
+    "price": 500,
     "//": "70in Yew Longbow at 28in, 60 lbs draw, 45J, 0.37 slugs with 30g arrow",
     "material": [
       "wood"
@@ -523,7 +659,7 @@
     ],
     "weight": "680 g",
     "volume": "3500 ml",
-    "price_postapoc": "30 USD",
+    "price_postapoc": 30,
     "melee_damage": {
       "bash": 10
     },
@@ -554,25 +690,72 @@
   },
   {
     "id": "woodgreatbow",
-    "copy-from": "longbow",
     "type": "GUN",
+    "copy-from": "longbow",
+    "symbol": "(",
+    "color": "yellow",
     "name": {
       "str": "wooden greatbow"
     },
     "description": "An extremely large and stiff longbow, made with enormous limbs and a thick string to take an immense amount of energy.  Takes incredible strength to draw.",
-    "price": "1500 USD",
+    "price": 1500,
     "//": "78in Yew Longbow at 30in draw with 31in, 145 lbs draw, 0.51 slugs with 30g arrow.",
+    "material": [
+      "wood"
+    ],
+    "flags": [
+      "FIRE_TWOHAND",
+      "RELOAD_AND_SHOOT",
+      "PRIMITIVE_RANGED_WEAPON",
+      "BELTED",
+      "SHEATH_BOW",
+      "WATERPROOF_GUN",
+      "NEVER_JAMS"
+    ],
+    "ammo_effects": [
+      "NEVER_MISFIRES"
+    ],
+    "skill": "archery",
     "min_strength": 16,
+    "ammo": [
+      "arrow"
+    ],
     "weight": "3200 g",
     "volume": "6250 ml",
-    "price_postapoc": "20 USD",
-    "durability": 8,
+    "longest_side": "183 cm",
+    "price_postapoc": 20,
+    "reload_noise_volume": 3,
     "loudness": 16,
     "ranged_damage": {
       "damage_type": "stab",
       "amount": 44
     },
-    "range": 20
+    "range": 20,
+    "dispersion": 1000,
+    "sight_dispersion": 3000,
+    "durability": 8,
+    "valid_mod_locations": [
+      [
+        "dampening",
+        1
+      ],
+      [
+        "arrow rest",
+        1
+      ]
+    ],
+    "reload": 50,
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE",
+        "ammo_restriction": {
+          "arrow": 1
+        }
+      }
+    ],
+    "melee_damage": {
+      "bash": 10
+    }
   },
   {
     "id": "compgreatbow",
@@ -584,7 +767,7 @@
       "str": "compound greatbow"
     },
     "description": "An extremely large and powerful compound bow, made with enormous limbs and a thick string to take an immense amount of energy.  Takes incredible strength to draw.",
-    "price": "1600 USD",
+    "price": 1600,
     "//": "120 lb draw weight, very efficient, 0.5 slugs of momentum with a 30g arrow.",
     "material": [
       "steel",
@@ -601,7 +784,7 @@
     ],
     "weight": "2000 g",
     "volume": "4 L",
-    "price_postapoc": "30 USD",
+    "price_postapoc": 30,
     "melee_damage": {
       "bash": 14
     },
@@ -656,7 +839,7 @@
       "str": "reflex recurve bow"
     },
     "description": "A modernized bow that combines the traits from both the reflex and the recurve bows, with both limbs and tips curving away from the archer, and reinforced with composite materials.  This dramatically increases the power and requires significant strength to draw the bow effectively, but can still be fired quickly.",
-    "price": "720 USD",
+    "price": 720,
     "//": "50in wood reflex bow, 50 lbs draw, 0.4 slugs, this is a very inaccurate number but this bow should be deprecated.",
     "material": [
       "wood"
@@ -674,7 +857,7 @@
     ],
     "weight": "450 g",
     "volume": "2 L",
-    "price_postapoc": "60 USD",
+    "price_postapoc": 60,
     "melee_damage": {
       "bash": 12
     },

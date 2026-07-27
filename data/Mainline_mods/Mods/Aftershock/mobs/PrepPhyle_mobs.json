@@ -1,22 +1,36 @@
 [
   {
     "id": "afs_mon_cyber_mastiff",
-    "copy-from": "mon_dog",
-    "default_faction": "PrepNet",
     "type": "MONSTER",
+    "copy-from": "mon_dog",
     "name": {
       "str": "Cyber Mastiff",
       "str_pl": "Cyber Mastifs"
     },
-    "//": "Rare, location specific only",
     "description": "A mix of Great Pyrenees and Ovcharka breeds outfitted with bionic enhancements.  These hounds defend Prep Phyle lands from all comers undead and otherwise.",
+    "default_faction": "PrepNet",
+    "bodytype": "dog",
+    "categories": [
+      "WILDLIFE"
+    ],
+    "species": [
+      "MAMMAL"
+    ],
     "volume": "57500 ml",
     "weight": "57500 g",
+    "harvest": "CBM_DOG",
+    "dissect": "dissect_CBM_DOG",
     "hp": 86,
     "speed": 100,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "d",
+    "color": "light_gray",
     "aggression": 0,
     "morale": 10,
     "aggro_character": false,
+    "melee_skill": 6,
     "melee_dice": 1,
     "melee_dice_sides": 2,
     "melee_damage": [
@@ -26,17 +40,55 @@
       }
     ],
     "dodge": 3,
-    "looks_like": "mon_dog_gpyrenees",
-    "vision_day": 30,
+    "stomach_size": 250,
     "vision_night": 8,
-    "harvest": "CBM_DOG",
-    "dissect": "dissect_CBM_DOG",
+    "zombify_into": "mon_zombie_dog",
+    "death_drops": "mon_dog_death_drops",
+    "families": [
+      "prof_intro_biology",
+      "prof_physiology"
+    ],
+    "path_settings": {
+      "max_dist": 10
+    },
     "reproduction": {
       "baby_monster": "afs_mon_cyber_mastiff_pup",
       "baby_count": 7,
       "baby_timer": 320
     },
-    "//2": "1-7 puppies & 300-320 days per-litter for size medium canines",
+    "//": "Rare, location specific only",
+    "baby_flags": [
+      "SPRING",
+      "SUMMER",
+      "AUTUMN",
+      "WINTER"
+    ],
+    "biosignature": {
+      "biosig_item": "feces_dog",
+      "biosig_timer": 6
+    },
+    "anger_triggers": [
+      "FRIEND_DIED",
+      "FRIEND_ATTACKED",
+      "HURT"
+    ],
+    "special_attacks": [
+      [
+        "EAT_FOOD",
+        100
+      ],
+      [
+        "PARROT_AT_DANGER",
+        0
+      ]
+    ],
+    "petfood": {
+      "food": [
+        "DOGFOOD"
+      ],
+      "feed": "The %s seems to like you!  It lets you pat its head and seems friendly.",
+      "pet": "The %s happily wags its tail while you pat its head."
+    },
     "flags": [
       "ANIMAL",
       "PET_MOUNTABLE",
@@ -48,11 +100,9 @@
       "SMELLS",
       "WARM"
     ],
-    "anger_triggers": [
-      "FRIEND_DIED",
-      "FRIEND_ATTACKED",
-      "HURT"
-    ],
+    "looks_like": "mon_dog_gpyrenees",
+    "vision_day": 30,
+    "//2": "1-7 puppies & 300-320 days per-litter for size medium canines",
     "armor": {
       "bash": 8,
       "cut": 14,

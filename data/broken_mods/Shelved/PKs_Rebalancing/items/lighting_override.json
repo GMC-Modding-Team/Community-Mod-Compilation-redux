@@ -2,11 +2,50 @@
   {
     "id": "handflare_act",
     "type": "TOOL",
-    "name": { "str": "struck flare" },
     "copy-from": "handflare",
+    "name": {
+      "str": "struck flare"
+    },
     "description": "An activated flare, any moment now the chemicals will finish mixing and the flare will ignite.",
+    "material": [
+      "plastic",
+      "powder"
+    ],
+    "symbol": ";",
+    "color": "light_red",
+    "weight": "128 g",
+    "volume": "250 ml",
+    "price": 400,
+    "price_postapoc": 100,
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE",
+        "ammo_restriction": {
+          "flare_nitrate": 300
+        },
+        "rigid": true
+      }
+    ],
+    "ammo": "flare_nitrate",
+    "use_action": {
+      "menu_text": "Strike the striker",
+      "type": "transform",
+      "target": "handflare_lit",
+      "active": true,
+      "msg": "You strike your flare and light it."
+    },
+    "flags": [
+      "NO_UNLOAD",
+      "NO_RELOAD"
+    ],
     "turns_per_charge": 1,
     "countdown_interval": 6,
-    "countdown_action": { "type": "transform", "target": "handflare_lit", "target_charges": 300, "active": true, "msg": "The flare lights up." }
+    "countdown_action": {
+      "type": "transform",
+      "target": "handflare_lit",
+      "target_charges": 300,
+      "active": true,
+      "msg": "The flare lights up."
+    }
   }
 ]

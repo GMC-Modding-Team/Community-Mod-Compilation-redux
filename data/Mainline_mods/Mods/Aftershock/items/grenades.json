@@ -17,7 +17,6 @@
   {
     "id": "afs_kaburaya_bomb",
     "type": "TOOL",
-    "copy-from": "grenade_canister",
     "category": "weapons",
     "looks_like": "c4",
     "name": {
@@ -42,7 +41,6 @@
   {
     "id": "afs_kaburaya_bomb_act",
     "type": "TOOL",
-    "copy-from": "grenade_canister",
     "looks_like": "c4",
     "name": {
       "str": "armed Kabura-ya antipersonnel device"
@@ -73,12 +71,11 @@
   {
     "id": "afs_demo_charge",
     "type": "TOOL",
-    "copy-from": "grenade_canister",
     "looks_like": "c4",
     "name": {
       "str": "demolition charge"
     },
-    "price": "450 USD",
+    "price": 450,
     "description": "A powerful explosive with a highly focused blast radius, often used for mining or demolition work.  It's configured to work alongside a radio detonator, and will explode immediately after activation.",
     "use_action": {
       "need_wielding": true,
@@ -99,15 +96,23 @@
     "id": "afs_demo_charge_act",
     "type": "TOOL",
     "copy-from": "afs_demo_charge",
+    "looks_like": "c4armed",
     "name": {
       "str": "active demolition charge"
     },
-    "looks_like": "c4armed",
+    "price": 450,
     "description": "A powerful explosive with a highly focused blast radius, often used for mining or demolition work.  It's currently active.",
     "use_action": {
       "type": "message",
       "message": "You've already activated the %s, try throwing it instead."
     },
+    "flags": [
+      "RADIO_ACTIVATION",
+      "RADIO_INVOKE_PROC",
+      "RADIOSIGNAL_1",
+      "BOMB",
+      "TRADER_AVOID"
+    ],
     "countdown_action": {
       "type": "explosion",
       "explosion": {
@@ -115,17 +120,11 @@
         "max_noise": 250,
         "distance_factor": 0.3
       }
-    },
-    "extend": {
-      "flags": [
-        "TRADER_AVOID"
-      ]
     }
   },
   {
     "id": "afs_electroshock_grenade_1",
     "type": "TOOL",
-    "copy-from": "grenade_canister",
     "category": "weapons",
     "looks_like": "grenade_emp",
     "name": {
@@ -150,18 +149,26 @@
     "id": "afs_electroshock_grenade_1_act",
     "type": "TOOL",
     "copy-from": "afs_electroshock_grenade_1",
+    "category": "weapons",
     "looks_like": "grenade_emp_act",
     "name": {
       "str": "armed electroshock grenade"
     },
     "description": "This electroshock grenade is currently creating a dangerous electric field.",
+    "use_action": {
+      "menu_text": "Pull pin",
+      "need_wielding": true,
+      "type": "transform",
+      "target": "afs_electroshock_grenade_1_act",
+      "target_timer": "20 seconds"
+    },
+    "flags": [
+      "TRADER_AVOID"
+    ],
     "emits": [
       "emit_shock_cloud"
     ],
-    "revert_to": "afs_material_1",
-    "flags": [
-      "TRADER_AVOID"
-    ]
+    "revert_to": "afs_material_1"
   },
   {
     "id": "grenade_cryo",
@@ -249,12 +256,31 @@
     "id": "afs_oxygen_bomb",
     "type": "TOOL",
     "copy-from": "pipebomb",
-    "looks_like": "pipebomb",
+    "category": "weapons",
     "name": {
       "str": "oxygen bomb"
     },
-    "price": "150 USD",
+    "looks_like": "pipebomb",
     "description": "A favorite tool of mutineers everywhere, this is a standard issue oxygen candle deliberately tampered to explode upon activation.  Its fuse is dangerously short, so you won't want to waste any time.",
+    "weight": "840 g",
+    "//": "Only one third (410 g) of a whole pipe is being used",
+    "volume": "280 ml",
+    "price": 150,
+    "longest_side": "229 mm",
+    "to_hit": 1,
+    "material": [
+      "steel"
+    ],
+    "symbol": "*",
+    "color": "light_gray",
+    "explode_in_fire": true,
+    "explosion": {
+      "power": 300,
+      "shrapnel": {
+        "casing_mass": 410,
+        "fragment_mass": 0.5
+      }
+    },
     "use_action": {
       "need_wielding": true,
       "target": "afs_oxygen_bomb_act",
@@ -268,17 +294,61 @@
       "RADIO_INVOKE_PROC",
       "BOMB",
       "NPC_ACTIVATE"
-    ]
+    ],
+    "melee_damage": {
+      "bash": 5
+    }
   },
   {
     "id": "afs_oxygen_bomb_act",
     "type": "TOOL",
     "copy-from": "pipebomb_act",
-    "looks_like": "pipebomb_act",
+    "category": "weapons",
     "name": {
       "str": "active oxygen bomb"
     },
-    "price": "0 USD",
-    "description": "This bomb's fuse is lit, and it will explode any second now.  Throw it immediately!"
+    "looks_like": "pipebomb_act",
+    "description": "This bomb's fuse is lit, and it will explode any second now.  Throw it immediately!",
+    "weight": "840 g",
+    "volume": "280 ml",
+    "longest_side": "229 mm",
+    "price": 0,
+    "to_hit": 1,
+    "material": [
+      "steel"
+    ],
+    "symbol": "*",
+    "color": "light_gray",
+    "use_action": {
+      "type": "message",
+      "message": "You've already lit the %s, try throwing it instead.",
+      "name": "Pull pin"
+    },
+    "explode_in_fire": true,
+    "explosion": {
+      "power": 300,
+      "shrapnel": {
+        "casing_mass": 410,
+        "fragment_mass": 0.5
+      }
+    },
+    "countdown_action": {
+      "type": "explosion",
+      "explosion": {
+        "power": 300,
+        "shrapnel": {
+          "casing_mass": 410,
+          "fragment_mass": 0.5
+        }
+      }
+    },
+    "flags": [
+      "BOMB",
+      "TRADER_AVOID",
+      "DANGEROUS"
+    ],
+    "melee_damage": {
+      "bash": 5
+    }
   }
 ]

@@ -1,0 +1,158 @@
+[
+  {
+    "type": "martial_art",
+    "id": "style_niten",
+    "name": {
+      "str": "Niten Ichi-Ryu"
+    },
+    "description": "Niten Ichi-Ryu is an ancient school of combat, transmitting a style of classical Japanese swordsmanship conceived by the warrior Miyamoto Musashi.  Perception increases damage and reduces blocked damage.  Moving and attacking reduces dodging and damage until you pause.  Pausing for a moment increases Dodging skill.",
+    "initiate": [
+      "You clear your mind as you prepare yourself for combat.",
+      "%s relaxes and prepares for combat."
+    ],
+    "priority": 1,
+    "learn_difficulty": 8,
+    "primary_skill": "cutting",
+    "strictly_melee": true,
+    "static_buffs": [
+      {
+        "id": "buff_niten_static",
+        "name": "Niten Ichi-Ryu Stance",
+        "description": "Cautious watchful eyes,\nmeasure and display your skill.\nPractice makes perfect.\n\nArmor penetration increased by 50% of Perception, blocked damage reduced by 100% of Perception.",
+        "melee_allowed": true,
+        "flat_bonuses": [
+          {
+            "stat": "arpen",
+            "type": "bash",
+            "scaling-stat": "per",
+            "scale": 0.5
+          },
+          {
+            "stat": "arpen",
+            "type": "cut",
+            "scaling-stat": "per",
+            "scale": 0.5
+          },
+          {
+            "stat": "arpen",
+            "type": "stab",
+            "scaling-stat": "per",
+            "scale": 0.5
+          },
+          {
+            "stat": "block",
+            "scaling-stat": "per",
+            "scale": 1.0
+          }
+        ]
+      }
+    ],
+    "onmove_buffs": [
+      {
+        "id": "buff_niten_onmove",
+        "name": "Waning Moon",
+        "description": "Blackened like darkness,\nnightmares approach from all sides.\nFlee at any cost!\n\n-5.0 Dodging skill.\nLasts 1 turn.",
+        "melee_allowed": true,
+        "buff_duration": 1,
+        "persists": true,
+        "flat_bonuses": [
+          {
+            "stat": "dodge",
+            "scale": -5.0
+          }
+        ]
+      }
+    ],
+    "onattack_buffs": [
+      {
+        "id": "buff_niten_onattack",
+        "name": "Falling Leaf",
+        "description": "A sharp sword cuts true.\nAlthough, all things fade with time.\nRestraint hones your skills.\n\n-1.0 Dodging skill, -5% damage.\nLasts 1 turn.  Stacks 5 times.",
+        "melee_allowed": true,
+        "buff_duration": 1,
+        "max_stacks": 5,
+        "persists": true,
+        "flat_bonuses": [
+          {
+            "stat": "dodge",
+            "scale": -1.0
+          }
+        ],
+        "mult_bonuses": [
+          {
+            "stat": "damage",
+            "type": "bash",
+            "scale": 0.95
+          },
+          {
+            "stat": "damage",
+            "type": "cut",
+            "scale": 0.95
+          },
+          {
+            "stat": "damage",
+            "type": "stab",
+            "scale": 0.95
+          }
+        ]
+      }
+    ],
+    "ondodge_buffs": [
+      {
+        "id": "buff_niten_ondodge",
+        "name": "Moonlight",
+        "description": "Luck be the light,\non a dark and cloudy night,\nas the moon shines down.\n\nEnables \"In-One Timing\" technique.\nLasts 1 turn.",
+        "skill_requirements": [
+          {
+            "name": "melee",
+            "level": 5
+          }
+        ],
+        "melee_allowed": true,
+        "buff_duration": 1
+      }
+    ],
+    "onpause_buffs": [
+      {
+        "id": "buff_niten_onpause",
+        "name": "Stillness",
+        "description": "The eye of the storm,\na fleeting moment of peace,\ngone without a trace.\n\n+2 accuracy, Dodging skill increased by 50% of Perception.\nLasts 2 turns.",
+        "melee_allowed": true,
+        "buff_duration": 2,
+        "flat_bonuses": [
+          {
+            "stat": "hit",
+            "scale": 2.0
+          },
+          {
+            "stat": "dodge",
+            "scaling-stat": "per",
+            "scale": 0.5
+          }
+        ]
+      }
+    ],
+    "techniques": [
+      "niten_water_cut",
+      "niten_red_leaf",
+      "niten_stone_cut",
+      "niten_timing_attack",
+      "niten_feint"
+    ],
+    "weapon_category": [
+      "SHORT_SWORDS",
+      "MEDIUM_SWORDS",
+      "LONG_SWORDS"
+    ],
+    "extend": {
+      "weapons": [
+        "bladegohei_on",
+        "roukankenhakurouken",
+        "roukanken",
+        "hakurouken",
+        "t_kusanagi01",
+        "t_kusanagi02"
+      ]
+    }
+  }
+]

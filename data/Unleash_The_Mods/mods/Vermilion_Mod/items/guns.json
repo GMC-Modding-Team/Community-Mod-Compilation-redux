@@ -9,7 +9,7 @@
     "description": "A crude, humongous hunk of tech scrap seated into the remains of what seems like a minigun's frame and the widened receiver of a large caliber machine gun, as well as numerous picatinny rails and odds and ends from other weapons that are now impossible to identify, reinforced with superalloy and ceramics covered in piezoelectric capacitors.  The weapon launches rails at such an overkill velocity that they shatter on impact.  Carved near the blade are the words 'With love, Shion' and a small carving of a canine-eared head of a person with a smug grin, holding up a victory sign.",
     "weight": "20 kg",
     "volume": "5250 ml",
-    "price": "780 USD",
+    "price": 780,
     "to_hit": -3,
     "melee_damage": {
       "bash": 16,
@@ -108,15 +108,82 @@
   {
     "id": "ptrs41",
     "type": "GUN",
+    "copy-from": "rifle_base",
+    "reload_noise_volume": 10,
+    "//": "this is the default handling for anything with a stock",
+    "handling": 20,
     "name": {
       "str": "PTRS-41"
     },
-    "looks_like": "modular_ar15",
-    "copy-from": "rifle_base",
     "symbol": "(",
     "color": "dark_gray",
+    "faults": [
+      "fault_gun_blackpowder",
+      "fault_gun_dirt",
+      "fault_gun_chamber_spent"
+    ],
+    "ranged_damage": {
+      "damage_type": "stab",
+      "amount": -3
+    },
+    "skill": "rifle",
+    "valid_mod_locations": [
+      [
+        "barrel",
+        1
+      ],
+      [
+        "bore",
+        1
+      ],
+      [
+        "brass catcher",
+        1
+      ],
+      [
+        "grip",
+        1
+      ],
+      [
+        "mechanism",
+        4
+      ],
+      [
+        "magazine",
+        1
+      ],
+      [
+        "muzzle",
+        1
+      ],
+      [
+        "rail",
+        2
+      ],
+      [
+        "sights",
+        1
+      ],
+      [
+        "sling",
+        1
+      ],
+      [
+        "stock",
+        1
+      ],
+      [
+        "stock accessory",
+        2
+      ],
+      [
+        "underbarrel",
+        1
+      ]
+    ],
+    "looks_like": "modular_ar15",
     "description": "The PTRS-41 is a semi-automatic anti-tank rifle produced and used by the Soviets during World War II. It fires the powerful 14.5x114mm cartridge, but getting ahold of those after the Cataclysm might prove to be a difficult task.",
-    "price": "1890 USD",
+    "price": 1890,
     "material": [
       "steel",
       "wood"
@@ -131,10 +198,6 @@
       "145x114mm"
     ],
     "range": 45,
-    "ranged_damage": {
-      "damage_type": "stab",
-      "amount": -3
-    },
     "dispersion": 95,
     "durability": 7,
     "barrel_volume": "1250 ml",
@@ -166,8 +229,8 @@
     "description": "This overpowered and overengineered variant of the ferromagnetic rail rifle was designed to deliver electromagnetically-driven obliteration right through whatever obstacles that lies in front of it, be it buildings, vehicles or hordes of walking dead.  However, the hefty bulk and weight of this weapon compared to most contemporary rifles makes it somewhat cumbersome to wield; not to mention that it consumes UPS charges at a tremendous rate, making it impractical for use in prolonged engagements.",
     "weight": "11500 g",
     "volume": "4500 ml",
-    "price": "9000 USD",
-    "price_postapoc": "90 USD",
+    "price": 9000,
+    "price_postapoc": 90,
     "to_hit": -1,
     "melee_damage": {
       "bash": 12

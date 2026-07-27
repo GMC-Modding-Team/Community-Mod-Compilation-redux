@@ -1,49 +1,73 @@
 [
   {
-    "type": "overmap_terrain",
     "id": "railroad",
-    "name": "railroad",
+    "type": "overmap_terrain",
     "copy-from": "generic_transportation",
+    "name": "railroad",
+    "land_use_code": "transportation",
     "color": "light_green",
     "see_cost": 2,
-    "flags": [ "LINEAR", "REQUIRES_PREDECESSOR" ]
+    "flags": [
+      "LINEAR",
+      "REQUIRES_PREDECESSOR"
+    ]
   },
   {
-    "type": "overmap_terrain",
     "abstract": "generic_railroad_bridge",
+    "type": "overmap_terrain",
     "copy-from": "generic_transportation",
     "name": "railroad bridge",
+    "land_use_code": "transportation",
     "sym": "│",
     "color": "white",
     "see_cost": 2
   },
   {
-    "type": "overmap_terrain",
     "id": "railroad_bridge",
+    "type": "overmap_terrain",
     "copy-from": "generic_railroad_bridge",
+    "name": "railroad bridge",
+    "land_use_code": "transportation",
+    "sym": "│",
     "color": "light_cyan",
-    "flags": [ "RIVER" ]
+    "see_cost": 2,
+    "flags": [
+      "RIVER"
+    ]
   },
   {
-    "type": "overmap_terrain",
     "id": "railroad_bridge_overpass",
+    "type": "overmap_terrain",
     "copy-from": "generic_bridge",
-    "name": "railroad bridge (overpass)"
+    "name": "railroad bridge (overpass)",
+    "land_use_code": "transportation",
+    "sym": "│",
+    "color": "white",
+    "see_cost": 2,
+    "flags": [
+      "BRIDGE"
+    ]
   },
   {
-    "type": "overmap_terrain",
     "id": "railroad_bridgehead_ground",
+    "type": "overmap_terrain",
     "copy-from": "generic_railroad_bridge",
     "name": "railroad bridgehead (ground)",
+    "land_use_code": "transportation",
     "sym": "v",
+    "color": "white",
+    "see_cost": 2,
     "extras": "bridgehead_railroad_ground"
   },
   {
-    "type": "overmap_terrain",
     "id": "railroad_bridgehead_ramp",
+    "type": "overmap_terrain",
     "copy-from": "generic_railroad_bridge",
     "name": "railroad bridgehead (ramp)",
-    "sym": "^"
+    "land_use_code": "transportation",
+    "sym": "^",
+    "color": "white",
+    "see_cost": 2
   },
   {
     "type": "overmap_terrain",
@@ -57,33 +81,61 @@
   {
     "abstract": "generic_railroad_station",
     "type": "overmap_terrain",
-    "name": "railroad station",
     "copy-from": "generic_city_building_no_sidewalk",
+    "name": "railroad station",
     "sym": "R",
+    "see_cost": 5,
+    "extras": "build",
+    "mondensity": 2,
     "color": "light_green"
   },
   {
     "abstract": "generic_railroad_station_under",
     "type": "overmap_terrain",
     "copy-from": "generic_railroad_station",
+    "name": "railroad station",
+    "sym": "R",
+    "see_cost": 5,
+    "extras": "build",
+    "mondensity": 2,
     "color": "dark_gray"
   },
   {
     "abstract": "generic_railroad_station_parking_lot",
     "type": "overmap_terrain",
-    "name": "railroad station parking lot",
     "copy-from": "generic_railroad_station",
+    "name": "railroad station parking lot",
     "sym": "O",
+    "see_cost": 5,
+    "extras": "build",
+    "mondensity": 2,
     "color": "dark_gray"
   },
   {
     "type": "overmap_terrain",
-    "id": [ "railroad_station_0_1", "railroad_station_0_2", "railroad_station_0_3", "railroad_station_0_4" ],
-    "copy-from": "generic_railroad_station",
-    "sym": "│"
+    "abstract": "generic_railroad_station",
+    "name": "railroad station",
+    "sym": "│",
+    "see_cost": 5,
+    "extras": "build",
+    "mondensity": 2,
+    "color": "light_green",
+    "id": [
+      "railroad_station_0_1",
+      "railroad_station_0_2",
+      "railroad_station_0_3",
+      "railroad_station_0_4"
+    ]
   },
   {
     "type": "overmap_terrain",
+    "abstract": "generic_railroad_station",
+    "name": "railroad station",
+    "sym": "R",
+    "see_cost": 5,
+    "extras": "build",
+    "mondensity": 2,
+    "color": "light_green",
     "id": [
       "railroad_station_1_1",
       "railroad_station_1_2",
@@ -97,16 +149,27 @@
       "railroad_station_1_3_roof",
       "railroad_station_1_4_roof",
       "railroad_station_2_4_roof"
-    ],
-    "copy-from": "generic_railroad_station"
+    ]
   },
   {
     "type": "overmap_terrain",
-    "id": [ "railroad_station_2_1", "railroad_station_2_2", "railroad_station_2_3", "railroad_station_2_4" ],
-    "copy-from": "generic_railroad_station_parking_lot"
+    "abstract": "generic_railroad_station_parking_lot",
+    "sym": "O",
+    "name": "railroad station parking lot",
+    "color": "dark_gray",
+    "id": [
+      "railroad_station_2_1",
+      "railroad_station_2_2",
+      "railroad_station_2_3",
+      "railroad_station_2_4"
+    ]
   },
   {
     "type": "overmap_terrain",
+    "abstract": "generic_railroad_station_under",
+    "sym": "R",
+    "name": "railroad station",
+    "color": "dark_gray",
     "id": [
       "railroad_station_under_0_1",
       "railroad_station_under_0_2",
@@ -114,7 +177,6 @@
       "railroad_station_under_1_1",
       "railroad_station_under_1_2",
       "railroad_station_under_1_3"
-    ],
-    "copy-from": "generic_railroad_station_under"
+    ]
   }
 ]

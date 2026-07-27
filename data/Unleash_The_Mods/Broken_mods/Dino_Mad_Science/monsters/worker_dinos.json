@@ -1,54 +1,302 @@
 [
   {
-    "type": "MONSTER",
-    "copy-from": "mon_gallimimus",
     "id": "mon_fgallimimus",
-    "name": { "str": "Gallimimus fireman" },
-    "death_drops": "dino_fireman_drops",
-    "speed": 100,
-    "melee_skill": 2,
-    "melee_dice": 2,
-    "melee_dice_sides": 2,
-    "melee_damage": [ { "damage_type": "bash", "amount": 2 } ],
-    "dodge": 1,
-    "hp": 50,
-    "zombify_into": "mon_fzallimimus",
-    "extend": { "flags": [ "BASHES", "ACIDPROOF", "FIREPROOF", "GROUP_BASH" ] },
-    "armor": { "bash": 4, "cut": 5, "bullet": 3 }
-  },
-  {
     "type": "MONSTER",
     "copy-from": "mon_gallimimus",
-    "id": "mon_tgallimimus",
-    "name": { "str": "Gallimimus technician" },
-    "death_drops": "dino_technician_drops",
-    "zombify_into": "mon_tzallimimus",
-    "extend": { "flags": [ "GROUP_BASH", "BASHES" ] }
-  },
-  {
-    "type": "MONSTER",
-    "copy-from": "mon_zallimimus",
-    "id": "mon_tzallimimus",
-    "name": { "str": "Gallimimus zombie technician" },
-    "death_drops": "dino_technician_drops",
-    "aggression": 70,
-    "extend": { "flags": [ "GROUP_BASH", "BASHES" ] }
-  },
-  {
-    "type": "MONSTER",
-    "copy-from": "mon_zallimimus",
-    "id": "mon_fzallimimus",
-    "name": { "str": "Gallimimus zombie fireman" },
-    "death_drops": "dino_fireman_drops",
-    "aggression": 70,
+    "name": {
+      "str": "Gallimimus fireman"
+    },
+    "species": "DINOSAUR",
+    "default_faction": "gallimimus",
+    "symbol": "D",
+    "color": "light_green",
+    "volume": "440000 ml",
+    "weight": "440000 g",
+    "material": [
+      "flesh"
+    ],
+    "diff": 0,
+    "aggression": -60,
+    "morale": -20,
     "speed": 100,
     "melee_skill": 2,
     "melee_dice": 2,
     "melee_dice_sides": 2,
-    "melee_damage": [ { "damage_type": "bash", "amount": 2 } ],
+    "melee_damage": [
+      {
+        "damage_type": "bash",
+        "amount": 2
+      }
+    ],
     "dodge": 1,
     "hp": 50,
-    "extend": { "flags": [ "BASHES", "ACIDPROOF", "FIREPROOF", "GROUP_BASH" ] },
-    "armor": { "bash": 4, "cut": 5, "bullet": 3 }
+    "description": "A feathered bipedal dinosaur, standing as tall as a human.  It looks somewhat like a reptilian ostrich.",
+    "reproduction": {
+      "baby_egg": "egg_gallimimus",
+      "baby_count": 3,
+      "baby_timer": 12
+    },
+    "baby_flags": [
+      "SPRING",
+      "SUMMER"
+    ],
+    "biosignature": {
+      "biosig_item": "feces_bird",
+      "biosig_timer": 3
+    },
+    "flags": [
+      "SEES",
+      "SMELLS",
+      "HEARS",
+      "GOODHEARING",
+      "ANIMAL",
+      "PATH_AVOID_DANGER_1",
+      "WARM",
+      "BASHES",
+      "ACIDPROOF",
+      "FIREPROOF",
+      "GROUP_BASH"
+    ],
+    "fear_triggers": [
+      "SOUND",
+      "PLAYER_CLOSE",
+      "HURT",
+      "FIRE"
+    ],
+    "categories": [
+      "DINOSAUR"
+    ],
+    "armor": {
+      "bash": 4,
+      "cut": 5,
+      "bullet": 3
+    },
+    "death_drops": "dino_fireman_drops",
+    "zombify_into": "mon_fzallimimus"
+  },
+  {
+    "id": "mon_tgallimimus",
+    "type": "MONSTER",
+    "copy-from": "mon_gallimimus",
+    "name": {
+      "str": "Gallimimus technician"
+    },
+    "species": "DINOSAUR",
+    "default_faction": "gallimimus",
+    "symbol": "D",
+    "color": "light_green",
+    "volume": "440000 ml",
+    "weight": "440000 g",
+    "material": [
+      "flesh"
+    ],
+    "diff": 0,
+    "aggression": -60,
+    "morale": -20,
+    "speed": 150,
+    "melee_skill": 2,
+    "melee_dice": 1,
+    "melee_dice_sides": 4,
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 2
+      }
+    ],
+    "dodge": 3,
+    "hp": 40,
+    "description": "A feathered bipedal dinosaur, standing as tall as a human.  It looks somewhat like a reptilian ostrich.",
+    "reproduction": {
+      "baby_egg": "egg_gallimimus",
+      "baby_count": 3,
+      "baby_timer": 12
+    },
+    "baby_flags": [
+      "SPRING",
+      "SUMMER"
+    ],
+    "biosignature": {
+      "biosig_item": "feces_bird",
+      "biosig_timer": 3
+    },
+    "flags": [
+      "SEES",
+      "SMELLS",
+      "HEARS",
+      "GOODHEARING",
+      "ANIMAL",
+      "PATH_AVOID_DANGER_1",
+      "WARM",
+      "GROUP_BASH",
+      "BASHES"
+    ],
+    "fear_triggers": [
+      "SOUND",
+      "PLAYER_CLOSE",
+      "HURT",
+      "FIRE"
+    ],
+    "categories": [
+      "DINOSAUR"
+    ],
+    "armor": {
+      "bash": 1,
+      "cut": 1
+    },
+    "death_drops": "dino_technician_drops",
+    "zombify_into": "mon_tzallimimus"
+  },
+  {
+    "id": "mon_tzallimimus",
+    "type": "MONSTER",
+    "copy-from": "mon_zallimimus",
+    "name": {
+      "str": "Gallimimus zombie technician"
+    },
+    "looks_like": "mon_gallimimus",
+    "species": [
+      "ZOMBIE"
+    ],
+    "default_faction": "zombie",
+    "symbol": "Z",
+    "color": "green",
+    "volume": "440 L",
+    "weight": "440 kg",
+    "bodytype": "ostrich",
+    "material": [
+      "flesh"
+    ],
+    "aggression": 70,
+    "morale": 100,
+    "speed": 100,
+    "melee_skill": 2,
+    "melee_dice": 1,
+    "melee_dice_sides": 4,
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 2
+      }
+    ],
+    "hp": 70,
+    "special_attacks": [
+      {
+        "id": "scratch",
+        "cooldown": 10
+      },
+      {
+        "type": "bite",
+        "cooldown": 5
+      }
+    ],
+    "description": "The shuffling corpse of a medium-sized bipedal dinosaur covered with tattered feathers and black putrid liquid.",
+    "upgrades": {
+      "half_life": 14,
+      "into": "mon_zallimimus_brute"
+    },
+    "flags": [
+      "SEES",
+      "SMELLS",
+      "HEARS",
+      "PET_MOUNTABLE",
+      "POISON",
+      "STUMBLES",
+      "NO_BREATHE",
+      "REVIVES",
+      "FILTHY",
+      "WARM",
+      "GROUP_BASH",
+      "BASHES"
+    ],
+    "vision_night": 3,
+    "harvest": "zed_dino_feather",
+    "categories": [
+      "DINOSAUR",
+      "CLASSIC"
+    ],
+    "armor": {
+      "bash": 2,
+      "cut": 4,
+      "bullet": 2
+    },
+    "death_drops": "dino_technician_drops"
+  },
+  {
+    "id": "mon_fzallimimus",
+    "type": "MONSTER",
+    "copy-from": "mon_zallimimus",
+    "name": {
+      "str": "Gallimimus zombie fireman"
+    },
+    "looks_like": "mon_gallimimus",
+    "species": [
+      "ZOMBIE"
+    ],
+    "default_faction": "zombie",
+    "symbol": "Z",
+    "color": "green",
+    "volume": "440 L",
+    "weight": "440 kg",
+    "bodytype": "ostrich",
+    "material": [
+      "flesh"
+    ],
+    "aggression": 70,
+    "morale": 100,
+    "speed": 100,
+    "melee_skill": 2,
+    "melee_dice": 2,
+    "melee_dice_sides": 2,
+    "melee_damage": [
+      {
+        "damage_type": "bash",
+        "amount": 2
+      }
+    ],
+    "hp": 50,
+    "special_attacks": [
+      {
+        "id": "scratch",
+        "cooldown": 10
+      },
+      {
+        "type": "bite",
+        "cooldown": 5
+      }
+    ],
+    "description": "The shuffling corpse of a medium-sized bipedal dinosaur covered with tattered feathers and black putrid liquid.",
+    "upgrades": {
+      "half_life": 14,
+      "into": "mon_zallimimus_brute"
+    },
+    "flags": [
+      "SEES",
+      "SMELLS",
+      "HEARS",
+      "PET_MOUNTABLE",
+      "POISON",
+      "STUMBLES",
+      "NO_BREATHE",
+      "REVIVES",
+      "FILTHY",
+      "WARM",
+      "BASHES",
+      "ACIDPROOF",
+      "FIREPROOF",
+      "GROUP_BASH"
+    ],
+    "vision_night": 3,
+    "harvest": "zed_dino_feather",
+    "categories": [
+      "DINOSAUR",
+      "CLASSIC"
+    ],
+    "armor": {
+      "bash": 4,
+      "cut": 5,
+      "bullet": 3
+    },
+    "death_drops": "dino_fireman_drops",
+    "dodge": 1
   }
 ]

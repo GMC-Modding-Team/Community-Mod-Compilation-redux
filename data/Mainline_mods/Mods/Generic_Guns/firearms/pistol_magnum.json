@@ -102,16 +102,85 @@
   },
   {
     "id": "pistol_magnum_levergun",
-    "copy-from": "henry_big_boy",
     "type": "GUN",
+    "copy-from": "henry_big_boy",
     "name": {
       "str": "magnum levergun"
     },
+    "skill": "rifle",
+    "valid_mod_locations": [
+      [
+        "barrel",
+        1
+      ],
+      [
+        "bore",
+        1
+      ],
+      [
+        "brass catcher",
+        1
+      ],
+      [
+        "grip",
+        1
+      ],
+      [
+        "mechanism",
+        4
+      ],
+      [
+        "muzzle",
+        1
+      ],
+      [
+        "sights",
+        1
+      ],
+      [
+        "sling",
+        1
+      ],
+      [
+        "stock mount",
+        1
+      ],
+      [
+        "rail mount",
+        1
+      ],
+      [
+        "underbarrel mount",
+        1
+      ]
+    ],
+    "//": "Manual actions exclude the magazine location preventing installation of belt-feed adaptors",
+    "faults": [
+      "fault_gun_blackpowder",
+      "fault_gun_dirt"
+    ],
+    "looks_like": "modular_ar15",
+    "description": "A modern re-imagining of the classic western lever-action, this larger rifle accepts powerful magnum pistol ammunition as well as weaker pistol ammo.  Carrying this along side a magnum pistol would allow one to reduce the number of calibers carried, and allow you to squeeze more power from ammunition.",
+    "weight": "3937 g",
+    "volume": "2310 ml",
+    "longest_side": "98 cm",
+    "barrel_length": "508 mm",
+    "price": 89995,
+    "price_postapoc": 3500,
+    "to_hit": -1,
+    "material": [
+      "steel",
+      "wood"
+    ],
+    "color": "dark_gray",
+    "range": 7,
     "ammo": [
       "ammo_pistol_magnum",
       "ammo_pistol"
     ],
-    "description": "A modern re-imagining of the classic western lever-action, this larger rifle accepts powerful magnum pistol ammunition as well as weaker pistol ammo.  Carrying this along side a magnum pistol would allow one to reduce the number of calibers carried, and allow you to squeeze more power from ammunition.",
+    "dispersion": 180,
+    "durability": 8,
+    "blackpowder_tolerance": 32,
     "pocket_data": [
       {
         "pocket_type": "MAGAZINE",
@@ -121,33 +190,19 @@
         },
         "rigid": true
       }
-    ]
+    ],
+    "melee_damage": {
+      "bash": 12
+    }
   },
   {
     "id": "pistol_magnum_pipe_levergun",
-    "copy-from": "henry_big_boy",
     "type": "GUN",
+    "copy-from": "henry_big_boy",
     "name": {
       "str": "handmade magnum carbine"
     },
-    "ammo": [
-      "ammo_pistol_magnum",
-      "ammo_pistol"
-    ],
-    "description": "A crudely constructed carbine, chambered for magnum pistol ammo and standard pistol ammo.  It feeds from commercial magnum pistol magazines, and locks with a rudimentary lever-action system.  Its powerful cartridge and relative precision should serve well against zombies and medium game.",
-    "weight": "2114 g",
-    "volume": "2 L",
-    "price": 10000,
-    "color": "brown",
-    "ranged_damage": {
-      "damage_type": "bullet",
-      "amount": 0
-    },
-    "dispersion": 550,
-    "durability": 6,
-    "blackpowder_tolerance": 60,
-    "loudness": 25,
-    "barrel_volume": "250 ml",
+    "skill": "rifle",
     "valid_mod_locations": [
       [
         "muzzle",
@@ -178,6 +233,33 @@
         1
       ]
     ],
+    "//": "Manual actions exclude the magazine location preventing installation of belt-feed adaptors",
+    "faults": [
+      "fault_gun_blackpowder",
+      "fault_gun_dirt"
+    ],
+    "looks_like": "modular_ar15",
+    "description": "A crudely constructed carbine, chambered for magnum pistol ammo and standard pistol ammo.  It feeds from commercial magnum pistol magazines, and locks with a rudimentary lever-action system.  Its powerful cartridge and relative precision should serve well against zombies and medium game.",
+    "weight": "2114 g",
+    "volume": "2 L",
+    "longest_side": "98 cm",
+    "barrel_length": "508 mm",
+    "price": 10000,
+    "price_postapoc": 3500,
+    "to_hit": -1,
+    "material": [
+      "steel",
+      "wood"
+    ],
+    "color": "brown",
+    "range": 7,
+    "ammo": [
+      "ammo_pistol_magnum",
+      "ammo_pistol"
+    ],
+    "dispersion": 550,
+    "durability": 6,
+    "blackpowder_tolerance": 60,
     "pocket_data": [
       {
         "pocket_type": "MAGAZINE_WELL",
@@ -193,15 +275,67 @@
     ],
     "melee_damage": {
       "bash": 10
-    }
+    },
+    "ranged_damage": {
+      "damage_type": "bullet",
+      "amount": 0
+    },
+    "loudness": 25,
+    "barrel_volume": "250 ml"
   },
   {
     "id": "pistol_magnum_pipe",
-    "copy-from": "ashot",
     "type": "GUN",
+    "copy-from": "ashot",
     "name": {
       "str": "pipe magnum"
     },
+    "skill": "pistol",
+    "sight_dispersion": 60,
+    "//": "default handling for anything without a stock",
+    "handling": 10,
+    "valid_mod_locations": [
+      [
+        "grip",
+        1
+      ],
+      [
+        "stock mount",
+        1
+      ],
+      [
+        "mechanism",
+        4
+      ],
+      [
+        "sights mount",
+        1
+      ],
+      [
+        "rail mount",
+        1
+      ],
+      [
+        "underbarrel mount",
+        1
+      ]
+    ],
+    "looks_like": "glock_17",
+    "description": "A firearm made from a stout pipe, reinforced at the chamber.  It holds a single a round of standard or magnum pistol ammunition, and has a crude assembly to fire it.  There's no extractor, so it might be slow to reload, and its construction makes for poor reliability and longevity.",
+    "ascii_picture": "shotgun_pistol",
+    "weight": "828 g",
+    "volume": "800 ml",
+    "longest_side": "35 cm",
+    "barrel_length": "203 mm",
+    "price": 100000,
+    "price_postapoc": 500,
+    "to_hit": -2,
+    "material": [
+      "steel",
+      "wood"
+    ],
+    "symbol": "(",
+    "color": "brown",
     "ammo": [
       "ammo_pistol_magnum",
       "ammo_pistol"
@@ -210,7 +344,18 @@
       "damage_type": "bullet",
       "amount": -2
     },
-    "description": "A firearm made from a stout pipe, reinforced at the chamber.  It holds a single a round of standard or magnum pistol ammunition, and has a crude assembly to fire it.  There's no extractor, so it might be slow to reload, and its construction makes for poor reliability and longevity.",
+    "dispersion": 440,
+    "durability": 6,
+    "reload": 110,
+    "faults": [
+      "fault_gun_blackpowder",
+      "fault_gun_dirt"
+    ],
+    "flags": [
+      "NEVER_JAMS",
+      "RELOAD_EJECT",
+      "EASY_CLEAN"
+    ],
     "pocket_data": [
       {
         "pocket_type": "MAGAZINE",
@@ -221,21 +366,88 @@
         }
       }
     ],
-    "dispersion": 440,
-    "reload": 110
+    "melee_damage": {
+      "bash": 6
+    }
   },
   {
     "id": "pistol_magnum_revolver",
-    "copy-from": "sw629",
     "type": "GUN",
+    "copy-from": "sw629",
     "name": {
       "str": "hunting magnum"
     },
+    "skill": "pistol",
+    "sight_dispersion": 60,
+    "//": "165.1mm + 41mm max OAL for 44mag. Revolvers just built different.",
+    "handling": 10,
+    "valid_mod_locations": [
+      [
+        "barrel",
+        1
+      ],
+      [
+        "bore",
+        1
+      ],
+      [
+        "grip",
+        1
+      ],
+      [
+        "mechanism",
+        4
+      ],
+      [
+        "rail",
+        1
+      ],
+      [
+        "sights",
+        1
+      ],
+      [
+        "stock",
+        1
+      ],
+      [
+        "underbarrel",
+        1
+      ]
+    ],
+    "extend": {
+      "flags": [
+        "RELOAD_ONE",
+        "RELOAD_EJECT",
+        "NEVER_JAMS",
+        "EASY_CLEAN"
+      ]
+    },
+    "faults": [
+      "fault_gun_blackpowder",
+      "fault_gun_dirt"
+    ],
+    "looks_like": "sw_619",
+    "description": "Early handgun hunters helped develop this revolver's magnum ammunition from standard calibers, which needed heavier revolvers to safely fire it.  These revolvers' cylinders can thus chamber both magnum and standard pistol ammunition.  You could take medium to large game with this hefty piece.",
+    "weight": "1267 g",
+    "volume": "675 ml",
+    "longest_side": "30 cm",
+    "barrel_length": "206 mm",
+    "price": 86100,
+    "price_postapoc": 2750,
+    "to_hit": -2,
+    "material": [
+      "steel",
+      "plastic"
+    ],
+    "color": "dark_gray",
     "ammo": [
       "ammo_pistol_magnum",
       "ammo_pistol"
     ],
-    "description": "Early handgun hunters helped develop this revolver's magnum ammunition from standard calibers, which needed heavier revolvers to safely fire it.  These revolvers' cylinders can thus chamber both magnum and standard pistol ammunition.  You could take medium to large game with this hefty piece.",
+    "dispersion": 280,
+    "durability": 8,
+    "blackpowder_tolerance": 56,
     "pocket_data": [
       {
         "pocket_type": "MAGAZINE",
@@ -246,6 +458,11 @@
         },
         "rigid": true
       }
-    ]
+    ],
+    "melee_damage": {
+      "bash": 10
+    },
+    "symbol": "(",
+    "reload": 0.7
   }
 ]

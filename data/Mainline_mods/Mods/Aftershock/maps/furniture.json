@@ -1,24 +1,20 @@
 [
   {
-    "type": "furniture",
     "id": "f_afs_escape_pod_seat",
-    "name": "escape pod seat",
+    "type": "furniture",
     "copy-from": "f_seat_airplane",
-    "description": "The cushioned and upright facing seat of a single-seater escape pod.  A storage space beneath it holds survival supplies.",
+    "name": "escape pod seat",
+    "//": "Used in airliner.json, it yields short rope as a seatbelt",
+    "looks_like": "f_armchair",
     "symbol": "H",
+    "description": "The cushioned and upright facing seat of a single-seater escape pod.  A storage space beneath it holds survival supplies.",
     "color": "light_red",
-    "flags": [
-      "TRANSPARENT",
-      "FLAMMABLE_ASH",
-      "ORGANIC",
-      "MOUNTABLE",
-      "CAN_SIT"
-    ],
     "move_cost_mod": 1,
     "coverage": 45,
     "comfort": 3,
     "floor_bedding_warmth": 500,
     "bonus_fire_warmth_feet": 1000,
+    "required_str": 20,
     "deconstruct": {
       "items": [
         {
@@ -37,22 +33,77 @@
         }
       ]
     },
-    "required_str": 20
+    "flags": [
+      "TRANSPARENT",
+      "FLAMMABLE_ASH",
+      "ORGANIC",
+      "MOUNTABLE",
+      "CAN_SIT"
+    ],
+    "bash": {
+      "str_min": 10,
+      "str_max": 40,
+      "sound": "smash!",
+      "sound_fail": "whump.",
+      "items": [
+        {
+          "item": "pipe",
+          "count": [
+            0,
+            2
+          ]
+        },
+        {
+          "item": "scrap",
+          "charges": [
+            2,
+            10
+          ]
+        },
+        {
+          "item": "sheet_cotton",
+          "count": [
+            2,
+            5
+          ]
+        },
+        {
+          "item": "cotton_patchwork",
+          "count": [
+            5,
+            8
+          ]
+        },
+        {
+          "item": "plastic_chunk",
+          "count": [
+            1,
+            7
+          ]
+        },
+        {
+          "item": "rope_6"
+        }
+      ]
+    }
   },
   {
-    "type": "furniture",
     "id": "f_autodoc_super",
+    "type": "furniture",
+    "copy-from": "f_autodoc",
     "name": "chirurgic suite",
     "symbol": "&",
+    "description": "A multitude of surgical arms seamlessly meld with the chromed ceiling.  They expectantly unravel with your approach, animated by an AI whose performances blur the lines between medicine and art.",
     "color": "light_cyan",
-    "copy-from": "f_autodoc",
+    "looks_like": "f_robotic_arm",
+    "move_cost_mod": -1,
+    "coverage": 35,
+    "required_str": -1,
     "flags": [
       "TRANSPARENT",
       "AUTODOC"
     ],
-    "description": "A multitude of surgical arms seamlessly meld with the chromed ceiling.  They expectantly unravel with your approach, animated by an AI whose performances blur the lines between medicine and art.",
     "examine_action": "autodoc",
-    "//": "Easy installation",
     "surgery_skill_multiplier": 999999,
     "deconstruct": {
       "items": [
@@ -180,16 +231,21 @@
           "prob": 50
         }
       ]
-    }
+    },
+    "//": "Easy installation"
   },
   {
-    "type": "furniture",
     "id": "f_autodoc_cheap",
+    "type": "furniture",
+    "copy-from": "f_autodoc",
     "name": "salvaged Autodoc",
     "symbol": "&",
-    "color": "light_red",
-    "copy-from": "f_autodoc",
     "description": "The kind of worn-down and dubiously safe surgical device that is perfectly at home in a back alley clinic.  It would take great skill to safely operate this.",
+    "color": "light_red",
+    "looks_like": "f_robotic_arm",
+    "move_cost_mod": -1,
+    "coverage": 35,
+    "required_str": -1,
     "flags": [
       "TRANSPARENT",
       "AUTODOC"
@@ -1271,7 +1327,7 @@
     "looks_like": "f_drill_press",
     "description": "This device looks like a cross between some kind of nightmare dentistry equipment and socketing tool mounted on a slide that lets it drop precisely down.  Useful for those projects that require putting delicate items into hard to reach spaces.",
     "symbol": "7",
-    "color": "yellow_red",
+    "color": "yellow",
     "move_cost_mod": -1,
     "coverage": 40,
     "required_str": 10,
@@ -1382,7 +1438,7 @@
     "looks_like": "f_bandsaw",
     "description": "A wire the size of a cheescutter runs in a single direction in this tool, allowing atomically precise cuts at almost any angle.  Even unpowered it gives off a visual distortion for several inches around it to prevent you from losing a hand.  It is impossible to deconstruct this device without the wire self destructing.",
     "symbol": "7",
-    "color": "yellow_cyan",
+    "color": "yellow",
     "move_cost_mod": -2,
     "coverage": 40,
     "required_str": 10,
@@ -4752,25 +4808,21 @@
     }
   },
   {
-    "type": "furniture",
     "id": "f_afs_shuttle_seat",
-    "name": "shuttle seat",
+    "type": "furniture",
     "copy-from": "f_seat_airplane",
-    "description": "The cushioned and upright facing seat of a short-ranged shuttle pod.  Has a locking bar that fits over your shoulders.",
+    "name": "shuttle seat",
+    "//": "Used in airliner.json, it yields short rope as a seatbelt",
+    "looks_like": "f_armchair",
     "symbol": "H",
+    "description": "The cushioned and upright facing seat of a short-ranged shuttle pod.  Has a locking bar that fits over your shoulders.",
     "color": "light_red",
-    "flags": [
-      "TRANSPARENT",
-      "FLAMMABLE_ASH",
-      "ORGANIC",
-      "MOUNTABLE",
-      "CAN_SIT"
-    ],
     "move_cost_mod": 1,
     "coverage": 45,
     "comfort": 3,
     "floor_bedding_warmth": 500,
     "bonus_fire_warmth_feet": 1000,
+    "required_str": 20,
     "deconstruct": {
       "items": [
         {
@@ -4789,28 +4841,76 @@
         }
       ]
     },
-    "required_str": 20
+    "flags": [
+      "TRANSPARENT",
+      "FLAMMABLE_ASH",
+      "ORGANIC",
+      "MOUNTABLE",
+      "CAN_SIT"
+    ],
+    "bash": {
+      "str_min": 10,
+      "str_max": 40,
+      "sound": "smash!",
+      "sound_fail": "whump.",
+      "items": [
+        {
+          "item": "pipe",
+          "count": [
+            0,
+            2
+          ]
+        },
+        {
+          "item": "scrap",
+          "charges": [
+            2,
+            10
+          ]
+        },
+        {
+          "item": "sheet_cotton",
+          "count": [
+            2,
+            5
+          ]
+        },
+        {
+          "item": "cotton_patchwork",
+          "count": [
+            5,
+            8
+          ]
+        },
+        {
+          "item": "plastic_chunk",
+          "count": [
+            1,
+            7
+          ]
+        },
+        {
+          "item": "rope_6"
+        }
+      ]
+    }
   },
   {
-    "type": "furniture",
     "id": "f_afs_escape_pod_seat_launch",
-    "name": "escape pod seat",
+    "type": "furniture",
     "copy-from": "f_seat_airplane",
-    "description": "The cushioned and upright facing seat of a single-seater escape pod.  A storage space beneath it holds survival supplies.",
+    "name": "escape pod seat",
+    "//": "Used in airliner.json, it yields short rope as a seatbelt",
+    "looks_like": "f_armchair",
     "symbol": "H",
+    "description": "The cushioned and upright facing seat of a single-seater escape pod.  A storage space beneath it holds survival supplies.",
     "color": "light_red",
-    "flags": [
-      "TRANSPARENT",
-      "FLAMMABLE_ASH",
-      "ORGANIC",
-      "MOUNTABLE",
-      "CAN_SIT"
-    ],
     "move_cost_mod": 1,
     "coverage": 45,
     "comfort": 3,
     "floor_bedding_warmth": 500,
     "bonus_fire_warmth_feet": 1000,
+    "required_str": 20,
     "deconstruct": {
       "items": [
         {
@@ -4829,6 +4929,58 @@
         }
       ]
     },
-    "required_str": 20
+    "flags": [
+      "TRANSPARENT",
+      "FLAMMABLE_ASH",
+      "ORGANIC",
+      "MOUNTABLE",
+      "CAN_SIT"
+    ],
+    "bash": {
+      "str_min": 10,
+      "str_max": 40,
+      "sound": "smash!",
+      "sound_fail": "whump.",
+      "items": [
+        {
+          "item": "pipe",
+          "count": [
+            0,
+            2
+          ]
+        },
+        {
+          "item": "scrap",
+          "charges": [
+            2,
+            10
+          ]
+        },
+        {
+          "item": "sheet_cotton",
+          "count": [
+            2,
+            5
+          ]
+        },
+        {
+          "item": "cotton_patchwork",
+          "count": [
+            5,
+            8
+          ]
+        },
+        {
+          "item": "plastic_chunk",
+          "count": [
+            1,
+            7
+          ]
+        },
+        {
+          "item": "rope_6"
+        }
+      ]
+    }
   }
 ]

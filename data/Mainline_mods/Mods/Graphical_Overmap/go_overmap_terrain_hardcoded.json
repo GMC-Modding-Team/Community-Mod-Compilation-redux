@@ -6,7 +6,9 @@
     "sym": "¦",
     "color": "blue",
     "travel_cost_type": "air",
-    "flags": [ "NO_ROTATE" ]
+    "flags": [
+      "NO_ROTATE"
+    ]
   },
   {
     "type": "overmap_terrain",
@@ -15,68 +17,133 @@
     "sym": "ü",
     "color": "red",
     "see_cost": 2,
-    "flags": [ "NO_ROTATE", "REQUIRES_PREDECESSOR" ]
+    "flags": [
+      "NO_ROTATE",
+      "REQUIRES_PREDECESSOR"
+    ]
   },
   {
-    "type": "overmap_terrain",
     "id": "field",
+    "type": "overmap_terrain",
     "copy-from": "generic_open_land",
     "name": "field",
+    "land_use_code": "open_land",
     "sym": "¨",
     "color": "brown",
     "see_cost": 2,
     "extras": "field",
-    "spawns": { "group": "GROUP_FOREST", "population": [ 0, 1 ], "chance": 13 },
+    "spawns": {
+      "group": "GROUP_FOREST",
+      "population": [
+        0,
+        1
+      ],
+      "chance": 13
+    },
     "travel_cost_type": "field",
-    "flags": [ "NO_ROTATE" ]
+    "flags": [
+      "NO_ROTATE"
+    ]
   },
   {
-    "type": "overmap_terrain",
     "id": "forest",
+    "type": "overmap_terrain",
     "copy-from": "generic_forest",
     "name": "forest",
+    "land_use_code": "forest",
+    "connect_group": "forest",
     "sym": "è",
     "color": "green",
     "see_cost": 3,
     "extras": "forest",
-    "spawns": { "group": "GROUP_FOREST", "population": [ 0, 3 ], "chance": 13 },
+    "spawns": {
+      "group": "GROUP_FOREST",
+      "population": [
+        0,
+        3
+      ],
+      "chance": 13
+    },
     "travel_cost_type": "forest",
-    "flags": [ "NO_ROTATE", "SOURCE_FORAGE" ]
+    "flags": [
+      "NO_ROTATE",
+      "SOURCE_FORAGE"
+    ]
   },
   {
-    "type": "overmap_terrain",
     "id": "forest_thick",
+    "type": "overmap_terrain",
     "copy-from": "generic_forest",
     "name": "forest",
+    "land_use_code": "forest",
+    "connect_group": "forest",
     "sym": "õ",
     "color": "green",
     "see_cost": 4,
     "extras": "forest_thick",
-    "spawns": { "group": "GROUP_FOREST", "population": [ 0, 6 ], "chance": 15 },
-    "mapgen": [ { "method": "builtin", "name": "forest" } ],
-    "flags": [ "NO_ROTATE", "SOURCE_FORAGE" ]
+    "spawns": {
+      "group": "GROUP_FOREST",
+      "population": [
+        0,
+        6
+      ],
+      "chance": 15
+    },
+    "mapgen": [
+      {
+        "method": "builtin",
+        "name": "forest"
+      }
+    ],
+    "flags": [
+      "NO_ROTATE",
+      "SOURCE_FORAGE"
+    ]
   },
   {
-    "type": "overmap_terrain",
     "id": "forest_water",
+    "type": "overmap_terrain",
     "copy-from": "generic_wetland_forest",
     "name": "swamp",
+    "land_use_code": "wetland_forest",
     "sym": "ì",
     "color": "cyan",
     "see_cost": 4,
     "extras": "forest_water",
-    "spawns": { "group": "GROUP_SWAMP", "population": [ 2, 6 ], "chance": 50 },
-    "mapgen": [ { "method": "builtin", "name": "forest" } ],
+    "spawns": {
+      "group": "GROUP_SWAMP",
+      "population": [
+        2,
+        6
+      ],
+      "chance": 50
+    },
+    "mapgen": [
+      {
+        "method": "builtin",
+        "name": "forest"
+      }
+    ],
     "travel_cost_type": "swamp",
-    "flags": [ "NO_ROTATE", "SOURCE_FORAGE", "RISK_HIGH" ]
+    "flags": [
+      "NO_ROTATE",
+      "SOURCE_FORAGE",
+      "RISK_HIGH"
+    ]
   },
   {
-    "type": "overmap_terrain",
     "id": "s_lot",
+    "type": "overmap_terrain",
     "copy-from": "generic_city_building",
     "name": "parking lot",
     "sym": "ô",
-    "color": "dark_gray"
+    "see_cost": 5,
+    "extras": "build",
+    "mondensity": 2,
+    "color": "dark_gray",
+    "flags": [
+      "SIDEWALK"
+    ]
   },
   {
     "type": "overmap_terrain",
@@ -85,8 +152,17 @@
     "sym": "è",
     "color": "dark_gray",
     "see_cost": 3,
-    "spawns": { "group": "GROUP_STANDING_STONES", "population": [ 1, 4 ], "chance": 100 },
-    "flags": [ "NO_ROTATE" ]
+    "spawns": {
+      "group": "GROUP_STANDING_STONES",
+      "population": [
+        1,
+        4
+      ],
+      "chance": 100
+    },
+    "flags": [
+      "NO_ROTATE"
+    ]
   },
   {
     "type": "overmap_terrain",
@@ -95,13 +171,21 @@
     "sym": "þ",
     "color": "pink",
     "see_cost": 5,
-    "flags": [ "KNOWN_DOWN" ]
+    "flags": [
+      "KNOWN_DOWN"
+    ]
   },
   {
-    "type": "overmap_terrain",
     "id": "temple_finale",
+    "type": "overmap_terrain",
     "copy-from": "temple_stairs",
-    "sym": "þ"
+    "name": "strange temple",
+    "sym": "þ",
+    "color": "pink",
+    "see_cost": 5,
+    "flags": [
+      "KNOWN_DOWN"
+    ]
   },
   {
     "type": "overmap_terrain",
@@ -110,7 +194,9 @@
     "sym": "Ó",
     "color": "magenta",
     "see_cost": 5,
-    "flags": [ "KNOWN_DOWN" ]
+    "flags": [
+      "KNOWN_DOWN"
+    ]
   },
   {
     "type": "overmap_terrain",
@@ -127,7 +213,10 @@
     "sym": "Ó",
     "color": "dark_gray",
     "see_cost": 5,
-    "flags": [ "KNOWN_UP", "KNOWN_DOWN" ]
+    "flags": [
+      "KNOWN_UP",
+      "KNOWN_DOWN"
+    ]
   },
   {
     "type": "overmap_terrain",
@@ -136,7 +225,9 @@
     "sym": "Ó",
     "color": "dark_gray",
     "see_cost": 5,
-    "flags": [ "KNOWN_UP" ]
+    "flags": [
+      "KNOWN_UP"
+    ]
   },
   {
     "type": "overmap_terrain",
@@ -153,7 +244,10 @@
     "sym": "ê",
     "color": "light_gray",
     "see_cost": 2,
-    "flags": [ "NO_ROTATE", "SOURCE_SAFETY" ]
+    "flags": [
+      "NO_ROTATE",
+      "SOURCE_SAFETY"
+    ]
   },
   {
     "type": "overmap_terrain",
@@ -163,7 +257,11 @@
     "sym": "ê",
     "color": "brown",
     "see_cost": 2,
-    "flags": [ "KNOWN_DOWN", "NO_ROTATE", "SOURCE_SAFETY" ]
+    "flags": [
+      "KNOWN_DOWN",
+      "NO_ROTATE",
+      "SOURCE_SAFETY"
+    ]
   },
   {
     "type": "overmap_terrain",
@@ -172,7 +270,9 @@
     "sym": "ó",
     "color": "yellow",
     "see_cost": 3,
-    "flags": [ "RISK_HIGH" ]
+    "flags": [
+      "RISK_HIGH"
+    ]
   },
   {
     "type": "overmap_terrain",
@@ -181,7 +281,9 @@
     "sym": "è",
     "color": "white",
     "see_cost": 3,
-    "flags": [ "RISK_HIGH" ]
+    "flags": [
+      "RISK_HIGH"
+    ]
   },
   {
     "type": "overmap_terrain",
@@ -199,7 +301,10 @@
     "sym": "Ü",
     "color": "light_green",
     "see_cost": 2,
-    "flags": [ "NO_ROTATE", "RISK_HIGH" ]
+    "flags": [
+      "NO_ROTATE",
+      "RISK_HIGH"
+    ]
   },
   {
     "type": "overmap_terrain",
@@ -208,7 +313,10 @@
     "sym": "Ü",
     "color": "light_green",
     "see_cost": 2,
-    "flags": [ "KNOWN_DOWN", "NO_ROTATE" ]
+    "flags": [
+      "KNOWN_DOWN",
+      "NO_ROTATE"
+    ]
   },
   {
     "type": "overmap_terrain",
@@ -218,7 +326,11 @@
     "color": "pink",
     "see_cost": 5,
     "mondensity": 2,
-    "flags": [ "KNOWN_UP", "KNOWN_DOWN", "RISK_HIGH" ]
+    "flags": [
+      "KNOWN_UP",
+      "KNOWN_DOWN",
+      "RISK_HIGH"
+    ]
   },
   {
     "type": "overmap_terrain",
@@ -228,8 +340,19 @@
     "color": "magenta",
     "see_cost": 5,
     "mondensity": 2,
-    "spawns": { "group": "GROUP_TRIFFID", "population": [ 40, 45 ], "chance": 80 },
-    "flags": [ "KNOWN_UP", "KNOWN_DOWN", "RISK_HIGH" ]
+    "spawns": {
+      "group": "GROUP_TRIFFID",
+      "population": [
+        40,
+        45
+      ],
+      "chance": 80
+    },
+    "flags": [
+      "KNOWN_UP",
+      "KNOWN_DOWN",
+      "RISK_HIGH"
+    ]
   },
   {
     "type": "overmap_terrain",
@@ -239,8 +362,18 @@
     "color": "red",
     "see_cost": 5,
     "mondensity": 2,
-    "spawns": { "group": "GROUP_TRIFFID_HEARTGUARDS", "population": [ 50, 60 ], "chance": 80 },
-    "flags": [ "KNOWN_UP", "RISK_HIGH" ]
+    "spawns": {
+      "group": "GROUP_TRIFFID_HEARTGUARDS",
+      "population": [
+        50,
+        60
+      ],
+      "chance": 80
+    },
+    "flags": [
+      "KNOWN_UP",
+      "RISK_HIGH"
+    ]
   },
   {
     "type": "overmap_terrain",
@@ -251,7 +384,9 @@
     "sym": "®",
     "color": "dark_gray",
     "see_cost": 5,
-    "flags": [ "NO_ROTATE" ]
+    "flags": [
+      "NO_ROTATE"
+    ]
   },
   {
     "type": "overmap_terrain",
@@ -261,7 +396,9 @@
     "color": "dark_gray",
     "see_cost": 5,
     "travel_cost_type": "impassable",
-    "flags": [ "NO_ROTATE" ]
+    "flags": [
+      "NO_ROTATE"
+    ]
   },
   {
     "type": "overmap_terrain",
@@ -270,7 +407,11 @@
     "sym": "¡",
     "color": "red",
     "see_cost": 2,
-    "flags": [ "NO_ROTATE", "RISK_HIGH", "SHOULD_NOT_SPAWN" ]
+    "flags": [
+      "NO_ROTATE",
+      "RISK_HIGH",
+      "SHOULD_NOT_SPAWN"
+    ]
   },
   {
     "type": "overmap_terrain",
@@ -279,7 +420,12 @@
     "sym": "¡",
     "color": "light_red",
     "see_cost": 2,
-    "flags": [ "KNOWN_DOWN", "NO_ROTATE", "RISK_HIGH", "SHOULD_NOT_SPAWN" ]
+    "flags": [
+      "KNOWN_DOWN",
+      "NO_ROTATE",
+      "RISK_HIGH",
+      "SHOULD_NOT_SPAWN"
+    ]
   },
   {
     "type": "overmap_terrain",
@@ -287,8 +433,17 @@
     "name": "ant tunnel",
     "color": "brown",
     "see_cost": 5,
-    "spawns": { "group": "GROUP_ANT", "population": [ 4, 6 ], "chance": 100 },
-    "flags": [ "LINEAR" ],
+    "spawns": {
+      "group": "GROUP_ANT",
+      "population": [
+        4,
+        6
+      ],
+      "chance": 100
+    },
+    "flags": [
+      "LINEAR"
+    ],
     "sym": "Ü"
   },
   {
@@ -298,23 +453,48 @@
     "sym": "ó",
     "color": "green",
     "see_cost": 5,
-    "spawns": { "group": "GROUP_ANT", "population": [ 6, 10 ], "chance": 100 }
+    "spawns": {
+      "group": "GROUP_ANT",
+      "population": [
+        6,
+        10
+      ],
+      "chance": 100
+    }
   },
   {
-    "type": "overmap_terrain",
     "id": "ants_larvae",
+    "type": "overmap_terrain",
     "copy-from": "ants_food",
     "name": "ant larva chamber",
+    "sym": "ó",
     "color": "white",
-    "sym": "ó"
+    "see_cost": 5,
+    "spawns": {
+      "group": "GROUP_ANT",
+      "population": [
+        6,
+        10
+      ],
+      "chance": 100
+    }
   },
   {
-    "type": "overmap_terrain",
     "id": "ants_queen",
+    "type": "overmap_terrain",
     "copy-from": "ants_food",
     "name": "ant queen chamber",
+    "sym": "ó",
     "color": "red",
-    "sym": "ó"
+    "see_cost": 5,
+    "spawns": {
+      "group": "GROUP_ANT",
+      "population": [
+        6,
+        10
+      ],
+      "chance": 100
+    }
   },
   {
     "type": "overmap_terrain",
@@ -323,6 +503,9 @@
     "sym": "×",
     "color": "cyan",
     "see_cost": 5,
-    "flags": [ "NO_ROTATE", "SHOULD_NOT_SPAWN" ]
+    "flags": [
+      "NO_ROTATE",
+      "SHOULD_NOT_SPAWN"
+    ]
   }
 ]

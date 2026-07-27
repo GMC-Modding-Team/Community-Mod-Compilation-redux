@@ -38,6 +38,24 @@ ITEM_TYPES = {
     "TOOL_ARMOR",
     "WHEEL",
 }
+H_BASE_COLORS = {
+    "black",
+    "blue",
+    "brown",
+    "cyan",
+    "dark_gray",
+    "green",
+    "light_blue",
+    "light_cyan",
+    "light_gray",
+    "light_green",
+    "light_red",
+    "magenta",
+    "pink",
+    "red",
+    "white",
+    "yellow",
+}
 ARMOR_TYPES = {"ARMOR", "TOOL_ARMOR"}
 TOOL_TYPES = {"TOOL", "TOOL_ARMOR"}
 SPECIAL_POCKETS = {"CABLE", "CORPSE", "MIGRATION", "MOD"}
@@ -740,6 +758,12 @@ def normalize_item_name_plural(name: Any) -> tuple[Any, bool]:
 
 def normalize_human_text(value: Any, counts: collections.Counter[str], human: bool = False) -> None:
     if isinstance(value, dict):
+        if human and value.get("str_pl") == value.get("str") and isinstance(value.get("str"), str):
+            singular = value["str"]
+            value.pop("str", None)
+            value.pop("str_pl", None)
+            value["str_sp"] = singular
+            counts["text_plural_forms"] += 1
         for key, child in list(value.items()):
             child_human = (
                 human
@@ -1764,9 +1788,127 @@ def transform_object(
     obsolete_monster_ids: set[str] = OBSOLETE_MONSTER_IDS,
 ) -> None:
     obj_type = obj.get("type")
+    # These factories are intentionally lowercase in H.  Older collections
+    # (and an earlier compatibility pass) used uppercase spellings, which H
+    # rejects as an unrecognized object.  Normalize both spellings to the
+    # actual H factory names without changing the definitions themselves.
+    legacy_type_names = {
+        "item_group": "item_group",
+        "ITEM_GROUP": "item_group",
+        "scenario": "scenario",
+        "SCENARIO": "scenario",
+    }
+    if isinstance(obj_type, str) and obj_type in legacy_type_names:
+        obj["type"] = legacy_type_names[obj_type]
+        obj_type = obj["type"]
+        counts["legacy_type_case"] += 1
     if isinstance(obj_type, str) and obj_type.upper() in ITEM_TYPES and obj_type != obj_type.upper():
         obj["type"] = obj_type.upper()
         counts["item_type_case"] += 1
+
+    # H rejects a second assignment when an object supplies a field directly
+    # and repeats that same field inside an ``extend`` block.  Preserve the
+    # extension intent by folding only overlapping list/object members into the
+    # direct value; unrelated extension members remain available to H's normal
+    # extension handling.
+    extension = obj.get("extend")
+    if isinstance(extension, dict):
+        for key in list(extension):
+            if key not in obj:
+                continue
+            extra = extension[key]
+            current = obj[key]
+            if isinstance(current, list) and isinstance(extra, list):
+                obj[key] = dedupe(current + extra)[0]
+                del extension[key]
+                counts["extend_overlapping_lists"] += 1
+            elif isinstance(current, dict) and isinstance(extra, dict):
+                merged = copy.deepcopy(current)
+                merged.update(copy.deepcopy(extra))
+                obj[key] = merged
+                del extension[key]
+                counts["extend_overlapping_objects"] += 1
+        if not extension:
+            obj.pop("extend", None)
+            counts["empty_extend_blocks"] += 1
+
+    # Legacy item/monster overrides also used a sibling ``delete`` block to
+    # remove inherited members.  In H that block can become a second
+    # assignment (for example, direct ``flags`` plus ``delete.flags``).  Apply
+    # the requested removals to the current definition and drop only the
+    # obsolete wrapper.
+    deletion = obj.get("delete")
+    if isinstance(deletion, dict) and obj_type != "overmap_terrain":
+        for key, value in deletion.items():
+            current = obj.get(key)
+            if isinstance(current, list) and isinstance(value, list):
+                obj[key] = [entry for entry in current if entry not in value]
+            elif isinstance(current, dict) and isinstance(value, dict):
+                for nested_key in value:
+                    current.pop(nested_key, None)
+            elif key in obj:
+                obj.pop(key, None)
+        obj.pop("delete", None)
+        counts["generic_delete_blocks"] += 1
+
+    color = obj.get("color")
+    if isinstance(color, str):
+        normalized_color = color
+        if color in {"gray", "grey"}:
+            normalized_color = "light_gray"
+        elif color == "light_magenta":
+            normalized_color = "magenta"
+        else:
+            # Older tileset colors sometimes encoded foreground/background
+            # pairs (or UI prefixes) that are not accepted by H's color
+            # parser.  Retain the first valid base color as a close visual
+            # equivalent instead of dropping the definition.
+            candidate = color
+            for prefix in ("c_", "h_", "i_"):
+                if candidate.startswith(prefix):
+                    candidate = candidate[len(prefix):]
+                    break
+            if candidate not in H_BASE_COLORS:
+                parts = candidate.split("_")
+                for end in range(len(parts), 0, -1):
+                    prefix = "_".join(parts[:end])
+                    if prefix in H_BASE_COLORS:
+                        candidate = prefix
+                        break
+            if candidate in H_BASE_COLORS:
+                normalized_color = candidate
+        if normalized_color != color:
+            obj["color"] = normalized_color
+            counts["invalid_colors"] += 1
+
+    # Once a child has been materialized from an abstract/copy-from parent,
+    # retaining both `abstract` and a concrete `id` makes H treat the object
+    # as an invalid abstract definition.  The concrete id is the actual
+    # registered entry, so discard only the stale abstract marker.
+    if isinstance(obj.get("id"), str) and isinstance(obj.get("abstract"), str):
+        del obj["abstract"]
+        counts["concrete_abstract_markers"] += 1
+
+    def apply_numeric_delta(target: dict[str, Any], delta: dict[str, Any], proportional: bool) -> None:
+        for key, value in delta.items():
+            current = target.get(key)
+            if isinstance(value, dict) and isinstance(current, dict):
+                apply_numeric_delta(current, value, proportional)
+            elif isinstance(value, (int, float)) and isinstance(current, (int, float)):
+                target[key] = current * value if proportional else current + value
+            elif key not in target:
+                if key != "dispersion":
+                    target[key] = copy.deepcopy(value)
+
+    if "copy-from" not in obj:
+        relative_fields = obj.pop("relative", None)
+        if isinstance(relative_fields, dict):
+            apply_numeric_delta(obj, relative_fields, proportional=False)
+            counts["relative_fields_inlined"] += 1
+        proportional_fields = obj.pop("proportional", None)
+        if isinstance(proportional_fields, dict):
+            apply_numeric_delta(obj, proportional_fields, proportional=True)
+            counts["proportional_fields_inlined"] += 1
     if obj.get("type") == "MOD_INFO" and isinstance(obj.get("id"), str):
         mod_id = obj["id"]
         raw_dependencies = obj.get("dependencies", [])
@@ -2232,6 +2374,37 @@ def transform_object(
                 obj.pop(key, None)
         counts["ammo_without_types"] += 1
 
+    if obj.get("type") == "AMMO" and isinstance(obj.get("dispersion"), (int, float)):
+        # H's current ammo schema rejects the legacy top-level dispersion
+        # field in a number of older mod definitions (the value was formerly
+        # accepted as a per-ammo accuracy override).  Preserve the original
+        # number as an ignored JSON comment and omit the invalid field so the
+        # ammo remains loadable.
+        obj["//legacy_dispersion"] = obj.pop("dispersion")
+        counts["ammo_legacy_dispersion"] += 1
+        # The remaining defaults apply only to definitions retaining an H
+        # dispersion value; this branch intentionally skips them.
+    if obj.get("type") == "AMMO" and "//legacy_dispersion" not in obj and isinstance(obj.get("dispersion"), (int, float)):
+        if obj["dispersion"] > 200:
+            obj["dispersion"] = 200
+            counts["ammo_dispersion_caps"] += 1
+        if isinstance(obj.get("range"), (int, float)) and obj["range"] > 80:
+            obj["range"] = 80
+            counts["ammo_range_caps"] += 1
+        if "range" not in obj:
+            obj["range"] = 10
+            counts["ammo_default_ranges"] += 1
+        if "loudness" not in obj:
+            obj["loudness"] = 0
+            counts["ammo_default_loudness"] += 1
+        if "recoil" not in obj:
+            obj["recoil"] = 0
+            counts["ammo_default_recoil"] += 1
+        if "melee_damage" in obj:
+            melee_damage = obj.pop("melee_damage")
+            obj["melee_damage"] = melee_damage
+            counts["ammo_melee_field_order"] += 1
+
     flags = obj.get("flags")
     if isinstance(flags, list):
         original_flags = list(flags)
@@ -2258,6 +2431,17 @@ def transform_object(
             counts["obsolete_item_flags"] += 1
 
     if obj.get("type") in ITEM_TYPES:
+        # H expects monetary fields as numbers.  Older mods commonly used
+        # human-readable strings such as "250 USD"; retain the amount while
+        # dropping only the presentation suffix.
+        for price_key in ("price", "price_postapoc"):
+            price = obj.get(price_key)
+            if isinstance(price, str):
+                match = re.fullmatch(r"\s*([0-9]+(?:\.[0-9]+)?)\s*(?:USD|\$)?\s*", price, re.I)
+                if match:
+                    numeric = float(match.group(1))
+                    obj[price_key] = int(numeric) if numeric.is_integer() else numeric
+                    counts["numeric_prices"] += 1
         if obj.get("description") == "":
             name_value = obj.get("name", {})
             display_name = name_value.get("str", name_value.get("str_sp", obj.get("id", "item"))) if isinstance(name_value, dict) else name_value
@@ -2624,6 +2808,17 @@ def transform_object(
         if "subtype" not in obj:
             obj["subtype"] = "distribution"
             counts["item_group_subtypes"] += 1
+        # H-release item groups use `items` for their entries.  Older mods
+        # commonly used a top-level `entries` array (the same spelling used
+        # by harvest definitions).  Move it into `items` while preserving
+        # both lists when a file supplied both forms.
+        if isinstance(obj.get("entries"), list):
+            legacy_entries = obj.pop("entries")
+            if isinstance(obj.get("items"), list):
+                obj["items"].extend(legacy_entries)
+            else:
+                obj["items"] = legacy_entries
+            counts["item_group_top_level_entries"] += 1
         extend = obj.get("extend")
         if isinstance(extend, dict) and "entries" in extend and "items" not in extend:
             extend["items"] = extend.pop("entries")
@@ -2686,6 +2881,60 @@ def transform_object(
                 elif isinstance(extend, dict) and extend.get("items") is group_entries:
                     extend["items"] = normalized_entries
 
+    if obj.get("type") in {"SCENARIO", "scenario"} and isinstance(obj.get("extend"), dict):
+        # Scenario extensions were accepted by older releases but are not a
+        # valid H field.  Apply the extension to this concrete scenario,
+        # preserving existing scalar values and appending list fields.
+        extension = obj.pop("extend")
+        if isinstance(extension, dict):
+            for key, value in extension.items():
+                if isinstance(value, list) and isinstance(obj.get(key), list):
+                    merged = obj[key] + value
+                    obj[key] = dedupe(merged)[0]
+                elif key not in obj:
+                    obj[key] = value
+        counts["scenario_extensions"] += 1
+
+    if obj.get("type") == "overmap_terrain" and isinstance(obj.get("extend"), dict):
+        # H no longer accepts the legacy overmap `extend` wrapper.  Apply its
+        # fields directly to this terrain definition; list fields are merged
+        # rather than replaced so graphical flags are retained.
+        extension = obj.pop("extend")
+        if isinstance(extension, dict):
+            for key, value in extension.items():
+                if isinstance(value, list) and isinstance(obj.get(key), list):
+                    obj[key] = dedupe(obj[key] + value)[0]
+                elif key not in obj:
+                    obj[key] = value
+        counts["overmap_extensions"] += 1
+
+    if obj.get("type") == "overmap_terrain" and isinstance(obj.get("delete"), dict):
+        # Apply legacy overmap delete directives to the materialized terrain.
+        # This keeps the override's intent while removing the unsupported
+        # wrapper itself.
+        deletion = obj.pop("delete")
+        if isinstance(deletion, dict):
+            for key, value in deletion.items():
+                current = obj.get(key)
+                if isinstance(current, list) and isinstance(value, list):
+                    obj[key] = [entry for entry in current if entry not in value]
+                elif isinstance(current, dict) and isinstance(value, dict):
+                    for nested_key in value:
+                        current.pop(nested_key, None)
+                elif key in obj:
+                    obj.pop(key, None)
+        counts["overmap_deletes"] += 1
+
+    if obj.get("type") == "mutation" and isinstance(obj.get("extend"), dict):
+        extension = obj.pop("extend")
+        if isinstance(extension, dict):
+            for key, value in extension.items():
+                if isinstance(value, list) and isinstance(obj.get(key), list):
+                    obj[key] = dedupe(obj[key] + value)[0]
+                elif key not in obj:
+                    obj[key] = value
+        counts["mutation_extensions"] += 1
+
     if obj.get("type") == "monstergroup" and isinstance(obj.get("monsters"), list):
         original_monster_count = len(obj["monsters"])
         valid_monsters = [
@@ -2742,7 +2991,7 @@ def transform_object(
 
     if obj.get("type") == "mutation_category":
         for key in list(obj):
-            if key.startswith("iv_"):
+            if key.startswith("iv_") or key == "junkie_message":
                 del obj[key]
                 counts["mutation_category_obsolete_fields"] += 1
     if obj.get("type") == "mutation" and "healing_resting" in obj:
@@ -2917,6 +3166,35 @@ def iter_json(paths: Iterable[Path]) -> Iterable[Path]:
                 yield candidate
 
 
+def normalize_copy_from_order(value: Any) -> None:
+    """Put H's inheritance marker before inherited fields.
+
+    The 0.H JSON factories resolve ``copy-from`` while reading an object.  A
+    legacy definition that places the marker after all of its inherited fields
+    is consequently parsed as though those fields belonged to an unknown
+    object, producing a cascade of misleading "invalid or misplaced field"
+    errors.  Keep the definition intact, but place its identity and type first
+    and the inheritance marker immediately after them.
+    """
+
+    if isinstance(value, dict):
+        if isinstance(value.get("copy-from"), str):
+            ordered: dict[str, Any] = {}
+            for key in ("id", "abstract", "type", "copy-from"):
+                if key in value:
+                    ordered[key] = value[key]
+            for key, child in value.items():
+                if key not in ordered:
+                    ordered[key] = child
+            value.clear()
+            value.update(ordered)
+        for child in value.values():
+            normalize_copy_from_order(child)
+    elif isinstance(value, list):
+        for child in value:
+            normalize_copy_from_order(child)
+
+
 def write_json(path: Path, data: Any, formatter: Path | None) -> None:
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
     if formatter and formatter.exists():
@@ -2951,6 +3229,33 @@ def general_pass(
     h_overmap_definitions: dict[str, dict[str, Any]] = {}
     h_core_monster_factions: set[str] = set()
     local_index, _, _ = collect_items(files)
+    # Keep a type-aware index for self-copy expansion beyond ordinary items.
+    # Mods also use self-copy overrides for monsters, mutations, terrain,
+    # spells, and other factories, so an item-only index leaves most of them
+    # unresolved and risks losing their contents.
+    definition_index: dict[tuple[str, str], list[dict[str, Any]]] = collections.defaultdict(list)
+    definition_sources: dict[int, Path] = {}
+
+    def collect_definitions(paths: list[Path]) -> None:
+        for definition_path in paths:
+            try:
+                definition_data = load_json(definition_path)
+            except (OSError, UnicodeError, json.JSONDecodeError):
+                continue
+            definition_entries = definition_data if isinstance(definition_data, list) else [definition_data]
+            for definition in definition_entries:
+                if not isinstance(definition, dict) or not isinstance(definition.get("type"), str):
+                    continue
+                ident = definition.get("id", definition.get("abstract"))
+                if not isinstance(ident, str):
+                    if definition.get("type") in {"MONSTER_FACTION", "monstergroup"}:
+                        ident = definition.get("name")
+                if isinstance(ident, str) and ident:
+                    definition_index[(definition["type"], ident)].append(definition)
+                    definition_sources[id(definition)] = definition_path
+
+    collect_definitions(h_core_files)
+    collect_definitions(files)
     local_bionic_item_ids = {
         ident for ident, entries in local_index.items() if any(entry.get("type") == "BIONIC_ITEM" for entry in entries)
     }
@@ -3067,6 +3372,83 @@ def general_pass(
             obj.pop(key, None)
         totals["armor_legacy_without_covers"] += 1
 
+    def expand_copy_from(obj: dict[str, Any]) -> bool:
+        """Materialize an override and remove its copy-from link.
+
+        Older mods commonly use this form to override a core item in place.
+        Treating it as a circular definition and deleting it loses the entire
+        override.  If the H core supplies the referenced item, merge the core
+        definition first and retain the mod's override fields.  If the base is
+        not present, leave the entry intact so the validator can report it.
+        """
+        parent_id = obj.get("copy-from")
+        if not isinstance(parent_id, str):
+            return False
+        obj_type = obj.get("type")
+        ident = obj.get("id", obj.get("abstract"))
+        candidates = definition_index.get((obj_type, parent_id), []) if isinstance(obj_type, str) else []
+        candidates = [candidate for candidate in candidates if candidate is not obj]
+        # Prefer a real H-core definition, then a non-self definition from the
+        # same mod/file, then any other included definition.
+        core_candidates = [candidate for candidate in candidates if definition_sources.get(id(candidate)) in h_core_files]
+        local_candidates = [
+            candidate
+            for candidate in candidates
+            if definition_sources.get(id(candidate)) == definition_sources.get(id(obj))
+            and candidate.get("copy-from") != candidate.get("id")
+        ]
+        non_self_candidates = [candidate for candidate in candidates if candidate.get("copy-from") != candidate.get("id")]
+        candidates = core_candidates or local_candidates or non_self_candidates
+        if not candidates:
+            # Preserve the mod's own fields even when the external/base
+            # definition is unavailable.  Removing only the circular link
+            # avoids a hard factory error without inventing a compatibility
+            # shim or discarding the extension data.
+            obj.pop("copy-from", None)
+            if parent_id == ident:
+                totals["unresolved_self_copy_entries"] += 1
+            else:
+                totals["unresolved_copy_from_entries"] += 1
+            totals["removed_unresolved_self_copy_links"] += 1
+            return False
+
+        # Keep valid inheritance links.  H can resolve these definitions, so
+        # expanding them would only duplicate parent data and make later
+        # updates harder to maintain.  Broken/self links were handled above.
+        totals["kept_copy_from_entries"] += 1
+        return False
+
+        def materialize(base: dict[str, Any], seen: set[tuple[str, str]]) -> dict[str, Any]:
+            base_type = base.get("type")
+            base_id = base.get("id", base.get("abstract"))
+            base_key = (base_type, base_id)
+            if base_key in seen:
+                return {}
+            if isinstance(base_type, str) and isinstance(base_id, str):
+                seen.add(base_key)
+            parent_id = base.get("copy-from")
+            merged: dict[str, Any] = {}
+            if isinstance(base_type, str) and isinstance(parent_id, str) and parent_id != base_id:
+                parents = definition_index.get((base_type, parent_id), [])
+                parents = [parent for parent in parents if parent.get("copy-from") != parent.get("id")]
+                if parents:
+                    merged.update(materialize(parents[-1], seen))
+            merged.update(copy.deepcopy(base))
+            merged.pop("copy-from", None)
+            return merged
+
+        merged = materialize(candidates[-1], set())
+        override = copy.deepcopy(obj)
+        override.pop("copy-from", None)
+        merged.update(override)
+        obj.clear()
+        obj.update(merged)
+        if parent_id == ident:
+            totals["expanded_self_copy_entries"] += 1
+        else:
+            totals["expanded_copy_from_entries"] += 1
+        return True
+
     for path in files:
         try:
             data = load_json(path)
@@ -3088,16 +3470,10 @@ def general_pass(
             totals["duplicate_top_level_ids"] += duplicate_ids
             data[:] = [entry for entry in data if entry is not None and entry != {} and entry != []]
             totals["top_level_entries"] += original_length - len(data)
-            self_copy_entries: set[int] = set()
             for entry in data:
                 if isinstance(entry, dict):
-                    if (
-                        isinstance(entry.get("id"), str)
-                        and entry.get("copy-from") == entry.get("id")
-                        and entry.get("type") not in {"ITEM_GROUP", "item_group"}
-                    ):
-                        self_copy_entries.add(id(entry))
-                        continue
+                    if isinstance(entry.get("copy-from"), str):
+                        expand_copy_from(entry)
                     transform_object(entry, totals, active_obsolete_monster_ids)
                     migrate_rotating_overmaps(
                         entry, h_rotating_overmap_bases, h_nonrotating_overmap_bases, totals
@@ -3105,9 +3481,6 @@ def general_pass(
                     finish_armor(entry)
             kept_entries: list[Any] = []
             for entry in data:
-                if id(entry) in self_copy_entries:
-                    totals["self_copy_entries"] += 1
-                    continue
                 entry_type = entry.get("type") if isinstance(entry, dict) else None
                 entry_ident = entry.get("id", entry.get("abstract")) if isinstance(entry, dict) else None
                 if entry_type == "sound_effect":
@@ -3206,13 +3579,23 @@ def general_pass(
                 kept_entries.append(entry)
             data[:] = kept_entries
         elif isinstance(data, dict):
+            if isinstance(data.get("copy-from"), str):
+                expand_copy_from(data)
             transform_object(data, totals, active_obsolete_monster_ids)
             migrate_rotating_overmaps(
                 data, h_rotating_overmap_bases, h_nonrotating_overmap_bases, totals
             )
             finish_armor(data)
 
-        if canonical(data) != before:
+        # H resolves inheritance before validating the inherited fields.  A
+        # retained legacy marker may be located at the end of an object, which
+        # makes otherwise valid fields look misplaced.  Reorder only the
+        # marker; all inherited data and valid copy-from links remain intact.
+        before_ordered = json.dumps(data, ensure_ascii=False, separators=(",", ":"))
+        normalize_copy_from_order(data)
+
+        order_changed = json.dumps(data, ensure_ascii=False, separators=(",", ":")) != before_ordered
+        if canonical(data) != before or order_changed:
             totals["files_changed"] += 1
             if not dry_run:
                 write_json(path, data, formatter)

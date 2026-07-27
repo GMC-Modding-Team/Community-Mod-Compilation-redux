@@ -1,16 +1,66 @@
 [
   {
     "id": "revolver_hunting",
-    "copy-from": "pistol_revolver",
-    "looks_like": "bfr",
     "type": "GUN",
+    "copy-from": "pistol_revolver",
     "name": {
       "str": "NVA BFR"
     },
+    "skill": "pistol",
+    "sight_dispersion": 60,
+    "//": "Revolvers exclude the muzzle location preventing installation of suppressors",
+    "handling": 10,
+    "valid_mod_locations": [
+      [
+        "accessories",
+        2
+      ],
+      [
+        "barrel",
+        1
+      ],
+      [
+        "grip",
+        1
+      ],
+      [
+        "mechanism",
+        4
+      ],
+      [
+        "sights",
+        1
+      ],
+      [
+        "rail mount",
+        1
+      ],
+      [
+        "stock mount",
+        1
+      ],
+      [
+        "underbarrel mount",
+        1
+      ]
+    ],
+    "extend": {
+      "flags": [
+        "RELOAD_ONE",
+        "RELOAD_EJECT",
+        "NEVER_JAMS",
+        "EASY_CLEAN"
+      ]
+    },
+    "faults": [
+      "fault_gun_blackpowder",
+      "fault_gun_dirt"
+    ],
+    "looks_like": "bfr",
     "description": "The New Vegas Armory Big Fuckin' Revolver.  Chambered in.45-70 govt.  rounds, this chunky behemoth of a revolver will ensure it's wielder won't be the 21st to take a slip.",
     "weight": "1950 g",
     "volume": "1 L",
-    "price": "1050 USD",
+    "price": 1050,
     "price_postapoc": "2750 cent",
     "to_hit": -2,
     "melee_damage": {
@@ -34,6 +84,28 @@
     },
     "dispersion": 180,
     "durability": 8,
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE",
+        "rigid": true,
+        "ammo_restriction": {
+          "4570": 5
+        }
+      }
+    ],
+    "reload": 0.7
+  },
+  {
+    "id": "revolver_ranger",
+    "type": "GUN",
+    "copy-from": "pistol_revolver",
+    "name": {
+      "str": "Ranger Sequoia"
+    },
+    "skill": "pistol",
+    "sight_dispersion": 60,
+    "//": "Revolvers exclude the muzzle location preventing installation of suppressors",
+    "handling": 10,
     "valid_mod_locations": [
       [
         "accessories",
@@ -68,28 +140,23 @@
         1
       ]
     ],
-    "pocket_data": [
-      {
-        "pocket_type": "MAGAZINE",
-        "rigid": true,
-        "ammo_restriction": {
-          "4570": 5
-        }
-      }
-    ]
-  },
-  {
-    "id": "revolver_ranger",
-    "copy-from": "pistol_revolver",
-    "looks_like": "bfr",
-    "type": "GUN",
-    "name": {
-      "str": "Ranger Sequoia"
+    "extend": {
+      "flags": [
+        "RELOAD_ONE",
+        "RELOAD_EJECT",
+        "NEVER_JAMS",
+        "EASY_CLEAN"
+      ]
     },
+    "faults": [
+      "fault_gun_blackpowder",
+      "fault_gun_dirt"
+    ],
+    "looks_like": "bfr",
     "description": "The New Vegas Armory Big Fuckin' Revolver.  Chambered in.45-70 govt.  rounds, this chunky behemoth of a revolver can take out just about anything in the wasteland.  This variant is the black Ranger Sequoia, given to veteran NCR rangers after 20 years of service.  A beloved prize gun of its wielders, the barrel is engraved with the phrases 'Against all tyrants' and 'For Honorable Service.', while the grip has an engraving of a bear, and a brass plate on the bottom, engraved with the phrase '20 years of service'.",
     "weight": "1950 g",
     "volume": "1 L",
-    "price": "1050 USD",
+    "price": 1050,
     "price_postapoc": "2750 cent",
     "to_hit": -2,
     "melee_damage": {
@@ -110,40 +177,6 @@
     },
     "dispersion": 180,
     "durability": 8,
-    "valid_mod_locations": [
-      [
-        "accessories",
-        2
-      ],
-      [
-        "barrel",
-        1
-      ],
-      [
-        "grip",
-        1
-      ],
-      [
-        "mechanism",
-        4
-      ],
-      [
-        "sights",
-        1
-      ],
-      [
-        "rail mount",
-        1
-      ],
-      [
-        "stock mount",
-        1
-      ],
-      [
-        "underbarrel mount",
-        1
-      ]
-    ],
     "pocket_data": [
       {
         "pocket_type": "MAGAZINE",
@@ -152,6 +185,7 @@
           "4570": 5
         }
       }
-    ]
+    ],
+    "reload": 0.7
   }
 ]

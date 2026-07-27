@@ -15,6 +15,10 @@
   },
   {
     "type": "overmap_terrain",
+    "abstract": "generic_hospital",
+    "sym": "H",
+    "name": "hospital",
+    "color": "red",
     "id": [
       "dm_hospital_1",
       "dm_hospital_2",
@@ -26,7 +30,11 @@
       "dm_hospital_8",
       "dm_hospital_9"
     ],
-    "copy-from": "generic_hospital"
+    "flags": [
+      "RISK_HIGH",
+      "SOURCE_MEDICINE",
+      "SOURCE_CHEMISTRY"
+    ]
   },
   {
     "type": "overmap_terrain",
@@ -35,16 +43,45 @@
     "sym": "M",
     "color": "light_green",
     "see_cost": 5,
-    "flags": [ "SOURCE_FOOD", "SOURCE_DRINK", "SOURCE_LUXURY", "SOURCE_BOOKS" ]
+    "flags": [
+      "SOURCE_FOOD",
+      "SOURCE_DRINK",
+      "SOURCE_LUXURY",
+      "SOURCE_BOOKS"
+    ]
+  },
+  {
+    "abstract": "generic_mansion",
+    "type": "overmap_terrain",
+    "copy-from": "generic_mansion_entrance",
+    "name": "mansion",
+    "sym": "M",
+    "color": "green",
+    "see_cost": 5,
+    "mondensity": 2,
+    "flags": [
+      "RISK_HIGH",
+      "SOURCE_FOOD",
+      "SOURCE_DRINK",
+      "SOURCE_LUXURY",
+      "SOURCE_BOOKS"
+    ]
   },
   {
     "type": "overmap_terrain",
     "abstract": "generic_mansion",
-    "copy-from": "generic_mansion_entrance",
-    "color": "green"
-  },
-  {
-    "type": "overmap_terrain",
+    "name": "mansion",
+    "sym": "M",
+    "color": "green",
+    "see_cost": 5,
+    "mondensity": 2,
+    "flags": [
+      "RISK_HIGH",
+      "SOURCE_FOOD",
+      "SOURCE_DRINK",
+      "SOURCE_LUXURY",
+      "SOURCE_BOOKS"
+    ],
     "id": [
       "dm_mansion_+1",
       "dm_mansion_+1d",
@@ -95,17 +132,25 @@
       "dm_mansion_t7",
       "dm_mansion_t7d",
       "dm_mansion_t7u"
-    ],
-    "copy-from": "generic_mansion"
+    ]
   },
   {
     "type": "overmap_terrain",
-    "id": [ "dm_public_works_NE", "dm_public_works_NW", "dm_public_works_SE" ],
+    "id": [
+      "dm_public_works_NE",
+      "dm_public_works_NW",
+      "dm_public_works_SE"
+    ],
     "name": "public works",
     "sym": "w",
     "color": "light_gray",
     "see_cost": 5,
-    "flags": [ "SIDEWALK", "SOURCE_VEHICLES", "SOURCE_FABRICATION", "SOURCE_CONSTRUCTION" ]
+    "flags": [
+      "SIDEWALK",
+      "SOURCE_VEHICLES",
+      "SOURCE_FABRICATION",
+      "SOURCE_CONSTRUCTION"
+    ]
   },
   {
     "type": "overmap_terrain",
@@ -114,11 +159,20 @@
     "sym": "W",
     "color": "light_gray",
     "see_cost": 5,
-    "flags": [ "SIDEWALK", "SOURCE_VEHICLES", "SOURCE_FABRICATION", "SOURCE_CONSTRUCTION" ]
+    "flags": [
+      "SIDEWALK",
+      "SOURCE_VEHICLES",
+      "SOURCE_FABRICATION",
+      "SOURCE_CONSTRUCTION"
+    ]
   },
   {
     "type": "overmap_terrain",
-    "id": [ "public_works_NE_roof", "public_works_NW_roof", "public_works_SE_roof" ],
+    "id": [
+      "public_works_NE_roof",
+      "public_works_NW_roof",
+      "public_works_SE_roof"
+    ],
     "name": "public works roof",
     "sym": "w",
     "color": "light_gray",
@@ -134,11 +188,15 @@
   },
   {
     "type": "overmap_terrain",
-    "id": [ "dm_survivor_forest_camp" ],
+    "id": [
+      "dm_survivor_forest_camp"
+    ],
     "name": "survivor forest camp",
     "sym": "+",
     "color": "green",
     "see_cost": 5,
-    "flags": [ "REQUIRES_PREDECESSOR" ]
+    "flags": [
+      "REQUIRES_PREDECESSOR"
+    ]
   }
 ]

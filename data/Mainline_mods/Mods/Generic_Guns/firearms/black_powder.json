@@ -1,15 +1,65 @@
 [
   {
     "id": "black_powder_pistol",
-    "copy-from": "pistol_flintlock",
     "type": "GUN",
+    "copy-from": "pistol_flintlock",
+    "looks_like": "glock_17",
+    "reload_noise_volume": 10,
     "name": {
       "str": "antique pistol"
     },
+    "description": "This antiquated single shot pistol would complete a pirate's outfit nicely.  While its loading may be slow, it does not require brass casings to fire, and is theoretically sustainable.  Range and accuracy are hampered by lack of rifling, but this old design is still plenty lethal.",
+    "weight": "1 kg",
+    "volume": "390 ml",
+    "longest_side": "345 mm",
+    "price": 35000,
+    "price_postapoc": 1750,
+    "to_hit": -1,
+    "material": [
+      "iron",
+      "wood"
+    ],
+    "symbol": "(",
+    "color": "brown",
     "ammo": [
       "ammo_black_powder"
     ],
-    "description": "This antiquated single shot pistol would complete a pirate's outfit nicely.  While its loading may be slow, it does not require brass casings to fire, and is theoretically sustainable.  Range and accuracy are hampered by lack of rifling, but this old design is still plenty lethal.",
+    "skill": "pistol",
+    "range": 2,
+    "ranged_damage": {
+      "damage_type": "bullet",
+      "amount": 2
+    },
+    "dispersion": 620,
+    "durability": 6,
+    "blackpowder_tolerance": 96,
+    "reload": 2500,
+    "valid_mod_locations": [
+      [
+        "grip mount",
+        1
+      ],
+      [
+        "rail mount",
+        1
+      ],
+      [
+        "sights mount",
+        1
+      ],
+      [
+        "stock mount",
+        1
+      ],
+      [
+        "underbarrel mount",
+        1
+      ]
+    ],
+    "flags": [
+      "NEVER_JAMS",
+      "EASY_CLEAN"
+    ],
     "pocket_data": [
       {
         "pocket_type": "MAGAZINE",
@@ -18,19 +68,78 @@
         },
         "rigid": true
       }
-    ]
+    ],
+    "melee_damage": {
+      "bash": 5
+    }
   },
   {
     "id": "black_powder_revolver",
-    "copy-from": "colt_army",
     "type": "GUN",
+    "copy-from": "colt_army",
     "name": {
       "str": "antique revolver"
     },
+    "skill": "pistol",
+    "sight_dispersion": 60,
+    "//": "Slower reloads, no unloading.  Base, unskilled person should take 1.5 seconds per chamber.  No underbarrel mods, that's where the ram goes.",
+    "handling": 10,
+    "valid_mod_locations": [
+      [
+        "barrel",
+        1
+      ],
+      [
+        "bore",
+        1
+      ],
+      [
+        "grip",
+        1
+      ],
+      [
+        "stock",
+        1
+      ],
+      [
+        "rail mount",
+        1
+      ],
+      [
+        "sights mount",
+        1
+      ]
+    ],
+    "reload": 150,
+    "extend": {
+      "flags": [
+        "RELOAD_ONE",
+        "NO_UNLOAD",
+        "EASY_CLEAN"
+      ]
+    },
+    "faults": [
+      "fault_gun_blackpowder",
+      "fault_gun_dirt"
+    ],
+    "looks_like": "sw_619",
+    "description": "This is an old revolver designed during the period of westward expansion.  Black powder paper cartridges must be loaded for each shot, which is a fairly lengthy process.  Despite its age, this type of weapon would perform adequately against most two-legged threats.",
+    "weight": "1188 g",
+    "volume": "486 ml",
+    "longest_side": "373 mm",
+    "price": 43000,
+    "price_postapoc": 3000,
+    "to_hit": -1,
+    "material": [
+      "steel",
+      "wood"
+    ],
     "ammo": [
       "ammo_black_powder"
     ],
-    "description": "This is an old revolver designed during the period of westward expansion.  Black powder paper cartridges must be loaded for each shot, which is a fairly lengthy process.  Despite its age, this type of weapon would perform adequately against most two-legged threats.",
+    "dispersion": 400,
+    "durability": 7,
+    "blackpowder_tolerance": 96,
     "pocket_data": [
       {
         "pocket_type": "MAGAZINE",
@@ -39,19 +148,82 @@
         },
         "rigid": true
       }
-    ]
+    ],
+    "melee_damage": {
+      "bash": 8
+    }
   },
   {
     "id": "black_powder_rifle",
-    "copy-from": "rifle_flintlock",
     "type": "GUN",
+    "copy-from": "rifle_flintlock",
+    "looks_like": "modular_ar15",
+    "reload_noise_volume": 10,
     "name": {
       "str": "antique musket"
     },
+    "description": "An antique design, this smoothbore long arm would look more at home on a pre-1850's battlefield than in your hands in the cataclysm.  Its loading may be slow, but it does not require brass casings to fire, and is theoretically sustainable to fire.  Range and accuracy are hampered by lack of rifling, but this time-tested design is plenty lethal.",
+    "weight": "4900 g",
+    "volume": "2500 ml",
+    "longest_side": "1466 mm",
+    "price": 41000,
+    "price_postapoc": 2250,
+    "to_hit": -1,
+    "material": [
+      "iron",
+      "wood"
+    ],
+    "symbol": "(",
+    "color": "brown",
     "ammo": [
       "ammo_black_powder"
     ],
-    "description": "An antique design, this smoothbore long arm would look more at home on a pre-1850's battlefield than in your hands in the cataclysm.  Its loading may be slow, but it does not require brass casings to fire, and is theoretically sustainable to fire.  Range and accuracy are hampered by lack of rifling, but this time-tested design is plenty lethal.",
+    "skill": "rifle",
+    "range": 6,
+    "ranged_damage": {
+      "damage_type": "bullet",
+      "amount": 10
+    },
+    "dispersion": 180,
+    "durability": 6,
+    "blackpowder_tolerance": 96,
+    "//": "Sources place muzzle loader firing rate at at up to 4 / minute for elite professionals. Nominal 30s will be cut down to 15s at skill 10.",
+    "reload": 3000,
+    "valid_mod_locations": [
+      [
+        "sling",
+        1
+      ],
+      [
+        "bayonet lug",
+        1
+      ],
+      [
+        "underbarrel",
+        1
+      ],
+      [
+        "grip mount",
+        1
+      ],
+      [
+        "rail mount",
+        1
+      ],
+      [
+        "sights mount",
+        1
+      ],
+      [
+        "stock mount",
+        1
+      ]
+    ],
+    "flags": [
+      "NEVER_JAMS",
+      "DURABLE_MELEE",
+      "EASY_CLEAN"
+    ],
     "pocket_data": [
       {
         "pocket_type": "MAGAZINE",
@@ -60,6 +232,9 @@
         },
         "rigid": true
       }
-    ]
+    ],
+    "melee_damage": {
+      "bash": 15
+    }
   }
 ]

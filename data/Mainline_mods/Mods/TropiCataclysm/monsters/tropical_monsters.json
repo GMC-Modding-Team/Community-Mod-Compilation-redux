@@ -1,0 +1,93 @@
+[
+  {
+    "id": "mon_bushelephant_fungal",
+    "type": "MONSTER",
+    "name": {
+      "str": "fungal elephant"
+    },
+    "description": "A horrifying image with tendrils seeping out of many oozing wounds, this elephant's form appears more eldritch than animal.",
+    "default_faction": "fungus",
+    "bodytype": "elephant",
+    "categories": [
+      "WILDLIFE"
+    ],
+    "species": [
+      "FUNGUS"
+    ],
+    "volume": "5896700 ml",
+    "weight": "5896700 g",
+    "hp": 360,
+    "speed": 120,
+    "material": [
+      "veggy"
+    ],
+    "symbol": "E",
+    "color": "light_gray",
+    "aggression": 100,
+    "morale": 100,
+    "melee_skill": 4,
+    "melee_dice": 2,
+    "melee_dice_sides": 3,
+    "path_settings": {
+      "max_dist": 20
+    },
+    "anger_triggers": [
+      "FRIEND_ATTACKED",
+      "FRIEND_DIED",
+      "HURT",
+      "MATING_SEASON"
+    ],
+    "baby_flags": [
+      "SPRING"
+    ],
+    "//": "Baby elephants don't actually exist (yet), but Spring is the wet season (their mating season) so baby_flags is defined so that they get angry then",
+    "harvest": "mammal_large_leather",
+    "biosignature": {
+      "biosig_item": "feces_manure",
+      "biosig_timer": 16
+    },
+    "petfood": {
+      "food": [
+        "CATTLEFOOD"
+      ],
+      "feed": "The %s seems to like you!  It lets you pat its head and seems friendly."
+    },
+    "special_attacks": [
+      [
+        "FUNGUS",
+        200
+      ],
+      [
+        "SMASH",
+        15
+      ],
+      [
+        "FUNGUS_BRISTLE",
+        20
+      ],
+      [
+        "FUNGUS_BIG_BLOSSOM",
+        30
+      ]
+    ],
+    "flags": [
+      "SEES",
+      "SMELLS",
+      "PUSH_MON",
+      "DESTROYS",
+      "POISON",
+      "NO_BREATHE"
+    ],
+    "armor": {
+      "bash": 3,
+      "cut": 1
+    },
+    "death_function": {
+      "corpse_type": "NO_CORPSE",
+      "effect": {
+        "id": "death_fungus",
+        "hit_self": true
+      }
+    }
+  }
+]

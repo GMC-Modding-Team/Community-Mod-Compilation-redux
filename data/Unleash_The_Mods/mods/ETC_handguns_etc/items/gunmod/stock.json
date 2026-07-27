@@ -1,15 +1,48 @@
 [
   {
     "id": "ocg_telescopic_stock",
-    "copy-from": "folding_stock",
     "type": "GUNMOD",
-    "name": { "str": "OCG telescopic stock" },
+    "copy-from": "folding_stock",
+    "name": {
+      "str": "OCG telescopic stock"
+    },
     "description": "An OCG built in telescopic stock which is faster to set up than a folding stock but won't reduce as much volume.",
-    "install_time": "40 m",
-    "integral_weight": "0 g",
+    "weight": "200 g",
+    "volume": "500 ml",
     "integral_volume": "250 ml",
+    "integral_weight": "0 g",
     "price": "0 cent",
-    "flags": [ "IRREMOVABLE", "COLLAPSIBLE_STOCK" ],
-    "location": "mechanism"
+    "price_postapoc": 250,
+    "install_time": "40 m",
+    "material": [
+      "plastic",
+      "steel"
+    ],
+    "symbol": ":",
+    "color": "dark_gray",
+    "location": "mechanism",
+    "mod_targets": [
+      "smg",
+      "rifle",
+      "shotgun",
+      "launcher"
+    ],
+    "use_action": {
+      "type": "transform",
+      "msg": "You fold the stock for transport.",
+      "menu_text": "Fold",
+      "target": "folding_stock_folded",
+      "moves": 120
+    },
+    "min_skills": [
+      [
+        "weapon",
+        3
+      ]
+    ],
+    "flags": [
+      "IRREMOVABLE",
+      "COLLAPSIBLE_STOCK"
+    ]
   }
 ]

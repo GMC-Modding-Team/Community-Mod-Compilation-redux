@@ -1,11 +1,36 @@
 [
   {
     "id": "thrown_flashlight",
-    "copy-from": "flashlight",
     "type": "TOOL",
-    "name": { "str": "throwable flashlight (off)", "str_pl": "throwable flashlights (off)" },
+    "copy-from": "flashlight",
+    "name": {
+      "str": "throwable flashlight (off)",
+      "str_pl": "throwable flashlights (off)"
+    },
     "description": "A flashlight you can throw.  It's no more aerodynamic than a regular flashlight, but an internal trigger will turn it on when it lands.",
-    "extend": { "flags": [ "RADIO_MODABLE", "ACT_ON_RANGED_HIT" ] },
+    "material": [
+      "plastic",
+      "aluminum"
+    ],
+    "symbol": ";",
+    "color": "blue",
+    "weight": "280 g",
+    "volume": "270 ml",
+    "longest_side": "14 cm",
+    "price": 500,
+    "price_postapoc": 100,
+    "charges_per_use": 1,
+    "ammo": [
+      "battery"
+    ],
+    "flags": [
+      "BELT_CLIP",
+      "WATER_BREAK_ACTIVE",
+      "HELMET_HEAD_ATTACHMENT",
+      "HEAD_STRAP_MOUNT",
+      "RADIO_MODABLE",
+      "ACT_ON_RANGED_HIT"
+    ],
     "use_action": {
       "type": "transform",
       "msg": "The flashlight turns on.",
@@ -13,16 +38,72 @@
       "active": true,
       "need_charges": 1,
       "need_charges_msg": "The flashlight's batteries are dead."
-    }
+    },
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "rigid": true,
+        "flag_restriction": [
+          "BATTERY_LIGHT",
+          "BATTERY_ULTRA_LIGHT"
+        ],
+        "default_magazine": "light_disposable_cell"
+      }
+    ]
   },
   {
     "id": "thrown_flashlight_on",
-    "copy-from": "flashlight_on",
     "type": "TOOL",
-    "name": { "str": "throwable flashlight (on)", "str_pl": "flashlights (on)" },
+    "copy-from": "flashlight_on",
+    "name": {
+      "str": "throwable flashlight (on)",
+      "str_pl": "flashlights (on)"
+    },
     "description": "A flashlight you can throw.  It's no more aerodynamic than a regular flashlight, but an internal trigger will turn it on when it lands.",
-    "extend": { "flags": [ "RADIO_MODABLE", "ACT_ON_RANGED_HIT" ] },
-    "revert_to": "flashlight",
-    "use_action": { "menu_text": "Turn off", "type": "transform", "msg": "The flashlight turns off.", "target": "thrown_flashlight" }
+    "material": [
+      "plastic",
+      "aluminum"
+    ],
+    "symbol": ";",
+    "color": "blue",
+    "weight": "280 g",
+    "volume": "270 ml",
+    "longest_side": "14 cm",
+    "price": 500,
+    "price_postapoc": 100,
+    "charges_per_use": 1,
+    "ammo": [
+      "battery"
+    ],
+    "flags": [
+      "LIGHT_300",
+      "CHARGEDIM",
+      "TRADER_AVOID",
+      "BELT_CLIP",
+      "WATER_BREAK",
+      "HELMET_HEAD_ATTACHMENT",
+      "HEAD_STRAP_MOUNT",
+      "RADIO_MODABLE",
+      "ACT_ON_RANGED_HIT"
+    ],
+    "use_action": {
+      "menu_text": "Turn off",
+      "type": "transform",
+      "msg": "The flashlight turns off.",
+      "target": "thrown_flashlight"
+    },
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "rigid": true,
+        "flag_restriction": [
+          "BATTERY_LIGHT",
+          "BATTERY_ULTRA_LIGHT"
+        ],
+        "default_magazine": "light_disposable_cell"
+      }
+    ],
+    "power_draw": "10 W",
+    "revert_to": "flashlight"
   }
 ]

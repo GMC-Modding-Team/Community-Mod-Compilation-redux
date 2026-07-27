@@ -4,7 +4,9 @@
     "type": "SPELL",
     "name": "Smite",
     "description": "Evil has become pervasive throughout the world.  Let your power be the light that shines in the darkness!",
-    "valid_targets": [ "hostile" ],
+    "valid_targets": [
+      "hostile"
+    ],
     "min_damage": 10,
     "max_damage": 200,
     "damage_increment": 15,
@@ -22,7 +24,11 @@
     "difficulty": 8,
     "max_level": 15,
     "damage_type": "pure",
-    "flags": [ "VERBAL", "LOUD", "NO_HANDS" ],
+    "flags": [
+      "VERBAL",
+      "LOUD",
+      "NO_HANDS"
+    ],
     "energy_source": "MANA"
   },
   {
@@ -30,7 +36,9 @@
     "type": "SPELL",
     "name": "Life Conversion",
     "description": "You channel lifeforce itself into your spiritual energy.  You spend runes to regain mana.",
-    "valid_targets": [ "self" ],
+    "valid_targets": [
+      "self"
+    ],
     "min_damage": 75,
     "damage_increment": 15.0,
     "max_damage": 600,
@@ -42,7 +50,13 @@
     "energy_source": "MANA",
     "components": "spell_components_rune_animist",
     "base_casting_time": 500,
-    "flags": [ "SOMATIC", "VERBAL", "SILENT", "NO_LEGS", "CONSUMES_RUNES" ],
+    "flags": [
+      "SOMATIC",
+      "VERBAL",
+      "SILENT",
+      "NO_LEGS",
+      "CONSUMES_RUNES"
+    ],
     "difficulty": 3
   },
   {
@@ -50,7 +64,9 @@
     "type": "SPELL",
     "name": "Mind over Pain",
     "description": "With an intense ritual that resembles crossfit, you manage to put some of your pain at bay.",
-    "valid_targets": [ "self" ],
+    "valid_targets": [
+      "self"
+    ],
     "min_damage": 10,
     "max_damage": 100,
     "damage_increment": 2.0,
@@ -63,7 +79,11 @@
     "base_casting_time": 50000,
     "base_energy_cost": 5000,
     "energy_increment": 500.0,
-    "flags": [ "SOMATIC", "VERBAL", "PAIN_NORESIST" ],
+    "flags": [
+      "SOMATIC",
+      "VERBAL",
+      "PAIN_NORESIST"
+    ],
     "final_energy_cost": 10000
   },
   {
@@ -71,7 +91,9 @@
     "type": "SPELL",
     "name": "Summon Undead",
     "description": "An ethereal-looking undead rises from the depths of the earth to fight for you.  You may be able to summon the stronger ones with a higher level in this spell.",
-    "valid_targets": [ "self" ],
+    "valid_targets": [
+      "self"
+    ],
     "min_damage": 1,
     "max_damage": 1,
     "max_level": 35,
@@ -84,7 +106,12 @@
     "energy_source": "MANA",
     "base_energy_cost": 400,
     "base_casting_time": 3000,
-    "flags": [ "SOMATIC", "VERBAL", "CONCENTRATE", "CONSUMES_RUNES" ],
+    "flags": [
+      "SOMATIC",
+      "VERBAL",
+      "CONCENTRATE",
+      "CONSUMES_RUNES"
+    ],
     "min_duration": 36000,
     "max_duration": 1080000,
     "duration_increment": 36000
@@ -93,14 +120,59 @@
     "type": "effect_on_condition",
     "id": "EOC_SUMMON_ZOMBIE",
     "effect": {
-      "switch": { "u_val": "spell_level", "spell": "summon_undead" },
+      "switch": {
+        "u_val": "spell_level",
+        "spell": "summon_undead"
+      },
       "cases": [
-        { "case": 0, "effect": { "u_cast_spell": { "id": "summon_zombie" } } },
-        { "case": 7, "effect": { "u_cast_spell": { "id": "summon_tough_zombie" } } },
-        { "case": 14, "effect": { "u_cast_spell": { "id": "summon_zombie_brute" } } },
-        { "case": 21, "effect": { "u_cast_spell": { "id": "summon_skeleton" } } },
-        { "case": 28, "effect": { "u_cast_spell": { "id": "summon_skeleton_brute" } } },
-        { "case": 35, "effect": { "u_cast_spell": { "id": "summon_skeleton_hulk" } } }
+        {
+          "case": 0,
+          "effect": {
+            "u_cast_spell": {
+              "id": "summon_zombie"
+            }
+          }
+        },
+        {
+          "case": 7,
+          "effect": {
+            "u_cast_spell": {
+              "id": "summon_tough_zombie"
+            }
+          }
+        },
+        {
+          "case": 14,
+          "effect": {
+            "u_cast_spell": {
+              "id": "summon_zombie_brute"
+            }
+          }
+        },
+        {
+          "case": 21,
+          "effect": {
+            "u_cast_spell": {
+              "id": "summon_skeleton"
+            }
+          }
+        },
+        {
+          "case": 28,
+          "effect": {
+            "u_cast_spell": {
+              "id": "summon_skeleton_brute"
+            }
+          }
+        },
+        {
+          "case": 35,
+          "effect": {
+            "u_cast_spell": {
+              "id": "summon_skeleton_hulk"
+            }
+          }
+        }
       ]
     }
   },
@@ -109,7 +181,9 @@
     "type": "SPELL",
     "name": "Abstract Summon Zombie",
     "description": "Abstract of Summon Undead spell.",
-    "valid_targets": [ "ground" ],
+    "valid_targets": [
+      "ground"
+    ],
     "min_damage": 1,
     "max_damage": 1,
     "max_level": 35,
@@ -119,18 +193,23 @@
     "max_range": 3,
     "min_aoe": 2,
     "max_aoe": 2,
-    "flags": [ "SILENT", "NO_EXPLOSION_SFX", "NO_CORPSE_QUIET" ],
+    "flags": [
+      "SILENT",
+      "NO_EXPLOSION_SFX",
+      "NO_CORPSE_QUIET"
+    ],
     "min_duration": 36000,
     "max_duration": 1080000,
     "duration_increment": 36000
   },
   {
     "id": "summon_zombie",
-    "copy-from": "summon_abstract_zombie",
     "type": "SPELL",
     "name": "Summon Zombie",
     "description": "Summon a zombie.  Part of Summon Undead spell.",
-    "valid_targets": [ "ground" ],
+    "valid_targets": [
+      "ground"
+    ],
     "effect": "summon",
     "effect_str": "mon_zombie",
     "max_level": 35,
@@ -140,11 +219,12 @@
   },
   {
     "id": "summon_tough_zombie",
-    "copy-from": "summon_abstract_zombie",
     "type": "SPELL",
     "name": "Summon Tough Zombie",
     "description": "Summon a tough zombie.  Part of Summon Undead spell.",
-    "valid_targets": [ "ground" ],
+    "valid_targets": [
+      "ground"
+    ],
     "effect": "summon",
     "effect_str": "mon_zombie_tough",
     "max_level": 35,
@@ -154,11 +234,12 @@
   },
   {
     "id": "summon_zombie_brute",
-    "copy-from": "summon_abstract_zombie",
     "type": "SPELL",
     "name": "Summon Zombie Brute",
     "description": "Summon a zombie brute.  Part of Summon Undead spell.",
-    "valid_targets": [ "ground" ],
+    "valid_targets": [
+      "ground"
+    ],
     "effect": "summon",
     "effect_str": "mon_zombie_brute",
     "max_level": 35,
@@ -168,11 +249,12 @@
   },
   {
     "id": "summon_skeleton",
-    "copy-from": "summon_abstract_zombie",
     "type": "SPELL",
     "name": "Summon Skeleton Zombie",
     "description": "Summon a skeleton zombie.  Part of Summon Undead spell.",
-    "valid_targets": [ "ground" ],
+    "valid_targets": [
+      "ground"
+    ],
     "effect": "summon",
     "effect_str": "mon_skeleton",
     "max_level": 35,
@@ -182,11 +264,12 @@
   },
   {
     "id": "summon_skeleton_brute",
-    "copy-from": "summon_abstract_zombie",
     "type": "SPELL",
     "name": "Summon Skeletal Brute",
     "description": "Summon a skeletal brute.  Part of Summon Undead spell.",
-    "valid_targets": [ "ground" ],
+    "valid_targets": [
+      "ground"
+    ],
     "effect": "summon",
     "effect_str": "mon_skeleton_brute",
     "max_level": 35,
@@ -196,11 +279,12 @@
   },
   {
     "id": "summon_skeleton_hulk",
-    "copy-from": "summon_abstract_zombie",
     "type": "SPELL",
     "name": "Summon Skeletal Juggernaut",
     "description": "Summon a skeletal juggernaut.  Part of Summon Undead spell.",
-    "valid_targets": [ "ground" ],
+    "valid_targets": [
+      "ground"
+    ],
     "effect": "summon",
     "effect_str": "mon_skeleton_hulk",
     "max_level": 35,
@@ -213,7 +297,9 @@
     "type": "SPELL",
     "name": "Summon Undead Swarm",
     "description": "A group of undead animals rises from the depths of the earth to fight for you.  You may be able to summon the stronger ones with a higher level in this spell.",
-    "valid_targets": [ "self" ],
+    "valid_targets": [
+      "self"
+    ],
     "min_damage": 1,
     "max_damage": 1,
     "max_level": 35,
@@ -226,7 +312,12 @@
     "energy_source": "MANA",
     "base_energy_cost": 600,
     "base_casting_time": 3000,
-    "flags": [ "SOMATIC", "VERBAL", "CONCENTRATE", "CONSUMES_RUNES" ],
+    "flags": [
+      "SOMATIC",
+      "VERBAL",
+      "CONCENTRATE",
+      "CONSUMES_RUNES"
+    ],
     "min_duration": 36000,
     "max_duration": 1080000,
     "duration_increment": 36000
@@ -235,16 +326,75 @@
     "type": "effect_on_condition",
     "id": "EOC_SUMMON_ZOMBIE_SWARM",
     "effect": {
-      "switch": { "u_val": "spell_level", "spell": "summon_undead_swarm" },
+      "switch": {
+        "u_val": "spell_level",
+        "spell": "summon_undead_swarm"
+      },
       "cases": [
-        { "case": 0, "effect": { "u_cast_spell": { "id": "summon_zombie_dog" } } },
-        { "case": 5, "effect": { "u_cast_spell": { "id": "summon_dog_skeleton" } } },
-        { "case": 10, "effect": { "u_cast_spell": { "id": "summon_zougar" } } },
-        { "case": 15, "effect": { "u_cast_spell": { "id": "summon_wolf_skeleton" } } },
-        { "case": 20, "effect": { "u_cast_spell": { "id": "summon_dog_zombie_brute" } } },
-        { "case": 25, "effect": { "u_cast_spell": { "id": "summon_dog_skeleton_brute" } } },
-        { "case": 30, "effect": { "u_cast_spell": { "id": "summon_dog_zombie_hulk" } } },
-        { "case": 35, "effect": { "u_cast_spell": { "id": "summon_zougar_hunter" } } }
+        {
+          "case": 0,
+          "effect": {
+            "u_cast_spell": {
+              "id": "summon_zombie_dog"
+            }
+          }
+        },
+        {
+          "case": 5,
+          "effect": {
+            "u_cast_spell": {
+              "id": "summon_dog_skeleton"
+            }
+          }
+        },
+        {
+          "case": 10,
+          "effect": {
+            "u_cast_spell": {
+              "id": "summon_zougar"
+            }
+          }
+        },
+        {
+          "case": 15,
+          "effect": {
+            "u_cast_spell": {
+              "id": "summon_wolf_skeleton"
+            }
+          }
+        },
+        {
+          "case": 20,
+          "effect": {
+            "u_cast_spell": {
+              "id": "summon_dog_zombie_brute"
+            }
+          }
+        },
+        {
+          "case": 25,
+          "effect": {
+            "u_cast_spell": {
+              "id": "summon_dog_skeleton_brute"
+            }
+          }
+        },
+        {
+          "case": 30,
+          "effect": {
+            "u_cast_spell": {
+              "id": "summon_dog_zombie_hulk"
+            }
+          }
+        },
+        {
+          "case": 35,
+          "effect": {
+            "u_cast_spell": {
+              "id": "summon_zougar_hunter"
+            }
+          }
+        }
       ]
     }
   },
@@ -253,7 +403,9 @@
     "type": "SPELL",
     "name": "Abstract Summon Swarm",
     "description": "Abstract of Summon Undead Swarm spell.",
-    "valid_targets": [ "ground" ],
+    "valid_targets": [
+      "ground"
+    ],
     "min_damage": 3,
     "max_damage": 3,
     "max_level": 35,
@@ -263,18 +415,23 @@
     "max_range": 3,
     "min_aoe": 2,
     "max_aoe": 2,
-    "flags": [ "SILENT", "NO_EXPLOSION_SFX", "NO_CORPSE_QUIET" ],
+    "flags": [
+      "SILENT",
+      "NO_EXPLOSION_SFX",
+      "NO_CORPSE_QUIET"
+    ],
     "min_duration": 36000,
     "max_duration": 1080000,
     "duration_increment": 36000
   },
   {
     "id": "summon_zombie_dog",
-    "copy-from": "summon_abstract_swarm",
     "type": "SPELL",
     "name": "Summon Zombie Dog",
     "description": "Summon a zombie dog.  Part of Summon Undead Swarm spell.",
-    "valid_targets": [ "ground" ],
+    "valid_targets": [
+      "ground"
+    ],
     "effect": "summon",
     "effect_str": "mon_zombie_dog",
     "max_level": 35,
@@ -284,11 +441,12 @@
   },
   {
     "id": "summon_dog_skeleton",
-    "copy-from": "summon_abstract_swarm",
     "type": "SPELL",
     "name": "Summon Skeletal Dog",
     "description": "Summon a skeletal dog.  Part of Summon Undead Swarm spell.",
-    "valid_targets": [ "ground" ],
+    "valid_targets": [
+      "ground"
+    ],
     "effect": "summon",
     "effect_str": "mon_dog_skeleton",
     "max_level": 35,
@@ -298,11 +456,12 @@
   },
   {
     "id": "summon_zougar",
-    "copy-from": "summon_abstract_swarm",
     "type": "SPELL",
     "name": "Summon Decayed Pouncer",
     "description": "Summon a decayed pouncer.  Part of Summon Undead Swarm spell.",
-    "valid_targets": [ "ground" ],
+    "valid_targets": [
+      "ground"
+    ],
     "effect": "summon",
     "effect_str": "mon_zougar",
     "max_level": 35,
@@ -312,11 +471,12 @@
   },
   {
     "id": "summon_wolf_skeleton",
-    "copy-from": "summon_abstract_swarm",
     "type": "SPELL",
     "name": "Summon Skeletal Wolf",
     "description": "Summon a skeletal wolf.  Part of Summon Undead Swarm spell.",
-    "valid_targets": [ "ground" ],
+    "valid_targets": [
+      "ground"
+    ],
     "effect": "summon",
     "effect_str": "mon_wolf_skeleton",
     "max_level": 35,
@@ -326,11 +486,12 @@
   },
   {
     "id": "summon_dog_zombie_brute",
-    "copy-from": "summon_abstract_swarm",
     "type": "SPELL",
     "name": "Summon Barghest",
     "description": "Summon a barghest.  Part of Summon Undead Swarm spell.",
-    "valid_targets": [ "ground" ],
+    "valid_targets": [
+      "ground"
+    ],
     "effect": "summon",
     "effect_str": "mon_dog_zombie_brute",
     "max_level": 35,
@@ -340,11 +501,12 @@
   },
   {
     "id": "summon_dog_skeleton_brute",
-    "copy-from": "summon_abstract_swarm",
     "type": "SPELL",
     "name": "Summon Boneplate Wolf",
     "description": "Summon a boneplate wolf.  Part of Summon Undead Swarm spell.",
-    "valid_targets": [ "ground" ],
+    "valid_targets": [
+      "ground"
+    ],
     "effect": "summon",
     "effect_str": "mon_dog_skeleton_brute",
     "max_level": 35,
@@ -354,11 +516,12 @@
   },
   {
     "id": "summon_dog_zombie_hulk",
-    "copy-from": "summon_abstract_swarm",
     "type": "SPELL",
     "name": "Summon Hulking Horror",
     "description": "Summon a Hulking Horror.  Part of Summon Undead Swarm spell.",
-    "valid_targets": [ "ground" ],
+    "valid_targets": [
+      "ground"
+    ],
     "effect": "summon",
     "effect_str": "mon_dog_zombie_hulk",
     "max_level": 35,
@@ -368,11 +531,12 @@
   },
   {
     "id": "summon_zougar_hunter",
-    "copy-from": "summon_abstract_swarm",
     "type": "SPELL",
     "name": "Summon Spearcat Hunter",
     "description": "Summon a spearcat hunter.  Part of Summon Undead Swarm spell.",
-    "valid_targets": [ "ground" ],
+    "valid_targets": [
+      "ground"
+    ],
     "effect": "summon",
     "effect_str": "mon_zougar_hunter",
     "max_level": 35,
@@ -385,12 +549,21 @@
     "type": "SPELL",
     "name": "Necrotic Gaze",
     "description": "You use the power of your own blood, concentrated in rune, to imbue necrotic energy into your gaze, damaging the target you look at.",
-    "valid_targets": [ "hostile" ],
+    "valid_targets": [
+      "hostile"
+    ],
     "effect": "attack",
     "shape": "line",
     "spell_class": "ANIMIST",
     "energy_source": "MANA",
-    "flags": [ "NO_LEGS", "CONCENTRATE", "SOMATIC", "NO_PROJECTILE", "NO_HANDS", "CONSUMES_RUNES" ],
+    "flags": [
+      "NO_LEGS",
+      "CONCENTRATE",
+      "SOMATIC",
+      "NO_PROJECTILE",
+      "NO_HANDS",
+      "CONSUMES_RUNES"
+    ],
     "components": "spell_components_rune_animist",
     "min_damage": 10,
     "max_damage": 160,
@@ -409,9 +582,13 @@
   {
     "id": "create_rune_animist",
     "type": "SPELL",
-    "name": { "str": "Animist Rune" },
+    "name": {
+      "str": "Animist Rune"
+    },
     "description": "This ritual creates a small pebble attuned to Animists.  You can use the rune to summon creatures, or as a catalyst for recipes.",
-    "valid_targets": [ "self" ],
+    "valid_targets": [
+      "self"
+    ],
     "min_damage": 1,
     "max_damage": 1,
     "effect": "spawn_item",
@@ -426,17 +603,30 @@
     "max_level": 0,
     "spell_class": "ANIMIST",
     "energy_source": "HP",
-    "flags": [ "PERMANENT", "NO_LEGS", "CONCENTRATE" ]
+    "flags": [
+      "PERMANENT",
+      "NO_LEGS",
+      "CONCENTRATE"
+    ]
   },
   {
     "id": "dominate",
     "type": "SPELL",
     "name": "Domination",
     "description": "Force the undead creature you pick to obey your command, making it ally for a short time.  It's an expensive spell, so use it wisely.",
-    "valid_targets": [ "hostile" ],
-    "flags": [ "CONCENTRATE", "SOMATIC", "SILENT", "CONSUMES_RUNES" ],
+    "valid_targets": [
+      "hostile"
+    ],
+    "flags": [
+      "CONCENTRATE",
+      "SOMATIC",
+      "SILENT",
+      "CONSUMES_RUNES"
+    ],
     "effect": "charm_monster",
-    "targeted_monster_species": [ "ZOMBIE" ],
+    "targeted_monster_species": [
+      "ZOMBIE"
+    ],
     "components": "spell_components_rune_animist_3",
     "shape": "blast",
     "message": "",
@@ -466,12 +656,23 @@
     "type": "SPELL",
     "name": "Life Detonation",
     "description": "Explode a living energy inside your undead and release a tremendous force around it.",
-    "valid_targets": [ "ally" ],
-    "targeted_monster_species": [ "ZOMBIE" ],
+    "valid_targets": [
+      "ally"
+    ],
+    "targeted_monster_species": [
+      "ZOMBIE"
+    ],
     "effect": "attack",
     "shape": "blast",
     "spell_class": "ANIMIST",
-    "flags": [ "NO_LEGS", "CONCENTRATE", "SOMATIC", "NO_PROJECTILE", "NO_HANDS", "PERCENTAGE_DAMAGE" ],
+    "flags": [
+      "NO_LEGS",
+      "CONCENTRATE",
+      "SOMATIC",
+      "NO_PROJECTILE",
+      "NO_HANDS",
+      "PERCENTAGE_DAMAGE"
+    ],
     "min_damage": 100,
     "max_damage": 100,
     "min_range": 10,
@@ -485,15 +686,26 @@
     "base_energy_cost": 300,
     "energy_source": "MANA",
     "damage_type": "biological",
-    "extra_effects": [ { "id": "life_detonation_explosion" } ]
+    "extra_effects": [
+      {
+        "id": "life_detonation_explosion"
+      }
+    ]
   },
   {
     "id": "life_detonation_explosion",
     "type": "SPELL",
     "name": "Life Detonation Explosion",
     "description": "Detonation for life detonation spell.",
-    "valid_targets": [ "hostile", "ground" ],
-    "flags": [ "CONCENTRATE", "SOMATIC", "SILENT" ],
+    "valid_targets": [
+      "hostile",
+      "ground"
+    ],
+    "flags": [
+      "CONCENTRATE",
+      "SOMATIC",
+      "SILENT"
+    ],
     "effect": "attack",
     "shape": "blast",
     "message": "",
@@ -514,8 +726,15 @@
     "type": "SPELL",
     "name": "Convert",
     "description": "Kill an allied creature, converting its life energy into a compact rune that you can use afterwards.",
-    "valid_targets": [ "ally" ],
-    "flags": [ "CONCENTRATE", "SOMATIC", "SILENT", "PERCENTAGE_DAMAGE" ],
+    "valid_targets": [
+      "ally"
+    ],
+    "flags": [
+      "CONCENTRATE",
+      "SOMATIC",
+      "SILENT",
+      "PERCENTAGE_DAMAGE"
+    ],
     "effect": "attack",
     "shape": "blast",
     "message": "",
@@ -531,15 +750,30 @@
     "final_casting_time": 1000,
     "casting_time_increment": -200,
     "energy_source": "MANA",
-    "extra_effects": [ { "id": "create_rune_animist", "hit_self": true } ]
+    "extra_effects": [
+      {
+        "id": "create_rune_animist",
+        "hit_self": true
+      }
+    ]
   },
   {
     "id": "soulrend",
     "type": "SPELL",
     "name": "Soulrend",
     "description": "Violently tears the spirit from the body and binds the resulting shade to your will.",
-    "valid_targets": [ "hostile", "ally" ],
-    "flags": [ "NO_LEGS", "LOUD", "SOMATIC", "POLYMORPH_GROUP", "FRIENDLY_POLY", "NO_HANDS" ],
+    "valid_targets": [
+      "hostile",
+      "ally"
+    ],
+    "flags": [
+      "NO_LEGS",
+      "LOUD",
+      "SOMATIC",
+      "POLYMORPH_GROUP",
+      "FRIENDLY_POLY",
+      "NO_HANDS"
+    ],
     "effect": "targeted_polymorph",
     "effect_str": "GROUP_POLYMORPH_SHADOW",
     "shape": "blast",
@@ -563,8 +797,17 @@
     "type": "SPELL",
     "name": "Disruption Bolt",
     "description": "Release a resonant bolt of spiritual energy at a nearby target.  It will disrupt the natural link between matter and animus, causing heavy but never lethal damage.",
-    "valid_targets": [ "hostile" ],
-    "flags": [ "VERBAL", "SOMATIC", "NO_LEGS", "PERCENTAGE_DAMAGE", "SILENT", "NO_PROJECTILE" ],
+    "valid_targets": [
+      "hostile"
+    ],
+    "flags": [
+      "VERBAL",
+      "SOMATIC",
+      "NO_LEGS",
+      "PERCENTAGE_DAMAGE",
+      "SILENT",
+      "NO_PROJECTILE"
+    ],
     "min_damage": 35,
     "damage_type": "pure",
     "damage_increment": 1,
@@ -582,14 +825,19 @@
     "energy_source": "MANA",
     "shape": "blast",
     "effect": "attack",
-    "learn_spells": { "soulrend": 20 }
+    "learn_spells": {
+      "soulrend": 20
+    }
   },
   {
     "id": "wrathful_spirits",
     "type": "SPELL",
     "name": "Wrathful Spirits",
     "description": "Grant brief corporality to orphaned spirits and allow them to fight under your command.",
-    "valid_targets": [ "self", "ground" ],
+    "valid_targets": [
+      "self",
+      "ground"
+    ],
     "min_damage": 2,
     "max_damage": 6,
     "damage_increment": 0.2,
@@ -604,7 +852,10 @@
     "base_casting_time": 500,
     "min_aoe": 3,
     "max_aoe": 3,
-    "flags": [ "SOMATIC", "VERBAL" ],
+    "flags": [
+      "SOMATIC",
+      "VERBAL"
+    ],
     "min_duration": 6000,
     "max_duration": 12000,
     "duration_increment": 1000
@@ -614,9 +865,23 @@
     "type": "SPELL",
     "name": "Spirit Walk",
     "description": "Momentarily plunge into the underworld and swap positions with any spirit you command.",
-    "valid_targets": [ "ally" ],
-    "targeted_monster_ids": [ "mon_wisp", "mon_shadow", "mon_magi_shadow", "mon_darkman", "mon_shadow_snake" ],
-    "flags": [ "NO_LEGS", "LOUD", "SOMATIC", "SWAP_POS", "NO_PROJECTILE" ],
+    "valid_targets": [
+      "ally"
+    ],
+    "targeted_monster_ids": [
+      "mon_wisp",
+      "mon_shadow",
+      "mon_magi_shadow",
+      "mon_darkman",
+      "mon_shadow_snake"
+    ],
+    "flags": [
+      "NO_LEGS",
+      "LOUD",
+      "SOMATIC",
+      "SWAP_POS",
+      "NO_PROJECTILE"
+    ],
     "effect": "attack",
     "shape": "blast",
     "spell_class": "ANIMIST",
@@ -638,8 +903,14 @@
     "type": "SPELL",
     "name": "Lesser Banishment",
     "description": "Banish a monster to a lesser-known nether dimension.  If a monster is more powerful than you can handle, the spell drains your life force to make up the difference.",
-    "valid_targets": [ "hostile" ],
-    "flags": [ "SOMATIC", "VERBAL", "NO_HANDS" ],
+    "valid_targets": [
+      "hostile"
+    ],
+    "flags": [
+      "SOMATIC",
+      "VERBAL",
+      "NO_HANDS"
+    ],
     "effect": "banishment",
     "shape": "blast",
     "min_damage": 40,
@@ -659,11 +930,16 @@
     "type": "SPELL",
     "name": "Ignus Fatuus",
     "description": "Summons ghostly foxfire worked from living marsh vapor to lead your enemies astray.  With more experience, this spell can conjure multiple ghost lights.",
-    "valid_targets": [ "ground" ],
+    "valid_targets": [
+      "ground"
+    ],
     "effect": "summon",
     "effect_str": "mon_wisp",
     "shape": "blast",
-    "flags": [ "LOUD", "SOMATIC" ],
+    "flags": [
+      "LOUD",
+      "SOMATIC"
+    ],
     "energy_source": "MANA",
     "spell_class": "ANIMIST",
     "difficulty": 2,
@@ -687,10 +963,18 @@
     "type": "SPELL",
     "name": "Bleed",
     "description": "With a shout and a gesture, the target starts bleeding from old wounds.",
-    "valid_targets": [ "hostile" ],
+    "valid_targets": [
+      "hostile"
+    ],
     "effect": "attack",
     "shape": "blast",
-    "flags": [ "VERBAL", "SOMATIC", "NO_LEGS", "NO_PROJECTILE", "NO_HANDS" ],
+    "flags": [
+      "VERBAL",
+      "SOMATIC",
+      "NO_LEGS",
+      "NO_PROJECTILE",
+      "NO_HANDS"
+    ],
     "energy_source": "MANA",
     "spell_class": "ANIMIST",
     "difficulty": 2,
@@ -714,13 +998,21 @@
   {
     "id": "animist_summon_decaying_boneclub",
     "type": "SPELL",
-    "name": { "str": "Decaying Boneclub" },
+    "name": {
+      "str": "Decaying Boneclub"
+    },
     "description": "This spell links your living blood to dead blood and bones, creating a club hungry for the flesh of the living.",
     "effect": "spawn_item",
     "effect_str": "decaying_boneclub",
     "shape": "blast",
-    "valid_targets": [ "self" ],
-    "flags": [ "SOMATIC", "CONCENTRATE", "VERBAL" ],
+    "valid_targets": [
+      "self"
+    ],
+    "flags": [
+      "SOMATIC",
+      "CONCENTRATE",
+      "VERBAL"
+    ],
     "components": "spell_components_decayingboneclub",
     "max_level": 15,
     "min_damage": 1,
@@ -732,19 +1024,28 @@
     "base_casting_time": 400,
     "base_energy_cost": 6,
     "energy_source": "HP",
-    "learn_spells": { "animist_summon_decaying_boneclub_plus": 20 },
+    "learn_spells": {
+      "animist_summon_decaying_boneclub_plus": 20
+    },
     "difficulty": 6
   },
   {
     "id": "animist_summon_decaying_boneclub_plus",
     "type": "SPELL",
-    "name": { "str": "Improved Decaying Boneclub" },
+    "name": {
+      "str": "Improved Decaying Boneclub"
+    },
     "description": "This spell links your living blood to dead blood and bones, creating a club hungry for the flesh of the living.  Now you know this spell like the back of your hand, and have started to design your own version.",
     "effect": "spawn_item",
     "effect_str": "decaying_boneclub",
     "shape": "blast",
-    "valid_targets": [ "self" ],
-    "flags": [ "SOMATIC", "VERBAL" ],
+    "valid_targets": [
+      "self"
+    ],
+    "flags": [
+      "SOMATIC",
+      "VERBAL"
+    ],
     "components": "spell_components_decayingboneclub",
     "max_level": 25,
     "min_damage": 1,
@@ -769,8 +1070,15 @@
     "description": "You pour mana into an unwilling and unprepared vessel, causing cellular break-down, internal hemorrhaging, muddling ley lines, and overcharging electronics.  Immensely gruesome and crude, it was once illegal world-wide, not that it matters now.",
     "effect": "attack",
     "shape": "blast",
-    "valid_targets": [ "hostile" ],
-    "flags": [ "SOMATIC", "NO_PROJECTILE", "LOUD", "NO_HANDS" ],
+    "valid_targets": [
+      "hostile"
+    ],
+    "flags": [
+      "SOMATIC",
+      "NO_PROJECTILE",
+      "LOUD",
+      "NO_HANDS"
+    ],
     "max_level": 25,
     "min_range": 1,
     "range_increment": 0.1,
@@ -797,8 +1105,13 @@
     "type": "SPELL",
     "name": "Devour",
     "description": "Kill a summoned creature, consuming its life energy to regain some health.",
-    "valid_targets": [ "ally" ],
-    "flags": [ "CONCENTRATE", "SOMATIC" ],
+    "valid_targets": [
+      "ally"
+    ],
+    "flags": [
+      "CONCENTRATE",
+      "SOMATIC"
+    ],
     "//": "added this min/max damage for player, so it will be visible how much hp would be healed.  ",
     "effect": "attack",
     "shape": "blast",
@@ -814,15 +1127,28 @@
     "max_level": 25,
     "base_casting_time": 100,
     "energy_source": "MANA",
-    "extra_effects": [ { "id": "devour_damage" }, { "id": "devour_healing", "hit_self": true } ]
+    "extra_effects": [
+      {
+        "id": "devour_damage"
+      },
+      {
+        "id": "devour_healing",
+        "hit_self": true
+      }
+    ]
   },
   {
     "id": "devour_damage",
     "type": "SPELL",
     "name": "Devour Damage",
     "description": "Deal deadly damage to ally.  You can see it only in debug mode.",
-    "valid_targets": [ "ally" ],
-    "flags": [ "SILENT", "PERCENTAGE_DAMAGE" ],
+    "valid_targets": [
+      "ally"
+    ],
+    "flags": [
+      "SILENT",
+      "PERCENTAGE_DAMAGE"
+    ],
     "effect": "attack",
     "shape": "blast",
     "damage_type": "pure",
@@ -834,8 +1160,15 @@
     "type": "SPELL",
     "name": "Devour Healing",
     "description": "Heal the player.  You can see it only in debug mode.",
-    "valid_targets": [ "self" ],
-    "flags": [ "CONCENTRATE", "SOMATIC", "SILENT", "NO_PROJECTILE" ],
+    "valid_targets": [
+      "self"
+    ],
+    "flags": [
+      "CONCENTRATE",
+      "SOMATIC",
+      "SILENT",
+      "NO_PROJECTILE"
+    ],
     "effect": "attack",
     "shape": "blast",
     "min_damage": -1,
@@ -848,9 +1181,16 @@
     "type": "SPELL",
     "name": "Sense Outsiders",
     "description": "You can sense the presence of nearby beings from the Nether.",
-    "valid_targets": [ "self" ],
+    "valid_targets": [
+      "self"
+    ],
     "spell_class": "ANIMIST",
-    "flags": [ "CONCENTRATE", "VERBAL", "SOMATIC", "NO_EXPLOSION_SFX" ],
+    "flags": [
+      "CONCENTRATE",
+      "VERBAL",
+      "SOMATIC",
+      "NO_EXPLOSION_SFX"
+    ],
     "effect": "attack",
     "effect_str": "effect_sense_outsiders",
     "shape": "blast",
@@ -866,14 +1206,23 @@
   {
     "id": "animist_summon_watcher",
     "type": "SPELL",
-    "name": { "str": "Summon Watcher Spirit" },
+    "name": {
+      "str": "Summon Watcher Spirit"
+    },
     "description": "Summon a watcher spirit, whose senses overlap with your own and through whose eyes you can see.  Although they are spirits, they are fragile and dissipate easily in the face of any assault.",
-    "flags": [ "SOMATIC", "CONCENTRATE", "VERBAL", "NO_PROJECTILE" ],
+    "flags": [
+      "SOMATIC",
+      "CONCENTRATE",
+      "VERBAL",
+      "NO_PROJECTILE"
+    ],
     "spell_class": "ANIMIST",
     "effect": "summon",
     "effect_str": "mon_watcher_spirit",
     "shape": "blast",
-    "valid_targets": [ "ground" ],
+    "valid_targets": [
+      "ground"
+    ],
     "difficulty": 3,
     "max_level": 15,
     "min_damage": 1,

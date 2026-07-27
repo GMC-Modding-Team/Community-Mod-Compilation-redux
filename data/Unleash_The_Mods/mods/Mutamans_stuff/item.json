@@ -2,10 +2,11 @@
   {
     "id": "v_aft_item",
     "type": "GENERIC",
-    "symbol": "T",
+    "copy-from": "v_scoop_item",
     "name": {
       "str": "Anti-fungal tower"
     },
+    "symbol": "T",
     "color": "green",
     "description": "A rather macabre fusion of biological matter and machine.  Like a modern frankenstein you've used living tissue as a medium, some triffid organic components, various mutagens, some fresh blob to give it another kick at life, and a huge amount of electro-stimulators and stitchwork to create a barely-alive construct specifically engineered to synthesize fungicide from a pre-existing base and the air.  For as long as it has power and a biological fungicidal base substance to start up it will continually replace a local atmospheric bubble with a fine toxic fungicidal mist.  You've attached the roots of this myco-triffid construct to a metallic base that you can use to attach or remove the tower to or from any appropriate construct you wish.  Unfortunately, once it has run out of its trigger synthesis base it cannot be turned off until it runs out of power.",
     "weight": "300000 g",
@@ -13,16 +14,23 @@
       "steel",
       "plastic"
     ],
+    "category": "veh_parts",
+    "price": 3500,
+    "price_postapoc": 500,
     "volume": "650000 ml",
-    "copy-from": "v_scoop_item"
+    "melee_damage": {
+      "bash": 1
+    }
   },
   {
     "id": "FC_blob_can",
     "type": "GENERIC",
-    "symbol": "0",
+    "copy-from": "v_scoop_item",
     "name": {
       "str": "Fungicidal blob canister"
     },
+    "symbol": "0",
+    "color": "light_gray",
     "description": "A big cylindrical glass canister capped off on both sides with domes made from sheet metal and bolts holding things together.  On one end there is a pipe and a collection of filters and pumps that filter in fresh air and pumps out the funigicidal gas the blob strain makes.  This canister has been filled with the greenish blob, and the cables meant to shock them line the inside of the canister.",
     "weight": "35000 g",
     "material": [
@@ -30,20 +38,35 @@
       "plastic",
       "glass"
     ],
+    "category": "veh_parts",
+    "price": 3500,
+    "price_postapoc": 500,
     "volume": "40000 ml",
-    "copy-from": "v_scoop_item"
+    "melee_damage": {
+      "bash": 1
+    }
   },
   {
     "id": "FC_blob",
     "type": "GENERIC",
-    "symbol": "o",
+    "copy-from": "v_scoop_item",
     "name": {
       "str": "Fungicidal blob"
     },
+    "symbol": "o",
+    "color": "light_gray",
     "description": "A greenish blob that has been modified to synthesize a gaseous fungicide.  Unlike its darker counterpart it is mostly immobile and doesn't react to most things, leaving it on the same level of existence as a squishy rock or something.  Giving it a small jolt of electricity stimulates it to release its fungicidal gas, and a lot of them together could make enough to be of use to you.",
     "weight": "3000 g",
+    "material": [
+      "steel"
+    ],
+    "category": "veh_parts",
+    "price": 3500,
+    "price_postapoc": 500,
     "volume": "1000 ml",
-    "copy-from": "v_scoop_item"
+    "melee_damage": {
+      "bash": 1
+    }
   },
   {
     "id": "200L_drum_pack",
@@ -55,7 +78,7 @@
     "description": "A 200L drum modified to have straps and things to allow wearing it as a backpack.  Lots of storage for lots of encumberance.  Its open top allows long items to stick out of it.",
     "weight": "20000 g",
     "volume": "235000 ml",
-    "price": "100 USD",
+    "price": 100,
     "price_postapoc": "250 cent",
     "material": [
       "iron"
@@ -104,7 +127,7 @@
     "description": "A 100L drum modified to have straps and things to allow wearing it as a backpack.  Lots of storage for lots of encumberance.  Its open top allows long items to stick out of it.",
     "weight": "10000 g",
     "volume": "125000 ml",
-    "price": "50 USD",
+    "price": 50,
     "price_postapoc": "125 cent",
     "material": [
       "iron"
@@ -158,8 +181,8 @@
       "VARSIZE",
       "SKINTIGHT"
     ],
-    "price": "150 USD",
-    "price_postapoc": "5 USD",
+    "price": 150,
+    "price_postapoc": 5,
     "material": [
       "rubber",
       "plastic"
@@ -217,9 +240,11 @@
   },
   {
     "id": "fan_suit_on",
-    "copy-from": "fan_suit",
-    "repairs_like": "fan_suit",
     "type": "TOOL_ARMOR",
+    "copy-from": "fan_suit",
+    "category": "clothing",
+    "symbol": "[",
+    "color": "light_gray",
     "name": {
       "str": "Air cooling suit(on)",
       "str_pl": "Air cooling suits(on)"
@@ -230,15 +255,63 @@
       "SKINTIGHT",
       "TRADER_AVOID"
     ],
-    "power_draw": 120000,
-    "revert_to": "fan_suit",
-    "warmth": -40,
+    "price": 150,
+    "price_postapoc": 5,
+    "material": [
+      "rubber",
+      "plastic"
+    ],
+    "weight": "864 g",
+    "volume": "2 L",
+    "charges_per_use": 1,
     "use_action": {
       "menu_text": "Turn off",
       "type": "transform",
       "msg": "Your %s deactivates.",
       "target": "fan_suit"
-    }
+    },
+    "warmth": -40,
+    "material_thickness": 1,
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "holster": true,
+        "rigid": true,
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [
+          "medium_plus_battery_cell",
+          "medium_battery_cell",
+          "medium_atomic_battery_cell",
+          "medium_disposable_cell"
+        ]
+      }
+    ],
+    "armor": [
+      {
+        "encumbrance": [
+          10,
+          30
+        ],
+        "coverage": 100,
+        "covers": [
+          "torso",
+          "arm_l",
+          "arm_r",
+          "leg_l",
+          "leg_r",
+          "hand_l",
+          "hand_r",
+          "head",
+          "foot_l",
+          "foot_r",
+          "mouth"
+        ]
+      }
+    ],
+    "repairs_like": "fan_suit",
+    "power_draw": 120000,
+    "revert_to": "fan_suit"
   },
   {
     "id": "small_fan",
@@ -284,8 +357,8 @@
       "VARSIZE",
       "SKINTIGHT"
     ],
-    "price": "150 USD",
-    "price_postapoc": "5 USD",
+    "price": 150,
+    "price_postapoc": 5,
     "material": [
       "rubber",
       "plastic",
@@ -344,9 +417,11 @@
   },
   {
     "id": "emr_suit_on",
-    "copy-from": "emr_suit",
-    "repairs_like": "emr_suit",
     "type": "TOOL_ARMOR",
+    "copy-from": "emr_suit",
+    "category": "clothing",
+    "symbol": "[",
+    "color": "dark_gray",
     "name": {
       "str": "EMR suit(on)",
       "str_pl": "EMR suits(on)"
@@ -357,15 +432,64 @@
       "SKINTIGHT",
       "TRADER_AVOID"
     ],
-    "power_draw": 120000,
-    "revert_to": "emr_suit",
-    "warmth": -80,
+    "price": 150,
+    "price_postapoc": 5,
+    "material": [
+      "rubber",
+      "plastic",
+      "copper"
+    ],
+    "weight": "864 g",
+    "volume": "2 L",
+    "charges_per_use": 3,
     "use_action": {
       "menu_text": "Turn off",
       "type": "transform",
       "msg": "Your %s deactivates.",
       "target": "emr_suit"
-    }
+    },
+    "warmth": -80,
+    "material_thickness": 2,
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "holster": true,
+        "rigid": true,
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [
+          "medium_plus_battery_cell",
+          "medium_battery_cell",
+          "medium_atomic_battery_cell",
+          "medium_disposable_cell"
+        ]
+      }
+    ],
+    "armor": [
+      {
+        "encumbrance": [
+          10,
+          30
+        ],
+        "coverage": 100,
+        "covers": [
+          "torso",
+          "arm_l",
+          "arm_r",
+          "leg_l",
+          "leg_r",
+          "hand_l",
+          "hand_r",
+          "head",
+          "foot_l",
+          "foot_r",
+          "mouth"
+        ]
+      }
+    ],
+    "repairs_like": "emr_suit",
+    "power_draw": 120000,
+    "revert_to": "emr_suit"
   },
   {
     "id": "lnemr_suit",
@@ -382,8 +506,8 @@
       "VARSIZE",
       "SKINTIGHT"
     ],
-    "price": "150 USD",
-    "price_postapoc": "5 USD",
+    "price": 150,
+    "price_postapoc": 5,
     "material": [
       "rubber",
       "plastic",
@@ -442,9 +566,11 @@
   },
   {
     "id": "lnemr_suit_on",
-    "copy-from": "lnemr_suit",
-    "repairs_like": "lnemr_suit",
     "type": "TOOL_ARMOR",
+    "copy-from": "lnemr_suit",
+    "category": "clothing",
+    "symbol": "[",
+    "color": "dark_gray",
     "name": {
       "str": "LNEMR suit(on)",
       "str_pl": "LNEMR suits(on)"
@@ -455,15 +581,64 @@
       "SKINTIGHT",
       "TRADER_AVOID"
     ],
-    "power_draw": 120000,
-    "revert_to": "lnemr_suit",
-    "warmth": -240,
+    "price": 150,
+    "price_postapoc": 5,
+    "material": [
+      "rubber",
+      "plastic",
+      "copper"
+    ],
+    "weight": "864 g",
+    "volume": "2 L",
+    "charges_per_use": 5,
     "use_action": {
       "menu_text": "Turn off",
       "type": "transform",
       "msg": "Your %s deactivates.",
       "target": "lnemr_suit"
-    }
+    },
+    "warmth": -240,
+    "material_thickness": 2,
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "holster": true,
+        "rigid": true,
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [
+          "heavy_plus_battery_cell",
+          "heavy_battery_cell",
+          "heavy_atomic_battery_cell",
+          "heavy_disposable_cell"
+        ]
+      }
+    ],
+    "armor": [
+      {
+        "encumbrance": [
+          15,
+          30
+        ],
+        "coverage": 100,
+        "covers": [
+          "torso",
+          "arm_l",
+          "arm_r",
+          "leg_l",
+          "leg_r",
+          "hand_l",
+          "hand_r",
+          "head",
+          "foot_l",
+          "foot_r",
+          "mouth"
+        ]
+      }
+    ],
+    "repairs_like": "lnemr_suit",
+    "power_draw": 120000,
+    "revert_to": "lnemr_suit"
   },
   {
     "id": "gadolinium_small",

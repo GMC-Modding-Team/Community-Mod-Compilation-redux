@@ -18,12 +18,19 @@
   },
   {
     "id": "20ga_magnum_casing",
-    "copy-from": "casing",
-    "looks_like": "223_casing",
     "type": "GENERIC",
+    "copy-from": "casing",
+    "category": "spare_parts",
     "name": {
       "str": "20 gauge magnum casing"
     },
+    "stackable": true,
+    "material": [
+      "brass"
+    ],
+    "symbol": "=",
+    "color": "yellow",
+    "looks_like": "223_casing",
     "description": "An empty casing from a higher brass 20 gauge magnum shell.  These are rare, so you might want to hold onto these.",
     "weight": "18 g",
     "volume": "12ml"
@@ -37,8 +44,8 @@
     "description": "A shell filled with metal pellets.  Extremely damaging, plus the spread makes it very accurate at short range.  20 gauge is smaller than 12 gauge, but still more lethal than.410 bore.",
     "weight": "24 g",
     "volume": "175 ml",
-    "price": "5 USD",
-    "price_postapoc": "8 USD",
+    "price": 5,
+    "price_postapoc": 8,
     "flags": [
       "IRREPLACEABLE_CONSUMABLE"
     ],
@@ -66,383 +73,533 @@
   },
   {
     "id": "20ga_bird",
-    "copy-from": "20ga_shot",
     "type": "AMMO",
+    "copy-from": "20ga_shot",
     "name": {
       "str": "20 gauge, birdshot"
     },
     "description": "Weak, 20 gauge shotgun ammunition.  Designed for hunting birds and other small game, its applications in combat are very limited.",
-    "price": "1 USD",
-    "price_postapoc": "4 USD",
+    "weight": "24 g",
+    "volume": "175 ml",
+    "price": 1,
+    "price_postapoc": 4,
     "flags": [
       "IRREPLACEABLE_CONSUMABLE"
     ],
-    "proportional": {
-      "damage": {
-        "damage_type": "bullet",
-        "amount": 0.3
-      },
-      "recoil": 0.6,
-      "loudness": 0.8
+    "material": [
+      "plastic",
+      "powder"
+    ],
+    "symbol": "=",
+    "color": "red",
+    "count": 30,
+    "stack_size": 30,
+    "ammo_type": "20ga",
+    "casing": "20ga_hull",
+    "range": 12,
+    "damage": {
+      "damage_type": "bullet",
+      "amount": 12.0
     },
-    "extend": {
-      "effects": [
-        "NOGIB"
-      ]
-    }
+    "recoil": 1050.0,
+    "loudness": 96.0,
+    "effects": [
+      "COOKOFF",
+      "SHOT",
+      "NOGIB"
+    ]
   },
   {
     "id": "20ga_flechette",
-    "copy-from": "20ga_shot",
     "type": "AMMO",
+    "copy-from": "20ga_shot",
     "name": {
       "str": "20 gauge flechette shell"
     },
     "description": "A shotgun shell filled with tiny steel darts.  Extremely damaging, plus the spread makes it very accurate at short range.  Slices through most forms of armor with ease.",
-    "price": "100 USD",
-    "relative": {
-      "damage": -6,
-      "pierce": 12
+    "weight": "24 g",
+    "volume": "175 ml",
+    "price": 100,
+    "price_postapoc": 8,
+    "flags": [
+      "IRREPLACEABLE_CONSUMABLE"
+    ],
+    "material": [
+      "plastic",
+      "powder"
+    ],
+    "symbol": "=",
+    "color": "red",
+    "count": 10,
+    "stack_size": 30,
+    "ammo_type": "20ga",
+    "casing": "20ga_hull",
+    "range": 12,
+    "damage": {
+      "damage_type": "bullet",
+      "amount": 40,
+      "armor_penetration": 12
     },
-    "count": 10
+    "recoil": 1750,
+    "loudness": 120,
+    "effects": [
+      "COOKOFF",
+      "SHOT"
+    ]
   },
   {
     "id": "20ga_scrap",
-    "copy-from": "20ga_shot",
     "type": "AMMO",
+    "copy-from": "20ga_shot",
     "name": {
       "str": "20 gauge, scrap loaded"
     },
     "description": "A shotgun shell filled with whatever was lying around.  They are more damaging than birdshot, but fairly inaccurate.",
-    "proportional": {
-      "price": 0.4,
-      "damage": {
-        "damage_type": "bullet",
-        "amount": 0.6
-      },
-      "dispersion": 1.2
+    "weight": "24 g",
+    "volume": "175 ml",
+    "price": 2.0,
+    "price_postapoc": 8,
+    "flags": [],
+    "material": [
+      "plastic",
+      "powder"
+    ],
+    "symbol": "=",
+    "color": "red",
+    "count": 30,
+    "stack_size": 30,
+    "ammo_type": "20ga",
+    "casing": "20ga_hull",
+    "range": 12,
+    "damage": {
+      "damage_type": "bullet",
+      "amount": 24.0
     },
-    "extend": {
-      "effects": [
-        "RECYCLED"
-      ]
-    },
-    "delete": {
-      "effects": [
-        "NEVER_MISFIRES"
-      ],
-      "flags": [
-        "IRREPLACEABLE_CONSUMABLE"
-      ]
-    }
+    "recoil": 1750,
+    "loudness": 120,
+    "effects": [
+      "COOKOFF",
+      "SHOT",
+      "RECYCLED"
+    ]
   },
   {
     "id": "20ga_slug",
-    "copy-from": "20ga_shot",
     "type": "AMMO",
+    "copy-from": "20ga_shot",
     "name": {
       "str": "20 gauge, slug"
     },
     "description": "A heavy metal slug used with shotguns to give them the range capabilities of a rifle.  Extremely damaging but rather inaccurate.",
-    "price": "4 USD",
-    "price_postapoc": "4 USD",
+    "weight": "24 g",
+    "volume": "175 ml",
+    "price": 4,
+    "price_postapoc": 4,
     "flags": [
       "IRREPLACEABLE_CONSUMABLE"
     ],
-    "relative": {
-      "range": 12,
-      "damage": {
-        "damage_type": "bullet",
-        "armor_penetration": 6
-      }
+    "material": [
+      "plastic",
+      "powder"
+    ],
+    "symbol": "=",
+    "color": "red",
+    "count": 30,
+    "stack_size": 30,
+    "ammo_type": "20ga",
+    "casing": "20ga_hull",
+    "range": 24,
+    "damage": {
+      "damage_type": "bullet",
+      "amount": 40,
+      "armor_penetration": 6
     },
-    "proportional": {
-      "recoil": 1.4
-    },
-    "delete": {
-      "effects": [
-        "SHOT"
-      ]
-    },
-    "dispersion": 100
+    "recoil": 2450.0,
+    "loudness": 120,
+    "effects": [
+      "COOKOFF"
+    ],
+    "//legacy_dispersion": 100
   },
   {
     "id": "20ga_buck",
-    "copy-from": "20ga_shot",
     "type": "AMMO",
+    "copy-from": "20ga_shot",
     "name": {
       "str": "20 gauge, 3/0 buck"
     },
     "description": "A 20 gauge shell loaded with less, but larger, projectiles.",
-    "price": "4 USD",
-    "price_postapoc": "4 USD",
+    "weight": "24 g",
+    "volume": "175 ml",
+    "price": 4,
+    "price_postapoc": 4,
     "flags": [
       "IRREPLACEABLE_CONSUMABLE"
     ],
-    "relative": {
-      "range": 12,
-      "damage": {
-        "damage_type": "bullet",
-        "armor_penetration": 6
-      }
+    "material": [
+      "plastic",
+      "powder"
+    ],
+    "symbol": "=",
+    "color": "red",
+    "count": 30,
+    "stack_size": 30,
+    "ammo_type": "20ga",
+    "casing": "20ga_hull",
+    "range": 24,
+    "damage": {
+      "damage_type": "bullet",
+      "amount": 40,
+      "armor_penetration": 6
     },
-    "proportional": {
-      "recoil": 1.4
-    },
-    "dispersion": 100
+    "recoil": 2450.0,
+    "loudness": 120,
+    "effects": [
+      "COOKOFF",
+      "SHOT"
+    ],
+    "//legacy_dispersion": 100
   },
   {
     "id": "bp_20ga_shot",
-    "copy-from": "20ga_shot",
     "type": "AMMO",
+    "copy-from": "20ga_shot",
     "name": {
       "str": "20 gauge shot, black powder"
     },
-    "extend": {
-      "effects": [
-        "RECYCLED",
-        "MUZZLE_SMOKE",
-        "BLACKPOWDER"
-      ]
+    "description": "A shell filled with metal pellets.  Extremely damaging, plus the spread makes it very accurate at short range.  20 gauge is smaller than 12 gauge, but still more lethal than.410 bore.",
+    "weight": "24 g",
+    "volume": "175 ml",
+    "price": 5,
+    "price_postapoc": 8,
+    "flags": [],
+    "material": [
+      "plastic",
+      "powder"
+    ],
+    "symbol": "=",
+    "color": "red",
+    "count": 30,
+    "stack_size": 30,
+    "ammo_type": "20ga",
+    "casing": "20ga_hull",
+    "range": 12,
+    "damage": {
+      "damage_type": "bullet",
+      "amount": 40
     },
-    "delete": {
-      "effects": [
-        "NEVER_MISFIRES"
-      ],
-      "flags": [
-        "IRREPLACEABLE_CONSUMABLE"
-      ]
-    }
+    "recoil": 1750,
+    "loudness": 120,
+    "effects": [
+      "COOKOFF",
+      "SHOT",
+      "RECYCLED",
+      "MUZZLE_SMOKE",
+      "BLACKPOWDER"
+    ]
   },
   {
     "id": "bp_20ga_bird",
-    "copy-from": "20ga_bird",
     "type": "AMMO",
+    "copy-from": "20ga_bird",
     "name": {
       "str": "20 gauge, birdshot, black powder"
     },
-    "proportional": {
-      "price": 0.6,
-      "damage": {
-        "damage_type": "bullet",
-        "amount": 0.8
-      },
-      "dispersion": 1.2
+    "description": "Weak, 20 gauge shotgun ammunition.  Designed for hunting birds and other small game, its applications in combat are very limited.",
+    "weight": "24 g",
+    "volume": "175 ml",
+    "price": 0.6,
+    "price_postapoc": 4,
+    "flags": [],
+    "material": [
+      "plastic",
+      "powder"
+    ],
+    "symbol": "=",
+    "color": "red",
+    "count": 30,
+    "stack_size": 30,
+    "ammo_type": "20ga",
+    "casing": "20ga_hull",
+    "range": 12,
+    "damage": {
+      "damage_type": "bullet",
+      "amount": 32.0
     },
-    "extend": {
-      "effects": [
-        "RECYCLED",
-        "MUZZLE_SMOKE",
-        "BLACKPOWDER"
-      ]
-    },
-    "delete": {
-      "effects": [
-        "NEVER_MISFIRES"
-      ],
-      "flags": [
-        "IRREPLACEABLE_CONSUMABLE"
-      ]
-    }
+    "recoil": 1750,
+    "loudness": 120,
+    "effects": [
+      "COOKOFF",
+      "SHOT",
+      "RECYCLED",
+      "MUZZLE_SMOKE",
+      "BLACKPOWDER"
+    ]
   },
   {
     "id": "bp_20ga_scrap",
-    "copy-from": "20ga_scrap",
     "type": "AMMO",
+    "copy-from": "20ga_scrap",
     "name": {
       "str": "20 gauge, black powder, scrap loaded"
     },
-    "proportional": {
-      "price": 0.6,
-      "damage": {
-        "damage_type": "bullet",
-        "amount": 0.8
-      }
+    "description": "A shotgun shell filled with whatever was lying around.  They are more damaging than birdshot, but fairly inaccurate.",
+    "weight": "24 g",
+    "volume": "175 ml",
+    "price": 3.0,
+    "price_postapoc": 8,
+    "flags": [],
+    "material": [
+      "plastic",
+      "powder"
+    ],
+    "symbol": "=",
+    "color": "red",
+    "count": 30,
+    "stack_size": 30,
+    "ammo_type": "20ga",
+    "casing": "20ga_hull",
+    "range": 12,
+    "damage": {
+      "damage_type": "bullet",
+      "amount": 32.0
     },
-    "extend": {
-      "effects": [
-        "RECYCLED",
-        "MUZZLE_SMOKE"
-      ]
-    },
-    "delete": {
-      "effects": [
-        "NEVER_MISFIRES"
-      ],
-      "flags": [
-        "IRREPLACEABLE_CONSUMABLE"
-      ]
-    }
+    "recoil": 1750,
+    "loudness": 120,
+    "effects": [
+      "COOKOFF",
+      "SHOT",
+      "RECYCLED",
+      "MUZZLE_SMOKE"
+    ]
   },
   {
     "id": "bp_20ga_slug",
-    "copy-from": "20ga_slug",
     "type": "AMMO",
+    "copy-from": "20ga_slug",
     "name": {
       "str": "20 gauge, slug, black powder"
     },
-    "proportional": {
-      "price": 0.6,
-      "damage": {
-        "damage_type": "bullet",
-        "amount": 0.8
-      },
-      "dispersion": 1.2
+    "description": "A heavy metal slug used with shotguns to give them the range capabilities of a rifle.  Extremely damaging but rather inaccurate.",
+    "weight": "24 g",
+    "volume": "175 ml",
+    "price": 2.4,
+    "price_postapoc": 4,
+    "flags": [],
+    "material": [
+      "plastic",
+      "powder"
+    ],
+    "symbol": "=",
+    "color": "red",
+    "count": 30,
+    "stack_size": 30,
+    "ammo_type": "20ga",
+    "casing": "20ga_hull",
+    "range": 24,
+    "damage": {
+      "damage_type": "bullet",
+      "amount": 32.0,
+      "armor_penetration": 6
     },
-    "extend": {
-      "effects": [
-        "RECYCLED",
-        "MUZZLE_SMOKE",
-        "BLACKPOWDER"
-      ]
-    },
-    "delete": {
-      "effects": [
-        "NEVER_MISFIRES"
-      ],
-      "flags": [
-        "IRREPLACEABLE_CONSUMABLE"
-      ]
-    }
+    "recoil": 1750,
+    "loudness": 120,
+    "effects": [
+      "COOKOFF",
+      "SHOT",
+      "RECYCLED",
+      "MUZZLE_SMOKE",
+      "BLACKPOWDER"
+    ],
+    "//legacy_dispersion": 120.0
   },
   {
     "id": "bp_20ga_buck",
-    "copy-from": "20ga_buck",
     "type": "AMMO",
+    "copy-from": "20ga_buck",
     "name": {
       "str": "20 gauge, 3/0 buck, black powder"
     },
-    "extend": {
-      "effects": [
-        "RECYCLED",
-        "MUZZLE_SMOKE",
-        "BLACKPOWDER"
-      ]
+    "description": "A 20 gauge shell loaded with less, but larger, projectiles.",
+    "weight": "24 g",
+    "volume": "175 ml",
+    "price": 4,
+    "price_postapoc": 4,
+    "flags": [],
+    "material": [
+      "plastic",
+      "powder"
+    ],
+    "symbol": "=",
+    "color": "red",
+    "count": 30,
+    "stack_size": 30,
+    "ammo_type": "20ga",
+    "casing": "20ga_hull",
+    "range": 24,
+    "damage": {
+      "damage_type": "bullet",
+      "amount": 40,
+      "armor_penetration": 6
     },
-    "delete": {
-      "effects": [
-        "NEVER_MISFIRES"
-      ],
-      "flags": [
-        "IRREPLACEABLE_CONSUMABLE"
-      ]
-    }
+    "recoil": 2450.0,
+    "loudness": 120,
+    "effects": [
+      "COOKOFF",
+      "SHOT",
+      "RECYCLED",
+      "MUZZLE_SMOKE",
+      "BLACKPOWDER"
+    ],
+    "//legacy_dispersion": 100
   },
   {
     "id": "reloaded_20ga_shot",
-    "copy-from": "20ga_shot",
     "type": "AMMO",
+    "copy-from": "20ga_shot",
     "name": {
       "str": "20 gauge shot, reloaded"
     },
-    "proportional": {
-      "price": 0.7,
-      "damage": {
-        "damage_type": "bullet",
-        "amount": 0.9
-      },
-      "dispersion": 1.1
+    "description": "A shell filled with metal pellets.  Extremely damaging, plus the spread makes it very accurate at short range.  20 gauge is smaller than 12 gauge, but still more lethal than.410 bore.",
+    "weight": "24 g",
+    "volume": "175 ml",
+    "price": 3.5,
+    "price_postapoc": 8,
+    "flags": [],
+    "material": [
+      "plastic",
+      "powder"
+    ],
+    "symbol": "=",
+    "color": "red",
+    "count": 30,
+    "stack_size": 30,
+    "ammo_type": "20ga",
+    "casing": "20ga_hull",
+    "range": 12,
+    "damage": {
+      "damage_type": "bullet",
+      "amount": 36.0
     },
-    "extend": {
-      "effects": [
-        "RECYCLED"
-      ]
-    },
-    "delete": {
-      "effects": [
-        "NEVER_MISFIRES"
-      ],
-      "flags": [
-        "IRREPLACEABLE_CONSUMABLE"
-      ]
-    }
+    "recoil": 1750,
+    "loudness": 120,
+    "effects": [
+      "COOKOFF",
+      "SHOT",
+      "RECYCLED"
+    ]
   },
   {
     "id": "reloaded_20ga_bird",
-    "copy-from": "20ga_bird",
     "type": "AMMO",
+    "copy-from": "20ga_bird",
     "name": {
       "str": "20 gauge, birdshot, reloaded"
     },
-    "proportional": {
-      "price": 0.7,
-      "damage": {
-        "damage_type": "bullet",
-        "amount": 0.9
-      },
-      "dispersion": 1.1
+    "description": "Weak, 20 gauge shotgun ammunition.  Designed for hunting birds and other small game, its applications in combat are very limited.",
+    "weight": "24 g",
+    "volume": "175 ml",
+    "price": 0.7,
+    "price_postapoc": 4,
+    "flags": [],
+    "material": [
+      "plastic",
+      "powder"
+    ],
+    "symbol": "=",
+    "color": "red",
+    "count": 30,
+    "stack_size": 30,
+    "ammo_type": "20ga",
+    "casing": "20ga_hull",
+    "range": 12,
+    "damage": {
+      "damage_type": "bullet",
+      "amount": 36.0
     },
-    "extend": {
-      "effects": [
-        "RECYCLED"
-      ]
-    },
-    "delete": {
-      "effects": [
-        "NEVER_MISFIRES"
-      ],
-      "flags": [
-        "IRREPLACEABLE_CONSUMABLE"
-      ]
-    }
+    "recoil": 1750,
+    "loudness": 120,
+    "effects": [
+      "COOKOFF",
+      "SHOT",
+      "RECYCLED"
+    ]
   },
   {
     "id": "reloaded_20ga_slug",
-    "copy-from": "20ga_slug",
     "type": "AMMO",
+    "copy-from": "20ga_slug",
     "name": {
       "str": "20 gauge, slug, reloaded"
     },
-    "proportional": {
-      "price": 0.7,
-      "damage": {
-        "damage_type": "bullet",
-        "amount": 0.9
-      },
-      "dispersion": 1.1
+    "description": "A heavy metal slug used with shotguns to give them the range capabilities of a rifle.  Extremely damaging but rather inaccurate.",
+    "weight": "24 g",
+    "volume": "175 ml",
+    "price": 2.8,
+    "price_postapoc": 4,
+    "flags": [],
+    "material": [
+      "plastic",
+      "powder"
+    ],
+    "symbol": "=",
+    "color": "red",
+    "count": 30,
+    "stack_size": 30,
+    "ammo_type": "20ga",
+    "casing": "20ga_hull",
+    "range": 24,
+    "damage": {
+      "damage_type": "bullet",
+      "amount": 36.0,
+      "armor_penetration": 6
     },
-    "extend": {
-      "effects": [
-        "RECYCLED"
-      ]
-    },
-    "delete": {
-      "effects": [
-        "NEVER_MISFIRES"
-      ],
-      "flags": [
-        "IRREPLACEABLE_CONSUMABLE"
-      ]
-    }
+    "recoil": 1750,
+    "loudness": 120,
+    "effects": [
+      "COOKOFF",
+      "SHOT",
+      "RECYCLED"
+    ],
+    "//legacy_dispersion": 110.00000000000001
   },
   {
     "id": "reloaded_20ga_buck",
-    "copy-from": "20ga_buck",
     "type": "AMMO",
+    "copy-from": "20ga_buck",
     "name": {
       "str": "20 gauge, 3/0 buck, reloaded"
     },
-    "proportional": {
-      "price": 0.7,
-      "damage": {
-        "damage_type": "bullet",
-        "amount": 0.9
-      },
-      "dispersion": 1.1
+    "description": "A 20 gauge shell loaded with less, but larger, projectiles.",
+    "weight": "24 g",
+    "volume": "175 ml",
+    "price": 2.8,
+    "price_postapoc": 4,
+    "flags": [],
+    "material": [
+      "plastic",
+      "powder"
+    ],
+    "symbol": "=",
+    "color": "red",
+    "count": 30,
+    "stack_size": 30,
+    "ammo_type": "20ga",
+    "casing": "20ga_hull",
+    "range": 24,
+    "damage": {
+      "damage_type": "bullet",
+      "amount": 36.0,
+      "armor_penetration": 6
     },
-    "extend": {
-      "effects": [
-        "RECYCLED"
-      ]
-    },
-    "delete": {
-      "effects": [
-        "NEVER_MISFIRES"
-      ],
-      "flags": [
-        "IRREPLACEABLE_CONSUMABLE"
-      ]
-    }
+    "recoil": 1750,
+    "loudness": 120,
+    "effects": [
+      "COOKOFF",
+      "SHOT",
+      "RECYCLED"
+    ],
+    "//legacy_dispersion": 110.00000000000001
   },
   {
     "id": "20ga_shot_magnum",
@@ -453,8 +610,8 @@
     "description": "A shell filled with metal pellets.  Extremely damaging, plus the spread makes it very accurate at short range.  20 gauge is smaller than 12 gauge, but still more lethal than.410 bore.  This shell is in a brass case instead of a plastic hull, allowing a lot more powder behind every shot.",
     "weight": "24 g",
     "volume": "175 ml",
-    "price": "5 USD",
-    "price_postapoc": "8 USD",
+    "price": 5,
+    "price_postapoc": 8,
     "flags": [
       "IRREPLACEABLE_CONSUMABLE"
     ],
@@ -482,230 +639,301 @@
   },
   {
     "id": "20ga_bird_magnum",
-    "copy-from": "20ga_shot_magnum",
     "type": "AMMO",
+    "copy-from": "20ga_shot_magnum",
     "name": {
       "str": "20 gauge, magnum birdshot"
     },
     "description": "Weak, 20 gauge shotgun ammunition.  Designed for hunting birds and other small game, its applications in combat are very limited.  The magnum powder load helps to alleviate this slightly.",
-    "price": "1 USD",
-    "price_postapoc": "4 USD",
+    "weight": "24 g",
+    "volume": "175 ml",
+    "price": 1,
+    "price_postapoc": 4,
     "flags": [
       "IRREPLACEABLE_CONSUMABLE"
     ],
-    "proportional": {
-      "damage": {
-        "damage_type": "bullet",
-        "amount": 0.3
-      },
-      "recoil": 0.6,
-      "loudness": 0.8
+    "material": [
+      "plastic",
+      "powder"
+    ],
+    "symbol": "=",
+    "color": "red",
+    "count": 15,
+    "stack_size": 15,
+    "ammo_type": "20ga",
+    "casing": "20ga_magnum_casing",
+    "range": 16,
+    "damage": {
+      "damage_type": "bullet",
+      "amount": 24.0
     },
-    "extend": {
-      "effects": [
-        "NOGIB"
-      ]
-    }
+    "recoil": 1500.0,
+    "loudness": 128.0,
+    "effects": [
+      "COOKOFF",
+      "SHOT",
+      "NOGIB"
+    ]
   },
   {
     "id": "20ga_scrap_magnum",
-    "copy-from": "20ga_shot_magnum",
     "type": "AMMO",
+    "copy-from": "20ga_shot_magnum",
     "name": {
       "str": "20 gauge, scrap lmagnum"
     },
     "description": "A 20 gauge magnum shell filled with whatever was lying around.  They are more damaging than birdshot, but fairly inaccurate.",
-    "proportional": {
-      "price": 0.4,
-      "damage": {
-        "damage_type": "bullet",
-        "amount": 0.6
-      },
-      "dispersion": 1.2
+    "weight": "24 g",
+    "volume": "175 ml",
+    "price": 2.0,
+    "price_postapoc": 8,
+    "flags": [],
+    "material": [
+      "plastic",
+      "powder"
+    ],
+    "symbol": "=",
+    "color": "red",
+    "count": 15,
+    "stack_size": 15,
+    "ammo_type": "20ga",
+    "casing": "20ga_magnum_casing",
+    "range": 16,
+    "damage": {
+      "damage_type": "bullet",
+      "amount": 48.0
     },
-    "extend": {
-      "effects": [
-        "RECYCLED"
-      ]
-    },
-    "delete": {
-      "effects": [
-        "NEVER_MISFIRES"
-      ],
-      "flags": [
-        "IRREPLACEABLE_CONSUMABLE"
-      ]
-    }
+    "recoil": 2500,
+    "loudness": 160,
+    "effects": [
+      "COOKOFF",
+      "SHOT",
+      "RECYCLED"
+    ]
   },
   {
     "id": "20ga_slug_magnum",
-    "copy-from": "20ga_shot_magnum",
     "type": "AMMO",
+    "copy-from": "20ga_shot_magnum",
     "name": {
       "str": "20 gauge, magnum slug"
     },
     "description": "A heavy metal slug used with shotguns to give them the range capabilities of a rifle.  Extremely damaging but rather inaccurate.  This is only enhanced by the magnum powder load.",
-    "price": "4 USD",
-    "price_postapoc": "4 USD",
+    "weight": "24 g",
+    "volume": "175 ml",
+    "price": 4,
+    "price_postapoc": 4,
     "flags": [
       "IRREPLACEABLE_CONSUMABLE"
     ],
-    "relative": {
-      "range": 12,
-      "damage": {
-        "damage_type": "bullet",
-        "armor_penetration": 6
-      }
+    "material": [
+      "plastic",
+      "powder"
+    ],
+    "symbol": "=",
+    "color": "red",
+    "count": 15,
+    "stack_size": 15,
+    "ammo_type": "20ga",
+    "casing": "20ga_magnum_casing",
+    "range": 28,
+    "damage": {
+      "damage_type": "bullet",
+      "amount": 80,
+      "armor_penetration": 6
     },
-    "proportional": {
-      "recoil": 1.4
-    },
-    "delete": {
-      "effects": [
-        "SHOT"
-      ]
-    },
-    "dispersion": 100
+    "recoil": 3500.0,
+    "loudness": 160,
+    "effects": [
+      "COOKOFF"
+    ],
+    "//legacy_dispersion": 100
   },
   {
     "id": "20ga_buck_magnum",
-    "copy-from": "20ga_shot_magnum",
     "type": "AMMO",
+    "copy-from": "20ga_shot_magnum",
     "name": {
       "str": "20 gauge, 3/0 buck magnum"
     },
     "description": "A 20 gauge shell loaded with less, but larger, projectiles.  Given the magnum load, you could probably rename this to bearshot.",
-    "price": "4 USD",
-    "price_postapoc": "4 USD",
+    "weight": "24 g",
+    "volume": "175 ml",
+    "price": 4,
+    "price_postapoc": 4,
     "flags": [
       "IRREPLACEABLE_CONSUMABLE"
     ],
-    "relative": {
-      "range": 12,
-      "damage": {
-        "damage_type": "bullet",
-        "armor_penetration": 6
-      }
+    "material": [
+      "plastic",
+      "powder"
+    ],
+    "symbol": "=",
+    "color": "red",
+    "count": 15,
+    "stack_size": 15,
+    "ammo_type": "20ga",
+    "casing": "20ga_magnum_casing",
+    "range": 28,
+    "damage": {
+      "damage_type": "bullet",
+      "amount": 80,
+      "armor_penetration": 6
     },
-    "proportional": {
-      "recoil": 1.4
-    },
-    "dispersion": 100
+    "recoil": 3500.0,
+    "loudness": 160,
+    "effects": [
+      "COOKOFF",
+      "SHOT"
+    ],
+    "//legacy_dispersion": 100
   },
   {
     "id": "reloaded_20ga_shot_magnum",
-    "copy-from": "20ga_shot_magnum",
     "type": "AMMO",
+    "copy-from": "20ga_shot_magnum",
     "name": {
       "str": "20 gauge, magnum shot, reloaded"
     },
-    "proportional": {
-      "price": 0.7,
-      "damage": {
-        "damage_type": "bullet",
-        "amount": 0.9
-      },
-      "dispersion": 1.1
+    "description": "A shell filled with metal pellets.  Extremely damaging, plus the spread makes it very accurate at short range.  20 gauge is smaller than 12 gauge, but still more lethal than.410 bore.  This shell is in a brass case instead of a plastic hull, allowing a lot more powder behind every shot.",
+    "weight": "24 g",
+    "volume": "175 ml",
+    "price": 3.5,
+    "price_postapoc": 8,
+    "flags": [],
+    "material": [
+      "plastic",
+      "powder"
+    ],
+    "symbol": "=",
+    "color": "red",
+    "count": 15,
+    "stack_size": 15,
+    "ammo_type": "20ga",
+    "casing": "20ga_magnum_casing",
+    "range": 16,
+    "damage": {
+      "damage_type": "bullet",
+      "amount": 72.0
     },
-    "extend": {
-      "effects": [
-        "RECYCLED"
-      ]
-    },
-    "delete": {
-      "effects": [
-        "NEVER_MISFIRES"
-      ],
-      "flags": [
-        "IRREPLACEABLE_CONSUMABLE"
-      ]
-    }
+    "recoil": 2500,
+    "loudness": 160,
+    "effects": [
+      "COOKOFF",
+      "SHOT",
+      "RECYCLED"
+    ]
   },
   {
     "id": "reloaded_20ga_bird_magnum",
-    "copy-from": "20ga_bird_magnum",
     "type": "AMMO",
+    "copy-from": "20ga_bird_magnum",
     "name": {
       "str": "20 gauge, magnum birdshot, reloaded"
     },
-    "proportional": {
-      "price": 0.7,
-      "damage": {
-        "damage_type": "bullet",
-        "amount": 0.9
-      },
-      "dispersion": 1.1
+    "description": "Weak, 20 gauge shotgun ammunition.  Designed for hunting birds and other small game, its applications in combat are very limited.  The magnum powder load helps to alleviate this slightly.",
+    "weight": "24 g",
+    "volume": "175 ml",
+    "price": 0.7,
+    "price_postapoc": 4,
+    "flags": [],
+    "material": [
+      "plastic",
+      "powder"
+    ],
+    "symbol": "=",
+    "color": "red",
+    "count": 15,
+    "stack_size": 15,
+    "ammo_type": "20ga",
+    "casing": "20ga_magnum_casing",
+    "range": 16,
+    "damage": {
+      "damage_type": "bullet",
+      "amount": 72.0
     },
-    "extend": {
-      "effects": [
-        "RECYCLED"
-      ]
-    },
-    "delete": {
-      "effects": [
-        "NEVER_MISFIRES"
-      ],
-      "flags": [
-        "IRREPLACEABLE_CONSUMABLE"
-      ]
-    }
+    "recoil": 2500,
+    "loudness": 160,
+    "effects": [
+      "COOKOFF",
+      "SHOT",
+      "RECYCLED"
+    ]
   },
   {
     "id": "reloaded_20ga_slug_magnum",
-    "copy-from": "20ga_slug_magnum",
     "type": "AMMO",
+    "copy-from": "20ga_slug_magnum",
     "name": {
       "str": "20 gauge, magnum slug, reloaded"
     },
-    "proportional": {
-      "price": 0.7,
-      "damage": {
-        "damage_type": "bullet",
-        "amount": 0.9
-      },
-      "dispersion": 1.1
+    "description": "A heavy metal slug used with shotguns to give them the range capabilities of a rifle.  Extremely damaging but rather inaccurate.  This is only enhanced by the magnum powder load.",
+    "weight": "24 g",
+    "volume": "175 ml",
+    "price": 2.8,
+    "price_postapoc": 4,
+    "flags": [],
+    "material": [
+      "plastic",
+      "powder"
+    ],
+    "symbol": "=",
+    "color": "red",
+    "count": 15,
+    "stack_size": 15,
+    "ammo_type": "20ga",
+    "casing": "20ga_magnum_casing",
+    "range": 28,
+    "damage": {
+      "damage_type": "bullet",
+      "amount": 72.0,
+      "armor_penetration": 6
     },
-    "extend": {
-      "effects": [
-        "RECYCLED"
-      ]
-    },
-    "delete": {
-      "effects": [
-        "NEVER_MISFIRES"
-      ],
-      "flags": [
-        "IRREPLACEABLE_CONSUMABLE"
-      ]
-    }
+    "recoil": 2500,
+    "loudness": 160,
+    "effects": [
+      "COOKOFF",
+      "SHOT",
+      "RECYCLED"
+    ],
+    "//legacy_dispersion": 110.00000000000001
   },
   {
     "id": "reloaded_20ga_buck_magnum",
-    "copy-from": "20ga_buck_magnum",
     "type": "AMMO",
+    "copy-from": "20ga_buck_magnum",
     "name": {
       "str": "20 gauge, 3/0 magnum buck, reloaded"
     },
-    "proportional": {
-      "price": 0.7,
-      "damage": {
-        "damage_type": "bullet",
-        "amount": 0.9
-      },
-      "dispersion": 1.1
+    "description": "A 20 gauge shell loaded with less, but larger, projectiles.  Given the magnum load, you could probably rename this to bearshot.",
+    "weight": "24 g",
+    "volume": "175 ml",
+    "price": 2.8,
+    "price_postapoc": 4,
+    "flags": [],
+    "material": [
+      "plastic",
+      "powder"
+    ],
+    "symbol": "=",
+    "color": "red",
+    "count": 15,
+    "stack_size": 15,
+    "ammo_type": "20ga",
+    "casing": "20ga_magnum_casing",
+    "range": 28,
+    "damage": {
+      "damage_type": "bullet",
+      "amount": 72.0,
+      "armor_penetration": 6
     },
-    "extend": {
-      "effects": [
-        "RECYCLED"
-      ]
-    },
-    "delete": {
-      "effects": [
-        "NEVER_MISFIRES"
-      ],
-      "flags": [
-        "IRREPLACEABLE_CONSUMABLE"
-      ]
-    }
+    "recoil": 2500,
+    "loudness": 160,
+    "effects": [
+      "COOKOFF",
+      "SHOT",
+      "RECYCLED"
+    ],
+    "//legacy_dispersion": 110.00000000000001
   }
 ]

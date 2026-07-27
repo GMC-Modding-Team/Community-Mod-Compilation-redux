@@ -1,16 +1,58 @@
 [
   {
     "id": "zp500",
-    "copy-from": "pistol_revolver",
     "type": "GUN",
+    "copy-from": "pistol_revolver",
     "name": {
       "str_sp": "ZP 500"
     },
+    "skill": "pistol",
+    "sight_dispersion": 60,
+    "//": "Revolvers exclude the muzzle location preventing installation of suppressors",
+    "handling": 10,
+    "valid_mod_locations": [
+      [
+        "barrel",
+        1
+      ],
+      [
+        "bore",
+        1
+      ],
+      [
+        "grip",
+        1
+      ],
+      [
+        "mechanism",
+        4
+      ],
+      [
+        "sights",
+        1
+      ],
+      [
+        "stock",
+        1
+      ],
+      [
+        "rail mount",
+        1
+      ],
+      [
+        "underbarrel mount",
+        1
+      ]
+    ],
+    "faults": [
+      "fault_gun_blackpowder",
+      "fault_gun_dirt"
+    ],
     "description": "Powerful handcannon with built-in red dot sight and unique firing mechanism, capable of delivering great damage for long-range target.",
     "weight": "2700 g",
     "volume": "2230 ml",
     "price": "3 kUSD",
-    "price_postapoc": "500 USD",
+    "price_postapoc": 500,
     "to_hit": -2,
     "melee_damage": {
       "bash": 10
@@ -31,12 +73,15 @@
     "recoil": 110,
     "durability": 8,
     "loudness": 20,
-    "reload": 100,
+    "reload": 70.0,
     "built_in_mods": [
       "red_dot_sight"
     ],
     "flags": [
-      "NEVER_JAMS"
+      "NEVER_JAMS",
+      "RELOAD_ONE",
+      "RELOAD_EJECT",
+      "EASY_CLEAN"
     ],
     "pocket_data": [
       {
@@ -51,11 +96,80 @@
   },
   {
     "id": "v85",
-    "copy-from": "rifle_base",
     "type": "GUN",
+    "copy-from": "rifle_base",
+    "reload_noise_volume": 10,
+    "//": "this is the default handling for anything with a stock",
+    "handling": 20,
     "name": {
       "str_sp": "Vitrovski 85"
     },
+    "symbol": "(",
+    "color": "dark_gray",
+    "faults": [
+      "fault_gun_blackpowder",
+      "fault_gun_dirt",
+      "fault_gun_chamber_spent"
+    ],
+    "ranged_damage": {
+      "damage_type": "stab",
+      "amount": -2
+    },
+    "skill": "rifle",
+    "valid_mod_locations": [
+      [
+        "barrel",
+        1
+      ],
+      [
+        "bore",
+        1
+      ],
+      [
+        "brass catcher",
+        1
+      ],
+      [
+        "grip",
+        1
+      ],
+      [
+        "mechanism",
+        4
+      ],
+      [
+        "magazine",
+        1
+      ],
+      [
+        "muzzle",
+        1
+      ],
+      [
+        "rail",
+        2
+      ],
+      [
+        "sights",
+        1
+      ],
+      [
+        "sling",
+        1
+      ],
+      [
+        "stock",
+        1
+      ],
+      [
+        "stock accessory",
+        2
+      ],
+      [
+        "underbarrel",
+        1
+      ]
+    ],
     "description": "Russian's manufactured sniper rifle capable of piercing a thick steel wall thanks to its unique 550 Arlov bullet, it also has built-in muzzle brake and rifle scope.",
     "weight": "3300 g",
     "volume": "2560 ml",
@@ -70,12 +184,7 @@
     "ammo": [
       "550arlov"
     ],
-    "color": "dark_gray",
     "range": 40,
-    "ranged_damage": {
-      "damage_type": "stab",
-      "amount": -2
-    },
     "dispersion": 220,
     "durability": 8,
     "loudness": 20,
@@ -110,7 +219,7 @@
     "weight": "5500 g",
     "volume": "5700 ml",
     "price": "100 kUSD",
-    "price_postapoc": "25000 USD",
+    "price_postapoc": 25000,
     "to_hit": -5,
     "melee_damage": {
       "bash": 10
@@ -180,7 +289,7 @@
     "weight": "4300 g",
     "volume": "2330 ml",
     "price": "25 kUSD",
-    "price_postapoc": "12500 USD",
+    "price_postapoc": 12500,
     "to_hit": -2,
     "melee_damage": {
       "bash": 10
@@ -260,8 +369,8 @@
     "description": "Made by Extrella Company, this handgun is famous for its firing mechanism that result in almost no recoil and perfect accuracy.  it also has built-in scope for ease in aiming",
     "weight": "2700 g",
     "volume": "2100 ml",
-    "price": "17500 USD",
-    "price_postapoc": "8500 USD",
+    "price": 17500,
+    "price_postapoc": 8500,
     "to_hit": -1,
     "melee_damage": {
       "bash": 9
@@ -322,7 +431,7 @@
     "weight": "9700 g",
     "volume": "4500 ml",
     "price": "45 kUSD",
-    "price_postapoc": "10000 USD",
+    "price_postapoc": 10000,
     "to_hit": -5,
     "melee_damage": {
       "bash": 15
@@ -375,7 +484,7 @@
     "weight": "7900 g",
     "volume": "1312 ml",
     "price": "100 kUSD",
-    "price_postapoc": "10000 USD",
+    "price_postapoc": 10000,
     "to_hit": -5,
     "melee_damage": {
       "bash": 15
@@ -423,7 +532,7 @@
     "weight": "4300 g",
     "volume": "1100 ml",
     "price": "5 kUSD",
-    "price_postapoc": "1000 USD",
+    "price_postapoc": 1000,
     "to_hit": 1,
     "melee_damage": {
       "bash": 15
@@ -470,8 +579,8 @@
     "description": "Russian's special sniper rifle.  uses Subsonic 9x39mm bullet and has built-in scope and suppresor, this weapon is specially designed for undercover or clandestine operation, or picking zombies silently.",
     "weight": "2600 g",
     "volume": "1094 ml",
-    "price": "1793 USD",
-    "price_postapoc": "983 USD",
+    "price": 1793,
+    "price_postapoc": 983,
     "to_hit": 1,
     "melee_damage": {
       "bash": 10
@@ -522,8 +631,8 @@
     "description": "Designed and produced by former pirate, this weapon almost looks like pirate's boat cannon although its smaller and enough to be carried like normal weapons.  heavy, but has enough power to deliver a big oof to everything thanks to its special cannonball bullet.",
     "weight": "7800 g",
     "volume": "3700 ml",
-    "price": "2132 USD",
-    "price_postapoc": "1211 USD",
+    "price": 2132,
+    "price_postapoc": 1211,
     "to_hit": -3,
     "melee_damage": {
       "bash": 15
@@ -570,7 +679,7 @@
     "weight": "5400 g",
     "volume": "2900 ml",
     "price": "3 kUSD",
-    "price_postapoc": "950 USD",
+    "price_postapoc": 950,
     "to_hit": -2,
     "melee_damage": {
       "bash": 10
@@ -618,7 +727,7 @@
     "weight": "3700 g",
     "volume": "1870 ml",
     "price": "40 kUSD",
-    "price_postapoc": "9500 USD",
+    "price_postapoc": 9500,
     "to_hit": -1,
     "melee_damage": {
       "bash": 15
@@ -672,8 +781,8 @@
     "description": "First electric-powered anti-material rifle, one of many military's secret project to fight the Cataclysm.  futuristic and deadly, you can't help but wonder how the military is still failed to fight Cataclysm with this weapon.",
     "weight": "3500 g",
     "volume": "1770 ml",
-    "price": "525000 USD",
-    "price_postapoc": "11000 USD",
+    "price": 525000,
+    "price_postapoc": 11000,
     "to_hit": -2,
     "melee_damage": {
       "bash": 15
@@ -716,8 +825,8 @@
     "description": "Heavily modified with electrical component, this classic weapon is still maintaining its originality but with strange electrical component at the front end that provides increased firepower at the cost of using electric charge from UPS.  by the looks of it, this weapon seems originated from somewhere else.",
     "weight": "4550 g",
     "volume": "2600 ml",
-    "price": "1100 USD",
-    "price_postapoc": "45 USD",
+    "price": 1100,
+    "price_postapoc": 45,
     "to_hit": -1,
     "melee_damage": {
       "bash": 15
@@ -760,8 +869,8 @@
     "description": "A WW2 weapon, improved with complex electrical component that powers up when the trigger is pulled.  not only it increase the firepower but it also give the weapon an automated bolt-action mechanism.  originally this weapon uses 8mm Mauser but due to its heavy modification it now requires UPS charge and 7.62x25 as its new caliber.",
     "weight": "3750 g",
     "volume": "2700 ml",
-    "price": "35000 USD",
-    "price_postapoc": "350 USD",
+    "price": 35000,
+    "price_postapoc": 350,
     "to_hit": 1,
     "melee_damage": {
       "bash": 12

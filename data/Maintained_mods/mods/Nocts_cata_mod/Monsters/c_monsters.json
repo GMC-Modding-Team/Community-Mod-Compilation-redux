@@ -18,7 +18,7 @@
       "flesh"
     ],
     "symbol": "Z",
-    "color": "red_cyan",
+    "color": "red",
     "aggression": 0,
     "morale": 100,
     "melee_skill": 4,
@@ -124,7 +124,7 @@
       "flesh"
     ],
     "symbol": "B",
-    "color": "red_cyan",
+    "color": "red",
     "aggression": 5,
     "morale": 100,
     "melee_skill": 6,
@@ -226,7 +226,7 @@
       "flesh"
     ],
     "symbol": "A",
-    "color": "red_cyan",
+    "color": "red",
     "aggression": 100,
     "morale": 100,
     "melee_skill": 10,
@@ -355,7 +355,7 @@
       "veggy"
     ],
     "symbol": "F",
-    "color": "red_cyan",
+    "color": "red",
     "aggression": 0,
     "morale": 100,
     "melee_skill": 2,
@@ -477,7 +477,7 @@
       "flesh"
     ],
     "symbol": "Z",
-    "color": "red_cyan",
+    "color": "red",
     "aggression": 0,
     "morale": 100,
     "melee_skill": 3,
@@ -572,7 +572,7 @@
       "flesh"
     ],
     "symbol": "Z",
-    "color": "red_cyan",
+    "color": "red",
     "aggression": 0,
     "morale": 100,
     "melee_skill": 3,
@@ -656,9 +656,23 @@
       "str": "zombie augmented prowler"
     },
     "description": "An advanced, well-equipped member of the military that still succumbed to the cataclysm.  This one moves with purpose and clarity, knife in hand as though it still remembers how to use it.",
+    "default_faction": "super_soldat",
+    "species": [
+      "ZOMBIE"
+    ],
+    "volume": "62500 ml",
+    "weight": "81500 g",
+    "hp": 100,
     "speed": 100,
-    "dodge": 4,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "Z",
+    "color": "red",
+    "aggression": 0,
+    "morale": 100,
     "melee_skill": 5,
+    "melee_dice": 2,
     "melee_dice_sides": 6,
     "melee_damage": [
       {
@@ -666,10 +680,32 @@
         "amount": 10
       }
     ],
-    "path_settings": {
-      "max_dist": 20
+    "dodge": 4,
+    "armor": {
+      "bash": 5,
+      "cut": 10,
+      "stab": 10,
+      "bullet": 15,
+      "acid": 5,
+      "heat": 10
     },
+    "vision_day": 40,
     "vision_night": 20,
+    "luminance": 2,
+    "regenerates": 1,
+    "regeneration_modifiers": [
+      [
+        "onfire",
+        -1
+      ],
+      [
+        "corroding",
+        -1
+      ]
+    ],
+    "regen_morale": true,
+    "harvest": "CBM_SOLDAT_ZOMBIE_GENERIC",
+    "dissect": "dissect_CBM_SOLDAT_ZOMBIE_GENERIC",
     "special_attacks": [
       {
         "id": "grab",
@@ -684,8 +720,23 @@
         20
       ]
     ],
+    "special_when_hit": [
+      "ZAPBACK",
+      60
+    ],
+    "anger_triggers": [
+      "FRIEND_DIED",
+      "FRIEND_ATTACKED",
+      "HURT",
+      "STALK",
+      "PLAYER_CLOSE"
+    ],
+    "placate_triggers": [
+      "PLAYER_WEAK"
+    ],
     "death_drops": "mon_zombie_bio_knife_death_drops",
     "zombify_into": "mon_zombie_bio_reanimated",
+    "upgrades": {},
     "flags": [
       "HARDTOSHOOT",
       "SEES",
@@ -696,11 +747,8 @@
       "FILTHY",
       "PATH_AVOID_DANGER_1"
     ],
-    "delete": {
-      "upgrades": {
-        "half_life": 28,
-        "into": "mon_zombie_bio_knife"
-      }
+    "path_settings": {
+      "max_dist": 20
     }
   },
   {
@@ -724,7 +772,7 @@
       "flesh"
     ],
     "symbol": "Z",
-    "color": "red_cyan",
+    "color": "red",
     "aggression": 0,
     "morale": 100,
     "melee_skill": 5,
@@ -861,7 +909,7 @@
       "flesh"
     ],
     "symbol": "Z",
-    "color": "red_cyan",
+    "color": "red",
     "aggression": 0,
     "morale": 100,
     "melee_skill": 5,
@@ -993,7 +1041,7 @@
       "flesh"
     ],
     "symbol": "Z",
-    "color": "red_cyan",
+    "color": "red",
     "aggression": 0,
     "morale": 100,
     "melee_skill": 7,
@@ -1132,7 +1180,7 @@
       "flesh"
     ],
     "symbol": "Z",
-    "color": "red_cyan",
+    "color": "red",
     "aggression": 0,
     "morale": 100,
     "melee_skill": 7,
@@ -1262,7 +1310,7 @@
       "flesh"
     ],
     "symbol": "Z",
-    "color": "red_cyan",
+    "color": "red",
     "aggression": 0,
     "morale": 100,
     "melee_skill": 5,
@@ -1392,7 +1440,7 @@
       "flesh"
     ],
     "symbol": "Z",
-    "color": "red_cyan",
+    "color": "red",
     "aggression": 0,
     "morale": 100,
     "melee_skill": 3,
@@ -1519,7 +1567,7 @@
       "flesh"
     ],
     "symbol": "Z",
-    "color": "red_cyan",
+    "color": "red",
     "aggression": 0,
     "morale": 100,
     "melee_skill": 3,
@@ -1655,7 +1703,7 @@
       "flesh"
     ],
     "symbol": "Z",
-    "color": "red_cyan",
+    "color": "red",
     "//": "It has long since been aggro'd at this point.",
     "aggression": 100,
     "morale": 100,

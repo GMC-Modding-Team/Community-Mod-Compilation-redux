@@ -2,29 +2,63 @@
   {
     "id": "feces_roach",
     "type": "COMESTIBLE",
-    "name": { "str": "bug dirt" },
     "copy-from": "feces_bird",
-    "description": "Large black pellets of rotting material."
+    "name": {
+      "str": "bug dirt"
+    },
+    "category": "chems",
+    "weight": "40 g",
+    "color": "brown",
+    "spoils_in": "4 days 16 hours",
+    "comestible_type": "FOOD",
+    "symbol": "%",
+    "quench": -3,
+    "healthy": -1,
+    "calories": 26,
+    "description": "Large black pellets of rotting material.",
+    "price": "1 cent",
+    "price_postapoc": "1 cent",
+    "material": [
+      "feces"
+    ],
+    "contamination": [
+      {
+        "disease": "highly_contaminated_food",
+        "probability": 100
+      }
+    ],
+    "volume": "62 ml",
+    "fun": -25
   },
   {
     "id": "acid_free",
     "type": "COMESTIBLE",
-    "name": { "str_sp": "concentrated acid" },
+    "name": {
+      "str_sp": "concentrated acid"
+    },
     "weight": "250 g",
     "color": "green",
-    "flags": [ "ACID" ],
+    "flags": [
+      "ACID"
+    ],
     "use_action": "BLECH",
     "comestible_type": "DRINK",
     "symbol": "~",
     "quench": -96,
     "healthy": -4,
     "description": "Concentrated acid.  Don't drink it.",
-    "price": "20 USD",
+    "price": 20,
     "volume": "250 ml",
     "phase": "liquid",
     "category": "chems",
     "fun": -45,
-    "drop_action": { "type": "emit_actor", "emits": [ "emit_acid_splash" ], "scale_qty": true },
+    "drop_action": {
+      "type": "emit_actor",
+      "emits": [
+        "emit_acid_splash"
+      ],
+      "scale_qty": true
+    },
     "charges": 1
   }
 ]

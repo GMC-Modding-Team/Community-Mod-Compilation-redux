@@ -2,10 +2,10 @@
   {
     "id": "mon_necco",
     "type": "MONSTER",
+    "copy-from": "mon_cat",
     "name": {
       "str": "necco"
     },
-    "copy-from": "mon_cat",
     "description": "A giant necco wafer happily hopping around.",
     "default_faction": "cat",
     "bodytype": "dog",
@@ -15,6 +15,7 @@
     "species": [
       "MAMMAL"
     ],
+    "volume": "4000 ml",
     "weight": "2 kg",
     "hp": 8,
     "speed": 150,
@@ -23,12 +24,58 @@
     ],
     "symbol": "%",
     "color": "magenta",
-    "death_function": {
-      "corpse_type": "BROKEN"
-    },
+    "aggression": -99,
+    "morale": 2,
+    "melee_skill": 6,
+    "melee_dice": 1,
+    "melee_dice_sides": 2,
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 2
+      }
+    ],
+    "dodge": 8,
+    "//": "Their fur keeps them warm",
+    "vision_night": 20,
+    "special_attacks": [
+      {
+        "id": "scratch",
+        "attack_upper": false,
+        "cooldown": 10
+      },
+      {
+        "type": "bite",
+        "cooldown": 15,
+        "infection_chance": 50
+      }
+    ],
+    "fear_triggers": [
+      "SOUND",
+      "PLAYER_CLOSE",
+      "FRIEND_ATTACKED"
+    ],
     "placate_triggers": [
       "HURT"
     ],
+    "harvest": "cat_small_with_skull",
+    "dissect": "dissect_feline_sample_single",
+    "families": [
+      "prof_intro_biology",
+      "prof_physiology"
+    ],
+    "reproduction": {
+      "baby_monster": "mon_cat_kitten",
+      "baby_count": 4,
+      "baby_timer": 60
+    },
+    "petfood": {
+      "food": [
+        "CATFOOD"
+      ],
+      "feed": "The %s seems to like you!  Or maybe it just tolerates your presence better.  It's hard to tell with felines.",
+      "pet": "The %s softly purrs as you pet it.  It demands more."
+    },
     "flags": [
       "SEES",
       "HEARS",
@@ -38,7 +85,13 @@
       "PATH_AVOID_DANGER_1",
       "WARM",
       "HIT_AND_RUN"
-    ]
+    ],
+    "armor": {
+      "cold": 2
+    },
+    "death_function": {
+      "corpse_type": "BROKEN"
+    }
   },
   {
     "id": "mon_marshmallow_kid",
@@ -213,7 +266,7 @@
       "sugar"
     ],
     "symbol": "M",
-    "color": "light_red_magenta",
+    "color": "light_red",
     "morale": 100,
     "melee_skill": 5,
     "melee_dice": 4,
@@ -254,17 +307,46 @@
   {
     "id": "mon_marshmallow_kid_armored",
     "type": "MONSTER",
+    "copy-from": "mon_marshmallow_kid",
     "name": {
       "str": "marshmallow squire"
     },
     "description": "A small humanoid made of marshmallow.  Its chocolate-coated cracker armor shines dully as it bumbles around on its stubby marshmallow legs.  How cute!",
-    "copy-from": "mon_marshmallow_kid",
-    "color": "white_red",
+    "default_faction": "marshmallow_boys",
+    "bodytype": "human",
+    "species": [
+      "MARSHMALLOW"
+    ],
+    "volume": "30000 ml",
+    "weight": "40750 g",
+    "hp": 40,
+    "speed": 60,
+    "material": [
+      "sugar"
+    ],
+    "symbol": "m",
+    "color": "white",
+    "morale": 100,
+    "melee_skill": 2,
+    "melee_dice": 2,
+    "melee_dice_sides": 4,
+    "dodge": 2,
+    "vision_day": 30,
+    "vision_night": 3,
     "harvest": "armored_marshmallow_boy",
     "upgrades": {
       "half_life": 14,
       "into": "mon_marshmallow_guy_armored"
     },
+    "flags": [
+      "SEES",
+      "HEARS",
+      "SMELLS",
+      "STUMBLES",
+      "WARM",
+      "BASHES",
+      "NO_BREATHE"
+    ],
     "armor": {
       "bash": 2,
       "cut": 3,
@@ -274,13 +356,30 @@
   {
     "id": "mon_marshmallow_guy_armored",
     "type": "MONSTER",
+    "copy-from": "mon_marshmallow_guy",
     "name": {
       "str": "marshmallow knight"
     },
     "description": "A marshmallow humanoid clad in knightly armor made of chocolate-coated crackers.  It bumbles around as if looking around for something.  It's oddly adorable in a majestic sort of way.",
     "default_faction": "marshmallow_boys",
-    "copy-from": "mon_marshmallow_guy",
-    "color": "white_magenta",
+    "bodytype": "human",
+    "species": [
+      "MARSHMALLOW"
+    ],
+    "volume": "62500 ml",
+    "weight": "81500 g",
+    "hp": 80,
+    "speed": 70,
+    "material": [
+      "sugar"
+    ],
+    "symbol": "M",
+    "color": "white",
+    "morale": 100,
+    "melee_skill": 4,
+    "melee_dice": 2,
+    "melee_dice_sides": 3,
+    "vision_night": 3,
     "harvest": "armored_marshmallow_boy",
     "upgrades": {
       "half_life": 14,
@@ -291,6 +390,17 @@
       "baby_count": 5,
       "baby_timer": 14
     },
+    "flags": [
+      "SEES",
+      "HEARS",
+      "SMELLS",
+      "STUMBLES",
+      "WARM",
+      "BASHES",
+      "GROUP_BASH",
+      "NO_BREATHE",
+      "PUSH_MON"
+    ],
     "armor": {
       "bash": 3,
       "cut": 4,
@@ -300,14 +410,38 @@
   {
     "id": "mon_marshmallow_buff_armored",
     "type": "MONSTER",
+    "copy-from": "mon_marshmallow_buff",
     "name": {
       "str": "marshmallow champion"
     },
     "description": "Standing tall in its shining armor of chocolate-coated crackers, this marshmallow proudly strides towards an unknown goal.",
     "default_faction": "marshmallow_boys",
-    "copy-from": "mon_marshmallow_buff",
-    "color": "yellow_magenta",
+    "bodytype": "human",
+    "species": [
+      "MARSHMALLOW"
+    ],
+    "diff": 2,
+    "volume": "62500 ml",
+    "weight": "81500 g",
+    "hp": 120,
+    "speed": 105,
+    "material": [
+      "sugar"
+    ],
+    "symbol": "M",
+    "color": "yellow",
+    "morale": 100,
+    "melee_skill": 4,
+    "melee_dice": 3,
+    "melee_dice_sides": 8,
+    "vision_night": 4,
     "harvest": "armored_marshmallow_boy",
+    "special_attacks": [
+      [
+        "SMASH",
+        30
+      ]
+    ],
     "upgrades": {
       "half_life": 14,
       "into": "mon_marshmallow_goliath_armored"
@@ -317,6 +451,18 @@
       "baby_count": 7,
       "baby_timer": 12
     },
+    "flags": [
+      "SEES",
+      "HEARS",
+      "SMELLS",
+      "STUMBLES",
+      "WARM",
+      "BASHES",
+      "GROUP_BASH",
+      "NO_BREATHE",
+      "PUSH_MON",
+      "PUSH_VEH"
+    ],
     "armor": {
       "bash": 6,
       "cut": 7,
@@ -326,19 +472,57 @@
   {
     "id": "mon_marshmallow_goliath_armored",
     "type": "MONSTER",
+    "copy-from": "mon_marshmallow_goliath",
     "name": {
       "str": "marshmallow war lord"
     },
     "description": "A gigantic humanoid armored with thick plates of chocolate-coated crackers.  Its frozen smile is barely visible from under its heavy helmet as it scans its surroundings.",
     "default_faction": "marshmallow_boys",
-    "copy-from": "mon_marshmallow_goliath",
+    "bodytype": "human",
+    "species": [
+      "MARSHMALLOW"
+    ],
+    "diff": 5,
+    "volume": "875000 ml",
+    "weight": "200 kg",
+    "hp": 480,
+    "speed": 130,
+    "material": [
+      "sugar"
+    ],
     "symbol": "M",
-    "color": "brown_magenta",
+    "color": "brown",
+    "morale": 100,
+    "melee_skill": 5,
+    "melee_dice": 4,
+    "melee_dice_sides": 8,
+    "vision_day": 50,
+    "vision_night": 4,
+    "harvest": "marshmallow_boy",
+    "special_attacks": [
+      [
+        "SMASH",
+        20
+      ]
+    ],
     "reproduction": {
       "baby_egg": "smores",
       "baby_count": 10,
       "baby_timer": 10
     },
+    "flags": [
+      "SEES",
+      "HEARS",
+      "SMELLS",
+      "STUMBLES",
+      "WARM",
+      "BASHES",
+      "DESTROYS",
+      "ATTACKMON",
+      "NO_BREATHE",
+      "PUSH_MON",
+      "PUSH_VEH"
+    ],
     "armor": {
       "bash": 9,
       "cut": 11,
@@ -353,18 +537,53 @@
       "str": "gummy cub"
     },
     "description": "An achingly adorable bear cub made of sugary gummy goodness.",
+    "default_faction": "gummy_bears",
+    "bodytype": "bear",
+    "species": [
+      "GUMMY"
+    ],
     "volume": "40750 ml",
     "weight": "40750 g",
     "hp": 20,
     "speed": 90,
+    "material": [
+      "sugar"
+    ],
     "symbol": "b",
     "color": "light_red",
+    "aggression": 0,
     "morale": 30,
     "melee_skill": 2,
     "melee_dice": 2,
     "melee_dice_sides": 3,
     "dodge": 2,
+    "vision_day": 30,
+    "vision_night": 10,
+    "path_settings": {
+      "max_dist": 10
+    },
+    "anger_triggers": [
+      "HURT"
+    ],
     "harvest": "gummy_bear",
+    "reproduction": {
+      "baby_egg": "candy3",
+      "baby_count": 1,
+      "baby_timer": 10
+    },
+    "flags": [
+      "SEES",
+      "HEARS",
+      "SMELLS",
+      "PATH_AVOID_DANGER_1",
+      "WARM",
+      "BASHES",
+      "ATTACKMON",
+      "NO_BREATHE"
+    ],
+    "armor": {
+      "bash": 2
+    },
     "upgrades": {
       "half_life": 20,
       "into": "mon_gummy"
@@ -428,26 +647,80 @@
   {
     "id": "mon_gummy_gator",
     "type": "MONSTER",
+    "copy-from": "mon_gator",
     "name": {
       "str": "gummy gator"
     },
-    "copy-from": "mon_gator",
     "description": "Slowly moving through the chocolate like a gummy log along the surface.  You notice it's eye's following your movement as you approach.",
     "default_faction": "gummy_bears",
+    "bodytype": "gator",
+    "categories": [
+      "WILDLIFE"
+    ],
     "species": [
       "GUMMY"
     ],
+    "volume": "92500 ml",
+    "weight": "120 kg",
+    "hp": 90,
+    "speed": 90,
     "material": [
       "sugar"
     ],
     "symbol": "C",
     "color": "light_red",
+    "aggression": 30,
+    "morale": 50,
+    "melee_skill": 4,
+    "melee_dice": 1,
+    "melee_dice_sides": 10,
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 12
+      }
+    ],
+    "dodge": 2,
+    "vision_day": 3,
+    "vision_night": 35,
+    "families": [
+      "prof_intro_biology",
+      "prof_physiology"
+    ],
     "harvest": "gummy_bear",
-    "reproduction": {
-      "baby_egg": "candy3gator",
-      "baby_count": 1,
-      "baby_timer": 10
+    "dissect": "dissect_lizard_sample_large",
+    "path_settings": {
+      "max_dist": 8
     },
+    "grab_strength": 50,
+    "special_attacks": [
+      {
+        "id": "bite_grab",
+        "cooldown": 20,
+        "accuracy": 6,
+        "damage_max_instance": [
+          {
+            "damage_type": "stab",
+            "amount": 9,
+            "armor_multiplier": 0.5
+          },
+          {
+            "damage_type": "bash",
+            "amount": 27,
+            "armor_multiplier": 0.5
+          }
+        ],
+        "infection_chance": 50
+      }
+    ],
+    "anger_triggers": [
+      "PLAYER_CLOSE",
+      "PLAYER_WEAK"
+    ],
+    "fear_triggers": [
+      "FIRE",
+      "HURT"
+    ],
     "flags": [
       "SEES",
       "HEARS",
@@ -456,7 +729,17 @@
       "ANIMAL",
       "ATTACKMON",
       "SWIMS"
-    ]
+    ],
+    "armor": {
+      "bash": 6,
+      "cut": 8,
+      "bullet": 6
+    },
+    "reproduction": {
+      "baby_egg": "candy3gator",
+      "baby_count": 1,
+      "baby_timer": 10
+    }
   },
   {
     "id": "mon_small_cracker",
@@ -577,24 +860,68 @@
     "id": "mon_cracker_lbass",
     "type": "MONSTER",
     "copy-from": "mon_fish_medium",
-    "species": [
-      "CRACKER"
-    ],
+    "description": "An animal cracker largemouth bass.  It leaps from the water in pursuit of food.",
     "default_faction": "crackers",
     "name": {
       "str_sp": "animal cracker largemouth bass"
     },
-    "description": "An animal cracker largemouth bass.  It leaps from the water in pursuit of food.",
-    "harvest": "cracker_boy",
+    "//": "a default fish type - does not appear in-game",
+    "bodytype": "fish",
+    "categories": [
+      "WILDLIFE"
+    ],
+    "species": [
+      "CRACKER"
+    ],
+    "volume": "7 L",
+    "weight": "4535 g",
+    "hp": 10,
+    "speed": 150,
+    "dodge": 8,
     "material": [
       "wheat",
       "junk"
     ],
+    "symbol": "f",
+    "color": "white",
+    "aggression": -60,
+    "morale": 5,
+    "melee_dice": 1,
+    "melee_dice_sides": 2,
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 2
+      }
+    ],
+    "luminance": 0,
     "reproduction": {
       "baby_egg": "grahmcrackers_roe",
       "baby_count": 3,
       "baby_timer": 20
-    }
+    },
+    "baby_flags": [
+      "SPRING",
+      "SUMMER"
+    ],
+    "fear_triggers": [
+      "PLAYER_CLOSE",
+      "SOUND"
+    ],
+    "harvest": "cracker_boy",
+    "families": [
+      "prof_intro_biology",
+      "prof_physiology"
+    ],
+    "dissect": "dissect_fish_sample_single",
+    "flags": [
+      "FISHABLE",
+      "SEES",
+      "SMELLS",
+      "SWIMS",
+      "AQUATIC",
+      "WATER_CAMOUFLAGE"
+    ]
   },
   {
     "id": "mon_cookie",
@@ -657,16 +984,26 @@
   {
     "id": "mon_cookie_hydra",
     "type": "MONSTER",
+    "copy-from": "mon_cookie",
     "name": {
       "str": "cookie hydra"
     },
     "description": "A giant cookie dragon with multiple heads.  It prowls looking for food.",
-    "copy-from": "mon_cookie",
+    "default_faction": "cookies",
     "bodytype": "angel",
+    "species": [
+      "COOKIE"
+    ],
     "volume": "600 L",
     "weight": "500 kg",
     "hp": 160,
     "speed": 80,
+    "material": [
+      "wheat",
+      "junk"
+    ],
+    "symbol": "o",
+    "color": "brown",
     "aggression": 7,
     "morale": 7,
     "melee_skill": 4,
@@ -679,6 +1016,18 @@
       }
     ],
     "dodge": 2,
+    "vision_day": 30,
+    "vision_night": 10,
+    "harvest": "cookie_beast",
+    "path_settings": {
+      "max_dist": 10
+    },
+    "anger_triggers": [
+      "PLAYER_WEAK"
+    ],
+    "fear_triggers": [
+      "PLAYER_CLOSE"
+    ],
     "flags": [
       "SEES",
       "SMELLS",
@@ -695,16 +1044,26 @@
   {
     "id": "mon_cookie_hydra_youth",
     "type": "MONSTER",
+    "copy-from": "mon_cookie",
     "name": {
       "str": "cookie hydra spawn"
     },
     "description": "A giant cookie dragon with multiple heads.  It prowls looking for food.",
-    "copy-from": "mon_cookie",
+    "default_faction": "cookies",
     "bodytype": "angel",
+    "species": [
+      "COOKIE"
+    ],
     "volume": "300 L",
     "weight": "250 kg",
     "hp": 60,
     "speed": 80,
+    "material": [
+      "wheat",
+      "junk"
+    ],
+    "symbol": "o",
+    "color": "brown",
     "aggression": 0,
     "morale": 7,
     "melee_skill": 2,
@@ -717,6 +1076,18 @@
       }
     ],
     "dodge": 2,
+    "vision_day": 30,
+    "vision_night": 10,
+    "harvest": "cookie_beast",
+    "path_settings": {
+      "max_dist": 10
+    },
+    "anger_triggers": [
+      "PLAYER_WEAK"
+    ],
+    "fear_triggers": [
+      "PLAYER_CLOSE"
+    ],
     "flags": [
       "SEES",
       "SMELLS",
@@ -724,6 +1095,11 @@
       "PATH_AVOID_DANGER_1",
       "SWIMS"
     ],
+    "reproduction": {
+      "baby_egg": "cookies",
+      "baby_count": 10,
+      "baby_timer": 5
+    },
     "upgrades": {
       "age_grow": 200,
       "into": "mon_cookie_hydra"
@@ -839,20 +1215,109 @@
   {
     "id": "mon_cow_calf_choc",
     "type": "MONSTER",
+    "copy-from": "mon_cow_calf",
     "name": {
       "str": "chocolate calf",
       "str_pl": "chocolate calves"
     },
     "description": "The domestic cow, a baleful, ruminating farm animal.  It is quite muscular, and the males can have a violent streak to accompany their nasty-looking horns.  This one looks to be made entirely of chocolate.",
-    "copy-from": "mon_cow_calf",
+    "default_faction": "herbivore",
+    "bodytype": "dog",
+    "categories": [
+      "WILDLIFE"
+    ],
+    "species": [
+      "MAMMAL"
+    ],
+    "volume": "62500 ml",
+    "weight": "81500 g",
+    "hp": 40,
+    "speed": 120,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "C",
+    "color": "light_gray",
+    "looks_like": "mon_cow",
+    "aggression": -70,
+    "morale": 20,
+    "melee_skill": 3,
+    "melee_dice": 2,
+    "melee_dice_sides": 4,
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 2
+      }
+    ],
+    "dodge": 2,
+    "stomach_size": 2000,
+    "path_settings": {
+      "max_dist": 10
+    },
+    "anger_triggers": [
+      "HURT"
+    ],
+    "fear_triggers": [
+      "PLAYER_CLOSE"
+    ],
+    "placate_triggers": [
+      "PLAYER_WEAK"
+    ],
+    "death_drops": {
+      "subtype": "collection",
+      "groups": [
+        [
+          "cow",
+          25
+        ]
+      ],
+      "//": "25% chance of an item from group cow"
+    },
+    "zombify_into": "mon_meat_cocoon_small",
     "harvest": "choc_cows",
+    "dissect": "dissect_cattle_sample_single",
+    "families": [
+      "prof_intro_biology",
+      "prof_physiology"
+    ],
+    "upgrades": {
+      "age_grow": 180,
+      "into": "mon_cow_choc"
+    },
     "biosignature": {
       "biosig_item": "feces_candy",
       "biosig_timer": "1 d"
     },
-    "upgrades": {
-      "age_grow": 180,
-      "into": "mon_cow_choc"
+    "special_attacks": [
+      [
+        "GRAZE",
+        20
+      ],
+      [
+        "EAT_CROP",
+        60
+      ]
+    ],
+    "petfood": {
+      "food": [
+        "CATTLEFOOD"
+      ],
+      "feed": "The %s seems to like you!  It lets you pat its head and seems friendly."
+    },
+    "flags": [
+      "SEES",
+      "HEARS",
+      "SMELLS",
+      "ANIMAL",
+      "PATH_AVOID_DANGER_1",
+      "WARM",
+      "PET_WONT_FOLLOW",
+      "CAN_BE_CULLED",
+      "EATS"
+    ],
+    "armor": {
+      "bash": 2
     }
   },
   {
@@ -957,12 +1422,46 @@
   {
     "id": "mon_licorice_snake_hatchling",
     "type": "MONSTER",
+    "copy-from": "mon_licorice_snake",
     "name": {
       "str": "licorice snake hatchling"
     },
     "description": "A baby snake made entirely out of licorice, possibly the children of the larger licorice snakes.",
-    "copy-from": "mon_licorice_snake",
+    "default_faction": "licorice_snakes",
+    "bodytype": "snake",
+    "species": [
+      "LICORICE"
+    ],
+    "volume": "230 ml",
+    "weight": "1000 g",
+    "hp": 65,
+    "speed": 45,
+    "material": [
+      "sugar"
+    ],
+    "reproduction": {
+      "baby_monster": "mon_licorice_snake_hatchling",
+      "baby_count": 20,
+      "baby_timer": 245
+    },
+    "symbol": "~",
+    "color": "red",
+    "morale": 100,
+    "melee_skill": 1,
+    "melee_dice": 3,
+    "melee_dice_sides": 5,
+    "dodge": 6,
+    "vision_day": 23,
+    "vision_night": 50,
     "harvest": "licorice_snake",
+    "flags": [
+      "SEES",
+      "HEARS",
+      "SMELLS",
+      "STUMBLES",
+      "WARM",
+      "BASHES"
+    ],
     "upgrades": {
       "age_grow": 200,
       "into": "mon_licorice_snake"

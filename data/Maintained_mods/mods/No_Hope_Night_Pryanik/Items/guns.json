@@ -11,7 +11,7 @@
     "weight": "5140 g",
     "volume": "1500 ml",
     "price": "4 kUSD",
-    "price_postapoc": "80 USD",
+    "price_postapoc": 80,
     "to_hit": -1,
     "melee_damage": {
       "bash": 4
@@ -140,7 +140,7 @@
     "description": "A cyborg's fusion blaster arm, cannibalized and converted into a rifle.  This improvised weapon is powered by a standard UPS connection.",
     "weight": "2680 g",
     "volume": "2500 ml",
-    "price": "4200 USD",
+    "price": 4200,
     "to_hit": -1,
     "melee_damage": {
       "bash": 10
@@ -205,21 +205,72 @@
   },
   {
     "id": "l_sp_45",
-    "copy-from": "l_sp_9mm",
     "type": "GUN",
+    "copy-from": "l_sp_9mm",
     "name": {
       "str": "L39-460"
     },
+    "skill": "pistol",
+    "sight_dispersion": 60,
+    "//": "L39s are based off the Robocop Auto-9, in turn a dolled-up Beretta 93R.",
+    "handling": 10,
+    "valid_mod_locations": [
+      [
+        "accessories",
+        2
+      ],
+      [
+        "brass catcher",
+        1
+      ],
+      [
+        "sights",
+        1
+      ],
+      [
+        "underbarrel",
+        1
+      ],
+      [
+        "muzzle",
+        1
+      ],
+      [
+        "grip mount",
+        1
+      ],
+      [
+        "rail mount",
+        1
+      ],
+      [
+        "stock mount",
+        1
+      ]
+    ],
+    "looks_like": "glock_17",
     "description": "Developed as a testament to the L39 family of pistols' strength, this hefty pistol chambers powerful.460 Rowland.  In addition to the heavy slide and L39 standard sighting package, this pistol sports a large compensator.  Notably, normal.45ACP can also be fired through the weapon.  Similar to other Leadworks products it doesn't accept third-party modifications.",
-    "price": "900 USD",
+    "weight": "935 g",
+    "volume": "500 ml",
+    "price": 900,
+    "to_hit": -2,
+    "melee_damage": {
+      "bash": 8
+    },
+    "material": [
+      "steel",
+      "plastic"
+    ],
+    "symbol": "(",
+    "color": "dark_gray",
     "ammo": [
       "460",
       "45"
     ],
+    "range": 1,
+    "dispersion": 340,
+    "durability": 8,
     "min_cycle_recoil": 540,
-    "relative": {
-      "durability": -1
-    },
     "built_in_mods": [
       "lead_holo_sight",
       "muzzle_brake",
@@ -235,24 +286,79 @@
           "lw12mag"
         ]
       }
+    ],
+    "flags": [
+      "DURABLE_MELEE"
     ]
   },
   {
     "id": "l_mp_45",
-    "copy-from": "l_mp_9mm",
     "type": "GUN",
+    "copy-from": "l_mp_9mm",
     "name": {
       "str": "L39B-45"
     },
+    "skill": "pistol",
+    "sight_dispersion": 60,
+    "//": "The M93R can go through up to 110 rounds in six seconds, FWIW.",
+    "handling": 10,
+    "valid_mod_locations": [
+      [
+        "accessories",
+        2
+      ],
+      [
+        "brass catcher",
+        1
+      ],
+      [
+        "sights",
+        1
+      ],
+      [
+        "underbarrel",
+        1
+      ],
+      [
+        "muzzle",
+        1
+      ],
+      [
+        "grip mount",
+        1
+      ],
+      [
+        "rail mount",
+        1
+      ],
+      [
+        "stock mount",
+        1
+      ]
+    ],
+    "looks_like": "glock_17",
     "description": "After the success of their 9x19mm machine pistol, Leadworks LLC developed the L39B-45 from their.460 Rowland semi-autos, intending them to be used with.45ACP.  Because it shares most of its parts with the L39-460, this variant retains the ability to fire fearsome.460 Rowland, though users are strongly advised not to do so during automatic fire.  Comes with built in red dot, recoil compensator and laser sights.  Similar to other Leadworks products it doesn't accept third-party modifications.",
+    "weight": "935 g",
+    "volume": "500 ml",
+    "price": 950,
+    "to_hit": -2,
+    "melee_damage": {
+      "bash": 8
+    },
+    "material": [
+      "steel",
+      "plastic"
+    ],
+    "symbol": "(",
+    "color": "dark_gray",
     "ammo": [
       "460",
       "45"
     ],
+    "range": 1,
+    "dispersion": 340,
+    "durability": 8,
     "min_cycle_recoil": 540,
-    "relative": {
-      "durability": -1
-    },
     "built_in_mods": [
       "lead_holo_sight",
       "muzzle_brake",
@@ -268,46 +374,34 @@
           "lw12mag"
         ]
       }
+    ],
+    "flags": [
+      "DURABLE_MELEE"
+    ],
+    "modes": [
+      [
+        "DEFAULT",
+        "semi-auto",
+        1
+      ],
+      [
+        "BURST",
+        "3 rd.",
+        3
+      ]
     ]
   },
   {
     "id": "l_enforcer_45",
-    "copy-from": "pistol_revolver",
-    "looks_like": "sw_619",
     "type": "GUN",
+    "copy-from": "pistol_revolver",
     "name": {
       "str_sp": "L2031 Enforcer"
     },
+    "skill": "pistol",
+    "sight_dispersion": 60,
     "//": "Real-life Autorevolvers tended to vary between 6-7.5 inch barrels, so we'll err on the side of a +1 here.",
-    "description": "An \"autorevolver\", this Leadworks LLC six-shooter combines the ease-of-action of a semi-auto with the ease-of-reloading and style of a revolver.  In addition to ubiquitous.45 ACP, the Enforcer also fires powerful.460 Rowland, offering.44 Magnum performance in a smaller package.  It achieved overnight stardom when it appeared in \"Treasure Trail\", a popular space-Western series.  Comes with built in holographic and laser sights.  Similar to other Leadworks products it doesn't accept third-party modifications.",
-    "weight": "1370 g",
-    "volume": "500 ml",
-    "price": "830 USD",
-    "to_hit": -2,
-    "melee_damage": {
-      "bash": 7
-    },
-    "material": [
-      "steel",
-      "wood"
-    ],
-    "symbol": "(",
-    "color": "light_gray",
-    "ammo": [
-      "460",
-      "45"
-    ],
-    "ranged_damage": {
-      "damage_type": "bullet",
-      "amount": 1
-    },
-    "dispersion": 360,
-    "durability": 8,
-    "blackpowder_tolerance": 56,
-    "built_in_mods": [
-      "lead_holo_sight",
-      "lead_laser_sight"
-    ],
+    "handling": 10,
     "valid_mod_locations": [
       [
         "accessories",
@@ -334,6 +428,48 @@
         1
       ]
     ],
+    "extend": {
+      "flags": [
+        "RELOAD_ONE",
+        "RELOAD_EJECT",
+        "NEVER_JAMS",
+        "EASY_CLEAN"
+      ]
+    },
+    "faults": [
+      "fault_gun_blackpowder",
+      "fault_gun_dirt"
+    ],
+    "looks_like": "sw_619",
+    "description": "An \"autorevolver\", this Leadworks LLC six-shooter combines the ease-of-action of a semi-auto with the ease-of-reloading and style of a revolver.  In addition to ubiquitous.45 ACP, the Enforcer also fires powerful.460 Rowland, offering.44 Magnum performance in a smaller package.  It achieved overnight stardom when it appeared in \"Treasure Trail\", a popular space-Western series.  Comes with built in holographic and laser sights.  Similar to other Leadworks products it doesn't accept third-party modifications.",
+    "weight": "1370 g",
+    "volume": "500 ml",
+    "price": 830,
+    "to_hit": -2,
+    "melee_damage": {
+      "bash": 7
+    },
+    "material": [
+      "steel",
+      "wood"
+    ],
+    "symbol": "(",
+    "color": "light_gray",
+    "ammo": [
+      "460",
+      "45"
+    ],
+    "ranged_damage": {
+      "damage_type": "bullet",
+      "amount": 1
+    },
+    "dispersion": 360,
+    "durability": 8,
+    "blackpowder_tolerance": 56,
+    "built_in_mods": [
+      "lead_holo_sight",
+      "lead_laser_sight"
+    ],
     "pocket_data": [
       {
         "pocket_type": "MAGAZINE",
@@ -343,7 +479,8 @@
           "45": 6
         }
       }
-    ]
+    ],
+    "reload": 0.7
   },
   {
     "id": "l_long_45",
@@ -357,7 +494,7 @@
     "description": "The Leadworks Long Ranger was designed to give Enforcer users (or anyone using.460/.45 caliber cartridges) a little extra reach while using the same ammunition.  Loaded with powerful.460 Rowland ammunition, this rifle offers a competitive replacement to the AR-15 in politically restrictive climates, but was met with disgust from lever action purists because of its synthetic furniture and built in holographic and laser sights.  Similar to other Leadworks products it doesn't accept third-party modifications.",
     "weight": "4175 g",
     "volume": "3250 ml",
-    "price": "900 USD",
+    "price": 900,
     "to_hit": -1,
     "melee_damage": {
       "bash": 12
@@ -444,16 +581,73 @@
   },
   {
     "id": "l_lookout_9mm",
-    "copy-from": "l_enforcer_45",
-    "looks_like": "sw_619",
     "type": "GUN",
+    "copy-from": "l_enforcer_45",
     "name": {
       "str_sp": "L2032 Lookout"
     },
+    "skill": "pistol",
+    "sight_dispersion": 60,
+    "//": "Real-life Autorevolvers tended to vary between 6-7.5 inch barrels, so we'll err on the side of a +1 here.",
+    "handling": 10,
+    "valid_mod_locations": [
+      [
+        "accessories",
+        2
+      ],
+      [
+        "sights",
+        1
+      ],
+      [
+        "underbarrel",
+        1
+      ],
+      [
+        "grip mount",
+        1
+      ],
+      [
+        "rail mount",
+        1
+      ],
+      [
+        "stock mount",
+        1
+      ]
+    ],
+    "extend": {
+      "flags": [
+        "RELOAD_ONE",
+        "RELOAD_EJECT",
+        "NEVER_JAMS",
+        "EASY_CLEAN"
+      ]
+    },
+    "faults": [
+      "fault_gun_blackpowder",
+      "fault_gun_dirt"
+    ],
+    "looks_like": "sw_619",
     "description": "After the Enforcer's success, Leadworks LLC reworked their autorevolver design to cater to the 9x19mm market.  The Lookout takes advantage of the smaller 9x19mm to hold a seventh round, without sacrificing the ease of handling or reloading the Enforcer made legendary.  Comes with built in holographic and laser sights.  Similar to other Leadworks products it doesn't accept third-party modifications.",
+    "weight": "1370 g",
+    "volume": "500 ml",
+    "longest_side": "25 cm",
+    "barrel_length": "141 mm",
+    "price": 830,
+    "price_postapoc": 1250,
+    "to_hit": -2,
+    "material": [
+      "steel",
+      "wood"
+    ],
+    "color": "light_gray",
     "ammo": [
       "9mm"
     ],
+    "dispersion": 360,
+    "durability": 8,
+    "blackpowder_tolerance": 56,
     "pocket_data": [
       {
         "pocket_type": "MAGAZINE",
@@ -462,70 +656,32 @@
           "9mm": 7
         }
       }
-    ]
+    ],
+    "melee_damage": {
+      "bash": 7
+    },
+    "symbol": "(",
+    "ranged_damage": {
+      "damage_type": "bullet",
+      "amount": 1
+    },
+    "built_in_mods": [
+      "lead_holo_sight",
+      "lead_laser_sight"
+    ],
+    "reload": 0.7
   },
   {
     "id": "l_mp_9mm",
-    "copy-from": "l_sp_9mm",
     "type": "GUN",
+    "copy-from": "l_sp_9mm",
     "name": {
       "str": "L39B"
     },
+    "skill": "pistol",
+    "sight_dispersion": 60,
     "//": "The M93R can go through up to 110 rounds in six seconds, FWIW.",
-    "description": "A selective-firing 9x19mm handgun introduced by Leadworks LLC's, L39B provides accurate single-shot placement as well as controllable short-range firepower with its three-round burst mode.  Users praised its accuracy and fearsome appearance.  Comes with built in red dot and laser sights.  Similar to other Leadworks products it doesn't accept third-party modifications.",
-    "price": "950 USD",
-    "modes": [
-      [
-        "DEFAULT",
-        "semi-auto",
-        1
-      ],
-      [
-        "BURST",
-        "3 rd.",
-        3
-      ]
-    ],
-    "relative": {
-      "weight": 130,
-      "durability": -1
-    }
-  },
-  {
-    "id": "l_sp_9mm",
-    "copy-from": "pistol_base",
-    "looks_like": "glock_17",
-    "type": "GUN",
-    "name": {
-      "str": "L39"
-    },
-    "//": "L39s are based off the Robocop Auto-9, in turn a dolled-up Beretta 93R.",
-    "description": "A semiautomatic 9x19mm handgun introduced by Leadworks LLC's, L39 provides accurate single-shot placement in a very robust frame with built in red dot and laser sights.  Several urban legends describe using it in ways that would have destroyed a lesser weapon.  Similar to other Leadworks products it doesn't accept third-party modifications.",
-    "weight": "935 g",
-    "volume": "500 ml",
-    "price": "700 USD",
-    "to_hit": -2,
-    "melee_damage": {
-      "bash": 8
-    },
-    "material": [
-      "steel",
-      "plastic"
-    ],
-    "symbol": "(",
-    "color": "dark_gray",
-    "ammo": [
-      "9mm",
-      "460"
-    ],
-    "range": 1,
-    "dispersion": 340,
-    "durability": 9,
-    "min_cycle_recoil": 450,
-    "built_in_mods": [
-      "lead_red_dot_sight",
-      "lead_laser_sight"
-    ],
+    "handling": 10,
     "valid_mod_locations": [
       [
         "accessories",
@@ -560,6 +716,143 @@
         1
       ]
     ],
+    "looks_like": "glock_17",
+    "description": "A selective-firing 9x19mm handgun introduced by Leadworks LLC's, L39B provides accurate single-shot placement as well as controllable short-range firepower with its three-round burst mode.  Users praised its accuracy and fearsome appearance.  Comes with built in red dot and laser sights.  Similar to other Leadworks products it doesn't accept third-party modifications.",
+    "weight": "935 g",
+    "volume": "500 ml",
+    "price": 950,
+    "to_hit": -2,
+    "melee_damage": {
+      "bash": 8
+    },
+    "material": [
+      "steel",
+      "plastic"
+    ],
+    "symbol": "(",
+    "color": "dark_gray",
+    "ammo": [
+      "9mm",
+      "460"
+    ],
+    "range": 1,
+    "dispersion": 340,
+    "durability": 8,
+    "min_cycle_recoil": 450,
+    "built_in_mods": [
+      "lead_red_dot_sight",
+      "lead_laser_sight"
+    ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "holster": true,
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [
+          "lw12mag",
+          "lw21mag"
+        ]
+      }
+    ],
+    "flags": [
+      "DURABLE_MELEE"
+    ],
+    "modes": [
+      [
+        "DEFAULT",
+        "semi-auto",
+        1
+      ],
+      [
+        "BURST",
+        "3 rd.",
+        3
+      ]
+    ]
+  },
+  {
+    "id": "l_sp_9mm",
+    "type": "GUN",
+    "copy-from": "pistol_base",
+    "reload_noise_volume": 10,
+    "//": "L39s are based off the Robocop Auto-9, in turn a dolled-up Beretta 93R.",
+    "handling": 10,
+    "name": {
+      "str": "L39"
+    },
+    "symbol": "(",
+    "color": "dark_gray",
+    "faults": [
+      "fault_gun_blackpowder",
+      "fault_gun_dirt",
+      "fault_gun_chamber_spent"
+    ],
+    "ranged_damage": {
+      "damage_type": "bullet",
+      "amount": 0
+    },
+    "skill": "pistol",
+    "sight_dispersion": 60,
+    "valid_mod_locations": [
+      [
+        "accessories",
+        2
+      ],
+      [
+        "brass catcher",
+        1
+      ],
+      [
+        "sights",
+        1
+      ],
+      [
+        "underbarrel",
+        1
+      ],
+      [
+        "muzzle",
+        1
+      ],
+      [
+        "grip mount",
+        1
+      ],
+      [
+        "rail mount",
+        1
+      ],
+      [
+        "stock mount",
+        1
+      ]
+    ],
+    "looks_like": "glock_17",
+    "description": "A semiautomatic 9x19mm handgun introduced by Leadworks LLC's, L39 provides accurate single-shot placement in a very robust frame with built in red dot and laser sights.  Several urban legends describe using it in ways that would have destroyed a lesser weapon.  Similar to other Leadworks products it doesn't accept third-party modifications.",
+    "weight": "935 g",
+    "volume": "500 ml",
+    "price": 700,
+    "to_hit": -2,
+    "melee_damage": {
+      "bash": 8
+    },
+    "material": [
+      "steel",
+      "plastic"
+    ],
+    "ammo": [
+      "9mm",
+      "460"
+    ],
+    "range": 1,
+    "dispersion": 340,
+    "durability": 9,
+    "min_cycle_recoil": 450,
+    "built_in_mods": [
+      "lead_red_dot_sight",
+      "lead_laser_sight"
+    ],
     "pocket_data": [
       {
         "pocket_type": "MAGAZINE_WELL",
@@ -578,17 +871,46 @@
   },
   {
     "id": "l_bak_223",
-    "copy-from": "pistol_revolver",
-    "looks_like": "sw_619",
     "type": "GUN",
+    "copy-from": "pistol_revolver",
     "name": {
       "str": "L2037 Backup"
     },
+    "skill": "pistol",
+    "sight_dispersion": 60,
     "//": "Most real-life autorevolvers use 6-7.5 inch barrel, but this one's mentioned to be particularly massive.",
+    "handling": 10,
+    "valid_mod_locations": [
+      [
+        "accessories",
+        2
+      ],
+      [
+        "sights",
+        1
+      ],
+      [
+        "underbarrel",
+        1
+      ]
+    ],
+    "extend": {
+      "flags": [
+        "RELOAD_ONE",
+        "RELOAD_EJECT",
+        "NEVER_JAMS",
+        "EASY_CLEAN"
+      ]
+    },
+    "faults": [
+      "fault_gun_blackpowder",
+      "fault_gun_dirt"
+    ],
+    "looks_like": "sw_619",
     "description": "The logical extension of Leadworks' autorevolver series, this massive 'sidearm' fires 5.56 NATO to share ammo with a soldier's rifle.  The muzzle flash and report of this 5-shot revolver are incredible, producing ballistics similar to.357 Magnum.  Similar to other Leadworks products it doesn't accept third-party modifications.",
     "weight": "2370 g",
     "volume": "750 ml",
-    "price": "2670 USD",
+    "price": 2670,
     "to_hit": -2,
     "melee_damage": {
       "bash": 7
@@ -624,34 +946,43 @@
       "lead_holo_sight",
       "lead_laser_sight"
     ],
+    "reload": 0.7
+  },
+  {
+    "id": "l_base_223",
+    "type": "GUN",
+    "copy-from": "rifle_auto",
+    "name": {
+      "str": "L523 platform"
+    },
+    "skill": "rifle",
     "valid_mod_locations": [
       [
         "accessories",
         2
       ],
       [
-        "sights",
+        "brass catcher",
         1
       ],
       [
-        "underbarrel",
+        "muzzle",
+        1
+      ],
+      [
+        "sling",
         1
       ]
-    ]
-  },
-  {
-    "id": "l_base_223",
-    "copy-from": "rifle_auto",
+    ],
+    "weapon_category": [
+      "AUTOMATIC_RIFLES"
+    ],
     "looks_like": "modular_ar15",
-    "type": "GUN",
-    "name": {
-      "str": "L523 platform"
-    },
     "//": "Current milspec, so Expensive.",
     "description": "Leadworks LLC's bullpup L523 platform utilizes the ubiquitous 5.56 round in multiple applications, and is designed to part-swap quickly, safely, and effectively from one to the next.  The base mechanism could--theoretically--be used on its own, but such use is inadvisable and will void your warranty.  There's no real place to incorporate aftermarket modifications on this barren proto-weapon.",
     "weight": "2500 g",
     "volume": "1500 ml",
-    "price": "3500 USD",
+    "price": 3500,
     "material": [
       "steel",
       "plastic"
@@ -680,24 +1011,6 @@
         3
       ]
     ],
-    "valid_mod_locations": [
-      [
-        "accessories",
-        2
-      ],
-      [
-        "brass catcher",
-        1
-      ],
-      [
-        "muzzle",
-        1
-      ],
-      [
-        "sling",
-        1
-      ]
-    ],
     "pocket_data": [
       {
         "pocket_type": "MAGAZINE_WELL",
@@ -716,14 +1029,71 @@
   },
   {
     "id": "l_car_223",
-    "copy-from": "l_base_223",
     "type": "GUN",
+    "copy-from": "l_base_223",
     "name": {
       "str": "L523-CAR carbine"
     },
+    "skill": "rifle",
+    "valid_mod_locations": [
+      [
+        "accessories",
+        2
+      ],
+      [
+        "brass catcher",
+        1
+      ],
+      [
+        "muzzle",
+        1
+      ],
+      [
+        "sights",
+        1
+      ],
+      [
+        "sling",
+        1
+      ],
+      [
+        "barrel",
+        1
+      ],
+      [
+        "underbarrel",
+        2
+      ],
+      [
+        "rail",
+        1
+      ]
+    ],
+    "weapon_category": [
+      "AUTOMATIC_RIFLES"
+    ],
+    "looks_like": "modular_ar15",
+    "//": "Current milspec, so Expensive.",
     "description": "Leadworks LLC's bullpup L523 platform utilizes the ubiquitous 5.56 round in multiple applications, and is designed to part-swap quickly, safely, and effectively from one to the next.  The carbine model incorporates Leadworks' proprietary gyro-stabilization technology and includes a red-dot sight and an integral laser sight.  Additionally it comes with underslung shotgun for close range encounters.  Like the rest of the family, doesn't accept third-party modifications.",
-    "price": "5200 USD",
+    "weight": "2500 g",
+    "volume": "1500 ml",
+    "price": 5200,
+    "material": [
+      "steel",
+      "plastic"
+    ],
+    "symbol": "(",
+    "color": "dark_gray",
+    "ammo": [
+      "223"
+    ],
+    "ranged_damage": {
+      "damage_type": "bullet",
+      "amount": -1
+    },
+    "dispersion": 140,
     "durability": 9,
+    "min_cycle_recoil": 1350,
     "modes": [
       [
         "DEFAULT",
@@ -736,16 +1106,37 @@
         4
       ]
     ],
-    "relative": {
-      "weight": 400
-    },
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "holster": true,
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [
+          "lw223mag",
+          "lw223bigmag"
+        ]
+      }
+    ],
+    "flags": [
+      "DISABLE_SIGHTS"
+    ],
     "built_in_mods": [
       "lead_red_dot_sight",
       "lead_barrel_small",
       "lead_laser_sight",
       "lead_u_shotgun",
       "lead_stabilizer"
-    ],
+    ]
+  },
+  {
+    "id": "l_dsr_223",
+    "type": "GUN",
+    "copy-from": "l_base_223",
+    "name": {
+      "str": "L523-DSR rifle"
+    },
+    "skill": "rifle",
     "valid_mod_locations": [
       [
         "accessories",
@@ -779,19 +1170,32 @@
         "rail",
         1
       ]
-    ]
-  },
-  {
-    "id": "l_dsr_223",
-    "copy-from": "l_base_223",
-    "type": "GUN",
-    "name": {
-      "str": "L523-DSR rifle"
-    },
+    ],
+    "weapon_category": [
+      "AUTOMATIC_RIFLES"
+    ],
+    "looks_like": "modular_ar15",
+    "//": "Current milspec, so Expensive.",
     "description": "Leadworks LLC's bullpup L523 platform utilizes the ubiquitous 5.56 round in multiple applications, and is designed to part-swap quickly, safely, and effectively from one to the next.  The designated-shootist rifle incorporates a specially-designed extended barrel with integral bipod and foregrip, along with an integral 8x optic, and trades selective-fire for the Leadworks gyro-stabilization system.  Like the rest of the family, though, it doesn't accept third-party modifications.",
-    "price": "5800 USD",
+    "weight": "2500 g",
+    "volume": "1500 ml",
+    "price": 5800,
+    "material": [
+      "steel",
+      "plastic"
+    ],
+    "symbol": "(",
+    "color": "dark_gray",
+    "ammo": [
+      "223"
+    ],
+    "ranged_damage": {
+      "damage_type": "bullet",
+      "amount": -1
+    },
+    "dispersion": 140,
     "durability": 9,
-    "barrel_volume": "750 ml",
+    "min_cycle_recoil": 1350,
     "modes": [
       [
         "DEFAULT",
@@ -799,27 +1203,38 @@
         1
       ]
     ],
-    "relative": {
-      "//": "Volume, range, and bullpup all point to a very large barrel on this one.",
-      "weight": 1200,
-      "volume": 4
-    },
-    "delete": {
-      "modes": [
-        [
-          "AUTO",
-          "auto",
-          3
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "holster": true,
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [
+          "lw223mag",
+          "lw223bigmag"
         ]
-      ]
-    },
+      }
+    ],
+    "flags": [
+      "DISABLE_SIGHTS"
+    ],
+    "barrel_volume": "750 ml",
     "built_in_mods": [
       "lead_rifle_scope",
       "lead_barrel_big",
       "lead_bipod",
       "lead_grip",
       "lead_stabilizer"
-    ],
+    ]
+  },
+  {
+    "id": "l_lmg_223",
+    "type": "GUN",
+    "copy-from": "l_base_223",
+    "name": {
+      "str": "L523-LMG"
+    },
+    "skill": "rifle",
     "valid_mod_locations": [
       [
         "accessories",
@@ -853,18 +1268,32 @@
         "rail",
         1
       ]
-    ]
-  },
-  {
-    "id": "l_lmg_223",
-    "copy-from": "l_base_223",
-    "type": "GUN",
-    "name": {
-      "str": "L523-LMG"
-    },
+    ],
+    "weapon_category": [
+      "AUTOMATIC_RIFLES"
+    ],
+    "looks_like": "modular_ar15",
+    "//": "Current milspec, so Expensive.",
     "description": "Leadworks LLC's bullpup L523 platform utilizes the ubiquitous 5.56 round in multiple applications, and is designed to part-swap quickly, safely, and effectively from one to the next.  The rather ambitious light machine gun variant incorporates ACOG scope, a heavy-duty barrel, foregrip, bipod and as well as the Leadworks gyro system.  Unlike the other configurations, the L523 LMG can be loaded with ammo belts.",
-    "price": "6200 USD",
+    "weight": "2500 g",
+    "volume": "1500 ml",
+    "price": 6200,
+    "material": [
+      "steel",
+      "plastic"
+    ],
+    "symbol": "(",
+    "color": "dark_gray",
+    "ammo": [
+      "223"
+    ],
+    "ranged_damage": {
+      "damage_type": "bullet",
+      "amount": -1
+    },
+    "dispersion": 190,
     "durability": 9,
+    "min_cycle_recoil": 1350,
     "modes": [
       [
         "DEFAULT",
@@ -877,11 +1306,6 @@
         14
       ]
     ],
-    "relative": {
-      "weight": 2000,
-      "volume": 7,
-      "dispersion": 50
-    },
     "pocket_data": [
       {
         "pocket_type": "MAGAZINE_WELL",
@@ -895,13 +1319,25 @@
         ]
       }
     ],
+    "flags": [
+      "DISABLE_SIGHTS"
+    ],
     "built_in_mods": [
       "lead_acog_scope",
       "lead_barrel_heavy_duty",
       "lead_bipod",
       "lead_grip",
       "lead_stabilizer"
-    ],
+    ]
+  },
+  {
+    "id": "l_mbr_223",
+    "type": "GUN",
+    "copy-from": "l_base_223",
+    "name": {
+      "str": "L523-MBR rifle"
+    },
+    "skill": "rifle",
     "valid_mod_locations": [
       [
         "accessories",
@@ -917,14 +1353,10 @@
       ],
       [
         "sights",
-        1
+        2
       ],
       [
         "sling",
-        1
-      ],
-      [
-        "barrel",
         1
       ],
       [
@@ -935,58 +1367,65 @@
         "rail",
         1
       ]
-    ]
-  },
-  {
-    "id": "l_mbr_223",
-    "copy-from": "l_base_223",
-    "type": "GUN",
-    "name": {
-      "str": "L523-MBR rifle"
-    },
+    ],
+    "weapon_category": [
+      "AUTOMATIC_RIFLES"
+    ],
+    "looks_like": "modular_ar15",
+    "//": "Current milspec, so Expensive.",
     "description": "Leadworks LLC's bullpup L523 platform utilizes the ubiquitous 5.56 round in multiple applications, and is designed to part-swap quickly, safely, and effectively from one to the next.  The battle rifle's (proprietary) combination optic & red-dot sights provide quick and accurate targeting, with Leadworks gyro-stabilization system and foregrip available for greater control.  Additionally it comes with grenade launcher module for dealing with hard targets.  Like the rest of the family, though, it doesn't accept third-party modifications.",
-    "price": "5200 USD",
-    "durability": 9,
-    "relative": {
-      "weight": 1200,
-      "volume": 2
+    "weight": "2500 g",
+    "volume": "1500 ml",
+    "price": 5200,
+    "material": [
+      "steel",
+      "plastic"
+    ],
+    "symbol": "(",
+    "color": "dark_gray",
+    "ammo": [
+      "223"
+    ],
+    "ranged_damage": {
+      "damage_type": "bullet",
+      "amount": -1
     },
+    "dispersion": 140,
+    "durability": 9,
+    "min_cycle_recoil": 1350,
+    "modes": [
+      [
+        "DEFAULT",
+        "semi-auto",
+        1
+      ],
+      [
+        "AUTO",
+        "auto",
+        3
+      ]
+    ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "holster": true,
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "item_restriction": [
+          "lw223mag",
+          "lw223bigmag"
+        ]
+      }
+    ],
+    "flags": [
+      "DISABLE_SIGHTS"
+    ],
     "built_in_mods": [
       "lead_acog_scope",
       "lead_red_dot_sight",
       "lead_grip",
       "lead_glm",
       "lead_stabilizer"
-    ],
-    "valid_mod_locations": [
-      [
-        "accessories",
-        2
-      ],
-      [
-        "brass catcher",
-        1
-      ],
-      [
-        "muzzle",
-        1
-      ],
-      [
-        "sights",
-        2
-      ],
-      [
-        "sling",
-        1
-      ],
-      [
-        "underbarrel",
-        2
-      ],
-      [
-        "rail",
-        1
-      ]
     ]
   },
   {
@@ -1000,7 +1439,7 @@
     "description": "This unusual Rivtech carbine features five rotating barrels and a large capacity helical magazine.  Durable and easy to handle, it was designed to overcome the deficiencies of its low power.22LR cartridge by rapidly delivering a large number of projectiles.",
     "weight": "1620 g",
     "volume": "1 L",
-    "price": "1800 USD",
+    "price": 1800,
     "to_hit": -2,
     "melee_damage": {
       "bash": 8
@@ -1107,8 +1546,8 @@
     "description": "Considered overkill by some, the Rivtech M99 remains an exceedingly powerful addition to the arsenal of any gunslinger.",
     "weight": "1204 g",
     "volume": "750 ml",
-    "price": "2100 USD",
-    "price_postapoc": "80 USD",
+    "price": 2100,
+    "price_postapoc": 80,
     "to_hit": -2,
     "melee_damage": {
       "bash": 12
@@ -1190,7 +1629,7 @@
     "weight": "11500 g",
     "volume": "4500 ml",
     "price": "9 kUSD",
-    "price_postapoc": "90 USD",
+    "price_postapoc": 90,
     "to_hit": -1,
     "melee_damage": {
       "bash": 12
@@ -1265,8 +1704,8 @@
     "description": "A single-shot, electrically propelled, steel rail launcher handcrafted from scrap.  The hypervelocity metal stake that it fires is accelerated to the point of spontaneous combustion by a Lorentz force generated by electromagnetic induction, powered by a standard UPS.",
     "weight": "4213 g",
     "volume": "2500 ml",
-    "price": "5500 USD",
-    "price_postapoc": "60 USD",
+    "price": 5500,
+    "price_postapoc": 60,
     "to_hit": -3,
     "melee_damage": {
       "bash": 10
@@ -1322,16 +1761,30 @@
   },
   {
     "id": "nailrifle",
-    "copy-from": "gun_base",
-    "looks_like": "modular_ar15",
     "type": "GUN",
+    "copy-from": "gun_base",
+    "reload_noise_volume": 10,
+    "//": "this is the default handling for anything with a stock",
+    "handling": 20,
     "name": {
       "str": "nail rifle"
     },
+    "symbol": "(",
+    "color": "yellow",
+    "faults": [
+      "fault_gun_blackpowder",
+      "fault_gun_dirt",
+      "fault_gun_chamber_spent"
+    ],
+    "ranged_damage": {
+      "damage_type": "stab",
+      "amount": 4
+    },
+    "looks_like": "modular_ar15",
     "description": "This is a nailgun that has been extensively modified with the addition of a short barrel, stock and hand guard.  It can be reloaded using detachable magazines and is an overall much more effective weapon.",
     "weight": "4904 g",
     "volume": "1750 ml",
-    "price": "390 USD",
+    "price": 390,
     "price_postapoc": "750 cent",
     "to_hit": -1,
     "melee_damage": {
@@ -1341,15 +1794,9 @@
       "plastic",
       "steel"
     ],
-    "symbol": "(",
-    "color": "yellow",
     "ammo": [
       "nail"
     ],
-    "ranged_damage": {
-      "damage_type": "stab",
-      "amount": 4
-    },
     "skill": "rifle",
     "modes": [
       [
@@ -1424,8 +1871,8 @@
       "str": "pneumatic bolt driver"
     },
     "description": "An eight-shot, revolving barrel, pneumatic bolt driver handcrafted from scrap.  It is very quiet and deadly.",
-    "price": "2900 USD",
-    "price_postapoc": "120 USD",
+    "price": 2900,
+    "price_postapoc": 120,
     "material": [
       "steel",
       "wood"
@@ -1509,7 +1956,7 @@
       "str": "pneumatic shotgun"
     },
     "description": "A double-barreled pneumatic air shotgun handcrafted from scrap.  Though it's firepower is lacking compared to more conventional shotguns, this thing can still pack quite a punch.  That is, if your target is directly in front of you.",
-    "price": "2200 USD",
+    "price": 2200,
     "material": [
       "steel",
       "wood"
@@ -1525,7 +1972,7 @@
     ],
     "weight": "3410 g",
     "volume": "2500 ml",
-    "price_postapoc": "120 USD",
+    "price_postapoc": 120,
     "melee_damage": {
       "bash": 8
     },

@@ -83,11 +83,28 @@
       "str": "giant beaver cub"
     },
     "description": "A juvenile giant beaver.  Pretty big already.",
+    "default_faction": "herbivore",
+    "bodytype": "bear",
+    "categories": [
+      "WILDLIFE"
+    ],
+    "species": [
+      "MAMMAL"
+    ],
+    "families": [
+      "prof_intro_biology"
+    ],
     "volume": "36 L",
     "weight": "36 kg",
     "hp": 30,
     "speed": 90,
+    "material": [
+      "flesh"
+    ],
     "symbol": "b",
+    "color": "brown",
+    "looks_like": "mon_beaver",
+    "aggression": -10,
     "morale": 10,
     "melee_skill": 2,
     "melee_dice": 1,
@@ -99,10 +116,23 @@
       }
     ],
     "dodge": 2,
-    "upgrades": {
-      "age_grow": 160,
-      "into": "mon_giant_beaver"
+    "harvest": "pelt_megafauna",
+    "anger_triggers": [
+      "HURT",
+      "PLAYER_NEAR_BABY"
+    ],
+    "fear_triggers": [
+      "SOUND",
+      "FIRE"
+    ],
+    "reproduction": {
+      "baby_monster": "mon_giant_beaver_cub",
+      "baby_count": 4,
+      "baby_timer": 360
     },
+    "baby_flags": [
+      "AUTUMN"
+    ],
     "flags": [
       "SEES",
       "HEARS",
@@ -112,7 +142,16 @@
       "SWIMS",
       "WARM",
       "NO_BREED"
-    ]
+    ],
+    "armor": {
+      "bash": 5,
+      "cut": 10,
+      "stab": 5
+    },
+    "upgrades": {
+      "age_grow": 160,
+      "into": "mon_giant_beaver"
+    }
   },
   {
     "id": "mon_large_claw_sloth",
@@ -229,11 +268,27 @@
     },
     "description": "A juvenile large claw sloth.  Pretty big already.",
     "default_faction": "herbivore",
+    "bodytype": "bear",
+    "categories": [
+      "WILDLIFE"
+    ],
+    "species": [
+      "MAMMAL"
+    ],
+    "families": [
+      "prof_intro_biology",
+      "prof_wp_megafauna"
+    ],
     "volume": "160 L",
     "weight": "160 kg",
     "hp": 130,
     "speed": 60,
+    "material": [
+      "flesh"
+    ],
     "symbol": "c",
+    "color": "brown",
+    "aggression": -10,
     "morale": 10,
     "melee_skill": 2,
     "melee_dice": 1,
@@ -244,10 +299,51 @@
         "amount": 4.0
       }
     ],
+    "special_attacks": [
+      {
+        "id": "longswipe"
+      },
+      {
+        "id": "smash"
+      },
+      [
+        "EAT_CROP",
+        5
+      ],
+      [
+        "EAT_FOOD",
+        5
+      ]
+    ],
     "dodge": 1,
-    "upgrades": {
-      "age_grow": 720,
-      "into": "mon_large_claw_sloth"
+    "harvest": "pelt_megafauna",
+    "anger_triggers": [
+      "HURT",
+      "PLAYER_NEAR_BABY"
+    ],
+    "shearing": [
+      {
+        "result": "wool_staple",
+        "ratio_volume": 0.05
+      }
+    ],
+    "fear_triggers": [
+      "FIRE"
+    ],
+    "reproduction": {
+      "baby_monster": "mon_large_claw_sloth_cub",
+      "baby_count": 1,
+      "baby_timer": 1080
+    },
+    "baby_flags": [
+      "SPRING"
+    ],
+    "petfood": {
+      "food": [
+        "CATTLEFOOD"
+      ],
+      "feed": "The %s seems to like you!  It lets you pat its head, giving off a bassy hum.",
+      "pet": "The %s turns on its back and lets you scratch its huge, moss-overgrown belly."
     },
     "flags": [
       "SEES",
@@ -259,7 +355,16 @@
       "WARM",
       "NO_BREED",
       "CANPLAY"
-    ]
+    ],
+    "armor": {
+      "bash": 5,
+      "cut": 15,
+      "stab": 10
+    },
+    "upgrades": {
+      "age_grow": 720,
+      "into": "mon_large_claw_sloth"
+    }
   },
   {
     "id": "mon_stagmoose",
@@ -380,11 +485,27 @@
     },
     "description": "A juvenile stag moose.  Pretty big already, but its antlers have not grown yet.",
     "default_faction": "herbivore",
+    "bodytype": "horse",
+    "categories": [
+      "WILDLIFE"
+    ],
+    "species": [
+      "MAMMAL"
+    ],
+    "families": [
+      "prof_intro_biology",
+      "prof_wp_megafauna"
+    ],
     "volume": "46 L",
     "weight": "46 kg",
     "hp": 40,
     "speed": 110,
+    "material": [
+      "flesh"
+    ],
     "symbol": "s",
+    "color": "brown",
+    "aggression": -10,
     "morale": 30,
     "melee_skill": 2,
     "melee_dice": 1,
@@ -395,10 +516,48 @@
         "amount": 2.0
       }
     ],
+    "special_attacks": [
+      {
+        "id": "stag_smash"
+      },
+      {
+        "id": "mutant_antler"
+      },
+      [
+        "EAT_CROP",
+        20
+      ]
+    ],
     "dodge": 2,
-    "upgrades": {
-      "age_grow": 270,
-      "into": "mon_stagmoose"
+    "vision_night": 7,
+    "path_settings": {
+      "max_dist": 10
+    },
+    "starting_ammo": {
+      "milk_raw": 3
+    },
+    "anger_triggers": [
+      "HURT",
+      "MATING_SEASON",
+      "PLAYER_NEAR_BABY"
+    ],
+    "fear_triggers": [
+      "FIRE",
+      "SOUND"
+    ],
+    "reproduction": {
+      "baby_monster": "mon_stagmoose_cub",
+      "baby_count": 1,
+      "baby_timer": 360
+    },
+    "baby_flags": [
+      "SPRING",
+      "AUTUMN"
+    ],
+    "harvest": "pelt_megafauna",
+    "biosignature": {
+      "biosig_item": "feces_manure",
+      "biosig_timer": 8
     },
     "petfood": {
       "food": [
@@ -416,7 +575,16 @@
       "NO_BREED",
       "WARM",
       "CANPLAY"
-    ]
+    ],
+    "armor": {
+      "bash": 5,
+      "cut": 5,
+      "stab": 5
+    },
+    "upgrades": {
+      "age_grow": 270,
+      "into": "mon_stagmoose"
+    }
   },
   {
     "id": "mon_mammoth",
@@ -566,11 +734,27 @@
     },
     "description": "This big baby mammoth is already covered in thick brown wool, but the menacing tusks of their parents have not grown yet.",
     "default_faction": "herbivore",
+    "bodytype": "elephant",
+    "categories": [
+      "WILDLIFE"
+    ],
+    "species": [
+      "MAMMAL"
+    ],
+    "families": [
+      "prof_intro_biology",
+      "prof_wp_megafauna"
+    ],
     "volume": "230 L",
     "weight": "200 kg",
     "hp": 200,
     "speed": 70,
+    "material": [
+      "flesh"
+    ],
     "symbol": "m",
+    "color": "brown",
+    "aggression": -30,
     "morale": 30,
     "melee_skill": 2,
     "melee_dice": 2,
@@ -582,6 +766,23 @@
       }
     ],
     "dodge": 1,
+    "vision_night": 5,
+    "path_settings": {
+      "max_dist": 10
+    },
+    "shearing": [
+      {
+        "result": "wool_staple",
+        "ratio_volume": 0.2
+      }
+    ],
+    "//": "This will produce 256kg of wool (as 1 wool staple is 200g)",
+    "anger_triggers": [
+      "HURT",
+      "FRIEND_ATTACKED",
+      "PLAYER_NEAR_BABY",
+      "MATING_SEASON"
+    ],
     "fear_triggers": [
       "SOUND",
       "PLAYER_CLOSE",
@@ -592,18 +793,20 @@
       "biosig_timer": 3
     },
     "harvest": "woolly_mammoth_baby",
+    "reproduction": {
+      "baby_monster": "mon_mammoth_cub",
+      "baby_count": 1,
+      "baby_timer": 720
+    },
+    "baby_flags": [
+      "AUTUMN"
+    ],
     "special_attacks": [
       [
         "EAT_FOOD",
         60
       ]
     ],
-    "petfood": {
-      "food": [
-        "CATTLEFOOD"
-      ],
-      "feed": "The %s seems to like you!  It lets you pat its head and seems friendly."
-    },
     "flags": [
       "NO_BREED",
       "SEES",
@@ -618,14 +821,20 @@
       "PUSH_MON",
       "CANPLAY"
     ],
-    "upgrades": {
-      "age_grow": 450,
-      "into": "mon_mammoth"
-    },
     "armor": {
       "cut": 5,
       "stab": 2,
       "bash": 5
+    },
+    "petfood": {
+      "food": [
+        "CATTLEFOOD"
+      ],
+      "feed": "The %s seems to like you!  It lets you pat its head and seems friendly."
+    },
+    "upgrades": {
+      "age_grow": 450,
+      "into": "mon_mammoth"
     }
   },
   {
@@ -765,11 +974,27 @@
     },
     "description": "This big baby mastodon is already quite muscular, but the menacing tusks of their parents have not grown yet.",
     "default_faction": "herbivore",
+    "bodytype": "elephant",
+    "categories": [
+      "WILDLIFE"
+    ],
+    "species": [
+      "MAMMAL"
+    ],
+    "families": [
+      "prof_intro_biology",
+      "prof_wp_megafauna"
+    ],
     "volume": "260 L",
     "weight": "240 kg",
     "hp": 120,
     "speed": 70,
+    "material": [
+      "flesh"
+    ],
     "symbol": "m",
+    "color": "light_gray",
+    "aggression": -20,
     "morale": 30,
     "melee_skill": 2,
     "melee_dice": 2,
@@ -781,27 +1006,35 @@
       }
     ],
     "dodge": 1,
-    "fear_triggers": [
-      "SOUND",
-      "PLAYER_CLOSE"
+    "vision_night": 5,
+    "path_settings": {
+      "max_dist": 10
+    },
+    "anger_triggers": [
+      "HURT",
+      "FRIEND_ATTACKED",
+      "PLAYER_NEAR_BABY",
+      "MATING_SEASON"
     ],
     "biosignature": {
       "biosig_item": "feces_manure",
       "biosig_timer": 3
     },
     "harvest": "mammal_large_leather",
+    "reproduction": {
+      "baby_monster": "mon_mastodon_cub",
+      "baby_count": 1,
+      "baby_timer": 720
+    },
+    "baby_flags": [
+      "AUTUMN"
+    ],
     "special_attacks": [
       [
         "EAT_FOOD",
         60
       ]
     ],
-    "petfood": {
-      "food": [
-        "CATTLEFOOD"
-      ],
-      "feed": "The %s seems to like you!  It lets you pat its head and seems friendly."
-    },
     "flags": [
       "NO_BREED",
       "SEES",
@@ -815,14 +1048,24 @@
       "PUSH_MON",
       "CANPLAY"
     ],
-    "upgrades": {
-      "age_grow": 450,
-      "into": "mon_mastodon"
-    },
     "armor": {
       "cut": 3,
       "stab": 2,
       "bash": 2
+    },
+    "fear_triggers": [
+      "SOUND",
+      "PLAYER_CLOSE"
+    ],
+    "petfood": {
+      "food": [
+        "CATTLEFOOD"
+      ],
+      "feed": "The %s seems to like you!  It lets you pat its head and seems friendly."
+    },
+    "upgrades": {
+      "age_grow": 450,
+      "into": "mon_mastodon"
     }
   },
   {
@@ -939,13 +1182,28 @@
     },
     "description": "A juvenile giant short-faced bear.  Still a massive bear and a considerable threat on its own, but the real danger will come from its highly protective parent.",
     "default_faction": "bear",
+    "bodytype": "bear",
+    "categories": [
+      "WILDLIFE"
+    ],
+    "species": [
+      "MAMMAL"
+    ],
+    "families": [
+      "prof_intro_biology",
+      "prof_wp_megafauna"
+    ],
     "volume": "200 L",
     "weight": "180 kg",
     "hp": 80,
     "speed": 110,
+    "material": [
+      "flesh"
+    ],
     "symbol": "b",
-    "morale": 30,
+    "color": "brown",
     "aggression": -10,
+    "morale": 30,
     "melee_skill": 2,
     "melee_dice": 2,
     "melee_dice_sides": 4,
@@ -956,14 +1214,50 @@
       }
     ],
     "dodge": 2,
+    "vision_day": 16,
+    "vision_night": 7,
+    "path_settings": {
+      "max_dist": 10
+    },
+    "anger_triggers": [
+      "HURT",
+      "PLAYER_NEAR_BABY",
+      "PLAYER_CLOSE"
+    ],
     "fear_triggers": [
       "SOUND",
       "PLAYER_CLOSE"
     ],
-    "upgrades": {
-      "age_grow": 360,
-      "into": "mon_shortface"
+    "biosignature": {
+      "biosig_item": "feces_manure",
+      "biosig_timer": 4
     },
+    "harvest": "pelt_megafauna",
+    "reproduction": {
+      "baby_monster": "mon_shortface_cub",
+      "baby_count": 1,
+      "baby_timer": 720
+    },
+    "baby_flags": [
+      "SPRING"
+    ],
+    "special_attacks": [
+      [
+        "EAT_FOOD",
+        60
+      ],
+      {
+        "id": "smash",
+        "cooldown": 20,
+        "throw_strength": 40,
+        "damage_max_instance": [
+          {
+            "damage_type": "bash",
+            "amount": 40
+          }
+        ]
+      }
+    ],
     "flags": [
       "NO_BREED",
       "SEES",
@@ -972,7 +1266,16 @@
       "ANIMAL",
       "PATH_AVOID_DANGER_1",
       "WARM"
-    ]
+    ],
+    "armor": {
+      "bash": 10,
+      "cut": 15,
+      "stab": 5
+    },
+    "upgrades": {
+      "age_grow": 360,
+      "into": "mon_shortface"
+    }
   },
   {
     "id": "mon_auk",
@@ -1048,13 +1351,68 @@
     "id": "mon_auk_chick",
     "type": "MONSTER",
     "copy-from": "mon_chicken_chick",
-    "description": "A tiny grey-colored chick, it could be from a number of different species.",
     "name": {
       "str": "white chick"
     },
+    "description": "A tiny grey-colored chick, it could be from a number of different species.",
+    "default_faction": "small_animal",
+    "bodytype": "bird",
+    "categories": [
+      "WILDLIFE"
+    ],
+    "species": [
+      "BIRD"
+    ],
+    "volume": "750 ml",
+    "weight": "60 g",
+    "hp": 1,
+    "speed": 40,
+    "material": [
+      "flesh"
+    ],
+    "symbol": "v",
+    "color": "yellow",
+    "looks_like": "mon_chicken",
+    "aggression": -99,
+    "morale": -8,
+    "melee_skill": 1,
+    "melee_dice": 1,
+    "melee_dice_sides": 1,
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 1
+      }
+    ],
+    "dodge": 1,
+    "families": [
+      "prof_intro_biology",
+      "prof_physiology",
+      "prof_wp_basic_bird"
+    ],
+    "harvest": "bird_tiny",
     "upgrades": {
       "age_grow": 28,
       "into": "mon_auk"
+    },
+    "//": "Grows up into a standard chicken as a fallback",
+    "flags": [
+      "SEES",
+      "HEARS",
+      "SMELLS",
+      "ANIMAL",
+      "PATH_AVOID_DANGER_1",
+      "WARM",
+      "SWARMS",
+      "CAN_BE_CULLED",
+      "CANPLAY"
+    ],
+    "petfood": {
+      "food": [
+        "BIRDFOOD"
+      ],
+      "feed": "The %s seems to like you!  It runs around your legs and seems friendly.",
+      "pet": "The %s runs around your leg."
     }
   },
   {
@@ -1164,13 +1522,28 @@
     },
     "description": "A juvenile glyptotherium.  Its shell is not quite fully developed, having an almost leathery feel to it.",
     "default_faction": "bear",
+    "bodytype": "bear",
+    "categories": [
+      "WILDLIFE"
+    ],
+    "species": [
+      "MAMMAL"
+    ],
+    "families": [
+      "prof_intro_biology",
+      "prof_wp_megafauna"
+    ],
     "volume": "200 L",
     "weight": "180 kg",
     "hp": 80,
     "speed": 80,
+    "material": [
+      "flesh"
+    ],
     "symbol": "g",
-    "morale": 20,
+    "color": "brown",
     "aggression": -20,
+    "morale": 20,
     "melee_skill": 2,
     "melee_dice": 2,
     "melee_dice_sides": 4,
@@ -1181,15 +1554,50 @@
       }
     ],
     "dodge": 3,
+    "vision_day": 16,
+    "vision_night": 7,
+    "path_settings": {
+      "max_dist": 10
+    },
+    "anger_triggers": [
+      "HURT",
+      "PLAYER_NEAR_BABY",
+      "PLAYER_CLOSE"
+    ],
     "fear_triggers": [
       "SOUND",
       "PLAYER_CLOSE"
     ],
-    "harvest": "mammal_large_leather",
-    "upgrades": {
-      "age_grow": 360,
-      "into": "mon_glyptotherium"
+    "biosignature": {
+      "biosig_item": "feces_manure",
+      "biosig_timer": 4
     },
+    "harvest": "mammal_large_leather",
+    "reproduction": {
+      "baby_monster": "mon_shortface_cub",
+      "baby_count": 1,
+      "baby_timer": 720
+    },
+    "baby_flags": [
+      "SPRING"
+    ],
+    "special_attacks": [
+      [
+        "EAT_FOOD",
+        60
+      ],
+      {
+        "id": "smash",
+        "cooldown": 20,
+        "throw_strength": 40,
+        "damage_max_instance": [
+          {
+            "damage_type": "bash",
+            "amount": 40
+          }
+        ]
+      }
+    ],
     "flags": [
       "NO_BREED",
       "SEES",
@@ -1203,6 +1611,10 @@
       "bash": 4,
       "cut": 10,
       "stab": 5
+    },
+    "upgrades": {
+      "age_grow": 360,
+      "into": "mon_glyptotherium"
     }
   },
   {
@@ -1303,15 +1715,29 @@
   {
     "id": "mon_zebra_foal",
     "type": "MONSTER",
+    "copy-from": "mon_american_zebra",
     "name": {
       "str": "Scott's horse foal"
     },
     "description": "A juvenile American zebra.  It gallops around its parent excitedly, throwing around its head joyously.",
-    "copy-from": "mon_american_zebra",
+    "default_faction": "herbivore",
+    "bodytype": "horse",
+    "categories": [
+      "WILDLIFE"
+    ],
+    "species": [
+      "MAMMAL"
+    ],
+    "families": [
+      "prof_intro_biology"
+    ],
     "volume": "60 L",
     "weight": "60 kg",
     "hp": 35,
     "speed": 160,
+    "material": [
+      "flesh"
+    ],
     "symbol": "z",
     "color": "white",
     "morale": 20,
@@ -1328,7 +1754,17 @@
     "anger_triggers": [
       "HURT"
     ],
+    "fear_triggers": [
+      "SOUND",
+      "FIRE"
+    ],
+    "placate_triggers": [
+      "PLAYER_WEAK"
+    ],
     "harvest": "mammal_large_leather",
+    "starting_ammo": {
+      "milk_raw": 1
+    },
     "biosignature": {
       "biosig_item": "feces_manure",
       "biosig_timer": 2
@@ -1339,16 +1775,21 @@
         60
       ]
     ],
-    "upgrades": {
-      "age_grow": 240,
-      "into": "mon_american_zebra"
+    "reproduction": {
+      "baby_monster": "mon_zebra_foal",
+      "baby_count": 1,
+      "baby_timer": 360
     },
+    "baby_flags": [
+      "AUTUMN"
+    ],
     "petfood": {
       "food": [
         "CATTLEFOOD"
       ],
       "feed": "The %s seems to like you!  It lets you pat its head and seems friendly."
     },
+    "mountable_weight_ratio": 0.3,
     "flags": [
       "SEES",
       "HEARS",
@@ -1359,6 +1800,15 @@
       "PATH_AVOID_DANGER_1",
       "WARM",
       "NO_BREED"
-    ]
+    ],
+    "armor": {
+      "bash": 5,
+      "cut": 10,
+      "stab": 5
+    },
+    "upgrades": {
+      "age_grow": 240,
+      "into": "mon_american_zebra"
+    }
   }
 ]

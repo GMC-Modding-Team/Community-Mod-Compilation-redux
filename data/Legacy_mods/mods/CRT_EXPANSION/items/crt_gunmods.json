@@ -8,7 +8,7 @@
     "description": "A small barrel which launches signal flares.  However, due to its awkward position, it has lower accuracy compared to an actual flaregun.",
     "weight": "500 g",
     "volume": "250 ml",
-    "price": "80 USD",
+    "price": 80,
     "material": [
       "steel"
     ],
@@ -51,7 +51,7 @@
     "description": "The integrated underbarrel shotgun of this gun which holds a single shot.  It's irremovable.",
     "weight": "2600 g",
     "volume": "0 L",
-    "price": "950 USD",
+    "price": 950,
     "to_hit": -1,
     "material": [
       "steel"
@@ -89,14 +89,31 @@
   },
   {
     "id": "beam_difractor",
-    "copy-from": "beam_scatterer",
     "type": "GUNMOD",
+    "copy-from": "beam_scatterer",
     "name": {
       "str": "diffracting lens",
       "str_pl": "diffracting lenses"
     },
     "description": "A set of optics made to fit on laser weapons, which will diffract the laser beam into several lower powered beams.  This slightly increases point-blank damage and makes it difficult to not hit, but reduces range",
-    "range_modifier": -7,
+    "weight": "380 g",
+    "volume": "250 ml",
+    "price": 84000,
+    "price_postapoc": 1000,
+    "install_time": "5 m",
+    "material": [
+      "steel"
+    ],
+    "symbol": ":",
+    "color": "light_gray",
+    "location": "mechanism",
+    "mod_targets": [
+      "rifle",
+      "pistol",
+      "smg",
+      "shotgun"
+    ],
+    "range_multiplier": 0.5,
     "damage_modifier": {
       "damage_type": "stab",
       "amount": 2
@@ -110,14 +127,7 @@
         1
       ]
     ],
-    "mod_targets": [
-      "rifle",
-      "pistol",
-      "smg",
-      "shotgun"
-    ],
-    "location": "mechanism",
-    "install_time": "5 m"
+    "range_modifier": -7
   },
   {
     "id": "flash_acc",
@@ -129,7 +139,7 @@
     "weight": "250 g",
     "volume": "125 ml",
     "integral_volume": "0 L",
-    "price": "420 USD",
+    "price": 420,
     "material": [
       "plastic",
       "steel"
@@ -169,24 +179,56 @@
   },
   {
     "id": "flash_acc_on",
-    "copy-from": "flash_acc",
     "type": "TOOL",
+    "copy-from": "flash_acc",
     "name": {
       "str": "tactical flashlight (on)",
       "str_pl": "tactical flashlights (on)"
     },
     "description": "A compact flashlight which is attached to the side of your weapon, not powerful, but good enough for tight hallways.",
-    "revert_to": "flash_acc",
-    "flags": [
-      "LIGHT_75",
-      "CHARGEDIM",
-      "TRADER_AVOID"
+    "weight": "250 g",
+    "volume": "125 ml",
+    "integral_volume": "0 L",
+    "price": 420,
+    "material": [
+      "plastic",
+      "steel"
     ],
+    "symbol": ":",
+    "color": "dark_gray",
+    "gunmod_data": {
+      "location": "accessories",
+      "mod_targets": [
+        "pistol",
+        "smg",
+        "rifle",
+        "shotgun"
+      ],
+      "install_time": "10 s",
+      "dispersion_modifier": 10
+    },
+    "charges_per_use": 1,
     "use_action": {
       "type": "transform",
       "menu_text": "Turn off",
       "msg": "You turn the tactical flashlight off.",
       "target": "flash_acc"
-    }
+    },
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "rigid": true,
+        "flag_restriction": [
+          "BATTERY_MEDIUM"
+        ],
+        "default_magazine": "medium_battery_cell"
+      }
+    ],
+    "revert_to": "flash_acc",
+    "flags": [
+      "LIGHT_75",
+      "CHARGEDIM",
+      "TRADER_AVOID"
+    ]
   }
 ]

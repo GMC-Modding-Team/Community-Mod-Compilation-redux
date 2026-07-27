@@ -1,52 +1,99 @@
 [
   {
-    "type": "overmap_terrain",
     "id": "field",
+    "type": "overmap_terrain",
     "copy-from": "generic_open_land",
     "name": "drylands",
+    "land_use_code": "open_land",
     "sym": ".",
     "color": "yellow",
     "see_cost": 2,
     "extras": "field",
-    "flags": [ "NO_ROTATE" ]
+    "flags": [
+      "NO_ROTATE"
+    ]
   },
   {
-    "type": "overmap_terrain",
     "id": "forest",
+    "type": "overmap_terrain",
     "copy-from": "generic_forest",
     "name": "shrubland",
+    "land_use_code": "forest",
+    "connect_group": "forest",
     "sym": "*",
     "color": "green",
     "see_cost": 1,
     "extras": "forest",
-    "spawns": { "group": "GROUP_FOREST", "population": [ 0, 3 ], "chance": 13 },
-    "flags": [ "NO_ROTATE", "SOURCE_FORAGE" ]
+    "spawns": {
+      "group": "GROUP_FOREST",
+      "population": [
+        0,
+        3
+      ],
+      "chance": 13
+    },
+    "flags": [
+      "NO_ROTATE",
+      "SOURCE_FORAGE"
+    ]
   },
   {
-    "type": "overmap_terrain",
     "id": "forest_thick",
+    "type": "overmap_terrain",
     "copy-from": "generic_forest",
     "name": "woodland",
+    "land_use_code": "forest",
+    "connect_group": "forest",
     "sym": "F",
     "color": "green",
     "see_cost": 4,
     "extras": "forest_thick",
-    "spawns": { "group": "GROUP_FOREST", "population": [ 0, 6 ], "chance": 15 },
-    "mapgen": [ { "method": "builtin", "name": "forest" } ],
-    "flags": [ "NO_ROTATE", "SOURCE_FORAGE" ]
+    "spawns": {
+      "group": "GROUP_FOREST",
+      "population": [
+        0,
+        6
+      ],
+      "chance": 15
+    },
+    "mapgen": [
+      {
+        "method": "builtin",
+        "name": "forest"
+      }
+    ],
+    "flags": [
+      "NO_ROTATE",
+      "SOURCE_FORAGE"
+    ]
   },
   {
-    "type": "overmap_terrain",
     "id": "forest_water",
+    "type": "overmap_terrain",
     "copy-from": "generic_wetland_forest",
     "name": "desert pavement",
+    "land_use_code": "wetland_forest",
     "sym": ",",
     "color": "dark_gray",
     "see_cost": 2,
     "extras": "forest_water",
-    "spawns": { "group": "GROUP_SWAMP", "population": [ 1, 4 ], "chance": 16 },
-    "mapgen": [ { "method": "builtin", "name": "forest" } ],
-    "flags": [ "NO_ROTATE" ]
+    "spawns": {
+      "group": "GROUP_SWAMP",
+      "population": [
+        1,
+        4
+      ],
+      "chance": 16
+    },
+    "mapgen": [
+      {
+        "method": "builtin",
+        "name": "forest"
+      }
+    ],
+    "flags": [
+      "NO_ROTATE"
+    ]
   },
   {
     "type": "overmap_terrain",
@@ -55,16 +102,20 @@
     "sym": "%",
     "color": "brown",
     "see_cost": 5,
-    "flags": [ "NO_ROTATE" ]
+    "flags": [
+      "NO_ROTATE"
+    ]
   },
   {
     "type": "overmap_terrain",
     "id": "mesa",
     "name": "mesa",
     "sym": "%",
-    "color": "i_brown",
+    "color": "brown",
     "see_cost": 5,
-    "flags": [ "NO_ROTATE" ]
+    "flags": [
+      "NO_ROTATE"
+    ]
   },
   {
     "type": "overmap_terrain",
@@ -82,7 +133,9 @@
     "sym": "%",
     "color": "brown",
     "see_cost": 5,
-    "flags": [ "REQUIRES_PREDECESSOR" ]
+    "flags": [
+      "REQUIRES_PREDECESSOR"
+    ]
   },
   {
     "type": "overmap_terrain",
@@ -141,89 +194,224 @@
     "sym": "V",
     "color": "light_gray",
     "see_cost": 5,
-    "flags": [ "REQUIRES_PREDECESSOR" ]
+    "flags": [
+      "REQUIRES_PREDECESSOR"
+    ]
   },
   {
-    "type": "overmap_terrain",
     "abstract": "generic_lake",
+    "type": "overmap_terrain",
     "copy-from": "generic_water",
     "name": "lake bed",
+    "land_use_code": "water",
     "sym": "#",
     "color": "dark_gray",
     "see_cost": 1,
-    "flags": [ "NO_ROTATE", "LAKE" ]
+    "flags": [
+      "NO_ROTATE",
+      "LAKE"
+    ]
   },
   {
-    "type": "overmap_terrain",
     "id": "lake_shore",
+    "type": "overmap_terrain",
     "copy-from": "generic_lake",
     "name": "lake bed shore",
+    "land_use_code": "water",
+    "sym": "#",
     "color": "light_gray",
-    "delete": { "flags": [ "LAKE" ] },
-    "extend": { "flags": [ "LAKE_SHORE", "IGNORE_ROTATION_FOR_ADJACENCY" ] },
+    "see_cost": 1,
+    "flags": [
+      "NO_ROTATE",
+      "SOURCE_DRINK",
+      "WATER",
+      "LAKE_SHORE",
+      "IGNORE_ROTATION_FOR_ADJACENCY"
+    ],
     "extras": "lake_shore",
-    "mapgen": [ { "method": "builtin", "name": "lake_shore" } ]
+    "mapgen": [
+      {
+        "method": "builtin",
+        "name": "lake_shore"
+      }
+    ]
   },
   {
-    "type": "overmap_terrain",
     "id": "lake_surface",
-    "copy-from": "generic_lake"
+    "type": "overmap_terrain",
+    "copy-from": "generic_lake",
+    "name": "lake",
+    "land_use_code": "water",
+    "sym": "#",
+    "color": "blue",
+    "see_cost": 1,
+    "flags": [
+      "NO_ROTATE",
+      "LAKE",
+      "SOURCE_DRINK",
+      "WATER"
+    ]
   },
   {
-    "type": "overmap_terrain",
     "id": "lake_water_cube",
+    "type": "overmap_terrain",
     "copy-from": "generic_lake",
-    "name": "lake"
+    "name": "lake",
+    "land_use_code": "water",
+    "sym": "#",
+    "color": "blue",
+    "see_cost": 1,
+    "flags": [
+      "NO_ROTATE",
+      "LAKE",
+      "SOURCE_DRINK",
+      "WATER"
+    ]
   },
   {
-    "type": "overmap_terrain",
     "id": "lake_bed",
+    "type": "overmap_terrain",
     "copy-from": "generic_lake",
-    "name": "lake bed"
+    "name": "lake bed",
+    "land_use_code": "water",
+    "sym": "#",
+    "color": "blue",
+    "see_cost": 1,
+    "flags": [
+      "NO_ROTATE",
+      "LAKE",
+      "SOURCE_DRINK",
+      "WATER"
+    ]
   },
   {
-    "type": "overmap_terrain",
     "abstract": "generic_river",
+    "type": "overmap_terrain",
     "copy-from": "generic_water",
     "name": "riverbed",
+    "land_use_code": "water",
     "sym": "R",
     "color": "dark_gray",
     "see_cost": 1,
-    "flags": [ "RIVER", "NO_ROTATE" ]
+    "flags": [
+      "RIVER",
+      "NO_ROTATE"
+    ]
+  },
+  {
+    "abstract": "generic_river_bank",
+    "type": "overmap_terrain",
+    "copy-from": "generic_river",
+    "name": "riverbed shore",
+    "land_use_code": "water",
+    "sym": "R",
+    "color": "light_gray",
+    "see_cost": 1,
+    "flags": [
+      "RIVER",
+      "NO_ROTATE",
+      "SOURCE_DRINK",
+      "WATER"
+    ]
+  },
+  {
+    "id": "river_center",
+    "type": "overmap_terrain",
+    "copy-from": "generic_river",
+    "name": "river",
+    "land_use_code": "water",
+    "sym": "R",
+    "color": "blue",
+    "see_cost": 1,
+    "flags": [
+      "RIVER",
+      "NO_ROTATE",
+      "SOURCE_DRINK",
+      "WATER"
+    ],
+    "mapgen": [
+      {
+        "method": "builtin",
+        "name": "river_center"
+      }
+    ]
+  },
+  {
+    "id": "river",
+    "type": "overmap_terrain",
+    "copy-from": "generic_river_bank",
+    "name": "river bank",
+    "sym": "÷",
+    "color": "light_blue",
+    "see_cost": 1,
+    "flags": [
+      "RIVER",
+      "SOURCE_DRINK",
+      "WATER"
+    ],
+    "travel_cost_type": "shore",
+    "extras": "river",
+    "mapgen": [
+      {
+        "method": "builtin",
+        "name": "river_straight"
+      }
+    ]
   },
   {
     "type": "overmap_terrain",
     "abstract": "generic_river_bank",
-    "copy-from": "generic_river",
-    "name": "riverbed shore",
-    "color": "light_gray"
-  },
-  {
-    "type": "overmap_terrain",
-    "id": "river_center",
-    "copy-from": "generic_river",
-    "mapgen": [ { "method": "builtin", "name": "river_center" } ]
-  },
-  {
-    "type": "overmap_terrain",
-    "id": "river",
-    "copy-from": "generic_river_bank",
+    "name": "river bank",
+    "sym": "÷",
+    "color": "light_blue",
+    "see_cost": 1,
+    "flags": [
+      "RIVER",
+      "NO_ROTATE",
+      "SOURCE_DRINK",
+      "WATER"
+    ],
+    "travel_cost_type": "shore",
+    "id": [
+      "river_c_not_ne",
+      "river_c_not_nw",
+      "river_c_not_se",
+      "river_c_not_sw"
+    ],
     "extras": "river",
-    "mapgen": [ { "method": "builtin", "name": "river_straight" } ],
-    "delete": { "flags": [ "NO_ROTATE" ] }
+    "mapgen": [
+      {
+        "method": "builtin",
+        "name": "river_curved_not"
+      }
+    ]
   },
   {
     "type": "overmap_terrain",
-    "id": [ "river_c_not_ne", "river_c_not_nw", "river_c_not_se", "river_c_not_sw" ],
-    "copy-from": "generic_river_bank",
+    "abstract": "generic_river_bank",
+    "name": "river bank",
+    "sym": "÷",
+    "color": "light_blue",
+    "see_cost": 1,
+    "flags": [
+      "RIVER",
+      "NO_ROTATE",
+      "SOURCE_DRINK",
+      "WATER"
+    ],
+    "travel_cost_type": "shore",
+    "id": [
+      "river_ne",
+      "river_nw",
+      "river_se",
+      "river_sw"
+    ],
     "extras": "river",
-    "mapgen": [ { "method": "builtin", "name": "river_curved_not" } ]
-  },
-  {
-    "type": "overmap_terrain",
-    "id": [ "river_ne", "river_nw", "river_se", "river_sw" ],
-    "extras": "river",
-    "copy-from": "generic_river_bank",
-    "mapgen": [ { "method": "builtin", "name": "river_curved" } ]
+    "mapgen": [
+      {
+        "method": "builtin",
+        "name": "river_curved"
+      }
+    ]
   }
 ]

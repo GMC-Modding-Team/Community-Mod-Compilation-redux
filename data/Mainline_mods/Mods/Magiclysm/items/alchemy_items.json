@@ -58,33 +58,93 @@
   },
   {
     "id": "copper_infuser",
-    "copy-from": "copper_bracelet",
     "type": "ARMOR",
+    "copy-from": "copper_bracelet",
+    "name": {
+      "str": "copper infusion bracelet"
+    },
+    "description": "This bracelet has runes engraved on it.  You sense a faint air of mysticism when you look at it.  It would be useful for imbuing mana into material.",
+    "weight": "45 g",
+    "volume": "10 ml",
+    "price": 2500,
+    "price_postapoc": 10,
+    "material": [
+      "copper"
+    ],
+    "symbol": "[",
+    "looks_like": "silver_bracelet",
+    "color": "brown",
+    "sided": true,
+    "armor": [
+      {
+        "encumbrance": 0,
+        "coverage": 20,
+        "covers": [
+          "hand_l",
+          "hand_r"
+        ],
+        "specifically_covers": [
+          "hand_wrist_l",
+          "hand_wrist_r"
+        ]
+      }
+    ],
+    "flags": [
+      "BELTED",
+      "NO_WEAR_EFFECT",
+      "OVERSIZE"
+    ],
     "qualities": [
       [
         "MANA_INFUSE",
         1
       ]
-    ],
-    "name": {
-      "str": "copper infusion bracelet"
-    },
-    "description": "This bracelet has runes engraved on it.  You sense a faint air of mysticism when you look at it.  It would be useful for imbuing mana into material."
+    ]
   },
   {
     "id": "silver_infuser",
-    "copy-from": "silver_bracelet",
     "type": "ARMOR",
+    "copy-from": "silver_bracelet",
+    "name": {
+      "str": "silver infusion bracelet"
+    },
+    "description": "This bracelet has runes engraved on it.  You sense a faint air of mysticism when you look at it.  It would be useful for imbuing mana into material.",
+    "weight": "30 g",
+    "volume": "25 ml",
+    "price": 25000,
+    "price_postapoc": 25,
+    "material": [
+      "silver"
+    ],
+    "symbol": "[",
+    "color": "light_gray",
+    "sided": true,
+    "armor": [
+      {
+        "encumbrance": 0,
+        "coverage": 20,
+        "covers": [
+          "hand_l",
+          "hand_r"
+        ],
+        "specifically_covers": [
+          "hand_wrist_l",
+          "hand_wrist_r"
+        ]
+      }
+    ],
+    "flags": [
+      "FANCY",
+      "NO_WEAR_EFFECT",
+      "BELTED",
+      "OVERSIZE"
+    ],
     "qualities": [
       [
         "MANA_INFUSE",
         2
       ]
-    ],
-    "name": {
-      "str": "silver infusion bracelet"
-    },
-    "description": "This bracelet has runes engraved on it.  You sense a faint air of mysticism when you look at it.  It would be useful for imbuing mana into material."
+    ]
   },
   {
     "id": "copper_circlet",
@@ -127,16 +187,45 @@
   },
   {
     "id": "potion_starter",
-    "copy-from": "mixed_alcohol_strong",
     "type": "COMESTIBLE",
+    "copy-from": "mixed_alcohol_strong",
+    "looks_like": "bum_wine",
     "name": {
       "str_sp": "potion starter"
     },
-    "description": "Strong alcohol, infused with mana and concentrated into a liquid that can stabilize spells into liquid form.  You can still drink it, if you want."
+    "weight": "36 g",
+    "color": "red",
+    "addiction_type": "alcohol",
+    "use_action": [
+      "ALCOHOL"
+    ],
+    "stim": -15,
+    "container": "jug_plastic",
+    "sealed": false,
+    "comestible_type": "DRINK",
+    "symbol": "~",
+    "quench": -12,
+    "healthy": -1,
+    "addiction_potential": 7,
+    "calories": 79,
+    "description": "Strong alcohol, infused with mana and concentrated into a liquid that can stabilize spells into liquid form.  You can still drink it, if you want.",
+    "price_postapoc": 250,
+    "material": [
+      "alcohol"
+    ],
+    "volume": "250 ml",
+    "phase": "liquid",
+    "charges": 7,
+    "flags": [
+      "EATEN_COLD",
+      "NUTRIENT_OVERRIDE",
+      "NO_AUTO_CONSUME"
+    ],
+    "freezing_point": -30,
+    "fun": 5
   },
   {
     "id": "potion_starter_superior",
-    "copy-from": "chem_ethanol",
     "type": "COMESTIBLE",
     "comestible_type": "DRINK",
     "name": {
@@ -146,18 +235,43 @@
   },
   {
     "id": "adrenal_gland_large",
-    "copy-from": "meat",
     "type": "COMESTIBLE",
+    "copy-from": "meat",
+    "comestible_type": "FOOD",
     "name": {
       "str": "large adrenal gland"
     },
-    "description": "An organ located above the kidneys responsible for secretion of adrenaline, cortisol, and aldosterone.  This one is huge, whether by nature or mutation.",
-    "delete": {
-      "flags": [
-        "SMOKABLE"
+    "material": [
+      "flesh"
+    ],
+    "symbol": "%",
+    "color": "red",
+    "parasites": 32,
+    "vitamins": [
+      [
+        "calcium",
+        2
+      ],
+      [
+        "iron",
+        12
       ]
-    },
-    "price": 2000
+    ],
+    "flags": [
+      "RAW",
+      "PREDATOR_FUN"
+    ],
+    "freezing_point": -1000,
+    "description": "An organ located above the kidneys responsible for secretion of adrenaline, cortisol, and aldosterone.  This one is huge, whether by nature or mutation.",
+    "weight": "275 g",
+    "volume": "250 ml",
+    "price": 2000,
+    "price_postapoc": 50,
+    "spoils_in": "1 day",
+    "calories": 402,
+    "fun": -10,
+    "cooks_like": "meat_cooked",
+    "smoking_result": "meat_smoked"
   },
   {
     "id": "glow_dust",
@@ -339,17 +453,27 @@
     "id": "bundle_demon_chitin_piece",
     "type": "GENERIC",
     "copy-from": "demon_chitin_piece",
+    "category": "spare_parts",
     "symbol": "=",
+    "color": "red",
     "name": {
       "str": "bundle of demon chitin chunks",
       "str_pl": "bundles of demon chitin chunks"
     },
-    "proportional": {
-      "price": 10,
-      "weight": 10,
-      "volume": 10
-    },
-    "description": "Pieces of demon spider exoskeleton, bundled tightly together for storage.  Disassemble to unpack."
+    "description": "Pieces of demon spider exoskeleton, bundled tightly together for storage.  Disassemble to unpack.",
+    "price": 10000,
+    "material": [
+      "demon_chitin"
+    ],
+    "weight": "89 g",
+    "volume": "250 ml",
+    "flags": [
+      "TRADER_AVOID"
+    ],
+    "to_hit": -2,
+    "melee_damage": {
+      "bash": 1
+    }
   },
   {
     "type": "GENERIC",

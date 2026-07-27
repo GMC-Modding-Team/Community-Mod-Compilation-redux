@@ -199,16 +199,32 @@
   {
     "id": "mon_demon_spider_queen",
     "type": "MONSTER",
+    "copy-from": "mon_demon_spider",
+    "description": "This gigantic spider is the size of a moving van: you have no idea how it manages to stay together, much less move with that bulk.  Its abdomen is huge and swollen-looking, and an evil intelligence burns in its eyes even as magic crackles around its chitinous barbs.",
     "name": {
       "str": "demon spider queen"
     },
-    "description": "This gigantic spider is the size of a moving van: you have no idea how it manages to stay together, much less move with that bulk.  Its abdomen is huge and swollen-looking, and an evil intelligence burns in its eyes even as magic crackles around its chitinous barbs.",
-    "copy-from": "mon_demon_spider",
+    "default_faction": "demon_spider",
+    "bodytype": "spider",
+    "species": [
+      "DEMON_SPIDER"
+    ],
+    "material": [
+      "iflesh",
+      "demon_chitin"
+    ],
+    "diff": 7,
     "weight": "250 kg",
+    "//": "monster can't be any bigger because of limits of volume on tiles.  if there is a way designed around this, it should be about 3500 L",
+    "volume": "1000 L",
     "hp": 5600,
     "speed": 28,
+    "symbol": "S",
+    "color": "red",
     "aggression": 100,
+    "morale": 100,
     "melee_skill": 10,
+    "melee_dice": 20,
     "melee_dice_sides": 20,
     "melee_damage": [
       {
@@ -216,9 +232,27 @@
         "amount": 30
       }
     ],
+    "dodge": 4,
     "vision_day": 12,
     "vision_night": 18,
     "harvest": "demon_spider_queen",
+    "special_attacks": [
+      {
+        "type": "spell",
+        "spell_data": {
+          "id": "mon_summon_demon_spiderlings"
+        },
+        "cooldown": 14
+      }
+    ],
+    "anger_triggers": [
+      "FRIEND_ATTACKED",
+      "FRIEND_DIED",
+      "HURT",
+      "STALK",
+      "PLAYER_WEAK",
+      "PLAYER_CLOSE"
+    ],
     "flags": [
       "SEES",
       "SMELLS",
@@ -230,14 +264,13 @@
       "PUSH_MON",
       "STUN_IMMUNE"
     ],
-    "special_attacks": [
-      {
-        "type": "spell",
-        "spell_data": {
-          "id": "mon_summon_demon_spiderlings"
-        },
-        "cooldown": 14
-      }
-    ]
+    "armor": {
+      "bash": 5,
+      "cut": 45,
+      "stab": 60,
+      "acid": 10,
+      "heat": 80,
+      "bullet": 60
+    }
   }
 ]

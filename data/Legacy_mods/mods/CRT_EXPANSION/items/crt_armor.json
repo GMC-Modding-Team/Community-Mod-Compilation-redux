@@ -9,7 +9,7 @@
     "description": "A standard issue face mask, lined with Kevlar for extra protection.  A few filters provide decent environmental safety, but it was not intended for extended use.  It has a basic integrated HUD.",
     "weight": "5 kg",
     "volume": "1 L",
-    "price": "25000 USD",
+    "price": 25000,
     "to_hit": 1,
     "material": [
       "neoprene",
@@ -41,23 +41,32 @@
   },
   {
     "id": "crt_boots",
-    "copy-from": "crt_la_boots",
     "type": "ARMOR",
+    "copy-from": "crt_la_boots",
+    "category": "armor",
     "name": {
       "str": "pair of C.R.I.T boots",
       "str_pl": "pairs of C.R.I.T boots"
     },
     "description": "A pair of standard-issue boots.  Next-gen gels keep feet comfortable and hygienic during long-term missions while absorbing shock and heat from outside-sources.  Superalloy mesh and rubber offer quite a bit of chemical protection as well.  Decently heavy though",
-    "color": "dark_gray",
     "weight": "1500 g",
-    "price": "2500 USD",
+    "volume": "1500 ml",
+    "price": 2500,
+    "to_hit": -1,
     "material": [
       "rubber",
       "steel",
       "nomex"
     ],
-    "warmth": 40,
+    "symbol": "[",
+    "color": "dark_gray",
     "material_thickness": 5,
+    "warmth": 40,
+    "flags": [
+      "VARSIZE",
+      "WATERPROOF",
+      "STURDY"
+    ],
     "armor": [
       {
         "encumbrance": 17,
@@ -68,6 +77,9 @@
         ]
       }
     ],
+    "melee_damage": {
+      "bash": 2
+    },
     "environmental_protection": 5
   },
   {
@@ -81,7 +93,7 @@
     "description": "A pair of skeletonized boots.  Based off of C.R.I.T boots, the light-armor variant was created for missions in warmer climates.  The LA boots keep most of the old features of the standard issue boots but trade in protection for easier movement.",
     "weight": "1060 g",
     "volume": "1500 ml",
-    "price": "1000 USD",
+    "price": 1000,
     "to_hit": -1,
     "material": [
       "rubber",
@@ -114,24 +126,34 @@
   },
   {
     "id": "crt_gloves",
-    "copy-from": "gloves_tactical",
     "type": "ARMOR",
+    "copy-from": "gloves_tactical",
+    "category": "armor",
     "name": {
       "str": "pair of C.R.I.T fingertip-less gloves",
       "str_pl": "pairs of C.R.I.T fingertip-less gloves"
     },
     "description": "A pair of standard-issue gloves.  Made with superalloy mesh for those with gene-modding and/or mutations while still allowing greater manipulation of items and moderate protection.",
+    "weight": "220 g",
+    "volume": "500 ml",
+    "price": 5200,
+    "price_postapoc": 1500,
+    "to_hit": 2,
     "material": [
       "kevlar",
       "steel"
     ],
+    "symbol": "[",
+    "looks_like": "fire_gauntlets",
+    "color": "dark_gray",
+    "warmth": 20,
     "material_thickness": 2,
+    "environmental_protection": 2,
     "flags": [
       "ALLOWS_NATURAL_ATTACKS",
       "STURDY",
       "WATERPROOF"
     ],
-    "warmth": 20,
     "armor": [
       {
         "encumbrance": 12,
@@ -145,23 +167,33 @@
   },
   {
     "id": "crt_gloves_liner",
-    "copy-from": "crt_gloves",
     "type": "ARMOR",
+    "copy-from": "crt_gloves",
+    "category": "armor",
     "name": {
       "str": "pair of C.R.I.T fingertip-less liners",
       "str_pl": "pairs of C.R.I.T fingertip-less liners"
     },
     "description": "A pair of standard-issue glove liners.  Made with neoprene and rubber mesh for warmth and fingertip-less for those with gene-modding and/or mutations while still allowing greater manipulation of items and moderate protection.",
+    "weight": "220 g",
+    "volume": "500 ml",
+    "price": 5200,
+    "price_postapoc": 1500,
+    "to_hit": 2,
     "material": [
       "neoprene",
       "rubber"
     ],
+    "symbol": "[",
+    "looks_like": "fire_gauntlets",
+    "color": "dark_gray",
+    "warmth": 15,
     "material_thickness": 1,
+    "environmental_protection": 2,
     "flags": [
       "ALLOWS_NATURAL_ATTACKS",
       "SKINTIGHT"
     ],
-    "warmth": 15,
     "armor": [
       {
         "encumbrance": 3,
@@ -175,12 +207,23 @@
   },
   {
     "id": "crt_backpack",
-    "copy-from": "molle_pack",
     "type": "ARMOR",
+    "copy-from": "molle_pack",
+    "//": "Based upon own service and wikipedia: https://en.wikipedia.org/wiki/MOLLE",
     "name": {
       "str": "C.R.I.T backpack"
     },
     "description": "A standard-issue pack.  Based on the MOLLE backpack's design, this smaller pack strikes a fine balance between storage space and encumbrance and allows a larger weapon to be holstered, drawing and holstering is still rather awkward even with the magnetized clips, but practice helps.",
+    "weight": "1450 g",
+    "volume": "6 L",
+    "price": 6700,
+    "price_postapoc": 1500,
+    "material": [
+      "leather",
+      "kevlar"
+    ],
+    "symbol": "[",
+    "looks_like": "backpack",
     "color": "dark_gray",
     "pocket_data": [
       {
@@ -190,16 +233,23 @@
         "moves": 200
       }
     ],
+    "warmth": 10,
     "material_thickness": 3,
-    "material": [
-      "leather",
-      "kevlar"
-    ],
     "flags": [
       "BELTED",
       "OVERSIZE",
       "STURDY",
-      "WATERPROOF"
+      "WATERPROOF",
+      "TARDIS"
+    ],
+    "use_action": [
+      {
+        "type": "attach_molle",
+        "size": 6
+      },
+      {
+        "type": "detach_molle"
+      }
     ],
     "armor": [
       {
@@ -216,48 +266,166 @@
   },
   {
     "id": "crt_chestrig",
-    "copy-from": "chestrig",
     "type": "ARMOR",
+    "copy-from": "chestrig",
     "name": {
       "str": "C.R.I.T chest rig"
     },
     "description": "A slightly modified chest rig, has mesh and MOLLE loops for gear and slots with light-armor padding.",
-    "color": "dark_gray",
+    "variant_type": "generic",
+    "variants": [
+      {
+        "id": "generic_chestrig",
+        "name": {
+          "str_sp": "chest rig"
+        },
+        "description": "Popularized during the Vietnam War, chest rigs like these are typically plain, barebones affairs consisting of three or more pouches in a row, with straps to secure them on your chest.  This one can hold four magazines in its pouches.",
+        "weight": 30
+      },
+      {
+        "id": "flag_chestrig",
+        "name": {
+          "str_sp": "patriot’s chest rig"
+        },
+        "description": "An American flag is proudly embroidered across the front of each pouch, with a tiny, eagle-winged.50-caliber bullet crowning each banner.",
+        "append": true
+      }
+    ],
+    "weight": "425 g",
+    "volume": "500 ml",
+    "price": 3900,
+    "price_postapoc": 3000,
     "material": [
       "kevlar",
       "plastic"
     ],
+    "symbol": "[",
+    "looks_like": "tool_belt",
+    "color": "dark_gray",
+    "material_thickness": 2,
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "max_item_length": "240 mm",
+        "max_contains_volume": "750 ml",
+        "max_contains_weight": "2 kg",
+        "moves": 40,
+        "flag_restriction": [
+          "MAG_COMPACT"
+        ],
+        "volume_encumber_modifier": 0.3
+      },
+      {
+        "pocket_type": "CONTAINER",
+        "max_item_length": "240 mm",
+        "max_contains_volume": "750 ml",
+        "max_contains_weight": "2 kg",
+        "moves": 40,
+        "flag_restriction": [
+          "MAG_COMPACT"
+        ],
+        "volume_encumber_modifier": 0.3
+      },
+      {
+        "pocket_type": "CONTAINER",
+        "max_item_length": "240 mm",
+        "max_contains_volume": "750 ml",
+        "max_contains_weight": "2 kg",
+        "moves": 40,
+        "flag_restriction": [
+          "MAG_COMPACT"
+        ],
+        "volume_encumber_modifier": 0.3
+      },
+      {
+        "pocket_type": "CONTAINER",
+        "max_item_length": "240 mm",
+        "max_contains_volume": "750 ml",
+        "max_contains_weight": "2 kg",
+        "moves": 40,
+        "flag_restriction": [
+          "MAG_COMPACT"
+        ],
+        "volume_encumber_modifier": 0.3
+      },
+      {
+        "pocket_type": "CONTAINER",
+        "rigid": true,
+        "max_contains_volume": "2 L",
+        "max_contains_weight": "5 kg"
+      }
+    ],
     "flags": [
       "STURDY",
-      "ALLOWS_NATURAL_ATTACKS"
+      "ALLOWS_NATURAL_ATTACKS",
+      "TARDIS"
+    ],
+    "armor": [
+      {
+        "encumbrance": 1,
+        "coverage": 25,
+        "covers": [
+          "torso"
+        ],
+        "specifically_covers": [
+          "torso_upper"
+        ]
+      }
     ]
   },
   {
     "id": "crt_legguard",
-    "copy-from": "legguard_hard",
     "type": "ARMOR",
+    "copy-from": "legguard_hard",
+    "category": "armor",
     "name": {
       "str": "pair of C.R.I.T leg guards",
       "str_pl": "pairs of C.R.I.T leg guards"
     },
     "description": "Leg armor for those who fight.  Simple design and durable material allows for easy movement and the padding keeps the legs safe and warm in colder conditions.",
-    "color": "dark_gray",
+    "weight": "1300 g",
+    "volume": "1500 ml",
+    "price": 200,
+    "price_postapoc": 500,
+    "to_hit": 1,
     "material": [
       "steel",
       "rubber",
       "neoprene"
     ],
-    "weight": "1300 g",
-    "volume": "1500 ml",
-    "price": "200 USD",
     "symbol": ":",
+    "looks_like": "leg_warmers",
+    "color": "dark_gray",
+    "warmth": 17,
+    "material_thickness": 4,
+    "environmental_protection": 1,
     "flags": [
       "STURDY",
       "BELTED",
       "BLOCK_WHILE_WORN",
       "ALLOWS_TAIL"
     ],
-    "warmth": 17
+    "armor": [
+      {
+        "covers": [
+          "leg_l",
+          "leg_r"
+        ],
+        "encumbrance": 4,
+        "coverage": 90,
+        "cover_melee": 90,
+        "cover_ranged": 95,
+        "cover_vitals": 90,
+        "specifically_covers": [
+          "leg_lower_r",
+          "leg_lower_l",
+          "leg_knee_r",
+          "leg_knee_l",
+          "leg_upper_r",
+          "leg_upper_l"
+        ]
+      }
+    ]
   },
   {
     "id": "crt_armguard",
@@ -270,7 +438,7 @@
     "description": "A pair of arm guards made from superalloy molded upon neoprene, and then insulated with rubber.  They are sturdy and will block attacks, but they are ridiculously heavy.",
     "weight": "1820 g",
     "volume": "3 L",
-    "price": "2000 USD",
+    "price": 2000,
     "to_hit": 1,
     "material": [
       "steel",
@@ -308,7 +476,7 @@
     "description": "A thick full-length duster coat with rubber insulation.  More than mildly encumbering, but rather protective against any anti-infantry electrical discharges from the robots.  Has several pockets for storage.",
     "weight": "2120 g",
     "volume": "5750 ml",
-    "price": "255 USD",
+    "price": 255,
     "to_hit": -1,
     "material": [
       "neoprene",
@@ -316,7 +484,7 @@
       "kevlar"
     ],
     "symbol": "[",
-    "color": "black_green",
+    "color": "black",
     "pocket_data": [
       {
         "pocket_type": "CONTAINER",
@@ -380,7 +548,7 @@
     "description": "A relatively simple suit of armor.  A suit of woven composite fibers combined with a cleansuit core and strategically placed segmented Kevlar plates keep the suit light-weight and the one wearing it alive while offering superb resistance to the elements and ambient radiation.",
     "weight": "11460 g",
     "volume": "11250 ml",
-    "price": "9000000 USD",
+    "price": 9000000,
     "to_hit": -5,
     "material": [
       "kevlar",
@@ -446,7 +614,7 @@
     "description": "A set of pouches that can be worn on the thighs using buckled straps.  This variety is more compact and is favored by the C.R.I.T for its ease of use.",
     "weight": "255 g",
     "volume": "500 ml",
-    "price": "30 USD",
+    "price": 30,
     "material": [
       "plastic",
       "cotton",
@@ -501,7 +669,7 @@
     "description": "A series of plates, guards and buckles which assemble into a suit of sturdy body-armor which usually goes over other armor.  Overlapping steel plates on top of Kevlar plates cover vast expanses as the armor juts off in places so it can deflect attacks.  Built with the idea that comfort is less important than safety, this heavy suit is difficult to move about in but highly protective.  Various adjustable connectors such as straps and clips hold it together.",
     "weight": "21460 g",
     "volume": "11250 ml",
-    "price": "9000000 USD",
+    "price": 9000000,
     "to_hit": -5,
     "material": [
       "steel",
@@ -562,7 +730,7 @@
     "description": "C.R.I.T Enforcer docks.  Metal plates vaguely molded into the shape of oversized feet which clamp down onto your own footwear keep your feet out of harms way.  It looks terrible and feels clunky unlike most of C.R.I.T's designs, but they do seem to be worth using if you were to be in the middle of a war zone.",
     "weight": "2060 g",
     "volume": "1500 ml",
-    "price": "1000 USD",
+    "price": 1000,
     "to_hit": -1,
     "material": [
       "kevlar",
@@ -604,7 +772,7 @@
     "description": "A suit of modern body-armor.  Strategically placed superalloy plates keep the suit's weight minimal while Kevlar plates other areas and a lining of soft neoprene pads areas for extra comfort.  Most importantly, this can be worn comfortably under other armor.",
     "weight": "5439 g",
     "volume": "6250 ml",
-    "price": "9000000 USD",
+    "price": 9000000,
     "material": [
       "neoprene",
       "kevlar",
@@ -659,7 +827,7 @@
     "description": "A matte black suit of outdated and bulky looking plate armor fitted onto a soft Kevlar body-suit.  Retrofitted with new armor improvements, this heavy armor will definitely protect you from practically anything.  Just make sure you can actually walk with it on though.",
     "weight": "42563 g",
     "volume": "12500 ml",
-    "price": "1000000 USD",
+    "price": 1000000,
     "material": [
       "qt_steel",
       "kevlar"
@@ -717,7 +885,7 @@
     "description": "A sleeveless cotton shirt with camouflage dye.  Very easy to move in.",
     "weight": "78 g",
     "volume": "250 ml",
-    "price": "15 USD",
+    "price": 15,
     "price_postapoc": "50 cent",
     "material": [
       "cotton"

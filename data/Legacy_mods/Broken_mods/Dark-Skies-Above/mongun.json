@@ -1,28 +1,86 @@
 [
   {
     "id": "dks_mon_radgun",
-    "copy-from": "v29",
     "type": "GUN",
-    "symbol": "/",
-    "color": "red",
+    "copy-from": "v29",
+    "looks_like": "glock_17",
+    "reload_noise_volume": 10,
     "name": {
       "str": "fake smokegun"
     },
+    "description": "Shoots dangerous radioactive gas.  If you're seeing this, it's a bug.",
+    "weight": "680 g",
+    "volume": "1 L",
+    "longest_side": "233 mm",
+    "//": "copy-from'd Glock 17, since this looks_like it",
+    "price": 720000,
+    "price_postapoc": 5500,
+    "to_hit": -2,
+    "material": [
+      "steel",
+      "plastic"
+    ],
+    "symbol": "/",
+    "color": "red",
+    "skill": "launcher",
+    "range": 10,
     "ranged_damage": {
       "damage_type": "bash",
       "amount": 1
     },
-    "description": "Shoots dangerous radioactive gas.  If you're seeing this, it's a bug.",
-    "skill": "launcher",
-    "range": 10,
-    "flags": [
-      "NEVER_JAMS"
+    "dispersion": 180,
+    "durability": 8,
+    "loudness": 7,
+    "energy_drain": "10 kJ",
+    "reload": 200,
+    "overheat_threshold": 60,
+    "cooling_value": 2,
+    "heat_per_shot": 6,
+    "valid_mod_locations": [
+      [
+        "emitter",
+        1
+      ],
+      [
+        "grip",
+        1
+      ],
+      [
+        "lens",
+        1
+      ],
+      [
+        "rail",
+        1
+      ],
+      [
+        "sights",
+        1
+      ],
+      [
+        "stock",
+        1
+      ],
+      [
+        "underbarrel",
+        1
+      ]
     ],
     "ammo_effects": [
       "DKS_NUKEGAS",
       "DKS_TOXGAS_BIG",
       "SMOKE",
       "DKS_TOXTRAIL"
-    ]
+    ],
+    "flags": [
+      "NEVER_JAMS"
+    ],
+    "faults": [
+      "fault_overheat_melting",
+      "fault_overheat_safety"
+    ],
+    "melee_damage": {
+      "bash": 5
+    }
   }
 ]
