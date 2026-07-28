@@ -995,8 +995,7 @@
         "gun_type": "robogun_8x40mm",
         "fake_skills": [ [ "gun", 5 ], [ "rifle", 6 ] ],
         "fake_dex": 10,
-        "ranges": [ [ 0, 10, "DEFAULT" ] ],
-        "armor": { "bash": 8, "cut": 8 }
+        "ranges": [ [ 0, 10, "DEFAULT" ] ]
       }
     ],
     "death_drops": { "groups": [ [ "robots", 4 ], [ "skitterbot", 1 ] ] },
@@ -1090,6 +1089,9 @@
   {
     "id": "mon_defbot_shot",
     "type": "MONSTER",
+    "copy-from": "mon_secubot",
+    "default_faction": "cop_bot",
+    "species": [ "ROBOT" ],
     "name": { "str": "security robot" },
     "description": "An automated defense robot still active due to its internal power source.  This one is equipped with an electric prod and an integrated shotgun.",
     "melee_damage": [ { "damage_type": "electric", "amount": 6 } ],
@@ -1138,6 +1140,9 @@
   {
     "id": "mon_milbot_trainer",
     "type": "MONSTER",
+    "copy-from": "mon_milbot_base",
+    "default_faction": "military",
+    "species": [ "ROBOT" ],
     "name": { "str": "military robot" },
     "description": "A military training robot still operating due to its internal power core.  This one is armed with a high power paintball gun and a foam baton.",
     "diff": 2,
@@ -1171,6 +1176,9 @@
   {
     "id": "mon_milbot_556",
     "type": "MONSTER",
+    "copy-from": "mon_milbot_base",
+    "default_faction": "military",
+    "species": [ "ROBOT" ],
     "name": { "str": "military robot" },
     "description": "A military robot still operating due to its internal power core.  This one is armed with an electric prod and an integrated 5.56mm firearm.",
     "diff": 20,
@@ -1199,6 +1207,9 @@
   {
     "id": "mon_milbot_308",
     "type": "MONSTER",
+    "copy-from": "mon_milbot_base",
+    "default_faction": "military",
+    "species": [ "ROBOT" ],
     "name": { "str": "military robot" },
     "description": "A military robot still operating due to its internal power core.  This one is armed with an electric prod and an integrated 7.62mm firearm.",
     "diff": 20,
@@ -1228,6 +1239,9 @@
   {
     "id": "mon_milbot_50bmg",
     "type": "MONSTER",
+    "copy-from": "mon_milbot_base",
+    "default_faction": "military",
+    "species": [ "ROBOT" ],
     "name": { "str": "military robot" },
     "description": "A military robot still operating due to its internal power core.  This one is armed with an electric prod and an integrated 50 caliber firearm.",
     "diff": 30,
@@ -1256,6 +1270,9 @@
   {
     "id": "mon_milbot_8x40mm",
     "type": "MONSTER",
+    "copy-from": "mon_milbot_base",
+    "default_faction": "military",
+    "species": [ "ROBOT" ],
     "name": { "str": "military robot" },
     "description": "A military robot still operating due to its internal power core.  This one is armed with an electric prod and an integrated 8mm firearm.",
     "diff": 20,
@@ -1284,6 +1301,9 @@
   {
     "id": "mon_milbot_needle",
     "type": "MONSTER",
+    "copy-from": "mon_milbot_base",
+    "default_faction": "military",
+    "species": [ "ROBOT" ],
     "name": { "str": "military robot" },
     "description": "A military robot still operating due to its internal power core.  This one is armed with an electric prod and an integrated 5x50mm flechette gun.",
     "diff": 15,
@@ -1312,6 +1332,9 @@
   {
     "id": "mon_milbot_40mm",
     "type": "MONSTER",
+    "copy-from": "mon_milbot_base",
+    "default_faction": "military",
+    "species": [ "ROBOT" ],
     "name": { "str": "grenadier robot" },
     "description": "A military robot still operating due to its internal power core.  This one is armed with an electric prod and an integrated 40mm grenade launcher.",
     "diff": 20,
@@ -1341,6 +1364,9 @@
   {
     "id": "mon_milbot_flame",
     "type": "MONSTER",
+    "copy-from": "mon_milbot_base",
+    "default_faction": "military",
+    "species": [ "ROBOT" ],
     "name": { "str": "military flame robot" },
     "description": "A military robot still operating due to its internal power core.  This one is armed with an electric prod and an integrated flamethrower.",
     "diff": 20,
@@ -1368,6 +1394,9 @@
   {
     "abstract": "mon_advbot_base",
     "type": "MONSTER",
+    "symbol": "R",
+    "volume": "62500 ml",
+    "weight": "81500 g",
     "looks_like": "mon_copbot",
     "name": { "str": "advanced robot" },
     "description": "An advanced robot still functioning due to its internal fusion core.  This model is armed with a powerful laser-emitter.",
@@ -1384,6 +1413,7 @@
   {
     "id": "mon_advbot_laser",
     "type": "MONSTER",
+    "copy-from": "mon_advbot_base",
     "looks_like": "mon_copbot",
     "name": { "str": "laser-emitting robot" },
     "description": "An advanced robot still functioning due to its internal fusion core.  This model is furnished with a powerful laser-emitter.",
@@ -1419,6 +1449,7 @@
   {
     "id": "mon_advbot_plasma",
     "type": "MONSTER",
+    "copy-from": "mon_advbot_base",
     "looks_like": "mon_copbot",
     "name": { "str": "plasma-ejecting robot" },
     "description": "An advanced robot still functioning due to its internal fusion core.  This model is furnished with a powerful plasma-ejector.",
@@ -1456,6 +1487,7 @@
   {
     "id": "mon_advbot_rail",
     "type": "MONSTER",
+    "copy-from": "mon_advbot_base",
     "looks_like": "mon_copbot",
     "name": { "str": "railgun robot" },
     "description": "An advanced robot still functioning due to its internal fusion core.  This model is furnished with a powerful railgun.",
@@ -1492,6 +1524,7 @@
   {
     "id": "mon_advbot_lightning",
     "type": "MONSTER",
+    "copy-from": "mon_advbot_base",
     "looks_like": "mon_copbot",
     "name": { "str": "electro-casting robot" },
     "description": "An advanced robot still functioning due to its internal fusion core.  This model is furnished with a powerful electro-caster.",
@@ -1528,6 +1561,7 @@
   {
     "id": "mon_advbot_emp",
     "type": "MONSTER",
+    "copy-from": "mon_advbot_base",
     "looks_like": "mon_copbot",
     "name": { "str": "EMP-projecting robot" },
     "description": "An advanced robot still functioning due to its internal fusion core.  This model is furnished with a powerful EMP-projector.",
@@ -1562,6 +1596,9 @@
   {
     "id": "mon_defbot_cowboy",
     "type": "MONSTER",
+    "copy-from": "mon_secubot",
+    "default_faction": "cop_bot",
+    "species": [ "ROBOT" ],
     "name": { "str": "junkyard cowboy" },
     "description": "A salvaged defense robot refitted with a shotgun and two circular buzzsaws.  Due to bootleg targeting software, it can only attack nearby targets.",
     "speed": 100,
@@ -1590,6 +1627,9 @@
   {
     "id": "mon_defbot_samurai",
     "type": "MONSTER",
+    "copy-from": "mon_secubot",
+    "default_faction": "defense_bot",
+    "species": [ "ROBOT" ],
     "name": { "str": "shortcircuit samurai" },
     "description": "A salvaged defense robot refitted with two electrified blades.  The over-taxed power systems result in somewhat sluggish movement and occasional discharges.  Keep a safe distance!",
     "speed": 70,
@@ -1610,6 +1650,9 @@
   {
     "id": "mon_defbot_paladin",
     "type": "MONSTER",
+    "copy-from": "mon_secubot",
+    "default_faction": "defense_bot",
+    "species": [ "ROBOT" ],
     "name": { "str": "slapdash paladin" },
     "description": "A salvaged defense robot refitted with a homemade flamethrower and two searing hot blades.  The burning fuel reserves make the robot noisy and smokey.",
     "speed": 100,
@@ -1638,8 +1681,7 @@
         "require_targeting_player": false,
         "require_targeting_npc": false,
         "require_targeting_monster": false,
-        "ranges": [ [ 0, 10, "DEFAULT" ] ],
-        "armor": { "bash": 12, "cut": 12, "acid": 4 }
+        "ranges": [ [ 0, 10, "DEFAULT" ] ]
       }
     ],
     "extend": { "flags": [ "FIREPROOF", "DROPS_AMMO" ] }
@@ -1647,6 +1689,9 @@
   {
     "id": "mon_milbot_gaurdian",
     "type": "MONSTER",
+    "copy-from": "mon_milbot_base",
+    "default_faction": "military",
+    "species": [ "ROBOT" ],
     "name": { "str": "robo-guardian" },
     "description": "A salvaged military robot refitted with a pair of integrated 9mm firearms.  Multiple weapons provide a high rate of fire, but jury-rigged sensors limit the effective range and accuracy.  It makes for a good close range bodyguard.",
     "diff": 10,
@@ -1676,6 +1721,8 @@
   {
     "id": "mon_milbot_deluxe",
     "type": "MONSTER",
+    "default_faction": "military",
+    "species": [ "ROBOT" ],
     "copy-from": "mon_milbot_gaurdian",
     "name": { "str_sp": "robote deluxe" },
     "description": "A diamond-studded gold-plated robot armed with a pair of integrated 9mm firearms.  An opulent luxury-bot suitable for those who wish to survive the apocalypse in style.",
@@ -1706,6 +1753,9 @@
   {
     "id": "mon_milbot_protector",
     "type": "MONSTER",
+    "copy-from": "mon_milbot_base",
+    "default_faction": "military",
+    "species": [ "ROBOT" ],
     "name": { "str": "robo-protector" },
     "description": "A salvaged military robot refitted with an integrated 5.56mm rifle.  The modified firearm is only capable of three round bursts, but range and accuracy are decent.  It makes for a solid combat ally.",
     "diff": 20,
@@ -1733,6 +1783,9 @@
   {
     "id": "mon_milbot_defender",
     "type": "MONSTER",
+    "copy-from": "mon_milbot_base",
+    "default_faction": "military",
+    "species": [ "ROBOT" ],
     "name": { "str": "robo-defender" },
     "description": "A salvaged military robot refitted with an integrated 50bmg rifle.  Improved optics provide nightvision and excellent range, but glitchy targeting software requires an extended pause between shots.  It makes for a good long range sniper.",
     "diff": 30,
@@ -1766,6 +1819,7 @@
   {
     "id": "mon_advbot_glitter",
     "type": "MONSTER",
+    "copy-from": "mon_advbot_base",
     "looks_like": "mon_copbot",
     "name": { "str": "glittering lady", "str_pl": "glittering ladies" },
     "description": "A salvaged advanced robot transformed into a luminous beacon of destruction.  It has two integral lasers and emits a steady pulse of blinding flashes.  Due to mismatched focusing lenses, the lasers have limited range.",
@@ -1790,8 +1844,7 @@
         "gun_type": "robogun_laser",
         "fake_skills": [ [ "gun", 5 ], [ "rifle", 5 ] ],
         "fake_dex": 8,
-        "ranges": [ [ 0, 5, "AUTO" ] ],
-        "armor": { "bash": 8 }
+        "ranges": [ [ 0, 5, "AUTO" ] ]
       }
     ],
     "extend": { "flags": [ "DROPS_AMMO" ] }
@@ -1799,6 +1852,7 @@
   {
     "id": "mon_advbot_bitter",
     "type": "MONSTER",
+    "copy-from": "mon_advbot_base",
     "looks_like": "mon_copbot",
     "name": { "str": "bitter spinster" },
     "description": "A salvaged military robot transformed into a caustic monster.  An internal acid fermenter feeds a ranged glob spitter and sprayer.  The many tanks and pipes weaken the robot structurally, making it somewhat fragile.",
@@ -1827,8 +1881,7 @@
         "fake_skills": [ [ "gun", 5 ], [ "rifle", 5 ] ],
         "fake_dex": 10,
         "require_targeting_player": false,
-        "ranges": [ [ 0, 20, "DEFAULT" ] ],
-        "armor": { "bash": 8, "cut": 8 }
+        "ranges": [ [ 0, 20, "DEFAULT" ] ]
       }
     ],
     "extend": { "flags": [ "ACIDPROOF" ] }
@@ -1865,6 +1918,9 @@
   {
     "id": "mon_chickenbot_horror",
     "type": "MONSTER",
+    "copy-from": "mon_chickenbot_base",
+    "default_faction": "military",
+    "species": [ "ROBOT" ],
     "name": { "str": "chainsaw horror" },
     "description": "A salvaged chickenwalker modified into a horrific monster adorned with skulls and spikes.  It has traded its long range weapons for a set of whirring chainsaws.  A speaker system has been installed to blast terrifying shrieks of distorted music.  No one in their right mind would craft such an awful creature.",
     "hp": 90,
@@ -1881,6 +1937,9 @@
   {
     "id": "mon_chickenbot_terror",
     "type": "MONSTER",
+    "copy-from": "mon_chickenbot_base",
+    "default_faction": "military",
+    "species": [ "ROBOT" ],
     "name": { "str": "screeching terror" },
     "description": "A salvaged chickenwalker modified into a horrific monster adorned with skulls and spikes.  It has traded its long range weapons for a set of piston-driven lances.  A speaker system has been installed to blast terrifying shrieks of distorted music.  No one in their right mind would craft such a hellish beast.",
     "diff": 5,
@@ -1898,6 +1957,9 @@
   {
     "id": "mon_chickenbot_nightmare",
     "type": "MONSTER",
+    "copy-from": "mon_chickenbot_base",
+    "default_faction": "military",
+    "species": [ "ROBOT" ],
     "name": { "str": "hooked nightmare" },
     "description": "A salvaged chickenwalker modified into a horrific monster adorned with skulls and spikes.  It has traded its long range weapons for a set of spinning chains terminating in bloody hooks.  A speaker system has been installed to blast terrifying shrieks of distorted music.  No one in their right mind would craft such a twisted abomination.",
     "diff": 5,
@@ -1950,6 +2012,7 @@
   {
     "id": "mon_tankbot_king",
     "type": "MONSTER",
+    "copy-from": "mon_tankbot_base",
     "name": { "str": "fist king" },
     "description": "A salvaged tankbot refitted with a pair of powerful pneumatic hammers which it uses to crush anything in its way, including buildings.  Although lacking ranged weapons, its armor and strength make it a match for the even the biggest monsters.  Only a madman would dare build such a reckless behemoth.",
     "default_faction": "military",
@@ -1969,6 +2032,7 @@
   {
     "id": "mon_tankbot_sultan",
     "type": "MONSTER",
+    "copy-from": "mon_tankbot_base",
     "name": { "str": "atomic sultan" },
     "description": "A salvaged tankbot refitted with burning hot man-crushers.  Although lacking ranged weapons, its armor and strength make it a match for even the biggest foes.  Multiple fusion cores give the robot ample power but also cause radioactive gas leaks.  Only a lunatic would dare build such a reckless monster.",
     "diff": 10,
