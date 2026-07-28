@@ -43,7 +43,7 @@
     "description": "Your body is coated with a fine slime.  Protects from long term effects of acid, though not short term ones.  Greatly increases wet benefits.",
     "leads_to": [ "SLIME_HANDS" ],
     "changes_to": [ "VISCOUS" ],
-    "category": [ "FISH", "SLIME", "TROGLOBITE", "CEPHALOPOD", "NECROMANTIC" ],
+    "category": [ "FISH", "SLIME", "TROGLOBITE", "CEPHALOPOD", "BATRACHIAN", "GASTROPOD", "NECROMANTIC" ],
     "wet_protection": [
       { "part": "head", "neutral": 3, "good": 4 },
       { "part": "leg_l", "neutral": 7, "good": 14 },
@@ -61,7 +61,7 @@
     "//": "Route to undead mutation Routine addition wing-like protrusion → collapse finer etc.",
     "type": "mutation",
     "id": "WINGS_STUB",
-    "category": [ "NECROMANTIC" ],
+    "category": [ "BEAST", "BIRD", "INSECT", "NECROMANTIC" ],
     "name": "Wing Stubs",
     "points": 0,
     "visibility": 2,
@@ -72,7 +72,7 @@
   {
     "type": "mutation",
     "id": "HEADBUMPS",
-    "category": [ "NECROMANTIC" ],
+    "category": [ "CATTLE", "CHIMERA", "INSECT", "NECROMANTIC" ],
     "name": "Head Bumps",
     "points": 0,
     "visibility": 3,
@@ -90,7 +90,7 @@
     "types": [ "CLAWS" ],
     "changes_to": [ "CLAWS", "TALONS", "NEC_HORNS" ],
     "cancels": [ "ARM_TENTACLES", "ARM_TENTACLES_4", "ARM_TENTACLES_8" ],
-    "category": [ "RAPTOR", "BEAST", "RAT", "URSINE", "NECROMANTIC" ]
+    "category": [ "RAPTOR", "BEAST", "RAT", "URSINE", "BIRD", "CHIMERA", "FELINE", "LIZARD", "LUPINE", "RABBIT", "NECROMANTIC" ]
   },
   {
     "//": "Below we write what mutates with undead mutation",
@@ -128,7 +128,7 @@
     "prereqs": [ "NAILS" ],
     "changes_to": [ "CLAWS_RETRACT", "CLAWS_RAT" ],
     "cancels": [ "ARM_TENTACLES", "ARM_TENTACLES_4", "ARM_TENTACLES_8" ],
-    "category": [ "BEAST", "RAT", "URSINE", "NECROMANTIC" ]
+    "category": [ "BEAST", "RAT", "URSINE", "FELINE", "NECROMANTIC" ]
   },
   {
     "type": "mutation",
@@ -157,7 +157,7 @@
     "description": "You have a major digestive disorder.  Though it causes you to vomit frequently, you have found that you can trigger your vomit reflex on demand, too.",
     "prereqs": [ "NAUSEA" ],
     "changes_to": [ "EATPOISON" ],
-    "category": [ "SLIME", "RAT", "MEDICAL", "ELFA", "NECROMANTIC", "TROGLOBITE", "RAPTOR", "CHIMERA", "MOUSE" ],
+    "category": [ "SLIME", "RAT", "MEDICAL", "ELFA", "NECROMANTIC", "TROGLOBITE", "RAPTOR", "CHIMERA", "MOUSE", "ALPHA", "BATRACHIAN", "CRUSTACEAN", "GASTROPOD" ],
     "active": true
   },
   {
@@ -171,7 +171,7 @@
     "//": "Yes, you eventually got over the massive digestive upset.  Mutations aren't easy on a system!",
     "prereqs2": [ "SAPROVORE", "TOLERANCE" ],
     "threshreq": [ "THRESH_TROGLOBITE", "THRESH_CHIMERA", "THRESH_RAPTOR", "THRESH_RAT", "THRESH_MOUSE", "THRESH_NECROMANTIC" ],
-    "category": [ "TROGLOBITE", "RAPTOR", "RAT", "CHIMERA", "NECROMANTIC", "MOUSE" ],
+    "category": [ "TROGLOBITE", "RAPTOR", "RAT", "CHIMERA", "NECROMANTIC", "MOUSE", "BATRACHIAN", "CRUSTACEAN", "GASTROPOD" ],
     "valid": false
   },
   {
@@ -182,7 +182,7 @@
     "description": "Eating rotting, long-dead flesh is good for the struggle, and safe--if still completely unappealing--for you.",
     "prereqs": [ "EATPOISON" ],
     "threshreq": [ "THRESH_CHIMERA", "THRESH_RAT", "THRESH_MOUSE", "THRESH_NECROMANTIC" ],
-    "category": [ "RAT", "CHIMERA", "MOUSE", "NECROMANTIC" ],
+    "category": [ "RAT", "CHIMERA", "MOUSE", "NECROMANTIC", "CRUSTACEAN" ],
     "valid": false
   },
   {
@@ -194,7 +194,7 @@
     "cancels": [ "SUNLIGHT_DEPENDENT" ],
     "prereqs": [ "TROGLO" ],
     "changes_to": [ "TROGLO3" ],
-    "category": [ "RAT", "NECROMANTIC" ]
+    "category": [ "RAT", "TROGLOBITE", "NECROMANTIC" ]
   },
   {
     "type": "mutation",
@@ -218,7 +218,7 @@
     "types": [ "TAIL" ],
     "prereqs": [ "TAIL_STUB" ],
     "changes_to": [ "TAIL_CLUB" ],
-    "category": [ "LIZARD", "NECROMANTIC" ],
+    "category": [ "LIZARD", "CHIMERA", "NECROMANTIC" ],
     "restricts_gear": [ "leg_l", "leg_r" ],
     "allow_soft_gear": true,
     "attacks": {
@@ -238,7 +238,7 @@
     "starting_trait": true,
     "cancels": [ "ANIMALEMPATH" ],
     "changes_to": [ "ANIMALDISCORD2" ],
-    "category": [ "LUPINE", "BEAST", "RAPTOR", "INSECT", "NECROMANTIC" ]
+    "category": [ "LUPINE", "BEAST", "RAPTOR", "INSECT", "MOUSE", "RABBIT", "NECROMANTIC" ]
   },
   {
     "type": "mutation",
@@ -250,7 +250,7 @@
     "description": "You smell awful.  Monsters that track scent will find you very easily, and humans will react poorly.",
     "prereqs": [ "SMELLY" ],
     "leads_to": [ "PHEROMONE_INSECT", "PHEROMONE_MAMMAL" ],
-    "category": [ "FISH", "BEAST", "SLIME", "CHIMERA", "URSINE", "NECROMANTIC" ]
+    "category": [ "FISH", "BEAST", "SLIME", "CHIMERA", "URSINE", "BATRACHIAN", "CATTLE", "CRUSTACEAN", "INSECT", "NECROMANTIC" ]
   },
   {
     "type": "mutation",
@@ -270,7 +270,7 @@
     "description": "You have a hard time falling asleep, even under the best circumstances!",
     "starting_trait": true,
     "valid": false,
-    "category": [ "MEDICAL", "NECROMANTIC" ],
+    "category": [ "MEDICAL", "ALPHA", "NECROMANTIC" ],
     "cancels": [ "EASYSLEEPER" ]
   },
   {
@@ -282,7 +282,7 @@
     "starting_trait": true,
     "valid": false,
     "cancels": [ "MORE_PAIN", "MORE_PAIN2", "MORE_PAIN3" ],
-    "category": [ "MEDICAL", "NECROMANTIC" ]
+    "category": [ "MEDICAL", "TROGLOBITE", "NECROMANTIC" ]
   },
   {
     "type": "mutation",
