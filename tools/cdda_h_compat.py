@@ -1832,6 +1832,25 @@ def transform_object(
             obj.pop("extend", None)
             counts["empty_extend_blocks"] += 1
 
+    # H item groups cannot assign ``items`` directly on an object that
+    # inherits from another item group.  Preserve the original additions by
+    # moving them into the supported ``extend.items`` list instead of
+    # dropping the group or its entries.
+    if (
+        obj_type == "item_group"
+        and isinstance(obj.get("copy-from"), str)
+        and isinstance(obj.get("items"), list)
+    ):
+        extension = obj.setdefault("extend", {})
+        if isinstance(extension, dict):
+            inherited_items = extension.get("items")
+            if isinstance(inherited_items, list):
+                extension["items"] = dedupe(inherited_items + obj["items"])[0]
+            else:
+                extension["items"] = obj["items"]
+            del obj["items"]
+            counts["item_group_items_to_extend"] += 1
+
     # Legacy item/monster overrides also used a sibling ``delete`` block to
     # remove inherited members.  In H that block can become a second
     # assignment (for example, direct ``flags`` plus ``delete.flags``).  Apply
