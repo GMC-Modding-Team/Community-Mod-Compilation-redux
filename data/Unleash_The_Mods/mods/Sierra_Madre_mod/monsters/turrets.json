@@ -3,71 +3,34 @@
     "id": "mon_sierra_turret",
     "looks_like": "mon_robofac_laserturret_mk1",
     "type": "MONSTER",
-    "name": {
-      "str": "laser turret"
-    },
+    "name": { "str": "laser turret" },
     "description": "A simple military-grade laser turret for protecting important areas.  Nothing too special about it, but it's deadly and gets the job done.",
-    "species": [
-      "ROBOT"
-    ],
+    "species": [ "ROBOT" ],
     "default_faction": "sierra_turrets",
     "volume": "30000 ml",
     "weight": "40750 g",
     "hp": 30,
     "speed": 100,
-    "material": [
-      "steel"
-    ],
+    "material": [ "steel" ],
     "symbol": "2",
     "color": "white",
     "aggression": 100,
     "morale": 100,
-    "armor": {
-      "bash": 2,
-      "cut": 5,
-      "bullet": 2
-    },
+    "armor": { "bash": 2, "cut": 5, "bullet": 2 },
     "vision_day": 50,
     "special_attacks": [
       {
         "type": "gun",
         "cooldown": 1,
         "gun_type": "v29",
-        "fake_skills": [
-          [
-            "gun",
-            4
-          ],
-          [
-            "pistol",
-            4
-          ]
-        ],
-        "ranges": [
-          [
-            0,
-            30,
-            "DEFAULT"
-          ]
-        ]
+        "fake_skills": [ [ "gun", 4 ], [ "pistol", 4 ] ],
+        "ranges": [ [ 0, 30, "DEFAULT" ] ]
       }
     ],
-    "special_when_hit": [
-      "RETURN_FIRE",
-      100
-    ],
-    "death_drops": {},
-    "death_function": {
-      "corpse_type": "BROKEN"
-    },
-    "flags": [
-      "SEES",
-      "NOHEAD",
-      "ELECTRONIC",
-      "COLDPROOF",
-      "IMMOBILE",
-      "NO_BREATHE"
-    ]
+    "special_when_hit": [ "RETURN_FIRE", 100 ],
+    "death_drops": {  },
+    "death_function": { "corpse_type": "BROKEN" },
+    "flags": [ "SEES", "NOHEAD", "ELECTRONIC", "COLDPROOF", "IMMOBILE", "NO_BREATHE" ]
   },
   {
     "id": "broken_sierra_turret",
@@ -75,41 +38,22 @@
     "copy-from": "broken_turret",
     "symbol": ",",
     "color": "green",
-    "name": {
-      "str": "broken laser turret"
-    },
+    "name": { "str": "broken laser turret" },
     "category": "other",
     "description": "A broken turret.  Much less threatening now that it's laid limp on solid ground.  Could be gutted for parts.",
     "price": 1000,
     "price_postapoc": 10,
-    "material": [
-      "steel",
-      "plastic"
-    ],
+    "material": [ "steel", "plastic" ],
     "weight": "40 kg",
     "volume": "30 L",
     "to_hit": -3,
-    "flags": [
-      "TRADER_AVOID",
-      "NO_REPAIR",
-      "NO_SALVAGE"
-    ],
-    "melee_damage": {
-      "bash": 4,
-      "cut": 4
-    },
+    "flags": [ "TRADER_AVOID", "NO_REPAIR", "NO_SALVAGE" ],
+    "melee_damage": { "bash": 4, "cut": 4 },
     "looks_like": "broken_robofac_laserturret_mk1"
   },
   {
     "type": "MONSTER_FACTION",
     "name": "sierra_turrets",
-    "hate": [
-      "zombie",
-      "fungus",
-      "cult",
-      "triffid",
-      "nether",
-      "mutant"
-    ]
+    "hate": [ "zombie", "fungus", "cult", "triffid", "nether", "mutant" ]
   }
 ]

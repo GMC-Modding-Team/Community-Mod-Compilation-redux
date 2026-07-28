@@ -13,194 +13,52 @@
   {
     "type": "npc_class",
     "id": "fo_bos_abbot_npc",
-    "name": {
-      "str": "BoS Gate Guard"
-    },
+    "name": { "str": "BoS Gate Guard" },
     "job_description": "Is a paladin of the Brotherhood of Steel.",
-    "traits": [
-      {
-        "group": "NPC_starting_traits"
-      },
-      {
-        "group": "Hair_Any"
-      }
-    ],
+    "traits": [ { "group": "NPC_starting_traits" }, { "group": "Hair_Any" } ],
     "common": false,
-    "bonus_str": {
-      "rng": [
-        -3,
-        3
-      ]
-    },
-    "bonus_dex": {
-      "rng": [
-        -3,
-        3
-      ]
-    },
-    "bonus_int": {
-      "rng": [
-        -3,
-        3
-      ]
-    },
-    "bonus_per": {
-      "rng": [
-        -3,
-        3
-      ]
-    },
+    "bonus_str": { "rng": [ -3, 3 ] },
+    "bonus_dex": { "rng": [ -3, 3 ] },
+    "bonus_int": { "rng": [ -3, 3 ] },
+    "bonus_per": { "rng": [ -3, 3 ] },
     "worn_override": "NC_BOSABBOT_worn",
     "carry_override": "NC_BOSPAL_carry",
     "weapon_override": "NC_BOSPAL_weapon",
     "skills": [
-      {
-        "skill": "ALL",
-        "level": {
-          "sum": [
-            {
-              "dice": [
-                3,
-                2
-              ]
-            },
-            {
-              "constant": -2
-            }
-          ]
-        }
-      },
-      {
-        "skill": "dodge",
-        "bonus": {
-          "rng": [
-            1,
-            2
-          ]
-        }
-      },
-      {
-        "skill": "melee",
-        "bonus": {
-          "rng": [
-            1,
-            2
-          ]
-        }
-      },
-      {
-        "skill": "unarmed",
-        "bonus": {
-          "rng": [
-            0,
-            2
-          ]
-        }
-      },
-      {
-        "skill": "rifle",
-        "bonus": {
-          "rng": [
-            0,
-            2
-          ]
-        }
-      },
-      {
-        "skill": "mechanics",
-        "bonus": {
-          "rng": [
-            0,
-            2
-          ]
-        }
-      },
-      {
-        "skill": "electronics",
-        "bonus": {
-          "rng": [
-            0,
-            2
-          ]
-        }
-      },
-      {
-        "skill": "gun",
-        "bonus": {
-          "rng": [
-            0,
-            2
-          ]
-        }
-      },
-      {
-        "skill": "firstaid",
-        "bonus": {
-          "rng": [
-            1,
-            2
-          ]
-        }
-      },
-      {
-        "skill": "fabrication",
-        "bonus": {
-          "rng": [
-            1,
-            2
-          ]
-        }
-      },
-      {
-        "skill": "survival",
-        "bonus": {
-          "rng": [
-            1,
-            2
-          ]
-        }
-      }
+      { "skill": "ALL", "level": { "sum": [ { "dice": [ 3, 2 ] }, { "constant": -2 } ] } },
+      { "skill": "dodge", "bonus": { "rng": [ 1, 2 ] } },
+      { "skill": "melee", "bonus": { "rng": [ 1, 2 ] } },
+      { "skill": "unarmed", "bonus": { "rng": [ 0, 2 ] } },
+      { "skill": "rifle", "bonus": { "rng": [ 0, 2 ] } },
+      { "skill": "mechanics", "bonus": { "rng": [ 0, 2 ] } },
+      { "skill": "electronics", "bonus": { "rng": [ 0, 2 ] } },
+      { "skill": "gun", "bonus": { "rng": [ 0, 2 ] } },
+      { "skill": "firstaid", "bonus": { "rng": [ 1, 2 ] } },
+      { "skill": "fabrication", "bonus": { "rng": [ 1, 2 ] } },
+      { "skill": "survival", "bonus": { "rng": [ 1, 2 ] } }
     ]
   },
   {
     "type": "item_group",
     "id": "NC_BOSABBOT_worn",
     "subtype": "collection",
-    "items": [
-      {
-        "item": "power_armor_t51"
-      }
-    ]
+    "items": [ { "item": "power_armor_t51" } ]
   },
   {
     "type": "item_group",
     "id": "NC_BOSPAL_carry",
     "subtype": "collection",
     "items": [
-      {
-        "group": "drugs_heal_simple",
-        "prob": 75
-      },
-      {
-        "group": "ammo_any_batteries_full",
-        "prob": 15
-      },
-      {
-        "group": "fallout_misc_itemgroup_food",
-        "prob": 40
-      }
+      { "group": "drugs_heal_simple", "prob": 75 },
+      { "group": "ammo_any_batteries_full", "prob": 15 },
+      { "group": "fallout_misc_itemgroup_food", "prob": 40 }
     ]
   },
   {
     "type": "item_group",
     "id": "NC_BOSPAL_weapon",
     "subtype": "collection",
-    "items": [
-      {
-        "item": "cz53",
-        "charges": 500
-      }
-    ]
+    "items": [ { "item": "cz53", "charges": 500 } ]
   },
   {
     "type": "talk_topic",
@@ -209,51 +67,25 @@
     "responses": [
       {
         "text": "Who are you, what are you doing here?",
-        "condition": {
-          "not": {
-            "u_has_var": "u_are_bos_member",
-            "type": "general",
-            "context": "meeting",
-            "value": "yes"
-          }
-        },
+        "condition": { "not": { "u_has_var": "u_are_bos_member", "type": "general", "context": "meeting", "value": "yes" } },
         "topic": "TALK_bos_abbot_2"
       },
-      {
-        "text": "What is the Brotherhood of Steel?",
-        "topic": "TALK_bos_abbot_3"
-      },
-      {
-        "text": "Is there anyway for me to join the Brotherhood of Steel?",
-        "topic": "TALK_MISSION_LIST"
-      },
-      {
-        "text": "Goodbye.",
-        "topic": "TALK_DONE"
-      }
+      { "text": "What is the Brotherhood of Steel?", "topic": "TALK_bos_abbot_3" },
+      { "text": "Is there anyway for me to join the Brotherhood of Steel?", "topic": "TALK_MISSION_LIST" },
+      { "text": "Goodbye.", "topic": "TALK_DONE" }
     ]
   },
   {
     "id": "TALK_bos_abbot_2",
     "type": "talk_topic",
     "dynamic_line": "I'm a paladin for the Brotherhood of Steel.  I have been posted at this outpost's gate to defend it from all potential assailants.",
-    "responses": [
-      {
-        "text": "Thanks for the info.",
-        "topic": "TALK_DONE"
-      }
-    ]
+    "responses": [ { "text": "Thanks for the info.", "topic": "TALK_DONE" } ]
   },
   {
     "id": "TALK_bos_abbot_3",
     "type": "talk_topic",
     "dynamic_line": "As I'm sure you know, we're an organization principally devoted to the preservation of the old world's technology.  As I'm sure you can tell, most people out in the wastes now can't appreciate the more refined arts and sciences of the past, and the herculean task of maintaining such delicate technology falls to us and us alone.  We're an organization principally devoted to the preservation of the old world's technology.  As I'm sure you can tell, most people out in the wastes now can't appreciate the more refined arts and sciences of the past, and the herculean task of maintaining such delicate technology falls to us and us alone.  You're not a member, so you're not privy to the resources our outpost can provide.",
-    "responses": [
-      {
-        "text": "Thanks for the info.",
-        "topic": "TALK_DONE"
-      }
-    ]
+    "responses": [ { "text": "Thanks for the info.", "topic": "TALK_DONE" } ]
   },
   {
     "id": "MISSION_BOS_FIND_GLOWTAPE",
@@ -266,67 +98,21 @@
     "item": "item_fo_glow_holotape",
     "count": 1,
     "end": {
-      "update_mapgen": [
-        {
-          "om_terrain": "FO_BOSOUTPOST_1",
-          "place_nested": [
-            {
-              "chunks": [
-                "fo_bos_postdoor"
-              ],
-              "x": 11,
-              "y": 12
-            }
-          ]
-        }
-      ],
+      "update_mapgen": [ { "om_terrain": "FO_BOSOUTPOST_1", "place_nested": [ { "chunks": [ "fo_bos_postdoor" ], "x": 11, "y": 12 } ] } ],
       "effect": [
-        {
-          "u_add_var": "u_are_bos_member",
-          "type": "general",
-          "context": "meeting",
-          "value": "yes"
-        },
-        {
-          "u_buy_item": "medium_battery_cell"
-        },
-        {
-          "u_buy_item": "armor_combat_light",
-          "count": 1
-        },
-        {
-          "u_buy_item": "helmet_combat_light",
-          "count": 1
-        },
-        {
-          "u_buy_item": "N99_pistol",
-          "count": 1
-        },
-        {
-          "u_buy_item": "10mmmidmag",
-          "count": 2
-        },
-        {
-          "u_buy_item": "5mm",
-          "count": 50
-        },
-        {
-          "u_buy_item": "10mmap",
-          "count": 20
-        },
-        {
-          "u_buy_item": "10mm_incendiary",
-          "count": 20
-        },
-        {
-          "u_buy_item": "10mm",
-          "count": 50
-        }
+        { "u_add_var": "u_are_bos_member", "type": "general", "context": "meeting", "value": "yes" },
+        { "u_buy_item": "medium_battery_cell" },
+        { "u_buy_item": "armor_combat_light", "count": 1 },
+        { "u_buy_item": "helmet_combat_light", "count": 1 },
+        { "u_buy_item": "N99_pistol", "count": 1 },
+        { "u_buy_item": "10mmmidmag", "count": 2 },
+        { "u_buy_item": "5mm", "count": 50 },
+        { "u_buy_item": "10mmap", "count": 20 },
+        { "u_buy_item": "10mm_incendiary", "count": 20 },
+        { "u_buy_item": "10mm", "count": 50 }
       ]
     },
-    "origins": [
-      "ORIGIN_SECONDARY"
-    ],
+    "origins": [ "ORIGIN_SECONDARY" ],
     "dialogue": {
       "describe": "Uh, well, I talked to the High Elder, and he said that not just anyone can join.  He, um, he said you have to complete a quest first.  I need you to go to a special location and retrieve a holotape.  This place is high tech.  There's things inside like you've never seen before.  Oh, uh, it's also radioactive.  Aheh.",
       "offer": "Uh, well, I talked to the High Elder, and he said that not just anyone can join.  He, um, he said you have to complete a quest first.  I need you to go to a special location and retrieve a holotape.  This place is high tech.  There's things inside like you've never seen before.  Oh, uh, it's also radioactive.  Aheh.",
@@ -338,12 +124,6 @@
       "success_lie": "Did you actually think that I would fall for something so stupid?",
       "failure": "Oh well, at least you tried.  You're not going to be accepted into the BoS, though."
     },
-    "start": {
-      "assign_mission_target": {
-        "om_terrain": "FO_WESTTEK_2_roof_2",
-        "search_range": 300,
-        "reveal_radius": 3
-      }
-    }
+    "start": { "assign_mission_target": { "om_terrain": "FO_WESTTEK_2_roof_2", "search_range": 300, "reveal_radius": 3 } }
   }
 ]

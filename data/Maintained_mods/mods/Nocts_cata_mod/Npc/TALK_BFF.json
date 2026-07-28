@@ -6,73 +6,37 @@
     "speaker_effect": {
       "condition": {
         "and": [
-          {
-            "u_has_trait": "PROF_PREPPER_HOLDOUT"
-          },
-          {
-            "not": {
-              "compare_string": [
-                "yes",
-                {
-                  "npc_val": "c_var_prepper_met"
-                }
-              ]
-            }
-          }
+          { "u_has_trait": "PROF_PREPPER_HOLDOUT" },
+          { "not": { "compare_string": [ "yes", { "npc_val": "c_var_prepper_met" } ] } }
         ]
       },
-      "effect": {
-        "npc_add_var": "c_var_prepper_met",
-        "value": "yes"
-      },
-      "opinion": {
-        "trust": 8,
-        "value": 8,
-        "anger": -4,
-        "fear": -4
-      }
+      "effect": { "npc_add_var": "c_var_prepper_met", "value": "yes" },
+      "opinion": { "trust": 8, "value": 8, "anger": -4, "fear": -4 }
     },
     "responses": [
       {
         "text": "Another survivor!  We should travel together.",
-        "condition": {
-          "not": {
-            "u_has_trait": "PROF_PREPPER_HOLDOUT"
-          }
-        },
+        "condition": { "not": { "u_has_trait": "PROF_PREPPER_HOLDOUT" } },
         "topic": "TALK_SUGGEST_FOLLOW"
       },
       {
         "text": "What are you doing?",
-        "condition": {
-          "not": {
-            "u_has_trait": "PROF_PREPPER_HOLDOUT"
-          }
-        },
+        "condition": { "not": { "u_has_trait": "PROF_PREPPER_HOLDOUT" } },
         "topic": "TALK_DESCRIBE_MISSION"
       },
       {
         "text": "Care to trade?",
         "topic": "TALK_DONE",
-        "condition": {
-          "not": {
-            "u_has_trait": "PROF_PREPPER_HOLDOUT"
-          }
-        },
+        "condition": { "not": { "u_has_trait": "PROF_PREPPER_HOLDOUT" } },
         "effect": "start_trade"
       },
       {
         "text": "Sure, let's head out!",
-        "condition": {
-          "u_has_trait": "PROF_PREPPER_HOLDOUT"
-        },
+        "condition": { "u_has_trait": "PROF_PREPPER_HOLDOUT" },
         "effect": "follow",
         "topic": "TALK_DONE"
       },
-      {
-        "text": "See you later.",
-        "topic": "TALK_DONE"
-      }
+      { "text": "See you later.", "topic": "TALK_DONE" }
     ]
   }
 ]

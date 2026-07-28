@@ -8,29 +8,9 @@
         "topic": "TALK_REFUGEE_Pablo_CF_REP_MISSION_4",
         "condition": {
           "and": [
-            {
-              "not": {
-                "compare_string": [
-                  "yes",
-                  {
-                    "u_val": "sofia_allies_secured"
-                  }
-                ]
-              }
-            },
-            {
-              "not": {
-                "compare_string": [
-                  "yes",
-                  {
-                    "npc_val": "sofia_refugee_convinced"
-                  }
-                ]
-              }
-            },
-            {
-              "u_has_mission": "MISSION_CF_REP_4"
-            }
+            { "not": { "compare_string": [ "yes", { "u_val": "sofia_allies_secured" } ] } },
+            { "not": { "compare_string": [ "yes", { "npc_val": "sofia_refugee_convinced" } ] } },
+            { "u_has_mission": "MISSION_CF_REP_4" }
           ]
         }
       }
@@ -49,10 +29,7 @@
         "text": "Would you be able to help keep an eye out for someone who might be interested?",
         "topic": "TALK_REFUGEE_Pablo_CF_REP_MISSION_4_OFFER"
       },
-      {
-        "text": "Alright.  Thanks anyway.",
-        "topic": "TALK_REFUGEE_Pablo_1"
-      }
+      { "text": "Alright.  Thanks anyway.", "topic": "TALK_REFUGEE_Pablo_1" }
     ]
   },
   {
@@ -64,10 +41,7 @@
         "text": "Could you help keep an eye out for any other visitors who might be looking for work?",
         "topic": "TALK_REFUGEE_Pablo_CF_REP_MISSION_4_OFFER"
       },
-      {
-        "text": "I'll see what I can find out, thanks.",
-        "topic": "TALK_REFUGEE_Pablo_1"
-      }
+      { "text": "I'll see what I can find out, thanks.", "topic": "TALK_REFUGEE_Pablo_1" }
     ]
   },
   {
@@ -93,10 +67,7 @@
       {
         "text": "I've asked a couple others already, I should probably go check on them.  See you later.",
         "effect": [
-          {
-            "u_add_var": "sofia_allies_secured",
-            "value": "yes"
-          },
+          { "u_add_var": "sofia_allies_secured", "value": "yes" },
           {
             "mapgen_update": "arcana_cf_4_wasteland_scavengers_1",
             "om_terrain": "cf_church_1",
@@ -126,51 +97,25 @@
             "search_range": 256
           }
         ],
-        "condition": {
-          "compare_string": [
-            "yes",
-            {
-              "u_val": "sofia_ally_seeking_2"
-            }
-          ]
-        },
+        "condition": { "compare_string": [ "yes", { "u_val": "sofia_ally_seeking_2" } ] },
         "switch": true,
         "topic": "TALK_DONE"
       },
       {
         "text": "I'll ask around a bit more while I'm at it.  See you later.",
         "effect": [
-          {
-            "u_add_var": "sofia_ally_seeking_2",
-            "value": "yes"
-          },
-          {
-            "npc_add_var": "sofia_refugee_convinced",
-            "value": "yes"
-          }
+          { "u_add_var": "sofia_ally_seeking_2", "value": "yes" },
+          { "npc_add_var": "sofia_refugee_convinced", "value": "yes" }
         ],
-        "condition": {
-          "compare_string": [
-            "yes",
-            {
-              "u_val": "sofia_ally_seeking_1"
-            }
-          ]
-        },
+        "condition": { "compare_string": [ "yes", { "u_val": "sofia_ally_seeking_1" } ] },
         "switch": true,
         "topic": "TALK_DONE"
       },
       {
         "text": "I'll ask around some more as well.  See you later.",
         "effect": [
-          {
-            "u_add_var": "sofia_ally_seeking_1",
-            "value": "yes"
-          },
-          {
-            "npc_add_var": "sofia_refugee_convinced",
-            "value": "yes"
-          }
+          { "u_add_var": "sofia_ally_seeking_1", "value": "yes" },
+          { "npc_add_var": "sofia_refugee_convinced", "value": "yes" }
         ],
         "switch": true,
         "default": true,

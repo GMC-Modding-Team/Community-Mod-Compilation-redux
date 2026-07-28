@@ -3,103 +3,49 @@
     "id": "mon_utilibot_beehive",
     "type": "MONSTER",
     "copy-from": "mon_utilibot",
-    "name": {
-      "str": "bee bot"
-    },
+    "name": { "str": "bee bot" },
     "looks_like": "mon_hazmatbot",
     "description": "A salvaged utility robot converted into an AI monitored bee hive that periodically removes and delivers honey combs.",
     "default_faction": "utility_bot",
-    "species": [
-      "ROBOT"
-    ],
+    "species": [ "ROBOT" ],
     "weight": "140 kg",
     "volume": "65 L",
     "hp": 120,
     "speed": 0,
-    "material": [
-      "steel"
-    ],
+    "material": [ "steel" ],
     "symbol": "R",
     "color": "brown",
     "bodytype": "human",
     "morale": 20,
     "aggression": 0,
-    "anger_triggers": [
-      "HURT"
-    ],
-    "armor": {
-      "bash": 8,
-      "cut": 8,
-      "heat": 4,
-      "acid": 6
-    },
+    "anger_triggers": [ "HURT" ],
+    "armor": { "bash": 8, "cut": 8, "heat": 4, "acid": 6 },
     "vision_day": 50,
-    "death_function": {
-      "corpse_type": "BROKEN"
-    },
+    "death_function": { "corpse_type": "BROKEN" },
     "revert_to_itype": "bot_utilibot_beehive",
-    "flags": [
-      "SEES",
-      "HEARS",
-      "ELECTRONIC",
-      "NO_BREATHE",
-      "PRIORITIZE_TARGETS",
-      "PATH_AVOID_DANGER_1"
-    ],
-    "fear_triggers": [
-      "HURT"
-    ],
-    "biosignature": {
-      "biosig_item": "honeycomb",
-      "biosig_timer": 3600
-    },
-    "//": [
-      "emit_bee_field"
-    ],
-    "special_attacks": [
-      [
-        "PARROT",
-        10
-      ]
-    ],
-    "death_drops": {
-      "groups": [
-        [
-          "broken_robots",
-          1
-        ],
-        [
-          "beehive",
-          1
-        ]
-      ]
-    }
+    "flags": [ "SEES", "HEARS", "ELECTRONIC", "NO_BREATHE", "PRIORITIZE_TARGETS", "PATH_AVOID_DANGER_1" ],
+    "fear_triggers": [ "HURT" ],
+    "biosignature": { "biosig_item": "honeycomb", "biosig_timer": 3600 },
+    "//": [ "emit_bee_field" ],
+    "special_attacks": [ [ "PARROT", 10 ] ],
+    "death_drops": { "groups": [ [ "broken_robots", 1 ], [ "beehive", 1 ] ] }
   },
   {
     "id": "mon_light_hack",
     "type": "MONSTER",
     "copy-from": "base_drone",
-    "name": {
-      "str": "floating lantern"
-    },
+    "name": { "str": "floating lantern" },
     "default_faction": "defense_bot",
-    "species": [
-      "ROBOT"
-    ],
+    "species": [ "ROBOT" ],
     "volume": "750 ml",
     "weight": "1 kg",
     "hp": 10,
-    "material": [
-      "steel"
-    ],
+    "material": [ "steel" ],
     "symbol": "e",
     "aggression": 0,
     "morale": 50,
     "luminance": 100,
-    "death_function": {
-      "message": "The %s's interior compartment sizzles with destructive energy.",
-      "corpse_type": "BROKEN"
-    },
+    "death_function": { "message": "The %s's interior compartment sizzles with destructive energy.", "corpse_type": "BROKEN" },
     "flags": [
       "SEES",
       "FLIES",
@@ -119,77 +65,35 @@
     "color": "yellow",
     "dodge": 8,
     "revert_to_itype": "bot_light_hack",
-    "armor": {
-      "cut": 4
-    }
+    "armor": { "cut": 4 }
   },
   {
     "id": "mon_eyebot_heater",
     "type": "MONSTER",
     "copy-from": "mon_eyebot",
-    "name": {
-      "str": "floating heater"
-    },
+    "name": { "str": "floating heater" },
     "looks_like": "mon_eyebot",
     "description": "A salvaged eyebot repurposed into a floating space heater.  It emits a constant jet of warm air to heat an enclosed space.",
     "default_faction": "cop_bot",
-    "species": [
-      "ROBOT"
-    ],
+    "species": [ "ROBOT" ],
     "diff": 2,
     "hp": 20,
     "speed": 120,
-    "material": [
-      "steel"
-    ],
+    "material": [ "steel" ],
     "symbol": "e",
     "color": "pink",
     "aggression": 40,
     "morale": 80,
     "melee_skill": 6,
     "dodge": 3,
-    "armor": {
-      "bash": 8,
-      "cut": 10,
-      "bullet": 8,
-      "heat": 10
-    },
-    "death_drops": {
-      "groups": [
-        [
-          "broken_robots",
-          4
-        ]
-      ]
-    },
-    "death_function": {
-      "corpse_type": "BROKEN"
-    },
-    "special_attacks": [
-      {
-        "id": "flash"
-      }
-    ],
-    "flags": [
-      "SEES",
-      "FLIES",
-      "ELECTRONIC",
-      "NO_BREATHE",
-      "NOHEAD",
-      "PRIORITIZE_TARGETS",
-      "PET_WONT_FOLLOW",
-      "WARM"
-    ],
+    "armor": { "bash": 8, "cut": 10, "bullet": 8, "heat": 10 },
+    "death_drops": { "groups": [ [ "broken_robots", 4 ] ] },
+    "death_function": { "corpse_type": "BROKEN" },
+    "special_attacks": [ { "id": "flash" } ],
+    "flags": [ "SEES", "FLIES", "ELECTRONIC", "NO_BREATHE", "NOHEAD", "PRIORITIZE_TARGETS", "PET_WONT_FOLLOW", "WARM" ],
     "luminance": 8,
     "revert_to_itype": "bot_eyebot_heater",
-    "fear_triggers": [
-      "HURT"
-    ],
-    "emit_fields": [
-      {
-        "emit_id": "emit_hot_air2_stream",
-        "delay": "1 s"
-      }
-    ]
+    "fear_triggers": [ "HURT" ],
+    "emit_fields": [ { "emit_id": "emit_hot_air2_stream", "delay": "1 s" } ]
   }
 ]

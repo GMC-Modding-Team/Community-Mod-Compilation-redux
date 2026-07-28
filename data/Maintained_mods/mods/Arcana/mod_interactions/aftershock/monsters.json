@@ -2,93 +2,50 @@
   {
     "id": "afs_mon_migoturret",
     "type": "MONSTER",
-    "name": {
-      "str": "brain blaster"
-    },
+    "name": { "str": "brain blaster" },
     "description": "The mi-go have set up some defenses here.  This horrifying techno-organic amalgamation appears to use brains in jars as their operating system.  On the plus side it looks like an easy headshot.",
     "default_faction": "mi-go",
-    "species": [
-      "ROBOT"
-    ],
+    "species": [ "ROBOT" ],
     "diff": 20,
     "volume": "30000 ml",
     "weight": "40750 g",
     "hp": 45,
     "speed": 100,
-    "material": [
-      "alien_resin"
-    ],
+    "material": [ "alien_resin" ],
     "symbol": "2",
     "color": "green",
     "aggression": 50,
     "morale": 100,
     "vision_day": 50,
-    "starting_ammo": {
-      "acidic_bore": 500
-    },
+    "starting_ammo": { "acidic_bore": 500 },
     "revert_to_itype": "bot_migoturret",
     "special_attacks": [
-      [
-        "PARROT",
-        0
-      ],
+      [ "PARROT", 0 ],
       {
         "type": "gun",
         "cooldown": 1,
         "gun_type": "vibrating_blaster",
-        "fake_skills": [
-          [
-            "gun",
-            2
-          ],
-          [
-            "rifle",
-            3
-          ]
-        ],
-        "ranges": [
-          [
-            0,
-            20,
-            "DEFAULT"
-          ]
-        ]
+        "fake_skills": [ [ "gun", 2 ], [ "rifle", 3 ] ],
+        "ranges": [ [ 0, 20, "DEFAULT" ] ]
       }
     ],
     "death_drops": "afs_mon_migoturret_death_drops",
-    "death_function": {
-      "corpse_type": "BROKEN"
-    },
-    "flags": [
-      "SEES",
-      "ELECTRONIC",
-      "IMMOBILE",
-      "NO_BREATHE"
-    ],
-    "armor": {
-      "bash": 14,
-      "cut": 16
-    }
+    "death_function": { "corpse_type": "BROKEN" },
+    "flags": [ "SEES", "ELECTRONIC", "IMMOBILE", "NO_BREATHE" ],
+    "armor": { "bash": 14, "cut": 16 }
   },
   {
     "id": "mon_afs_headless_horror",
     "type": "MONSTER",
-    "name": {
-      "str": "headless horror"
-    },
+    "name": { "str": "headless horror" },
     "description": "This headless zombie has swollen to frightening proportions, towering almost nine feet tall.  Six-foot-long feelers of black ooze blindly wave from its neck, violently twitching at nearby sounds.  Its long stride allows it to quickly pursue its targets, which it pummels into pulp with its huge, swollen fists.",
     "default_faction": "zombie",
-    "species": [
-      "ZOMBIE",
-      "HUMAN"
-    ],
+    "species": [ "ZOMBIE", "HUMAN" ],
     "volume": "62500 ml",
     "weight": "81500 g",
     "hp": 300,
     "speed": 130,
-    "material": [
-      "flesh"
-    ],
+    "material": [ "flesh" ],
     "symbol": "Z",
     "color": "black",
     "aggression": 100,
@@ -99,26 +56,11 @@
     "//": "the headless horror is technically blind, but its feelers allow it to sense your presence if you're close to it",
     "vision_day": 2,
     "vision_night": 2,
-    "weakpoint_sets": [
-      "wps_humanoid_body_headless"
-    ],
-    "families": [
-      "prof_intro_biology",
-      "prof_physiology",
-      "prof_wp_zombie",
-      "prof_wp_hulk"
-    ],
+    "weakpoint_sets": [ "wps_humanoid_body_headless" ],
+    "families": [ "prof_intro_biology", "prof_physiology", "prof_wp_zombie", "prof_wp_hulk" ],
     "harvest": "zombie_humanoid",
     "grab_strength": 50,
-    "special_attacks": [
-      {
-        "id": "grab",
-        "cooldown": 7
-      },
-      {
-        "id": "scratch_humanoid"
-      }
-    ],
+    "special_attacks": [ { "id": "grab", "cooldown": 7 }, { "id": "scratch_humanoid" } ],
     "death_drops": "mon_afs_headless_horror_death_drops",
     "flags": [
       "SEES",
@@ -136,33 +78,23 @@
       "NOHEAD",
       "LOUDMOVES"
     ],
-    "armor": {
-      "electric": 2
-    }
+    "armor": { "electric": 2 }
   },
   {
     "id": "afs_mon_garlander",
     "type": "MONSTER",
-    "name": {
-      "str": "garlander"
-    },
+    "name": { "str": "garlander" },
     "description": "A ribbon-like alien that glides along the ground on countless hair-thin legs, wrapping around sources of body heat to absorb as much as it can before gliding on.",
     "default_faction": "garlander",
     "bodytype": "snake",
-    "categories": [
-      "WILDLIFE"
-    ],
-    "species": [
-      "ALIEN_ARTHROPOD"
-    ],
+    "categories": [ "WILDLIFE" ],
+    "species": [ "ALIEN_ARTHROPOD" ],
     "diff": 2,
     "volume": "750 ml",
     "weight": "1 kg",
     "hp": 12,
     "speed": 90,
-    "material": [
-      "flesh"
-    ],
+    "material": [ "flesh" ],
     "symbol": "s",
     "color": "red",
     "aggression": 4,
@@ -170,71 +102,40 @@
     "melee_skill": 5,
     "melee_dice": 2,
     "melee_dice_sides": 4,
-    "melee_damage": [
-      {
-        "damage_type": "cut",
-        "amount": 2
-      }
-    ],
+    "melee_damage": [ { "damage_type": "cut", "amount": 2 } ],
     "dodge": 1,
     "vision_day": 15,
     "vision_night": 5,
     "harvest": "alien_arthropod",
     "dissect": "dissect_insect_sample_single",
     "special_attacks": [
-      {
-        "id": "garlander_web"
-      },
+      { "id": "garlander_web" },
       {
         "type": "spell",
-        "spell_data": {
-          "id": "afs_heat_drain",
-          "min_level": 3
-        },
+        "spell_data": { "id": "afs_heat_drain", "min_level": 3 },
         "cooldown": 5,
         "monster_message": "The air around the garlander feels unnaturally cold!"
       }
     ],
-    "anger_triggers": [
-      "HURT",
-      "PLAYER_WEAK",
-      "PLAYER_CLOSE"
-    ],
-    "flags": [
-      "ANIMAL",
-      "SEES",
-      "HEARS",
-      "SMELLS",
-      "NOHEAD",
-      "HARDTOSHOOT",
-      "SWIMS"
-    ],
+    "anger_triggers": [ "HURT", "PLAYER_WEAK", "PLAYER_CLOSE" ],
+    "flags": [ "ANIMAL", "SEES", "HEARS", "SMELLS", "NOHEAD", "HARDTOSHOOT", "SWIMS" ],
     "death_drops": "afs_mon_garlander_death_drops"
   },
   {
     "id": "afs_mon_boatman",
     "type": "MONSTER",
-    "name": {
-      "str": "anchor-boatman",
-      "str_pl": "anchor-boatmen"
-    },
+    "name": { "str": "anchor-boatman", "str_pl": "anchor-boatmen" },
     "description": "The anchor-boatman, borne on the frozen wind like a predatory dandelion seed, subtly inclines its rigid parachutes as it drifts towards its prey, its clawed tentacles undulating and flicking as they taste the air for signs of life.  Soft things that get too close are hooked, bled out, and dragged behind it for months as it extracts every bit of nutrition it can.  Scavengers that try to take its prey often join them.",
     "default_faction": "boatman",
     "bodytype": "blob",
-    "categories": [
-      "WILDLIFE"
-    ],
-    "species": [
-      "ALIEN_FLOATER"
-    ],
+    "categories": [ "WILDLIFE" ],
+    "species": [ "ALIEN_FLOATER" ],
     "diff": 10,
     "volume": "335000 ml",
     "weight": "40 kg",
     "hp": 350,
     "speed": 110,
-    "material": [
-      "flesh"
-    ],
+    "material": [ "flesh" ],
     "symbol": "8",
     "color": "light_red",
     "aggression": 100,
@@ -243,12 +144,7 @@
     "melee_dice": 2,
     "melee_dice_sides": 3,
     "attack_cost": 330,
-    "melee_damage": [
-      {
-        "damage_type": "cut",
-        "amount": 12
-      }
-    ],
+    "melee_damage": [ { "damage_type": "cut", "amount": 12 } ],
     "dodge": 3,
     "bleed_rate": 40,
     "harvest": "alien_floater",
@@ -256,20 +152,9 @@
     "vision_night": 3,
     "grab_strength": 50,
     "special_attacks": [
-      {
-        "id": "ranged_pull",
-        "cooldown": 10,
-        "grab_data": {
-          "pull_weight_ratio": 5.0
-        }
-      },
-      {
-        "id": "grab_drag",
-        "cooldown": 3
-      },
-      {
-        "id": "drag_followup"
-      }
+      { "id": "ranged_pull", "cooldown": 10, "grab_data": { "pull_weight_ratio": 5.0 } },
+      { "id": "grab_drag", "cooldown": 3 },
+      { "id": "drag_followup" }
     ],
     "flags": [
       "ANIMAL",
@@ -287,32 +172,23 @@
       "PUSH_MON",
       "PUSH_VEH"
     ],
-    "armor": {
-      "bash": 15,
-      "electric": 3
-    },
+    "armor": { "bash": 15, "electric": 3 },
     "death_drops": "afs_mon_boatman_death_drops"
   },
   {
     "id": "mon_cryokinetic",
     "type": "MONSTER",
-    "name": {
-      "str": "frost maddened human"
-    },
+    "name": { "str": "frost maddened human" },
     "description": "Sky blue irises with gray floating flecks cover the entirety of the eye.  Flurries seem to emanate from around them.",
     "default_faction": "cryo",
     "looks_like": "chud",
     "bodytype": "human",
-    "species": [
-      "HUMAN"
-    ],
+    "species": [ "HUMAN" ],
     "volume": "62500 ml",
     "weight": "81500 g",
     "hp": 90,
     "speed": 100,
-    "material": [
-      "flesh"
-    ],
+    "material": [ "flesh" ],
     "symbol": "@",
     "color": "light_blue",
     "aggression": 30,
@@ -320,45 +196,20 @@
     "melee_skill": 4,
     "melee_dice": 2,
     "melee_dice_sides": 4,
-    "melee_damage": [
-      {
-        "damage_type": "cold",
-        "amount": 8
-      }
-    ],
+    "melee_damage": [ { "damage_type": "cold", "amount": 8 } ],
     "dodge": 3,
     "harvest": "human",
     "dissect": "dissect_human",
     "vision_day": 30,
     "vision_night": 3,
-    "path_settings": {
-      "avoid_traps": true,
-      "avoid_sharp": true
-    },
+    "path_settings": { "avoid_traps": true, "avoid_sharp": true },
     "death_drops": "mon_cryokinetic_death_drops",
-    "anger_triggers": [
-      "FRIEND_DIED",
-      "FRIEND_ATTACKED",
-      "HURT"
-    ],
-    "flags": [
-      "SEES",
-      "HEARS",
-      "SMELLS",
-      "BASHES",
-      "GROUP_BASH",
-      "HUMAN",
-      "CAN_OPEN_DOORS",
-      "PATH_AVOID_DANGER_1",
-      "COLDPROOF"
-    ],
+    "anger_triggers": [ "FRIEND_DIED", "FRIEND_ATTACKED", "HURT" ],
+    "flags": [ "SEES", "HEARS", "SMELLS", "BASHES", "GROUP_BASH", "HUMAN", "CAN_OPEN_DOORS", "PATH_AVOID_DANGER_1", "COLDPROOF" ],
     "special_attacks": [
       {
         "type": "spell",
-        "spell_data": {
-          "id": "cryo_blast",
-          "min_level": 5
-        },
+        "spell_data": { "id": "cryo_blast", "min_level": 5 },
         "cooldown": 20,
         "monster_message": "A burst of frozen air explodes from their lungs!"
       }
@@ -367,21 +218,15 @@
   {
     "id": "mon_flesh_golem_afs",
     "type": "MONSTER",
-    "name": {
-      "str": "flesh golem"
-    },
+    "name": { "str": "flesh golem" },
     "description": "A seeping conglomeration of spasming muscle and organs have fused together into this towering caricature of the human form.  Various organs fall off of its hulking body only to be reabsorbed moments later.",
     "default_faction": "jabberwock",
-    "species": [
-      "ABERRATION"
-    ],
+    "species": [ "ABERRATION" ],
     "volume": "300000 ml",
     "weight": "120 kg",
     "hp": 200,
     "speed": 80,
-    "material": [
-      "flesh"
-    ],
+    "material": [ "flesh" ],
     "symbol": "j",
     "color": "dark_gray",
     "aggression": 100,
@@ -389,77 +234,33 @@
     "melee_skill": 6,
     "melee_dice": 4,
     "melee_dice_sides": 6,
-    "melee_damage": [
-      {
-        "damage_type": "cut",
-        "amount": 2
-      }
-    ],
-    "families": [
-      "prof_intro_biology",
-      "prof_physiology",
-      "prof_wp_demihuman"
-    ],
+    "melee_damage": [ { "damage_type": "cut", "amount": 2 } ],
+    "families": [ "prof_intro_biology", "prof_physiology", "prof_wp_demihuman" ],
     "bleed_rate": 60,
     "vision_day": 50,
     "vision_night": 3,
-    "special_attacks": [
-      [
-        "FLESH_GOLEM",
-        8
-      ],
-      [
-        "ABSORB_MEAT",
-        1
-      ],
-      {
-        "id": "hypo_pkill",
-        "cooldown": 1
-      }
-    ],
+    "special_attacks": [ [ "FLESH_GOLEM", 8 ], [ "ABSORB_MEAT", 1 ], { "id": "hypo_pkill", "cooldown": 1 } ],
     "harvest": "flesh_golem",
     "dissect": "dissect_beast_sample_small",
-    "upgrades": {
-      "half_life": 15,
-      "into": "mon_flesh_golem_afs"
-    },
+    "upgrades": { "half_life": 15, "into": "mon_flesh_golem_afs" },
     "zombify_into": "mon_meat_cocoon_med",
-    "flags": [
-      "SEES",
-      "HEARS",
-      "SMELLS",
-      "STUMBLES",
-      "WARM",
-      "ATTACKMON",
-      "POISON"
-    ],
-    "armor": {
-      "bash": 6,
-      "cut": 4,
-      "bullet": 3,
-      "electric": 1
-    },
+    "flags": [ "SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "ATTACKMON", "POISON" ],
+    "armor": { "bash": 6, "cut": 4, "bullet": 3, "electric": 1 },
     "death_drops": "mon_flesh_golem_afs_death_drops"
   },
   {
     "id": "mon_deep_go",
     "type": "MONSTER",
-    "name": {
-      "str": "deep one"
-    },
+    "name": { "str": "deep one" },
     "description": "An alien that appears to have evolved for survival in the depths.  Its tubular gray body bears numerous sets of paired appendages with clawed protrusions, and a pair of thick muscular fins.  You see glimpses of its shape, shifting in and out of the water.",
     "default_faction": "mi-go",
     "bodytype": "migo",
-    "species": [
-      "NETHER"
-    ],
+    "species": [ "NETHER" ],
     "volume": "92500 ml",
     "weight": "120 kg",
     "hp": 210,
     "speed": 120,
-    "material": [
-      "flesh"
-    ],
+    "material": [ "flesh" ],
     "symbol": "&",
     "color": "light_gray",
     "aggression": 20,
@@ -467,43 +268,17 @@
     "melee_skill": 7,
     "melee_dice": 4,
     "melee_dice_sides": 6,
-    "melee_damage": [
-      {
-        "damage_type": "cut",
-        "amount": 6
-      }
-    ],
+    "melee_damage": [ { "damage_type": "cut", "amount": 6 } ],
     "dodge": 4,
     "vision_day": 40,
     "vision_night": 15,
     "harvest": "zombie_meatslug",
-    "path_settings": {
-      "max_dist": 50,
-      "avoid_traps": true,
-      "avoid_sharp": true
-    },
-    "scents_ignored": [
-      "sc_fetid"
-    ],
+    "path_settings": { "max_dist": 50, "avoid_traps": true, "avoid_sharp": true },
+    "scents_ignored": [ "sc_fetid" ],
     "special_attacks": [
-      [
-        "PARROT",
-        0
-      ],
-      {
-        "id": "scratch",
-        "damage_max_instance": [
-          {
-            "damage_type": "cut",
-            "amount": 19,
-            "armor_multiplier": 0.8
-          }
-        ]
-      },
-      [
-        "TENTACLE",
-        5
-      ]
+      [ "PARROT", 0 ],
+      { "id": "scratch", "damage_max_instance": [ { "damage_type": "cut", "amount": 19, "armor_multiplier": 0.8 } ] },
+      [ "TENTACLE", 5 ]
     ],
     "flags": [
       "SEES",
@@ -520,32 +295,22 @@
       "PRIORITIZE_TARGETS",
       "SWIMS"
     ],
-    "armor": {
-      "bash": 4,
-      "cut": 12,
-      "bullet": 10
-    },
+    "armor": { "bash": 4, "cut": 12, "bullet": 10 },
     "death_drops": "mon_deep_go_death_drops"
   },
   {
     "id": "mon_deep_go_slaver",
     "type": "MONSTER",
-    "name": {
-      "str": "deep one slaver"
-    },
+    "name": { "str": "deep one slaver" },
     "description": "An alien that appears to have evolved for survival in the depths.  Its tubular gray body bears numerous sets of paired appendages with clawed protrusions, and a pair of thick muscular fins.  You see glimpses of its shape, shifting in and out of the water.  It is carrying a conical object that hums with an odd keening sound.",
     "default_faction": "mi-go",
     "bodytype": "migo",
-    "species": [
-      "NETHER"
-    ],
+    "species": [ "NETHER" ],
     "volume": "92500 ml",
     "weight": "120 kg",
     "hp": 210,
     "speed": 120,
-    "material": [
-      "flesh"
-    ],
+    "material": [ "flesh" ],
     "symbol": "&",
     "color": "light_gray",
     "aggression": 20,
@@ -553,51 +318,18 @@
     "melee_skill": 7,
     "melee_dice": 4,
     "melee_dice_sides": 6,
-    "melee_damage": [
-      {
-        "damage_type": "cut",
-        "amount": 6
-      }
-    ],
+    "melee_damage": [ { "damage_type": "cut", "amount": 6 } ],
     "dodge": 4,
     "vision_day": 40,
     "vision_night": 15,
     "harvest": "zombie_meatslug",
-    "path_settings": {
-      "max_dist": 50,
-      "avoid_traps": true,
-      "avoid_sharp": true
-    },
-    "scents_ignored": [
-      "sc_fetid"
-    ],
+    "path_settings": { "max_dist": 50, "avoid_traps": true, "avoid_sharp": true },
+    "scents_ignored": [ "sc_fetid" ],
     "special_attacks": [
-      [
-        "PARROT",
-        0
-      ],
-      {
-        "id": "scratch",
-        "damage_max_instance": [
-          {
-            "damage_type": "cut",
-            "amount": 16,
-            "armor_multiplier": 0.8
-          }
-        ]
-      },
-      [
-        "TENTACLE",
-        5
-      ],
-      {
-        "type": "spell",
-        "spell_data": {
-          "id": "mi-go_slaver_beam",
-          "min_level": 1
-        },
-        "cooldown": 400
-      }
+      [ "PARROT", 0 ],
+      { "id": "scratch", "damage_max_instance": [ { "damage_type": "cut", "amount": 16, "armor_multiplier": 0.8 } ] },
+      [ "TENTACLE", 5 ],
+      { "type": "spell", "spell_data": { "id": "mi-go_slaver_beam", "min_level": 1 }, "cooldown": 400 }
     ],
     "flags": [
       "SEES",
@@ -614,34 +346,23 @@
       "PRIORITIZE_TARGETS",
       "SWIMS"
     ],
-    "armor": {
-      "bash": 4,
-      "cut": 12,
-      "bullet": 10
-    },
+    "armor": { "bash": 4, "cut": 12, "bullet": 10 },
     "death_drops": "mon_deep_go_slaver_death_drops"
   },
   {
     "id": "mon_zombie_upliftedoctopus",
     "type": "MONSTER",
-    "name": {
-      "str": "Dead Sea Witch",
-      "str_pl": "Dead Sea Witches"
-    },
+    "name": { "str": "Dead Sea Witch", "str_pl": "Dead Sea Witches" },
     "description": "There is driftwood coming out of oozing wounds.  It moves towards you on a mass of writhing tentacles, black eyes like the deepest trench of the sea.",
     "default_faction": "zombie",
     "bodytype": "human",
-    "species": [
-      "ZOMBIE"
-    ],
+    "species": [ "ZOMBIE" ],
     "diff": 5,
     "volume": "62500 ml",
     "weight": "81500 g",
     "hp": 80,
     "speed": 80,
-    "material": [
-      "flesh"
-    ],
+    "material": [ "flesh" ],
     "symbol": "&",
     "color": "white",
     "aggression": 100,
@@ -653,12 +374,7 @@
     "vision_day": 20,
     "harvest": "zombie_meatslug",
     "death_drops": "mon_zombie_upliftedoctopus_death_drops",
-    "special_attacks": [
-      {
-        "type": "bite",
-        "cooldown": 5
-      }
-    ],
+    "special_attacks": [ { "type": "bite", "cooldown": 5 } ],
     "flags": [
       "SEES",
       "HEARS",
@@ -677,23 +393,17 @@
   {
     "id": "mon_moxie_regenerator",
     "type": "MONSTER",
-    "name": {
-      "str": "MoxPhore Regenerator"
-    },
+    "name": { "str": "MoxPhore Regenerator" },
     "description": "A human stands here, comically thin and scratching its scar-ridden flesh, any flesh it rips off grows back in seconds.",
     "default_faction": "moxie",
     "bodytype": "human",
-    "species": [
-      "MOXIE"
-    ],
+    "species": [ "MOXIE" ],
     "diff": 5,
     "volume": "62500 ml",
     "weight": "81500 g",
     "hp": 30,
     "speed": 100,
-    "material": [
-      "flesh"
-    ],
+    "material": [ "flesh" ],
     "symbol": "Q",
     "color": "red",
     "aggression": 100,
@@ -701,31 +411,15 @@
     "melee_skill": 4,
     "melee_dice": 2,
     "melee_dice_sides": 2,
-    "melee_damage": [
-      {
-        "damage_type": "cut",
-        "amount": 2
-      }
-    ],
+    "melee_damage": [ { "damage_type": "cut", "amount": 2 } ],
     "dodge": 2,
     "vision_day": 40,
     "regenerates": 20,
     "harvest": "frost_human",
     "death_drops": "mon_moxie_regenerator_death_drops",
     "special_attacks": [
-      {
-        "type": "bite",
-        "cooldown": 5
-      },
-      {
-        "id": "scratch",
-        "damage_max_instance": [
-          {
-            "damage_type": "cut",
-            "amount": 6
-          }
-        ]
-      }
+      { "type": "bite", "cooldown": 5 },
+      { "id": "scratch", "damage_max_instance": [ { "damage_type": "cut", "amount": 6 } ] }
     ],
     "flags": [
       "SEES",
@@ -741,10 +435,6 @@
       "PUSH_MON",
       "FILTHY"
     ],
-    "armor": {
-      "bash": 10,
-      "cut": 20,
-      "bullet": 25
-    }
+    "armor": { "bash": 10, "cut": 20, "bullet": 25 }
   }
 ]

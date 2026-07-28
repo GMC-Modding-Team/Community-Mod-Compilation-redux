@@ -3,108 +3,31 @@
     "id": "grei_tanker_drum",
     "type": "vehicle_part",
     "copy-from": "tank",
-    "name": {
-      "str": "Tanker Drum (200L)"
-    },
+    "name": { "str": "Tanker Drum (200L)" },
     "item": "55gal_drum",
     "location": "fuel_source",
     "broken_color": "red",
     "durability": 200,
     "description": "A storage space for holding liquids.  If filled with the appropriate fuel for the vehicle's engine, the engine will automatically draw fuel from the tank when the engine is on.  If filled with water, you can access the water from a water faucet, if one is installed in the vehicle.  You can also use a rubber hose to siphon liquids out of a tank.",
-    "categories": [
-      "movement"
-    ],
+    "categories": [ "movement" ],
     "damage_modifier": 80,
     "breaks_into": [
-      {
-        "item": "steel_lump",
-        "count": [
-          2,
-          2
-        ]
-      },
-      {
-        "item": "steel_chunk",
-        "count": [
-          1,
-          2
-        ]
-      },
-      {
-        "item": "scrap",
-        "count": [
-          1,
-          5
-        ]
-      }
+      { "item": "steel_lump", "count": [ 2, 2 ] },
+      { "item": "steel_chunk", "count": [ 1, 2 ] },
+      { "item": "scrap", "count": [ 1, 5 ] }
     ],
     "//": "weld repairs would involve patching up holes, for a medium tank assume 10cm squares (40 cm weld total)",
     "requirements": {
       "install": {
-        "skills": [
-          [
-            "mechanics",
-            1
-          ]
-        ],
+        "skills": [ [ "mechanics", 1 ] ],
         "time": "90 m",
-        "using": [
-          [
-            "vehicle_wrench_2",
-            1
-          ],
-          [
-            "drilling_standard",
-            50
-          ]
-        ]
+        "using": [ [ "vehicle_wrench_2", 1 ], [ "drilling_standard", 50 ] ]
       },
-      "removal": {
-        "skills": [
-          [
-            "mechanics",
-            1
-          ]
-        ],
-        "time": "45 m",
-        "qualities": [
-          {
-            "id": "WRENCH",
-            "level": 2
-          }
-        ]
-      },
-      "repair": {
-        "skills": [
-          [
-            "mechanics",
-            1
-          ]
-        ],
-        "time": "8 m",
-        "using": [
-          [
-            "repair_welding_standard",
-            4
-          ]
-        ]
-      }
+      "removal": { "skills": [ [ "mechanics", 1 ] ], "time": "45 m", "qualities": [ { "id": "WRENCH", "level": 2 } ] },
+      "repair": { "skills": [ [ "mechanics", 1 ] ], "time": "8 m", "using": [ [ "repair_welding_standard", 4 ] ] }
     },
-    "flags": [
-      "FLUIDTANK",
-      "OBSTACLE",
-      "OPAQUE",
-      "PROTRUSION"
-    ],
-    "damage_reduction": {
-      "all": 28,
-      "stab": 12
-    },
-    "variants": [
-      {
-        "symbols": "O",
-        "symbols_broken": "#"
-      }
-    ]
+    "flags": [ "FLUIDTANK", "OBSTACLE", "OPAQUE", "PROTRUSION" ],
+    "damage_reduction": { "all": 28, "stab": 12 },
+    "variants": [ { "symbols": "O", "symbols_broken": "#" } ]
   }
 ]

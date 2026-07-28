@@ -2,20 +2,13 @@
   {
     "id": "MISSION_GET_INHALER",
     "type": "mission_definition",
-    "name": {
-      "str": "Find Spurge Tea"
-    },
+    "name": { "str": "Find Spurge Tea" },
     "goal": "MGOAL_CONDITION",
-    "goal_condition": {
-      "u_has_item": "spurge_tea"
-    },
+    "goal_condition": { "u_has_item": "spurge_tea" },
     "difficulty": 2,
     "value": 150000,
     "urgent": true,
-    "origins": [
-      "ORIGIN_OPENER_NPC",
-      "ORIGIN_ANY_NPC"
-    ],
+    "origins": [ "ORIGIN_OPENER_NPC", "ORIGIN_ANY_NPC" ],
     "deadline_low": 30,
     "deadline_high": 48,
     "dialogue": {
@@ -31,50 +24,27 @@
     },
     "start": {
       "effect": [
-        {
-          "npc_add_trait": "ASTHMA"
-        },
-        {
-          "npc_remove_item_with": "spurge_tea"
-        },
+        { "npc_add_trait": "ASTHMA" },
+        { "npc_remove_item_with": "spurge_tea" },
         "assign_guard",
-        {
-          "clear_npc_rule": "investigate_noises"
-        }
+        { "clear_npc_rule": "investigate_noises" }
       ]
     },
     "end": {
-      "effect": [
-        "stop_guard",
-        {
-          "set_npc_rule": "investigate_noises"
-        },
-        {
-          "u_sell_item": "spurge_tea"
-        },
-        "npc_thankful"
-      ]
+      "effect": [ "stop_guard", { "set_npc_rule": "investigate_noises" }, { "u_sell_item": "spurge_tea" }, "npc_thankful" ]
     },
-    "fail": {
-      "effect": "npc_die"
-    }
+    "fail": { "effect": "npc_die" }
   },
   {
     "id": "MISSION_GET_ANTIBIOTICS",
     "type": "mission_definition",
-    "name": {
-      "str": "Find Cattail Jelly"
-    },
+    "name": { "str": "Find Cattail Jelly" },
     "goal": "MGOAL_CONDITION",
     "difficulty": 2,
     "value": 150000,
     "urgent": true,
-    "goal_condition": {
-      "u_has_item": "cattail_jelly"
-    },
-    "origins": [
-      "ORIGIN_OPENER_NPC"
-    ],
+    "goal_condition": { "u_has_item": "cattail_jelly" },
+    "origins": [ "ORIGIN_OPENER_NPC" ],
     "deadline_low": 24,
     "deadline_high": 48,
     "dialogue": {
@@ -90,49 +60,26 @@
     },
     "start": {
       "effect": [
-        {
-          "npc_add_effect": "infection",
-          "duration": "PERMANENT"
-        },
-        {
-          "npc_remove_item_with": "cattail_jelly"
-        },
+        { "npc_add_effect": "infection", "duration": "PERMANENT" },
+        { "npc_remove_item_with": "cattail_jelly" },
         "assign_guard",
-        {
-          "clear_npc_rule": "investigate_noises"
-        }
+        { "clear_npc_rule": "investigate_noises" }
       ]
     },
     "end": {
-      "effect": [
-        {
-          "npc_lose_effect": "infection"
-        },
-        "stop_guard",
-        {
-          "set_npc_rule": "investigate_noises"
-        },
-        "npc_thankful"
-      ]
+      "effect": [ { "npc_lose_effect": "infection" }, "stop_guard", { "set_npc_rule": "investigate_noises" }, "npc_thankful" ]
     },
-    "fail": {
-      "effect": "npc_die"
-    }
+    "fail": { "effect": "npc_die" }
   },
   {
     "id": "MISSION_GET_FLAG",
     "type": "mission_definition",
-    "name": {
-      "str": "Make a Flag"
-    },
+    "name": { "str": "Make a Flag" },
     "goal": "MGOAL_FIND_ITEM",
     "difficulty": 2,
     "value": 100000,
     "item": "grass_blanket",
-    "origins": [
-      "ORIGIN_OPENER_NPC",
-      "ORIGIN_ANY_NPC"
-    ],
+    "origins": [ "ORIGIN_OPENER_NPC", "ORIGIN_ANY_NPC" ],
     "dialogue": {
       "describe": "Does our flag still yet wave?  Maybe we will have to make it.",
       "offer": "You haven't truly visited a place until you've driven a flagpole down into its dirt.  I've got the pole and the paint here, but I need a large canvas for the flag itself.  Get me a large sheet woven out of grass, and we can claim this land in the name of America!",
@@ -148,17 +95,12 @@
   {
     "id": "MISSION_GET_RECORD_ACCOUNTING",
     "type": "mission_definition",
-    "name": {
-      "str": "Find Secrets in Leather Journal"
-    },
+    "name": { "str": "Find Secrets in Leather Journal" },
     "goal": "MGOAL_FIND_ITEM",
     "difficulty": 2,
     "value": 140000,
     "item": "leather_journal",
-    "origins": [
-      "ORIGIN_OPENER_NPC",
-      "ORIGIN_ANY_NPC"
-    ],
+    "origins": [ "ORIGIN_OPENER_NPC", "ORIGIN_ANY_NPC" ],
     "dialogue": {
       "describe": "Those twisted snakes…",
       "offer": "I left my dream journal in the swamp while I was doing my naked snake yoga.  There's some pretty wild stuff in there so I want it back.",
@@ -174,17 +116,12 @@
   {
     "id": "MISSION_GET_RECORD_PATIENT",
     "type": "mission_definition",
-    "name": {
-      "str": "Find Patient Records in Leather Journal"
-    },
+    "name": { "str": "Find Patient Records in Leather Journal" },
     "goal": "MGOAL_FIND_ITEM",
     "difficulty": 2,
     "value": 60000,
     "item": "leather_journal",
-    "origins": [
-      "ORIGIN_OPENER_NPC",
-      "ORIGIN_ANY_NPC"
-    ],
+    "origins": [ "ORIGIN_OPENER_NPC", "ORIGIN_ANY_NPC" ],
     "dialogue": {
       "describe": "I hope I don't see many names I know…",
       "offer": "I've lost so many friends…  please find me a patient list in a leather journal.  I just want to know who might still be out there.",
@@ -200,17 +137,12 @@
   {
     "id": "MISSION_GET_RECORD_WEATHER",
     "type": "mission_definition",
-    "name": {
-      "str": "Find Weather Log in Leather Journal"
-    },
+    "name": { "str": "Find Weather Log in Leather Journal" },
     "goal": "MGOAL_FIND_ITEM",
     "difficulty": 2,
     "value": 50000,
     "item": "leather_journal",
-    "origins": [
-      "ORIGIN_OPENER_NPC",
-      "ORIGIN_ANY_NPC"
-    ],
+    "origins": [ "ORIGIN_OPENER_NPC", "ORIGIN_ANY_NPC" ],
     "dialogue": {
       "describe": "I wonder if a retreat might exist…",
       "offer": "Everyone who dies gets back up, right?  Which means that whatever is causing this it must be airborne to have infected everyone.  I believe that if that is the case then there should be regions that were not downwind from where-ever the disease was released.  We need to find a leather journal with all the weather patterns leading up to the outbreak.",
@@ -226,17 +158,12 @@
   {
     "id": "MISSION_GET_RELIC",
     "type": "mission_definition",
-    "name": {
-      "str": "Find Rock"
-    },
+    "name": { "str": "Find Rock" },
     "goal": "MGOAL_FIND_ITEM",
     "difficulty": 2,
     "value": 100000,
     "item": "rock",
-    "origins": [
-      "ORIGIN_OPENER_NPC",
-      "ORIGIN_ANY_NPC"
-    ],
+    "origins": [ "ORIGIN_OPENER_NPC", "ORIGIN_ANY_NPC" ],
     "dialogue": {
       "describe": "St. Michael the archangel defend me in battle…",
       "offer": "As the world seems to abandon the reality that we once knew, it becomes plausible that the old superstitions that were cast aside may have had some truth to them.  Please go and find me a religious relic…  I doubt it will be of much use but I've got to hope in something.  It will look like a normal rock to you, but I can divine secrets from its earthly essence.",
@@ -252,30 +179,13 @@
   {
     "id": "MISSION_RECOVER_PRIEST_DIARY",
     "type": "mission_definition",
-    "name": {
-      "str": "Recover Holy Symbol"
-    },
+    "name": { "str": "Recover Holy Symbol" },
     "goal": "MGOAL_FIND_ITEM",
     "difficulty": 2,
     "value": 70000,
     "item": "holy_symbol",
     "start": {
-      "update_mapgen": {
-        "place_item": [
-          {
-            "item": "holy_symbol",
-            "x": [
-              3,
-              21
-            ],
-            "y": [
-              6,
-              21
-            ],
-            "amount": 1
-          }
-        ]
-      },
+      "update_mapgen": { "place_item": [ { "item": "holy_symbol", "x": [ 3, 21 ], "y": [ 6, 21 ], "amount": 1 } ] },
       "assign_mission_target": {
         "om_terrain": "standing_stones",
         "om_terrain_match_type": "PREFIX",
@@ -286,9 +196,7 @@
         "z": 0
       }
     },
-    "origins": [
-      "ORIGIN_SECONDARY"
-    ],
+    "origins": [ "ORIGIN_SECONDARY" ],
     "followup": "MISSION_INVESTIGATE_CULT",
     "dialogue": {
       "describe": "St. Michael the archangel defend me in battle…",
@@ -305,40 +213,16 @@
   {
     "id": "MISSION_INVESTIGATE_CULT",
     "type": "mission_definition",
-    "name": {
-      "str": "Investigate Cult"
-    },
+    "name": { "str": "Investigate Cult" },
     "goal": "MGOAL_FIND_ITEM",
     "difficulty": 2,
     "value": 150000,
     "item": "etched_skull",
     "start": {
-      "update_mapgen": {
-        "place_item": [
-          {
-            "item": "etched_skull",
-            "x": [
-              3,
-              21
-            ],
-            "y": [
-              6,
-              21
-            ],
-            "amount": 1
-          }
-        ]
-      },
-      "assign_mission_target": {
-        "om_terrain": "cave_rat",
-        "om_special": "Rat Cave",
-        "reveal_radius": 3,
-        "search_range": 120
-      }
+      "update_mapgen": { "place_item": [ { "item": "etched_skull", "x": [ 3, 21 ], "y": [ 6, 21 ], "amount": 1 } ] },
+      "assign_mission_target": { "om_terrain": "cave_rat", "om_special": "Rat Cave", "reveal_radius": 3, "search_range": 120 }
     },
-    "origins": [
-      "ORIGIN_SECONDARY"
-    ],
+    "origins": [ "ORIGIN_SECONDARY" ],
     "followup": "MISSION_INVESTIGATE_PRISON_VISIONARY",
     "dialogue": {
       "describe": "St. Michael the archangel defend me in battle…",
@@ -355,34 +239,16 @@
   {
     "id": "MISSION_INVESTIGATE_PRISON_VISIONARY",
     "type": "mission_definition",
-    "name": {
-      "str": "Mad Hermit"
-    },
+    "name": { "str": "Mad Hermit" },
     "goal": "MGOAL_FIND_ITEM",
     "difficulty": 2,
     "value": 150000,
     "item": "visions_solitude",
     "start": {
-      "assign_mission_target": {
-        "om_terrain": "island_forest_thick",
-        "om_special": "Island",
-        "reveal_radius": 3,
-        "search_range": 180
-      },
-      "update_mapgen": {
-        "om_terrain": "prison_1_4",
-        "place_item": [
-          {
-            "item": "visions_solitude",
-            "x": 15,
-            "y": 22
-          }
-        ]
-      }
+      "assign_mission_target": { "om_terrain": "island_forest_thick", "om_special": "Island", "reveal_radius": 3, "search_range": 180 },
+      "update_mapgen": { "om_terrain": "prison_1_4", "place_item": [ { "item": "visions_solitude", "x": 15, "y": 22 } ] }
     },
-    "origins": [
-      "ORIGIN_SECONDARY"
-    ],
+    "origins": [ "ORIGIN_SECONDARY" ],
     "dialogue": {
       "describe": "St. Michael the archangel defend me in battle…",
       "offer": "I have another task if you are feeling up to it.   There is a mad hermit that the whispers made special mention of.  I was wondering if you could see what may have happened to them or if they left anything behind.  The whispers admit the individual is rather unstable, to put it lightly, but the whispers believe the hermit was some kind of mystical visionary.  I'm not in a position to cast out the account just yet…  it seems the hermit has prophesied events accurately before.",
@@ -398,17 +264,12 @@
   {
     "id": "MISSION_GET_SOFTWARE",
     "type": "mission_definition",
-    "name": {
-      "str": "Retrieve Stick"
-    },
+    "name": { "str": "Retrieve Stick" },
     "goal": "MGOAL_FIND_ITEM",
     "item": "stick",
     "difficulty": 2,
     "value": 80000,
-    "origins": [
-      "ORIGIN_OPENER_NPC",
-      "ORIGIN_ANY_NPC"
-    ],
+    "origins": [ "ORIGIN_OPENER_NPC", "ORIGIN_ANY_NPC" ],
     "dialogue": {
       "describe": "Oh man, I can't believe I forgot to bring it…",
       "offer": "There's some important notes on my special stick that I need.",
@@ -424,40 +285,16 @@
   {
     "id": "MISSION_GET_ZOMBIE_BLOOD_ANAL",
     "type": "mission_definition",
-    "name": {
-      "str": "Analyze Alien Fungus"
-    },
+    "name": { "str": "Analyze Alien Fungus" },
     "goal": "MGOAL_FIND_ITEM",
     "difficulty": 8,
     "value": 250000,
     "item": "veggy_tainted",
     "start": {
-      "assign_mission_target": {
-        "om_terrain": "forest",
-        "reveal_radius": 3,
-        "search_range": 120
-      },
-      "update_mapgen": {
-        "place_item": [
-          {
-            "item": "veggy_tainted",
-            "x": 14,
-            "y": 15,
-            "amount": [
-              10,
-              20
-            ],
-            "repeat": [
-              1,
-              3
-            ]
-          }
-        ]
-      }
+      "assign_mission_target": { "om_terrain": "forest", "reveal_radius": 3, "search_range": 120 },
+      "update_mapgen": { "place_item": [ { "item": "veggy_tainted", "x": 14, "y": 15, "amount": [ 10, 20 ], "repeat": [ 1, 3 ] } ] }
     },
-    "origins": [
-      "ORIGIN_SECONDARY"
-    ],
+    "origins": [ "ORIGIN_SECONDARY" ],
     "dialogue": {
       "describe": "You've seen these walking fungus things around?  I would like to take a closer look at their flesh.  For science.",
       "offer": "I need someone to get a sample of strange alien fungus chunks and bring it to me.",
@@ -473,9 +310,7 @@
   {
     "id": "MISSION_KILL_JABBERWOCK",
     "type": "mission_definition",
-    "name": {
-      "str": "Kill Jabberwock"
-    },
+    "name": { "str": "Kill Jabberwock" },
     "goal": "MGOAL_KILL_MONSTER",
     "difficulty": 5,
     "value": 200000,
@@ -490,24 +325,10 @@
         "min_distance": 5,
         "z": 0
       },
-      "update_mapgen": {
-        "place_monster": [
-          {
-            "monster": "mon_jabberwock",
-            "x": 11,
-            "y": 11,
-            "target": true
-          }
-        ]
-      }
+      "update_mapgen": { "place_monster": [ { "monster": "mon_jabberwock", "x": 11, "y": 11, "target": true } ] }
     },
-    "end": {
-      "effect": "npc_thankful"
-    },
-    "origins": [
-      "ORIGIN_OPENER_NPC",
-      "ORIGIN_ANY_NPC"
-    ],
+    "end": { "effect": "npc_thankful" },
+    "origins": [ "ORIGIN_OPENER_NPC", "ORIGIN_ANY_NPC" ],
     "dialogue": {
       "describe": "The eater of the dead…  something was ripping trees to shreds and only leaving a few scattered limbs…",
       "offer": "A few days ago another survivor and I were in the woods.  One night something caught onto our trail and chased us for ten minutes or so until we decided to split up and meet-up back here.  My buddy never showed up and I don't have the means to kill whatever it was.  Can you lend a hand?",
@@ -523,37 +344,17 @@
   {
     "id": "MISSION_KILL_ZOMBIE_MOM",
     "type": "mission_definition",
-    "name": {
-      "str": "Kill Zombie Bear"
-    },
+    "name": { "str": "Kill Zombie Bear" },
     "goal": "MGOAL_KILL_MONSTER",
     "difficulty": 5,
     "value": 120000,
     "urgent": true,
     "start": {
-      "assign_mission_target": {
-        "om_terrain": "forest",
-        "reveal_radius": 3
-      },
-      "update_mapgen": {
-        "place_monster": [
-          {
-            "monster": "mon_zombear",
-            "name": "Willa",
-            "x": 12,
-            "y": 12,
-            "target": true
-          }
-        ]
-      }
+      "assign_mission_target": { "om_terrain": "forest", "reveal_radius": 3 },
+      "update_mapgen": { "place_monster": [ { "monster": "mon_zombear", "name": "Willa", "x": 12, "y": 12, "target": true } ] }
     },
-    "end": {
-      "effect": "npc_thankful"
-    },
-    "origins": [
-      "ORIGIN_OPENER_NPC",
-      "ORIGIN_ANY_NPC"
-    ],
+    "end": { "effect": "npc_thankful" },
+    "origins": [ "ORIGIN_OPENER_NPC", "ORIGIN_ANY_NPC" ],
     "dialogue": {
       "describe": "Oh god, I can't believe it happened…",
       "offer": "My bear…  she's…  she was killed, but then she just got back up…  she's one of those things now.  Can you put her out of her misery for me?",
@@ -569,33 +370,15 @@
   {
     "id": "MISSION_RESCUE_DOG",
     "type": "mission_definition",
-    "name": {
-      "str": "Find Lost Dog"
-    },
+    "name": { "str": "Find Lost Dog" },
     "goal": "MGOAL_FIND_MONSTER",
     "difficulty": 3,
     "value": 100000,
     "start": {
-      "assign_mission_target": {
-        "om_terrain": "forest",
-        "reveal_radius": 3
-      },
-      "update_mapgen": {
-        "place_monster": [
-          {
-            "monster": "mon_dog",
-            "name": "Sparky",
-            "x": 12,
-            "y": 12,
-            "target": true,
-            "friendly": true
-          }
-        ]
-      }
+      "assign_mission_target": { "om_terrain": "forest", "reveal_radius": 3 },
+      "update_mapgen": { "place_monster": [ { "monster": "mon_dog", "name": "Sparky", "x": 12, "y": 12, "target": true, "friendly": true } ] }
     },
-    "origins": [
-      "ORIGIN_OPENER_NPC"
-    ],
+    "origins": [ "ORIGIN_OPENER_NPC" ],
     "dialogue": {
       "describe": "Oh, my poor puppy…",
       "offer": "I left my stupid dog in the woods, not far from here.  Can you retrieve it?",
@@ -611,34 +394,15 @@
   {
     "id": "MISSION_GET_CITY_COP_MOMENTO",
     "type": "mission_definition",
-    "name": {
-      "str": "Go into deep woods to retrieve family seeds"
-    },
+    "name": { "str": "Go into deep woods to retrieve family seeds" },
     "goal": "MGOAL_FIND_ITEM",
     "difficulty": 2,
     "value": 800,
     "item": "seed_weed",
-    "origins": [
-      "ORIGIN_SECONDARY"
-    ],
+    "origins": [ "ORIGIN_SECONDARY" ],
     "start": {
-      "assign_mission_target": {
-        "om_terrain": "forest",
-        "reveal_radius": 3
-      },
-      "update_mapgen": {
-        "place_item": [
-          {
-            "item": "seed_weed",
-            "x": 14,
-            "y": 15,
-            "amount": [
-              10,
-              20
-            ]
-          }
-        ]
-      }
+      "assign_mission_target": { "om_terrain": "forest", "reveal_radius": 3 },
+      "update_mapgen": { "place_item": [ { "item": "seed_weed", "x": 14, "y": 15, "amount": [ 10, 20 ] } ] }
     },
     "dialogue": {
       "describe": "I need you to get my family seeds from the deep woods.",
@@ -655,74 +419,32 @@
   {
     "id": "MISSION_LEARN_ABOUT_CATTAIL_JELLY",
     "type": "mission_definition",
-    "name": {
-      "str": "Gather cattail stalks to create cattail jelly"
-    },
+    "name": { "str": "Gather cattail stalks to create cattail jelly" },
     "description": "Gather <color_light_blue>80 cattail stalks</color> from the swamp and bring them back to <color_light_red>learn how to craft cattail jelly</color>.  Raise your <color_light_blue>survival skill to at least 1</color> by harvesting cattail stalks.  <color_light_blue>Bring back the provided bag</color> as well.",
     "goal": "MGOAL_CONDITION",
     "goal_condition": {
       "and": [
-        {
-          "u_has_item": "backpack_leather"
-        },
-        {
-          "u_has_items": {
-            "item": "cattail_stalk",
-            "count": 80
-          }
-        },
-        {
-          "math": [
-            "u_skill('survival')",
-            ">=",
-            "1"
-          ]
-        }
+        { "u_has_item": "backpack_leather" },
+        { "u_has_items": { "item": "cattail_stalk", "count": 80 } },
+        { "math": [ "u_skill('survival')", ">=", "1" ] }
       ]
     },
     "difficulty": 1,
     "value": 0,
     "has_generic_rewards": false,
-    "origins": [
-      "ORIGIN_OPENER_NPC",
-      "ORIGIN_ANY_NPC"
-    ],
+    "origins": [ "ORIGIN_OPENER_NPC", "ORIGIN_ANY_NPC" ],
     "start": {
-      "effect": [
-        {
-          "u_spawn_item": "backpack_leather"
-        }
-      ],
-      "assign_mission_target": {
-        "om_terrain": "forest_water",
-        "reveal_radius": 3
-      }
+      "effect": [ { "u_spawn_item": "backpack_leather" } ],
+      "assign_mission_target": { "om_terrain": "forest_water", "reveal_radius": 3 }
     },
     "end": {
       "effect": [
-        {
-          "u_sell_item": "backpack_leather"
-        },
-        {
-          "u_sell_item": "cattail_stalk",
-          "count": 80
-        },
-        {
-          "npc_consume_item": "cattail_stalk",
-          "count": 80
-        },
-        {
-          "u_learn_recipe": "cattail_jelly"
-        },
-        {
-          "u_message": "You learn how to craft cattail jelly.",
-          "popup": true
-        },
-        {
-          "u_spawn_item": "cattail_jelly",
-          "container": "stomach_sealed",
-          "count": 7
-        }
+        { "u_sell_item": "backpack_leather" },
+        { "u_sell_item": "cattail_stalk", "count": 80 },
+        { "npc_consume_item": "cattail_stalk", "count": 80 },
+        { "u_learn_recipe": "cattail_jelly" },
+        { "u_message": "You learn how to craft cattail jelly.", "popup": true },
+        { "u_spawn_item": "cattail_jelly", "container": "stomach_sealed", "count": 7 }
       ]
     },
     "dialogue": {
@@ -740,9 +462,7 @@
   {
     "id": "MISSION_PYROMANIAC",
     "type": "mission_definition",
-    "name": {
-      "str": "Angry pyromaniac"
-    },
+    "name": { "str": "Angry pyromaniac" },
     "goal": "MGOAL_GO_TO",
     "difficulty": 0,
     "value": 0,
@@ -751,34 +471,11 @@
     "//3": "At the end of the mission, will place fire on tagged tile and NPC will join player faction.",
     "has_generic_rewards": false,
     "start": {
-      "effect": [
-        "follow_only",
-        {
-          "npc_first_topic": "MISSION_PYROMANIAC"
-        }
-      ],
-      "assign_mission_target": {
-        "om_terrain": "forest",
-        "om_terrain_match_type": "PREFIX",
-        "search_range": 75,
-        "random": true,
-        "z": 0
-      }
+      "effect": [ "follow_only", { "npc_first_topic": "MISSION_PYROMANIAC" } ],
+      "assign_mission_target": { "om_terrain": "forest", "om_terrain_match_type": "PREFIX", "search_range": 75, "random": true, "z": 0 }
     },
-    "end": {
-      "effect": [
-        "follow",
-        {
-          "u_consume_item": "tinder"
-        },
-        {
-          "mapgen_update": "MISSION_PYROMANIAC_BURN_INNAWOOD"
-        }
-      ]
-    },
-    "origins": [
-      "ORIGIN_OPENER_NPC"
-    ],
+    "end": { "effect": [ "follow", { "u_consume_item": "tinder" }, { "mapgen_update": "MISSION_PYROMANIAC_BURN_INNAWOOD" } ] },
+    "origins": [ "ORIGIN_OPENER_NPC" ],
     "dialogue": {
       "describe": "Oh man, I want to <swear> burn it so bad…",
       "offer": "I'm so <swear> infuriated!  I've got a tree that ruined my life, and now I want to get revenge!  I don't care about <the_cataclysm>, I just want to burn that tree!  Would you help me, <name_g>?",
@@ -797,35 +494,8 @@
     "update_mapgen_id": "MISSION_PYROMANIAC_BURN_INNAWOOD",
     "method": "json",
     "object": {
-      "place_item": [
-        {
-          "item": "tinder",
-          "x": [
-            5,
-            20
-          ],
-          "y": [
-            5,
-            20
-          ],
-          "amount": 5,
-          "repeat": 40
-        }
-      ],
-      "place_fields": [
-        {
-          "field": "fd_fire",
-          "x": [
-            5,
-            20
-          ],
-          "y": [
-            5,
-            20
-          ],
-          "repeat": 40
-        }
-      ]
+      "place_item": [ { "item": "tinder", "x": [ 5, 20 ], "y": [ 5, 20 ], "amount": 5, "repeat": 40 } ],
+      "place_fields": [ { "field": "fd_fire", "x": [ 5, 20 ], "y": [ 5, 20 ], "repeat": 40 } ]
     }
   },
   {
@@ -837,17 +507,7 @@
       {
         "text": "We're here.  Let's do it!",
         "topic": "TALK_MISSION_INQUIRE",
-        "condition": {
-          "and": [
-            "mission_complete",
-            {
-              "u_has_items": {
-                "item": "tinder",
-                "count": 1
-              }
-            }
-          ]
-        }
+        "condition": { "and": [ "mission_complete", { "u_has_items": { "item": "tinder", "count": 1 } } ] }
       }
     ]
   }

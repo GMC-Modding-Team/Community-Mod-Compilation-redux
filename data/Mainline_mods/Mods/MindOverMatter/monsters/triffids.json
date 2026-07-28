@@ -2,21 +2,15 @@
   {
     "id": "mon_triffid_clairsentient",
     "type": "MONSTER",
-    "name": {
-      "str": "triffid seedseer"
-    },
+    "name": { "str": "triffid seedseer" },
     "description": "A creeping mobile plant, as tall as a moose.  It has a single bark-covered stalk supporting a flowery head with a paralyzing sting concealed within.  You have the distinct sense that it's watching you.",
     "default_faction": "triffid",
-    "species": [
-      "PLANT"
-    ],
+    "species": [ "PLANT" ],
     "volume": "62500 ml",
     "weight": "81500 g",
     "hp": 80,
     "speed": 70,
-    "material": [
-      "veggy"
-    ],
+    "material": [ "veggy" ],
     "symbol": "F",
     "color": "light_green",
     "aggression": 20,
@@ -24,41 +18,15 @@
     "melee_skill": 5,
     "melee_dice": 2,
     "melee_dice_sides": 4,
-    "melee_damage": [
-      {
-        "damage_type": "cut",
-        "amount": 6
-      }
-    ],
+    "melee_damage": [ { "damage_type": "cut", "amount": 6 } ],
     "bleed_rate": 60,
-    "weakpoint_sets": [
-      "wps_triffid"
-    ],
-    "families": [
-      "prof_intro_biology",
-      "prof_wp_triffid_basic",
-      "prof_wp_triffid_advanced"
-    ],
+    "weakpoint_sets": [ "wps_triffid" ],
+    "families": [ "prof_intro_biology", "prof_wp_triffid_basic", "prof_wp_triffid_advanced" ],
     "harvest": "triffid_paralytic",
     "dissect": "dissect_plant_sample_single",
     "fungalize_into": "mon_fungaloid",
-    "flags": [
-      "SEES",
-      "SMELLS",
-      "HAS_MIND",
-      "BASHES",
-      "GROUP_BASH",
-      "NOHEAD",
-      "PARALYZEVENOM",
-      "HARDTOSHOOT",
-      "ALL_SEEING"
-    ],
-    "armor": {
-      "bash": 10,
-      "cut": 4,
-      "bullet": 43,
-      "electric": 2
-    },
+    "flags": [ "SEES", "SMELLS", "HAS_MIND", "BASHES", "GROUP_BASH", "NOHEAD", "PARALYZEVENOM", "HARDTOSHOOT", "ALL_SEEING" ],
+    "armor": { "bash": 10, "cut": 4, "bullet": 43, "electric": 2 },
     "dodge": 7,
     "//": "Extra bullet armor here is from clairsentient anticipation of bullet trajectories, not literal armor.",
     "extend": {
@@ -66,20 +34,9 @@
         {
           "id": "psi_triffid_seedseer_discern_weakness",
           "type": "spell",
-          "spell_data": {
-            "id": "clairsentient_discern_weakness_monster",
-            "min_level": 4
-          },
-          "cooldown": {
-            "math": [
-              "12 + rand(32)"
-            ]
-          },
-          "condition": {
-            "not": {
-              "u_has_effect": "effect_psi_null"
-            }
-          },
+          "spell_data": { "id": "clairsentient_discern_weakness_monster", "min_level": 4 },
+          "cooldown": { "math": [ "12 + rand(32)" ] },
+          "condition": { "not": { "u_has_effect": "effect_psi_null" } },
           "monster_message": "%1$s's fronds quiver."
         }
       ]
@@ -88,21 +45,15 @@
   {
     "id": "mon_triffid_pyrokinetic",
     "type": "MONSTER",
-    "name": {
-      "str": "triffid flamebreaker"
-    },
+    "name": { "str": "triffid flamebreaker" },
     "description": "A creeping mobile plant, as tall as a moose.  It has a single bark-covered stalk supporting a flowery head with a paralyzing sting concealed within.  The air around it wavers slightly, like a summer haze.",
     "default_faction": "triffid",
-    "species": [
-      "PLANT_INFLAMMABLE"
-    ],
+    "species": [ "PLANT_INFLAMMABLE" ],
     "volume": "62500 ml",
     "weight": "81500 g",
     "hp": 80,
     "speed": 70,
-    "material": [
-      "veggy"
-    ],
+    "material": [ "veggy" ],
     "symbol": "F",
     "color": "light_green",
     "aggression": 20,
@@ -110,74 +61,28 @@
     "melee_skill": 5,
     "melee_dice": 2,
     "melee_dice_sides": 4,
-    "melee_damage": [
-      {
-        "damage_type": "cut",
-        "amount": 6
-      }
-    ],
+    "melee_damage": [ { "damage_type": "cut", "amount": 6 } ],
     "bleed_rate": 60,
-    "weakpoint_sets": [
-      "wps_triffid"
-    ],
-    "families": [
-      "prof_intro_biology",
-      "prof_wp_triffid_basic",
-      "prof_wp_triffid_advanced"
-    ],
+    "weakpoint_sets": [ "wps_triffid" ],
+    "families": [ "prof_intro_biology", "prof_wp_triffid_basic", "prof_wp_triffid_advanced" ],
     "harvest": "triffid_paralytic",
     "dissect": "dissect_plant_sample_single",
     "fungalize_into": "mon_fungaloid",
-    "flags": [
-      "SEES",
-      "SMELLS",
-      "HAS_MIND",
-      "BASHES",
-      "GROUP_BASH",
-      "NOHEAD",
-      "PARALYZEVENOM",
-      "FIREPROOF"
-    ],
-    "armor": {
-      "bash": 10,
-      "cut": 4,
-      "bullet": 3,
-      "electric": 2,
-      "heat": 500
-    },
+    "flags": [ "SEES", "SMELLS", "HAS_MIND", "BASHES", "GROUP_BASH", "NOHEAD", "PARALYZEVENOM", "FIREPROOF" ],
+    "armor": { "bash": 10, "cut": 4, "bullet": 3, "electric": 2, "heat": 500 },
     "extend": {
       "special_attacks": [
         {
           "type": "monster_attack",
           "attack_type": "melee",
           "id": "mon_fountain_of_flames",
-          "cooldown": {
-            "math": [
-              "5 + rand(13)"
-            ]
-          },
+          "cooldown": { "math": [ "5 + rand(13)" ] },
           "move_cost": 80,
-          "damage_max_instance": [
-            {
-              "damage_type": "heat",
-              "amount": 20
-            }
-          ],
+          "damage_max_instance": [ { "damage_type": "heat", "amount": 20 } ],
           "dodgeable": true,
           "blockable": false,
-          "effects": [
-            {
-              "id": "onfire",
-              "duration": 60,
-              "chance": 50,
-              "affect_hit_bp": true
-            }
-          ],
-          "condition": {
-            "not": {
-              "u_has_effect": "effect_psi_null"
-            }
-          },
+          "effects": [ { "id": "onfire", "duration": 60, "chance": 50, "affect_hit_bp": true } ],
+          "condition": { "not": { "u_has_effect": "effect_psi_null" } },
           "hit_dmg_u": "%1$s waves its fronds and your %2$s is engulfed in flames!",
           "hit_dmg_npc": "%1$s waves its fronds and <npcname>'s %2$s is engulfed in flames!",
           "miss_msg_u": "%1$s waves its fronds and you narrowly avoid a burst of flame!",
@@ -188,50 +93,21 @@
         {
           "id": "psi_triffid_flamebreaker_quell",
           "type": "spell",
-          "spell_data": {
-            "id": "pyrokinetic_quell_flames_monster",
-            "min_level": 10
-          },
+          "spell_data": { "id": "pyrokinetic_quell_flames_monster", "min_level": 10 },
           "allow_no_target": true,
           "cooldown": 1,
-          "condition": {
-            "and": [
-              {
-                "not": {
-                  "u_has_effect": "effect_psi_null"
-                }
-              },
-              {
-                "u_is_in_field": "fd_fire"
-              }
-            ]
-          },
+          "condition": { "and": [ { "not": { "u_has_effect": "effect_psi_null" } }, { "u_is_in_field": "fd_fire" } ] },
           "monster_message": "%1$s waves its fronds and the flames gutter and die."
         },
         {
           "id": "psi_triffid_flamebreaker_no_flame_buff",
           "type": "spell",
-          "spell_data": {
-            "id": "pyrokinetic_flame_armor_ally_monster",
-            "min_level": 8
-          },
-          "cooldown": {
-            "math": [
-              "10 + rand(25)"
-            ]
-          },
+          "spell_data": { "id": "pyrokinetic_flame_armor_ally_monster", "min_level": 8 },
+          "cooldown": { "math": [ "10 + rand(25)" ] },
           "condition": {
             "and": [
-              {
-                "not": {
-                  "u_has_effect": "effect_psi_null"
-                }
-              },
-              {
-                "not": {
-                  "npc_has_effect": "effect_monster_pyrokinetic_fire_immunity"
-                }
-              }
+              { "not": { "u_has_effect": "effect_psi_null" } },
+              { "not": { "npc_has_effect": "effect_monster_pyrokinetic_fire_immunity" } }
             ]
           },
           "monster_message": "%1$s waves its fronds at %3$s."
@@ -242,21 +118,15 @@
   {
     "id": "mon_triffid_teleporter",
     "type": "MONSTER",
-    "name": {
-      "str": "triffid riftcaller"
-    },
+    "name": { "str": "triffid riftcaller" },
     "description": "A creeping mobile plant, as tall as a moose.  It has a single bark-covered stalk supporting a flowery head with a paralyzing sting concealed within.  Occasionally it vanishes and reappears elsewhere.",
     "default_faction": "triffid",
-    "species": [
-      "PLANT"
-    ],
+    "species": [ "PLANT" ],
     "volume": "62500 ml",
     "weight": "81500 g",
     "hp": 80,
     "speed": 70,
-    "material": [
-      "veggy"
-    ],
+    "material": [ "veggy" ],
     "symbol": "F",
     "color": "light_green",
     "aggression": 20,
@@ -264,95 +134,40 @@
     "melee_skill": 5,
     "melee_dice": 2,
     "melee_dice_sides": 4,
-    "melee_damage": [
-      {
-        "damage_type": "cut",
-        "amount": 6
-      }
-    ],
+    "melee_damage": [ { "damage_type": "cut", "amount": 6 } ],
     "bleed_rate": 60,
-    "weakpoint_sets": [
-      "wps_triffid"
-    ],
-    "families": [
-      "prof_intro_biology",
-      "prof_wp_triffid_basic",
-      "prof_wp_triffid_advanced"
-    ],
+    "weakpoint_sets": [ "wps_triffid" ],
+    "families": [ "prof_intro_biology", "prof_wp_triffid_basic", "prof_wp_triffid_advanced" ],
     "harvest": "triffid_paralytic",
     "dissect": "dissect_plant_sample_single",
     "fungalize_into": "mon_fungaloid",
-    "flags": [
-      "SEES",
-      "SMELLS",
-      "HAS_MIND",
-      "BASHES",
-      "GROUP_BASH",
-      "NOHEAD",
-      "PARALYZEVENOM",
-      "TELEPORT_IMMUNE"
-    ],
-    "armor": {
-      "bash": 10,
-      "cut": 4,
-      "bullet": 3,
-      "electric": 2
-    },
+    "flags": [ "SEES", "SMELLS", "HAS_MIND", "BASHES", "GROUP_BASH", "NOHEAD", "PARALYZEVENOM", "TELEPORT_IMMUNE" ],
+    "armor": { "bash": 10, "cut": 4, "bullet": 3, "electric": 2 },
     "extend": {
       "special_attacks": [
         {
           "id": "psi_triffid_teleporter_slow",
           "type": "spell",
-          "spell_data": {
-            "id": "teleport_slow_monster",
-            "min_level": 8
-          },
-          "cooldown": {
-            "math": [
-              "7 + rand(14)"
-            ]
-          },
-          "condition": {
-            "not": {
-              "u_has_effect": "effect_psi_null"
-            }
-          },
+          "spell_data": { "id": "teleport_slow_monster", "min_level": 8 },
+          "cooldown": { "math": [ "7 + rand(14)" ] },
+          "condition": { "not": { "u_has_effect": "effect_psi_null" } },
           "monster_message": "%1$s waves its fronds at %3$s."
         },
         {
           "type": "leap",
-          "cooldown": {
-            "math": [
-              "4 + rand(8)"
-            ]
-          },
+          "cooldown": { "math": [ "4 + rand(8)" ] },
           "move_cost": 50,
           "allow_no_target": true,
           "max_range": 10,
           "message": "%1$s vanishes and reappears elsewhere!",
-          "condition": {
-            "not": {
-              "u_has_effect": "effect_psi_null"
-            }
-          }
+          "condition": { "not": { "u_has_effect": "effect_psi_null" } }
         },
         {
           "id": "psi_triffid_teleporter_ally_teleport",
           "type": "spell",
-          "spell_data": {
-            "id": "teleporter_triffid_summon_allies",
-            "min_level": 10
-          },
-          "cooldown": {
-            "math": [
-              "17 + rand(32)"
-            ]
-          },
-          "condition": {
-            "not": {
-              "u_has_effect": "effect_psi_null"
-            }
-          },
+          "spell_data": { "id": "teleporter_triffid_summon_allies", "min_level": 10 },
+          "cooldown": { "math": [ "17 + rand(32)" ] },
+          "condition": { "not": { "u_has_effect": "effect_psi_null" } },
           "monster_message": "%1$s waves its fronds at %3$s and the air around %3$s solidifies into shapes."
         }
       ]

@@ -13,39 +13,19 @@
     "faction": "red_suns"
   },
   {
-    "id": [
-      "TALK_bandit_rs_merchant1"
-    ],
+    "id": [ "TALK_bandit_rs_merchant1" ],
     "type": "talk_topic",
     "dynamic_line": "<greet>",
     "responses": [
-      {
-        "text": "I would like to ask you about something…",
-        "topic": "TALK_bandit_rs_merchant_questions"
-      },
-      {
-        "text": "Let's trade.",
-        "effect": "start_trade",
-        "topic": "TALK_bandit_rs_merchant1"
-      },
+      { "text": "I would like to ask you about something…", "topic": "TALK_bandit_rs_merchant_questions" },
+      { "text": "Let's trade.", "effect": "start_trade", "topic": "TALK_bandit_rs_merchant1" },
       {
         "text": "About that job…",
-        "condition": {
-          "and": [
-            "has_assigned_mission",
-            "mission_complete"
-          ]
-        },
+        "condition": { "and": [ "has_assigned_mission", "mission_complete" ] },
         "topic": "TALK_MISSION_INQUIRE"
       },
-      {
-        "text": "Do you need any help?",
-        "topic": "TALK_MISSION_LIST"
-      },
-      {
-        "text": "Goodbye.",
-        "topic": "TALK_DONE"
-      }
+      { "text": "Do you need any help?", "topic": "TALK_MISSION_LIST" },
+      { "text": "Goodbye.", "topic": "TALK_DONE" }
     ]
   },
   {
@@ -66,55 +46,23 @@
       {
         "text": "Who's in charge now?",
         "topic": "TALK_bandit_rs_merchant_questions_leader",
-        "condition": {
-          "u_has_var": "hell_hound",
-          "type": "switch",
-          "context": "alive_dead",
-          "value": "dead"
-        }
+        "condition": { "u_has_var": "hell_hound", "type": "switch", "context": "alive_dead", "value": "dead" }
       },
       {
         "text": "I'm from Comandante.  Did you agree on something?",
-        "condition": {
-          "u_has_var": "fs_leader_mission_khh",
-          "type": "count",
-          "context": "unmarked_mission_progress",
-          "value": "3"
-        },
-        "effect": {
-          "u_add_var": "fs_leader_mission_khh",
-          "type": "count",
-          "context": "unmarked_mission_progress",
-          "value": "4"
-        },
+        "condition": { "u_has_var": "fs_leader_mission_khh", "type": "count", "context": "unmarked_mission_progress", "value": "3" },
+        "effect": { "u_add_var": "fs_leader_mission_khh", "type": "count", "context": "unmarked_mission_progress", "value": "4" },
         "topic": "TALK_bandit_rs_merchant_questions_hh_deal"
       },
       {
         "text": "Your guys slipped words that they don't really like the new leader.  Is it true?",
-        "condition": {
-          "u_has_var": "fs_leader_mission_khh",
-          "type": "count",
-          "context": "unmarked_mission_progress",
-          "value": "2"
-        },
+        "condition": { "u_has_var": "fs_leader_mission_khh", "type": "count", "context": "unmarked_mission_progress", "value": "2" },
         "topic": "TALK_bandit_rs_merchant_questions_hh"
       },
-      {
-        "text": "What's your story?",
-        "topic": "TALK_bandit_rs_merchant_Background"
-      },
-      {
-        "text": "Who are you all?",
-        "topic": "TALK_bandit_rs_merchant_questions_faction"
-      },
-      {
-        "text": "Why do you use Free Merchant merch?",
-        "topic": "TALK_bandit_rs_merchant_questions_merch"
-      },
-      {
-        "text": "<done_conversation_section>",
-        "topic": "TALK_bandit_rs_merchant1"
-      }
+      { "text": "What's your story?", "topic": "TALK_bandit_rs_merchant_Background" },
+      { "text": "Who are you all?", "topic": "TALK_bandit_rs_merchant_questions_faction" },
+      { "text": "Why do you use Free Merchant merch?", "topic": "TALK_bandit_rs_merchant_questions_merch" },
+      { "text": "<done_conversation_section>", "topic": "TALK_bandit_rs_merchant1" }
     ]
   },
   {
@@ -150,17 +98,13 @@
   {
     "id": "MISSION_bandit_rs_merchant_1",
     "type": "mission_definition",
-    "name": {
-      "str": "Defend Refugee center"
-    },
+    "name": { "str": "Defend Refugee center" },
     "description": "Repel attack of Free Merchants on Refugee Center.",
     "goal": "MGOAL_ASSASSINATE",
     "difficulty": 0,
     "value": 35000,
     "start": {
-      "assign_mission_target": {
-        "om_terrain": "evac_center_23"
-      },
+      "assign_mission_target": { "om_terrain": "evac_center_23" },
       "update_mapgen": {
         "rows": [
           "                        ",
@@ -188,75 +132,20 @@
           "                        ",
           "                        "
         ],
-        "terrain": {
-          " ": "t_null"
-        },
+        "terrain": { " ": "t_null" },
         "place_vehicles": [
-          {
-            "vehicle": "pickup",
-            "fuel": 35,
-            "rotation": 270,
-            "status": 0,
-            "x": 17,
-            "y": 5
-          },
-          {
-            "vehicle": "pickup",
-            "fuel": 35,
-            "rotation": 270,
-            "status": 0,
-            "x": 13,
-            "y": 14
-          }
+          { "vehicle": "pickup", "fuel": 35, "rotation": 270, "status": 0, "x": 17, "y": 5 },
+          { "vehicle": "pickup", "fuel": 35, "rotation": 270, "status": 0, "x": 13, "y": 14 }
         ],
-        "place_npcs": [
-          {
-            "class": "hostile_guard",
-            "x": 15,
-            "y": 5
-          },
-          {
-            "class": "hostile_guard",
-            "x": 13,
-            "y": 14,
-            "target": true
-          }
-        ],
-        "nested": {
-          "4": {
-            "chunks": [
-              [
-                "null",
-                35
-              ],
-              [
-                "evac_hostile_guards",
-                65
-              ]
-            ]
-          }
-        }
+        "place_npcs": [ { "class": "hostile_guard", "x": 15, "y": 5 }, { "class": "hostile_guard", "x": 13, "y": 14, "target": true } ],
+        "nested": { "4": { "chunks": [ [ "null", 35 ], [ "evac_hostile_guards", 65 ] ] } }
       }
     },
     "end": {
-      "opinion": {
-        "trust": 4,
-        "value": 4
-      },
-      "update_mapgen": {
-        "om_terrain": "evac_center_13",
-        "place_npcs": [
-          {
-            "class": "NPC_bandit_rs_bomber",
-            "x": 2,
-            "y": 15
-          }
-        ]
-      }
+      "opinion": { "trust": 4, "value": 4 },
+      "update_mapgen": { "om_terrain": "evac_center_13", "place_npcs": [ { "class": "NPC_bandit_rs_bomber", "x": 2, "y": 15 } ] }
     },
-    "origins": [
-      "ORIGIN_SECONDARY"
-    ],
+    "origins": [ "ORIGIN_SECONDARY" ],
     "followup": "MISSION_bandit_rs_merchant_2",
     "dialogue": {
       "describe": "-",
@@ -273,51 +162,22 @@
   {
     "id": "MISSION_bandit_rs_merchant_2",
     "type": "mission_definition",
-    "name": {
-      "str": "Package delivery"
-    },
+    "name": { "str": "Package delivery" },
     "goal": "MGOAL_TALK_TO_NPC",
     "difficulty": 0,
     "value": 10000,
     "start": {
-      "assign_mission_target": {
-        "om_terrain": "ws_biker_dump_2_2"
-      },
-      "update_mapgen": {
-        "place_npcs": [
-          {
-            "class": "NPC_bandit_sb_leader",
-            "x": 10,
-            "y": 5,
-            "target": true
-          }
-        ]
-      },
+      "assign_mission_target": { "om_terrain": "ws_biker_dump_2_2" },
+      "update_mapgen": { "place_npcs": [ { "class": "NPC_bandit_sb_leader", "x": 10, "y": 5, "target": true } ] },
       "effect": [
-        {
-          "u_buy_item": "bandit_item_2",
-          "cost": 800
-        },
-        {
-          "npc_change_faction": "sunset_bikers"
-        },
-        {
-          "u_faction_rep": 25
-        },
-        {
-          "npc_change_faction": "red_suns"
-        }
+        { "u_buy_item": "bandit_item_2", "cost": 800 },
+        { "npc_change_faction": "sunset_bikers" },
+        { "u_faction_rep": 25 },
+        { "npc_change_faction": "red_suns" }
       ]
     },
-    "end": {
-      "opinion": {
-        "trust": 2,
-        "value": 2
-      }
-    },
-    "origins": [
-      "ORIGIN_SECONDARY"
-    ],
+    "end": { "opinion": { "trust": 2, "value": 2 } },
+    "origins": [ "ORIGIN_SECONDARY" ],
     "dialogue": {
       "describe": "-",
       "offer": "So, I still need to deliver that package.  Conditions are the same.  Agree?",
@@ -334,18 +194,6 @@
     "type": "mapgen",
     "method": "json",
     "nested_mapgen_id": "evac_hostile_guards",
-    "object": {
-      "mapgensize": [
-        1,
-        1
-      ],
-      "place_npcs": [
-        {
-          "class": "hostile_guard",
-          "x": 0,
-          "y": 0
-        }
-      ]
-    }
+    "object": { "mapgensize": [ 1, 1 ], "place_npcs": [ { "class": "hostile_guard", "x": 0, "y": 0 } ] }
   }
 ]

@@ -2,22 +2,16 @@
   {
     "id": "mon_kangaroo_hook",
     "type": "MONSTER",
-    "name": {
-      "str": "hook kangaroo"
-    },
+    "name": { "str": "hook kangaroo" },
     "description": "Grotesque and deformed kangaroo body that has black goo seeping from its orifices.  The most unnerving is its forearms have reformed into a raptorial shape, like that of a praying mantis.",
     "default_faction": "zombie",
     "bodytype": "kangaroo",
-    "species": [
-      "ZOMBIE"
-    ],
+    "species": [ "ZOMBIE" ],
     "volume": "90718 ml",
     "weight": "90718 g",
     "hp": 125,
     "speed": 130,
-    "material": [
-      "flesh"
-    ],
+    "material": [ "flesh" ],
     "symbol": "K",
     "color": "red",
     "aggression": 50,
@@ -25,82 +19,36 @@
     "melee_skill": 6,
     "melee_dice": 3,
     "melee_dice_sides": 6,
-    "melee_damage": [
-      {
-        "damage_type": "cut",
-        "amount": 3
-      }
-    ],
+    "melee_damage": [ { "damage_type": "cut", "amount": 3 } ],
     "dodge": 2,
     "vision_day": 30,
     "vision_night": 5,
     "harvest": "zombie_leather",
     "special_attacks": [
-      [
-        "SMASH",
-        20
-      ],
-      [
-        "LUNGE",
-        20
-      ],
-      {
-        "type": "leap",
-        "cooldown": 15,
-        "move_cost": 0,
-        "max_range": 12,
-        "min_consider_range": 4
-      }
+      [ "SMASH", 20 ],
+      [ "LUNGE", 20 ],
+      { "type": "leap", "cooldown": 15, "move_cost": 0, "max_range": 12, "min_consider_range": 4 }
     ],
-    "anger_triggers": [
-      "STALK",
-      "PLAYER_WEAK",
-      "PLAYER_CLOSE"
-    ],
-    "fear_triggers": [
-      "FIRE"
-    ],
-    "flags": [
-      "SEES",
-      "HEARS",
-      "SMELLS",
-      "STUMBLES",
-      "WARM",
-      "BASHES",
-      "POISON",
-      "NO_BREATHE",
-      "REVIVES",
-      "FILTHY",
-      "SWIMS"
-    ],
-    "armor": {
-      "bash": 3,
-      "cut": 1
-    }
+    "anger_triggers": [ "STALK", "PLAYER_WEAK", "PLAYER_CLOSE" ],
+    "fear_triggers": [ "FIRE" ],
+    "flags": [ "SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "POISON", "NO_BREATHE", "REVIVES", "FILTHY", "SWIMS" ],
+    "armor": { "bash": 3, "cut": 1 }
   },
   {
     "id": "mon_bushelephant_fungal",
     "type": "MONSTER",
     "copy-from": "mon_bushelephant",
-    "name": {
-      "str": "fungal elephant"
-    },
+    "name": { "str": "fungal elephant" },
     "description": "A horrifying image with tendrils seeping out of many oozing wounds, this elephant's form appears more eldritch than animal.",
     "default_faction": "fungus",
     "bodytype": "elephant",
-    "categories": [
-      "WILDLIFE"
-    ],
-    "species": [
-      "FUNGUS"
-    ],
+    "categories": [ "WILDLIFE" ],
+    "species": [ "FUNGUS" ],
     "volume": "5896700 ml",
     "weight": "5896700 g",
     "hp": 360,
     "speed": 120,
-    "material": [
-      "veggy"
-    ],
+    "material": [ "veggy" ],
     "symbol": "E",
     "color": "light_gray",
     "aggression": 100,
@@ -108,88 +56,32 @@
     "melee_skill": 4,
     "melee_dice": 2,
     "melee_dice_sides": 3,
-    "path_settings": {
-      "max_dist": 20
-    },
-    "anger_triggers": [
-      "FRIEND_ATTACKED",
-      "FRIEND_DIED",
-      "HURT",
-      "MATING_SEASON"
-    ],
-    "baby_flags": [
-      "SPRING"
-    ],
+    "path_settings": { "max_dist": 20 },
+    "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT", "MATING_SEASON" ],
+    "baby_flags": [ "SPRING" ],
     "//": "Baby elephants don't actually exist (yet), but Spring is the wet season (their mating season) so baby_flags is defined so that they get angry then",
     "harvest": "mammal_large_leather",
-    "biosignature": {
-      "biosig_item": "feces_manure",
-      "biosig_timer": 16
-    },
-    "petfood": {
-      "food": [
-        "CATTLEFOOD"
-      ],
-      "feed": "The %s seems to like you!  It lets you pat its head and seems friendly."
-    },
-    "special_attacks": [
-      [
-        "FUNGUS",
-        200
-      ],
-      [
-        "SMASH",
-        15
-      ],
-      [
-        "FUNGUS_BRISTLE",
-        20
-      ],
-      [
-        "FUNGUS_BIG_BLOSSOM",
-        30
-      ]
-    ],
-    "flags": [
-      "SEES",
-      "SMELLS",
-      "PUSH_MON",
-      "DESTROYS",
-      "POISON",
-      "NO_BREATHE"
-    ],
-    "armor": {
-      "bash": 3,
-      "cut": 1
-    },
-    "death_function": {
-      "effect": {
-        "id": "death_fungus",
-        "hit_self": true
-      }
-    }
+    "biosignature": { "biosig_item": "feces_manure", "biosig_timer": 16 },
+    "petfood": { "food": [ "CATTLEFOOD" ], "feed": "The %s seems to like you!  It lets you pat its head and seems friendly." },
+    "special_attacks": [ [ "FUNGUS", 200 ], [ "SMASH", 15 ], [ "FUNGUS_BRISTLE", 20 ], [ "FUNGUS_BIG_BLOSSOM", 30 ] ],
+    "flags": [ "SEES", "SMELLS", "PUSH_MON", "DESTROYS", "POISON", "NO_BREATHE" ],
+    "armor": { "bash": 3, "cut": 1 },
+    "death_function": { "effect": { "id": "death_fungus", "hit_self": true } }
   },
   {
     "id": "mon_zandcrawler",
     "type": "MONSTER",
     "copy-from": "mon_beekeeper",
-    "name": {
-      "str": "zandcrawler"
-    },
+    "name": { "str": "zandcrawler" },
     "description": "A calloused and misshapened form that seems to have adapted to the harsh, dry environment.",
     "default_faction": "zombie",
     "bodytype": "human",
-    "species": [
-      "ZOMBIE",
-      "HUMAN"
-    ],
+    "species": [ "ZOMBIE", "HUMAN" ],
     "volume": "62500 ml",
     "weight": "81500 g",
     "hp": 70,
     "speed": 90,
-    "material": [
-      "flesh"
-    ],
+    "material": [ "flesh" ],
     "symbol": "Z",
     "color": "light_red",
     "aggression": 100,
@@ -197,36 +89,12 @@
     "melee_skill": 3,
     "melee_dice": 2,
     "melee_dice_sides": 4,
-    "melee_damage": [
-      {
-        "damage_type": "cut",
-        "amount": 2
-      }
-    ],
-    "weakpoint_sets": [
-      "wps_humanoid_body",
-      "wps_natural_armor"
-    ],
-    "families": [
-      "prof_intro_biology",
-      "prof_physiology",
-      "prof_wp_zombie",
-      "prof_wp_nat_armored"
-    ],
+    "melee_damage": [ { "damage_type": "cut", "amount": 2 } ],
+    "weakpoint_sets": [ "wps_humanoid_body", "wps_natural_armor" ],
+    "families": [ "prof_intro_biology", "prof_physiology", "prof_wp_zombie", "prof_wp_nat_armored" ],
     "harvest": "zombie_humanoid",
     "grab_strength": 20,
-    "special_attacks": [
-      {
-        "id": "grab"
-      },
-      {
-        "id": "bite_humanoid",
-        "cooldown": 5
-      },
-      {
-        "id": "scratch_humanoid"
-      }
-    ],
+    "special_attacks": [ { "id": "grab" }, { "id": "bite_humanoid", "cooldown": 5 }, { "id": "scratch_humanoid" } ],
     "death_drops": "mon_zombie_swimmer_death_drops",
     "burn_into": "mon_zombie_scorched",
     "fungalize_into": "mon_beekeeper_fungal",
@@ -244,11 +112,6 @@
       "FILTHY",
       "CAN_DIG"
     ],
-    "armor": {
-      "bash": 6,
-      "cut": 8,
-      "bullet": 6,
-      "electric": 1
-    }
+    "armor": { "bash": 6, "cut": 8, "bullet": 6, "electric": 1 }
   }
 ]

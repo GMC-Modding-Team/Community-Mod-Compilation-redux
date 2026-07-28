@@ -7,34 +7,9 @@
         "text": "I've been sent to ask about recent attacks on survivors by anomalous creatures.  Know anything about that?",
         "condition": {
           "and": [
-            {
-              "compare_string": [
-                "yes",
-                {
-                  "u_val": "johnathan_prelude_mid"
-                }
-              ]
-            },
-            {
-              "not": {
-                "compare_string": [
-                  "yes",
-                  {
-                    "npc_val": "johnathan_prelude_mid"
-                  }
-                ]
-              }
-            },
-            {
-              "not": {
-                "compare_string": [
-                  "yes",
-                  {
-                    "u_val": "johnathan_prelude_data_5"
-                  }
-                ]
-              }
-            }
+            { "compare_string": [ "yes", { "u_val": "johnathan_prelude_mid" } ] },
+            { "not": { "compare_string": [ "yes", { "npc_val": "johnathan_prelude_mid" } ] } },
+            { "not": { "compare_string": [ "yes", { "u_val": "johnathan_prelude_data_5" } ] } }
           ]
         },
         "topic": "TALK_ARSONIST_GM_PRELUDE"
@@ -55,29 +30,9 @@
         "topic": "TALK_ARSONIST_CF_REP_MISSION_4",
         "condition": {
           "and": [
-            {
-              "not": {
-                "compare_string": [
-                  "yes",
-                  {
-                    "u_val": "sofia_allies_secured"
-                  }
-                ]
-              }
-            },
-            {
-              "not": {
-                "compare_string": [
-                  "yes",
-                  {
-                    "npc_val": "sofia_refugee_convinced"
-                  }
-                ]
-              }
-            },
-            {
-              "u_has_mission": "MISSION_CF_REP_4"
-            }
+            { "not": { "compare_string": [ "yes", { "u_val": "sofia_allies_secured" } ] } },
+            { "not": { "compare_string": [ "yes", { "npc_val": "sofia_refugee_convinced" } ] } },
+            { "u_has_mission": "MISSION_CF_REP_4" }
           ]
         }
       }
@@ -92,14 +47,7 @@
         "text": "It's a group operating out of a rural church along the roadside, I was asked to see if I could find another trading partner for them.",
         "switch": true,
         "topic": "TALK_ARSONIST_CF_REP_MISSION_4_DESCRIBE",
-        "condition": {
-          "compare_string": [
-            "yes",
-            {
-              "u_val": "knowledge_flag_tacoma_started"
-            }
-          ]
-        }
+        "condition": { "compare_string": [ "yes", { "u_val": "knowledge_flag_tacoma_started" } ] }
       },
       {
         "text": "There's a decent-sized holdout I was asked to help find another trading partner for.",
@@ -114,14 +62,8 @@
     "id": "TALK_ARSONIST_CF_REP_MISSION_4_DESCRIBE",
     "dynamic_line": "I've heard a little bit about a place like before, from a couple other local scavengers.  Never visited them myself, a bit out of the way from where I prefer to scout out, plus I'd rather not set fires where they might cause trouble for other holdouts.  I could try telling the other scavs about there being work there, I guess.",
     "responses": [
-      {
-        "text": "I'd appreciate the help if you could, sure.",
-        "topic": "TALK_ARSONIST_CF_REP_MISSION_4_DEAL"
-      },
-      {
-        "text": "It's fine, I was going to look into other options just in case.",
-        "topic": "TALK_ARSONIST"
-      }
+      { "text": "I'd appreciate the help if you could, sure.", "topic": "TALK_ARSONIST_CF_REP_MISSION_4_DEAL" },
+      { "text": "It's fine, I was going to look into other options just in case.", "topic": "TALK_ARSONIST" }
     ]
   },
   {
@@ -132,10 +74,7 @@
       {
         "text": "Thanks!  I've talked to a few others as well, that should be enough to get word out.  I should go check up on them.",
         "effect": [
-          {
-            "u_add_var": "sofia_allies_secured",
-            "value": "yes"
-          },
+          { "u_add_var": "sofia_allies_secured", "value": "yes" },
           {
             "mapgen_update": "arcana_cf_4_wasteland_scavengers_1",
             "om_terrain": "cf_church_1",
@@ -165,51 +104,25 @@
             "search_range": 256
           }
         ],
-        "condition": {
-          "compare_string": [
-            "yes",
-            {
-              "u_val": "sofia_ally_seeking_2"
-            }
-          ]
-        },
+        "condition": { "compare_string": [ "yes", { "u_val": "sofia_ally_seeking_2" } ] },
         "switch": true,
         "topic": "TALK_DONE"
       },
       {
         "text": "Thanks!  I might talk to someone else to help get word out.",
         "effect": [
-          {
-            "u_add_var": "sofia_ally_seeking_2",
-            "value": "yes"
-          },
-          {
-            "npc_add_var": "sofia_refugee_convinced",
-            "value": "yes"
-          }
+          { "u_add_var": "sofia_ally_seeking_2", "value": "yes" },
+          { "npc_add_var": "sofia_refugee_convinced", "value": "yes" }
         ],
-        "condition": {
-          "compare_string": [
-            "yes",
-            {
-              "u_val": "sofia_ally_seeking_1"
-            }
-          ]
-        },
+        "condition": { "compare_string": [ "yes", { "u_val": "sofia_ally_seeking_1" } ] },
         "switch": true,
         "topic": "TALK_DONE"
       },
       {
         "text": "Thanks!  I'll see if talking to a couple other people will help.",
         "effect": [
-          {
-            "u_add_var": "sofia_ally_seeking_1",
-            "value": "yes"
-          },
-          {
-            "npc_add_var": "sofia_refugee_convinced",
-            "value": "yes"
-          }
+          { "u_add_var": "sofia_ally_seeking_1", "value": "yes" },
+          { "npc_add_var": "sofia_refugee_convinced", "value": "yes" }
         ],
         "switch": true,
         "default": true,

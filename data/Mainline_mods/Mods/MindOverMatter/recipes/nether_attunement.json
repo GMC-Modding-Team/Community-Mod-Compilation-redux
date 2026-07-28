@@ -11,40 +11,18 @@
     "time": "20 m",
     "autolearn": true,
     "skill_used": "metaphysics",
-    "flags": [
-      "BLIND_EASY"
-    ],
+    "flags": [ "BLIND_EASY" ],
     "result_eocs": [
       {
         "id": "EOC_CENTERING_MEDITATION",
-        "condition": {
-          "math": [
-            "u_vitamin('vitamin_psionic_drain')",
-            ">=",
-            "10"
-          ]
-        },
-        "effect": [
-          {
-            "math": [
-              "u_vitamin('vitamin_psionic_drain')",
-              "-=",
-              "10"
-            ]
-          }
-        ],
+        "condition": { "math": [ "u_vitamin('vitamin_psionic_drain')", ">=", "10" ] },
+        "effect": [ { "math": [ "u_vitamin('vitamin_psionic_drain')", "-=", "10" ] } ],
         "false_effect": [
           {
             "u_message": "After your meditations, your mind is free and clear.  The odd feelings caused by excessive psionic channeling have entirely left you.",
             "type": "good"
           },
-          {
-            "math": [
-              "u_vitamin('vitamin_psionic_drain')",
-              "=",
-              "0"
-            ]
-          }
+          { "math": [ "u_vitamin('vitamin_psionic_drain')", "=", "0" ] }
         ]
       }
     ]
@@ -60,34 +38,13 @@
     "skill_used": "metaphysics",
     "difficulty": 7,
     "time": "1 h",
-    "book_learn": [
-      [
-        "phavian_report_psionic_drain",
-        5
-      ]
-    ],
+    "book_learn": [ [ "phavian_report_psionic_drain", 5 ] ],
     "proficiencies": [
-      {
-        "proficiency": "prof_psionic_basic",
-        "required": true
-      },
-      {
-        "proficiency": "prof_psionic_containment",
-        "required": false
-      }
+      { "proficiency": "prof_psionic_basic", "required": true },
+      { "proficiency": "prof_psionic_containment", "required": false }
     ],
-    "components": [
-      [
-        [
-          "matrix_crystal_drained",
-          1
-        ]
-      ]
-    ],
-    "flags": [
-      "SECRET",
-      "BLIND_HARD"
-    ],
+    "components": [ [ [ "matrix_crystal_drained", 1 ] ] ],
+    "flags": [ "SECRET", "BLIND_HARD" ],
     "result_eocs": [
       {
         "id": "EOC_MATRIX_DRAIN_MEDITATION",
@@ -95,17 +52,8 @@
           {
             "u_message": "You channel all of your powers into the drained matrix crystal in your hands.  As you do, the faint light in its depths grows steadily brighter and the crystal begins to feel warm in your hands.  Suddenly, the crystal shatters…  and with it, the strange feelings caused by using your powers vanish."
           },
-          {
-            "math": [
-              "u_vitamin('vitamin_psionic_drain')",
-              "=",
-              "0"
-            ]
-          },
-          {
-            "u_spawn_item": "matrix_crystal_drained_dust",
-            "count": 10
-          }
+          { "math": [ "u_vitamin('vitamin_psionic_drain')", "=", "0" ] },
+          { "u_spawn_item": "matrix_crystal_drained_dust", "count": 10 }
         ]
       }
     ]

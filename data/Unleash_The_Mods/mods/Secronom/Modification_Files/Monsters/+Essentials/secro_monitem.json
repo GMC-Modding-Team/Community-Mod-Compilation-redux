@@ -3,30 +3,20 @@
     "//": "Maximum of 2 clingers clinging on player's feet.",
     "id": "clinger_clinging",
     "type": "ARMOR",
-    "name": {
-      "str_sp": "<color_magenta>clinger</color>"
-    },
+    "name": { "str_sp": "<color_magenta>clinger</color>" },
     "description": "A filthy rotten creature that greatly hampers your reflexes.  Activate to pull it off.",
     "weight": "1300 g",
     "volume": "500 ml",
     "price": "0 cent",
     "to_hit": -1,
-    "melee_damage": {
-      "bash": 1
-    },
-    "material": [
-      "flesh"
-    ],
+    "melee_damage": { "bash": 1 },
+    "material": [ "flesh" ],
     "symbol": "⨨",
     "color": "yellow",
     "warmth": 0,
     "material_thickness": 1,
     "environmental_protection": 0,
-    "use_action": {
-      "type": "countdown",
-      "name": "Pull it off",
-      "message": "You start pulling the clinger off of you."
-    },
+    "use_action": { "type": "countdown", "name": "Pull it off", "message": "You start pulling the clinger off of you." },
     "countdown_interval": 6,
     "countdown_action": {
       "type": "place_monster",
@@ -35,10 +25,7 @@
       "hostile_msg": "The clinger detaches!",
       "friendly_msg": "How the turntables…",
       "place_randomly": true,
-      "skills": [
-        "dodge",
-        "unarmed"
-      ],
+      "skills": [ "dodge", "unarmed" ],
       "moves": 125
     },
     "relic_data": {
@@ -46,73 +33,25 @@
         {
           "has": "WORN",
           "condition": "ALWAYS",
-          "values": [
-            {
-              "value": "MOVE_COST",
-              "add": 25
-            },
-            {
-              "value": "DEXTERITY",
-              "add": -2
-            }
-          ]
+          "values": [ { "value": "MOVE_COST", "add": 25 }, { "value": "DEXTERITY", "add": -2 } ]
         }
       ]
     },
-    "flags": [
-      "PERSONAL",
-      "FRAGILE",
-      "BELTED",
-      "NO_DROP",
-      "NO_TAKEOFF"
-    ],
-    "armor": [
-      {
-        "encumbrance": 40,
-        "coverage": 100,
-        "covers": [
-          "leg_l",
-          "leg_r"
-        ]
-      }
-    ]
+    "flags": [ "PERSONAL", "FRAGILE", "BELTED", "NO_DROP", "NO_TAKEOFF" ],
+    "armor": [ { "encumbrance": 40, "coverage": 100, "covers": [ "leg_l", "leg_r" ] } ]
   },
   {
     "id": "sflesh_bio",
     "type": "COMESTIBLE",
     "copy-from": "flesh",
     "comestible_type": "FOOD",
-    "name": {
-      "str": "flesh chunk"
-    },
-    "material": [
-      "flesh"
-    ],
+    "name": { "str": "flesh chunk" },
+    "material": [ "flesh" ],
     "symbol": "%",
     "color": "red",
     "parasites": 32,
-    "vitamins": [
-      [
-        "vitC",
-        13
-      ],
-      [
-        "calcium",
-        2
-      ],
-      [
-        "iron",
-        61
-      ],
-      [
-        "vitB",
-        950
-      ]
-    ],
-    "flags": [
-      "SMOKABLE",
-      "RAW"
-    ],
+    "vitamins": [ [ "vitC", 13 ], [ "calcium", 2 ], [ "iron", 61 ], [ "vitB", 950 ] ],
+    "flags": [ "SMOKABLE", "RAW" ],
     "//": "Eating this vile meat mends your body, even broken limbs! (not head and torso, ofc).",
     "description": "Fresh chunk of meat from the melting flesh you can tell as its precious innard.  Both gross and odd looking, but possesses regenerative properties which mends deep wounds when eaten.",
     "weight": "436 g",
@@ -127,70 +66,19 @@
       "type": "consume_drug",
       "activation_message": "<color_light_green>As you chomp down the flesh, your body feels refreshed.</color>",
       "effects": [
-        {
-          "id": "secro_flesh_bio_heal",
-          "duration": 120,
-          "bp": "torso"
-        },
-        {
-          "id": "secro_flesh_bio_heal",
-          "duration": 120,
-          "bp": "head"
-        },
-        {
-          "id": "secro_flesh_bio_heal",
-          "duration": 120,
-          "bp": "arm_l"
-        },
-        {
-          "id": "secro_flesh_bio_heal",
-          "duration": 120,
-          "bp": "arm_r"
-        },
-        {
-          "id": "secro_flesh_bio_heal",
-          "duration": 120,
-          "bp": "leg_l"
-        },
-        {
-          "id": "secro_flesh_bio_heal",
-          "duration": 120,
-          "bp": "leg_r"
-        },
-        {
-          "id": "secro_flesh_bio_limb",
-          "duration": 10,
-          "bp": "head"
-        },
-        {
-          "id": "secro_flesh_bio_limb",
-          "duration": 10,
-          "bp": "torso"
-        },
-        {
-          "id": "secro_flesh_bio_limb",
-          "duration": 10,
-          "bp": "arm_l"
-        },
-        {
-          "id": "secro_flesh_bio_limb",
-          "duration": 10,
-          "bp": "arm_r"
-        },
-        {
-          "id": "secro_flesh_bio_limb",
-          "duration": 10,
-          "bp": "leg_l"
-        },
-        {
-          "id": "secro_flesh_bio_limb",
-          "duration": 10,
-          "bp": "leg_r"
-        },
-        {
-          "id": "cureall",
-          "duration": 1
-        }
+        { "id": "secro_flesh_bio_heal", "duration": 120, "bp": "torso" },
+        { "id": "secro_flesh_bio_heal", "duration": 120, "bp": "head" },
+        { "id": "secro_flesh_bio_heal", "duration": 120, "bp": "arm_l" },
+        { "id": "secro_flesh_bio_heal", "duration": 120, "bp": "arm_r" },
+        { "id": "secro_flesh_bio_heal", "duration": 120, "bp": "leg_l" },
+        { "id": "secro_flesh_bio_heal", "duration": 120, "bp": "leg_r" },
+        { "id": "secro_flesh_bio_limb", "duration": 10, "bp": "head" },
+        { "id": "secro_flesh_bio_limb", "duration": 10, "bp": "torso" },
+        { "id": "secro_flesh_bio_limb", "duration": 10, "bp": "arm_l" },
+        { "id": "secro_flesh_bio_limb", "duration": 10, "bp": "arm_r" },
+        { "id": "secro_flesh_bio_limb", "duration": 10, "bp": "leg_l" },
+        { "id": "secro_flesh_bio_limb", "duration": 10, "bp": "leg_r" },
+        { "id": "cureall", "duration": 1 }
       ]
     },
     "smoking_result": "sflesh_bio_smoked"
@@ -200,37 +88,13 @@
     "type": "COMESTIBLE",
     "copy-from": "flesh",
     "comestible_type": "FOOD",
-    "name": {
-      "str": "cooked flesh chunk"
-    },
-    "material": [
-      "flesh"
-    ],
+    "name": { "str": "cooked flesh chunk" },
+    "material": [ "flesh" ],
     "symbol": "%",
     "color": "red",
     "parasites": 0,
-    "vitamins": [
-      [
-        "vitC",
-        16
-      ],
-      [
-        "calcium",
-        2
-      ],
-      [
-        "iron",
-        74
-      ],
-      [
-        "vitB",
-        1132
-      ]
-    ],
-    "flags": [
-      "EATEN_HOT",
-      "NUTRIENT_OVERRIDE"
-    ],
+    "vitamins": [ [ "vitC", 16 ], [ "calcium", 2 ], [ "iron", 74 ], [ "vitB", 1132 ] ],
+    "flags": [ "EATEN_HOT", "NUTRIENT_OVERRIDE" ],
     "weight": "436 g",
     "volume": "500 ml",
     "spoils_in": "1 day",
@@ -242,70 +106,19 @@
       "type": "consume_drug",
       "activation_message": "<color_light_green>As you chomp down the flesh, your body feels refreshed.</color>",
       "effects": [
-        {
-          "id": "secro_flesh_bio_heal",
-          "duration": 45,
-          "bp": "head"
-        },
-        {
-          "id": "secro_flesh_bio_heal",
-          "duration": 45,
-          "bp": "torso"
-        },
-        {
-          "id": "secro_flesh_bio_heal",
-          "duration": 45,
-          "bp": "arm_l"
-        },
-        {
-          "id": "secro_flesh_bio_heal",
-          "duration": 45,
-          "bp": "arm_r"
-        },
-        {
-          "id": "secro_flesh_bio_heal",
-          "duration": 45,
-          "bp": "leg_l"
-        },
-        {
-          "id": "secro_flesh_bio_heal",
-          "duration": 45,
-          "bp": "leg_r"
-        },
-        {
-          "id": "secro_flesh_bio_limb",
-          "duration": 10,
-          "bp": "head"
-        },
-        {
-          "id": "secro_flesh_bio_limb",
-          "duration": 10,
-          "bp": "torso"
-        },
-        {
-          "id": "secro_flesh_bio_limb",
-          "duration": 10,
-          "bp": "arm_l"
-        },
-        {
-          "id": "secro_flesh_bio_limb",
-          "duration": 10,
-          "bp": "arm_r"
-        },
-        {
-          "id": "secro_flesh_bio_limb",
-          "duration": 10,
-          "bp": "leg_l"
-        },
-        {
-          "id": "secro_flesh_bio_limb",
-          "duration": 10,
-          "bp": "leg_r"
-        },
-        {
-          "id": "cureall",
-          "duration": 1
-        }
+        { "id": "secro_flesh_bio_heal", "duration": 45, "bp": "head" },
+        { "id": "secro_flesh_bio_heal", "duration": 45, "bp": "torso" },
+        { "id": "secro_flesh_bio_heal", "duration": 45, "bp": "arm_l" },
+        { "id": "secro_flesh_bio_heal", "duration": 45, "bp": "arm_r" },
+        { "id": "secro_flesh_bio_heal", "duration": 45, "bp": "leg_l" },
+        { "id": "secro_flesh_bio_heal", "duration": 45, "bp": "leg_r" },
+        { "id": "secro_flesh_bio_limb", "duration": 10, "bp": "head" },
+        { "id": "secro_flesh_bio_limb", "duration": 10, "bp": "torso" },
+        { "id": "secro_flesh_bio_limb", "duration": 10, "bp": "arm_l" },
+        { "id": "secro_flesh_bio_limb", "duration": 10, "bp": "arm_r" },
+        { "id": "secro_flesh_bio_limb", "duration": 10, "bp": "leg_l" },
+        { "id": "secro_flesh_bio_limb", "duration": 10, "bp": "leg_r" },
+        { "id": "cureall", "duration": 1 }
       ]
     }
   },
@@ -314,37 +127,13 @@
     "type": "COMESTIBLE",
     "copy-from": "sflesh_bio_cooked",
     "comestible_type": "FOOD",
-    "name": {
-      "str": "smoked flesh chunk"
-    },
-    "material": [
-      "flesh"
-    ],
+    "name": { "str": "smoked flesh chunk" },
+    "material": [ "flesh" ],
     "symbol": "%",
     "color": "red",
     "parasites": 0,
-    "vitamins": [
-      [
-        "vitC",
-        16
-      ],
-      [
-        "calcium",
-        2
-      ],
-      [
-        "iron",
-        74
-      ],
-      [
-        "vitB",
-        1132
-      ]
-    ],
-    "flags": [
-      "EATEN_HOT",
-      "SMOKED"
-    ],
+    "vitamins": [ [ "vitC", 16 ], [ "calcium", 2 ], [ "iron", 74 ], [ "vitB", 1132 ] ],
+    "flags": [ "EATEN_HOT", "SMOKED" ],
     "freezing_point": -1000,
     "weight": "436 g",
     "volume": "500 ml",
@@ -357,70 +146,19 @@
       "type": "consume_drug",
       "activation_message": "<color_light_green>As you chomp down the flesh, your body feels refreshed.</color>",
       "effects": [
-        {
-          "id": "secro_flesh_bio_heal",
-          "duration": 45,
-          "bp": "head"
-        },
-        {
-          "id": "secro_flesh_bio_heal",
-          "duration": 45,
-          "bp": "torso"
-        },
-        {
-          "id": "secro_flesh_bio_heal",
-          "duration": 45,
-          "bp": "arm_l"
-        },
-        {
-          "id": "secro_flesh_bio_heal",
-          "duration": 45,
-          "bp": "arm_r"
-        },
-        {
-          "id": "secro_flesh_bio_heal",
-          "duration": 45,
-          "bp": "leg_l"
-        },
-        {
-          "id": "secro_flesh_bio_heal",
-          "duration": 45,
-          "bp": "leg_r"
-        },
-        {
-          "id": "secro_flesh_bio_limb",
-          "duration": 10,
-          "bp": "head"
-        },
-        {
-          "id": "secro_flesh_bio_limb",
-          "duration": 10,
-          "bp": "torso"
-        },
-        {
-          "id": "secro_flesh_bio_limb",
-          "duration": 10,
-          "bp": "arm_l"
-        },
-        {
-          "id": "secro_flesh_bio_limb",
-          "duration": 10,
-          "bp": "arm_r"
-        },
-        {
-          "id": "secro_flesh_bio_limb",
-          "duration": 10,
-          "bp": "leg_l"
-        },
-        {
-          "id": "secro_flesh_bio_limb",
-          "duration": 10,
-          "bp": "leg_r"
-        },
-        {
-          "id": "cureall",
-          "duration": 1
-        }
+        { "id": "secro_flesh_bio_heal", "duration": 45, "bp": "head" },
+        { "id": "secro_flesh_bio_heal", "duration": 45, "bp": "torso" },
+        { "id": "secro_flesh_bio_heal", "duration": 45, "bp": "arm_l" },
+        { "id": "secro_flesh_bio_heal", "duration": 45, "bp": "arm_r" },
+        { "id": "secro_flesh_bio_heal", "duration": 45, "bp": "leg_l" },
+        { "id": "secro_flesh_bio_heal", "duration": 45, "bp": "leg_r" },
+        { "id": "secro_flesh_bio_limb", "duration": 10, "bp": "head" },
+        { "id": "secro_flesh_bio_limb", "duration": 10, "bp": "torso" },
+        { "id": "secro_flesh_bio_limb", "duration": 10, "bp": "arm_l" },
+        { "id": "secro_flesh_bio_limb", "duration": 10, "bp": "arm_r" },
+        { "id": "secro_flesh_bio_limb", "duration": 10, "bp": "leg_l" },
+        { "id": "secro_flesh_bio_limb", "duration": 10, "bp": "leg_r" },
+        { "id": "cureall", "duration": 1 }
       ]
     },
     "quench": -1

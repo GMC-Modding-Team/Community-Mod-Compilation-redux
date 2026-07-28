@@ -7,27 +7,9 @@
         "text": "I've been sent to ask about recent attacks on survivors by anomalous creatures.  Know anything about that?",
         "condition": {
           "and": [
-            {
-              "compare_string": [
-                "yes",
-                {
-                  "u_val": "johnathan_prelude_mid"
-                }
-              ]
-            },
-            {
-              "not": {
-                "compare_string": [
-                  "yes",
-                  {
-                    "u_val": "johnathan_prelude_data_5"
-                  }
-                ]
-              }
-            },
-            {
-              "u_has_trait": "PROF_FED"
-            }
+            { "compare_string": [ "yes", { "u_val": "johnathan_prelude_mid" } ] },
+            { "not": { "compare_string": [ "yes", { "u_val": "johnathan_prelude_data_5" } ] } },
+            { "u_has_trait": "PROF_FED" }
           ]
         },
         "topic": "TALK_OLD_GUARD_REP_GM_PRELUDE_SPECIAL"
@@ -36,39 +18,10 @@
         "text": "I've been sent to ask about recent attacks on survivors by anomalous creatures.  Know anything about that?",
         "condition": {
           "and": [
-            {
-              "compare_string": [
-                "yes",
-                {
-                  "u_val": "johnathan_prelude_mid"
-                }
-              ]
-            },
-            {
-              "not": {
-                "compare_string": [
-                  "yes",
-                  {
-                    "npc_val": "johnathan_prelude_mid"
-                  }
-                ]
-              }
-            },
-            {
-              "not": {
-                "compare_string": [
-                  "yes",
-                  {
-                    "u_val": "johnathan_prelude_data_5"
-                  }
-                ]
-              }
-            },
-            {
-              "not": {
-                "u_has_trait": "PROF_FED"
-              }
-            }
+            { "compare_string": [ "yes", { "u_val": "johnathan_prelude_mid" } ] },
+            { "not": { "compare_string": [ "yes", { "npc_val": "johnathan_prelude_mid" } ] } },
+            { "not": { "compare_string": [ "yes", { "u_val": "johnathan_prelude_data_5" } ] } },
+            { "not": { "u_has_trait": "PROF_FED" } }
           ]
         },
         "topic": "TALK_OLD_GUARD_REP_GM_PRELUDE"
@@ -77,19 +30,8 @@
         "text": "[MISSION] Would the Old Guard be willing to establish a presence in another community?",
         "condition": {
           "and": [
-            {
-              "not": {
-                "compare_string": [
-                  "yes",
-                  {
-                    "u_val": "sofia_allies_secured"
-                  }
-                ]
-              }
-            },
-            {
-              "u_has_mission": "MISSION_CF_REP_4"
-            }
+            { "not": { "compare_string": [ "yes", { "u_val": "sofia_allies_secured" } ] } },
+            { "u_has_mission": "MISSION_CF_REP_4" }
           ]
         },
         "topic": "TALK_OLD_GUARD_REP_CF_MISSION_4"
@@ -109,14 +51,8 @@
       {
         "text": "Okay.  I guess I'll report back to them, then.",
         "effect": [
-          {
-            "u_add_var": "johnathan_prelude_data_5",
-            "value": "yes"
-          },
-          {
-            "npc_add_var": "johnathan_prelude_mid",
-            "value": "yes"
-          }
+          { "u_add_var": "johnathan_prelude_data_5", "value": "yes" },
+          { "npc_add_var": "johnathan_prelude_mid", "value": "yes" }
         ],
         "topic": "TALK_DONE"
       }
@@ -129,25 +65,16 @@
     "responses": [
       {
         "text": "It's a group converting a rural church into a small outpost, who have been trading with the Free Merchants.",
-        "condition": {
-          "u_has_trait": "PROF_FED"
-        },
+        "condition": { "u_has_trait": "PROF_FED" },
         "topic": "TALK_OLD_GUARD_REP_CF_MISSION_4_CHURCH"
       },
       {
         "text": "I'll look into other options, just in case.  Thank you though.",
         "switch": true,
-        "condition": {
-          "u_has_trait": "PROF_FED"
-        },
+        "condition": { "u_has_trait": "PROF_FED" },
         "topic": "TALK_OLD_GUARD_REP"
       },
-      {
-        "text": "Oh, okay.",
-        "switch": true,
-        "default": true,
-        "topic": "TALK_DONE"
-      }
+      { "text": "Oh, okay.", "switch": true, "default": true, "topic": "TALK_DONE" }
     ]
   },
   {
@@ -157,33 +84,18 @@
     "responses": [
       {
         "text": "I've been a part of their group since before things boiled over.  We were focused on hunting down and dealing with some of the anomalies that began to show up in the months leading up to this.",
-        "condition": {
-          "u_has_any_trait": [
-            "PROF_CLEANSINGFLAME",
-            "PROF_CLEANSINGFLAME2"
-          ]
-        },
+        "condition": { "u_has_any_trait": [ "PROF_CLEANSINGFLAME", "PROF_CLEANSINGFLAME2" ] },
         "topic": "TALK_OLD_GUARD_REP_CF_MISSION_4_CF1"
       },
       {
         "text": "I'm one of then, actually.  We have a common interest, doing our best to ensure humanity's survival.  We have our ways, rooted in the otherworldly though they are.",
-        "condition": {
-          "u_has_trait": "PROF_CLEANSINGFLAME2"
-        },
+        "condition": { "u_has_trait": "PROF_CLEANSINGFLAME2" },
         "topic": "TALK_OLD_GUARD_REP_CF_MISSION_4_CF2"
       },
       {
         "text": "They're hunters.  Monster hunters these days, in the past they fought with local occult groups and other small-scale threats, before it all boiled over.",
         "switch": true,
-        "condition": {
-          "u_has_any_trait": [
-            "PROF_ARCANIST",
-            "PROF_ARCANIST2",
-            "PROF_SANGUINE",
-            "PROF_CHALICE",
-            "PROF_CHALICE2"
-          ]
-        },
+        "condition": { "u_has_any_trait": [ "PROF_ARCANIST", "PROF_ARCANIST2", "PROF_SANGUINE", "PROF_CHALICE", "PROF_CHALICE2" ] },
         "topic": "TALK_OLD_GUARD_REP_CF_MISSION_4_ARCANIST"
       },
       {
@@ -217,18 +129,9 @@
       {
         "text": "Thank you.  There's something else I wanted to talk about, before I leave.",
         "effect": [
-          {
-            "u_add_var": "sofia_allies_secured",
-            "value": "yes"
-          },
-          {
-            "u_add_var": "old_guard_presence",
-            "value": "yes"
-          },
-          {
-            "npc_add_var": "old_guard_presence",
-            "value": "yes"
-          },
+          { "u_add_var": "sofia_allies_secured", "value": "yes" },
+          { "u_add_var": "old_guard_presence", "value": "yes" },
+          { "npc_add_var": "old_guard_presence", "value": "yes" },
           {
             "mapgen_update": "arcana_cf_4_old_guard_1",
             "om_terrain": "cf_church_1",
@@ -263,18 +166,9 @@
       {
         "text": "Thank you.  I should go check on them, goodbye for now.",
         "effect": [
-          {
-            "u_add_var": "sofia_allies_secured",
-            "value": "yes"
-          },
-          {
-            "u_add_var": "old_guard_presence",
-            "value": "yes"
-          },
-          {
-            "npc_add_var": "old_guard_presence",
-            "value": "yes"
-          },
+          { "u_add_var": "sofia_allies_secured", "value": "yes" },
+          { "u_add_var": "old_guard_presence", "value": "yes" },
+          { "npc_add_var": "old_guard_presence", "value": "yes" },
           {
             "mapgen_update": "arcana_cf_4_old_guard_1",
             "om_terrain": "cf_church_1",
@@ -317,10 +211,7 @@
         "text": "We must ally with outsiders to survive, and our experience will be to their benefit.  Go for it.",
         "topic": "TALK_OLD_GUARD_REP_CF_MISSION_4_DEAL"
       },
-      {
-        "text": "I'll look into alternatives then.  Thank you though.",
-        "topic": "TALK_OLD_GUARD_REP"
-      }
+      { "text": "I'll look into alternatives then.  Thank you though.", "topic": "TALK_OLD_GUARD_REP" }
     ]
   },
   {
@@ -328,14 +219,8 @@
     "type": "talk_topic",
     "dynamic_line": "Great.  Occult stuff and vigilantism.  If you know that much about them, and still think they'll get along with the Old Guard, then I'll trust your judgment.  Just say the word, and I'll do what I can to smooth things over.",
     "responses": [
-      {
-        "text": "Go ahead, then.",
-        "topic": "TALK_OLD_GUARD_REP_CF_MISSION_4_DEAL"
-      },
-      {
-        "text": "On second thought, I'll seek out another option.",
-        "topic": "TALK_OLD_GUARD_REP"
-      }
+      { "text": "Go ahead, then.", "topic": "TALK_OLD_GUARD_REP_CF_MISSION_4_DEAL" },
+      { "text": "On second thought, I'll seek out another option.", "topic": "TALK_OLD_GUARD_REP" }
     ]
   },
   {
@@ -343,14 +228,8 @@
     "type": "talk_topic",
     "dynamic_line": "I've heard stranger rumors than that, so I suppose if that's what they are at heart, then it's in our best interest to work together.  I still have my reservations about this, but if you're sure, I can get in touch with my superiors and try to win them over.",
     "responses": [
-      {
-        "text": "Go ahead, then.",
-        "topic": "TALK_OLD_GUARD_REP_CF_MISSION_4_DEAL"
-      },
-      {
-        "text": "On second thought, I'll seek out another option.",
-        "topic": "TALK_OLD_GUARD_REP"
-      }
+      { "text": "Go ahead, then.", "topic": "TALK_OLD_GUARD_REP_CF_MISSION_4_DEAL" },
+      { "text": "On second thought, I'll seek out another option.", "topic": "TALK_OLD_GUARD_REP" }
     ]
   }
 ]

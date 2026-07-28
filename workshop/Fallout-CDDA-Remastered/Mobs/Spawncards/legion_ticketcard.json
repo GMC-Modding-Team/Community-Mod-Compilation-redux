@@ -13,11 +13,9 @@
   {
     "type": "npc_class",
     "id": "person_ticketcard_legion",
-    "name": {
-      "str": "Faction Changer"
-    },
+    "name": { "str": "Faction Changer" },
     "job_description": "A stopgap to allow the user to change their faction at the start of the game.",
-    "traits": [],
+    "traits": [  ],
     "common": false,
     "worn_override": "NC_TICKETMANLEG_worn",
     "carry_override": "NC_TICKETMANLEG_carry",
@@ -27,49 +25,33 @@
     "type": "item_group",
     "id": "NC_TICKETMANLEG_weapon",
     "subtype": "distribution",
-    "items": [
-      {
-        "item": "null"
-      }
-    ]
+    "items": [ { "item": "null" } ]
   },
   {
     "type": "item_group",
     "id": "NC_TICKETMANLEG_worn",
     "subtype": "collection",
-    "items": [
-      {
-        "item": "null"
-      }
-    ]
+    "items": [ { "item": "null" } ]
   },
   {
     "type": "item_group",
     "id": "NC_TICKETMANLEG_carry",
     "subtype": "collection",
-    "items": [
-      {
-        "item": "null"
-      }
-    ]
+    "items": [ { "item": "null" } ]
   },
   {
     "type": "TOOL",
     "category": "other",
     "id": "fo_leg_idticketcard",
     "looks_like": "paper",
-    "name": {
-      "str": "Legion Faction change device"
-    },
+    "name": { "str": "Legion Faction change device" },
     "description": "A device used to improve the player character's relationship with Caesar's Legion.  Should only be available at spawn, otherwise a glitch has occurred.",
     "weight": "1 g",
     "symbol": "L",
     "color": "red",
     "price": 1,
     "price_postapoc": "0 cent",
-    "material": [
-      "steel"
-    ],
+    "material": [ "steel" ],
     "volume": "1 ml",
     "max_charges": 0,
     "initial_charges": 0,
@@ -90,11 +72,7 @@
       {
         "text": "Increase the Empire's reputation with me.",
         "topic": "TALK_TICKETFAC_LEGION_E1",
-        "effect": [
-          {
-            "npc_change_faction": "fac__fo_legion"
-          }
-        ]
+        "effect": [ { "npc_change_faction": "fac__fo_legion" } ]
       }
     ]
   },
@@ -105,14 +83,7 @@
     "responses": [
       {
         "text": "Now change my relationship with Gallia.",
-        "effect": [
-          {
-            "u_faction_rep": 30
-          },
-          {
-            "npc_change_faction": "fac__fo_NCR"
-          }
-        ],
+        "effect": [ { "u_faction_rep": 30 }, { "npc_change_faction": "fac__fo_NCR" } ],
         "topic": "TALK_TICKETFAC_LEGION_G1"
       }
     ]
@@ -121,28 +92,12 @@
     "id": "TALK_TICKETFAC_LEGION_G1",
     "type": "talk_topic",
     "dynamic_line": "I have decreased your relationship with New California Republic by 30 points.  I have decreased your relationship with New California Republic by 30 points.",
-    "responses": [
-      {
-        "text": "Proceed.",
-        "effect": [
-          {
-            "u_faction_rep": -30
-          }
-        ],
-        "topic": "TALK_TICKETDEATH_LEGION"
-      }
-    ]
+    "responses": [ { "text": "Proceed.", "effect": [ { "u_faction_rep": -30 } ], "topic": "TALK_TICKETDEATH_LEGION" } ]
   },
   {
     "id": "TALK_TICKETDEATH_LEGION",
     "type": "talk_topic",
     "dynamic_line": "The process is complete.  The process is complete.",
-    "responses": [
-      {
-        "text": "Now go away",
-        "effect": "npc_die",
-        "topic": "TALK_DONE"
-      }
-    ]
+    "responses": [ { "text": "Now go away", "effect": "npc_die", "topic": "TALK_DONE" } ]
   }
 ]

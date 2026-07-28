@@ -21,81 +21,40 @@
         "topic": "TALK_OLD_GUARD_NEC_COMMO_FREQ",
         "condition": {
           "and": [
-            {
-              "u_is_wearing": "badge_marshal"
-            },
-            {
-              "u_has_mission": "MISSION_OLD_GUARD_NEC_1"
-            },
-            {
-              "not": {
-                "u_has_effect": "has_og_comm_freq"
-              }
-            }
+            { "u_is_wearing": "badge_marshal" },
+            { "u_has_mission": "MISSION_OLD_GUARD_NEC_1" },
+            { "not": { "u_has_effect": "has_og_comm_freq" } }
           ]
         }
       },
       {
         "text": "What are you doing here?",
         "topic": "TALK_OLD_GUARD_NEC_COMMO_GOAL",
-        "condition": {
-          "u_is_wearing": "badge_marshal"
-        }
+        "condition": { "u_is_wearing": "badge_marshal" }
       },
       {
         "text": "Do you need any help?",
         "topic": "TALK_MISSION_LIST",
-        "condition": {
-          "and": [
-            {
-              "u_has_effect": "has_og_comm_freq"
-            },
-            {
-              "u_is_wearing": "badge_marshal"
-            }
-          ]
-        }
+        "condition": { "and": [ { "u_has_effect": "has_og_comm_freq" }, { "u_is_wearing": "badge_marshal" } ] }
       },
       {
         "text": "About the mission…",
         "topic": "TALK_MISSION_INQUIRE",
-        "condition": {
-          "and": [
-            "has_assigned_mission",
-            {
-              "u_is_wearing": "badge_marshal"
-            }
-          ]
-        }
+        "condition": { "and": [ "has_assigned_mission", { "u_is_wearing": "badge_marshal" } ] }
       },
       {
         "text": "About one of those missions…",
         "topic": "TALK_MISSION_LIST_ASSIGNED",
-        "condition": {
-          "and": [
-            "has_many_assigned_missions",
-            {
-              "u_is_wearing": "badge_marshal"
-            }
-          ]
-        }
+        "condition": { "and": [ "has_many_assigned_missions", { "u_is_wearing": "badge_marshal" } ] }
       },
-      {
-        "text": "I should be going",
-        "topic": "TALK_DONE"
-      }
+      { "text": "I should be going", "topic": "TALK_DONE" }
     ]
   },
   {
     "type": "talk_topic",
     "id": "TALK_OLD_GUARD_NEC_COMMO_GOAL",
     "dynamic_line": "We are securing the external communications array for this facility.  I'm rather restricted in what I can release…  go find my commander if you have any questions.",
-    "responses": [
-      {
-        "text": "I'll try and find your commander then…",
-        "topic": "TALK_NONE"
-      }
-    ]
+    "responses": [ { "text": "I'll try and find your commander then…", "topic": "TALK_NONE" } ]
   },
   {
     "type": "talk_topic",
@@ -105,42 +64,23 @@
       {
         "text": "Thanks.",
         "topic": "TALK_NONE",
-        "effect": [
-          {
-            "u_spawn_item": "necropolis_freq"
-          },
-          {
-            "u_add_effect": "has_og_comm_freq",
-            "duration": "PERMANENT"
-          }
-        ]
+        "effect": [ { "u_spawn_item": "necropolis_freq" }, { "u_add_effect": "has_og_comm_freq", "duration": "PERMANENT" } ]
       }
     ]
   },
   {
     "id": "MISSION_OLD_GUARD_NEC_COMMO_1",
     "type": "mission_definition",
-    "name": {
-      "str": "Fabricate Repeater Mod"
-    },
+    "name": { "str": "Fabricate Repeater Mod" },
     "goal": "MGOAL_FIND_ITEM",
     "difficulty": 2,
     "value": 250000,
     "item": "radio_repeater_mod",
     "start": {
-      "effect": {
-        "u_spawn_item": "repeater_mod_guide"
-      },
-      "assign_mission_target": {
-        "om_terrain": "necropolis_c_23",
-        "om_special": "Necropolis",
-        "reveal_radius": 3,
-        "z": -2
-      }
+      "effect": { "u_spawn_item": "repeater_mod_guide" },
+      "assign_mission_target": { "om_terrain": "necropolis_c_23", "om_special": "Necropolis", "reveal_radius": 3, "z": -2 }
     },
-    "origins": [
-      "ORIGIN_SECONDARY"
-    ],
+    "origins": [ "ORIGIN_SECONDARY" ],
     "followup": "MISSION_OLD_GUARD_NEC_COMMO_2",
     "dialogue": {
       "describe": "We need help…",
@@ -157,15 +97,11 @@
   {
     "id": "MISSION_OLD_GUARD_NEC_COMMO_2",
     "type": "mission_definition",
-    "name": {
-      "str": "Disable External Power"
-    },
+    "name": { "str": "Disable External Power" },
     "goal": "MGOAL_COMPUTER_TOGGLE",
     "difficulty": 2,
     "value": 150000,
-    "origins": [
-      "ORIGIN_SECONDARY"
-    ],
+    "origins": [ "ORIGIN_SECONDARY" ],
     "followup": "MISSION_OLD_GUARD_NEC_COMMO_3",
     "dialogue": {
       "describe": "We need help…",
@@ -182,15 +118,11 @@
   {
     "id": "MISSION_OLD_GUARD_NEC_COMMO_3",
     "type": "mission_definition",
-    "name": {
-      "str": "Install Repeater Mod"
-    },
+    "name": { "str": "Install Repeater Mod" },
     "goal": "MGOAL_COMPUTER_TOGGLE",
     "difficulty": 2,
     "value": 300000,
-    "origins": [
-      "ORIGIN_SECONDARY"
-    ],
+    "origins": [ "ORIGIN_SECONDARY" ],
     "followup": "MISSION_OLD_GUARD_NEC_COMMO_4",
     "dialogue": {
       "describe": "We need help…",
@@ -207,15 +139,11 @@
   {
     "id": "MISSION_OLD_GUARD_NEC_COMMO_4",
     "type": "mission_definition",
-    "name": {
-      "str": "Install Repeater Mod"
-    },
+    "name": { "str": "Install Repeater Mod" },
     "goal": "MGOAL_COMPUTER_TOGGLE",
     "difficulty": 2,
     "value": 350000,
-    "origins": [
-      "ORIGIN_SECONDARY"
-    ],
+    "origins": [ "ORIGIN_SECONDARY" ],
     "followup": "MISSION_OLD_GUARD_NEC_COMMO_4",
     "dialogue": {
       "describe": "We need help…",

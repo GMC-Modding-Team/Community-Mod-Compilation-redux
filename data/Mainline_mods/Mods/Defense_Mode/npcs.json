@@ -114,384 +114,127 @@
     "faction": "free_merchants",
     "per": -20,
     "dex": -20,
-    "personality": {
-      "aggression": -100,
-      "bravery": -100,
-      "collector": 0,
-      "altruism": 0
-    }
+    "personality": { "aggression": -100, "bravery": -100, "collector": 0, "altruism": 0 }
   },
   {
     "type": "npc_class",
     "id": "NC_DM_MERCHANT",
-    "name": {
-      "str": "Merchant"
-    },
+    "name": { "str": "Merchant" },
     "job_description": "I'm the one who sells you things.",
     "common": false,
     "bonus_str": 10000,
     "worn_override": "NC_DM_MERCHANT_worn",
     "carry_override": "NC_DM_MERCHANT_carry",
     "shopkeeper_price_rules": [
-      {
-        "group": "NC_DM_MERCHANT_stock",
-        "markup": 2.5
-      },
-      {
-        "group": "zombie_humanoid",
-        "fixed_adj": -2.5
-      },
-      {
-        "group": "human",
-        "fixed_adj": -2.5
-      },
-      {
-        "group": "arachnid",
-        "fixed_adj": -2.5
-      },
-      {
-        "group": "triffid_paralytic",
-        "fixed_adj": -2.5
-      },
-      {
-        "group": "default_zombie_death_drops",
-        "fixed_adj": -0.5
-      },
-      {
-        "group": "mon_zombie_cop_death_drops",
-        "fixed_adj": -0.5
-      },
-      {
-        "group": "mon_zombie_fireman_death_drops",
-        "fixed_adj": -0.5
-      },
-      {
-        "group": "mon_zombie_hazmat_death_drops",
-        "fixed_adj": -0.5
-      },
-      {
-        "group": "mon_zombie_swat_death_drops",
-        "fixed_adj": -0.5
-      },
-      {
-        "group": "mon_zombie_resort_dancer_death_drops",
-        "fixed_adj": -0.5
-      },
-      {
-        "group": "mon_zombie_resort_bouncer_death_drops",
-        "fixed_adj": -0.5
-      },
-      {
-        "group": "mon_zombie_resort_staff_death_drops",
-        "fixed_adj": -0.5
-      }
+      { "group": "NC_DM_MERCHANT_stock", "markup": 2.5 },
+      { "group": "zombie_humanoid", "fixed_adj": -2.5 },
+      { "group": "human", "fixed_adj": -2.5 },
+      { "group": "arachnid", "fixed_adj": -2.5 },
+      { "group": "triffid_paralytic", "fixed_adj": -2.5 },
+      { "group": "default_zombie_death_drops", "fixed_adj": -0.5 },
+      { "group": "mon_zombie_cop_death_drops", "fixed_adj": -0.5 },
+      { "group": "mon_zombie_fireman_death_drops", "fixed_adj": -0.5 },
+      { "group": "mon_zombie_hazmat_death_drops", "fixed_adj": -0.5 },
+      { "group": "mon_zombie_swat_death_drops", "fixed_adj": -0.5 },
+      { "group": "mon_zombie_resort_dancer_death_drops", "fixed_adj": -0.5 },
+      { "group": "mon_zombie_resort_bouncer_death_drops", "fixed_adj": -0.5 },
+      { "group": "mon_zombie_resort_staff_death_drops", "fixed_adj": -0.5 }
     ],
-    "traits": [
-      [
-        "DEBUG_FLIMSY",
-        100
-      ],
-      [
-        "DEBUG_FLIMSY2",
-        100
-      ],
-      [
-        "DEBUG_NOSCENT",
-        100
-      ],
-      [
-        "DEBUG_SILENT",
-        100
-      ]
-    ]
+    "traits": [ [ "DEBUG_FLIMSY", 100 ], [ "DEBUG_FLIMSY2", 100 ], [ "DEBUG_NOSCENT", 100 ], [ "DEBUG_SILENT", 100 ] ]
   },
   {
     "type": "item_group",
     "id": "NC_DM_MERCHANT_worn",
     "subtype": "collection",
     "items": [
-      {
-        "group": "npc_pants_male",
-        "prob": 100
-      },
-      {
-        "group": "npc_underwear_feet_male",
-        "prob": 100
-      },
-      {
-        "group": "npc_underwear_bottom_male",
-        "prob": 100
-      },
-      {
-        "group": "npc_shirt_male",
-        "prob": 100
-      },
-      {
-        "group": "npc_shoes_male",
-        "prob": 100
-      },
-      {
-        "item": "debug_backpack",
-        "prob": 100
-      }
+      { "group": "npc_pants_male", "prob": 100 },
+      { "group": "npc_underwear_feet_male", "prob": 100 },
+      { "group": "npc_underwear_bottom_male", "prob": 100 },
+      { "group": "npc_shirt_male", "prob": 100 },
+      { "group": "npc_shoes_male", "prob": 100 },
+      { "item": "debug_backpack", "prob": 100 }
     ]
   },
   {
     "type": "item_group",
     "id": "NC_DM_MERCHANT_carry",
     "subtype": "collection",
-    "items": [
-      {
-        "group": "NC_DM_MERCHANT_stock",
-        "prob": 100
-      },
-      {
-        "item": "FMCNote",
-        "count": [
-          700,
-          1000
-        ],
-        "prob": 100
-      }
-    ]
+    "items": [ { "group": "NC_DM_MERCHANT_stock", "prob": 100 }, { "item": "FMCNote", "count": [ 700, 1000 ], "prob": 100 } ]
   },
   {
     "type": "item_group",
     "id": "NC_DM_MERCHANT_stock",
     "subtype": "collection",
     "items": [
-      {
-        "group": "trader_farmingstuff",
-        "prob": 70
-      },
-      {
-        "group": "everyday_gear",
-        "prob": 70
-      },
-      {
-        "group": "child_items",
-        "prob": 70
-      },
-      {
-        "group": "traveler",
-        "prob": 70
-      },
-      {
-        "group": "swat_gear",
-        "prob": 70
-      },
-      {
-        "group": "gear_survival",
-        "prob": 70
-      },
-      {
-        "group": "civilian_body_armor",
-        "prob": 70
-      },
-      {
-        "group": "drugs_pharmacy",
-        "prob": 70
-      },
-      {
-        "group": "preserved_food",
-        "prob": 70
-      },
-      {
-        "group": "pet_food",
-        "prob": 70
-      },
-      {
-        "group": "condiments",
-        "prob": 70
-      },
-      {
-        "group": "trader_guns&ammo",
-        "prob": 70,
-        "charges": 30
-      },
-      {
-        "group": "hardware",
-        "prob": 70
-      },
-      {
-        "group": "defense_caravan_melee",
-        "prob": 70
-      },
-      {
-        "group": "defense_caravan_ranged",
-        "prob": 70,
-        "charges": 30
-      },
-      {
-        "group": "defense_caravan_ammunition",
-        "prob": 70
-      },
-      {
-        "group": "defense_caravan_components",
-        "prob": 70
-      },
-      {
-        "group": "defense_caravan_clothes",
-        "prob": 70
-      },
-      {
-        "group": "defense_caravan_tools",
-        "prob": 70
-      },
-      {
-        "group": "hardware_bulk",
-        "prob": 70
-      },
-      {
-        "group": "lumberyard",
-        "prob": 70
-      },
-      {
-        "group": "supplies_hardware",
-        "prob": 70
-      }
+      { "group": "trader_farmingstuff", "prob": 70 },
+      { "group": "everyday_gear", "prob": 70 },
+      { "group": "child_items", "prob": 70 },
+      { "group": "traveler", "prob": 70 },
+      { "group": "swat_gear", "prob": 70 },
+      { "group": "gear_survival", "prob": 70 },
+      { "group": "civilian_body_armor", "prob": 70 },
+      { "group": "drugs_pharmacy", "prob": 70 },
+      { "group": "preserved_food", "prob": 70 },
+      { "group": "pet_food", "prob": 70 },
+      { "group": "condiments", "prob": 70 },
+      { "group": "trader_guns&ammo", "prob": 70, "charges": 30 },
+      { "group": "hardware", "prob": 70 },
+      { "group": "defense_caravan_melee", "prob": 70 },
+      { "group": "defense_caravan_ranged", "prob": 70, "charges": 30 },
+      { "group": "defense_caravan_ammunition", "prob": 70 },
+      { "group": "defense_caravan_components", "prob": 70 },
+      { "group": "defense_caravan_clothes", "prob": 70 },
+      { "group": "defense_caravan_tools", "prob": 70 },
+      { "group": "hardware_bulk", "prob": 70 },
+      { "group": "lumberyard", "prob": 70 },
+      { "group": "supplies_hardware", "prob": 70 }
     ]
   },
   {
     "type": "item_group",
     "id": "trader_farmingstuff",
     "subtype": "collection",
-    "items": [
-      {
-        "group": "farming_seeds",
-        "prob": 100
-      },
-      {
-        "group": "farming_tools",
-        "prob": 90
-      }
-    ]
+    "items": [ { "group": "farming_seeds", "prob": 100 }, { "group": "farming_tools", "prob": 90 } ]
   },
   {
     "id": "trader_guns&ammo",
     "type": "item_group",
     "subtype": "collection",
     "items": [
-      {
-        "group": "guns_pistol_common",
-        "prob": 75
-      },
-      {
-        "group": "guns_pistol_rare",
-        "prob": 50
-      },
-      {
-        "group": "guns_pistol_obscure",
-        "prob": 30
-      },
-      {
-        "group": "guns_pistol_improvised",
-        "prob": 95
-      },
-      {
-        "group": "guns_shotgun_common",
-        "prob": 75
-      },
-      {
-        "group": "guns_shotgun_rare",
-        "prob": 50
-      },
-      {
-        "group": "guns_shotgun_obscure",
-        "prob": 30
-      },
-      {
-        "group": "guns_shotgun_milspec",
-        "prob": 95
-      },
-      {
-        "group": "guns_shotgun_improvised",
-        "prob": 90
-      },
-      {
-        "group": "guns_smg_improvised",
-        "prob": 90
-      },
-      {
-        "group": "guns_smg_common",
-        "prob": 70
-      },
-      {
-        "group": "guns_smg_rare",
-        "prob": 50
-      },
-      {
-        "group": "guns_smg_obscure",
-        "prob": 10
-      },
-      {
-        "group": "guns_rifle_common",
-        "prob": 65
-      },
-      {
-        "group": "guns_rifle_rare",
-        "prob": 40
-      },
-      {
-        "group": "ammo_pistol_common",
-        "prob": 75
-      },
-      {
-        "group": "ammo_pistol_rare",
-        "prob": 50
-      },
-      {
-        "group": "ammo_pistol_obscure",
-        "prob": 30
-      },
-      {
-        "group": "ammo_shotgun_common",
-        "prob": 75
-      },
-      {
-        "group": "ammo_shotgun_rare",
-        "prob": 50
-      },
-      {
-        "group": "ammo_shotgun_obscure",
-        "prob": 30
-      },
-      {
-        "group": "ammo_shotgun_milspec",
-        "prob": 95
-      },
-      {
-        "group": "ammo_shotgun_reloaded",
-        "prob": 90
-      },
-      {
-        "group": "ammo_smg_common",
-        "prob": 70
-      },
-      {
-        "group": "ammo_smg_rare",
-        "prob": 50
-      },
-      {
-        "group": "ammo_smg_obscure",
-        "prob": 10
-      },
-      {
-        "group": "ammo_rifle_common",
-        "prob": 65
-      },
-      {
-        "group": "ammo_rifle_rare",
-        "prob": 40
-      }
+      { "group": "guns_pistol_common", "prob": 75 },
+      { "group": "guns_pistol_rare", "prob": 50 },
+      { "group": "guns_pistol_obscure", "prob": 30 },
+      { "group": "guns_pistol_improvised", "prob": 95 },
+      { "group": "guns_shotgun_common", "prob": 75 },
+      { "group": "guns_shotgun_rare", "prob": 50 },
+      { "group": "guns_shotgun_obscure", "prob": 30 },
+      { "group": "guns_shotgun_milspec", "prob": 95 },
+      { "group": "guns_shotgun_improvised", "prob": 90 },
+      { "group": "guns_smg_improvised", "prob": 90 },
+      { "group": "guns_smg_common", "prob": 70 },
+      { "group": "guns_smg_rare", "prob": 50 },
+      { "group": "guns_smg_obscure", "prob": 10 },
+      { "group": "guns_rifle_common", "prob": 65 },
+      { "group": "guns_rifle_rare", "prob": 40 },
+      { "group": "ammo_pistol_common", "prob": 75 },
+      { "group": "ammo_pistol_rare", "prob": 50 },
+      { "group": "ammo_pistol_obscure", "prob": 30 },
+      { "group": "ammo_shotgun_common", "prob": 75 },
+      { "group": "ammo_shotgun_rare", "prob": 50 },
+      { "group": "ammo_shotgun_obscure", "prob": 30 },
+      { "group": "ammo_shotgun_milspec", "prob": 95 },
+      { "group": "ammo_shotgun_reloaded", "prob": 90 },
+      { "group": "ammo_smg_common", "prob": 70 },
+      { "group": "ammo_smg_rare", "prob": 50 },
+      { "group": "ammo_smg_obscure", "prob": 10 },
+      { "group": "ammo_rifle_common", "prob": 65 },
+      { "group": "ammo_rifle_rare", "prob": 40 }
     ]
   },
   {
     "type": "mutation",
     "id": "DEBUG_FLIMSY",
-    "name": {
-      "str": "Debug No HP"
-    },
+    "name": { "str": "Debug No HP" },
     "points": -6,
     "description": "You will die in one hit, more or less.  Sneezing too hard will kill you.",
     "debug": true,
@@ -500,9 +243,7 @@
   {
     "type": "mutation",
     "id": "DEBUG_FLIMSY2",
-    "name": {
-      "str": "Debug No HP II"
-    },
+    "name": { "str": "Debug No HP II" },
     "points": -6,
     "description": "You will die in one hit, more or less.  Sneezing too hard will kill you.",
     "debug": true,

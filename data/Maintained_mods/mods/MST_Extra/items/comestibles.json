@@ -3,33 +3,21 @@
     "id": "tar_oil",
     "type": "COMESTIBLE",
     "comestible_type": "MED",
-    "name": {
-      "str_sp": "tar oil"
-    },
+    "name": { "str_sp": "tar oil" },
     "description": "A thick, runny tar typically made from birch bark or pine.  Among various historical uses, it is also used as an antiseptic and astringent.",
     "weight": "40 g",
     "volume": "250 ml",
-    "material": [
-      "oil"
-    ],
+    "material": [ "oil" ],
     "symbol": "~",
     "color": "yellow",
     "phase": "liquid",
     "charges": 5,
-    "use_action": {
-      "type": "heal",
-      "disinfectant_power": 2,
-      "bleed": 2,
-      "bite": 0.75,
-      "move_cost": 100
-    }
+    "use_action": { "type": "heal", "disinfectant_power": 2, "bleed": 2, "bite": 0.75, "move_cost": 100 }
   },
   {
     "type": "COMESTIBLE",
     "id": "oil_garlic",
-    "name": {
-      "str_sp": "garlic oil"
-    },
+    "name": { "str_sp": "garlic oil" },
     "weight": "25 g",
     "color": "white",
     "container": "bottle_glass",
@@ -40,49 +28,32 @@
     "description": "A strong-tasting extract made from garlic, traditionally used to help resist infection, especially in Eastern Europe.  Not as powerful as modern full-strength antibiotics, but better than nothing.  Use once every 12 hours.",
     "charges": 6,
     "price": 10,
-    "material": [
-      "garlic"
-    ],
+    "material": [ "garlic" ],
     "volume": "250 ml",
     "phase": "liquid",
     "fun": -8,
     "use_action": "WEAK_ANTIBIOTIC",
-    "flags": [
-      "NPC_SAFE",
-      "NUTRIENT_OVERRIDE"
-    ]
+    "flags": [ "NPC_SAFE", "NUTRIENT_OVERRIDE" ]
   },
   {
     "id": "makeshift_poultice",
     "type": "COMESTIBLE",
     "comestible_type": "MED",
-    "name": {
-      "str": "makeshift poultice"
-    },
+    "name": { "str": "makeshift poultice" },
     "description": "A primitive poultice using improvised antiseptic, held in place by a cloth or leather wrap.  Applied loosely, it is designed to stave off infection but can still help staunch bleeding.",
     "weight": "70 g",
     "volume": "25 ml",
     "price": 3,
-    "material": [
-      "veggy"
-    ],
+    "material": [ "veggy" ],
     "symbol": "!",
     "color": "light_gray",
-    "use_action": {
-      "type": "heal",
-      "bandages_power": 3,
-      "bleed": 8,
-      "bite": 0.75,
-      "move_cost": 300
-    }
+    "use_action": { "type": "heal", "bandages_power": 3, "bleed": 8, "bite": 0.75, "move_cost": 300 }
   },
   {
     "type": "COMESTIBLE",
     "id": "posca",
     "comestible_type": "DRINK",
-    "name": {
-      "str_sp": "posca"
-    },
+    "name": { "str_sp": "posca" },
     "description": "A traditional Roman drink made of water mixed with a bit of vinegar, then spiced up with herbs and honey.  A good way to quench one's thirst on a long march.",
     "volume": "250 ml",
     "weight": "250 g",
@@ -91,9 +62,7 @@
     "looks_like": "vinegar",
     "price": 3,
     "price_postapoc": "75 cent",
-    "material": [
-      "water"
-    ],
+    "material": [ "water" ],
     "phase": "liquid",
     "calories": 75,
     "quench": 50,
@@ -101,18 +70,14 @@
     "fun": 3,
     "charges": 1,
     "container": "waterskin",
-    "flags": [
-      "EATEN_COLD"
-    ]
+    "flags": [ "EATEN_COLD" ]
   },
   {
     "id": "posca_hard",
     "type": "COMESTIBLE",
     "copy-from": "posca",
     "comestible_type": "DRINK",
-    "name": {
-      "str_sp": "hard posca"
-    },
+    "name": { "str_sp": "hard posca" },
     "description": "A traditional Roman drink made of water mixed with a bit of sour wine, then spiced up with herbs and honey.  Good for unwinding after a long march.",
     "volume": "250 ml",
     "weight": "250 g",
@@ -121,10 +86,7 @@
     "looks_like": "vinegar",
     "price": 4,
     "price_postapoc": 1,
-    "material": [
-      "water",
-      "alcohol"
-    ],
+    "material": [ "water", "alcohol" ],
     "phase": "liquid",
     "calories": 110,
     "quench": 50,
@@ -132,10 +94,7 @@
     "fun": 6,
     "charges": 1,
     "container": "waterskin",
-    "flags": [
-      "EATEN_COLD",
-      "NO_AUTO_CONSUME"
-    ],
+    "flags": [ "EATEN_COLD", "NO_AUTO_CONSUME" ],
     "stim": -2,
     "addiction_type": "alcohol",
     "addiction_potential": 1,
@@ -146,53 +105,18 @@
     "type": "COMESTIBLE",
     "copy-from": "jerky",
     "comestible_type": "FOOD",
-    "name": {
-      "str_sp": "jerked offal"
-    },
-    "material": [
-      "flesh"
-    ],
+    "name": { "str_sp": "jerked offal" },
+    "material": [ "flesh" ],
     "symbol": "%",
     "color": "brown",
     "parasites": 0,
-    "vitamins": [
-      [
-        "vitC",
-        0
-      ],
-      [
-        "calcium",
-        2
-      ],
-      [
-        "iron",
-        26
-      ]
-    ],
-    "flags": [],
+    "vitamins": [ [ "vitC", 0 ], [ "calcium", 2 ], [ "iron", 26 ] ],
+    "flags": [  ],
     "freezing_point": -1000,
     "conditional_names": [
-      {
-        "type": "FLAG",
-        "condition": "CANNIBALISM",
-        "name": {
-          "str_sp": "jerk jerky"
-        }
-      },
-      {
-        "type": "FLAG",
-        "condition": "STRICT_HUMANITARIANISM",
-        "name": {
-          "str_sp": "talking animal jerky"
-        }
-      },
-      {
-        "type": "COMPONENT_ID_SUBSTRING",
-        "condition": "mutant",
-        "name": {
-          "str_sp": "monster jerky"
-        }
-      }
+      { "type": "FLAG", "condition": "CANNIBALISM", "name": { "str_sp": "jerk jerky" } },
+      { "type": "FLAG", "condition": "STRICT_HUMANITARIANISM", "name": { "str_sp": "talking animal jerky" } },
+      { "type": "COMPONENT_ID_SUBSTRING", "condition": "mutant", "name": { "str_sp": "monster jerky" } }
     ],
     "description": "Salty dried organ meat.  Smells a bit like dog food, but will last a long time.",
     "primary_material": "cured_meat",

@@ -3,25 +3,15 @@
     "id": "mon_civilian_biokinetic",
     "type": "MONSTER",
     "copy-from": "mon_civilian_clairsentient",
-    "name": {
-      "str": "bellicose brawler"
-    },
+    "name": { "str": "bellicose brawler" },
     "description": "This bloodshot-eyed berserker hurls themselves at the zombie horde.  Despite their crude technique, they are moving faster than you've ever seen a human move, and some of their attacks send the zombies flying.",
     "looks_like": "mon_dementia",
     "default_faction": "human",
     "bodytype": "human",
-    "species": [
-      "HUMAN"
-    ],
-    "material": [
-      "flesh"
-    ],
-    "weakpoint_sets": [
-      "wps_humanoid_body"
-    ],
-    "chat_topics": [
-      "TALK_CIVILIAN_FIGHTER"
-    ],
+    "species": [ "HUMAN" ],
+    "material": [ "flesh" ],
+    "weakpoint_sets": [ "wps_humanoid_body" ],
+    "chat_topics": [ "TALK_CIVILIAN_FIGHTER" ],
     "volume": "62500 ml",
     "weight": "81500 g",
     "hp": 85,
@@ -34,92 +24,41 @@
     "vision_night": 1,
     "melee_dice": 2,
     "melee_dice_sides": 5,
-    "melee_damage": [
-      {
-        "damage_type": "bash",
-        "amount": 4
-      }
-    ],
-    "families": [
-      "prof_intro_biology",
-      "prof_physiology"
-    ],
+    "melee_damage": [ { "damage_type": "bash", "amount": 4 } ],
+    "families": [ "prof_intro_biology", "prof_physiology" ],
     "diff": 10,
     "dodge": 3,
-    "death_function": {
-      "effect": {
-        "id": "death_guilt",
-        "min_level": 6
-      }
-    },
-    "path_settings": {
-      "max_dist": 30,
-      "allow_open_doors": true,
-      "avoid_traps": true,
-      "avoid_sharp": true
-    },
-    "upgrades": {
-      "half_life": 2,
-      "into": "mon_feral_human_bio"
-    },
+    "death_function": { "effect": { "id": "death_guilt", "min_level": 6 } },
+    "path_settings": { "max_dist": 30, "allow_open_doors": true, "avoid_traps": true, "avoid_sharp": true },
+    "upgrades": { "half_life": 2, "into": "mon_feral_human_bio" },
     "special_attacks": [
       {
         "id": "smash",
         "attack_upper": true,
         "throw_strength": 40,
         "cooldown": 10,
-        "condition": {
-          "not": {
-            "u_has_effect": "effect_psi_null"
-          }
-        }
+        "condition": { "not": { "u_has_effect": "effect_psi_null" } }
       },
-      {
-        "id": "bio_op_takedown",
-        "cooldown": 20,
-        "condition": {
-          "not": {
-            "u_has_effect": "effect_psi_null"
-          }
-        }
-      }
+      { "id": "bio_op_takedown", "cooldown": 20, "condition": { "not": { "u_has_effect": "effect_psi_null" } } }
     ],
     "death_drops": "default_zombie_death_drops",
     "zombify_into": "mon_zombie",
-    "flags": [
-      "SEES",
-      "HEARS",
-      "WARM",
-      "HUMAN",
-      "CAN_OPEN_DOORS",
-      "PATH_AVOID_DANGER_1",
-      "CONVERSATION"
-    ],
+    "flags": [ "SEES", "HEARS", "WARM", "HUMAN", "CAN_OPEN_DOORS", "PATH_AVOID_DANGER_1", "CONVERSATION" ],
     "aggro_character": false,
     "melee_skill": 4
   },
   {
     "id": "mon_civilian_clairsentient",
     "type": "MONSTER",
-    "name": {
-      "str": "agitated augur"
-    },
+    "name": { "str": "agitated augur" },
     "description": "This individual looks wildly all around them, constantly muttering to themselves the entire time.",
     "looks_like": "mon_dementia",
     "default_faction": "human",
     "bodytype": "human",
-    "species": [
-      "HUMAN"
-    ],
-    "material": [
-      "flesh"
-    ],
-    "weakpoint_sets": [
-      "wps_humanoid_body"
-    ],
-    "chat_topics": [
-      "TALK_CIVILIAN_PANIC"
-    ],
+    "species": [ "HUMAN" ],
+    "material": [ "flesh" ],
+    "weakpoint_sets": [ "wps_humanoid_body" ],
+    "chat_topics": [ "TALK_CIVILIAN_PANIC" ],
     "volume": "62500 ml",
     "weight": "81500 g",
     "hp": 75,
@@ -132,75 +71,31 @@
     "vision_night": 20,
     "melee_dice": 1,
     "melee_dice_sides": 2,
-    "melee_damage": [
-      {
-        "damage_type": "cut",
-        "amount": 3
-      }
-    ],
-    "families": [
-      "prof_intro_biology",
-      "prof_physiology"
-    ],
+    "melee_damage": [ { "damage_type": "cut", "amount": 3 } ],
+    "families": [ "prof_intro_biology", "prof_physiology" ],
     "diff": 0,
     "dodge": 4,
-    "death_function": {
-      "effect": {
-        "id": "death_guilt",
-        "min_level": 6
-      }
-    },
-    "path_settings": {
-      "max_dist": 30,
-      "allow_open_doors": true,
-      "avoid_traps": true,
-      "avoid_sharp": true
-    },
-    "upgrades": {
-      "half_life": 2,
-      "into": "mon_feral_human_clair"
-    },
-    "special_attacks": [
-      [
-        "PARROT_AT_DANGER",
-        2
-      ]
-    ],
+    "death_function": { "effect": { "id": "death_guilt", "min_level": 6 } },
+    "path_settings": { "max_dist": 30, "allow_open_doors": true, "avoid_traps": true, "avoid_sharp": true },
+    "upgrades": { "half_life": 2, "into": "mon_feral_human_clair" },
+    "special_attacks": [ [ "PARROT_AT_DANGER", 2 ] ],
     "death_drops": "default_zombie_death_drops",
     "zombify_into": "mon_zombie",
-    "flags": [
-      "SEES",
-      "HEARS",
-      "WARM",
-      "HUMAN",
-      "CAN_OPEN_DOORS",
-      "PATH_AVOID_DANGER_1",
-      "CONVERSATION"
-    ]
+    "flags": [ "SEES", "HEARS", "WARM", "HUMAN", "CAN_OPEN_DOORS", "PATH_AVOID_DANGER_1", "CONVERSATION" ]
   },
   {
     "id": "mon_civilian_electrokinetic",
     "type": "MONSTER",
     "copy-from": "mon_civilian_clairsentient",
-    "name": {
-      "str": "voltaic vigilante"
-    },
+    "name": { "str": "voltaic vigilante" },
     "description": "This person's skin occasionally crackles with lightning.  Their eyes have an eerie blue glow and sparks drip from their hands as they hurl themselves at the zombie hordes.",
     "looks_like": "mon_dementia",
     "default_faction": "human",
     "bodytype": "human",
-    "species": [
-      "HUMAN"
-    ],
-    "material": [
-      "flesh"
-    ],
-    "weakpoint_sets": [
-      "wps_humanoid_body"
-    ],
-    "chat_topics": [
-      "TALK_CIVILIAN_ELECTROKINETIC"
-    ],
+    "species": [ "HUMAN" ],
+    "material": [ "flesh" ],
+    "weakpoint_sets": [ "wps_humanoid_body" ],
+    "chat_topics": [ "TALK_CIVILIAN_ELECTROKINETIC" ],
     "volume": "62500 ml",
     "weight": "81500 g",
     "hp": 75,
@@ -213,97 +108,44 @@
     "vision_night": 1,
     "melee_dice": 1,
     "melee_dice_sides": 6,
-    "melee_damage": [
-      {
-        "damage_type": "electric",
-        "amount": 4
-      }
-    ],
-    "families": [
-      "prof_intro_biology",
-      "prof_physiology"
-    ],
+    "melee_damage": [ { "damage_type": "electric", "amount": 4 } ],
+    "families": [ "prof_intro_biology", "prof_physiology" ],
     "diff": 3,
     "dodge": 1,
-    "death_function": {
-      "effect": {
-        "id": "death_guilt",
-        "min_level": 6
-      }
-    },
-    "path_settings": {
-      "max_dist": 30,
-      "allow_open_doors": true,
-      "avoid_traps": true,
-      "avoid_sharp": true
-    },
-    "upgrades": {
-      "half_life": 2,
-      "into": "mon_feral_human_electrokin"
-    },
+    "death_function": { "effect": { "id": "death_guilt", "min_level": 6 } },
+    "path_settings": { "max_dist": 30, "allow_open_doors": true, "avoid_traps": true, "avoid_sharp": true },
+    "upgrades": { "half_life": 2, "into": "mon_feral_human_electrokin" },
     "special_attacks": [
-      [
-        "PARROT_AT_DANGER",
-        10
-      ],
+      [ "PARROT_AT_DANGER", 10 ],
       {
         "id": "psi_civilian_electrokinetic_zap",
         "type": "spell",
-        "spell_data": {
-          "id": "electrokinetic_shock_touch_monster",
-          "min_level": 0
-        },
+        "spell_data": { "id": "electrokinetic_shock_touch_monster", "min_level": 0 },
         "cooldown": 10,
-        "condition": {
-          "not": {
-            "u_has_effect": "effect_psi_null"
-          }
-        },
+        "condition": { "not": { "u_has_effect": "effect_psi_null" } },
         "monster_message": "%1$s unleashes a burst of sparks!"
       }
     ],
     "death_drops": "default_zombie_death_drops",
     "zombify_into": "mon_zombie",
-    "flags": [
-      "SEES",
-      "HEARS",
-      "WARM",
-      "HUMAN",
-      "CAN_OPEN_DOORS",
-      "PATH_AVOID_DANGER_1",
-      "CONVERSATION",
-      "ELECTRIC"
-    ],
+    "flags": [ "SEES", "HEARS", "WARM", "HUMAN", "CAN_OPEN_DOORS", "PATH_AVOID_DANGER_1", "CONVERSATION", "ELECTRIC" ],
     "aggro_character": false,
     "melee_skill": 2,
-    "special_when_hit": [
-      "ZAPBACK",
-      50
-    ]
+    "special_when_hit": [ "ZAPBACK", 50 ]
   },
   {
     "id": "mon_civilian_photokinetic",
     "type": "MONSTER",
     "copy-from": "mon_civilian_clairsentient",
-    "name": {
-      "str": "miserable magician"
-    },
+    "name": { "str": "miserable magician" },
     "description": "This person seems to be afraid of his own illusionary tricks, not being used to his 'magic' actually working.  He doesn't seem to be able to control it very well, or willfully.",
     "looks_like": "mon_dementia",
     "default_faction": "human",
     "bodytype": "human",
-    "species": [
-      "HUMAN"
-    ],
-    "material": [
-      "flesh"
-    ],
-    "weakpoint_sets": [
-      "wps_humanoid_body"
-    ],
-    "chat_topics": [
-      "TALK_CIVILIAN_PHOTOKINETIC"
-    ],
+    "species": [ "HUMAN" ],
+    "material": [ "flesh" ],
+    "weakpoint_sets": [ "wps_humanoid_body" ],
+    "chat_topics": [ "TALK_CIVILIAN_PHOTOKINETIC" ],
     "volume": "62500 ml",
     "weight": "81500 g",
     "hp": 75,
@@ -316,66 +158,27 @@
     "vision_night": 1,
     "melee_dice": 2,
     "melee_dice_sides": 3,
-    "melee_damage": [
-      {
-        "damage_type": "bash",
-        "amount": 2
-      }
-    ],
-    "families": [
-      "prof_intro_biology",
-      "prof_physiology"
-    ],
+    "melee_damage": [ { "damage_type": "bash", "amount": 2 } ],
+    "families": [ "prof_intro_biology", "prof_physiology" ],
     "diff": 3,
     "dodge": 1,
-    "death_function": {
-      "effect": {
-        "id": "death_guilt",
-        "min_level": 6
-      }
-    },
-    "path_settings": {
-      "max_dist": 30,
-      "allow_open_doors": true,
-      "avoid_traps": true,
-      "avoid_sharp": true
-    },
-    "upgrades": {
-      "half_life": 2,
-      "into": "mon_feral_human_photokin"
-    },
+    "death_function": { "effect": { "id": "death_guilt", "min_level": 6 } },
+    "path_settings": { "max_dist": 30, "allow_open_doors": true, "avoid_traps": true, "avoid_sharp": true },
+    "upgrades": { "half_life": 2, "into": "mon_feral_human_photokin" },
     "special_attacks": [
-      [
-        "PARROT_AT_DANGER",
-        10
-      ],
+      [ "PARROT_AT_DANGER", 10 ],
       {
         "id": "psi_civilian_photokinetic_lightbeam",
         "type": "spell",
-        "spell_data": {
-          "id": "photokinetic_light_beam_monster",
-          "min_level": 0
-        },
+        "spell_data": { "id": "photokinetic_light_beam_monster", "min_level": 0 },
         "cooldown": 10,
-        "condition": {
-          "not": {
-            "u_has_effect": "effect_psi_null"
-          }
-        },
+        "condition": { "not": { "u_has_effect": "effect_psi_null" } },
         "monster_message": "%1$s fires a photon beam!"
       }
     ],
     "death_drops": "default_zombie_death_drops",
     "zombify_into": "mon_zombie",
-    "flags": [
-      "SEES",
-      "HEARS",
-      "WARM",
-      "HUMAN",
-      "CAN_OPEN_DOORS",
-      "PATH_AVOID_DANGER_1",
-      "CONVERSATION"
-    ],
+    "flags": [ "SEES", "HEARS", "WARM", "HUMAN", "CAN_OPEN_DOORS", "PATH_AVOID_DANGER_1", "CONVERSATION" ],
     "aggro_character": false,
     "melee_skill": 2
   },
@@ -383,25 +186,15 @@
     "id": "mon_civilian_pyrokinetic",
     "type": "MONSTER",
     "copy-from": "mon_civilian_clairsentient",
-    "name": {
-      "str": "furious firestarter"
-    },
+    "name": { "str": "furious firestarter" },
     "description": "The air around this person wavers slightly like summer heat, and flames occasionally flicker around their upraised hand.  There is a focused look in their eyes, and they seem to think they can kill every zombie in sight with their powers.",
     "looks_like": "mon_dementia",
     "default_faction": "human",
     "bodytype": "human",
-    "species": [
-      "HUMAN"
-    ],
-    "material": [
-      "flesh"
-    ],
-    "weakpoint_sets": [
-      "wps_humanoid_body"
-    ],
-    "chat_topics": [
-      "TALK_CIVILIAN_PYROKINETIC"
-    ],
+    "species": [ "HUMAN" ],
+    "material": [ "flesh" ],
+    "weakpoint_sets": [ "wps_humanoid_body" ],
+    "chat_topics": [ "TALK_CIVILIAN_PYROKINETIC" ],
     "volume": "62500 ml",
     "weight": "81500 g",
     "hp": 75,
@@ -414,66 +207,27 @@
     "vision_night": 1,
     "melee_dice": 2,
     "melee_dice_sides": 3,
-    "melee_damage": [
-      {
-        "damage_type": "heat",
-        "amount": 4
-      }
-    ],
-    "families": [
-      "prof_intro_biology",
-      "prof_physiology"
-    ],
+    "melee_damage": [ { "damage_type": "heat", "amount": 4 } ],
+    "families": [ "prof_intro_biology", "prof_physiology" ],
     "diff": 3,
     "dodge": 1,
-    "death_function": {
-      "effect": {
-        "id": "death_guilt",
-        "min_level": 6
-      }
-    },
-    "path_settings": {
-      "max_dist": 30,
-      "allow_open_doors": true,
-      "avoid_traps": true,
-      "avoid_sharp": true
-    },
-    "upgrades": {
-      "half_life": 2,
-      "into": "mon_feral_human_pyrokin"
-    },
+    "death_function": { "effect": { "id": "death_guilt", "min_level": 6 } },
+    "path_settings": { "max_dist": 30, "allow_open_doors": true, "avoid_traps": true, "avoid_sharp": true },
+    "upgrades": { "half_life": 2, "into": "mon_feral_human_pyrokin" },
     "special_attacks": [
-      [
-        "PARROT_AT_DANGER",
-        10
-      ],
+      [ "PARROT_AT_DANGER", 10 ],
       {
         "id": "psi_civilian_pyrokinetic_flameblast",
         "type": "spell",
-        "spell_data": {
-          "id": "pyrokinetic_eruption_monster",
-          "min_level": 0
-        },
+        "spell_data": { "id": "pyrokinetic_eruption_monster", "min_level": 0 },
         "cooldown": 10,
-        "condition": {
-          "not": {
-            "u_has_effect": "effect_psi_null"
-          }
-        },
+        "condition": { "not": { "u_has_effect": "effect_psi_null" } },
         "monster_message": "%1$s summons a blast of flame!"
       }
     ],
     "death_drops": "default_zombie_death_drops",
     "zombify_into": "mon_zombie",
-    "flags": [
-      "SEES",
-      "HEARS",
-      "WARM",
-      "HUMAN",
-      "CAN_OPEN_DOORS",
-      "PATH_AVOID_DANGER_1",
-      "CONVERSATION"
-    ],
+    "flags": [ "SEES", "HEARS", "WARM", "HUMAN", "CAN_OPEN_DOORS", "PATH_AVOID_DANGER_1", "CONVERSATION" ],
     "aggro_character": false,
     "melee_skill": 2
   },
@@ -481,25 +235,15 @@
     "id": "mon_civilian_telekinetic",
     "type": "MONSTER",
     "copy-from": "mon_civilian_clairsentient",
-    "name": {
-      "str": "panic-stricken psychokinetic"
-    },
+    "name": { "str": "panic-stricken psychokinetic" },
     "description": "They stare around at the monsters nearby, occasionally making throwing motions with their hands.  Sometimes, when they make a throwing motion, one of the zombies is hurled through the air.",
     "looks_like": "mon_dementia",
     "default_faction": "human",
     "bodytype": "human",
-    "species": [
-      "HUMAN"
-    ],
-    "material": [
-      "flesh"
-    ],
-    "weakpoint_sets": [
-      "wps_humanoid_body"
-    ],
-    "chat_topics": [
-      "TALK_CIVILIAN_TELEKINETIC"
-    ],
+    "species": [ "HUMAN" ],
+    "material": [ "flesh" ],
+    "weakpoint_sets": [ "wps_humanoid_body" ],
+    "chat_topics": [ "TALK_CIVILIAN_TELEKINETIC" ],
     "volume": "62500 ml",
     "weight": "81500 g",
     "hp": 75,
@@ -512,55 +256,24 @@
     "vision_night": 1,
     "melee_dice": 2,
     "melee_dice_sides": 3,
-    "melee_damage": [
-      {
-        "damage_type": "bash",
-        "amount": 4
-      }
-    ],
-    "families": [
-      "prof_intro_biology",
-      "prof_physiology"
-    ],
+    "melee_damage": [ { "damage_type": "bash", "amount": 4 } ],
+    "families": [ "prof_intro_biology", "prof_physiology" ],
     "diff": 3,
     "dodge": 1,
-    "death_function": {
-      "effect": {
-        "id": "death_guilt",
-        "min_level": 6
-      }
-    },
-    "path_settings": {
-      "max_dist": 30,
-      "allow_open_doors": true,
-      "avoid_traps": true,
-      "avoid_sharp": true
-    },
-    "upgrades": {
-      "half_life": 2,
-      "into": "mon_feral_human_telekin"
-    },
+    "death_function": { "effect": { "id": "death_guilt", "min_level": 6 } },
+    "path_settings": { "max_dist": 30, "allow_open_doors": true, "avoid_traps": true, "avoid_sharp": true },
+    "upgrades": { "half_life": 2, "into": "mon_feral_human_telekin" },
     "special_attacks": [
       {
         "id": "smash",
         "move_cost": 100,
         "cooldown": 10,
-        "damage_max_instance": [
-          {
-            "damage_type": "bash",
-            "amount": 10,
-            "armor_penetration": 10
-          }
-        ],
+        "damage_max_instance": [ { "damage_type": "bash", "amount": 10, "armor_penetration": 10 } ],
         "hitsize_min": 12,
         "throw_strength": 40,
         "blockable": false,
         "effects_require_dmg": false,
-        "condition": {
-          "not": {
-            "u_has_effect": "effect_psi_null"
-          }
-        },
+        "condition": { "not": { "u_has_effect": "effect_psi_null" } },
         "hit_dmg_u": "%1$s stares at you and a powerful force hurls you through the air!",
         "hit_dmg_npc": "%1$s stares at <npcname> and a powerful force hurls them through the air!",
         "miss_msg_u": "%s stares at you, and you feel a crushing pressure for a moment before the feeling vanishes!",
@@ -569,15 +282,7 @@
     ],
     "death_drops": "default_zombie_death_drops",
     "zombify_into": "mon_zombie",
-    "flags": [
-      "SEES",
-      "HEARS",
-      "WARM",
-      "HUMAN",
-      "CAN_OPEN_DOORS",
-      "PATH_AVOID_DANGER_1",
-      "CONVERSATION"
-    ],
+    "flags": [ "SEES", "HEARS", "WARM", "HUMAN", "CAN_OPEN_DOORS", "PATH_AVOID_DANGER_1", "CONVERSATION" ],
     "aggro_character": false,
     "melee_skill": 2
   },
@@ -585,25 +290,15 @@
     "id": "mon_civilian_telepath",
     "type": "MONSTER",
     "copy-from": "mon_civilian_clairsentient",
-    "name": {
-      "str": "manic mutterer"
-    },
+    "name": { "str": "manic mutterer" },
     "description": "Holding their head in their hands, they barely seem aware of the world around them, but they still try to escape the zombies.  Looking at them, you feel an eerie sensation like fingers scratching at your mind.",
     "looks_like": "mon_dementia",
     "default_faction": "human",
     "bodytype": "human",
-    "species": [
-      "HUMAN"
-    ],
-    "material": [
-      "flesh"
-    ],
-    "weakpoint_sets": [
-      "wps_humanoid_body"
-    ],
-    "chat_topics": [
-      "TALK_CIVILIAN_PANIC"
-    ],
+    "species": [ "HUMAN" ],
+    "material": [ "flesh" ],
+    "weakpoint_sets": [ "wps_humanoid_body" ],
+    "chat_topics": [ "TALK_CIVILIAN_PANIC" ],
     "volume": "62500 ml",
     "weight": "81500 g",
     "hp": 75,
@@ -616,75 +311,31 @@
     "vision_night": 0,
     "melee_dice": 1,
     "melee_dice_sides": 2,
-    "melee_damage": [
-      {
-        "damage_type": "cut",
-        "amount": 3
-      }
-    ],
-    "families": [
-      "prof_intro_biology",
-      "prof_physiology"
-    ],
+    "melee_damage": [ { "damage_type": "cut", "amount": 3 } ],
+    "families": [ "prof_intro_biology", "prof_physiology" ],
     "diff": 0,
     "dodge": 1,
-    "death_function": {
-      "effect": {
-        "id": "death_guilt",
-        "min_level": 6
-      }
-    },
-    "path_settings": {
-      "max_dist": 30,
-      "allow_open_doors": false,
-      "avoid_traps": false,
-      "avoid_sharp": false
-    },
-    "upgrades": {
-      "half_life": 2,
-      "into": "mon_feral_human_teep"
-    },
-    "special_attacks": [
-      [
-        "PARROT_AT_DANGER",
-        5
-      ]
-    ],
+    "death_function": { "effect": { "id": "death_guilt", "min_level": 6 } },
+    "path_settings": { "max_dist": 30, "allow_open_doors": false, "avoid_traps": false, "avoid_sharp": false },
+    "upgrades": { "half_life": 2, "into": "mon_feral_human_teep" },
+    "special_attacks": [ [ "PARROT_AT_DANGER", 5 ] ],
     "death_drops": "default_zombie_death_drops",
     "zombify_into": "mon_zombie",
-    "flags": [
-      "SEES",
-      "HEARS",
-      "WARM",
-      "HUMAN",
-      "CAN_OPEN_DOORS",
-      "PATH_AVOID_DANGER_1",
-      "CONVERSATION"
-    ]
+    "flags": [ "SEES", "HEARS", "WARM", "HUMAN", "CAN_OPEN_DOORS", "PATH_AVOID_DANGER_1", "CONVERSATION" ]
   },
   {
     "id": "mon_civilian_teleporter",
     "type": "MONSTER",
     "copy-from": "mon_civilian_clairsentient",
-    "name": {
-      "str": "jittery jumper"
-    },
+    "name": { "str": "jittery jumper" },
     "description": "This person looks vacantly around them with a blank expression on their face.  Then, in an instant, they are gone.",
     "looks_like": "mon_dementia",
     "default_faction": "human",
     "bodytype": "human",
-    "species": [
-      "HUMAN"
-    ],
-    "material": [
-      "flesh"
-    ],
-    "weakpoint_sets": [
-      "wps_humanoid_body"
-    ],
-    "chat_topics": [
-      "TALK_CIVILIAN_PANIC"
-    ],
+    "species": [ "HUMAN" ],
+    "material": [ "flesh" ],
+    "weakpoint_sets": [ "wps_humanoid_body" ],
+    "chat_topics": [ "TALK_CIVILIAN_PANIC" ],
     "volume": "62500 ml",
     "weight": "81500 g",
     "hp": 75,
@@ -697,86 +348,40 @@
     "vision_night": 1,
     "melee_dice": 1,
     "melee_dice_sides": 2,
-    "melee_damage": [
-      {
-        "damage_type": "cut",
-        "amount": 3
-      }
-    ],
-    "families": [
-      "prof_intro_biology",
-      "prof_physiology"
-    ],
+    "melee_damage": [ { "damage_type": "cut", "amount": 3 } ],
+    "families": [ "prof_intro_biology", "prof_physiology" ],
     "diff": 0,
     "dodge": 1,
-    "death_function": {
-      "effect": {
-        "id": "death_guilt",
-        "min_level": 6
-      }
-    },
-    "path_settings": {
-      "max_dist": 30,
-      "allow_open_doors": false,
-      "avoid_traps": false,
-      "avoid_sharp": false
-    },
-    "upgrades": {
-      "half_life": 2,
-      "into": "mon_feral_human_porter"
-    },
+    "death_function": { "effect": { "id": "death_guilt", "min_level": 6 } },
+    "path_settings": { "max_dist": 30, "allow_open_doors": false, "avoid_traps": false, "avoid_sharp": false },
+    "upgrades": { "half_life": 2, "into": "mon_feral_human_porter" },
     "special_attacks": [
       {
         "id": "psi_civilian_teleport_blink",
         "type": "spell",
-        "spell_data": {
-          "id": "teleport_blink_monster",
-          "min_level": 0
-        },
+        "spell_data": { "id": "teleport_blink_monster", "min_level": 0 },
         "cooldown": 5,
-        "condition": {
-          "not": {
-            "u_has_effect": "effect_psi_null"
-          }
-        },
+        "condition": { "not": { "u_has_effect": "effect_psi_null" } },
         "monster_message": "%1$s suddenly vanishes!"
       }
     ],
     "death_drops": "default_zombie_death_drops",
     "zombify_into": "mon_zombie",
-    "flags": [
-      "SEES",
-      "HEARS",
-      "WARM",
-      "HUMAN",
-      "CAN_OPEN_DOORS",
-      "PATH_AVOID_DANGER_1",
-      "CONVERSATION"
-    ]
+    "flags": [ "SEES", "HEARS", "WARM", "HUMAN", "CAN_OPEN_DOORS", "PATH_AVOID_DANGER_1", "CONVERSATION" ]
   },
   {
     "id": "mon_civilian_vitakinetic",
     "type": "MONSTER",
     "copy-from": "mon_civilian_clairsentient",
-    "name": {
-      "str": "confused curer"
-    },
+    "name": { "str": "confused curer" },
     "description": "This person mutters to themselves, glancing to and fro with bloodshot eyes.  They seem remarkably unscathed for someone in the midst of the apocalypse.",
     "looks_like": "mon_dementia",
     "default_faction": "human",
     "bodytype": "human",
-    "species": [
-      "HUMAN"
-    ],
-    "material": [
-      "flesh"
-    ],
-    "weakpoint_sets": [
-      "wps_humanoid_body"
-    ],
-    "chat_topics": [
-      "TALK_CIVILIAN_PANIC"
-    ],
+    "species": [ "HUMAN" ],
+    "material": [ "flesh" ],
+    "weakpoint_sets": [ "wps_humanoid_body" ],
+    "chat_topics": [ "TALK_CIVILIAN_PANIC" ],
     "volume": "62500 ml",
     "weight": "81500 g",
     "hp": 90,
@@ -789,57 +394,18 @@
     "vision_night": 1,
     "melee_dice": 1,
     "melee_dice_sides": 2,
-    "melee_damage": [
-      {
-        "damage_type": "cut",
-        "amount": 3
-      }
-    ],
-    "families": [
-      "prof_intro_biology",
-      "prof_physiology"
-    ],
+    "melee_damage": [ { "damage_type": "cut", "amount": 3 } ],
+    "families": [ "prof_intro_biology", "prof_physiology" ],
     "diff": 0,
     "dodge": 1,
-    "death_function": {
-      "effect": {
-        "id": "death_guilt",
-        "min_level": 6
-      }
-    },
-    "path_settings": {
-      "max_dist": 30,
-      "allow_open_doors": false,
-      "avoid_traps": false,
-      "avoid_sharp": false
-    },
-    "upgrades": {
-      "half_life": 2,
-      "into": "mon_feral_human_vita"
-    },
-    "special_attacks": [
-      [
-        "PARROT_AT_DANGER",
-        10
-      ]
-    ],
+    "death_function": { "effect": { "id": "death_guilt", "min_level": 6 } },
+    "path_settings": { "max_dist": 30, "allow_open_doors": false, "avoid_traps": false, "avoid_sharp": false },
+    "upgrades": { "half_life": 2, "into": "mon_feral_human_vita" },
+    "special_attacks": [ [ "PARROT_AT_DANGER", 10 ] ],
     "death_drops": "default_zombie_death_drops",
     "zombify_into": "mon_zombie",
-    "flags": [
-      "SEES",
-      "HEARS",
-      "WARM",
-      "HUMAN",
-      "CAN_OPEN_DOORS",
-      "PATH_AVOID_DANGER_1",
-      "CONVERSATION"
-    ],
+    "flags": [ "SEES", "HEARS", "WARM", "HUMAN", "CAN_OPEN_DOORS", "PATH_AVOID_DANGER_1", "CONVERSATION" ],
     "regenerates": 5,
-    "regeneration_modifiers": [
-      [
-        "effect_vitakin_hurt",
-        -3
-      ]
-    ]
+    "regeneration_modifiers": [ [ "effect_vitakin_hurt", -3 ] ]
   }
 ]

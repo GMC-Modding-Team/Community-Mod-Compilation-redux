@@ -12,205 +12,58 @@
   {
     "type": "npc_class",
     "id": "fo_bos_paladin_npc",
-    "name": {
-      "str": "BoS Paladin"
-    },
+    "name": { "str": "BoS Paladin" },
     "job_description": "Is a paladin of the Brotherhood of Steel.",
-    "traits": [
-      {
-        "group": "NPC_starting_traits"
-      },
-      {
-        "group": "Hair_Any"
-      }
-    ],
+    "traits": [ { "group": "NPC_starting_traits" }, { "group": "Hair_Any" } ],
     "common": false,
-    "bonus_str": {
-      "rng": [
-        -3,
-        3
-      ]
-    },
-    "bonus_dex": {
-      "rng": [
-        -3,
-        3
-      ]
-    },
-    "bonus_int": {
-      "rng": [
-        -3,
-        3
-      ]
-    },
-    "bonus_per": {
-      "rng": [
-        -3,
-        3
-      ]
-    },
+    "bonus_str": { "rng": [ -3, 3 ] },
+    "bonus_dex": { "rng": [ -3, 3 ] },
+    "bonus_int": { "rng": [ -3, 3 ] },
+    "bonus_per": { "rng": [ -3, 3 ] },
     "worn_override": "NC_BOSPAL_worn",
     "carry_override": "NC_BOSPAL_carry",
     "weapon_override": "NC_BOSPAL_weapon",
     "skills": [
-      {
-        "skill": "ALL",
-        "level": {
-          "sum": [
-            {
-              "dice": [
-                3,
-                2
-              ]
-            },
-            {
-              "constant": -2
-            }
-          ]
-        }
-      },
-      {
-        "skill": "dodge",
-        "bonus": {
-          "rng": [
-            1,
-            2
-          ]
-        }
-      },
-      {
-        "skill": "melee",
-        "bonus": {
-          "rng": [
-            1,
-            2
-          ]
-        }
-      },
-      {
-        "skill": "unarmed",
-        "bonus": {
-          "rng": [
-            0,
-            2
-          ]
-        }
-      },
-      {
-        "skill": "rifle",
-        "bonus": {
-          "rng": [
-            0,
-            2
-          ]
-        }
-      },
-      {
-        "skill": "mechanics",
-        "bonus": {
-          "rng": [
-            0,
-            2
-          ]
-        }
-      },
-      {
-        "skill": "electronics",
-        "bonus": {
-          "rng": [
-            0,
-            2
-          ]
-        }
-      },
-      {
-        "skill": "gun",
-        "bonus": {
-          "rng": [
-            0,
-            2
-          ]
-        }
-      },
-      {
-        "skill": "firstaid",
-        "bonus": {
-          "rng": [
-            1,
-            2
-          ]
-        }
-      },
-      {
-        "skill": "fabrication",
-        "bonus": {
-          "rng": [
-            1,
-            2
-          ]
-        }
-      },
-      {
-        "skill": "survival",
-        "bonus": {
-          "rng": [
-            1,
-            2
-          ]
-        }
-      }
+      { "skill": "ALL", "level": { "sum": [ { "dice": [ 3, 2 ] }, { "constant": -2 } ] } },
+      { "skill": "dodge", "bonus": { "rng": [ 1, 2 ] } },
+      { "skill": "melee", "bonus": { "rng": [ 1, 2 ] } },
+      { "skill": "unarmed", "bonus": { "rng": [ 0, 2 ] } },
+      { "skill": "rifle", "bonus": { "rng": [ 0, 2 ] } },
+      { "skill": "mechanics", "bonus": { "rng": [ 0, 2 ] } },
+      { "skill": "electronics", "bonus": { "rng": [ 0, 2 ] } },
+      { "skill": "gun", "bonus": { "rng": [ 0, 2 ] } },
+      { "skill": "firstaid", "bonus": { "rng": [ 1, 2 ] } },
+      { "skill": "fabrication", "bonus": { "rng": [ 1, 2 ] } },
+      { "skill": "survival", "bonus": { "rng": [ 1, 2 ] } }
     ]
   },
   {
     "type": "item_group",
     "id": "NC_BOSPAL_worn",
     "subtype": "collection",
-    "items": [
-      {
-        "group": "fallout_glow_power_armor_choice"
-      }
-    ]
+    "items": [ { "group": "fallout_glow_power_armor_choice" } ]
   },
   {
     "type": "talk_topic",
     "id": "TALK_bos_paladin_start",
     "dynamic_line": "Hey there.  Oh, hey, it's you again.  Anything to report?  You're back, Did you find any tech in the wastes?  Hello there, fellow member of the brotherhood.  Who are you?  What are you doing here?  Shouldn't you be banging rocks together, local?  If you think you're getting in, think again.",
     "responses": [
-      {
-        "text": "Who are you, what are you doing here?",
-        "topic": "TALK_bos_paladin_2"
-      },
-      {
-        "text": "What is the Brotherhood of Steel?",
-        "topic": "TALK_bos_paladin_3"
-      },
-      {
-        "text": "Goodbye.",
-        "topic": "TALK_DONE"
-      }
+      { "text": "Who are you, what are you doing here?", "topic": "TALK_bos_paladin_2" },
+      { "text": "What is the Brotherhood of Steel?", "topic": "TALK_bos_paladin_3" },
+      { "text": "Goodbye.", "topic": "TALK_DONE" }
     ]
   },
   {
     "id": "TALK_bos_paladin_2",
     "type": "talk_topic",
     "dynamic_line": "I'm a paladin for the Brotherhood of Steel.  I have been posted at this outpost's gate to defend it from all potential assailants.",
-    "responses": [
-      {
-        "text": "Thanks for the info.",
-        "topic": "TALK_DONE"
-      }
-    ]
+    "responses": [ { "text": "Thanks for the info.", "topic": "TALK_DONE" } ]
   },
   {
     "id": "TALK_bos_paladin_3",
     "type": "talk_topic",
     "dynamic_line": "We're an organization principally devoted to the preservation of the old world's technology.  As I'm sure you can tell, most people out in the wastes now can't appreciate the more refined arts and sciences of the past, and the herculean task of maintaining such delicate technology falls to us and us alone.",
-    "responses": [
-      {
-        "text": "Thanks for the info.",
-        "topic": "TALK_DONE"
-      }
-    ]
+    "responses": [ { "text": "Thanks for the info.", "topic": "TALK_DONE" } ]
   },
   {
     "type": "npc",
@@ -225,153 +78,29 @@
   {
     "type": "npc_class",
     "id": "fo_bos_paladin_base_npc",
-    "name": {
-      "str": "BoS Paladin"
-    },
+    "name": { "str": "BoS Paladin" },
     "job_description": "Is a paladin of the Brotherhood of Steel.",
-    "traits": [
-      {
-        "group": "NPC_starting_traits"
-      },
-      {
-        "group": "Hair_Any"
-      }
-    ],
+    "traits": [ { "group": "NPC_starting_traits" }, { "group": "Hair_Any" } ],
     "common": false,
-    "bonus_str": {
-      "rng": [
-        -3,
-        3
-      ]
-    },
-    "bonus_dex": {
-      "rng": [
-        -3,
-        3
-      ]
-    },
-    "bonus_int": {
-      "rng": [
-        -3,
-        3
-      ]
-    },
-    "bonus_per": {
-      "rng": [
-        -3,
-        3
-      ]
-    },
+    "bonus_str": { "rng": [ -3, 3 ] },
+    "bonus_dex": { "rng": [ -3, 3 ] },
+    "bonus_int": { "rng": [ -3, 3 ] },
+    "bonus_per": { "rng": [ -3, 3 ] },
     "worn_override": "NC_BOSPAL_worn",
     "carry_override": "NC_BOSPAL_carry",
     "weapon_override": "NC_BOSPALBASE_weapon",
     "skills": [
-      {
-        "skill": "ALL",
-        "level": {
-          "sum": [
-            {
-              "dice": [
-                3,
-                2
-              ]
-            },
-            {
-              "constant": -2
-            }
-          ]
-        }
-      },
-      {
-        "skill": "dodge",
-        "bonus": {
-          "rng": [
-            1,
-            2
-          ]
-        }
-      },
-      {
-        "skill": "melee",
-        "bonus": {
-          "rng": [
-            1,
-            2
-          ]
-        }
-      },
-      {
-        "skill": "unarmed",
-        "bonus": {
-          "rng": [
-            0,
-            2
-          ]
-        }
-      },
-      {
-        "skill": "rifle",
-        "bonus": {
-          "rng": [
-            0,
-            2
-          ]
-        }
-      },
-      {
-        "skill": "mechanics",
-        "bonus": {
-          "rng": [
-            0,
-            2
-          ]
-        }
-      },
-      {
-        "skill": "electronics",
-        "bonus": {
-          "rng": [
-            0,
-            2
-          ]
-        }
-      },
-      {
-        "skill": "gun",
-        "bonus": {
-          "rng": [
-            0,
-            2
-          ]
-        }
-      },
-      {
-        "skill": "firstaid",
-        "bonus": {
-          "rng": [
-            1,
-            2
-          ]
-        }
-      },
-      {
-        "skill": "fabrication",
-        "bonus": {
-          "rng": [
-            1,
-            2
-          ]
-        }
-      },
-      {
-        "skill": "survival",
-        "bonus": {
-          "rng": [
-            1,
-            2
-          ]
-        }
-      }
+      { "skill": "ALL", "level": { "sum": [ { "dice": [ 3, 2 ] }, { "constant": -2 } ] } },
+      { "skill": "dodge", "bonus": { "rng": [ 1, 2 ] } },
+      { "skill": "melee", "bonus": { "rng": [ 1, 2 ] } },
+      { "skill": "unarmed", "bonus": { "rng": [ 0, 2 ] } },
+      { "skill": "rifle", "bonus": { "rng": [ 0, 2 ] } },
+      { "skill": "mechanics", "bonus": { "rng": [ 0, 2 ] } },
+      { "skill": "electronics", "bonus": { "rng": [ 0, 2 ] } },
+      { "skill": "gun", "bonus": { "rng": [ 0, 2 ] } },
+      { "skill": "firstaid", "bonus": { "rng": [ 1, 2 ] } },
+      { "skill": "fabrication", "bonus": { "rng": [ 1, 2 ] } },
+      { "skill": "survival", "bonus": { "rng": [ 1, 2 ] } }
     ]
   },
   {
@@ -379,34 +108,12 @@
     "id": "NC_BOSPALBASE_weapon",
     "subtype": "collection",
     "items": [
-      {
-        "item": "light_plus_battery_cell",
-        "charges": 150,
-        "prob": 5
-      },
-      {
-        "item": "light_plus_battery_cell",
-        "charges": 150,
-        "prob": 25
-      },
-      {
-        "item": "wattz_2000",
-        "prob": 25
-      },
-      {
-        "item": "medium_battery_cell",
-        "charges": 500,
-        "prob": 25
-      },
-      {
-        "item": "medium_battery_cell",
-        "charges": 500,
-        "prob": 9
-      },
-      {
-        "item": "hk_l30",
-        "prob": 5
-      }
+      { "item": "light_plus_battery_cell", "charges": 150, "prob": 5 },
+      { "item": "light_plus_battery_cell", "charges": 150, "prob": 25 },
+      { "item": "wattz_2000", "prob": 25 },
+      { "item": "medium_battery_cell", "charges": 500, "prob": 25 },
+      { "item": "medium_battery_cell", "charges": 500, "prob": 9 },
+      { "item": "hk_l30", "prob": 5 }
     ]
   }
 ]

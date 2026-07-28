@@ -8,29 +8,9 @@
         "topic": "TALK_REFUGEE_Boris_CF_REP_MISSION_4",
         "condition": {
           "and": [
-            {
-              "not": {
-                "compare_string": [
-                  "yes",
-                  {
-                    "u_val": "sofia_allies_secured"
-                  }
-                ]
-              }
-            },
-            {
-              "not": {
-                "compare_string": [
-                  "yes",
-                  {
-                    "npc_val": "sofia_refugee_convinced"
-                  }
-                ]
-              }
-            },
-            {
-              "u_has_mission": "MISSION_CF_REP_4"
-            }
+            { "not": { "compare_string": [ "yes", { "u_val": "sofia_allies_secured" } ] } },
+            { "not": { "compare_string": [ "yes", { "npc_val": "sofia_refugee_convinced" } ] } },
+            { "u_has_mission": "MISSION_CF_REP_4" }
           ]
         }
       }
@@ -44,23 +24,13 @@
       {
         "text": "It's a different community actually.  Smaller, but fortified and starting to become self-sufficient.",
         "topic": "TALK_REFUGEE_Boris_CF_REP_MISSION_4_UNKNOWN",
-        "condition": {
-          "compare_string": [
-            "yes",
-            {
-              "u_val": "knowledge_flag_tacoma_started"
-            }
-          ]
-        }
+        "condition": { "compare_string": [ "yes", { "u_val": "knowledge_flag_tacoma_started" } ] }
       },
       {
         "text": "Understandable.  Know anyone else who might be able to make the trip?",
         "topic": "TALK_REFUGEE_Boris_CF_REP_MISSION_4_HELP"
       },
-      {
-        "text": "Oh, okay.  Never mind then.",
-        "topic": "TALK_REFUGEE_Boris_1"
-      }
+      { "text": "Oh, okay.  Never mind then.", "topic": "TALK_REFUGEE_Boris_1" }
     ]
   },
   {
@@ -68,14 +38,8 @@
     "id": "TALK_REFUGEE_Boris_CF_REP_MISSION_4_UNKNOWN",
     "dynamic_line": "I can't afford to gamble my life, and the life of those I still have left, on a place I know nothing about.  I'm sorry.",
     "responses": [
-      {
-        "text": "Do you know if anyone else might be able to help?",
-        "topic": "TALK_REFUGEE_Boris_CF_REP_MISSION_4_HELP"
-      },
-      {
-        "text": "It's fine.  I'd better get going.",
-        "topic": "TALK_DONE"
-      }
+      { "text": "Do you know if anyone else might be able to help?", "topic": "TALK_REFUGEE_Boris_CF_REP_MISSION_4_HELP" },
+      { "text": "It's fine.  I'd better get going.", "topic": "TALK_DONE" }
     ]
   },
   {
@@ -87,10 +51,7 @@
         "text": "If you get the chance, could you help spread the word that another place is looking for people to work for them?",
         "topic": "TALK_REFUGEE_Boris_CF_REP_MISSION_4_OFFER"
       },
-      {
-        "text": "I'll see if I can figure something out.",
-        "topic": "TALK_REFUGEE_Boris_1"
-      }
+      { "text": "I'll see if I can figure something out.", "topic": "TALK_REFUGEE_Boris_1" }
     ]
   },
   {
@@ -102,10 +63,7 @@
         "text": "A local group of monster hunters operating out of a roadside parish church, that they've started fortifying and building additional buildings near.",
         "topic": "TALK_REFUGEE_Boris_CF_REP_MISSION_4_DEAL"
       },
-      {
-        "text": "On second thought, I might be able to work something else out.",
-        "topic": "TALK_REFUGEE_Boris_1"
-      }
+      { "text": "On second thought, I might be able to work something else out.", "topic": "TALK_REFUGEE_Boris_1" }
     ]
   },
   {
@@ -116,10 +74,7 @@
       {
         "text": "I've asked a couple others already, hopefully that should help.  I should probably check on the outpost.",
         "effect": [
-          {
-            "u_add_var": "sofia_allies_secured",
-            "value": "yes"
-          },
+          { "u_add_var": "sofia_allies_secured", "value": "yes" },
           {
             "mapgen_update": "arcana_cf_4_wasteland_scavengers_1",
             "om_terrain": "cf_church_1",
@@ -130,62 +85,28 @@
             "om_terrain": "cf_church_3",
             "om_special": "cf_rural_church"
           },
-          {
-            "mapgen_update": "arcana_cf_4_roof_1",
-            "om_terrain": "cf_church_1_roof",
-            "om_special": "cf_rural_church"
-          },
-          {
-            "mapgen_update": "arcana_cf_4_roof_2",
-            "om_terrain": "cf_church_3_roof",
-            "om_special": "cf_rural_church"
-          }
+          { "mapgen_update": "arcana_cf_4_roof_1", "om_terrain": "cf_church_1_roof", "om_special": "cf_rural_church" },
+          { "mapgen_update": "arcana_cf_4_roof_2", "om_terrain": "cf_church_3_roof", "om_special": "cf_rural_church" }
         ],
-        "condition": {
-          "compare_string": [
-            "yes",
-            {
-              "u_val": "sofia_ally_seeking_2"
-            }
-          ]
-        },
+        "condition": { "compare_string": [ "yes", { "u_val": "sofia_ally_seeking_2" } ] },
         "switch": true,
         "topic": "TALK_DONE"
       },
       {
         "text": "Thank you.  I'll keep at it for now.",
         "effect": [
-          {
-            "u_add_var": "sofia_ally_seeking_2",
-            "value": "yes"
-          },
-          {
-            "npc_add_var": "sofia_refugee_convinced",
-            "value": "yes"
-          }
+          { "u_add_var": "sofia_ally_seeking_2", "value": "yes" },
+          { "npc_add_var": "sofia_refugee_convinced", "value": "yes" }
         ],
-        "condition": {
-          "compare_string": [
-            "yes",
-            {
-              "u_val": "sofia_ally_seeking_1"
-            }
-          ]
-        },
+        "condition": { "compare_string": [ "yes", { "u_val": "sofia_ally_seeking_1" } ] },
         "switch": true,
         "topic": "TALK_DONE"
       },
       {
         "text": "Thank you.  I'll keep asking around to see where this goes.",
         "effect": [
-          {
-            "u_add_var": "sofia_ally_seeking_1",
-            "value": "yes"
-          },
-          {
-            "npc_add_var": "sofia_refugee_convinced",
-            "value": "yes"
-          }
+          { "u_add_var": "sofia_ally_seeking_1", "value": "yes" },
+          { "npc_add_var": "sofia_refugee_convinced", "value": "yes" }
         ],
         "switch": true,
         "default": true,

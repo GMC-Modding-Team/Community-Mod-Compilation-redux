@@ -7,85 +7,33 @@
     "subcategory": "CSC_OTHER_MEDICAL",
     "skill_used": "firstaid",
     "difficulty": 5,
-    "skills_required": [
-      "electronics",
-      4
-    ],
+    "skills_required": [ "electronics", 4 ],
     "time": "240 m",
-    "qualities": [
-      {
-        "id": "SEW",
-        "level": 2
-      },
-      {
-        "id": "SAW_M",
-        "level": 2
-      },
-      {
-        "id": "JUMPSTART",
-        "level": 1
-      }
-    ],
-    "components": [
-      [
-        [
-          "meat_tainted",
-          180
-        ]
-      ],
-      [
-        [
-          "bone_tainted",
-          80
-        ]
-      ],
-      [
-        [
-          "pipe",
-          2
-        ]
-      ]
-    ],
-    "flags": [
-      "SECRET"
-    ]
+    "qualities": [ { "id": "SEW", "level": 2 }, { "id": "SAW_M", "level": 2 }, { "id": "JUMPSTART", "level": 1 } ],
+    "components": [ [ [ "meat_tainted", 180 ] ], [ [ "bone_tainted", 80 ] ], [ [ "pipe", 2 ] ] ],
+    "flags": [ "SECRET" ]
   },
   {
     "type": "effect_on_condition",
     "id": "EOC_frankenstein_insight",
-    "condition": {
-      "u_know_recipe": "meat_hunk"
-    },
-    "effect": [
-      {
-        "u_message": "You have already mastered the art of bringing back the undead!"
-      }
-    ],
+    "condition": { "u_know_recipe": "meat_hunk" },
+    "effect": [ { "u_message": "You have already mastered the art of bringing back the undead!" } ],
     "false_effect": [
-      {
-        "u_message": "With a flash of insight you now understand how to bring the dead back to life!"
-      },
-      {
-        "u_learn_recipe": "meat_hunk"
-      }
+      { "u_message": "With a flash of insight you now understand how to bring the dead back to life!" },
+      { "u_learn_recipe": "meat_hunk" }
     ]
   },
   {
     "id": "meat_hunk",
     "type": "TOOL",
-    "name": {
-      "str": "homunculus",
-      "str_pl": "homunculi"
-    },
+    "name": { "str": "homunculus", "str_pl": "homunculi" },
     "description": "A stitched together monstrosity of meat and bone, with limbs as wide as trash cans.  This one is still sleeping.  It would require a master's touch to bring it to life.",
     "volume": "875000 ml",
     "weight": "200 kg",
     "price": 0,
     "price_postapoc": 0,
     "to_hit": -3,
-    "material": [
-      "flesh"
-    ],
+    "material": [ "flesh" ],
     "symbol": ";",
     "color": "white",
     "use_action": {
@@ -95,82 +43,43 @@
       "hostile_msg": "",
       "difficulty": 0,
       "moves": 150,
-      "skills": [
-        "electronics",
-        "firstaid"
-      ]
+      "skills": [ "electronics", "firstaid" ]
     },
-    "flags": [
-      "SINGLE_USE"
-    ],
-    "melee_damage": {
-      "bash": 8
-    }
+    "flags": [ "SINGLE_USE" ],
+    "melee_damage": { "bash": 8 }
   },
   {
     "id": "mon_meat_hunk",
     "type": "MONSTER",
-    "name": {
-      "str": "homunculus",
-      "str_pl": "homunculi"
-    },
+    "name": { "str": "homunculus", "str_pl": "homunculi" },
     "description": "A stitched together monstrosity of meat and bone, with limbs as wide as trash cans.",
     "default_faction": "player",
     "bodytype": "human",
-    "species": [
-      "ZOMBIE",
-      "HUMAN"
-    ],
+    "species": [ "ZOMBIE", "HUMAN" ],
     "diff": 5,
     "volume": "875000 ml",
     "weight": "200 kg",
     "hp": 150,
     "speed": 130,
-    "material": [
-      "flesh"
-    ],
+    "material": [ "flesh" ],
     "symbol": "Z",
     "color": "white",
-    "scents_tracked": [
-      "sc_human",
-      "sc_fetid"
-    ],
+    "scents_tracked": [ "sc_human", "sc_fetid" ],
     "aggression": 100,
     "morale": 100,
     "melee_skill": 5,
     "melee_dice": 4,
     "melee_dice_sides": 8,
     "weakpoints": [
-      {
-        "name": "the head",
-        "armor_mult": {
-          "physical": 0.5
-        },
-        "coverage": 3
-      },
-      {
-        "name": "the eye",
-        "armor_mult": {
-          "physical": 0
-        },
-        "coverage": 1
-      }
+      { "name": "the head", "armor_mult": { "physical": 0.5 }, "coverage": 3 },
+      { "name": "the eye", "armor_mult": { "physical": 0 }, "coverage": 1 }
     ],
-    "families": [
-      "prof_intro_biology",
-      "prof_wp_zombie",
-      "prof_wp_hulk"
-    ],
+    "families": [ "prof_intro_biology", "prof_wp_zombie", "prof_wp_hulk" ],
     "bleed_rate": 0,
     "vision_day": 83,
     "vision_night": 4,
     "harvest": "zombie",
-    "special_attacks": [
-      {
-        "id": "smash",
-        "throw_strength": 96
-      }
-    ],
+    "special_attacks": [ { "id": "smash", "throw_strength": 96 } ],
     "fungalize_into": "mon_zombie_fungus",
     "flags": [
       "SEES",
@@ -186,11 +95,6 @@
       "PUSH_VEH",
       "FILTHY"
     ],
-    "armor": {
-      "bash": 4,
-      "cut": 4,
-      "bullet": 4,
-      "electric": 2
-    }
+    "armor": { "bash": 4, "cut": 4, "bullet": 4, "electric": 2 }
   }
 ]

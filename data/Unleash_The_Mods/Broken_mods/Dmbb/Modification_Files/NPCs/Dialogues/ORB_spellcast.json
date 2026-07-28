@@ -8,135 +8,66 @@
       "topic": "TALK_DONE",
       "condition": {
         "and": [
-          {
-            "npc_has_trait": "DMBB_ORB_stunner"
-          },
-          {
-            "u_has_effect": "dmbb_timelimit"
-          },
-          {
-            "not": {
-              "u_has_effect": "dmbb_act_blindingflash_cd"
-            }
-          }
+          { "npc_has_trait": "DMBB_ORB_stunner" },
+          { "u_has_effect": "dmbb_timelimit" },
+          { "not": { "u_has_effect": "dmbb_act_blindingflash_cd" } }
         ]
       },
-      "effect": [
-        {
-          "u_buy_monster": "mon_dmbb_bless_blindingflash"
-        },
-        {
-          "u_add_effect": "dmbb_act_blindingflash_cd",
-          "duration": 90
-        }
-      ]
+      "effect": [ { "u_buy_monster": "mon_dmbb_bless_blindingflash" }, { "u_add_effect": "dmbb_act_blindingflash_cd", "duration": 90 } ]
     },
     {
       "text": "Activate \"Shockstorm\"",
       "topic": "TALK_DONE",
       "condition": {
         "and": [
-          {
-            "not": {
-              "u_has_var": "dmbb_orb",
-              "type": "research",
-              "context": "turret_shock1",
-              "value": "yes"
-            }
-          },
-          {
-            "npc_has_trait": "DMBB_ORB_shockstorm"
-          },
-          {
-            "u_has_effect": "dmbb_timelimit"
-          },
-          {
-            "not": {
-              "u_has_effect": "dmbb_act_shockstorm_cd"
-            }
-          }
+          { "not": { "u_has_var": "dmbb_orb", "type": "research", "context": "turret_shock1", "value": "yes" } },
+          { "npc_has_trait": "DMBB_ORB_shockstorm" },
+          { "u_has_effect": "dmbb_timelimit" },
+          { "not": { "u_has_effect": "dmbb_act_shockstorm_cd" } }
         ]
       },
-      "effect": [
-        {
-          "u_buy_monster": "mon_dmbb_bless_shockstorm"
-        },
-        {
-          "u_add_effect": "dmbb_act_shockstorm_cd",
-          "duration": 40
-        }
-      ]
+      "effect": [ { "u_buy_monster": "mon_dmbb_bless_shockstorm" }, { "u_add_effect": "dmbb_act_shockstorm_cd", "duration": 40 } ]
     },
     {
       "text": "Activate \"Inferno\"",
       "topic": "TALK_DONE",
       "condition": {
         "and": [
-          {
-            "not": {
-              "u_has_var": "dmbb_orb",
-              "type": "research",
-              "context": "turret_fire1",
-              "value": "yes"
-            }
-          },
-          {
-            "npc_has_trait": "DMBB_ORB_inferno"
-          },
-          {
-            "u_has_effect": "dmbb_timelimit"
-          },
-          {
-            "not": {
-              "u_has_effect": "dmbb_act_inferno_cd"
-            }
-          }
+          { "not": { "u_has_var": "dmbb_orb", "type": "research", "context": "turret_fire1", "value": "yes" } },
+          { "npc_has_trait": "DMBB_ORB_inferno" },
+          { "u_has_effect": "dmbb_timelimit" },
+          { "not": { "u_has_effect": "dmbb_act_inferno_cd" } }
         ]
       },
-      "effect": [
-        {
-          "u_buy_monster": "mon_dmbb_bless_inferno"
-        },
-        {
-          "u_add_effect": "dmbb_act_inferno_cd",
-          "duration": 100
-        }
-      ]
+      "effect": [ { "u_buy_monster": "mon_dmbb_bless_inferno" }, { "u_add_effect": "dmbb_act_inferno_cd", "duration": 100 } ]
     },
     {
       "text": "Activate \"Blizzard\"",
       "topic": "TALK_DONE",
       "condition": {
         "and": [
-          {
-            "not": {
-              "u_has_var": "dmbb_orb",
-              "type": "research",
-              "context": "turret_ice1",
-              "value": "yes"
-            }
-          },
-          {
-            "npc_has_trait": "DMBB_ORB_blizzard"
-          },
-          {
-            "u_has_effect": "dmbb_timelimit"
-          },
-          {
-            "not": {
-              "u_has_effect": "dmbb_act_blizzard_cd"
-            }
-          }
+          { "not": { "u_has_var": "dmbb_orb", "type": "research", "context": "turret_ice1", "value": "yes" } },
+          { "npc_has_trait": "DMBB_ORB_blizzard" },
+          { "u_has_effect": "dmbb_timelimit" },
+          { "not": { "u_has_effect": "dmbb_act_blizzard_cd" } }
+        ]
+      },
+      "effect": [ { "u_buy_monster": "mon_dmbb_bless_blizzard" }, { "u_add_effect": "dmbb_act_blizzard_cd", "duration": 75 } ]
+    },
+    {
+      "text": "Activate \"Barrier\"",
+      "topic": "TALK_DONE",
+      "condition": {
+        "and": [
+          { "npc_has_trait": "DMBB_ORB_barrier" },
+          { "not": { "npc_has_trait": "DMBB_ORB_barrier_plus" } },
+          { "u_has_effect": "dmbb_timelimit" },
+          { "not": { "u_has_effect": "dmbb_act_barrier_cd" } }
         ]
       },
       "effect": [
-        {
-          "u_buy_monster": "mon_dmbb_bless_blizzard"
-        },
-        {
-          "u_add_effect": "dmbb_act_blizzard_cd",
-          "duration": 75
-        }
+        { "mapgen_update": "dmbb_orb_barrier", "om_terrain": "dmbb_arena_5", "om_special": "DMBB Arena" },
+        { "u_add_effect": "dmbb_act_barrier_cd", "duration": 200 }
       ]
     },
     {
@@ -144,72 +75,16 @@
       "topic": "TALK_DONE",
       "condition": {
         "and": [
-          {
-            "npc_has_trait": "DMBB_ORB_barrier"
-          },
-          {
-            "not": {
-              "npc_has_trait": "DMBB_ORB_barrier_plus"
-            }
-          },
-          {
-            "u_has_effect": "dmbb_timelimit"
-          },
-          {
-            "not": {
-              "u_has_effect": "dmbb_act_barrier_cd"
-            }
-          }
+          { "npc_has_trait": "DMBB_ORB_barrier" },
+          { "npc_has_trait": "DMBB_ORB_barrier_plus" },
+          { "u_has_effect": "dmbb_timelimit" },
+          { "not": { "u_has_effect": "dmbb_act_barrier_cd" } }
         ]
       },
       "effect": [
-        {
-          "mapgen_update": "dmbb_orb_barrier",
-          "om_terrain": "dmbb_arena_5",
-          "om_special": "DMBB Arena"
-        },
-        {
-          "u_add_effect": "dmbb_act_barrier_cd",
-          "duration": 200
-        }
-      ]
-    },
-    {
-      "text": "Activate \"Barrier\"",
-      "topic": "TALK_DONE",
-      "condition": {
-        "and": [
-          {
-            "npc_has_trait": "DMBB_ORB_barrier"
-          },
-          {
-            "npc_has_trait": "DMBB_ORB_barrier_plus"
-          },
-          {
-            "u_has_effect": "dmbb_timelimit"
-          },
-          {
-            "not": {
-              "u_has_effect": "dmbb_act_barrier_cd"
-            }
-          }
-        ]
-      },
-      "effect": [
-        {
-          "mapgen_update": "dmbb_orb_barrier",
-          "om_terrain": "dmbb_arena_5",
-          "om_special": "DMBB Arena"
-        },
-        {
-          "mapgen_update": "dmbb_orb_barrier_plus",
-          "om_terrain": "dmbb_arena_5",
-          "om_special": "DMBB Arena"
-        },
-        {
-          "u_add_effect": "dmbb_act_barrier_cd",
-          "duration": 200
-        }
+        { "mapgen_update": "dmbb_orb_barrier", "om_terrain": "dmbb_arena_5", "om_special": "DMBB Arena" },
+        { "mapgen_update": "dmbb_orb_barrier_plus", "om_terrain": "dmbb_arena_5", "om_special": "DMBB Arena" },
+        { "u_add_effect": "dmbb_act_barrier_cd", "duration": 200 }
       ]
     },
     {
@@ -217,32 +92,13 @@
       "topic": "TALK_DONE",
       "condition": {
         "and": [
-          {
-            "npc_has_trait": "DMBB_ORB_judgment"
-          },
-          {
-            "u_has_effect": "dmbb_timelimit"
-          },
-          {
-            "not": {
-              "u_has_effect": "dmbb_act_judgment_cd"
-            }
-          }
+          { "npc_has_trait": "DMBB_ORB_judgment" },
+          { "u_has_effect": "dmbb_timelimit" },
+          { "not": { "u_has_effect": "dmbb_act_judgment_cd" } }
         ]
       },
-      "effect": [
-        {
-          "u_buy_monster": "mon_dmbb_bless_judgment"
-        },
-        {
-          "u_add_effect": "dmbb_act_judgment_cd",
-          "duration": 1000
-        }
-      ]
+      "effect": [ { "u_buy_monster": "mon_dmbb_bless_judgment" }, { "u_add_effect": "dmbb_act_judgment_cd", "duration": 1000 } ]
     },
-    {
-      "text": "< - - -",
-      "topic": "TALK_DMBB_ORB"
-    }
+    { "text": "< - - -", "topic": "TALK_DMBB_ORB" }
   ]
 }
