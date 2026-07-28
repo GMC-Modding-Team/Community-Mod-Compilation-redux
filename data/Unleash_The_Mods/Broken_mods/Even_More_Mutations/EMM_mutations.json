@@ -6,11 +6,9 @@
     "points": 3,
     "description": "If you feel like your exoskeleton is getting too tight, you may choose to shed it. Doing so will produce chitin chunks, useful for crafting.  Activate to shed your carapace.",
     "threshreq": [ "THRESH_SPIDER", "THRESH_CRAB", "THRESH_INSECT" ],
-    "category": [ "SPIDER", "INSECT", "CRAB" ],
+    "category": [ "SPIDER", "INSECT", "CRUSTACEAN" ],
     "active": true,
     "cost": 100,
-    "hunger": true,
-    "thirst": false,
     "prereqs": [ "CHITIN2", "CHITIN3", "CHITIN4", "CHITIN_FUR", "CHITIN_FUR2", "CHITIN_FUR3" ],
     "spawn_item": { "type": "chitin_piece", "message": "You shed your old exoskeleton.  You are feeling fresh." }
   },
@@ -50,7 +48,7 @@
     "prereqs": [ "TAIL_STUB" ],
     "cancels": [ "TAIL_FIN", "TAIL_THICK", "TAIL_RAPTOR", "TAIL_SNAKE" ],
     "changes_to": [ "TAIL_FLUFFY", "TAIL_STING", "TAIL_CLUB", "TAIL_CATTLE", "TAIL_RAT" ],
-    "category": [ "FELINE", "BEAST", "LUPINE", "INSECT", "CHIMERA", "CATTLE", "RAT", "MOUSE" ],
+    "category": [ "FELINE", "LUPINE", "INSECT", "CATTLE", "RAT", "MOUSE", "CHIMERA" ],
     "restricts_gear": [ "leg_l", "leg_r" ],
     "allow_soft_gear": true
   },
@@ -126,7 +124,7 @@
     "description": "You have a long, fluffy-furred tail.  It greatly improves your balance, making your ability to dodge much higher.  Prevents wearing non-fabric pants.",
     "prereqs": [ "TAIL_LONG" ],
     "cancels": [ "TAIL_STING", "TAIL_CLUB", "TAIL_FIN", "TAIL_THICK", "TAIL_RAT", "TAIL_CATTLE", "TAIL_RAPTOR", "TAIL_SNAKE" ],
-    "category": [ "BEAST", "LUPINE" ],
+    "category": [ "LUPINE" ],
     "restricts_gear": [ "leg_l", "leg_r" ],
     "allow_soft_gear": true,
     "social_modifiers": { "lie": -20, "persuade": 10 }
@@ -181,7 +179,7 @@
     "description": "Your eyes bulge out several inches from your skull.  This does not affect your vision in any way.",
     "leads_to": [ "MEMBRANE" ],
     "changes_to": [ "COMPOUND_EYES" ],
-    "category": [ "CRAB" ]
+    "category": [ "BATRACHIAN", "INSECT", "GASTROPOD", "FISH", "CRUSTACEAN" ]
   },
   {
     "id": "SMELLY2",
@@ -193,7 +191,7 @@
     "description": "You smell awful.  Monsters that track scent will find you very easily, and humans will react poorly.",
     "prereqs": [ "SMELLY" ],
     "leads_to": [ "PHEROMONE_INSECT", "PHEROMONE_MAMMAL" ],
-    "category": [ "FISH", "BEAST", "SLIME", "CHIMERA", "URSINE", "CRAB" ]
+    "category": [ "FISH", "BEAST", "SLIME", "CHIMERA", "URSINE", "BATRACHIAN", "INSECT", "CATTLE", "CRUSTACEAN" ]
   },
   {
     "id": "COLDBLOOD",
@@ -204,7 +202,7 @@
     "description": "Your muscle response is dependent on ambient temperatures.  You lose 1% of your speed for every 5 (2.8) degrees below 65 F (18.3 C).  This sluggishness helps you conserve energy, however.",
     "changes_to": [ "COLDBLOOD2" ],
     "types": [ "METABOLISM" ],
-    "category": [ "FISH", "CEPHALOPOD", "SPIDER", "CRAB" ],
+    "category": [ "FISH", "CEPHALOPOD", "SPIDER", "GASTROPOD", "INSECT", "LIZARD", "BATRACHIAN", "PLANT", "CRUSTACEAN" ],
     "metabolism_modifier": -0.333
   },
   {
@@ -218,7 +216,7 @@
     "cancels": [ "PRETTY", "BEAUTIFUL", "BEAUTIFUL2", "BEAUTIFUL3" ],
     "prereqs": [ "DEFORMED" ],
     "changes_to": [ "DEFORMED3" ],
-    "category": [ "BEAST", "URSINE", "PLANT", "CRAB" ]
+    "category": [ "BEAST", "URSINE", "PLANT", "GASTROPOD", "SLIME", "RAT", "CHIMERA", "CRUSTACEAN" ]
   },
   {
     "id": "FASTHEALER",
@@ -229,7 +227,7 @@
     "starting_trait": true,
     "types": [ "HEALING" ],
     "changes_to": [ "FASTHEALER2", "REGEN_LIZ" ],
-    "category": [ "MEDICAL", "CRAB" ],
+    "category": [ "MEDICAL", "PLANT", "BATRACHIAN", "LIZARD", "SLIME", "TROGLOBITE", "CRUSTACEAN" ],
     "healing_awake": 0.2
   },
   {
@@ -239,7 +237,7 @@
     "points": 1,
     "description": "There's something about you that creatures find frightening, and they are more likely to try to flee.",
     "starting_trait": true,
-    "category": [ "BEAST", "INSECT", "CHIMERA", "CRAB" ],
+    "category": [ "BEAST", "INSECT", "CHIMERA", "CRUSTACEAN" ],
     "social_modifiers": { "intimidate": 15 }
   },
   {
@@ -251,7 +249,7 @@
     "prereqs": [ "THIRST" ],
     "changes_to": [ "THIRST3" ],
     "cancels": [ "NO_THIRST" ],
-    "category": [ "FISH", "SLIME", "CEPHALOPOD", "CRAB" ],
+    "category": [ "FISH", "SLIME", "CEPHALOPOD", "BATRACHIAN", "CRUSTACEAN" ],
     "thirst_modifier": 1.0
   },
   {
@@ -262,7 +260,7 @@
     "visibility": 5,
     "ugliness": 3,
     "description": "You've grown a set of gills in your neck, allowing you to breathe underwater.  Slightly increases wet benefits.",
-    "category": [ "CRAB", "FISH" ],
+    "category": [ "FISH", "BATRACHIAN", "CRUSTACEAN" ],
     "cancels": [ "GILLS_CEPH" ],
     "wet_protection": [ { "part": "head", "good": 1 } ]
   },
@@ -273,7 +271,7 @@
     "points": -1,
     "description": "You make more noise while walking.  You're also more likely to set off traps.",
     "starting_trait": true,
-    "category": [ "CRAB" ],
+    "category": [ "CRUSTACEAN" ],
     "cancels": [ "LIGHTSTEP" ]
   },
   {
@@ -286,7 +284,7 @@
     "description": "You've grown a chitin exoskeleton made of thick, stiff plates.  It provides excellent physical protection, but reduces your dexterity by 1 and encumbers all body parts but your eyes and mouth.  Greatly reduces wet effects.",
     "types": [ "SKIN" ],
     "prereqs": [ "CHITIN2" ],
-    "category": [ "CRAB", "SPIDER" ],
+    "category": [ "SPIDER", "CRUSTACEAN" ],
     "changes_to": [ "CHITIN4", "CHITIN_FUR3" ],
     "wet_protection": [
       { "part": "head", "ignored": 4 },
@@ -324,8 +322,8 @@
     "ugliness": 8,
     "description": "Your body is covered with a thick, impenetrable red carapace.  It provides unmatched physical protection and even some protection from corrosive chemicals, but reduces your dexterity by 3 and severely encumbers all body parts but your eyes.  Greatly reduces wet effects.",
     "types": [ "SKIN" ],
-    "prereqs": [ "CHITIN3" ],
-    "category": [ "CRAB" ],
+    "prereqs": [ "CHITIN3", "CHITIN2" ],
+    "category": [ "CRUSTACEAN" ],
     "leads_to": [ "CRAB_CLAW" ],
     "wet_protection": [
       { "part": "head", "ignored": 8 },
@@ -366,7 +364,7 @@
     "prereqs": [ "STR_UP_2" ],
     "changes_to": [ "STR_UP_4" ],
     "leads_to": [ "MUT_TOUGH" ],
-    "category": [ "CHIMERA", "CRAB", "LUPINE", "TROGLOBITE" ],
+    "category": [ "CHIMERA", "LUPINE", "TROGLOBITE", "BEAST", "URSINE", "CATTLE", "CRUSTACEAN" ],
     "passive_mods": { "str_mod": 4 }
   },
   {
@@ -380,7 +378,7 @@
     "//": "Yes, you eventually got over the massive digestive upset.  Mutations aren't easy on a system!",
     "prereqs2": [ "SAPROVORE", "TOLERANCE" ],
     "threshreq": [ "THRESH_TROGLOBITE", "THRESH_CHIMERA", "THRESH_RAPTOR", "THRESH_RAT", "THRESH_MOUSE", "THRESH_CRAB" ],
-    "category": [ "TROGLOBITE", "RAPTOR", "RAT", "CHIMERA", "CRAB", "MOUSE" ],
+    "category": [ "TROGLOBITE", "RAPTOR", "RAT", "CHIMERA", "BATRACHIAN", "GASTROPOD", "CRUSTACEAN" ],
     "valid": false
   },
   {
@@ -391,7 +389,7 @@
     "description": "Eating rotting, long-dead flesh is good for the struggle, and safe--if still completely unappealing--for you.",
     "prereqs": [ "EATPOISON" ],
     "threshreq": [ "THRESH_CHIMERA", "THRESH_CRAB", "THRESH_RAT", "THRESH_MOUSE" ],
-    "category": [ "RAT", "CHIMERA", "CRAB", "MOUSE" ],
+    "category": [ "RAT", "CHIMERA", "CRUSTACEAN" ],
     "valid": false
   },
   {
@@ -404,7 +402,7 @@
     "threshreq": [ "THRESH_URSINE", "THRESH_CATTLE", "THRESH_CHIMERA", "THRESH_CRAB", "THRESH_MEDICAL", "THRESH_LIZARD", "THRESH_BEAST" ],
     "cancels": [ "FLIMSY", "FLIMSY2", "FLIMSY3", "GLASSJAW" ],
     "changes_to": [ "MUT_TOUGH2" ],
-    "category": [ "URSINE", "CATTLE", "CHIMERA", "CRAB", "BEAST", "LIZARD", "MEDICAL" ],
+    "category": [ "URSINE", "CATTLE", "CHIMERA", "BEAST", "LIZARD", "CRUSTACEAN" ],
     "hp_modifier_secondary": 0.2
   },
   {
@@ -418,7 +416,7 @@
     "threshreq": [ "THRESH_URSINE", "THRESH_CATTLE", "THRESH_CHIMERA", "THRESH_CRAB", "THRESH_MEDICAL" ],
     "cancels": [ "FLIMSY", "FLIMSY2", "FLIMSY3", "GLASSJAW" ],
     "changes_to": [ "MUT_TOUGH3" ],
-    "category": [ "URSINE", "CATTLE", "CHIMERA", "CRAB", "MEDICAL" ],
+    "category": [ "URSINE", "CATTLE", "CHIMERA", "CRUSTACEAN" ],
     "hp_modifier_secondary": 0.3
   },
   {
@@ -435,7 +433,7 @@
     "cancels": [ "SMALL", "SMALL2" ],
     "threshreq": [ "THRESH_URSINE", "THRESH_CATTLE", "THRESH_CRAB" ],
     "leads_to": [ "MUT_TOUGH" ],
-    "category": [ "URSINE", "CATTLE", "CRAB" ],
+    "category": [ "URSINE", "CATTLE", "CRUSTACEAN" ],
     "passive_mods": { "str_mod": 4 },
     "restricts_gear": [ "torso", "leg_l", "leg_r", "arm_l", "arm_r", "hand_l", "hand_r", "head", "foot_l", "foot_r" ],
     "destroys_gear": true
@@ -453,7 +451,7 @@
     "valid": false,
     "cancels": [ "NAILS", "CLAWS", "TALONS", "WEBBED", "ARM_TENTACLES", "ARM_TENTACLES_4", "ARM_TENTACLES_8" ],
     "threshreq": [ "THRESH_CRAB" ],
-    "category": [ "CRAB" ],
+    "category": [ "CRUSTACEAN" ],
     "restricts_gear": [ "hand_r" ],
     "types": [ "CLAWS" ],
     "armor": [ { "parts": [ "hand_r" ], "bash": 2, "cut": 2 } ],
@@ -477,7 +475,7 @@
     "prereqs": [ "STR_UP", "STR_UP_2", "STR_UP_3", "STR_UP_4" ],
     "cancels": [ "SMALL", "SMALL2" ],
     "changes_to": [ "LARGE_OK", "HUGE" ],
-    "category": [ "URSINE", "CATTLE", "LIZARD", "CRAB" ],
+    "category": [ "URSINE", "CATTLE", "LIZARD", "CHIMERA", "CRUSTACEAN" ],
     "passive_mods": { "str_mod": 2 }
   },
   {
@@ -493,7 +491,7 @@
     "threshreq": [ "THRESH_URSINE", "THRESH_CATTLE", "THRESH_LIZARD", "THRESH_CRAB" ],
     "changes_to": [ "HUGE" ],
     "leads_to": [ "MUT_TOUGH" ],
-    "category": [ "URSINE", "CATTLE", "LIZARD", "CRAB" ],
+    "category": [ "URSINE", "CATTLE", "LIZARD", "CHIMERA", "CRUSTACEAN" ],
     "passive_mods": { "str_mod": 2 }
   },
   {
@@ -509,7 +507,7 @@
     "prereqs2": [ "STR_UP_3", "STR_UP_4" ],
     "cancels": [ "SMALL", "SMALL2" ],
     "changes_to": [ "HUGE_OK" ],
-    "category": [ "URSINE", "CATTLE", "CRAB" ],
+    "category": [ "URSINE", "CATTLE", "CRUSTACEAN" ],
     "passive_mods": { "str_mod": 4 },
     "hp_adjustment": -6,
     "fatigue_modifier": 0.15,
@@ -554,9 +552,9 @@
     "visibility": 10,
     "ugliness": 3,
     "description": "A set of flexible green scales has grown to cover your body, acting as natural armor.  Somewhat reduces wet effects.",
-    "category": [ "CHIMERA", "RAPTOR", "LIZARD", "SNAKE", "FISH" ],
+    "category": [ "RAPTOR", "LIZARD", "FISH" ],
     "types": [ "SKIN" ],
-    "prereqs": [ "SKIN_ROUGH" ],
+    "prereqs": [ "SPARSE_SCALES" ],
     "changes_to": [ "THICK_SCALES", "SLEEK_SCALES" ],
     "wet_protection": [
       { "part": "head", "ignored": 3 },
@@ -581,7 +579,7 @@
     "ugliness": 4,
     "description": "You have a flattened nose and thin slits for nostrils, giving you a lizard-like appearance.  This makes breathing slightly difficult and increases mouth encumbrance by 10.",
     "encumbrance_always": [ [ "mouth", 10 ] ],
-    "category": [ "LIZARD", "CEPHALOPOD", "RAPTOR", "SNAKE" ]
+    "category": [ "LIZARD", "CEPHALOPOD", "RAPTOR" ]
   },
   {
     "id": "LIZ_EYE",
@@ -593,7 +591,7 @@
     "description": "Your eyes have mutated, with a brilliant iris and slitted pupil similar to that of a lizard.  This is visually striking, but doesn't seem to affect your vision.",
     "leads_to": [ "LIZ_IR" ],
     "cancels": [ "ELFAEYES", "FEL_EYE", "URSINE_EYE", "BIRD_EYE", "COMPOUND_EYES", "SPIDER_EYE", "SPIDER_EYE" ],
-    "category": [ "LIZARD", "RAPTOR", "SNAKE" ]
+    "category": [ "LIZARD", "RAPTOR" ]
   },
   {
     "id": "SPIDER_EYE",
@@ -628,7 +626,7 @@
     "prereqs": [ "COLDBLOOD2" ],
     "changes_to": [ "COLDBLOOD4" ],
     "types": [ "METABOLISM" ],
-    "category": [ "INSECT", "LIZARD", "SNAKE" ],
+    "category": [ "INSECT", "LIZARD", "BATRACHIAN", "PLANT" ],
     "metabolism_modifier": -0.5
   },
   {
@@ -642,7 +640,7 @@
     "threshreq": [ "THRESH_LIZARD", "THRESH_SNAKE" ],
     "purifiable": false,
     "types": [ "METABOLISM" ],
-    "category": [ "LIZARD", "SNAKE" ],
+    "category": [ "LIZARD", "PLANT", "BATRACHIAN" ],
     "metabolism_modifier": -0.5
   },
   {
@@ -654,21 +652,7 @@
     "ugliness": 2,
     "description": "You have a short, stubby tail.  It serves no purpose.",
     "changes_to": [ "TAIL_LONG", "TAIL_THICK", "TAIL_FIN", "TAIL_RAT", "TAIL_RAPTOR" ],
-    "category": [
-      "URSINE",
-      "RABBIT",
-      "FELINE",
-      "BEAST",
-      "LUPINE",
-      "INSECT",
-      "CHIMERA",
-      "CATTLE",
-      "RAT",
-      "MOUSE",
-      "LIZARD",
-      "FISH",
-      "RAPTOR"
-    ]
+    "category": [ "URSINE", "FELINE", "LIZARD", "FISH", "RAT", "MOUSE", "RAPTOR", "LUPINE", "INSECT", "CATTLE", "CHIMERA", "BEAST" ]
   },
   {
     "id": "PER_UP_4",
@@ -688,7 +672,7 @@
     "points": -2,
     "description": "Your hearing is poor, and you may not hear quiet or far-off noises.",
     "starting_trait": true,
-    "category": [ "PLANT", "CRAB" ],
+    "category": [ "PLANT", "GASTROPOD" ],
     "cancels": [ "GOODHEARING" ]
   },
   {
@@ -698,7 +682,7 @@
     "points": -3,
     "description": "You simply can not carry as much as people with a similar strength could.  Your maximum weight carried is reduced by 35%.",
     "starting_trait": true,
-    "category": [ "BIRD", "ELFA", "RABBIT" ],
+    "category": [ "BIRD", "ELFA" ],
     "cancels": [ "STRONGBACK" ]
   },
   {
@@ -720,7 +704,7 @@
     "description": "Your optic nerves and brain have mutated to catch up with your eyes, allowing you to see in the infrared spectrum.",
     "prereqs": [ "LIZ_EYE" ],
     "cancels": [ "ELFA_NV", "ELFA_FNV", "FEL_NV", "INFRARED" ],
-    "category": [ "LIZARD", "RAPTOR", "SNAKE" ]
+    "category": [ "LIZARD", "RAPTOR" ]
   },
   {
     "id": "HISS",
@@ -729,7 +713,7 @@
     "mixed_effect": true,
     "points": -1,
     "description": "You hiss when speaking.  Persuading NPCs will be more difficult, but threatening them will be easier.",
-    "category": [ "LIZARD", "RAPTOR", "SNAKE" ],
+    "category": [ "LIZARD", "RAPTOR" ],
     "social_modifiers": { "persuade": -25, "intimidate": 15 }
   },
   {
@@ -742,7 +726,7 @@
     "description": "A set of very flexible and slick scales has grown to cover your body.  These act as weak natural armor, improve your ability to swim, and make you difficult to grab.  Mostly reduces wet effects.",
     "types": [ "SKIN" ],
     "prereqs": [ "SCALES" ],
-    "category": [ "FISH", "SNAKE" ],
+    "category": [ "FISH" ],
     "wet_protection": [
       { "part": "head", "good": 7 },
       { "part": "leg_l", "good": 21 },
@@ -811,7 +795,7 @@
     "description": "Your body's ability to digest fruits, vegetables and grains is severely hampered.  You cannot eat anything besides meat.",
     "cancels": [ "VEGETARIAN", "HERBIVORE", "RUMINANT", "GRAZER" ],
     "leads_to": [ "SAPROVORE" ],
-    "category": [ "LIZARD", "BEAST", "SPIDER", "CHIMERA", "RAPTOR", "FELINE", "SNAKE" ],
+    "category": [ "LIZARD", "SPIDER", "CHIMERA", "RAPTOR", "FELINE", "BATRACHIAN", "BEAST", "LUPINE" ],
     "vitamin_rates": [ [ "vitC", -1200 ] ]
   },
   {
@@ -822,7 +806,7 @@
     "description": "Your system is rather tolerant of poisons and toxins, and most will affect you less.",
     "starting_trait": true,
     "leads_to": [ "EATPOISON" ],
-    "category": [ "INSECT", "SLIME", "SPIDER", "MEDICAL", "SNAKE" ]
+    "category": [ "INSECT", "SLIME", "SPIDER", "MEDICAL", "CEPHALOPOD", "TROGLOBITE", "RAPTOR", "RAT", "BATRACHIAN", "CHIMERA", "GASTROPOD", "CRUSTACEAN", "SNAKE" ]
   },
   {
     "id": "POISONOUS",
@@ -833,7 +817,7 @@
     "prereqs": [ "POISRESIST" ],
     "leads_to": [ "EATPOISON" ],
     "changes_to": [ "POISONOUS2" ],
-    "category": [ "SLIME", "TROGLOBITE", "SPIDER", "SNAKE" ]
+    "category": [ "SLIME", "TROGLOBITE", "SPIDER", "CEPHALOPOD", "GASTROPOD", "CHIMERA", "BATRACHIAN", "SNAKE" ]
   },
   {
     "id": "POISONOUS2",
@@ -843,7 +827,7 @@
     "description": "Your venom has become particularly strong.  You're confident that your bites or other cutting/stabbing natural attacks will take your target down quickly.",
     "prereqs": [ "POISONOUS" ],
     "threshreq": [ "THRESH_SPIDER", "THRESH_SNAKE" ],
-    "category": [ "SPIDER", "SNAKE" ]
+    "category": [ "SPIDER" ]
   },
   {
     "id": "FORKED_TONGUE",
@@ -853,7 +837,7 @@
     "visibility": 1,
     "ugliness": 3,
     "description": "Your tongue is forked, like that of a reptile.  This has no effect.",
-    "category": [ "LIZARD", "RAPTOR", "SNAKE" ]
+    "category": [ "LIZARD", "RAPTOR" ]
   },
   {
     "id": "STR_DOWN",
@@ -883,7 +867,7 @@
     "description": "You are nimbler.  Dexterity + 2",
     "prereqs": [ "DEX_UP" ],
     "changes_to": [ "DEX_UP_3" ],
-    "category": [ "LIZARD", "SPIDER", "CHIMERA", "RAPTOR", "MOUSE", "SNAKE", "RABBIT", "BIRD", "ELFA", "FELINE" ],
+    "category": [ "LIZARD", "SPIDER", "CHIMERA", "RAPTOR", "MOUSE", "RABBIT", "BIRD", "ELFA", "FELINE", "CEPHALOPOD", "FISH", "ALPHA" ],
     "passive_mods": { "dex_mod": 2 }
   },
   {
@@ -894,7 +878,7 @@
     "description": "You are nimble and quick.  Dexterity + 4",
     "prereqs": [ "DEX_UP_2" ],
     "changes_to": [ "DEX_UP_4" ],
-    "category": [ "BIRD", "ELFA", "FELINE", "SNAKE" ],
+    "category": [ "BIRD", "ELFA", "FELINE", "CEPHALOPOD", "FISH" ],
     "passive_mods": { "dex_mod": 4 }
   },
   {
@@ -979,7 +963,7 @@
     "description": "You've had a revelation: by killing the weaker creatures, who would only die anyway, you preserve resources for those better able to survive.  You are less bothered by death of others: their own weakness invited these fates upon them.",
     "purifiable": false,
     "changes_to": [ "PRED2" ],
-    "prereqs": [ "CARNIVORE" ],
+    "prereqs": [ "CARNIVORE", "CARNIVORE_FAKE" ],
     "threshreq": [
       "THRESH_BEAST",
       "THRESH_RAPTOR",
@@ -992,7 +976,7 @@
       "THRESH_SNAKE"
     ],
     "cancels": [ "PACIFIST" ],
-    "category": [ "BEAST", "RAPTOR", "CHIMERA", "LUPINE", "FELINE", "URSINE", "LIZARD", "SPIDER", "SNAKE" ]
+    "category": [ "BEAST", "RAPTOR", "CHIMERA", "LUPINE", "FELINE", "URSINE", "LIZARD", "SPIDER", "BATRACHIAN" ]
   },
   {
     "id": "PRED2",
@@ -1001,7 +985,7 @@
     "points": 3,
     "description": "Your brain has a lot more in common with predatory animal than a human, making it easier to control misplaced reactions to death of your prey.  Additionally, combat skills, which you use to hunt, are easier to learn and maintain.",
     "purifiable": false,
-    "prereqs": [ "CARNIVORE", "THRESH_URSINE" ],
+    "prereqs": [ "CARNIVORE", "CARNIVORE_FAKE" ],
     "prereqs2": [ "PRED1" ],
     "changes_to": [ "PRED3" ],
     "threshreq": [
@@ -1016,7 +1000,7 @@
       "THRESH_SNAKE"
     ],
     "cancels": [ "PACIFIST" ],
-    "category": [ "BEAST", "RAPTOR", "CHIMERA", "LUPINE", "FELINE", "URSINE", "LIZARD", "SPIDER", "SNAKE" ]
+    "category": [ "BEAST", "RAPTOR", "CHIMERA", "LUPINE", "FELINE", "URSINE", "LIZARD", "SPIDER" ]
   },
   {
     "id": "PRED3",
@@ -1026,7 +1010,7 @@
     "description": "You consider yourself something other than human and no longer empathize with them.  Combat skills are easy to learn and maintain, but your critical thinking, so characteristic to these creatures, suffers.",
     "valid": false,
     "purifiable": false,
-    "prereqs": [ "CARNIVORE", "THRESH_URSINE" ],
+    "prereqs": [ "CARNIVORE", "CARNIVORE_FAKE" ],
     "prereqs2": [ "PRED2" ],
     "leads_to": [ "SAPIOVORE" ],
     "changes_to": [ "PRED4" ],
@@ -1042,7 +1026,7 @@
       "THRESH_SNAKE"
     ],
     "cancels": [ "PACIFIST" ],
-    "category": [ "BEAST", "RAPTOR", "CHIMERA", "LUPINE", "FELINE", "URSINE", "LIZARD", "SPIDER", "SNAKE" ],
+    "category": [ "BEAST", "RAPTOR", "CHIMERA", "LUPINE", "FELINE", "URSINE", "LIZARD", "SPIDER" ],
     "passive_mods": { "int_mod": -1 }
   },
   {
@@ -1053,10 +1037,10 @@
     "description": "The hairless apes are as good eating as any other meat.",
     "valid": false,
     "purifiable": false,
-    "prereqs": [ "CARNIVORE" ],
+    "prereqs": [ "CARNIVORE", "CARNIVORE_FAKE" ],
     "prereqs2": [ "PRED3", "PRED4" ],
     "threshreq": [ "THRESH_BEAST", "THRESH_RAPTOR", "THRESH_CHIMERA", "THRESH_URSINE", "THRESH_LIZARD", "THRESH_SPIDER", "THRESH_SNAKE" ],
-    "category": [ "BEAST", "RAPTOR", "CHIMERA", "URSINE", "LIZARD", "SPIDER", "SNAKE" ],
+    "category": [ "BEAST", "RAPTOR", "CHIMERA", "URSINE", "LIZARD", "SPIDER" ],
     "flags": [ "CANNIBAL" ]
   },
   {
@@ -1076,7 +1060,7 @@
     "points": -2,
     "description": "Your head can't take much abuse.  Its maximum HP is 20% lower than usual.",
     "starting_trait": true,
-    "category": [ "BIRD", "RAPTOR", "SNAKE" ],
+    "category": [ "BIRD", "RAPTOR" ],
     "cancels": [ "TOUGH" ]
   },
   {
@@ -1099,7 +1083,7 @@
     "points": 1,
     "description": "Your hearing is better than average, and you can hear distant sounds more easily.",
     "starting_trait": true,
-    "category": [ "ALPHA", "MOUSE", "RABBIT" ],
+    "category": [ "ALPHA", "MOUSE", "ELFA", "RABBIT" ],
     "cancels": [ "BADHEARING" ]
   },
   {
@@ -1118,7 +1102,7 @@
     "points": 1,
     "description": "You make less noise while walking.  You're also less likely to set off traps.",
     "starting_trait": true,
-    "category": [ "BIRD", "ELFA", "FELINE", "RABBIT" ],
+    "category": [ "BIRD", "ELFA", "FELINE" ],
     "cancels": [ "CLUMSY" ]
   },
   {
@@ -1130,7 +1114,7 @@
     "ugliness": 1,
     "description": "Your ears are huge!  They're rather fascinating, and help you hear from a much greater distance.",
     "valid": false,
-    "category": [ "MOUSE", "RAT", "RABBIT" ],
+    "category": [ "MOUSE", "RAT" ],
     "cancels": [ "FELINE_EARS", "LUPINE_EARS", "URSINE_EARS", "CANINE_EARS", "ELFA_EARS" ]
   },
   {
@@ -1142,8 +1126,8 @@
     "ugliness": 1,
     "description": "Your skin is slightly rough.  This has no gameplay effect.",
     "types": [ "SKIN" ],
-    "changes_to": [ "SCALES", "FEATHERS", "LIGHTFUR", "CHITIN", "PLANTSKIN", "RABBIT_FUR" ],
-    "category": [ "LIZARD", "CHIMERA", "RAPTOR", "SNAKE", "FISH", "RABBIT" ]
+    "changes_to": [ "FEATHERS" ],
+    "category": [ "BIRD" ]
   },
   {
     "id": "RABBIT_FUR",
@@ -1158,7 +1142,7 @@
     "category": [ "RABBIT" ],
     "types": [ "SKIN" ],
     "cancels": [ "FUR", "FELINE_FUR", "LUPINE_FUR", "URSINE_FUR", "CHITIN_FUR" ],
-    "prereqs": [ "SKIN_ROUGH" ],
+    "prereqs": [ "LIGHTFUR" ],
     "social_modifiers": { "persuade": 20 }
   },
   {
@@ -1170,7 +1154,7 @@
     "ugliness": 1,
     "description": "You have a set of prominent rodent-like whiskers around your mouth.  These make you more aware of vibrations in the air, and improve your ability to dodge slightly.",
     "prereqs": [ "MUZZLE_RAT" ],
-    "category": [ "RAT", "MOUSE", "RABBIT" ]
+    "category": [ "RAT", "MOUSE" ]
   },
   {
     "id": "BEAUTIFUL",
@@ -1182,7 +1166,7 @@
     "description": "You're a real head-turner.  Some people will react well to your appearance, and most people have an easier time trusting you.",
     "cancels": [ "UGLY", "DEFORMED", "DEFORMED2", "DEFORMED3" ],
     "prereqs": [ "PRETTY" ],
-    "category": [ "RABBIT" ],
+    "category": [ "ALPHA", "ELFA" ],
     "changes_to": [ "BEAUTIFUL2" ]
   },
   {
@@ -1194,7 +1178,7 @@
     "prereqs": [ "HUNGER" ],
     "changes_to": [ "HUNGER3" ],
     "types": [ "METABOLISM" ],
-    "category": [ "BEAST", "SLIME", "RAPTOR", "RABBIT" ],
+    "category": [ "BEAST", "SLIME", "RAPTOR", "CHIMERA" ],
     "metabolism_modifier": 1.0,
     "stamina_regen_modifier": 0.3
   },
@@ -1238,7 +1222,7 @@
     "visibility": 1,
     "description": "The bottoms of your feet are strongly padded.  You receive no movement penalty for not wearing shoes, and even receive a 10% bonus when moving barefoot.",
     "cancels": [ "HOOVES", "LEG_TENTACLES", "RAP_TALONS", "ROOTS1", "ROOTS2", "ROOTS3" ],
-    "category": [ "BEAST", "URSINE", "FELINE", "LUPINE", "RABBIT" ],
+    "category": [ "BATRACHIAN", "RABBIT", "URSINE", "FELINE", "LUPINE", "SPIDER", "BEAST" ],
     "leads_to": [ "RABBIT_FEET" ]
   },
   {
@@ -1266,7 +1250,7 @@
     "description": "You have grown large, curved, and wickedly sharp talons in place of your big toes.  Fortunately, they don't get in the way of your movement.  Unfortunately, they do prevent you from wearing footgear.",
     "valid": false,
     "cancels": [ "PADDED_FEET", "LEG_TENTACLES", "HOOVES", "ROOTS1", "ROOTS2", "ROOTS3", "RABBIT_FEET" ],
-    "category": [ "RAPTOR" ],
+    "category": [ "RAPTOR", "SPIDER" ],
     "restricts_gear": [ "foot_l", "foot_r" ],
     "destroys_gear": true,
     "attacks": {
@@ -1372,7 +1356,7 @@
     "description": "Your senses are keener.  Perception + 2",
     "prereqs": [ "PER_UP" ],
     "changes_to": [ "PER_UP_3", "PER_ALPHA" ],
-    "category": [ "ALPHA", "CHIMERA", "RABBIT" ],
+    "category": [ "ALPHA", "CHIMERA", "BATRACHIAN", "ELFA", "RAPTOR", "BIRD", "SPIDER" ],
     "passive_mods": { "per_mod": 2 }
   },
   {
@@ -1393,7 +1377,7 @@
     "ugliness": 3,
     "description": "Your big teeth have grown in.  Folks had best show some more respect.",
     "cancels": [ "BEAK", "BEAK_HUM", "BEAK_PECK", "FANGS" ],
-    "prereqs": [ "MUZZLE_RAT" ],
+    "prereqs": [ "MUZZLE_RAT", "RABBIT_NOSE" ],
     "threshreq": [ "THRESH_RAT", "THRESH_RABBIT" ],
     "category": [ "RAT", "RABBIT" ],
     "attacks": {
@@ -1423,7 +1407,7 @@
     "name": { "str": "Grazer" },
     "points": 3,
     "description": "You're accustomed to eating plants directly, and can get nutrition from grass as well as underbrush.  Eat either one by activating this, standing over your target, and pressing E.",
-    "prereqs": [ "RUMINANT" ],
+    "prereqs": [ "RUMINANT", "INCISORS" ],
     "threshreq": [ "THRESH_CATTLE", "THRESH_RABBIT" ],
     "cancels": [ "CARNIVORE", "SAPROVORE" ],
     "category": [ "CATTLE", "RABBIT" ],
@@ -1449,7 +1433,7 @@
     "description": "Your legs are extremely limber and fast-moving.  You move 30% faster on flat surfaces.",
     "prereqs": [ "FLEET" ],
     "types": [ "RUNNING" ],
-    "category": [ "BIRD", "RABBIT" ]
+    "category": [ "BIRD" ]
   },
   {
     "id": "GOODCARDIO2",
