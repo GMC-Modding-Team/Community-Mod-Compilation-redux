@@ -120,9 +120,23 @@ def main() -> int:
 
     changed_files = 0
     removed_entries = 0
+    scoped_bridges: set[Path] = set()
     for root in args.roots:
+        root_resolved = root.resolve()
+        local_bridges = [
+            bridge
+            for bridge in bridges
+            if bridge.resolve().is_relative_to(root_resolved)
+        ]
+        scoped_bridges.update(local_bridges)
+        # Compatibility IDs belong to the pack that ships their bridge.  Do
+        # not let a bridge in one pack remove genuine definitions from another
+        # pack merely because the IDs happen to match.
+        ids = bridge_ids(local_bridges)
+        if not ids:
+            continue
         for path in root.rglob("*.json"):
-            if any(path.resolve().is_relative_to(bridge.resolve()) for bridge in bridges):
+            if any(path.resolve().is_relative_to(bridge.resolve()) for bridge in local_bridges):
                 continue
             try:
                 original_text = path.read_text(encoding="utf-8-sig")
@@ -138,10 +152,13 @@ def main() -> int:
                 removed_entries += count
 
     if args.delete_bridges:
-        for bridge in bridges:
+        for bridge in scoped_bridges:
             shutil.rmtree(bridge)
 
-    print(f"bridge_mods={len(bridges)} bridge_ids={len(ids)} changed_files={changed_files} removed_entries={removed_entries}")
+    print(
+        f"bridge_mods={len(scoped_bridges)} changed_files={changed_files} "
+        f"removed_entries={removed_entries}"
+    )
     return 0
 
 
