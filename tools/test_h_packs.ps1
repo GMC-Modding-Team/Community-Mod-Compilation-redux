@@ -99,6 +99,23 @@ foreach ($record in $records) {
     $byId[$record.Id].Add($record)
 }
 
+$bundledModIds = [System.Collections.Generic.HashSet[string]]::new()
+$bundledModsRoot = Join-Path $GameData "mods"
+if (Test-Path -LiteralPath $bundledModsRoot) {
+    foreach ($file in (Get-ChildItem -LiteralPath $bundledModsRoot -Recurse -File -Filter "modinfo.json")) {
+        try {
+            $parsed = Get-Content -LiteralPath $file.FullName -Raw -Encoding UTF8 | ConvertFrom-Json
+        } catch {
+            continue
+        }
+        foreach ($entry in @($parsed)) {
+            if ($entry.type -eq "MOD_INFO" -and $entry.id) {
+                [void]$bundledModIds.Add([string]$entry.id)
+            }
+        }
+    }
+}
+
 $globallyUnavailable = [System.Collections.Generic.HashSet[string]]::new()
 $changed = $true
 while ($changed) {
@@ -109,6 +126,7 @@ while ($changed) {
             if ([string]::IsNullOrWhiteSpace([string]$dependency)) { continue }
             if (
                 $dependency -ne "dda" -and
+                -not $bundledModIds.Contains([string]$dependency) -and
                 (-not $byId.ContainsKey($dependency) -or $globallyUnavailable.Contains([string]$dependency))
             ) {
                 if ($globallyUnavailable.Add($record.Id)) { $changed = $true }
@@ -154,7 +172,11 @@ foreach ($pack in $packs) {
         $record = $pending.Dequeue()
         foreach ($dependency in $record.Dependencies) {
             if ([string]::IsNullOrWhiteSpace([string]$dependency)) { continue }
-            if ($dependency -eq "dda" -or $selected.ContainsKey($dependency)) { continue }
+            if (
+                $dependency -eq "dda" -or
+                $bundledModIds.Contains([string]$dependency) -or
+                $selected.ContainsKey($dependency)
+            ) { continue }
             if ($byId.ContainsKey($dependency)) {
                 # Several collections intentionally carry their own version
                 # of a shared compatibility dependency.  Prefer the version
