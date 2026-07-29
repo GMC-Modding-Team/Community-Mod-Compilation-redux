@@ -822,7 +822,7 @@
   },
   {
     "id": "mask_filter",
-    "type": "ARMOR",
+    "type": "TOOL_ARMOR",
     "//": "Keeps the filter mask at 20 warmth.  In summer it presents a choice between more prot/warmth here or less warmth for less prot with a dust mask.",
     "name": { "str": "filter mask" },
     "description": "A mask that straps over your mouth and nose and filters air.  Protects from smoke, dust, and other contaminants quite well.",
@@ -835,8 +835,21 @@
     "color": "light_gray",
     "armor": [ { "encumbrance": 20, "coverage": 100, "covers": [ "mouth" ] } ],
     "material_thickness": 2,
-    "environmental_protection": 7,
-    "warmth": 15
+    "environmental_protection": 3,
+    "environmental_protection_with_filter": 7,
+    "warmth": 15,
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "rigid": true,
+        "flag_restriction": [ "GASFILTER_SM" ],
+        "default_magazine": "gasfilter_sm"
+      }
+    ],
+    "ammo": "gasfilter_s",
+    "use_action": [ "GASMASK_ACTIVATE" ],
+    "tick_action": [ "GASMASK" ],
+    "flags": [ "SLEEP_IGNORE" ]
   },
   {
     "id": "mask_dust",
