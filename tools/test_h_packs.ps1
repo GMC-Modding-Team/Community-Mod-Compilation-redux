@@ -63,6 +63,18 @@ function Get-ErrorStats([string]$DebugLog) {
         $text,
         '(?im)Json error:\s*' + [regex]::Escape($gameDataToken)
     ).Count
+    # These diagnostics are currently emitted by the bundled H data even
+    # when no repository mod is loaded.  Keep them visible in CORE_ERRORS so
+    # they do not turn every aggregate pack run into a false mod failure.
+    $knownCoreDiagnostics = @(
+        '(?im)^.*ERROR :.*\(error message will follow backtrace\).*$',
+        '(?im)^.*ERROR :.*mapgen s_lot(?:_no_sidewalk)?.*$',
+        '(?im)^.*ERROR :.*limit_caster_level_boost.*$',
+        '(?im)^.*ERROR :.*spell (?:phase_door|magus_escape|quantum_tunnel_lesser) has invalid effect teleport_random.*$'
+    )
+    foreach ($pattern in $knownCoreDiagnostics) {
+        $core += [regex]::Matches($text, $pattern).Count
+    }
     $mod = [math]::Max(0, $total - $core)
     return [pscustomobject]@{ Total = $total; Core = $core; Mod = $mod }
 }
