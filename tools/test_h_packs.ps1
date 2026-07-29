@@ -50,6 +50,23 @@ function Invoke-HCheck([string[]]$CheckArguments, [string]$OutputPath) {
     return $process.ExitCode
 }
 
+function Get-ErrorStats([string]$DebugLog) {
+    if (-not (Test-Path -LiteralPath $DebugLog)) {
+        return [pscustomobject]@{ Total = -1; Core = 0; Mod = -1 }
+    }
+    $text = Get-Content -LiteralPath $DebugLog -Raw -Encoding UTF8
+    $total = [regex]::Matches($text, ' ERROR :').Count
+    # The H executable currently reports a known set of diagnostics from its
+    # bundled data.  Keep those visible, but do not treat them as mod errors.
+    $gameDataToken = ((Resolve-Path -LiteralPath $GameData).Path -replace '\\', '/')
+    $core = [regex]::Matches(
+        $text,
+        '(?im)Json error:\s*' + [regex]::Escape($gameDataToken)
+    ).Count
+    $mod = [math]::Max(0, $total - $core)
+    return [pscustomobject]@{ Total = $total; Core = $core; Mod = $mod }
+}
+
 $records = [System.Collections.Generic.List[object]]::new()
 $modInfoFiles = & rg -l 'MOD_INFO' (Join-Path $repo "data") (Join-Path $repo "workshop") --glob "*.json"
 foreach ($file in $modInfoFiles) {
@@ -107,6 +124,7 @@ if ($OnlyPacks.Count -gt 0) {
 }
 
 $results = [System.Collections.Generic.List[object]]::new()
+$failed = $false
 foreach ($pack in $packs) {
     $packRecords = @($records | Where-Object Pack -eq $pack)
     $allPackIds = @($packRecords.Id | Sort-Object -Unique)
@@ -173,16 +191,18 @@ foreach ($pack in $packs) {
     $stdout = Join-Path $userDir "output.log"
     $gameExit = Invoke-HCheck -CheckArguments $arguments -OutputPath $stdout
     $debugLog = Join-Path $userDir "config\debug.log"
-    $errorCount = if (Test-Path -LiteralPath $debugLog) { @(Select-String -LiteralPath $debugLog -Pattern ' ERROR :').Count } else { -1 }
+    $errorStats = Get-ErrorStats $debugLog
     $results.Add([pscustomobject]@{
         Pack = $pack
         Mods = $checkIds.Count
         Exit = $gameExit
-        Errors = $errorCount
+        Errors = $errorStats.Mod
+        CoreErrors = $errorStats.Core
         MissingDependencies = (@($missing) -join ',')
         UserDir = $userDir
     })
-    Write-Output ("PACK`t{0}`tSHARD={1}/{2}`tMODS={3}`tEXIT={4}`tERRORS={5}`tMISSING={6}`tSKIPPED={7}`tUSERDIR={8}" -f $pack, $ShardIndex, $ShardCount, $checkIds.Count, $gameExit, $errorCount, (@($missing) -join ','), ($skippedIds -join ','), $userDir)
+    if ($gameExit -ne 0 -or $errorStats.Mod -gt 0 -or $missing.Count -gt 0) { $failed = $true }
+    Write-Output ("PACK`t{0}`tSHARD={1}/{2}`tMODS={3}`tEXIT={4}`tERRORS={5}`tCORE_ERRORS={6}`tMISSING={7}`tSKIPPED={8}`tUSERDIR={9}" -f $pack, $ShardIndex, $ShardCount, $checkIds.Count, $gameExit, $errorStats.Mod, $errorStats.Core, (@($missing) -join ','), ($skippedIds -join ','), $userDir)
 }
 
 # A pack can contain more than one implementation of the same mod id.  The
@@ -206,10 +226,13 @@ foreach ($id in @($byId.Keys | Sort-Object)) {
             $stdout = Join-Path $userDir "output.log"
             $gameExit = Invoke-HCheck -CheckArguments $arguments -OutputPath $stdout
             $debugLog = Join-Path $userDir "config\debug.log"
-            $errorCount = if (Test-Path -LiteralPath $debugLog) { @(Select-String -LiteralPath $debugLog -Pattern ' ERROR :').Count } else { -1 }
-            Write-Output ("ALT`t{0}`tID={1}`tEXIT={2}`tERRORS={3}`tUSERDIR={4}" -f $record.Pack, $id, $gameExit, $errorCount, $userDir)
+            $errorStats = Get-ErrorStats $debugLog
+            if ($gameExit -ne 0 -or $errorStats.Mod -gt 0) { $failed = $true }
+            Write-Output ("ALT`t{0}`tID={1}`tEXIT={2}`tERRORS={3}`tCORE_ERRORS={4}`tUSERDIR={5}" -f $record.Pack, $id, $gameExit, $errorStats.Mod, $errorStats.Core, $userDir)
         }
     }
 }
 
 Write-Output ("RUNROOT`t{0}" -f $runRoot)
+if ($failed) { exit 1 }
+exit 0
