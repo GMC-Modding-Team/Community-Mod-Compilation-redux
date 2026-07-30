@@ -1265,122 +1265,54 @@
     }
   },
   {
-    "id": "drugs_misc",
-    "type": "item_group",
-    "//": "Drugs not contained within any other category",
-    "subtype": "distribution",
-    "items": [
-      {
-        "group": "bfipowder_bottle_plastic_5_60",
-        "prob": 100
+      "id": "drugs_misc",
+      "type": "item_group",
+      "copy-from": "drugs_misc",
+      "extend": {
+          "items": [
+              [
+                  "flu_shot_fun",
+                  50
+              ],
+              {
+                  "group": "bfipowder_bottle_plastic_5_60",
+                  "prob": 100
+              },
+              {
+                  "item": "dayquil",
+                  "count-min": 1,
+                  "count-max": 30,
+                  "prob": 50
+              },
+              {
+                  "item": "nyquil",
+                  "count-min": 1,
+                  "count-max": 30,
+                  "prob": 50
+              },
+              {
+                  "item": "flu_shot",
+                  "count-min": 1,
+                  "count-max": 10,
+                  "prob": 50
+              }
+          ]
       },
-      {
-        "item": "dayquil",
-        "count-min": 1,
-        "count-max": 30,
-        "prob": 50
-      },
-      {
-        "item": "nyquil",
-        "count-min": 1,
-        "count-max": 30,
-        "prob": 50
-      },
-      {
-        "item": "flu_shot",
-        "count-min": 1,
-        "count-max": 10,
-        "prob": 50
-      },
-      {
-        "item": "flu_shot_fun",
-        "prob": 50
-      }
-    ]
+      "//": "Drugs not contained within any other category",
+      "subtype": "distribution"
   },
   {
     "type": "item_group",
-    "id": "harddrugs",
-    "items": [
-      {
-        "item": "inhaler",
-        "prob": 14,
-        "charges-min": 10,
-        "charges-max": 100
-      },
-      {
-        "prob": 15,
-        "group": "codeine_bottle_plastic_pill_painkiller_1_10"
-      },
-      {
-        "prob": 4,
-        "group": "oxycodone_bottle_plastic_pill_prescription_1_10"
-      },
-      {
-        "item": "morphine",
-        "prob": 4,
-        "count": [
-          1,
-          4
+    "copy-from": "harddrugs",
+    "extend": {
+        "items": [
+            [
+                "flu_shot_fun",
+                50
+            ]
         ]
-      },
-      {
-        "prob": 11,
-        "group": "tramadol_bottle_plastic_pill_prescription_1_10"
-      },
-      {
-        "prob": 10,
-        "group": "xanax_bottle_plastic_pill_prescription_1_10"
-      },
-      {
-        "prob": 10,
-        "group": "adderall_bottle_plastic_pill_prescription_1_10"
-      },
-      {
-        "prob": 7,
-        "group": "thorazine_bottle_plastic_pill_prescription_1_10"
-      },
-      {
-        "prob": 10,
-        "group": "prozac_bottle_plastic_pill_prescription_1_15"
-      },
-      {
-        "prob": 25,
-        "group": "antibiotics_bottle_plastic_pill_prescription_1_15"
-      },
-      {
-        "prob": 5,
-        "group": "strong_antibiotic_bottle_plastic_pill_prescription_1_5"
-      },
-      {
-        "prob": 2,
-        "group": "antifungal_bottle_plastic_pill_prescription_1_5"
-      },
-      {
-        "prob": 3,
-        "group": "antiparasitic_bottle_plastic_pill_prescription_1_10"
-      },
-      {
-        "item": "survnote",
-        "prob": 1
-      },
-      {
-        "prob": 4,
-        "group": "diazepam_bottle_plastic_pill_prescription_1_10"
-      },
-      {
-        "item": "flu_shot",
-        "prob": 5
-      },
-      {
-        "item": "syringe",
-        "prob": 8
-      },
-      {
-        "item": "flu_shot_fun",
-        "prob": 50
-      }
-    ],
+    },
+    "id": "harddrugs",
     "subtype": "distribution"
   }
 ]

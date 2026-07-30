@@ -512,67 +512,24 @@
     }
   },
   {
-    "type": "item_group",
-    "subtype": "collection",
-    "id": "map_extra_science_corpse",
-    "container-item": "corpse_generic_human",
-    "//": "3/4 times a wallet with an id card, all the time a lab coat",
-    "items": [
-      {
-        "group": "wallets_science",
-        "prob": 75
+      "type": "item_group",
+      "copy-from": "map_extra_science_corpse",
+      "extend": {
+          "items": [
+              {
+                  "item": "left_leg_prosthetic",
+                  "prob": 2
+              },
+              {
+                  "item": "right_leg_prosthetic",
+                  "prob": 2
+              }
+          ]
       },
-      {
-        "item": "coat_lab",
-        "damage": [
-          1,
-          3
-        ]
-      },
-      {
-        "group": "lab_pants",
-        "damage": [
-          1,
-          3
-        ]
-      },
-      {
-        "group": "socks_unisex",
-        "damage": [
-          1,
-          3
-        ]
-      },
-      {
-        "group": "lab_shoes",
-        "damage": [
-          1,
-          3
-        ]
-      },
-      {
-        "group": "lab_torso",
-        "damage": [
-          1,
-          3
-        ]
-      },
-      {
-        "group": "underwear",
-        "damage": [
-          1,
-          3
-        ]
-      },
-      {
-        "item": "left_leg_prosthetic",
-        "prob": 2
-      },
-      {
-        "item": "right_leg_prosthetic",
-        "prob": 2
-      }
-    ]
+      "subtype": "collection",
+      "id": "map_extra_science_corpse",
+      "container-item": "corpse_generic_human",
+      "//": "3/4 times a wallet with an id card, all the time a lab coat"
   },
   {
     "id": "hospital_bed",
@@ -802,43 +759,38 @@
     }
   },
   {
-    "type": "item_group",
-    "id": "hospital_medical_items",
-    "items": [
-      {
-        "group": "surgery",
-        "prob": 80
+      "type": "item_group",
+      "copy-from": "hospital_medical_items",
+      "extend": {
+          "items": [
+              {
+                  "item": "left_leg_prosthetic",
+                  "prob": 5
+              },
+              {
+                  "item": "right_leg_prosthetic",
+                  "prob": 5
+              },
+              {
+                  "item": "right_arm_prosthetic",
+                  "prob": 5
+              },
+              {
+                  "item": "right_arm_prosthetic",
+                  "prob": 5
+              },
+              {
+                  "item": "right_arm_neuroprosthetic",
+                  "prob": 2
+              },
+              {
+                  "item": "right_arm_neuroprosthetic",
+                  "prob": 2
+              }
+          ]
       },
-      {
-        "group": "drugs_emergency",
-        "prob": 40
-      },
-      {
-        "group": "softdrugs",
-        "prob": 20
-      },
-      {
-        "group": "harddrugs",
-        "prob": 5
-      },
-      {
-        "item": "left_leg_prosthetic",
-        "prob": 5
-      },
-      {
-        "item": "right_leg_prosthetic",
-        "prob": 5
-      },
-      {
-        "item": "right_arm_prosthetic",
-        "prob": 5
-      },
-      {
-        "item": "right_arm_neuroprosthetic",
-        "prob": 2
-      }
-    ],
-    "subtype": "distribution"
+      "id": "hospital_medical_items",
+      "subtype": "distribution"
   },
   {
     "id": "hospital_lab",
@@ -1073,45 +1025,48 @@
     }
   },
   {
-    "id": "mil_base_bed_hospital",
-    "type": "item_group",
-    "subtype": "distribution",
-    "items": [
-      {
-        "item": "blanket",
-        "prob": 200
+      "id": "mil_base_bed_hospital",
+      "type": "item_group",
+      "copy-from": "mil_base_bed_hospital",
+      "extend": {
+          "items": [
+              {
+                  "item": "left_leg_prosthetic",
+                  "prob": 2
+              },
+              {
+                  "item": "right_leg_prosthetic",
+                  "prob": 2
+              },
+              {
+                  "item": "left_arm_prosthetic",
+                  "prob": 2
+              },
+              {
+                  "item": "right_arm_prosthetic",
+                  "prob": 2
+              },
+              {
+                  "item": "left_arm_neuroprosthetic",
+                  "prob": 1
+              },
+              {
+                  "item": "right_arm_neuroprosthetic",
+                  "prob": 1
+              },
+              {
+                  "item": "blanket",
+                  "prob": 200
+              },
+              {
+                  "item": "cotton_patchwork",
+                  "prob": 400,
+                  "custom-flags": [
+                      "FILTHY"
+                  ]
+              }
+          ]
       },
-      {
-        "item": "cotton_patchwork",
-        "prob": 400,
-        "custom-flags": [
-          "FILTHY"
-        ]
-      },
-      {
-        "item": "left_leg_prosthetic",
-        "prob": 2
-      },
-      {
-        "item": "right_leg_prosthetic",
-        "prob": 2
-      },
-      {
-        "item": "left_arm_prosthetic",
-        "prob": 2
-      },
-      {
-        "item": "right_arm_prosthetic",
-        "prob": 2
-      },
-      {
-        "item": "left_arm_neuroprosthetic",
-        "prob": 1
-      },
-      {
-        "item": "right_arm_neuroprosthetic",
-        "prob": 1
-      }
-    ]
+      "subtype": "distribution"
   }
 ]
