@@ -2,14 +2,9 @@
   {
     "type": "martial_art",
     "id": "style_aikido",
-    "name": {
-      "str": "Aikido"
-    },
+    "name": { "str": "Aikido" },
     "description": "Aikido is a Japanese martial art focused on self-defense, while minimizing injury to the attacker.  It uses defensive throws and disarms but its techniques lack offensive power.",
-    "initiate": [
-      "You enter the hanmi stance.",
-      "%s enters a relaxed combat posture."
-    ],
+    "initiate": [ "You enter the hanmi stance.", "%s enters a relaxed combat posture." ],
     "priority": 1,
     "learn_difficulty": 5,
     "arm_block": 0,
@@ -22,19 +17,9 @@
         "unarmed_weapons_allowed": false,
         "melee_allowed": true,
         "flat_bonuses": [
-          {
-            "stat": "block",
-            "scaling-stat": "dex",
-            "scale": 1.0
-          },
-          {
-            "stat": "block_effectiveness",
-            "scale": 2.0
-          },
-          {
-            "stat": "dodge",
-            "scale": 1.0
-          }
+          { "stat": "block", "scaling-stat": "dex", "scale": 1.0 },
+          { "stat": "block_effectiveness", "scale": 2.0 },
+          { "stat": "dodge", "scale": 1.0 }
         ]
       },
       {
@@ -44,25 +29,10 @@
         "unarmed_allowed": true,
         "unarmed_weapons_allowed": false,
         "melee_allowed": true,
-        "skill_requirements": [
-          {
-            "name": "unarmed",
-            "level": 3
-          }
-        ],
+        "skill_requirements": [ { "name": "unarmed", "level": 3 } ],
         "bonus_dodges": 1,
         "bonus_blocks": 1,
-        "flat_bonuses": [
-          {
-            "stat": "block",
-            "scaling-stat": "dex",
-            "scale": 1.0
-          },
-          {
-            "stat": "block_effectiveness",
-            "scale": 1.0
-          }
-        ]
+        "flat_bonuses": [ { "stat": "block", "scaling-stat": "dex", "scale": 1.0 }, { "stat": "block_effectiveness", "scale": 1.0 } ]
       },
       {
         "id": "buff_aikido_static3",
@@ -71,20 +41,10 @@
         "unarmed_allowed": true,
         "unarmed_weapons_allowed": false,
         "melee_allowed": true,
-        "skill_requirements": [
-          {
-            "name": "unarmed",
-            "level": 5
-          }
-        ],
+        "skill_requirements": [ { "name": "unarmed", "level": 5 } ],
         "bonus_dodges": 1,
         "bonus_blocks": 1,
-        "flat_bonuses": [
-          {
-            "stat": "block_effectiveness",
-            "scale": 1.0
-          }
-        ]
+        "flat_bonuses": [ { "stat": "block_effectiveness", "scale": 1.0 } ]
       }
     ],
     "onblock_buffs": [
@@ -92,22 +52,12 @@
         "id": "buff_aikido_onblock",
         "name": "Fluid Blocking",
         "description": "After a smooth block, you prepare to counter your foe.\n\n-10% move cost.\nLasts 1 turn.",
-        "skill_requirements": [
-          {
-            "name": "unarmed",
-            "level": 1
-          }
-        ],
+        "skill_requirements": [ { "name": "unarmed", "level": 1 } ],
         "unarmed_allowed": true,
         "unarmed_weapons_allowed": false,
         "melee_allowed": true,
         "buff_duration": 1,
-        "mult_bonuses": [
-          {
-            "stat": "movecost",
-            "scale": 0.9
-          }
-        ]
+        "mult_bonuses": [ { "stat": "movecost", "scale": 0.9 } ]
       }
     ],
     "ondodge_buffs": [
@@ -119,12 +69,7 @@
         "unarmed_weapons_allowed": false,
         "melee_allowed": true,
         "buff_duration": 1,
-        "mult_bonuses": [
-          {
-            "stat": "movecost",
-            "scale": 0.9
-          }
-        ]
+        "mult_bonuses": [ { "stat": "movecost", "scale": 0.9 } ]
       }
     ],
     "techniques": [
@@ -134,9 +79,7 @@
       "tec_aikido_dodgethrow",
       "tec_aikido_blockthrow"
     ],
-    "weapon_category": [
-      "CLAWS"
-    ],
+    "weapon_category": [ "CLAWS" ],
     "weapons": [
       "cestus_plus_one",
       "cestus_plus_two",
@@ -155,10 +98,7 @@
     "id": "style_eskrima",
     "name": "Eskrima",
     "description": "Eskrima, also known as Kali, is a Filipino martial art.  It emphasizes rapid strikes with knife and baton weapons, along with a variety of improvised substitutes.",
-    "initiate": [
-      "You enter an open guard stance and prepare to strike.",
-      "%s enters an open stance."
-    ],
+    "initiate": [ "You enter an open guard stance and prepare to strike.", "%s enters an open stance." ],
     "priority": 1,
     "learn_difficulty": 8,
     "primary_skill": "bashing",
@@ -169,12 +109,7 @@
         "name": "Eskrima Stance",
         "description": "You are skilled at getting the most out of your weapons.  The term 'weapon' might be very subjective.\n\n+2 accuracy.",
         "melee_allowed": true,
-        "flat_bonuses": [
-          {
-            "stat": "hit",
-            "scale": 2.0
-          }
-        ]
+        "flat_bonuses": [ { "stat": "hit", "scale": 2.0 } ]
       }
     ],
     "oncrit_buffs": [
@@ -182,31 +117,14 @@
         "id": "buff_eskrima_oncrit",
         "name": "Eskrima Combination",
         "description": "You can follow up a critical hit with a stronger attack if the opportunity presents itself.\n\n+15% damage.\nEnables \"Combination Strike\" technique.\nLasts 3 turns.  Stacks 3 times.",
-        "skill_requirements": [
-          {
-            "name": "melee",
-            "level": 2
-          }
-        ],
+        "skill_requirements": [ { "name": "melee", "level": 2 } ],
         "melee_allowed": true,
         "buff_duration": 3,
         "max_stacks": 3,
         "mult_bonuses": [
-          {
-            "stat": "damage",
-            "type": "bash",
-            "scale": 1.15
-          },
-          {
-            "stat": "damage",
-            "type": "cut",
-            "scale": 1.15
-          },
-          {
-            "stat": "damage",
-            "type": "stab",
-            "scale": 1.15
-          }
+          { "stat": "damage", "type": "bash", "scale": 1.15 },
+          { "stat": "damage", "type": "cut", "scale": 1.15 },
+          { "stat": "damage", "type": "stab", "scale": 1.15 }
         ]
       }
     ],
@@ -218,13 +136,7 @@
       "tec_eskrima_low",
       "tec_eskrima_combination"
     ],
-    "weapon_category": [
-      "KNIVES",
-      "BATONS",
-      "SHORT_SWORDS",
-      "CLAWS",
-      "SHIVS"
-    ],
+    "weapon_category": [ "KNIVES", "BATONS", "SHORT_SWORDS", "CLAWS", "SHIVS" ],
     "weapons": [
       "cudgel_plus_one",
       "cudgel_plus_two",
@@ -252,10 +164,7 @@
     "id": "style_fencing",
     "name": "Fencing",
     "description": "The noble art of fencing is taught with flexible competition blades, but the techniques are derived from (and applicable to) more functional examples.  Skilled fencers can take advantage of blocks and feints to deliver accurate strikes.",
-    "initiate": [
-      "You move into the en-garde stance.",
-      "%s moves into a fencing stance."
-    ],
+    "initiate": [ "You move into the en-garde stance.", "%s moves into a fencing stance." ],
     "priority": 1,
     "learn_difficulty": 5,
     "primary_skill": "stabbing",
@@ -266,13 +175,7 @@
         "name": "Fencing Stance",
         "description": "Your side stance reduces the chance that you will be harmed in combat.\n\nBlocked damage reduced by 50% of Dexterity.",
         "melee_allowed": true,
-        "flat_bonuses": [
-          {
-            "stat": "block",
-            "scaling-stat": "dex",
-            "scale": 0.5
-          }
-        ]
+        "flat_bonuses": [ { "stat": "block", "scaling-stat": "dex", "scale": 0.5 } ]
       }
     ],
     "onblock_buffs": [
@@ -280,20 +183,10 @@
         "id": "buff_fencing_onblock",
         "name": "Parry",
         "description": "Your next strike will find its mark much easier after your parry.\n\n+1 accuracy.\nLasts 1 turn.",
-        "skill_requirements": [
-          {
-            "name": "melee",
-            "level": 1
-          }
-        ],
+        "skill_requirements": [ { "name": "melee", "level": 1 } ],
         "melee_allowed": true,
         "buff_duration": 1,
-        "flat_bonuses": [
-          {
-            "stat": "hit",
-            "scale": 1.0
-          }
-        ]
+        "flat_bonuses": [ { "stat": "hit", "scale": 1.0 } ]
       }
     ],
     "onmiss_buffs": [
@@ -301,20 +194,10 @@
         "id": "buff_fencing_onmiss",
         "name": "Remise",
         "description": "Your feint is the perfect setup for a devastating followup attack!\n\n+1 accuracy.\nEnables \"Compound Attack\" technique.\nLasts 1 turn.",
-        "skill_requirements": [
-          {
-            "name": "melee",
-            "level": 3
-          }
-        ],
+        "skill_requirements": [ { "name": "melee", "level": 3 } ],
         "melee_allowed": true,
         "buff_duration": 1,
-        "flat_bonuses": [
-          {
-            "stat": "hit",
-            "scale": 1.0
-          }
-        ]
+        "flat_bonuses": [ { "stat": "hit", "scale": 1.0 } ]
       }
     ],
     "onpause_buffs": [
@@ -323,31 +206,13 @@
         "name": "Counter Time",
         "description": "You fake an attack and prepare yourself to unleash a Compound Attack.\n\n+2 blocking effectiveness.\nEnables \"Compound Attack\" technique.\nLasts 2 turns.",
         "melee_allowed": true,
-        "skill_requirements": [
-          {
-            "name": "melee",
-            "level": 4
-          }
-        ],
+        "skill_requirements": [ { "name": "melee", "level": 4 } ],
         "buff_duration": 2,
-        "flat_bonuses": [
-          {
-            "stat": "block_effectiveness",
-            "scale": 2.0
-          }
-        ]
+        "flat_bonuses": [ { "stat": "block_effectiveness", "scale": 2.0 } ]
       }
     ],
-    "techniques": [
-      "tec_fencing_feint",
-      "tec_fencing_lunge",
-      "tec_fencing_riposte",
-      "tec_fencing_compound1",
-      "tec_fencing_compound2"
-    ],
-    "weapon_category": [
-      "FENCING_WEAPONRY"
-    ],
+    "techniques": [ "tec_fencing_feint", "tec_fencing_lunge", "tec_fencing_riposte", "tec_fencing_compound1", "tec_fencing_compound2" ],
+    "weapon_category": [ "FENCING_WEAPONRY" ],
     "weapons": [
       "cudgel_plus_one",
       "cudgel_plus_two",
@@ -368,10 +233,7 @@
     "id": "style_medievalpole",
     "name": "Fior Di Battaglia",
     "description": "Medieval Europe's martial techniques for fighting with hooked weapons.  The \"Flower of Battle\" places great focus on countering one's opponent and knocking them down before landing a killing blow.",
-    "initiate": [
-      "You hold your weapon in a firm grip, ready to block any attack.",
-      "%s grips their weapon tightly."
-    ],
+    "initiate": [ "You hold your weapon in a firm grip, ready to block any attack.", "%s grips their weapon tightly." ],
     "priority": 1,
     "learn_difficulty": 6,
     "primary_skill": "bashing",
@@ -384,19 +246,9 @@
         "melee_allowed": true,
         "bonus_blocks": 1,
         "flat_bonuses": [
-          {
-            "stat": "block_effectiveness",
-            "scale": 2.0
-          },
-          {
-            "stat": "block",
-            "scaling-stat": "str",
-            "scale": 0.5
-          },
-          {
-            "stat": "dodge",
-            "scale": -1.0
-          }
+          { "stat": "block_effectiveness", "scale": 2.0 },
+          { "stat": "block", "scaling-stat": "str", "scale": 0.5 },
+          { "stat": "dodge", "scale": -1.0 }
         ]
       }
     ],
@@ -409,19 +261,9 @@
         "buff_duration": 2,
         "bonus_blocks": -1,
         "flat_bonuses": [
-          {
-            "stat": "block_effectiveness",
-            "scale": -2.0
-          },
-          {
-            "stat": "block",
-            "scaling-stat": "str",
-            "scale": -0.5
-          },
-          {
-            "stat": "dodge",
-            "scale": 1.0
-          }
+          { "stat": "block_effectiveness", "scale": -2.0 },
+          { "stat": "block", "scaling-stat": "str", "scale": -0.5 },
+          { "stat": "dodge", "scale": 1.0 }
         ]
       }
     ],
@@ -431,12 +273,7 @@
         "name": "Tactical Feinting",
         "description": "They fell for your feint!\n\nEnables \"Hook and Drag\" technique.\nLasts 1 turn.",
         "melee_allowed": true,
-        "skill_requirements": [
-          {
-            "name": "melee",
-            "level": 3
-          }
-        ],
+        "skill_requirements": [ { "name": "melee", "level": 3 } ],
         "buff_duration": 1
       }
     ],
@@ -446,20 +283,10 @@
         "name": "Defense Break",
         "description": "Each successful block reveals an opening in your opponent's guard.\n\n+1 accuracy.\nEnables \"Displace and Hook\" technique.\nLasts 1 turn.  Stacks 3 times.",
         "melee_allowed": true,
-        "skill_requirements": [
-          {
-            "name": "melee",
-            "level": 1
-          }
-        ],
+        "skill_requirements": [ { "name": "melee", "level": 1 } ],
         "buff_duration": 1,
         "max_stacks": 3,
-        "flat_bonuses": [
-          {
-            "stat": "hit",
-            "scale": 1.0
-          }
-        ]
+        "flat_bonuses": [ { "stat": "hit", "scale": 1.0 } ]
       }
     ],
     "techniques": [
@@ -470,9 +297,7 @@
       "tec_medievalpole_execute",
       "tec_medievalpole_break"
     ],
-    "weapon_category": [
-      "HOOKING_WEAPONRY"
-    ],
+    "weapon_category": [ "HOOKING_WEAPONRY" ],
     "weapons": [
       "sledge_plus_one",
       "sledge_plus_two",
@@ -496,10 +321,7 @@
     "id": "style_judo",
     "name": "Judo",
     "description": "Judo is a martial art that focuses on grabs and throws, both defensive and offensive.  You are resistant to most effects that can knock you down and can counter grab and takedown attacks with a strong judo throw.",
-    "initiate": [
-      "You prepare yourself for a grapple.",
-      "%s prepares for a grapple."
-    ],
+    "initiate": [ "You prepare yourself for a grapple.", "%s prepares for a grapple." ],
     "priority": 1,
     "learn_difficulty": 4,
     "static_buffs": [
@@ -510,9 +332,7 @@
         "unarmed_allowed": true,
         "melee_allowed": true,
         "unarmed_weapons_allowed": false,
-        "flags": [
-          "DOWNED_RECOVERY"
-        ]
+        "flags": [ "DOWNED_RECOVERY" ]
       }
     ],
     "ondodge_buffs": [
@@ -520,43 +340,19 @@
         "id": "buff_judo_ondodge",
         "name": "Perfect Position",
         "description": "You've moved into a perfect position to counter attack!\n\n+30% damage.\nLasts 1 turn.",
-        "skill_requirements": [
-          {
-            "name": "unarmed",
-            "level": 4
-          }
-        ],
+        "skill_requirements": [ { "name": "unarmed", "level": 4 } ],
         "unarmed_allowed": true,
         "melee_allowed": true,
         "buff_duration": 1,
         "mult_bonuses": [
-          {
-            "stat": "damage",
-            "type": "bash",
-            "scale": 1.3
-          },
-          {
-            "stat": "damage",
-            "type": "cut",
-            "scale": 1.3
-          },
-          {
-            "stat": "damage",
-            "type": "stab",
-            "scale": 1.3
-          }
+          { "stat": "damage", "type": "bash", "scale": 1.3 },
+          { "stat": "damage", "type": "cut", "scale": 1.3 },
+          { "stat": "damage", "type": "stab", "scale": 1.3 }
         ]
       }
     ],
-    "techniques": [
-      "tec_judo_backthrow",
-      "tec_judo_disarm",
-      "tec_judo_break",
-      "tec_judo_throw"
-    ],
-    "weapon_category": [
-      "CLAWS"
-    ],
+    "techniques": [ "tec_judo_backthrow", "tec_judo_disarm", "tec_judo_break", "tec_judo_throw" ],
+    "weapon_category": [ "CLAWS" ],
     "weapons": [
       "cestus_plus_one",
       "cestus_plus_two",
@@ -575,10 +371,7 @@
     "id": "style_krav_maga",
     "name": "Krav Maga",
     "description": "Originating in Israel, Krav Maga is based on taking down an enemy quickly and effectively.  It focuses on applicable attacks rather than showy or complex moves.  Popular among police and armed forces everywhere.",
-    "initiate": [
-      "You assume a practical combat stance.",
-      "%s assumes a practical combat stance."
-    ],
+    "initiate": [ "You assume a practical combat stance.", "%s assumes a practical combat stance." ],
     "priority": 1,
     "learn_difficulty": 6,
     "arm_block": 2,
@@ -591,12 +384,7 @@
         "melee_allowed": true,
         "unarmed_allowed": true,
         "bonus_blocks": 1,
-        "flat_bonuses": [
-          {
-            "stat": "hit",
-            "scale": 1.0
-          }
-        ]
+        "flat_bonuses": [ { "stat": "hit", "scale": 1.0 } ]
       }
     ],
     "onblock_buffs": [
@@ -606,19 +394,9 @@
         "description": "Like a fool, your opponent has left themselves wide open.\n\n+5% critical hit chance.\nLasts 1 turn.",
         "melee_allowed": true,
         "unarmed_allowed": true,
-        "skill_requirements": [
-          {
-            "name": "melee",
-            "level": 4
-          }
-        ],
+        "skill_requirements": [ { "name": "melee", "level": 4 } ],
         "buff_duration": 1,
-        "flat_bonuses": [
-          {
-            "stat": "crit_chance",
-            "scale": 5.0
-          }
-        ]
+        "flat_bonuses": [ { "stat": "crit_chance", "scale": 5.0 } ]
       }
     ],
     "techniques": [
@@ -629,13 +407,7 @@
       "tec_krav_maga_disarm",
       "tec_krav_maga_break"
     ],
-    "weapon_category": [
-      "AUTOMATIC_RIFLES",
-      "AUTOMATIC_PISTOLS",
-      "KNIVES",
-      "BATONS",
-      "SHIVS"
-    ],
+    "weapon_category": [ "AUTOMATIC_RIFLES", "AUTOMATIC_PISTOLS", "KNIVES", "BATONS", "SHIVS" ],
     "weapons": [
       "cudgel_plus_one",
       "cudgel_plus_two",
@@ -663,10 +435,7 @@
     "id": "style_swordsmanship",
     "name": "Medieval Swordsmanship",
     "description": "The art of the longsword and sword & buckler, preceding the later development of fencing.  Designed for combat both unarmored and in armor, it includes grappling as well as defensive and offensive sword techniques.  This style is a combination of the Italian and German traditions.",
-    "initiate": [
-      "You take on a knightly stance.",
-      "%s takes on a knightly stance."
-    ],
+    "initiate": [ "You take on a knightly stance.", "%s takes on a knightly stance." ],
     "priority": 1,
     "strictly_melee": true,
     "learn_difficulty": 6,
@@ -678,13 +447,7 @@
         "description": "Through chivalry and vigilance, your defense with a blade has increased.\n\n+1 block attempt, blocked damage reduced by 50% of Strength.",
         "melee_allowed": true,
         "bonus_blocks": 1,
-        "flat_bonuses": [
-          {
-            "stat": "block",
-            "scaling-stat": "str",
-            "scale": 0.5
-          }
-        ]
+        "flat_bonuses": [ { "stat": "block", "scaling-stat": "str", "scale": 0.5 } ]
       }
     ],
     "onblock_buffs": [
@@ -693,33 +456,13 @@
         "name": "Mastercut",
         "description": "You parry and return the attack with greater vigor!\n\n+10% damage, -10% move cost.\nLasts 1 turn.",
         "melee_allowed": true,
-        "skill_requirements": [
-          {
-            "name": "melee",
-            "level": 5
-          }
-        ],
+        "skill_requirements": [ { "name": "melee", "level": 5 } ],
         "buff_duration": 1,
         "mult_bonuses": [
-          {
-            "stat": "movecost",
-            "scale": 0.9
-          },
-          {
-            "stat": "damage",
-            "type": "bash",
-            "scale": 1.1
-          },
-          {
-            "stat": "damage",
-            "type": "cut",
-            "scale": 1.1
-          },
-          {
-            "stat": "damage",
-            "type": "stab",
-            "scale": 1.1
-          }
+          { "stat": "movecost", "scale": 0.9 },
+          { "stat": "damage", "type": "bash", "scale": 1.1 },
+          { "stat": "damage", "type": "cut", "scale": 1.1 },
+          { "stat": "damage", "type": "stab", "scale": 1.1 }
         ]
       }
     ],
@@ -729,19 +472,9 @@
         "name": "Conserve Momentum",
         "description": "You maintain the momentum from your last strike to move more quickly.\n\n-20% move cost.\nLasts 2 turns.",
         "melee_allowed": true,
-        "skill_requirements": [
-          {
-            "name": "melee",
-            "level": 2
-          }
-        ],
+        "skill_requirements": [ { "name": "melee", "level": 2 } ],
         "buff_duration": 2,
-        "mult_bonuses": [
-          {
-            "stat": "movecost",
-            "scale": 0.8
-          }
-        ]
+        "mult_bonuses": [ { "stat": "movecost", "scale": 0.8 } ]
       }
     ],
     "onpause_buffs": [
@@ -749,38 +482,14 @@
         "id": "buff_swordsmanship_onpause",
         "name": "Half Swording",
         "description": "You grip the blade partway down for greater control.\n\nBlocked damage reduced by 50% of Strength, -1 accuracy.\nEnables \"Grab\" and \"Lethal Strike\" techniques.\nLasts 2 turns.",
-        "skill_requirements": [
-          {
-            "name": "melee",
-            "level": 3
-          }
-        ],
+        "skill_requirements": [ { "name": "melee", "level": 3 } ],
         "melee_allowed": true,
         "buff_duration": 2,
-        "flat_bonuses": [
-          {
-            "stat": "block",
-            "scaling-stat": "str",
-            "scale": 0.5
-          },
-          {
-            "stat": "hit",
-            "scale": -1.0
-          }
-        ]
+        "flat_bonuses": [ { "stat": "block", "scaling-stat": "str", "scale": 0.5 }, { "stat": "hit", "scale": -1.0 } ]
       }
     ],
-    "techniques": [
-      "tec_swordsmanship_feint",
-      "tec_swordsmanship_lethal",
-      "tec_swordsmanship_ringen"
-    ],
-    "weapon_category": [
-      "MEDIUM_SWORDS",
-      "LONG_SWORDS",
-      "GREAT_SWORDS",
-      "LONG_THRUSTING_SWORDS"
-    ],
+    "techniques": [ "tec_swordsmanship_feint", "tec_swordsmanship_lethal", "tec_swordsmanship_ringen" ],
+    "weapon_category": [ "MEDIUM_SWORDS", "LONG_SWORDS", "GREAT_SWORDS", "LONG_THRUSTING_SWORDS" ],
     "weapons": [
       "arming_sword_plus_one",
       "arming_sword_plus_two",
@@ -805,10 +514,7 @@
     "id": "style_ninjutsu",
     "name": "Ninjutsu",
     "description": "Ninjutsu is a martial art and set of tactics used by ninja in feudal Japan.  It focuses on rapid, precise, silent strikes.  Ninjutsu is almost entirely silent and you have a higher chance to critically hit on your first attack.  It also provides small combat bonuses every time you move.",
-    "initiate": [
-      "You perform a kuji-in mantra with your hands.  Rin, Kai, Jin!",
-      "%s performs a series of intricate hand signs."
-    ],
+    "initiate": [ "You perform a kuji-in mantra with your hands.  Rin, Kai, Jin!", "%s performs a series of intricate hand signs." ],
     "priority": 1,
     "learn_difficulty": 6,
     "arm_block": 3,
@@ -828,15 +534,8 @@
         "description": "To a true shinobi, the first strike and the last strike are one and the same.\n\n+25% critical hit chance.",
         "unarmed_allowed": true,
         "melee_allowed": true,
-        "forbidden_buffs_all": [
-          "buff_ninjutsu_onattack"
-        ],
-        "flat_bonuses": [
-          {
-            "stat": "crit_chance",
-            "scale": 25.0
-          }
-        ]
+        "forbidden_buffs_all": [ "buff_ninjutsu_onattack" ],
+        "flat_bonuses": [ { "stat": "crit_chance", "scale": 25.0 } ]
       }
     ],
     "onattack_buffs": [
@@ -855,26 +554,11 @@
         "id": "buff_ninjutsu_onmove",
         "name": "Momentum Shift",
         "description": "Ninja are trained to be extremely agile and mobile.\n\n+1.0 Dodging skill, accuracy increased by 20% of Dexterity.\nLasts 1 turn.",
-        "skill_requirements": [
-          {
-            "name": "unarmed",
-            "level": 2
-          }
-        ],
+        "skill_requirements": [ { "name": "unarmed", "level": 2 } ],
         "unarmed_allowed": true,
         "melee_allowed": true,
         "buff_duration": 1,
-        "flat_bonuses": [
-          {
-            "stat": "dodge",
-            "scale": 1.0
-          },
-          {
-            "stat": "hit",
-            "scaling-stat": "dex",
-            "scale": 0.2
-          }
-        ]
+        "flat_bonuses": [ { "stat": "dodge", "scale": 1.0 }, { "stat": "hit", "scaling-stat": "dex", "scale": 0.2 } ]
       }
     ],
     "onkill_buffs": [
@@ -882,23 +566,13 @@
         "id": "buff_ninjutsu_onkill",
         "name": "Escape Plan",
         "description": "Your target has perished.  It is time to leave and plan your next attack.\n\n+2 dodge attempts, +10 movement speed.\nLasts 3 turns, persists after switching styles.",
-        "skill_requirements": [
-          {
-            "name": "melee",
-            "level": 3
-          }
-        ],
+        "skill_requirements": [ { "name": "melee", "level": 3 } ],
         "unarmed_allowed": true,
         "melee_allowed": true,
         "buff_duration": 3,
         "persists": true,
         "bonus_dodges": 2,
-        "flat_bonuses": [
-          {
-            "stat": "speed",
-            "scale": 10.0
-          }
-        ]
+        "flat_bonuses": [ { "stat": "speed", "scale": 10.0 } ]
       }
     ],
     "techniques": [
@@ -910,14 +584,7 @@
       "tec_ninjutsu_staffdown",
       "tec_ninjutsu_downkill"
     ],
-    "weapon_category": [
-      "MEDIUM_SWORDS",
-      "LONG_SWORDS",
-      "SHORT_SWORDS",
-      "KNIVES",
-      "QUARTERSTAVES",
-      "CLAWS"
-    ],
+    "weapon_category": [ "MEDIUM_SWORDS", "LONG_SWORDS", "SHORT_SWORDS", "KNIVES", "QUARTERSTAVES", "CLAWS" ],
     "weapons": [
       "arming_sword_plus_one",
       "arming_sword_plus_two",
@@ -977,10 +644,7 @@
     "id": "style_niten",
     "name": "Niten Ichi-Ryu",
     "description": "Niten Ichi-Ryu is an ancient school of combat, transmitting a style of classical Japanese swordsmanship conceived by the warrior Miyamoto Musashi.  Perception increases damage and reduces blocked damage.  Moving and attacking reduces dodging and damage until you pause.  Pausing for a moment increases Dodging skill.",
-    "initiate": [
-      "You clear your mind as you prepare yourself for combat.",
-      "%s relaxes and prepares for combat."
-    ],
+    "initiate": [ "You clear your mind as you prepare yourself for combat.", "%s relaxes and prepares for combat." ],
     "priority": 1,
     "learn_difficulty": 8,
     "primary_skill": "cutting",
@@ -992,29 +656,10 @@
         "description": "Cautious watchful eyes,\nmeasure and display your skill.\nPractice makes perfect.\n\nArmor penetration increased by 50% of Perception, blocked damage reduced by 100% of Perception.",
         "melee_allowed": true,
         "flat_bonuses": [
-          {
-            "stat": "arpen",
-            "type": "bash",
-            "scaling-stat": "per",
-            "scale": 0.5
-          },
-          {
-            "stat": "arpen",
-            "type": "cut",
-            "scaling-stat": "per",
-            "scale": 0.5
-          },
-          {
-            "stat": "arpen",
-            "type": "stab",
-            "scaling-stat": "per",
-            "scale": 0.5
-          },
-          {
-            "stat": "block",
-            "scaling-stat": "per",
-            "scale": 1.0
-          }
+          { "stat": "arpen", "type": "bash", "scaling-stat": "per", "scale": 0.5 },
+          { "stat": "arpen", "type": "cut", "scaling-stat": "per", "scale": 0.5 },
+          { "stat": "arpen", "type": "stab", "scaling-stat": "per", "scale": 0.5 },
+          { "stat": "block", "scaling-stat": "per", "scale": 1.0 }
         ]
       }
     ],
@@ -1026,12 +671,7 @@
         "melee_allowed": true,
         "buff_duration": 1,
         "persists": true,
-        "flat_bonuses": [
-          {
-            "stat": "dodge",
-            "scale": -5.0
-          }
-        ]
+        "flat_bonuses": [ { "stat": "dodge", "scale": -5.0 } ]
       }
     ],
     "onattack_buffs": [
@@ -1043,28 +683,11 @@
         "buff_duration": 1,
         "max_stacks": 5,
         "persists": true,
-        "flat_bonuses": [
-          {
-            "stat": "dodge",
-            "scale": -1.0
-          }
-        ],
+        "flat_bonuses": [ { "stat": "dodge", "scale": -1.0 } ],
         "mult_bonuses": [
-          {
-            "stat": "damage",
-            "type": "bash",
-            "scale": 0.95
-          },
-          {
-            "stat": "damage",
-            "type": "cut",
-            "scale": 0.95
-          },
-          {
-            "stat": "damage",
-            "type": "stab",
-            "scale": 0.95
-          }
+          { "stat": "damage", "type": "bash", "scale": 0.95 },
+          { "stat": "damage", "type": "cut", "scale": 0.95 },
+          { "stat": "damage", "type": "stab", "scale": 0.95 }
         ]
       }
     ],
@@ -1073,12 +696,7 @@
         "id": "buff_niten_ondodge",
         "name": "Moonlight",
         "description": "Luck be the light,\non a dark and cloudy night,\nas the moon shines down.\n\nEnables \"In-One Timing\" technique.\nLasts 1 turn.",
-        "skill_requirements": [
-          {
-            "name": "melee",
-            "level": 5
-          }
-        ],
+        "skill_requirements": [ { "name": "melee", "level": 5 } ],
         "melee_allowed": true,
         "buff_duration": 1
       }
@@ -1090,31 +708,11 @@
         "description": "The eye of the storm,\na fleeting moment of peace,\ngone without a trace.\n\n+2 accuracy, Dodging skill increased by 50% of Perception.\nLasts 2 turns.",
         "melee_allowed": true,
         "buff_duration": 2,
-        "flat_bonuses": [
-          {
-            "stat": "hit",
-            "scale": 2.0
-          },
-          {
-            "stat": "dodge",
-            "scaling-stat": "per",
-            "scale": 0.5
-          }
-        ]
+        "flat_bonuses": [ { "stat": "hit", "scale": 2.0 }, { "stat": "dodge", "scaling-stat": "per", "scale": 0.5 } ]
       }
     ],
-    "techniques": [
-      "niten_water_cut",
-      "niten_red_leaf",
-      "niten_stone_cut",
-      "niten_timing_attack",
-      "niten_feint"
-    ],
-    "weapon_category": [
-      "SHORT_SWORDS",
-      "MEDIUM_SWORDS",
-      "LONG_SWORDS"
-    ],
+    "techniques": [ "niten_water_cut", "niten_red_leaf", "niten_stone_cut", "niten_timing_attack", "niten_feint" ],
+    "weapon_category": [ "SHORT_SWORDS", "MEDIUM_SWORDS", "LONG_SWORDS" ],
     "weapons": [
       "katana_plus_one",
       "katana_plus_two",
@@ -1130,10 +728,7 @@
     "id": "style_silat",
     "name": "Silat",
     "description": "Pencak Silat, of Indonesian origin, is a fighting style that covers the use of short blades and bludgeons.  Fighters stay low and mobile to avoid attacks, then unleash deadly critical hits.",
-    "initiate": [
-      "You give a salute of respect as you prepare for combat.",
-      "%s gives a combat salute."
-    ],
+    "initiate": [ "You give a salute of respect as you prepare for combat.", "%s gives a combat salute." ],
     "priority": 1,
     "learn_difficulty": 7,
     "primary_skill": "cutting",
@@ -1152,22 +747,11 @@
         "id": "buff_silat_ondodge",
         "name": "Silat Appraisal",
         "description": "Each time you dodge an attack, you learn a bit more about your opponent's fighting style.  This allows you to make more precise attacks against them.\n\nAccuracy increased by 15% of Dexterity.\nLasts 2 turns.  Stacks 3 times.",
-        "skill_requirements": [
-          {
-            "name": "melee",
-            "level": 1
-          }
-        ],
+        "skill_requirements": [ { "name": "melee", "level": 1 } ],
         "melee_allowed": true,
         "buff_duration": 2,
         "max_stacks": 3,
-        "flat_bonuses": [
-          {
-            "stat": "hit",
-            "scaling-stat": "dex",
-            "scale": 0.15
-          }
-        ]
+        "flat_bonuses": [ { "stat": "hit", "scaling-stat": "dex", "scale": 0.15 } ]
       }
     ],
     "onmove_buffs": [
@@ -1175,35 +759,14 @@
         "id": "buff_silat_onmove",
         "name": "Silat Ambush",
         "description": "You stay low as you move, making it harder for enemies to defend against you.\n\n+5% critical hit chance.\nLasts 1 turn.",
-        "skill_requirements": [
-          {
-            "name": "melee",
-            "level": 1
-          }
-        ],
+        "skill_requirements": [ { "name": "melee", "level": 1 } ],
         "melee_allowed": true,
         "buff_duration": 1,
-        "flat_bonuses": [
-          {
-            "stat": "crit_chance",
-            "scale": 5.0
-          }
-        ]
+        "flat_bonuses": [ { "stat": "crit_chance", "scale": 5.0 } ]
       }
     ],
-    "techniques": [
-      "tec_silat_hamstring",
-      "tec_silat_precise",
-      "tec_silat_brutal",
-      "tec_silat_dirty"
-    ],
-    "weapon_category": [
-      "KNIVES",
-      "BATONS",
-      "QUARTERSTAVES",
-      "SHORT_SWORDS",
-      "POLEARMS"
-    ],
+    "techniques": [ "tec_silat_hamstring", "tec_silat_precise", "tec_silat_brutal", "tec_silat_dirty" ],
+    "weapon_category": [ "KNIVES", "BATONS", "QUARTERSTAVES", "SHORT_SWORDS", "POLEARMS" ],
     "weapons": [
       "cudgel_plus_one",
       "cudgel_plus_two",
@@ -1245,10 +808,7 @@
     "id": "style_sojutsu",
     "name": "Sojutsu",
     "description": "Sōjutsu, \"The Way of the Spear\", is the Japanese martial art of fighting with a spear.  Sōjutsu focuses on keeping opponents at a distance in order to maintain the advantage in combat.  Standing still gives you an extra block attempt but moving will briefly increase your damage.",
-    "initiate": [
-      "You prepare to defend against all that approach you.",
-      "%s assumes a wide, defensive stance."
-    ],
+    "initiate": [ "You prepare to defend against all that approach you.", "%s assumes a wide, defensive stance." ],
     "priority": 1,
     "learn_difficulty": 7,
     "primary_skill": "stabbing",
@@ -1260,12 +820,7 @@
         "description": "Your training grants better defense while using a polearm.\n\n+1 block attempt, +2 blocking effectiveness.",
         "melee_allowed": true,
         "bonus_blocks": 1,
-        "flat_bonuses": [
-          {
-            "stat": "block_effectiveness",
-            "scale": 2.0
-          }
-        ]
+        "flat_bonuses": [ { "stat": "block_effectiveness", "scale": 2.0 } ]
       }
     ],
     "onmove_buffs": [
@@ -1277,33 +832,14 @@
         "buff_duration": 1,
         "bonus_blocks": -1,
         "mult_bonuses": [
-          {
-            "stat": "damage",
-            "type": "bash",
-            "scale": 1.1
-          },
-          {
-            "stat": "damage",
-            "type": "cut",
-            "scale": 1.1
-          },
-          {
-            "stat": "damage",
-            "type": "stab",
-            "scale": 1.1
-          }
+          { "stat": "damage", "type": "bash", "scale": 1.1 },
+          { "stat": "damage", "type": "cut", "scale": 1.1 },
+          { "stat": "damage", "type": "stab", "scale": 1.1 }
         ]
       }
     ],
-    "techniques": [
-      "tec_sojutsu_feint",
-      "tec_sojutsu_shove",
-      "tec_sojutsu_trip",
-      "tec_sojutsu_jab"
-    ],
-    "weapon_category": [
-      "POLEARMS"
-    ],
+    "techniques": [ "tec_sojutsu_feint", "tec_sojutsu_shove", "tec_sojutsu_trip", "tec_sojutsu_jab" ],
+    "weapon_category": [ "POLEARMS" ],
     "weapons": [
       "glaive_plus_one",
       "glaive_plus_two",
