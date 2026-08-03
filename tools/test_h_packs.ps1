@@ -59,9 +59,14 @@ function Get-ErrorStats([string]$DebugLog) {
     # The H executable currently reports a known set of diagnostics from its
     # bundled data.  Keep those visible, but do not treat them as mod errors.
     $gameDataToken = ((Resolve-Path -LiteralPath $GameData).Path -replace '\\', '/')
+    # Depending on the process working directory, H may print bundled-data
+    # paths as either absolute paths or paths relative to the repository.
+    # Count both spellings as core diagnostics so the bundled-data cascade is
+    # not mistaken for errors in the repository mod being checked.
+    $gameDataRelativeToken = ((Resolve-Path -LiteralPath $GameData -Relative).ToString() -replace '\\', '/')
     $core = [regex]::Matches(
         $text,
-        '(?im)Json error:\s*' + [regex]::Escape($gameDataToken)
+        '(?im)Json error:\s*(?:' + [regex]::Escape($gameDataToken) + '|' + [regex]::Escape($gameDataRelativeToken) + ')'
     ).Count
     # These diagnostics are currently emitted by the bundled H data even
     # when no repository mod is loaded.  Keep them visible in CORE_ERRORS so
