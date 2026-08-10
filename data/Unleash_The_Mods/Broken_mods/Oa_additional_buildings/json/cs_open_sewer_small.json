@@ -4,57 +4,161 @@
     "name": "GROUP_ZOMBIE_SEWER",
     "default": "mon_zombie_technician",
     "monsters": [
-      { "monster": "mon_zombie_technician", "freq": 250, "cost_multiplier": 3 },
-      { "monster": "mon_zombie_electric", "freq": 150, "cost_multiplier": 5 }
+      {
+        "monster": "mon_zombie_technician",
+        "freq": 250,
+        "cost_multiplier": 3
+      },
+      {
+        "monster": "mon_zombie_electric",
+        "freq": 150,
+        "cost_multiplier": 5
+      }
     ]
   },
   {
     "id": "os_items",
     "type": "item_group",
     "items": [
-      { "item": "flashlight", "prob": 50 },
-      { "item": "heavy_flashlight", "prob": 40 },
-      { "item": "gloves_work", "prob": 30 },
-      { "item": "gloves_rubber", "prob": 60 },
-      { "item": "boots_rubber", "prob": 60 },
-      { "item": "hat_hard", "prob": 60 },
-      { "item": "shovel", "prob": 40 },
-      { "item": "jackhammer", "prob": 5 },
-      { "item": "elec_jackhammer", "prob": 5 },
-      { "item": "folding_poncho", "prob": 40 },
-      { "item": "radio", "prob": 40 },
-      { "item": "well_pump", "prob": 10 },
-      { "item": "wrench", "prob": 15 },
-      { "item": "bag_canvas", "prob": 40 },
-      { "item": "jumper_cable", "prob": 40 },
-      { "item": "jumper_cable_heavy", "prob": 20 },
-      { "item": "glasses_safety", "prob": 30 },
-      { "item": "crowbar", "prob": 15 },
-      { "item": "mask_filter", "prob": 30 },
-      { "item": "electric_lantern", "prob": 30 }
+      {
+        "item": "flashlight",
+        "prob": 50
+      },
+      {
+        "item": "heavy_flashlight",
+        "prob": 40
+      },
+      {
+        "item": "gloves_work",
+        "prob": 30
+      },
+      {
+        "item": "gloves_rubber",
+        "prob": 60
+      },
+      {
+        "item": "boots_rubber",
+        "prob": 60
+      },
+      {
+        "item": "hat_hard",
+        "prob": 60
+      },
+      {
+        "item": "shovel",
+        "prob": 40
+      },
+      {
+        "item": "jackhammer",
+        "prob": 5
+      },
+      {
+        "item": "elec_jackhammer",
+        "prob": 5
+      },
+      {
+        "item": "folding_poncho",
+        "prob": 40
+      },
+      {
+        "item": "radio",
+        "prob": 40
+      },
+      {
+        "item": "well_pump",
+        "prob": 10
+      },
+      {
+        "item": "wrench",
+        "prob": 15
+      },
+      {
+        "item": "bag_canvas",
+        "prob": 40
+      },
+      {
+        "item": "jumper_cable",
+        "prob": 40
+      },
+      {
+        "item": "jumper_cable_heavy",
+        "prob": 20
+      },
+      {
+        "item": "glasses_safety",
+        "prob": 30
+      },
+      {
+        "item": "crowbar",
+        "prob": 15
+      },
+      {
+        "item": "mask_filter",
+        "prob": 30
+      },
+      {
+        "item": "electric_lantern",
+        "prob": 30
+      },
+      [
+        "toolbox_empty",
+        5
+      ]
     ],
     "subtype": "distribution"
   },
   {
     "id": "os_work_vehicles",
     "type": "vehicle_group",
-    "vehicles": [ [ "wheelbarrow", 60 ], [ "portable_generator", 40 ], [ "oa_work_light", 50 ] ]
+    "vehicles": [
+      [
+        "wheelbarrow",
+        60
+      ],
+      [
+        "portable_generator",
+        40
+      ],
+      [
+        "oa_work_light",
+        50
+      ]
+    ]
   },
   {
     "id": "oa_work_light",
     "type": "vehicle",
     "name": "work light",
-    "blueprint": [ "^" ],
+    "blueprint": [
+      "^"
+    ],
     "parts": [
-      { "x": 0, "y": 0, "parts": [ "xlframe#vertical_2", "wheel_caster", "small_storage_battery" ] },
-      { "x": 0, "y": 0, "parts": [ "floodlight", "controls_electronic" ] }
+      {
+        "x": 0,
+        "y": 0,
+        "parts": [
+          "xlframe#vertical_2",
+          "wheel_caster",
+          "small_storage_battery"
+        ]
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "parts": [
+          "floodlight",
+          "controls_electronic"
+        ]
+      }
     ]
   },
   {
     "type": "mapgen",
     "method": "json",
     "weight": 1000,
-    "om_terrain": [ "cs_open_sewer" ],
+    "om_terrain": [
+      "cs_open_sewer"
+    ],
     "object": {
       "rows": [
         ",,.,,..,.,,.,,..,,.,..,.",
@@ -114,17 +218,53 @@
         "B": "f_bench"
       },
       "items": {
-        "r": { "item": "os_items", "chance": 5 },
-        "L": { "item": "os_items", "chance": 60 },
-        "w": { "item": "os_items", "chance": 1 }
+        "r": {
+          "item": "os_items",
+          "chance": 5
+        },
+        "L": {
+          "item": "os_items",
+          "chance": 60
+        },
+        "w": {
+          "item": "os_items",
+          "chance": 1
+        }
       },
       "place_vehicles": [
-        { "vehicle": "os_work_vehicles", "chance": 30, "x": 5, "y": 19 },
-        { "vehicle": "os_work_vehicles", "chance": 30, "x": 13, "y": 17 },
-        { "vehicle": "os_work_vehicles", "chance": 30, "x": 6, "y": 7 }
+        {
+          "vehicle": "os_work_vehicles",
+          "chance": 30,
+          "x": 5,
+          "y": 19
+        },
+        {
+          "vehicle": "os_work_vehicles",
+          "chance": 30,
+          "x": 13,
+          "y": 17
+        },
+        {
+          "vehicle": "os_work_vehicles",
+          "chance": 30,
+          "x": 6,
+          "y": 7
+        }
       ],
-      "place_monsters": [ { "monster": "GROUP_ZOMBIE_SEWER", "x": 13, "y": 12 } ],
-      "place_signs": [ { "signage": "Caution: Work in Progress", "x": 11, "y": 1 } ],
+      "place_monsters": [
+        {
+          "monster": "GROUP_ZOMBIE_SEWER",
+          "x": 13,
+          "y": 12
+        }
+      ],
+      "place_signs": [
+        {
+          "signage": "Caution: Work in Progress",
+          "x": 11,
+          "y": 1
+        }
+      ],
       "fill_ter": "t_region_groundcover"
     }
   }

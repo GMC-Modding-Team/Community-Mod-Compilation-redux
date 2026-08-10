@@ -12,36 +12,74 @@
   {
     "type": "npc_class",
     "id": "NC_AUGUSTMOON_shipping_chief",
-    "name": { "str": "Portmaster" },
+    "name": {
+      "str": "Portmaster"
+    },
     "job_description": "I manage incoming and outgoing ships and shuttlecraft.",
-    "traits": [ { "group": "NPC_starting_traits" }, { "group": "Appearance_demographics" } ],
+    "traits": [
+      {
+        "group": "NPC_starting_traits"
+      },
+      {
+        "group": "Appearance_demographics"
+      }
+    ],
     "common": false,
-    "bonus_int": { "rng": [ 5, 7 ] },
+    "bonus_int": {
+      "rng": [
+        5,
+        7
+      ]
+    },
     "worn_override": "NC_UICA_PORT_CREW_worn",
     "carry_override": "EMPTY_GROUP",
     "weapon_override": "EMPTY_GROUP",
-    "shopkeeper_item_group": [ { "group": "NC_AUGUSTMOON_shipping_stock", "rigid": true }, { "group": "augustmoon_shop_money", "rigid": true } ],
-    "shopkeeper_price_rules": [ { "group": "afs_general_armory", "fixed_adj": 0 }, { "group": "augustmoon_shop_money", "fixed_adj": 0 } ]
+    "shopkeeper_item_group": [
+      {
+        "group": "NC_AUGUSTMOON_shipping_stock",
+        "rigid": true
+      },
+      {
+        "group": "augustmoon_shop_money",
+        "rigid": true
+      }
+    ],
+    "shopkeeper_price_rules": [
+      {
+        "group": "afs_general_armory",
+        "fixed_adj": 0
+      },
+      {
+        "group": "augustmoon_shop_money",
+        "fixed_adj": 0
+      }
+    ]
   },
   {
     "type": "item_group",
     "id": "NC_AUGUSTMOON_shipping_stock",
     "subtype": "collection",
     "ammo": 100,
-    "items": [ { "item": "afs_shuttle_radiobeacon", "count": [ 4, 10 ] } ]
+    "items": []
   },
   {
     "id": "TALK_AUGUSTMOON_SHIPPING_CHIEF",
     "type": "talk_topic",
     "dynamic_line": "Interested in booking passage planetside?",
     "responses": [
-      { "text": "That's why I'm here", "topic": "TALK_AUGUSTMOON_LANDING" },
+      {
+        "text": "That's why I'm here",
+        "topic": "TALK_AUGUSTMOON_LANDING"
+      },
       {
         "text": "I want to contract a drone shuttle.",
         "topic": "TALK_AUGUSTMOON_SHIPPING_CHIEF",
         "effect": "start_trade"
       },
-      { "text": "Not right now", "topic": "TALK_DONE" }
+      {
+        "text": "Not right now",
+        "topic": "TALK_DONE"
+      }
     ]
   },
   {
@@ -51,10 +89,18 @@
     "responses": [
       {
         "text": "I'm ready, book me in the next ship down.",
-        "effect": [ { "u_spend_cash": 100000, "true_eocs": "EOC_PORT_TO_LANDING_PAD_TP" } ],
+        "effect": [
+          {
+            "u_spend_cash": 100000,
+            "true_eocs": "EOC_PORT_TO_LANDING_PAD_TP"
+          }
+        ],
         "topic": "TALK_DONE"
       },
-      { "text": "I need to settle a few things first", "topic": "TALK_DONE" }
+      {
+        "text": "I need to settle a few things first",
+        "topic": "TALK_DONE"
+      }
     ]
   }
 ]
