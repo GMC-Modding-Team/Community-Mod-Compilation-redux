@@ -40,12 +40,33 @@ Transformations applied
   20. "min_unarmed": N          -> skill_requirements entry  (merged with min_melee)
   21. "bashing": N, "cutting": M-> "melee_damage": { "bash": N, "cut": M }
   22. "bash_resist": N, etc.    -> "resist": { "bash": N, ... }
+
+H-release mode
+--------------
+Pass ``--h-data-root PATH`` to run the type-aware 0.H compatibility pass after
+the legacy transforms.  The pass delegates to ``cdda_h_compat.py`` so this
+updater and the repository-wide updater share one implementation.  It covers
+the current H fixes, including modern item/armor fields, copy-from resolution,
+vehicle variants, mapgen rows and coordinates, item groups, duplicate-entry
+cleanup, field immunities, recipes, and power-armor/tool magazine pockets.
+JSON files are never removed and dependency/bridge/shim mods are never added.
+The H data root must be an exact 0.H ``data`` tree so copy-from resolution is
+based on the actual release data rather than guessed placeholders.
+
+  # Apply all legacy and H-release transforms in place:
+  python3 update_legacy_json.py path/to/mods/ --h-data-root path/to/cdda/data/
+
+  # Preview both passes without writing:
+  python3 update_legacy_json.py path/to/mods/ --h-data-root path/to/cdda/data/ --dry-run
 """
 
 import os
 import re
 import argparse
+import json
 import sys
+
+from pathlib import Path
 
 # ---------------------------------------------------------------------------
 # Recipe activity level mapping
@@ -3206,6 +3227,43 @@ def process_path(path, dry_run=False):
         sys.exit(1)
 
 
+def run_h_release_pass(paths, h_data_root, dry_run=False, formatter=None, prune_core_copies=False):
+    """Run the shared, structured 0.H compatibility pass.
+
+    ``update_legacy_json.py`` predates the repository's type-aware H updater.
+    Keeping a second copy of those rules here caused the two tools to drift,
+    especially for variants, item groups, mapgen and power-armour pockets.
+    H mode therefore imports the canonical implementation and runs both of its
+    passes over the same target set after the historical regex pass above.
+    """
+    try:
+        import cdda_h_compat
+    except ImportError as exc:
+        raise RuntimeError(
+            "H-release mode requires tools/cdda_h_compat.py next to this script"
+        ) from exc
+
+    target_paths = [Path(path) for path in paths]
+    h_root = Path(h_data_root)
+    files = list(cdda_h_compat.iter_json(target_paths))
+    h_files = list(cdda_h_compat.iter_json([h_root]))
+    if not files:
+        print("[H-RELEASE] No JSON files found in the requested target paths.")
+    if not h_files:
+        raise RuntimeError(f"No JSON files found below H data root: {h_root}")
+
+    formatter_path = Path(formatter) if formatter else None
+    general = cdda_h_compat.general_pass(
+        files,
+        h_files,
+        dry_run,
+        formatter_path,
+        prune_core_copies=prune_core_copies,
+    )
+    pockets = cdda_h_compat.tool_pocket_pass(files, h_files, dry_run, formatter_path)
+    return {"general": dict(general), "tool_pockets": dict(pockets)}
+
+
 # ---------------------------------------------------------------------------
 # CLI entry-point
 # ---------------------------------------------------------------------------
@@ -3230,14 +3288,58 @@ def main():
         action='store_true',
         help='Preview which files would be changed without writing anything.',
     )
+    parser.add_argument(
+        '--h-data-root',
+        metavar='PATH',
+        help=(
+            'Run the shared type-aware CDDA 0.H compatibility pass after the '
+            'legacy transforms. PATH must be the exact H-release data tree.'
+        ),
+    )
+    parser.add_argument(
+        '--formatter',
+        metavar='PATH',
+        help=(
+            'Optional CDDA json_formatter executable used by H-release mode '
+            'after files are rewritten.'
+        ),
+    )
+    parser.add_argument(
+        '--prune-core-copies',
+        action='store_true',
+        help=(
+            'Opt in to removing obsolete copied core definitions during H '
+            'mode. By default copy-from entries are preserved or repaired.'
+        ),
+    )
     args = parser.parse_args()
+
+    if args.prune_core_copies and not args.h_data_root:
+        parser.error('--prune-core-copies requires --h-data-root')
+    if args.formatter and not args.h_data_root:
+        parser.error('--formatter requires --h-data-root')
 
     mode = "DRY-RUN" if args.dry_run else "UPDATE"
     print(f"=== CDDA Legacy JSON Updater [{mode}] ===")
     for path in args.paths:
         process_path(path, dry_run=args.dry_run)
+    if args.h_data_root:
+        try:
+            h_summary = run_h_release_pass(
+                args.paths,
+                args.h_data_root,
+                dry_run=args.dry_run,
+                formatter=args.formatter,
+                prune_core_copies=args.prune_core_copies,
+            )
+        except (OSError, RuntimeError, ValueError) as exc:
+            print(f"[H-RELEASE ERROR] {exc}", file=sys.stderr)
+            return 1
+        print("\n[H-RELEASE] Shared compatibility pass summary:")
+        print(json.dumps(h_summary, indent=2, sort_keys=True))
     print("Done.")
+    return 0
 
 
 if __name__ == '__main__':
-    main()
+    raise SystemExit(main())
