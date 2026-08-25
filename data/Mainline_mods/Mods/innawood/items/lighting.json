@@ -1,21 +1,12 @@
 [
   {
     "id": "oil_lamp_on",
-    "type": "TOOL",
     "copy-from": "oil_lamp",
+    "type": "TOOL",
     "name": { "str": "oil lamp" },
     "description": "This is an oil fueled lamp.  It does not provide much light, but it lasts a long time.  It is turned on.  Use it to turn it off.",
-    "weight": "1720 g",
-    "volume": "1 L",
-    "price": "1000 cent",
-    "price_postapoc": "100 cent",
-    "to_hit": 2,
-    "material": [ "glass", "iron" ],
-    "symbol": ";",
-    "color": "yellow",
-    "ammo": [ "lamp_oil" ],
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "watertight": true, "ammo_restriction": { "lamp_oil": 750 } } ],
-    "charges_per_use": 1,
+    "turns_per_charge": 240,
+    "revert_to": "oil_lamp",
     "use_action": [
       {
         "ammo_scale": 0,
@@ -26,27 +17,18 @@
       },
       { "type": "firestarter", "moves": 100 }
     ],
-    "flags": [ "LIGHT_30", "TRADER_AVOID", "FIRE", "ALLOWS_REMOTE_USE", "WATER_EXTINGUISH", "FIRESTARTER" ],
-    "melee_damage": { "bash": 1 },
-    "turns_per_charge": 240,
-    "revert_to": "oil_lamp"
+    "flags": [ "LIGHT_30", "TRADER_AVOID", "FIRE", "ALLOWS_REMOTE_USE", "WATER_EXTINGUISH", "FIRESTARTER" ]
   },
   {
     "id": "oil_lamp_clay_on",
-    "type": "TOOL",
     "copy-from": "oil_lamp_clay",
+    "looks_like": "oil_lamp_on",
+    "sub": "oil_lamp_on",
+    "type": "TOOL",
     "name": { "str": "clay oil lamp" },
     "description": "This is a specialized small clay container with a wick, an ancient form of oil lamp.  Unlike newer designs, it isn't windproof, so the flame is likely to be extinguished if exposed to wind; better use it indoors.  It does not provide much light, but lasts a long time.  It is lit, consuming oil and providing light.  Use it to extinguish the flame.",
-    "weight": "620 g",
-    "volume": "300 ml",
-    "price": "800 cent",
-    "price_postapoc": "100 cent",
-    "material": [ "clay" ],
-    "symbol": ";",
-    "color": "brown",
-    "ammo": [ "crude_lamp_oil", "lamp_oil" ],
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "watertight": true, "ammo_restriction": { "crude_lamp_oil": 250, "lamp_oil": 250 } } ],
-    "charges_per_use": 1,
+    "turns_per_charge": 240,
+    "revert_to": "oil_lamp_clay",
     "use_action": [
       {
         "ammo_scale": 0,
@@ -57,12 +39,7 @@
       },
       { "type": "firestarter", "moves": 100 }
     ],
-    "flags": [ "LIGHT_20", "TRADER_AVOID", "FIRE", "ALLOWS_REMOTE_USE", "WATER_EXTINGUISH", "WIND_EXTINGUISH", "FIRESTARTER" ],
-    "melee_damage": { "bash": 1 },
-    "looks_like": "oil_lamp_on",
-    "sub": "oil_lamp_on",
-    "turns_per_charge": 240,
-    "revert_to": "oil_lamp_clay"
+    "flags": [ "LIGHT_20", "TRADER_AVOID", "FIRE", "ALLOWS_REMOTE_USE", "WATER_EXTINGUISH", "WIND_EXTINGUISH", "FIRESTARTER" ]
   },
   {
     "id": "torch_lit",
@@ -71,8 +48,8 @@
     "description": "This is a large stick, wrapped in rags that are soaked with a flammable material.  It is burning, producing plenty of light.",
     "weight": "831 g",
     "volume": "750 ml",
-    "price": "0 cent",
-    "price_postapoc": "0 cent",
+    "price": 0,
+    "price_postapoc": 0,
     "to_hit": 1,
     "material": [ "wood" ],
     "symbol": "/",

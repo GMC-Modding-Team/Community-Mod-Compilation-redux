@@ -64,7 +64,14 @@
   {
     "id": "TALK_THAWED_1",
     "type": "talk_topic",
-    "dynamic_line": "What year is it?  How long have I been asleep?  Anymore bad news?",
+    "dynamic_line": {
+      "npc_has_var": "thawed_has_talked",
+      "type": "dialogue",
+      "context": "thawed",
+      "value": "yes",
+      "no": "What year is it?  How long have I been asleep?",
+      "yes": "Anymore bad news?"
+    },
     "speaker_effect": { "effect": { "npc_add_var": "thawed_has_talked", "type": "dialogue", "context": "thawed", "value": "yes" } },
     "responses": [
       {

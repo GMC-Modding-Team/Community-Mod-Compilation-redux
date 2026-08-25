@@ -2,7 +2,14 @@
   {
     "type": "talk_topic",
     "id": "TALK_NPC_DEFENSE_WANDERER",
-    "dynamic_line": "<greet> Freeze you <swear> <zombies>!",
+    "dynamic_line": {
+      "npc_has_var": "knows_u",
+      "type": "dialogue",
+      "context": "first_meeting",
+      "value": "yes",
+      "yes": "<greet>",
+      "no": "Freeze you <swear> <zombies>!"
+    },
     "speaker_effect": { "effect": { "npc_add_var": "knows_u", "type": "dialogue", "context": "first_meeting", "value": "yes" } },
     "responses": [
       {
@@ -37,7 +44,7 @@
   {
     "type": "talk_topic",
     "id": "TALK_NPC_DEFENSE_WANDERER_INTRO",
-    "dynamic_line": "What's up?  What do you need?  What can I do for you?",
+    "dynamic_line": [ "What's up?", "What do you need?", "What can I do for you?" ],
     "responses": [
       { "text": "What are you doing out here in the sticks?", "topic": "TALK_NPC_DEFENSE_WANDERER_STORY" },
       { "text": "Care to trade?", "topic": "TALK_NPC_DEFENSE_WANDERER_INTRO", "effect": "start_trade" },

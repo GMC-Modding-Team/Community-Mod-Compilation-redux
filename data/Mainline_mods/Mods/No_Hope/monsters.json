@@ -83,7 +83,7 @@
     "id": "mon_turret_bmg",
     "type": "MONSTER",
     "name": { "str": "antimateriel turret" },
-    "description": "Leadworks LLC's T-107A1 Interdictor, an automated.50BMG antimateriel rifle.  Credited with forestalling countless car-bombing attempts, it has always been kept under extremely tight control, so as to itself maintain extremely tight control of its area.  And then the Cataclysm struck.",
+    "description": "Leadworks LLC's T-107A1 Interdictor, an automated .50BMG antimateriel rifle.  Credited with forestalling countless car-bombing attempts, it has always been kept under extremely tight control, so as to itself maintain extremely tight control of its area.  And then the Cataclysm struck.",
     "default_faction": "military",
     "species": [ "ROBOT" ],
     "diff": 40,
@@ -253,7 +253,7 @@
   {
     "id": "mon_tripod",
     "type": "MONSTER",
-    "name": { "str": "tripod" },
+    "name": "tripod",
     "description": "The Honda Regnal, a tall robot walking on three spidery legs.  For weapons, it has a trio of spiked retractable cables and a flamethrower mounted on its head.",
     "default_faction": "military",
     "species": [ "ROBOT" ],
@@ -282,7 +282,7 @@
   {
     "id": "mon_tankbot",
     "type": "MONSTER",
-    "name": { "str": "Beagle Mini-Tank UGV" },
+    "name": "Beagle Mini-Tank UGV",
     "description": "The Northrop Beagle is a refrigerator-sized urban warfare UGV.  Sporting an anti-tank missile launcher, 40mm grenade launcher, and numerous anti-infantry weapons, it's designed for high-risk urban fighting.",
     "default_faction": "military",
     "species": [ "ROBOT" ],
@@ -299,6 +299,7 @@
     "melee_skill": 5,
     "melee_dice": 5,
     "melee_dice_sides": 5,
+    "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "vision_day": 50,
     "revert_to_itype": "bot_tankbot",
     "starting_ammo": { "40x46mm_m433": 200, "556": 3000 },
@@ -322,7 +323,7 @@
   {
     "id": "mon_chickenbot",
     "type": "MONSTER",
-    "name": { "str": "chicken walker" },
+    "name": "chicken walker",
     "description": "The Northrop ATSV, a massive, heavily-armed and armored robot walking on a pair of reverse-jointed legs.  Armed with a 40mm anti-vehicle grenade launcher, 5.56 anti-personnel gun, and the ability to electrify itself against attackers, it is an effective automated sentry, though production was limited due to a legal dispute.",
     "default_faction": "military",
     "species": [ "ROBOT" ],
@@ -339,6 +340,7 @@
     "melee_skill": 3,
     "melee_dice": 3,
     "melee_dice_sides": 3,
+    "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "vision_day": 50,
     "vision_night": 35,
     "revert_to_itype": "bot_chickenbot",
@@ -415,6 +417,7 @@
     "melee_skill": 6,
     "melee_dice": 3,
     "melee_dice_sides": 4,
+    "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "dodge": 1,
     "vision_night": 7,
     "path_settings": { "max_dist": 10 },
@@ -445,13 +448,14 @@
     "color": "light_blue",
     "aggression": 100,
     "morale": 100,
+    "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "dodge": 1,
     "vision_day": 50,
     "vision_night": 40,
     "luminance": 25,
     "harvest": "zombie_meatslug",
     "special_attacks": [
-      { "id": "flaming_eye_warming_up", "cooldown": 10 },
+      [ "flaming_eye_warming_up", 10 ],
       {
         "type": "spell",
         "spell_data": { "id": "destruction_ray" },
@@ -478,6 +482,7 @@
     "symbol": "e",
     "color": "light_blue",
     "morale": 100,
+    "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "dodge": 1,
     "vision_day": 50,
     "vision_night": 40,
@@ -486,6 +491,22 @@
     "special_attacks": [ [ "STARE", 12 ] ],
     "flags": [ "SEES", "WARM", "FLIES", "FIREY", "NO_BREATHE", "NOHEAD" ],
     "armor": { "bash": 4 }
+  },
+  {
+    "id": "mon_zombie_soldier",
+    "type": "MONSTER",
+    "name": { "str": "zombie soldier" },
+    "description": "Once a soldier, it is dressed head to toe in combat gear and carries itself rather steadily for a zombie.",
+    "copy-from": "mon_zombie_soldier",
+    "death_drops": "mon_zombie_soldier_death_drops_no_hope"
+  },
+  {
+    "id": "mon_zombie_soldier_blackops_1",
+    "type": "MONSTER",
+    "name": { "str": "black-ops zombie" },
+    "description": "This soldier zombie's skin radiates a sort of shadowy smoke that obscures its outline, making its camouflage even harder to see against the background.  In the darkness it would be nigh invisible.",
+    "copy-from": "mon_zombie_soldier_blackops_1",
+    "death_drops": "mon_zombie_soldier_death_drops_no_hope"
   },
   {
     "id": "mon_zombie_flamer",
@@ -502,12 +523,13 @@
     "speed": 70,
     "material": [ "flesh" ],
     "symbol": "Z",
-    "color": "white",
+    "color": "white_red",
     "aggression": 100,
     "morale": 100,
     "melee_skill": 5,
     "melee_dice": 2,
     "melee_dice_sides": 6,
+    "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "dodge": 1,
     "weakpoint_sets": [ "wps_humanoid_body", "wps_humanoid_body_armor", "wps_humanoid_open_helmet", "wps_humanoid_gasmask" ],
     "families": [ "prof_intro_biology", "prof_wp_zombie", "prof_wp_syn_armored" ],
@@ -606,6 +628,7 @@
     "melee_skill": 2,
     "melee_dice": 2,
     "melee_dice_sides": 6,
+    "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "vision_night": 50,
     "mech_str_bonus": 10,
     "mech_battery": "huge_atomic_battery_cell",
@@ -652,6 +675,7 @@
     "melee_skill": 4,
     "melee_dice": 4,
     "melee_dice_sides": 8,
+    "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "vision_night": 50,
     "mech_str_bonus": 30,
     "mech_battery": "huge_atomic_battery_cell",
@@ -679,5 +703,19 @@
       "MECH_DEFENSIVE"
     ],
     "armor": { "bash": 22, "cut": 30, "bullet": 24 }
+  },
+  {
+    "id": "mon_zombie_technician",
+    "type": "MONSTER",
+    "name": { "str": "zombie technician" },
+    "description": "Still wearing its work clothes and hardhat, this zombie likely used to work on power lines or other electrical equipment.  As it approaches, everything metal you're carrying shifts very slightly in the zombie's direction, as if attracted by a strong magnetic force.",
+    "copy-from": "mon_zombie_technician",
+    "grab_strength": 20,
+    "special_attacks": [
+      [ "PULL_METAL_WEAPON", 25 ],
+      { "id": "grab", "cooldown": 7 },
+      { "id": "scratch_humanoid" },
+      { "id": "bite_humanoid", "cooldown": 5 }
+    ]
   }
 ]

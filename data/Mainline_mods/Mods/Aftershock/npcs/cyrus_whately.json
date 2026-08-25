@@ -6,7 +6,14 @@
   {
     "type": "talk_topic",
     "id": "TALK_CYRUS_1",
-    "dynamic_line": "What brings you here today?  Hello.  How are you?  Welcome!  Are you ready to leave this marble?  You look like one of my niece's lab assistants.",
+    "dynamic_line": {
+      "u_has_var": "u_met_cyrus",
+      "type": "general",
+      "context": "meeting",
+      "value": "yes",
+      "yes": [ "What brings you here today?", "Hello.", "How are you?", "Welcome!", "Are you ready to leave this marble?" ],
+      "no": "You look like one of my niece's lab assistants."
+    },
     "responses": [
       {
         "text": "Who are you?",
@@ -98,7 +105,7 @@
     "followup": "MISSION_FRANKENSTEIN_2",
     "dialogue": {
       "describe": "I need 4 self healing polymers from wherever you can find them.",
-      "offer": "My experiments are at a critical point.  Could you find about…  4 self healing polymers for me?",
+      "offer": "My experiments are at a critical point.  Could you find about… 4 self healing polymers for me?",
       "accepted": "Don't forget to tell me when you have them.",
       "rejected": "Then why are you even here?  Just let me know if you reconsider.",
       "advice": "Hospitals, DIY geneticists.",

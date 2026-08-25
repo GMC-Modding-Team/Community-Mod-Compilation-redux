@@ -3,7 +3,7 @@
     "type": "item_group",
     "subtype": "collection",
     "id": "quiver_orc_archer",
-    "items": [ { "item": "arrow_wood_heavy", "count": [ 1, 6 ], "charges": [ 1, 10 ] } ]
+    "entries": [ { "item": "arrow_wood_heavy", "count": [ 1, 6 ], "charges": [ 1, 10 ] } ]
   },
   {
     "id": "mon_orc_warrior",
@@ -65,36 +65,12 @@
     ]
   },
   {
-    "id": "mon_orc_archer",
     "type": "MONSTER",
-    "copy-from": "mon_orc_warrior",
+    "id": "mon_orc_archer",
     "name": { "str": "orc archer" },
     "description": "This green brute is an orc archer.  It looks at you with a bow in hand and smiles silently as it aims at you.",
-    "default_faction": "orcs",
-    "bodytype": "human",
-    "species": [ "ORC" ],
-    "volume": "60 L",
-    "weight": "70 kg",
-    "hp": 92,
-    "speed": 110,
-    "material": [ "flesh" ],
-    "symbol": "o",
-    "color": "green",
-    "aggression": 75,
-    "morale": 100,
+    "copy-from": "mon_orc_warrior",
     "melee_skill": 2,
-    "melee_dice": 6,
-    "melee_dice_sides": 4,
-    "melee_damage": [ { "damage_type": "cut", "amount": 7 } ],
-    "dodge": 7,
-    "harvest": "orc",
-    "families": [ "prof_wp_demihuman" ],
-    "weakpoint_sets": [ "wps_humanoid_body", "wps_humanoid_body_armor", "wps_humanoid_open_helmet" ],
-    "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "PLAYER_WEAK" ],
-    "vision_day": 13,
-    "vision_night": 5,
-    "path_settings": { "avoid_traps": true, "avoid_sharp": true },
-    "zombify_into": "mon_zorc",
     "death_drops": {
       "subtype": "collection",
       "items": [
@@ -113,19 +89,6 @@
         { "item": "quiver_large", "contents-group": "quiver_orc_archer", "prob": 100 }
       ]
     },
-    "flags": [
-      "SEES",
-      "HEARS",
-      "HAS_MIND",
-      "WARM",
-      "BASHES",
-      "FILTHY",
-      "PATH_AVOID_DANGER_1",
-      "SWARMS",
-      "GROUP_MORALE",
-      "WIELDED_WEAPON",
-      "DROPS_AMMO"
-    ],
     "starting_ammo": { "arrow_wood_heavy": 60 },
     "extend": {
       "special_attacks": [
@@ -144,7 +107,8 @@
           "ranges": [ [ 3, 13, "DEFAULT" ] ],
           "no_ammo_sound": "grunting"
         }
-      ]
+      ],
+      "flags": [ "DROPS_AMMO" ]
     }
   },
   {
@@ -153,31 +117,12 @@
     "copy-from": "mon_orc_warrior",
     "name": { "str": "blood orc" },
     "description": "This bloody red brute is an orc warrior.  He stares at you menacingly, weapon in hand; this one seems to have bathed himself in the blood of his enemies.",
-    "default_faction": "orcs",
-    "bodytype": "human",
-    "species": [ "ORC" ],
-    "volume": "60 L",
-    "weight": "70 kg",
     "hp": 97,
-    "speed": 110,
-    "material": [ "flesh" ],
-    "symbol": "o",
-    "color": "red",
+    "dodge": 3,
     "aggression": 100,
-    "morale": 100,
-    "melee_skill": 5,
-    "melee_dice": 6,
+    "color": "red",
     "melee_dice_sides": 8,
     "melee_damage": [ { "damage_type": "cut", "amount": 5 } ],
-    "dodge": 3,
-    "harvest": "orc",
-    "families": [ "prof_wp_demihuman" ],
-    "weakpoint_sets": [ "wps_humanoid_body", "wps_humanoid_body_armor", "wps_humanoid_open_helmet" ],
-    "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "PLAYER_WEAK" ],
-    "vision_day": 13,
-    "vision_night": 5,
-    "path_settings": { "avoid_traps": true, "avoid_sharp": true },
-    "zombify_into": "mon_zorc",
     "death_drops": {
       "subtype": "collection",
       "items": [
@@ -193,18 +138,6 @@
         { "item": "chestwrap_fur", "prob": 5 },
         { "item": "warhammer", "prob": 100 }
       ]
-    },
-    "flags": [
-      "SEES",
-      "HEARS",
-      "HAS_MIND",
-      "WARM",
-      "BASHES",
-      "FILTHY",
-      "PATH_AVOID_DANGER_1",
-      "SWARMS",
-      "GROUP_MORALE",
-      "WIELDED_WEAPON"
-    ]
+    }
   }
 ]

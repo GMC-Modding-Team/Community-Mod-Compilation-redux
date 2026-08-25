@@ -1,53 +1,34 @@
 [
   {
-    "id": "f_afs_escape_pod_seat",
     "type": "furniture",
-    "copy-from": "f_seat_airplane",
+    "id": "f_afs_escape_pod_seat",
     "name": "escape pod seat",
-    "//": "Used in airliner.json, it yields short rope as a seatbelt",
-    "looks_like": "f_armchair",
-    "symbol": "H",
+    "copy-from": "f_seat_airplane",
     "description": "The cushioned and upright facing seat of a single-seater escape pod.  A storage space beneath it holds survival supplies.",
+    "symbol": "H",
     "color": "light_red",
+    "flags": [ "TRANSPARENT", "FLAMMABLE_ASH", "ORGANIC", "MOUNTABLE", "CAN_SIT" ],
     "move_cost_mod": 1,
     "coverage": 45,
     "comfort": 3,
     "floor_bedding_warmth": 500,
     "bonus_fire_warmth_feet": 1000,
-    "required_str": 20,
     "deconstruct": {
       "items": [ { "item": "pipe", "count": 10 }, { "item": "cotton_patchwork", "count": [ 30, 33 ] }, { "item": "rope_6" } ]
     },
-    "flags": [ "TRANSPARENT", "FLAMMABLE_ASH", "ORGANIC", "MOUNTABLE", "CAN_SIT" ],
-    "bash": {
-      "str_min": 10,
-      "str_max": 40,
-      "sound": "smash!",
-      "sound_fail": "whump.",
-      "items": [
-        { "item": "pipe", "count": [ 0, 2 ] },
-        { "item": "scrap", "charges": [ 2, 10 ] },
-        { "item": "sheet_cotton", "count": [ 2, 5 ] },
-        { "item": "cotton_patchwork", "count": [ 5, 8 ] },
-        { "item": "plastic_chunk", "count": [ 1, 7 ] },
-        { "item": "rope_6" }
-      ]
-    }
+    "required_str": 20
   },
   {
-    "id": "f_autodoc_super",
     "type": "furniture",
-    "copy-from": "f_autodoc",
+    "id": "f_autodoc_super",
     "name": "chirurgic suite",
     "symbol": "&",
-    "description": "A multitude of surgical arms seamlessly meld with the chromed ceiling.  They expectantly unravel with your approach, animated by an AI whose performances blur the lines between medicine and art.",
     "color": "light_cyan",
-    "looks_like": "f_robotic_arm",
-    "move_cost_mod": -1,
-    "coverage": 35,
-    "required_str": -1,
+    "copy-from": "f_autodoc",
     "flags": [ "TRANSPARENT", "AUTODOC" ],
+    "description": "A multitude of surgical arms seamlessly meld with the chromed ceiling.  They expectantly unravel with your approach, animated by an AI whose performances blur the lines between medicine and art.",
     "examine_action": "autodoc",
+    "//": "Easy installation",
     "surgery_skill_multiplier": 999999,
     "deconstruct": {
       "items": [
@@ -77,21 +58,56 @@
         { "item": "plastic_chunk", "count": [ 4, 10 ], "prob": 50 },
         { "item": "afs_material_2", "count": [ 2, 6 ], "prob": 50 }
       ]
-    },
-    "//": "Easy installation"
+    }
   },
   {
-    "id": "f_autodoc_cheap",
     "type": "furniture",
+    "id": "f_autodoc",
+    "name": "Autodoc Mk. XVI",
+    "symbol": "&",
+    "color": "light_red",
     "copy-from": "f_autodoc",
+    "description": "A commercial surgical robot often found within licensed clinics and corporate hospitals.  Its various AI routines assist during surgery, but they are no replacement for the actual operator's skill.",
+    "flags": [ "TRANSPARENT", "AUTODOC" ],
+    "examine_action": "autodoc",
+    "surgery_skill_multiplier": 1.6,
+    "deconstruct": {
+      "items": [
+        { "item": "afs_circuitry_3", "count": [ 1, 2 ] },
+        { "item": "afs_circuitry_2", "count": [ 4, 8 ] },
+        { "item": "cable", "charges": [ 4, 6 ] },
+        { "item": "small_lcd_screen", "count": [ 1, 2 ] },
+        { "item": "afs_material_2", "count": [ 6, 10 ] },
+        { "item": "afs_energy_storage_2", "count": [ 1, 2 ] },
+        { "item": "afs_energy_storage_3", "count": [ 0, 1 ] },
+        { "item": "plastic_chunk", "count": [ 10, 12 ] },
+        { "item": "afs_material_2", "count": [ 6, 8 ] }
+      ]
+    },
+    "bash": {
+      "str_min": 8,
+      "str_max": 150,
+      "sound": "crunch!",
+      "sound_fail": "whack!",
+      "items": [
+        { "item": "afs_circuitry_2", "prob": 25 },
+        { "item": "afs_circuitry_1", "count": [ 1, 2 ], "prob": 50 },
+        { "item": "cable", "charges": [ 1, 2 ], "prob": 50 },
+        { "item": "small_lcd_screen", "prob": 25 },
+        { "item": "afs_energy_storage_2", "prob": 25 },
+        { "item": "plastic_chunk", "count": [ 4, 10 ], "prob": 50 },
+        { "item": "afs_material_2", "count": [ 2, 6 ], "prob": 50 }
+      ]
+    }
+  },
+  {
+    "type": "furniture",
+    "id": "f_autodoc_cheap",
     "name": "salvaged Autodoc",
     "symbol": "&",
-    "description": "The kind of worn-down and dubiously safe surgical device that is perfectly at home in a back alley clinic.  It would take great skill to safely operate this.",
     "color": "light_red",
-    "looks_like": "f_robotic_arm",
-    "move_cost_mod": -1,
-    "coverage": 35,
-    "required_str": -1,
+    "copy-from": "f_autodoc",
+    "description": "The kind of worn-down and dubiously safe surgical device that is perfectly at home in a back alley clinic.  It would take great skill to safely operate this.",
     "flags": [ "TRANSPARENT", "AUTODOC" ],
     "examine_action": "autodoc",
     "surgery_skill_multiplier": 0.6,
@@ -451,7 +467,7 @@
     "looks_like": "f_drill_press",
     "description": "This device looks like a cross between some kind of nightmare dentistry equipment and socketing tool mounted on a slide that lets it drop precisely down.  Useful for those projects that require putting delicate items into hard to reach spaces.",
     "symbol": "7",
-    "color": "yellow",
+    "color": "yellow_red",
     "move_cost_mod": -1,
     "coverage": 40,
     "required_str": 10,
@@ -488,7 +504,7 @@
     "looks_like": "f_bandsaw",
     "description": "A wire the size of a cheescutter runs in a single direction in this tool, allowing atomically precise cuts at almost any angle.  Even unpowered it gives off a visual distortion for several inches around it to prevent you from losing a hand.  It is impossible to deconstruct this device without the wire self destructing.",
     "symbol": "7",
-    "color": "yellow",
+    "color": "yellow_cyan",
     "move_cost_mod": -2,
     "coverage": 40,
     "required_str": 10,
@@ -1346,73 +1362,41 @@
     }
   },
   {
-    "id": "f_afs_shuttle_seat",
     "type": "furniture",
-    "copy-from": "f_seat_airplane",
+    "id": "f_afs_shuttle_seat",
     "name": "shuttle seat",
-    "//": "Used in airliner.json, it yields short rope as a seatbelt",
-    "looks_like": "f_armchair",
-    "symbol": "H",
+    "copy-from": "f_seat_airplane",
     "description": "The cushioned and upright facing seat of a short-ranged shuttle pod.  Has a locking bar that fits over your shoulders.",
+    "symbol": "H",
     "color": "light_red",
+    "flags": [ "TRANSPARENT", "FLAMMABLE_ASH", "ORGANIC", "MOUNTABLE", "CAN_SIT" ],
     "move_cost_mod": 1,
     "coverage": 45,
     "comfort": 3,
     "floor_bedding_warmth": 500,
     "bonus_fire_warmth_feet": 1000,
-    "required_str": 20,
     "deconstruct": {
       "items": [ { "item": "pipe", "count": 10 }, { "item": "cotton_patchwork", "count": [ 30, 33 ] }, { "item": "rope_6" } ]
     },
-    "flags": [ "TRANSPARENT", "FLAMMABLE_ASH", "ORGANIC", "MOUNTABLE", "CAN_SIT" ],
-    "bash": {
-      "str_min": 10,
-      "str_max": 40,
-      "sound": "smash!",
-      "sound_fail": "whump.",
-      "items": [
-        { "item": "pipe", "count": [ 0, 2 ] },
-        { "item": "scrap", "charges": [ 2, 10 ] },
-        { "item": "sheet_cotton", "count": [ 2, 5 ] },
-        { "item": "cotton_patchwork", "count": [ 5, 8 ] },
-        { "item": "plastic_chunk", "count": [ 1, 7 ] },
-        { "item": "rope_6" }
-      ]
-    }
+    "required_str": 20
   },
   {
-    "id": "f_afs_escape_pod_seat_launch",
     "type": "furniture",
-    "copy-from": "f_seat_airplane",
+    "id": "f_afs_escape_pod_seat_launch",
     "name": "escape pod seat",
-    "//": "Used in airliner.json, it yields short rope as a seatbelt",
-    "looks_like": "f_armchair",
-    "symbol": "H",
+    "copy-from": "f_seat_airplane",
     "description": "The cushioned and upright facing seat of a single-seater escape pod.  A storage space beneath it holds survival supplies.",
+    "symbol": "H",
     "color": "light_red",
+    "flags": [ "TRANSPARENT", "FLAMMABLE_ASH", "ORGANIC", "MOUNTABLE", "CAN_SIT" ],
     "move_cost_mod": 1,
     "coverage": 45,
     "comfort": 3,
     "floor_bedding_warmth": 500,
     "bonus_fire_warmth_feet": 1000,
-    "required_str": 20,
     "deconstruct": {
       "items": [ { "item": "pipe", "count": 10 }, { "item": "cotton_patchwork", "count": [ 30, 33 ] }, { "item": "rope_6" } ]
     },
-    "flags": [ "TRANSPARENT", "FLAMMABLE_ASH", "ORGANIC", "MOUNTABLE", "CAN_SIT" ],
-    "bash": {
-      "str_min": 10,
-      "str_max": 40,
-      "sound": "smash!",
-      "sound_fail": "whump.",
-      "items": [
-        { "item": "pipe", "count": [ 0, 2 ] },
-        { "item": "scrap", "charges": [ 2, 10 ] },
-        { "item": "sheet_cotton", "count": [ 2, 5 ] },
-        { "item": "cotton_patchwork", "count": [ 5, 8 ] },
-        { "item": "plastic_chunk", "count": [ 1, 7 ] },
-        { "item": "rope_6" }
-      ]
-    }
+    "required_str": 20
   }
 ]

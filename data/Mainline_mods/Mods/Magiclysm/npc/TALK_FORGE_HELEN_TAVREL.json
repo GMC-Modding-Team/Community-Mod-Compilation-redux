@@ -40,9 +40,9 @@
     "type": "item_group",
     "id": "NC_FORGE_REAGENT_clothes",
     "subtype": "collection",
-    "items": [
+    "entries": [
       { "item": "baldric_holster", "prob": 100, "contents-group": "pirate_loadout" },
-      { "item": "cavalry_sabre_plus_one", "prob": 100 },
+      { "item": "cavalry_sabre_plus_one", "prob": 100, "container-item": "scabbard" },
       { "item": "bandana", "prob": 100 },
       { "item": "mboots_escape", "prob": 100 },
       { "item": "parabolan_enchanted_breeches", "prob": 100 },
@@ -60,7 +60,14 @@
     "type": "item_group",
     "subtype": "collection",
     "id": "pirate_loadout",
-    "items": [ { "item": "enchanted_blackpowder_pistol", "charges": 1 } ]
+    "entries": [
+      { "item": "enchanted_blackpowder_pistol", "ammo-item": "flintlock_ammo", "charges": 1 },
+      { "item": "enchanted_blackpowder_pistol", "ammo-item": "flintlock_ammo", "charges": 1 },
+      { "item": "enchanted_blackpowder_pistol", "ammo-item": "flintlock_ammo", "charges": 1 },
+      { "item": "enchanted_blackpowder_pistol", "ammo-item": "flintlock_ammo", "charges": 1 },
+      { "item": "enchanted_blackpowder_pistol", "ammo-item": "flintlock_ammo", "charges": 1 },
+      { "item": "enchanted_blackpowder_pistol", "ammo-item": "flintlock_ammo", "charges": 1 }
+    ]
   },
   {
     "type": "item_group",
@@ -84,7 +91,15 @@
   {
     "id": "TALK_FORGE_LORD_REAGENT",
     "type": "talk_topic",
-    "dynamic_line": "Would you try to capture me?  I've killed many a government-sanctioned hunter in my life.  Aren't we all lucky that you are probably the last lawman alive in miles?  Welcome to the Forge of Wonders.  Reagents and blackpowders!  Ahoy and other nautical terms!",
+    "dynamic_line": {
+      "u_is_wearing": "badge_marshal",
+      "yes": [
+        "Would you try to capture me?",
+        "I've killed many a government-sanctioned hunter in my life.",
+        "Aren't we all lucky that you are probably the last lawman alive in miles?"
+      ],
+      "no": [ "Welcome to the Forge of Wonders.", "Reagents and blackpowders!", "Ahoy and other nautical terms!" ]
+    },
     "responses": [
       { "text": "Let's trade.", "effect": "start_trade", "topic": "TALK_FORGE_LORD_REAGENT" },
       { "text": "What are you doing here?", "topic": "TALK_FORGE_REAGENT_DOING" },
@@ -94,7 +109,11 @@
   {
     "id": "TALK_FORGE_REAGENT_DOING",
     "type": "talk_topic",
-    "dynamic_line": "I hope you're willing to overlook my past because otherwise you're not buying anything from me. A lifetime of plunder has brought me many a strange item - that you can have for unbeatable prices!",
+    "dynamic_line": {
+      "u_is_wearing": "badge_marshal",
+      "yes": "I hope you're willing to overlook my past because otherwise you're not buying anything from me.",
+      "no": "A lifetime of plunder has brought me many a strange item - that you can have for unbeatable prices!"
+    },
     "responses": [ { "text": "Well, shiver me timbers then.", "topic": "TALK_FORGE_LORD_REAGENT" } ]
   }
 ]

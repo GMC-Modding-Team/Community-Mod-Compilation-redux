@@ -1,5 +1,28 @@
 [
   {
+    "id": "panacea",
+    "type": "COMESTIBLE",
+    "comestible_type": "MED",
+    "name": { "str": "Panaceus", "str_pl": "Panaceii" },
+    "symbol": "!",
+    "color": "red",
+    "copy-from": "panacea",
+    "use_action": {
+      "type": "consume_drug",
+      "activation_message": "You feel AMAZING!",
+      "effects": [ { "id": "panacea", "duration": "1 m" }, { "id": "cureall" } ],
+      "damage_over_time": [
+        {
+          "damage_type": "pure",
+          "duration": "1 m",
+          "amount": -10,
+          "bodyparts": [ "torso", "head", "arm_l", "leg_l", "arm_r", "leg_r" ]
+        }
+      ]
+    },
+    "flags": [ "NPC_SAFE", "IRREPLACEABLE_CONSUMABLE" ]
+  },
+  {
     "id": "cream_prot_cold",
     "name": { "str_sp": "heat retention cream" },
     "description": "Rub this on your skin when you are expecting exposure to extreme cold temperatures.  Cannot protect from instant frostbite.  Smells like the inside of a sheep.",
@@ -14,7 +37,7 @@
     "comestible_type": "MED",
     "flags": [ "EATEN_COLD" ],
     "phase": "solid",
-    "price": "2500 cent"
+    "price": 2500
   },
   {
     "id": "cream_greater_prot_cold",
@@ -31,7 +54,7 @@
     "comestible_type": "MED",
     "flags": [ "EATEN_COLD" ],
     "phase": "solid",
-    "price": "5000 cent"
+    "price": 5000
   },
   {
     "type": "COMESTIBLE",

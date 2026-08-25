@@ -39,7 +39,7 @@
     "type": "item_group",
     "id": "NC_FORGE_LORD_clothes",
     "subtype": "collection",
-    "items": [
+    "entries": [
       { "item": "mbelt_pockets_greater", "prob": 100 },
       { "item": "cloak_morthylla", "prob": 100 },
       { "item": "mboots_escape", "prob": 100 },
@@ -75,7 +75,15 @@
   {
     "id": "TALK_FORGE_LORD",
     "type": "talk_topic",
-    "dynamic_line": "The government doesn't subsidize your purchases here anymore.  Do you have any tales of adventure I could write down?  In case you were wondering, we no longer respect any pre-existing weapon laws.  Welcome to the Forge of Wonders.  Here to trade, I hope?  Bring me tales and we can trade.",
+    "dynamic_line": {
+      "u_is_wearing": "badge_marshal",
+      "yes": [
+        "The government doesn't subsidize your purchases here anymore.",
+        "Do you have any tales of adventure I could write down?",
+        "In case you were wondering, we no longer respect any pre-existing weapon laws."
+      ],
+      "no": [ "Welcome to the Forge of Wonders.", "Here to trade, I hope?", "Bring me tales and we can trade." ]
+    },
     "responses": [
       { "text": "Let's trade.", "effect": "start_trade", "topic": "TALK_FORGE_LORD" },
       { "text": "What are you doing here?", "topic": "TALK_FORGE_LORD_DOING" },
@@ -119,7 +127,14 @@
   {
     "id": "TALK_FORGE_LORD_DOING",
     "type": "talk_topic",
-    "dynamic_line": "Well here and now I am the law, and the law here is that people purchase my goods, they take them out into the world and they die; or they return to buy more of my goods.  Either way, I write poetry about them.  Once I was lost in the throes of love, now I've built an empire of material goods.",
+    "dynamic_line": {
+      "u_has_var": "u_met_FORGE_LORD",
+      "type": "general",
+      "context": "meeting",
+      "value": "yes",
+      "no": "Well here and now I am the law, and the law here is that people purchase my goods, they take them out into the world and they die; or they return to buy more of my goods.  Either way, I write poetry about them.",
+      "yes": "Once I was lost in the throes of love, now I've built an empire of material goods."
+    },
     "responses": [
       {
         "text": "Good day, sir.",

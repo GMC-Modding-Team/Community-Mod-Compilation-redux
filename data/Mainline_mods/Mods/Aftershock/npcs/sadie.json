@@ -19,7 +19,20 @@
   {
     "type": "talk_topic",
     "id": "TALK_Sadie_1",
-    "dynamic_line": "Are we meeting again or did we already do that part?  You remind me of my friend Billy.  What an amazing world to be alive in, more or less.  My head always beats when I see you.  Or is that my heart?  I should check that.  It's always so nice to be seen.  Hello Billy.  Back again to try and kill me?  It won't work, you should just give up.",
+    "dynamic_line": {
+      "u_has_var": "u_met_sadie",
+      "type": "general",
+      "context": "meeting",
+      "value": "yes",
+      "yes": [
+        "Are we meeting again or did we already do that part?",
+        "You remind me of my friend Billy.",
+        "What an amazing world to be alive in, more or less.",
+        "My head always beats when I see you.  Or is that my heart?  I should check that.",
+        "It's always so nice to be seen."
+      ],
+      "no": "Hello Billy.  Back again to try and kill me?  It won't work, you should just give up."
+    },
     "responses": [
       {
         "text": "What, who is Billy?",
@@ -142,7 +155,18 @@
   {
     "id": "TALK_sadie_follow",
     "type": "talk_topic",
-    "dynamic_line": "I can't wait to see how wonderful the world must be.  I've heard the shrieking and moaning and cries for help and I just know it's going to be perfect if everyone out there is as sweet and loving as you and Billy.  Let's go explore.  There's still so much these eyes haven't seen.  Wait, are these new eyes?  Where did I put my old eyes?  Are they pretty?",
+    "dynamic_line": {
+      "u_has_var": "u_freed_sadie",
+      "type": "general",
+      "context": "free",
+      "value": "yes",
+      "no": [
+        "I can't wait to see how wonderful the world must be.  I've heard the shrieking and moaning and cries for help and I just know it's going to be perfect if everyone out there is as sweet and loving as you and Billy."
+      ],
+      "yes": [
+        "Let's go explore.  There's still so much these eyes haven't seen.  Wait, are these new eyes?  Where did I put my old eyes?  Are they pretty?"
+      ]
+    },
     "responses": [
       {
         "text": "Yes, everyone left is exactly like Billy and me, or worse.",

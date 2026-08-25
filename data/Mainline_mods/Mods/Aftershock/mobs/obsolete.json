@@ -1,9 +1,9 @@
 [
   {
-    "copy-from": "mon_milbot_base",
     "id": "mon_milbot_flame",
     "type": "MONSTER",
-    "name": { "str": "military flame robot" },
+    "copy-from": "mon_milbot_base",
+    "name": "military flame robot",
     "description": "A military robot still operating due to its internal power core.  This one is armed with an electric prod and an integrated flamethrower.",
     "diff": 20,
     "melee_damage": [ { "damage_type": "electric", "amount": 6 } ],
@@ -30,10 +30,10 @@
     ]
   },
   {
-    "copy-from": "mon_milbot_base",
     "id": "mon_milbot_308",
     "type": "MONSTER",
-    "name": { "str": "military robot" },
+    "copy-from": "mon_milbot_base",
+    "name": "military robot",
     "description": "A military robot still operating due to its internal power core.  This one is armed with an electric prod and an integrated 7.62mm firearm.",
     "diff": 20,
     "melee_damage": [ { "damage_type": "electric", "amount": 6 } ],
@@ -62,10 +62,10 @@
     "extend": { "flags": [ "DROPS_AMMO" ] }
   },
   {
-    "copy-from": "mon_milbot_base",
     "id": "mon_milbot_8x40mm",
     "type": "MONSTER",
-    "name": { "str": "military robot" },
+    "copy-from": "mon_milbot_base",
+    "name": "military robot",
     "description": "A military robot still operating due to its internal power core.  This one is armed with an electric prod and an integrated 8mm firearm.",
     "diff": 20,
     "melee_damage": [ { "damage_type": "electric", "amount": 6 } ],
@@ -93,21 +93,11 @@
     "extend": { "flags": [ "DROPS_AMMO" ] }
   },
   {
-    "copy-from": "mon_advbot_base",
     "id": "mon_advbot_rail",
     "type": "MONSTER",
-    "looks_like": "mon_copbot",
-    "name": { "str": "railgun robot" },
+    "copy-from": "mon_advbot_base",
+    "name": "railgun robot",
     "description": "An advanced robot still functioning due to its internal fusion core.  This model is furnished with a powerful railgun.",
-    "default_faction": "science",
-    "species": [ "ROBOT" ],
-    "hp": 100,
-    "armor": { "bash": 8, "cut": 6, "bullet": 6, "heat": 8, "acid": 12 },
-    "vision_day": 50,
-    "speed": 110,
-    "color": "white",
-    "aggression": 100,
-    "dodge": 5,
     "diff": 30,
     "starting_ammo": { "steel_rail": 100 },
     "special_attacks": [
@@ -150,8 +140,9 @@
     "melee_skill": 3,
     "melee_dice": 1,
     "melee_dice_sides": 3,
+    "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "harvest": "zombie",
-    "special_attacks": [ { "id": "grab", "cooldown": 7 }, { "id": "scratch", "cooldown": 20 } ],
+    "special_attacks": [ { "id": "grab", "cooldown": 7 }, [ "scratch", 20 ] ],
     "death_drops": "default_zombie_death_drops",
     "upgrades": { "half_life": 28, "into": "mon_afs_headless_horror" },
     "flags": [

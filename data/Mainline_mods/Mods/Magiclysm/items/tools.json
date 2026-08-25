@@ -7,7 +7,7 @@
     "description": "This cauldron made of demon spider chitin seems to absorb the light.  It will hold 16 liters of material and will absorb poisons from it.  It may have other properties that require discovery.",
     "weight": "1424 g",
     "volume": "20 L",
-    "price": "2000 cent",
+    "price": 2000,
     "to_hit": -1,
     "looks_like": "clay_hydria",
     "material": [ "demon_chitin" ],
@@ -27,7 +27,7 @@
     "description": "This is an alchemical cauldron made of orichalcum.  The metal is especially resistant to the unique types of corrosion caused by alchemy.",
     "weight": "15 kg",
     "volume": "20 L",
-    "price": "750 cent",
+    "price": "750 USD",
     "to_hit": -4,
     "looks_like": "canning_pot",
     "material": [ "orichalcum_metal" ],
@@ -45,7 +45,7 @@
     "description": "This is a portable version of the charcoal forge that is magically enhanced and fortified with demon spider chitin in order to be able to resmelt magical metals into their workable ingot form.",
     "weight": "10 kg",
     "volume": "8 L",
-    "price": "200000 cent",
+    "price": 200000,
     "to_hit": -2,
     "material": [ "demon_chitin" ],
     "symbol": ";",
@@ -65,11 +65,76 @@
     "description": "Some alchemical mortar, ready to be used in building projects expecting temperatures on par with dragonbreath.",
     "category": "spare_parts",
     "container": "bag_canvas",
-    "price": "500000 cent",
+    "price": 500000,
     "material": [ "powder_nonflam" ],
     "weight": "2340 g",
     "volume": "1 L",
     "melee_damage": { "bash": 4 }
+  },
+  {
+    "id": "sewing_kit",
+    "name": "sewing kit",
+    "copy-from": "sewing_kit",
+    "type": "TOOL",
+    "use_action": {
+      "type": "repair_item",
+      "item_action_type": "repair_fabric",
+      "materials": [
+        "cotton",
+        "leather",
+        "lycra",
+        "nylon",
+        "wool",
+        "fur",
+        "faux_fur",
+        "nomex",
+        "kevlar",
+        "kevlar_layered",
+        "gutskin",
+        "denim",
+        "canvas",
+        "demon_chitin",
+        "black_dragon_hide"
+      ],
+      "skill": "tailor",
+      "tool_quality": 0,
+      "cost_scaling": 0.1,
+      "move_cost": 1000
+    }
+  },
+  {
+    "id": "tailors_kit",
+    "name": "tailor's kit",
+    "copy-from": "tailors_kit",
+    "type": "TOOL",
+    "use_action": [
+      {
+        "type": "repair_item",
+        "item_action_type": "repair_fabric",
+        "materials": [
+          "cotton",
+          "leather",
+          "lycra",
+          "nylon",
+          "wool",
+          "fur",
+          "faux_fur",
+          "nomex",
+          "kevlar",
+          "kevlar_layered",
+          "neoprene",
+          "gutskin",
+          "denim",
+          "canvas",
+          "black_dragon_hide",
+          "demon_chitin"
+        ],
+        "skill": "tailor",
+        "tool_quality": 1,
+        "cost_scaling": 0.1,
+        "move_cost": 800
+      }
+    ]
   },
   {
     "id": "parabolan_wool_staple",
@@ -79,8 +144,8 @@
     "description": "The natural cluster of parabolan wool fibers.  Could be processed to felt patches or yarns.",
     "weight": "120 g",
     "volume": "500 ml",
-    "price": "0 cent",
-    "price_postapoc": "10 cent",
+    "price": 0,
+    "price_postapoc": 10,
     "to_hit": -4,
     "material": [ "parabolan_wool" ],
     "symbol": ",",
@@ -88,28 +153,14 @@
     "flags": [ "NO_SALVAGE" ]
   },
   {
-    "id": "glassteel_shard",
     "type": "TOOL",
+    "id": "glassteel_shard",
     "copy-from": "glass_shard",
-    "symbol": ",",
-    "color": "light_cyan",
     "name": { "str": "glassteel shard" },
     "category": "other",
     "description": "A broken shard of glassteel covered in sharp edges.  You could use it as a weapon, but you might want to wear gloves.",
     "material": [ "glassteel" ],
-    "weight": "75 g",
-    "volume": "30 ml",
-    "use_action": {
-      "type": "place_trap",
-      "trap": "tr_glass",
-      "moves": 150,
-      "practice": 2,
-      "done_message": "You carefully place the shards on the ground, ready to be cracked by something passing by."
-    },
-    "flags": [ "HURT_WHEN_WIELDED", "TRADER_AVOID", "SINGLE_USE", "FRAGILE_MELEE", "ALLOWS_BODY_BLOCK" ],
-    "to_hit": -1,
-    "melee_damage": { "cut": 7 },
-    "weapon_category": [ "SHIVS" ]
+    "melee_damage": { "cut": 7 }
   },
   {
     "id": "magic_circle_rank_1",

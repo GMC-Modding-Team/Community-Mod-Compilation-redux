@@ -3,53 +3,27 @@
     "type": "item_group",
     "id": "orichalcum_frame_break",
     "subtype": "collection",
-    "items": [ { "item": "orichalcum_lump", "count": [ 4, 6 ] }, { "item": "orichalcum_sliver", "count": [ 4, 6 ] } ]
+    "entries": [ { "item": "orichalcum_lump", "count": [ 4, 6 ] }, { "item": "orichalcum_sliver", "count": [ 4, 6 ] } ]
   },
   {
     "type": "item_group",
     "id": "light_orichalcum_frame_break",
     "subtype": "collection",
-    "items": [ { "item": "orichalcum_lump", "count": [ 2, 3 ] }, { "item": "orichalcum_sliver", "count": [ 1, 5 ] } ]
+    "entries": [ { "item": "orichalcum_lump", "count": [ 2, 3 ] }, { "item": "orichalcum_sliver", "count": [ 1, 5 ] } ]
   },
   {
     "abstract": "mana_engine",
-    "type": "vehicle_part",
     "copy-from": "engine_combustion",
-    "categories": [ "movement" ],
-    "location": "engine_block",
-    "color": "light_red",
-    "broken_color": "red",
-    "damage_modifier": 80,
-    "backfire_threshold": 0.25,
-    "backfire_freq": 20,
-    "noise_factor": 15,
-    "damaged_power_factor": 0.25,
-    "m2c": 60,
-    "flags": [ "ENGINE", "E_COMBUSTION", "E_ALTERNATOR", "E_HIGHER_SKILL", "E_HEATER" ],
-    "description": "A magically manifested combustion engine.  Despite operating entirely off of mana rather than normal fuel, it otherwise functions exactly as a conventional internal combustion engine.  Somehow.",
-    "variants": [ { "symbols": "*", "symbols_broken": "#" } ],
+    "type": "vehicle_part",
     "fuel_type": "mana",
-    "//": "30% energy efficiency"
+    "m2c": 60,
+    "//": "30% energy efficiency",
+    "description": "A magically manifested combustion engine.  Despite operating entirely off of mana rather than normal fuel, it otherwise functions exactly as a conventional internal combustion engine.  Somehow."
   },
   {
     "id": "engine_vtwin_magic",
-    "type": "vehicle_part",
     "copy-from": "mana_engine",
-    "categories": [ "movement" ],
-    "location": "engine_block",
-    "color": "light_red",
-    "broken_color": "red",
-    "damage_modifier": 80,
-    "backfire_threshold": 0.25,
-    "backfire_freq": 20,
-    "noise_factor": 15,
-    "damaged_power_factor": 0.25,
-    "m2c": 60,
-    "flags": [ "ENGINE", "E_COMBUSTION", "E_ALTERNATOR", "E_HIGHER_SKILL", "E_HEATER", "NO_INSTALL_HIDDEN" ],
-    "description": "A magically manifested combustion engine.  Despite operating entirely off of mana rather than normal fuel, it otherwise functions exactly as a conventional internal combustion engine.  Somehow.",
-    "variants": [ { "symbols": "*", "symbols_broken": "#" } ],
-    "fuel_type": "mana",
-    "//": "30% energy efficiency",
+    "type": "vehicle_part",
     "item": "v2_combustion_magic",
     "durability": 200,
     "epower": "-50 W",
@@ -66,7 +40,8 @@
       "removal": { "skills": [ [ "mechanics", 2 ] ], "time": "30 m", "using": [ [ "vehicle_wrench_2", 1 ] ] },
       "repair": { "skills": [ [ "mechanics", 3 ] ], "time": "60 m", "using": [ [ "welding_standard", 5 ] ] }
     },
-    "damage_reduction": { "all": 60 }
+    "damage_reduction": { "all": 60 },
+    "extend": { "flags": [ "NO_INSTALL_HIDDEN" ] }
   },
   {
     "id": "ap_everburning_sconce",

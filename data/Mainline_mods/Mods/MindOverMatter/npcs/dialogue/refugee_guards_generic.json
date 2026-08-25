@@ -24,7 +24,7 @@
   {
     "id": [ "TALK_GUARD_GENERIC_REFUGEE_scan" ],
     "type": "talk_topic",
-    "dynamic_line": "<telepathy_refugee_guard> <telepathy_refugee_guard> <telepathy_refugee_guard> <telepathy_generic>",
+    "dynamic_line": [ "<telepathy_refugee_guard>", "<telepathy_refugee_guard>", "<telepathy_refugee_guard>", "<telepathy_generic>" ],
     "responses": [ { "text": "…", "topic": "TALK_GUARD" } ]
   },
   {
@@ -52,7 +52,26 @@
   {
     "id": [ "TALK_EVAC_GUARD1_scan" ],
     "type": "talk_topic",
-    "dynamic_line": "«Oh great.  Another one.» «Idle hands make a waste of time.» «We really should start locking the doors at night so these people can't get in.» «Wow, I'm amazed she's lived this long.» «No point in learning her name.  She'll probably be dead soon anyway.»",
+    "dynamic_line": [
+      "«Oh great.  Another one.»",
+      "«Idle hands make a waste of time.»",
+      {
+        "is_day": [ "«We need to post sentries outside that'll turn some of these people away.»" ],
+        "no": [ "«We really should start locking the doors at night so these people can't get in.»" ]
+      },
+      {
+        "days_since_cataclysm": 60,
+        "yes": [
+          { "u_male": [ "«Wow, I'm amazed he's lived this long.»" ], "no": [ "«Wow, I'm amazed she's lived this long.»" ] }
+        ],
+        "no": [
+          {
+            "u_male": [ "«No point in learning his name.  He'll probably be dead soon anyway.»" ],
+            "no": [ "«No point in learning her name.  She'll probably be dead soon anyway.»" ]
+          }
+        ]
+      }
+    ],
     "responses": [ { "text": "…", "topic": "TALK_EVAC_GUARD1" } ]
   },
   {
@@ -80,7 +99,20 @@
   {
     "id": [ "TALK_EVAC_GUARD2_scan" ],
     "type": "talk_topic",
-    "dynamic_line": "«Not bad playing tour guide.  Better than having to fight.» «So tired.  That's what I get for drawing the night shift.» «At least in here I can see them coming.  If I were out there…  » «How much did it take to get here?  What has she lost?»",
+    "dynamic_line": [
+      "«Not bad playing tour guide.  Better than having to fight.»",
+      {
+        "is_day": [ "«Another day after <the_cataclysm>.  One foot in front of the other.»" ],
+        "no": [
+          "«So tired.  That's what I get for drawing the night shift.»",
+          "«At least in here I can see them coming.  If I were out there…»"
+        ]
+      },
+      {
+        "u_male": [ "«How much did it take to get here?  What has he lost?»" ],
+        "no": [ "«How much did it take to get here?  What has she lost?»" ]
+      }
+    ],
     "responses": [ { "text": "…", "topic": "TALK_EVAC_GUARD2" } ]
   }
 ]

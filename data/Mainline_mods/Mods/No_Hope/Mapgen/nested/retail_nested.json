@@ -1256,6 +1256,29 @@
   {
     "type": "mapgen",
     "method": "json",
+    "//": "designed for 3x3 candy shop crates.",
+    "nested_mapgen_id": "city_block_3x3_backroom_crates_candy",
+    "object": {
+      "mapgensize": [ 3, 3 ],
+      "rotation": [ 0, 3 ],
+      "rows": [
+        "z z",
+        "  z",
+        "z z"
+      ],
+      "terrain": { "z": "t_floor" },
+      "furniture": { "z": [ [ "f_cardboard_box", 5 ], "f_crate_c" ] },
+      "items": {
+        "z": [
+          { "item": "candy_chocolate", "chance": 30, "repeat": [ 1, 6 ] },
+          { "item": "toy_store", "chance": 30, "repeat": [ 1, 6 ] }
+        ]
+      }
+    }
+  },
+  {
+    "type": "mapgen",
+    "method": "json",
     "//": "designed for restaurant spaces 14x14.",
     "nested_mapgen_id": "city_block_14x14_restaurant",
     "object": {
@@ -1349,7 +1372,7 @@
         " * *     K ",
         "j|K|YnJK   "
       ],
-      "terrain": { " ": "t_null", "|": "t_brick_wall", "*": "t_door_c", "K": "t_region_groundcover" },
+      "terrain": { " ": "t_null", "|": "t_brick_wall", "*": "t_door_c" },
       "furniture": {
         "L": "f_table",
         "x": "f_pool_table",

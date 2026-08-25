@@ -3,228 +3,127 @@
     "id": "mut_lab",
     "type": "item_group",
     "copy-from": "mut_lab",
-    "//": "If we ever get themed labs defined by what types of mutagens they worked on this itemgroup may need to be re-evaluated.",
-    "ammo": 50,
-    "magazine": 100,
-    "subtype": "distribution",
     "extend": {
       "items": [
-        { "group": "supplies_reagents_lab", "prob": 20 },
-        { "item": "gelbox", "prob": 3 },
-        { "item": "microcentrifuge", "prob": 3 },
-        { "item": "beaker", "prob": 5 },
-        { "item": "gradcylinder", "prob": 5 },
-        { "item": "flask_glass", "prob": 2 },
-        { "item": "rack_test_tube", "prob": 7 },
-        { "item": "rack_test_tube_micro", "prob": 7 },
-        { "item": "burette", "prob": 4 },
-        { "item": "stopcock", "prob": 3 },
-        { "item": "rotovap", "prob": 2 },
-        { "item": "stand_ring", "prob": 5 },
-        { "item": "stand_ring_clamps", "prob": 3 },
-        { "item": "spectrophotometer", "prob": 5 },
-        { "item": "balance_small", "prob": 5 },
-        { "item": "cuvettes", "prob": 5 },
-        { "item": "ph_meter", "prob": 5 },
-        { "item": "recipe_elfa", "prob": 1 },
-        { "item": "recipe_raptor", "prob": 1 },
-        { "item": "recipe_alpha", "prob": 1 },
-        { "item": "recipe_chimera", "prob": 2 },
-        { "item": "recipe_medicalmut", "prob": 2 },
-        { "item": "recipe_serum", "prob": 4 },
-        { "item": "recipe_creepy", "prob": 4 },
-        { "item": "recipe_animal", "prob": 4 },
-        { "item": "recipe_maiar", "prob": 4 },
-        { "item": "recipe_labchem", "prob": 6 },
-        { "item": "mutagen", "prob": 8 },
-        { "item": "iv_mutagen", "prob": 6 },
-        { "item": "iv_mutagen_elfa", "prob": 2 },
-        { "item": "iv_mutagen_alpha", "prob": 2 },
-        { "item": "iv_mutagen_raptor", "prob": 2 },
-        { "item": "iv_mutagen_medical", "prob": 2 },
-        { "item": "iv_mutagen_chimera", "prob": 2 },
-        { "item": "iv_mutagen_plant", "prob": 2 },
-        { "item": "iv_mutagen_insect", "prob": 2 },
-        { "item": "iv_mutagen_spider", "prob": 2 },
-        { "item": "iv_mutagen_snail", "prob": 2 },
-        { "item": "iv_mutagen_batrachian", "prob": 2 },
-        { "item": "iv_mutagen_fish", "prob": 2 },
-        { "item": "iv_mutagen_slime", "prob": 2 },
-        { "item": "iv_mutagen_rat", "prob": 2 },
-        { "item": "iv_mutagen_beast", "prob": 2 },
-        { "item": "iv_mutagen_cattle", "prob": 2 },
-        { "item": "iv_mutagen_cephalopod", "prob": 2 },
-        { "item": "iv_mutagen_bird", "prob": 2 },
-        { "item": "iv_mutagen_lizard", "prob": 2 },
-        { "item": "iv_mutagen_troglobite", "prob": 2 },
-        { "item": "iv_mutagen_ursine", "prob": 2 },
-        { "item": "iv_mutagen_feline", "prob": 2 },
-        { "item": "iv_mutagen_lupine", "prob": 2 },
-        { "item": "iv_mutagen_mouse", "prob": 2 },
-        { "item": "iv_mutagen_rabbit", "prob": 2 },
-        { "item": "iv_mutagen_crustacean", "prob": 2 },
-        { "item": "mutagen_chelator", "prob": 5 },
-        { "item": "purifier", "prob": 3 },
-        { "item": "iv_purifier", "prob": 8 },
-        { "item": "syringe", "prob": 8 },
-        { "item": "bleach", "prob": 20, "charges-min": 1 },
-        { "item": "ammonia_liquid", "prob": 50, "charges-min": 6 },
-        { "item": "lye_powder", "prob": 10, "charges": [ 100, 200 ] },
-        { "item": "oxy_powder", "prob": 12, "charges": [ 100, 200 ] },
-        { "item": "chemistry_set", "prob": 5 },
-        { "item": "meat_tainted", "prob": 8 },
-        { "item": "veggy_tainted", "prob": 4 },
-        { "item": "slime_scrap", "prob": 8 },
-        { "item": "chem_nitric_acid", "prob": 5, "charges-min": 1 },
-        { "item": "kiernans_notes", "prob": 1 },
-        { "item": "iv_mutagen_tyrant", "prob": 3 },
-        { "item": "iv_mutagen_stego", "prob": 3 },
-        { "item": "iv_mutagen_horns", "prob": 3 },
-        { "item": "mutagen_tyrant", "prob": 5 },
-        { "item": "mutagen_stego", "prob": 5 },
-        { "item": "mutagen_horns", "prob": 5 }
+        [ "kiernans_notes", 1 ],
+        [ "iv_mutagen_tyrant", 3 ],
+        [ "iv_mutagen_stego", 3 ],
+        [ "iv_mutagen_horns", 3 ],
+        [ "mutagen_tyrant", 5 ],
+        [ "mutagen_stego", 5 ],
+        [ "mutagen_horns", 5 ]
       ]
     }
   },
   {
     "id": "lab_mutagen_ingredients_fridge",
     "type": "item_group",
+    "subtype": "collection",
     "copy-from": "lab_mutagen_ingredients_fridge",
     "extend": {
       "entries": [
         { "item": "raptor_sample", "prob": 40, "count": [ 1, 3 ] },
         { "item": "tyrant_sample", "prob": 40, "count": [ 1, 3 ] },
         { "item": "stego_sample", "prob": 40, "count": [ 1, 3 ] },
-        { "item": "horns_sample", "prob": 40, "count": [ 1, 3 ] },
-        { "item": "meat", "prob": 40, "count": [ 1, 3 ] },
-        { "item": "rabbit_sample", "prob": 40, "count": [ 1, 3 ] },
-        { "item": "rat_sample", "prob": 40, "count": [ 1, 3 ] },
-        { "item": "mouse_sample", "prob": 40, "count": [ 1, 3 ] },
-        { "item": "fish_sample", "prob": 40, "count": [ 1, 3 ] },
-        { "item": "meat_tainted", "prob": 30, "count": [ 1, 3 ] },
-        { "item": "tallow", "prob": 30, "count": [ 2, 6 ] },
-        { "item": "fish", "prob": 40, "count": [ 1, 3 ] },
-        { "item": "tallow_tainted", "prob": 20, "count": [ 2, 4 ] },
-        { "item": "egg_bird_unfert", "prob": 30, "count-min": 1, "count-max": 12 },
-        { "item": "gastropod_sample", "prob": 40, "count": [ 1, 3 ] },
-        { "item": "batrachian_sample", "prob": 40, "count": [ 1, 3 ] },
-        { "item": "insect_sample", "prob": 40, "count": [ 1, 3 ] },
-        { "item": "cattle_sample", "prob": 40, "count": [ 1, 3 ] },
-        { "item": "spider_sample", "prob": 40, "count": [ 1, 3 ] },
-        { "item": "troglobite_sample", "prob": 40, "count": [ 1, 3 ] },
-        { "item": "lizard_sample", "prob": 40, "count": [ 1, 3 ] },
-        { "item": "ursine_sample", "prob": 40, "count": [ 1, 3 ] },
-        { "item": "beast_sample", "prob": 40, "count": [ 1, 3 ] },
-        { "item": "human_sample", "prob": 40, "count": [ 1, 3 ] },
-        { "item": "cephalopod_sample", "prob": 40, "count": [ 1, 3 ] },
-        { "item": "lupine_sample", "prob": 40, "count": [ 1, 3 ] },
-        { "item": "feline_sample", "prob": 40, "count": [ 1, 3 ] },
-        { "item": "plant_sample", "prob": 40, "count": [ 1, 3 ] },
-        { "item": "slime_sample", "prob": 40, "count": [ 1, 3 ] },
-        { "item": "bird_sample", "prob": 40, "count": [ 1, 3 ] },
-        { "item": "crustacean_sample", "prob": 40, "count": [ 1, 3 ] },
-        { "item": "egg_reptile", "prob": 20, "count-min": 1, "count-max": 12 },
-        { "item": "water_clean", "prob": 65, "count": [ 1, 3 ], "sealed": false },
-        { "item": "water_mineral", "prob": 35, "count": [ 1, 2 ], "sealed": false }
+        { "item": "horns_sample", "prob": 40, "count": [ 1, 3 ] }
       ]
-    },
-    "subtype": "collection"
+    }
   },
   {
     "id": "raptor_sample_single",
     "type": "item_group",
     "subtype": "collection",
-    "items": [ { "item": "raptor_sample" } ]
+    "entries": [ { "item": "raptor_sample" } ]
   },
   {
     "id": "raptor_sample_small",
     "type": "item_group",
     "subtype": "collection",
-    "items": [ { "item": "raptor_sample", "count-min": 1, "count-max": 3 } ]
+    "entries": [ { "item": "raptor_sample", "count-min": 1, "count-max": 3 } ]
   },
   {
     "id": "raptor_sample_large",
     "type": "item_group",
     "subtype": "collection",
-    "items": [ { "item": "raptor_sample", "count-min": 3, "count-max": 6 } ]
+    "entries": [ { "item": "raptor_sample", "count-min": 3, "count-max": 6 } ]
   },
   {
     "id": "raptor_sample_huge",
     "type": "item_group",
     "subtype": "collection",
-    "items": [ { "item": "raptor_sample", "count-min": 10, "count-max": 20 } ]
+    "entries": [ { "item": "raptor_sample", "count-min": 10, "count-max": 20 } ]
   },
   {
     "id": "tyrant_sample_single",
     "type": "item_group",
     "subtype": "collection",
-    "items": [ { "item": "tyrant_sample" } ]
+    "entries": [ { "item": "tyrant_sample" } ]
   },
   {
     "id": "tyrant_sample_small",
     "type": "item_group",
     "subtype": "collection",
-    "items": [ { "item": "tyrant_sample", "count-min": 1, "count-max": 3 } ]
+    "entries": [ { "item": "tyrant_sample", "count-min": 1, "count-max": 3 } ]
   },
   {
     "id": "tyrant_sample_large",
     "type": "item_group",
     "subtype": "collection",
-    "items": [ { "item": "tyrant_sample", "count-min": 3, "count-max": 6 } ]
+    "entries": [ { "item": "tyrant_sample", "count-min": 3, "count-max": 6 } ]
   },
   {
     "id": "tyrant_sample_huge",
     "type": "item_group",
     "subtype": "collection",
-    "items": [ { "item": "tyrant_sample", "count-min": 10, "count-max": 20 } ]
+    "entries": [ { "item": "tyrant_sample", "count-min": 10, "count-max": 20 } ]
   },
   {
     "id": "stego_sample_single",
     "type": "item_group",
     "subtype": "collection",
-    "items": [ { "item": "stego_sample" } ]
+    "entries": [ { "item": "stego_sample" } ]
   },
   {
     "id": "stego_sample_small",
     "type": "item_group",
     "subtype": "collection",
-    "items": [ { "item": "stego_sample", "count-min": 1, "count-max": 3 } ]
+    "entries": [ { "item": "stego_sample", "count-min": 1, "count-max": 3 } ]
   },
   {
     "id": "stego_sample_large",
     "type": "item_group",
     "subtype": "collection",
-    "items": [ { "item": "stego_sample", "count-min": 3, "count-max": 6 } ]
+    "entries": [ { "item": "stego_sample", "count-min": 3, "count-max": 6 } ]
   },
   {
     "id": "stego_sample_huge",
     "type": "item_group",
     "subtype": "collection",
-    "items": [ { "item": "stego_sample", "count-min": 10, "count-max": 20 } ]
+    "entries": [ { "item": "stego_sample", "count-min": 10, "count-max": 20 } ]
   },
   {
     "id": "horns_sample_single",
     "type": "item_group",
     "subtype": "collection",
-    "items": [ { "item": "horns_sample" } ]
+    "entries": [ { "item": "horns_sample" } ]
   },
   {
     "id": "horns_sample_small",
     "type": "item_group",
     "subtype": "collection",
-    "items": [ { "item": "horns_sample", "count-min": 1, "count-max": 3 } ]
+    "entries": [ { "item": "horns_sample", "count-min": 1, "count-max": 3 } ]
   },
   {
     "id": "horns_sample_large",
     "type": "item_group",
     "subtype": "collection",
-    "items": [ { "item": "horns_sample", "count-min": 3, "count-max": 6 } ]
+    "entries": [ { "item": "horns_sample", "count-min": 3, "count-max": 6 } ]
   },
   {
     "id": "horns_sample_huge",
     "type": "item_group",
     "subtype": "collection",
-    "items": [ { "item": "horns_sample", "count-min": 10, "count-max": 20 } ]
+    "entries": [ { "item": "horns_sample", "count-min": 10, "count-max": 20 } ]
   },
   {
     "type": "item_group",
@@ -233,13 +132,13 @@
     "magazine": 100,
     "items": [
       { "group": "office", "prob": 100 },
-      { "item": "newest_newspaper", "prob": 100 },
-      { "item": "egg_dino", "prob": 75 },
-      { "item": "egg_dino_theropod", "prob": 75 },
-      { "item": "mutagen_tyrant", "prob": 30 },
-      { "item": "mutagen_stego", "prob": 30 },
-      { "item": "mutagen_horns", "prob": 30 },
-      { "item": "kiernans_notes", "prob": 10 },
+      [ "newest_newspaper", 100 ],
+      [ "egg_dino", 75 ],
+      [ "egg_dino_theropod", 75 ],
+      [ "mutagen_tyrant", 30 ],
+      [ "mutagen_stego", 30 ],
+      [ "mutagen_horns", 30 ],
+      [ "kiernans_notes", 10 ],
       { "item": "kevlar_armor_elephant", "prob": 10 },
       { "item": "acidchitin_armor_elephant", "prob": 10 },
       { "item": "chitin_armor_elephant", "prob": 10 },
@@ -264,8 +163,7 @@
       { "item": "bronze_armor_ostrich", "prob": 10 },
       { "item": "dino_carrier", "prob": 10 },
       { "item": "dino_carrier_wooden", "prob": 10 }
-    ],
-    "subtype": "distribution"
+    ]
   },
   {
     "type": "item_group",
@@ -273,47 +171,48 @@
     "subtype": "distribution",
     "//": "High-tech bionics, handy for the harried researcher.  They get access to classified toys too, but only stuff a scientist would have use for.",
     "items": [
-      { "item": "burnt_out_bionic", "prob": 60 },
-      { "item": "bio_batteries", "prob": 30 },
-      { "item": "bio_power_storage", "prob": 30 },
-      { "item": "bio_metabolics", "prob": 5 },
-      { "item": "bio_ethanol", "prob": 5 },
-      { "item": "bio_ups", "prob": 10 },
-      { "item": "bio_torsionratchet", "prob": 30 },
-      { "item": "bio_tools", "prob": 10 },
-      { "item": "bio_flashlight", "prob": 30 },
-      { "item": "bio_lighter", "prob": 25 },
-      { "item": "bio_magnet", "prob": 20 },
-      { "item": "bio_memory", "prob": 15 },
-      { "item": "bio_ears", "prob": 10 },
-      { "item": "bio_sunglasses", "prob": 10 },
-      { "item": "bio_eye_optic", "prob": 10 },
-      { "item": "bio_eye_enhancer", "prob": 5 },
-      { "item": "bio_dex_enhancer", "prob": 5 },
-      { "item": "bio_int_enhancer", "prob": 10 },
-      { "item": "bio_night_vision", "prob": 1 },
-      { "item": "bio_infrared", "prob": 2 },
-      { "item": "bio_synaptic_regen", "prob": 12 },
-      { "item": "bio_gills", "prob": 5 },
-      { "item": "bio_climate", "prob": 2 },
-      { "item": "bio_heatsink", "prob": 2 },
-      { "item": "bio_blood_filter", "prob": 10 },
-      { "item": "bio_fingerhack", "prob": 2 },
-      { "item": "bio_lockpick", "prob": 2 },
-      { "item": "bio_surgical_razor", "prob": 8 },
-      { "item": "bio_nanobots", "prob": 15 },
-      { "item": "bio_blood_anal", "prob": 10 },
-      { "item": "bio_geiger", "prob": 15 },
-      { "item": "bio_radscrubber", "prob": 10 },
-      { "item": "bio_watch", "prob": 40 },
-      { "item": "bio_leukocyte", "prob": 15 },
-      { "item": "bio_syringe", "prob": 2 },
-      { "item": "bio_jointservo", "prob": 10 },
-      { "item": "bio_soporific", "prob": 2 }
+      [ "burnt_out_bionic", 60 ],
+      [ "bio_batteries", 30 ],
+      [ "bio_power_storage", 30 ],
+      [ "bio_metabolics", 5 ],
+      [ "bio_ethanol", 5 ],
+      [ "bio_ups", 10 ],
+      [ "bio_torsionratchet", 30 ],
+      [ "bio_tools", 10 ],
+      [ "bio_flashlight", 30 ],
+      [ "bio_lighter", 25 ],
+      [ "bio_magnet", 20 ],
+      [ "bio_memory", 15 ],
+      [ "bio_ears", 10 ],
+      [ "bio_sunglasses", 10 ],
+      [ "bio_eye_optic", 10 ],
+      [ "bio_eye_enhancer", 5 ],
+      [ "bio_dex_enhancer", 5 ],
+      [ "bio_int_enhancer", 10 ],
+      [ "bio_night_vision", 1 ],
+      [ "bio_infrared", 2 ],
+      [ "bio_synaptic_regen", 12 ],
+      [ "bio_gills", 5 ],
+      [ "bio_climate", 2 ],
+      [ "bio_heatsink", 2 ],
+      [ "bio_blood_filter", 10 ],
+      [ "bio_fingerhack", 2 ],
+      [ "bio_lockpick", 2 ],
+      [ "bio_surgical_razor", 8 ],
+      [ "bio_nanobots", 15 ],
+      [ "bio_blood_anal", 10 ],
+      [ "bio_geiger", 15 ],
+      [ "bio_radscrubber", 10 ],
+      [ "bio_watch", 40 ],
+      [ "bio_leukocyte", 15 ],
+      [ "bio_syringe", 2 ],
+      [ "bio_jointservo", 10 ],
+      [ "bio_soporific", 2 ]
     ]
   },
   {
     "type": "item_group",
+    "id": "museum_armor_pet",
     "copy-from": "museum_armor_pet",
     "extend": {
       "items": [
@@ -340,8 +239,6 @@
         { "item": "steel_armor_ostrich", "prob": 10 },
         { "item": "bronze_armor_ostrich", "prob": 10 }
       ]
-    },
-    "id": "museum_armor_pet",
-    "subtype": "distribution"
+    }
   }
 ]

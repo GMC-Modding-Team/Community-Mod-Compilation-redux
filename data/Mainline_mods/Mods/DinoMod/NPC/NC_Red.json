@@ -13,7 +13,21 @@
   {
     "type": "talk_topic",
     "id": "TALK_OLD_GUARD_RED",
-    "dynamic_line": "You there, wanderer.  You have the look of someone who hates dinosaurs.  Are you ready to take this country back?  You're back.  I knew you were a killer.  Are you ready to take this country back?  It's a good day to shoot some dinos.",
+    "dynamic_line": {
+      "u_has_var": "talked_to_red",
+      "type": "dialogue",
+      "context": "first_meeting",
+      "value": "yes",
+      "no": "You there, wanderer.  You have the look of someone who hates dinosaurs.  Are you ready to take this country back?",
+      "yes": {
+        "u_has_var": "asked_about_kill_dinos",
+        "type": "dialogue",
+        "context": "dino",
+        "value": "yes",
+        "no": "You're back.  I knew you were a killer.  Are you ready to take this country back?",
+        "yes": "It's a good day to shoot some dinos."
+      }
+    },
     "speaker_effect": { "effect": { "u_add_var": "talked_to_red", "type": "dialogue", "context": "first_meeting", "value": "yes" } },
     "responses": [
       {

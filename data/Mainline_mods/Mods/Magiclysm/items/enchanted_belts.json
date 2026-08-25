@@ -2,11 +2,11 @@
   {
     "abstract": "mbelt_leather",
     "type": "TOOL_ARMOR",
-    "name": { "str": "magic leather belt" },
+    "name": "magic leather belt",
     "description": "A leather belt.  Useful for making your pair of pants fit.",
     "weight": "102 g",
     "volume": "250 ml",
-    "price": "90000 cent",
+    "price": 90000,
     "material": [ "leather", "steel" ],
     "symbol": "[",
     "color": "brown",
@@ -20,16 +20,16 @@
         "moves": 60,
         "flag_restriction": [ "BELT_CLIP" ],
         "transparent": true
-      },
-      { "pocket_type": "CONTAINER", "rigid": true, "max_contains_volume": "2 L", "max_contains_weight": "5 kg" }
+      }
     ],
-    "flags": [ "BELTED", "STURDY", "TARDIS" ],
+    "use_action": { "type": "holster", "holster_prompt": "Stick what into your belt", "holster_msg": "You tuck your %s into your %s" },
+    "flags": [ "BELTED", "WATER_FRIENDLY", "STURDY" ],
     "armor": [ { "coverage": 50, "covers": [ "torso" ], "specifically_covers": [ "torso_waist" ] } ],
     "melee_damage": { "bash": 5 }
   },
   {
-    "copy-from": "mbelt_leather",
     "type": "TOOL_ARMOR",
+    "copy-from": "mbelt_leather",
     "id": "mbelt_haste",
     "name": { "str": "Belt of Haste", "str_pl": "Belts of Haste" },
     "relic_data": {
@@ -37,11 +37,11 @@
     }
   },
   {
-    "copy-from": "mbelt_leather",
     "type": "TOOL_ARMOR",
+    "copy-from": "mbelt_leather",
     "id": "mbelt_thor",
     "name": { "str_sp": "Megingjörð" },
-    "price_postapoc": "9500 cent",
+    "price_postapoc": "9500 USD",
     "description": "The mythical belt of Thor, god of thunder.  Or at least so it appears.  It doubles the wearer's base strength.",
     "material": [ "superalloy" ],
     "material_thickness": 10,
@@ -53,8 +53,8 @@
     }
   },
   {
-    "copy-from": "mbelt_leather",
     "type": "TOOL_ARMOR",
+    "copy-from": "mbelt_leather",
     "id": "mbelt_pockets_lesser",
     "name": { "str": "lesser dimensional toolbelt" },
     "description": "A sturdy workman's belt that fits around your waist, covered in easy to access pouches.  Like all dimensional spaces, they hold more than they should with a fair weight reduction.",
@@ -100,8 +100,8 @@
     "armor": [ { "encumbrance": [ 4, 10 ], "coverage": 100, "covers": [ "torso" ], "specifically_covers": [ "torso_waist" ] } ]
   },
   {
-    "copy-from": "mbelt_leather",
     "type": "TOOL_ARMOR",
+    "copy-from": "mbelt_leather",
     "id": "mbelt_pockets_greater",
     "name": { "str": "greater dimensional toolbelt" },
     "description": "A heavy-duty workman's belt that fits around your waist, covered in easy to access pouches.  Like all dimensional spaces, they hold far more than they should with a substantial weight reduction.",
@@ -147,8 +147,8 @@
     "armor": [ { "encumbrance": [ 6, 8 ], "coverage": 100, "covers": [ "torso" ], "specifically_covers": [ "torso_waist" ] } ]
   },
   {
-    "copy-from": "mbelt_leather",
     "type": "TOOL_ARMOR",
+    "copy-from": "mbelt_leather",
     "id": "mbelt_weaponry",
     "name": { "str": "Belt of Weaponry", "str_pl": "Belts of Weaponry" },
     "description": "A wide girdle that fits around your waist, you can sheath or holster any weapon into it in the blink of an eye, and it seemingly stores them somewhere else.",
@@ -184,9 +184,9 @@
         "max_contains_weight": "2500 g",
         "max_item_length": "125 cm",
         "weight_multiplier": 0.0
-      },
-      { "pocket_type": "CONTAINER", "rigid": true, "max_contains_volume": "2 L", "max_contains_weight": "5 kg" }
+      }
     ],
+    "use_action": { "type": "holster", "holster_prompt": "Stick what into your belt", "holster_msg": "You tuck your %s into your %s" },
     "material": [ "leather" ],
     "armor": [ { "encumbrance": [ 3, 3 ], "coverage": 100, "covers": [ "torso" ], "specifically_covers": [ "torso_waist" ] } ]
   },
@@ -208,10 +208,10 @@
     ],
     "symbol": "[",
     "description": "A custom-built leather utility belt that instantly creates any tool that you reach for.  Activate to sheathe/draw a weapon.",
-    "price": "500000 cent",
+    "price": 500000,
     "material": [ "leather", "steel" ],
     "volume": "4 L",
-    "flags": [ "VARSIZE", "STURDY", "BELTED", "OVERSIZE" ],
+    "flags": [ "VARSIZE", "WATER_FRIENDLY", "STURDY", "BELTED", "OVERSIZE" ],
     "material_thickness": 4,
     "use_action": [ { "type": "holster", "holster_prompt": "Sheath blade", "holster_msg": "You sheath your %s" }, "CROWBAR" ],
     "qualities": [
@@ -230,8 +230,8 @@
     "armor": [ { "encumbrance": 4, "coverage": 100, "covers": [ "torso" ], "specifically_covers": [ "torso_waist" ] } ]
   },
   {
-    "copy-from": "mbelt_leather",
     "type": "TOOL_ARMOR",
+    "copy-from": "mbelt_leather",
     "id": "mbelt_iron_whip",
     "name": { "str": "Belt of The Iron Whip", "str_pl": "Belts of the Iron Whip" },
     "volume": "1 L",
@@ -258,7 +258,7 @@
     "description": "A long braided flexible steel bullwhip that narrows into a sharp blade at the end.  Easily capable of slicing and dicing anything that comes at you.  It transforms back into a belt.",
     "weight": "2154 g",
     "volume": "2 L",
-    "price": "350000 cent",
+    "price": 350000,
     "material": [ "steel" ],
     "flags": [ "REACH_ATTACK", "REACH3", "WHIP", "UNBREAKABLE_MELEE" ],
     "techniques": [ "WBLOCK_1", "SWEEP", "WHIP_DISARM", "WRAP" ],

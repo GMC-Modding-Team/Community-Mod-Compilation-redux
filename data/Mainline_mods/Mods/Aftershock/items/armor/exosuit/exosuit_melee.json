@@ -4,7 +4,7 @@
     "type": "GENERIC",
     "symbol": "/",
     "color": "light_gray",
-    "name": { "str": "boarding axe" },
+    "name": "boarding axe",
     "ascii_picture": "halberd",
     "description": "This is a sturdy axe with a pick opposite the blade.  A composite titanium/Kevlar handle provides a sturdy grip that protects against electrical shocks and high temperatures.  Designed for use by soldiers wearing strength-enhancing exosuits, it's quite heavy.  Activate it to fold it into a compact module.",
     "weight": "3500 g",
@@ -33,7 +33,7 @@
     "type": "GENERIC",
     "symbol": "/",
     "color": "light_gray",
-    "name": { "str": "makeshift boarding axe" },
+    "name": "makeshift boarding axe",
     "ascii_picture": "halberd",
     "description": "This is an oversized axe made from scraps of salvaged metal.  While not as versatile or durable as the boarding axe, it still packs a punch.",
     "weight": "4250 g",
@@ -53,7 +53,7 @@
     "type": "TOOL_ARMOR",
     "symbol": "=",
     "color": "yellow",
-    "name": { "str": "heavy mining drill" },
+    "name": "heavy mining drill",
     "description": "This is a portable roadheader, designed to chew through the toughest rock with three carbide-tipped mining heads.  Heavy cables run from the module to a handheld trigger mechanism.  Currently inactive, it still makes a powerful blunt weapon.",
     "weight": "45 kg",
     "volume": "6 L",
@@ -91,36 +91,15 @@
     "id": "heavy_drill_on",
     "type": "TOOL_ARMOR",
     "copy-from": "heavy_drill",
-    "symbol": "=",
-    "color": "yellow",
     "name": { "str": "heavy mining drill (on)", "str_pl": "heavy mining drills (on)" },
     "description": "This is a portable roadheader, designed to chew through the toughest rock.  Currently active, the drill heads are a blur.",
-    "weight": "45 kg",
-    "volume": "6 L",
-    "longest_side": "90 cm",
-    "sided": true,
-    "techniques": [ "WBLOCK_2", "BRUTAL", "WIDE", "SWEEP" ],
     "qualities": [ [ "HAMMER", 1 ], [ "DIG", 3 ] ],
+    "extend": { "flags": [ "POWERED", "EXO_LARGE_GADGET" ] },
     "to_hit": { "grip": "weapon", "length": "long", "surface": "every", "balance": "clumsy" },
-    "material": [ "qt_steel", "carbide" ],
-    "weapon_category": [ "MACES", "GREAT_HAMMERS" ],
-    "flags": [ "NONCONDUCTIVE", "DURABLE_MELEE", "REACH_ATTACK", "USE_UPS", "EXO_LARGE_GADGET", "POWERED" ],
-    "category": "weapons",
-    "use_action": { "ammo_scale": 0, "target": "heavy_drill", "msg": "You deactivate the drill.", "type": "transform" },
-    "armor": [
-      {
-        "material": [
-          { "type": "qt_steel", "covered_by_mat": 100, "thickness": 10 },
-          { "type": "carbide", "covered_by_mat": 15, "thickness": 5 }
-        ],
-        "covers": [ "hand_l", "hand_r" ],
-        "coverage": 100,
-        "encumbrance": 20
-      }
-    ],
-    "melee_damage": { "bash": 50, "cut": 25 },
     "power_draw": "1500 mW",
-    "revert_to": "heavy_drill"
+    "revert_to": "heavy_drill",
+    "use_action": { "ammo_scale": 0, "target": "heavy_drill", "msg": "You deactivate the drill.", "type": "transform" },
+    "melee_damage": { "bash": 50, "cut": 25 }
   },
   {
     "id": "exosuit_claw",
@@ -130,14 +109,14 @@
     "weight": "3 kg",
     "volume": "300 ml",
     "longest_side": "50 cm",
-    "price": "1100 cent",
-    "price_postapoc": "250 cent",
+    "price": 1100,
+    "price_postapoc": 250,
     "to_hit": { "grip": "weapon", "length": "hand", "surface": "any", "balance": "neutral" },
     "material": [ "qt_steel" ],
     "symbol": "[",
     "color": "light_gray",
     "power_armor": true,
-    "flags": [ "DURABLE_MELEE", "OVERSIZE", "OUTER", "EXO_MEDIUM_GADGET" ],
+    "flags": [ "WATER_FRIENDLY", "DURABLE_MELEE", "OVERSIZE", "OUTER", "EXO_MEDIUM_GADGET" ],
     "armor": [
       {
         "material": [
@@ -241,8 +220,8 @@
     "melee_damage": { "bash": 10, "cut": 5 }
   },
   {
-    "copy-from": "exosuit_power_cutter",
     "id": "exosuit_power_cutter_on",
+    "copy-from": "exosuit_power_cutter",
     "type": "TOOL",
     "name": { "str": "exosuit power cutter (on)", "str_pl": "exosuit power cutters (on)" },
     "description": "A huge, multi-fuel powered saw with a diamond blade, currently a whirling blur.  It's consuming fuel and can be used as a fantastic tool for cutting metal.  You can also use it as a terrifying weapon, if you're into that sort of thing.",

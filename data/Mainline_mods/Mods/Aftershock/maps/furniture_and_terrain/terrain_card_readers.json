@@ -1,16 +1,13 @@
 [
   {
-    "id": "t_afs_industrial_card_reader",
     "type": "terrain",
-    "copy-from": "t_card_science_maintenance_yellow",
+    "id": "t_afs_industrial_card_reader",
     "name": "Old TSKBEM Card Reader",
     "description": "A smartcard based lock system once fitted to TSKBEM prefab industrial facilities.  While an original key would be impossible to find, the machine is ancient and obsolete, and it can be hacked or masterkeys can be obtained to bypass it.",
-    "//": "Tier 2 card for a lab.  Medium security access. Reanamed player facing name to ocher.",
     "symbol": "6",
     "color": "yellow",
-    "move_cost": 0,
-    "roof": "t_metal_roof",
-    "flags": [ "NOITEM", "CONNECT_WITH_WALL" ],
+    "copy-from": "t_card_science_maintenance_yellow",
+    "looks_like": "t_card_science_maintenance_yellow",
     "examine_action": {
       "type": "cardreader",
       "flags": [ "OLD_TSKBEM_CARD" ],
@@ -23,15 +20,6 @@
       "query_msg": "Are you sure you want to open this door?",
       "success_msg": "You opened the door!",
       "redundant_msg": "The door is already open."
-    },
-    "bash": {
-      "str_min": 18,
-      "str_max": 180,
-      "sound": "crunch!",
-      "sound_fail": "whack!",
-      "ter_set": "t_card_reader_broken",
-      "items": [ { "item": "plastic_chunk", "count": [ 0, 2 ] }, { "item": "scrap", "prob": 50 } ]
-    },
-    "looks_like": "t_card_science_maintenance_yellow"
+    }
   }
 ]

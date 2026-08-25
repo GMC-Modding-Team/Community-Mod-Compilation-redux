@@ -66,7 +66,7 @@
   {
     "type": "mutation",
     "id": "MIGO_THRESH_RAD_FLUSH",
-    "name": { "str": "Radiation Flush" },
+    "name": { "str": "Radiation Flush " },
     "points": 5,
     "description": "You can instruct your immune system to flush out radioactive particles at an enviable speed.",
     "prereqs": [ "MIGO_RAD_ADAPTION" ],
@@ -123,6 +123,12 @@
     "category": [ "MIGO" ],
     "leads_to": [ "MIGO_HEAT_RESIST" ],
     "bodytemp_modifiers": [ -500, -1250 ]
+  },
+  {
+    "type": "mutation",
+    "id": "THICKSKIN",
+    "copy-from": "THICKSKIN",
+    "extend": { "category": [ "MIGO", "MASTODON" ] }
   },
   {
     "type": "mutation",
@@ -396,6 +402,12 @@
   },
   {
     "type": "mutation",
+    "id": "SHOUT1",
+    "copy-from": "SHOUT1",
+    "extend": { "category": [ "MIGO" ] }
+  },
+  {
+    "type": "mutation",
     "id": "UPLIFTED",
     "name": "Uplifted",
     "points": 2,
@@ -416,6 +428,12 @@
   },
   {
     "type": "mutation",
+    "id": "TOUGH_FEET",
+    "copy-from": "TOUGH_FEET",
+    "extend": { "category": [ "MASTODON" ] }
+  },
+  {
+    "type": "mutation",
     "id": "HAULER",
     "name": "Hauler",
     "points": 2,
@@ -423,6 +441,36 @@
     "category": [ "MASTODON" ],
     "cancels": [ "BADBACK" ],
     "weight_capacity_modifier": 1.6
+  },
+  {
+    "type": "mutation",
+    "id": "BADKNEES",
+    "copy-from": "BADKNEES",
+    "extend": { "category": [ "MASTODON" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "VEGETARIAN",
+    "copy-from": "VEGETARIAN",
+    "extend": { "category": [ "MASTODON" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "SMELLY",
+    "copy-from": "SMELLY",
+    "extend": { "category": [ "MASTODON", "MIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "CLUMSY",
+    "copy-from": "CLUMSY",
+    "extend": { "category": [ "MASTODON" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "SLOWRUNNER",
+    "copy-from": "SLOWRUNNER",
+    "extend": { "category": [ "MASTODON" ] }
   },
   {
     "type": "mutation",
@@ -435,6 +483,25 @@
     "types": [ "SKIN", "BODY_ARMOR", "BODY_ARMOR_MOD", "ARMOR" ],
     "changes_to": [ "LIGHTFUR" ],
     "category": [ "MASTODON", "SPIDER", "MOUSE", "BEAST", "CATTLE", "RAT", "FELINE", "LUPINE", "RABBIT", "INSECT", "URSINE" ]
+  },
+  {
+    "type": "mutation",
+    "id": "HIRSUTE",
+    "copy-from": "HIRSUTE",
+    "extend": { "category": [ "MASTODON" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "LIGHTFUR",
+    "copy-from": "LIGHTFUR",
+    "prereqs": [ "HIRSUTE" ],
+    "extend": { "category": [ "MASTODON" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "FUR",
+    "copy-from": "FUR",
+    "extend": { "category": [ "MASTODON" ] }
   },
   {
     "type": "mutation",
@@ -471,6 +538,18 @@
       "chance": 20,
       "strength_damage": { "damage_type": "bash", "amount": 5 }
     }
+  },
+  {
+    "type": "mutation",
+    "id": "RUMINANT",
+    "copy-from": "RUMINANT",
+    "extend": { "category": [ "MASTODON" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "GRAZER",
+    "copy-from": "GRAZER",
+    "extend": { "category": [ "MASTODON" ] }
   },
   {
     "type": "mutation",
@@ -527,6 +606,67 @@
   },
   {
     "type": "mutation",
+    "id": "DENSE_BONES",
+    "copy-from": "DENSE_BONES",
+    "extend": { "category": [ "MASTODON" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "MUT_TOUGH",
+    "copy-from": "MUT_TOUGH",
+    "extend": { "category": [ "MASTODON" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "MUT_TOUGH2",
+    "copy-from": "MUT_TOUGH2",
+    "extend": { "category": [ "MASTODON" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "MUT_TOUGH3",
+    "copy-from": "MUT_TOUGH3",
+    "extend": { "category": [ "MASTODON" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "LARGE",
+    "copy-from": "LARGE",
+    "extend": { "category": [ "MASTODON" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "LARGE_OK",
+    "copy-from": "LARGE_OK",
+    "extend": { "category": [ "MASTODON" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "HUGE",
+    "copy-from": "HUGE",
+    "extend": { "category": [ "MASTODON" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "HUGE_OK",
+    "copy-from": "HUGE_OK",
+    "extend": { "category": [ "MASTODON" ], "threshreq": [ "THRESH_MASTODON" ] },
+    "profession": true
+  },
+  {
+    "type": "mutation",
+    "id": "SMELLY2",
+    "copy-from": "SMELLY2",
+    "extend": { "category": [ "MASTODON", "MIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "SNOUT",
+    "copy-from": "SNOUT",
+    "extend": { "category": [ "MASTODON" ], "changes_to": [ "TRUNK" ] }
+  },
+  {
+    "type": "mutation",
     "id": "TRUNK",
     "name": { "str": "Elephant Trunk" },
     "points": 0,
@@ -543,6 +683,36 @@
   },
   {
     "type": "mutation",
+    "id": "HUNGER",
+    "copy-from": "HUNGER",
+    "extend": { "category": [ "MASTODON" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "MET_RAT",
+    "copy-from": "MET_RAT",
+    "extend": { "category": [ "MASTODON" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "SLEEPY",
+    "copy-from": "SLEEPY",
+    "extend": { "category": [ "MASTODON" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "THIRST",
+    "copy-from": "THIRST",
+    "extend": { "category": [ "MASTODON" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "THIRST2",
+    "copy-from": "THIRST2",
+    "extend": { "category": [ "MASTODON" ] }
+  },
+  {
+    "type": "mutation",
     "id": "TRIPAWS",
     "name": "Three Fingered",
     "points": 0,
@@ -556,6 +726,24 @@
     "types": [ "HANDS" ],
     "cancels": [ "TALONS" ],
     "category": [ "MASTODON" ]
+  },
+  {
+    "type": "mutation",
+    "id": "HERBIVORE",
+    "copy-from": "HERBIVORE",
+    "extend": { "category": [ "MASTODON" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "PONDEROUS1",
+    "copy-from": "PONDEROUS1",
+    "extend": { "category": [ "MASTODON" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "PONDEROUS2",
+    "copy-from": "PONDEROUS2",
+    "extend": { "category": [ "MASTODON" ] }
   },
   {
     "type": "mutation",
@@ -589,6 +777,96 @@
     "valid": false,
     "purifiable": false,
     "profession": true
+  },
+  {
+    "type": "mutation",
+    "id": "LEG_TENTACLES",
+    "copy-from": "LEG_TENTACLES",
+    "extend": { "allow_soft_gear": true }
+  },
+  {
+    "type": "mutation",
+    "id": "CHEMIMBALANCE",
+    "copy-from": "CHEMIMBALANCE",
+    "extend": { "category": [ "MIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "POISRESIST",
+    "copy-from": "POISRESIST",
+    "extend": { "category": [ "MIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "NIGHTVISION",
+    "copy-from": "NIGHTVISION",
+    "extend": { "category": [ "MIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "DISRESISTANT",
+    "copy-from": "DISRESISTANT",
+    "extend": { "category": [ "MIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "DISIMMUNE",
+    "copy-from": "DISIMMUNE",
+    "extend": { "category": [ "MIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "INFRESIST",
+    "copy-from": "INFRESIST",
+    "extend": { "category": [ "MIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "INFIMMUNE",
+    "copy-from": "INFIMMUNE",
+    "extend": { "category": [ "MIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "PARAIMMUNE",
+    "copy-from": "PARAIMMUNE",
+    "extend": { "category": [ "MIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "SCHIZOPHRENIC",
+    "copy-from": "SCHIZOPHRENIC",
+    "extend": { "category": [ "MIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "STR_UP",
+    "copy-from": "STR_UP",
+    "extend": { "category": [ "MASTODON" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "STR_UP_2",
+    "copy-from": "STR_UP_2",
+    "extend": { "category": [ "MASTODON" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "STR_UP_3",
+    "copy-from": "STR_UP_3",
+    "extend": { "category": [ "MASTODON" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "STR_UP_4",
+    "copy-from": "STR_UP_4",
+    "extend": { "category": [ "MASTODON" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "WINGS_STUB",
+    "copy-from": "WINGS_STUB",
+    "extend": { "category": [ "MIGO" ] }
   },
   {
     "type": "mutation",

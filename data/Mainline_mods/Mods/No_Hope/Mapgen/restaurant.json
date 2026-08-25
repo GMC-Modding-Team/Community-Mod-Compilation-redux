@@ -98,7 +98,7 @@
         "|||"
       ],
       "palettes": [ "restaurant_palette" ],
-      "terrain": { "<": "t_stairs_up", "+": "t_door_metal_locked", "@": "t_card_fp", " ": "t_null", "|": "t_region_groundcover" },
+      "terrain": { "<": "t_stairs_up", "+": "t_door_metal_locked", "@": "t_card_fp", " ": "t_null" },
       "flags": [ "ERASE_ALL_BEFORE_PLACING_TERRAIN" ]
     }
   },
@@ -134,7 +134,7 @@
         "                    X   ",
         "                        "
       ],
-      "terrain": { "W": "t_window_boarded", "X": "t_region_groundcover", "@": "t_region_groundcover", "N": "t_region_groundcover" },
+      "terrain": { "W": "t_window_boarded" },
       "furniture": { "R": "f_rack", "F": "f_fridge", "x": "f_trashcan", "T": "f_table" },
       "remove_all": { "N": {  } },
       "place_npcs": [ { "class": "survivor_chef", "x": 12, "y": 19 } ],
@@ -193,8 +193,7 @@
         "                        ",
         "                        "
       ],
-      "nested": { "@": { "chunks": [ [ "1x1_GROUP_GROCERY", 1 ], [ "null", 4 ] ] } },
-      "terrain": { "@": "t_region_groundcover" }
+      "nested": { "@": { "chunks": [ [ "1x1_GROUP_GROCERY", 1 ], [ "null", 4 ] ] } }
     }
   },
   {
@@ -245,6 +244,7 @@
     "method": "json",
     "om_terrain": "s_restaurant",
     "object": {
+      "fill_ter": "t_linoleum_gray",
       "rows": [
         "____,____,____,____,____",
         "____,____,____,____,____",
@@ -293,36 +293,7 @@
           "neighbors": { "above": "s_restaurant_foodplace_roof" }
         }
       ],
-      "place_items": [ { "item": "trash", "x": [ 0, 17 ], "y": [ 22, 23 ], "chance": 20, "repeat": [ 1, 2 ] } ],
-      "terrain": {
-        "_": "t_region_groundcover",
-        ",": "t_region_groundcover",
-        "+": "t_region_groundcover",
-        "G": "t_region_groundcover",
-        "|": "t_region_groundcover",
-        "C": "t_region_groundcover",
-        "B": "t_region_groundcover",
-        "W": "t_region_groundcover",
-        "T": "t_region_groundcover",
-        "y": "t_region_groundcover",
-        "S": "t_region_groundcover",
-        "~": "t_region_groundcover",
-        "$": "t_region_groundcover",
-        "P": "t_region_groundcover",
-        "#": "t_region_groundcover",
-        "O": "t_region_groundcover",
-        "{": "t_region_groundcover",
-        "F": "t_region_groundcover",
-        ".": "t_region_groundcover",
-        "&": "t_region_groundcover",
-        "R": "t_region_groundcover",
-        "D": "t_region_groundcover",
-        "*": "t_region_groundcover",
-        "4": "t_region_groundcover",
-        "^": "t_region_groundcover",
-        "d": "t_region_groundcover"
-      },
-      "fill_ter": "t_region_groundcover"
+      "place_items": [ { "item": "trash", "x": [ 0, 17 ], "y": [ 22, 23 ], "chance": 20, "repeat": [ 1, 2 ] } ]
     }
   },
   {
@@ -330,6 +301,7 @@
     "method": "json",
     "om_terrain": [ "s_restaurant_roof" ],
     "object": {
+      "fill_ter": "t_flat_roof",
       "rows": [
         "                        ",
         "                        ",
@@ -372,9 +344,7 @@
           "y": [ 14, 15 ]
         },
         { "chunks": [ [ "roof_16x16_help", 5 ], [ "null", 95 ] ], "x": 2, "y": 7 }
-      ],
-      "terrain": { "-": "t_region_groundcover", ".": "t_region_groundcover", "5": "t_region_groundcover", "v": "t_region_groundcover" },
-      "fill_ter": "t_region_groundcover"
+      ]
     }
   },
   {
@@ -401,7 +371,7 @@
         "      ",
         "   X  "
       ],
-      "terrain": { "X": "t_rdoor_boarded", "F": "t_region_groundcover" },
+      "terrain": { "X": "t_rdoor_boarded" },
       "items": { "F": { "item": "dead_foodperson", "chance": 30 } },
       "place_zones": [ { "type": "NPC_NO_INVESTIGATE", "faction": "no_faction", "x": [ 0, 5 ], "y": [ 0, 5 ] } ]
     }
@@ -411,13 +381,13 @@
     "type": "item_group",
     "subtype": "collection",
     "container-item": "foodperson_mask",
-    "items": [ { "item": "medium_disposable_cell" } ]
+    "entries": [ { "item": "medium_disposable_cell" } ]
   },
   {
     "id": "foodperson_outfit",
     "type": "item_group",
     "subtype": "collection",
-    "items": [
+    "entries": [
       { "group": "foodperson_mask_loaded" },
       { "item": "cape_fp" },
       { "item": "chestguard_hard" },
@@ -432,13 +402,14 @@
     "type": "item_group",
     "subtype": "collection",
     "container-item": "corpse",
-    "items": [ { "group": "foodperson_outfit" } ]
+    "entries": [ { "group": "foodperson_outfit" } ]
   },
   {
     "type": "mapgen",
     "method": "json",
     "om_terrain": [ "s_restaurant_foodplace_roof" ],
     "object": {
+      "fill_ter": "t_floor",
       "rows": [
         "                        ",
         "                        ",
@@ -473,24 +444,7 @@
         "h": "t_linoleum_white",
         "T": "t_linoleum_white",
         "i": "t_linoleum_white",
-        "'": "t_linoleum_white",
-        "-": "t_region_groundcover",
-        ".": "t_region_groundcover",
-        "|": "t_region_groundcover",
-        "b": "t_region_groundcover",
-        "L": "t_region_groundcover",
-        "_": "t_region_groundcover",
-        "S": "t_region_groundcover",
-        "y": "t_region_groundcover",
-        "e": "t_region_groundcover",
-        "F": "t_region_groundcover",
-        "c": "t_region_groundcover",
-        "s": "t_region_groundcover",
-        "t": "t_region_groundcover",
-        "Y": "t_region_groundcover",
-        "D": "t_region_groundcover",
-        "4": "t_region_groundcover",
-        ">": "t_region_groundcover"
+        "'": "t_linoleum_white"
       },
       "furniture": {
         "h": "f_shower",
@@ -528,8 +482,7 @@
       },
       "vendingmachines": { "D": { "item_group": "vending_drink", "lootable": true } },
       "place_loot": [ { "item": "television", "x": [ 3, 4 ], "y": 20, "repeat": 1, "chance": 100 } ],
-      "place_nested": [ { "chunks": [ [ "foodperson_break_room", 25 ], [ "null", 75 ] ], "x": 15, "y": 10 } ],
-      "fill_ter": "t_region_groundcover"
+      "place_nested": [ { "chunks": [ [ "foodperson_break_room", 25 ], [ "null", 75 ] ], "x": 15, "y": 10 } ]
     }
   },
   {

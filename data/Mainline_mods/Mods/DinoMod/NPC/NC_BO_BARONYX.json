@@ -36,7 +36,21 @@
   {
     "type": "talk_topic",
     "id": "TALK_SWAMPER",
-    "dynamic_line": "You look hungry friend.  So much hunger in this world.  This is the time of the eaters.  Welcome.  Are you hungry friend?  The eaters will be fed.",
+    "dynamic_line": {
+      "u_has_var": "talked_to_swamper",
+      "type": "dialogue",
+      "context": "first_meeting",
+      "value": "yes",
+      "no": "You look hungry friend.  So much hunger in this world.  This is the time of the eaters.",
+      "yes": {
+        "u_has_var": "asked_about_eating",
+        "type": "dialogue",
+        "context": "eating",
+        "value": "yes",
+        "no": "Welcome.  Are you hungry friend?",
+        "yes": "The eaters will be fed."
+      }
+    },
     "speaker_effect": { "effect": { "u_add_var": "talked_to_swamper", "type": "dialogue", "context": "first_meeting", "value": "yes" } },
     "responses": [
       {
@@ -161,7 +175,25 @@
   {
     "id": "TALK_MISSION_LIST_SWAMPER",
     "type": "talk_topic",
-    "dynamic_line": "I know of eaters ready for meat.",
+    "dynamic_line": {
+      "has_no_available_mission": {
+        "has_no_assigned_mission": "The eaters have fed.  They will be hungry again in time.",
+        "no": { "has_many_assigned_missions": "You know what to do.", "no": "That is all for now." }
+      },
+      "no": {
+        "has_many_available_missions": {
+          "has_no_assigned_mission": "The great eaters must be fed.  Are you ready?",
+          "no": {
+            "has_many_assigned_missions": "There is still more work to do.  Are you ready?",
+            "no": "There is meat ready for the feeding.  Are you ready to gather it?"
+          }
+        },
+        "no": {
+          "has_no_assigned_mission": "The eaters are hungry.",
+          "no": { "has_many_assigned_missions": "There is more meat needed.", "no": "I know of eaters ready for meat." }
+        }
+      }
+    },
     "responses": [
       { "text": "I see.", "topic": "TALK_NONE", "condition": "has_no_available_mission" },
       {
@@ -215,7 +247,11 @@
   {
     "id": "TALK_SUGGEST_FOLLOW_SWAMPER",
     "type": "talk_topic",
-    "dynamic_line": "No, I must remain here to oversee the company.  Oh, you know my friend Brigitte.  Well in that case, let's go!",
+    "dynamic_line": {
+      "u_has_trait": "seer_mark",
+      "no": "No, I must remain here to oversee the company.",
+      "yes": "Oh, you know my friend Brigitte.  Well in that case, let's go!"
+    },
     "responses": [
       { "text": "Of course CEO Baronyx.", "topic": "TALK_NONE", "condition": { "not": { "u_has_trait": "seer_mark" } } },
       { "text": "Sweet!", "effect": "follow", "condition": { "u_has_trait": "seer_mark" }, "topic": "TALK_DONE" },
