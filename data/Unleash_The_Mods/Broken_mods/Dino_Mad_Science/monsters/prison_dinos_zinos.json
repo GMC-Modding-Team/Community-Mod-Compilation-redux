@@ -3,564 +3,221 @@
     "id": "mon_putahraptor",
     "type": "MONSTER",
     "copy-from": "mon_utahraptor",
-    "name": { "str": "Utahraptor prisoner" },
-    "species": "DINOSAUR",
-    "default_faction": "utahraptor",
-    "symbol": "D",
-    "color": "dark_gray",
-    "volume": "500000 ml",
-    "weight": "500000 g",
-    "material": [ "flesh" ],
-    "diff": 30,
-    "aggression": 30,
-    "morale": 80,
-    "speed": 100,
-    "melee_skill": 10,
-    "melee_dice": 2,
-    "melee_dice_sides": 6,
-    "melee_damage": [ { "damage_type": "cut", "amount": 5 } ],
-    "dodge": 1,
-    "hp": 100,
-    "special_attacks": [ { "type": "leap", "cooldown": 7, "max_range": 3, "allow_no_target": true } ],
-    "description": "A large bipedal dinosaur with feathered arms, a long tail, and scythe-like claws.",
-    "reproduction": { "baby_egg": "egg_utahraptor", "baby_count": 3, "baby_timer": 18 },
-    "baby_flags": [ "SPRING", "SUMMER" ],
-    "biosignature": { "biosig_item": "feces_bird", "biosig_timer": 3 },
-    "flags": [ "SEES", "SMELLS", "HEARS", "ANIMAL", "PATH_AVOID_DANGER_1", "KEENNOSE", "ATTACKMON", "WARM", "GROUP_BASH", "BASHES" ],
-    "anger_triggers": [ "STALK", "FRIEND_ATTACKED", "FRIEND_DIED", "PLAYER_WEAK", "HURT" ],
-    "fear_triggers": [ "SOUND", "FIRE" ],
-    "categories": [ "DINOSAUR" ],
-    "armor": { "bash": 2, "cut": 1 },
+    "name": {
+      "str": "Utahraptor prisoner"
+    },
     "death_drops": "dino_prisoner_drops",
-    "zombify_into": "mon_pzutahraptor"
+    "zombify_into": "mon_pzutahraptor",
+    "extend": {
+      "flags": [
+        "GROUP_BASH",
+        "BASHES"
+      ]
+    }
   },
   {
     "id": "mon_cutahraptor",
     "type": "MONSTER",
     "copy-from": "mon_utahraptor",
-    "name": { "str": "Utahraptor cop" },
-    "species": "DINOSAUR",
-    "default_faction": "utahraptor",
-    "symbol": "D",
-    "color": "dark_gray",
-    "volume": "500000 ml",
-    "weight": "500000 g",
-    "material": [ "flesh" ],
-    "diff": 30,
-    "aggression": 30,
-    "morale": 80,
-    "speed": 100,
-    "melee_skill": 10,
-    "melee_dice": 2,
-    "melee_dice_sides": 6,
-    "melee_damage": [ { "damage_type": "cut", "amount": 5 } ],
-    "dodge": 1,
-    "hp": 100,
-    "special_attacks": [ { "type": "leap", "cooldown": 7, "max_range": 3, "allow_no_target": true } ],
-    "description": "A large bipedal dinosaur with feathered arms, a long tail, and scythe-like claws.",
-    "reproduction": { "baby_egg": "egg_utahraptor", "baby_count": 3, "baby_timer": 18 },
-    "baby_flags": [ "SPRING", "SUMMER" ],
-    "biosignature": { "biosig_item": "feces_bird", "biosig_timer": 3 },
-    "flags": [ "SEES", "SMELLS", "HEARS", "ANIMAL", "PATH_AVOID_DANGER_1", "KEENNOSE", "ATTACKMON", "WARM", "GROUP_BASH", "BASHES" ],
-    "anger_triggers": [ "STALK", "FRIEND_ATTACKED", "FRIEND_DIED", "PLAYER_WEAK", "HURT" ],
-    "fear_triggers": [ "SOUND", "FIRE" ],
-    "categories": [ "DINOSAUR" ],
-    "armor": { "bash": 2, "cut": 1 },
+    "name": {
+      "str": "Utahraptor cop"
+    },
     "death_drops": "dino_cop_drops",
-    "zombify_into": "mon_czutahraptor"
+    "zombify_into": "mon_czutahraptor",
+    "extend": {
+      "flags": [
+        "GROUP_BASH",
+        "BASHES"
+      ]
+    }
   },
   {
     "id": "mon_pzutahraptor",
     "type": "MONSTER",
     "copy-from": "mon_zutahraptor",
-    "name": { "str": "Utahraptor zombie prisoner" },
-    "looks_like": "mon_utahraptor",
-    "species": [ "ZOMBIE" ],
-    "default_faction": "zombie",
-    "symbol": "Z",
-    "color": "green",
-    "volume": "500 L",
-    "weight": "500 kg",
-    "bodytype": "ostrich",
-    "material": [ "flesh" ],
-    "aggression": 100,
-    "morale": 100,
-    "speed": 130,
-    "melee_skill": 10,
-    "melee_dice": 2,
-    "melee_dice_sides": 6,
-    "melee_damage": [ { "damage_type": "cut", "amount": 5 } ],
-    "hp": 170,
-    "special_attacks": [
-      { "type": "leap", "cooldown": 5, "max_range": 5, "allow_no_target": true },
-      { "id": "scratch", "cooldown": 10 },
-      { "type": "bite", "cooldown": 5 }
-    ],
-    "description": "The swaying, hopping corpse of a large bipedal dinosaur with feathered arms, a long tail, and long sharp scythe-like claws.",
-    "upgrades": { "half_life": 14, "into_group": "GROUP_zutahraptor_UPGRADE" },
-    "flags": [
-      "SEES",
-      "SMELLS",
-      "HEARS",
-      "KEENNOSE",
-      "POISON",
-      "STUMBLES",
-      "NO_BREATHE",
-      "REVIVES",
-      "FILTHY",
-      "WARM",
-      "GROUP_BASH",
-      "BASHES"
-    ],
-    "vision_day": 30,
-    "vision_night": 10,
-    "harvest": "zed_dino_feather",
-    "categories": [ "DINOSAUR", "CLASSIC" ],
-    "armor": { "bash": 3, "cut": 4, "bullet": 2 },
-    "death_drops": "dino_prisoner_drops"
+    "name": {
+      "str": "Utahraptor zombie prisoner"
+    },
+    "death_drops": "dino_prisoner_drops",
+    "extend": {
+      "flags": [
+        "GROUP_BASH",
+        "BASHES"
+      ]
+    }
   },
   {
     "id": "mon_czutahraptor",
     "type": "MONSTER",
     "copy-from": "mon_zutahraptor",
-    "name": { "str": "Utahraptor zombie cop" },
-    "looks_like": "mon_utahraptor",
-    "species": [ "ZOMBIE" ],
-    "default_faction": "zombie",
-    "symbol": "Z",
-    "color": "green",
-    "volume": "500 L",
-    "weight": "500 kg",
-    "bodytype": "ostrich",
-    "material": [ "flesh" ],
-    "aggression": 100,
-    "morale": 100,
-    "speed": 130,
-    "melee_skill": 10,
-    "melee_dice": 2,
-    "melee_dice_sides": 6,
-    "melee_damage": [ { "damage_type": "cut", "amount": 5 } ],
-    "hp": 170,
-    "special_attacks": [
-      { "type": "leap", "cooldown": 5, "max_range": 5, "allow_no_target": true },
-      { "id": "scratch", "cooldown": 10 },
-      { "type": "bite", "cooldown": 5 }
-    ],
-    "description": "The swaying, hopping corpse of a large bipedal dinosaur with feathered arms, a long tail, and long sharp scythe-like claws.",
-    "upgrades": { "half_life": 14, "into_group": "GROUP_zutahraptor_UPGRADE" },
-    "flags": [
-      "SEES",
-      "SMELLS",
-      "HEARS",
-      "KEENNOSE",
-      "POISON",
-      "STUMBLES",
-      "NO_BREATHE",
-      "REVIVES",
-      "FILTHY",
-      "WARM",
-      "GROUP_BASH",
-      "BASHES"
-    ],
-    "vision_day": 30,
-    "vision_night": 10,
-    "harvest": "zed_dino_feather",
-    "categories": [ "DINOSAUR", "CLASSIC" ],
-    "armor": { "bash": 3, "cut": 4, "bullet": 2 },
-    "death_drops": "dino_cop_drops"
+    "name": {
+      "str": "Utahraptor zombie cop"
+    },
+    "death_drops": "dino_cop_drops",
+    "extend": {
+      "flags": [
+        "GROUP_BASH",
+        "BASHES"
+      ]
+    }
   },
   {
     "id": "mon_pgallimimus",
     "type": "MONSTER",
     "copy-from": "mon_gallimimus",
-    "name": { "str": "Gallimimus prisoner" },
-    "species": "DINOSAUR",
-    "default_faction": "gallimimus",
-    "symbol": "D",
-    "color": "light_green",
-    "volume": "440000 ml",
-    "weight": "440000 g",
-    "material": [ "flesh" ],
-    "diff": 0,
+    "name": {
+      "str": "Gallimimus prisoner"
+    },
     "aggression": 2,
-    "morale": -20,
-    "speed": 150,
-    "melee_skill": 2,
-    "melee_dice": 1,
-    "melee_dice_sides": 4,
-    "melee_damage": [ { "damage_type": "cut", "amount": 2 } ],
-    "dodge": 3,
-    "hp": 40,
-    "description": "A feathered bipedal dinosaur, standing as tall as a human.  It looks somewhat like a reptilian ostrich.",
-    "reproduction": { "baby_egg": "egg_gallimimus", "baby_count": 3, "baby_timer": 12 },
-    "baby_flags": [ "SPRING", "SUMMER" ],
-    "biosignature": { "biosig_item": "feces_bird", "biosig_timer": 3 },
-    "flags": [ "SEES", "SMELLS", "HEARS", "GOODHEARING", "ANIMAL", "PATH_AVOID_DANGER_1", "WARM", "GROUP_BASH", "BASHES" ],
-    "fear_triggers": [ "SOUND", "PLAYER_CLOSE", "HURT", "FIRE" ],
-    "categories": [ "DINOSAUR" ],
-    "armor": { "bash": 1, "cut": 1 },
     "death_drops": "dino_prisoner_drops",
-    "zombify_into": "mon_pzallimimus"
+    "zombify_into": "mon_pzallimimus",
+    "extend": {
+      "flags": [
+        "GROUP_BASH",
+        "BASHES"
+      ]
+    }
   },
   {
     "id": "mon_cgallimimus",
     "type": "MONSTER",
     "copy-from": "mon_gallimimus",
-    "name": { "str": "Gallimimus cop" },
-    "species": "DINOSAUR",
-    "default_faction": "gallimimus",
-    "symbol": "D",
-    "color": "light_green",
-    "volume": "440000 ml",
-    "weight": "440000 g",
-    "material": [ "flesh" ],
-    "diff": 0,
-    "aggression": -60,
-    "morale": -20,
-    "speed": 150,
-    "melee_skill": 2,
-    "melee_dice": 1,
-    "melee_dice_sides": 4,
-    "melee_damage": [ { "damage_type": "cut", "amount": 2 } ],
-    "dodge": 3,
-    "hp": 40,
-    "description": "A feathered bipedal dinosaur, standing as tall as a human.  It looks somewhat like a reptilian ostrich.",
-    "reproduction": { "baby_egg": "egg_gallimimus", "baby_count": 3, "baby_timer": 12 },
-    "baby_flags": [ "SPRING", "SUMMER" ],
-    "biosignature": { "biosig_item": "feces_bird", "biosig_timer": 3 },
-    "flags": [ "SEES", "SMELLS", "HEARS", "GOODHEARING", "ANIMAL", "PATH_AVOID_DANGER_1", "WARM", "GROUP_BASH", "BASHES" ],
-    "fear_triggers": [ "SOUND", "PLAYER_CLOSE", "HURT", "FIRE" ],
-    "categories": [ "DINOSAUR" ],
-    "armor": { "bash": 1, "cut": 1 },
+    "name": {
+      "str": "Gallimimus cop"
+    },
     "death_drops": "dino_cop_drops",
-    "zombify_into": "mon_czallimimus"
+    "zombify_into": "mon_czallimimus",
+    "extend": {
+      "flags": [
+        "GROUP_BASH",
+        "BASHES"
+      ]
+    }
   },
   {
     "id": "mon_pzallimimus",
     "type": "MONSTER",
     "copy-from": "mon_zallimimus",
-    "name": { "str": "Gallimimus zombie prisoner" },
-    "looks_like": "mon_gallimimus",
-    "species": [ "ZOMBIE" ],
-    "default_faction": "zombie",
-    "symbol": "Z",
-    "color": "green",
-    "volume": "440 L",
-    "weight": "440 kg",
-    "bodytype": "ostrich",
-    "material": [ "flesh" ],
+    "name": {
+      "str": "Gallimimus zombie prisoner"
+    },
     "aggression": 10,
-    "morale": 100,
-    "speed": 100,
-    "melee_skill": 2,
-    "melee_dice": 1,
-    "melee_dice_sides": 4,
-    "melee_damage": [ { "damage_type": "cut", "amount": 2 } ],
-    "hp": 70,
-    "special_attacks": [ { "id": "scratch", "cooldown": 10 }, { "type": "bite", "cooldown": 5 } ],
-    "description": "The shuffling corpse of a medium-sized bipedal dinosaur covered with tattered feathers and black putrid liquid.",
-    "upgrades": { "half_life": 14, "into": "mon_zallimimus_brute" },
-    "flags": [
-      "SEES",
-      "SMELLS",
-      "HEARS",
-      "PET_MOUNTABLE",
-      "POISON",
-      "STUMBLES",
-      "NO_BREATHE",
-      "REVIVES",
-      "FILTHY",
-      "WARM",
-      "GROUP_BASH",
-      "BASHES"
-    ],
-    "vision_night": 3,
-    "harvest": "zed_dino_feather",
-    "categories": [ "DINOSAUR", "CLASSIC" ],
-    "armor": { "bash": 2, "cut": 4, "bullet": 2 },
-    "death_drops": "dino_prisoner_drops"
+    "death_drops": "dino_prisoner_drops",
+    "extend": {
+      "flags": [
+        "GROUP_BASH",
+        "BASHES"
+      ]
+    }
   },
   {
     "id": "mon_czallimimus",
     "type": "MONSTER",
     "copy-from": "mon_zallimimus",
-    "name": { "str": "Gallimimus zombie cop" },
-    "looks_like": "mon_gallimimus",
-    "species": [ "ZOMBIE" ],
-    "default_faction": "zombie",
-    "symbol": "Z",
-    "color": "green",
-    "volume": "440 L",
-    "weight": "440 kg",
-    "bodytype": "ostrich",
-    "material": [ "flesh" ],
+    "name": {
+      "str": "Gallimimus zombie cop"
+    },
     "aggression": 10,
-    "morale": 100,
-    "speed": 100,
-    "melee_skill": 2,
-    "melee_dice": 1,
-    "melee_dice_sides": 4,
-    "melee_damage": [ { "damage_type": "cut", "amount": 2 } ],
-    "hp": 70,
-    "special_attacks": [ { "id": "scratch", "cooldown": 10 }, { "type": "bite", "cooldown": 5 } ],
-    "description": "The shuffling corpse of a medium-sized bipedal dinosaur covered with tattered feathers and black putrid liquid.",
-    "upgrades": { "half_life": 14, "into": "mon_zallimimus_brute" },
-    "flags": [
-      "SEES",
-      "SMELLS",
-      "HEARS",
-      "PET_MOUNTABLE",
-      "POISON",
-      "STUMBLES",
-      "NO_BREATHE",
-      "REVIVES",
-      "FILTHY",
-      "WARM",
-      "GROUP_BASH",
-      "BASHES"
-    ],
-    "vision_night": 3,
-    "harvest": "zed_dino_feather",
-    "categories": [ "DINOSAUR", "CLASSIC" ],
-    "armor": { "bash": 2, "cut": 4, "bullet": 2 },
-    "death_drops": "dino_cop_drops"
+    "death_drops": "dino_cop_drops",
+    "extend": {
+      "flags": [
+        "GROUP_BASH",
+        "BASHES"
+      ]
+    }
   },
   {
     "id": "mon_pvelociraptor",
     "type": "MONSTER",
     "copy-from": "mon_velociraptor",
-    "name": { "str": "Velociraptor prisoner" },
-    "species": "DINOSAUR",
-    "default_faction": "velociraptor",
-    "symbol": "D",
-    "color": "light_red",
-    "volume": "15000 ml",
-    "weight": "15000 g",
-    "material": [ "flesh" ],
-    "diff": 10,
+    "name": {
+      "str": "Velociraptor prisoner"
+    },
     "aggression": 5,
-    "morale": 20,
-    "speed": 150,
-    "melee_skill": 8,
-    "melee_dice": 1,
-    "melee_dice_sides": 6,
-    "melee_damage": [ { "damage_type": "cut", "amount": 2 } ],
-    "dodge": 3,
-    "hp": 30,
-    "special_attacks": [ { "type": "leap", "cooldown": 5, "max_range": 6, "allow_no_target": true } ],
-    "description": "A small bipedal dinosaur covered with feathers.  Small, hooked claws emerge from its feet and hands.",
-    "reproduction": { "baby_egg": "egg_velociraptor", "baby_count": 3, "baby_timer": 18 },
-    "baby_flags": [ "SPRING", "SUMMER" ],
-    "biosignature": { "biosig_item": "feces_bird", "biosig_timer": 3 },
-    "flags": [ "SEES", "SMELLS", "HEARS", "ANIMAL", "PATH_AVOID_DANGER_1", "KEENNOSE", "WARM", "GROUP_BASH", "BASHES" ],
-    "anger_triggers": [ "STALK", "FRIEND_ATTACKED", "FRIEND_DIED", "PLAYER_WEAK", "HURT" ],
-    "fear_triggers": [ "SOUND", "FIRE" ],
-    "categories": [ "DINOSAUR" ],
-    "armor": { "bash": 1, "cut": 1 },
-    "death_drops": "dino_prisoner_drops"
+    "death_drops": "dino_prisoner_drops",
+    "extend": {
+      "flags": [
+        "GROUP_BASH",
+        "BASHES"
+      ]
+    }
   },
   {
     "id": "mon_cvelociraptor",
     "type": "MONSTER",
     "copy-from": "mon_velociraptor",
-    "name": { "str": "Velociraptor cop" },
-    "species": "DINOSAUR",
-    "default_faction": "velociraptor",
-    "symbol": "D",
-    "color": "light_red",
-    "volume": "15000 ml",
-    "weight": "15000 g",
-    "material": [ "flesh" ],
-    "diff": 10,
+    "name": {
+      "str": "Velociraptor cop"
+    },
     "aggression": 5,
-    "morale": 20,
-    "speed": 150,
-    "melee_skill": 8,
-    "melee_dice": 1,
-    "melee_dice_sides": 6,
-    "melee_damage": [ { "damage_type": "cut", "amount": 2 } ],
-    "dodge": 3,
-    "hp": 30,
-    "special_attacks": [ { "type": "leap", "cooldown": 5, "max_range": 6, "allow_no_target": true } ],
-    "description": "A small bipedal dinosaur covered with feathers.  Small, hooked claws emerge from its feet and hands.",
-    "reproduction": { "baby_egg": "egg_velociraptor", "baby_count": 3, "baby_timer": 18 },
-    "baby_flags": [ "SPRING", "SUMMER" ],
-    "biosignature": { "biosig_item": "feces_bird", "biosig_timer": 3 },
-    "flags": [ "SEES", "SMELLS", "HEARS", "ANIMAL", "PATH_AVOID_DANGER_1", "KEENNOSE", "WARM", "GROUP_BASH", "BASHES" ],
-    "anger_triggers": [ "STALK", "FRIEND_ATTACKED", "FRIEND_DIED", "PLAYER_WEAK", "HURT" ],
-    "fear_triggers": [ "SOUND", "FIRE" ],
-    "categories": [ "DINOSAUR" ],
-    "armor": { "bash": 1, "cut": 1 },
-    "death_drops": "dino_cop_drops"
+    "death_drops": "dino_cop_drops",
+    "extend": {
+      "flags": [
+        "GROUP_BASH",
+        "BASHES"
+      ]
+    }
   },
   {
     "id": "mon_ppteranodon",
     "type": "MONSTER",
     "copy-from": "mon_pteranodon",
-    "name": { "str": "Pteranodon prisoner" },
-    "species": "REPTILE",
-    "default_faction": "pteranodon",
-    "symbol": "D",
-    "color": "light_gray",
-    "volume": "70 L",
-    "weight": "50 kg",
-    "bodytype": "bird",
-    "material": [ "flesh" ],
-    "stomach_size": 1000,
-    "aggression": 9,
-    "morale": 50,
-    "speed": 200,
-    "melee_skill": 6,
-    "melee_dice": 2,
-    "melee_dice_sides": 6,
-    "dodge": 5,
-    "families": [ "prof_intro_biology", "prof_wp_flying" ],
-    "weakpoint_sets": [ "wps_pterosaur_body" ],
-    "hp": 20,
-    "description": "A large feathered flying reptile, with a long pointed toothless beak and a long pointy head crest.",
-    "reproduction": { "baby_egg": "egg_pteranodon", "baby_count": 3, "baby_timer": 24 },
-    "baby_flags": [ "SPRING", "SUMMER" ],
-    "biosignature": { "biosig_item": "feces_dino", "biosig_timer": 500 },
-    "petfood": { "food": [ "DINOFOOD_B" ] },
-    "flags": [
-      "SEES",
-      "SMELLS",
-      "HEARS",
-      "FLIES",
-      "HIT_AND_RUN",
-      "ANIMAL",
-      "PATH_AVOID_DANGER_1",
-      "CANPLAY",
-      "CAN_BE_CULLED",
-      "CORNERED_FIGHTER",
-      "EATS",
-      "GROUP_BASH",
-      "BASHES"
-    ],
-    "harvest": "dino_feather_leather",
-    "dissect": "dissect_lizard_sample_small",
-    "special_attacks": [ { "id": "scratch", "cooldown": 10 }, [ "EAT_CARRION", 60 ] ],
-    "fear_triggers": [ "FRIEND_DIED" ],
-    "categories": [ "DINOSAUR", "WILDLIFE" ],
+    "name": {
+      "str": "Pteranodon prisoner"
+    },
     "death_drops": "dino_prisoner_drops",
     "zombify_into": "mon_pzteranodon",
-    "anger_triggers": [ "PLAYER_WEAK", "HURT", "FRIEND_ATTACKED", "PLAYER_CLOSE" ]
+    "extend": {
+      "flags": [
+        "GROUP_BASH",
+        "BASHES"
+      ]
+    }
   },
   {
     "id": "mon_cpteranodon",
     "type": "MONSTER",
     "copy-from": "mon_pteranodon",
-    "name": { "str": "Pteranodon cop" },
-    "species": "REPTILE",
-    "default_faction": "pteranodon",
-    "symbol": "D",
-    "color": "light_gray",
-    "volume": "70 L",
-    "weight": "50 kg",
-    "bodytype": "bird",
-    "material": [ "flesh" ],
-    "stomach_size": 1000,
-    "aggression": 9,
-    "morale": 50,
-    "speed": 200,
-    "melee_skill": 6,
-    "melee_dice": 2,
-    "melee_dice_sides": 6,
-    "dodge": 5,
-    "families": [ "prof_intro_biology", "prof_wp_flying" ],
-    "weakpoint_sets": [ "wps_pterosaur_body" ],
-    "hp": 20,
-    "description": "A large feathered flying reptile, with a long pointed toothless beak and a long pointy head crest.",
-    "reproduction": { "baby_egg": "egg_pteranodon", "baby_count": 3, "baby_timer": 24 },
-    "baby_flags": [ "SPRING", "SUMMER" ],
-    "biosignature": { "biosig_item": "feces_dino", "biosig_timer": 500 },
-    "petfood": { "food": [ "DINOFOOD_B" ] },
-    "flags": [
-      "SEES",
-      "SMELLS",
-      "HEARS",
-      "FLIES",
-      "HIT_AND_RUN",
-      "ANIMAL",
-      "PATH_AVOID_DANGER_1",
-      "CANPLAY",
-      "CAN_BE_CULLED",
-      "CORNERED_FIGHTER",
-      "EATS",
-      "GROUP_BASH",
-      "BASHES"
-    ],
-    "harvest": "dino_feather_leather",
-    "dissect": "dissect_lizard_sample_small",
-    "special_attacks": [ { "id": "scratch", "cooldown": 10 }, [ "EAT_CARRION", 60 ] ],
-    "fear_triggers": [ "FRIEND_DIED" ],
-    "categories": [ "DINOSAUR", "WILDLIFE" ],
+    "name": {
+      "str": "Pteranodon cop"
+    },
     "death_drops": "dino_cop_drops",
     "zombify_into": "mon_czteranodon",
-    "anger_triggers": [ "PLAYER_WEAK", "HURT", "FRIEND_ATTACKED", "PLAYER_CLOSE" ]
+    "extend": {
+      "flags": [
+        "GROUP_BASH",
+        "BASHES"
+      ]
+    }
   },
   {
     "id": "mon_pzteranodon",
     "type": "MONSTER",
     "copy-from": "mon_zteranodon",
-    "name": { "str": "Pteranodon zombie prisoner" },
-    "looks_like": "mon_pteranodon",
-    "species": [ "ZOMBIE" ],
-    "default_faction": "zombie",
-    "symbol": "Z",
-    "color": "green",
-    "volume": "38 L",
-    "weight": "50 kg",
-    "bodytype": "bird",
-    "material": [ "flesh" ],
-    "aggression": 100,
-    "morale": 100,
-    "speed": 150,
-    "melee_skill": 5,
-    "melee_dice": 2,
-    "melee_dice_sides": 6,
-    "melee_damage": [ { "damage_type": "cut", "amount": 2 } ],
-    "hp": 70,
-    "special_attacks": [ { "id": "scratch", "cooldown": 10 }, { "type": "bite", "cooldown": 5 } ],
-    "description": "The raggedly flying corpse of a large feathered reptile with a long pointed toothless beak and a long pointy head crest.",
-    "upgrades": { "half_life": 14, "into": "mon_zteranodon_brute" },
-    "flags": [ "SEES", "SMELLS", "HEARS", "POISON", "STUMBLES", "NO_BREATHE", "REVIVES", "FILTHY", "WARM", "BASHES", "GROUP_BASH" ],
-    "vision_night": 3,
-    "harvest": "zed_dino_leather",
-    "categories": [ "DINOSAUR", "CLASSIC" ],
-    "armor": { "bash": 4, "cut": 4, "bullet": 1 },
-    "death_drops": "dino_prisoner_drops"
+    "name": {
+      "str": "Pteranodon zombie prisoner"
+    },
+    "death_drops": "dino_prisoner_drops",
+    "extend": {
+      "flags": [
+        "GROUP_BASH",
+        "BASHES"
+      ]
+    }
   },
   {
     "id": "mon_czteranodon",
     "type": "MONSTER",
     "copy-from": "mon_zteranodon",
-    "name": { "str": "Pteranodon zombie cop" },
-    "looks_like": "mon_pteranodon",
-    "species": [ "ZOMBIE" ],
-    "default_faction": "zombie",
-    "symbol": "Z",
-    "color": "green",
-    "volume": "38 L",
-    "weight": "50 kg",
-    "bodytype": "bird",
-    "material": [ "flesh" ],
-    "aggression": 100,
-    "morale": 100,
-    "speed": 150,
-    "melee_skill": 5,
-    "melee_dice": 2,
-    "melee_dice_sides": 6,
-    "melee_damage": [ { "damage_type": "cut", "amount": 2 } ],
-    "hp": 70,
-    "special_attacks": [ { "id": "scratch", "cooldown": 10 }, { "type": "bite", "cooldown": 5 } ],
-    "description": "The raggedly flying corpse of a large feathered reptile with a long pointed toothless beak and a long pointy head crest.",
-    "upgrades": { "half_life": 14, "into": "mon_zteranodon_brute" },
-    "flags": [ "SEES", "SMELLS", "HEARS", "POISON", "STUMBLES", "NO_BREATHE", "REVIVES", "FILTHY", "WARM", "BASHES", "GROUP_BASH" ],
-    "vision_night": 3,
-    "harvest": "zed_dino_leather",
-    "categories": [ "DINOSAUR", "CLASSIC" ],
-    "armor": { "bash": 4, "cut": 4, "bullet": 1 },
-    "death_drops": "dino_cop_drops"
+    "name": {
+      "str": "Pteranodon zombie cop"
+    },
+    "death_drops": "dino_cop_drops",
+    "extend": {
+      "flags": [
+        "GROUP_BASH",
+        "BASHES"
+      ]
+    }
   }
 ]

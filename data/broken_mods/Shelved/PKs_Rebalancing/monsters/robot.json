@@ -2,14 +2,20 @@
   {
     "id": "mon_cyborg_guard",
     "type": "MONSTER",
-    "name": { "str": "guard cyborg" },
+    "name": {
+      "str": "guard cyborg"
+    },
     "description": "An outdated and decrepit looking sentinel cyborg with a rather disturbing gun barrel where its left arm should be.  What little flesh it has is pallid.  Its steps are awkward and stiff with neglect.",
     "default_faction": "bot",
-    "species": [ "ROBOT" ],
+    "species": [
+      "ROBOT"
+    ],
     "diff": 50,
     "hp": 70,
     "speed": 75,
-    "material": [ "steel" ],
+    "material": [
+      "steel"
+    ],
     "symbol": "@",
     "color": "dark_gray",
     "aggression": 100,
@@ -17,18 +23,38 @@
     "melee_skill": 4,
     "melee_dice": 2,
     "melee_dice_sides": 6,
-    "melee_damage": [ { "damage_type": "cut", "amount": 4 } ],
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 4
+      }
+    ],
     "dodge": 2,
     "vision_day": 50,
     "vision_night": 5,
     "special_attacks": [
-      { "id": "wound_minor", "cooldown": 30 },
-      [ "PARROT", 12 ],
+      {
+        "id": "wound_minor",
+        "cooldown": 30
+      },
+      [
+        "PARROT",
+        12
+      ],
       {
         "id": "diseased swipe",
         "cooldown": 30,
         "accuracy": 2,
-        "effects": [ { "id": "nausea", "duration": 10 }, { "id": "tetanus", "duration": 121000 } ]
+        "effects": [
+          {
+            "id": "nausea",
+            "duration": 10
+          },
+          {
+            "id": "tetanus",
+            "duration": 121000
+          }
+        ]
       },
       {
         "type": "gun",
@@ -38,7 +64,13 @@
         "fake_dex": 0,
         "fake_per": 12,
         "max_ammo": 100,
-        "ranges": [ [ 5, 15, "DEFAULT" ] ],
+        "ranges": [
+          [
+            5,
+            15,
+            "DEFAULT"
+          ]
+        ],
         "require_targeting_player": true,
         "require_targeting_npc": true,
         "require_targeting_monster": true,
@@ -64,19 +96,28 @@
       "HUMAN",
       "NO_NECRO"
     ],
-    "armor": { "bash": 14, "cut": 10 }
+    "armor": {
+      "bash": 14,
+      "cut": 10
+    }
   },
   {
     "id": "mon_cyborg_cop",
     "type": "MONSTER",
-    "name": { "str": "robotic cop" },
+    "name": {
+      "str": "robotic cop"
+    },
     "description": "A cybornetic police office with a small variety of built in weapons.  Like all early-model cyborgs, it is known for its lack of agility but incredible endurance.  Not to be underestimated, these old models always proven their worth under heavy fire.  Its weaponry is famous for being DNA locked.",
     "default_faction": "cop_bot",
-    "species": [ "ROBOT" ],
+    "species": [
+      "ROBOT"
+    ],
     "diff": 18,
     "hp": 105,
     "speed": 70,
-    "material": [ "steel" ],
+    "material": [
+      "steel"
+    ],
     "symbol": "@",
     "color": "white",
     "aggression": 80,
@@ -87,20 +128,44 @@
     "dodge": 2,
     "vision_day": 50,
     "vision_night": 5,
-    "starting_ammo": { "bomblet_stun": 100 },
+    "starting_ammo": {
+      "bomblet_stun": 100
+    },
     "special_attacks": [
-      [ "COPBOT", 3 ],
-      [ "PARROT", 20 ],
+      [
+        "COPBOT",
+        3
+      ],
+      [
+        "PARROT",
+        20
+      ],
       {
         "type": "gun",
         "cooldown": 20,
         "move_cost": 250,
         "gun_type": "bomblet_launcher_dualshot",
-        "fake_skills": [ [ "gun", 7 ] ],
+        "fake_skills": [
+          [
+            "gun",
+            7
+          ]
+        ],
         "fake_dex": 4,
         "fake_per": 12,
         "max_ammo": 1000,
-        "ranges": [ [ 3, 7, "AUTO" ], [ 8, 13, "DEFAULT" ] ],
+        "ranges": [
+          [
+            3,
+            7,
+            "AUTO"
+          ],
+          [
+            8,
+            13,
+            "DEFAULT"
+          ]
+        ],
         "targeting_sound": "Cease and Desist, non-human.",
         "targeting_volume": 20,
         "require_targeting_player": false,
@@ -126,20 +191,34 @@
       "HUMAN",
       "NO_NECRO"
     ],
-    "anger_triggers": [ "HURT", "FRIEND_ATTACKED", "SOUND", "PLAYER_CLOSE" ],
-    "armor": { "bash": 12, "cut": 16 }
+    "anger_triggers": [
+      "HURT",
+      "FRIEND_ATTACKED",
+      "SOUND",
+      "PLAYER_CLOSE"
+    ],
+    "armor": {
+      "bash": 12,
+      "cut": 16
+    }
   },
   {
     "id": "mon_manhack_missile",
     "type": "MONSTER",
-    "name": { "str": "revenant rocket" },
+    "name": {
+      "str": "revenant rocket"
+    },
     "description": "A revenant's homing missile, working its way towards you.  If only you could disable it …",
     "default_faction": "nether",
-    "species": [ "ROBOT" ],
+    "species": [
+      "ROBOT"
+    ],
     "diff": 12,
     "hp": 5,
     "speed": 110,
-    "material": [ "steel" ],
+    "material": [
+      "steel"
+    ],
     "symbol": ",",
     "color": "cyan",
     "aggression": 100,
@@ -151,30 +230,66 @@
     "vision_day": 50,
     "vision_night": 25,
     "revert_to_itype": "bot_manhack_missile",
-    "starting_ammo": { "rocket_core": 1 },
-    "emit_fields": [ "emit_radiation_plume" ],
-    "special_attacks": [ [ "KAMIKAZE", 0 ], [ "DISAPPEAR", 300 ] ],
+    "starting_ammo": {
+      "rocket_core": 1
+    },
+    "emit_fields": [
+      "emit_radiation_plume"
+    ],
+    "special_attacks": [
+      [
+        "KAMIKAZE",
+        0
+      ],
+      [
+        "DISAPPEAR",
+        300
+      ]
+    ],
     "death_drops": "rocket_drops",
-    "flags": [ "SEES", "PATH_AVOID_DANGER_2", "PRIORITIZE_TARGETS", "FLIES", "NOHEAD", "ELECTRONIC", "NO_BREATHE", "INTERIOR_AMMO" ],
-    "armor": { "bash": 5, "cut": 5 }
+    "flags": [
+      "SEES",
+      "PATH_AVOID_DANGER_2",
+      "PRIORITIZE_TARGETS",
+      "FLIES",
+      "NOHEAD",
+      "ELECTRONIC",
+      "NO_BREATHE",
+      "INTERIOR_AMMO"
+    ],
+    "armor": {
+      "bash": 5,
+      "cut": 5
+    }
   },
   {
     "id": "mon_manhack_fire",
     "type": "MONSTER",
     "copy-from": "mon_manhack",
-    "name": { "str": "firebomb hack" },
+    "name": {
+      "str": "firebomb hack"
+    },
     "default_faction": "defense_bot",
-    "species": [ "ROBOT" ],
-    "volume": "750 ml",
-    "weight": "1 kg",
+    "species": [
+      "ROBOT"
+    ],
     "hp": 10,
-    "material": [ "steel" ],
+    "material": [
+      "steel"
+    ],
     "symbol": "e",
     "aggression": 100,
     "morale": 100,
     "luminance": 5,
-    "death_function": { "corpse_type": "BROKEN" },
-    "flags": [ "SEES", "FLIES", "NOHEAD", "ELECTRONIC", "NO_BREATHE", "INTERIOR_AMMO", "HIT_AND_RUN" ],
+    "flags": [
+      "SEES",
+      "FLIES",
+      "NOHEAD",
+      "ELECTRONIC",
+      "NO_BREATHE",
+      "INTERIOR_AMMO",
+      "HIT_AND_RUN"
+    ],
     "description": "This manhack carries an incendiary explosive within its core.",
     "diff": 10,
     "speed": 250,
@@ -182,49 +297,110 @@
     "melee_skill": 0,
     "melee_dice": 0,
     "melee_dice_sides": 0,
-    "melee_damage": [ { "damage_type": "cut", "amount": 12 } ],
     "revert_to_itype": "bot_manhack_fire",
-    "armor": { "cut": 4 },
+    "armor": {
+      "cut": 4
+    },
     "dodge": 6,
     "vision_day": 40,
-    "starting_ammo": { "manhack_firebomb": 1 },
-    "special_attacks": [ [ "KAMIKAZE", 0 ] ],
-    "death_drops": { "subtype": "collection", "groups": [ [ "robots", 80 ] ], "//": "80% chance of an item from group robots" }
+    "starting_ammo": {
+      "manhack_firebomb": 1
+    },
+    "special_attacks": [
+      [
+        "KAMIKAZE",
+        0
+      ]
+    ],
+    "death_drops": {
+      "subtype": "collection",
+      "groups": [
+        [
+          "robots",
+          80
+        ]
+      ],
+      "//": "80% chance of an item from group robots"
+    }
   },
   {
     "id": "mon_turret_shockcannon",
     "type": "MONSTER",
-    "name": { "str": "shock turret" },
+    "name": {
+      "str": "shock turret"
+    },
     "description": "Taking the dense storage capacity of UPS to its logical conclusion, the PRD3 Mounted Shockcannon is a 'computer aided defense tool designed for repeling crowds in a nonlethal manner'.",
     "default_faction": "defense_bot",
-    "species": [ "ROBOT" ],
+    "species": [
+      "ROBOT"
+    ],
     "diff": 16,
     "hp": 35,
     "speed": 100,
-    "material": [ "steel" ],
+    "material": [
+      "steel"
+    ],
     "symbol": "2",
     "color": "cyan",
     "aggression": 100,
     "morale": 100,
     "luminance": 40,
     "revert_to_itype": "bot_turret_shockcannon",
-    "starting_ammo": { "battery": 10000 },
-    "special_attacks": [ { "type": "gun", "cooldown": 1, "gun_type": "shockcannon", "ranges": [ [ 0, 5, "DEFAULT" ] ] } ],
-    "death_drops": { "groups": [ [ "Shockcannon_turret", 80 ] ] },
-    "flags": [ "SEES", "NOHEAD", "ELECTRONIC", "ELECTRIC", "IMMOBILE", "NO_BREATHE" ],
-    "armor": { "bash": 10, "cut": 12 }
+    "starting_ammo": {
+      "battery": 10000
+    },
+    "special_attacks": [
+      {
+        "type": "gun",
+        "cooldown": 1,
+        "gun_type": "shockcannon",
+        "ranges": [
+          [
+            0,
+            5,
+            "DEFAULT"
+          ]
+        ]
+      }
+    ],
+    "death_drops": {
+      "groups": [
+        [
+          "Shockcannon_turret",
+          80
+        ]
+      ]
+    },
+    "flags": [
+      "SEES",
+      "NOHEAD",
+      "ELECTRONIC",
+      "ELECTRIC",
+      "IMMOBILE",
+      "NO_BREATHE"
+    ],
+    "armor": {
+      "bash": 10,
+      "cut": 12
+    }
   },
   {
     "id": "mon_robot_drone",
     "type": "MONSTER",
-    "name": { "str": "Helidrone" },
+    "name": {
+      "str": "Helidrone"
+    },
     "description": "An automated anti-personnel drone produced by contract winner Hiensfeld Manufacturing; resembling a helicoptor the size of a human torso.  Equipped with a battle rifle, the drone possesses functional thrusters and a trio of propellers that serve in close combat.",
     "default_faction": "defense_bot",
-    "species": [ "ROBOT" ],
+    "species": [
+      "ROBOT"
+    ],
     "diff": 28,
     "hp": 30,
     "speed": 190,
-    "material": [ "steel" ],
+    "material": [
+      "steel"
+    ],
     "symbol": "H",
     "color": "light_green",
     "aggression": 100,
@@ -232,22 +408,52 @@
     "melee_skill": 4,
     "melee_dice": 3,
     "melee_dice_sides": 4,
-    "melee_damage": [ { "damage_type": "cut", "amount": 24 } ],
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 24
+      }
+    ],
     "dodge": 4,
     "vision_day": 50,
     "vision_night": 12,
     "luminance": 8,
     "revert_to_itype": "bot_robot_drone",
-    "starting_ammo": { "556": 100 },
+    "starting_ammo": {
+      "556": 100
+    },
     "special_attacks": [
-      [ "PARROT", 10 ],
+      [
+        "PARROT",
+        10
+      ],
       {
         "type": "gun",
         "cooldown": 1,
         "gun_type": "m4a1",
-        "fake_skills": [ [ "gun", 6 ], [ "rifle", 4 ] ],
+        "fake_skills": [
+          [
+            "gun",
+            6
+          ],
+          [
+            "rifle",
+            4
+          ]
+        ],
         "fake_dex": 10,
-        "ranges": [ [ 2, 7, "AUTO" ], [ 8, 15, "DEFAULT" ] ],
+        "ranges": [
+          [
+            2,
+            7,
+            "AUTO"
+          ],
+          [
+            8,
+            15,
+            "DEFAULT"
+          ]
+        ],
         "targeting_sound": "Bleerp~blip",
         "targeting_volume": 12,
         "targeting_cost": 150,
@@ -255,26 +461,70 @@
         "no_ammo_sound": "\"Bleepblop.\""
       }
     ],
-    "death_drops": { "groups": [ [ "robots", 90 ], [ "robots", 90 ] ] },
-    "death_function": { "corpse_type": "BROKEN" },
-    "flags": [ "SEES", "HEARS", "FLIES", "PATH_AVOID_DANGER_1", "ELECTRONIC", "HIT_AND_RUN", "NO_BREATHE", "INTERIOR_AMMO" ],
-    "armor": { "bash": 8, "cut": 14 }
+    "death_drops": {
+      "groups": [
+        [
+          "robots",
+          90
+        ],
+        [
+          "robots",
+          90
+        ]
+      ]
+    },
+    "death_function": {
+      "corpse_type": "BROKEN"
+    },
+    "flags": [
+      "SEES",
+      "HEARS",
+      "FLIES",
+      "PATH_AVOID_DANGER_1",
+      "ELECTRONIC",
+      "HIT_AND_RUN",
+      "NO_BREATHE",
+      "INTERIOR_AMMO"
+    ],
+    "armor": {
+      "bash": 8,
+      "cut": 14
+    }
   },
   {
     "id": "mon_generator_SCINET",
     "type": "MONSTER",
-    "name": { "str": "generator" },
+    "name": {
+      "str": "generator"
+    },
     "description": "The generator that powers the Security, Crime, and Investigation Networking Eternal Team program.  Destroying it should stop the creation and resupply of new robots.",
     "default_faction": "bot",
-    "species": [ "UNKNOWN" ],
+    "species": [
+      "UNKNOWN"
+    ],
     "harvest": "exempt",
     "hp": 200,
     "speed": 100,
-    "material": [ "steel" ],
+    "material": [
+      "steel"
+    ],
     "symbol": "4",
     "color": "white",
-    "special_attacks": [ [ "GENERATOR", 7 ] ],
-    "flags": [ "NOHEAD", "ACIDPROOF", "IMMOBILE", "QUEEN" ],
-    "armor": { "bash": 8, "cut": 14 }
+    "special_attacks": [
+      [
+        "GENERATOR",
+        7
+      ]
+    ],
+    "flags": [
+      "NOHEAD",
+      "ACIDPROOF",
+      "IMMOBILE",
+      "QUEEN"
+    ],
+    "armor": {
+      "bash": 8,
+      "cut": 14
+    }
   }
 ]

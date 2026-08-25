@@ -34,8 +34,8 @@ Transformations applied
   14. "mod-type": "SUPPLEMENTAL"-> "category": "SUPPLEMENTAL"
   15. "author": "x"             -> "authors": [ "x" ]
   16. "note":                   -> "//"
-  17. "price": N                -> "price": "N cent"
-  18. "price_postapoc": N       -> "price_postapoc": "N cent"
+  17. direct "price": N          -> whole-cent H price
+  18. direct "price_postapoc": N -> whole-cent H price
   19. "min_melee": N            -> skill_requirements entry  (merged with min_unarmed)
   20. "min_unarmed": N          -> skill_requirements entry  (merged with min_melee)
   21. "bashing": N, "cutting": M-> "melee_damage": { "bash": N, "cut": M }
@@ -3748,7 +3748,14 @@ MONSTER_FACTION_MIGRATIONS = {
     "wildlife": "animal",
     "zed_doom": "zombie",
 }
-OBSOLETE_BIONIC_IDS = {"bio_furnace"}
+OBSOLETE_BIONIC_IDS = {
+    "bio_furnace",
+    # Removed from H and retained only in the old migration table.  Keeping
+    # the legacy definitions causes bionic consistency failures because no
+    # corresponding CBM item version exists anymore.
+    "bio_power_armor_interface",
+    "bio_power_armor_interface_mkII",
+}
 OBSOLETE_RECIPE_RESULT_IDS = {"broken_tripod"}
 LOOPING_ACID_RECIPE_RESULTS = {
     "chem_muriatic_acid",
@@ -3925,6 +3932,71 @@ def clean_structural_list_entries(value: Any) -> int:
             kept.append(child)
         value[:] = kept
     return removed
+
+
+def normalize_h_quantity_strings(value: Any, counts: collections.Counter[str], key: str | None = None) -> None:
+    """Normalize legacy decimal quantity strings to H's integer-unit form.
+
+    The H quantity parser accepts integer magnitudes (for example ``2 g``),
+    but older mods commonly contain values such as ``2.0 g`` or ``1.07 g``.
+    Preserve the represented quantity by carrying fractional grams/kilograms
+    into milligrams and fractional litres into millilitres.  This is limited
+    to fields whose schema is a quantity; ordinary numeric fields are left
+    untouched.
+    """
+    mass_keys = {
+        "weight",
+        "max_contains_weight",
+        "min_item_weight",
+        "max_item_weight",
+    }
+    volume_keys = {
+        "volume",
+        "integral_volume",
+        "folded_volume",
+        "max_contains_volume",
+        "min_item_volume",
+        "volume_per_turn",
+    }
+    energy_keys = {"energy"}
+
+    if isinstance(value, dict):
+        for child_key, child in list(value.items()):
+            if isinstance(child, str) and child_key in mass_keys | volume_keys | energy_keys:
+                match = re.fullmatch(r"\s*([0-9]+(?:\.[0-9]+)?)\s*(mg|g|kg|ml|l|kj)\s*", child, re.I)
+                if match:
+                    amount = float(match.group(1))
+                    unit = match.group(2).lower()
+                    replacement: str | None = None
+                    if child_key in mass_keys and unit in {"mg", "g", "kg"}:
+                        milligrams = amount * {"mg": 1, "g": 1000, "kg": 1_000_000}[unit]
+                        if milligrams.is_integer() and milligrams < 1000:
+                            replacement = f"{int(milligrams)} mg"
+                        elif (milligrams / 1000).is_integer():
+                            replacement = f"{int(milligrams / 1000)} g"
+                        else:
+                            replacement = f"{int(round(milligrams))} mg"
+                    elif child_key in volume_keys and unit in {"ml", "l"}:
+                        # H accepts integer litre quantities (for example
+                        # ``1 L``) directly.  Preserve the authored unit and
+                        # spelling whenever the litre amount is integral;
+                        # only fractional litres need conversion to ml to
+                        # avoid decimal quantity strings such as ``1.5 L``.
+                        if unit == "l" and amount.is_integer():
+                            replacement = child
+                        else:
+                            millilitres = amount * (1000 if unit == "l" else 1)
+                            replacement = f"{int(round(millilitres))} ml"
+                    elif child_key in energy_keys and unit == "kj":
+                        replacement = f"{int(round(amount))} kJ"
+                    if replacement and replacement != child:
+                        value[child_key] = replacement
+                        counts["quantity_unit_normalization"] += 1
+                        child = replacement
+            normalize_h_quantity_strings(child, counts, child_key)
+    elif isinstance(value, list):
+        for child in value:
+            normalize_h_quantity_strings(child, counts, key)
 
 
 def normalize_coordinate_ranges(value: Any) -> int:
@@ -5004,13 +5076,20 @@ def convert_gun(obj: dict[str, Any], counts: collections.Counter[str]) -> None:
 
 
 def convert_comestible(obj: dict[str, Any], counts: collections.Counter[str]) -> None:
-    if obj.get("type") != "COMESTIBLE" or "nutrition" not in obj:
+    if obj.get("type") != "COMESTIBLE":
         return
-    nutrition = obj.pop("nutrition")
-    if "calories" not in obj and isinstance(nutrition, (int, float)):
-        # 0.H defines one legacy nutrition point as 2500 / (12 * 24) kcal.
-        obj["calories"] = int(round(float(nutrition) * 2500 / (12 * 24)))
-    counts["nutrition"] += 1
+    if "nutrition" in obj:
+        nutrition = obj.pop("nutrition")
+        if "calories" not in obj and isinstance(nutrition, (int, float)):
+            # 0.H defines one legacy nutrition point as 2500 / (12 * 24) kcal.
+            obj["calories"] = int(round(float(nutrition) * 2500 / (12 * 24)))
+        counts["nutrition"] += 1
+    if "comestible_type" not in obj:
+        # H requires this discriminator even for very small food definitions.
+        # FOOD is the least surprising default for legacy entries such as
+        # cereal bars that omitted the old field entirely.
+        obj["comestible_type"] = "FOOD"
+        counts["comestible_type_defaults"] += 1
 
 
 def normalize_optional_mod_item_groups(
@@ -5021,8 +5100,9 @@ def normalize_optional_mod_item_groups(
     Arcana ships compatibility item groups for Cata++ and Magiclysm, but its
     modinfo does not require either dependency.  H still parses those files
     when Arcana is enabled, so retain the group definitions while removing
-    unavailable cross-mod entries and converting Magiclysm extensions into
-    standalone groups.
+    unavailable cross-mod entries.  Keep authored ``copy-from`` and
+    ``extend`` relationships intact; flattening them silently duplicates
+    inherited data and makes later H updates impossible to apply cleanly.
     """
     normalized_path = path.as_posix().lower()
     entries = data if isinstance(data, list) else [data]
@@ -5060,20 +5140,17 @@ def normalize_optional_mod_item_groups(
         for entry in entries:
             if not isinstance(entry, dict) or entry.get("type") not in {"ITEM_GROUP", "item_group"}:
                 continue
-            if "copy-from" in entry:
-                del entry["copy-from"]
-                counts["optional_group_copy_from"] += 1
-            extend = entry.pop("extend", None)
-            if isinstance(extend, dict) and isinstance(extend.get("items"), list):
-                existing = entry.get("items")
-                if not isinstance(existing, list):
-                    existing = []
-                entry["items"] = existing + extend["items"]
-                counts["optional_group_extensions"] += 1
-            items = entry.get("items")
-            if isinstance(items, list):
+            # Filter only the authored lists.  Never delete copy-from or
+            # flatten an extend block: those relationships are part of the
+            # mod's intended inheritance and should remain visible to H.
+            for list_key in ("items", "extend"):
+                container = entry.get(list_key)
+                if list_key == "extend" and isinstance(container, dict):
+                    container = container.get("items")
+                if not isinstance(container, list):
+                    continue
                 kept = [
-                    item for item in items
+                    item for item in container
                     if not (
                         isinstance(item, dict)
                         and (
@@ -5082,9 +5159,12 @@ def normalize_optional_mod_item_groups(
                         )
                     )
                 ]
-                if kept != items:
-                    entry["items"] = kept
-                    counts["optional_group_entries"] += len(items) - len(kept)
+                if kept != container:
+                    if list_key == "items":
+                        entry["items"] = kept
+                    else:
+                        entry["extend"]["items"] = kept
+                    counts["optional_group_entries"] += len(container) - len(kept)
 
 
 def clean_fantasy_blacklist_refs(
@@ -5106,12 +5186,134 @@ def clean_fantasy_blacklist_refs(
             counts["fantasy_blacklist_entries"] += len(items) - len(kept)
 
 
+def remove_core_snippet_duplicates(
+    value: Any, core_snippet_ids: set[str], counts: collections.Counter[str]
+) -> None:
+    """Remove snippet variants that duplicate H's built-in item snippets."""
+    if isinstance(value, dict):
+        for key, child in list(value.items()):
+            if key in {"snippet_category", "snippets"} and isinstance(child, list):
+                kept = [
+                    entry
+                    for entry in child
+                    if not (
+                        isinstance(entry, dict)
+                        and isinstance(entry.get("id"), str)
+                        and entry["id"] in core_snippet_ids
+                    )
+                ]
+                removed = len(child) - len(kept)
+                if removed:
+                    counts["core_snippet_duplicates"] += removed
+                    if kept:
+                        value[key] = kept
+                    else:
+                        del value[key]
+                    child = kept
+            remove_core_snippet_duplicates(child, core_snippet_ids, counts)
+    elif isinstance(value, list):
+        for child in value:
+            remove_core_snippet_duplicates(child, core_snippet_ids, counts)
+
+
+def clean_blacklist_references(
+    value: Any,
+    valid_item_ids: set[str],
+    valid_monster_ids: set[str],
+    counts: collections.Counter[str],
+) -> None:
+    """Drop stale item/monster blacklist IDs while retaining the blacklist."""
+    if not isinstance(value, dict):
+        if isinstance(value, list):
+            for child in value:
+                clean_blacklist_references(child, valid_item_ids, valid_monster_ids, counts)
+        return
+    object_type = value.get("type")
+    if object_type == "ITEM_BLACKLIST" and isinstance(value.get("items"), list):
+        items = value["items"]
+        kept = [item for item in items if not isinstance(item, str) or item in valid_item_ids]
+        if kept != items:
+            if kept:
+                value["items"] = kept
+            else:
+                value.pop("items", None)
+            counts["stale_item_blacklist_entries"] += len(items) - len(kept)
+    elif object_type == "MONSTER_BLACKLIST" and isinstance(value.get("monsters"), list):
+        monsters = value["monsters"]
+        kept = [monster for monster in monsters if not isinstance(monster, str) or monster in valid_monster_ids]
+        if kept != monsters:
+            if kept:
+                value["monsters"] = kept
+            else:
+                value.pop("monsters", None)
+            counts["stale_monster_blacklist_entries"] += len(monsters) - len(kept)
+    for child in value.values():
+        clean_blacklist_references(child, valid_item_ids, valid_monster_ids, counts)
+
+
 def transform_object(
     obj: dict[str, Any],
     counts: collections.Counter[str],
     obsolete_monster_ids: set[str] = OBSOLETE_MONSTER_IDS,
 ) -> None:
+    normalize_h_quantity_strings(obj, counts)
     obj_type = obj.get("type")
+
+    # H's variant factory expects every variant record to carry both symbol
+    # spellings.  Older item and furniture variants often only supplied an
+    # id/name override and inherited the parent's symbol implicitly.  Make
+    # that inheritance explicit while retaining the variant's other data;
+    # this also lets us remove the obsolete sibling symbol fields below
+    # without losing the visual representation.
+    variants = obj.get("variants")
+    if isinstance(variants, list):
+        parent_symbol = obj.get("symbol")
+        parent_broken = obj.get("broken_symbol")
+        generic_item_variants = obj.get("variant_type") == "generic" and obj_type in ITEM_TYPES
+        normalized_variants: list[Any] = []
+        for variant in variants:
+            if not isinstance(variant, dict):
+                normalized_variants.append(variant)
+                continue
+            variant_symbol = variant.get("symbols", variant.get("symbol"))
+            variant_broken = variant.get("symbols_broken", variant.get("broken_symbol"))
+            if generic_item_variants:
+                # Generic item variants inherit the parent symbol.  The H
+                # generic-item factory rejects vehicle-only symbols fields in
+                # these records, so do not materialize them here.
+                variant.pop("symbols", None)
+                variant.pop("symbols_broken", None)
+                variant.pop("symbol", None)
+                variant.pop("broken_symbol", None)
+                variant.pop("volume", None)
+                normalized_variants.append(variant)
+                continue
+            if variant_symbol is None:
+                variant_symbol = parent_symbol or variant_broken or parent_broken or "?"
+                variant["symbols"] = variant_symbol
+                counts["variant_symbols_filled"] += 1
+            if variant_broken is None:
+                variant_broken = parent_broken or variant.get("broken_symbol") or variant_symbol or "?"
+                variant["symbols_broken"] = variant_broken
+                counts["variant_symbols_broken_filled"] += 1
+            # Generic variants are finalized as independent item records in
+            # H; omitted physical dimensions therefore become zero instead of
+            # inheriting the parent.  Carry over only dimensions that the
+            # variant did not explicitly override.
+            for dimension in ("volume", "weight"):
+                if dimension not in variant and dimension in obj:
+                    variant[dimension] = copy.deepcopy(obj[dimension])
+                    counts[f"variant_{dimension}_filled"] += 1
+            variant.pop("symbol", None)
+            variant.pop("broken_symbol", None)
+            normalized_variants.append(variant)
+        obj["variants"] = normalized_variants
+        if "symbol" in obj:
+            del obj["symbol"]
+            counts["variant_parent_symbol_removed"] += 1
+        if "broken_symbol" in obj:
+            del obj["broken_symbol"]
+            counts["variant_parent_broken_symbol_removed"] += 1
     # These factories are intentionally lowercase in H.  Older collections
     # (and an earlier compatibility pass) used uppercase spellings, which H
     # rejects as an unrecognized object.  Normalize both spellings to the
@@ -5129,6 +5331,60 @@ def transform_object(
     if isinstance(obj_type, str) and obj_type.upper() in ITEM_TYPES and obj_type != obj_type.upper():
         obj["type"] = obj_type.upper()
         counts["item_type_case"] += 1
+
+    # Fallout Remastered's 25 mm payload records are used by 25 mm magazines
+    # but were left as GENERIC objects with a legacy ``drop`` member.  Make
+    # them proper ammo children of the abstract already present in the same
+    # pack so magazine validation and payload dimensions resolve normally.
+    if (
+        isinstance(obj.get("id"), str)
+        and obj["id"].startswith("25mm_")
+        and obj_type == "GENERIC"
+        and "copy-from" not in obj
+    ):
+        obj["type"] = "AMMO"
+        obj["copy-from"] = "25mm_grenade"
+        obj.pop("drop", None)
+        counts["fallout_25mm_ammo_repairs"] += 1
+
+    # A number of legacy food and book definitions omitted physical
+    # dimensions entirely.  H finalizes those as zero-volume items and
+    # rejects the pack.  Supply conservative defaults only for standalone
+    # definitions; copy-from children continue to inherit their parent's
+    # dimensions as intended.
+    if "copy-from" not in obj and obj_type in {"COMESTIBLE", "BOOK"}:
+        default_dimensions = (
+            ("100 g", "100 ml") if obj_type == "COMESTIBLE" else ("500 g", "500 ml")
+        )
+        if "weight" not in obj:
+            obj["weight"] = default_dimensions[0]
+            counts["required_item_weight_defaults"] += 1
+        if "volume" not in obj:
+            obj["volume"] = default_dimensions[1]
+            counts["required_item_volume_defaults"] += 1
+        if "symbol" not in obj and "variants" not in obj:
+            obj["symbol"] = "?" if obj_type == "BOOK" else "%"
+            counts["required_item_symbol_defaults"] += 1
+
+    if obj_type in {"mutation", "bionic"} and "copy-from" not in obj:
+        # Standalone legacy mutation/bionic entries frequently carried only a
+        # name (or, in an override file, only an id).  H treats both members
+        # as mandatory; derive conservative text rather than dropping the
+        # entry or introducing a compatibility shim.
+        ident = obj.get("id", "legacy entry")
+        name = obj.get("name")
+        if not isinstance(name, (str, dict)):
+            readable = re.sub(r"[_-]+", " ", str(ident)).strip().title()
+            obj["name"] = {"str": readable or "Legacy entry"}
+            counts["required_name_defaults"] += 1
+        if "description" not in obj:
+            name_value = obj.get("name")
+            if isinstance(name_value, dict):
+                name_value = name_value.get("str", name_value.get("str_sp"))
+            if not isinstance(name_value, str) or not name_value:
+                name_value = str(ident)
+            obj["description"] = f"{name_value}."
+            counts["required_description_defaults"] += 1
 
     if obj.get("type") == "MAGAZINE" and "reliability" in obj:
         # H no longer accepts the deprecated magazine reliability field.
@@ -5793,7 +6049,16 @@ def transform_object(
                 )
                 if match:
                     numeric = float(match.group(1))
-                    obj[price_key] = int(numeric) if numeric.is_integer() else numeric
+                    # Direct item prices are whole cents in H.  Truncate
+                    # legacy fractional cents (for example 86.25 -> 86),
+                    # while leaving decimal multipliers in structured
+                    # price_rules/proportional objects untouched by the
+                    # masking performed before this pass.
+                    obj[price_key] = int(numeric)
+                    counts["numeric_prices"] += 1
+            elif isinstance(price, (int, float)) and not isinstance(price, bool):
+                if isinstance(price, float) and not price.is_integer():
+                    obj[price_key] = int(price)
                     counts["numeric_prices"] += 1
         if obj.get("description") == "":
             name_value = obj.get("name", {})
@@ -6432,6 +6697,10 @@ def transform_object(
             if obsolete in obj:
                 del obj[obsolete]
                 counts["material_obsolete_fields"] += 1
+        fuel_data = obj.get("fuel_data")
+        if isinstance(fuel_data, dict) and isinstance(fuel_data.get("energy"), (int, float)):
+            fuel_data["energy"] = f"{int(round(float(fuel_data['energy'])))} kJ"
+            counts["material_fuel_energy_units"] += 1
 
     material_value = obj.get("material")
     if isinstance(material_value, str) and material_value == "hardsteel":
@@ -6595,6 +6864,7 @@ def general_pass(
     h_nonrotating_overmap_bases: set[str] = set()
     h_overmap_definitions: dict[str, dict[str, Any]] = {}
     h_core_monster_factions: set[str] = set()
+    h_core_snippet_ids: set[str] = set()
     local_index, _, _ = collect_items(files)
     # Keep a type-aware index for self-copy expansion beyond ordinary items.
     # Mods also use self-copy overrides for monsters, mutations, terrain,
@@ -6653,6 +6923,18 @@ def general_pass(
                 h_ident = h_entry.get("id")
                 if isinstance(h_ident, str):
                     h_material_ids.add(h_ident)
+            def collect_snippet_ids(value: Any) -> None:
+                if isinstance(value, dict):
+                    for key, child in value.items():
+                        if key in {"snippet_category", "snippets"} and isinstance(child, list):
+                            for snippet in child:
+                                if isinstance(snippet, dict) and isinstance(snippet.get("id"), str):
+                                    h_core_snippet_ids.add(snippet["id"])
+                        collect_snippet_ids(child)
+                elif isinstance(value, list):
+                    for child in value:
+                        collect_snippet_ids(child)
+            collect_snippet_ids(h_entry)
             if prune_core_copies and isinstance(h_entry, dict):
                 h_type = h_entry.get("type")
                 h_ident = h_entry.get("id", h_entry.get("abstract"))
@@ -6816,6 +7098,51 @@ def general_pass(
             totals["expanded_copy_from_entries"] += 1
         return True
 
+    def collapse_core_override(obj: dict[str, Any]) -> bool:
+        """Turn a full duplicate of a core mutation/bionic into an override."""
+        obj_type = obj.get("type")
+        ident = obj.get("id")
+        if obj_type not in {"mutation", "bionic"} or not isinstance(ident, str):
+            return False
+        if isinstance(obj.get("copy-from"), str):
+            return False
+        candidates = [
+            candidate
+            for candidate in definition_index.get((obj_type, ident), [])
+            if definition_sources.get(id(candidate)) in h_core_files
+        ]
+        if not candidates:
+            return False
+        base = candidates[-1]
+        differences: dict[str, Any] = {}
+        for key, value in obj.items():
+            if key in {"id", "type"} or key.startswith("//"):
+                continue
+            if canonical(value) != canonical(base.get(key)):
+                differences[key] = copy.deepcopy(value)
+        if not differences:
+            obj.clear()
+            return True
+        extension: dict[str, Any] = {}
+        direct: dict[str, Any] = {}
+        for key, value in differences.items():
+            base_value = base.get(key)
+            if isinstance(value, list) and isinstance(base_value, list):
+                base_encoded = {canonical(entry) for entry in base_value}
+                extras = [entry for entry in value if canonical(entry) not in base_encoded]
+                if extras and all(canonical(entry) in {canonical(item) for item in value} for entry in base_value):
+                    extension[key] = extras
+                    continue
+            direct[key] = value
+        rewritten: dict[str, Any] = {"type": obj_type, "id": ident, "copy-from": ident}
+        rewritten.update(direct)
+        if extension:
+            rewritten["extend"] = extension
+        obj.clear()
+        obj.update(rewritten)
+        totals["core_override_rewrites"] += 1
+        return False
+
     for path in files:
         try:
             data = load_json(path)
@@ -6839,6 +7166,15 @@ def general_pass(
             totals["top_level_entries"] += original_length - len(data)
             for entry in data:
                 if isinstance(entry, dict):
+                    clean_blacklist_references(
+                        entry,
+                        set(h_index) | set(local_index),
+                        h_core_monster_ids | local_monster_ids,
+                        totals,
+                    )
+                    remove_core_snippet_duplicates(entry, h_core_snippet_ids, totals)
+                    if collapse_core_override(entry):
+                        continue
                     if isinstance(entry.get("copy-from"), str):
                         expand_copy_from(entry)
                     transform_object(entry, totals, active_obsolete_monster_ids)
@@ -6847,10 +7183,19 @@ def general_pass(
                     )
                     finish_armor(entry)
 
+            data[:] = [entry for entry in data if entry is not None and entry != {} and entry != []]
+
             kept_entries: list[Any] = []
             for entry in data:
                 entry_type = entry.get("type") if isinstance(entry, dict) else None
                 entry_ident = entry.get("id", entry.get("abstract")) if isinstance(entry, dict) else None
+                if (
+                    entry_type == "bionic"
+                    and isinstance(entry_ident, str)
+                    and entry_ident in OBSOLETE_BIONIC_IDS
+                ):
+                    totals["obsolete_bionic_entries"] += 1
+                    continue
                 if entry_type == "sound_effect":
                     # H loads sounds from its built-in registry; legacy JSON
                     # sound_effect objects are rejected by the H factory.
@@ -7408,6 +7753,172 @@ def graphical_overmap_pass(
                 write_json(path, data, formatter)
     return totals
 
+
+def _collection_root(path: Path) -> Path:
+    """Return the pack root used by the repository's mod test collections."""
+    parts = path.parts
+    for marker in ("data", "workshop"):
+        if marker in parts:
+            index = parts.index(marker)
+            if len(parts) > index + 1:
+                return Path(*parts[: index + 2])
+    return path.parent
+
+
+def _mod_root(path: Path) -> Path:
+    """Find the nearest directory that owns a modinfo.json file."""
+    current = path.parent
+    while current != current.parent:
+        if (current / "modinfo.json").exists():
+            return current
+        current = current.parent
+    return _collection_root(path)
+
+
+def dedupe_cross_file_definitions(
+    files: list[Path], dry_run: bool, formatter: Path | None
+) -> collections.Counter[str]:
+    """Remove duplicate factory definitions within one mod's source tree.
+
+    H registers definitions per factory, not per JSON file.  A number of
+    legacy mods shipped the same object once in a generated/bridge file and
+    once in their normal file, which produces a hard load error.  Keep the
+    strongest definition and remove only the duplicate entry; JSON files are
+    retained even when an array becomes empty.
+    """
+    totals: collections.Counter[str] = collections.Counter()
+    file_data: dict[Path, Any] = {}
+    for path in files:
+        try:
+            file_data[path] = load_json(path)
+        except (OSError, UnicodeError, json.JSONDecodeError):
+            totals["errors"] += 1
+
+    owners: dict[tuple[Path, tuple[str, str]], tuple[list[Any], dict[str, Any], int]] = {}
+    removed_entries: set[int] = set()
+    for path in sorted(file_data):
+        data = file_data[path]
+        entries = data if isinstance(data, list) else [data]
+        mod_root = _mod_root(path)
+        for index, entry in enumerate(entries):
+            identity = top_level_identity(entry)
+            if identity is None or identity[0] == "MOD_INFO":
+                continue
+            key = (mod_root, identity)
+            if key not in owners:
+                owners[key] = (entries, entry, index)
+                continue
+            old_entries, old_entry, _ = owners[key]
+            if canonical(entry) == canonical(old_entry):
+                old_entries_ref, old_entry_ref = old_entries, old_entry
+                # Keep the first stable source and remove the later copy.
+                removed_entries.add(id(entry))
+                totals["cross_file_duplicate_definitions"] += 1
+                continue
+            if definition_quality(entry) > definition_quality(old_entry):
+                try:
+                    old_entries.remove(old_entry)
+                except ValueError:
+                    pass
+                removed_entries.add(id(old_entry))
+                owners[key] = (entries, entry, index)
+            else:
+                removed_entries.add(id(entry))
+            totals["cross_file_duplicate_definitions"] += 1
+
+    for path, data in file_data.items():
+        if isinstance(data, list):
+            kept = [entry for entry in data if id(entry) not in removed_entries]
+            if kept != data:
+                data[:] = kept
+        elif id(data) in removed_entries:
+            file_data[path] = []
+        if not dry_run:
+            # Only rewrite files whose parsed content changed.
+            original = load_json(path)
+            if canonical(file_data[path]) != canonical(original):
+                write_json(path, file_data[path], formatter)
+        elif canonical(file_data[path]) != canonical(load_json(path)):
+            totals["dry_run_files_changed"] += 1
+    return totals
+
+
+INLINE_FACTORY_KEYS = {
+    "static_buffs",
+    "onmove_buffs",
+    "onattack_buffs",
+    "onhit_buffs",
+    "onblock_buffs",
+    "onmiss_buffs",
+    "oncrit_buffs",
+    "ondodge_buffs",
+}
+
+
+def dedupe_inline_factory_entries(
+    files: list[Path], dry_run: bool, formatter: Path | None
+) -> collections.Counter[str]:
+    """Dedupe globally registered inline martial-art buff objects per pack."""
+    totals: collections.Counter[str] = collections.Counter()
+    file_data: dict[Path, Any] = {}
+    for path in files:
+        try:
+            file_data[path] = load_json(path)
+        except (OSError, UnicodeError, json.JSONDecodeError):
+            totals["errors"] += 1
+    registry: dict[tuple[Path, str], tuple[list[Any], dict[str, Any]]] = {}
+
+    def visit(value: Any, pack: Path) -> None:
+        if isinstance(value, dict):
+            for key, child in list(value.items()):
+                if key in INLINE_FACTORY_KEYS and isinstance(child, list):
+                    kept: list[Any] = []
+                    for entry in child:
+                        ident = entry.get("id") if isinstance(entry, dict) else None
+                        if not isinstance(ident, str):
+                            kept.append(entry)
+                            continue
+                        identity = (pack, ident)
+                        previous = registry.get(identity)
+                        if previous is None:
+                            registry[identity] = (kept, entry)
+                            kept.append(entry)
+                            continue
+                        previous_list, previous_entry = previous
+                        if canonical(entry) == canonical(previous_entry):
+                            totals["duplicate_inline_factory_entries"] += 1
+                            continue
+                        if definition_quality(entry) > definition_quality(previous_entry):
+                            try:
+                                previous_list.remove(previous_entry)
+                            except ValueError:
+                                pass
+                            registry[identity] = (kept, entry)
+                            kept.append(entry)
+                        else:
+                            totals["duplicate_inline_factory_entries"] += 1
+                            continue
+                        totals["duplicate_inline_factory_entries"] += 1
+                    value[key] = kept
+                    for entry in kept:
+                        visit(entry, pack)
+                else:
+                    visit(child, pack)
+        elif isinstance(value, list):
+            for child in value:
+                visit(child, pack)
+
+    for path in sorted(file_data):
+        visit(file_data[path], _collection_root(path))
+    for path, data in file_data.items():
+        original = load_json(path)
+        if canonical(data) != canonical(original):
+            if not dry_run:
+                write_json(path, data, formatter)
+            else:
+                totals["dry_run_files_changed"] += 1
+    return totals
+
 def run_h_release_pass(paths, h_data_root, dry_run=False, formatter=None, prune_core_copies=False):
     """Run the embedded, structured 0.H compatibility pass.
 
@@ -7431,8 +7942,15 @@ def run_h_release_pass(paths, h_data_root, dry_run=False, formatter=None, prune_
         formatter_path,
         prune_core_copies=prune_core_copies,
     )
+    duplicate_definitions = dedupe_cross_file_definitions(files, dry_run, formatter_path)
+    duplicate_inline = dedupe_inline_factory_entries(files, dry_run, formatter_path)
     pockets = tool_pocket_pass(files, h_files, dry_run, formatter_path)
-    return {"general": dict(general), "tool_pockets": dict(pockets)}
+    return {
+        "general": dict(general),
+        "cross_file_duplicates": dict(duplicate_definitions),
+        "inline_duplicates": dict(duplicate_inline),
+        "tool_pockets": dict(pockets),
+    }
 
 
 # ---------------------------------------------------------------------------

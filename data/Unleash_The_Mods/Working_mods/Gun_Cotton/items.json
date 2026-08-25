@@ -3,36 +3,57 @@
     "id": "chem_guncotton",
     "type": "AMMO",
     "category": "chems",
-    "price": "6 cent",
-    "name": { "str": "gun cotton" },
+    "price": 6,
+    "name": {
+      "str": "gun cotton"
+    },
     "symbol": "=",
     "color": "yellow",
     "description": "Wet lumps of nitrated cotton.  Can be used to craft explosives or smokeless powder.  Highly sensitive to shock when dried.",
     "container": "bag_plastic",
-    "material": [ "powder" ],
+    "material": [
+      "powder"
+    ],
     "volume": "250 ml",
     "weight": "50 g",
     "count": 5,
     "ammo_type": "components",
-    "effects": [ "COOKOFF" ]
+    "effects": [
+      "COOKOFF"
+    ]
   },
   {
     "id": "nail_bomb",
     "type": "TOOL",
-    "name": { "str": "nail bomb" },
+    "name": {
+      "str": "nail bomb"
+    },
     "description": "A crude and bulky improvised bomb.  Made from a container, an explosive surrounded by nails and a fuse.  Use this item to light the fuse.  You will then have five turns before it explodes; throwing it would be a good idea.",
     "category": "weapons",
     "weight": "470 g",
     "volume": "500 ml",
-    "melee_damage": { "bash": 4 },
+    "melee_damage": {
+      "bash": 4
+    },
     "to_hit": 1,
-    "price": "9 cent",
-    "price_postapoc": "5 cent",
-    "material": [ "aluminum", "iron" ],
+    "price": 9,
+    "price_postapoc": 5,
+    "material": [
+      "aluminum",
+      "iron"
+    ],
     "symbol": "*",
     "color": "green",
     "explode_in_fire": true,
-    "explosion": { "power": 175, "shrapnel": { "casing_mass": 160, "fragment_mass": 0.4, "drop": "nail", "recovery": 16 } },
+    "explosion": {
+      "power": 175,
+      "shrapnel": {
+        "casing_mass": 160,
+        "fragment_mass": 0.4,
+        "drop": "nail",
+        "recovery": 16
+      }
+    },
     "use_action": {
       "target": "nail_bomb_act",
       "msg": "You light the fuse on the %s.",
@@ -42,31 +63,40 @@
       "menu_text": "Light fuse",
       "type": "transform"
     },
-    "flags": [ "RADIO_MODABLE", "RADIO_INVOKE_PROC", "BOMB", "NO_REPAIR" ]
+    "flags": [
+      "RADIO_MODABLE",
+      "RADIO_INVOKE_PROC",
+      "BOMB",
+      "NO_REPAIR"
+    ]
   },
   {
     "id": "nail_bomb_act",
     "type": "TOOL",
     "copy-from": "nail_bomb",
-    "name": { "str": "active nail bomb" },
+    "name": {
+      "str": "active nail bomb"
+    },
     "description": "A crude and bulky improvised bomb.  Made from a container, an explosive surrounded by nails and a fuse.  The fuse has been lit, you should throw it.",
-    "category": "weapons",
-    "weight": "470 g",
-    "volume": "500 ml",
-    "melee_damage": { "bash": 4 },
-    "to_hit": 1,
-    "price": "0 cent",
-    "price_postapoc": "0 cent",
-    "material": [ "aluminum", "iron" ],
-    "symbol": "*",
-    "color": "green",
-    "explode_in_fire": true,
-    "explosion": { "power": 175, "shrapnel": { "casing_mass": 160, "fragment_mass": 0.4, "drop": "nail", "recovery": 16 } },
+    "price": 0,
+    "price_postapoc": 0,
     "use_action": {
       "type": "explosion",
-      "explosion": { "power": 175, "shrapnel": { "casing_mass": 160, "fragment_mass": 0.4, "drop": "nail", "recovery": 16 } }
+      "explosion": {
+        "power": 175,
+        "shrapnel": {
+          "casing_mass": 160,
+          "fragment_mass": 0.4,
+          "drop": "nail",
+          "recovery": 16
+        }
+      }
     },
-    "flags": [ "BOMB", "TRADER_AVOID", "NO_REPAIR" ],
+    "flags": [
+      "BOMB",
+      "TRADER_AVOID",
+      "NO_REPAIR"
+    ],
     "initial_charges": 5,
     "max_charges": 5,
     "turns_per_charge": 1

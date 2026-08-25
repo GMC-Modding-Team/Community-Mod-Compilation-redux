@@ -3,61 +3,110 @@
     "id": "grenademg",
     "type": "GUN",
     "copy-from": "launcher_base",
-    "reload_noise_volume": 10,
-    "//": "default handling for anything without a recoil stock",
-    "handling": 10,
-    "name": { "str": "grenade machinegun" },
-    "symbol": "(",
-    "color": "light_gray",
-    "faults": [ "fault_gun_blackpowder", "fault_gun_dirt" ],
-    "ranged_damage": { "damage_type": "bullet", "amount": 1 },
-    "skill": "launcher",
-    "modes": [ [ "DEFAULT", "low auto", 3 ], [ "AUTO", "high auto", 10, "NPC_AVOID" ] ],
-    "valid_mod_locations": [ [ "accessories", 4 ], [ "grip", 1 ], [ "mechanism", 4 ], [ "sights", 1 ] ],
-    "flags": [ "MOUNTED_GUN" ],
+    "name": {
+      "str": "grenade machinegun"
+    },
+    "ranged_damage": {
+      "damage_type": "bullet",
+      "amount": 1
+    },
+    "modes": [
+      [
+        "DEFAULT",
+        "low auto",
+        3
+      ],
+      [
+        "AUTO",
+        "high auto",
+        10,
+        "NPC_AVOID"
+      ]
+    ],
+    "valid_mod_locations": [
+      [
+        "accessories",
+        4
+      ],
+      [
+        "grip",
+        1
+      ],
+      [
+        "mechanism",
+        4
+      ],
+      [
+        "sights",
+        1
+      ]
+    ],
+    "flags": [
+      "MOUNTED_GUN"
+    ],
     "description": "An experimental pre-cataclsym weapon, firing grenades with speeds nearly unheard of. Incredibly dangerous.",
     "weight": "35200 g",
     "volume": "4000 ml",
-    "price": "16500 cent",
+    "price": 16500,
     "to_hit": -1,
-    "melee_damage": { "bash": 14 },
-    "material": [ "steel" ],
-    "ammo": [ "25mm" ],
+    "melee_damage": {
+      "bash": 14
+    },
+    "material": [
+      "steel"
+    ],
+    "ammo": [
+      "25mm"
+    ],
     "range": 30,
     "dispersion": 180,
     "durability": 8,
     "reload": 400,
-    "pocket_data": [ { "pocket_type": "MAGAZINE_WELL", "item_restriction": [ "25mmdrummag", "25mmdrummagxl" ] } ]
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "item_restriction": [
+          "25mmdrummag",
+          "25mmdrummagxl"
+        ]
+      }
+    ]
   },
   {
     "id": "25mmapw",
     "type": "GUN",
     "copy-from": "launcher_base",
-    "reload_noise_volume": 10,
-    "//": "default handling for anything without a recoil stock",
-    "handling": 10,
-    "name": { "str": "25mm Grenade APW" },
+    "name": {
+      "str": "25mm Grenade APW"
+    },
     "symbol": "(",
-    "color": "light_gray",
-    "faults": [ "fault_gun_blackpowder", "fault_gun_dirt" ],
-    "ranged_damage": { "damage_type": "bullet", "amount": 0 },
-    "skill": "launcher",
-    "modes": [ [ "DEFAULT", "single", 1, "NPC_AVOID" ] ],
-    "valid_mod_locations": [ [ "barrel", 1 ], [ "sights", 1 ], [ "sling", 1 ] ],
-    "flags": [ "RELOAD_ONE", "RELOAD_EJECT", "NEVER_JAMS" ],
     "looks_like": "m79",
     "description": "A 6 shot 25mm grenade launcher manufactured by the Gun Runners.",
     "weight": "2100 g",
     "volume": "750 ml",
-    "price": "8500 cent",
+    "price": 8500,
     "to_hit": -3,
-    "melee_damage": { "bash": 6 },
-    "material": [ "steel" ],
-    "ammo": [ "25mm" ],
+    "melee_damage": {
+      "bash": 6
+    },
+    "material": [
+      "steel"
+    ],
+    "ammo": [
+      "25mm"
+    ],
     "dispersion": 270,
     "durability": 9,
     "reload": 150,
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "25mm": 6 } } ]
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE",
+        "rigid": true,
+        "ammo_restriction": {
+          "25mm": 6
+        }
+      }
+    ]
   },
   {
     "id": "broadsider",
@@ -65,24 +114,71 @@
     "reload_noise_volume": 10,
     "symbol": "(",
     "color": "dark_gray",
-    "name": { "str": "Broadsider" },
+    "name": {
+      "str": "Broadsider"
+    },
     "description": "A reclaimed naval swivel gun, repurposed into a weapon you can carry, even if you may prefer mounting it. It has been modified with a special tube to let it hold three shots before a reload.  Before the cataclysm, it was written off as little more than an antique-turned-gimmick.  It has a special mechanism that lets you discharge the three shots in quick succession",
-    "price": "29000 cent",
-    "material": [ "steel" ],
-    "flags": [ "MOUNTED_GUN", "NEVER_JAMS" ],
+    "price": 29000,
+    "material": [
+      "steel"
+    ],
+    "flags": [
+      "MOUNTED_GUN",
+      "NEVER_JAMS"
+    ],
     "skill": "launcher",
-    "ammo": [ "cannonball" ],
+    "ammo": [
+      "cannonball"
+    ],
     "weight": "5220 g",
     "volume": "6000 ml",
-    "melee_damage": { "bash": 12 },
+    "melee_damage": {
+      "bash": 12
+    },
     "to_hit": -3,
     "dispersion": 300,
     "durability": 7,
     "reload": 1200,
     "loudness": 400,
-    "valid_mod_locations": [ [ "accessories", 4 ], [ "grip", 1 ], [ "mechanism", 4 ], [ "sights", 1 ] ],
-    "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "BURST", "burst", 3 ] ],
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "cannonball": 3 } } ]
+    "valid_mod_locations": [
+      [
+        "accessories",
+        4
+      ],
+      [
+        "grip",
+        1
+      ],
+      [
+        "mechanism",
+        4
+      ],
+      [
+        "sights",
+        1
+      ]
+    ],
+    "modes": [
+      [
+        "DEFAULT",
+        "semi-auto",
+        1
+      ],
+      [
+        "BURST",
+        "burst",
+        3
+      ]
+    ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE",
+        "rigid": true,
+        "ammo_restriction": {
+          "cannonball": 3
+        }
+      }
+    ]
   },
   {
     "id": "rockwell_bigbazooka",
@@ -90,68 +186,106 @@
     "reload_noise_volume": 10,
     "symbol": "(",
     "color": "dark_gray",
-    "name": { "str_sp": "Rockwell BigBazooka" },
+    "name": {
+      "str_sp": "Rockwell BigBazooka"
+    },
     "description": "A Rockwell BigBazooka rocket launcher, with the deluxe 3 lb. trigger.  Fires BigBazooka Rockets",
-    "price": "29000 cent",
-    "material": [ "steel" ],
-    "flags": [ "BACKBLAST", "NEVER_JAMS" ],
+    "price": 29000,
+    "material": [
+      "steel"
+    ],
+    "flags": [
+      "BACKBLAST",
+      "NEVER_JAMS"
+    ],
     "skill": "launcher",
-    "ammo": [ "bbrocket" ],
+    "ammo": [
+      "bbrocket"
+    ],
     "weight": "5220 g",
     "volume": "6000 ml",
-    "melee_damage": { "bash": 12 },
+    "melee_damage": {
+      "bash": 12
+    },
     "to_hit": -3,
     "dispersion": 300,
     "durability": 7,
     "reload": 600,
     "loudness": 200,
-    "valid_mod_locations": [ [ "accessories", 4 ], [ "grip", 1 ], [ "mechanism", 4 ], [ "sights", 1 ] ],
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "bbrocket": 1 } } ]
+    "valid_mod_locations": [
+      [
+        "accessories",
+        4
+      ],
+      [
+        "grip",
+        1
+      ],
+      [
+        "mechanism",
+        4
+      ],
+      [
+        "sights",
+        1
+      ]
+    ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE",
+        "rigid": true,
+        "ammo_restriction": {
+          "bbrocket": 1
+        }
+      }
+    ]
   },
   {
     "id": "amr50",
     "type": "GUN",
     "copy-from": "rifle_base",
-    "reload_noise_volume": 10,
-    "//": "this is the default handling for anything with a stock",
-    "handling": 20,
-    "name": { "str_sp": "Gun Runner AMR-50" },
-    "symbol": "(",
-    "color": "light_gray",
-    "faults": [ "fault_gun_blackpowder", "fault_gun_dirt", "fault_gun_chamber_spent" ],
-    "ranged_damage": { "damage_type": "bullet", "amount": 5 },
-    "skill": "rifle",
-    "valid_mod_locations": [
-      [ "barrel", 1 ],
-      [ "bore", 1 ],
-      [ "brass catcher", 1 ],
-      [ "grip", 1 ],
-      [ "mechanism", 4 ],
-      [ "magazine", 1 ],
-      [ "muzzle", 1 ],
-      [ "rail", 2 ],
-      [ "sights", 1 ],
-      [ "sling", 1 ],
-      [ "stock", 1 ],
-      [ "stock accessory", 2 ],
-      [ "underbarrel", 1 ]
-    ],
+    "name": {
+      "str_sp": "Gun Runner AMR-50"
+    },
+    "ranged_damage": {
+      "damage_type": "bullet",
+      "amount": 5
+    },
     "looks_like": "ar15",
     "description": "Baed off the PGM Hecate II, this baby is one of the heaviest hitters, and best sellers, in the Gun Runners' Arsenal.",
     "weight": "12602 g",
     "volume": "3500 ml",
-    "price": "14833 cent",
+    "price": 14833,
     "to_hit": -1,
-    "melee_damage": { "bash": 12 },
-    "material": [ "steel" ],
-    "ammo": [ "50" ],
+    "melee_damage": {
+      "bash": 12
+    },
+    "material": [
+      "steel"
+    ],
+    "ammo": [
+      "50"
+    ],
     "range": 100,
     "dispersion": 110,
     "durability": 10,
     "barrel_volume": "1500 ml",
-    "default_mods": [ "bipod", "rifle_scope", "muzzle_brake" ],
-    "flags": [ "NEVER_JAMS" ],
-    "pocket_data": [ { "pocket_type": "MAGAZINE_WELL", "item_restriction": [ "amr50mag" ] } ]
+    "default_mods": [
+      "bipod",
+      "rifle_scope",
+      "muzzle_brake"
+    ],
+    "flags": [
+      "NEVER_JAMS"
+    ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "item_restriction": [
+          "amr50mag"
+        ]
+      }
+    ]
   },
   {
     "id": "70mm_autocannon",
@@ -159,39 +293,76 @@
     "reload_noise_volume": 10,
     "symbol": "(",
     "color": "dark_gray",
-    "name": { "str": "70mm bubble cannon" },
+    "name": {
+      "str": "70mm bubble cannon"
+    },
     "description": "A 70mm bubble autocannon, typically mounted to either side of an Infantry Fighting Vehicle to give it its distinctive 'whiskers'",
-    "price": "28000 cent",
-    "material": [ "steel" ],
-    "flags": [ "NO_RELOAD", "MOUNTED_GUN" ],
+    "price": 28000,
+    "material": [
+      "steel"
+    ],
+    "flags": [
+      "NO_RELOAD",
+      "MOUNTED_GUN"
+    ],
     "skill": "launcher",
-    "ammo": [ "70mm" ],
+    "ammo": [
+      "70mm"
+    ],
     "weight": "200 kg",
     "volume": "7500 ml",
-    "melee_damage": { "bash": 12 },
+    "melee_damage": {
+      "bash": 12
+    },
     "to_hit": -1,
     "dispersion": 0,
     "sight_dispersion": 10,
     "durability": 8,
-    "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "AUTO", "auto", 5 ] ],
+    "modes": [
+      [
+        "DEFAULT",
+        "semi-auto",
+        1
+      ],
+      [
+        "AUTO",
+        "auto",
+        5
+      ]
+    ],
     "reload": 700,
     "loudness": 175,
-    "pocket_data": [ { "pocket_type": "MAGAZINE_WELL", "item_restriction": [ "belt70mm" ] } ]
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "item_restriction": [
+          "belt70mm"
+        ]
+      }
+    ]
   },
   {
     "id": "tank_gun_dual",
     "type": "GUN",
     "symbol": "(",
     "color": "green",
-    "name": { "str": "140mm double-barrel tank gun" },
+    "name": {
+      "str": "140mm double-barrel tank gun"
+    },
     "description": "two 140mm cannons from a tank, with twin 4-round autoloaders.  Obviously it needs to be mounted on a vehicle to fire.",
-    "price": "910000 cent",
-    "material": [ "steel" ],
+    "price": 910000,
+    "material": [
+      "steel"
+    ],
     "skill": "launcher",
-    "ammo": [ "140mm" ],
+    "ammo": [
+      "140mm"
+    ],
     "weight": "3300 kg",
     "volume": "10 L",
-    "melee_damage": { "bash": 12 },
+    "melee_damage": {
+      "bash": 12
+    },
     "to_hit": -6,
     "range": 50,
     "dispersion": 20,
@@ -199,24 +370,47 @@
     "durability": 9,
     "reload": 1500,
     "loudness": 300,
-    "flags": [ "NO_RELOAD", "MOUNTED_GUN" ],
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "140mm": 8 } } ]
+    "flags": [
+      "NO_RELOAD",
+      "MOUNTED_GUN"
+    ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE",
+        "rigid": true,
+        "ammo_restriction": {
+          "140mm": 8
+        }
+      }
+    ]
   },
   {
     "id": "tank_gun_105",
     "type": "GUN",
     "symbol": "(",
     "color": "green",
-    "name": { "str": "105mm tank gun" },
+    "name": {
+      "str": "105mm tank gun"
+    },
     "description": "A 105mm cannon from an infantry fighting vehicle.  Obviously it needs to be mounted on a vehicle to fire.",
-    "price": "900000 cent",
-    "material": [ "steel" ],
-    "flags": [ "NEVER_JAMS", "NO_RELOAD", "MOUNTED_GUN" ],
+    "price": 900000,
+    "material": [
+      "steel"
+    ],
+    "flags": [
+      "NEVER_JAMS",
+      "NO_RELOAD",
+      "MOUNTED_GUN"
+    ],
     "skill": "launcher",
-    "ammo": [ "105mm" ],
+    "ammo": [
+      "105mm"
+    ],
     "weight": "3000 kg",
     "volume": "8750 ml",
-    "melee_damage": { "bash": 12 },
+    "melee_damage": {
+      "bash": 12
+    },
     "to_hit": -6,
     "range": 40,
     "dispersion": 20,
@@ -224,6 +418,14 @@
     "durability": 9,
     "reload": 1400,
     "loudness": 300,
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "105mm": 1 } } ]
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE",
+        "rigid": true,
+        "ammo_restriction": {
+          "105mm": 1
+        }
+      }
+    ]
   }
 ]

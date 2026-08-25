@@ -2,45 +2,72 @@
   {
     "id": "carver_off",
     "type": "TOOL",
-    "name": { "str": "electric carver (off)", "str_pl": "electric carvers (off)" },
+    "name": {
+      "str": "electric carver (off)",
+      "str_pl": "electric carvers (off)"
+    },
     "description": "An electric meat carver powered by batteries.  Two serrated blades that vibrate together to slice just about anything from turkey to ham…  even your enemies!",
     "weight": "1106 g",
     "volume": "1500 ml",
     "longest_side": "30 cm",
-    "price": "2000 cent",
-    "price_postapoc": "50 cent",
+    "price": 2000,
+    "price_postapoc": 50,
     "to_hit": -2,
-    "material": [ "steel", "plastic" ],
+    "material": [
+      "steel",
+      "plastic"
+    ],
     "symbol": "/",
     "color": "yellow",
-    "ammo": [ "battery" ],
+    "ammo": [
+      "battery"
+    ],
     "charges_per_use": 5,
-    "use_action": [ "CARVER_OFF" ],
-    "flags": [ "SHEATH_SWORD", "NONCONDUCTIVE", "WATER_BREAK_ACTIVE" ],
+    "use_action": [
+      "CARVER_OFF"
+    ],
+    "flags": [
+      "SHEATH_SWORD",
+      "NONCONDUCTIVE",
+      "WATER_BREAK_ACTIVE"
+    ],
     "pocket_data": [
       {
         "pocket_type": "MAGAZINE_WELL",
         "rigid": true,
-        "flag_restriction": [ "BATTERY_MEDIUM" ],
+        "flag_restriction": [
+          "BATTERY_MEDIUM"
+        ],
         "default_magazine": "medium_battery_cell"
       }
     ],
-    "melee_damage": { "bash": 2, "cut": 8 }
+    "melee_damage": {
+      "bash": 2,
+      "cut": 8
+    }
   },
   {
     "id": "noise_emitter",
     "type": "TOOL",
-    "name": { "str": "noise emitter (off)", "str_pl": "noise emitters (off)" },
+    "name": {
+      "str": "noise emitter (off)",
+      "str_pl": "noise emitters (off)"
+    },
     "description": "This device was constructed by 'enhancing' a speaker ripped off from some electronic device with some amplifier circuits.  It has now no other use beside emitting loud crackling static noise, that could distract an enemy.",
     "weight": "340 g",
     "volume": "1 L",
-    "price": "0 cent",
-    "price_postapoc": "50 cent",
+    "price": 0,
+    "price_postapoc": 50,
     "to_hit": -1,
-    "material": [ "plastic", "aluminum" ],
+    "material": [
+      "plastic",
+      "aluminum"
+    ],
     "symbol": ";",
     "color": "yellow",
-    "ammo": [ "battery" ],
+    "ammo": [
+      "battery"
+    ],
     "charges_per_use": 1,
     "use_action": {
       "target": "noise_emitter_on",
@@ -49,31 +76,48 @@
       "active": true,
       "type": "transform"
     },
-    "flags": [ "RADIO_MODABLE", "RADIO_INVOKE_PROC", "WATER_BREAK" ],
+    "flags": [
+      "RADIO_MODABLE",
+      "RADIO_INVOKE_PROC",
+      "WATER_BREAK"
+    ],
     "pocket_data": [
       {
         "pocket_type": "MAGAZINE_WELL",
         "rigid": true,
-        "flag_restriction": [ "BATTERY_LIGHT", "BATTERY_ULTRA_LIGHT" ],
+        "flag_restriction": [
+          "BATTERY_LIGHT",
+          "BATTERY_ULTRA_LIGHT"
+        ],
         "default_magazine": "light_battery_cell"
       }
     ],
-    "melee_damage": { "bash": 6 }
+    "melee_damage": {
+      "bash": 6
+    }
   },
   {
     "id": "noise_emitter_on",
     "type": "TOOL",
-    "name": { "str": "noise emitter (on)", "str_pl": "noise emitters (on)" },
+    "name": {
+      "str": "noise emitter (on)",
+      "str_pl": "noise emitters (on)"
+    },
     "description": "This device has been turned on and is emitting horrible crackles, pops and other static sounds.  Quick, get away from it before it draws enemies to you!",
     "weight": "340 g",
     "volume": "1 L",
-    "price": "0 cent",
-    "price_postapoc": "50 cent",
+    "price": 0,
+    "price_postapoc": 50,
     "to_hit": -1,
-    "material": [ "plastic", "aluminum" ],
+    "material": [
+      "plastic",
+      "aluminum"
+    ],
     "symbol": ";",
     "color": "yellow",
-    "ammo": [ "battery" ],
+    "ammo": [
+      "battery"
+    ],
     "charges_per_use": 1,
     "use_action": {
       "target": "noise_emitter",
@@ -82,113 +126,221 @@
       "active": false,
       "type": "transform"
     },
-    "flags": [ "RADIO_MODABLE", "RADIO_INVOKE_PROC", "TRADER_AVOID", "WATER_BREAK" ],
+    "flags": [
+      "RADIO_MODABLE",
+      "RADIO_INVOKE_PROC",
+      "TRADER_AVOID",
+      "WATER_BREAK"
+    ],
     "pocket_data": [
       {
         "pocket_type": "MAGAZINE_WELL",
         "rigid": true,
-        "flag_restriction": [ "BATTERY_LIGHT", "BATTERY_ULTRA_LIGHT" ],
+        "flag_restriction": [
+          "BATTERY_LIGHT",
+          "BATTERY_ULTRA_LIGHT"
+        ],
         "default_magazine": "light_battery_cell"
       }
     ],
-    "melee_damage": { "bash": 6 },
+    "melee_damage": {
+      "bash": 6
+    },
     "power_draw": "10 W",
     "revert_to": "noise_emitter",
-    "tick_action": [ "NOISE_EMITTER_ON" ]
+    "tick_action": [
+      "NOISE_EMITTER_ON"
+    ]
   },
   {
     "id": "e_handcuffs",
     "type": "TOOL",
-    "name": { "str_sp": "electronic handcuffs" },
+    "name": {
+      "str_sp": "electronic handcuffs"
+    },
     "description": "A pair of electronic handcuffs, used by automated New Order units to detain captives.  Their continuous siren clearly identifies the wearer as a person of internet and alerts nearby 'safety teams' to their presence.  Wait for their arrival, don't try to escape or to remove the cuffs - they will administer an electric shock.\nHowever, since capture is out of the question, you're probably in for a painful time, unless you get creative…",
     "weight": "2000 g",
     "volume": "500 ml",
-    "price": "0 cent",
-    "price_postapoc": "0 cent",
+    "price": 0,
+    "price_postapoc": 0,
     "to_hit": -8,
-    "material": [ "plastic", "steel" ],
+    "material": [
+      "plastic",
+      "steel"
+    ],
     "symbol": ";",
     "color": "white",
     "max_charges": 3000,
     "turns_per_charge": 1,
-    "use_action": [ "EHANDCUFFS" ],
-    "tick_action": [ "EHANDCUFFS_TICK" ],
+    "use_action": [
+      "EHANDCUFFS"
+    ],
+    "tick_action": [
+      "EHANDCUFFS_TICK"
+    ],
     "//": "Don't add ELECTRONIC flag here, since these handcuffs have their own behavior when affected by EMP blast",
-    "flags": [ "ALWAYS_TWOHAND", "TRADER_AVOID", "WATER_BREAK" ],
-    "melee_damage": { "cut": 1 }
+    "flags": [
+      "ALWAYS_TWOHAND",
+      "TRADER_AVOID",
+      "WATER_BREAK"
+    ],
+    "melee_damage": {
+      "cut": 1
+    }
   },
   {
     "id": "trimmer_off",
     "type": "TOOL",
-    "name": { "str": "hedge trimmer (off)", "str_pl": "hedge trimmers (off)" },
+    "name": {
+      "str": "hedge trimmer (off)",
+      "str_pl": "hedge trimmers (off)"
+    },
     "description": "A cordless, double-sided, gasoline-powered hedge trimmer.  A long line of sharp-edged teeth extends from the engine; turning the trimmer on will make them rapidly vibrate.  The poor man's chainsaw as far as your enemies are concerned.",
     "weight": "4500 g",
     "volume": "2500 ml",
     "longest_side": "100 cm",
-    "price": "4000 cent",
-    "price_postapoc": "250 cent",
+    "price": 4000,
+    "price_postapoc": 250,
     "to_hit": -1,
-    "material": [ "steel", "plastic" ],
+    "material": [
+      "steel",
+      "plastic"
+    ],
     "symbol": "/",
     "color": "green",
-    "ammo": [ "gasoline" ],
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "watertight": true, "ammo_restriction": { "gasoline": 600 } } ],
+    "ammo": [
+      "gasoline"
+    ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE",
+        "rigid": true,
+        "watertight": true,
+        "ammo_restriction": {
+          "gasoline": 600
+        }
+      }
+    ],
     "charges_per_use": 5,
-    "use_action": [ "TRIMMER_OFF" ],
-    "flags": [ "NONCONDUCTIVE" ],
-    "melee_damage": { "bash": 4, "cut": 8 }
+    "use_action": [
+      "TRIMMER_OFF"
+    ],
+    "flags": [
+      "NONCONDUCTIVE"
+    ],
+    "melee_damage": {
+      "bash": 4,
+      "cut": 8
+    }
   },
   {
     "id": "trimmer_on",
     "type": "TOOL",
-    "name": { "str": "hedge trimmer (on)", "str_pl": "hedge trimmers (on)" },
+    "name": {
+      "str": "hedge trimmer (on)",
+      "str_pl": "hedge trimmers (on)"
+    },
     "description": "A cordless, double-sided, gasoline-powered hedge trimmer.  It is currently on, ready to do some alien topiary; use this item to turn it off.",
     "weight": "4500 g",
     "volume": "2500 ml",
     "longest_side": "100 cm",
-    "price": "4000 cent",
-    "price_postapoc": "250 cent",
+    "price": 4000,
+    "price_postapoc": 250,
     "to_hit": -1,
-    "material": [ "steel", "plastic" ],
+    "material": [
+      "steel",
+      "plastic"
+    ],
     "symbol": "/",
     "color": "green",
-    "ammo": [ "gasoline" ],
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "watertight": true, "ammo_restriction": { "gasoline": 600 } } ],
+    "ammo": [
+      "gasoline"
+    ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE",
+        "rigid": true,
+        "watertight": true,
+        "ammo_restriction": {
+          "gasoline": 600
+        }
+      }
+    ],
     "charges_per_use": 0,
-    "use_action": [ "TOOLWEAPON_DEACTIVATE" ],
-    "flags": [ "MESSY", "TRADER_AVOID", "NONCONDUCTIVE" ],
-    "melee_damage": { "bash": 4, "cut": 40 },
+    "use_action": [
+      "TOOLWEAPON_DEACTIVATE"
+    ],
+    "flags": [
+      "MESSY",
+      "TRADER_AVOID",
+      "NONCONDUCTIVE"
+    ],
+    "melee_damage": {
+      "bash": 4,
+      "cut": 40
+    },
     "power_draw": "500 W",
     "revert_to": "trimmer_off",
-    "tick_action": [ "TRIMMER_ON" ],
-    "qualities": [ [ "CUT", 1 ], [ "BUTCHER", -60 ] ]
+    "tick_action": [
+      "TRIMMER_ON"
+    ],
+    "qualities": [
+      [
+        "CUT",
+        1
+      ],
+      [
+        "BUTCHER",
+        -60
+      ]
+    ]
   },
   {
     "id": "circsaw_off",
     "type": "TOOL",
-    "name": { "str": "circular saw (off)", "str_pl": "circular saws (off)" },
+    "name": {
+      "str": "circular saw (off)",
+      "str_pl": "circular saws (off)"
+    },
     "description": "A lightweight handheld cordless circular saw.  Spins a circular blade fast enough to cut wood, aliens, or in an emergency, pizza.  The blade, while effective in combat, is hard to hit with due to its small size.",
     "weight": "2940 g",
     "volume": "750 ml",
     "longest_side": "44 cm",
-    "price": "5000 cent",
-    "price_postapoc": "250 cent",
+    "price": 5000,
+    "price_postapoc": 250,
     "to_hit": -3,
-    "material": [ "steel", "plastic" ],
+    "material": [
+      "steel",
+      "plastic"
+    ],
     "symbol": "/",
     "color": "yellow",
-    "ammo": [ "battery" ],
+    "ammo": [
+      "battery"
+    ],
     "charges_per_use": 1,
-    "use_action": { "target": "circsaw_on", "msg": "You turn on the circular saw.", "active": true, "type": "transform" },
-    "flags": [ "NONCONDUCTIVE" ],
+    "use_action": {
+      "target": "circsaw_on",
+      "msg": "You turn on the circular saw.",
+      "active": true,
+      "type": "transform"
+    },
+    "flags": [
+      "NONCONDUCTIVE"
+    ],
     "pocket_data": [
       {
         "pocket_type": "MAGAZINE_WELL",
         "magazine_well": "200 ml",
-        "flag_restriction": [ "BATTERY_MEDIUM" ],
+        "flag_restriction": [
+          "BATTERY_MEDIUM"
+        ],
         "default_magazine": "medium_battery_cell"
       }
     ],
-    "melee_damage": { "bash": 2, "cut": 4 }
+    "melee_damage": {
+      "bash": 2,
+      "cut": 4
+    }
   }
 ]

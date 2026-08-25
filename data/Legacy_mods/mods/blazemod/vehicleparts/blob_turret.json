@@ -2,7 +2,9 @@
   {
     "id": "blob_turret_mount",
     "type": "vehicle_part",
-    "name": { "str": "inert core" },
+    "name": {
+      "str": "inert core"
+    },
     "color": "red",
     "broken_color": "red",
     "damage_modifier": 80,
@@ -11,14 +13,58 @@
     "folded_volume": "2500 ml",
     "item": "queen",
     "requirements": {
-      "install": { "skills": [ [ "mechanics", 1 ] ], "time": "20 m" },
-      "removal": { "skills": [ [ "mechanics", 1 ] ], "time": "10 m" },
-      "repair": { "skills": [ [ "mechanics", 1 ] ], "time": "5 m", "using": [ [ "blobrep", 1 ] ] }
+      "install": {
+        "skills": [
+          [
+            "mechanics",
+            1
+          ]
+        ],
+        "time": "20 m"
+      },
+      "removal": {
+        "skills": [
+          [
+            "mechanics",
+            1
+          ]
+        ],
+        "time": "10 m"
+      },
+      "repair": {
+        "skills": [
+          [
+            "mechanics",
+            1
+          ]
+        ],
+        "time": "5 m",
+        "using": [
+          [
+            "blobrep",
+            1
+          ]
+        ]
+      }
     },
-    "flags": [ "TURRET_MOUNT", "FOLDABLE" ],
-    "breaks_into": [ { "item": "queengrow" } ],
-    "damage_reduction": { "all": 54 },
-    "variants": [ { "symbols": "X", "symbols_broken": "X" } ]
+    "flags": [
+      "TURRET_MOUNT",
+      "FOLDABLE"
+    ],
+    "breaks_into": [
+      {
+        "item": "queengrow"
+      }
+    ],
+    "damage_reduction": {
+      "all": 54
+    },
+    "variants": [
+      {
+        "symbols": "X",
+        "symbols_broken": "X"
+      }
+    ]
   },
   {
     "abstract": "blob_turret",
@@ -28,180 +74,328 @@
     "location": "on_roof",
     "folded_volume": "2500 ml",
     "requirements": {
-      "install": { "time": "100 s" },
-      "removal": { "time": "50 s" },
-      "repair": { "skills": [ [ "mechanics", 1 ] ], "time": "5 m", "using": [ [ "blobrep", 1 ] ] }
+      "install": {
+        "time": "100 s"
+      },
+      "removal": {
+        "time": "50 s"
+      },
+      "repair": {
+        "skills": [
+          [
+            "mechanics",
+            1
+          ]
+        ],
+        "time": "5 m",
+        "using": [
+          [
+            "blobrep",
+            1
+          ]
+        ]
+      }
     },
     "description": "A living blob turned into a heavy vehicle weapon.",
-    "flags": [ "TURRET", "FOLDABLE" ],
-    "variants": [ { "symbols": "t", "symbols_broken": "#" } ]
+    "flags": [
+      "TURRET",
+      "FOLDABLE"
+    ],
+    "variants": [
+      {
+        "symbols": "t",
+        "symbols_broken": "#"
+      }
+    ]
   },
   {
-    "copy-from": "blob_turret",
     "id": "mounted_biter",
     "type": "vehicle_part",
-    "name": { "str": "biting blob" },
+    "name": {
+      "str": "biting blob"
+    },
     "item": "biter",
     "location": "center",
     "color": "blue",
     "broken_color": "blue",
     "durability": 400,
-    "breaks_into": [ { "item": "bitergrow" } ],
-    "flags": [ "TURRET", "FOLDABLE", "OBSTACLE" ]
+    "breaks_into": [
+      {
+        "item": "bitergrow"
+      }
+    ],
+    "flags": [
+      "TURRET",
+      "FOLDABLE",
+      "OBSTACLE"
+    ],
+    "copy-from": "blob_turret"
   },
   {
-    "copy-from": "blob_turret",
     "id": "mounted_clutter",
     "type": "vehicle_part",
-    "name": { "str": "gel shooter" },
+    "name": {
+      "str": "gel shooter"
+    },
     "item": "clutter",
     "color": "magenta",
     "broken_color": "magenta",
-    "breaks_into": [ { "item": "cluttergrow" } ]
+    "breaks_into": [
+      {
+        "item": "cluttergrow"
+      }
+    ],
+    "copy-from": "blob_turret"
   },
   {
-    "copy-from": "blob_turret",
     "id": "mounted_freezie",
     "type": "vehicle_part",
-    "name": { "str": "frost lancer" },
+    "name": {
+      "str": "frost lancer"
+    },
     "item": "freezie",
     "color": "light_blue",
     "broken_color": "light_blue",
-    "breaks_into": [ { "item": "freeziegrow" } ],
-    "description": "A living blob, existing in a super-cooled state and transformed into a heavy vehicle weapon."
+    "breaks_into": [
+      {
+        "item": "freeziegrow"
+      }
+    ],
+    "description": "A living blob, existing in a super-cooled state and transformed into a heavy vehicle weapon.",
+    "copy-from": "blob_turret"
   },
   {
-    "copy-from": "blob_turret",
     "id": "mounted_fuzzle",
     "type": "vehicle_part",
-    "name": { "str": "snapping ooze" },
+    "name": {
+      "str": "snapping ooze"
+    },
     "item": "fuzzle",
     "location": "center",
     "color": "brown",
     "broken_color": "brown",
     "durability": 600,
     "damage_modifier": 10,
-    "breaks_into": [ { "item": "fuzzlegrow" } ],
-    "flags": [ "TURRET", "FOLDABLE", "OBSTACLE" ]
+    "breaks_into": [
+      {
+        "item": "fuzzlegrow"
+      }
+    ],
+    "flags": [
+      "TURRET",
+      "FOLDABLE",
+      "OBSTACLE"
+    ],
+    "copy-from": "blob_turret"
   },
   {
-    "copy-from": "blob_turret",
     "id": "mounted_horror",
     "type": "vehicle_part",
-    "name": { "str": "blobsaw" },
+    "name": {
+      "str": "blobsaw"
+    },
     "item": "horror",
     "location": "center",
     "color": "blue",
     "broken_color": "blue",
     "durability": 1000,
     "damage_modifier": 10,
-    "breaks_into": [ { "item": "horrorgrow" } ],
-    "flags": [ "TURRET", "FOLDABLE", "OBSTACLE" ]
+    "breaks_into": [
+      {
+        "item": "horrorgrow"
+      }
+    ],
+    "flags": [
+      "TURRET",
+      "FOLDABLE",
+      "OBSTACLE"
+    ],
+    "copy-from": "blob_turret"
   },
   {
-    "copy-from": "blob_turret",
     "id": "mounted_inkie",
     "type": "vehicle_part",
-    "name": { "str": "fuel puffer" },
+    "name": {
+      "str": "fuel puffer"
+    },
     "item": "inkie",
     "color": "brown",
     "broken_color": "brown",
-    "breaks_into": [ { "item": "inkiegrow" } ],
-    "flags": [ "TURRET", "FOLDABLE", "USE_TANKS" ]
+    "breaks_into": [
+      {
+        "item": "inkiegrow"
+      }
+    ],
+    "flags": [
+      "TURRET",
+      "FOLDABLE",
+      "USE_TANKS"
+    ],
+    "copy-from": "blob_turret"
   },
   {
-    "copy-from": "blob_turret",
     "id": "mounted_meltie",
     "type": "vehicle_part",
-    "name": { "str": "acid puffer" },
+    "name": {
+      "str": "acid puffer"
+    },
     "item": "meltie",
     "color": "light_red",
     "broken_color": "light_red",
-    "breaks_into": [ { "item": "meltiegrow" } ],
-    "flags": [ "TURRET", "FOLDABLE", "USE_TANKS" ]
+    "breaks_into": [
+      {
+        "item": "meltiegrow"
+      }
+    ],
+    "flags": [
+      "TURRET",
+      "FOLDABLE",
+      "USE_TANKS"
+    ],
+    "copy-from": "blob_turret"
   },
   {
-    "copy-from": "blob_turret",
     "id": "mounted_spouterqueen",
     "type": "vehicle_part",
-    "name": { "str": "gel spouter" },
+    "name": {
+      "str": "gel spouter"
+    },
     "item": "spouterqueen",
     "looks_like": "clutter",
     "color": "red",
     "broken_color": "red",
-    "breaks_into": [ { "item": "queengrow" } ],
-    "flags": [ "TURRET", "FOLDABLE", "USE_TANKS" ]
+    "breaks_into": [
+      {
+        "item": "queengrow"
+      }
+    ],
+    "flags": [
+      "TURRET",
+      "FOLDABLE",
+      "USE_TANKS"
+    ],
+    "copy-from": "blob_turret"
   },
   {
-    "copy-from": "blob_turret",
     "id": "mounted_razorqueen",
     "type": "vehicle_part",
-    "name": { "str": "gel spiker" },
+    "name": {
+      "str": "gel spiker"
+    },
     "item": "razorqueen",
     "color": "cyan",
     "broken_color": "cyan",
-    "breaks_into": [ { "item": "razorqueengrow" } ]
+    "breaks_into": [
+      {
+        "item": "razorqueengrow"
+      }
+    ],
+    "copy-from": "blob_turret"
   },
   {
-    "copy-from": "blob_turret",
     "id": "mounted_sharp",
     "type": "vehicle_part",
-    "name": { "str": "gel lancer" },
+    "name": {
+      "str": "gel lancer"
+    },
     "item": "sharp",
     "color": "light_blue",
     "broken_color": "light_blue",
-    "breaks_into": [ { "item": "sharpgrow" } ]
+    "breaks_into": [
+      {
+        "item": "sharpgrow"
+      }
+    ],
+    "copy-from": "blob_turret"
   },
   {
-    "copy-from": "blob_turret",
     "id": "mounted_gelrazor",
     "type": "vehicle_part",
-    "name": { "str": "gel razor" },
+    "name": {
+      "str": "gel razor"
+    },
     "item": "gelrazor",
     "color": "blue",
     "broken_color": "blue",
-    "breaks_into": [ { "item": "sicklegrow" } ]
+    "breaks_into": [
+      {
+        "item": "sicklegrow"
+      }
+    ],
+    "copy-from": "blob_turret"
   },
   {
-    "copy-from": "blob_turret",
     "id": "mounted_sparkie",
     "type": "vehicle_part",
-    "name": { "str": "shock bulb" },
+    "name": {
+      "str": "shock bulb"
+    },
     "item": "sparkie",
     "color": "cyan",
     "broken_color": "cyan",
-    "breaks_into": [ { "item": "sparkiegrow" } ]
+    "breaks_into": [
+      {
+        "item": "sparkiegrow"
+      }
+    ],
+    "copy-from": "blob_turret"
   },
   {
-    "copy-from": "blob_turret",
     "id": "mounted_stickie",
     "type": "vehicle_part",
-    "name": { "str": "gel puffer" },
+    "name": {
+      "str": "gel puffer"
+    },
     "item": "stickie",
     "color": "yellow",
     "broken_color": "yellow",
-    "breaks_into": [ { "item": "stickiegrow" } ],
-    "flags": [ "TURRET", "FOLDABLE", "USE_TANKS" ]
+    "breaks_into": [
+      {
+        "item": "stickiegrow"
+      }
+    ],
+    "flags": [
+      "TURRET",
+      "FOLDABLE",
+      "USE_TANKS"
+    ],
+    "copy-from": "blob_turret"
   },
   {
-    "copy-from": "blob_turret",
     "id": "mounted_torchie",
     "type": "vehicle_part",
-    "name": { "str": "fire puffer" },
+    "name": {
+      "str": "fire puffer"
+    },
     "item": "torchie",
     "color": "light_red",
     "broken_color": "light_red",
-    "breaks_into": [ { "item": "torchiegrow" } ],
-    "flags": [ "TURRET", "FOLDABLE", "USE_TANKS" ]
+    "breaks_into": [
+      {
+        "item": "torchiegrow"
+      }
+    ],
+    "flags": [
+      "TURRET",
+      "FOLDABLE",
+      "USE_TANKS"
+    ],
+    "copy-from": "blob_turret"
   },
   {
-    "copy-from": "blob_turret",
     "id": "mounted_voideater",
     "type": "vehicle_part",
-    "name": { "str": "spark blight" },
+    "name": {
+      "str": "spark blight"
+    },
     "item": "voideater",
     "color": "cyan",
     "broken_color": "cyan",
-    "breaks_into": [ { "item": "voideatergrow" } ]
+    "breaks_into": [
+      {
+        "item": "voideatergrow"
+      }
+    ],
+    "copy-from": "blob_turret"
   }
 ]

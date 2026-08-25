@@ -3,34 +3,15 @@
     "id": "UPS_off",
     "type": "TOOL",
     "copy-from": "UPS_ON",
-    "name": { "str": "UPS", "str_pl": "UPS's" },
-    "description": "A unified power supply, or UPS.  It is a device developed jointly by military and scientific interests for use in combat and the field.  The UPS is designed to power bionics, armor, and some guns, but drains batteries quickly.",
-    "//": "UPS change for UPS Pouch",
-    "weight": "680 g",
-    "volume": "2500 ml",
-    "price": "280000 cent",
-    "price_postapoc": "1500 cent",
-    "to_hit": -1,
-    "material": [ "aluminum", "plastic" ],
-    "symbol": ";",
-    "color": "light_gray",
-    "ammo": [ "battery" ],
-    "flags": [ "IS_UPS", "UPS_MAG" ],
-    "pocket_data": [
-      {
-        "pocket_type": "MAGAZINE_WELL",
-        "flag_restriction": [ "BATTERY_HEAVY" ],
-        "default_magazine": "heavy_plus_battery_cell"
-      }
-    ],
-    "charges_per_use": 1,
-    "use_action": {
-      "ammo_scale": 0,
-      "target": "UPS_OFF",
-      "msg": "The charger is turned off.",
-      "menu_text": "Turn off",
-      "type": "transform"
+    "name": {
+      "str": "UPS",
+      "str_pl": "UPS's"
     },
-    "melee_damage": { "bash": 8 }
+    "//": "UPS change for UPS Pouch",
+    "extend": {
+      "flags": [
+        "UPS_MAG"
+      ]
+    }
   }
 ]
