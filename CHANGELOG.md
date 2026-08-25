@@ -39,6 +39,7 @@
 
 **Merged pull requests:**
 
+- Add CDDA JSON Editor v2.3 [\#283](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/283) ([TheGoatGod](https://github.com/TheGoatGod))
 - Add CDDA JSON Editor and Formatter v2.0 [\#282](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/282) ([TheGoatGod](https://github.com/TheGoatGod))
 - Goats mods removal [\#280](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/280) ([TheGoatGod](https://github.com/TheGoatGod))
 - Goats mods update [\#279](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/279) ([TheGoatGod](https://github.com/TheGoatGod))
