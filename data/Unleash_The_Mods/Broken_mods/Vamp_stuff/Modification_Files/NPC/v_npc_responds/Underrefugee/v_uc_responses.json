@@ -21,6 +21,26 @@
         "effect": [ "mission_success", { "u_consume_item": "bloodsac" } ],
         "text": "Here's your blood sac.",
         "topic": "TALK_MISSION_SUCCESS"
+      },
+      {
+        "text": "Here's your blood.",
+        "topic": "TALK_MISSION_SUCCESS",
+        "effect": [ "mission_success", { "u_consume_item": "blood", "count": 15 } ],
+        "condition": { "and": [ { "u_has_items": { "item": "blood", "count": 15 } }, { "u_has_mission": "VAMP_LONELY_quest1" } ] }
+      },
+      {
+        "text": "Here's your bloodrune stone.",
+        "topic": "TALK_MISSION_SUCCESS",
+        "effect": [ "mission_success", { "u_consume_item": "bloodrune" } ],
+        "condition": { "and": [ { "u_has_item": "bloodrune" }, { "u_has_mission": "VAMP_LONELY_quest3" } ] }
+      },
+      {
+        "text": "Here's your corrupted bloodrune stones.",
+        "topic": "TALK_MISSION_SUCCESS",
+        "effect": [ "mission_success", { "u_consume_item": "corruptbloodrune", "count": 2 } ],
+        "condition": {
+          "and": [ { "u_has_items": { "item": "corruptbloodrune", "count": 2 } }, { "u_has_mission": "VAMP_UNDERTRADER_quest" } ]
+        }
       }
     ],
     "type": "talk_topic"

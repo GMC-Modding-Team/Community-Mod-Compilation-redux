@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
 """Safely remove duplicate CDDA JSON entries from non-Mainline mod trees.
 
-This is intentionally conservative.  It removes only exact duplicate
+This is intentionally conservative about scope.  It removes duplicate
 top-level factory objects within a mod's source tree (for example two
-``{"type": "ARMOR", "id": "same_id"}`` definitions).  It does not alter
-item-group/blacklist arrays, variants, or any other nested list.  Differing
-definitions are reported for review instead of being guessed away, including
-definitions in files named ``obsolete``.
+``{"type": "ARMOR", "id": "same_id"}`` definitions), including differing
+copies that would trigger CDDA's ``has two definitions from the same source``
+error.  When copies differ, a non-obsolete path and the more complete
+definition are preferred.  Additive item-group, monster-group, talk-topic,
+and requirement arrays are merged before the losing header is removed.  Valid
+``extend`` entries are left alone.  It does not alter variants or unrelated
+nested lists.
 
 Usage::
 
@@ -184,10 +187,64 @@ def remove_exact_duplicates(values: list[Any]) -> tuple[list[Any], int]:
     return kept, removed
 
 
+def is_extension(value: Any) -> bool:
+    """Return whether a top-level object is an authored ``extend`` patch."""
+    return isinstance(value, dict) and "extend" in value
+
+
+def is_obsolete_path(path: Path) -> bool:
+    """Treat files/directories explicitly named obsolete as fallback copies."""
+    parts = {part.lower() for part in path.parts}
+    return "obsolete" in parts or path.stem.lower().startswith("obsolete")
+
+
+def should_replace_keeper(
+    old_path: Path, old_entry: Any, new_path: Path, new_entry: Any
+) -> bool:
+    """Choose the safer keeper for two differing top-level definitions."""
+    old_obsolete = is_obsolete_path(old_path)
+    new_obsolete = is_obsolete_path(new_path)
+    if old_obsolete != new_obsolete:
+        return old_obsolete and not new_obsolete
+
+    old_quality = quality(old_entry)
+    new_quality = quality(new_entry)
+    if old_quality != new_quality:
+        return new_quality > old_quality
+
+    # Stable tie-breaker: retain the lexicographically earlier source path.
+    return new_path.as_posix().lower() < old_path.as_posix().lower()
+
+
+MERGEABLE_ARRAYS = {
+    "ITEM_GROUP": ("items", "groups", "entries"),
+    "MONSTERGROUP": ("monsters",),
+    "TALK_TOPIC": ("responses",),
+    "REQUIREMENT": ("components", "qualities", "tools", "skills", "proficiencies"),
+    "TRAIT_GROUP": ("traits",),
+}
+
+
+def merge_additive_fields(keeper: Any, duplicate: Any, kind: str) -> None:
+    """Preserve additive data before dropping a duplicate top-level object."""
+    if not isinstance(keeper, dict) or not isinstance(duplicate, dict):
+        return
+    for key in MERGEABLE_ARRAYS.get(kind, ()):
+        incoming = duplicate.get(key)
+        if not isinstance(incoming, list):
+            continue
+        existing = keeper.get(key)
+        if not isinstance(existing, list):
+            keeper[key] = list(incoming)
+            continue
+        existing.extend(incoming)
+        keeper[key], _ = remove_exact_duplicates(existing)
+
+
 def remove_top_level_duplicates(
     file_data: dict[Path, Any], counts: Counter[str], reports: list[str], base: Path | None
 ) -> None:
-    """Remove exact/safely-obsolete duplicate factory definitions per mod."""
+    """Remove duplicate factory definitions per mod, preserving valid extends."""
     registry: dict[tuple[Path, tuple[str, str]], tuple[Path, Any]] = {}
     removed_ids: dict[Path, set[int]] = defaultdict(set)
     for path in sorted(file_data):
@@ -196,7 +253,7 @@ def remove_top_level_duplicates(
         owner = mod_root(path)
         for entry in entries:
             ident = identity(entry)
-            if ident is None or ident[0] == "MOD_INFO":
+            if ident is None or ident[0] == "MOD_INFO" or is_extension(entry):
                 continue
             key = (owner, ident)
             previous = registry.get(key)
@@ -207,15 +264,24 @@ def remove_top_level_duplicates(
             if canonical(entry) == canonical(prev_entry):
                 removed_ids[path].add(id(entry))
                 counts["duplicate_definitions_exact"] += 1
+                reports.append(
+                    f"REMOVED exact duplicate {ident[0]} {ident[1]}: "
+                    f"{path_label(path, base)} (kept {path_label(prev_path, base)})"
+                )
                 continue
-            # A differing definition in an obsolete-named file is still
-            # authored data.  Keep it and report it rather than silently
-            # dropping fields (obsolete files can contain intentional
-            # overrides or migration data).  Exact duplicates were handled
-            # above, so no obsolete special case is needed here.
+            if should_replace_keeper(prev_path, prev_entry, path, entry):
+                merge_additive_fields(entry, prev_entry, ident[0])
+                removed_ids[prev_path].add(id(prev_entry))
+                registry[key] = (path, entry)
+                keeper, removed = path, prev_path
+            else:
+                merge_additive_fields(prev_entry, entry, ident[0])
+                removed_ids[path].add(id(entry))
+                keeper, removed = prev_path, path
+            counts["duplicate_definitions_differing"] += 1
             reports.append(
-                f"DIFFERING duplicate {ident[0]} {ident[1]}: "
-                f"{path_label(prev_path, base)} vs {path_label(path, base)}"
+                f"RESOLVED differing duplicate {ident[0]} {ident[1]}: "
+                f"kept {path_label(keeper, base)}; removed {path_label(removed, base)}"
             )
 
     for path, ids in removed_ids.items():

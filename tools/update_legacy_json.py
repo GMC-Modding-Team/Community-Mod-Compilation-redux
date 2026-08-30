@@ -3877,6 +3877,58 @@ def definition_quality(value: dict[str, Any]) -> tuple[int, int]:
     return score, len(encoded)
 
 
+def _is_extension(value: Any) -> bool:
+    """Return whether a top-level object is an authored ``extend`` patch."""
+    return isinstance(value, dict) and "extend" in value
+
+
+def _path_is_obsolete(path: Path) -> bool:
+    parts = {part.lower() for part in path.parts}
+    return "obsolete" in parts or path.stem.lower().startswith("obsolete")
+
+
+def _should_replace_definition(
+    old_path: Path, old_entry: Any, new_path: Path, new_entry: Any
+) -> bool:
+    """Choose a deterministic keeper for differing duplicate definitions."""
+    old_obsolete = _path_is_obsolete(old_path)
+    new_obsolete = _path_is_obsolete(new_path)
+    if old_obsolete != new_obsolete:
+        return old_obsolete and not new_obsolete
+    old_quality = definition_quality(old_entry) if isinstance(old_entry, dict) else (0, 0)
+    new_quality = definition_quality(new_entry) if isinstance(new_entry, dict) else (0, 0)
+    if old_quality != new_quality:
+        return new_quality > old_quality
+    return new_path.as_posix().lower() < old_path.as_posix().lower()
+
+
+_ADDITIVE_DUPLICATE_ARRAYS = {
+    "ITEM_GROUP": ("items", "groups", "entries"),
+    "MONSTERGROUP": ("monsters",),
+    "TALK_TOPIC": ("responses",),
+    "REQUIREMENT": ("components", "qualities", "tools", "skills", "proficiencies"),
+    "TRAIT_GROUP": ("traits",),
+}
+
+
+def _merge_additive_duplicate_fields(
+    keeper: Any, duplicate: Any, kind: str
+) -> None:
+    """Merge additive arrays so resolving a duplicate does not discard data."""
+    if not isinstance(keeper, dict) or not isinstance(duplicate, dict):
+        return
+    for key in _ADDITIVE_DUPLICATE_ARRAYS.get(kind.upper(), ()):
+        incoming = duplicate.get(key)
+        if not isinstance(incoming, list):
+            continue
+        existing = keeper.get(key)
+        if not isinstance(existing, list):
+            keeper[key] = list(incoming)
+            continue
+        existing.extend(incoming)
+        keeper[key], _ = dedupe(existing)
+
+
 def dedupe_top_level_identities(values: list[Any]) -> tuple[list[Any], int]:
     """Keep the strongest definition for duplicate factory IDs in one file."""
     result: list[Any] = []
@@ -3884,7 +3936,10 @@ def dedupe_top_level_identities(values: list[Any]) -> tuple[list[Any], int]:
     removed = 0
     for value in values:
         identity = top_level_identity(value)
-        if identity is None or identity not in positions:
+        if identity is None or _is_extension(value):
+            result.append(value)
+            continue
+        if identity not in positions:
             if identity is not None:
                 positions[identity] = len(result)
             result.append(value)
@@ -3896,7 +3951,10 @@ def dedupe_top_level_identities(values: list[Any]) -> tuple[list[Any], int]:
             and isinstance(existing, dict)
             and definition_quality(value) >= definition_quality(existing)
         ):
+            _merge_additive_duplicate_fields(value, existing, identity[0])
             result[position] = value
+        elif isinstance(value, dict) and isinstance(existing, dict):
+            _merge_additive_duplicate_fields(existing, value, identity[0])
         removed += 1
     return result, removed
 
@@ -7782,9 +7840,10 @@ def dedupe_cross_file_definitions(
 
     H registers definitions per factory, not per JSON file.  A number of
     legacy mods shipped the same object once in a generated/bridge file and
-    once in their normal file, which produces a hard load error.  Keep the
-    strongest definition and remove only the duplicate entry; JSON files are
-    retained even when an array becomes empty.
+    once in their normal file, which produces a hard load error.  Keep a
+    deterministic definition, merge additive group/dialogue arrays, and
+    remove only the duplicate entry; authored ``extend`` patches and JSON
+    files are retained.
     """
     totals: collections.Counter[str] = collections.Counter()
     file_data: dict[Path, Any] = {}
@@ -7794,7 +7853,7 @@ def dedupe_cross_file_definitions(
         except (OSError, UnicodeError, json.JSONDecodeError):
             totals["errors"] += 1
 
-    owners: dict[tuple[Path, tuple[str, str]], tuple[list[Any], dict[str, Any], int]] = {}
+    owners: dict[tuple[Path, tuple[str, str]], tuple[Path, list[Any], dict[str, Any], int]] = {}
     removed_entries: set[int] = set()
     for path in sorted(file_data):
         data = file_data[path]
@@ -7802,27 +7861,28 @@ def dedupe_cross_file_definitions(
         mod_root = _mod_root(path)
         for index, entry in enumerate(entries):
             identity = top_level_identity(entry)
-            if identity is None or identity[0] == "MOD_INFO":
+            if identity is None or identity[0] == "MOD_INFO" or _is_extension(entry):
                 continue
             key = (mod_root, identity)
             if key not in owners:
-                owners[key] = (entries, entry, index)
+                owners[key] = (path, entries, entry, index)
                 continue
-            old_entries, old_entry, _ = owners[key]
+            old_path, old_entries, old_entry, _ = owners[key]
             if canonical(entry) == canonical(old_entry):
-                old_entries_ref, old_entry_ref = old_entries, old_entry
                 # Keep the first stable source and remove the later copy.
                 removed_entries.add(id(entry))
                 totals["cross_file_duplicate_definitions"] += 1
                 continue
-            if definition_quality(entry) > definition_quality(old_entry):
+            if _should_replace_definition(old_path, old_entry, path, entry):
+                _merge_additive_duplicate_fields(entry, old_entry, identity[0])
                 try:
                     old_entries.remove(old_entry)
                 except ValueError:
                     pass
                 removed_entries.add(id(old_entry))
-                owners[key] = (entries, entry, index)
+                owners[key] = (path, entries, entry, index)
             else:
+                _merge_additive_duplicate_fields(old_entry, entry, identity[0])
                 removed_entries.add(id(entry))
             totals["cross_file_duplicate_definitions"] += 1
 
