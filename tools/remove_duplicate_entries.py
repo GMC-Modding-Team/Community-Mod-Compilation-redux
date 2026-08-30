@@ -298,7 +298,12 @@ def main() -> int:
     if args.write and args.dry_run:
         parser.error("choose either --write or --dry-run")
 
-    roots = args.roots or [Path("data"), Path("workshop")]
+    # Explorer launches Python scripts with an unrelated working directory
+    # (often ``C:\\Windows\\System32``).  Resolve the implicit repository
+    # roots beside this script so a double-click or an absolute script path
+    # still scans the intended checkout.
+    repo_root = Path(__file__).resolve().parents[1]
+    roots = args.roots or [repo_root / "data", repo_root / "workshop"]
     files = json_files(roots)
     base = Path(os.path.commonpath([str(path) for path in files])) if files else None
     file_data: dict[Path, Any] = {}
@@ -334,6 +339,11 @@ def main() -> int:
         "mainline_skipped": True,
     }
     print(json.dumps(output, ensure_ascii=False, indent=2))
+    if not files:
+        print(
+            "No JSON files found. Run this from the repository or pass a data/workshop path.",
+            file=sys.stderr,
+        )
     if args.report:
         args.report.write_text(json.dumps(output, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     if not args.write:
