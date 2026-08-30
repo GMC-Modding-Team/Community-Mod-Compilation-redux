@@ -3851,6 +3851,37 @@ def dedupe(values: list[Any]) -> tuple[list[Any], int]:
     return result, removed
 
 
+SAFE_DUPLICATE_LIST_KEYS = {"items", "entries"}
+
+
+def dedupe_safe_nested_lists(value: Any, counts: collections.Counter[str], *, in_variants: bool = False) -> None:
+    """Remove exact empty/repeated members from safe item-entry arrays.
+
+    This folds the standalone duplicate-entry tool's conservative cleanup into
+    the main updater.  ``items`` and ``entries`` arrays are the CDDA lists
+    where an identical member never adds meaning; other arrays are left
+    untouched.  Variant subtrees are deliberately skipped because their order
+    and repeated symbols can be authored display data.
+    """
+    if in_variants:
+        return
+    if isinstance(value, dict):
+        for key, child in list(value.items()):
+            if key == "variants":
+                continue
+            if key in SAFE_DUPLICATE_LIST_KEYS and isinstance(child, list):
+                kept = [entry for entry in child if entry not in (None, "", [], {})]
+                counts["empty_safe_list_entries"] += len(child) - len(kept)
+                deduped, removed = dedupe(kept)
+                counts["duplicate_safe_list_entries"] += removed
+                value[key] = deduped
+                child = deduped
+            dedupe_safe_nested_lists(child, counts)
+    elif isinstance(value, list):
+        for child in value:
+            dedupe_safe_nested_lists(child, counts)
+
+
 def top_level_identity(value: Any) -> tuple[str, str] | None:
     if not isinstance(value, dict) or not isinstance(value.get("type"), str):
         return None
@@ -6784,6 +6815,7 @@ def transform_object(
     clean_legacy_use_actions(obj, counts)
     normalize_human_text(obj, counts)
     remove_obsolete_item_refs(obj, counts)
+    dedupe_safe_nested_lists(obj, counts)
     counts["empty_list_entries"] += clean_structural_list_entries(obj)
 
 
