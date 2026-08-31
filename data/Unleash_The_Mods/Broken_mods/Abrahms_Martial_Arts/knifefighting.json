@@ -6,7 +6,6 @@
     "description": "You pull out a knife and prepare to butcher your enemy.\n\n Based on Piercing Weapons skill, focuses on fast attacks, dodging, and armor penetration.  Weaknesses of the style are stamina cost and low damage per hit, and greater dependence on stats, primarily dex.  A classic thief/rogue/assassin style.",
     "initiate": [ "You hold your knife out in front of you.", "%s gets ready to make em bleed." ],
     "autolearn": [ [ "stabbing", 1 ] ],
-    "allow_melee": true,
     "static_buffs": [
       {
         "id": "buff_fightingstance_static",
@@ -369,7 +368,7 @@
     ],
     "onkill_buffs": [
       {
-        "id": "buff_onthemark_onkill",
+        "id": "buff_onthemark_onkill_knifefighting",
         "name": "On the mark",
         "description": "Every kill makes you more badass.",
         "unarmed_allowed": true,
@@ -385,7 +384,7 @@
     ],
     "onmiss_buffs": [
       {
-        "id": "buff_dairyfarmer_onmiss",
+        "id": "buff_dairyfarmer_onmiss_knifefighting",
         "name": "You Fight Like A Dairy Farmer",
         "description": "You fight like a dairy farmer!",
         "unarmed_allowed": true,
@@ -431,7 +430,7 @@
     "type": "technique",
     "name": "You Fight Like A Cow",
     "melee_allowed": true,
-    "required_buffs_all": [ "buff_dairyfarmer_onmiss" ],
+    "required_buffs_all": [ "buff_dairyfarmer_onmiss_knifefighting" ],
     "flat_bonuses": [
       { "stat": "arpen", "type": "stab", "scaling-stat": "dex", "scale": 0.5 },
       { "stat": "dodge", "scaling-stat": "dex", "scale": 0.5 }
@@ -444,7 +443,7 @@
     "id": "abknife_annihilated",
     "type": "technique",
     "name": "Every Enemy Ive Met Ive Annihilated",
-    "required_buffs_all": [ "buff_dairyfarmer_onmiss" ],
+    "required_buffs_all": [ "buff_dairyfarmer_onmiss_knifefighting" ],
     "skill_requirements": [ { "name": "stabbing", "level": 10 } ],
     "flat_bonuses": [
       { "stat": "arpen", "type": "stab", "scaling-stat": "dex", "scale": 0.5 },
