@@ -61,8 +61,8 @@
         "text": "Look, first time I saw you, I noticed you stance, how you react on danger…",
         "condition": {
           "and": [
-            { "u_has_skill": { "skill": "dodge", "level": 3 } },
-            { "u_has_skill": { "skill": "unarmed", "level": 3 } },
+            { "math": [ "u_skill('dodge')", ">=", "3" ] },
+            { "math": [ "u_skill('unarmed')", ">=", "3" ] },
             { "not": { "npc_has_effect": "confronted_hobo_victoria" } },
             { "not": { "u_has_mission": "MISSION_hobo_victoria_6" } }
           ]

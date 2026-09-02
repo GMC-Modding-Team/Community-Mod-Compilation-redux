@@ -1649,13 +1649,35 @@ def _restore_activity_noise_volume(content, originals):
 
 def fix_price(content):
     """
-    "price": N          ->  "price": "N cent"
-    "price_postapoc": N ->  "price_postapoc": "N cent"
+    Normalize direct item prices to whole-cent numeric values.
+
+    H accepts structured pricing multipliers (``price_rules`` and
+    ``proportional``) as floating point values, but direct item prices are
+    whole cents.  Keep those nested structures masked while converting only
+    direct numeric fields and legacy ``"N cent"`` strings.  Mixed-unit
+    authored strings such as ``"1 USD 50 cent"`` are left alone.
     """
-    # Match the complete JSON number.  Matching only the integer prefix turns
-    # values such as ``2.0`` into the invalid token ``"2 cent".0``.
-    content = _sub(r'"price"\s*:\s*(\d+(?:\.\d+)?)', r'"price": "\1 cent"', content)
-    content = _sub(r'"price_postapoc"\s*:\s*(\d+(?:\.\d+)?)', r'"price_postapoc": "\1 cent"', content)
+    content, prop_originals = _mask_proportional(content)
+    content, relative_originals = _mask_relative_price_weight(content)
+    content, price_rules_originals = _mask_price_rules_prices(content)
+
+    pattern = re.compile(
+        r'(?P<prefix>"(?:price|price_postapoc)"\s*:\s*)'
+        r'(?:'
+        r'(?P<number>[+-]?(?:\d+(?:\.\d*)?|\.\d+))'
+        r'|"(?P<cent>[+-]?(?:\d+(?:\.\d*)?|\.\d+))\s+cent"'
+        r')',
+        re.IGNORECASE,
+    )
+
+    def normalize(match):
+        value = match.group("number") or match.group("cent")
+        return f'{match.group("prefix")}{int(float(value))}'
+
+    content = pattern.sub(normalize, content)
+    content = _restore_price_rules_prices(content, price_rules_originals)
+    content = _restore_relative_price_weight(content, relative_originals)
+    content = _restore_proportional(content, prop_originals)
     return content
 
 
