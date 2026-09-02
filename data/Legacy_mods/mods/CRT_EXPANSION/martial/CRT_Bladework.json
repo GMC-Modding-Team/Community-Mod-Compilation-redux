@@ -1,17 +1,11 @@
 [
   {
     "id": "manual_crt_blade",
-    "copy-from": "book_martial",
     "type": "GENERIC",
     "name": { "str": "C.R.I.T Blade-work manual" },
     "description": "An advanced military manual on C.R.I.T Blade-work.",
-    "book_data": { "martial_art": "style_crt_blade" }
-  },
-  {
-    "id": "book_martial",
-    "type": "item_group",
-    "copy-from": "book_martial",
-    "extend": { "items": [ [ "manual_crt_blade", 5 ] ] }
+    "book_data": { "martial_art": "style_crt_blade" },
+    "copy-from": "book_martial"
   },
   {
     "type": "martial_art",
@@ -198,5 +192,12 @@
       "You drive your weapon down into %s's vulnerable center mass",
       "<npcname> lands a deadly blow on %s's unguarded center mass"
     ]
+  },
+  {
+    "id": "book_martial",
+    "type": "item_group",
+    "copy-from": "book_martial",
+    "extend": { "items": [ { "item": "manual_crt_blade", "prob": 5 } ] },
+    "subtype": "distribution"
   }
 ]

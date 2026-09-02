@@ -61,7 +61,8 @@
         { "monster": "mon_zombie_failed_weapon", "x": 2, "y": 10 },
         { "monster": "mon_zombie_failed_weapon", "x": 12, "y": 4 }
       ],
-      "place_vehicles": [ { "vehicle": "humvee_tow", "x": 8, "y": 18, "rotation": 30, "chance": 100, "fuel": 10, "status": 1 } ]
+      "place_vehicles": [ { "vehicle": "humvee_tow", "x": 8, "y": 18, "rotation": 30, "chance": 100, "fuel": 10, "status": 1 } ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -70,7 +71,6 @@
     "om_terrain": [ "mil_base_5e" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_thconc_floor",
       "rows": [
         "                        ",
         "                        ",
@@ -129,53 +129,39 @@
           "variant": "modular_m4a1",
           "x": 12,
           "y": [ 9, 11 ],
-          "magazine": 100,
           "chance": 75,
           "repeat": 30
         },
-        {
-          "item": "modular_m16_auto_rifle",
-          "variant": "acr",
-          "x": 12,
-          "y": 9,
-          "magazine": 100,
-          "chance": 75,
-          "repeat": 8
-        },
-        { "item": "modular_m16a4", "x": 12, "y": 9, "magazine": 100, "chance": 75, "repeat": 2 },
+        { "item": "modular_m16_auto_rifle", "variant": "acr", "x": 12, "y": 9, "chance": 75, "repeat": 8 },
+        { "item": "modular_m16a4", "x": 12, "y": 9, "chance": 75, "repeat": 2 },
         { "item": "stanag30", "x": 12, "y": 12, "chance": 75, "repeat": 80 },
         { "item": "stanag50", "x": 12, "y": 12, "chance": 75, "repeat": 20 },
-        { "item": "556", "x": 14, "y": [ 9, 12 ], "chance": 75, "repeat": 150 },
         {
           "item": "modular_m4_carbine",
           "variant": "modular_m4a1",
           "x": 16,
           "y": [ 9, 11 ],
-          "magazine": 100,
           "chance": 75,
           "repeat": 36
         },
         { "item": "stanag30", "x": 16, "y": 12, "chance": 75, "repeat": 100 },
-        { "item": "556", "x": 18, "y": [ 9, 12 ], "chance": 75, "repeat": 150 },
         { "item": "m249", "x": 20, "y": 9, "chance": 75, "repeat": 6 },
         { "item": "m240", "x": 20, "y": 9, "chance": 75, "repeat": 4 },
         { "item": "mossberg_930", "variant": "m1014", "x": 20, "y": 10, "chance": 75, "repeat": 10 },
         { "item": "mossberg_590", "x": 20, "y": 10, "chance": 75, "repeat": 8 },
-        { "item": "m2010", "x": 20, "y": 11, "magazine": 100, "chance": 75, "repeat": 2 },
-        { "item": "m110a1", "x": 20, "y": 11, "magazine": 100, "chance": 75, "repeat": 8 },
+        { "item": "m2010", "x": 20, "y": 11, "chance": 75, "repeat": 2 },
+        { "item": "m110a1", "x": 20, "y": 11, "chance": 75, "repeat": 8 },
         { "item": "m2010mag", "x": 20, "y": 12, "chance": 75, "repeat": 10 },
         { "item": "hk417mag_20rd", "x": 20, "y": 12, "chance": 75, "repeat": 16 },
         { "item": "hk417mag_10rd", "x": 20, "y": 12, "chance": 75, "repeat": 8 },
         { "item": "300_winmag", "x": 22, "y": 12, "chance": 75, "repeat": 10 },
         { "item": "belt223", "x": 22, "y": 9, "chance": 75, "repeat": 3 },
         { "item": "belt308", "x": 22, "y": 9, "chance": 75, "repeat": 2 },
-        { "item": "shot_00", "x": 22, "y": 10, "chance": 75, "repeat": 10 },
         { "item": "shot_slug", "x": 22, "y": 10, "chance": 75, "repeat": 5 },
         { "item": "shot_beanbag", "x": 22, "y": 10, "chance": 75, "repeat": 3 },
         { "item": "shot_he", "x": 22, "y": 10, "chance": 75, "repeat": 5 },
         { "item": "shot_flechette", "x": 22, "y": 10, "chance": 75, "repeat": 5 },
         { "item": "762_51_incendiary", "x": 22, "y": 11, "chance": 75, "repeat": 5 },
-        { "item": "762_51", "x": 22, "y": [ 11, 12 ], "chance": 75, "repeat": 30 },
         { "item": "shoulder_strap", "x": [ 8, 9 ], "y": 15, "chance": 75, "repeat": 100 },
         { "item": "holo_sight", "x": 10, "y": 15, "chance": 75, "repeat": 50 },
         { "item": "acog_scope", "x": 11, "y": 15, "chance": 75, "repeat": 30 },
@@ -184,7 +170,37 @@
         { "item": "goggles_nv", "x": [ 17, 18 ], "y": 15, "chance": 75, "repeat": 40 },
         { "item": "knife_combat", "x": [ 22, 23 ], "y": 15, "chance": 75, "repeat": 100 },
         { "item": "holster", "x": [ 20, 21 ], "y": 15, "chance": 75, "repeat": 100 }
-      ]
+      ],
+      "terrain": {
+        "X": "t_region_groundcover",
+        "s": "t_region_groundcover",
+        "/": "t_region_groundcover",
+        "C": "t_region_groundcover",
+        "]": "t_region_groundcover",
+        ".": "t_region_groundcover",
+        "u": "t_region_groundcover",
+        "(": "t_region_groundcover",
+        ")": "t_region_groundcover",
+        "h": "t_region_groundcover",
+        "$": "t_region_groundcover",
+        "t": "t_region_groundcover",
+        "#": "t_region_groundcover",
+        "d": "t_region_groundcover",
+        "D": "t_region_groundcover",
+        "[": "t_region_groundcover",
+        "g": "t_region_groundcover",
+        "5": "t_region_groundcover",
+        "`": "t_region_groundcover",
+        "i": "t_region_groundcover",
+        "O": "t_region_groundcover",
+        "Y": "t_region_groundcover",
+        "e": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "z": "t_region_groundcover",
+        "G": "t_region_groundcover",
+        "w": "t_region_groundcover"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   }
 ]

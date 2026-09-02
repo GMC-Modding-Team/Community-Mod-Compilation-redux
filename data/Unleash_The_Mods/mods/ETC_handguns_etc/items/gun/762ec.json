@@ -4,44 +4,43 @@
     "type": "GUN",
     "copy-from": "etc_pistol_revolver",
     "name": { "str_sp": "OCG AMR" },
-    "description": "OmniCorp's Anti-Materiel Revolver might be the most powerful handgun ever made. It can destroy almost anything within four shots, but its recoil is so heavy its manual forbids shooting it without wearing power armor.",
     "//": "255 mm/10 in barrel. This and the ADR are inspired by this fictional hand cannon: https://eyedivinecybermancy.fandom.com/wiki/444_Bear_Killer",
+    "looks_like": "raging_bull",
+    "description": "OmniCorp's Anti-Materiel Revolver might be the most powerful handgun ever made.  It can destroy almost anything within four shots, but its recoil is so heavy its manual forbids shooting it without wearing power armor.",
     "weight": "2300 g",
     "volume": "1 L",
     "price": "5 kUSD",
-    "price_postapoc": "80 USD",
+    "price_postapoc": 80,
     "to_hit": -2,
-    "melee_damage": { "bash": 9 },
     "material": [ "superalloy", "ceramic", "wood" ],
     "color": "dark_gray",
     "ammo": [ "762etc" ],
-    "ranged_damage": { "damage_type": "stab", "amount": -5 },
     "dispersion": 195,
-    "range": -12,
     "durability": 8,
-    "default_mods": "pistol_scope",
-    "clip_size": 4,
-    "looks_like": "raging_bull",
     "pocket_data": [
       {
         "magazine_well": "250 ml",
         "pocket_type": "MAGAZINE_WELL",
-        "max_contains_volume": "20 L",
-        "max_contains_weight": "20 kg",
+        "max_contains_volume": "20000 ml",
+        "max_contains_weight": "20000 g",
         "item_restriction": [ "762etc_speedloader" ]
       }
-    ]
+    ],
+    "melee_damage": { "bash": 9 },
+    "ranged_damage": { "damage_type": "stab", "amount": -5 },
+    "range": -12,
+    "default_mods": "pistol_scope"
   },
   {
     "id": "etc_dwom",
-    "copy-from": "etc_rifle_base",
     "type": "GUN",
+    "copy-from": "etc_rifle_base",
     "name": { "str_sp": "OCG DWOM" },
     "description": "A battle rifle for future warfare scenarios involving long range engagements, power armor and tank drones, the highly accurate Drone Warfare Opus Magnum can fire two-round bursts of hypervelocity 7.62x51mm EC rounds.",
     "weight": "3 kg",
     "volume": "2300 ml",
-    "price": "7300 USD",
-    "price_postapoc": "90 USD",
+    "price": 7300,
+    "price_postapoc": 90,
     "to_hit": -1,
     "melee_damage": { "bash": 12 },
     "material": [ "superalloy", "steel", "ceramic" ],
@@ -57,19 +56,19 @@
       {
         "magazine_well": "500 ml",
         "pocket_type": "MAGAZINE_WELL",
-        "max_contains_volume": "20 L",
-        "max_contains_weight": "20 kg",
+        "max_contains_volume": "20000 ml",
+        "max_contains_weight": "20000 g",
         "item_restriction": [ "ocg762e_7", "ocg762e_20", "ocg762e_30", "ocg762e_40", "ocg762e_50", "ocg762e_66" ]
       }
     ]
   },
   {
     "id": "etc_mar7k",
-    "copy-from": "etc_rifle_base",
     "type": "GUN",
+    "copy-from": "etc_rifle_base",
     "name": { "str_sp": "OCG MAR7k" },
-    "description": "Considered an overkill among overkills, the bullpup Mega Assault Rifle is the most powerful fully automatic rifle of OmniCorp. Even with fixed foregrip and bipod, it is very compact due to a \"CQB\" barrel, a receiver shortened through a vertically sliding bolt and a magazine well right next to its buttplate.",
     "//": "This is pretty much a CQB optimized gun, the only among these, but it still got a very long effective range. It's more or less inspired by the TKB-022 Korobov in the features needed to make it as short as possible. Ergonomics may suffer.",
+    "description": "Considered an overkill among overkills, the bullpup Mega Assault Rifle is the most powerful fully automatic rifle of OmniCorp.  Even with fixed foregrip and bipod, it is very compact due to a \"CQB\" barrel, a receiver shortened through a vertically sliding bolt and a magazine well right next to its buttplate.",
     "weight": "3500 g",
     "volume": "1 L",
     "price": "7 kUSD",
@@ -90,8 +89,8 @@
       {
         "magazine_well": "500 ml",
         "pocket_type": "MAGAZINE_WELL",
-        "max_contains_volume": "20 L",
-        "max_contains_weight": "20 kg",
+        "max_contains_volume": "20000 ml",
+        "max_contains_weight": "20000 g",
         "item_restriction": [ "ocg762e_7", "ocg762e_20", "ocg762e_30", "ocg762e_40", "ocg762e_50", "ocg762e_66" ]
       }
     ]
@@ -101,12 +100,13 @@
     "type": "GUN",
     "copy-from": "etc_rifle_base",
     "name": { "str": "OCG OFG16k" },
-    "description": "The Orbital Force Gun is an anti-materiel light-gas rifle with a detachable, vacuum-sealable barrel which can be connected to a hydrogen canister yet works without one with drastically reduced muzzle energy. Its manual recommends avoiding hydrogen despite that due to reliability issues a future OFG16kA1 model would solve.",
+    "valid_mod_locations": [ [ "barrel", 1 ], [ "muzzle", 1 ], [ "rail", 1 ], [ "sights", 1 ], [ "stock", 1 ] ],
     "//": "Visual reference for damage under optimal muzzle velocities: https://en.wikipedia.org/wiki/File:SDIO_KEW_Lexan_projectile.jpg  . Should be less powerful than that because it uses projectiles with lighter masses, but it is almost an anti-tank rifle.",
+    "description": "The Orbital Force Gun is an anti-materiel light-gas rifle with a detachable, vacuum-sealable barrel which can be connected to a hydrogen canister yet works without one with drastically reduced muzzle energy.  Its manual recommends avoiding hydrogen despite that due to reliability issues a future OFG16kA1 model would solve.",
     "weight": "2100 g",
     "volume": "1 L",
     "price": "95 kUSD",
-    "price_postapoc": "100 USD",
+    "price_postapoc": 100,
     "to_hit": -1,
     "melee_damage": { "bash": 12 },
     "material": [ "superalloy", "steel", "diamond" ],
@@ -116,20 +116,18 @@
     "range": -40,
     "built_in_mods": [ "rifle_scope", "cheek_pad", "stabilizer", "barrel_ported" ],
     "default_mods": "hydrogen_gun_atm_barrel",
-    "valid_mod_locations": [ [ "barrel", 1 ], [ "muzzle", 1 ], [ "rail", 1 ], [ "sights", 1 ], [ "stock", 1 ] ],
     "dispersion": 950,
     "durability": 3,
-    "clip_size": 7,
     "looks_like": "hk_g80",
     "flags": [ "RELOAD_ONE", "WATERPROOF_GUN" ],
     "pocket_data": [ { "pocket_type": "MAGAZINE", "ammo_restriction": { "762etc": 7 } } ]
   },
   {
     "id": "etc_seven7",
-    "copy-from": "etc_rifle_manual",
     "type": "GUN",
+    "copy-from": "etc_rifle_manual",
     "name": { "str_sp": "OCG Seven-7B" },
-    "description": "Electrothermal magazine-fed bolt-action anti-materiel rifle. Its hypervelocity 7.62x51mm EC round is not as damaging as a conventional .50 BMG, but its recoil is much lower and its armor penetration better.",
+    "description": "Electrothermal magazine-fed bolt-action anti-materiel rifle.  Its hypervelocity 7.62x51mm EC round is not as damaging as a conventional.50 BMG, but its recoil is much lower and its armor penetration better.",
     "weight": "4400 g",
     "volume": "2500 ml",
     "price": "8 kUSD",
@@ -147,8 +145,8 @@
       {
         "magazine_well": "500 ml",
         "pocket_type": "MAGAZINE_WELL",
-        "max_contains_volume": "20 L",
-        "max_contains_weight": "20 kg",
+        "max_contains_volume": "20000 ml",
+        "max_contains_weight": "20000 g",
         "item_restriction": [ "ocg762e_7", "ocg762e_20", "ocg762e_30", "ocg762e_40", "ocg762e_50", "ocg762e_66" ]
       }
     ]

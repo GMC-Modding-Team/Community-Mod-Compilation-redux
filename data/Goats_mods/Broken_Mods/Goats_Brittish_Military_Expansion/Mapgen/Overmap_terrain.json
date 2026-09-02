@@ -1,27 +1,28 @@
 [
   {
     "type": "overmap_terrain",
-    "id": "brit_raf_airfield",
+    "id": [ "brit_raf_airfield", "brit_raf_airfield_north" ],
     "name": "RAF airfield",
     "sym": "A",
-    "color": "i_green",
+    "color": "green",
     "see_cost": 5,
     "flags": [ "SIDEWALK" ]
   },
   {
     "type": "overmap_special",
     "id": "brit_raf_airfield",
-    "overmaps": [ { "point": [ 0, 0, 0 ], "overmap": "brit_raf_airfield" } ],
+    "overmaps": [ { "point": [ 0, 0, 0 ], "overmap": "brit_raf_airfield_north" } ],
     "connections": [ { "point": [ 0, -1, 0 ], "terrain": "road", "connection": "local_road" } ],
     "locations": [ "land" ],
     "city_distance": [ 8, 20 ],
     "city_sizes": [ 4, 12 ],
     "occurrences": [ 0, 1 ],
+    "rotate": false,
     "flags": [ "CLASSIC" ]
   },
   {
     "type": "overmap_terrain",
-    "id": "brit_military_compound",
+    "id": [ "brit_military_compound", "brit_military_compound_north" ],
     "name": "British military compound",
     "sym": "M",
     "color": "green",
@@ -31,18 +32,28 @@
   {
     "type": "overmap_special",
     "id": "brit_military_compound",
-    "overmaps": [ { "point": [ 0, 0, 0 ], "overmap": "brit_military_compound" } ],
+    "overmaps": [ { "point": [ 0, 0, 0 ], "overmap": "brit_military_compound_north" } ],
     "connections": [ { "point": [ 0, -1, 0 ], "terrain": "road", "connection": "local_road" } ],
     "locations": [ "land" ],
     "city_distance": [ 5, 20 ],
     "city_sizes": [ 3, 12 ],
     "occurrences": [ 0, 2 ],
+    "rotate": false,
     "flags": [ "CLASSIC" ]
   },
   {
     "type": "overmap_terrain",
-    "id": "brit_military_hq",
+    "id": [ "brit_military_hq", "brit_military_hq_north" ],
     "name": "British military headquarters",
+    "sym": "M",
+    "color": "green",
+    "see_cost": 5,
+    "flags": [ "SIDEWALK" ]
+  },
+  {
+    "type": "overmap_terrain",
+    "id": [ "brit_military_hq_extension", "brit_military_hq_extension_north" ],
+    "name": "British military headquarters extension",
     "sym": "M",
     "color": "green",
     "see_cost": 5,
@@ -51,17 +62,21 @@
   {
     "type": "overmap_special",
     "id": "brit_military_hq",
-    "overmaps": [ { "point": [ 0, 0, 0 ], "overmap": "brit_military_hq" } ],
+    "overmaps": [
+      { "point": [ 0, 0, 0 ], "overmap": "brit_military_hq_north" },
+      { "point": [ 0, 1, 0 ], "overmap": "brit_military_hq_extension_north" }
+    ],
     "connections": [ { "point": [ 0, -1, 0 ], "terrain": "road", "connection": "local_road" } ],
     "locations": [ "land" ],
     "city_distance": [ 5, 20 ],
     "city_sizes": [ 3, 12 ],
     "occurrences": [ 0, 1 ],
+    "rotate": false,
     "flags": [ "CLASSIC" ]
   },
   {
     "type": "overmap_terrain",
-    "id": "brit_military_base",
+    "id": [ "brit_military_base", "brit_military_base_north" ],
     "name": "British military outpost",
     "sym": "M",
     "color": "green",
@@ -71,17 +86,18 @@
   {
     "type": "overmap_special",
     "id": "brit_military_base",
-    "overmaps": [ { "point": [ 0, 0, 0 ], "overmap": "brit_military_base" } ],
+    "overmaps": [ { "point": [ 0, 0, 0 ], "overmap": "brit_military_base_north" } ],
     "connections": [ { "point": [ 0, -1, 0 ], "terrain": "road", "connection": "local_road" } ],
     "locations": [ "land" ],
     "city_distance": [ 3, 15 ],
     "city_sizes": [ 1, 12 ],
     "occurrences": [ 0, 3 ],
+    "rotate": false,
     "flags": [ "CLASSIC" ]
   },
   {
     "type": "overmap_terrain",
-    "id": "brit_field_hospital",
+    "id": [ "brit_field_hospital", "brit_field_hospital_north" ],
     "name": "British field hospital",
     "sym": "H",
     "color": "red",
@@ -91,17 +107,18 @@
   {
     "type": "overmap_special",
     "id": "brit_field_hospital",
-    "overmaps": [ { "point": [ 0, 0, 0 ], "overmap": "brit_field_hospital" } ],
+    "overmaps": [ { "point": [ 0, 0, 0 ], "overmap": "brit_field_hospital_north" } ],
     "connections": [ { "point": [ 0, -1, 0 ], "terrain": "road", "connection": "local_road" } ],
     "locations": [ "land" ],
     "city_distance": [ 3, 15 ],
     "city_sizes": [ 1, 12 ],
     "occurrences": [ 0, 2 ],
+    "rotate": false,
     "flags": [ "CLASSIC" ]
   },
   {
     "type": "overmap_terrain",
-    "id": "brit_supply_depot",
+    "id": [ "brit_supply_depot", "brit_supply_depot_north" ],
     "name": "British supply depot",
     "sym": "D",
     "color": "white",
@@ -111,12 +128,13 @@
   {
     "type": "overmap_special",
     "id": "brit_supply_depot",
-    "overmaps": [ { "point": [ 0, 0, 0 ], "overmap": "brit_supply_depot" } ],
+    "overmaps": [ { "point": [ 0, 0, 0 ], "overmap": "brit_supply_depot_north" } ],
     "connections": [ { "point": [ 0, -1, 0 ], "terrain": "road", "connection": "local_road" } ],
     "locations": [ "land" ],
     "city_distance": [ 3, 15 ],
     "city_sizes": [ 1, 12 ],
     "occurrences": [ 0, 2 ],
+    "rotate": false,
     "flags": [ "CLASSIC" ]
   }
 ]

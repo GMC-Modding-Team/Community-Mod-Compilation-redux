@@ -42,40 +42,31 @@
     "id": "NC_police_teacher_worn",
     "type": "item_group",
     "subtype": "collection",
-    "entries": [
+    "items": [
       { "item": "socks" },
-      { "item": "swat_armor" },
       { "item": "tac_fullhelmet" },
       { "item": "boots_combat" },
       { "item": "gloves_tactical" },
       { "item": "badge_swat" },
       { "item": "wristwatch" },
       { "item": "bandolier_shotgun", "contents-group": "bandolier_swat_cqc1" },
-      { "item": "bandolier_shotgun", "contents-group": "bandolier_swat_cqc2" },
       { "item": "legpouch_large", "contents-group": "army_mags_usp9" },
-      { "item": "usp_9mm", "ammo-item": "9mmfmj", "charges": 15, "container-item": "holster" },
-      { "item": "baton-extended", "container-item": "police_belt" },
-      { "item": "ksg", "ammo-item": "shot_00", "charges": 7, "contents-item": "shoulder_strap" }
+      { "item": "usp_9mm", "charges": 15 },
+      { "item": "baton-extended" },
+      { "item": "ksg", "charges": 7, "contents-item": "shoulder_strap" },
+      { "item": "bandolier_shotgun", "contents-group": "bandolier_swat_cqc2" }
     ]
   },
   {
     "id": "NC_police_teacher_carried",
     "type": "item_group",
     "subtype": "collection",
-    "entries": [ { "group": "charged_two_way_radio" }, { "item": "ear_plugs", "custom-flags": [ "no_auto_equip" ] } ]
+    "items": [ { "group": "charged_two_way_radio" }, { "item": "ear_plugs", "custom-flags": [ "no_auto_equip" ] } ]
   },
   {
     "id": [ "TALK_police_teacher_1" ],
     "type": "talk_topic",
-    "dynamic_line": {
-      "u_is_wearing": "badge_marshal",
-      "yes": "Marshal…",
-      "no": {
-        "u_has_any_trait": [ "PROF_POLICE", "PROF_SWAT", "PROF_CYBERCOP" ],
-        "yes": "Officer…",
-        "no": { "u_has_any_trait": [ "PROF_PD_DET" ], "yes": "Detective…", "no": "Citizen…" }
-      }
-    },
+    "dynamic_line": "Marshal…  Officer…  Detective…  Citizen…",
     "speaker_effect": { "sentinel": "met", "effect": { "add_mission": "MISSION_police_teacher_0" } },
     "responses": [
       {
@@ -132,7 +123,7 @@
   {
     "id": "TALK_police_teacher_teach",
     "type": "talk_topic",
-    "dynamic_line": "I learned all from this book. You can take it. Good luck.",
+    "dynamic_line": "I learned all from this book.  You can take it. Good luck.",
     "responses": [ { "text": "Thank you, officer.", "topic": "TALK_DONE" } ]
   },
   {
@@ -144,7 +135,7 @@
   {
     "id": "TALK_police_teacher_truth",
     "type": "talk_topic",
-    "dynamic_line": "OK, OK, I'll tell you.  The truth is, I was afraid when first <zombies> tried to enter our department, and didn't even notice how I got myself locked up here, in this cell.  Maybe I panicked, and instead of running away, or helping my fellow co-workers, I thought, maybe, this metal bars would protect me.  I'm so ashamed of myself, really.  Officers should be calm in emergencies like this, to help civilians with anything they need, to protect them, but… What done is done.",
+    "dynamic_line": "OK, OK, I'll tell you.  The truth is, I was afraid when first <zombies> tried to enter our department, and didn't even notice how I got myself locked up here, in this cell.  Maybe I panicked, and instead of running away, or helping my fellow co-workers, I thought, maybe, this metal bars would protect me.  I'm so ashamed of myself, really.  Officers should be calm in emergencies like this, to help civilians with anything they need, to protect them, but…  What done is done.",
     "responses": [
       {
         "text": "Oh, uh, well, OK then?",
@@ -164,15 +155,7 @@
   {
     "id": "TALK_police_teacher_working",
     "type": "talk_topic",
-    "dynamic_line": {
-      "npc_compare_time_since_var": "police_teacher_work",
-      "type": "general",
-      "context": "flag",
-      "op": ">",
-      "time": "2 days",
-      "yes": "I'm done.",
-      "no": "I'm still working on it, <name_g>."
-    },
+    "dynamic_line": "I'm done.  I'm still working on it, <name_g>.",
     "responses": [
       {
         "text": "OK, <name_g>, take your time.",
@@ -228,17 +211,6 @@
     ]
   },
   {
-    "id": "TALK_police_teacher_basement",
-    "type": "talk_topic",
-    "dynamic_line": "What? What secret room?  I don't know what you're talking about!",
-    "responses": [
-      {
-        "text": "Bill told me everything.  You want to screw me over and got all neat stuff from Billy's secret stash all by yourself? Not this time.  Ha-Ha on You!",
-        "topic": "TALK_police_teacher_basement1"
-      }
-    ]
-  },
-  {
     "//": "TODO WRITE SOMETHING!!!",
     "id": "TALK_police_teacher_basement",
     "type": "talk_topic",
@@ -274,12 +246,12 @@
     "followup": "MISSION_police_teacher_2",
     "dialogue": {
       "describe": "-",
-      "offer": "Before <the_cataclysm>,  I was in a secret police search party that was formed to track an assassin, who worked for a famous kingpin.  They called him 'Bill The Assassin'.  Somehow, we managed to track him, and even put him behind bars for a <very> long time.  But you see, the situation changed drastically outside, and I know the guy like him wouldn't hesitate to use it as a chance to break free.  And, um, I think the guy like him would definitely try to take his revenge, so… I just want to know for sure if the guy is alive or turned into <zombie>.  Find police records, so I can learn where did they locked him, and maybe learn what happened to him there.",
+      "offer": "Before <the_cataclysm>,  I was in a secret police search party that was formed to track an assassin, who worked for a famous kingpin.  They called him 'Bill The Assassin'.  Somehow, we managed to track him, and even put him behind bars for a <very> long time.  But you see, the situation changed drastically outside, and I know the guy like him wouldn't hesitate to use it as a chance to break free.  And, um, I think the guy like him would definitely try to take his revenge, so…  I just want to know for sure if the guy is alive or turned into <zombie>.  Find police records, so I can learn where did they locked him, and maybe learn what happened to him there.",
       "accepted": "Whew, thank you.  I'll wait.",
       "rejected": "Why?",
       "advice": "Well, I'm not sure where it may be, to be honest.  Try to search all the building.",
       "inquire": "So?",
-      "success": "Good, thank you.  I just need some time to… Oh, it's right on the top, ha-ha.  Let's see… So, now I know where to find him.",
+      "success": "Good, thank you.  I just need some time to…  Oh, it's right on the top, ha-ha.  Let's see…  So, now I know where to find him.",
       "success_lie": "-",
       "failure": "-"
     }
@@ -310,12 +282,12 @@
     "followup": "MISSION_police_teacher_3",
     "dialogue": {
       "describe": "-",
-      "offer": "So, now I know where he's been serving sentence, and I want to just check what happened to him… What?  Why don't I just go there and look for myself?  Well, ha-ha, I'm kind of busy with… Defending my PD, ha!  So, if you want to help me, please find Bill.  If he's there, kill him and bring his head as poof.  He have a tattoo on his face that looks like a dragon, so you can’t mistake him for anyone.",
+      "offer": "So, now I know where he's been serving sentence, and I want to just check what happened to him…  What?  Why don't I just go there and look for myself?  Well, ha-ha, I'm kind of busy with…  Defending my PD, ha!  So, if you want to help me, please find Bill.  If he's there, kill him and bring his head as poof.  He have a tattoo on his face that looks like a dragon, so you can’t mistake him for anyone.",
       "accepted": "Thank you.  I'll wait.",
       "rejected": "Why?",
       "advice": "Be <very> careful with your approach.  Prisons are guarder by police bots and turrets, and they are a <very> dangerous.",
       "inquire": "So?",
-      "success": "Good.  Show it to me.  So, here you are, you dirty bastard.  Who's laughing now, huh?  Ha-ha! Hah… Wait a minute.  Green eyes, potato nose, scar under left eye, dental print looks like his, but… It's a wyrm, not a dragon!  ARGH, what a trickster!  So, now we know that we put behind bars someone else, and there's the chance he's still alive.  That's bad news, indeed.  I need to think about it.",
+      "success": "Good.  Show it to me.  So, here you are, you dirty bastard.  Who's laughing now, huh?  Ha-ha!  Hah…  Wait a minute.  Green eyes, potato nose, scar under left eye, dental print looks like his, but…  It's a wyrm, not a dragon!  ARGH, what a trickster!  So, now we know that we put behind bars someone else, and there's the chance he's still alive.  That's bad news, indeed.  I need to think about it.",
       "success_lie": "-",
       "failure": "What a shame."
     }

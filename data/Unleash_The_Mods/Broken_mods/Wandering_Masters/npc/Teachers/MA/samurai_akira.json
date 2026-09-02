@@ -36,7 +36,7 @@
     "id": "NC_samurai_akira_worn",
     "type": "item_group",
     "subtype": "collection",
-    "entries": [
+    "items": [
       { "item": "loincloth" },
       { "item": "hakama_gi" },
       { "item": "obi_gi" },
@@ -52,13 +52,13 @@
     "id": "NC_samurai_akira_carried",
     "type": "item_group",
     "subtype": "collection",
-    "entries": [ { "item": "waterskin" } ]
+    "items": [ { "item": "waterskin" } ]
   },
   {
     "id": "NC_samurai_akira_weapon",
     "type": "item_group",
     "subtype": "collection",
-    "entries": [ { "item": "katana" } ]
+    "items": [ { "item": "katana" } ]
   },
   {
     "id": [ "TALK_samurai_akira_1" ],
@@ -81,14 +81,7 @@
   {
     "id": "TALK_samurai_akira_teach_check",
     "type": "talk_topic",
-    "dynamic_line": {
-      "npc_has_var": "u_helped_samurai_akira",
-      "type": "general",
-      "context": "meeting",
-      "value": "yes",
-      "yes": "So, you want to learn the way of the sword?  Good.  I can teach you.",
-      "no": "Hmm… I'm not ready.  My mission is not finished.  Yet."
-    },
+    "dynamic_line": "So, you want to learn the way of the sword?  Good.  I can teach you.  Hmm…  I'm not ready.  My mission is not finished.  Yet.",
     "responses": [
       {
         "text": "Yes, teach me.",
@@ -96,7 +89,7 @@
         "trial": {
           "type": "CONDITION",
           "condition": {
-            "and": [ { "u_has_skill": { "skill": "melee", "level": 4 } }, { "u_has_skill": { "skill": "cutting", "level": 4 } } ]
+            "and": [ { "math": [ "u_skill('melee')", ">=", "4" ] }, { "math": [ "u_skill('cutting')", ">=", "4" ] } ]
           }
         },
         "success": { "topic": "TALK_samurai_akira_teach_yes" },
@@ -108,14 +101,7 @@
   {
     "id": "TALK_samurai_akira_teach_yes",
     "type": "talk_topic",
-    "dynamic_line": {
-      "npc_has_var": "samurai_akira_warn",
-      "type": "general",
-      "context": "meeting",
-      "value": "yes",
-      "yes": "Are you ready, my student?",
-      "no": "Good, good.  I was looking for someone like you.  Last part of my missions was to find someone worthy, so I can teach him Kentaro's ancient fighting style.  But be warned, training will be hard.  So, if you think you're ready, we can start."
-    },
+    "dynamic_line": "Are you ready, my student?  Good, good.  I was looking for someone like you.  Last part of my missions was to find someone worthy, so I can teach him Kentaro's ancient fighting style.  But be warned, training will be hard.  So, if you think you're ready, we can start.",
     "responses": [
       { "text": "I'm ready.", "topic": "TALK_samurai_akira_test1" },
       {
@@ -250,7 +236,7 @@
       "rejected": "Coward!",
       "advice": "If you want to become a great warrior, that will be song about in the legends, you need to learn how to deal with problems by yourself!",
       "inquire": "I'm waiting.",
-      "success": "Yes, yes, it's his helmet.  It even smells like… dirty nerd?!  Ugh, kuso weeab…  AHEM!  Good, good.  Two steps closer to the end of my quest.",
+      "success": "Yes, yes, it's his helmet.  It even smells like…  dirty nerd?!  Ugh, kuso weeab…  AHEM!  Good, good.  Two steps closer to the end of my quest.",
       "success_lie": "…",
       "failure": "…"
     }
@@ -281,12 +267,12 @@
     "followup": "MISSION_samurai_akira_4",
     "dialogue": {
       "describe": "-",
-      "offer": "Third item: Kentaro's armor.  A 35 years ago, his armor was donated to the museum located in this state, so that kids could look at it and… damn those kids.  I hate kids!  Quick, find his armor and bring it back to me!",
+      "offer": "Third item: Kentaro's armor.  A 35 years ago, his armor was donated to the museum located in this state, so that kids could look at it and…  damn those kids.  I hate kids!  Quick, find his armor and bring it back to me!",
       "accepted": "Good.  I'll wait.",
       "rejected": "Coward!",
       "advice": "If you want to become a great warrior, that will be song about in the legends, you need to learn how to deal with problems by yourself!",
       "inquire": "…",
-      "success": "Yes, yes, it's his armor.  It even smells like… I need to stop smelling things, do I?  AHEM!  Good, good.  Three steps closer to the end of my quest.",
+      "success": "Yes, yes, it's his armor.  It even smells like…  I need to stop smelling things, do I?  AHEM!  Good, good.  Three steps closer to the end of my quest.",
       "success_lie": "…",
       "failure": "…"
     }
@@ -306,7 +292,7 @@
     "origins": [ "ORIGIN_SECONDARY" ],
     "dialogue": {
       "describe": "-",
-      "offer": "And now, the last one: Kentaro's sword!  I thought that it was well hidden in some temple, far away in the mountains, but recently I learned that it was stolen!  Some lousy politician funded a famous band of tomb raiders that agreed to break in that temple and steal Kentaro's precious sword.  FOOLS, IT COULD BE CURSED!  THEY COULD DOOM THE WHOLE WORLD BY STEALING IT!  ARGH… AHEM!  Find his sword for me, please.",
+      "offer": "And now, the last one: Kentaro's sword!  I thought that it was well hidden in some temple, far away in the mountains, but recently I learned that it was stolen!  Some lousy politician funded a famous band of tomb raiders that agreed to break in that temple and steal Kentaro's precious sword.  FOOLS, IT COULD BE CURSED!  THEY COULD DOOM THE WHOLE WORLD BY STEALING IT!  ARGH…  AHEM!  Find his sword for me, please.",
       "accepted": "Good.  There's only one catch: I don't know exactly where it is.  I only know that that politician lived in this state.  Maybe he hid it in his mansion?  Check all mansions nearby.  After that, we can talk about your reward, youngling.",
       "rejected": "Coward!",
       "advice": "If you want to become a great warrior, that will be song about in the legends, you need to learn how to deal with problems by yourself!",

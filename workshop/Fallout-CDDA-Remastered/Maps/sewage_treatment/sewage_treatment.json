@@ -30,25 +30,26 @@
       "b": "t_door_metal_pickable",
       "e": "t_door_metal_locked",
       "D": "t_door_glass_c",
-      "6": "t_console_broken",
+      "6": "t_metal_floor",
       "+": "t_door_c",
       ",": "t_floor",
       "M": "t_metal_floor",
       "<": "t_ladder_up",
       ">": "t_stairs_down",
-      "%": "t_machinery_heavy",
-      "$": "t_machinery_light",
+      "%": "t_floor",
+      "$": "t_floor",
       "{": "t_thconc_floor",
       "R": "t_thconc_floor",
       "J": "t_current_trans",
       "U": "t_sai_box",
-      "G": "t_generator_broken",
+      "G": "t_floor",
       "F": "t_potential_trans",
       "7": "t_metal_floor",
       "4": "t_metal_floor",
       "g": "t_metal_floor",
       "Y": "t_switchgear_s"
-    }
+    },
+    "furniture": { "6": "f_console_broken" }
   },
   {
     "type": "palette",
@@ -86,7 +87,7 @@
       "H": "t_sconc_wall",
       "2": "t_sewage_pipe",
       "U": "t_sai_box",
-      "G": "t_generator_broken",
+      "G": "t_floor",
       "Y": "t_switchgear_s",
       "&": "t_sewage_pump",
       "-": "t_wall_glass",
@@ -94,44 +95,35 @@
       "a": "t_railing_v",
       "|": "t_chainfence",
       "C": "t_chaingate_l",
-      "$": "t_machinery_light",
-      "@": "t_machinery_heavy",
-      "v": "t_machinery_old",
+      "$": "t_floor",
+      "@": "t_floor",
+      "v": "t_floor",
       "+": "t_door_c",
-      "6": "t_console_broken"
-    }
+      "6": "t_thconc_floor"
+    },
+    "furniture": { "6": "f_console_broken" }
   },
   {
     "id": "treatment_chemicals",
     "type": "item_group",
     "items": [
-      { "item": "bleach", "container-item": "55gal_drum", "charges-min": 10, "charges-max": 126, "prob": 50 },
-      {
-        "item": "chem_sulphuric_acid",
-        "container-item": "55gal_drum",
-        "charges-min": 2,
-        "charges-max": 50,
-        "prob": 20
-      },
-      {
-        "item": "material_quicklime",
-        "container-item": "55gal_drum",
-        "charges-min": 2,
-        "charges-max": 50,
-        "prob": 20
-      },
+      { "item": "bleach", "charges-min": 10, "charges-max": 126, "prob": 50 },
+      { "item": "chem_sulphuric_acid", "charges-min": 2, "charges-max": 50, "prob": 20 },
+      { "item": "material_quicklime", "charges-min": 2, "charges-max": 50, "prob": 20 },
       { "item": "55gal_drum", "prob": 50 }
-    ]
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "sewage_samples",
     "type": "item_group",
     "items": [
-      { "item": "sewage", "container-item": "flask_glass", "charges": 1, "prob": 50 },
-      { "item": "water", "container-item": "flask_glass", "charges": 1, "prob": 50 },
-      { "item": "water_clean", "container-item": "flask_glass", "charges": 1, "prob": 30 },
-      { "item": "slime_scrap", "container-item": "flask_glass", "charges": 1, "prob": 10 }
-    ]
+      { "item": "sewage", "charges": 1, "prob": 50 },
+      { "item": "water", "charges": 1, "prob": 50 },
+      { "item": "water_clean", "charges": 1, "prob": 30 },
+      { "item": "slime_scrap", "prob": 10 }
+    ],
+    "subtype": "distribution"
   },
   {
     "type": "monstergroup",
@@ -177,7 +169,6 @@
     "method": "json",
     "om_terrain": [ [ "sewage_treatment_0_0_0", "sewage_treatment_1_0_0" ], [ "sewage_treatment_0_1_0", "sewage_treatment_1_1_0" ] ],
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "|||_.......pp......._|||||||||||||||||||||||||||",
         "|  _................_      ? ?   ? ??? ?   ? 9 |",
@@ -290,7 +281,49 @@
         { "monster": "GROUP_SEWAGE_SUPERMUTANTS", "x": [ 0, 23 ], "y": [ 24, 45 ], "density": 0.2 },
         { "monster": "GROUP_SEWAGE_SUPERMUTANTS", "x": [ 24, 47 ], "y": [ 0, 23 ], "density": 0.2 },
         { "monster": "GROUP_SEWAGE_SUPERMUTANTS", "x": [ 24, 47 ], "y": [ 24, 45 ], "density": 0.2 }
-      ]
+      ],
+      "terrain": {
+        "p": "t_region_groundcover",
+        "_": "t_region_groundcover",
+        ".": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "?": "t_region_groundcover",
+        "9": "t_region_groundcover",
+        "H": "t_region_groundcover",
+        "W": "t_region_groundcover",
+        "6": "t_region_groundcover",
+        ",": "t_region_groundcover",
+        "+": "t_region_groundcover",
+        "D": "t_region_groundcover",
+        "8": "t_region_groundcover",
+        "t": "t_region_groundcover",
+        "<": "t_region_groundcover",
+        "e": "t_region_groundcover",
+        ">": "t_region_groundcover",
+        "b": "t_region_groundcover",
+        "%": "t_region_groundcover",
+        "m": "t_region_groundcover",
+        "T": "t_region_groundcover",
+        "C": "t_region_groundcover",
+        "z": "t_region_groundcover",
+        ")": "t_region_groundcover",
+        "w": "t_region_groundcover",
+        "M": "t_region_groundcover",
+        "1": "t_region_groundcover",
+        "-": "t_region_groundcover",
+        "&": "t_region_groundcover",
+        "U": "t_region_groundcover",
+        "J": "t_region_groundcover",
+        "$": "t_region_groundcover",
+        "Y": "t_region_groundcover",
+        "0": "t_region_groundcover",
+        "F": "t_region_groundcover",
+        "G": "t_region_groundcover",
+        "!": "t_region_groundcover",
+        "@": "t_region_groundcover",
+        "~": "t_region_groundcover"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -301,7 +334,6 @@
       [ "sewage_treatment_0_1_roof", "sewage_treatment_1_1_roof" ]
     ],
     "object": {
-      "fill_ter": "t_flat_roof",
       "rows": [
         "                                                ",
         "                                                ",
@@ -353,14 +385,26 @@
         "                                                "
       ],
       "palettes": [ "roof_palette" ],
-      "terrain": { ">": "t_ladder_down", "X": "t_radio_tower", "H": "t_sconc_wall", "B": "t_door_metal_pickable" },
+      "terrain": {
+        ">": "t_ladder_down",
+        "X": "t_radio_tower",
+        "H": "t_sconc_wall",
+        "B": "t_door_metal_pickable",
+        "2": "t_gutter",
+        "3": "t_gutter",
+        "|": "t_gutter",
+        "5": "t_region_groundcover",
+        ".": "t_region_groundcover",
+        "-": "t_region_groundcover"
+      },
       "place_nested": [
         {
           "chunks": [ [ "null", 20 ], [ "roof_4x4_utility", 50 ], [ "roof_4x4_utility_1", 40 ] ],
           "x": [ 29, 36 ],
           "y": [ 5, 10 ]
         }
-      ]
+      ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -371,7 +415,6 @@
       [ "sewage_treatment_0_1_-1", "sewage_treatment_1_1_-1", "sewage_treatment_2_1_-1" ]
     ],
     "object": {
-      "fill_ter": "t_rock_floor",
       "rows": [
         "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%~~~~%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%",
         "%%%%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%%%%",
@@ -478,7 +521,38 @@
         { "monster": "GROUP_SEWAGE_GHOUL", "x": [ 16, 20 ], "y": [ 36, 38 ], "density": 0.15 },
         { "monster": "GROUP_SEWAGE_TREATMENT", "x": 36, "y": 3, "density": 0.2 },
         { "monster": "GROUP_SEWAGE_TREATMENT", "x": [ 30, 32 ], "y": [ 35, 36 ], "density": 0.2 }
-      ]
+      ],
+      "terrain": {
+        "%": "t_region_groundcover",
+        "~": "t_region_groundcover",
+        "#": "t_region_groundcover",
+        "b": "t_region_groundcover",
+        "A": "t_region_groundcover",
+        "H": "t_region_groundcover",
+        "2": "t_region_groundcover",
+        "&": "t_region_groundcover",
+        "U": "t_region_groundcover",
+        "x": "t_region_groundcover",
+        ".": "t_region_groundcover",
+        "$": "t_region_groundcover",
+        "@": "t_region_groundcover",
+        "6": "t_region_groundcover",
+        "+": "t_region_groundcover",
+        "`": "t_region_groundcover",
+        "!": "t_region_groundcover",
+        ">": "t_region_groundcover",
+        "8": "t_region_groundcover",
+        "-": "t_region_groundcover",
+        "v": "t_region_groundcover",
+        "a": "t_region_groundcover",
+        "*": "t_region_groundcover",
+        "C": "t_region_groundcover",
+        "^": "t_region_groundcover",
+        "Y": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "G": "t_region_groundcover"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -487,7 +561,6 @@
     "om_terrain": [ "sewage_treatment_0_1_-1" ],
     "//": "10% chance of a hidden CHUD lair",
     "object": {
-      "fill_ter": "t_rock_floor",
       "rows": [
         "%%%%%~#2%%%%%%%%HHHHHHHH",
         "%%%%%~#2%%%HHHHHHww.....",
@@ -526,7 +599,26 @@
       "place_monsters": [
         { "monster": "GROUP_ZOMBIE", "x": [ 16, 20 ], "y": [ 11, 14 ], "density": 0.1 },
         { "monster": "GROUP_CHUD", "x": [ 4, 6 ], "y": [ 16, 18 ], "density": 0.2 }
-      ]
+      ],
+      "terrain": {
+        "#": "t_region_groundcover",
+        "H": "t_region_groundcover",
+        "~": "t_region_groundcover",
+        "2": "t_region_groundcover",
+        "%": "t_region_groundcover",
+        ".": "t_region_groundcover",
+        "C": "t_region_groundcover",
+        "^": "t_region_groundcover",
+        "b": "t_region_groundcover",
+        "x": "t_region_groundcover",
+        "U": "t_region_groundcover",
+        "Y": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "G": "t_region_groundcover",
+        "=": "t_region_groundcover",
+        "!": "t_region_groundcover"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -535,7 +627,6 @@
     "om_terrain": [ "sewage_treatment_0_1_-1" ],
     "//": "Easter egg - TMNT reference",
     "object": {
-      "fill_ter": "t_rock_floor",
       "rows": [
         "%%%%%~#2%%%%%%%%HHHHHHHH",
         "%%%%%~#2%%%HHHHHHww.....",
@@ -563,7 +654,27 @@
         "%%%%%%%%%%%%%%%%%%%%%%%%"
       ],
       "palettes": [ "sewage_treatment_sewer_palette" ],
-      "terrain": { "O": "t_mdoor_lab_frame", ":": "t_carpet_yellow", "Q": "t_privacy_fence" },
+      "terrain": {
+        "O": "t_mdoor_lab_frame",
+        ":": "t_carpet_yellow",
+        "Q": "t_privacy_fence",
+        "#": "t_region_groundcover",
+        "H": "t_region_groundcover",
+        "~": "t_region_groundcover",
+        "2": "t_region_groundcover",
+        "%": "t_region_groundcover",
+        ".": "t_region_groundcover",
+        "C": "t_region_groundcover",
+        "^": "t_region_groundcover",
+        "b": "t_region_groundcover",
+        "x": "t_region_groundcover",
+        "U": "t_region_groundcover",
+        "Y": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "G": "t_region_groundcover",
+        "*": "t_region_groundcover",
+        "!": "t_region_groundcover"
+      },
       "furniture": {
         "{": "f_utility_shelf",
         "w": "f_workbench",
@@ -597,7 +708,8 @@
         { "item": "judo_belt_blue", "x": 4, "y": 13 },
         { "item": "pizza_cheese", "x": 2, "y": 21 }
       ],
-      "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 16, 20 ], "y": [ 11, 14 ], "density": 0.1 } ]
+      "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 16, 20 ], "y": [ 11, 14 ], "density": 0.1 } ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -614,8 +726,7 @@
       { "item": "human_flesh", "prob": 70, "count-min": 1, "count-max": 10 },
       { "item": "hstomach_large", "prob": 60 },
       { "item": "hstomach", "prob": 60 },
-      { "item": "bone_human", "prob": 90, "count-min": 1, "count-max": 5 },
-      { "item": "rag_bloody", "prob": 90, "count-min": 1, "count-max": 4 }
+      { "item": "bone_human", "prob": 90, "count-min": 1, "count-max": 5 }
     ]
   }
 ]

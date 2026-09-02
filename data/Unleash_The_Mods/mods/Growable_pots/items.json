@@ -6,11 +6,11 @@
     "color": "brown",
     "name": { "str": "garden pot" },
     "description": "A special pot for growing plants, maintaining them at comfortable conditions for maximum yield.  It can be crafted with various seeds to plant them.",
-    "price": "6 USD",
+    "price": 6,
     "material": [ "clay" ],
     "weight": "280 g",
     "volume": "2 L",
-    "pocket_data": [ { "max_contains_volume": "1250 ml", "max_contains_weight": "3 kg", "open_container": true } ],
+    "pocket_data": [ { "max_contains_volume": "1250 ml", "max_contains_weight": "3000 g", "open_container": true } ],
     "melee_damage": { "bash": 1, "cut": 0 },
     "category": "tools",
     "to_hit": 0
@@ -23,7 +23,7 @@
     "weight": "480 g",
     "symbol": ")",
     "color": "brown",
-    "price": "13 USD",
+    "price": 13,
     "material": [ "clay", "veggy" ],
     "volume": "2500 ml",
     "melee_damage": { "bash": 1 },
@@ -34,15 +34,14 @@
     "abstract": "gp_pot_grown",
     "name": { "str": "garden pot (grown)", "str_pl": "garden pots (grown)" },
     "description": "A garden pot with some ripe, unnameable plants.  You shouldn't see this item.",
-    "copy-from": "gp_pot_growing",
-    "use_action": "DISASSEMBLE"
+    "use_action": "DISASSEMBLE",
+    "copy-from": "gp_pot_growing"
   },
   {
     "id": "gp_tomato",
     "type": "GENERIC",
     "name": { "str": "garden pot (growing tomato)", "str_pl": "garden pots (growing tomatoes)" },
     "description": "This is a garden pot growing tomatoes.  Once ripe, it can be activated to prepare them for harvest.",
-    "copy-from": "gp_pot_growing",
     "use_action": {
       "type": "delayed_transform",
       "transform_age": 432000,
@@ -50,7 +49,8 @@
       "msg": "The tomatoes are ready to harvest!",
       "moves": 0,
       "target": "gp_tomato_ready"
-    }
+    },
+    "copy-from": "gp_pot_growing"
   },
   {
     "id": "gp_tomato_ready",
@@ -64,7 +64,6 @@
     "type": "GENERIC",
     "name": { "str": "garden pot (growing wheat)", "str_pl": "garden pots (growing wheat)" },
     "description": "This is a garden pot growing wheat.  Once ripe, it can be activated to prepare it for harvest.",
-    "copy-from": "gp_pot_growing",
     "use_action": {
       "type": "delayed_transform",
       "transform_age": 432000,
@@ -72,7 +71,8 @@
       "msg": "The wheat is ready to harvest!",
       "moves": 0,
       "target": "gp_wheat_ready"
-    }
+    },
+    "copy-from": "gp_pot_growing"
   },
   {
     "id": "gp_wheat_ready",
@@ -86,7 +86,6 @@
     "type": "GENERIC",
     "name": { "str": "garden pot (growing hops)", "str_pl": "garden pots (growing hops)" },
     "description": "This is a garden pot growing hops.  Once ripe, it can be activated to prepare it for harvest.",
-    "copy-from": "gp_pot_growing",
     "use_action": {
       "type": "delayed_transform",
       "transform_age": 432000,
@@ -94,7 +93,8 @@
       "msg": "The hops are ready to harvest!",
       "moves": 0,
       "target": "gp_hops_ready"
-    }
+    },
+    "copy-from": "gp_pot_growing"
   },
   {
     "id": "gp_hops_ready",
@@ -108,7 +108,6 @@
     "type": "GENERIC",
     "name": { "str": "garden pot (growing buckwheat)", "str_pl": "garden pots (growing buckwheat)" },
     "description": "This is a garden pot growing buckwheat.  Once ripe, it can be activated to prepare it for harvest.",
-    "copy-from": "gp_pot_growing",
     "use_action": {
       "type": "delayed_transform",
       "transform_age": 432000,
@@ -116,7 +115,8 @@
       "msg": "The buckwheat is ready to harvest!",
       "moves": 0,
       "target": "gp_buckwheat_ready"
-    }
+    },
+    "copy-from": "gp_pot_growing"
   },
   {
     "id": "gp_buckwheat_ready",
@@ -130,7 +130,6 @@
     "type": "GENERIC",
     "name": { "str": "garden pot (growing broccoli)", "str_pl": "garden pots (growing broccoli)" },
     "description": "This is a garden pot growing broccoli.  Once ripe, it can be activated to prepare it for harvest.",
-    "copy-from": "gp_pot_growing",
     "use_action": {
       "type": "delayed_transform",
       "transform_age": 432000,
@@ -138,7 +137,8 @@
       "msg": "The broccoli is ready to harvest!",
       "moves": 0,
       "target": "gp_broccoli_ready"
-    }
+    },
+    "copy-from": "gp_pot_growing"
   },
   {
     "id": "gp_broccoli_ready",
@@ -152,7 +152,6 @@
     "type": "GENERIC",
     "name": { "str": "garden pot (growing oats)", "str_pl": "garden pots (growing oats)" },
     "description": "This is a garden pot growing oats.  Once ripe, it can be activated to prepare it for harvest.",
-    "copy-from": "gp_pot_growing",
     "use_action": {
       "type": "delayed_transform",
       "transform_age": 432000,
@@ -160,7 +159,8 @@
       "msg": "The oats are ready to harvest!",
       "moves": 0,
       "target": "gp_oats_ready"
-    }
+    },
+    "copy-from": "gp_pot_growing"
   },
   {
     "id": "gp_oats_ready",
@@ -174,7 +174,6 @@
     "type": "GENERIC",
     "name": { "str": "garden pot (growing barley)", "str_pl": "garden pots (growing barley)" },
     "description": "This is a garden pot growing barley.  Once ripe, it can be activated to prepare it for harvest.",
-    "copy-from": "gp_pot_growing",
     "use_action": {
       "type": "delayed_transform",
       "transform_age": 432000,
@@ -182,7 +181,8 @@
       "msg": "Barley is ready to harvest!",
       "moves": 0,
       "target": "gp_barley_ready"
-    }
+    },
+    "copy-from": "gp_pot_growing"
   },
   {
     "id": "gp_barley_ready",
@@ -196,7 +196,6 @@
     "type": "GENERIC",
     "name": { "str": "garden pot (growing carrot)", "str_pl": "garden pots (growing carrots)" },
     "description": "This is a garden pot growing carrots.  Once ripe, it can be activated to prepare it for harvest.",
-    "copy-from": "gp_pot_growing",
     "use_action": {
       "type": "delayed_transform",
       "transform_age": 432000,
@@ -204,7 +203,8 @@
       "msg": "The carrots are ready to harvest!",
       "moves": 0,
       "target": "gp_carrot_ready"
-    }
+    },
+    "copy-from": "gp_pot_growing"
   },
   {
     "id": "gp_carrot_ready",
@@ -218,7 +218,6 @@
     "type": "GENERIC",
     "name": { "str": "garden pot (growing cotton)", "str_pl": "garden pots (growing cotton)" },
     "description": "This is a garden pot growing cotton.  Once ripe, it can be activated to prepare it for harvest.",
-    "copy-from": "gp_pot_growing",
     "use_action": {
       "type": "delayed_transform",
       "transform_age": 432000,
@@ -226,7 +225,8 @@
       "msg": "The cotton is ready to harvest!",
       "moves": 0,
       "target": "gp_cotton_boll_ready"
-    }
+    },
+    "copy-from": "gp_pot_growing"
   },
   {
     "id": "gp_cotton_boll_ready",
@@ -240,7 +240,6 @@
     "type": "GENERIC",
     "name": { "str": "garden pot (growing cabbage)", "str_pl": "garden pots (growing cabbage)" },
     "description": "This is a garden pot growing cabbage.  Once ripe, it can be activated to prepare it for harvest.",
-    "copy-from": "gp_pot_growing",
     "use_action": {
       "type": "delayed_transform",
       "transform_age": 432000,
@@ -248,7 +247,8 @@
       "msg": "The cabbages are ready to harvest!",
       "moves": 0,
       "target": "gp_cabbage_ready"
-    }
+    },
+    "copy-from": "gp_pot_growing"
   },
   {
     "id": "gp_cabbage_ready",
@@ -262,7 +262,6 @@
     "type": "GENERIC",
     "name": { "str": "garden pot (growing cucumber)", "str_pl": "garden pots (growing cucumber)" },
     "description": "This is a garden pot growing cucumber.  Once ripe, it can be activated to prepare it for harvest.",
-    "copy-from": "gp_pot_growing",
     "use_action": {
       "type": "delayed_transform",
       "transform_age": 432000,
@@ -270,7 +269,8 @@
       "msg": "The cucumbers are ready to harvest!",
       "moves": 0,
       "target": "gp_cucumber_ready"
-    }
+    },
+    "copy-from": "gp_pot_growing"
   },
   {
     "id": "gp_cucumber_ready",
@@ -284,7 +284,6 @@
     "type": "GENERIC",
     "name": { "str": "garden pot (growing garlic)", "str_pl": "garden pots (growing garlic)" },
     "description": "This is a garden pot growing garlic bulbs.  Once ripe, it can be activated to prepare it for harvest.",
-    "copy-from": "gp_pot_growing",
     "use_action": {
       "type": "delayed_transform",
       "transform_age": 432000,
@@ -292,7 +291,8 @@
       "msg": "The garlic is ready to harvest!",
       "moves": 0,
       "target": "gp_garlic_ready"
-    }
+    },
+    "copy-from": "gp_pot_growing"
   },
   {
     "id": "gp_garlic_ready",

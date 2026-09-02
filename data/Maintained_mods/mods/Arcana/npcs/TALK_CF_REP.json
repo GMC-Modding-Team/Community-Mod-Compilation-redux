@@ -2,34 +2,7 @@
   {
     "type": "talk_topic",
     "id": "TALK_CF_REP",
-    "dynamic_line": {
-      "u_has_effect": "cf_mission_1",
-      "yes": "Welcome once again.  How may I help you?",
-      "no": {
-        "u_has_trait": "PROF_SANGUINE",
-        "yes": {
-          "u_has_effect": "sofia_motive_explained",
-          "yes": "Greetings.  You are welcome here, so long as you cause no trouble.",
-          "no": "Greetings.  I know you are, or were, a follower of the Path to Power.  For what purpose have you come here?"
-        },
-        "no": {
-          "u_has_any_trait": [ "PROF_CLEANSINGFLAME", "PROF_CLEANSINGFLAME2" ],
-          "yes": {
-            "u_male": "Welcome, Brother.  I knew we were not alone just yet.",
-            "no": "Welcome, Sister.  I knew we were not alone just yet."
-          },
-          "no": {
-            "u_has_any_trait": [ "PROF_CHALICE", "PROF_CHALICE2", "THRESH_VEIL" ],
-            "yes": {
-              "u_has_effect": "sofia_motive_explained",
-              "yes": "Greetings.  I hope that we can work together.",
-              "no": "Greetings, Keeper.  The others cannot see the mark of your god upon you, as I can.  We need not be enemies, if your intentions are peaceful."
-            },
-            "no": "Welcome, traveler.  You may rest here if in need, meager though our sanctum may be."
-          }
-        }
-      }
-    },
+    "dynamic_line": "Welcome once again.  How may I help you?  Greetings.  You are welcome here, so long as you cause no trouble.  Greetings.  I know you are, or were, a follower of the Path to Power.  For what purpose have you come here?  Welcome, Sister.  I knew we were not alone just yet.  Greetings.  I hope that we can work together.  Greetings, Keeper.  The others cannot see the mark of your god upon you, as I can.  We need not be enemies, if your intentions are peaceful.  Welcome, traveler.  You may rest here if in need, meager though our sanctum may be.",
     "speaker_effect": {
       "condition": { "not": { "u_has_effect": "sofia_deacon_message" } },
       "effect": { "u_add_effect": "sofia_deacon_message", "duration": "PERMANENT" }
@@ -310,11 +283,7 @@
   {
     "type": "talk_topic",
     "id": "TALK_CF_REP_JOHNATHAN_ADVICE_2",
-    "dynamic_line": {
-      "u_has_any_trait": [ "PROF_CLEANSINGFLAME", "PROF_CLEANSINGFLAME2" ],
-      "yes": "I know about that place, yes.  The Sanctum of St. John.  Don't know if you ever had the chance to visit it before all this happened, but it was the only sanctum built by our own hand.  Only one I know of, at least.  Anything you wish to know, I will answer as best as I can recall.",
-      "no": "I know about that place, yes.  We called it the Sanctum of St. John.  As far as I am aware, it was the only refuge we constructed ourselves, rather than being sheltered by our contacts elsewhere.  What do you wish to know about it?"
-    },
+    "dynamic_line": "I know about that place, yes.  The Sanctum of St. John.  Don't know if you ever had the chance to visit it before all this happened, but it was the only sanctum built by our own hand.  Only one I know of, at least.  Anything you wish to know, I will answer as best as I can recall.  I know about that place, yes.  We called it the Sanctum of St. John.  As far as I am aware, it was the only refuge we constructed ourselves, rather than being sheltered by our contacts elsewhere.  What do you wish to know about it?",
     "responses": [
       { "text": "What can you tell me about the layout of the place?", "topic": "TALK_CF_REP_JOHNATHAN_ADVICE_2_1" },
       { "text": "What happened to it?", "topic": "TALK_CF_REP_JOHNATHAN_ADVICE_2_2" },
@@ -343,7 +312,7 @@
   {
     "type": "talk_topic",
     "id": "TALK_CF_REP_JOHNATHAN_ADVICE_2_2",
-    "dynamic_line": "When all this started, many places suffered anomalies and hazards of various sorts.  The mere nature of our work down there, dismantling dangerous objects recovered on hunts, evidently allowed such things to happen even there, despite all our efforts to be cautious.  The hunters there held off what came crawling out from Beyond as best as they could, but they couldn't… I'm sorry.  It's unavoidable in our line of work, but we lost so many down there, that day.  Whatever fate the gods mandate for them, I hope they are at peace.",
+    "dynamic_line": "When all this started, many places suffered anomalies and hazards of various sorts.  The mere nature of our work down there, dismantling dangerous objects recovered on hunts, evidently allowed such things to happen even there, despite all our efforts to be cautious.  The hunters there held off what came crawling out from Beyond as best as they could, but they couldn't…  I'm sorry.  It's unavoidable in our line of work, but we lost so many down there, that day.  Whatever fate the gods mandate for them, I hope they are at peace.",
     "responses": [
       { "text": "Maybe it would be better to ask about something else.", "topic": "TALK_CF_REP_JOHNATHAN_ADVICE_2" },
       { "text": "That's all for now.", "topic": "TALK_CF_REP" }
@@ -352,15 +321,7 @@
   {
     "type": "talk_topic",
     "id": "TALK_CF_REP_JOHNATHAN_ADVICE_3",
-    "dynamic_line": {
-      "u_has_any_trait": [ "PROF_CLEANSINGFLAME", "PROF_CLEANSINGFLAME2" ],
-      "yes": "You know your duty.  \"If they are a threat to humanity, be they blood mage or bandit, offer no mercy and expect none in return.\"  Those among the Order who are willing to abandon their ways, or even merely offer truce to us, are vanishingly rare.  They are continuing their studies, continuing to prey upon the innocent to fuel their practices.  May Odin grant you victory in battle.",
-      "no": {
-        "u_has_trait": "PROF_SANGUINE",
-        "yes": "You have seen the worst of your order.  I would advise caution, and be prepared for a fight even if they recognize that you're one of them.  That you pursue this task means I can trust you to do what's right.  They're preying upon people just as the Order has for decades, and not even the threat of humanity's extinction has swayed them.  It's unfortunate, as killing each other is the last thing we should be doing in times like these, but they must be brought to justice.",
-        "no": "The Sanguine Order is dangerous.  It is not merely their dabbling in dangerous forces, they were a threat even before their discoveries.  They are murderers, worse than any petty bandit.  While I am hopeful that some of their number might face the threat of humanity's end, and come to understand this cannot continue, this group has been confirmed to still be just as senseless in their actions as the Order typically is.  Do not trust them, and do not underestimate them."
-      }
-    },
+    "dynamic_line": "You know your duty.  \"If they are a threat to humanity, be they blood mage or bandit, offer no mercy and expect none in return.\"  Those among the Order who are willing to abandon their ways, or even merely offer truce to us, are vanishingly rare.  They are continuing their studies, continuing to prey upon the innocent to fuel their practices.  May Odin grant you victory in battle.  You have seen the worst of your order.  I would advise caution, and be prepared for a fight even if they recognize that you're one of them.  That you pursue this task means I can trust you to do what's right.  They're preying upon people just as the Order has for decades, and not even the threat of humanity's extinction has swayed them.  It's unfortunate, as killing each other is the last thing we should be doing in times like these, but they must be brought to justice.  The Sanguine Order is dangerous.  It is not merely their dabbling in dangerous forces, they were a threat even before their discoveries.  They are murderers, worse than any petty bandit.  While I am hopeful that some of their number might face the threat of humanity's end, and come to understand this cannot continue, this group has been confirmed to still be just as senseless in their actions as the Order typically is.  Do not trust them, and do not underestimate them.",
     "responses": [
       {
         "text": "\"Dii supra et infra, dōnēs nobis virtus.\"  I'll deal with them.",
@@ -375,7 +336,7 @@
         "topic": "TALK_CF_REP"
       },
       {
-        "text": "So be it.  \"No matter the cost, no matter what we must do, for the strength and safety of this world…\"",
+        "text": "So be it.  \"No matter the cost, no matter what we must do, for the strength and safety of this world…  \"",
         "switch": true,
         "condition": { "u_has_any_trait": [ "PROF_CHALICE", "PROF_CHALICE2" ] },
         "topic": "TALK_CF_REP"
@@ -386,17 +347,13 @@
   {
     "type": "talk_topic",
     "id": "TALK_CF_REP_JOHNATHAN_PRELUDE",
-    "dynamic_line": {
-      "compare_string": [ "yes", { "u_val": "sofia_opinion_given" } ],
-      "yes": "Ask the merchant contacts here before you leave, you might be able to get a bit out information out of them first.  Then check with the refugee center.  We've tracked area anomalies like this before, just get more info on where these attacks have taken place and we should be able to figure things out from here.",
-      "no": "I'd primarily suggest the refugee center, as they may be able to help provide more information.  What we need is simply confirming specific locations of where attacks have taken place.  We can handle it from there, afterward."
-    },
+    "dynamic_line": "Ask the merchant contacts here before you leave, you might be able to get a bit out information out of them first.  Then check with the refugee center.  We've tracked area anomalies like this before, just get more info on where these attacks have taken place and we should be able to figure things out from here.  I'd primarily suggest the refugee center, as they may be able to help provide more information.  What we need is simply confirming specific locations of where attacks have taken place.  We can handle it from there, afterward.",
     "responses": [ { "text": "Okay, thanks.", "topic": "TALK_CF_REP" } ]
   },
   {
     "id": "TALK_CF_REP_PRELUDE_JOURNAL",
     "type": "talk_topic",
-    "dynamic_line": "Let me take a look at this.  Looks like the entries describe a series of strange events and dreams experienced ever since passing through the anomalous region.  Lot of rambling, bit out of order too.  Like they skipped a few pages then filled in the blanks with later entries… but, I think I see roughly how things went down.",
+    "dynamic_line": "Let me take a look at this.  Looks like the entries describe a series of strange events and dreams experienced ever since passing through the anomalous region.  Lot of rambling, bit out of order too.  Like they skipped a few pages then filled in the blanks with later entries…  but, I think I see roughly how things went down.",
     "responses": [ { "text": "Anything useful?", "topic": "TALK_CF_REP_PRELUDE_JOURNAL_2" } ]
   },
   {
@@ -535,11 +492,7 @@
   {
     "type": "talk_topic",
     "id": "TALK_CF_REP_MERCHANT_MOTIVE",
-    "dynamic_line": {
-      "u_has_trait": "PROF_SANGUINE",
-      "yes": "And yet you came here, knowing the potential danger.  Or did you think us extinct?  Perhaps that means you can be trusted.  If your intent remains honest, we need not be enemies.  But we shall see.",
-      "no": "Then hopefully this means we need not be enemies.  The gods ensured that mortal means would lead us to meet.  Remind us of our shared humanity, perhaps.  We shall see if this holds true."
-    },
+    "dynamic_line": "And yet you came here, knowing the potential danger.  Or did you think us extinct?  Perhaps that means you can be trusted.  If your intent remains honest, we need not be enemies.  But we shall see.  Then hopefully this means we need not be enemies.  The gods ensured that mortal means would lead us to meet.  Remind us of our shared humanity, perhaps.  We shall see if this holds true.",
     "responses": [
       {
         "text": "We'll see.",
@@ -551,11 +504,7 @@
   {
     "type": "talk_topic",
     "id": "TALK_CF_REP_DEACON_MOTIVE",
-    "dynamic_line": {
-      "u_has_trait": "PROF_SANGUINE",
-      "yes": "That young man knows nothing of our history.  I fear he may be too trusting, to have asked for your assistance.  I will give you the benefit of the doubt for now, but if I find that you've harmed him, I will slay you myself.  Understood?",
-      "no": "The deacon of this church does not know of our nature, unlike the priest who would normally be attending this place.  If you get the opportunity to visit him again, I'm sure he'll be relieved to know that we're still holding on."
-    },
+    "dynamic_line": "That young man knows nothing of our history.  I fear he may be too trusting, to have asked for your assistance.  I will give you the benefit of the doubt for now, but if I find that you've harmed him, I will slay you myself.  Understood?  The deacon of this church does not know of our nature, unlike the priest who would normally be attending this place.  If you get the opportunity to visit him again, I'm sure he'll be relieved to know that we're still holding on.",
     "responses": [
       {
         "text": "…",
@@ -618,11 +567,7 @@
   {
     "type": "talk_topic",
     "id": "TALK_CF_REP_MISSION_1_HOW_KNOWN",
-    "dynamic_line": {
-      "u_has_any_trait": [ "PROF_CLEANSINGFLAME", "PROF_CLEANSINGFLAME2" ],
-      "yes": "Indeed.  There are still concerns that the fabric of The Veil may still be unstable and vulnerable to new anomalies, and the potential for otherworldly monsters being attracted to this place.  Same method by which we safeguarded our sanctums, until most of them were overwhelmed the day everything boiled over.",
-      "no": "You are correct.  Our methods may differ from that of the Keepers, but the objective is similar.  With the right rituals we can reduce the rest of any additional anomalies opening up too close to us, and make the place less visible to any interlopers already in this world.  That will allow us to use the arcane items at our disposal to the fullest, otherwise we'd basically be lighting up a beacon for every otherwordly monster within a couple miles."
-    },
+    "dynamic_line": "Indeed.  There are still concerns that the fabric of The Veil may still be unstable and vulnerable to new anomalies, and the potential for otherworldly monsters being attracted to this place.  Same method by which we safeguarded our sanctums, until most of them were overwhelmed the day everything boiled over.  You are correct.  Our methods may differ from that of the Keepers, but the objective is similar.  With the right rituals we can reduce the rest of any additional anomalies opening up too close to us, and make the place less visible to any interlopers already in this world.  That will allow us to use the arcane items at our disposal to the fullest, otherwise we'd basically be lighting up a beacon for every otherwordly monster within a couple miles.",
     "responses": [
       { "text": "So how do I go about making one?", "topic": "TALK_CF_REP_MISSION_1_WHERE" },
       { "text": "That's all for now, thank you.", "topic": "TALK_CF_REP" }
@@ -729,21 +674,13 @@
   {
     "type": "talk_topic",
     "id": "TALK_CF_REP_ARCANE_2",
-    "dynamic_line": {
-      "u_has_effect": "cf_sofia_notes_given",
-      "yes": "There are many approaches to handling these forces.  Some have chosen recklessness, as though it is a drug to be abused.  Others, superstitious faith and worship of powers that do not belong in our world.  We seek to study these anomalies cautiously, and keep others safe from more dangerous artifacts if we must.  The acolyte I took those notes from, the ones I gave you, learned the importance of caution the hard way, and did not live to benefit from that experience.  That is why we have resorted to extreme measures to deal with dangerous relics in the past.",
-      "no": "There are many approaches to handling these forces.  Some have chosen recklessness, as though it is a drug to be abused.  Others, superstitious faith and worship of powers that do not belong in our world.  We seek to study these anomalies cautiously, and keep others safe from more dangerous artifacts if we must.  If it means containment, or destruction, so be it.  I prefer instead to teach others how to handle such safely, for caution is a lesson many learn the hard way, and few survive such experiences."
-    },
+    "dynamic_line": "There are many approaches to handling these forces.  Some have chosen recklessness, as though it is a drug to be abused.  Others, superstitious faith and worship of powers that do not belong in our world.  We seek to study these anomalies cautiously, and keep others safe from more dangerous artifacts if we must.  The acolyte I took those notes from, the ones I gave you, learned the importance of caution the hard way, and did not live to benefit from that experience.  That is why we have resorted to extreme measures to deal with dangerous relics in the past.  There are many approaches to handling these forces.  Some have chosen recklessness, as though it is a drug to be abused.  Others, superstitious faith and worship of powers that do not belong in our world.  We seek to study these anomalies cautiously, and keep others safe from more dangerous artifacts if we must.  If it means containment, or destruction, so be it.  I prefer instead to teach others how to handle such safely, for caution is a lesson many learn the hard way, and few survive such experiences.",
     "responses": [ { "text": "Alright…", "topic": "TALK_CF_REP" } ]
   },
   {
     "type": "talk_topic",
     "id": "TALK_CF_REP_ARCANE",
-    "dynamic_line": {
-      "u_has_effect": "cf_sofia_notes_given",
-      "yes": "Things may have reached their boiling point rather recently, but less-disruptive events have been happening here and there for a bit before all this.  There is a logic to it, and I hope if you attempt to understand it yourself you'll be cautious in your efforts.",
-      "no": "We've taken to referring to certain supernatural events as such, and the methods some have found to exploit these effects.  Things may have reached their boiling point rather recently, but less-disruptive events have been happening here and there for a bit before all this.  Given things like strange monsters being called from gods-know-where, cultists fueling rituals with blood, and the like, it's hard not to refer to such as magical, even if there is some manner of logic to it.  Here.  This may help you make sense of what we've had to deal with, to some extent."
-    },
+    "dynamic_line": "Things may have reached their boiling point rather recently, but less-disruptive events have been happening here and there for a bit before all this.  There is a logic to it, and I hope if you attempt to understand it yourself you'll be cautious in your efforts.  We've taken to referring to certain supernatural events as such, and the methods some have found to exploit these effects.  Things may have reached their boiling point rather recently, but less-disruptive events have been happening here and there for a bit before all this.  Given things like strange monsters being called from gods-know-where, cultists fueling rituals with blood, and the like, it's hard not to refer to such as magical, even if there is some manner of logic to it.  Here.  This may help you make sense of what we've had to deal with, to some extent.",
     "responses": [
       {
         "text": "I see.  I think…",
@@ -763,11 +700,7 @@
   {
     "type": "talk_topic",
     "id": "TALK_CF_REP_CAUSE",
-    "dynamic_line": {
-      "u_has_any_trait": [ "PROF_CLEANSINGFLAME", "PROF_CLEANSINGFLAME2" ],
-      "yes": "An interesting question, from one of my kin.  We have not strayed from our goal of protecting the innocent against the dangers of the Beyond.",
-      "no": "Before all this boiled over, who would believe us?  With the dead rising, and strange powers decaying the very fabric of reality, we can afford to be more open about our nature.  We seek to protect people from dangerous magic and otherworldly monsters.  The first signs of these threats were isolated, forbidden knowledge slipping through the cracks, minor symptoms of whatever caused this.  Now it is more than any one group can handle, I fear."
-    },
+    "dynamic_line": "An interesting question, from one of my kin.  We have not strayed from our goal of protecting the innocent against the dangers of the Beyond.  Before all this boiled over, who would believe us?  With the dead rising, and strange powers decaying the very fabric of reality, we can afford to be more open about our nature.  We seek to protect people from dangerous magic and otherworldly monsters.  The first signs of these threats were isolated, forbidden knowledge slipping through the cracks, minor symptoms of whatever caused this.  Now it is more than any one group can handle, I fear.",
     "responses": [
       {
         "text": "Magic?  I'm still not sure I can believe that.",
@@ -794,11 +727,7 @@
   {
     "type": "talk_topic",
     "id": "TALK_CF_REP_MAGIC",
-    "dynamic_line": {
-      "u_has_effect": "cf_sofia_notes_given",
-      "yes": "You have every right to consider it absurd.  We speak of magic and the arcane, when it's something effects we use with only enough comprehension to use safely.  Perhaps calling it such when there is an order to it, a logic of its own, may be incorrect as well.  But it's useful to remind us to treat even the items we're familiar with cautiously, and never make the assumption that we understand enough to make a rash mistake.",
-      "no": "You have every right to consider it absurd.  We speak of magic and the arcane, when it's something effects we use with only enough comprehension to use safely.  Perhaps calling it such when there is an order to it, a logic of its own, may be incorrect as well.  Here.  This may prove better than trying to toy with the unknown unaided."
-    },
+    "dynamic_line": "You have every right to consider it absurd.  We speak of magic and the arcane, when it's something effects we use with only enough comprehension to use safely.  Perhaps calling it such when there is an order to it, a logic of its own, may be incorrect as well.  But it's useful to remind us to treat even the items we're familiar with cautiously, and never make the assumption that we understand enough to make a rash mistake.  You have every right to consider it absurd.  We speak of magic and the arcane, when it's something effects we use with only enough comprehension to use safely.  Perhaps calling it such when there is an order to it, a logic of its own, may be incorrect as well.  Here.  This may prove better than trying to toy with the unknown unaided.",
     "responses": [
       { "text": "…", "switch": true, "topic": "TALK_CF_REP", "condition": { "u_has_effect": "cf_sofia_notes_given" } },
       {
@@ -829,11 +758,7 @@
   {
     "type": "talk_topic",
     "id": "TALK_CF_REP_CF_LEFT",
-    "dynamic_line": {
-      "npc_has_effect": "cf_mission_3",
-      "yes": "Do not lose hope yet.  Already our efforts bore fruit, and more are surely out there.  If the gods will it, we will endure.",
-      "no": "I do not know for certain.  Between trying to get anything to come in via radio, and our contact with the refugee center, I have heard nothing else so far, but I will keep searching.  We must never give up."
-    },
+    "dynamic_line": "Do not lose hope yet.  Already our efforts bore fruit, and more are surely out there.  If the gods will it, we will endure.  I do not know for certain.  Between trying to get anything to come in via radio, and our contact with the refugee center, I have heard nothing else so far, but I will keep searching.  We must never give up.",
     "responses": [ { "text": "So long as the Sun shines upon the Earth…", "topic": "TALK_CF_REP" } ]
   },
   {
@@ -892,11 +817,7 @@
   {
     "type": "talk_topic",
     "id": "TALK_CF_REP_SANGUINE_QUERY",
-    "dynamic_line": {
-      "u_has_trait": "THRESH_DRAGONBLOOD",
-      "yes": "I had thought from your alterations that you were familiar with them.  They were the ones that developed the practices that you yourself have benefited from.  A band of murderous cultists, even before all this started and they found ways to exploit these anomalies.",
-      "no": "A local cult that used to infest this area's rural regions, and their effects on our community led to our own group being formed.  Like us, before things boiled over there were some initial supernatural effects, and with that came ways of using it to one's benefit.  Their rituals went from simple murder to something dangerous to more than just their victims."
-    },
+    "dynamic_line": "I had thought from your alterations that you were familiar with them.  They were the ones that developed the practices that you yourself have benefited from.  A band of murderous cultists, even before all this started and they found ways to exploit these anomalies.  A local cult that used to infest this area's rural regions, and their effects on our community led to our own group being formed.  Like us, before things boiled over there were some initial supernatural effects, and with that came ways of using it to one's benefit.  Their rituals went from simple murder to something dangerous to more than just their victims.",
     "responses": [ { "text": "…", "topic": "TALK_CF_REP" } ]
   },
   {

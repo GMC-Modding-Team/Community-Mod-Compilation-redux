@@ -1,5 +1,23 @@
 [
   {
+    "id": "museum_guns",
+    "type": "item_group",
+    "extend": { "items": [ { "item": "flintlock_ammo_mine", "prob": 20 } ] },
+    "subtype": "distribution"
+  },
+  {
+    "id": "antique_ammo",
+    "type": "item_group",
+    "extend": { "items": [ { "item": "flintlock_ammo_mine", "prob": 20 } ] },
+    "subtype": "distribution"
+  },
+  {
+    "id": "on_hand_flintlock",
+    "type": "item_group",
+    "subtype": "distribution",
+    "extend": { "items": [ { "item": "flintlock_ammo_mine", "prob": 50, "charges": [ 15, 30 ] } ] }
+  },
+  {
     "id": "camping",
     "copy-from": "camping",
     "type": "item_group",
@@ -82,18 +100,6 @@
         { "group": "lmil_armor_collection", "prob": 1 },
         { "group": "mil_armor_collection", "prob": 1 },
         { "group": "hmil_armor_collection", "prob": 1 }
-      ]
-    }
-  },
-  {
-    "id": "mil_hw",
-    "copy-from": "mil_hw",
-    "type": "item_group",
-    "extend": {
-      "items": [
-        { "group": "lmil_armor_collection", "prob": 2 },
-        { "group": "mil_armor_collection", "prob": 2 },
-        { "group": "hmil_armor_collection", "prob": 2 }
       ]
     }
   },
@@ -241,30 +247,6 @@
     "type": "item_group",
     "extend": {
       "items": [
-        {
-          "distribution": [ { "item": "neo_laser_pistol", "prob": 50 }, { "item": "neo_laser_pistol_ups", "prob": 50 } ],
-          "prob": 2
-        },
-        {
-          "distribution": [ { "item": "akro_laser_smg", "prob": 50 }, { "item": "akro_laser_smg_ups", "prob": 50 } ],
-          "prob": 2
-        },
-        {
-          "distribution": [ { "item": "arc_laser_rifle", "prob": 50 }, { "item": "arc_laser_rifle_ups", "prob": 50 } ],
-          "prob": 2
-        },
-        {
-          "distribution": [ { "item": "krx_laser_lmg", "prob": 50 }, { "item": "krx_laser_lmg_ups", "prob": 50 } ],
-          "prob": 2
-        },
-        {
-          "distribution": [ { "item": "mx_laser_sniper", "prob": 50 }, { "item": "mx_laser_sniper_ups", "prob": 50 } ],
-          "prob": 2
-        },
-        {
-          "distribution": [ { "item": "xarm_laser_shotgun", "prob": 50 }, { "item": "xarm_laser_shotgun_ups", "prob": 50 } ],
-          "prob": 2
-        },
         [ "br_bolt_rifle_elec", 2 ],
         [ "mk_ionic_cannon", 2 ],
         [ "omnitech_plasma_pistol", 1 ],
@@ -291,30 +273,6 @@
     "type": "item_group",
     "extend": {
       "items": [
-        {
-          "distribution": [ { "item": "neo_laser_pistol", "prob": 50 }, { "item": "neo_laser_pistol_ups", "prob": 50 } ],
-          "prob": 2
-        },
-        {
-          "distribution": [ { "item": "akro_laser_smg", "prob": 50 }, { "item": "akro_laser_smg_ups", "prob": 50 } ],
-          "prob": 2
-        },
-        {
-          "distribution": [ { "item": "arc_laser_rifle", "prob": 50 }, { "item": "arc_laser_rifle_ups", "prob": 50 } ],
-          "prob": 2
-        },
-        {
-          "distribution": [ { "item": "krx_laser_lmg", "prob": 50 }, { "item": "krx_laser_lmg_ups", "prob": 50 } ],
-          "prob": 2
-        },
-        {
-          "distribution": [ { "item": "mx_laser_sniper", "prob": 50 }, { "item": "mx_laser_sniper_ups", "prob": 50 } ],
-          "prob": 2
-        },
-        {
-          "distribution": [ { "item": "xarm_laser_shotgun", "prob": 50 }, { "item": "xarm_laser_shotgun_ups", "prob": 50 } ],
-          "prob": 2
-        },
         [ "br_bolt_rifle_elec", 2 ],
         [ "mk_ionic_cannon", 2 ],
         [ "omnitech_plasma_pistol", 1 ],
@@ -417,14 +375,6 @@
   },
   {
     "type": "item_group",
-    "id": "bionics_tech",
-    "copy-from": "bionics_tech",
-    "subtype": "distribution",
-    "//": "Bionics used by technicians.",
-    "extend": { "items": [ [ "bio_atomic_battery", 10 ], [ "bio_cutting_torch", 20 ] ] }
-  },
-  {
-    "type": "item_group",
     "id": "bionics_subs",
     "copy-from": "bionics_subs",
     "subtype": "distribution",
@@ -464,7 +414,6 @@
         [ "thong", 10 ],
         { "item": "fancy_briefs", "prob": 5 },
         { "item": "fancy_boxer_briefs", "prob": 10 },
-        { "item": "fancy_panties", "prob": 10 },
         { "item": "fancy_house_coat", "prob": 10 }
       ]
     }
@@ -588,39 +537,7 @@
     "id": "guns_energy",
     "copy-from": "guns_energy",
     "type": "item_group",
-    "extend": {
-      "items": [
-        [ "mk_ionic_cannon", 1 ],
-        [ "omnitech_plasma_pistol", 1 ],
-        {
-          "distribution": [ { "item": "neo_laser_pistol", "prob": 50, "charges": [ 0, 500 ] }, { "item": "neo_laser_pistol_ups", "prob": 50 } ],
-          "prob": 1
-        },
-        {
-          "distribution": [ { "item": "akro_laser_smg", "prob": 50, "charges": [ 0, 1000 ] }, { "item": "akro_laser_smg_ups", "prob": 50 } ],
-          "prob": 1
-        },
-        {
-          "distribution": [ { "item": "arc_laser_rifle", "prob": 50, "charges": [ 0, 5000 ] }, { "item": "arc_laser_rifle_ups", "prob": 50 } ],
-          "prob": 1
-        },
-        {
-          "distribution": [ { "item": "krx_laser_lmg", "prob": 50, "charges": [ 0, 10000 ] }, { "item": "krx_laser_lmg_ups", "prob": 50 } ],
-          "prob": 1
-        },
-        {
-          "distribution": [ { "item": "mx_laser_sniper", "prob": 50, "charges": [ 0, 5000 ] }, { "item": "mx_laser_sniper_ups", "prob": 50 } ],
-          "prob": 1
-        },
-        {
-          "distribution": [
-            { "item": "xarm_laser_shotgun", "prob": 50, "charges": [ 0, 5000 ] },
-            { "item": "xarm_laser_shotgun_ups", "prob": 50 }
-          ],
-          "prob": 1
-        }
-      ]
-    }
+    "extend": { "items": [ [ "mk_ionic_cannon", 1 ], [ "omnitech_plasma_pistol", 1 ] ] }
   },
   {
     "type": "item_group",
@@ -688,21 +605,5 @@
     "id": "bunker_basement_drugs",
     "copy-from": "bunker_basement_drugs",
     "extend": { "items": [ { "item": "iv_mutagen_super_soldier", "prob": 10 } ] }
-  },
-  {
-    "id": "museum_guns",
-    "type": "item_group",
-    "extend": { "items": [ [ "flintlock_ammo_mine", 20 ] ] }
-  },
-  {
-    "id": "antique_ammo",
-    "type": "item_group",
-    "extend": { "items": [ [ "flintlock_ammo_mine", 20 ] ] }
-  },
-  {
-    "id": "on_hand_flintlock",
-    "type": "item_group",
-    "subtype": "distribution",
-    "extend": { "entries": [ { "item": "flintlock_ammo_mine", "prob": 50, "charges": [ 15, 30 ] } ] }
   }
 ]

@@ -41,7 +41,7 @@
     "id": "NC_wanderer_knight_worn",
     "type": "item_group",
     "subtype": "collection",
-    "entries": [
+    "items": [
       { "item": "armor_lightplate" },
       { "item": "boots_plate" },
       { "item": "gloves_plate" },
@@ -55,32 +55,18 @@
     "id": "NC_wanderer_knight_carried",
     "type": "item_group",
     "subtype": "collection",
-    "entries": [ { "item": "waterskin" }, { "item": "meat_smoked" }, { "item": "cheese_hard" }, { "item": "brandy" } ]
+    "items": [ { "item": "waterskin" }, { "item": "meat_smoked" }, { "item": "cheese_hard" }, { "item": "brandy" } ]
   },
   {
     "id": "NC_wanderer_knight_weapon",
     "type": "item_group",
     "subtype": "collection",
-    "entries": [ { "item": "zweihander" } ]
+    "items": [ { "item": "zweihander" } ]
   },
   {
     "id": [ "TALK_wanderer_knight_1" ],
     "type": "talk_topic",
-    "dynamic_line": {
-      "npc_has_var": "wanderer_knight_truth",
-      "type": "general",
-      "context": "meeting",
-      "value": "yes",
-      "yes": "Ah, The Chosen One!  What brings you to this sacred place?",
-      "no": {
-        "npc_has_var": "wanderer_knight_trust",
-        "type": "general",
-        "context": "flag",
-        "value": "yes",
-        "yes": "Ah, glad to see another living soul in this cursed world.  What brings you to this sacred place?",
-        "no": "Hmm…"
-      }
-    },
+    "dynamic_line": "Ah, The Chosen One!  What brings you to this sacred place?  Ah, glad to see another living soul in this cursed world.  What brings you to this sacred place?  Hmm…",
     "responses": [
       {
         "text": "About that job…",
@@ -139,12 +125,7 @@
   {
     "id": "TALK_wanderer_knight_trust_yes",
     "type": "talk_topic",
-    "dynamic_line": {
-      "and": [
-        "Ah, it's good to see another follower of our lord Jesus Christ. Welcome, my ",
-        { "u_male": true, "yes": "brother.", "no": "sister." }
-      ]
-    },
+    "dynamic_line": "Ah, it's good to see another follower of our lord Jesus Christ.  Welcome, my brother.  sister.",
     "responses": [
       {
         "text": "…",
@@ -195,12 +176,7 @@
   {
     "id": "TALK_wanderer_knight_teach",
     "type": "talk_topic",
-    "dynamic_line": {
-      "and": [
-        "I learned all from this book. You can take it.  God bless you, my ",
-        { "u_male": true, "yes": "brother!", "no": "sister!" }
-      ]
-    },
+    "dynamic_line": "I learned all from this book.  You can take it.  God bless you, my brother!  sister!",
     "responses": [ { "text": "Thank you, holy warrior.", "topic": "TALK_DONE" } ]
   },
   {
@@ -244,7 +220,7 @@
   {
     "id": "TALK_wanderer_knight_nope",
     "type": "talk_topic",
-    "dynamic_line": { "u_male": true, "yes": "Where is your cross, my brother?", "no": "Where is your cross, my sister?" },
+    "dynamic_line": "Where is your cross, my brother?  Where is your cross, my sister?",
     "responses": [ { "text": "…", "topic": "TALK_DONE" } ]
   },
   {
@@ -300,7 +276,7 @@
       "offer": "Ah, my fellow warrior of the light, it's good that you're alive.  I have another task for you.  You need to help my dear brother, Brother Randolph, to lift his curse, so that his soul could reach the heaven and rest peacefully for eternity.",
       "accepted": "I'll wait.",
       "rejected": "What are you, infidel?!",
-      "advice": "I know you can do it! God bless you!",
+      "advice": "I know you can do it!  God bless you!",
       "inquire": "Hmm…",
       "success": "Ah, what a relief!  You did good, my <name_g>.",
       "success_lie": "Um…",

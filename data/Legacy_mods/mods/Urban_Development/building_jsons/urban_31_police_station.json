@@ -3,17 +3,18 @@
     "id": "virology_lab_fridge",
     "type": "item_group",
     "items": [
-      [ "blood", 300 ],
-      [ "vacutainer", 100 ],
-      [ "jar_glass_sealed", 30 ],
-      [ "jar_3l_glass_sealed", 15 ],
-      [ "hygrometer", 3 ],
-      [ "chem_nitric_acid", 15 ],
-      [ "denat_alcohol", 100 ],
-      [ "thermometer", 50 ],
-      [ "flu_shot", 50 ],
-      [ "disinfectant", 35 ]
-    ]
+      { "item": "blood", "prob": 300 },
+      { "item": "vacutainer", "prob": 100 },
+      { "item": "jar_glass_sealed", "prob": 30 },
+      { "item": "jar_3l_glass_sealed", "prob": 15 },
+      { "item": "hygrometer", "prob": 3 },
+      { "item": "chem_nitric_acid", "prob": 15 },
+      { "item": "denat_alcohol", "prob": 100 },
+      { "item": "thermometer", "prob": 50 },
+      { "item": "flu_shot", "prob": 50 },
+      { "item": "disinfectant", "prob": 35 }
+    ],
+    "subtype": "distribution"
   },
   {
     "type": "mapgen",
@@ -21,7 +22,6 @@
     "om_terrain": [ "urban_31_1" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "%%%%%%%%%%%%%%%%%%%%%%%%",
         "%%%%%%%%%%%%%%%%%%%%%%%%",
@@ -54,7 +54,15 @@
         "T": "t_strconc_floor",
         "b": "t_strconc_floor",
         "c": "t_strconc_floor",
-        "r": "t_strconc_floor"
+        "r": "t_strconc_floor",
+        "%": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "'": "t_region_groundcover",
+        "J": "t_region_groundcover",
+        "5": "t_region_groundcover",
+        ">": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "$": "t_region_groundcover"
       },
       "toilets": { "T": {  } },
       "items": {
@@ -63,7 +71,8 @@
         "c": { "item": "hazmat_eyes", "chance": 20 },
         "r": { "item": "hazmat_eyes", "chance": 90 }
       },
-      "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 1, 13 ], "y": [ 6, 22 ], "density": 0.35 } ]
+      "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 1, 13 ], "y": [ 6, 22 ], "density": 0.35 } ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -72,7 +81,6 @@
     "om_terrain": [ "urban_31_2" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "%%%%%%%%%%:zz:%%%%%%%%%%",
         "%%%%%%%%%%:zz:%%%%%%%%%%",
@@ -100,13 +108,28 @@
         "%%%%%%%%%%%%%%l''''''l%%"
       ],
       "palettes": [ "acidia_residential_commercial_palette" ],
-      "terrain": { "K": "t_strconc_floor", "c": "t_strconc_floor", "r": "t_strconc_floor" },
+      "terrain": {
+        "K": "t_strconc_floor",
+        "c": "t_strconc_floor",
+        "r": "t_strconc_floor",
+        "z": "t_region_groundcover",
+        "%": "t_region_groundcover",
+        ":": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "'": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "}": "t_region_groundcover",
+        "Z": "t_region_groundcover",
+        "$": "t_region_groundcover",
+        "=": "t_region_groundcover"
+      },
       "items": {
         "'": { "item": "trash_cart", "chance": 3 },
         ":": { "item": "sewer", "chance": 1 },
         "b": { "item": "bed", "chance": 60 },
         "r": { "item": "mine_equipment", "chance": 90 }
-      }
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -115,7 +138,6 @@
     "om_terrain": [ "urban_31_3" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "l55lllllllll55llllllllll",
         "l'''''''''''''''''''''''",
@@ -148,7 +170,18 @@
         "L": "t_strconc_floor",
         "d": "t_strconc_floor",
         "t": "t_strconc_floor",
-        "u": "t_strconc_floor"
+        "u": "t_strconc_floor",
+        "5": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "'": "t_region_groundcover",
+        "$": "t_region_groundcover",
+        "+": "t_region_groundcover",
+        "=": "t_region_groundcover",
+        "6": "t_region_groundcover",
+        "h": "t_region_groundcover",
+        "E": "t_region_groundcover",
+        "A": "t_region_groundcover",
+        "%": "t_region_groundcover"
       },
       "items": {
         "'": { "item": "trash_cart", "chance": 3 },
@@ -161,7 +194,8 @@
       "place_monsters": [
         { "monster": "GROUP_ZOMBIE", "x": [ 1, 22 ], "y": [ 1, 17 ], "density": 0.1 },
         { "monster": "GROUP_ZOMBIE", "x": [ 16, 22 ], "y": [ 4, 17 ], "density": 0.35 }
-      ]
+      ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -170,7 +204,6 @@
     "om_terrain": [ "urban_31_4" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "lllllllllllllllll==lllll",
         "'''''''''''''''''''''''l",
@@ -205,7 +238,19 @@
         "f": "t_strconc_floor",
         "o": "t_strconc_floor",
         "r": "t_strconc_floor",
-        "t": "t_strconc_floor"
+        "t": "t_strconc_floor",
+        "=": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "'": "t_region_groundcover",
+        "5": "t_region_groundcover",
+        "$": "t_region_groundcover",
+        "S": "t_region_groundcover",
+        "+": "t_region_groundcover",
+        "E": "t_region_groundcover",
+        "M": "t_region_groundcover",
+        ">": "t_region_groundcover",
+        "6": "t_region_groundcover",
+        "%": "t_region_groundcover"
       },
       "items": {
         "'": { "item": "trash_cart", "chance": 3 },
@@ -216,7 +261,8 @@
         "r": { "item": "cannedfood", "chance": 50 },
         "t": { "item": "trash_cart", "chance": 20 }
       },
-      "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 1, 22 ], "y": [ 1, 17 ], "density": 0.3 } ]
+      "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 1, 22 ], "y": [ 1, 17 ], "density": 0.3 } ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -225,7 +271,6 @@
     "om_terrain": [ "urban_31_5" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         ";;;;;;;;;;;;;;;;;;;;;;;;",
         "llllllllllllllllllllllll",
@@ -253,7 +298,23 @@
         "l''$''TlT''$''l;;;;;;;;;"
       ],
       "palettes": [ "acidia_residential_commercial_palette" ],
-      "terrain": { "S": "t_strconc_floor", "T": "t_strconc_floor", "b": "t_strconc_floor", "r": "t_strconc_floor" },
+      "terrain": {
+        "S": "t_strconc_floor",
+        "T": "t_strconc_floor",
+        "b": "t_strconc_floor",
+        "r": "t_strconc_floor",
+        ";": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "_": "t_region_groundcover",
+        "2": "t_region_groundcover",
+        "'": "t_region_groundcover",
+        "s": "t_region_groundcover",
+        "=": "t_region_groundcover",
+        ">": "t_region_groundcover",
+        "5": "t_region_groundcover",
+        "<": "t_region_groundcover",
+        "$": "t_region_groundcover"
+      },
       "toilets": { "T": {  } },
       "items": {
         "'": { "item": "trash_cart", "chance": 1 },
@@ -270,7 +331,8 @@
         { "vehicle": "policecar", "x": 19, "y": 5, "chance": 50, "rotation": 180 },
         { "vehicle": "policecar", "x": 19, "y": 12, "chance": 50, "rotation": 180 },
         { "vehicle": "policecar", "x": 19, "y": 18, "chance": 50, "rotation": 180 }
-      ]
+      ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -279,7 +341,6 @@
     "om_terrain": [ "urban_31_6" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         ";;;;________________;;;;",
         "llllnnnnnnnnnnnnnnnnllll",
@@ -309,7 +370,15 @@
       "palettes": [ "acidia_residential_commercial_palette" ],
       "items": { "_": { "item": "trash_cart", "chance": 1 } },
       "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.35 } ],
-      "place_vehicles": [ { "vehicle": "truck_swat", "x": 17, "y": 14, "chance": 30, "rotation": 270 } ]
+      "place_vehicles": [ { "vehicle": "truck_swat", "x": 17, "y": 14, "chance": 30, "rotation": 270 } ],
+      "terrain": {
+        ";": "t_region_groundcover",
+        "_": "t_region_groundcover",
+        "n": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "U": "t_region_groundcover"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -318,7 +387,6 @@
     "om_terrain": [ "urban_31_7" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "l55lllllllll55ll==lllVVl",
         "l'''''''''''''''''l6d'''",
@@ -351,7 +419,24 @@
         "L": "t_strconc_floor",
         "d": "t_strconc_floor",
         "h": "t_strconc_floor",
-        "r": "t_strconc_floor"
+        "r": "t_strconc_floor",
+        "V": "t_region_groundcover",
+        "=": "t_region_groundcover",
+        "5": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "'": "t_region_groundcover",
+        "6": "t_region_groundcover",
+        "E": "t_region_groundcover",
+        "$": "t_region_groundcover",
+        "1": "t_region_groundcover",
+        "+": "t_region_groundcover",
+        "S": "t_region_groundcover",
+        "T": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        ";": "t_region_groundcover",
+        "#": "t_region_groundcover",
+        "^": "t_region_groundcover",
+        ",": "t_region_groundcover"
       },
       "toilets": { "T": {  } },
       "items": {
@@ -361,7 +446,8 @@
         "r": { "item": "prison_armor", "chance": 50 },
         "t": { "item": "trash_cart", "chance": 20 }
       },
-      "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.35 } ]
+      "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.35 } ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -370,7 +456,6 @@
     "om_terrain": [ "urban_31_8" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "lllVVlllllllllVVVll=llll",
         "rr''dd6lrlSl'''''''''''l",
@@ -407,7 +492,26 @@
         "d": "t_strconc_floor",
         "h": "t_strconc_floor",
         "r": "t_strconc_floor",
-        "t": "t_strconc_floor"
+        "t": "t_strconc_floor",
+        "V": "t_region_groundcover",
+        "=": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "6": "t_region_groundcover",
+        "'": "t_region_groundcover",
+        "+": "t_region_groundcover",
+        "1": "t_region_groundcover",
+        "5": "t_region_groundcover",
+        "J": "t_region_groundcover",
+        ">": "t_region_groundcover",
+        "v": "t_region_groundcover",
+        "$": "t_region_groundcover",
+        "E": "t_region_groundcover",
+        "k": "t_region_groundcover",
+        "<": "t_region_groundcover",
+        ";": "t_region_groundcover",
+        ",": "t_region_groundcover",
+        "#": "t_region_groundcover",
+        "^": "t_region_groundcover"
       },
       "toilets": { "T": {  } },
       "items": {
@@ -418,7 +522,8 @@
         "r": { "item": "office", "chance": 50 },
         "t": { "item": "office", "chance": 10 }
       },
-      "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.35 } ]
+      "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.35 } ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -427,7 +532,6 @@
     "om_terrain": [ "urban_31_9" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "........................",
         "lllllllllllllllRRRRRRRRR",
@@ -462,7 +566,27 @@
         "d": { "item": "office", "chance": 40 },
         "r": { "item": "cleaning", "chance": 50 }
       },
-      "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 1, 13 ], "y": [ 2, 22 ], "density": 0.3 } ]
+      "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 1, 13 ], "y": [ 2, 22 ], "density": 0.3 } ],
+      "terrain": {
+        ".": "t_region_groundcover",
+        "R": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "L": "t_region_groundcover",
+        "r": "t_region_groundcover",
+        "S": "t_region_groundcover",
+        "+": "t_region_groundcover",
+        "<": "t_region_groundcover",
+        ">": "t_region_groundcover",
+        "=": "t_region_groundcover",
+        "O": "t_region_groundcover",
+        "6": "t_region_groundcover",
+        "v": "t_region_groundcover",
+        "d": "t_region_groundcover",
+        "h": "t_region_groundcover",
+        "A": "t_region_groundcover",
+        "V": "t_region_groundcover"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -471,7 +595,6 @@
     "om_terrain": [ "urban_31_10" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "........................",
         "RRRR................RRRR",
@@ -498,7 +621,9 @@
         ".......................R",
         ".......................R"
       ],
-      "palettes": [ "acidia_residential_commercial_palette" ]
+      "palettes": [ "acidia_residential_commercial_palette" ],
+      "terrain": { ".": "t_region_groundcover", "R": "t_region_groundcover" },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -507,7 +632,6 @@
     "om_terrain": [ "urban_31_11" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "l  lvvvvlvvvvlllllllllll",
         "l             kl      c ",
@@ -535,7 +659,29 @@
         "........................"
       ],
       "palettes": [ "acidia_residential_commercial_palette" ],
-      "terrain": { "(": "t_floor", "3": "t_linoleum_white", "L": "t_linoleum_white" },
+      "terrain": {
+        "(": "t_floor",
+        "3": "t_linoleum_white",
+        "L": "t_linoleum_white",
+        "v": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "c": "t_region_groundcover",
+        "k": "t_region_groundcover",
+        "+": "t_region_groundcover",
+        "h": "t_region_groundcover",
+        "2": "t_region_groundcover",
+        "s": "t_region_groundcover",
+        "=": "t_region_groundcover",
+        "E": "t_region_groundcover",
+        "t": "t_region_groundcover",
+        "C": "t_region_groundcover",
+        "S": "t_region_groundcover",
+        "9": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "V": "t_region_groundcover",
+        "T": "t_region_groundcover",
+        ".": "t_region_groundcover"
+      },
       "furniture": { "3": "f_bench" },
       "toilets": { "T": {  } },
       "items": {
@@ -543,7 +689,8 @@
         "2": { "item": "cleaning", "chance": 2 },
         "L": { "item": "swat_gear", "chance": 40 }
       },
-      "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 1, 22 ], "y": [ 1, 18 ], "density": 0.3 } ]
+      "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 1, 22 ], "y": [ 1, 18 ], "density": 0.3 } ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -552,7 +699,6 @@
     "om_terrain": [ "urban_31_12" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "llllllllllllllVVVlVVVlll",
         "        l  l    h d   Ll",
@@ -580,7 +726,34 @@
         "........................"
       ],
       "palettes": [ "acidia_residential_commercial_palette" ],
-      "terrain": { "(": "t_floor" },
+      "terrain": {
+        "(": "t_floor",
+        "V": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "h": "t_region_groundcover",
+        "L": "t_region_groundcover",
+        "d": "t_region_groundcover",
+        "A": "t_region_groundcover",
+        "6": "t_region_groundcover",
+        "+": "t_region_groundcover",
+        "c": "t_region_groundcover",
+        "O": "t_region_groundcover",
+        "t": "t_region_groundcover",
+        "C": "t_region_groundcover",
+        "T": "t_region_groundcover",
+        "2": "t_region_groundcover",
+        "S": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "-": "t_region_groundcover",
+        "9": "t_region_groundcover",
+        "r": "t_region_groundcover",
+        "1": "t_region_groundcover",
+        "<": "t_region_groundcover",
+        "E": "t_region_groundcover",
+        "=": "t_region_groundcover",
+        "k": "t_region_groundcover",
+        ".": "t_region_groundcover"
+      },
       "toilets": { "T": {  } },
       "items": {
         " ": { "item": "office", "chance": 1 },
@@ -590,7 +763,8 @@
         "r": { "item": "cleaning", "chance": 50 },
         "t": { "item": "coffee_table", "chance": 25 }
       },
-      "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 1, 22 ], "y": [ 1, 18 ], "density": 0.3 } ]
+      "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 1, 22 ], "y": [ 1, 18 ], "density": 0.3 } ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -599,7 +773,6 @@
     "om_terrain": [ "urban_31_13" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "........................",
         "lllllllllllllll.........",
@@ -634,7 +807,27 @@
         "g": { "item": "virology_lab_fridge", "chance": 60 },
         "r": { "item": "hospital_lab", "chance": 60 }
       },
-      "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 1, 13 ], "y": [ 2, 22 ], "density": 0.3 } ]
+      "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 1, 13 ], "y": [ 2, 22 ], "density": 0.3 } ],
+      "terrain": {
+        ".": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "C": "t_region_groundcover",
+        "T": "t_region_groundcover",
+        "S": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "+": "t_region_groundcover",
+        "2": "t_region_groundcover",
+        "-": "t_region_groundcover",
+        "<": "t_region_groundcover",
+        "V": "t_region_groundcover",
+        "v": "t_region_groundcover",
+        "6": "t_region_groundcover",
+        "g": "t_region_groundcover",
+        "h": "t_region_groundcover",
+        "J": "t_region_groundcover",
+        "r": "t_region_groundcover"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -643,7 +836,6 @@
     "om_terrain": [ "urban_31_15" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "l            kllllll9999",
         "l(                 lRRRR",
@@ -671,14 +863,39 @@
         "........................"
       ],
       "palettes": [ "acidia_residential_commercial_palette" ],
-      "terrain": { "(": "t_floor" },
+      "terrain": {
+        "(": "t_floor",
+        "9": "t_region_groundcover",
+        "k": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "R": "t_region_groundcover",
+        "V": "t_region_groundcover",
+        "j": "t_region_groundcover",
+        "v": "t_region_groundcover",
+        "=": "t_region_groundcover",
+        "C": "t_region_groundcover",
+        "J": "t_region_groundcover",
+        "H": "t_region_groundcover",
+        "2": "t_region_groundcover",
+        "E": "t_region_groundcover",
+        "4": "t_region_groundcover",
+        "S": "t_region_groundcover",
+        "t": "t_region_groundcover",
+        "@": "t_region_groundcover",
+        "f": "t_region_groundcover",
+        "8": "t_region_groundcover",
+        "'": "t_region_groundcover",
+        "}": "t_region_groundcover",
+        ".": "t_region_groundcover"
+      },
       "items": {
         " ": { "item": "office", "chance": 1 },
         "4": { "item": "office_breakroom", "chance": 30 },
         "C": { "item": "office_breakroom", "chance": 30 },
         "f": { "item": "fridgesnacks", "chance": 60 }
       },
-      "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 1, 18 ], "y": [ 1, 15 ], "density": 0.2 } ]
+      "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 1, 18 ], "y": [ 1, 15 ], "density": 0.2 } ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -687,7 +904,6 @@
     "om_terrain": [ "urban_31_16" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "999999999999999999999998",
         "RRRRRRRRRRRRRRRRRRRRRRR8",
@@ -715,7 +931,15 @@
         "........................"
       ],
       "palettes": [ "acidia_residential_commercial_palette" ],
-      "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 2, 20 ], "y": [ 1, 18 ], "density": 0.06 } ]
+      "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 2, 20 ], "y": [ 1, 18 ], "density": 0.06 } ],
+      "terrain": {
+        "9": "t_region_groundcover",
+        "8": "t_region_groundcover",
+        "R": "t_region_groundcover",
+        ";": "t_region_groundcover",
+        ".": "t_region_groundcover"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -724,7 +948,6 @@
     "om_terrain": [ "urban_31_17" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "........................",
         "899999999999998.........",
@@ -752,7 +975,9 @@
         "8RRRRRRRRRRRRR8........."
       ],
       "palettes": [ "acidia_residential_commercial_palette" ],
-      "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 1, 13 ], "y": [ 2, 22 ], "density": 0.03 } ]
+      "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 1, 13 ], "y": [ 2, 22 ], "density": 0.03 } ],
+      "terrain": { ".": "t_region_groundcover", "8": "t_region_groundcover", "9": "t_region_groundcover", "R": "t_region_groundcover" },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -761,7 +986,6 @@
     "om_terrain": [ "urban_31_19" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "8RRRRRRRRRRRRR899998....",
         "8RRRRRRRRRRRRR)))RR8....",
@@ -789,7 +1013,17 @@
         "........................"
       ],
       "palettes": [ "acidia_residential_commercial_palette" ],
-      "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 1, 18 ], "y": [ 1, 15 ], "density": 0.03 } ]
+      "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 1, 18 ], "y": [ 1, 15 ], "density": 0.03 } ],
+      "terrain": {
+        "8": "t_region_groundcover",
+        "9": "t_region_groundcover",
+        ".": "t_region_groundcover",
+        "R": "t_region_groundcover",
+        ")": "t_region_groundcover",
+        "{": "t_region_groundcover",
+        "0": "t_region_groundcover"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   }
 ]

@@ -1,14 +1,53 @@
 [
   {
-    "id": "summer_advanced_start",
     "type": "scenario",
-    "copy-from": "summer_advanced_start",
-    "extend": { "professions": [ "wasteland_cyborg" ] }
+    "id": "summer_advanced_start",
+    "name": "The Next Summer",
+    "points": 0,
+    "description": "A little over a year has passed since the apocalypse started, and you're about to face your second summer in Hell.",
+    "allowed_locs": [
+      "sloc_field",
+      "sloc_forest",
+      "sloc_cabin",
+      "sloc_lodge_ground",
+      "sloc_hermit_shack",
+      "sloc_farm_survivalist",
+      "sloc_campsite",
+      "sloc_campground",
+      "sloc_cabin_lake",
+      "sloc_lighthouse_ground"
+    ],
+    "start_name": "Outside Town",
+    "flags": [ "LONE_START" ],
+    "start_of_cataclysm": { "hour": 0, "day": 61, "season": "spring", "year": 1 },
+    "start_of_game": { "hour": 8, "day": 1, "season": "summer", "year": 2 },
+    "add_professions": true,
+    "professions": [ "sheltered_survivor", "sheltered_militia", "winter_scavenger", "winter_army", "wasteland_cyborg" ],
+    "requirement": "achievement_survive_91_days"
   },
   {
-    "id": "ambushed",
     "type": "scenario",
-    "copy-from": "ambushed",
-    "extend": { "professions": [ "wasteland_cyborg" ] }
+    "id": "ambushed",
+    "name": "Ambush",
+    "points": -3,
+    "description": "It is the winter after zero hour.  As you were scavenging for food and a warm place to stay, you heard the sound of lots of movement nearby.",
+    "allowed_locs": [
+      "sloc_field",
+      "sloc_forest",
+      "sloc_cabin",
+      "sloc_hermit_shack",
+      "sloc_farm_survivalist",
+      "sloc_campsite",
+      "sloc_lodge_ground",
+      "sloc_campground"
+    ],
+    "start_name": "Outside Town",
+    "surround_groups": [ [ "GROUP_BLACK_ROAD", 70.0 ] ],
+    "flags": [ "LONE_START" ],
+    "start_of_cataclysm": { "hour": 0, "day": 61, "season": "spring", "year": 1 },
+    "start_of_game": { "hour": 8, "day": 1, "season": "winter", "year": 1 },
+    "add_professions": true,
+    "professions": [ "sheltered_survivor", "sheltered_militia", "winter_scavenger", "winter_army", "wasteland_cyborg" ],
+    "requirement": "achievement_survive_91_days"
   }
 ]

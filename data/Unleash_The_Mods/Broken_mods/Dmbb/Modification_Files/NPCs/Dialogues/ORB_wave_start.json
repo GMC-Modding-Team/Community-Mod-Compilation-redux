@@ -2,28 +2,7 @@
   {
     "id": "TALK_DMBB_ORB_command_wave",
     "type": "talk_topic",
-    "dynamic_line": {
-      "and": [
-        {
-          "u_has_var": "dmbb_orb",
-          "type": "wavepack",
-          "context": "has_selected",
-          "value": "yes",
-          "no": "*will call forth waves from...",
-          "yes": "*is showing all available waves from "
-        },
-        { "u_has_var": "dmbb_orb", "type": "wavepack", "context": "default", "value": "yes", "yes": "DMBB." },
-        { "u_has_var": "dmbb_orb", "type": "wavepack", "context": "secronom", "value": "yes", "yes": "Secronom." },
-        { "u_has_var": "dmbb_orb", "type": "wavepack", "context": "arcana", "value": "yes", "yes": "Arcana." },
-        {
-          "u_has_var": "dmbb_orb",
-          "type": "wavepack",
-          "context": "has_selected",
-          "value": "yes",
-          "yes": "\nSelect the desired wave to engage."
-        }
-      ]
-    },
+    "dynamic_line": "*will call forth waves from…  *is showing all available waves from DMBB.  Secronom.  Arcana.  Select the desired wave to engage.",
     "responses": [
       { "text": "< - - -", "topic": "TALK_DMBB_ORB_command" },
       {
@@ -31,10 +10,10 @@
         "topic": "TALK_DMBB_ORB_command_wave",
         "condition": { "u_has_var": "dmbb_orb", "type": "wavepack", "context": "has_selected", "value": "yes" },
         "effect": [
-          { "u_lose_var": "dmbb_orb", "type": "wavepack", "context": "has_selected", "value": "yes" },
-          { "u_lose_var": "dmbb_orb", "type": "wavepack", "context": "default", "value": "yes" },
-          { "u_lose_var": "dmbb_orb", "type": "wavepack", "context": "secronom", "value": "yes" },
-          { "u_lose_var": "dmbb_orb", "type": "wavepack", "context": "arcana", "value": "yes" }
+          { "u_lose_var": "dmbb_orb", "type": "wavepack", "context": "has_selected" },
+          { "u_lose_var": "dmbb_orb", "type": "wavepack", "context": "default" },
+          { "u_lose_var": "dmbb_orb", "type": "wavepack", "context": "secronom" },
+          { "u_lose_var": "dmbb_orb", "type": "wavepack", "context": "arcana" }
         ]
       },
       {
@@ -2588,19 +2567,10 @@
   {
     "id": "TALK_DMBB_ORB_command_quest_goblinsiege",
     "type": "talk_topic",
-    "dynamic_line": {
-      "and": [
-        "*needs the following items to call forth this wave:\n",
-        {
-          "u_has_items": { "item": "dmbb_essence", "count": 20 },
-          "yes": "\n*20 essence\nReady!\n",
-          "no": "\n*20 essence\nInsufficient amount!\n"
-        }
-      ]
-    },
+    "dynamic_line": "*needs the following items to call forth this wave: *20 essence\nReady!  *20 essence\nInsufficient amount!",
     "responses": [
       {
-        "text": "[START] Goblin Siege! 1/5",
+        "text": "[START] Goblin Siege!  1/5",
         "topic": "TALK_DONE",
         "condition": {
           "and": [
@@ -2660,7 +2630,7 @@
         ]
       },
       {
-        "text": "[START] Goblin Siege! 2/5",
+        "text": "[START] Goblin Siege!  2/5",
         "topic": "TALK_DONE",
         "condition": {
           "and": [
@@ -2721,7 +2691,7 @@
         ]
       },
       {
-        "text": "[START] Goblin Siege! 3/5",
+        "text": "[START] Goblin Siege!  3/5",
         "topic": "TALK_DONE",
         "condition": {
           "and": [
@@ -2782,7 +2752,7 @@
         ]
       },
       {
-        "text": "[START] Goblin Siege! 4/5",
+        "text": "[START] Goblin Siege!  4/5",
         "topic": "TALK_DONE",
         "condition": {
           "and": [
@@ -2843,7 +2813,7 @@
         ]
       },
       {
-        "text": "[START] Goblin Siege! 5/5",
+        "text": "[START] Goblin Siege!  5/5",
         "topic": "TALK_DONE",
         "condition": {
           "and": [
@@ -2911,16 +2881,7 @@
   {
     "id": "TALK_DMBB_ORB_command_quest_firenice",
     "type": "talk_topic",
-    "dynamic_line": {
-      "and": [
-        "*needs the following items to call forth this wave:\n",
-        {
-          "u_has_items": { "item": "dmbb_essence", "count": 150 },
-          "yes": "\n*150 essence\nReady!\n",
-          "no": "\n*150 essence\nInsufficient amount!\n"
-        }
-      ]
-    },
+    "dynamic_line": "*needs the following items to call forth this wave: *150 essence\nReady!  *150 essence\nInsufficient amount!",
     "responses": [
       {
         "text": "[START] Fire and Ice (Fire Dragon)",

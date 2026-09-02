@@ -35,7 +35,7 @@
     "id": "NC_moneylender_worn",
     "type": "item_group",
     "subtype": "collection",
-    "entries": [
+    "items": [
       { "item": "suit" },
       { "item": "tieclip" },
       { "item": "socks_wool" },
@@ -49,13 +49,13 @@
     "id": "NC_moneylender_weapon",
     "type": "item_group",
     "subtype": "collection",
-    "entries": [ { "item": "cigar" } ]
+    "items": [ { "item": "cigar" } ]
   },
   {
     "id": "NC_moneylender_shop",
     "type": "item_group",
     "subtype": "collection",
-    "items": [ [ "FMCNote", 100 ] ]
+    "items": [ { "item": "FMCNote", "prob": 100 } ]
   },
   {
     "id": [ "TALK_moneylender_1" ],
@@ -90,7 +90,7 @@
   {
     "id": "TALK_moneylender_johnny",
     "type": "talk_topic",
-    "dynamic_line": "So, Johnny sent you?  OK, here's the deal.  Johnny owed me a lot of money before <the_cataclysm>, and I want it back.  You have two options: pay for your <name_g>, 1200 FMCNotes will be enough, or you can help me with satisfying my passion and I'll forget about that fool's debt.  I'm a collector of sort.  If you find rare books in your traveling, bring them to me, maybe then I'll think about trusting you.  Choice is yours.  But don't take too long, or your <name_g> will lose his head, he-he.  Also, you have a choice to help him to lose it… I'll pay you for it, and maybe even let you buy my premium goods.",
+    "dynamic_line": "So, Johnny sent you?  OK, here's the deal.  Johnny owed me a lot of money before <the_cataclysm>, and I want it back.  You have two options: pay for your <name_g>, 1200 FMCNotes will be enough, or you can help me with satisfying my passion and I'll forget about that fool's debt.  I'm a collector of sort.  If you find rare books in your traveling, bring them to me, maybe then I'll think about trusting you.  Choice is yours.  But don't take too long, or your <name_g> will lose his head, he-he.  Also, you have a choice to help him to lose it…  I'll pay you for it, and maybe even let you buy my premium goods.",
     "speaker_effect": {
       "effect": [
         { "npc_add_var": "bj_debt_asked", "type": "flag", "context": "meeting", "value": "yes" },
@@ -112,25 +112,7 @@
   {
     "id": "TALK_moneylender_2",
     "type": "talk_topic",
-    "dynamic_line": {
-      "npc_has_var": "ml_crazy",
-      "type": "flag",
-      "context": "meeting",
-      "value": "yes",
-      "yes": {
-        "u_male": true,
-        "yes": "Damn, not that crazy bastard again.  What do you want?",
-        "no": "Damn, not that crazy bitch again.  What do you want?"
-      },
-      "no": {
-        "npc_has_var": "moneylender_job_done",
-        "type": "flag",
-        "context": "meeting",
-        "value": "yes",
-        "yes": "Ah, my favorite customer.  What brings you here?",
-        "no": "Make it quick.  I don't have time for chit-chat!"
-      }
-    },
+    "dynamic_line": "Damn, not that crazy bastard again.  What do you want?  Damn, not that crazy bitch again.  What do you want?  Ah, my favorite customer.  What brings you here?  Make it quick.  I don't have time for chit-chat!",
     "responses": [
       { "text": "<BGSS_intro_question>", "topic": "TALK_moneylender_Background" },
       {
@@ -144,7 +126,7 @@
         }
       },
       {
-        "text": "I got your money. [1200 FMCNotes]",
+        "text": "I got your money.  [1200 FMCNotes]",
         "topic": "TALK_moneylender_debt",
         "condition": {
           "and": [
@@ -337,14 +319,7 @@
   {
     "id": "TALK_moneylender_Background",
     "type": "talk_topic",
-    "dynamic_line": {
-      "npc_has_var": "moneylender_job_done",
-      "type": "flag",
-      "context": "meeting",
-      "value": "yes",
-      "yes": "Well, what to say, I was always good with numbers, especially while counting money, he-he.  When the <zombies> started to rise, I was here, with my trusted men, in my lovely shelter, protected from outside world.  Somehow, this plague didn't got me, so now I'm just continue to do what I know, and what I'm good at.",
-      "no": "I said I don't have time for chit-chat!"
-    },
+    "dynamic_line": "Well, what to say, I was always good with numbers, especially while counting money, he-he.  When the <zombies> started to rise, I was here, with my trusted men, in my lovely shelter, protected from outside world.  Somehow, this plague didn't got me, so now I'm just continue to do what I know, and what I'm good at. I said I don't have time for chit-chat!",
     "responses": [ { "text": "<done_conversation_section>", "topic": "TALK_NONE" } ]
   },
   {
@@ -420,28 +395,7 @@
     "//": "TODO add items",
     "id": "TALK_moneylender_premium",
     "type": "talk_topic",
-    "dynamic_line": {
-      "npc_has_var": "moneylender_premium_item",
-      "type": "flag",
-      "context": "meeting",
-      "value": "3",
-      "yes": "Sorry, <name_g>, I don't have anything for you at the moment.",
-      "no": {
-        "npc_has_var": "moneylender_premium_item",
-        "type": "flag",
-        "context": "meeting",
-        "value": "2",
-        "yes": "I have this cool martial book right here.  Price is 1200 merch.  Are you interested?",
-        "no": {
-          "npc_has_var": "moneylender_premium_item",
-          "type": "flag",
-          "context": "meeting",
-          "value": "1",
-          "yes": "I have this cool shotgun CBM right here.  Price is 400 merch.  Are you interested?",
-          "no": "I have this cool cop bot right here.  Price is 200 merch.  Are you interested?"
-        }
-      }
-    },
+    "dynamic_line": "Sorry, <name_g>, I don't have anything for you at the moment.  I have this cool martial book right here.  Price is 1200 merch.  Are you interested?  I have this cool shotgun CBM right here.  Price is 400 merch.  Are you interested?  I have this cool cop bot right here.  Price is 200 merch.  Are you interested?",
     "speaker_effect": [
       { "sentinel": "moneylender_item_premium" },
       { "effect": { "npc_add_var": "moneylender_premium_item", "type": "flag", "context": "meeting", "value": "0" } }

@@ -2,7 +2,7 @@
   {
     "id": "atlatl_dart_crude",
     "type": "AMMO",
-    "price": "10 USD",
+    "price": 10,
     "name": { "str": "crude atlatl dart" },
     "symbol": "=",
     "color": "green",
@@ -15,15 +15,16 @@
     "casing": "atlatl_dart_crude",
     "damage": { "damage_type": "stab", "amount": 6, "armor_penetration": 2 },
     "range": 3,
-    "dispersion": 450,
     "recoil": 0,
     "count": 1,
-    "effects": [ "RECOVER_15" ]
+    "effects": [ "RECOVER_15" ],
+    "loudness": 0,
+    "//legacy_dispersion": 450
   },
   {
     "id": "atlatl_dart",
     "type": "AMMO",
-    "price": "10 USD",
+    "price": 10,
     "name": { "str": "atlatl dart" },
     "symbol": "=",
     "color": "green",
@@ -36,15 +37,16 @@
     "casing": "atlatl_dart",
     "damage": { "damage_type": "stab", "amount": 12, "armor_penetration": 5 },
     "range": 3,
-    "dispersion": 150,
     "recoil": 0,
     "count": 1,
-    "effects": [ "RECOVER_25" ]
+    "effects": [ "RECOVER_25" ],
+    "loudness": 0,
+    "//legacy_dispersion": 150
   },
   {
     "id": "blowgun_dart_crude",
     "type": "AMMO",
-    "price": "10 USD",
+    "price": 10,
     "name": { "str": "crude blowgun dart" },
     "symbol": "=",
     "color": "green",
@@ -57,15 +59,16 @@
     "casing": "blowgun_dart_crude",
     "damage": { "damage_type": "stab", "amount": 5, "armor_penetration": 8 },
     "range": 3,
-    "dispersion": 450,
     "recoil": 0,
     "count": 1,
-    "effects": [ "RECOVER_15" ]
+    "effects": [ "RECOVER_15" ],
+    "loudness": 0,
+    "//legacy_dispersion": 450
   },
   {
     "id": "blowgun_dart",
     "type": "AMMO",
-    "price": "10 USD",
+    "price": 10,
     "name": { "str": "blowgun dart" },
     "symbol": "=",
     "color": "green",
@@ -78,32 +81,14 @@
     "casing": "blowgun_dart",
     "damage": { "damage_type": "stab", "amount": 15, "armor_penetration": 10 },
     "range": 3,
-    "dispersion": 150,
     "recoil": 0,
     "count": 1,
-    "effects": [ "RECOVER_25" ]
-  },
-  {
-    "id": "javelin",
-    "copy-from": "javelin",
-    "type": "AMMO",
-    "name": { "str": "wooden javelin" },
-    "//": "Item type intentionally converted from GENERIC to AMMO",
-    "volume": "250 ml",
-    "count": 1,
-    "stack_size": 4,
-    "ammo_type": "javelin",
-    "range": 15,
-    "damage": { "damage_type": "stab", "amount": 11 },
-    "dispersion": 135,
-    "loudness": 0,
-    "thrown_damage": [ { "damage_type": "bash", "amount": 5 }, { "damage_type": "stab", "amount": 11 } ],
     "effects": [ "RECOVER_25" ],
-    "flags": [ "FRAGILE_MELEE", "JAVELIN" ]
+    "loudness": 0,
+    "//legacy_dispersion": 150
   },
   {
     "id": "javelin_stone",
-    "copy-from": "javelin",
     "type": "AMMO",
     "name": { "str": "stone javelin" },
     "//": "Avoids negative numbers caused by any future rebalancing of mainline item",
@@ -115,32 +100,14 @@
     "ammo_type": "javelin",
     "range": 13,
     "damage": { "damage_type": "stab", "amount": 13, "armor_penetration": 1 },
-    "relative": { "weight": 100 },
-    "proportional": { "price": 0.5 },
     "thrown_damage": [ { "damage_type": "bash", "amount": 4 }, { "damage_type": "stab", "amount": 13 } ],
-    "flags": [ "FRAGILE_MELEE", "JAVELIN" ]
-  },
-  {
-    "id": "javelin_iron",
-    "copy-from": "javelin_iron",
-    "type": "AMMO",
-    "name": { "str": "iron javelin" },
-    "//": "Item type intentionally converted from GENERIC to AMMO",
-    "volume": "250 ml",
-    "count": 1,
-    "stack_size": 4,
-    "ammo_type": "javelin",
-    "range": 10,
-    "damage": { "damage_type": "stab", "amount": 17, "armor_penetration": 3 },
-    "dispersion": 135,
-    "loudness": 0,
-    "thrown_damage": [ { "damage_type": "bash", "amount": 5 }, { "damage_type": "stab", "amount": 17 } ],
-    "effects": [ "RECOVER_30" ],
-    "flags": [ "FRAGILE_MELEE", "JAVELIN" ]
+    "flags": [ "FRAGILE_MELEE", "JAVELIN" ],
+    "symbol": "=",
+    "volume": "1 L",
+    "copy-from": "javelin"
   },
   {
     "id": "javelin_copper",
-    "copy-from": "javelin_iron",
     "type": "AMMO",
     "name": { "str": "copper javelin" },
     "//": "Avoids negative numbers caused by any future rebalancing of mainline item",
@@ -151,24 +118,23 @@
     "stack_size": 4,
     "ammo_type": "javelin",
     "damage": { "damage_type": "stab", "amount": 14, "armor_penetration": 2 },
-    "relative": { "weight": 30 },
-    "proportional": { "price": 0.5 },
     "thrown_damage": [ { "damage_type": "bash", "amount": 5 }, { "damage_type": "stab", "amount": 14 } ],
-    "flags": [ "FRAGILE_MELEE", "JAVELIN" ]
+    "flags": [ "FRAGILE_MELEE", "JAVELIN" ],
+    "symbol": "=",
+    "volume": "750 ml",
+    "copy-from": "javelin_iron"
   },
   {
     "id": "oilcloth_paint",
-    "type": "AMMO",
+    "type": "GENERIC",
     "name": { "str_sp": "oilcloth paint" },
     "volume": "250 ml",
     "weight": "250 g",
     "color": "yellow",
     "symbol": "~",
     "description": "A jug oil based paint used for waterproofing canvas.",
-    "price": "60 cent",
-    "price_postapoc": "0 cent",
-    "material": [ "oil", "veggy" ],
-    "ammo_type": "NULL",
-    "count": 100
+    "price": 60,
+    "price_postapoc": 0,
+    "material": [ "oil", "veggy" ]
   }
 ]

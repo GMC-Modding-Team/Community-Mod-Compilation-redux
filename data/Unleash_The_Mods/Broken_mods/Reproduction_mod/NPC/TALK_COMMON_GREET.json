@@ -9,7 +9,7 @@
         "condition": { "not": { "npc_has_trait": "YOUR_KID" } }
       },
       {
-        "text": "Hello. I'd like you to travel with me for a while.",
+        "text": "Hello.  I'd like you to travel with me for a while.",
         "topic": "TALK_NPC_OFFSPRING_ASK_FOLLOW",
         "condition": { "npc_has_trait": "YOUR_KID" }
       },
@@ -86,24 +86,13 @@
   {
     "id": "TALK_STRANGER_FRIENDLY",
     "type": "talk_topic",
-    "dynamic_line": {
-      "and": [
-        "Hey there, ",
-        { "npc_has_trait": "YOUR_KID", "yes": "", "no": "<name_g>." },
-        { "npc_has_trait": "YOUR_KID", "yes": "forbear.", "no": "" }
-      ]
-    },
+    "dynamic_line": "Hey there, <name_g>. forbear.",
     "responses": [ { "text": "Bye.", "topic": "TALK_DONE" } ]
   },
   {
     "id": "TALK_STRANGER_NEUTRAL",
     "type": "talk_topic",
-    "dynamic_line": {
-      "and": [
-        { "npc_has_trait": "YOUR_KID", "yes": "", "no": "Hello there." },
-        { "npc_has_trait": "YOUR_KID", "yes": "Hello, parent.", "no": "" }
-      ]
-    },
+    "dynamic_line": "Hello there.  Hello, parent.",
     "responses": [ { "text": "Bye.", "topic": "TALK_DONE" } ]
   },
   {
@@ -121,7 +110,7 @@
   {
     "id": "TALK_STRANGER_AGGRESSIVE",
     "type": "talk_topic",
-    "dynamic_line": { "u_has_weapon": "<drop_it>", "no": "This is my territory, <name_b>." },
+    "dynamic_line": "This is my territory, <name_b>.",
     "responses": [
       { "text": "&Drop weapon.", "topic": "TALK_DEMAND_LEAVE", "condition": "u_has_weapon", "effect": "player_weapon_drop" },
       {
@@ -149,7 +138,7 @@
   {
     "id": "TALK_MUG",
     "type": "talk_topic",
-    "dynamic_line": { "u_has_weapon": "<drop_it>", "no": "<hands_up>" },
+    "dynamic_line": "<hands_up>",
     "responses": [
       {
         "text": "Calm down.  I'm not going to hurt you.",
@@ -183,7 +172,7 @@
   {
     "id": "TALK_WEAPON_DROPPED",
     "type": "talk_topic",
-    "dynamic_line": { "npc_male": "*drops his weapon.", "no": "*drops_her_weapon." },
+    "dynamic_line": "*drops_her_weapon.",
     "responses": [
       {
         "text": "Now get out of here",

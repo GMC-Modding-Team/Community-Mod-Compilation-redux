@@ -3,10 +3,9 @@
     "id": "style_smithy",
     "type": "martial_art",
     "name": { "str": "Blacksmith" },
-    "description": "Countless hours of training with the hammer and anvil have given your right arm superhuman strength. \n\n Based on Fabrication skill and strength. Gives lots of large bashing damage bonuses, but is only usable with tools. Strengths: greatly increases bashing damage and accuracy, becoming stronger the longer you use it. Weaknesses: doesn't do much else, can't use strong weapons, only tools.",
+    "description": "Countless hours of training with the hammer and anvil have given your right arm superhuman strength.\n\n Based on Fabrication skill and strength.  Gives lots of large bashing damage bonuses, but is only usable with tools.  Strengths: greatly increases bashing damage and accuracy, becoming stronger the longer you use it. Weaknesses: doesn't do much else, can't use strong weapons, only tools.",
     "initiate": [ "With your hammer in hand, you prepare to forge a path through your enemies.", "%s gets ready to smash heads." ],
     "autolearn": [ [ "fabrication", 1 ] ],
-    "allow_melee": true,
     "static_buffs": [
       {
         "id": "buff_smithybrandishing_static",
@@ -256,7 +255,7 @@
       {
         "id": "buff_hotiron_onhit",
         "name": "Hot Iron",
-        "description": "Waiting in your forge. Gives stacking bash damage bonuses for every consecutive hit.",
+        "description": "Waiting in your forge.  Gives stacking bash damage bonuses for every consecutive hit.",
         "mult_bonuses": [
           { "stat": "damage", "type": "bash", "scaling-stat": "str", "scale": 2 },
           { "stat": "damage", "type": "bash", "scale": 4 }
@@ -311,7 +310,7 @@
     ],
     "onblock_buffs": [
       {
-        "id": "buff_defending_onblock",
+        "id": "buff_defending_onblock_hammertime",
         "name": "Defending the Weak",
         "description": "Every successful block increases your bashing damage temporarily for a short amount of time.",
         "max_stacks": 99999,
@@ -384,7 +383,7 @@
     ],
     "onkill_buffs": [
       {
-        "id": "buff_battlefury_onkill",
+        "id": "buff_battlefury_onkill_hammertime",
         "name": "Battle Fury",
         "description": "On killing your enemy, you are consumed with bloodlust!\n\n Every kill gives you huge stacking damage bonuses for 5 turns.",
         "mult_bonuses": [
@@ -433,7 +432,7 @@
     ],
     "onmiss_buffs": [
       {
-        "id": "buff_dairyfarmer_onmiss",
+        "id": "buff_dairyfarmer_onmiss_hammertime",
         "name": "You Fight Like A Dairy Farmer",
         "description": "You fight like a dairy farmer!",
         "mult_bonuses": [
@@ -508,7 +507,7 @@
     "id": "absmithy_cow",
     "type": "technique",
     "name": "You Fight Like A Cow",
-    "required_buffs_all": [ "buff_dairyfarmer_onmiss" ],
+    "required_buffs_all": [ "buff_dairyfarmer_onmiss_hammertime" ],
     "mult_bonuses": [
       { "stat": "hit", "scaling-stat": "str", "scale": 1.2 },
       { "stat": "damage", "type": "cut", "scaling-stat": "str", "scale": 1.5 },
@@ -522,7 +521,7 @@
     "id": "absmithy_annihilated",
     "type": "technique",
     "name": "Every Enemy Ive Met Ive Annihilated",
-    "required_buffs_all": [ "buff_dairyfarmer_onmiss" ],
+    "required_buffs_all": [ "buff_dairyfarmer_onmiss_hammertime" ],
     "skill_requirements": [ { "name": "fabrication", "level": 10 } ],
     "mult_bonuses": [
       { "stat": "damage", "type": "cut", "scale": 99 },
@@ -546,7 +545,7 @@
     "type": "technique",
     "name": "Cart Revolution",
     "messages": [
-      "without the cart. You damage %s and nearby enemies with the weight of your equipment.",
+      "without the cart.  You damage %s and nearby enemies with the weight of your equipment.",
       "<npcname> swings their gear around to damage %s and nearby enemies."
     ],
     "skill_requirements": [ { "name": "fabrication", "level": 5 } ],

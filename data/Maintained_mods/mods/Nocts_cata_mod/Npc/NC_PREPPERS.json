@@ -3,7 +3,8 @@
     "id": "NC_PREPPER_worn",
     "type": "item_group",
     "subtype": "collection",
-    "entries": [
+    "items": [
+      { "item": "gloves_liner", "prob": 50 },
       {
         "distribution": [
           { "item": "undershirt", "prob": 30 },
@@ -23,7 +24,6 @@
       {
         "distribution": [ { "item": "socks", "prob": 45 }, { "item": "socks_wool", "prob": 45 }, { "item": "footrags", "prob": 10 } ]
       },
-      { "item": "gloves_liner", "prob": 50 },
       {
         "distribution": [
           { "group": "NC_PREPPER_worn_normal", "prob": 50 },
@@ -40,7 +40,7 @@
     "id": "NC_PREPPER_worn_nomad",
     "type": "item_group",
     "subtype": "collection",
-    "entries": [
+    "items": [
       { "item": "armor_nomad" },
       { "item": "helmet_nomad" },
       { "group": "NC_SCAVENGER_gloves" },
@@ -57,17 +57,17 @@
       { "item": "lsurvivor_armor" },
       { "item": "duster_survivor" },
       { "item": "gloves_lsurvivor", "prob": 50 },
-      { "distribution": [ { "item": "hood_lsurvivor", "prob": 75 }, { "item": "cowboy_hat_surv", "prob": 25 } ] },
       { "item": "mask_lsurvivor", "prob": 50 },
       { "item": "lsurvivor_pants" },
-      { "item": "boots_lsurvivor" }
+      { "item": "boots_lsurvivor" },
+      { "distribution": [ { "item": "hood_lsurvivor", "prob": 75 }, { "item": "cowboy_hat_surv", "prob": 25 } ] }
     ]
   },
   {
     "id": "NC_PREPPER_worn_lmil",
     "type": "item_group",
     "subtype": "collection",
-    "entries": [
+    "items": [
       { "item": "lmil_armor" },
       { "item": "lmil_helm", "prob": 50 },
       {
@@ -84,7 +84,7 @@
     "id": "NC_PREPPER_worn_normal",
     "type": "item_group",
     "subtype": "collection",
-    "entries": [
+    "items": [
       { "group": "clothing_outdoor_torso" },
       { "group": "clothing_outdoor_pants" },
       { "group": "clothing_outdoor_shoes" },
@@ -118,7 +118,9 @@
     "type": "item_group",
     "//": "And this is how to reliably get NC overrides to pair guns and ammo.",
     "subtype": "collection",
-    "entries": [
+    "items": [
+      { "group": "gear_survival", "count": [ 1, 3 ] },
+      { "group": "foodintincan", "count": [ 3, 6 ] },
       {
         "distribution": [
           { "group": "NC_PREPPER_carry_pnu", "prob": 20 },
@@ -128,9 +130,7 @@
           { "group": "NC_PREPPER_carry_bow", "prob": 30 },
           { "group": "NC_PREPPER_carry_flint", "prob": 20 }
         ]
-      },
-      { "group": "gear_survival", "count": [ 1, 3 ] },
-      { "group": "foodintincan", "count": [ 3, 6 ] }
+      }
     ]
   },
   {
@@ -138,7 +138,7 @@
     "type": "item_group",
     "subtype": "collection",
     "ammo": 100,
-    "entries": [
+    "items": [
       {
         "distribution": [
           { "item": "sling", "prob": 20 },
@@ -162,7 +162,7 @@
     "subtype": "collection",
     "magazine": 100,
     "ammo": 100,
-    "entries": [ { "item": "surv_battery_rifle" }, { "item": "medium_battery_cell", "count": [ 2, 3 ] } ]
+    "items": [ { "item": "surv_battery_rifle" }, { "item": "medium_battery_cell", "count": [ 2, 3 ] } ]
   },
   {
     "id": "NC_PREPPER_carry_223",
@@ -170,7 +170,7 @@
     "subtype": "collection",
     "magazine": 100,
     "ammo": 100,
-    "entries": [
+    "items": [
       {
         "distribution": [
           { "collection": [ { "group": "modular_ar15" }, { "item": "stanag30", "count": [ 2, 3 ] } ], "prob": 30 },
@@ -186,7 +186,7 @@
     "subtype": "collection",
     "magazine": 100,
     "ammo": 100,
-    "entries": [
+    "items": [
       {
         "distribution": [
           { "collection": [ { "item": "cx4" }, { "item": "m9bigmag", "count": [ 2, 3 ] } ], "prob": 25 },
@@ -200,7 +200,7 @@
     "id": "NC_PREPPER_carry_bow",
     "type": "item_group",
     "subtype": "collection",
-    "entries": [
+    "items": [
       {
         "distribution": [ { "item": "longbow", "prob": 40 }, { "item": "compbow", "prob": 40 }, { "item": "survbow", "prob": 30 } ]
       },
@@ -219,7 +219,8 @@
     "type": "item_group",
     "subtype": "collection",
     "ammo": 100,
-    "entries": [
+    "items": [
+      { "item": "flintlock_ammo", "count": [ 1, 2 ] },
       {
         "distribution": [
           { "item": "carbine_flintlock", "prob": 30 },
@@ -227,8 +228,7 @@
           { "item": "rifle_flintlock", "prob": 30 },
           { "item": "surv_sniper", "prob": 40 }
         ]
-      },
-      { "item": "flintlock_ammo", "count": [ 1, 2 ] }
+      }
     ]
   }
 ]

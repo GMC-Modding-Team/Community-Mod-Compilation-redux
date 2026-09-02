@@ -1,8 +1,8 @@
 [
   {
     "id": "morlock_map",
-    "copy-from": "abstractmap",
     "type": "GENERIC",
+    "copy-from": "abstractmap",
     "name": { "str": "underground map" },
     "description": "This is a crude map of the local sewers and subways.  It has a few additional sites as well.",
     "color": "light_green",
@@ -31,7 +31,7 @@
     "description": "A hand written notebook full of nightmarish Morlock recipes, such as rat soup, cockroach stirfry, worm-in-a-blanket, and others.  But there are a few useful recipes mixed in with the bad.",
     "weight": "1887 g",
     "volume": "1250 ml",
-    "price": "9 USD",
+    "price": 9,
     "melee_damage": { "bash": 5 },
     "material": [ "paper", "leather" ],
     "symbol": "?",
@@ -46,7 +46,7 @@
   {
     "id": "mushroom_tea",
     "type": "COMESTIBLE",
-    "name": { "str": "mush-tea", "str_pl": "mush-tea" },
+    "name": { "str_sp": "mush-tea" },
     "weight": "250 g",
     "color": "brown",
     "container": "ceramic_cup",
@@ -56,12 +56,13 @@
     "healthy": 2,
     "calories": 2,
     "description": "A healthy beverage made from mushrooms steeped in boiling water.",
-    "price": "1 USD",
+    "price": 1,
     "volume": "250 ml",
     "material": [ "water" ],
     "phase": "liquid",
     "flags": [ "EATEN_HOT", "NUTRIENT_OVERRIDE" ],
-    "fun": 1
+    "fun": 1,
+    "charges": 1
   },
   {
     "id": "mushroom_glowing",
@@ -75,7 +76,7 @@
     "healthy": -3,
     "calories": 30,
     "description": "A mutated mushroom that gives off a faint phosporescent glow.  Not safe to eat in this state.",
-    "price": "140 cent",
+    "price": 140,
     "material": [ "mushroom" ],
     "volume": "250 ml",
     "fun": 10,
@@ -92,21 +93,21 @@
     "id": "seed_mushroom_glowing",
     "type": "COMESTIBLE",
     "copy-from": "seed_mushroom_base",
-    "name": { "str": "glowing mushroom spores", "str_pl": "glowing mushroom spores" },
+    "name": { "str_sp": "glowing mushroom spores" },
     "flags": [ "FREEZERBURN", "LIGHT_2" ],
     "seed_data": { "plant_name": "glowing mushroom", "fruit": "mushroom_glowing", "grow": "45 days" }
   },
   {
     "id": "dry_mushroom_glowing",
     "type": "COMESTIBLE",
-    "name": { "str": "dried glowing mushroom" },
     "copy-from": "dry_mushroom",
+    "name": { "str": "dried glowing mushroom" },
     "description": "A mutant mushroom.  It no longers glows with phosphorescent light, but still looks unsafe to eat."
   },
   {
     "id": "glowing_tea",
     "type": "COMESTIBLE",
-    "name": { "str": "magic tea", "str_pl": "magic tea" },
+    "name": { "str_sp": "magic tea" },
     "weight": "250 g",
     "color": "brown",
     "container": "ceramic_cup",
@@ -116,7 +117,7 @@
     "healthy": 2,
     "calories": 2,
     "description": "A healthy beverage made from mutated mushrooms steeped in hot water.  May cause hallucinations.",
-    "price": "1 USD",
+    "price": 1,
     "volume": "250 ml",
     "material": [ "water" ],
     "phase": "liquid",
@@ -126,7 +127,8 @@
       "type": "consume_drug",
       "activation_message": "You drink the magic.",
       "effects": [ { "id": "hallu", "duration": 3600 } ]
-    }
+    },
+    "charges": 1
   },
   {
     "id": "brew_sunshine",
@@ -174,7 +176,7 @@
   {
     "id": "sunshine",
     "type": "COMESTIBLE",
-    "name": { "str": "sunshine", "str_pl": "sunshine" },
+    "name": { "str_sp": "sunshine" },
     "weight": "35 g",
     "color": "yellow",
     "addiction_type": "alcohol",
@@ -188,7 +190,7 @@
     "addiction_potential": 7,
     "calories": 101,
     "description": "Only the strongest, purest, good ol' fashioned hooch, distilled from glowing mushrooms and sugar.  The prefered drink of all subterranean people.",
-    "price": "850 cent",
+    "price": 850,
     "material": [ "alcohol" ],
     "volume": "250 ml",
     "phase": "liquid",

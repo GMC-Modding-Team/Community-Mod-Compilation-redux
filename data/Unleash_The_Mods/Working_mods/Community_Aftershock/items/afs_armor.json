@@ -9,7 +9,7 @@
     "weight": "581 g",
     "volume": "2 L",
     "price": "100 kUSD",
-    "price_postapoc": "50 USD",
+    "price_postapoc": 50,
     "material": [ "superalloy", "plastic" ],
     "armor": [ { "coverage": 100, "encumbrance": 15, "covers": [ "head", "eyes", "mouth" ] } ],
     "material_thickness": 2,
@@ -17,7 +17,6 @@
     "environmental_protection": 11,
     "qualities": [ [ "GLARE", 3 ] ],
     "charges_per_use": 1,
-    "ammo": [ "battery" ],
     "use_action": {
       "type": "transform",
       "msg": "You turn the helmet's headlamp on.",
@@ -33,8 +32,8 @@
         "magazine_well": "250 ml",
         "pocket_type": "MAGAZINE_WELL",
         "holster": true,
-        "max_contains_volume": "20 L",
-        "max_contains_weight": "20 kg",
+        "max_contains_volume": "20000 ml",
+        "max_contains_weight": "20000 g",
         "item_restriction": [ "light_battery_cell", "light_minus_battery_cell", "light_plus_battery_cell" ]
       }
     ]
@@ -43,13 +42,13 @@
     "id": "afs_hev_helmet_on",
     "type": "TOOL_ARMOR",
     "copy-from": "afs_hev_helmet",
-    "name": { "str": "hazardous environment helmet (on)" },
+    "name": { "str_sp": "hazardous environment helmet (on)" },
     "description": "Meant to pair with a compatible HEV suit, this helmet's physical protection is basic at best, but makes up for it with an air recycler that provides excellent protection from airborne contaminants.  Its light is on, illuminating the area at a cost of batteries.",
-    "revert_to": "afs_hev_helmet",
-    "turns_per_charge": 20,
     "use_action": { "menu_text": "Turn off", "type": "transform", "msg": "The %s flicks off.", "target": "afs_hev_helmet" },
     "flags": [ "LIGHT_500", "WATERPROOF", "FLASH_PROTECTION", "ONLY_ONE", "STURDY" ],
-    "looks_like": "depowered_helmet"
+    "looks_like": "depowered_helmet",
+    "revert_to": "afs_hev_helmet",
+    "turns_per_charge": 20
   },
   {
     "id": "afs_bag_of_holding",
@@ -67,13 +66,18 @@
     "armor": [ { "encumbrance": 10, "coverage": 30, "covers": [ "torso" ] } ],
     "warmth": 5,
     "material_thickness": 2,
-    "flags": [ "BELTED", "ONLY_ONE", "LEAK_DAM" ],
+    "flags": [ "BELTED", "ONLY_ONE", "LEAK_DAM", "TARDIS" ],
     "pocket_data": [
-      { "pocket_type": "CONTAINER", "max_contains_volume": "10 L", "max_contains_weight": "10 kg", "moves": 80 },
-      { "pocket_type": "CONTAINER", "max_contains_volume": "10 L", "max_contains_weight": "10 kg", "moves": 80 },
-      { "pocket_type": "CONTAINER", "max_contains_volume": "80 L", "max_contains_weight": "100 kg", "moves": 120 },
-      { "pocket_type": "CONTAINER", "max_contains_volume": "10 ml", "max_contains_weight": "10 kg", "moves": 80 },
-      { "pocket_type": "CONTAINER", "max_contains_volume": "10 ml", "max_contains_weight": "10 kg", "moves": 80 }
+      { "pocket_type": "CONTAINER", "max_contains_volume": "10000 ml", "max_contains_weight": "10000 g", "moves": 80 },
+      { "pocket_type": "CONTAINER", "max_contains_volume": "10000 ml", "max_contains_weight": "10000 g", "moves": 80 },
+      {
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "80000 ml",
+        "max_contains_weight": "100000 g",
+        "moves": 120
+      },
+      { "pocket_type": "CONTAINER", "max_contains_volume": "10 ml", "max_contains_weight": "10000 g", "moves": 80 },
+      { "pocket_type": "CONTAINER", "max_contains_volume": "10 ml", "max_contains_weight": "10000 g", "moves": 80 }
     ],
     "looks_like": "portal"
   },
@@ -84,7 +88,7 @@
     "description": "This is a makeshift quiver made from a thigh-high boot with the heel removed and patched shut, and strings used as a strap run through a hole punched into its side.  It can hold 40 arrows for easy access.",
     "weight": "770 g",
     "volume": "2 L",
-    "price": "5 USD",
+    "price": 5,
     "melee_damage": { "bash": 4 },
     "material": [ "leather" ],
     "symbol": "[",
@@ -92,7 +96,7 @@
     "armor": [ { "encumbrance": 5, "coverage": 20, "covers": [ "torso" ] } ],
     "material_thickness": 1,
     "pocket_data": [ { "pocket_type": "MAGAZINE", "ammo_restriction": { "arrow": 40 } } ],
-    "flags": [ "BELTED", "OVERSIZE", "WATER_FRIENDLY" ]
+    "flags": [ "BELTED", "OVERSIZE" ]
   },
   {
     "id": "afs_boot_bolt_quiver",
@@ -101,7 +105,7 @@
     "description": "This is a makeshift quiver made from a thigh-high boot with the heel removed and patched shut, and strings used as a strap run through a hole punched into its side.  It can hold 40 bolts for easy access.",
     "weight": "770 g",
     "volume": "2 L",
-    "price": "5 USD",
+    "price": 5,
     "melee_damage": { "bash": 4 },
     "material": [ "leather" ],
     "symbol": "[",
@@ -109,7 +113,7 @@
     "armor": [ { "encumbrance": 5, "coverage": 20, "covers": [ "torso" ] } ],
     "material_thickness": 1,
     "pocket_data": [ { "pocket_type": "MAGAZINE", "ammo_restriction": { "bolt": 40 } } ],
-    "flags": [ "BELTED", "OVERSIZE", "WATER_FRIENDLY" ]
+    "flags": [ "BELTED", "OVERSIZE" ]
   },
   {
     "id": "daypack",
@@ -121,17 +125,22 @@
     "weight": "411 g",
     "volume": "1 L",
     "//": "REI Co-op 22-liter daypack costs $54.95, so ballpark to $50",
-    "price": "50 USD",
-    "price_postapoc": "100 USD",
+    "price": 50,
+    "price_postapoc": 100,
     "material": [ "plastic" ],
     "armor": [ { "coverage": 50, "encumbrance": 10, "covers": [ "torso" ] } ],
     "material_thickness": 1,
     "pocket_data": [
-      { "pocket_type": "CONTAINER", "max_contains_volume": "2500 ml", "max_contains_weight": "5 kg", "moves": 80 },
-      { "pocket_type": "CONTAINER", "max_contains_volume": "2500 ml", "max_contains_weight": "5 kg", "moves": 80 },
-      { "pocket_type": "CONTAINER", "max_contains_volume": "15 L", "max_contains_weight": "30 kg", "moves": 120 }
+      { "pocket_type": "CONTAINER", "max_contains_volume": "2500 ml", "max_contains_weight": "5000 g", "moves": 80 },
+      { "pocket_type": "CONTAINER", "max_contains_volume": "2500 ml", "max_contains_weight": "5000 g", "moves": 80 },
+      {
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "15000 ml",
+        "max_contains_weight": "30000 g",
+        "moves": 120
+      }
     ],
-    "flags": [ "BELTED", "ONLY_ONE", "OVERSIZE", "STURDY" ],
+    "flags": [ "BELTED", "ONLY_ONE", "OVERSIZE", "STURDY", "TARDIS" ],
     "looks_like": "backpack"
   },
   {
@@ -144,7 +153,7 @@
     "weight": "3501 g",
     "volume": "2500 ml",
     "price": "1000 kUSD",
-    "price_postapoc": "500 USD",
+    "price_postapoc": 500,
     "material": [ "superalloy", "kevlar" ],
     "armor": [
       {
@@ -168,8 +177,8 @@
       "STURDY"
     ],
     "pocket_data": [
-      { "pocket_type": "CONTAINER", "max_contains_volume": "1500 ml", "max_contains_weight": "5 kg", "moves": 80 },
-      { "pocket_type": "CONTAINER", "max_contains_volume": "1500 ml", "max_contains_weight": "5 kg", "moves": 80 }
+      { "pocket_type": "CONTAINER", "max_contains_volume": "1500 ml", "max_contains_weight": "5000 g", "moves": 80 },
+      { "pocket_type": "CONTAINER", "max_contains_volume": "1500 ml", "max_contains_weight": "5000 g", "moves": 80 }
     ],
     "looks_like": "depowered_armor"
   },
@@ -180,7 +189,7 @@
     "description": "A big, comfy quilt made of thick wool in a triangle pattern.  Extremely cozy!",
     "weight": "1814 g",
     "volume": "5 L",
-    "price": "55 USD",
+    "price": 55,
     "to_hit": -1,
     "material": [ "wool" ],
     "symbol": "[",
@@ -216,14 +225,14 @@
     "description": "An insulated, breathable hoodie made for alpine skiing.  Very warm, and with sizable pockets.",
     "weight": "1105 g",
     "volume": "5 L",
-    "price": "180 USD",
+    "price": 180,
     "material": [ "cotton", "plastic" ],
     "symbol": "[",
     "color": "light_blue",
     "armor": [ { "encumbrance": 14, "coverage": 95, "covers": [ "torso", "arm_l", "arm_r" ] } ],
     "pocket_data": [
-      { "pocket_type": "CONTAINER", "max_contains_volume": "700 ml", "max_contains_weight": "3 kg", "moves": 80 },
-      { "pocket_type": "CONTAINER", "max_contains_volume": "700 ml", "max_contains_weight": "3 kg", "moves": 80 }
+      { "pocket_type": "CONTAINER", "max_contains_volume": "700 ml", "max_contains_weight": "3000 g", "moves": 80 },
+      { "pocket_type": "CONTAINER", "max_contains_volume": "700 ml", "max_contains_weight": "3000 g", "moves": 80 }
     ],
     "warmth": 80,
     "material_thickness": 5,
@@ -235,15 +244,18 @@
     "id": "afs_survivor_belt",
     "type": "ARMOR",
     "copy-from": "survivor_belt_notools",
-    "name": { "str": "survivor utility belt (holster)" },
+    "name": { "str_sp": "survivor utility belt (holster)" },
     "description": "A custom-built leather utility belt covered with straps and pouches containing many useful hand tools and a clip for holding various equipment.  Durable and carefully crafted to be comfortable to wear.  Activate to clip something to it.",
-    "use_action": { "type": "holster", "holster_prompt": "Attach what to belt loop?", "holster_msg": "You clip your %s to your %s" }
+    "pocket_data": [
+      { "pocket_type": "CONTAINER", "rigid": true, "max_contains_volume": "2000 ml", "max_contains_weight": "5000 g" },
+      { "pocket_type": "CONTAINER", "rigid": true, "max_contains_volume": "2000 ml", "max_contains_weight": "5000 g" }
+    ]
   },
   {
     "id": "survivor_belt",
     "type": "ARMOR",
     "copy-from": "survivor_belt_notools",
-    "name": { "str": "survivor utility belt (sheath)" }
+    "name": { "str_sp": "survivor utility belt (sheath)" }
   },
   {
     "id": "welding_mask",
@@ -252,7 +264,7 @@
     "description": "A metal mask with a very dark visor, meant to protect the entire face during welding.  It also serves as good armor, but makes it hard to see.",
     "weight": "4000 g",
     "volume": "1 L",
-    "price": "14 USD",
+    "price": 14,
     "to_hit": -3,
     "material": [ "steel" ],
     "symbol": "[",
@@ -269,7 +281,7 @@
     "description": "A crude welding mask made from shaped metal, with dark cloth and tinted glass to protect the eyes.  It's extremely hard to see with, but with nothing else available, it can protect your sight while welding.",
     "weight": "4000 g",
     "volume": "1 L",
-    "price": "14 USD",
+    "price": 14,
     "to_hit": -3,
     "material": [ "steel" ],
     "symbol": "[",
@@ -286,7 +298,7 @@
     "description": "A piece of body armor from the Middle Ages consisting of boiled leather with riveted metal plates lying underneath.  Typically used to protect from arrows, it has very good protection against cuts.",
     "weight": "3268 g",
     "volume": "1500 ml",
-    "price": "50 USD",
+    "price": 50,
     "to_hit": -3,
     "material": [ "leather", "steel" ],
     "symbol": "[",
@@ -303,7 +315,7 @@
     "description": "Modelled after a proper brigandine from medieval times, this makeshift piece of body armor consists of layered cloth with small pieces of sheet metal affixed to the underside.  While not as protective as a proper piece of armor, it'll still keep you relatively safe.",
     "weight": "3268 g",
     "volume": "1500 ml",
-    "price": "10 USD",
+    "price": 10,
     "to_hit": -3,
     "material": [ "cotton", "steel" ],
     "symbol": "[",
@@ -320,7 +332,7 @@
     "description": "A lightweight armor vest made of pieces of titanium sewn together, with cloth padding for comfort.  Brittle against blunt force, but highly resistant to cuts and corrosion.",
     "weight": "939 g",
     "volume": "500 ml",
-    "price": "10 USD",
+    "price": 10,
     "to_hit": -3,
     "material": [ "titanium", "cotton" ],
     "symbol": "[",
@@ -336,7 +348,7 @@
     "description": "A Modular Bullet Resistant Vest.  Titanium scraps have been inserted to improve its protection.  It has four pouches capable of carrying magazines.",
     "weight": "3108 g",
     "volume": "6 L",
-    "price": "1100 USD",
+    "price": 1100,
     "to_hit": -3,
     "melee_damage": { "bash": 6 },
     "material": [ "kevlar", "titanium" ],
@@ -345,10 +357,10 @@
     "armor": [ { "encumbrance": 7, "coverage": 85, "covers": [ "torso" ] } ],
     "warmth": 15,
     "material_thickness": 3,
-    "use_action": { "type": "holster", "holster_prompt": "Stash ammo", "holster_msg": "You stash your %s." },
     "pocket_data": [
-      { "pocket_type": "CONTAINER", "max_contains_volume": "1250 ml", "max_contains_weight": "5 kg", "moves": 80 },
-      { "pocket_type": "CONTAINER", "max_contains_volume": "1250 ml", "max_contains_weight": "5 kg", "moves": 80 }
+      { "pocket_type": "CONTAINER", "max_contains_volume": "1250 ml", "max_contains_weight": "5000 g", "moves": 80 },
+      { "pocket_type": "CONTAINER", "max_contains_volume": "1250 ml", "max_contains_weight": "5000 g", "moves": 80 },
+      { "pocket_type": "CONTAINER", "rigid": true, "max_contains_volume": "2000 ml", "max_contains_weight": "5000 g" }
     ],
     "flags": [ "STURDY", "OUTER" ]
   },
@@ -360,7 +372,7 @@
     "description": "A pair of arm guards made from leather, reinforced with bone.  Light and strong.",
     "weight": "645 g",
     "volume": "3 L",
-    "price": "200 USD",
+    "price": 200,
     "to_hit": 1,
     "material": [ "bone", "leather" ],
     "symbol": "[",
@@ -369,7 +381,7 @@
     "warmth": 20,
     "material_thickness": 4,
     "environmental_protection": 1,
-    "flags": [ "STURDY", "BELTED", "BLOCK_WHILE_WORN", "WATER_FRIENDLY" ]
+    "flags": [ "STURDY", "BELTED", "BLOCK_WHILE_WORN" ]
   },
   {
     "id": "armor_bone",
@@ -379,7 +391,7 @@
     "description": "Body armor consisting of a leather suit with strategically-placed bone reinforcement.  Light and strong.",
     "weight": "2687 g",
     "volume": "12500 ml",
-    "price": "1000 USD",
+    "price": 1000,
     "to_hit": -5,
     "melee_damage": { "bash": 2 },
     "material": [ "bone", "leather" ],
@@ -398,7 +410,7 @@
     "description": "Leather gauntlets with bone armor reinforcement.  Very light and strong.",
     "weight": "690 g",
     "volume": "1250 ml",
-    "price": "380 USD",
+    "price": 380,
     "to_hit": -2,
     "melee_damage": { "bash": 2 },
     "material": [ "bone", "leather" ],
@@ -418,7 +430,7 @@
     "description": "A grotesque, horned helmet carved from bone.  Covers the entire head; very light and strong.",
     "weight": "1621 g",
     "volume": "4250 ml",
-    "price": "420 USD",
+    "price": 420,
     "to_hit": -2,
     "melee_damage": { "bash": 2 },
     "material": [ "bone" ],

@@ -7,37 +7,36 @@
     "stackable": true,
     "material": [ "steel" ],
     "symbol": "=",
-    "color": "green",
-    "damage_states": [ 0, 0 ]
+    "color": "green"
   },
   {
     "id": "belt30mm",
-    "copy-from": "magazine_belt",
     "type": "MAGAZINE",
+    "copy-from": "magazine_belt",
     "name": { "str": "30x113mm ammo belt" },
+    "flags": [ "MAG_COMPACT", "ZERO_WEIGHT" ],
     "ammo_type": [ "30mm" ],
     "default_ammo": "30mm_hedp",
     "capacity": 300,
     "count": 50,
     "linkage": "ammolink30mm",
     "reload_time": 60,
-    "flags": [ "MAG_COMPACT", "ZERO_WEIGHT" ],
     "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "30mm": 300 } } ]
   },
   {
     "id": "ammolink30mm",
-    "copy-from": "ammolink",
     "type": "GENERIC",
+    "copy-from": "ammolink",
     "name": { "str": "30x113mm autocannon belt linkage" },
     "weight": "6 g",
-    "volume": "10ml",
+    "volume": "10 ml",
     "stackable": true,
     "use_action": { "type": "ammobelt", "belt": "belt30mm" }
   },
   {
     "id": "30mm_hedp",
     "type": "AMMO",
-    "price": "155 USD",
+    "price": 155,
     "name": { "str_sp": "30x113mm HEDP" },
     "symbol": "=",
     "color": "dark_gray",
@@ -50,17 +49,18 @@
     "casing": "30mm_casing",
     "damage": { "damage_type": "stab", "amount": 390, "armor_penetration": 210 },
     "range": 60,
-    "dispersion": 50,
     "recoil": 8000,
     "count": 15,
     "effects": [ "CUSTOM_EXPLOSION" ],
     "explode_in_fire": true,
-    "explosion": { "power": 24, "distance_factor": 0.6, "shrapnel": { "casing_mass": 5, "recovery": 100, "drop": "shrapnel" } }
+    "explosion": { "power": 24, "distance_factor": 0.6, "shrapnel": { "casing_mass": 5, "recovery": 100, "drop": "shrapnel" } },
+    "loudness": 0,
+    "//legacy_dispersion": 50
   },
   {
     "id": "30mm_hei",
     "type": "AMMO",
-    "price": "155 USD",
+    "price": 155,
     "name": { "str_sp": "30x113mm HEI" },
     "symbol": "=",
     "color": "dark_gray",
@@ -73,17 +73,18 @@
     "casing": "30mm_casing",
     "damage": { "damage_type": "stab", "amount": 210, "armor_penetration": 75 },
     "range": 60,
-    "dispersion": 50,
     "recoil": 8000,
     "count": 15,
     "effects": [ "CUSTOM_EXPLOSION" ],
     "explode_in_fire": true,
-    "explosion": { "power": 24, "distance_factor": 0.4, "fire": true }
+    "explosion": { "power": 24, "distance_factor": 0.4, "fire": true },
+    "loudness": 0,
+    "//legacy_dispersion": 50
   },
   {
     "id": "30mm_slug",
     "type": "AMMO",
-    "price": "1550 cent",
+    "price": 1550,
     "name": { "str_sp": "reloaded 30x113mm" },
     "symbol": "=",
     "color": "dark_gray",
@@ -96,10 +97,11 @@
     "casing": "30mm_casing",
     "damage": { "damage_type": "stab", "amount": 150, "armor_penetration": 15 },
     "range": 30,
-    "dispersion": 60,
     "recoil": 8000,
     "count": 10,
-    "effects": [ "COOKOFF", "RECYCLED" ]
+    "effects": [ "COOKOFF", "RECYCLED" ],
+    "loudness": 0,
+    "//legacy_dispersion": 60
   },
   {
     "id": "120mm_usable_heat",
@@ -117,17 +119,18 @@
     "casing": "120mm_casing",
     "damage": { "damage_type": "stab", "amount": 3500, "armor_penetration": 800 },
     "range": 90,
-    "dispersion": 5,
     "recoil": 6000,
     "count": 1,
     "effects": [ "CUSTOM_EXPLOSION", "TRAIL" ],
     "explode_in_fire": true,
-    "explosion": { "power": 100, "distance_factor": 0.4 }
+    "explosion": { "power": 100, "distance_factor": 0.4 },
+    "loudness": 0,
+    "//legacy_dispersion": 5
   },
   {
     "id": "120mm_usable_ap",
     "type": "AMMO",
-    "price": "1200 USD",
+    "price": 1200,
     "name": { "str": "120mm APFSDS" },
     "symbol": "=",
     "color": "dark_gray",
@@ -140,15 +143,16 @@
     "casing": "120mm_casing",
     "damage": { "damage_type": "stab", "amount": 4000, "armor_penetration": 800 },
     "range": 95,
-    "dispersion": 5,
     "recoil": 5000,
     "count": 1,
-    "effects": [ "COOKOFF", "INCENDIARY", "TRAIL" ]
+    "effects": [ "COOKOFF", "INCENDIARY", "TRAIL" ],
+    "loudness": 0,
+    "//legacy_dispersion": 5
   },
   {
     "id": "120mm_usable_shot",
     "type": "AMMO",
-    "price": "100 USD",
+    "price": 100,
     "name": { "str": "reloaded 120mm shot" },
     "symbol": "=",
     "color": "dark_gray",
@@ -161,15 +165,16 @@
     "casing": "120mm_casing",
     "damage": { "damage_type": "stab", "amount": 200, "armor_penetration": 10 },
     "range": 20,
-    "dispersion": 30,
     "recoil": 7500,
     "count": 1,
-    "effects": [ "COOKOFF", "SHOT", "RECYCLED" ]
+    "effects": [ "COOKOFF", "SHOT", "RECYCLED" ],
+    "loudness": 0,
+    "//legacy_dispersion": 30
   },
   {
     "id": "120mm_usable_slug",
     "type": "AMMO",
-    "price": "100 USD",
+    "price": 100,
     "name": { "str": "makeshift 120mm slug" },
     "symbol": "=",
     "color": "dark_gray",
@@ -182,15 +187,16 @@
     "casing": "120mm_casing",
     "damage": { "damage_type": "stab", "amount": 400, "armor_penetration": 25 },
     "range": 60,
-    "dispersion": 120,
     "recoil": 7500,
     "count": 1,
-    "effects": [ "COOKOFF", "RECYCLED" ]
+    "effects": [ "COOKOFF", "RECYCLED" ],
+    "loudness": 0,
+    "//legacy_dispersion": 120
   },
   {
     "id": "155mm_heat",
     "type": "AMMO",
-    "price": "1200 USD",
+    "price": 1200,
     "name": { "str": "155mm HEAT" },
     "symbol": "=",
     "color": "dark_gray",
@@ -203,17 +209,18 @@
     "casing": "155mm_casing",
     "damage": { "damage_type": "stab", "amount": 4000, "armor_penetration": 1200 },
     "range": 120,
-    "dispersion": 25,
     "recoil": 6000,
     "count": 1,
     "effects": [ "CUSTOM_EXPLOSION", "TRAIL" ],
     "explode_in_fire": true,
-    "explosion": { "power": 150, "distance_factor": 0.5 }
+    "explosion": { "power": 150, "distance_factor": 0.5 },
+    "loudness": 0,
+    "//legacy_dispersion": 25
   },
   {
     "id": "155mm_frag",
     "type": "AMMO",
-    "price": "1200 USD",
+    "price": 1200,
     "name": { "str": "155mm frag" },
     "symbol": "=",
     "color": "dark_gray",
@@ -226,17 +233,18 @@
     "casing": "155mm_casing",
     "damage": { "damage_type": "stab", "amount": 3500, "armor_penetration": 1200 },
     "range": 120,
-    "dispersion": 25,
     "recoil": 6000,
     "count": 1,
     "effects": [ "CUSTOM_EXPLOSION", "TRAIL" ],
     "explode_in_fire": true,
-    "explosion": { "power": 40, "shrapnel": { "casing_mass": 6, "recovery": 100, "drop": "shrapnel" } }
+    "explosion": { "power": 40, "shrapnel": { "casing_mass": 6, "recovery": 100, "drop": "shrapnel" } },
+    "loudness": 0,
+    "//legacy_dispersion": 25
   },
   {
     "id": "155mm_shot",
     "type": "AMMO",
-    "price": "120 USD",
+    "price": 120,
     "name": { "str": "reloaded 155mm shot" },
     "symbol": "=",
     "color": "dark_gray",
@@ -249,15 +257,16 @@
     "casing": "155mm_casing",
     "damage": { "damage_type": "stab", "amount": 225, "armor_penetration": 15 },
     "range": 25,
-    "dispersion": 50,
     "recoil": 6800,
     "count": 1,
-    "effects": [ "COOKOFF", "SHOT", "RECYCLED" ]
+    "effects": [ "COOKOFF", "SHOT", "RECYCLED" ],
+    "loudness": 0,
+    "//legacy_dispersion": 50
   },
   {
     "id": "155mm_slug",
     "type": "AMMO",
-    "price": "120 USD",
+    "price": 120,
     "name": { "str": "reloaded 155mm slug" },
     "symbol": "=",
     "color": "dark_gray",
@@ -270,45 +279,49 @@
     "casing": "155mm_casing",
     "damage": { "damage_type": "stab", "amount": 450, "armor_penetration": 35 },
     "range": 75,
-    "dispersion": 150,
     "recoil": 8000,
     "count": 1,
-    "effects": [ "COOKOFF", "SHOT", "RECYCLED" ]
+    "effects": [ "COOKOFF", "SHOT", "RECYCLED" ],
+    "loudness": 0,
+    "//legacy_dispersion": 150
   },
   {
     "id": "30mm_casing",
     "type": "GENERIC",
-    "copy-from": "artillery_casing",
+    "symbol": ".",
     "name": { "str": "30mm canister" },
     "description": "A canister from a spent 30mm shell.",
     "volume": "1250 ml",
-    "weight": "20 g"
+    "weight": "20 g",
+    "copy-from": "artillery_casing"
   },
   {
     "id": "120mm_casing",
     "type": "GENERIC",
-    "copy-from": "artillery_casing",
+    "symbol": ".",
     "name": { "str": "120mm canister" },
     "color": "dark_gray",
     "description": "A large canister from a spent 120mm shell, now an expensive paperweight.",
     "material": [ "steel" ],
     "volume": "2500 ml",
-    "weight": "300 g"
+    "weight": "300 g",
+    "copy-from": "artillery_casing"
   },
   {
     "id": "155mm_casing",
     "type": "GENERIC",
-    "copy-from": "artillery_casing",
+    "symbol": ".",
     "name": { "str": "155mm canister" },
     "description": "A large canister from a spent 155mm shell, now an expensive paperweight.",
     "volume": "3750 ml",
-    "weight": "400 g"
+    "weight": "400 g",
+    "copy-from": "artillery_casing"
   },
   {
     "id": "electric_primer",
     "type": "AMMO",
     "category": "spare_parts",
-    "price": "30 USD",
+    "price": 30,
     "name": { "str": "small electric primer" },
     "symbol": "=",
     "color": "dark_gray",
@@ -324,7 +337,7 @@
     "id": "electric_primer_large",
     "type": "AMMO",
     "category": "spare_parts",
-    "price": "30 USD",
+    "price": 30,
     "name": { "str": "large electric primer" },
     "symbol": "=",
     "color": "dark_gray",
@@ -363,8 +376,8 @@
         "magazine_well": "250 ml",
         "pocket_type": "MAGAZINE_WELL",
         "holster": true,
-        "max_contains_volume": "20 L",
-        "max_contains_weight": "20 kg",
+        "max_contains_volume": "20000 ml",
+        "max_contains_weight": "20000 g",
         "item_restriction": [ "belt30mm" ]
       }
     ]
@@ -389,7 +402,6 @@
     "dispersion": 20,
     "sight_dispersion": 10,
     "durability": 9,
-    "clip_size": 1,
     "loudness": 300,
     "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "120mm_usable": 1 } } ]
   },
@@ -412,7 +424,6 @@
     "dispersion": 20,
     "sight_dispersion": 10,
     "durability": 9,
-    "clip_size": 5,
     "loudness": 300,
     "flags": [ "NO_RELOAD", "MOUNTED_GUN" ],
     "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "120mm_usable": 5 } } ]
@@ -436,7 +447,6 @@
     "dispersion": 20,
     "sight_dispersion": 10,
     "durability": 8,
-    "clip_size": 5,
     "loudness": 300,
     "flags": [ "NO_RELOAD", "MOUNTED_GUN" ],
     "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "120mm_usable": 5 } } ]
@@ -461,7 +471,6 @@
     "dispersion": 20,
     "sight_dispersion": 10,
     "durability": 9,
-    "clip_size": 1,
     "loudness": 400,
     "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "155mm": 1 } } ]
   },
@@ -483,7 +492,6 @@
     "dispersion": 0,
     "sight_dispersion": 10,
     "durability": 9,
-    "clip_size": 2,
     "loudness": 200,
     "flags": [ "NO_RELOAD", "MOUNTED_GUN" ],
     "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "atgm": 2 } } ]
@@ -504,7 +512,7 @@
     "time": 30,
     "fun": 0,
     "skill": "launcher",
-    "price": "60 USD",
+    "price": 60,
     "required_level": 3
   },
   {
@@ -515,7 +523,7 @@
     "description": "A short, interlocking set of hard rubber tracks reinforced by stiff wire held in place by a set of smaller wheels.  Similar with what you might see used on light construction vehicles.  It's significantly stronger than regular tires due to not being at risk of bursting; but is quite heavy.",
     "weight": "32368 g",
     "volume": "50 L",
-    "price": "255 USD",
+    "price": 255,
     "to_hit": -3,
     "melee_damage": { "bash": 30 },
     "material": [ "plastic", "steel" ],
@@ -532,7 +540,7 @@
     "description": "A short, interlocking set of shaped steel tracks held in place by a set of smaller wheels.  Similar with what you might see used on large construction vehicles.  It's significantly stronger than regular tires due to not being at risk of bursting; but is very heavy.",
     "weight": "95968 g",
     "volume": "75 L",
-    "price": "455 USD",
+    "price": 455,
     "to_hit": -3,
     "melee_damage": { "bash": 30 },
     "material": [ "steel" ],
@@ -549,7 +557,7 @@
     "description": "A short, interlocking set of shaped steel tracks held in place by a set of smaller wheels.  Similar with what you might see used on APCs and armored vehicles.  It's significantly stronger than regular tires due to not being at risk of bursting; but is extremely heavy.",
     "weight": "287824 g",
     "volume": "87500 ml",
-    "price": "755 USD",
+    "price": 755,
     "to_hit": -3,
     "melee_damage": { "bash": 30 },
     "material": [ "qt_steel", "steel" ],
@@ -567,7 +575,7 @@
     "weight": "200000 g",
     "//": "cheating a bit with the volume due to lack of proper vehicle storage options",
     "volume": "250 L",
-    "price": "1000000 USD",
+    "price": 1000000,
     "to_hit": -3,
     "melee_damage": { "bash": 8 },
     "material": [ "steel" ],
@@ -592,7 +600,7 @@
     "name": { "str": "broken tank drone" },
     "category": "other",
     "description": "A broken tank drone.  Still looks intimidating despite being permanently inoperative, possibly due to the sheer size and mass.  Could be gutted for parts.",
-    "price": "10 USD",
+    "price": 10,
     "material": [ "steel", "plastic" ],
     "weight": "1223850 g",
     "volume": "875 L",

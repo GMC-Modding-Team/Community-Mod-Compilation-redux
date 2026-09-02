@@ -2,25 +2,7 @@
   {
     "id": "SECRO_FLESH_HIVEMIND_build_defenses",
     "type": "talk_topic",
-    "dynamic_line": {
-      "and": [
-        "*taps you with a tendril, which has given you information of what it can build.",
-        {
-          "npc_has_trait": "SECRONOM_FLESH_BIO_construction_wide",
-          "no": {
-            "and": [
-              "\n\nPerimeter Walls (Progressive)\nConstruct flesh walls around the basecamp.",
-              "\n\nBio-organic Turrets\nForm types of flesh heaps that acts as frontline defenses.",
-              {
-                "npc_has_trait": "SECRONOM_FLESH_BIO_construction_wide",
-                "no": "\n\nPerimeter Walls (Progressive)\nConstruct flesh walls around the basecamp."
-              }
-            ]
-          }
-        },
-        "\n\n- Using chunks of tainted meat increases build cost by *1.75\n- Rotten meat is acceptable"
-      ]
-    },
+    "dynamic_line": "*taps you with a tendril, which has given you information of what it can build.  Perimeter Walls (Progressive)\nConstruct flesh walls around the basecamp.  Bio-organic Turrets\nForm types of flesh heaps that acts as frontline defenses.  Perimeter Walls (Progressive)\nConstruct flesh walls around the basecamp.  - Using chunks of tainted meat increases build cost by *1.75\n- Rotten meat is acceptable",
     "responses": [
       { "text": "Perimeter Walls…", "topic": "SECRO_FLESH_HIVEMIND_build_defenses_walls" },
       { "text": "Bio-organic Turrets…", "topic": "SECRO_FLESH_HIVEMIND_build_defenses_turrets" },
@@ -30,29 +12,7 @@
   {
     "id": "SECRO_FLESH_HIVEMIND_build_defenses_walls",
     "type": "talk_topic",
-    "dynamic_line": {
-      "and": [
-        "*taps you again, informing you of the perimeter wall's progress, which is ",
-        {
-          "npc_has_effect": "secro_flesh_built_def_wall1",
-          "no": "○.",
-          "yes": {
-            "npc_has_effect": "secro_flesh_built_def_wall2",
-            "no": "◔.",
-            "yes": {
-              "npc_has_effect": "secro_flesh_built_def_wall3",
-              "no": "◑.",
-              "yes": { "npc_has_effect": "secro_flesh_built_def_wall4", "no": "◕.", "yes": "●." }
-            }
-          }
-        },
-        {
-          "npc_has_effect": "secro_flesh_built_def_wall4",
-          "no": "\nEach advancement costs 600 meat and takes a day to complete.",
-          "yes": "\nYou no longer need to invest meat, as the perimeter walls has been completed."
-        }
-      ]
-    },
+    "dynamic_line": "*taps you again, informing you of the perimeter wall's progress, which is ○. ◔. ◑. ◕. ●. Each advancement costs 600 meat and takes a day to complete.  You no longer need to invest meat, as the perimeter walls has been completed.",
     "responses": [
       {
         "text": "[BUILD] Perimeter Walls\n*Feed the hivemind with chunks of meat*",
@@ -252,34 +212,13 @@
           { "npc_add_effect": "secro_flesh_building", "duration": 86400 }
         ]
       },
-      { "text": "Okay...", "topic": "SECRO_FLESH_HIVEMIND_build" }
+      { "text": "Okay…", "topic": "SECRO_FLESH_HIVEMIND_build" }
     ]
   },
   {
     "id": "SECRO_FLESH_HIVEMIND_build_defenses_turrets",
     "type": "talk_topic",
-    "dynamic_line": {
-      "and": [
-        "*taps you again, noting you of available turrets it can build.\n",
-        "\n*100 meat *150 flesh\n> flesh heap\nA turret capable of generating/discharging blood acid.\n",
-        {
-          "npc_has_trait": "SECRONOM_FLESH_BIO_construction_fuse",
-          "yes": {
-            "and": [
-              "\n*125 meat *150 flesh\n*20 core (blade zombie)\n> flesh heap (blade)\nA durable turret capable of obliterating enemies at close range.\n",
-              "\n*75 meat *125 flesh\n*20 core (tendril zombie)\n> flesh heap (tendril)\nA turret specialized for short-ranged crowd-control.\n",
-              "\n*300 meat *100 flesh\n*20 core (mouthswell zombie)\n> flesh heap (mouthswell)\nAn extremely durable turret with concentrated damage.\n",
-              "\n*150 meat *325 flesh\n*20 core (unifier zombie)\n> flesh heap (unifier)\nA turret capable of forming durable, yet short-lived minions.\n",
-              {
-                "npc_has_trait": "SECRONOM_FLESH_BIO_spread3",
-                "yes": "\n*225 meat *250 flesh\n*30 core (blade zombie)\n*20 core (tendril zombie)\n> ravager flesh heap\nA hybrid turret with rapid and highly damaging attacks."
-              }
-            ]
-          }
-        },
-        "\n\n- Turrets are built after 2 hours."
-      ]
-    },
+    "dynamic_line": "*taps you again, noting you of available turrets it can build.  *100 meat *150 flesh\n> flesh heap\nA turret capable of generating/discharging blood acid.  *125 meat *150 flesh\n*20 core (blade zombie)\n> flesh heap (blade)\nA durable turret capable of obliterating enemies at close range.  *75 meat *125 flesh\n*20 core (tendril zombie)\n> flesh heap (tendril)\nA turret specialized for short-ranged crowd-control.  *300 meat *100 flesh\n*20 core (mouthswell zombie)\n> flesh heap (mouthswell)\nAn extremely durable turret with concentrated damage.  *150 meat *325 flesh\n*20 core (unifier zombie)\n> flesh heap (unifier)\nA turret capable of forming durable, yet short-lived minions.  *225 meat *250 flesh\n*30 core (blade zombie)\n*20 core (tendril zombie)\n> ravager flesh heap\nA hybrid turret with rapid and highly damaging attacks.  - Turrets are built after 2 hours.",
     "responses": [
       {
         "text": "[BUILD] flesh heap",
@@ -452,13 +391,13 @@
           ]
         }
       },
-      { "text": "Later...", "topic": "SECRO_FLESH_HIVEMIND_build" }
+      { "text": "Later…", "topic": "SECRO_FLESH_HIVEMIND_build" }
     ]
   },
   {
     "id": "SECRO_FLESH_HIVEMIND_build_defenses_turret",
     "type": "talk_topic",
-    "dynamic_line": "*needs the coordinates to build the bio-organic turret.\n\n       .abcde.\n       t.....f\n       s..│..g\n       r.─┼─.h\n       q..│..i\n       p.....j\n       .onmlk.\n\n",
+    "dynamic_line": "*needs the coordinates to build the bio-organic turret.\n\n.abcde.\n       t…  ..f\n       s..│..g\n       r.─┼─.h\n       q..│..i\n       p…  ..j\n.onmlk.\n\n",
     "responses": [
       {
         "text": "Build at coord \"a\"",
@@ -560,13 +499,13 @@
         "topic": "SECRO_FLESH_HIVEMIND_build_defenses_turret_coord",
         "effect": { "npc_add_effect": "secro_flesh_building_def_turret_t", "duration": "PERMANENT" }
       },
-      { "text": "Nevermind...", "topic": "SECRO_FLESH_HIVEMIND_build" }
+      { "text": "Nevermind…", "topic": "SECRO_FLESH_HIVEMIND_build" }
     ]
   },
   {
     "id": "SECRO_FLESH_HIVEMIND_build_defenses_turret_coord",
     "type": "talk_topic",
-    "dynamic_line": "*asks for its orientation on the fields. Far, mid and near are based from the distance to the outskirts, where far is next to the perimeter walls and vice versa.",
+    "dynamic_line": "*asks for its orientation on the fields.  Far, mid and near are based from the distance to the outskirts, where far is next to the perimeter walls and vice versa.",
     "responses": [
       {
         "text": "Build at far orientation.",
@@ -588,37 +527,7 @@
   {
     "id": "SECRO_FLESH_HIVEMIND_build_defenses_turret_coord_orient",
     "type": "talk_topic",
-    "dynamic_line": {
-      "and": [
-        "*informs you that you are building at coord ",
-        { "npc_has_effect": "secro_flesh_building_def_turret_a", "yes": "\"a\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_b", "yes": "\"b\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_c", "yes": "\"c\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_d", "yes": "\"d\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_e", "yes": "\"e\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_f", "yes": "\"f\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_g", "yes": "\"g\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_h", "yes": "\"h\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_i", "yes": "\"i\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_j", "yes": "\"j\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_k", "yes": "\"k\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_l", "yes": "\"l\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_m", "yes": "\"m\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_n", "yes": "\"n\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_o", "yes": "\"o\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_p", "yes": "\"l\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_q", "yes": "\"q\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_r", "yes": "\"r\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_s", "yes": "\"s\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_t", "yes": "\"t\"" },
-        " set with ",
-        { "npc_has_effect": "secro_flesh_building_def_turret_far", "yes": "\"far\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_mid", "yes": "\"mid\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_near", "yes": "\"near\"" },
-        " orientation.\n\n",
-        "Is this correct?"
-      ]
-    },
+    "dynamic_line": "*informs you that you are building at coord \"a\" \"b\" \"c\" \"d\" \"e\" \"f\" \"g\" \"h\" \"i\" \"j\" \"k\" \"l\" \"m\" \"n\" \"o\" \"l\" \"q\" \"r\" \"s\" \"t\" set with \"far\" \"mid\" \"near\" orientation.  Is this correct?",
     "responses": [
       {
         "text": "[BUILD] Yes\n*Feed the hivemind with chunks of meat and flesh*",
@@ -702,7 +611,7 @@
   {
     "id": "SECRO_FLESH_HIVEMIND_build_defenses_turret_blade",
     "type": "talk_topic",
-    "dynamic_line": "*needs the coordinates to build the bio-organic turret.\n\n       .abcde.\n       t.....f\n       s..│..g\n       r.─┼─.h\n       q..│..i\n       p.....j\n       .onmlk.\n\n",
+    "dynamic_line": "*needs the coordinates to build the bio-organic turret.\n\n.abcde.\n       t…  ..f\n       s..│..g\n       r.─┼─.h\n       q..│..i\n       p…  ..j\n.onmlk.\n\n",
     "responses": [
       {
         "text": "Build at coord \"a\"",
@@ -804,13 +713,13 @@
         "topic": "SECRO_FLESH_HIVEMIND_build_defenses_turret_blade_coord",
         "effect": { "npc_add_effect": "secro_flesh_building_def_turret_blade_t", "duration": "PERMANENT" }
       },
-      { "text": "Nevermind...", "topic": "SECRO_FLESH_HIVEMIND_build" }
+      { "text": "Nevermind…", "topic": "SECRO_FLESH_HIVEMIND_build" }
     ]
   },
   {
     "id": "SECRO_FLESH_HIVEMIND_build_defenses_turret_blade_coord",
     "type": "talk_topic",
-    "dynamic_line": "*asks for its orientation on the fields. Far, mid and near are based from the distance to the outskirts, where far is next to the perimeter walls and vice versa.",
+    "dynamic_line": "*asks for its orientation on the fields.  Far, mid and near are based from the distance to the outskirts, where far is next to the perimeter walls and vice versa.",
     "responses": [
       {
         "text": "Build at far orientation.",
@@ -832,37 +741,7 @@
   {
     "id": "SECRO_FLESH_HIVEMIND_build_defenses_turret_blade_coord_orient",
     "type": "talk_topic",
-    "dynamic_line": {
-      "and": [
-        "*informs you that you are building at coord ",
-        { "npc_has_effect": "secro_flesh_building_def_turret_blade_a", "yes": "\"a\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_blade_b", "yes": "\"b\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_blade_c", "yes": "\"c\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_blade_d", "yes": "\"d\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_blade_e", "yes": "\"e\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_blade_f", "yes": "\"f\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_blade_g", "yes": "\"g\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_blade_h", "yes": "\"h\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_blade_i", "yes": "\"i\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_blade_j", "yes": "\"j\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_blade_k", "yes": "\"k\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_blade_l", "yes": "\"l\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_blade_m", "yes": "\"m\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_blade_n", "yes": "\"n\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_blade_o", "yes": "\"o\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_blade_p", "yes": "\"l\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_blade_q", "yes": "\"q\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_blade_r", "yes": "\"r\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_blade_s", "yes": "\"s\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_blade_t", "yes": "\"t\"" },
-        " set with ",
-        { "npc_has_effect": "secro_flesh_building_def_turret_blade_far", "yes": "\"far\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_blade_mid", "yes": "\"mid\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_blade_near", "yes": "\"near\"" },
-        " orientation.\n\n",
-        "Is this correct?"
-      ]
-    },
+    "dynamic_line": "*informs you that you are building at coord \"a\" \"b\" \"c\" \"d\" \"e\" \"f\" \"g\" \"h\" \"i\" \"j\" \"k\" \"l\" \"m\" \"n\" \"o\" \"l\" \"q\" \"r\" \"s\" \"t\" set with \"far\" \"mid\" \"near\" orientation.  Is this correct?",
     "responses": [
       {
         "text": "[BUILD] Yes\n*Feed the hivemind with chunks of meat and flesh*",
@@ -958,7 +837,7 @@
   {
     "id": "SECRO_FLESH_HIVEMIND_build_defenses_turret_tendril",
     "type": "talk_topic",
-    "dynamic_line": "*needs the coordinates to build the bio-organic turret.\n\n       .abcde.\n       t.....f\n       s..│..g\n       r.─┼─.h\n       q..│..i\n       p.....j\n       .onmlk.\n\n",
+    "dynamic_line": "*needs the coordinates to build the bio-organic turret.\n\n.abcde.\n       t…  ..f\n       s..│..g\n       r.─┼─.h\n       q..│..i\n       p…  ..j\n.onmlk.\n\n",
     "responses": [
       {
         "text": "Build at coord \"a\"",
@@ -1060,13 +939,13 @@
         "topic": "SECRO_FLESH_HIVEMIND_build_defenses_turret_tendril_coord",
         "effect": { "npc_add_effect": "secro_flesh_building_def_turret_tendril_t", "duration": "PERMANENT" }
       },
-      { "text": "Nevermind...", "topic": "SECRO_FLESH_HIVEMIND_build" }
+      { "text": "Nevermind…", "topic": "SECRO_FLESH_HIVEMIND_build" }
     ]
   },
   {
     "id": "SECRO_FLESH_HIVEMIND_build_defenses_turret_tendril_coord",
     "type": "talk_topic",
-    "dynamic_line": "*asks for its orientation on the fields. Far, mid and near are based from the distance to the outskirts, where far is next to the perimeter walls and vice versa.",
+    "dynamic_line": "*asks for its orientation on the fields.  Far, mid and near are based from the distance to the outskirts, where far is next to the perimeter walls and vice versa.",
     "responses": [
       {
         "text": "Build at far orientation.",
@@ -1088,37 +967,7 @@
   {
     "id": "SECRO_FLESH_HIVEMIND_build_defenses_turret_tendril_coord_orient",
     "type": "talk_topic",
-    "dynamic_line": {
-      "and": [
-        "*informs you that you are building at coord ",
-        { "npc_has_effect": "secro_flesh_building_def_turret_tendril_a", "yes": "\"a\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_tendril_b", "yes": "\"b\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_tendril_c", "yes": "\"c\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_tendril_d", "yes": "\"d\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_tendril_e", "yes": "\"e\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_tendril_f", "yes": "\"f\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_tendril_g", "yes": "\"g\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_tendril_h", "yes": "\"h\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_tendril_i", "yes": "\"i\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_tendril_j", "yes": "\"j\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_tendril_k", "yes": "\"k\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_tendril_l", "yes": "\"l\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_tendril_m", "yes": "\"m\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_tendril_n", "yes": "\"n\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_tendril_o", "yes": "\"o\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_tendril_p", "yes": "\"l\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_tendril_q", "yes": "\"q\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_tendril_r", "yes": "\"r\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_tendril_s", "yes": "\"s\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_tendril_t", "yes": "\"t\"" },
-        " set with ",
-        { "npc_has_effect": "secro_flesh_building_def_turret_tendril_far", "yes": "\"far\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_tendril_mid", "yes": "\"mid\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_tendril_near", "yes": "\"near\"" },
-        " orientation.\n\n",
-        "Is this correct?"
-      ]
-    },
+    "dynamic_line": "*informs you that you are building at coord \"a\" \"b\" \"c\" \"d\" \"e\" \"f\" \"g\" \"h\" \"i\" \"j\" \"k\" \"l\" \"m\" \"n\" \"o\" \"l\" \"q\" \"r\" \"s\" \"t\" set with \"far\" \"mid\" \"near\" orientation.  Is this correct?",
     "responses": [
       {
         "text": "[BUILD] Yes\n*Feed the hivemind with chunks of meat and flesh*",
@@ -1214,7 +1063,7 @@
   {
     "id": "SECRO_FLESH_HIVEMIND_build_defenses_turret_mouth",
     "type": "talk_topic",
-    "dynamic_line": "*needs the coordinates to build the bio-organic turret.\n\n       .abcde.\n       t.....f\n       s..│..g\n       r.─┼─.h\n       q..│..i\n       p.....j\n       .onmlk.\n\n",
+    "dynamic_line": "*needs the coordinates to build the bio-organic turret.\n\n.abcde.\n       t…  ..f\n       s..│..g\n       r.─┼─.h\n       q..│..i\n       p…  ..j\n.onmlk.\n\n",
     "responses": [
       {
         "text": "Build at coord \"a\"",
@@ -1316,13 +1165,13 @@
         "topic": "SECRO_FLESH_HIVEMIND_build_defenses_turret_mouth_coord",
         "effect": { "npc_add_effect": "secro_flesh_building_def_turret_mouth_t", "duration": "PERMANENT" }
       },
-      { "text": "Nevermind...", "topic": "SECRO_FLESH_HIVEMIND_build" }
+      { "text": "Nevermind…", "topic": "SECRO_FLESH_HIVEMIND_build" }
     ]
   },
   {
     "id": "SECRO_FLESH_HIVEMIND_build_defenses_turret_mouth_coord",
     "type": "talk_topic",
-    "dynamic_line": "*asks for its orientation on the fields. Far, mid and near are based from the distance to the outskirts, where far is next to the perimeter walls and vice versa.",
+    "dynamic_line": "*asks for its orientation on the fields.  Far, mid and near are based from the distance to the outskirts, where far is next to the perimeter walls and vice versa.",
     "responses": [
       {
         "text": "Build at far orientation.",
@@ -1344,37 +1193,7 @@
   {
     "id": "SECRO_FLESH_HIVEMIND_build_defenses_turret_mouth_coord_orient",
     "type": "talk_topic",
-    "dynamic_line": {
-      "and": [
-        "*informs you that you are building at coord ",
-        { "npc_has_effect": "secro_flesh_building_def_turret_mouth_a", "yes": "\"a\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_mouth_b", "yes": "\"b\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_mouth_c", "yes": "\"c\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_mouth_d", "yes": "\"d\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_mouth_e", "yes": "\"e\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_mouth_f", "yes": "\"f\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_mouth_g", "yes": "\"g\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_mouth_h", "yes": "\"h\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_mouth_i", "yes": "\"i\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_mouth_j", "yes": "\"j\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_mouth_k", "yes": "\"k\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_mouth_l", "yes": "\"l\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_mouth_m", "yes": "\"m\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_mouth_n", "yes": "\"n\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_mouth_o", "yes": "\"o\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_mouth_p", "yes": "\"l\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_mouth_q", "yes": "\"q\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_mouth_r", "yes": "\"r\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_mouth_s", "yes": "\"s\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_mouth_t", "yes": "\"t\"" },
-        " set with ",
-        { "npc_has_effect": "secro_flesh_building_def_turret_mouth_far", "yes": "\"far\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_mouth_mid", "yes": "\"mid\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_mouth_near", "yes": "\"near\"" },
-        " orientation.\n\n",
-        "Is this correct?"
-      ]
-    },
+    "dynamic_line": "*informs you that you are building at coord \"a\" \"b\" \"c\" \"d\" \"e\" \"f\" \"g\" \"h\" \"i\" \"j\" \"k\" \"l\" \"m\" \"n\" \"o\" \"l\" \"q\" \"r\" \"s\" \"t\" set with \"far\" \"mid\" \"near\" orientation.  Is this correct?",
     "responses": [
       {
         "text": "[BUILD] Yes\n*Feed the hivemind with chunks of meat and flesh*",
@@ -1470,7 +1289,7 @@
   {
     "id": "SECRO_FLESH_HIVEMIND_build_defenses_turret_unify",
     "type": "talk_topic",
-    "dynamic_line": "*needs the coordinates to build the bio-organic turret.\n\n       .abcde.\n       t.....f\n       s..│..g\n       r.─┼─.h\n       q..│..i\n       p.....j\n       .onmlk.\n\n",
+    "dynamic_line": "*needs the coordinates to build the bio-organic turret.\n\n.abcde.\n       t…  ..f\n       s..│..g\n       r.─┼─.h\n       q..│..i\n       p…  ..j\n.onmlk.\n\n",
     "responses": [
       {
         "text": "Build at coord \"a\"",
@@ -1572,13 +1391,13 @@
         "topic": "SECRO_FLESH_HIVEMIND_build_defenses_turret_unify_coord",
         "effect": { "npc_add_effect": "secro_flesh_building_def_turret_unify_t", "duration": "PERMANENT" }
       },
-      { "text": "Nevermind...", "topic": "SECRO_FLESH_HIVEMIND_build" }
+      { "text": "Nevermind…", "topic": "SECRO_FLESH_HIVEMIND_build" }
     ]
   },
   {
     "id": "SECRO_FLESH_HIVEMIND_build_defenses_turret_unify_coord",
     "type": "talk_topic",
-    "dynamic_line": "*asks for its orientation on the fields. Far, mid and near are based from the distance to the outskirts, where far is next to the perimeter walls and vice versa.",
+    "dynamic_line": "*asks for its orientation on the fields.  Far, mid and near are based from the distance to the outskirts, where far is next to the perimeter walls and vice versa.",
     "responses": [
       {
         "text": "Build at far orientation.",
@@ -1600,37 +1419,7 @@
   {
     "id": "SECRO_FLESH_HIVEMIND_build_defenses_turret_unify_coord_orient",
     "type": "talk_topic",
-    "dynamic_line": {
-      "and": [
-        "*informs you that you are building at coord ",
-        { "npc_has_effect": "secro_flesh_building_def_turret_unify_a", "yes": "\"a\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_unify_b", "yes": "\"b\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_unify_c", "yes": "\"c\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_unify_d", "yes": "\"d\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_unify_e", "yes": "\"e\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_unify_f", "yes": "\"f\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_unify_g", "yes": "\"g\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_unify_h", "yes": "\"h\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_unify_i", "yes": "\"i\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_unify_j", "yes": "\"j\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_unify_k", "yes": "\"k\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_unify_l", "yes": "\"l\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_unify_m", "yes": "\"m\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_unify_n", "yes": "\"n\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_unify_o", "yes": "\"o\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_unify_p", "yes": "\"l\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_unify_q", "yes": "\"q\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_unify_r", "yes": "\"r\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_unify_s", "yes": "\"s\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_unify_t", "yes": "\"t\"" },
-        " set with ",
-        { "npc_has_effect": "secro_flesh_building_def_turret_unify_far", "yes": "\"far\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_unify_mid", "yes": "\"mid\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_unify_near", "yes": "\"near\"" },
-        " orientation.\n\n",
-        "Is this correct?"
-      ]
-    },
+    "dynamic_line": "*informs you that you are building at coord \"a\" \"b\" \"c\" \"d\" \"e\" \"f\" \"g\" \"h\" \"i\" \"j\" \"k\" \"l\" \"m\" \"n\" \"o\" \"l\" \"q\" \"r\" \"s\" \"t\" set with \"far\" \"mid\" \"near\" orientation.  Is this correct?",
     "responses": [
       {
         "text": "[BUILD] Yes\n*Feed the hivemind with chunks of meat and flesh*",
@@ -1726,7 +1515,7 @@
   {
     "id": "SECRO_FLESH_HIVEMIND_build_defenses_turret_hravager",
     "type": "talk_topic",
-    "dynamic_line": "*needs the coordinates to build the bio-organic turret.\n\n       .abcde.\n       t.....f\n       s..│..g\n       r.─┼─.h\n       q..│..i\n       p.....j\n       .onmlk.\n\n",
+    "dynamic_line": "*needs the coordinates to build the bio-organic turret.\n\n.abcde.\n       t…  ..f\n       s..│..g\n       r.─┼─.h\n       q..│..i\n       p…  ..j\n.onmlk.\n\n",
     "responses": [
       {
         "text": "Build at coord \"a\"",
@@ -1828,13 +1617,13 @@
         "topic": "SECRO_FLESH_HIVEMIND_build_defenses_turret_hravager_coord",
         "effect": { "npc_add_effect": "secro_flesh_building_def_turret_hravager_t", "duration": "PERMANENT" }
       },
-      { "text": "Nevermind...", "topic": "SECRO_FLESH_HIVEMIND_build" }
+      { "text": "Nevermind…", "topic": "SECRO_FLESH_HIVEMIND_build" }
     ]
   },
   {
     "id": "SECRO_FLESH_HIVEMIND_build_defenses_turret_hravager_coord",
     "type": "talk_topic",
-    "dynamic_line": "*asks for its orientation on the fields. Far, mid and near are based from the distance to the outskirts, where far is next to the perimeter walls and vice versa.",
+    "dynamic_line": "*asks for its orientation on the fields.  Far, mid and near are based from the distance to the outskirts, where far is next to the perimeter walls and vice versa.",
     "responses": [
       {
         "text": "Build at far orientation.",
@@ -1856,37 +1645,7 @@
   {
     "id": "SECRO_FLESH_HIVEMIND_build_defenses_turret_hravager_coord_orient",
     "type": "talk_topic",
-    "dynamic_line": {
-      "and": [
-        "*informs you that you are building at coord ",
-        { "npc_has_effect": "secro_flesh_building_def_turret_hravager_a", "yes": "\"a\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_hravager_b", "yes": "\"b\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_hravager_c", "yes": "\"c\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_hravager_d", "yes": "\"d\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_hravager_e", "yes": "\"e\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_hravager_f", "yes": "\"f\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_hravager_g", "yes": "\"g\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_hravager_h", "yes": "\"h\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_hravager_i", "yes": "\"i\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_hravager_j", "yes": "\"j\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_hravager_k", "yes": "\"k\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_hravager_l", "yes": "\"l\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_hravager_m", "yes": "\"m\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_hravager_n", "yes": "\"n\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_hravager_o", "yes": "\"o\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_hravager_p", "yes": "\"l\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_hravager_q", "yes": "\"q\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_hravager_r", "yes": "\"r\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_hravager_s", "yes": "\"s\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_hravager_t", "yes": "\"t\"" },
-        " set with ",
-        { "npc_has_effect": "secro_flesh_building_def_turret_hravager_far", "yes": "\"far\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_hravager_mid", "yes": "\"mid\"" },
-        { "npc_has_effect": "secro_flesh_building_def_turret_hravager_near", "yes": "\"near\"" },
-        " orientation.\n\n",
-        "Is this correct?"
-      ]
-    },
+    "dynamic_line": "*informs you that you are building at coord \"a\" \"b\" \"c\" \"d\" \"e\" \"f\" \"g\" \"h\" \"i\" \"j\" \"k\" \"l\" \"m\" \"n\" \"o\" \"l\" \"q\" \"r\" \"s\" \"t\" set with \"far\" \"mid\" \"near\" orientation.  Is this correct?",
     "responses": [
       {
         "text": "[BUILD] Yes\n*Feed the hivemind with chunks of meat and flesh*",

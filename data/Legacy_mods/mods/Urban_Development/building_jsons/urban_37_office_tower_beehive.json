@@ -32,7 +32,8 @@
   {
     "id": "hive_destructive",
     "type": "item_group",
-    "items": [ [ "honeycomb", 10 ], { "group": "building_rubble", "prob": 20 } ]
+    "items": [ { "item": "honeycomb", "prob": 10 } ],
+    "subtype": "distribution"
   },
   {
     "type": "mapgen",
@@ -40,7 +41,6 @@
     "om_terrain": [ "urban_37_1" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "%%%%%%%%%%%%%%%%%%%%%%%%",
         "%%%%%%%%%%%%%%%%%%%%%%%%",
@@ -68,10 +68,21 @@
         "l''____________________."
       ],
       "palettes": [ "acidia_commercial_palette" ],
-      "terrain": { "'": "t_sidewalk", ".": "t_pavement_y" },
+      "terrain": {
+        "'": "t_sidewalk",
+        ".": "t_pavement_y",
+        "%": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "_": "t_region_groundcover",
+        ">": "t_region_groundcover",
+        "E": "t_region_groundcover",
+        "J": "t_region_groundcover",
+        "6": "t_region_groundcover"
+      },
       "items": { "'": { "item": "trash_cart", "chance": 1 }, "_": { "item": "trash_cart", "chance": 1 } },
       "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.3 } ],
-      "place_vehicles": [ { "vehicle": "suburban_home", "x": 9, "y": 12, "chance": 60, "rotation": 90 } ]
+      "place_vehicles": [ { "vehicle": "suburban_home", "x": 9, "y": 12, "chance": 60, "rotation": 90 } ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -80,7 +91,6 @@
     "om_terrain": [ "urban_37_2" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "%%%%%%%%%%%%%%%%%%%%%%%%",
         "%%%%%%%%%%%%%%%%%%%%%%%%",
@@ -108,8 +118,31 @@
         "'.______.______.______'l"
       ],
       "palettes": [ "acidia_commercial_palette" ],
-      "terrain": { "'": "t_sidewalk", ".": "t_pavement_y" },
-      "toilets": { "T": {  } },
+      "terrain": {
+        "'": "t_sidewalk",
+        ".": "t_pavement_y",
+        "%": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "r": "t_region_groundcover",
+        "t": "t_region_groundcover",
+        "T": "t_region_groundcover",
+        "u": "t_region_groundcover",
+        "s": "t_region_groundcover",
+        "S": "t_region_groundcover",
+        ")": "t_region_groundcover",
+        "Z": "t_region_groundcover",
+        "6": "t_region_groundcover",
+        "c": "t_region_groundcover",
+        "+": "t_region_groundcover",
+        "1": "t_region_groundcover",
+        "L": "t_region_groundcover",
+        "(": "t_region_groundcover",
+        ">": "t_region_groundcover",
+        "h": "t_region_groundcover",
+        "d": "t_region_groundcover",
+        "J": "t_region_groundcover",
+        "_": "t_region_groundcover"
+      },
       "items": {
         "'": { "item": "trash_cart", "chance": 1 },
         "L": { "item": "hazmat_torso", "chance": 40 },
@@ -121,10 +154,11 @@
       },
       "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.16 } ],
       "place_vehicles": [
-        { "vehicle": "suburban_home", "x": 4, "y": 21, "chance": 30, "rotation": 270 },
-        { "vehicle": "suburban_home", "x": 11, "y": 21, "chance": 30, "rotation": 270 },
-        { "vehicle": "suburban_home", "x": 18, "y": 21, "chance": 30, "rotation": 270 }
-      ]
+        { "vehicle": "suburban_home", "x": 4, "y": 19, "chance": 30, "rotation": 270 },
+        { "vehicle": "suburban_home", "x": 11, "y": 19, "chance": 30, "rotation": 270 },
+        { "vehicle": "suburban_home", "x": 18, "y": 19, "chance": 30, "rotation": 270 }
+      ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -133,7 +167,6 @@
     "om_terrain": [ "urban_37_3" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "l''____________________.",
         "l'QQ___________________.",
@@ -161,7 +194,14 @@
         "%%%%%%%%%%%%%%%%%%%%%%%%"
       ],
       "palettes": [ "acidia_commercial_palette" ],
-      "terrain": { "'": "t_sidewalk", ".": "t_pavement_y" },
+      "terrain": {
+        "'": "t_sidewalk",
+        ".": "t_pavement_y",
+        "_": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "Q": "t_region_groundcover",
+        "%": "t_region_groundcover"
+      },
       "items": {
         "'": { "item": "trash_cart", "chance": 1 },
         "Q": { "item": "trash_cart", "chance": 90 },
@@ -172,7 +212,8 @@
         { "vehicle": "suburban_home", "x": 4, "y": 14, "chance": 30, "rotation": 270 },
         { "vehicle": "suburban_home", "x": 11, "y": 14, "chance": 30, "rotation": 270 },
         { "vehicle": "suburban_home", "x": 18, "y": 14, "chance": 30, "rotation": 270 }
-      ]
+      ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -181,7 +222,6 @@
     "om_terrain": [ "urban_37_4" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "'.______.______.______'l",
         "'.______.______.______'l",
@@ -209,14 +249,21 @@
         "%%%%%%%%%%%%%%%%%%%%%%%%"
       ],
       "palettes": [ "acidia_commercial_palette" ],
-      "terrain": { "'": "t_sidewalk", ".": "t_pavement_y" },
+      "terrain": {
+        "'": "t_sidewalk",
+        ".": "t_pavement_y",
+        "_": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "%": "t_region_groundcover"
+      },
       "items": { "'": { "item": "trash_cart", "chance": 1 }, "_": { "item": "trash_cart", "chance": 1 } },
       "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.3 } ],
       "place_vehicles": [
         { "vehicle": "suburban_home", "x": 4, "y": 14, "chance": 30, "rotation": 270 },
         { "vehicle": "suburban_home", "x": 11, "y": 14, "chance": 30, "rotation": 270 },
         { "vehicle": "suburban_home", "x": 18, "y": 14, "chance": 30, "rotation": 270 }
-      ]
+      ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -225,7 +272,6 @@
     "om_terrain": [ "urban_37_5" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         ";;;;___________________;",
         ";;;;___________________;",
@@ -253,14 +299,36 @@
         "lcccc6cc  l LlEEl       "
       ],
       "palettes": [ "acidia_commercial_palette" ],
-      "terrain": { ".": "t_pavement_y" },
+      "terrain": {
+        ".": "t_pavement_y",
+        ";": "t_region_groundcover",
+        "_": "t_region_groundcover",
+        "6": "t_region_groundcover",
+        "=": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "<": "t_region_groundcover",
+        "7": "t_region_groundcover",
+        "E": "t_region_groundcover",
+        "J": "t_region_groundcover",
+        "8": "t_region_groundcover",
+        "9": "t_region_groundcover",
+        "1": "t_region_groundcover",
+        "(": "t_region_groundcover",
+        "k": "t_region_groundcover",
+        "v": "t_region_groundcover",
+        "t": "t_region_groundcover",
+        "h": "t_region_groundcover",
+        "c": "t_region_groundcover",
+        "L": "t_region_groundcover"
+      },
       "items": {
         "(": { "item": "magazines", "chance": 5 },
         "L": { "item": "mechanics", "chance": 60 },
         "c": { "item": "office", "chance": 15 }
       },
       "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.36 } ],
-      "place_vehicles": [ { "vehicle": "suburban_home", "x": 17, "y": 8, "chance": 50, "rotation": 270 } ]
+      "place_vehicles": [ { "vehicle": "suburban_home", "x": 17, "y": 8, "chance": 50, "rotation": 270 } ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -269,7 +337,6 @@
     "om_terrain": [ "urban_37_6" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         ";;;;;;;;;;;;;;;;;;;;;;;;",
         ";;;;;;;;;;;;;;;;;;;;;;;;",
@@ -297,7 +364,6 @@
         "       lEElC   +TlT+  Cl"
       ],
       "palettes": [ "acidia_commercial_palette" ],
-      "toilets": { "T": {  } },
       "items": {
         "(": { "item": "magazines", "chance": 5 },
         "K": { "item": "jackets", "chance": 80 },
@@ -306,7 +372,33 @@
         "r": { "item": "winter", "chance": 60 },
         "u": { "item": "cleaning", "chance": 50 }
       },
-      "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.56 } ]
+      "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.56 } ],
+      "terrain": {
+        ";": "t_region_groundcover",
+        "'": "t_region_groundcover",
+        "J": "t_region_groundcover",
+        "v": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "c": "t_region_groundcover",
+        "K": "t_region_groundcover",
+        "r": "t_region_groundcover",
+        "6": "t_region_groundcover",
+        "O": "t_region_groundcover",
+        "1": "t_region_groundcover",
+        "+": "t_region_groundcover",
+        "L": "t_region_groundcover",
+        "<": "t_region_groundcover",
+        "S": "t_region_groundcover",
+        "u": "t_region_groundcover",
+        "X": "t_region_groundcover",
+        "C": "t_region_groundcover",
+        ">": "t_region_groundcover",
+        "T": "t_region_groundcover",
+        "(": "t_region_groundcover",
+        "k": "t_region_groundcover",
+        "E": "t_region_groundcover"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -315,7 +407,6 @@
     "om_terrain": [ "urban_37_7" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "l   h     + LlEE=       ",
         "l         l LlEE=       ",
@@ -352,7 +443,32 @@
         "g": { "item": "vending_drink", "chance": 60 },
         "r": { "item": "magazines", "chance": 60 }
       },
-      "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.6 } ]
+      "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.6 } ],
+      "terrain": {
+        "h": "t_region_groundcover",
+        "L": "t_region_groundcover",
+        "+": "t_region_groundcover",
+        "E": "t_region_groundcover",
+        "=": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "6": "t_region_groundcover",
+        "d": "t_region_groundcover",
+        "X": "t_region_groundcover",
+        "k": "t_region_groundcover",
+        "(": "t_region_groundcover",
+        "g": "t_region_groundcover",
+        "O": "t_region_groundcover",
+        "c": "t_region_groundcover",
+        "J": "t_region_groundcover",
+        ">": "t_region_groundcover",
+        "v": "t_region_groundcover",
+        "r": "t_region_groundcover",
+        ";": "t_region_groundcover",
+        "C": "t_region_groundcover",
+        "^": "t_region_groundcover",
+        "'": "t_region_groundcover"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -361,7 +477,6 @@
     "om_terrain": [ "urban_37_8" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "       =EElS   |-l-|  Sl",
         "       =EElC   +TlT+  Cl",
@@ -389,7 +504,6 @@
         ";;;;;;;;;;;;;;;;;;;;;;;;"
       ],
       "palettes": [ "acidia_commercial_palette" ],
-      "toilets": { "T": {  } },
       "items": {
         "(": { "item": "magazines", "chance": 5 },
         "*": { "item": "coffee_display", "chance": 60 },
@@ -399,7 +513,33 @@
         "r": { "item": "snacks_fancy", "chance": 60 },
         "t": { "item": "trash_cart", "chance": 20 }
       },
-      "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.6 } ]
+      "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.6 } ],
+      "terrain": {
+        "S": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "E": "t_region_groundcover",
+        "=": "t_region_groundcover",
+        "-": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "C": "t_region_groundcover",
+        "T": "t_region_groundcover",
+        "+": "t_region_groundcover",
+        "(": "t_region_groundcover",
+        "O": "t_region_groundcover",
+        "r": "t_region_groundcover",
+        "g": "t_region_groundcover",
+        "c": "t_region_groundcover",
+        "v": "t_region_groundcover",
+        "*": "t_region_groundcover",
+        "6": "t_region_groundcover",
+        "h": "t_region_groundcover",
+        "J": "t_region_groundcover",
+        "t": "t_region_groundcover",
+        ";": "t_region_groundcover",
+        "^": "t_region_groundcover",
+        "'": "t_region_groundcover"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -408,7 +548,6 @@
     "om_terrain": [ "urban_37_9" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "........................",
         "........................",
@@ -444,7 +583,29 @@
         "d": { "item": "office", "chance": 40 },
         "r": { "item": "cleaning", "chance": 60 }
       },
-      "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.4 } ]
+      "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.4 } ],
+      "terrain": {
+        ".": "t_region_groundcover",
+        "8": "t_region_groundcover",
+        "9": "t_region_groundcover",
+        "R": "t_region_groundcover",
+        "v": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "6": "t_region_groundcover",
+        "k": "t_region_groundcover",
+        "[": "t_region_groundcover",
+        "d": "t_region_groundcover",
+        "h": "t_region_groundcover",
+        "J": "t_region_groundcover",
+        "@": "t_region_groundcover",
+        "t": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "-": "t_region_groundcover",
+        "C": "t_region_groundcover",
+        "S": "t_region_groundcover",
+        "7": "t_region_groundcover"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -453,7 +614,6 @@
     "om_terrain": [ "urban_37_10" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "........................",
         "........................",
@@ -489,7 +649,32 @@
         "d": { "item": "office", "chance": 40 },
         "r": { "item": "bookstore_misc", "chance": 60 }
       },
-      "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.4 } ]
+      "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.4 } ],
+      "terrain": {
+        ".": "t_region_groundcover",
+        "9": "t_region_groundcover",
+        "8": "t_region_groundcover",
+        "R": "t_region_groundcover",
+        "v": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "6": "t_region_groundcover",
+        "[": "t_region_groundcover",
+        "d": "t_region_groundcover",
+        "h": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "-": "t_region_groundcover",
+        "r": "t_region_groundcover",
+        ">": "t_region_groundcover",
+        "J": "t_region_groundcover",
+        "<": "t_region_groundcover",
+        "Z": "t_region_groundcover",
+        "k": "t_region_groundcover",
+        "t": "t_region_groundcover",
+        "@": "t_region_groundcover",
+        "A": "t_region_groundcover",
+        "7": "t_region_groundcover"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -498,7 +683,6 @@
     "om_terrain": [ "urban_37_11" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "l     [  +   |77=    cc ",
         "l[[[[[[  | T |77=    c  ",
@@ -526,8 +710,37 @@
         "........................"
       ],
       "palettes": [ "acidia_commercial_palette" ],
-      "terrain": { "?": "t_linoleum_white" },
-      "toilets": { "T": {  } },
+      "terrain": {
+        "?": "t_linoleum_white",
+        "|": "t_region_groundcover",
+        "[": "t_region_groundcover",
+        "+": "t_region_groundcover",
+        "7": "t_region_groundcover",
+        "=": "t_region_groundcover",
+        "c": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "T": "t_region_groundcover",
+        "h": "t_region_groundcover",
+        "6": "t_region_groundcover",
+        "-": "t_region_groundcover",
+        "C": "t_region_groundcover",
+        "S": "t_region_groundcover",
+        "d": "t_region_groundcover",
+        "J": "t_region_groundcover",
+        "v": "t_region_groundcover",
+        "(": "t_region_groundcover",
+        "t": "t_region_groundcover",
+        ">": "t_region_groundcover",
+        "k": "t_region_groundcover",
+        "<": "t_region_groundcover",
+        "8": "t_region_groundcover",
+        "R": "t_region_groundcover",
+        "]": "t_region_groundcover",
+        "A": "t_region_groundcover",
+        "Z": "t_region_groundcover",
+        ".": "t_region_groundcover",
+        "9": "t_region_groundcover"
+      },
       "items": {
         " ": { "item": "office", "chance": 1 },
         "?": { "item": "vending_drink", "chance": 60 },
@@ -537,7 +750,8 @@
         "r": { "item": "bookstore_misc", "chance": 60 },
         "t": { "item": "office_breakroom", "chance": 25 }
       },
-      "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.4 } ]
+      "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.4 } ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -546,7 +760,6 @@
     "om_terrain": [ "urban_37_12" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         " cc    =77|d  [     dh l",
         "  c    =77|dh    [h    l",
@@ -582,7 +795,28 @@
         "r": { "item": "bookstore_misc", "chance": 60 },
         "t": { "item": "office_breakroom", "chance": 25 }
       },
-      "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.4 } ]
+      "place_monsters": [ { "monster": "GROUP_ZOMBIE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.4 } ],
+      "terrain": {
+        "h": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "7": "t_region_groundcover",
+        "[": "t_region_groundcover",
+        "=": "t_region_groundcover",
+        "c": "t_region_groundcover",
+        "d": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "6": "t_region_groundcover",
+        "-": "t_region_groundcover",
+        "J": "t_region_groundcover",
+        "v": "t_region_groundcover",
+        "(": "t_region_groundcover",
+        "O": "t_region_groundcover",
+        "8": "t_region_groundcover",
+        "R": "t_region_groundcover",
+        ".": "t_region_groundcover",
+        "9": "t_region_groundcover"
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -591,7 +825,6 @@
     "om_terrain": [ "urban_37_13" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "........................",
         "........................",
@@ -619,7 +852,25 @@
         "l6d  [   [  ]|77|       "
       ],
       "palettes": [ "acidia_commercial_palette" ],
-      "terrain": { ":": "t_floor_wax", "M": "t_wax" },
+      "terrain": {
+        ":": "t_floor_wax",
+        "M": "t_wax",
+        ".": "t_region_groundcover",
+        "v": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "]": "t_region_groundcover",
+        "r": "t_region_groundcover",
+        "6": "t_region_groundcover",
+        "[": "t_region_groundcover",
+        "d": "t_region_groundcover",
+        "h": "t_region_groundcover",
+        "Z": "t_region_groundcover",
+        "t": "t_region_groundcover",
+        "J": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "-": "t_region_groundcover",
+        "7": "t_region_groundcover"
+      },
       "items": {
         " ": { "item": "office", "chance": 1 },
         "O": { "item": "office", "chance": 50 },
@@ -631,7 +882,8 @@
       "place_monsters": [
         { "monster": "GROUP_ZOMBIE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.3 },
         { "monster": "GROUP_BEE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.2 }
-      ]
+      ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -640,7 +892,6 @@
     "om_terrain": [ "urban_37_14" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "........................",
         "........................",
@@ -668,11 +919,34 @@
         ":::::::|77|CSC|  [    ]l"
       ],
       "palettes": [ "acidia_commercial_palette" ],
-      "terrain": { "3": "t_strconc_floor", ":": "t_floor_wax", "M": "t_wax" },
+      "terrain": {
+        "3": "t_strconc_floor",
+        ":": "t_floor_wax",
+        "M": "t_wax",
+        ".": "t_region_groundcover",
+        "v": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "]": "t_region_groundcover",
+        "O": "t_region_groundcover",
+        "6": "t_region_groundcover",
+        "r": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "[": "t_region_groundcover",
+        "d": "t_region_groundcover",
+        "h": "t_region_groundcover",
+        "+": "t_region_groundcover",
+        "-": "t_region_groundcover",
+        "<": "t_region_groundcover",
+        "J": "t_region_groundcover",
+        "c": "t_region_groundcover",
+        "k": "t_region_groundcover",
+        "C": "t_region_groundcover",
+        "S": "t_region_groundcover",
+        "7": "t_region_groundcover"
+      },
       "furniture": { "3": "f_rubble" },
       "items": {
         " ": { "item": "office", "chance": 1 },
-        "3": { "item": "building_rubble", "chance": 70 },
         "O": { "item": "office", "chance": 50 },
         "]": { "item": "bookstore_misc", "chance": 70 },
         "d": { "item": "office", "chance": 40 },
@@ -681,7 +955,8 @@
       "place_monsters": [
         { "monster": "GROUP_ZOMBIE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.3 },
         { "monster": "GROUP_BEE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.2 }
-      ]
+      ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -690,7 +965,6 @@
     "om_terrain": [ "urban_37_15" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "ldh        hd|77=       ",
         "ld   [   [d6d|77=       ",
@@ -718,10 +992,32 @@
         "........................"
       ],
       "palettes": [ "acidia_commercial_palette" ],
-      "terrain": { ":": "t_floor_wax", "M": "t_wax" },
+      "terrain": {
+        ":": "t_floor_wax",
+        "M": "t_wax",
+        "h": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "7": "t_region_groundcover",
+        "=": "t_region_groundcover",
+        "d": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "6": "t_region_groundcover",
+        "[": "t_region_groundcover",
+        "k": "t_region_groundcover",
+        "c": "t_region_groundcover",
+        "-": "t_region_groundcover",
+        "]": "t_region_groundcover",
+        "J": "t_region_groundcover",
+        "v": "t_region_groundcover",
+        "<": "t_region_groundcover",
+        "@": "t_region_groundcover",
+        ">": "t_region_groundcover",
+        ".": "t_region_groundcover",
+        "r": "t_region_groundcover",
+        "Z": "t_region_groundcover"
+      },
       "items": {
         " ": { "item": "office", "chance": 1 },
-        "3": { "item": "building_rubble", "chance": 70 },
         "O": { "item": "office", "chance": 50 },
         "]": { "item": "bookstore_misc", "chance": 70 },
         "d": { "item": "office", "chance": 40 },
@@ -730,7 +1026,8 @@
       "place_monsters": [
         { "monster": "GROUP_ZOMBIE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.3 },
         { "monster": "GROUP_BEE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.2 }
-      ]
+      ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -739,7 +1036,6 @@
     "om_terrain": [ "urban_37_16" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "  :::::=77|   +     dh l",
         "    :::=77| T |  [h d6dl",
@@ -767,11 +1063,32 @@
         "........................"
       ],
       "palettes": [ "acidia_commercial_palette" ],
-      "terrain": { ":": "t_floor_wax", "M": "t_wax" },
-      "toilets": { "T": {  } },
+      "terrain": {
+        ":": "t_floor_wax",
+        "M": "t_wax",
+        "h": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "7": "t_region_groundcover",
+        "+": "t_region_groundcover",
+        "=": "t_region_groundcover",
+        "d": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "6": "t_region_groundcover",
+        "T": "t_region_groundcover",
+        "[": "t_region_groundcover",
+        "k": "t_region_groundcover",
+        "c": "t_region_groundcover",
+        "-": "t_region_groundcover",
+        "C": "t_region_groundcover",
+        "S": "t_region_groundcover",
+        "J": "t_region_groundcover",
+        "v": "t_region_groundcover",
+        "O": "t_region_groundcover",
+        "]": "t_region_groundcover",
+        ".": "t_region_groundcover"
+      },
       "items": {
         " ": { "item": "office", "chance": 1 },
-        "3": { "item": "building_rubble", "chance": 70 },
         "O": { "item": "office", "chance": 50 },
         "]": { "item": "bookstore_misc", "chance": 70 },
         "d": { "item": "office", "chance": 40 },
@@ -780,7 +1097,8 @@
       "place_monsters": [
         { "monster": "GROUP_ZOMBIE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.3 },
         { "monster": "GROUP_BEE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.2 }
-      ]
+      ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -789,7 +1107,6 @@
     "om_terrain": [ "urban_37_17" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "........................",
         "........................",
@@ -817,11 +1134,27 @@
         "ldh      |CSC|77|:::MMM:"
       ],
       "palettes": [ "acidia_commercial_palette" ],
-      "terrain": { ":": "t_floor_wax", "M": "t_wax" },
+      "terrain": {
+        ":": "t_floor_wax",
+        "M": "t_wax",
+        ".": "t_region_groundcover",
+        "v": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "6": "t_region_groundcover",
+        "k": "t_region_groundcover",
+        "[": "t_region_groundcover",
+        "d": "t_region_groundcover",
+        "h": "t_region_groundcover",
+        "@": "t_region_groundcover",
+        "t": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "-": "t_region_groundcover",
+        "C": "t_region_groundcover",
+        "S": "t_region_groundcover",
+        "7": "t_region_groundcover"
+      },
       "items": {
         " ": { "item": "office", "chance": 1 },
-        "3": { "item": "building_rubble", "chance": 70 },
-        ":": { "item": "building_rubble", "chance": 3 },
         "O": { "item": "office", "chance": 50 },
         "]": { "item": "bookstore_misc", "chance": 70 },
         "d": { "item": "office", "chance": 40 },
@@ -830,7 +1163,8 @@
       "place_monsters": [
         { "monster": "GROUP_ZOMBIE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.1 },
         { "monster": "GROUP_BEE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.4 }
-      ]
+      ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -839,7 +1173,6 @@
     "om_terrain": [ "urban_37_18" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "........................",
         "........................",
@@ -867,11 +1200,29 @@
         "::::::M|77|[[[[  [h 6ddl"
       ],
       "palettes": [ "acidia_commercial_palette" ],
-      "terrain": { ":": "t_floor_wax", "M": "t_wax" },
+      "terrain": {
+        ":": "t_floor_wax",
+        "M": "t_wax",
+        ".": "t_region_groundcover",
+        "v": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "6": "t_region_groundcover",
+        "[": "t_region_groundcover",
+        "d": "t_region_groundcover",
+        "h": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "-": "t_region_groundcover",
+        "r": "t_region_groundcover",
+        ">": "t_region_groundcover",
+        "Z": "t_region_groundcover",
+        "k": "t_region_groundcover",
+        "7": "t_region_groundcover",
+        "t": "t_region_groundcover",
+        "@": "t_region_groundcover",
+        "A": "t_region_groundcover"
+      },
       "items": {
         " ": { "item": "office", "chance": 1 },
-        "3": { "item": "building_rubble", "chance": 70 },
-        ":": { "item": "building_rubble", "chance": 3 },
         "O": { "item": "office", "chance": 50 },
         "]": { "item": "bookstore_misc", "chance": 70 },
         "d": { "item": "office", "chance": 40 },
@@ -880,7 +1231,8 @@
       "place_monsters": [
         { "monster": "GROUP_ZOMBIE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.1 },
         { "monster": "GROUP_BEE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.4 }
-      ]
+      ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -889,7 +1241,6 @@
     "om_terrain": [ "urban_37_19" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "l     [  +   |77= ::M:MM",
         "l[[[[[[  | T |77=  ::c:M",
@@ -917,13 +1268,39 @@
         "........................"
       ],
       "palettes": [ "acidia_commercial_palette" ],
-      "terrain": { "3": "t_strconc_floor", ":": "t_floor_wax", "M": "t_wax" },
+      "terrain": {
+        "3": "t_strconc_floor",
+        ":": "t_floor_wax",
+        "M": "t_wax",
+        "|": "t_region_groundcover",
+        "[": "t_region_groundcover",
+        "+": "t_region_groundcover",
+        "7": "t_region_groundcover",
+        "=": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "T": "t_region_groundcover",
+        "c": "t_region_groundcover",
+        "h": "t_region_groundcover",
+        "6": "t_region_groundcover",
+        "-": "t_region_groundcover",
+        "C": "t_region_groundcover",
+        "S": "t_region_groundcover",
+        "d": "t_region_groundcover",
+        "J": "t_region_groundcover",
+        "v": "t_region_groundcover",
+        "(": "t_region_groundcover",
+        "t": "t_region_groundcover",
+        "?": "t_region_groundcover",
+        "k": "t_region_groundcover",
+        "<": "t_region_groundcover",
+        ".": "t_region_groundcover",
+        "]": "t_region_groundcover",
+        "A": "t_region_groundcover",
+        "Z": "t_region_groundcover"
+      },
       "furniture": { "3": "f_rubble" },
-      "toilets": { "T": {  } },
       "items": {
         " ": { "item": "office", "chance": 1 },
-        "3": { "item": "building_rubble", "chance": 70 },
-        ":": { "item": "building_rubble", "chance": 3 },
         "O": { "item": "office", "chance": 50 },
         "]": { "item": "bookstore_misc", "chance": 70 },
         "d": { "item": "office", "chance": 40 },
@@ -932,7 +1309,8 @@
       "place_monsters": [
         { "monster": "GROUP_ZOMBIE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.1 },
         { "monster": "GROUP_BEE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.4 }
-      ]
+      ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -941,7 +1319,6 @@
     "om_terrain": [ "urban_37_20" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         ":::::::=77|d  [     dh l",
         ":::::::=77|dh    [h    l",
@@ -969,11 +1346,26 @@
         "........................"
       ],
       "palettes": [ "acidia_commercial_palette" ],
-      "terrain": { ":": "t_floor_wax", "M": "t_wax" },
+      "terrain": {
+        ":": "t_floor_wax",
+        "M": "t_wax",
+        "h": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "7": "t_region_groundcover",
+        "[": "t_region_groundcover",
+        "=": "t_region_groundcover",
+        "d": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "6": "t_region_groundcover",
+        "-": "t_region_groundcover",
+        "c": "t_region_groundcover",
+        "J": "t_region_groundcover",
+        "v": "t_region_groundcover",
+        "(": "t_region_groundcover",
+        ".": "t_region_groundcover"
+      },
       "items": {
         " ": { "item": "office", "chance": 1 },
-        "3": { "item": "building_rubble", "chance": 70 },
-        ":": { "item": "building_rubble", "chance": 3 },
         "O": { "item": "office", "chance": 50 },
         "]": { "item": "bookstore_misc", "chance": 70 },
         "d": { "item": "office", "chance": 40 },
@@ -982,7 +1374,8 @@
       "place_monsters": [
         { "monster": "GROUP_ZOMBIE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.1 },
         { "monster": "GROUP_BEE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.4 }
-      ]
+      ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -991,7 +1384,6 @@
     "om_terrain": [ "urban_37_21" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "........................",
         "........................",
@@ -1019,17 +1411,34 @@
         "l6d  [   [  ]|77|:::M::7"
       ],
       "palettes": [ "acidia_commercial_palette" ],
-      "terrain": { ":": "t_floor_wax", "M": "t_wax" },
+      "terrain": {
+        ":": "t_floor_wax",
+        "M": "t_wax",
+        ".": "t_region_groundcover",
+        "v": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "]": "t_region_groundcover",
+        "r": "t_region_groundcover",
+        "6": "t_region_groundcover",
+        "[": "t_region_groundcover",
+        "d": "t_region_groundcover",
+        "h": "t_region_groundcover",
+        "Z": "t_region_groundcover",
+        "t": "t_region_groundcover",
+        "7": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "-": "t_region_groundcover"
+      },
       "items": {
         " ": { "item": "office", "chance": 1 },
-        "3": { "item": "building_rubble", "chance": 70 },
         ":": { "item": "hive_destructive", "chance": 3 },
         "O": { "item": "office", "chance": 50 },
         "]": { "item": "bookstore_misc", "chance": 70 },
         "d": { "item": "office", "chance": 40 },
         "r": { "item": "cleaning", "chance": 60 }
       },
-      "place_monsters": [ { "monster": "GROUP_BEE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.6 } ]
+      "place_monsters": [ { "monster": "GROUP_BEE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.6 } ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -1038,7 +1447,6 @@
     "om_terrain": [ "urban_37_22" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "........................",
         "........................",
@@ -1066,18 +1474,41 @@
         "7777:::|77|CSC|  [    ]l"
       ],
       "palettes": [ "acidia_commercial_palette" ],
-      "terrain": { "3": "t_strconc_floor", ":": "t_floor_wax", "M": "t_wax" },
+      "terrain": {
+        "3": "t_strconc_floor",
+        ":": "t_floor_wax",
+        "M": "t_wax",
+        ".": "t_region_groundcover",
+        "v": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "]": "t_region_groundcover",
+        "6": "t_region_groundcover",
+        "r": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "[": "t_region_groundcover",
+        "d": "t_region_groundcover",
+        "h": "t_region_groundcover",
+        "+": "t_region_groundcover",
+        "-": "t_region_groundcover",
+        "<": "t_region_groundcover",
+        "J": "t_region_groundcover",
+        "c": "t_region_groundcover",
+        "7": "t_region_groundcover",
+        "k": "t_region_groundcover",
+        "C": "t_region_groundcover",
+        "S": "t_region_groundcover"
+      },
       "furniture": { "3": "f_rubble" },
       "items": {
         " ": { "item": "office", "chance": 1 },
-        "3": { "item": "building_rubble", "chance": 70 },
         ":": { "item": "hive_destructive", "chance": 3 },
         "O": { "item": "office", "chance": 50 },
         "]": { "item": "bookstore_misc", "chance": 70 },
         "d": { "item": "office", "chance": 40 },
         "r": { "item": "cleaning", "chance": 60 }
       },
-      "place_monsters": [ { "monster": "GROUP_BEE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.6 } ]
+      "place_monsters": [ { "monster": "GROUP_BEE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.6 } ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -1086,7 +1517,6 @@
     "om_terrain": [ "urban_37_23" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "ldh        hd|77=:::M:::",
         "ld   [   [d6d|77=:::M:::",
@@ -1114,17 +1544,35 @@
         "........................"
       ],
       "palettes": [ "acidia_commercial_palette" ],
-      "terrain": { ":": "t_floor_wax", "M": "t_wax" },
+      "terrain": {
+        ":": "t_floor_wax",
+        "M": "t_wax",
+        "h": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "7": "t_region_groundcover",
+        "=": "t_region_groundcover",
+        "d": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "6": "t_region_groundcover",
+        "[": "t_region_groundcover",
+        "-": "t_region_groundcover",
+        "]": "t_region_groundcover",
+        ">": "t_region_groundcover",
+        "v": "t_region_groundcover",
+        ".": "t_region_groundcover",
+        "r": "t_region_groundcover",
+        "Z": "t_region_groundcover"
+      },
       "items": {
         " ": { "item": "office", "chance": 1 },
-        "3": { "item": "building_rubble", "chance": 70 },
         ":": { "item": "hive_destructive", "chance": 3 },
         "O": { "item": "office", "chance": 50 },
         "]": { "item": "bookstore_misc", "chance": 70 },
         "d": { "item": "office", "chance": 40 },
         "r": { "item": "cleaning", "chance": 60 }
       },
-      "place_monsters": [ { "monster": "GROUP_BEE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.6 } ]
+      "place_monsters": [ { "monster": "GROUP_BEE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.6 } ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -1133,7 +1581,6 @@
     "om_terrain": [ "urban_37_24" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "::M:::::77|   +     dh l",
         "::M:::::77| T |  [h d6dl",
@@ -1161,18 +1608,38 @@
         "........................"
       ],
       "palettes": [ "acidia_commercial_palette" ],
-      "terrain": { ":": "t_floor_wax", "M": "t_wax" },
-      "toilets": { "T": {  } },
+      "terrain": {
+        ":": "t_floor_wax",
+        "M": "t_wax",
+        "h": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "7": "t_region_groundcover",
+        "+": "t_region_groundcover",
+        "d": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "6": "t_region_groundcover",
+        "T": "t_region_groundcover",
+        "[": "t_region_groundcover",
+        "-": "t_region_groundcover",
+        "C": "t_region_groundcover",
+        "S": "t_region_groundcover",
+        "=": "t_region_groundcover",
+        "v": "t_region_groundcover",
+        "O": "t_region_groundcover",
+        ";": "t_region_groundcover",
+        "]": "t_region_groundcover",
+        ".": "t_region_groundcover"
+      },
       "items": {
         " ": { "item": "office", "chance": 1 },
-        "3": { "item": "building_rubble", "chance": 70 },
         ":": { "item": "hive_destructive", "chance": 3 },
         "O": { "item": "office", "chance": 50 },
         "]": { "item": "bookstore_misc", "chance": 70 },
         "d": { "item": "office", "chance": 40 },
         "r": { "item": "cleaning", "chance": 60 }
       },
-      "place_monsters": [ { "monster": "GROUP_BEE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.6 } ]
+      "place_monsters": [ { "monster": "GROUP_BEE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.6 } ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -1181,7 +1648,6 @@
     "om_terrain": [ "urban_37_25" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "........................",
         "........................",
@@ -1209,9 +1675,18 @@
         "l:::M:::::::M|77|:777777"
       ],
       "palettes": [ "acidia_commercial_palette" ],
-      "terrain": { ":": "t_floor_wax", "M": "t_wax" },
+      "terrain": {
+        ":": "t_floor_wax",
+        "M": "t_wax",
+        ".": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "7": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "-": "t_region_groundcover"
+      },
       "items": { ":": { "item": "hive_destructive", "chance": 3 } },
-      "place_monsters": [ { "monster": "GROUP_BEE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.75 } ]
+      "place_monsters": [ { "monster": "GROUP_BEE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.75 } ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -1220,7 +1695,6 @@
     "om_terrain": [ "urban_37_26" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "........................",
         "........................",
@@ -1248,9 +1722,20 @@
         "777777:|77|::::::M:::::l"
       ],
       "palettes": [ "acidia_commercial_palette" ],
-      "terrain": { ":": "t_floor_wax", "M": "t_wax" },
+      "terrain": {
+        ":": "t_floor_wax",
+        "M": "t_wax",
+        ".": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "-": "t_region_groundcover",
+        ">": "t_region_groundcover",
+        "<": "t_region_groundcover",
+        "7": "t_region_groundcover"
+      },
       "items": { ":": { "item": "hive_destructive", "chance": 3 } },
-      "place_monsters": [ { "monster": "GROUP_BEE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.75 } ]
+      "place_monsters": [ { "monster": "GROUP_BEE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.75 } ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -1259,7 +1744,6 @@
     "om_terrain": [ "urban_37_27" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "l::MMM:::::MM|77::::7777",
         "l:MM:M::::MM:|77::::::77",
@@ -1287,9 +1771,21 @@
         "........................"
       ],
       "palettes": [ "acidia_commercial_palette" ],
-      "terrain": { ":": "t_floor_wax", "M": "t_wax" },
+      "terrain": {
+        ":": "t_floor_wax",
+        "M": "t_wax",
+        "|": "t_region_groundcover",
+        "7": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "-": "t_region_groundcover",
+        "=": "t_region_groundcover",
+        "<": "t_region_groundcover",
+        ".": "t_region_groundcover",
+        "v": "t_region_groundcover"
+      },
       "items": { ":": { "item": "hive_destructive", "chance": 3 } },
-      "place_monsters": [ { "monster": "GROUP_BEE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.75 } ]
+      "place_monsters": [ { "monster": "GROUP_BEE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.75 } ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -1298,7 +1794,6 @@
     "om_terrain": [ "urban_37_28" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "77777:::77|:::::MMM::::l",
         "77::::::77|::::MM:MM:::l",
@@ -1326,9 +1821,20 @@
         "........................"
       ],
       "palettes": [ "acidia_commercial_palette" ],
-      "terrain": { ":": "t_floor_wax", "M": "t_wax" },
+      "terrain": {
+        ":": "t_floor_wax",
+        "M": "t_wax",
+        "|": "t_region_groundcover",
+        "7": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "-": "t_region_groundcover",
+        "=": "t_region_groundcover",
+        ".": "t_region_groundcover",
+        "v": "t_region_groundcover"
+      },
       "items": { ":": { "item": "hive_destructive", "chance": 3 } },
-      "place_monsters": [ { "monster": "GROUP_BEE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.75 } ]
+      "place_monsters": [ { "monster": "GROUP_BEE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.75 } ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -1337,7 +1843,6 @@
     "om_terrain": [ "urban_37_29" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "........................",
         "........................",
@@ -1365,9 +1870,18 @@
         "8RRRRR::::M:::::M:777777"
       ],
       "palettes": [ "acidia_commercial_palette" ],
-      "terrain": { ":": "t_floor_wax", "M": "t_wax" },
+      "terrain": {
+        ":": "t_floor_wax",
+        "M": "t_wax",
+        ".": "t_region_groundcover",
+        "8": "t_region_groundcover",
+        "9": "t_region_groundcover",
+        "R": "t_region_groundcover",
+        "7": "t_region_groundcover"
+      },
       "items": { ":": { "item": "hive", "chance": 3 } },
-      "place_monsters": [ { "monster": "GROUP_BEE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.55 } ]
+      "place_monsters": [ { "monster": "GROUP_BEE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.55 } ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -1376,7 +1890,6 @@
     "om_terrain": [ "urban_37_30" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "........................",
         "........................",
@@ -1404,9 +1917,22 @@
         "777777:::M:MM::RRRRRRRR8"
       ],
       "palettes": [ "acidia_commercial_palette" ],
-      "terrain": { ":": "t_floor_wax", "M": "t_wax" },
+      "terrain": {
+        ":": "t_floor_wax",
+        "M": "t_wax",
+        ".": "t_region_groundcover",
+        "9": "t_region_groundcover",
+        "8": "t_region_groundcover",
+        "R": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "-": "t_region_groundcover",
+        "<": "t_region_groundcover",
+        "1": "t_region_groundcover",
+        "7": "t_region_groundcover"
+      },
       "items": { ":": { "item": "hive", "chance": 3 } },
-      "place_monsters": [ { "monster": "GROUP_BEE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.55 } ]
+      "place_monsters": [ { "monster": "GROUP_BEE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.55 } ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -1415,7 +1941,6 @@
     "om_terrain": [ "urban_37_31" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "8RRRRRR:::MM:::MMM::7777",
         "8RRRRRR::::MM::::MM:::77",
@@ -1443,9 +1968,20 @@
         "........................"
       ],
       "palettes": [ "acidia_commercial_palette" ],
-      "terrain": { "#": "t_floor_wax", ":": "t_floor_wax", "M": "t_wax" },
-      "items": { "#": { "item": "hive_center", "chance": 25 }, ":": { "item": "hive", "chance": 3 } },
-      "place_monsters": [ { "monster": "GROUP_BEE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.55 } ]
+      "terrain": {
+        "#": "t_floor_wax",
+        ":": "t_floor_wax",
+        "M": "t_wax",
+        "8": "t_region_groundcover",
+        "R": "t_region_groundcover",
+        "7": "t_region_groundcover",
+        ";": "t_region_groundcover",
+        "9": "t_region_groundcover",
+        ".": "t_region_groundcover"
+      },
+      "items": { "#": { "item": "hive", "chance": 25 }, ":": { "item": "hive", "chance": 3 } },
+      "place_monsters": [ { "monster": "GROUP_BEE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.55 } ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -1454,7 +1990,6 @@
     "om_terrain": [ "urban_37_32" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "77777::::MMM::::RRRRRRR8",
         "77M::::::M:::R:RRRRRRRR8",
@@ -1482,9 +2017,19 @@
         "........................"
       ],
       "palettes": [ "acidia_commercial_palette" ],
-      "terrain": { "#": "t_floor_wax", ":": "t_floor_wax", "M": "t_wax" },
-      "items": { "#": { "item": "hive_center", "chance": 25 }, ":": { "item": "hive", "chance": 3 } },
-      "place_monsters": [ { "monster": "GROUP_BEE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.55 } ]
+      "terrain": {
+        "#": "t_floor_wax",
+        ":": "t_floor_wax",
+        "M": "t_wax",
+        "8": "t_region_groundcover",
+        "R": "t_region_groundcover",
+        "7": "t_region_groundcover",
+        "9": "t_region_groundcover",
+        ".": "t_region_groundcover"
+      },
+      "items": { "#": { "item": "hive", "chance": 25 }, ":": { "item": "hive", "chance": 3 } },
+      "place_monsters": [ { "monster": "GROUP_BEE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.55 } ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -1493,7 +2038,6 @@
     "om_terrain": [ "urban_37_33" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "........................",
         "........................",
@@ -1521,8 +2065,9 @@
         "..........::::::::::::::"
       ],
       "palettes": [ "acidia_commercial_palette" ],
-      "terrain": { ":": "t_floor_wax", "M": "t_wax" },
-      "place_monsters": [ { "monster": "GROUP_BEE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.2 } ]
+      "terrain": { ":": "t_floor_wax", "M": "t_wax", ".": "t_region_groundcover" },
+      "place_monsters": [ { "monster": "GROUP_BEE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.2 } ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -1531,7 +2076,6 @@
     "om_terrain": [ "urban_37_34" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "........................",
         "........................",
@@ -1559,8 +2103,9 @@
         ":::::::::::::..........."
       ],
       "palettes": [ "acidia_commercial_palette" ],
-      "terrain": { ":": "t_floor_wax", "M": "t_wax" },
-      "place_monsters": [ { "monster": "GROUP_BEE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.2 } ]
+      "terrain": { ":": "t_floor_wax", "M": "t_wax", ".": "t_region_groundcover", "R": "t_region_groundcover" },
+      "place_monsters": [ { "monster": "GROUP_BEE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.2 } ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -1569,7 +2114,6 @@
     "om_terrain": [ "urban_37_35" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "..........::::::::::::::",
         "...........:::::::::::::",
@@ -1597,8 +2141,9 @@
         "........................"
       ],
       "palettes": [ "acidia_commercial_palette" ],
-      "terrain": { ":": "t_floor_wax", "M": "t_wax" },
-      "place_monsters": [ { "monster": "GROUP_BEE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.2 } ]
+      "terrain": { ":": "t_floor_wax", "M": "t_wax", ".": "t_region_groundcover" },
+      "place_monsters": [ { "monster": "GROUP_BEE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.2 } ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -1607,7 +2152,6 @@
     "om_terrain": [ "urban_37_36" ],
     "weight": 250,
     "object": {
-      "fill_ter": "t_floor",
       "rows": [
         "::::::::::::............",
         "::::::::::..............",
@@ -1635,8 +2179,9 @@
         "........................"
       ],
       "palettes": [ "acidia_commercial_palette" ],
-      "terrain": { ":": "t_floor_wax", "M": "t_wax" },
-      "place_monsters": [ { "monster": "GROUP_BEE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.2 } ]
+      "terrain": { ":": "t_floor_wax", "M": "t_wax", ".": "t_region_groundcover" },
+      "place_monsters": [ { "monster": "GROUP_BEE", "x": [ 1, 22 ], "y": [ 1, 22 ], "density": 0.2 } ],
+      "fill_ter": "t_region_groundcover"
     }
   }
 ]

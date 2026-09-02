@@ -44,7 +44,6 @@
   {
     "abstract": "mon_dog_mutant_pup",
     "type": "MONSTER",
-    "copy-from": "mon_dog_mutant",
     "name": { "str": "mutant whelp" },
     "description": "A deformed and mutating canine whelp.",
     "volume": "750 ml",
@@ -60,11 +59,11 @@
     "dodge": 1,
     "vision_night": 4,
     "harvest": "mammal_tiny",
-    "extend": { "flags": [ "NO_BREED" ] }
+    "extend": { "flags": [ "NO_BREED" ] },
+    "copy-from": "mon_dog_mutant"
   },
   {
     "id": "mon_dog_sick_scab",
-    "copy-from": "mon_dog_mutant",
     "type": "MONSTER",
     "name": { "str": "scab dog" },
     "description": "A mutating canine covered in scabs and bloody lesions.  Although weak from disease, the animal is deranged and highly aggressive.",
@@ -76,11 +75,11 @@
     "dodge": 1,
     "harvest": "animal_noskin",
     "upgrades": { "half_life": 60, "into_group": "GROUP_CANINE_MUTANT" },
-    "extend": { "flags": [ "NO_BREED" ] }
+    "extend": { "flags": [ "NO_BREED" ] },
+    "copy-from": "mon_dog_mutant"
   },
   {
     "id": "mon_dog_sick_blister",
-    "copy-from": "mon_dog_mutant",
     "type": "MONSTER",
     "name": { "str": "blister dog" },
     "description": "A mutating canine covered in giant blisters.  Although weak from disease, the animal is deranged and highly aggressive.",
@@ -92,11 +91,11 @@
     "dodge": 1,
     "harvest": "animal_noskin",
     "upgrades": { "half_life": 60, "into_group": "GROUP_CANINE_MUTANT" },
-    "extend": { "flags": [ "NO_BREED" ] }
+    "extend": { "flags": [ "NO_BREED" ] },
+    "copy-from": "mon_dog_mutant"
   },
   {
     "id": "mon_dog_sick_pus",
-    "copy-from": "mon_dog_mutant",
     "type": "MONSTER",
     "name": { "str": "pus dog" },
     "description": "A mutating canine with rancid pus dripping from its patchy fur.  Although weak from disease, the animal is deranged and highly aggressive.",
@@ -108,23 +107,23 @@
     "dodge": 1,
     "harvest": "animal_noskin",
     "upgrades": { "half_life": 60, "into_group": "GROUP_CANINE_MUTANT" },
-    "extend": { "flags": [ "NO_BREED" ] }
+    "extend": { "flags": [ "NO_BREED" ] },
+    "copy-from": "mon_dog_mutant"
   },
   {
     "id": "mon_dog_sick_pup",
-    "copy-from": "mon_dog_mutant_pup",
     "type": "MONSTER",
     "name": { "str": "deformed whelp" },
     "description": "A mutating puppy with patchy fur and malformed limbs.",
     "color": "green",
-    "upgrades": { "age_grow": 42, "into_group": "GROUP_CANINE_MUTANT" }
+    "upgrades": { "age_grow": 42, "into_group": "GROUP_CANINE_MUTANT" },
+    "copy-from": "mon_dog_mutant_pup"
   },
   {
     "id": "mon_dog_mutant_worm",
-    "copy-from": "mon_dog_mutant",
     "type": "MONSTER",
     "name": { "str": "worm dog" },
-    "description": "A former canine mutated into a hairless monster with a thick tail and long neck. Multifaceted eyes sprout irregularly atop its elongated skull.",
+    "description": "A former canine mutated into a hairless monster with a thick tail and long neck.  Multifaceted eyes sprout irregularly atop its elongated skull.",
     "hp": 80,
     "armor": { "bash": 4, "cut": 4, "bullet": 2 },
     "melee_skill": 6,
@@ -139,27 +138,27 @@
     "vision_night": 20,
     "reproduction": { "baby_monster": "mon_dog_mutant_worm_pup", "baby_count": 2, "baby_timer": 270 },
     "harvest": "mammal_small_leather",
-    "extend": { "flags": [ "BILE_BLOOD" ] }
+    "extend": { "flags": [ "BILE_BLOOD" ] },
+    "copy-from": "mon_dog_mutant"
   },
   {
     "id": "mon_dog_mutant_worm_pup",
-    "copy-from": "mon_dog_mutant_pup",
     "type": "MONSTER",
     "name": { "str": "wormling" },
-    "description": "The wriggling offspring of a worm dog. Multifaceted eyes sprout irregularly atop its elongated skull.",
-    "color": "white",
+    "description": "The wriggling offspring of a worm dog.  Multifaceted eyes sprout irregularly atop its elongated skull.",
     "morale": 30,
     "vision_night": 10,
     "harvest": "mammal_small_leather",
+    "extend": { "flags": [ "BILE_BLOOD" ] },
+    "color": "white",
     "upgrades": { "age_grow": 30, "into": "mon_dog_mutant_worm" },
-    "extend": { "flags": [ "BILE_BLOOD" ] }
+    "copy-from": "mon_dog_mutant_pup"
   },
   {
     "id": "mon_dog_mutant_happy",
-    "copy-from": "mon_dog_mutant",
     "type": "MONSTER",
     "name": { "str": "happysmile dog" },
-    "description": "A former canine mutated into a skinless monster with an oversized head and multiple rows of venomous fangs. Its absurdly wide mouth makes it appear to have a permanent smile.",
+    "description": "A former canine mutated into a skinless monster with an oversized head and multiple rows of venomous fangs.  Its absurdly wide mouth makes it appear to have a permanent smile.",
     "hp": 60,
     "melee_skill": 4,
     "melee_dice": 3,
@@ -172,21 +171,21 @@
     "aggression": 100,
     "morale": 50,
     "harvest": "animal_noskin",
-    "reproduction": { "baby_monster": "mon_dog_mutant_happy_pup", "baby_count": 2, "baby_timer": 270 }
+    "reproduction": { "baby_monster": "mon_dog_mutant_happy_pup", "baby_count": 2, "baby_timer": 270 },
+    "copy-from": "mon_dog_mutant"
   },
   {
     "id": "mon_dog_mutant_happy_pup",
-    "copy-from": "mon_dog_mutant_pup",
     "type": "MONSTER",
-    "name": { "str": "happysmile puppy" },
-    "description": "The chittering whelp of a happysmile dog. It has a permanent grin of venomous fangs.",
+    "name": { "str": "happysmile puppy", "str_pl": "happysmile puppies" },
+    "description": "The chittering whelp of a happysmile dog.  It has a permanent grin of venomous fangs.",
     "harvest": "animal_noskin",
     "upgrades": { "age_grow": 42, "into": "mon_dog_mutant_happy" },
-    "color": "pink"
+    "color": "pink",
+    "copy-from": "mon_dog_mutant_pup"
   },
   {
     "id": "mon_dog_mutant_digiri",
-    "copy-from": "mon_dog_mutant",
     "type": "MONSTER",
     "name": { "str": "digiridog" },
     "description": "A former canine mutated into a weird creature with bone tubes growing from its head and spine, from which it emits a stream of unearthly moans.  Its oily blue saliva can prevent blood from clotting.",
@@ -202,23 +201,23 @@
     "color": "light_blue",
     "aggression": 50,
     "morale": 50,
-    "reproduction": { "baby_monster": "mon_dog_mutant_digiri_pup", "baby_count": 2, "baby_timer": 270 }
+    "reproduction": { "baby_monster": "mon_dog_mutant_digiri_pup", "baby_count": 2, "baby_timer": 270 },
+    "copy-from": "mon_dog_mutant"
   },
   {
     "id": "mon_dog_mutant_digiri_pup",
-    "copy-from": "mon_dog_mutant_pup",
     "type": "MONSTER",
     "name": { "str": "digiridog whelp" },
-    "description": "The offspring of a digiridog. Its bone tubes are not yet developed and it looks almost like a real dog.",
+    "description": "The offspring of a digiridog.  Its bone tubes are not yet developed and it looks almost like a real dog.",
     "color": "light_blue",
-    "upgrades": { "age_grow": 42, "into": "mon_dog_mutant_digiri" }
+    "upgrades": { "age_grow": 42, "into": "mon_dog_mutant_digiri" },
+    "copy-from": "mon_dog_mutant_pup"
   },
   {
     "id": "mon_dog_mutant_dire",
-    "copy-from": "mon_dog_mutant",
     "type": "MONSTER",
     "name": { "str": "direwolf" },
-    "description": "A canine mutated into a wild beast the size of a grizzly bear. It can recover from disease and wounds with an alarming speed. The wild animal cannot be controlled, but perhaps a younger version could be tamed.",
+    "description": "A canine mutated into a wild beast the size of a grizzly bear.  It can recover from disease and wounds with an alarming speed.  The wild animal cannot be controlled, but perhaps a younger version could be tamed.",
     "symbol": "D",
     "color": "red",
     "volume": "650000 ml",
@@ -238,33 +237,33 @@
     "regenerates": 1,
     "anger_triggers": [ "FRIEND_ATTACKED", "HURT", "FRIEND_DIED", "PLAYER_WEAK", "PLAYER_CLOSE" ],
     "reproduction": { "baby_monster": "mon_dog_mutant_dire_pup", "baby_count": 1, "baby_timer": 270 },
-    "delete": { "flags": [ "HIT_AND_RUN" ] },
-    "extend": { "flags": [ "PET_MOUNTABLE" ] }
+    "extend": { "flags": [ "PET_MOUNTABLE" ] },
+    "copy-from": "mon_dog_mutant"
   },
   {
     "id": "mon_dog_mutant_dire_pup",
-    "copy-from": "mon_dog_mutant_pup",
     "type": "MONSTER",
     "name": { "str": "dire whelp" },
-    "description": "The offspring of a direwolf, already the size of an actual wolf. It seems almost as intelligent and friendly as a domestic dog.",
-    "color": "light_red",
+    "description": "The offspring of a direwolf, already the size of an actual wolf.  It seems almost as intelligent and friendly as a domestic dog.",
     "volume": "26625 ml",
     "weight": "26625 g",
     "hp": 40,
     "speed": 165,
-    "material": [ "flesh" ],
-    "symbol": "w",
     "morale": 20,
     "melee_skill": 7,
     "melee_dice": 2,
     "melee_dice_sides": 3,
     "melee_damage": [ { "damage_type": "cut", "amount": 4 } ],
     "dodge": 4,
-    "armor": { "bash": 1 },
     "vision_night": 5,
     "harvest": "mammal_fur",
+    "extend": { "flags": [ "DOGFOOD" ] },
+    "color": "light_red",
+    "material": [ "flesh" ],
+    "symbol": "w",
+    "armor": { "bash": 1 },
     "regenerates": 1,
     "upgrades": { "age_grow": 60, "into": "mon_dog_mutant_dire" },
-    "extend": { "flags": [ "DOGFOOD" ] }
+    "copy-from": "mon_dog_mutant_pup"
   }
 ]

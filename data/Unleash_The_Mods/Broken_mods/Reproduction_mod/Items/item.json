@@ -1,39 +1,5 @@
 [
   {
-    "id": "baby_carrier",
-    "type": "TOOL",
-    "name": { "str": "Baby carrier" },
-    "description": "A modern infant carrier with soft padding, a small built-in blanket, and a sturdy handle. It shields a baby from sun, wind, and rough handling.",
-    "weight": "4000 g",
-    "volume": "6000 ml",
-    "price": "1 USD",
-    "price_postapoc": "10 cent",
-    "melee_damage": { "bash": 1, "cut": 1 },
-    "material": [ "plastic", "cotton" ],
-    "symbol": "@",
-    "color": "light_gray",
-    "properties": [ [ "creature_size_capacity", "TINY" ] ],
-    "use_action": [ "CAPTURE_MONSTER_ACT" ],
-    "flags": [ "TRADER_AVOID" ]
-  },
-  {
-    "id": "baby_carrier_primitive",
-    "type": "TOOL",
-    "name": { "str": "Primitive baby carrier" },
-    "description": "A simple wicker infant carrier lined with straw and cloth. It does the job when proper baby gear is out of reach.",
-    "weight": "4000 g",
-    "volume": "6000 ml",
-    "price": "1 USD",
-    "price_postapoc": "10 cent",
-    "melee_damage": { "bash": 1, "cut": 1 },
-    "material": [ "wood", "cotton" ],
-    "symbol": "@",
-    "color": "yellow",
-    "properties": [ [ "creature_size_capacity", "TINY" ] ],
-    "use_action": [ "CAPTURE_MONSTER_ACT" ],
-    "flags": [ "TRADER_AVOID" ]
-  },
-  {
     "result": "baby_carrier_primitive",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
@@ -65,7 +31,7 @@
     "id": "npc_spawner_item",
     "type": "COMESTIBLE",
     "name": { "str": "Offspring NPC token" },
-    "description": "A necessary meta item. Use it to turn the last pregnancy stage into an NPC offspring.",
+    "description": "A necessary meta item.  Use it to turn the last pregnancy stage into an NPC offspring.",
     "comestible_type": "MED",
     "symbol": "N",
     "material": [ "alcohol" ],
@@ -73,7 +39,7 @@
     "use_action": {
       "type": "place_npc",
       "npc_class_id": "offspring",
-      "summon_msg": "Finally an adult. It's been a long journey, but your kid can now go their own way and take care of themselves, or continue helping you if you want them to.",
+      "summon_msg": "Finally an adult.  It's been a long journey, but your kid can now go their own way and take care of themselves, or continue helping you if you want them to.",
       "place_randomly": false,
       "moves": 1
     }
@@ -83,13 +49,12 @@
     "type": "TOOL_ARMOR",
     "category": "clothing",
     "symbol": "o",
-    "name": { "str": "ovum", "str_pl": "ovums" },
-    "description": "A meta item that represents the starting point of the pregnancy cycle. Use it to begin fertilization, or drop it if you do not want to keep it.",
+    "name": { "str": "ovum" },
+    "description": "A meta item that represents the starting point of the pregnancy cycle.  Use it to begin fertilization, or drop it if you do not want to keep it.",
     "flags": [ "ONLY_ONE", "INEDIBLE", "TRADER_AVOID", "NO_DROP", "ZERO_WEIGHT" ],
     "weight": "0 g",
     "volume": "1 ml",
     "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "human_sperm_type": 10 } } ],
-    "max_charges": 10,
     "charges_per_use": 1,
     "ammo": [ "human_sperm_type" ],
     "use_action": [
@@ -103,9 +68,8 @@
         "moves": 1
       }
     ],
-    "covers": [ "torso" ],
     "warmth": 0,
-    "coverage": 0
+    "armor": [ { "covers": [ "torso" ], "coverage": 0 } ]
   },
   {
     "id": "human_pregnancy_item",
@@ -113,13 +77,12 @@
     "category": "clothing",
     "symbol": "O",
     "name": { "str": "pregnancy", "str_pl": "pregnancies" },
-    "description": "A human pregnancy in progress. Wait for the timer to run out before using the birth item.",
+    "description": "A human pregnancy in progress.  Wait for the timer to run out before using the birth item.",
     "flags": [ "ONLY_ONE", "TRADER_AVOID", "NO_DROP", "ZERO_WEIGHT" ],
     "weight": "0 g",
     "volume": "1 ml",
-    "covers": [ "torso" ],
     "warmth": 10,
-    "armor": [ { "encumbrance": 15, "coverage": 25 } ],
+    "armor": [ { "encumbrance": 15, "coverage": 25, "covers": [ "torso" ] } ],
     "max_charges": 9,
     "initial_charges": 9,
     "turns_per_charge": 2592000,
@@ -132,14 +95,12 @@
     "material": [ "alcohol" ],
     "symbol": "b",
     "name": { "str": "completed pregnancy", "str_pl": "completed pregnancies" },
-    "description": "A pregnancy that has reached full term. Activate it to give birth.",
+    "description": "A pregnancy that has reached full term.  Activate it to give birth.",
     "flags": [ "TRADER_AVOID", "NO_INGEST", "ONLY_ONE", "ZERO_WEIGHT" ],
-    "max_charges": 2,
-    "initial_charges": 2,
     "use_action": {
       "type": "place_monster",
       "monster_id": "human_baby",
-      "summon_msg": "It's a healthy baby! Hope you have a baby carrier handy, because you sure as shit aren't allowed you to carry living things without such a thing.",
+      "friendly_msg": "It's a healthy baby!  Hope you have a baby carrier handy, because you sure as shit aren't allowed you to carry living things without such a thing.",
       "place_randomly": false,
       "moves": 1
     }
