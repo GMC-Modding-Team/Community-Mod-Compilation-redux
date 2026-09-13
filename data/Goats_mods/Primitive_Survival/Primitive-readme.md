@@ -1122,10 +1122,10 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 *Containers:*
 
 ```markdown
-- [ ] Primitive Backpack - Primitive Sack, Cord - bone awl
-- [ ] Primitive Sack - Cord - Bone awl
-- [ ] Primitive Bucket - Wood, Cord - Cutting tool
-- [ ] Primitive Canteen - Wood, Chisel - Cutting tool
+- [x] Primitive Backpack - Primitive Sack, Cord - bone awl
+- [x] Primitive Sack - Cord - Bone awl
+- [x] Primitive Bucket - Wood, Cord - Cutting tool
+- [x] Primitive Canteen - Wood, Chisel - Cutting tool
 ```
 
 
@@ -1366,17 +1366,17 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 
 ```markdown
 - [ ] Homemade Soap - water, vegetables, seasoning - knife - boil
-- [ ] Meat soup - raw meat, water, vegetables, seasoning - knife - boil
-- [ ] Meat stew - raw meat, water, vegetables, seasoning - knife - bake
-- [ ] Porridge - flour, Water - boil
-- [ ] Oven porridge - flour, water - Bake
-- [ ] Seed porridge - flour, seed, water - boil
-- [ ] Berry porridge - flour, berry, water - boil
-- [ ] Fish Fillet - raw fish, water, vegetables, seasoning - knife - boil
+- [x] Meat soup - raw meat, water, vegetables, seasoning - knife - boil
+- [x] Meat stew - raw meat, water, vegetables, seasoning - knife - bake
+- [x] Porridge - flour, Water - boil
+- [x] Oven porridge - flour, water - Bake
+- [x] Seed porridge - flour, seed, water - boil
+- [x] Berry porridge - flour, berry, water - boil
+- [x] Fish Fillet - raw fish, water, vegetables, seasoning - knife - boil
 - [ ] Pea soup - peas, water, raw meat, seasoning - boil
 - [ ] Green soup - herbs, water, flour, seasoning - boil
-- [ ] Vegetable soup - vegetables, water, seasoning - boil
-- [ ] Mushroom soup - mushrooms, water, flour, seasoning - boil
+- [x] Vegetable soup - vegetables, water, seasoning - boil
+- [x] Mushroom soup - mushrooms, water, flour, seasoning - boil
 - [x] Vegetable and meat stew - vegetables, water, mushrooms, seasoning - bake
 ```
 
