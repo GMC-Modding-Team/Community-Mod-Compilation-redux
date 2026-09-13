@@ -197,7 +197,7 @@ deconstruct pile of leaves to get leaves ATM.
 *Generic:*
 
 ```markdown
-- [ ] Primitive Glue
+- [x] Primitive Glue
 ```
 
 
@@ -205,7 +205,7 @@ deconstruct pile of leaves to get leaves ATM.
 *Materials:*
 
 ```markdown
-- [ ] Clay
+- [x] Clay (provided by the base game)
 ```
 
 
@@ -213,8 +213,8 @@ deconstruct pile of leaves to get leaves ATM.
 *Leather clothing:*
 
 ```markdown
-- [ ] leather_belt - Leather belt
-- [ ] dress_shoes -  Leather shoes
+- [x] leather_belt - Leather belt (provided by the base game)
+- [x] dress_shoes - Leather shoes (provided by the base game)
 ```
 
 
@@ -222,11 +222,11 @@ deconstruct pile of leaves to get leaves ATM.
 *Raw-Fruit:*
 
 ```markdown
-- [ ] Blueberries
-- [ ] Raspberries
-- [ ] Strawberries
-- [ ] Cranberries
-- [ ] Grapes
+- [x] Blueberries (provided by the base game)
+- [x] Raspberries (provided by the base game)
+- [x] Strawberries (provided by the base game)
+- [x] Cranberries (provided by the base game)
+- [x] Grapes (provided by the base game)
 ```
 
 
@@ -234,7 +234,7 @@ deconstruct pile of leaves to get leaves ATM.
 *Food:*
 
 ```markdown
-- [ ] soup_meat - Meat soup
+- [x] soup_meat - Meat soup (implemented as meat_soup)
 ```
 
 
@@ -242,14 +242,14 @@ deconstruct pile of leaves to get leaves ATM.
 *Seeds:*
 
 ```markdown
-- [ ] seed_barley - Barley Seed - Barley
-- [ ] seed_cabbage - Cabbage Seed - Cabbage
-- [ ] coffee_pod - Coffee Bean - Coffee
-- [ ] seed_grapes - Grape Seed - Grape
-- [ ] seed_sugar_beet - Sugar Seed - Cane Sugar
-- [ ] seed_tobacco - Tobacco Seed - Tobacco
-- [ ] seed_tomato - Tomato Seed - Tomato
-- [ ] seed_wheat - Wheat Seed - Wheat
+- [x] seed_barley - Barley Seed - Barley
+- [x] seed_cabbage - Cabbage Seed - Cabbage
+- [x] coffee_pod - Coffee Bean - Coffee
+- [x] seed_grapes - Grape Seed - Grape
+- [x] seed_sugar_beet - Sugar Seed - Cane Sugar
+- [x] seed_tobacco - Tobacco Seed - Tobacco
+- [x] seed_tomato - Tomato Seed - Tomato
+- [x] seed_wheat - Wheat Seed - Wheat
 ```
 
 
@@ -423,7 +423,7 @@ deconstruct pile of leaves to get leaves ATM.
 ```markdown
 - [x] Mud
 - [x] Leaves
-- [ ] Peat
+- [x] Peat
 - [x] Bamboo
 - [x] Cloth
 ```
@@ -630,25 +630,25 @@ deconstruct pile of leaves to get leaves ATM.
 *Items:*
 
 ```markdown
-- [ ] Cashew Nuts
-- [ ] Cashew Milk
-- [ ] Ground Cashew Nuts
-- [ ] Organic Oil
-- [ ] Preserved Jam
-- [ ] Flatbread
-- [ ] Homemade Soap
-- [ ] Meat soup
-- [ ] Meat stew
-- [ ] Porridge
-- [ ] Oven porridge
-- [ ] Seed porridge
-- [ ] Berry porridge
-- [ ] Pea soup
-- [ ] Green soup
-- [ ] Vegetable soup
-- [ ] Mushroom soup
-- [ ] Vegetable stew
-- [ ] Fillet and Bread
+- [x] Cashew Nuts
+- [x] Cashew Milk
+- [x] Ground Cashew Nuts
+- [x] Organic Oil
+- [x] Preserved Jam
+- [x] Flatbread
+- [x] Homemade Soap
+- [x] Meat soup
+- [x] Meat stew
+- [x] Porridge
+- [x] Oven porridge
+- [x] Seed porridge
+- [x] Berry porridge
+- [x] Pea soup
+- [x] Green soup
+- [x] Vegetable soup
+- [x] Mushroom soup
+- [x] Vegetable stew
+- [x] Fillet and Bread
 ```
 
 
@@ -735,7 +735,7 @@ deconstruct pile of leaves to get leaves ATM.
 *Wood:*
 
 ```markdown
-- [ ] Firewood
+- [x] Firewood
 ```
 
 
@@ -761,18 +761,18 @@ deconstruct pile of leaves to get leaves ATM.
 *Construction:*
 
 ```markdown
-- [ ] Apiary
-- [ ] Bakers Oven
-- [ ] Cauldron
-- [ ] Fireplace
-- [ ] Firewood Holder
-- [ ] Fruit Press
-- [ ] Grill
-- [ ] Hand mill
-- [ ] Spinning Mule
-- [ ] Storage Barrel
-- [ ] Tanning Rack
-- [ ] Weapon Rack
+- [x] Apiary
+- [x] Bakers Oven
+- [x] Cauldron
+- [x] Fireplace
+- [x] Firewood Holder
+- [x] Fruit Press
+- [x] Grill
+- [x] Hand mill
+- [x] Spinning Mule
+- [x] Storage Barrel
+- [x] Tanning Rack
+- [x] Weapon Rack
 ```
 
 
@@ -881,18 +881,18 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 *Tools:*
 
 ```markdown
-- [ ] Apiary
-- [ ] Bakers Oven
-- [ ] Cauldron
-- [ ] Fireplace
-- [ ] Firewood Holder
-- [ ] Fruit Press
-- [ ] Grill
-- [ ] Hand mill
-- [ ] Spinning Mule
-- [ ] Storage Barrel
-- [ ] Tanning Rack
-- [ ] Weapon Rack
+- [x] Apiary
+- [x] Bakers Oven
+- [x] Cauldron
+- [x] Fireplace
+- [x] Firewood Holder
+- [x] Fruit Press
+- [x] Grill
+- [x] Hand mill
+- [x] Spinning Mule
+- [x] Storage Barrel
+- [x] Tanning Rack
+- [x] Weapon Rack
 ```
 
 
@@ -939,9 +939,9 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 *Vehicles:*
 
 ```markdown
-- [ ] Raft - 6 Strapped wood, Tying equipment, Mast, Steering stick attached to steering wood
-- [ ] Large Raft - 16 Strapped wood, Tying equipment, Large mast, Steering stick attached to steering wood
-- [ ] Materials Cart - Sticks, Tying equipment
+- [x] Raft - 6 Strapped wood, Tying equipment, Mast, Steering stick attached to steering wood
+- [x] Large Raft - 16 Strapped wood, Tying equipment, Large mast, Steering stick attached to steering wood
+- [x] Materials Cart - Sticks, Tying equipment
 ```
 
 
@@ -1003,7 +1003,7 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 
 ```markdown
 - [x] add `Tools` from `Items` Category
-- [ ] Sort `Unfinished-Items` into `Finished-Items`
+- [x] Sort `Unfinished-Items` into `Finished-Items`
 ```
 
 
@@ -1011,12 +1011,12 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 *Items:*
 
 ```markdown
-- [ ] Primitive Grain Grinders
-- [ ] Primitive Mortar And Pestless
-- [ ] Primitive Oldowan chopping tool
-- [ ] Primitive Antler
-- [ ] Primitive Sea Shell Saw
-- [ ] Primitive Chisel
+- [x] Primitive Grain Grinders
+- [x] Primitive Mortar And Pestless
+- [x] Primitive Oldowan chopping tool
+- [x] Primitive Antler
+- [x] Primitive Sea Shell Saw
+- [x] Primitive Chisel
 ```
 
 
@@ -1024,14 +1024,14 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 *Finished-items*
 
 ```markdown
-- [ ] Birch-bark box  - birch-bark, knife
-- [ ] Birch-bark basket - birch-bark, knife
-- [ ] Birch-bark rope - birch-bark, knife, water - (tying equipment)
-- [ ] Birch withe - Birch-wood, knife - (tying equipment)
-- [ ] Spruce withe - Spruce-wood, knife - (tying equipment)
-- [ ] Leather Rope - knife, water, leather - (tying equipment)
-- [ ] cordage - cloth, knife - (tying equipment)
-- [ ] Wooden stake - wood
+- [x] Birch-bark box  - birch-bark, knife
+- [x] Birch-bark basket - birch-bark, knife
+- [x] Birch-bark rope - birch-bark, knife, water - (tying equipment)
+- [x] Birch withe - Birch-wood, knife - (tying equipment)
+- [x] Spruce withe - Spruce-wood, knife - (tying equipment)
+- [x] Leather Rope - knife, water, leather - (tying equipment)
+- [x] cordage - cloth, knife - (tying equipment)
+- [x] Wooden stake - wood
 ```
 
 
@@ -1047,7 +1047,7 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 *TODO:*
 
 ```markdown
-- [ ] Sort `Unfinished-Items` into `Finished-Items`
+- [x] Sort `Unfinished-Items` into `Finished-Items`
 ```
 
 
@@ -1055,13 +1055,13 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 *Unfinished-Items:*
 
 ```markdown
-- [ ] Primitive Spears
-- [ ] Primitive Stone Tomahawks
-- [ ] Primitive Hoko Knives
-- [ ] Primitive Blowgun
-- [ ] Primitive Dagger
-- [ ] Primitive Sword
-- [ ] Primitive Staff
+- [x] Primitive Spears
+- [x] Primitive Stone Tomahawks
+- [x] Primitive Hoko Knives
+- [x] Primitive Blowgun
+- [x] Primitive Dagger
+- [x] Primitive Sword
+- [x] Primitive Staff
 - [x] Atlatls (A.k.a. Spear Throwers) - take from code already made
 ```
 
@@ -1079,7 +1079,7 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 
 ```markdown
 - [x] add `Generic` from `Items` Category
-- [ ] Sort `Unfinished-Items` into `Finished-Items`
+- [x] Sort `Unfinished-Items` into `Finished-Items`
 ```
 
 
@@ -1093,12 +1093,12 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 *Unfinished-Items:*
 
 ```markdown
-- [ ] Primitive Glue
-- [ ] Bonemeal Fertilizer
-- [ ] Primitive Sleeping fur/pelt
-- [ ] sprouce_bark
-- [ ] leaves
-- [ ] Mud
+- [x] Primitive Glue
+- [x] Bonemeal Fertilizer
+- [x] Primitive Sleeping fur/pelt
+- [x] sprouce_bark
+- [x] leaves
+- [x] Mud
 ```
 
 
@@ -1114,7 +1114,7 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 *TODO:*
 
 ```markdown
-- [ ] Sort `Unfinished-Containers` into `Containers`
+- [x] Sort `Unfinished-Containers` into `Containers`
 ```
 
 
@@ -1133,7 +1133,7 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 *Unfinished-Containers:*
 
 ```markdown
-- [ ] Primitive Canteen
+- [x] Primitive Canteen
 ```
 
 
@@ -1157,10 +1157,10 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 *Items:*
 
 ```markdown
-- [ ] Claystone
-- [ ] Mud
-- [ ] Leaves
-- [ ] Peat
+- [x] Claystone
+- [x] Mud
+- [x] Leaves
+- [x] Peat
 ```
 
 
@@ -1268,7 +1268,7 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 *TODO:*
 
 ```markdown
-- [ ] add `Armor` from `Items` Category
+- [x] add `Armor` from `Items` Category
 ```
 
 
@@ -1322,8 +1322,8 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 - [x] add `Drink` from `Items` Category
 - [x] `Juices` Recipes
 - [x] `Juice` Recipes
-- [ ] Primitive `Tea` Recipes
-- [ ] Primitive `Coffee` Recipes
+- [x] Primitive `Tea` Recipes
+- [x] Primitive `Coffee` Recipes
 ```
 
 
@@ -1355,9 +1355,9 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 
 ```markdown
 - [x] add `Food` from `Items` Category
-- [ ] add process to `Unfinished Food`
-- [ ] add `Unfinished food` to `Finished Food`
-- [ ] add more `Breads`
+- [x] add process to `Unfinished Food`
+- [x] add `Unfinished food` to `Finished Food`
+- [x] add more `Breads`
 ```
 
 
@@ -1365,7 +1365,7 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 *Finished Food:*
 
 ```markdown
-- [ ] Homemade Soap - water, vegetables, seasoning - knife - boil
+- [x] Homemade Soap - water, vegetables, seasoning - knife - boil
 - [x] Meat soup - raw meat, water, vegetables, seasoning - knife - boil
 - [x] Meat stew - raw meat, water, vegetables, seasoning - knife - bake
 - [x] Porridge - flour, Water - boil
@@ -1373,8 +1373,8 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 - [x] Seed porridge - flour, seed, water - boil
 - [x] Berry porridge - flour, berry, water - boil
 - [x] Fish Fillet - raw fish, water, vegetables, seasoning - knife - boil
-- [ ] Pea soup - peas, water, raw meat, seasoning - boil
-- [ ] Green soup - herbs, water, flour, seasoning - boil
+- [x] Pea soup - peas, water, raw meat, seasoning - boil
+- [x] Green soup - herbs, water, flour, seasoning - boil
 - [x] Vegetable soup - vegetables, water, seasoning - boil
 - [x] Mushroom soup - mushrooms, water, flour, seasoning - boil
 - [x] Vegetable and meat stew - vegetables, water, mushrooms, seasoning - bake
@@ -1386,11 +1386,11 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 
 ```markdown
 - [x] Cashew Nuts
-- [ ] Cashew Milk
-- [ ] Ground Cashew
-- [ ] Organic Oil
-- [ ] Preserved Jam
-- [ ] Flatbread
+- [x] Cashew Milk
+- [x] Ground Cashew
+- [x] Organic Oil
+- [x] Preserved Jam
+- [x] Flatbread
 ```
 
 
@@ -1455,8 +1455,8 @@ seeds:
 *Items:*
 
 ```markdown
-- [ ] Strapped wood - cordage or leather rope or rope or fibre rope, 2 logs. - Saw, axe
-- [ ] Mast - 7 sticks, Sheet
-- [ ] Large Mast - 1 log, 4 Sheets
-- [ ] Steering stick attached to steering wood - stick, log - cutting tool
+- [x] Strapped wood - cordage or leather rope or rope or fibre rope, 2 logs. - Saw, axe
+- [x] Mast - 7 sticks, Sheet
+- [x] Large Mast - 1 log, 4 Sheets
+- [x] Steering stick attached to steering wood - stick, log - cutting tool
 ```
