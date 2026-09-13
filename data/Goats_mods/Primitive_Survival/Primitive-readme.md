@@ -956,10 +956,10 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 *Items:*
 
 ```markdown
-- [ ] Strapped wood
-- [ ] Mast
-- [ ] Large Mast
-- [ ] Steering stick attached to steering wood
+- [x] Strapped wood
+- [x] Mast
+- [x] Large Mast
+- [x] Steering stick attached to steering wood
 ```
 
 
