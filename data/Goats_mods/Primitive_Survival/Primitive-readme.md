@@ -670,19 +670,19 @@ deconstruct pile of leaves to get leaves ATM.
 *Mushrooms:*
 
 ```markdown
-- [ ] Black ear mushroom
-- [ ] Sand mushroom
-- [ ] Noaidi's mushroom
-- [ ] Yellowcoat mushroom
-- [ ] Browncoat mushroom
-- [ ] Bearpaw mushroom
-- [ ] Hairy mushroom
-- [ ] Redlegger mushroom
-- [ ] Yellow fingers mushroom
-- [ ] Tellervo's gift mushroom
-- [ ] Ukko's mushroom
-- [ ] Soft mushroom
-- [ ] Ringed mushroom
+- [x] Black ear mushroom
+- [x] Sand mushroom
+- [x] Noaidi's mushroom
+- [x] Yellowcoat mushroom
+- [x] Browncoat mushroom
+- [x] Bearpaw mushroom
+- [x] Hairy mushroom
+- [x] Redlegger mushroom
+- [x] Yellow fingers mushroom
+- [x] Tellervo's gift mushroom
+- [x] Ukko's mushroom
+- [x] Soft mushroom
+- [x] Ringed mushroom
 ```
 
 
@@ -840,26 +840,26 @@ deconstruct pile of leaves to get leaves ATM.
 
 
 
-*Mushrooms:* **needs proper naming to be included**
+*Mushrooms:* **terrain patches, harvests, regrowth, and naming implemented**
 
 ```Markdown
 https://en.wikipedia.org/wiki/Edible_mushroom
 ```
 
 ```markdown
-- [ ] Black ear mushroom
-- [ ] Sand mushroom
-- [ ] Noaidi's mushroom
-- [ ] Yellowcoat mushroom
-- [ ] Browncoat mushroom
-- [ ] Bearpaw mushroom
-- [ ] Hairy mushroom
-- [ ] Redlegger mushroom
-- [ ] Yellow fingers mushroom
-- [ ] Tellervo's gift mushroom
-- [ ] Ukko's mushroom
-- [ ] Soft mushroom
-- [ ] Ringed mushroom
+- [x] Black ear mushroom
+- [x] Sand mushroom
+- [x] Noaidi's mushroom
+- [x] Yellowcoat mushroom
+- [x] Browncoat mushroom
+- [x] Bearpaw mushroom
+- [x] Hairy mushroom
+- [x] Redlegger mushroom
+- [x] Yellow fingers mushroom
+- [x] Tellervo's gift mushroom
+- [x] Ukko's mushroom
+- [x] Soft mushroom
+- [x] Ringed mushroom
 ```
 
 
