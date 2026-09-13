@@ -1,0 +1,31 @@
+[
+  {
+    "id": "t_primitive_peat_bog",
+    "type": "terrain",
+    "name": "peat bog",
+    "description": "A damp, spongy patch of peat-rich soil. It can be dug for fuel and compost material.",
+    "symbol": ".",
+    "color": "dark_green",
+    "move_cost": 4,
+    "coverage": 100,
+    "flags": [ "TRANSPARENT", "DIGGABLE", "LIQUIDCONT", "SHORT" ],
+    "transforms_into": "t_primitive_peat_bog_harvested",
+    "examine_action": "harvest_ter_nectar",
+    "harvest_by_season": [ { "seasons": [ "spring", "summer", "autumn", "winter" ], "id": "peat_bog_harv" } ],
+    "bash": { "str_min": 2, "str_max": 20, "sound": "squelch.", "sound_fail": "splash.", "ter_set": "t_dirt" }
+  },
+  {
+    "id": "t_primitive_peat_bog_harvested",
+    "type": "terrain",
+    "name": "harvested peat bog",
+    "description": "A peat bog patch that has been dug over and needs time to recover.",
+    "symbol": ".",
+    "color": "dark_green",
+    "move_cost": 4,
+    "coverage": 100,
+    "flags": [ "TRANSPARENT", "DIGGABLE", "LIQUIDCONT", "SHORT", "HARVESTED" ],
+    "transforms_into": "t_primitive_peat_bog",
+    "examine_action": "harvested_plant",
+    "bash": { "str_min": 2, "str_max": 20, "sound": "squelch.", "sound_fail": "splash.", "ter_set": "t_dirt" }
+  }
+]
