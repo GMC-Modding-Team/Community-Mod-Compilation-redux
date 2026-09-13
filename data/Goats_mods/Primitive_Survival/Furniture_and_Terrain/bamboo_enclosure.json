@@ -1,0 +1,82 @@
+[
+  {
+    "id": "t_primitive_bamboo_floor",
+    "type": "terrain",
+    "name": "bamboo floor",
+    "description": "A raised floor made from lashed bamboo poles.",
+    "symbol": ".",
+    "color": "green",
+    "move_cost": 2,
+    "roof": "t_flat_roof",
+    "flags": [ "TRANSPARENT", "INDOORS", "FLAT", "SUPPORTS_ROOF" ],
+    "bash": { "ter_set": "t_dirt", "str_min": 10, "str_max": 35, "sound": "crack!", "sound_fail": "whump!" }
+  },
+  {
+    "id": "t_primitive_bamboo_roof",
+    "type": "terrain",
+    "name": "bamboo roof",
+    "description": "A light roof made from overlapping bamboo poles.",
+    "symbol": "^",
+    "color": "green",
+    "move_cost": 0,
+    "flags": [ "NOITEM", "ROOF" ],
+    "bash": { "ter_set": "t_dirt", "str_min": 15, "str_max": 50, "sound": "crack!", "sound_fail": "whump!" }
+  },
+  {
+    "id": "t_primitive_bamboo_door_frame",
+    "type": "terrain",
+    "name": "bamboo door frame",
+    "description": "A doorway frame lashed from bamboo poles.",
+    "symbol": "#",
+    "color": "green",
+    "move_cost": 0,
+    "flags": [ "NOITEM", "WALL", "SUPPORTS_ROOF", "BLOCK_WIND", "CONNECT_TO_WALL" ],
+    "bash": { "ter_set": "t_dirt", "str_min": 12, "str_max": 40, "sound": "crack!", "sound_fail": "whump!" }
+  },
+  {
+    "id": "t_primitive_bamboo_door",
+    "type": "terrain",
+    "name": "bamboo door",
+    "description": "A flexible bamboo door fitted into a primitive frame.",
+    "symbol": "+",
+    "color": "green",
+    "move_cost": 0,
+    "flags": [ "NOITEM", "DOOR", "CONNECT_TO_WALL", "SUPPORTS_ROOF", "BLOCK_WIND" ],
+    "open": "t_primitive_bamboo_door_open",
+    "bash": { "ter_set": "t_dirt", "str_min": 18, "str_max": 60, "sound": "crack!", "sound_fail": "whump!" }
+  },
+  {
+    "id": "t_primitive_bamboo_door_open",
+    "type": "terrain",
+    "name": "open bamboo door",
+    "description": "A bamboo door standing open.",
+    "symbol": "'",
+    "color": "green",
+    "move_cost": 2,
+    "flags": [ "TRANSPARENT", "FLAT", "CONNECT_TO_WALL", "SUPPORTS_ROOF" ],
+    "close": "t_primitive_bamboo_door",
+    "bash": { "ter_set": "t_dirt", "str_min": 12, "str_max": 40, "sound": "crack!", "sound_fail": "whump!" }
+  },
+  {
+    "id": "t_primitive_bamboo_window_frame",
+    "type": "terrain",
+    "name": "bamboo window frame",
+    "description": "A small bamboo frame for a primitive window.",
+    "symbol": "#",
+    "color": "green",
+    "move_cost": 0,
+    "flags": [ "NOITEM", "WALL", "SUPPORTS_ROOF", "BLOCK_WIND", "CONNECT_TO_WALL" ],
+    "bash": { "ter_set": "t_dirt", "str_min": 12, "str_max": 40, "sound": "crack!", "sound_fail": "whump!" }
+  },
+  {
+    "id": "t_primitive_bamboo_window",
+    "type": "terrain",
+    "name": "bamboo window",
+    "description": "A small open window in a bamboo wall.",
+    "symbol": "0",
+    "color": "light_blue",
+    "move_cost": 0,
+    "flags": [ "TRANSPARENT", "NOITEM", "MOUNTABLE", "CONNECT_TO_WALL", "SUPPORTS_ROOF" ],
+    "bash": { "ter_set": "t_dirt", "str_min": 10, "str_max": 35, "sound": "crack!", "sound_fail": "whump!" }
+  }
+]

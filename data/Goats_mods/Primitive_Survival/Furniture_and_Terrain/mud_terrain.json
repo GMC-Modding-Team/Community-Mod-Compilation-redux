@@ -1,0 +1,82 @@
+[
+  {
+    "id": "t_primitive_mud_floor",
+    "type": "terrain",
+    "name": "mud floor",
+    "description": "A level floor packed from mud.",
+    "symbol": ".",
+    "color": "brown",
+    "move_cost": 2,
+    "roof": "t_flat_roof",
+    "flags": [ "TRANSPARENT", "INDOORS", "FLAT", "SUPPORTS_ROOF" ],
+    "bash": { "ter_set": "t_dirt", "str_min": 20, "str_max": 80, "sound": "crumble!", "sound_fail": "thump!" }
+  },
+  {
+    "id": "t_primitive_mud_roof",
+    "type": "terrain",
+    "name": "mud roof",
+    "description": "A heavy roof packed from mud over a stick frame.",
+    "symbol": "^",
+    "color": "brown",
+    "move_cost": 0,
+    "flags": [ "NOITEM", "ROOF" ],
+    "bash": { "ter_set": "t_dirt", "str_min": 30, "str_max": 100, "sound": "crumble!", "sound_fail": "thump!" }
+  },
+  {
+    "id": "t_primitive_mud_door_frame",
+    "type": "terrain",
+    "name": "mud door frame",
+    "description": "A mud-packed doorway frame reinforced with sticks.",
+    "symbol": "#",
+    "color": "brown",
+    "move_cost": 0,
+    "flags": [ "NOITEM", "WALL", "SUPPORTS_ROOF", "BLOCK_WIND", "CONNECT_TO_WALL" ],
+    "bash": { "ter_set": "t_dirt", "str_min": 25, "str_max": 90, "sound": "crumble!", "sound_fail": "thump!" }
+  },
+  {
+    "id": "t_primitive_mud_door",
+    "type": "terrain",
+    "name": "mud door",
+    "description": "A solid mud door fitted into a primitive frame.",
+    "symbol": "+",
+    "color": "brown",
+    "move_cost": 0,
+    "flags": [ "NOITEM", "DOOR", "CONNECT_TO_WALL", "SUPPORTS_ROOF", "BLOCK_WIND" ],
+    "open": "t_primitive_mud_door_open",
+    "bash": { "ter_set": "t_dirt", "str_min": 35, "str_max": 120, "sound": "crumble!", "sound_fail": "thump!" }
+  },
+  {
+    "id": "t_primitive_mud_door_open",
+    "type": "terrain",
+    "name": "open mud door",
+    "description": "A mud door standing open.",
+    "symbol": "'",
+    "color": "brown",
+    "move_cost": 2,
+    "flags": [ "TRANSPARENT", "FLAT", "CONNECT_TO_WALL", "SUPPORTS_ROOF" ],
+    "close": "t_primitive_mud_door",
+    "bash": { "ter_set": "t_dirt", "str_min": 25, "str_max": 90, "sound": "crumble!", "sound_fail": "thump!" }
+  },
+  {
+    "id": "t_primitive_mud_window_frame",
+    "type": "terrain",
+    "name": "mud window frame",
+    "description": "A mud-packed window frame reinforced with sticks.",
+    "symbol": "#",
+    "color": "brown",
+    "move_cost": 0,
+    "flags": [ "NOITEM", "WALL", "SUPPORTS_ROOF", "BLOCK_WIND", "CONNECT_TO_WALL" ],
+    "bash": { "ter_set": "t_dirt", "str_min": 25, "str_max": 90, "sound": "crumble!", "sound_fail": "thump!" }
+  },
+  {
+    "id": "t_primitive_mud_window",
+    "type": "terrain",
+    "name": "mud window",
+    "description": "A small primitive window set into a mud wall.",
+    "symbol": "0",
+    "color": "light_blue",
+    "move_cost": 0,
+    "flags": [ "TRANSPARENT", "NOITEM", "MOUNTABLE", "CONNECT_TO_WALL", "SUPPORTS_ROOF" ],
+    "bash": { "ter_set": "t_dirt", "str_min": 20, "str_max": 75, "sound": "crack!", "sound_fail": "thump!" }
+  }
+]

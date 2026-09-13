@@ -1,0 +1,62 @@
+[
+  {
+    "id": "f_primitive_mud_wall_half",
+    "type": "furniture",
+    "name": "half-built mud wall",
+    "description": "A stick frame waiting to be packed with mud.",
+    "symbol": "#",
+    "color": "brown",
+    "move_cost_mod": -1,
+    "coverage": 20,
+    "required_str": -1,
+    "flags": [ "TRANSPARENT", "NOITEM", "FLAMMABLE_ASH", "WALL", "SUPPORTS_ROOF", "AUTO_WALL_SYMBOL" ],
+    "deconstruct": { "items": [ { "item": "stick", "count": 2 }, { "item": "stick_long", "count": 2 } ] },
+    "bash": {
+      "str_min": 5,
+      "str_max": 20,
+      "sound": "crack!",
+      "sound_fail": "whump.",
+      "items": [ { "item": "stick", "count": [ 1, 4 ] } ]
+    }
+  },
+  {
+    "id": "f_primitive_stick_wall",
+    "type": "furniture",
+    "name": "stick wall",
+    "description": "A simple wall woven from sticks and long branches. It offers modest shelter and can be improved later.",
+    "symbol": "#",
+    "color": "brown",
+    "move_cost_mod": -2,
+    "coverage": 40,
+    "required_str": -1,
+    "flags": [ "TRANSPARENT", "NOITEM", "FLAMMABLE_ASH", "WALL", "SUPPORTS_ROOF", "BLOCK_WIND", "AUTO_WALL_SYMBOL" ],
+    "deconstruct": { "items": [ { "item": "stick", "count": 12 }, { "item": "stick_long", "count": 4 } ] },
+    "bash": {
+      "str_min": 8,
+      "str_max": 30,
+      "sound": "crack!",
+      "sound_fail": "whump.",
+      "items": [ { "item": "stick", "count": [ 2, 8 ] } ]
+    }
+  },
+  {
+    "id": "f_primitive_mud_wall",
+    "type": "furniture",
+    "name": "mud wall",
+    "description": "A thick wall packed from mud around a light stick frame.",
+    "symbol": "#",
+    "color": "brown",
+    "move_cost_mod": -2,
+    "coverage": 80,
+    "required_str": -1,
+    "flags": [ "NOITEM", "WALL", "SUPPORTS_ROOF", "BLOCK_WIND", "AUTO_WALL_SYMBOL" ],
+    "deconstruct": { "items": [ { "item": "mud", "count": 10 }, { "item": "stick", "count": 2 } ] },
+    "bash": {
+      "str_min": 20,
+      "str_max": 60,
+      "sound": "crumble!",
+      "sound_fail": "thump.",
+      "items": [ { "item": "mud", "count": [ 2, 8 ] } ]
+    }
+  }
+]
