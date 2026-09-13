@@ -3,28 +3,145 @@
     "id": "flashlight",
     "type": "TOOL",
     "name": { "str": "flashlight (off)", "str_pl": "flashlights (off)" },
-    "copy-from": "flashlight",
-    "extend": { "flags": [ "RADIO_MODABLE" ] }
+    "description": "A typical household flashlight with a plastic handle, powered by batteries.",
+    "material": [ "plastic", "aluminum" ],
+    "symbol": ";",
+    "color": "blue",
+    "weight": "280 g",
+    "volume": "270 ml",
+    "longest_side": "14 cm",
+    "price": 500,
+    "price_postapoc": 100,
+    "charges_per_use": 1,
+    "ammo": [ "battery" ],
+    "flags": [ "BELT_CLIP", "WATER_BREAK_ACTIVE", "HELMET_HEAD_ATTACHMENT", "HEAD_STRAP_MOUNT", "RADIO_MODABLE" ],
+    "use_action": {
+      "type": "transform",
+      "msg": "You turn the flashlight on.",
+      "target": "flashlight_on",
+      "active": true,
+      "need_charges": 1,
+      "need_charges_msg": "The flashlight's batteries are dead."
+    },
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "rigid": true,
+        "flag_restriction": [ "BATTERY_LIGHT", "BATTERY_ULTRA_LIGHT" ],
+        "default_magazine": "light_disposable_cell"
+      }
+    ]
   },
   {
     "id": "flashlight_on",
     "type": "TOOL",
     "name": { "str": "flashlight (on)", "str_pl": "flashlights (on)" },
-    "copy-from": "flashlight_on",
-    "extend": { "flags": [ "RADIO_MODABLE" ] }
+    "description": "A typical household flashlight with a plastic handle, powered by batteries.",
+    "material": [ "plastic", "aluminum" ],
+    "symbol": ";",
+    "color": "blue",
+    "weight": "280 g",
+    "volume": "270 ml",
+    "longest_side": "14 cm",
+    "price": 500,
+    "price_postapoc": 100,
+    "charges_per_use": 1,
+    "ammo": [ "battery" ],
+    "flags": [
+      "LIGHT_300",
+      "CHARGEDIM",
+      "TRADER_AVOID",
+      "BELT_CLIP",
+      "WATER_BREAK",
+      "HELMET_HEAD_ATTACHMENT",
+      "HEAD_STRAP_MOUNT",
+      "RADIO_MODABLE"
+    ],
+    "use_action": {
+      "menu_text": "Turn off",
+      "type": "transform",
+      "msg": "You turn the flashlight off.",
+      "target": "flashlight",
+      "ammo_scale": 0
+    },
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "rigid": true,
+        "flag_restriction": [ "BATTERY_LIGHT", "BATTERY_ULTRA_LIGHT" ],
+        "default_magazine": "light_disposable_cell"
+      }
+    ],
+    "power_draw": "10 W",
+    "revert_to": "flashlight"
   },
   {
     "id": "heavy_flashlight",
     "type": "TOOL",
     "name": { "str": "heavy duty flashlight (off)", "str_pl": "heavy duty flashlights (off)" },
-    "copy-from": "heavy_flashlight",
-    "extend": { "flags": [ "RADIO_MODABLE" ] }
+    "description": "A heavy-duty aluminum LED flashlight, often used by security guards.  It even works underwater, and it's not bad for smacking hooligans.",
+    "weight": "450 g",
+    "volume": "470 ml",
+    "longest_side": "37 cm",
+    "price": 950,
+    "price_postapoc": 200,
+    "material": [ "aluminum" ],
+    "symbol": ";",
+    "color": "blue",
+    "charges_per_use": 1,
+    "ammo": [ "battery" ],
+    "flags": [ "BELT_CLIP", "RADIO_MODABLE" ],
+    "use_action": {
+      "type": "transform",
+      "msg": "You turn the heavy-duty flashlight on.",
+      "target": "heavy_flashlight_on",
+      "active": true,
+      "need_charges": 1,
+      "need_charges_msg": "The heavy-duty flashlight's batteries are dead."
+    },
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "rigid": true,
+        "flag_restriction": [ "BATTERY_LIGHT", "BATTERY_ULTRA_LIGHT" ],
+        "default_magazine": "light_disposable_cell"
+      }
+    ],
+    "melee_damage": { "bash": 8 }
   },
   {
     "id": "heavy_flashlight_on",
     "type": "TOOL",
     "name": { "str": "heavy duty flashlight (on)", "str_pl": "heavy duty flashlights (on)" },
-    "copy-from": "heavy_flashlight_on",
-    "extend": { "flags": [ "RADIO_MODABLE" ] }
+    "description": "A heavy-duty aluminum LED flashlight, often used by security guards.  It even works underwater, and it's not bad for smacking hooligans.",
+    "weight": "450 g",
+    "volume": "470 ml",
+    "longest_side": "37 cm",
+    "price": 950,
+    "price_postapoc": 200,
+    "material": [ "aluminum" ],
+    "symbol": ";",
+    "color": "blue",
+    "charges_per_use": 1,
+    "ammo": [ "battery" ],
+    "flags": [ "LIGHT_500", "CHARGEDIM", "BELT_CLIP", "RADIO_MODABLE" ],
+    "use_action": {
+      "ammo_scale": 0,
+      "menu_text": "Turn off",
+      "type": "transform",
+      "msg": "You turn the heavy-duty flashlight off.",
+      "target": "heavy_flashlight"
+    },
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "rigid": true,
+        "flag_restriction": [ "BATTERY_LIGHT", "BATTERY_ULTRA_LIGHT" ],
+        "default_magazine": "light_disposable_cell"
+      }
+    ],
+    "melee_damage": { "bash": 8 },
+    "power_draw": "15 W",
+    "revert_to": "heavy_flashlight"
   }
 ]

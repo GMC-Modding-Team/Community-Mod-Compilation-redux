@@ -13,32 +13,13 @@
   {
     "id": "SECRO_FLESH_SPAWN_ARTIFICE_job",
     "type": "talk_topic",
-    "dynamic_line": "*taps you with its weaving tendril:\nThe artifice creates an object using organic compounds such as meat and creature cores, and flesh being the main ingredient. You will have to give all ingredients to the artifice and it will produce the selected item in an instant. It is not capable of creating certain items from the start, but several augmentations will eventually allow it to perform complex crafts.",
+    "dynamic_line": "*taps you with its weaving tendril:\nThe artifice creates an object using organic compounds such as meat and creature cores, and flesh being the main ingredient.  You will have to give all ingredients to the artifice and it will produce the selected item in an instant.  It is not capable of creating certain items from the start, but several augmentations will eventually allow it to perform complex crafts.",
     "responses": [ { "text": "Okay.", "topic": "SECRO_FLESH_SPAWN_ARTIFICE_main" } ]
   },
   {
     "id": "SECRO_FLESH_SPAWN_ARTIFICE_upgrade",
     "type": "talk_topic",
-    "dynamic_line": {
-      "and": [
-        "*stretches its weaving tendril towards you.",
-        {
-          "npc_has_effect": "secro_flesh_artifice_upgrade_weaver_max",
-          "no": {
-            "npc_has_trait": "SECRONOM_FLESH_SPAWN_ARTIFICE_weaver1",
-            "no": "\n\n*75 flesh\n> Stronger Weavers\nStronger sets of weavers allow the artifice to craft tougher bio-organic materials.",
-            "yes": {
-              "npc_has_trait": "SECRONOM_FLESH_SPAWN_ARTIFICE_weaver2",
-              "no": "\n\n*175 flesh\n> Advanced Weavers\nSeveral augmented weavers allow the artifice to craft intricate bio-organic materials.",
-              "yes": {
-                "npc_has_trait": "SECRONOM_FLESH_SPAWN_ARTIFICE_weaver3",
-                "no": "\n\n*400 flesh\n> Hivemind Weavers\nArtifice's set of weavers now acts similar to the hivemind, making it capable to craft high-end bio-organic materials."
-              }
-            }
-          }
-        }
-      ]
-    },
+    "dynamic_line": "*stretches its weaving tendril towards you.  *75 flesh\n> Stronger Weavers\nStronger sets of weavers allow the artifice to craft tougher bio-organic materials.  *175 flesh\n> Advanced Weavers\nSeveral augmented weavers allow the artifice to craft intricate bio-organic materials.  *400 flesh\n> Hivemind Weavers\nArtifice's set of weavers now acts similar to the hivemind, making it capable to craft high-end bio-organic materials.",
     "responses": [
       {
         "text": "[UPGRADE] Stronger Weavers\n*Feed the artifice with flesh*",
@@ -104,15 +85,7 @@
   {
     "id": "SECRO_FLESH_SPAWN_ARTIFICE_craft_weapon",
     "type": "talk_topic",
-    "dynamic_line": {
-      "and": [
-        "*taps you with its weaving tendril, which has given you information about its available crafts.\n",
-        {
-          "npc_has_trait": "SECRONOM_FLESH_SPAWN_ARTIFICE_weaver2",
-          "yes": "\n*80 flesh\n*2 core (blade zombie)\n> bio-organic sword"
-        }
-      ]
-    },
+    "dynamic_line": "*taps you with its weaving tendril, which has given you information about its available crafts.  *80 flesh\n*2 core (blade zombie)\n> bio-organic sword",
     "responses": [
       {
         "text": "[CRAFT] bio-organic sword",
@@ -138,19 +111,7 @@
   {
     "id": "SECRO_FLESH_SPAWN_ARTIFICE_craft_vp",
     "type": "talk_topic",
-    "dynamic_line": {
-      "and": [
-        "*taps you with its weaving tendril, which has given you information about its available crafts.\n",
-        "\n*8 flesh\n> small flesh heap\n",
-        { "npc_has_trait": "SECRONOM_FLESH_SPAWN_ARTIFICE_weaver1", "yes": "\n*24 flesh\n> flesh heap\n" },
-        { "npc_has_trait": "SECRONOM_FLESH_SPAWN_ARTIFICE_weaver1", "yes": "\n*72 flesh]\n> large flesh heap\n" },
-        { "npc_has_trait": "SECRONOM_FLESH_SPAWN_ARTIFICE_weaver2", "yes": "\n*216 flesh\n> ossified flesh heap\n" },
-        { "npc_has_trait": "SECRONOM_FLESH_SPAWN_ARTIFICE_weaver1", "yes": "\n*300 flesh\n> flesh frame\n" },
-        { "npc_has_trait": "SECRONOM_FLESH_SPAWN_ARTIFICE_weaver2", "yes": "\n*500 flesh\n> hivemind residue\n" },
-        { "npc_has_trait": "SECRONOM_FLESH_SPAWN_ARTIFICE_weaver2", "yes": "\n*75 flesh\n> hivemind controls\n" },
-        { "npc_has_trait": "SECRONOM_FLESH_SPAWN_ARTIFICE_weaver3", "yes": "\n*800 flesh\n> hivemind core\n" }
-      ]
-    },
+    "dynamic_line": "*taps you with its weaving tendril, which has given you information about its available crafts.  *8 flesh\n> small flesh heap *24 flesh\n> flesh heap *72 flesh]\n> large flesh heap *216 flesh\n> ossified flesh heap *300 flesh\n> flesh frame *500 flesh\n> hivemind residue *75 flesh\n> hivemind controls *800 flesh\n> hivemind core",
     "responses": [
       {
         "text": "[CRAFT] small flesh heap",

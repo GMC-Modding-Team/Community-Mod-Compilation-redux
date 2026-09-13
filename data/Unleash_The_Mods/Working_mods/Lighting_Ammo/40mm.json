@@ -1,7 +1,6 @@
 [
   {
     "id": "40mm_lumin_casing",
-    "copy-from": "40x46mm_grenade",
     "type": "GENERIC",
     "category": "spare_parts",
     "name": { "str": "40mm illuminator casing" },
@@ -10,16 +9,17 @@
     "volume": "64 ml",
     "material": [ "steel" ],
     "symbol": "=",
-    "color": "dark_gray"
+    "color": "dark_gray",
+    "copy-from": "40x46mm_grenade"
   },
   {
     "id": "40mm_lumin",
     "type": "AMMO",
-    "name": { "str": "40mm illuminator", "str_pl": "40mm illuminators" },
+    "name": { "str": "40mm illuminator" },
     "description": "A one-use lightsource contained in a 40mm shell.",
     "weight": "230 g",
     "volume": "250 ml",
-    "price": "400 USD",
+    "price": 400,
     "material": [ "steel", "powder" ],
     "symbol": "=",
     "color": "yellow",
@@ -29,10 +29,11 @@
     "casing": "40mm_lumin_casing",
     "range": 40,
     "damage": { "damage_type": "bullet", "amount": 5 },
-    "dispersion": 30,
     "recoil": 225,
     "drop": "40mm_lumin_act",
-    "effects": [ "NEVER_MISFIRES", "NO_EMBED" ]
+    "effects": [ "NEVER_MISFIRES", "NO_EMBED" ],
+    "loudness": 0,
+    "//legacy_dispersion": 30
   },
   {
     "id": "40mm_lumin_act",
@@ -42,7 +43,7 @@
     "description": "This illuminator is active, but will soon burn out.",
     "weight": "400 g",
     "volume": "250 ml",
-    "price": "0 cent",
+    "price": 0,
     "to_hit": -1,
     "melee_damage": { "bash": 5 },
     "material": [ "steel", "plastic" ],

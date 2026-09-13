@@ -93,18 +93,11 @@
   {
     "id": [ "TALK_bandit_gs_slave_at_sb_work" ],
     "type": "talk_topic",
-    "dynamic_line": {
-      "u_has_var": "sb_narc_farm",
-      "type": "switch",
-      "context": "farm_status",
-      "value": "burned",
-      "yes": "Farm is burned, so I don't have anything to do around here.  I'm just passing time gambling and drinking.",
-      "no": "Sun is up, meself is working, sun is down, meself is dancing.  Every day, and every day of my new life…"
-    },
+    "dynamic_line": "Farm is burned, so I don't have anything to do around here.  I'm just passing time gambling and drinking.  Sun is up, meself is working, sun is down, meself is dancing.  Every day, and every day of my new life…",
     "responses": [
       {
         "truefalsetext": {
-          "true": "Work hard, and some day, you'll earn your freedom. *chuckle*",
+          "true": "Work hard, and some day, you'll earn your freedom.  *chuckle*",
           "false": "Don't worry, they will find you a new task to work on.",
           "condition": { "u_has_var": "sb_narc_farm", "type": "switch", "context": "farm_status", "value": "burned" }
         },

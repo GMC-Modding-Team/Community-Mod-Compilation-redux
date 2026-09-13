@@ -13,7 +13,7 @@
     "autolearn": true,
     "qualities": [ { "id": "CHEM", "level": 1 }, { "id": "DISTILL", "level": 1 } ],
     "tools": [ [ [ "surface_heat", 10, "LIST" ] ] ],
-    "byproducts": [ [ "turpentine", 1 ] ],
+    "byproducts": [  ],
     "components": [ [ [ "pine_bough", 1 ] ] ]
   },
   {
@@ -29,18 +29,19 @@
     "autolearn": true,
     "qualities": [ { "id": "CHEM", "level": 1 }, { "id": "DISTILL", "level": 1 } ],
     "tools": [ [ [ "surface_heat", 10, "LIST" ] ] ],
-    "byproducts": [ [ "rosin", 10 ] ],
+    "byproducts": [  ],
     "components": [ [ [ "pine_bough", 1 ] ] ]
   },
   {
     "id": "turpentine",
     "type": "COMESTIBLE",
-    "copy-from": "rosin",
     "weight": "15 g",
     "volume": "250 ml",
-    "charges": 16,
     "name": { "str": "turpentine" },
-    "description": "Distilled from pine resin, this solvent has many uses in projects."
+    "description": "Distilled from pine resin, this solvent has many uses in projects.",
+    "comestible_type": "FOOD",
+    "symbol": "%",
+    "copy-from": "rosin"
   },
   {
     "id": "oilcloth_paint",
@@ -51,35 +52,34 @@
     "container": "jug_plastic",
     "symbol": "~",
     "description": "An oil based paint used for waterproofing canvas.",
-    "price": "60 cent",
+    "price": 60,
     "material": [ "oil", "veggy" ],
     "volume": "250 ml",
     "phase": "liquid",
-    "freezing_point": 14
+    "freezing_point": 14,
+    "charges": 1,
+    "comestible_type": "FOOD"
   },
   {
     "id": "canvas",
     "type": "GENERIC",
-    "copy-from": "sheet",
     "name": { "str": "thick canvas", "str_pl": "thick canvasses" },
     "description": "A large reinforced sheet of cloth",
     "material": [ "canvas" ],
-    "proportional": { "weight": 2.0, "volume": 2.0, "price": 1.5 }
+    "copy-from": "sheet"
   },
   {
     "id": "oilcloth_canvas",
     "type": "GENERIC",
     "copy-from": "canvas",
     "name": { "str": "oilcloth canvas", "str_pl": "oilcloth canvasses" },
-    "proportional": { "price": 1.8 },
     "description": "A large waterproofed canvas, a dark grey in colour"
   },
   {
     "id": "drying_oilcloth_frame",
     "type": "GENERIC",
     "copy-from": "canvas",
-    "proportional": { "weight": 2.0 },
-    "name": { "str": "drying oilcloth", "str_pl": "drying oilcloths" },
+    "name": { "str": "drying oilcloth" },
     "material": [ "oilcloth", "wood" ],
     "use_action": {
       "target": "oilcloth_canvas_dry",
@@ -93,10 +93,9 @@
   {
     "id": "oilcloth_canvas_dry",
     "type": "GENERIC",
-    "name": { "str": "dried oilcloth", "str_pl": "dried oilcloths" },
     "copy-from": "canvas",
+    "name": { "str": "dried oilcloth" },
     "material": [ "oilcloth" ],
-    "proportional": { "weight": 1.1, "price": 1.2 },
     "use_action": "DISASSEMBLE"
   },
   {
@@ -200,7 +199,7 @@
     "description": "This is a small personal tent kit made from oilcloth, it's just big enough to fit you comfortably.",
     "weight": "1833 g",
     "volume": "2800 ml",
-    "price": "150 USD",
+    "price": 150,
     "to_hit": -3,
     "melee_damage": { "bash": 4 },
     "material": [ "oilcloth", "wood" ],

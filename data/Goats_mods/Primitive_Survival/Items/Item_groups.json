@@ -3,19 +3,22 @@
     "id": "guns_survival",
     "type": "item_group",
     "copy-from": "guns_survival",
-    "extend": { "items": [ { "item": "atlatl", "prob": 15 } ] }
+    "subtype": "distribution",
+    "extend": { "items": [  ] }
   },
   {
     "id": "weapons",
     "type": "item_group",
     "copy-from": "weapons",
-    "extend": { "items": [ { "item": "atlatl", "prob": 25 } ] }
+    "subtype": "distribution",
+    "extend": { "items": [  ] }
   },
   {
     "id": "trash_forest",
     "type": "item_group",
     "copy-from": "trash_forest",
-    "extend": { "items": [ { "item": "rope_fiber_6", "prob": 15 }, { "item": "rope_fiber_30", "prob": 15 } ] }
+    "subtype": "distribution",
+    "extend": { "items": [ { "item": "rope_6", "prob": 15 }, { "item": "rope_30", "prob": 15 } ] }
   },
   {
     "id": "tools_construction",
@@ -23,150 +26,165 @@
     "copy-from": "tools_construction",
     "extend": {
       "//": "Industrial machinery used for construction",
-      "items": [ { "item": "primitive_mattock", "prob": 15 }, { "item": "wiresaw", "prob": 15 } ]
-    }
+      "items": [
+        { "item": "brick_kiln", "prob": 80, "charges": [ 0, 1000 ] },
+        { "item": "kiln", "prob": 40 },
+        { "item": "con_mix", "prob": 120, "charges": [ 0, 500 ] },
+        { "item": "elec_jackhammer", "prob": 40, "charges": [ 0, 6600 ] },
+        { "item": "reciprocating_saw", "prob": 80, "charges": [ 0, 500 ] },
+        { "item": "cordless_impact_wrench", "prob": 20, "charges": [ 0, 500 ] },
+        { "item": "metal_smoother", "prob": 90 },
+        { "item": "jackhammer", "prob": 40, "charges": [ 0, 1200 ] },
+        { "group": "tools_toolbox", "prob": 20 },
+        { "group": "tools_workshop", "prob": 5 },
+        { "item": "recharge_station", "prob": 10 },
+        { "item": "angle_grinder", "prob": 30, "charges": [ 0, 500 ] },
+        { "item": "grinder_cutoff_disc", "prob": 15 },
+        { "item": "grinder_metal_grinding_disc", "prob": 15 },
+        { "item": "pickaxe", "prob": 15 },
+        { "item": "hacksaw", "prob": 15 }
+      ]
+    },
+    "subtype": "distribution"
   },
   {
     "id": "hand_tools",
     "type": "item_group",
     "copy-from": "hand_tools",
-    "extend": { "items": [ { "item": "wiresaw", "prob": 15 } ] }
+    "subtype": "distribution",
+    "extend": { "items": [ { "item": "hacksaw", "prob": 15 } ] }
   },
   {
     "id": "tools_tree_cutting",
     "type": "item_group",
-    "//": "Axes and saws.",
     "copy-from": "tools_tree_cutting",
-    "extend": { "items": [ { "item": "wiresaw", "prob": 15 } ] }
+    "//": "Axes and saws.",
+    "subtype": "distribution",
+    "extend": { "items": [ { "item": "hacksaw", "prob": 15 } ] }
   },
   {
     "id": "art",
     "type": "item_group",
-    "subtype": "distribution",
     "copy-from": "art",
-    "extend": { "entries": [ { "item": "clay_plant_pot", "prob": 15 } ] }
+    "subtype": "distribution",
+    "extend": { "items": [ { "item": "clay_pot", "prob": 15 } ] }
   },
   {
     "id": "pottery",
     "type": "item_group",
-    "subtype": "distribution",
     "copy-from": "pottery",
-    "extend": { "entries": [ { "item": "clay_plant_pot", "prob": 15 } ] }
+    "subtype": "distribution",
+    "extend": { "items": [ { "item": "clay_pot", "prob": 15 } ] }
   },
   {
     "id": "farming_seeds",
     "type": "item_group",
     "copy-from": "farming_seeds",
+    "subtype": "distribution",
     "extend": {
       "items": [
-        [ "seed_lingonberries", 60 ],
-        [ "seed_bilberries", 60 ],
-        [ "seed_crowberries", 60 ],
-        [ "seed_cloudberries", 60 ],
-        [ "seed_black_currant", 60 ],
-        [ "seed_gojiberries", 60 ],
-        [ "seed_acaiberries", 60 ],
-        [ "seed_turnip", 60 ],
-        [ "seed_swede", 60 ],
-        [ "seed_pea", 60 ],
-        [ "seed_broad_bean", 60 ]
+        { "item": "seed_huckleberries", "prob": 60 },
+        { "item": "seed_blueberries", "prob": 60 },
+        { "item": "seed_cranberries", "prob": 60 },
+        { "item": "seed_raspberries", "prob": 60 },
+        { "item": "seed_blackberries", "prob": 60 },
+        { "item": "seed_mulberries", "prob": 60 },
+        { "item": "seed_elderberries", "prob": 60 },
+        { "item": "seed_carrot", "prob": 60 },
+        { "item": "seed_cabbage", "prob": 60 },
+        { "item": "seed_beans", "prob": 60 },
+        { "item": "seed_lentils", "prob": 60 }
       ]
     }
   },
   {
-    "type": "item_group",
     "id": "hydro",
+    "type": "item_group",
     "copy-from": "hydro",
+    "subtype": "distribution",
     "extend": {
       "items": [
-        [ "lingonberries", 3 ],
-        [ "bilberries", 3 ],
-        [ "cloudberries", 3 ],
-        [ "crowberries", 3 ],
-        [ "black_currants", 3 ],
-        [ "gojiberries", 3 ],
-        [ "acaiberries", 3 ],
-        [ "turnip", 3 ],
-        [ "swede", 3 ],
-        [ "pea", 3 ],
-        [ "broad_bean", 3 ],
-        [ "seed_lingonberries", 1 ],
-        [ "seed_bilberries", 1 ],
-        [ "seed_crowberries", 1 ],
-        [ "seed_cloudberries", 1 ],
-        [ "seed_black_currant", 1 ],
-        [ "seed_gojiberries", 1 ],
-        [ "seed_acaiberries", 1 ],
-        [ "seed_turnip", 1 ],
-        [ "seed_swede", 1 ],
-        [ "seed_pea", 1 ],
-        [ "seed_broad_bean", 1 ]
+        { "item": "huckleberries", "prob": 3 },
+        { "item": "blueberries", "prob": 3 },
+        { "item": "raspberries", "prob": 3 },
+        { "item": "cranberries", "prob": 3 },
+        { "item": "blackberries", "prob": 3 },
+        { "item": "mulberries", "prob": 3 },
+        { "item": "elderberries", "prob": 3 },
+        { "item": "carrot", "prob": 3 },
+        { "item": "cabbage", "prob": 3 },
+        { "item": "beans_cooked", "prob": 3 },
+        { "item": "lentils_cooked", "prob": 3 },
+        { "item": "seed_huckleberries", "prob": 1 },
+        { "item": "seed_blueberries", "prob": 1 },
+        { "item": "seed_cranberries", "prob": 1 },
+        { "item": "seed_raspberries", "prob": 1 },
+        { "item": "seed_blackberries", "prob": 1 },
+        { "item": "seed_mulberries", "prob": 1 },
+        { "item": "seed_elderberries", "prob": 1 },
+        { "item": "seed_carrot", "prob": 1 },
+        { "item": "seed_cabbage", "prob": 1 },
+        { "item": "seed_beans", "prob": 1 },
+        { "item": "seed_lentils", "prob": 1 }
       ]
     }
   },
   {
-    "type": "item_group",
     "id": "pre_irradiated_food",
+    "type": "item_group",
     "copy-from": "pre_irradiated_food",
     "extend": {
-      "//": "Products valid for irradiation process.",
       "items": [
-        [ "lingonberries", 50 ],
-        [ "bilberries", 50 ],
-        [ "cloudberries", 50 ],
-        [ "crowberries", 50 ],
-        [ "black_currants", 50 ],
-        [ "gojiberries", 50 ],
-        [ "acaiberries", 50 ],
-        [ "breadfruit", 50 ],
-        [ "cashew", 50 ],
-        [ "turnip", 50 ],
-        [ "swede", 50 ],
-        [ "pea", 50 ],
-        [ "broad_bean", 50 ]
+        { "item": "cranberries", "prob": 50 },
+        { "item": "cashews", "prob": 50 },
+        { "item": "beans_cooked", "prob": 50 },
+        { "item": "lentils_cooked", "prob": 50 }
       ]
-    }
+    },
+    "subtype": "distribution"
   },
   {
     "type": "item_group",
     "id": "irradiated_food",
     "//": "Products of irradiation process.",
+    "subtype": "distribution",
     "copy-from": "irradiated_food",
     "extend": {
       "items": [
-        [ "irradiated_lingonberries", 50 ],
-        [ "irradiated_bilberries", 50 ],
-        [ "irradiated_cloudberries", 50 ],
-        [ "irradiated_crowberries", 50 ],
-        [ "irradiated_black_currants", 50 ],
-        [ "irradiated_gojiberries", 50 ],
-        [ "irradiated_acaiberries", 50 ],
-        [ "irradiated_breadfruit", 50 ],
-        [ "irradiated_cashew", 50 ],
-        [ "irradiated_turnip", 50 ],
-        [ "irradiated_swede", 50 ],
-        [ "irradiated_pea", 50 ],
-        [ "irradiated_broad_bean", 50 ]
+        { "item": "irradiated_huckleberries", "prob": 50 },
+        { "item": "irradiated_blueberries", "prob": 50 },
+        { "item": "irradiated_raspberries", "prob": 50 },
+        { "item": "irradiated_cranberries", "prob": 50 },
+        { "item": "irradiated_blackberries", "prob": 50 },
+        { "item": "irradiated_mulberries", "prob": 50 },
+        { "item": "irradiated_elderberries", "prob": 50 },
+        { "item": "irradiated_banana", "prob": 50 },
+        { "item": "irradiated_melon", "prob": 50 },
+        { "item": "irradiated_carrot", "prob": 50 },
+        { "item": "irradiated_cabbage", "prob": 50 }
       ]
     }
   },
   {
-    "type": "item_group",
     "id": "sewing_group",
     "//": "spawn list for craft stores",
+    "type": "item_group",
+    "subtype": "distribution",
     "copy-from": "sewing_group",
-    "extend": { "items": [ [ "cloth", 15 ], [ "sheet_cloth", 15 ] ] }
+    "extend": { "items": [ { "item": "rag", "prob": 15 }, { "item": "sheet_cotton", "prob": 15 } ] }
   },
   {
-    "type": "item_group",
     "id": "oa_custom_trash",
+    "type": "item_group",
     "copy-from": "oa_custom_trash",
-    "extend": { "items": [ [ "cloth", 10 ] ] }
+    "subtype": "distribution",
+    "extend": { "items": [ { "item": "rag", "prob": 10 } ] }
   },
   {
-    "type": "item_group",
     "id": "trash",
+    "type": "item_group",
     "copy-from": "trash",
-    "extend": { "items": [ [ "cloth", 1 ] ] }
+    "subtype": "distribution",
+    "extend": { "items": [ { "item": "rag", "prob": 1 } ] }
   }
 ]

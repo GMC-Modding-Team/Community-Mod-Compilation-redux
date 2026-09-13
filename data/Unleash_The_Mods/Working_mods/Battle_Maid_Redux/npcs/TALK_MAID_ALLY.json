@@ -2,10 +2,7 @@
   {
     "id": [ "TALK_MAID_ALLY" ],
     "type": "talk_topic",
-    "dynamic_line": {
-      "is_by_radio": " *pshhhttt* I'm reading you master, over.",
-      "no": { "has_reason": { "use_reason": true }, "no": "What is it, master?" }
-    },
+    "dynamic_line": "What is it, master?",
     "speaker_effect": {
       "sentinel": "maid_init",
       "condition": { "npc_rule": "allow_pick_up" },
@@ -33,10 +30,7 @@
   {
     "id": [ "TALK_MAID_SOCIAL" ],
     "type": "talk_topic",
-    "dynamic_line": {
-      "is_by_radio": " *tshk* Whatever you desire, master. Though perhaps we should meet up first?",
-      "no": "Is there something you need help with, master?"
-    },
+    "dynamic_line": "Is there something you need help with, master?",
     "responses": [
       {
         "text": "Mind if we just chat for a bit about your history?",
@@ -102,13 +96,13 @@
   {
     "id": "TALK_MAID_MILK2",
     "type": "talk_topic",
-    "dynamic_line": "Ah...Ahn♪ Oh master, that feels so...good...",
+    "dynamic_line": "Ah…  Ahn♪ Oh master, that feels so…  good…",
     "speaker_effect": {
       "effect": [ { "u_buy_item": "milk", "count": 4, "cost": 1000 }, { "npc_add_effect": "maid_milked", "duration": 28000 } ]
     },
     "responses": [
       {
-        "text": "We're not done yet. I want your 'milk' too.",
+        "text": "We're not done yet.  I want your 'milk' too.",
         "topic": "TALK_MAID_MILK3",
         "condition": { "npc_has_trait": "futanari" }
       },
@@ -118,36 +112,36 @@
   {
     "id": "TALK_MAID_MILK3",
     "type": "talk_topic",
-    "dynamic_line": "Th-there too? N-no, wait, I'm going to...! Master, please, I can't stop - urgh, please, just let me rest...!",
+    "dynamic_line": "Th-there too?  N-no, wait, I'm going to…  ! Master, please, I can't stop - urgh, please, just let me rest…  !",
     "speaker_effect": { "effect": [ { "u_buy_item": "protein_milk", "count": 1, "cost": 1000 } ] },
     "responses": [ { "text": "That's all for now.", "topic": "TALK_DONE" } ]
   },
   {
     "id": "TALK_SHOGGOTH_HEART",
     "type": "talk_topic",
-    "dynamic_line": "Oh master...♪ I feel the same way! But you know, there is a way we can be together forever, no matter how cold or cruel this world is...",
+    "dynamic_line": "Oh master…  ♪ I feel the same way!  But you know, there is a way we can be together forever, no matter how cold or cruel this world is…",
     "responses": [ { "text": "Tell me more.", "topic": "TALK_SHOGGOTH_HEART2" } ]
   },
   {
     "id": "TALK_SHOGGOTH_HEART2",
     "type": "talk_topic",
-    "dynamic_line": "Take my heart and eat it. Ah, don't worry♪ I won't die. My strength will become our strength, and nobody will be able to separate us then!",
+    "dynamic_line": "Take my heart and eat it. Ah, don't worry♪ I won't die.  My strength will become our strength, and nobody will be able to separate us then!",
     "responses": [
-      { "text": "This...let's do it. Now.", "topic": "TALK_SHOGGOTH_HEART3" },
-      { "text": "You know what? Never mind.", "topic": "TALK_DONE" }
+      { "text": "This…  let's do it. Now.", "topic": "TALK_SHOGGOTH_HEART3" },
+      { "text": "You know what?  Never mind.", "topic": "TALK_DONE" }
     ]
   },
   {
     "id": "TALK_SHOGGOTH_HEART3",
     "type": "talk_topic",
-    "dynamic_line": "For my beloved master, I would do anything! Oh, if you ever change your mind, just put my heart back in the flask - I'll be back in no time!",
+    "dynamic_line": "For my beloved master, I would do anything!  Oh, if you ever change your mind, just put my heart back in the flask - I'll be back in no time!",
     "speaker_effect": { "effect": [ { "u_buy_item": "meat_shoggoth", "count": 2, "cost": 1000 }, "npc_die" ] },
-    "responses": [ { "text": "...", "topic": "TALK_DONE" } ]
+    "responses": [ { "text": "…", "topic": "TALK_DONE" } ]
   },
   {
     "id": [ "TALK_MAID_ORDERS" ],
     "type": "talk_topic",
-    "dynamic_line": [ "As you command, my master.", "Do you have orders for me?", "How can I serve you?", "Just say the word." ],
+    "dynamic_line": "As you command, my master.  Do you have orders for me?  How can I serve you?  Just say the word.",
     "responses": [
       {
         "text": "Can you teach me anything?",
@@ -274,7 +268,7 @@
   {
     "id": "TALK_TRAIN_PERSUADE_MAID",
     "type": "talk_topic",
-    "dynamic_line": "But master...you can just leave everything to me!",
+    "dynamic_line": "But master…  you can just leave everything to me!",
     "responses": [
       {
         "text": "Come on, we're friends.",
@@ -297,7 +291,7 @@
   {
     "id": "TALK_MAID_CONVERSATION",
     "type": "talk_topic",
-    "dynamic_line": "My history? You mean before I served you? ...I'm sorry, but...",
+    "dynamic_line": "My history?  You mean before I served you?  …I'm sorry, but…",
     "responses": [ { "text": "Actually, never mind.", "topic": "TALK_DONE" } ]
   },
   {
@@ -316,100 +310,7 @@
   {
     "id": "TALK_MISC_RULES",
     "type": "talk_topic",
-    "dynamic_line": {
-      "concatenate": [
-        {
-          "concatenate": [
-            { "npc_override": "allow_pick_up", "yes": "OVERRIDE: " },
-            {
-              "npc_rule": "allow_pick_up",
-              "yes": { "has_pickup_list": "<ally_rule_allow_pick_up_true_list_text>", "no": "<ally_rule_allow_pick_up_true_text>" },
-              "no": "<ally_rule_allow_pick_up_false_text>"
-            }
-          ]
-        },
-        {
-          "concatenate": [
-            { "npc_override": "allow_bash", "yes": "  OVERRIDE: ", "no": "  " },
-            {
-              "npc_rule": "allow_bash",
-              "yes": "<ally_rule_allow_bash_true_text>",
-              "no": "<ally_rule_allow_bash_false_text>"
-            }
-          ]
-        },
-        {
-          "concatenate": [
-            { "npc_override": "allow_sleep", "yes": "  OVERRIDE: ", "no": "  " },
-            {
-              "npc_rule": "allow_sleep",
-              "yes": "<ally_rule_allow_sleep_true_text>",
-              "no": "<ally_rule_allow_sleep_false_text>"
-            }
-          ]
-        },
-        {
-          "concatenate": [
-            { "npc_override": "allow_complain", "yes": "  OVERRIDE: ", "no": "  " },
-            {
-              "npc_rule": "allow_complain",
-              "yes": "<ally_rule_allow_complain_true_text>",
-              "no": "<ally_rule_allow_complain_false_text>"
-            }
-          ]
-        },
-        {
-          "concatenate": [
-            { "npc_override": "allow_pulp", "yes": "  OVERRIDE: ", "no": "  " },
-            {
-              "npc_rule": "allow_pulp",
-              "yes": "<ally_rule_allow_pulp_true_text>",
-              "no": "<ally_rule_allow_pulp_false_text>"
-            }
-          ]
-        },
-        {
-          "concatenate": [
-            { "npc_override": "close_doors", "yes": "  OVERRIDE: ", "no": "  " },
-            {
-              "npc_rule": "close_doors",
-              "yes": "<ally_rule_close_doors_true_text>",
-              "no": "<ally_rule_close_doors_false_text>"
-            }
-          ]
-        },
-        {
-          "concatenate": [
-            { "npc_override": "ignore_noise", "yes": "  OVERRIDE: ", "no": "  " },
-            {
-              "npc_rule": "ignore_noise",
-              "yes": "<ally_rule_ignore_noise_true_text>",
-              "no": "<ally_rule_ignore_noise_false_text>"
-            }
-          ]
-        },
-        {
-          "concatenate": [
-            { "npc_override": "avoid_doors", "yes": "  OVERRIDE: ", "no": "  " },
-            {
-              "npc_rule": "avoid_doors",
-              "yes": "<ally_rule_avoid_doors_true_text>",
-              "no": "<ally_rule_avoid_doors_false_text>"
-            }
-          ]
-        },
-        {
-          "concatenate": [
-            { "npc_override": "forbid_engage", "yes": "  OVERRIDE: ", "no": "  " },
-            {
-              "npc_rule": "forbid_engage",
-              "yes": "<ally_rule_forbid_engage_true_text>",
-              "no": "<ally_rule_forbid_engage_false_text>"
-            }
-          ]
-        }
-      ]
-    },
+    "dynamic_line": "…",
     "responses": [
       {
         "truefalsetext": { "condition": { "npc_rule": "allow_pick_up" }, "true": "Don't pick up items.", "false": "You can pick up items now." },
@@ -498,7 +399,7 @@
   {
     "id": "TALK_MILKIFY2",
     "type": "talk_topic",
-    "dynamic_line": "Huh? Wh-what's happening to...me......master?",
+    "dynamic_line": "Huh?  Wh-what's happening to…  me…  …master?",
     "speaker_effect": {
       "effect": [
         { "npc_add_trait": "THRESH_MILK" },
@@ -516,9 +417,9 @@
       ]
     },
     "responses": [
-      { "text": "You're my maid now. Understood?", "topic": "TALK_MILKIFY3" },
+      { "text": "You're my maid now.  Understood?", "topic": "TALK_MILKIFY3" },
       {
-        "text": "It seems the serum made you more than just a woman...well, you're my maid either way. (FUTANARI)",
+        "text": "It seems the serum made you more than just a woman…  well, you're my maid either way.  (FUTANARI)",
         "condition": "npc_female",
         "topic": "TALK_MILKIFY4"
       }
@@ -527,15 +428,15 @@
   {
     "id": "TALK_MILKIFY3",
     "type": "talk_topic",
-    "dynamic_line": "Why can't I remember...I-I understand. Please take care of me...master.",
+    "dynamic_line": "Why can't I remember…  I-I understand.  Please take care of me…  master.",
     "speaker_effect": { "condition": "npc_male", "effect": [ { "npc_add_trait": "futanari" } ] },
-    "responses": [ { "text": "...", "topic": "TALK_DONE" } ]
+    "responses": [ { "text": "…", "topic": "TALK_DONE" } ]
   },
   {
     "id": "TALK_MILKIFY4",
     "type": "talk_topic",
-    "dynamic_line": "Why can't I remember...I-I understand. Please take care of me...master.",
+    "dynamic_line": "Why can't I remember…  I-I understand.  Please take care of me…  master.",
     "speaker_effect": { "effect": [ { "npc_add_trait": "futanari" } ] },
-    "responses": [ { "text": "...", "topic": "TALK_DONE" } ]
+    "responses": [ { "text": "…", "topic": "TALK_DONE" } ]
   }
 ]

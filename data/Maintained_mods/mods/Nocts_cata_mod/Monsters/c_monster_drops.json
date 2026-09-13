@@ -4,7 +4,7 @@
     "type": "item_group",
     "//": "items of the wild bio-weapons",
     "subtype": "collection",
-    "entries": [
+    "items": [
       { "group": "weapon_hat", "damage": [ 1, 4 ] },
       { "group": "weapon_suit", "damage": [ 1, 4 ] },
       { "group": "weapon_badge", "damage": [ 0, 0 ] },
@@ -21,7 +21,7 @@
     "type": "item_group",
     "//": "Drops for fungal augmented abominations, secondary source of Marloss items.",
     "subtype": "collection",
-    "entries": [
+    "items": [
       { "group": "weapon_hat", "damage": [ 1, 4 ] },
       { "group": "weapon_suit", "damage": [ 1, 4 ] },
       { "group": "weapon_badge", "damage": [ 0, 0 ] },
@@ -46,7 +46,7 @@
     "type": "item_group",
     "//": "items of bio-weapon apophis",
     "subtype": "collection",
-    "entries": [
+    "items": [
       { "group": "weapon_hat", "damage": [ 1, 4 ] },
       { "group": "weapon_suit", "damage": [ 1, 4 ] },
       { "group": "weapon_badge_apophis", "damage": [ 0, 0 ] },
@@ -60,41 +60,47 @@
   {
     "id": "weapon_badge",
     "type": "item_group",
-    "items": [ [ "badge_bio_weapon", 50 ] ]
+    "items": [ { "item": "badge_bio_weapon", "prob": 50 } ],
+    "subtype": "distribution"
   },
   {
     "id": "weapon_badge_apophis",
     "type": "item_group",
-    "items": [ [ "badge_bio_weapon_apophis", 100 ] ]
+    "items": [ { "item": "badge_bio_weapon_apophis", "prob": 100 } ],
+    "subtype": "distribution"
   },
   {
     "id": "weapon_suit",
     "type": "item_group",
-    "items": [ [ "subsuit_xl", 50 ] ]
+    "items": [ { "item": "subsuit_xl", "prob": 50 } ],
+    "subtype": "distribution"
   },
   {
     "id": "weapom_feet",
     "type": "item_group",
-    "items": [ [ "footrags", 50 ] ]
+    "items": [ { "item": "footrags", "prob": 50 } ],
+    "subtype": "distribution"
   },
   {
     "id": "weapon_hat",
     "type": "item_group",
-    "items": [ [ "hat_noise_cancelling", 50 ] ]
+    "items": [ { "item": "hat_noise_cancelling", "prob": 50 } ],
+    "subtype": "distribution"
   },
   {
     "id": "bio_weapon_power",
     "type": "item_group",
     "//": "Items a Bio-Weapon might hoard for power generation, based on the needs of the successful versions of the Project (except Delta, who lacks any overt fuel source).",
     "items": [
-      { "item": "chem_ethanol", "charges": [ 1, 2000 ], "container-item": "metal_tank_little", "prob": 10 },
-      { "item": "denat_alcohol", "charges": [ 1, 2000 ], "container-item": "metal_tank_little", "prob": 10 },
-      { "item": "chem_methanol", "charges": [ 1, 2000 ], "container-item": "metal_tank_little", "prob": 10 },
-      { "item": "gasoline", "charges": [ 1, 2000 ], "container-item": "metal_tank_little", "prob": 15 },
-      { "item": "c_hydrogen_gas", "charges": [ 1, 20 ], "container-item": "metal_tank_little", "prob": 10 },
+      { "item": "chem_ethanol", "charges": [ 1, 2000 ], "prob": 10 },
+      { "item": "denat_alcohol", "charges": [ 1, 2000 ], "prob": 10 },
+      { "item": "chem_methanol", "charges": [ 1, 2000 ], "prob": 10 },
+      { "item": "gasoline", "charges": [ 1, 2000 ], "prob": 15 },
+      { "item": "c_hydrogen_gas", "charges": [ 1, 20 ], "prob": 10 },
       { "item": "plasma", "charges": [ 1, 4 ], "prob": 5 },
       { "group": "ammo_any_batteries", "prob": 25 }
-    ]
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "wild_bio_infantry_rifle",
@@ -102,7 +108,7 @@
     "//": "items of the super soldier",
     "subtype": "collection",
     "ammo": 100,
-    "entries": [
+    "items": [
       { "group": "mon_zombie_bio_common" },
       { "item": "mil_armor", "damage": [ 1, 4 ], "prob": 75 },
       { "item": "mil_helm", "damage": [ 1, 4 ], "prob": 75 },
@@ -148,7 +154,7 @@
     "//": "items of the super soldier",
     "subtype": "collection",
     "ammo": 100,
-    "entries": [
+    "items": [
       { "group": "mon_zombie_bio_common" },
       { "item": "mil_armor", "damage": [ 1, 4 ], "prob": 75 },
       { "item": "mil_helm", "damage": [ 1, 4 ], "prob": 75 },
@@ -194,10 +200,14 @@
     "//": "items of the super scout",
     "ammo": 100,
     "subtype": "collection",
-    "entries": [
+    "items": [
       { "group": "mon_zombie_bio_common" },
       { "item": "lmil_armor", "damage": [ 1, 4 ], "prob": 75 },
       { "item": "lmil_helm", "damage": [ 1, 4 ], "prob": 75 },
+      { "item": "e_tool", "damage": [ 0, 3 ], "prob": 50 },
+      { "group": "mre_full_pack", "damage": [ 0, 3 ], "prob": 75 },
+      { "item": "large_tent_kit", "damage": [ 0, 3 ], "prob": 25 },
+      { "item": "rollmat", "damage": [ 0, 3 ], "prob": 50 },
       {
         "distribution": [ { "item": "molle_pack", "damage": [ 1, 4 ], "prob": 50 }, { "item": "rucksack", "damage": [ 1, 4 ], "prob": 50 } ],
         "prob": 50
@@ -235,11 +245,7 @@
             "prob": 25
           }
         ]
-      },
-      { "item": "e_tool", "damage": [ 0, 3 ], "prob": 50 },
-      { "group": "mre_full_pack", "damage": [ 0, 3 ], "prob": 75 },
-      { "item": "large_tent_kit", "damage": [ 0, 3 ], "prob": 25 },
-      { "item": "rollmat", "damage": [ 0, 3 ], "prob": 50 }
+      }
     ]
   },
   {
@@ -248,7 +254,7 @@
     "//": "items of the super juggernaut",
     "subtype": "collection",
     "ammo": 100,
-    "entries": [
+    "items": [
       { "group": "mon_zombie_bio_common" },
       { "item": "hmil_armor", "damage": [ 1, 4 ], "prob": 75 },
       { "item": "hmil_helm", "damage": [ 1, 4 ], "prob": 75 },
@@ -294,10 +300,13 @@
     "//": "items of the super juggernaut",
     "subtype": "collection",
     "ammo": 100,
-    "entries": [
+    "items": [
       { "group": "mon_zombie_bio_common" },
       { "item": "hmil_armor", "damage": [ 1, 4 ], "prob": 75 },
       { "item": "hmil_helm", "damage": [ 1, 4 ], "prob": 75 },
+      { "item": "mk_ionic_cannon", "damage": [ 0, 3 ] },
+      { "item": "plasma", "damage": [ 0, 1 ], "charges": [ 1, 2 ], "prob": 50 },
+      { "item": "UPS_off", "damage": [ 0, 1 ], "charges": [ 0, 1250 ], "prob": 10 },
       {
         "distribution": [ { "item": "legrig", "damage": [ 1, 4 ], "prob": 50 }, { "item": "dump_pouch", "damage": [ 1, 4 ], "prob": 50 } ],
         "prob": 50
@@ -308,10 +317,7 @@
           { "item": "sheath", "contents-item": "knife_rm42", "damage": [ 0, 3 ], "prob": 25 }
         ],
         "prob": 80
-      },
-      { "item": "mk_ionic_cannon", "damage": [ 0, 3 ], "charges": [ 0, 1 ] },
-      { "item": "plasma", "damage": [ 0, 1 ], "charges": [ 1, 2 ], "prob": 50 },
-      { "item": "UPS_off", "damage": [ 0, 1 ], "charges": [ 0, 1250 ], "prob": 10 }
+      }
     ]
   },
   {
@@ -320,10 +326,12 @@
     "//": "items of the super tool",
     "subtype": "collection",
     "ammo": 100,
-    "entries": [
+    "items": [
       { "group": "mon_zombie_bio_common" },
       { "item": "lmil_armor", "damage": [ 1, 4 ], "prob": 75 },
       { "item": "lmil_helm", "damage": [ 1, 4 ], "prob": 75 },
+      { "item": "chemistry_set", "damage": [ 0, 1 ], "prob": 90 },
+      { "item": "id_science", "damage": [ 0, 1 ], "prob": 25 },
       {
         "distribution": [ { "item": "molle_pack", "damage": [ 1, 4 ], "prob": 50 }, { "item": "rucksack", "damage": [ 1, 4 ], "prob": 50 } ],
         "prob": 50
@@ -358,8 +366,6 @@
           }
         ]
       },
-      { "item": "chemistry_set", "damage": [ 0, 1 ], "prob": 90 },
-      { "item": "id_science", "damage": [ 0, 1 ], "prob": 25 },
       {
         "distribution": [ { "item": "omnitech_weapon_ups_manual", "prob": 25 }, { "item": "omnitech_weapon_ups_kit", "prob": 75 } ],
         "prob": 25
@@ -372,10 +378,12 @@
     "//": "items of the super tool",
     "subtype": "collection",
     "ammo": 100,
-    "entries": [
+    "items": [
       { "group": "mon_zombie_bio_common" },
       { "item": "lmil_armor", "damage": [ 1, 4 ], "prob": 75 },
       { "item": "lmil_helm", "damage": [ 1, 4 ], "prob": 75 },
+      { "item": "chemistry_set", "damage": [ 0, 1 ], "prob": 90 },
+      { "item": "id_science", "damage": [ 0, 1 ], "prob": 25 },
       {
         "distribution": [ { "item": "molle_pack", "damage": [ 1, 4 ], "prob": 50 }, { "item": "rucksack", "damage": [ 1, 4 ], "prob": 50 } ],
         "prob": 50
@@ -410,8 +418,6 @@
           }
         ]
       },
-      { "item": "chemistry_set", "damage": [ 0, 1 ], "prob": 90 },
-      { "item": "id_science", "damage": [ 0, 1 ], "prob": 25 },
       {
         "distribution": [ { "item": "omnitech_weapon_ups_manual", "prob": 25 }, { "item": "omnitech_weapon_ups_kit", "prob": 75 } ],
         "prob": 25
@@ -437,7 +443,7 @@
     "id": "mon_zombie_bio_dormant_unarmed_death_drops",
     "type": "item_group",
     "subtype": "collection",
-    "entries": [
+    "items": [
       { "group": "mon_zombie_bio_unarmed_generic" },
       {
         "distribution": [
@@ -451,12 +457,12 @@
     "id": "mon_zombie_bio_knife_death_drops",
     "type": "item_group",
     "subtype": "collection",
-    "entries": [
+    "items": [
       { "group": "mon_zombie_bio_unarmed_generic" },
+      { "item": "sheath", "damage": [ 0, 3 ] },
       {
         "distribution": [ { "item": "knife_combat", "damage": [ 0, 3 ], "prob": 75 }, { "item": "knife_rm42", "damage": [ 0, 3 ], "prob": 25 } ]
-      },
-      { "item": "sheath", "damage": [ 0, 3 ] }
+      }
     ]
   },
   {
@@ -464,7 +470,7 @@
     "type": "item_group",
     "//": "This makes unarmed super soldiers pick gear lists based on the standard versions, but minus the ranged weapon, with the knife always spawning, and with reduced chance of spawning their unique ammo or tools.",
     "subtype": "collection",
-    "entries": [
+    "items": [
       { "group": "mon_zombie_bio_common" },
       {
         "distribution": [
@@ -562,7 +568,7 @@
     "type": "item_group",
     "//": "This makes unarmed super soldiers pick gear lists based on the standard versions, but minus the ranged weapon, with the knife always spawning, and with reduced chance of spawning their unique ammo or tools.",
     "subtype": "collection",
-    "entries": [
+    "items": [
       { "item": "helmet_liner", "damage": [ 1, 4 ] },
       { "item": "thermal_shirt", "damage": [ 1, 4 ] },
       { "item": "gloves_liner", "damage": [ 1, 4 ] },

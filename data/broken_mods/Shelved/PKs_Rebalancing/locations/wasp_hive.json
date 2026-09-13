@@ -2,7 +2,6 @@
   {
     "type": "monstergroup",
     "name": "GROUP_WASP",
-    "default": "mon_null",
     "monsters": [
       { "monster": "mon_wasp", "freq": 335, "cost_multiplier": 1 },
       { "monster": "mon_wasp", "freq": 30, "cost_multiplier": 5, "pack_size": [ 2, 4 ] },
@@ -17,7 +16,6 @@
   {
     "type": "monstergroup",
     "name": "GROUP_WASP_CENTER",
-    "default": "mon_null",
     "monsters": [
       { "monster": "mon_wasp", "freq": 400, "cost_multiplier": 1 },
       { "monster": "mon_dermatik", "freq": 50, "cost_multiplier": 5, "pack_size": [ 1, 2 ] },
@@ -31,7 +29,8 @@
   {
     "id": "wasp_center",
     "type": "item_group",
-    "items": [ [ "wasp_glue", 85 ], [ "egg_wasp", 15 ] ]
+    "items": [ { "item": "wasp_glue", "prob": 85 }, { "item": "egg_wasp", "prob": 15 } ],
+    "subtype": "distribution"
   },
   {
     "type": "mapgen",
@@ -87,7 +86,9 @@
           "t_tree",
           "t_tree"
         ],
-        "*": [ "t_paper", "t_paper", "t_paper", "t_paper_floor", "t_paper_floor", "t_grass", "t_dirt", "t_dirt" ]
+        "*": [ "t_paper", "t_paper", "t_paper", "t_paper_floor", "t_paper_floor", "t_grass", "t_dirt", "t_dirt" ],
+        "x": "t_paper_floor",
+        "A": "t_paper_floor"
       },
       "monster": { "x": { "monster": "mon_wasp_larvae" }, "A": { "monster": "mon_wasp_queen" } },
       "items": {

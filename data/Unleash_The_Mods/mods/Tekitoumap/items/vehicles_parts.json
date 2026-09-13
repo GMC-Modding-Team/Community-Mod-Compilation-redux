@@ -13,7 +13,7 @@
     "volume": "10 L",
     "melee_damage": { "bash": 15 },
     "category": "veh_parts",
-    "price": "400 USD"
+    "price": 400
   },
   {
     "id": "superalloy_frame_tm",
@@ -35,36 +35,48 @@
     "name": { "str": "Competitive foot crank" },
     "description": "It is a competition pedal with a multistep transmission.",
     "weight": "1016 g",
-    "volume": "500 ml",
+    "to_hit": -2,
     "color": "light_gray",
     "material": [ "steel" ],
-    "to_hit": -2,
-    "melee_damage": { "bash": 8, "cut": 2 },
-    "price": "150 USD",
-    "price_postapoc": "10 USD"
+    "volume": "500 ml",
+    "price": 150,
+    "price_postapoc": 10,
+    "melee_damage": { "bash": 8, "cut": 2 }
   },
   {
     "id": "foot_pedals_tm",
     "type": "vehicle_part",
     "copy-from": "engine_manual",
-    "name": { "str": "Competitive pedals" },
-    "variants": [ { "symbols": "*", "symbols_broken": "#" } ],
-    "color": "light_gray",
+    "fuel_type": "animal",
     "broken_color": "red",
     "damage_modifier": 35,
+    "variants": [ { "symbols": "*", "symbols_broken": "#" } ],
+    "name": { "str": "Competitive pedals" },
+    "color": "light_gray",
     "durability": 50,
-    "power": 360,
+    "power": 0,
     "muscle_power_factor": 60,
     "folded_volume": "500 ml",
-    "fuel_type": "animal",
     "item": "foot_crank_tm",
     "requirements": {
       "install": { "skills": [ [ "mechanics", 0 ] ], "time": "60 m", "using": [ [ "vehicle_wrench_2", 1 ] ] },
       "removal": { "skills": [ [ "mechanics", 0 ] ], "time": "30 m", "using": [ [ "vehicle_wrench_2", 1 ] ] },
       "repair": { "skills": [ [ "mechanics", 0 ] ], "time": "60 m", "using": [ [ "welding_standard", 5 ] ] }
     },
-    "extend": { "flags": [ "FOLDABLE", "MUSCLE_LEGS", "ENGINE", "CONTROLS", "TOOL_WRENCH" ] },
     "breaks_into": [ { "item": "steel_chunk", "count": [ 1, 2 ] }, { "item": "scrap", "count": [ 0, 2 ] } ],
-    "damage_reduction": { "all": 4 }
+    "damage_reduction": { "all": 4 },
+    "extend": { "flags": [ "FOLDABLE", "MUSCLE_LEGS", "ENGINE", "CONTROLS", "TOOL_WRENCH" ] }
+  },
+  {
+    "id": "mounted_m1918",
+    "type": "vehicle_part",
+    "name": { "str": "mounted assault rifle" },
+    "item": "rifle_assault",
+    "location": "on_roof",
+    "flags": [ "TURRET" ],
+    "durability": 400,
+    "damage_modifier": 80,
+    "variants": [ { "symbols": "t", "symbols_broken": "#" } ],
+    "breaks_into": [ { "item": "rifle_assault", "prob": 50 } ]
   }
 ]

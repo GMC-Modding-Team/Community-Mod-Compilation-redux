@@ -71,7 +71,7 @@
   {
     "id": "TALK_MESMER_TRIALS",
     "type": "talk_topic",
-    "dynamic_line": "I feel... sleepy... all of a sudden.",
+    "dynamic_line": "I feel…  sleepy…  all of a sudden.",
     "responses": [
       { "text": "You were saying something earlier?", "topic": "TALK_NONE" },
       {
@@ -112,7 +112,7 @@
         }
       },
       {
-        "text": "Yes.  Sleepy.  Very sleepy...",
+        "text": "Yes.  Sleepy.  Very sleepy…",
         "switch": true,
         "condition": "npc_friend",
         "trial": { "type": "PERSUADE", "difficulty": 40, "mod": [ [ "AGGRESSION", -2 ], [ "TRUST", 2 ] ] },
@@ -134,15 +134,15 @@
     "id": "TALK_MESMER_FAIL",
     "type": "talk_topic",
     "dynamic_line": "Wha!  What was that?  I zoned out for a second.",
-    "responses": [ { "text": "...", "topic": "TALK_DONE", "effect": { "npc_add_effect": "block_mesmer", "duration": 86400 } } ]
+    "responses": [ { "text": "…", "topic": "TALK_DONE", "effect": { "npc_add_effect": "block_mesmer", "duration": 86400 } } ]
   },
   {
     "id": "TALK_MESMER_SUCCESS",
     "type": "talk_topic",
-    "dynamic_line": "So tired...",
+    "dynamic_line": "So tired…",
     "responses": [
       {
-        "text": "From henceforth, you will be my psychic thrall, forever bound to my will! (only one attempt per NPC)",
+        "text": "From henceforth, you will be my psychic thrall, forever bound to my will!  (only one attempt per NPC)",
         "condition": { "not": { "npc_has_any_trait": [ "THRALL", "UNTHRALL" ] } },
         "trial": { "type": "PERSUADE", "difficulty": 0, "mod": [ [ "BRAVERY", -2 ], [ "POS_FEAR", -1 ], [ "AGGRESSION", -2 ] ] },
         "success": {
@@ -197,7 +197,7 @@
           { "npc_add_effect": "narcosis", "duration": 28800 }
         ]
       },
-      { "text": "You will forget all about this...", "topic": "TALK_DONE" }
+      { "text": "You will forget all about this…", "topic": "TALK_DONE" }
     ]
   },
   {
@@ -292,9 +292,9 @@
   {
     "id": "TALK_MESMER_START_DUEL",
     "type": "talk_topic",
-    "dynamic_line": "You have picked the wrong target, 'friend', for I too am awakened to the powers of the mind.  \nPrepare yourself for battle!",
+    "dynamic_line": "You have picked the wrong target, 'friend', for I too am awakened to the powers of the mind.\nPrepare yourself for battle!",
     "responses": [
-      { "text": "Forgive my mistake! I concede...", "topic": "TALK_MESMER_DUEL_CONCEDE" },
+      { "text": "Forgive my mistake!  I concede…", "topic": "TALK_MESMER_DUEL_CONCEDE" },
       {
         "text": "Another psychic?  So be it.  Let the duel begin!",
         "topic": "TALK_MESMER_DUEL_0c",
@@ -309,13 +309,13 @@
   {
     "id": "TALK_MESMER_DUEL_RULES",
     "type": "talk_topic",
-    "dynamic_line": "A psychic duel is fought in a series of rounds.  \nEach successful round establishes one 'contact'.  \nThe first to gain three contacts wins.  \nYou can also risk an assault with less than three contacts,  \n but a failed assault results in instant defeat.",
-    "responses": [ { "text": "I see...", "topic": "TALK_MESMER_START_DUEL" } ]
+    "dynamic_line": "A psychic duel is fought in a series of rounds.\nEach successful round establishes one 'contact'.\nThe first to gain three contacts wins.\nYou can also risk an assault with less than three contacts,\n but a failed assault results in instant defeat.",
+    "responses": [ { "text": "I see…", "topic": "TALK_MESMER_START_DUEL" } ]
   },
   {
     "id": "TALK_MESMER_DUEL_0c",
     "type": "talk_topic",
-    "dynamic_line": [ "<mesmer_0c>" ],
+    "dynamic_line": "<mesmer_0c>",
     "responses": [
       {
         "switch": true,
@@ -392,7 +392,7 @@
   {
     "id": "TALK_MESMER_DUEL_1c",
     "type": "talk_topic",
-    "dynamic_line": [ "<mesmer_1c>" ],
+    "dynamic_line": "<mesmer_1c>",
     "responses": [
       {
         "switch": true,
@@ -475,7 +475,7 @@
   {
     "id": "TALK_MESMER_DUEL_2c",
     "type": "talk_topic",
-    "dynamic_line": [ "<mesmer_2c>" ],
+    "dynamic_line": "<mesmer_2c>",
     "responses": [
       {
         "switch": true,
@@ -567,14 +567,7 @@
   {
     "id": "TALK_MESMER_DUEL_CONTACTED",
     "type": "talk_topic",
-    "dynamic_line": {
-      "npc_has_var": "psyduel_contact",
-      "type": "general",
-      "context": "mesmer",
-      "value": "1",
-      "no": "You'll never defeat me.  [2/3]",
-      "yes": "Ha ha.  Your defenses are crumbling.  [1/3]"
-    },
+    "dynamic_line": "You'll never defeat me.  [2/3] Ha ha.  Your defenses are crumbling.  [1/3]",
     "responses": [
       {
         "switch": true,
@@ -706,7 +699,7 @@
             { "npc_has_var": "psyduel_contact", "type": "general", "context": "mesmer", "value": "2" },
             { "u_has_var": "psyduel_contact", "type": "general", "context": "mesmer", "value": "1" },
             { "not": { "u_has_any_trait": [ "BADTEMPER", "PACIFIST", "KILLER", "PSYCHOPATH" ] } },
-            { "not": { "u_has_trait_flag": "CANNIBAL" } }
+            { "not": { "u_has_trait": "CANNIBAL" } }
           ]
         },
         "effect": [
@@ -734,7 +727,7 @@
     ],
     "responses": [
       {
-        "text": "I have proven myself to be the superior mentalist.  \nThere is no need to punish you for your inevitable failure.",
+        "text": "I have proven myself to be the superior mentalist.\nThere is no need to punish you for your inevitable failure.",
         "topic": "TALK_DONE",
         "opinion": { "fear": -10, "anger": -10, "value": 4, "favor": 1 },
         "effect": [ { "npc_add_var": "psychic_duelist", "type": "general", "context": "mesmer", "value": "yes" } ]
@@ -746,7 +739,7 @@
         "effect": [ { "npc_add_effect": "sleep", "duration": 28800 }, { "npc_add_effect": "narcosis", "duration": 28800 } ]
       },
       {
-        "text": "You are too dangerous to let go. \nI will crush your mind and seal your powers.",
+        "text": "You are too dangerous to let go.\nI will crush your mind and seal your powers.",
         "topic": "TALK_DONE",
         "opinion": { "fear": 50, "anger": 40, "value": -40, "trust": -15 },
         "effect": [
@@ -760,7 +753,7 @@
           { "npc_lose_trait": "PSYCHIC_PROJECT" }
         ]
       },
-      { "text": "Those who oppose me...  \n...must DIE!", "topic": "TALK_DONE", "effect": "npc_die" }
+      { "text": "Those who oppose me…\n…must DIE!", "topic": "TALK_DONE", "effect": "npc_die" }
     ]
   },
   {
@@ -780,9 +773,9 @@
     "responses": [
       {
         "switch": true,
-        "text": "So this is how it ends...",
+        "text": "So this is how it ends…",
         "topic": "TALK_DONE",
-        "condition": { "npc_has_trait_flag": "CANNIBAL" },
+        "condition": { "npc_has_trait": "CANNIBAL" },
         "effect": [ { "u_add_effect": "psychic_death", "duration": 77760 } ]
       },
       {
@@ -832,7 +825,7 @@
         ]
       }
     ],
-    "responses": [ { "text": "Someday...", "topic": "TALK_DONE", "opinion": { "fear": -5, "value": -5 } } ]
+    "responses": [ { "text": "Someday…", "topic": "TALK_DONE", "opinion": { "fear": -5, "value": -5 } } ]
   },
   {
     "id": "TALK_TRUE_FOODPERSON",
@@ -860,7 +853,7 @@
   {
     "id": "TALK_FOODPERSON_MESMER",
     "type": "talk_topic",
-    "dynamic_line": "Yes?  They're... uh... very nice.",
+    "dynamic_line": "Yes?  They're…  uh…  very nice.",
     "responses": [
       {
         "text": "Damn!",
@@ -895,7 +888,7 @@
   {
     "id": "TALK_MESMER_GUARD_TRIALS",
     "type": "talk_topic",
-    "dynamic_line": "I feel... sleepy... all of a sudden.",
+    "dynamic_line": "I feel…  sleepy…  all of a sudden.",
     "responses": [
       { "text": "You were saying something earlier?", "topic": "TALK_NONE" },
       {
@@ -910,7 +903,7 @@
   {
     "id": "TALK_MESMER_GUARD_SUCCESS",
     "type": "talk_topic",
-    "dynamic_line": "So... tired...",
+    "dynamic_line": "So…  tired…",
     "responses": [
       { "text": "Awaken.  And forget this ever happened.", "topic": "TALK_DONE" },
       {
@@ -948,6 +941,6 @@
     "id": "TALK_MESMER_KEEP_ITEM",
     "type": "talk_topic",
     "dynamic_line": "I must be seeing things.",
-    "responses": [ { "text": "...", "effect": "remove_stolen_status", "topic": "TALK_DONE" } ]
+    "responses": [ { "text": "…", "effect": "remove_stolen_status", "topic": "TALK_DONE" } ]
   }
 ]

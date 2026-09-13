@@ -3,9 +3,9 @@
     "type": "item_group",
     "subtype": "collection",
     "id": "mon_tengu_death_drops",
-    "entries": [
-      { "distribution": [ { "item": "cudgel", "prob": 40 }, { "item": "stick_long", "prob": 60 } ], "prob": 90 },
+    "items": [
       { "group": "tengu_general_drops" },
+      { "distribution": [ { "item": "cudgel", "prob": 40 }, { "item": "stick_long", "prob": 60 } ], "prob": 90 },
       {
         "distribution": [
           { "item": "candlestick", "prob": 40 },
@@ -22,7 +22,8 @@
     "type": "item_group",
     "subtype": "collection",
     "id": "mon_tengu_monk_death_drops",
-    "entries": [
+    "items": [
+      { "group": "tengu_general_drops" },
       { "distribution": [ { "item": "naginata", "prob": 10 }, { "item": "spear_survivor", "prob": 30 } ], "prob": 60 },
       {
         "distribution": [
@@ -44,15 +45,14 @@
           }
         ],
         "prob": 20
-      },
-      { "group": "tengu_general_drops" }
+      }
     ]
   },
   {
     "type": "item_group",
     "subtype": "collection",
     "id": "tengu_general_drops",
-    "entries": [
+    "items": [
       { "item": "kimono", "damage": [ 1, 4 ], "prob": 80 },
       { "item": "geta", "damage": [ 1, 4 ], "prob": 60 },
       { "group": "youkai_items", "prob": 60 }
@@ -62,19 +62,19 @@
     "type": "item_group",
     "subtype": "collection",
     "id": "mon_nekomata_death_drops",
-    "entries": [ { "item": "nekomata_tails", "prob": 90 }, { "group": "youkai_items", "prob": 60 } ]
+    "items": [ { "item": "nekomata_tails", "prob": 90 }, { "group": "youkai_items", "prob": 60 } ]
   },
   {
     "type": "item_group",
     "subtype": "collection",
     "id": "mon_kappa_death_drops",
-    "entries": [ { "item": "cucumber", "count": [ 1, 3 ], "prob": 40 }, { "group": "youkai_items", "prob": 60 } ]
+    "items": [ { "item": "cucumber", "count": [ 1, 3 ], "prob": 40 }, { "group": "youkai_items", "prob": 60 } ]
   },
   {
     "type": "item_group",
     "subtype": "collection",
     "id": "mon_kappabot_death_drops",
-    "entries": [
+    "items": [
       { "group": "supplies_electronics", "count": [ 1, 3 ], "prob": 20 },
       { "item": "cucumber", "count": [ 1, 3 ], "prob": 40 },
       { "group": "youkai_items", "prob": 60 }
@@ -84,7 +84,7 @@
     "type": "item_group",
     "subtype": "collection",
     "id": "mon_kappa_engineer_death_drops",
-    "entries": [
+    "items": [
       { "group": "supplies_electronics", "count": [ 1, 3 ], "prob": 20 },
       { "group": "robots", "prob": 60 },
       { "group": "youkai_items", "prob": 60 }
@@ -94,7 +94,9 @@
     "type": "item_group",
     "subtype": "collection",
     "id": "mon_oni_bandit_death_drops",
-    "entries": [
+    "items": [
+      { "group": "oni_general_booze_n_food", "prob": 60 },
+      { "group": "youkai_items", "prob": 60 },
       { "distribution": [ { "item": "log", "prob": 95 }, { "item": "homewrecker", "prob": 5 } ], "prob": 90 },
       {
         "distribution": [
@@ -122,58 +124,59 @@
           { "item": "bundle_leather", "prob": 10 }
         ],
         "prob": 50
-      },
-      { "group": "oni_general_booze_n_food", "prob": 60 },
-      { "group": "youkai_items", "prob": 60 }
+      }
     ]
   },
   {
     "type": "item_group",
     "subtype": "collection",
     "id": "mon_kamaitachi_death_drops",
-    "entries": [
+    "items": [
+      { "group": "youkai_items", "prob": 60 },
       {
         "distribution": [ { "item": "sickle", "prob": 50, "count": 4 }, { "item": "blade", "prob": 50, "count": 4 } ],
         "prob": 80
-      },
-      { "group": "youkai_items", "prob": 60 }
+      }
     ]
   },
   {
     "id": "youkai_items",
     "type": "item_group",
-    "items": [ [ "newest_newspaper", 3 ] ]
+    "items": [ { "item": "newest_newspaper", "prob": 3 } ],
+    "subtype": "distribution"
   },
   {
     "id": "oni_general_booze_n_food",
     "type": "item_group",
     "items": [
-      [ "cigar", 5 ],
-      [ "sake_filtered", 50 ],
-      [ "sake_unfiltered", 60 ],
-      [ "brandy", 5 ],
-      [ "sausage", 20 ],
-      [ "sandwich_t", 30 ],
-      [ "haggis", 5 ],
-      [ "meat_smoked", 40 ],
-      [ "koji", 3 ]
-    ]
+      { "item": "cigar", "prob": 5 },
+      { "item": "sake_filtered", "prob": 50 },
+      { "item": "sake_unfiltered", "prob": 60 },
+      { "item": "brandy", "prob": 5 },
+      { "item": "sausage", "prob": 20 },
+      { "item": "sandwich_t", "prob": 30 },
+      { "item": "haggis", "prob": 5 },
+      { "item": "meat_smoked", "prob": 40 },
+      { "item": "koji", "prob": 3 }
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "groce_ingredient",
     "type": "item_group",
-    "items": [ [ "koji", 2 ] ]
+    "items": [ { "item": "koji", "prob": 2 } ],
+    "subtype": "distribution"
   },
   {
     "type": "item_group",
     "subtype": "collection",
     "id": "mon_okka_death_drops",
-    "entries": [ { "item": "tomato", "count": [ 1, 1 ], "prob": 30 }, { "group": "youkai_items", "prob": 60 } ]
+    "items": [ { "item": "tomato", "count": [ 1, 1 ], "prob": 30 }, { "group": "youkai_items", "prob": 60 } ]
   },
   {
     "type": "item_group",
     "subtype": "collection",
     "id": "mon_kanazuchibo_death_drops",
-    "entries": [ { "item": "wooden_kine", "count": [ 1, 1 ], "prob": 100 }, { "group": "youkai_items", "prob": 60 } ]
+    "items": [ { "item": "wooden_kine", "count": [ 1, 1 ], "prob": 100 }, { "group": "youkai_items", "prob": 60 } ]
   }
 ]

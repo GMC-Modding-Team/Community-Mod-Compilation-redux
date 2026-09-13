@@ -39,7 +39,7 @@
     "type": "item_group",
     "id": "NC_DCLAWHUNT_worn",
     "subtype": "collection",
-    "entries": [
+    "items": [
       { "item": "duster" },
       { "item": "undershirt" },
       { "item": "10gal_hat" },
@@ -53,27 +53,23 @@
     "type": "item_group",
     "id": "NC_DCLAWHUNT_carry",
     "subtype": "collection",
-    "entries": [
-      { "group": "mon_vault_equipment_armory", "repeat": [ 3, 5 ], "prob": 65 },
-      { "group": "drugs_heal_simple", "repeat": [ 1, 2 ], "prob": 75 },
+    "items": [
+      { "group": "mon_vault_equipment_armory", "prob": 65 },
+      { "group": "drugs_heal_simple", "prob": 75 },
       { "group": "ammo_any_batteries_full", "prob": 15 },
-      { "item": "amr50mag", "charges": 8, "repeat": [ 3, 5 ] }
+      { "item": "amr50mag", "charges": 8 }
     ]
   },
   {
     "type": "item_group",
     "id": "NC_DCLAWHUNT_weapon",
     "subtype": "collection",
-    "entries": [ { "item": "amr50", "charges": 8 } ]
+    "items": [ { "item": "amr50", "charges": 8 } ]
   },
   {
     "id": "TALK_deathclawhunter_start",
     "type": "talk_topic",
-    "dynamic_line": {
-      "u_female": true,
-      "yes": "What are you doing here, little missie, don't you know this is a deathclaw stomping ground!",
-      "no": "What are you doing here, guy, don't you know this is a deathclaw stomping ground!"
-    },
+    "dynamic_line": "What are you doing here, little missie, don't you know this is a deathclaw stomping ground!  What are you doing here, guy, don't you know this is a deathclaw stomping ground!",
     "responses": [
       { "text": "What am I doing here, what are you doing here?!", "topic": "TALK_deathclawhunter_infotown" },
       { "text": "Do you want to come with me?", "topic": "TALK_deathclawhunter_recruit" },
@@ -83,17 +79,13 @@
   {
     "id": "TALK_deathclawhunter_infotown",
     "type": "talk_topic",
-    "dynamic_line": {
-      "u_female": true,
-      "yes": "What does it look like, I'm hunting deathclaws obviously! Their eggs fetch a large sum of caps at any decent market, and their hide is a kind of status symbol amongst the well-heeled and backwoods alike - it's a testament to one's strength to wear their hide. Oh, and these monsters are a menace to society and have to be hunted down.",
-      "no": "What does it look like, I'm hunting deathclaws obviously! Their eggs fetch a large sum of caps at any decent market, and their hide is a kind of status symbol amongst the well-heeled and backwoods alike - it's a testament to one's strength to wear their hide. Oh, and these monsters are a menace to society and have to be hunted down."
-    },
+    "dynamic_line": "What does it look like, I'm hunting deathclaws obviously!  Their eggs fetch a large sum of caps at any decent market, and their hide is a kind of status symbol amongst the well-heeled and backwoods alike - it's a testament to one's strength to wear their hide.  Oh, and these monsters are a menace to society and have to be hunted down.  What does it look like, I'm hunting deathclaws obviously!  Their eggs fetch a large sum of caps at any decent market, and their hide is a kind of status symbol amongst the well-heeled and backwoods alike - it's a testament to one's strength to wear their hide.  Oh, and these monsters are a menace to society and have to be hunted down.",
     "responses": [ { "text": "Got it.", "topic": "TALK_deathclawhunter_start" } ]
   },
   {
     "id": "TALK_deathclawhunter_recruit",
     "type": "talk_topic",
-    "dynamic_line": { "u_female": true, "yes": "I am ready to join you on your journey!", "no": "I am ready to join you on your journey!" },
+    "dynamic_line": "I am ready to join you on your journey!  I am ready to join you on your journey!",
     "responses": [ { "text": "Want to travel with me?", "topic": "TALK_SUGGEST_FOLLOW", "condition": { "not": "npc_following" } } ]
   }
 ]

@@ -2,7 +2,7 @@
   {
     "id": "mon_giant_mantis",
     "type": "MONSTER",
-    "name": "giant mantis",
+    "name": { "str": "giant mantis", "str_pl": "giant mantises" },
     "description": "A mutant mantis the size of a small dog, brought in from the west coast to deal with pest problems.",
     "default_faction": "mantis",
     "species": [ "INSECT" ],
@@ -19,7 +19,6 @@
     "melee_skill": 5,
     "melee_dice": 1,
     "melee_dice_sides": 6,
-    "melee_cut": 10,
     "dodge": 3,
     "vision_day": 5,
     "vision_night": 5,
@@ -27,15 +26,15 @@
     "reproduction": { "baby_egg": "egg_mantis", "baby_count": 1, "baby_timer": 7 },
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN" ],
     "anger_triggers": [ "PLAYER_WEAK" ],
-    "death_function": [ "NORMAL" ],
     "special_attacks": [ [ "EAT_FOOD", 60 ] ],
-    "flags": [ "SEES", "HEARS", "SMELLS", "CHITIN", "CLIMBS", "DOGFOOD" ],
-    "armor": { "bash": 5, "cut": 10 }
+    "flags": [ "SEES", "HEARS", "SMELLS", "CLIMBS" ],
+    "armor": { "bash": 5, "cut": 10 },
+    "melee_damage": [ { "damage_type": "cut", "amount": 10 } ]
   },
   {
     "id": "mon_giant_mantis_nymph",
     "type": "MONSTER",
-    "name": "giant mantis nymph",
+    "name": { "str": "giant mantis nymph" },
     "description": "A baby mutant mantis about the size of a rat.",
     "default_faction": "mantis",
     "species": [ "INSECT" ],
@@ -52,19 +51,17 @@
     "melee_skill": 3,
     "melee_dice": 2,
     "melee_dice_sides": 3,
-    "melee_cut": 0,
     "vision_day": 10,
     "vision_night": 3,
     "harvest": "arachnid",
     "upgrades": { "age_grow": 7, "into": "mon_giant_mantis" },
-    "death_function": [ "NORMAL" ],
     "special_attacks": [ [ "EAT_FOOD", 120 ] ],
-    "flags": [ "SEES", "HEARS", "SMELLS", "CHITIN", "CLIMBS", "DOGFOOD" ]
+    "flags": [ "SEES", "HEARS", "SMELLS", "CLIMBS" ]
   },
   {
     "id": "mon_radscorpion",
     "type": "MONSTER",
-    "name": "radscorpion",
+    "name": { "str": "radscorpion" },
     "description": "A giant mutated emperor scorpion.  A highly venomous nightmare come to life.",
     "default_faction": "radscorpion",
     "species": [ "SPIDER" ],
@@ -81,7 +78,6 @@
     "melee_skill": 6,
     "melee_dice": 1,
     "melee_dice_sides": 6,
-    "melee_cut": 2,
     "dodge": 2,
     "vision_day": 5,
     "vision_night": 5,
@@ -89,14 +85,14 @@
     "reproduction": { "baby_egg": "egg_radscorpion", "baby_count": 3, "baby_timer": 7 },
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN" ],
     "anger_triggers": [ "PLAYER_WEAK", "PLAYER_CLOSE" ],
-    "death_function": [ "NORMAL" ],
-    "flags": [ "SEES", "SMELLS", "HEARS", "BADVENOM", "CHITIN", "CLIMBS" ],
-    "armor": { "bash": 2, "cut": 4 }
+    "flags": [ "SEES", "SMELLS", "HEARS", "BADVENOM", "CLIMBS" ],
+    "armor": { "bash": 2, "cut": 4 },
+    "melee_damage": [ { "damage_type": "cut", "amount": 2 } ]
   },
   {
     "id": "mon_radscorpion_small",
     "type": "MONSTER",
-    "name": "young radscorpion",
+    "name": { "str": "young radscorpion" },
     "description": "The horrid spawn of a radscorpion.  Even as a newborn, this foul creature knows only how to kill.",
     "default_faction": "radscorpion",
     "species": [ "SPIDER" ],
@@ -113,15 +109,14 @@
     "melee_skill": 4,
     "melee_dice": 1,
     "melee_dice_sides": 3,
-    "melee_cut": 2,
     "dodge": 1,
     "vision_day": 5,
     "vision_night": 5,
     "harvest": "arachnid",
     "upgrades": { "age_grow": 7, "into": "mon_radscorpion" },
     "anger_triggers": [ "PLAYER_WEAK", "PLAYER_CLOSE" ],
-    "death_function": [ "NORMAL" ],
-    "flags": [ "SEES", "SMELLS", "HEARS", "VENOM", "CHITIN", "CLIMBS" ],
-    "armor": { "bash": 2, "cut": 4 }
+    "flags": [ "SEES", "SMELLS", "HEARS", "VENOM", "CLIMBS" ],
+    "armor": { "bash": 2, "cut": 4 },
+    "melee_damage": [ { "damage_type": "cut", "amount": 2 } ]
   }
 ]

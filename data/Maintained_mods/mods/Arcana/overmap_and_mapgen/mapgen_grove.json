@@ -35,10 +35,14 @@
       "set": [ { "point": "trap", "id": "tr_portal", "x": 10, "y": 15 } ],
       "terrain": {
         "|": [ "t_wall_log_half", "t_wall_log_chipped", "t_wall_log_broken", "t_region_groundcover" ],
-        ".": "t_rock_floor_no_roof"
+        ".": "t_rock_floor_no_roof",
+        ",": "t_region_groundcover",
+        "`": "t_region_groundcover",
+        "I": "t_region_groundcover"
       },
       "furniture": { ".": [ "f_boulder_small", "f_boulder_medium", "f_boulder_large" ] },
-      "place_monster": [ { "group": "GROUP_GROVESURFACE", "x": [ 0, 23 ], "y": [ 0, 23 ], "repeat": [ 3, 6 ] } ]
+      "place_monster": [ { "group": "GROUP_GROVESURFACE", "x": [ 0, 23 ], "y": [ 0, 23 ], "repeat": [ 3, 6 ] } ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -75,8 +79,16 @@
       ],
       "palettes": [ "arcana_palette" ],
       "set": [ { "point": "trap", "id": "tr_portal", "x": 7, "y": 4 }, { "point": "trap", "id": "tr_portal", "x": 16, "y": 19 } ],
-      "terrain": { ">": "t_slope_down", "#": "t_rock" },
-      "place_monster": [ { "group": "GROUP_GROVESURFACE", "x": [ 0, 23 ], "y": [ 0, 23 ], "repeat": [ 3, 6 ] } ]
+      "terrain": {
+        ">": "t_slope_down",
+        "#": "t_rock",
+        "`": "t_region_groundcover",
+        ",": "t_region_groundcover",
+        "T": "t_region_groundcover",
+        ".": "t_region_groundcover"
+      },
+      "place_monster": [ { "group": "GROUP_GROVESURFACE", "x": [ 0, 23 ], "y": [ 0, 23 ], "repeat": [ 3, 6 ] } ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -112,7 +124,25 @@
         "###########R..#~...#R###"
       ],
       "palettes": [ "arcana_palette" ],
-      "terrain": { "|": "t_concrete_wall", "%": "t_rock_floor", "R": "t_root_wall_arcana", "=": "t_rock" },
+      "terrain": {
+        "|": "t_concrete_wall",
+        "%": "t_rock_floor",
+        "R": "t_root_wall_arcana",
+        "=": "t_rock",
+        "#": "t_region_groundcover",
+        "]": "t_region_groundcover",
+        ".": "t_region_groundcover",
+        "~": "t_region_groundcover",
+        "h": "t_region_groundcover",
+        "e": "t_region_groundcover",
+        "X": "t_region_groundcover",
+        "{": "t_region_groundcover",
+        "+": "t_region_groundcover",
+        "K": "t_region_groundcover",
+        "A": "t_region_groundcover",
+        "F": "t_region_groundcover",
+        "d": "t_region_groundcover"
+      },
       "furniture": { "%": "f_rubble_rock" },
       "mapping": { "%": { "item": [ { "item": "rock", "repeat": [ 5, 10 ] } ] } },
       "items": {
@@ -129,7 +159,8 @@
       "place_monster": [
         { "group": "GROUP_GROVEBASEMENT", "x": [ 2, 22 ], "y": [ 2, 22 ], "repeat": [ 5, 10 ] },
         { "monster": "mon_moruboru", "x": 3, "y": 4 }
-      ]
+      ],
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -165,12 +196,13 @@
         "########################"
       ],
       "palettes": [ "arcana_palette" ],
-      "terrain": { "<": "t_slope_up", "R": "t_root_wall_arcana" },
+      "terrain": { "<": "t_slope_up", "R": "t_root_wall_arcana", "#": "t_region_groundcover", ".": "t_region_groundcover" },
       "place_loot": [
         { "group": "summoner_casualties_fresh", "x": [ 8, 15 ], "y": [ 10, 13 ], "repeat": [ 1, 3 ] },
         { "item": "note_grove", "x": [ 11, 14 ], "y": 16 }
       ],
-      "place_monster": [ { "group": "GROUP_GROVEBASEMENT", "x": [ 2, 22 ], "y": [ 2, 22 ], "repeat": [ 5, 10 ] } ]
+      "place_monster": [ { "group": "GROUP_GROVEBASEMENT", "x": [ 2, 22 ], "y": [ 2, 22 ], "repeat": [ 5, 10 ] } ],
+      "fill_ter": "t_region_groundcover"
     }
   }
 ]

@@ -1,33 +1,5 @@
 [
   {
-    "id": "mon_blank",
-    "type": "MONSTER",
-    "copy-from": "mon_blank",
-    "attack_effs": [ { "id": "rad_tenths", "duration": 20 } ],
-    "emit_fields": [ "emit_radiation_plume" ]
-  },
-  {
-    "id": "mon_vortex",
-    "type": "MONSTER",
-    "copy-from": "mon_vortex",
-    "default_faction": "small_animal",
-    "attack_effs": [ { "id": "rad_tenths", "duration": 5 } ],
-    "emit_fields": [ "emit_radiation_plume", "emit_relax_plume" ],
-    "special_attacks": [ [ "hallucinations", 20 ] ],
-    "flags": [
-      "HEARS",
-      "GOODHEARING",
-      "STUMBLES",
-      "NOHEAD",
-      "HARDTOSHOOT",
-      "FLIES",
-      "PLASTIC",
-      "NO_BREATHE",
-      "NOGIB",
-      "HIT_AND_RUN"
-    ]
-  },
-  {
     "id": "mon_stemcell_nether",
     "type": "MONSTER",
     "name": { "str": "shimmering light" },
@@ -38,16 +10,15 @@
     "aggression": 0,
     "morale": 90,
     "symbol": "*",
-    "color": "i_white",
+    "color": "white",
     "melee_skill": 0,
     "melee_dice": 0,
     "melee_dice_sides": 0,
-    "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "dodge": 15,
     "vision_day": 35,
     "vision_night": 35,
     "luminance": 8,
-    "special_attacks": [ [ "wound_minor", 30 ], [ "PARROT", 30 ] ],
+    "special_attacks": [ { "id": "wound_minor", "cooldown": 30 }, [ "PARROT", 30 ] ],
     "upgrades": { "half_life": 2, "into_group": "GROUP_NETHER" },
     "death_function": { "corpse_type": "NO_CORPSE", "message": "The %s melts away." },
     "flags": [
@@ -68,100 +39,15 @@
     "//": "A critter whose purpose is to evolve into a random nether monster.",
     "anger_triggers": [ "FIRE", "PLAYER_CLOSE" ],
     "fear_triggers": [ "HURT" ],
-    "placate_triggers": [ "SOUND" ],
     "armor": { "acid": 4 }
-  },
-  {
-    "id": "mon_gracke",
-    "type": "MONSTER",
-    "copy-from": "mon_gracke",
-    "name": { "str": "gracken" },
-    "description": "A bizarre humanoid creature with a calculating stare.  Its twitching hands move so fast they appear to be nothing but blurs.",
-    "default_faction": "nether",
-    "species": [ "NETHER" ],
-    "diff": 15,
-    "hp": 90,
-    "speed": 180,
-    "material": [ "flesh" ],
-    "symbol": "h",
-    "color": "light_red",
-    "aggression": 0,
-    "morale": 50,
-    "melee_skill": 10,
-    "melee_dice": 4,
-    "melee_dice_sides": 4,
-    "melee_damage": [ { "damage_type": "cut", "amount": 1 } ],
-    "dodge": 4,
-    "vision_day": 15,
-    "vision_night": 3,
-    "special_attacks": [
-      [ "wound_minor", 30 ],
-      [ "GRAB", 15 ],
-      { "id": "scratch", "damage_max_instance": [ { "damage_type": "bash", "amount": 14, "armor_multiplier": 0.8 } ] }
-    ],
-    "anger_triggers": [ "PLAYER_WEAK", "FIRE", "PLAYER_CLOSE" ],
-    "fear_triggers": [ "MEAT", "FRIEND_DIED" ],
-    "placate_triggers": [ "HURT", "SOUND" ],
-    "flags": [ "SEES", "SMELLS", "HEARS", "PATH_AVOID_DANGER_2", "WARM", "NO_BREATHE", "GRABS", "BONES", "HIT_AND_RUN" ],
-    "//": "http://smf.cataclysmdda.com/index.php?topic=2816.0",
-    "armor": { "bash": 2, "cut": 2 }
-  },
-  {
-    "id": "mon_flaming_eye",
-    "type": "MONSTER",
-    "name": { "str": "flaming eye" },
-    "copy-from": "mon_flaming_eye",
-    "diff": 25,
-    "hp": 250,
-    "vision_day": 30,
-    "vision_night": 30,
-    "luminance": 25,
-    "special_attacks": [ [ "STARE", 12 ] ]
-  },
-  {
-    "id": "mon_gozu",
-    "type": "MONSTER",
-    "name": { "str": "gozu" },
-    "copy-from": "mon_gozu",
-    "speed": 85,
-    "aggression": 15,
-    "morale": 100,
-    "symbol": "&",
-    "color": "white",
-    "melee_skill": 6,
-    "melee_dice": 2,
-    "melee_dice_sides": 8,
-    "melee_damage": [ { "damage_type": "cut", "amount": 2 } ],
-    "dodge": 4,
-    "vision_day": 40,
-    "special_attacks": [
-      [ "GRAB", 30 ],
-      [ "FEAR_PARALYZE", 20 ],
-      [ "hammer", 15 ],
-      {
-        "type": "bite",
-        "cooldown": 15,
-        "no_infection_chance": 9,
-        "damage_max_instance": [ { "damage_type": "bash", "amount": 16, "armor_multiplier": 0.8 }, { "damage_type": "cold", "amount": 3 } ]
-      }
-    ],
-    "armor": { "bash": 4, "cut": 4 }
-  },
-  {
-    "id": "mon_mi_go",
-    "type": "MONSTER",
-    "copy-from": "mon_mi_go",
-    "name": { "str": "mi-go" },
-    "description": "A flexuous monstrosity seeming as a giant crab covered in writhing antennae, clawed tentacles, and star-shaped growths, with a head like the insides of a fish but for its dire utterance.",
-    "upgrades": { "half_life": 1, "into_group": "MI_GO_EVO" }
   },
   {
     "id": "mon_mi_go_terminal",
     "type": "MONSTER",
     "copy-from": "mon_mi_go",
     "name": { "str": "mi-go" },
-    "hp": 200,
-    "description": "A flexuous monstrosity seeming as a giant crab covered in writhing antennae, clawed tentacles, and star-shaped growths, with a head like the insides of a fish but for its dire utterance."
+    "description": "A flexuous monstrosity seeming as a giant crab covered in writhing antennae, clawed tentacles, and star-shaped growths, with a head like the insides of a fish but for its dire utterance.",
+    "hp": 200
   },
   {
     "id": "mon_mi_go_fly",
@@ -193,21 +79,19 @@
     "melee_skill": 6,
     "melee_dice": 2,
     "melee_dice_sides": 11,
-    "melee_damage": [ { "damage_type": "cut", "amount": 2 } ],
-    "dodge": 2,
     "melee_damage": [ { "damage_type": "acid", "amount": 2 } ],
+    "dodge": 2,
     "vision_day": 40,
     "vision_night": 5,
     "special_attacks": [
-      [ "wound_minor", 8 ],
-      [ "diseased swipe", 15 ],
-      [ "hammer", 20 ],
-      [ "GRAB", 30 ],
+      { "id": "wound_minor", "cooldown": 8 },
+      { "id": "diseased swipe", "cooldown": 15 },
+      { "id": "hammer", "cooldown": 20 },
+      { "id": "grab", "cooldown": 30 },
       { "id": "scratch", "damage_max_instance": [ { "damage_type": "bash", "amount": 14 } ] },
       {
         "type": "bite",
         "cooldown": 25,
-        "no_infection_chance": 4,
         "damage_max_instance": [
           { "damage_type": "acid", "amount": 4, "armor_multiplier": 0.75 },
           { "damage_type": "bash", "amount": 22, "armor_multiplier": 0.75 }
@@ -223,26 +107,14 @@
     ],
     "death_function": { "corpse_type": "NO_CORPSE", "message": "The %s melts away." },
     "regen_morale": true,
-    "flags": [
-      "SEES",
-      "HEARS",
-      "SMELLS",
-      "WARM",
-      "BASHES",
-      "BONES",
-      "POISON",
-      "PLASTIC",
-      "PATH_AVOID_DANGER_2",
-      "SWARMS",
-      "SUNDEATH"
-    ],
-    "armor": { "bash": 6, "cut": 6, "acid": 6, "fire": 6 }
+    "flags": [ "SEES", "HEARS", "SMELLS", "WARM", "BASHES", "POISON", "PLASTIC", "PATH_AVOID_DANGER_2", "SWARMS", "SUNDEATH" ],
+    "armor": { "bash": 6, "cut": 6, "acid": 6, "heat": 6 }
   },
   {
     "id": "mon_horror_dusk_queen",
     "type": "MONSTER",
-    "name": { "str": "dusk horror" },
     "copy-from": "mon_horror_dusk",
+    "name": { "str": "dusk horror" },
     "hp": 440,
     "speed": 100,
     "aggression": 100,
@@ -250,13 +122,12 @@
     "melee_skill": 7,
     "melee_dice": 2,
     "melee_dice_sides": 13,
-    "melee_damage": [ { "damage_type": "cut", "amount": 3 } ],
-    "dodge": 5,
     "melee_damage": [ { "damage_type": "acid", "amount": 3 } ],
+    "dodge": 5,
     "vision_day": 40,
     "vision_night": 5,
     "regen_morale": true,
-    "flags": [ "SEES", "HEARS", "SMELLS", "WARM", "BASHES", "BONES", "POISON", "PLASTIC", "PATH_AVOID_DANGER_2", "SWARMS", "QUEEN" ],
-    "armor": { "bash": 6, "cut": 6, "acid": 6, "fire": 6 }
+    "flags": [ "SEES", "HEARS", "SMELLS", "WARM", "BASHES", "POISON", "PLASTIC", "PATH_AVOID_DANGER_2", "SWARMS", "QUEEN" ],
+    "armor": { "bash": 6, "cut": 6, "acid": 6, "heat": 6 }
   }
 ]

@@ -1,8 +1,20 @@
 [
   {
-    "abstract": "etc_pistol_base",
-    "copy-from": "pistol_base",
+    "abstract": "etc_pistol_revolver_1ups",
     "type": "GUN",
+    "copy-from": "etc_pistol_revolver",
+    "name": { "str": "base ETC revolver" }
+  },
+  {
+    "abstract": "etc_pistol_revolver_2ups",
+    "type": "GUN",
+    "copy-from": "etc_pistol_revolver",
+    "name": { "str": "2 charges ETC revolver" }
+  },
+  {
+    "abstract": "etc_pistol_base",
+    "type": "GUN",
+    "copy-from": "pistol_base",
     "name": { "str": "base ETC pistol" },
     "valid_mod_locations": [
       [ "accessories", 2 ],
@@ -20,29 +32,47 @@
   },
   {
     "abstract": "etc_pistol_revolver",
-    "copy-from": "pistol_revolver",
     "type": "GUN",
+    "copy-from": "pistol_revolver",
     "name": { "str": "EC ammo ETC revolver" },
     "valid_mod_locations": [ [ "accessories", 4 ], [ "barrel", 1 ], [ "grip", 1 ], [ "mechanism", 4 ], [ "sights", 1 ], [ "stock", 1 ] ]
   },
   {
-    "abstract": "etc_pistol_revolver_1ups",
-    "copy-from": "etc_pistol_revolver",
     "type": "GUN",
-    "name": { "str": "base ETC revolver" }
-  },
-  {
-    "abstract": "etc_pistol_revolver_2ups",
-    "copy-from": "etc_pistol_revolver",
-    "type": "GUN",
-    "name": { "str": "2 charges ETC revolver" }
+    "name": { "str": "2 charges ETC revolver" },
+    "skill": "pistol",
+    "sight_dispersion": 60,
+    "//": "101.6mm + 39.4mm max OAL for 38spl. Revolvers just built different.",
+    "handling": 10,
+    "valid_mod_locations": [ [ "accessories", 4 ], [ "barrel", 1 ], [ "grip", 1 ], [ "mechanism", 4 ], [ "sights", 1 ], [ "stock", 1 ] ],
+    "extend": { "flags": [ "RELOAD_ONE", "RELOAD_EJECT", "NEVER_JAMS", "EASY_CLEAN" ] },
+    "faults": [ "fault_gun_blackpowder", "fault_gun_dirt" ],
+    "id": "pistol_revolver",
+    "looks_like": "sw_619",
+    "description": "Revolvers like this, chambered for standard defensive calibers, were a favorite of police departments for nearly a century, up until the 1986 Miami shootout.  Afterwards, the slow reloading and shooting of revolvers were considered liabilities; still, this model's accuracy and moderate recoil make for a serviceable sidearm, and there are no magazines for you to lose or damage.",
+    "weight": "975 g",
+    "volume": "400 ml",
+    "longest_side": "25 cm",
+    "barrel_length": "141 mm",
+    "price": 42400,
+    "price_postapoc": 1250,
+    "to_hit": -2,
+    "material": [ "steel", "wood" ],
+    "color": "dark_gray",
+    "ammo": [ "ammo_pistol" ],
+    "dispersion": 480,
+    "durability": 8,
+    "blackpowder_tolerance": 56,
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "holster": true, "ammo_restriction": { "ammo_pistol": 6 }, "rigid": true } ],
+    "melee_damage": { "bash": 9 },
+    "reload": 0.7
   },
   {
     "abstract": "etc_rifle_base",
-    "copy-from": "rifle_base",
     "type": "GUN",
-    "name": { "str": "EC ammo ETC rifle" },
+    "copy-from": "rifle_base",
     "//": "No bore mods. These cannot be just converted to different calibers",
+    "name": { "str": "EC ammo ETC rifle" },
     "valid_mod_locations": [
       [ "accessories", 4 ],
       [ "barrel", 1 ],
@@ -60,22 +90,21 @@
   },
   {
     "abstract": "etc_rifle_base_1ups",
-    "copy-from": "etc_rifle_base",
     "type": "GUN",
+    "copy-from": "etc_rifle_base",
     "name": { "str": "base ETC rifle" }
   },
   {
     "abstract": "etc_rifle_base_2ups",
-    "copy-from": "etc_rifle_base",
     "type": "GUN",
+    "copy-from": "etc_rifle_base",
     "name": { "str": "2 charges ETC rifle" }
   },
   {
     "abstract": "etc_rifle_manual",
-    "copy-from": "rifle_manual",
     "type": "GUN",
+    "copy-from": "rifle_manual",
     "name": { "str_sp": "EC ammo ETC rifle with manual actions" },
-    "//": "No magazine or bore mods",
     "valid_mod_locations": [
       [ "accessories", 4 ],
       [ "barrel", 1 ],
@@ -88,24 +117,25 @@
       [ "sights", 1 ],
       [ "stock", 1 ],
       [ "underbarrel", 1 ]
-    ]
+    ],
+    "//": "No magazine or bore mods"
   },
   {
     "abstract": "etc_rifle_manual_1ups",
-    "copy-from": "etc_rifle_manual",
     "type": "GUN",
+    "copy-from": "etc_rifle_manual",
     "name": { "str_sp": "ETC rifle with manual actions" }
   },
   {
     "abstract": "etc_rifle_manual_2ups",
-    "copy-from": "etc_rifle_manual",
     "type": "GUN",
+    "copy-from": "etc_rifle_manual",
     "name": { "str_sp": "2 charges ETC rifle with manual actions" }
   },
   {
     "abstract": "etc_smg_base",
-    "copy-from": "smg_base",
     "type": "GUN",
+    "copy-from": "smg_base",
     "name": { "str": "base ETC SMG" }
   }
 ]

@@ -2,8 +2,25 @@
   {
     "id": "acr",
     "type": "GUN",
-    "copy-from": "acr",
+    "symbol": "(",
+    "color": "blue",
     "name": { "str": "Remington ACR" },
+    "description": "This carbine was developed for military use in the early 21st century.  It is damaging and accurate, though its rate of fire is a bit slower than competing.223 carbines.",
+    "price": 4200,
+    "material": [ "steel", "plastic" ],
+    "skill": "rifle",
+    "ammo": [ "223" ],
+    "weight": "27 g",
+    "volume": "3750 ml",
+    "melee_damage": { "bash": 18, "cut": 0 },
+    "to_hit": 2,
+    "ranged_damage": { "damage_type": "stab", "amount": 2 },
+    "range": 0,
+    "dispersion": 2,
+    "recoil": 0,
+    "durability": 8,
+    "reload": 475,
+    "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "BURST", "burst", 3 ] ],
     "pocket_data": [
       {
         "magazine_well": "250 ml",
@@ -18,8 +35,25 @@
   {
     "id": "ar15",
     "type": "GUN",
-    "copy-from": "ar15",
-    "name": { "str": "AR-15" },
+    "symbol": "(",
+    "color": "blue",
+    "name": { "str": "handmade carbine" },
+    "description": "A widely used assault rifle and the father of popular rifles such as the M16.  It is light and accurate, but not very durable.",
+    "price": 4000,
+    "material": [ "steel", "plastic" ],
+    "skill": "rifle",
+    "ammo": [ "223" ],
+    "weight": "28 g",
+    "volume": "4750 ml",
+    "melee_damage": { "bash": 12, "cut": 0 },
+    "to_hit": 2,
+    "ranged_damage": { "damage_type": "stab", "amount": 0 },
+    "range": 0,
+    "dispersion": 0,
+    "recoil": 0,
+    "durability": 7,
+    "reload": 500,
+    "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "BURST", "burst", 10 ] ],
     "pocket_data": [
       {
         "magazine_well": "250 ml",
@@ -27,14 +61,14 @@
         "holster": true,
         "max_contains_volume": "20 L",
         "max_contains_weight": "20 kg",
-        "item_restriction": [ "stanag30", "stanag50", "survivor223mag", "stanag_polymer" ]
+        "item_restriction": [ "survivor223mag", "stanag30", "stanag50", "stanag_polymer" ]
       }
     ]
   },
   {
     "id": "h&k416a5",
+    "copy-from": "modular_m27_assault_rifle",
     "type": "GUN",
-    "copy-from": "h&k416a5",
     "name": { "str": "HK416 A5" },
     "pocket_data": [
       {
@@ -48,10 +82,51 @@
     ]
   },
   {
-    "id": "hk_g36",
     "type": "GUN",
-    "copy-from": "hk_g36",
     "name": { "str": "H&K G36" },
+    "skill": "rifle",
+    "valid_mod_locations": [
+      [ "barrel", 1 ],
+      [ "bore", 1 ],
+      [ "brass catcher", 1 ],
+      [ "grip", 1 ],
+      [ "mechanism", 4 ],
+      [ "magazine", 1 ],
+      [ "muzzle", 1 ],
+      [ "rail", 2 ],
+      [ "sights", 1 ],
+      [ "sling", 1 ],
+      [ "stock", 1 ],
+      [ "stock accessory", 2 ],
+      [ "underbarrel", 1 ]
+    ],
+    "weapon_category": [ "AUTOMATIC_RIFLES" ],
+    "id": "hk_g36",
+    "looks_like": "modular_ar15",
+    "description": "An assault rifle chambered in 5.56x45mm and accepting G36 magazines.",
+    "weight": "3630 g",
+    "volume": "4640 ml",
+    "longest_side": "1004 mm",
+    "barrel_length": "480 mm",
+    "price": 210000,
+    "price_postapoc": 6000,
+    "variant_type": "gun",
+    "variants": [
+      {
+        "id": "hk_g36",
+        "name": { "str": "H&K G36" },
+        "description": "Designed as a replacement for the early H&K G3 battle rifle, the G36 is more accurate, and uses the much lighter.223 round, allowing for a higher ammo capacity."
+      }
+    ],
+    "to_hit": -1,
+    "material": [ "steel", "plastic" ],
+    "symbol": "(",
+    "color": "dark_gray",
+    "ammo": [ "223" ],
+    "dispersion": 150,
+    "durability": 8,
+    "min_cycle_recoil": 1350,
+    "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "AUTO", "auto", 4 ] ],
     "pocket_data": [
       {
         "magazine_well": "250 ml",
@@ -61,13 +136,48 @@
         "max_contains_weight": "20 kg",
         "item_restriction": [ "stanag30", "stanag50", "survivor223mag", "stanag_polymer" ]
       }
-    ]
+    ],
+    "melee_damage": { "bash": 12 }
   },
   {
-    "id": "m249",
     "type": "GUN",
-    "copy-from": "m249",
     "name": { "str": "M249" },
+    "skill": "rifle",
+    "valid_mod_locations": [
+      [ "barrel", 1 ],
+      [ "bore", 1 ],
+      [ "brass catcher", 1 ],
+      [ "grip", 1 ],
+      [ "mechanism", 4 ],
+      [ "muzzle", 1 ],
+      [ "rail", 1 ],
+      [ "sights", 1 ],
+      [ "sling", 1 ],
+      [ "stock", 1 ],
+      [ "stock accessory", 2 ]
+    ],
+    "weapon_category": [ "AUTOMATIC_RIFLES" ],
+    "id": "m249",
+    "looks_like": "modular_ar15",
+    "description": "The M249 is a mountable machine gun used by the US military and SWAT teams.  Quite inaccurate and difficult to control, the M249 is designed to fire many rounds very quickly.",
+    "ascii_picture": "m249_saw",
+    "weight": "7500 g",
+    "volume": "10610 ml",
+    "longest_side": "1035 mm",
+    "barrel_length": "533 mm",
+    "price": 750000,
+    "price_postapoc": 8000,
+    "to_hit": -1,
+    "material": [ "steel", "plastic" ],
+    "symbol": "(",
+    "color": "dark_gray",
+    "ammo": [ "223" ],
+    "dispersion": 200,
+    "durability": 7,
+    "min_cycle_recoil": 1350,
+    "reload": 400,
+    "modes": [ [ "DEFAULT", "burst", 4 ] ],
+    "built_in_mods": [ "bipod" ],
     "pocket_data": [
       {
         "magazine_well": "250 ml",
@@ -77,13 +187,31 @@
         "max_contains_weight": "20 kg",
         "item_restriction": [ "belt223", "stanag30", "stanag50", "survivor223mag", "stanag_polymer" ]
       }
-    ]
+    ],
+    "melee_damage": { "bash": 12 }
   },
   {
     "id": "m4a1",
     "type": "GUN",
-    "copy-from": "m4a1",
+    "symbol": "(",
+    "color": "blue",
     "name": { "str": "M4A1" },
+    "description": "A popular carbine, long used by the US military.  Though accurate, small, and lightweight, it is infamous for its fragility, particularly in less-than- ideal terrain.",
+    "price": 4400,
+    "material": [ "steel", "plastic" ],
+    "skill": "rifle",
+    "ammo": [ "223" ],
+    "weight": "24 g",
+    "volume": "3500 ml",
+    "melee_damage": { "bash": 13, "cut": 0 },
+    "to_hit": 2,
+    "ranged_damage": { "damage_type": "stab", "amount": 4 },
+    "range": 0,
+    "dispersion": 0,
+    "recoil": 2,
+    "durability": 6,
+    "reload": 475,
+    "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "BURST", "burst", 10 ] ],
     "pocket_data": [
       {
         "magazine_well": "250 ml",
@@ -98,8 +226,41 @@
   {
     "id": "m16a4",
     "type": "GUN",
-    "copy-from": "m16a4",
+    "symbol": "(",
+    "color": "dark_gray",
     "name": { "str": "M16A4" },
+    "looks_like": "modular_m4_carbine",
+    "description": "The last generation M16, Now a true battle rifle.  Rails up the wazoo, and better at close quarters thanks to its tri-burst system.  A reliable, accurate, damaging combat rifle.",
+    "price": 1400,
+    "price_postapoc": 39,
+    "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "BURST", "burst", 2 ], [ "AUTO", "auto", 4 ] ],
+    "material": [ "steel", "plastic" ],
+    "skill": "rifle",
+    "ammo": [ "223" ],
+    "weight": "3405 g",
+    "volume": "3500 ml",
+    "longest_side": "1000 mm",
+    "melee_damage": { "bash": 13 },
+    "to_hit": -3,
+    "dispersion": -25,
+    "sight_dispersion": 50,
+    "recoil": 20,
+    "durability": 9,
+    "reload": 150,
+    "loudness": 150,
+    "valid_mod_locations": [
+      [ "accessories", 4 ],
+      [ "barrel", 1 ],
+      [ "bore", 1 ],
+      [ "conversion", 1 ],
+      [ "grip", 1 ],
+      [ "mechanism", 4 ],
+      [ "muzzle", 1 ],
+      [ "rail", 1 ],
+      [ "sights", 1 ],
+      [ "stock", 1 ],
+      [ "underbarrel", 1 ]
+    ],
     "pocket_data": [
       {
         "magazine_well": "250 ml",
@@ -112,10 +273,43 @@
     ]
   },
   {
-    "id": "scar_l",
     "type": "GUN",
-    "copy-from": "scar_l",
     "name": { "str": "FN SCAR-L" },
+    "skill": "rifle",
+    "valid_mod_locations": [
+      [ "barrel", 1 ],
+      [ "bore", 1 ],
+      [ "brass catcher", 1 ],
+      [ "grip", 1 ],
+      [ "mechanism", 4 ],
+      [ "muzzle", 1 ],
+      [ "rail", 2 ],
+      [ "sights", 1 ],
+      [ "sling", 1 ],
+      [ "underbarrel", 1 ],
+      [ "stock accessory", 2 ],
+      [ "stock", 1 ]
+    ],
+    "weapon_category": [ "AUTOMATIC_RIFLES" ],
+    "id": "scar_l",
+    "description": "A highly accurate and modular assault rifle specially designed for the United States Special Operations Command.  The 'L' in its name stands for light, as it uses the lightweight.223 round.",
+    "ascii_picture": "scar-L",
+    "weight": "3490 g",
+    "volume": "4957 ml",
+    "longest_side": "798 mm",
+    "barrel_length": "355 mm",
+    "price": 540000,
+    "price_postapoc": 2250,
+    "to_hit": -1,
+    "material": [ "steel", "aluminum", "plastic" ],
+    "symbol": "(",
+    "color": "dark_gray",
+    "ammo": [ "223" ],
+    "dispersion": 180,
+    "durability": 8,
+    "min_cycle_recoil": 1350,
+    "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "AUTO", "auto", 4 ] ],
+    "default_mods": [ "high_end_folding_stock" ],
     "pocket_data": [
       {
         "magazine_well": "250 ml",
@@ -125,12 +319,13 @@
         "max_contains_weight": "20 kg",
         "item_restriction": [ "stanag30", "stanag50", "survivor223mag", "stanag_polymer" ]
       }
-    ]
+    ],
+    "melee_damage": { "bash": 12 }
   },
   {
-    "id": "sig552",
+    "id": "private_defense_sig552",
+    "copy-from": "sig_assault_rifle",
     "type": "GUN",
-    "copy-from": "sig552",
     "name": { "str": "SIG 552" },
     "pocket_data": [
       {
@@ -144,10 +339,50 @@
     ]
   },
   {
-    "id": "steyr_aug",
     "type": "GUN",
-    "copy-from": "steyr_aug",
     "name": { "str": "Steyr AUG" },
+    "skill": "rifle",
+    "valid_mod_locations": [
+      [ "barrel", 1 ],
+      [ "bore", 1 ],
+      [ "brass catcher", 1 ],
+      [ "grip", 1 ],
+      [ "mechanism", 4 ],
+      [ "magazine", 1 ],
+      [ "muzzle", 1 ],
+      [ "rail", 1 ],
+      [ "sights", 1 ],
+      [ "sling", 1 ],
+      [ "underbarrel", 1 ]
+    ],
+    "weapon_category": [ "AUTOMATIC_RIFLES" ],
+    "id": "steyr_aug",
+    "looks_like": "modular_ar15",
+    "description": "An assault rifle chambered in 5.56x45mm and accepting AUG magazines",
+    "weight": "3500 g",
+    "volume": "3520 ml",
+    "longest_side": "715 mm",
+    "barrel_length": "508 mm",
+    "price": 490000,
+    "price_postapoc": 6000,
+    "variant_type": "gun",
+    "variants": [
+      {
+        "id": "steyr_aug",
+        "name": { "str": "Steyr AUG" },
+        "description": "The Steyr AUG is an Austrian assault rifle that uses a bullpup design.  It is used in the armed forces and police forces of many nations, and enjoys low recoil and high accuracy."
+      }
+    ],
+    "to_hit": -1,
+    "material": [ "steel", "plastic" ],
+    "symbol": "(",
+    "color": "light_gray",
+    "ammo": [ "223" ],
+    "dispersion": 140,
+    "durability": 8,
+    "min_cycle_recoil": 1350,
+    "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "AUTO", "auto", 4 ] ],
+    "built_in_mods": [ "grip" ],
     "pocket_data": [
       {
         "magazine_well": "250 ml",
@@ -157,22 +392,7 @@
         "max_contains_weight": "20 kg",
         "item_restriction": [ "stanag30", "stanag50", "survivor223mag", "stanag_polymer" ]
       }
-    ]
-  },
-  {
-    "id": "ar15",
-    "type": "GUN",
-    "copy-from": "ar15",
-    "name": { "str": "handmade carbine" },
-    "pocket_data": [
-      {
-        "magazine_well": "250 ml",
-        "pocket_type": "MAGAZINE_WELL",
-        "holster": true,
-        "max_contains_volume": "20 L",
-        "max_contains_weight": "20 kg",
-        "item_restriction": [ "survivor223mag", "stanag30", "stanag50", "stanag_polymer" ]
-      }
-    ]
+    ],
+    "melee_damage": { "bash": 12 }
   }
 ]

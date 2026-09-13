@@ -6,7 +6,6 @@
     "om_terrain": [ "lab_1side" ],
     "weight": 100,
     "object": {
-      "fill_ter": "t_thconc_floor",
       "rows": [
         "|--------|....|--------|",
         "|x]]]]]]x|....|x]]]]]]x|",
@@ -35,7 +34,25 @@
       ],
       "palettes": [ "lab_palette" ],
       "furniture": { "S": "f_sofa", "s": "f_sandbag_half", "&": "f_trashcan" },
-      "terrain": { "*": "t_thconc_floor" },
+      "terrain": {
+        "*": "t_thconc_floor",
+        "-": "t_region_groundcover",
+        ".": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "x": "t_region_groundcover",
+        "]": "t_region_groundcover",
+        "6": "t_region_groundcover",
+        "h": "t_region_groundcover",
+        "t": "t_region_groundcover",
+        "L": "t_region_groundcover",
+        "r": "t_region_groundcover",
+        "g": "t_region_groundcover",
+        "d": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "W": "t_region_groundcover",
+        "G": "t_region_groundcover",
+        ",": "t_region_groundcover"
+      },
       "mapping": {
         "l": { "items": [ { "item": "gear_soldier_sidearm", "chance": 33 } ] },
         "]": { "items": [ { "item": "book_military", "chance": 20 } ] },
@@ -64,7 +81,8 @@
           "options": [ { "name": "UNLOCK ENTRANCE", "action": "unlock_disarm", "security": 7 } ],
           "failures": [ { "action": "damage" }, { "action": "shutdown" } ]
         }
-      }
+      },
+      "fill_ter": "t_region_groundcover"
     }
   }
 ]

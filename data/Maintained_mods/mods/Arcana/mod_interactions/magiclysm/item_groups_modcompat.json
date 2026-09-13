@@ -2,140 +2,105 @@
   {
     "type": "item_group",
     "id": "magic_shop_books",
-    "copy-from": "magic_shop_books",
     "//": "Additions to magic shop itemgroups are for automatic compatibility with Magiclysm.  General assumption is only the non-faction books were traded around enough for the non-arcanist magical community to start collecting samples.  Todo: remember magic_CBM itemgroup for when magitech is added to arcana.",
-    "extend": {
-      "items": [ [ "book_potioncraft", 25 ], [ "book_scrollcraft", 15 ], [ "book_summoning", 10 ], [ "book_syncretism", 5 ] ]
-    }
+    "subtype": "distribution",
+    "items": [
+      { "item": "book_potioncraft", "prob": 25 },
+      { "item": "book_scrollcraft", "prob": 15 },
+      { "item": "book_summoning", "prob": 10 },
+      { "item": "book_syncretism", "prob": 5 }
+    ]
   },
   {
     "type": "item_group",
     "id": "potions_common",
-    "copy-from": "potions_common",
-    "extend": { "items": [ [ "numbness_potion", 25 ], [ "strength_potion", 20 ], [ "speed_potion", 15 ], [ "healing_potion", 10 ] ] }
+    "subtype": "distribution",
+    "items": [
+      { "item": "numbness_potion", "prob": 25 },
+      { "item": "strength_potion", "prob": 20 },
+      { "item": "speed_potion", "prob": 15 },
+      { "item": "healing_potion", "prob": 10 }
+    ]
   },
   {
     "id": "alchemy_items",
     "type": "item_group",
-    "copy-from": "alchemy_items",
-    "extend": { "items": [ [ "book_potioncraft", 5 ], { "group": "arcana_hunt_random", "prob": 10 } ] }
+    "subtype": "distribution",
+    "items": [ { "item": "book_potioncraft", "prob": 5 }, { "group": "arcana_hunt_random", "prob": 10 } ]
   },
   {
     "id": "magic_recipe_basic",
     "type": "item_group",
-    "copy-from": "magic_recipe_basic",
-    "extend": { "items": [ [ "book_potioncraft", 25 ], [ "book_scrollcraft", 15 ] ] }
+    "subtype": "distribution",
+    "items": [ { "item": "book_potioncraft", "prob": 25 }, { "item": "book_scrollcraft", "prob": 15 } ]
   },
   {
     "id": "magic_recipe_advanced",
     "type": "item_group",
-    "copy-from": "magic_recipe_advanced",
-    "extend": { "items": [ [ "book_summoning", 10 ], [ "book_syncretism", 5 ] ] }
+    "subtype": "distribution",
+    "items": [ { "item": "book_summoning", "prob": 10 }, { "item": "book_syncretism", "prob": 5 } ]
   },
   {
     "id": "spell_scroll_tier_0",
     "type": "item_group",
-    "copy-from": "spell_scroll_tier_0",
-    "extend": {
-      "items": [
-        [ "scroll_spell_lightning", 10 ],
-        [ "scroll_spell_confusion", 10 ],
-        [ "scroll_spell_acidspray", 10 ],
-        [ "scroll_spell_insight", 10 ],
-        [ "scroll_spell_plants", 10 ]
-      ]
-    }
+    "subtype": "distribution",
+    "items": [
+      { "item": "scroll_spell_lightning", "prob": 10 },
+      { "item": "scroll_spell_confusion", "prob": 10 },
+      { "item": "scroll_spell_acidspray", "prob": 10 },
+      { "item": "scroll_spell_insight", "prob": 10 },
+      { "item": "scroll_spell_plants", "prob": 10 }
+    ]
   },
   {
     "id": "spell_scroll_tier_1",
     "type": "item_group",
-    "copy-from": "spell_scroll_tier_1",
-    "extend": { "items": [ [ "scroll_spell_agile", 10 ], [ "scroll_spell_clarity", 10 ], [ "scroll_spell_elecresist", 10 ] ] }
+    "subtype": "distribution",
+    "items": [
+      { "item": "scroll_spell_agile", "prob": 10 },
+      { "item": "scroll_spell_clarity", "prob": 10 },
+      { "item": "scroll_spell_elecresist", "prob": 10 }
+    ]
   },
   {
     "id": "spell_scroll_tier_2",
     "type": "item_group",
-    "copy-from": "spell_scroll_tier_2",
-    "extend": {
-      "items": [
-        [ "scroll_spell_heal", 10 ],
-        [ "scroll_spell_flame_armor", 10 ],
-        [ "scroll_spell_might", 10 ],
-        [ "scroll_spell_cleric", 10 ]
-      ]
-    }
+    "subtype": "distribution",
+    "items": [
+      { "item": "scroll_spell_heal", "prob": 10 },
+      { "item": "scroll_spell_flame_armor", "prob": 10 },
+      { "item": "scroll_spell_might", "prob": 10 },
+      { "item": "scroll_spell_cleric", "prob": 10 }
+    ]
   },
   {
     "id": "spell_scroll_tier_3",
     "type": "item_group",
-    "copy-from": "spell_scroll_tier_3",
-    "extend": { "items": [ [ "scroll_spell_clairvoyance", 10 ], [ "scroll_spell_free_action", 10 ], [ "scroll_spell_invis", 10 ] ] }
+    "subtype": "distribution",
+    "items": [
+      { "item": "scroll_spell_clairvoyance", "prob": 10 },
+      { "item": "scroll_spell_free_action", "prob": 10 },
+      { "item": "scroll_spell_invis", "prob": 10 }
+    ]
   },
   {
     "id": "technomancer_items",
-    "copy-from": "technomancer_items",
     "type": "item_group",
     "subtype": "collection",
-    "extend": { "items": [ [ "thermic_essence_cutter", 5 ] ] }
+    "items": [ { "item": "thermic_essence_cutter", "prob": 5 } ]
   },
   {
     "id": "magic_CBM",
-    "copy-from": "magic_CBM",
     "//": "Weights are expected to generally make Arcana CBMs show up half the time.",
     "type": "item_group",
-    "extend": {
-      "items": [
-        [ "bio_electrothermal_arc_projector", 1 ],
-        [ "bio_rift_focus_projector", 1 ],
-        [ "bio_essence_surge_cell", 3 ],
-        [ "bio_temporal_stimulation", 2 ],
-        [ "bio_life_sign_suppression", 3 ],
-        [ "bio_kinetic_amplifier", 1 ]
-      ]
-    }
-  },
-  {
-    "id": "chalice_cult_books_postapoc",
-    "copy-from": "chalice_cult_books_postapoc",
-    "type": "item_group",
-    "extend": { "items": [ [ "wizard_beginner", 3 ], [ "wizard_advanced", 2 ] ] }
-  },
-  {
-    "id": "sanguine_cult_books_postapoc",
-    "copy-from": "sanguine_cult_books_postapoc",
-    "type": "item_group",
-    "extend": { "items": [ { "group": "dragon_books", "prob": 5 } ] }
-  },
-  {
-    "id": "cleansing_flame_books_postapoc",
-    "copy-from": "cleansing_flame_books_postapoc",
-    "type": "item_group",
-    "extend": { "items": [ [ "priest_beginner", 2 ], [ "priest_advanced", 2 ], [ "techno_fundamentals", 1 ] ] }
-  },
-  {
-    "id": "unaligned_arcanist_books_postapoc",
-    "copy-from": "unaligned_arcanist_books_postapoc",
-    "type": "item_group",
-    "extend": {
-      "items": [
-        { "group": "magic_recipe_basic", "prob": 2 },
-        { "group": "magic_recipe_advanced", "prob": 1 },
-        { "group": "spellbook_loot_0", "prob": 1 },
-        { "group": "spellbook_loot_1", "prob": 1 }
-      ]
-    }
-  },
-  {
-    "id": "magic_books_postapoc",
-    "copy-from": "magic_books_postapoc",
-    "type": "item_group",
-    "extend": {
-      "items": [
-        { "group": "magic_recipe_basic", "prob": 2 },
-        { "group": "magic_recipe_advanced", "prob": 1 },
-        { "group": "spellbook_loot_0", "prob": 1 },
-        { "group": "spellbook_loot_1", "prob": 1 }
-      ]
-    }
+    "subtype": "distribution",
+    "items": [
+      { "item": "bio_electrothermal_arc_projector", "prob": 1 },
+      { "item": "bio_rift_focus_projector", "prob": 1 },
+      { "item": "bio_essence_surge_cell", "prob": 3 },
+      { "item": "bio_temporal_stimulation", "prob": 2 },
+      { "item": "bio_life_sign_suppression", "prob": 3 },
+      { "item": "bio_kinetic_amplifier", "prob": 1 }
+    ]
   }
 ]

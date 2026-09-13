@@ -2,10 +2,10 @@
   {
     "id": "afs_solderers_item",
     "type": "TOOL",
-    "copy-from": "fake_item",
-    "name": { "str": "precision solderers" },
+    "name": { "str": "precision solderers", "str_pl": "precision soldererses" },
     "flags": "TRADER_AVOID",
-    "qualities": [ [ "SAW_M_FINE", 1 ], [ "SCREW_FINE", 1 ], [ "CUT_FINE", 2 ] ]
+    "qualities": [ [ "SAW_M_FINE", 1 ], [ "SCREW_FINE", 1 ], [ "CUT_FINE", 2 ] ],
+    "copy-from": "fake_item"
   },
   {
     "id": "afs_basin",
@@ -14,7 +14,7 @@
     "description": "A wide, shallow basin used to hold liquid, hammered from a piece of sheet metal.  Ideal for collecting water.",
     "weight": "5000 g",
     "volume": "2500 ml",
-    "price": "10 USD",
+    "price": 10,
     "to_hit": -1,
     "melee_damage": { "bash": 1 },
     "material": [ "plastic" ],
@@ -27,8 +27,8 @@
         "pocket_type": "CONTAINER",
         "rigid": true,
         "watertight": true,
-        "max_contains_volume": "10 L",
-        "max_contains_weight": "15 kg"
+        "max_contains_volume": "10000 ml",
+        "max_contains_weight": "15000 g"
       }
     ]
   },
@@ -41,8 +41,8 @@
     "color": "white",
     "weight": "142882 g",
     "volume": "300 L",
-    "price": "400 USD",
-    "price_postapoc": "100 USD",
+    "price": 400,
+    "price_postapoc": 100,
     "material": [ "steel" ],
     "to_hit": -4,
     "melee_damage": { "bash": 8 },
@@ -52,8 +52,8 @@
   {
     "id": "afs_freezer",
     "type": "GENERIC",
-    "name": { "str": "vehicle freezer" },
     "copy-from": "afs_fridge",
+    "name": { "str": "vehicle freezer" },
     "description": "This refurbished refrigerator has been stripped of much of its internal components and converted to run at a much lower temperature, causing it to serve as a freezer for more power.  Like its predecessor, it runs on vehicle power.",
     "color": "light_blue"
   },
@@ -66,8 +66,8 @@
     "color": "brown",
     "weight": "472 g",
     "volume": "1 L",
-    "price": "15 USD",
-    "price_postapoc": "5 USD",
+    "price": 15,
+    "price_postapoc": 5,
     "material": [ "wood" ],
     "to_hit": -1,
     "melee_damage": { "bash": 6 },
@@ -80,10 +80,10 @@
     "type": "GENERIC",
     "symbol": ",",
     "color": "white",
-    "name": { "str": "scrap titanium", "str_pl": "scrap titanium" },
+    "name": { "str_sp": "scrap titanium" },
     "category": "spare_parts",
     "description": "A piece of light titanium, usable for crafting or repairs.",
-    "price": "10 USD",
+    "price": 10,
     "material": [ "titanium" ],
     "weight": "100 g",
     "volume": "250 ml",
@@ -104,7 +104,7 @@
     "volume": "7500 ml",
     "melee_damage": { "bash": 15 },
     "category": "veh_parts",
-    "price": "40 USD"
+    "price": 40
   },
   {
     "id": "afs_metal_rig",
@@ -124,7 +124,7 @@
     "id": "afs_cooking_rig",
     "type": "GENERIC",
     "copy-from": "vehicle_rig",
-    "name": { "str": "cooking rig", "str_pl": "cooking rigs" },
+    "name": { "str": "cooking rig" },
     "description": "Skillet, pot, hotplate, and chemistry set; everything you need to cook food and chemicals.  Includes proper fume vents and a separator, so you don't contaminate your food with toxic chemicals."
   },
   {
@@ -140,7 +140,7 @@
     "volume": "100 L",
     "melee_damage": { "bash": 2 },
     "category": "veh_parts",
-    "price": "500 USD"
+    "price": 500
   },
   {
     "id": "afs_control_station",
@@ -155,7 +155,7 @@
     "volume": "6 L",
     "melee_damage": { "bash": 2 },
     "category": "veh_parts",
-    "price": "600 USD"
+    "price": 600
   },
   {
     "id": "afs_hydraulic_gauntlet",
@@ -165,13 +165,13 @@
     "weight": "3778 g",
     "volume": "2 L",
     "price": "100 kUSD",
-    "price_postapoc": "200 USD",
+    "price_postapoc": 200,
     "material": [ "qt_steel" ],
     "symbol": "[",
     "color": "light_gray",
     "melee_damage": { "bash": 50 },
     "to_hit": -2,
-    "flags": [ "NO_REPAIR", "NONCONDUCTIVE", "SLOW_WIELD", "DURABLE_MELEE", "LEAK_DAM", "UNARMED_WEAPON" ],
+    "flags": [ "NO_REPAIR", "NONCONDUCTIVE", "SLOW_WIELD", "DURABLE_MELEE", "LEAK_DAM" ],
     "techniques": [ "BRUTAL", "AFS_PRESSURE_CRUNCH" ]
   },
   {
@@ -181,20 +181,20 @@
     "name": { "str": "barbed-wire rolling pin" },
     "description": "Typically used to flatten dough, this rolling pin has been repurposed as a weapon, with barbed wire adding some extra power and weight to its swing.  It has some real heft to it; perfect for the bakers of the apocalypse.",
     "weight": "923 g",
-    "volume": "1500 ml",
-    "price_postapoc": "15 USD",
     "material": [ "steel", "wood" ],
+    "techniques": [ "WBLOCK_1", "RAPID" ],
+    "flags": [ "DURABLE_MELEE", "FIREWOOD", "NONCONDUCTIVE" ],
+    "volume": "1500 ml",
+    "price_postapoc": 15,
     "to_hit": 1,
     "melee_damage": { "bash": 14, "cut": 6 },
-    "flags": [ "DURABLE_MELEE", "FIREWOOD", "NONCONDUCTIVE" ],
-    "techniques": [ "WBLOCK_1", "RAPID" ],
     "looks_like": "bwirebat"
   },
   {
     "id": "afs_golf_club",
     "type": "GENERIC",
-    "name": { "str": "golf club" },
     "copy-from": "golf_club",
+    "name": { "str": "golf club" },
     "material": [ "aluminum", "titanium" ]
   }
 ]

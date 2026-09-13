@@ -3,24 +3,39 @@
     "id": "sulfnade",
     "type": "TOOL",
     "name": { "str": "sulfnade" },
-    "description": "A sulfufly gland that has beem modified to make great use of its consentraded sulfuric content with a few nifty quemicals. Light the fuse and throw it! it should not rupture...right?",
+    "description": "A sulfufly gland that has beem modified to make great use of its consentraded sulfuric content with a few nifty quemicals.  Light the fuse and throw it!  it should not rupture…  right?",
     "category": "weapons",
     "weight": "400 g",
     "volume": "500 ml",
     "melee_damage": { "bash": 4 },
     "to_hit": 1,
-    "price": "7 USD",
+    "price": 7,
     "material": [ "iflesh" ],
     "symbol": "*",
     "color": "yellow",
     "explode_in_fire": true,
     "explosion": { "power": 150, "shrapnel": { "casing_mass": 40, "fragment_mass": 1, "recovery": 30, "drop": "chitin_piece" } },
-    "use_action": { "type": "countdown", "name": "Arm sulfnade", "message": "You light the fuse on the %s." },
-    "countdown_interval": 7,
+    "use_action": {
+      "type": "transform",
+      "target": "sulfnade_act",
+      "target_timer": "42 seconds",
+      "active": true,
+      "menu_text": "Arm sulfnade",
+      "msg": "You light the fuse on the %s."
+    },
+    "flags": [ "RADIO_MODABLE", "RADIO_INVOKE_PROC", "BOMB", "NONCONDUCTIVE" ]
+  },
+  {
+    "id": "sulfnade_act",
+    "type": "TOOL",
+    "copy-from": "sulfnade",
+    "name": { "str": "sulfnade (armed)", "str_pl": "sulfnades (armed)" },
+    "use_action": { "type": "message", "message": "You've already lit the %s; throw it!" },
+    "countdown_interval": "42 seconds",
     "countdown_action": {
       "type": "explosion",
       "explosion": { "power": 150, "shrapnel": { "casing_mass": 40, "fragment_mass": 1, "recovery": 30, "drop": "chitin_piece" } }
     },
-    "flags": [ "RADIO_MODABLE", "RADIO_INVOKE_PROC", "BOMB", "NONCONDUCTIVE" ]
+    "flags": [ "RADIO_MODABLE", "RADIO_INVOKE_PROC", "BOMB", "NONCONDUCTIVE", "TRADER_AVOID", "NPC_THROW_NOW" ]
   }
 ]

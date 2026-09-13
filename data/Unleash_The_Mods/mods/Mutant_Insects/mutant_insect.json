@@ -22,7 +22,6 @@
     "melee_dice": 1,
     "melee_dice_sides": 3,
     "dodge": 5,
-    "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "vision_day": 5,
     "vision_night": 5,
     "harvest": "arachnid",
@@ -37,7 +36,7 @@
     "bodytype": "insect",
     "species": [ "INSECT" ],
     "diff": 2,
-    "volume": "30000 ml",
+    "volume": "30 L",
     "weight": "40750 g",
     "hp": 30,
     "speed": 110,
@@ -105,7 +104,7 @@
     "speed": 95,
     "material": [ "iflesh" ],
     "symbol": "B",
-    "color": "i_green",
+    "color": "green",
     "aggression": 60,
     "morale": 100,
     "melee_skill": 4,
@@ -145,7 +144,7 @@
     "melee_damage": [ { "damage_type": "cut", "amount": 1 } ],
     "biosignature": { "biosig_item": "feces_roach", "biosig_timer": 3 },
     "harvest": "meatslug",
-    "flags": [ "SMELLS", "LARVA", "PET_WONT_FOLLOW" ]
+    "flags": [ "SMELLS", "PET_WONT_FOLLOW" ]
   },
   {
     "abstract": "mon_large_larva",
@@ -155,7 +154,7 @@
     "default_faction": "insect",
     "bodytype": "snake",
     "species": [ "INSECT" ],
-    "volume": "30000 ml",
+    "volume": "30 L",
     "weight": "40750 g",
     "hp": 10,
     "speed": 15,
@@ -167,16 +166,14 @@
     "melee_skill": 2,
     "melee_dice": 1,
     "melee_dice_sides": 4,
-    "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "biosignature": { "biosig_item": "feces_roach", "biosig_timer": 3 },
     "harvest": "meatslug",
-    "flags": [ "SMELLS", "LARVA", "PET_WONT_FOLLOW" ]
+    "flags": [ "SMELLS", "PET_WONT_FOLLOW" ]
   },
   {
     "id": "mon_ant_acid",
     "alias": "mon_giant_acid_ant",
     "type": "MONSTER",
-    "copy-from": "mon_giant_bug",
     "name": { "str": "giant acidic ant" },
     "description": "A monstrous brown ant the size of a human.  Glistening liquid periodically drips from its swollen abdomen.",
     "default_faction": "acid_ant",
@@ -192,18 +189,18 @@
     "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT", "PLAYER_CLOSE" ],
     "death_function": { "message": "The %s's body leaks acid.", "effect": { "id": "death_acid", "hit_self": true } },
     "harvest": "arachnid_acid",
-    "flags": [ "ACIDPROOF", "CLIMBS", "HEARS", "POISON", "SEES", "SMELLS", "PET_MOUNTABLE" ]
+    "flags": [ "ACIDPROOF", "CLIMBS", "HEARS", "POISON", "SEES", "SMELLS", "PET_MOUNTABLE" ],
+    "copy-from": "mon_giant_bug"
   },
   {
     "id": "mon_ant_acid_queen",
     "alias": "mon_mega_acid_ant_queen",
     "type": "MONSTER",
-    "copy-from": "mon_mega_bug",
     "name": { "str": "giant acidic ant queen" },
     "description": "An enormous brown ant the size of a cow.  Its orifice seems developed only for egg-laying rather than spraying acid.",
     "default_faction": "acid_ant",
     "symbol": "A",
-    "color": "i_brown",
+    "color": "brown",
     "speed": 50,
     "attack_cost": 25,
     "melee_skill": 5,
@@ -216,13 +213,13 @@
     "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT", "PLAYER_CLOSE" ],
     "death_function": { "message": "The %s's body leaks acid.", "effect": { "id": "death_acid", "hit_self": true } },
     "harvest": "arachnid_acid",
-    "flags": [ "ACIDPROOF", "HEARS", "POISON", "SEES", "SMELLS" ]
+    "flags": [ "ACIDPROOF", "HEARS", "POISON", "SEES", "SMELLS" ],
+    "copy-from": "mon_mega_bug"
   },
   {
     "id": "mon_ant_acid_soldier",
     "alias": "mon_giant_acid_ant_soldier",
     "type": "MONSTER",
-    "copy-from": "mon_giant_bug",
     "name": { "str": "giant acidic ant soldier" },
     "description": "A monstrous wolly brown ant the size of an adult human.  Glistening liquid periodically drips from its swollen abdomen and it bears a pair of scythe like mandibles.",
     "default_faction": "acid_ant",
@@ -240,18 +237,18 @@
     "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT", "PLAYER_CLOSE" ],
     "death_function": { "message": "The %s's body leaks acid.", "effect": { "id": "death_acid", "hit_self": true } },
     "harvest": "arachnid_acid",
-    "flags": [ "ACIDPROOF", "SHORTACIDTRAIL", "CLIMBS", "HEARS", "POISON", "SEES", "SMELLS", "PET_MOUNTABLE" ]
+    "flags": [ "ACIDPROOF", "SHORTACIDTRAIL", "CLIMBS", "HEARS", "POISON", "SEES", "SMELLS", "PET_MOUNTABLE" ],
+    "copy-from": "mon_giant_bug"
   },
   {
     "id": "mon_mega_acid_ant",
     "type": "MONSTER",
-    "copy-from": "mon_mega_bug",
     "name": { "str": "mega acid ant" },
     "looks_like": "mon_ant_acid_queen",
     "description": "A monstrous woolly brown ant the size of a water buffalo.  Glistening liquid periodically drips from its swollen abdomen and it bears a pair of scythe like mandibles.",
     "default_faction": "acid_ant",
     "symbol": "A",
-    "color": "i_brown",
+    "color": "brown",
     "melee_skill": 8,
     "melee_damage": [ { "damage_type": "cut", "amount": 10 } ],
     "dodge": 2,
@@ -262,13 +259,12 @@
     "biosignature": { "biosig_item": "acid_free", "biosig_timer": 10 },
     "death_function": { "message": "The %s's body leaks acid.", "effect": { "id": "death_acid", "hit_self": true } },
     "harvest": "arachnid_acid",
-    "flags": [ "ACIDPROOF", "SHORTACIDTRAIL", "CLIMBS", "HEARS", "POISON", "SEES", "SMELLS", "PET_MOUNTABLE" ]
+    "flags": [ "ACIDPROOF", "SHORTACIDTRAIL", "CLIMBS", "HEARS", "POISON", "SEES", "SMELLS", "PET_MOUNTABLE" ],
+    "copy-from": "mon_mega_bug"
   },
   {
     "id": "mon_ant_acid_larva",
-    "alias": "mon_large_acid_ant_larva",
     "type": "MONSTER",
-    "copy-from": "mon_large_larva",
     "name": { "str": "giant acidic ant larva", "str_pl": "giant acidic ant larvae" },
     "description": "A yellow grub the size of a dog.  It squirms and oozes gelatinous fluids.",
     "default_faction": "acid_ant",
@@ -278,7 +274,8 @@
     "upgrades": { "age_grow": 3, "into": "mon_ant_acid" },
     "biosignature": { "biosig_item": "feces_roach", "biosig_timer": 3 },
     "harvest": "mutant_meatslug",
-    "flags": [ "ACIDPROOF", "LARVA", "POISON", "SMELLS", "PET_WONT_FOLLOW" ]
+    "flags": [ "ACIDPROOF", "POISON", "SMELLS", "PET_WONT_FOLLOW" ],
+    "copy-from": "mon_large_larva"
   },
   {
     "id": "mon_tame_large_acid_ant_larva",
@@ -292,7 +289,6 @@
     "id": "mon_ant",
     "alias": "mon_giant_ant",
     "type": "MONSTER",
-    "copy-from": "mon_giant_bug",
     "name": { "str": "giant ant" },
     "description": "An enormous red ant the size of a full grown human.  It possesses a pair of wriggling antennae and vicious-looking mandibles.",
     "default_faction": "ant",
@@ -304,20 +300,20 @@
     "special_attacks": [ [ "EAT_FOOD", 30 ] ],
     "biosignature": { "biosig_item": "feces_roach", "biosig_timer": 99 },
     "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT", "PLAYER_WEAK" ],
-    "flags": [ "CLIMBS", "HEARS", "SEES", "SMELLS", "PET_MOUNTABLE" ]
+    "flags": [ "CLIMBS", "HEARS", "SEES", "SMELLS", "PET_MOUNTABLE" ],
+    "copy-from": "mon_giant_bug"
   },
   {
     "id": "mon_ant_queen",
     "alias": "mon_mega_ant_queen",
     "type": "MONSTER",
-    "copy-from": "mon_mega_bug",
     "name": { "str": "giant ant queen" },
     "description": "A colossal red ant the size of a cow.  It moves slowly and deliberately, tending to nearby eggs and continually laying more.",
     "default_faction": "ant",
     "speed": 50,
     "attack_cost": 25,
     "symbol": "A",
-    "color": "i_brown",
+    "color": "brown",
     "melee_skill": 5,
     "dodge": 0,
     "aggression": 40,
@@ -325,13 +321,13 @@
     "reproduction": { "baby_egg": "ant_egg", "baby_count": 5, "baby_timer": 1 },
     "biosignature": { "biosig_item": "feces_roach", "biosig_timer": 99 },
     "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT", "PLAYER_CLOSE" ],
-    "flags": [ "HEARS", "SEES", "SMELLS" ]
+    "flags": [ "HEARS", "SEES", "SMELLS" ],
+    "copy-from": "mon_mega_bug"
   },
   {
     "id": "mon_ant_soldier",
     "alias": "mon_giant_ant_soldier",
     "type": "MONSTER",
-    "copy-from": "mon_giant_bug",
     "name": { "str": "giant ant soldier" },
     "description": "A huge and hairy red ant the size of an adult human.  Bulging pincers extend from its jaws.",
     "default_faction": "ant",
@@ -346,31 +342,30 @@
     "biosignature": { "biosig_item": "feces_roach", "biosig_timer": 99 },
     "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT", "PLAYER_CLOSE" ],
     "death_function": { "message": "The %s's body leaks acid.", "effect": { "id": "death_acid", "hit_self": true } },
-    "flags": [ "CLIMBS", "HEARS", "SEES", "SMELLS", "PET_MOUNTABLE" ]
+    "flags": [ "CLIMBS", "HEARS", "SEES", "SMELLS", "PET_MOUNTABLE" ],
+    "copy-from": "mon_giant_bug"
   },
   {
     "id": "mon_mega_ant",
     "type": "MONSTER",
-    "copy-from": "mon_mega_bug",
     "name": { "str": "mega ant" },
     "looks_like": "mon_ant_queen",
-    "description": "A monstrous red ant the size of a bison.   Bulging pincers extend from its jaws.",
+    "description": "A monstrous red ant the size of a bison.  Bulging pincers extend from its jaws.",
     "default_faction": "ant",
     "symbol": "A",
-    "color": "i_brown",
+    "color": "brown",
     "melee_skill": 8,
     "melee_damage": [ { "damage_type": "cut", "amount": 10 } ],
     "dodge": 2,
     "armor": { "bash": 12, "cut": 16 },
     "attack_effs": [ { "id": "bleed", "chance": 20, "duration": 3 } ],
     "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT", "PLAYER_CLOSE" ],
-    "flags": [ "HEARS", "SEES", "SMELLS", "PET_MOUNTABLE" ]
+    "flags": [ "HEARS", "SEES", "SMELLS", "PET_MOUNTABLE" ],
+    "copy-from": "mon_mega_bug"
   },
   {
     "id": "mon_ant_larva",
-    "alias": "mon_large_ant_larva",
     "type": "MONSTER",
-    "copy-from": "mon_large_larva",
     "name": { "str": "gigantic ant larva", "str_pl": "gigantic ant larvae" },
     "description": "A pulsating sausage of glistening white flesh, the size of a dog.  On one end is a set of squirming mouth parts.",
     "default_faction": "ant",
@@ -379,7 +374,8 @@
     "fear_triggers": [ "HURT" ],
     "upgrades": { "age_grow": 3, "into": "mon_ant" },
     "biosignature": { "biosig_item": "feces_roach", "biosig_timer": 3 },
-    "flags": [ "LARVA", "SMELLS", "PET_WONT_FOLLOW" ]
+    "flags": [ "SMELLS", "PET_WONT_FOLLOW" ],
+    "copy-from": "mon_large_larva"
   },
   {
     "id": "mon_tame_large_ant_larva",
@@ -393,7 +389,6 @@
     "id": "mon_bee",
     "alias": "mon_large_bee",
     "type": "MONSTER",
-    "copy-from": "mon_large_bug",
     "name": { "str": "giant bee" },
     "description": "With a stinger the size of a kitchen knife, this dog-sized insect's black and yellow markings warn you to leave it undisturbed.",
     "bodytype": "flying insect",
@@ -409,12 +404,12 @@
     "harvest": "arachnid_stinger",
     "attack_effs": [ { "id": "poison", "chance": 30, "duration": 20 } ],
     "anger_triggers": [ "HURT", "FRIEND_DIED", "PLAYER_CLOSE", "PLAYER_CLOSE" ],
-    "flags": [ "SEES", "SMELLS", "FLIES", "SWARMS", "GROUP_MORALE", "PET_WONT_FOLLOW" ]
+    "flags": [ "SEES", "SMELLS", "FLIES", "SWARMS", "GROUP_MORALE", "PET_WONT_FOLLOW" ],
+    "copy-from": "mon_large_bug"
   },
   {
     "id": "mon_mega_bee_queen",
     "type": "MONSTER",
-    "copy-from": "mon_mega_bug",
     "name": { "str": "giant queen bee" },
     "description": "A colossal bee the size of a cow.  It moves slowly and deliberately, tending to nearby eggs and continually laying more.",
     "bodytype": "flying insect",
@@ -423,7 +418,7 @@
     "speed": 50,
     "attack_cost": 25,
     "symbol": "B",
-    "color": "i_yellow",
+    "color": "yellow",
     "melee_skill": 8,
     "dodge": 0,
     "aggression": 40,
@@ -433,12 +428,12 @@
     "harvest": "arachnid_stinger",
     "attack_effs": [ { "id": "poison", "chance": 30, "duration": 20 } ],
     "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT", "PLAYER_CLOSE" ],
-    "flags": [ "HEARS", "SEES", "SMELLS" ]
+    "flags": [ "HEARS", "SEES", "SMELLS" ],
+    "copy-from": "mon_mega_bug"
   },
   {
     "id": "mon_small_bee_larva",
     "type": "MONSTER",
-    "copy-from": "mon_small_larva",
     "name": { "str": "mutant bee larva", "str_pl": "mutant bee larvae" },
     "description": "A pulsating sausage of glistening white flesh, the size of a squirrel.  On one end is a set of squirming mouth parts.",
     "default_faction": "bee",
@@ -446,7 +441,8 @@
     "color": "white",
     "fear_triggers": [ "HURT" ],
     "upgrades": { "age_grow": 3, "into": "mon_bee" },
-    "flags": [ "LARVA", "SMELLS", "PET_WONT_FOLLOW" ]
+    "flags": [ "SMELLS", "PET_WONT_FOLLOW" ],
+    "copy-from": "mon_small_larva"
   },
   {
     "id": "mon_tame_small_bee_larva",
@@ -464,7 +460,6 @@
   {
     "id": "mon_giant_beetle",
     "type": "MONSTER",
-    "copy-from": "mon_giant_bug",
     "name": { "str": "gigantic beetle" },
     "description": "An enormous beetle the size of a Galapagos turtle.  It has a hard black shell.",
     "default_faction": "insect",
@@ -480,12 +475,12 @@
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN" ],
     "special_attacks": [ [ "EAT_FOOD", 100 ] ],
     "anger_triggers": [ "HURT" ],
-    "flags": [ "HEARS", "SEES", "SMELLS", "PET_MOUNTABLE" ]
+    "flags": [ "HEARS", "SEES", "SMELLS", "PET_MOUNTABLE" ],
+    "copy-from": "mon_giant_bug"
   },
   {
     "id": "mon_mega_beetle",
     "type": "MONSTER",
-    "copy-from": "mon_mega_bug",
     "name": { "str": "mega beetle" },
     "description": "An enormous beetle the size of a hippo.  It has a hard black shell.",
     "default_faction": "insect",
@@ -499,12 +494,12 @@
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN" ],
     "special_attacks": [ [ "EAT_FOOD", 50 ] ],
     "anger_triggers": [ "HURT" ],
-    "flags": [ "HEARS", "SEES", "SMELLS", "PET_MOUNTABLE" ]
+    "flags": [ "HEARS", "SEES", "SMELLS", "PET_MOUNTABLE" ],
+    "copy-from": "mon_mega_bug"
   },
   {
     "id": "mon_large_beetle_larva",
     "type": "MONSTER",
-    "copy-from": "mon_large_larva",
     "name": { "str": "gigantic beetle larva", "str_pl": "gigantic beetle larvae" },
     "description": "A worm-like beetle larva the size of a dog.",
     "default_faction": "insect",
@@ -513,20 +508,21 @@
     "fear_triggers": [ "HURT" ],
     "upgrades": { "age_grow": 3, "into": "mon_giant_beetle" },
     "biosignature": { "biosig_item": "feces_roach", "biosig_timer": 3 },
-    "flags": [ "LARVA", "SMELLS", "PET_WONT_FOLLOW" ]
+    "flags": [ "SMELLS", "PET_WONT_FOLLOW" ],
+    "copy-from": "mon_large_larva"
   },
   {
     "id": "mon_tame_large_beetle_larva",
     "type": "MONSTER",
     "copy-from": "mon_large_beetle_larva",
-    "description": "A worm-like larva the size of a dog. This one seems fairly tame.",
+    "description": "A worm-like larva the size of a dog.  This one seems fairly tame.",
     "upgrades": { "age_grow": 30, "into": "mon_mega_beetle" }
   },
   {
     "id": "mon_small_butterfly",
     "type": "MONSTER",
     "copy-from": "mon_small_bug",
-    "name": { "str": "gigantic butterfly" },
+    "name": { "str": "gigantic butterfly", "str_pl": "gigantic butterflies" },
     "description": "An enormous butterfly with a wingspan the size of a kite.  It has colorful wings that swirl with hypnotic colors.",
     "default_faction": "small_animal",
     "bodytype": "flying insect",
@@ -535,18 +531,16 @@
     "melee_skill": 1,
     "melee_dice": 1,
     "melee_dice_sides": 1,
-    "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "dodge": 9,
+    "flags": [ "CLIMBS", "HEARS", "STUMBLES", "FLIES", "SEES", "SMELLS", "HARDTOSHOOT" ],
     "fear_triggers": [ "HURT", "SOUND", "FIRE", "PLAYER_CLOSE" ],
     "reproduction": { "baby_egg": "egg_butterfly", "baby_count": 1, "baby_timer": 200 },
-    "baby_flags": [ "SPRING" ],
-    "flags": [ "CLIMBS", "HEARS", "STUMBLES", "FLIES", "SEES", "SMELLS", "HARDTOSHOOT" ]
+    "baby_flags": [ "SPRING" ]
   },
   {
     "id": "mon_small_butterfly_chrysalis",
     "type": "MONSTER",
-    "copy-from": "mon_small_larva",
-    "name": { "str": "mutant butterfly chrysalis" },
+    "name": { "str": "mutant butterfly chrysalis", "str_pl": "mutant butterfly chrysalises" },
     "description": "A silken cacoon containing what will become a mutant butterfly.",
     "default_faction": "small_animal",
     "symbol": "c",
@@ -554,14 +548,14 @@
     "speed": 0,
     "dodge": 0,
     "upgrades": { "age_grow": 10, "into": "mon_small_butterfly" },
-    "flags": [ "IMMOBILE", "PACIFIST" ]
+    "flags": [ "IMMOBILE", "PACIFIST" ],
+    "copy-from": "mon_small_larva"
   },
   {
     "id": "mon_small_butterfly_larva",
     "type": "MONSTER",
-    "copy-from": "mon_small_larva",
     "name": { "str": "mutant caterpillar" },
-    "description": "A thick green caterpillar the size of a person's arm. If slowly chews leaves and grass and seeds.",
+    "description": "A thick green caterpillar the size of a person's arm.  If slowly chews leaves and grass and seeds.",
     "default_faction": "small_animal",
     "symbol": "c",
     "color": "green",
@@ -570,14 +564,14 @@
     "fear_triggers": [ "HURT", "SOUND", "FIRE", "PLAYER_CLOSE" ],
     "upgrades": { "age_grow": 10, "into": "mon_small_butterfly_chrysalis" },
     "baby_flags": [ "SPRING" ],
-    "flags": [ "CLIMBS", "SEES", "SMELLS" ]
+    "flags": [ "CLIMBS", "SEES", "SMELLS" ],
+    "copy-from": "mon_small_larva"
   },
   {
     "id": "mon_large_centipede",
     "type": "MONSTER",
-    "copy-from": "mon_large_bug",
     "name": { "str": "mutant centipede" },
-    "description": "A mutant centipede grown to the size of an alligator. Its pincers have a deadly poison.",
+    "description": "A mutant centipede grown to the size of an alligator.  Its pincers have a deadly poison.",
     "bodytype": "snake",
     "default_faction": "centipede",
     "symbol": "c",
@@ -590,15 +584,15 @@
     "attack_effs": [ { "id": "poison", "chance": 75, "duration": 20 } ],
     "upgrades": { "half_life": 91, "into": "mon_centipede_giant" },
     "anger_triggers": [ "HURT", "PLAYER_WEAK" ],
-    "flags": [ "CLIMBS", "HEARS", "SEES", "SMELLS" ]
+    "flags": [ "CLIMBS", "HEARS", "SEES", "SMELLS" ],
+    "copy-from": "mon_large_bug"
   },
   {
     "id": "mon_centipede_giant",
     "alias": "mon_giant_centipede",
     "type": "MONSTER",
-    "copy-from": "mon_giant_bug",
     "name": { "str": "mutant centipede" },
-    "description": "A mutant centipede grown to the size of a tiger. Its pincers have a deadly poison.",
+    "description": "A mutant centipede grown to the size of a tiger.  Its pincers have a deadly poison.",
     "bodytype": "snake",
     "default_faction": "centipede",
     "symbol": "C",
@@ -613,11 +607,11 @@
     "anger_triggers": [ "HURT", "PLAYER_WEAK" ],
     "reproduction": { "baby_egg": "egg_centipede", "baby_count": 1, "baby_timer": 200 },
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN" ],
-    "flags": [ "CLIMBS", "HEARS", "SEES", "SMELLS" ]
+    "flags": [ "CLIMBS", "HEARS", "SEES", "SMELLS" ],
+    "copy-from": "mon_giant_bug"
   },
   {
     "id": "mon_giant_cockroach_nymph",
-    "alias": "mon_small_cockroach",
     "type": "MONSTER",
     "copy-from": "mon_small_bug",
     "name": { "str": "giant cockroach nymph" },
@@ -626,17 +620,17 @@
     "symbol": "c",
     "color": "brown",
     "vision_night": 10,
+    "flags": [ "SEES", "HEARS", "SMELLS", "CLIMBS", "HARDTOSHOOT" ],
+    "alias": "mon_small_cockroach",
     "upgrades": { "age_grow": 7, "into": "mon_giant_cockroach" },
     "special_attacks": [ [ "EAT_FOOD", 120 ] ],
     "fear_triggers": [ "SOUND", "FIRE" ],
-    "anger_triggers": [ "HURT", "PLAYER_WEAK" ],
-    "flags": [ "SEES", "HEARS", "SMELLS", "CLIMBS", "HARDTOSHOOT" ]
+    "anger_triggers": [ "HURT", "PLAYER_WEAK" ]
   },
   {
     "id": "mon_giant_cockroach",
     "alias": "mon_large_cockroach",
     "type": "MONSTER",
-    "copy-from": "mon_large_bug",
     "name": { "str": "giant cockroach" },
     "description": "A mutant cockroach the size of a small dog.",
     "default_faction": "roach",
@@ -650,13 +644,13 @@
     "special_attacks": [ [ "EAT_FOOD", 60 ] ],
     "fear_triggers": [ "SOUND", "FIRE" ],
     "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT", "PLAYER_WEAK" ],
-    "flags": [ "SEES", "HEARS", "SMELLS", "CLIMBS" ]
+    "flags": [ "SEES", "HEARS", "SMELLS", "CLIMBS" ],
+    "copy-from": "mon_large_bug"
   },
   {
     "id": "mon_pregnant_giant_cockroach",
     "alias": "mon_large_pregnant_cockroach",
     "type": "MONSTER",
-    "copy-from": "mon_large_bug",
     "name": { "str": "giant cockroach" },
     "description": "A mutant cockroach the size of a small dog.  Its abdomen is heavily swollen.",
     "default_faction": "roach",
@@ -669,11 +663,11 @@
     "special_attacks": [ [ "EAT_FOOD", 60 ] ],
     "fear_triggers": [ "SOUND", "FIRE" ],
     "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT", "PLAYER_WEAK" ],
-    "flags": [ "SEES", "HEARS", "SMELLS", "CLIMBS" ]
+    "flags": [ "SEES", "HEARS", "SMELLS", "CLIMBS" ],
+    "copy-from": "mon_large_bug"
   },
   {
     "id": "mon_plague_nymph",
-    "alias": "mon_small_plagueroach",
     "type": "MONSTER",
     "copy-from": "mon_small_bug",
     "name": { "str": "plagueroach nymph" },
@@ -683,18 +677,18 @@
     "symbol": "p",
     "color": "brown",
     "vision_night": 10,
-    "upgrades": { "age_grow": 7, "into": "mon_skittering_plague" },
     "harvest": "arachnid_tainted",
+    "flags": [ "SEES", "HEARS", "SMELLS", "CLIMBS", "POISON", "HARDTOSHOOT" ],
+    "alias": "mon_small_plagueroach",
+    "upgrades": { "age_grow": 7, "into": "mon_skittering_plague" },
     "special_attacks": [ [ "EAT_FOOD", 120 ] ],
     "fear_triggers": [ "SOUND", "FIRE" ],
-    "anger_triggers": [ "HURT", "PLAYER_WEAK" ],
-    "flags": [ "SEES", "HEARS", "SMELLS", "CLIMBS", "POISON", "HARDTOSHOOT" ]
+    "anger_triggers": [ "HURT", "PLAYER_WEAK" ]
   },
   {
     "id": "mon_skittering_plague",
     "alias": "mon_large_plagueroach",
     "type": "MONSTER",
-    "copy-from": "mon_large_bug",
     "name": { "str": "giant plagueroach" },
     "description": "An infected mutant cockroach the size of a small dog.",
     "default_faction": "roach",
@@ -710,13 +704,13 @@
     "harvest": "arachnid_tainted",
     "fear_triggers": [ "SOUND", "FIRE" ],
     "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT", "PLAYER_WEAK" ],
-    "flags": [ "SEES", "HEARS", "SMELLS", "CLIMBS", "POISON", "STUMBLES" ]
+    "flags": [ "SEES", "HEARS", "SMELLS", "CLIMBS", "POISON", "STUMBLES" ],
+    "copy-from": "mon_large_bug"
   },
   {
     "id": "mon_plague_vector",
     "alias": "mon_large_pregnant_plagueroach",
     "type": "MONSTER",
-    "copy-from": "mon_large_bug",
     "name": { "str": "pregnant plagueroach" },
     "description": "An infected mutant cockroach the size of a small dog.  Its abdomen is heavily swollen.",
     "default_faction": "roach",
@@ -731,17 +725,17 @@
     "harvest": "arachnid_tainted",
     "fear_triggers": [ "SOUND", "FIRE" ],
     "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT", "PLAYER_WEAK" ],
-    "flags": [ "SEES", "HEARS", "SMELLS", "CLIMBS", "POISON", "STUMBLES" ]
+    "flags": [ "SEES", "HEARS", "SMELLS", "CLIMBS", "POISON", "STUMBLES" ],
+    "copy-from": "mon_large_bug"
   },
   {
     "id": "mon_dermatik",
-    "alias": "mon_small_dermatik",
     "type": "MONSTER",
     "copy-from": "mon_small_bug",
     "name": { "str": "mutant dermatik" },
     "description": "A mutant wasp the size of a squirrel, with a barbed ovipositor extruding from the abdomen.",
-    "bodytype": "flying insect",
     "default_faction": "dermatik",
+    "bodytype": "flying insect",
     "symbol": "d",
     "color": "red",
     "aggression": 90,
@@ -749,17 +743,17 @@
     "melee_skill": 6,
     "melee_dice": 1,
     "melee_dice_sides": 6,
-    "melee_damage": [ { "damage_type": "cut", "amount": 3 } ],
     "dodge": 8,
+    "flags": [ "HEARS", "SMELLS", "STUMBLES", "POISON", "FLIES", "HARDTOSHOOT" ],
+    "alias": "mon_small_dermatik",
+    "melee_damage": [ { "damage_type": "cut", "amount": 3 } ],
     "special_attacks": [ [ "DERMATIK", 25 ] ],
-    "anger_triggers": [ "FRIEND_ATTACKED", "PLAYER_WEAK" ],
-    "flags": [ "HEARS", "SMELLS", "STUMBLES", "POISON", "FLIES", "HARDTOSHOOT" ]
+    "anger_triggers": [ "FRIEND_ATTACKED", "PLAYER_WEAK" ]
   },
   {
     "id": "mon_dermatik_larva",
     "alias": "mon_small_dermatik_larva",
     "type": "MONSTER",
-    "copy-from": "mon_small_larva",
     "name": { "str": "mutant dermatik larva", "str_pl": "mutant dermatik larvae" },
     "description": "A fat white grub as big as a squirrel, with a pair of large, spadelike mandibles.",
     "default_faction": "dermatik",
@@ -769,45 +763,13 @@
     "fear_triggers": [ "HURT" ],
     "upgrades": { "age_grow": 3, "into": "mon_dermatik" },
     "biosignature": { "biosig_item": "feces_roach", "biosig_timer": 3 },
-    "flags": [ "HEARS", "SMELLS", "POISON", "CAN_DIG", "LARVA" ]
-  },
-  {
-    "id": "mon_small_dragonfly",
-    "type": "MONSTER",
-    "copy-from": "mon_small_bug",
-    "name": { "str": "mutant dragonfly" },
-    "description": "A mutant dragonfly which has grown to the size of a crow.  It darts and weaves through the air.",
-    "bodytype": "flying insect",
-    "default_faction": "dragonfly",
-    "speed": 200,
-    "attack_cost": 200,
-    "symbol": "d",
-    "color": "light_green",
-    "melee_skill": 1,
-    "melee_dice": 1,
-    "melee_dice_sides": 1,
-    "melee_damage": [ { "damage_type": "cut", "amount": 3 } ],
-    "special_attacks": [ [ "PARROT", 30 ] ],
-    "dodge": 9,
-    "upgrades": { "age_grow": 10, "into": "mon_large_dragonfly" },
-    "vision_day": 30,
-    "fear_triggers": [ "SOUND", "FIRE" ],
-    "flags": [ "CLIMBS", "HEARS", "STUMBLES", "FLIES", "SEES", "SMELLS", "HIT_AND_RUN", "HARDTOSHOOT" ]
-  },
-  {
-    "id": "mon_tame_small_dragonfly",
-    "type": "MONSTER",
-    "copy-from": "mon_small_dragonfly",
-    "name": { "str": "mutant dragonfly" },
-    "description": "A mutant dragonfly which has grown to the size of a crow.  It darts and weaves through the air.  This one seems especially intelligent.",
-    "upgrades": { "age_grow": 30, "into": "mon_mega_dragonfly" },
-    "flags": [ "CLIMBS", "HEARS", "STUMBLES", "FLIES", "SEES", "SMELLS", "HIT_AND_RUN", "HARDTOSHOOT", "DOGFOOD" ]
+    "flags": [ "HEARS", "SMELLS", "POISON", "CAN_DIG" ],
+    "copy-from": "mon_small_larva"
   },
   {
     "id": "mon_large_dragonfly",
     "type": "MONSTER",
-    "copy-from": "mon_large_bug",
-    "name": { "str": "mutant dragonfly" },
+    "name": { "str": "mutant dragonfly", "str_pl": "mutant dragonflies" },
     "description": "A giant dragonfly the size of a condor.  It buzzes through the air on glistening wings.",
     "bodytype": "flying insect",
     "default_faction": "dragonfly",
@@ -825,14 +787,14 @@
     "vision_day": 30,
     "fear_triggers": [ "FIRE" ],
     "anger_triggers": [ "HURT", "PLAYER_WEAK" ],
-    "flags": [ "CLIMBS", "HEARS", "STUMBLES", "FLIES", "SEES", "SMELLS", "HIT_AND_RUN", "HARDTOSHOOT" ]
+    "flags": [ "CLIMBS", "HEARS", "STUMBLES", "FLIES", "SEES", "SMELLS", "HIT_AND_RUN", "HARDTOSHOOT" ],
+    "copy-from": "mon_large_bug"
   },
   {
     "id": "mon_dragonfly_giant",
     "alias": "mon_giant_dragonfly",
     "type": "MONSTER",
-    "copy-from": "mon_giant_bug",
-    "name": { "str": "mutant dragonfly" },
+    "name": { "str": "mutant dragonfly", "str_pl": "mutant dragonflies" },
     "description": "A giant dragonfly as large as a human being.  It buzzes through the air on glistening wings.",
     "bodytype": "flying insect",
     "default_faction": "dragonfly",
@@ -848,18 +810,18 @@
     "vision_day": 30,
     "fear_triggers": [ "FIRE" ],
     "anger_triggers": [ "HURT", "PLAYER_WEAK" ],
-    "flags": [ "HEARS", "STUMBLES", "FLIES", "SEES", "SMELLS", "HIT_AND_RUN", "PET_MOUNTABLE" ]
+    "flags": [ "HEARS", "STUMBLES", "FLIES", "SEES", "SMELLS", "HIT_AND_RUN", "PET_MOUNTABLE" ],
+    "copy-from": "mon_giant_bug"
   },
   {
     "id": "mon_mega_dragonfly",
     "type": "MONSTER",
-    "copy-from": "mon_mega_bug",
-    "name": { "str": "mega dragonfly" },
+    "name": { "str": "mega dragonfly", "str_pl": "mega dragonflies" },
     "description": "A giant dragonfly the size of a horse.  It makes a deafening buzz as it slowly hovers above the ground.",
     "bodytype": "flying insect",
     "default_faction": "dragonfly",
     "symbol": "D",
-    "color": "i_light_green",
+    "color": "light_green",
     "aggression": 20,
     "melee_damage": [ { "damage_type": "cut", "amount": 12 } ],
     "special_attacks": [ [ "PARROT", 20 ] ],
@@ -868,34 +830,33 @@
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN" ],
     "vision_day": 30,
     "anger_triggers": [ "HURT", "PLAYER_WEAK", "PLAYER_CLOSE" ],
-    "flags": [ "HEARS", "STUMBLES", "FLIES", "SEES", "SMELLS", "HIT_AND_RUN", "PET_MOUNTABLE" ]
+    "flags": [ "HEARS", "STUMBLES", "FLIES", "SEES", "SMELLS", "HIT_AND_RUN", "PET_MOUNTABLE" ],
+    "copy-from": "mon_mega_bug"
   },
   {
     "id": "mon_small_firefly",
     "type": "MONSTER",
     "copy-from": "mon_small_bug",
-    "name": { "str": "mutant firefly" },
-    "description": "A bioluminescent insect the size of a sparrow. It lights up the evening gloom with its yellow glow.",
-    "bodytype": "flying insect",
+    "name": { "str": "mutant firefly", "str_pl": "mutant fireflies" },
+    "description": "A bioluminescent insect the size of a sparrow.  It lights up the evening gloom with its yellow glow.",
     "default_faction": "small_animal",
+    "bodytype": "flying insect",
     "symbol": "f",
     "color": "yellow",
-    "luminance": 15,
     "melee_skill": 1,
     "melee_dice": 1,
     "melee_dice_sides": 1,
-    "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "dodge": 5,
     "vision_night": 20,
-    "fear_triggers": [ "HURT", "SOUND" ],
-    "flags": [ "CLIMBS", "HEARS", "STUMBLES", "FLIES", "SEES", "SMELLS", "HARDTOSHOOT" ]
+    "flags": [ "CLIMBS", "HEARS", "STUMBLES", "FLIES", "SEES", "SMELLS", "HARDTOSHOOT" ],
+    "luminance": 15,
+    "fear_triggers": [ "HURT", "SOUND" ]
   },
   {
     "id": "mon_fly",
     "alias": "mon_large_fly",
     "type": "MONSTER",
-    "copy-from": "mon_large_bug",
-    "name": { "str": "mutant fly" },
+    "name": { "str": "mutant fly", "str_pl": "mutant flies" },
     "description": "A giant mutant fly the size of a chicken.  It buzzes and drones incessantly.",
     "bodytype": "flying insect",
     "default_faction": "small_animal",
@@ -908,13 +869,13 @@
     "upgrades": { "age_grow": 10, "into": "mon_giant_fly" },
     "reproduction": { "baby_egg": "egg_fly", "baby_count": 1, "baby_timer": 30 },
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN" ],
-    "flags": [ "CLIMBS", "HEARS", "STUMBLES", "FLIES", "SEES", "SMELLS", "HARDTOSHOOT" ]
+    "flags": [ "CLIMBS", "HEARS", "STUMBLES", "FLIES", "SEES", "SMELLS", "HARDTOSHOOT" ],
+    "copy-from": "mon_large_bug"
   },
   {
     "id": "mon_giant_fly",
     "type": "MONSTER",
-    "copy-from": "mon_giant_bug",
-    "name": { "str": "giant fly" },
+    "name": { "str": "giant fly", "str_pl": "giant flies" },
     "description": "A giant fly the size of a sheep.  It buzzes and drones incessantly.",
     "bodytype": "flying insect",
     "default_faction": "insect",
@@ -927,18 +888,18 @@
     "reproduction": { "baby_egg": "egg_fly", "baby_count": 2, "baby_timer": 30 },
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN" ],
     "fear_triggers": [ "FIRE", "PLAYER_CLOSE", "HURT" ],
-    "flags": [ "HEARS", "STUMBLES", "FLIES", "SEES", "SMELLS", "HIT_AND_RUN", "PET_MOUNTABLE" ]
+    "flags": [ "HEARS", "STUMBLES", "FLIES", "SEES", "SMELLS", "HIT_AND_RUN", "PET_MOUNTABLE" ],
+    "copy-from": "mon_giant_bug"
   },
   {
     "id": "mon_mega_fly",
     "type": "MONSTER",
-    "copy-from": "mon_mega_bug",
-    "name": { "str": "mega fly" },
+    "name": { "str": "mega fly", "str_pl": "mega flies" },
     "description": "A giant fly the size of a horse.  It makes a deafening buzz as it slowly hovers above the ground.",
     "bodytype": "flying insect",
     "default_faction": "insect",
     "symbol": "F",
-    "color": "i_light_green",
+    "color": "light_green",
     "aggression": -5,
     "special_attacks": [ [ "PARROT", 20 ] ],
     "dodge": 5,
@@ -946,12 +907,12 @@
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN" ],
     "vision_day": 20,
     "fear_triggers": [ "FIRE", "HURT" ],
-    "flags": [ "HEARS", "STUMBLES", "FLIES", "SEES", "SMELLS", "PET_MOUNTABLE" ]
+    "flags": [ "HEARS", "STUMBLES", "FLIES", "SEES", "SMELLS", "PET_MOUNTABLE" ],
+    "copy-from": "mon_mega_bug"
   },
   {
     "id": "mon_small_fly_larva",
     "type": "MONSTER",
-    "copy-from": "mon_small_larva",
     "name": { "str": "mutant maggot" },
     "description": "A pulsating sausage of glistening white flesh, the size of a housecat.  On one end is a set of squirming mouth parts.",
     "default_faction": "small_animal",
@@ -960,7 +921,8 @@
     "fear_triggers": [ "HURT" ],
     "upgrades": { "age_grow": 3, "into": "mon_fly" },
     "biosignature": { "biosig_item": "feces_roach", "biosig_timer": 3 },
-    "flags": [ "LARVA", "SMELLS" ]
+    "flags": [ "SMELLS" ],
+    "copy-from": "mon_small_larva"
   },
   {
     "id": "mon_tame_small_fly_larva",
@@ -972,26 +934,25 @@
   },
   {
     "id": "mon_locust_nymph",
-    "alias": "mon_small_locust",
     "type": "MONSTER",
     "copy-from": "mon_small_bug",
     "name": { "str": "mutant locust" },
-    "description": "A mutant locust nymph the size of a crow. It's still growing and hungry.",
-    "bodytype": "flying insect",
+    "description": "A mutant locust nymph the size of a crow.  It's still growing and hungry.",
     "default_faction": "small_animal",
+    "bodytype": "flying insect",
     "symbol": "l",
     "color": "light_green",
     "dodge": 8,
+    "flags": [ "SEES", "HEARS", "SMELLS", "CLIMBS", "STUMBLES", "HARDTOSHOOT" ],
+    "alias": "mon_small_locust",
     "fear_triggers": [ "FIRE", "PLAYER_CLOSE", "HURT" ],
     "upgrades": { "age_grow": 10, "into": "mon_locust" },
-    "special_attacks": [ { "type": "leap", "cooldown": 4, "max_range": 4 }, [ "EAT_CROP", 120 ] ],
-    "flags": [ "SEES", "HEARS", "SMELLS", "CLIMBS", "LARVA", "STUMBLES", "HARDTOSHOOT" ]
+    "special_attacks": [ { "type": "leap", "cooldown": 4, "max_range": 4 }, [ "EAT_CROP", 120 ] ]
   },
   {
     "id": "mon_locust",
     "alias": "mon_large_locust",
     "type": "MONSTER",
-    "copy-from": "mon_large_bug",
     "name": { "str": "giant locust" },
     "description": "A giant locust the size of a racoon.  It's clumsy, stupid, and hungry.",
     "bodytype": "flying insect",
@@ -1004,33 +965,32 @@
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN" ],
     "fear_triggers": [ "FIRE", "PLAYER_CLOSE", "HURT" ],
     "special_attacks": [ { "type": "leap", "cooldown": 4, "max_range": 4 }, [ "EAT_CROP", 60 ] ],
-    "flags": [ "SEES", "HEARS", "SMELLS", "CLIMBS", "LARVA", "STUMBLES" ]
+    "flags": [ "SEES", "HEARS", "SMELLS", "CLIMBS", "STUMBLES" ],
+    "copy-from": "mon_large_bug"
   },
   {
     "id": "mon_small_moth",
     "type": "MONSTER",
     "copy-from": "mon_small_bug",
     "name": { "str": "mutant moth" },
-    "description": "A fuzzy mutated moth with a wingspan the size of a kite. It soars and flits through the darkness.",
-    "bodytype": "flying insect",
+    "description": "A fuzzy mutated moth with a wingspan the size of a kite.  It soars and flits through the darkness.",
     "default_faction": "small_animal",
+    "bodytype": "flying insect",
     "symbol": "m",
     "color": "dark_gray",
     "melee_skill": 1,
     "melee_dice": 1,
     "melee_dice_sides": 1,
-    "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "dodge": 9,
     "vision_night": 20,
+    "flags": [ "CLIMBS", "HEARS", "STUMBLES", "FLIES", "SEES", "SMELLS", "NIGHT_INVISIBILITY", "HARDTOSHOOT" ],
     "fear_triggers": [ "HURT", "SOUND" ],
-    "anger_triggers": [ "FIRE" ],
-    "flags": [ "CLIMBS", "HEARS", "STUMBLES", "FLIES", "SEES", "SMELLS", "NIGHT_INVISIBILITY", "HARDTOSHOOT" ]
+    "anger_triggers": [ "FIRE" ]
   },
   {
     "id": "mon_mosquito_giant",
     "alias": "mon_large_mosquito",
     "type": "MONSTER",
-    "copy-from": "mon_large_bug",
     "name": { "str": "mutant mosquito" },
     "default_faction": "mosquito",
     "description": "An enormous mutant mosquito the size of an eagle.  Its face is dominated by a long, spear-tipped proboscis.",
@@ -1045,12 +1005,12 @@
     "fear_triggers": [ "HURT" ],
     "reproduction": { "baby_egg": "egg_mosquito", "baby_count": 1, "baby_timer": 30 },
     "baby_flags": [ "SPRING", "SUMMER" ],
-    "flags": [ "CLIMBS", "HEARS", "STUMBLES", "FLIES", "SEES", "SMELLS", "SWARMS", "HARDTOSHOOT" ]
+    "flags": [ "CLIMBS", "HEARS", "STUMBLES", "FLIES", "SEES", "SMELLS", "SWARMS", "HARDTOSHOOT" ],
+    "copy-from": "mon_large_bug"
   },
   {
     "id": "mon_small_mosquito_larva",
     "type": "MONSTER",
-    "copy-from": "mon_small_larva",
     "name": { "str": "mutant mosquito larva", "str_pl": "mutant mosquito larvae" },
     "default_faction": "mosquito",
     "description": "A mutant mosquito larva the size of a squirrel.  It floats at the surface of the water waiting to catach smaller prey.",
@@ -1060,15 +1020,15 @@
     "melee_damage": [ { "damage_type": "cut", "amount": 4 } ],
     "fear_triggers": [ "HURT" ],
     "upgrades": { "age_grow": 10, "into": "mon_mosquito_giant" },
-    "flags": [ "AQUATIC", "SWIMS", "STUMBLES", "SEES", "FISHABLE" ]
+    "flags": [ "AQUATIC", "SWIMS", "STUMBLES", "SEES", "FISHABLE" ],
+    "copy-from": "mon_small_larva"
   },
   {
     "id": "mon_wasp",
     "alias": "mon_giant_wasp",
     "type": "MONSTER",
-    "copy-from": "mon_giant_bug",
     "name": { "str": "giant wasp" },
-    "description": "A gigantic slender-bodied wasp about the size of an adult human. It is armed with an evil-looking stinger and bears ominous red markings on its abdomen.",
+    "description": "A gigantic slender-bodied wasp about the size of an adult human.  It is armed with an evil-looking stinger and bears ominous red markings on its abdomen.",
     "bodytype": "flying insect",
     "default_faction": "wasp",
     "speed": 120,
@@ -1084,21 +1044,21 @@
     "harvest": "arachnid_stinger",
     "attack_effs": [ { "id": "poison", "chance": 50, "duration": 20 }, { "id": "paralyzepoison", "chance": 50, "duration": 10 } ],
     "anger_triggers": [ "HURT", "FRIEND_DIED", "PLAYER_CLOSE", "PLAYER_WEAK", "STALK" ],
-    "flags": [ "SEES", "SMELLS", "FLIES", "SWARMS", "GROUP_MORALE" ]
+    "flags": [ "SEES", "SMELLS", "FLIES", "SWARMS", "GROUP_MORALE" ],
+    "copy-from": "mon_giant_bug"
   },
   {
     "id": "mon_mega_wasp",
     "type": "MONSTER",
-    "copy-from": "mon_mega_bug",
     "name": { "str": "mega wasp" },
-    "description": "A gigantic slender-bodied wasp about the size of a cow. It is armed with an evil-looking stinger and bears ominous red markings on its abdomen.",
+    "description": "A gigantic slender-bodied wasp about the size of a cow.  It is armed with an evil-looking stinger and bears ominous red markings on its abdomen.",
     "bodytype": "flying insect",
     "default_faction": "wasp",
     "diff": 3,
     "speed": 120,
     "attack_cost": 150,
     "symbol": "W",
-    "color": "i_yellow",
+    "color": "yellow",
     "melee_damage": [ { "damage_type": "cut", "amount": 10 } ],
     "special_attacks": [ [ "PARROT", 30 ] ],
     "dodge": 4,
@@ -1108,12 +1068,12 @@
     "harvest": "arachnid_stinger",
     "attack_effs": [ { "id": "poison", "chance": 50, "duration": 20 }, { "id": "paralyzepoison", "chance": 50, "duration": 10 } ],
     "anger_triggers": [ "HURT", "FRIEND_DIED", "PLAYER_CLOSE", "PLAYER_WEAK", "STALK" ],
-    "flags": [ "SEES", "SMELLS", "FLIES", "SWARMS", "GROUP_MORALE" ]
+    "flags": [ "SEES", "SMELLS", "FLIES", "SWARMS", "GROUP_MORALE" ],
+    "copy-from": "mon_mega_bug"
   },
   {
     "id": "mon_large_wasp_larva",
     "type": "MONSTER",
-    "copy-from": "mon_large_larva",
     "name": { "str": "giant wasp larva", "str_pl": "giant wasp larvae" },
     "description": "A pulsating sausage of glistening white flesh, the size of a dog.  On one end is a set of squirming mouth parts.",
     "default_faction": "wasp",
@@ -1122,7 +1082,8 @@
     "fear_triggers": [ "HURT" ],
     "upgrades": { "age_grow": 12, "into": "mon_wasp" },
     "biosignature": { "biosig_item": "feces_roach", "biosig_timer": 3 },
-    "flags": [ "LARVA", "SMELLS" ]
+    "flags": [ "SMELLS" ],
+    "copy-from": "mon_large_larva"
   },
   {
     "id": "mon_tame_large_wasp_larva",

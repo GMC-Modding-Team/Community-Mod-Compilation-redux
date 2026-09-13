@@ -10,7 +10,7 @@
     "to_hit": 0,
     "color": "yellow",
     "armor": [ { "encumbrance": 0, "coverage": 0, "covers": [ "head" ] } ],
-    "price": "10 USD",
+    "price": 10,
     "material": [ "steel", "cotton" ],
     "symbol": "[",
     "melee_damage": { "bash": 0, "cut": 0 },
@@ -28,7 +28,7 @@
     "to_hit": 0,
     "color": "dark_gray",
     "armor": [ { "encumbrance": 0, "coverage": 0, "covers": [ "head" ] } ],
-    "price": "5 USD",
+    "price": 5,
     "material": [ "cotton", "bone" ],
     "symbol": "[",
     "melee_damage": { "bash": 0, "cut": 0 },
@@ -46,7 +46,7 @@
     "to_hit": 0,
     "color": "dark_gray",
     "armor": [ { "encumbrance": 0, "coverage": 0, "covers": [ "head" ] } ],
-    "price": "5 USD",
+    "price": 5,
     "material": [ "cotton", "stone" ],
     "symbol": "[",
     "melee_damage": { "bash": 0, "cut": 0 },
@@ -64,7 +64,7 @@
     "to_hit": 0,
     "color": "yellow",
     "armor": [ { "encumbrance": 0, "coverage": 0, "covers": [ "head" ] } ],
-    "price": "50 USD",
+    "price": 50,
     "material": [ "steel", "leather" ],
     "symbol": "[",
     "melee_damage": { "bash": 0, "cut": 0 },
@@ -82,7 +82,7 @@
     "to_hit": 0,
     "color": "brown",
     "armor": [ { "encumbrance": 0, "coverage": 0, "covers": [ "torso" ], "specifically_covers": [ "torso_waist" ] } ],
-    "price": "15 USD",
+    "price": 15,
     "material": [ "leather", "hflesh" ],
     "symbol": "[",
     "melee_damage": { "bash": 0, "cut": 0 },
@@ -96,10 +96,10 @@
         "moves": 50,
         "flag_restriction": [ "BELT_CLIP" ],
         "holster": true
-      }
+      },
+      { "pocket_type": "CONTAINER", "rigid": true, "max_contains_volume": "2 L", "max_contains_weight": "5 kg" }
     ],
-    "use_action": { "type": "holster", "holster_prompt": "Attach what to belt loop?", "holster_msg": "You clip your %s to your %s" },
-    "flags": [ "FANCY", "BELTED", "NO_QUICKDRAW", "WATER_FRIENDLY" ]
+    "flags": [ "FANCY", "BELTED", "TARDIS" ]
   },
   {
     "id": "belt_bandolier",
@@ -112,7 +112,7 @@
     "to_hit": 0,
     "color": "brown",
     "armor": [ { "encumbrance": 5, "coverage": 20, "covers": [ "torso" ] } ],
-    "price": "150 USD",
+    "price": 150,
     "material": [ "leather", "steel" ],
     "symbol": "[",
     "environmental_protection": 0,
@@ -120,10 +120,10 @@
       { "pocket_type": "CONTAINER", "max_contains_volume": "750 ml", "max_contains_weight": "2 kg", "moves": 30 },
       { "pocket_type": "CONTAINER", "max_contains_volume": "750 ml", "max_contains_weight": "2 kg", "moves": 30 },
       { "pocket_type": "CONTAINER", "max_contains_volume": "750 ml", "max_contains_weight": "2 kg", "moves": 30 },
-      { "pocket_type": "CONTAINER", "max_contains_volume": "750 ml", "max_contains_weight": "2 kg", "moves": 30 }
+      { "pocket_type": "CONTAINER", "max_contains_volume": "750 ml", "max_contains_weight": "2 kg", "moves": 30 },
+      { "pocket_type": "CONTAINER", "rigid": true, "max_contains_volume": "2 L", "max_contains_weight": "5 kg" }
     ],
-    "use_action": { "type": "holster", "holster_prompt": "Stash items", "holster_msg": "You stash your %s." },
-    "flags": [ "WATER_FRIENDLY", "BELTED" ]
+    "flags": [ "BELTED", "TARDIS" ]
   },
   {
     "id": "spiked_pauldrons",
@@ -135,7 +135,7 @@
     "to_hit": -1,
     "symbol": "[",
     "description": "Two large steel pauldrons covered with dozens of small sharp spikes, secured to the torso with a set of leather straps.",
-    "price": "125 USD",
+    "price": 125,
     "material": [ "steel", "leather" ],
     "volume": "750 ml",
     "melee_damage": { "bash": 4 },
@@ -155,7 +155,7 @@
     "weight": "97 g",
     "to_hit": 0,
     "color": "dark_gray",
-    "price": "10 USD",
+    "price": 10,
     "material": [ "steel", "cotton" ],
     "armor": [ { "encumbrance": 0, "coverage": 0, "covers": [ "head" ] } ],
     "symbol": "[",
@@ -167,14 +167,14 @@
   {
     "id": "steel_bra",
     "type": "ARMOR",
-    "name": { "str": "steel bra", "str_pl": "steel bras" },
+    "name": { "str": "steel bra" },
     "category": "armor",
     "weight": "2365 g",
     "color": "dark_gray",
     "to_hit": -1,
     "symbol": "[",
     "description": "Two steel breast cups, held in place by a series of small leather straps.",
-    "price": "50 USD",
+    "price": 50,
     "material": [ "steel", "leather" ],
     "volume": "750 ml",
     "melee_damage": { "bash": 1 },
@@ -193,14 +193,14 @@
     "to_hit": -2,
     "symbol": "[",
     "description": "A pair of glasses with a rectangular green lens and a circular red lens.",
-    "price": "350 USD",
+    "price": 350,
     "material": [ "glass", "plastic" ],
     "volume": "250 ml",
     "melee_damage": { "bash": 0 },
     "warmth": 0,
     "environmental_protection": 1,
     "armor": [ { "encumbrance": 0, "coverage": 75, "covers": [ "eyes" ] } ],
-    "flags": [ "WATER_FRIENDLY", "LENS", "SUN_GLASSES" ],
+    "flags": [ "LENS", "SUN_GLASSES" ],
     "qualities": [ [ "GLARE", 1 ] ],
     "material_thickness": 1
   }

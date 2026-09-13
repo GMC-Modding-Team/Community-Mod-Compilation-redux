@@ -1,26 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [The DDotDDD - Dark Days of the Dead Design Document](#the-ddotddd---dark-days-of-the-dead-design-document)
-  - [Mission Statement](#mission-statement)
-  - [Gameplay](#gameplay)
-    - [Desired changes to monster stats](#desired-changes-to-monster-stats)
-  - [Setting](#setting)
-    - [Changes to in-game stuff for setting reasons](#changes-to-in-game-stuff-for-setting-reasons)
-      - [Items and spawns](#items-and-spawns)
-      - [Professions and Scenarios](#professions-and-scenarios)
-        - [Movie-inspired starts](#movie-inspired-starts)
-        - [Story starts](#story-starts)
-    - [Zombification Mechanics](#zombification-mechanics)
-    - [History](#history)
-    - [Factions](#factions)
-      - [The Montana Army National Guard](#the-montana-army-national-guard)
-      - [The Central Alberta Historical Re-Enactors Army](#the-central-alberta-historical-re-enactors-army)
-      - [The Wild Rose Survivors](#the-wild-rose-survivors)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # The DDotDDD - Dark Days of the Dead Design Document
 
 ## Mission Statement
