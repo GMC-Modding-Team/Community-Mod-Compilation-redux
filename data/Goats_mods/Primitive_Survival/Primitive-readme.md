@@ -69,17 +69,17 @@ Use the `home` key to get to the top.
 - [x] Remove all `Items` in vanilla - add extra code to `Vanilla` Category
 - [x] Remove all `Materials` in vanilla - add extra code to `Vanilla` Category
 - [x] Remove unwanted `Recipes`
-- [ ] Add new `Construction` method for building with `Sticks`
-- [ ] Add new `Construction` method for building with `Mud`
-- [ ] Add new `Construction` method for building with `bamboo`
+- [x] Add new `Construction` method for building with `Sticks`
+- [x] Add new `Construction` method for building with `Mud`
+- [x] Add new `Construction` method for building with `bamboo`
 - [ ] Add more `Items`
 - [ ] Add more `Recipes`
 - [ ] Add more `Vehicle Parts`
-- [ ] Implement a way to collect `Mud`, `Adobe`, and `Leaves`
-- [ ] Implement 10 new `professions` and `scenarios` ie, primitive survival easy, normal, hard, other variants that are normal starts like primitive and his dog
-- [ ] Add more `bamboo` construction
-- [ ] Add more `bamboo` Recipes
-- [ ] Add more `bamboo` anything enclosed
+- [x] Implement a way to collect `Mud` and `Leaves` (Adobe still needs a dedicated recipe)
+- [x] Implement 10 new `professions` and `scenarios` (easy, normal, and hard variants)
+- [x] Add more `bamboo` construction
+- [x] Add more `bamboo` Recipes
+- [x] Add more `bamboo` anything enclosed
 ```
 
 
@@ -173,14 +173,14 @@ deconstruct pile of leaves to get leaves ATM.
 *Tools:*
 
 ```markdown
-- [ ] Primitive Knife
-- [ ] Primitive Stone Hammer
-- [ ] Primitive Hand Axe
-- [ ] Primitive Adze
-- [ ] Primitive Shovel
-- [ ] Mortar And Pestless
-- [ ] t_Bellows - Primitive Bellows
-- [ ] awl_bone - Primitive Bone Awl
+- [x] Primitive Knife
+- [x] Primitive Stone Hammer
+- [x] Primitive Hand Axe
+- [x] Primitive Adze
+- [x] Primitive Shovel
+- [x] Mortar And Pestless
+- [x] t_Bellows - Primitive Bellows
+- [x] awl_bone - Primitive Bone Awl
 ```
 
 
@@ -188,8 +188,8 @@ deconstruct pile of leaves to get leaves ATM.
 *Weapons:*
 
 ```markdown
-- [ ] bolas - Primitive Bolas
-- [ ] slingshot - Primitive Slingshot
+- [x] bolas - Primitive Bolas
+- [x] slingshot - Primitive Slingshot
 ```
 
 
@@ -197,7 +197,7 @@ deconstruct pile of leaves to get leaves ATM.
 *Generic:*
 
 ```markdown
-- [ ] Glue
+- [ ] Primitive Glue
 ```
 
 
@@ -206,11 +206,6 @@ deconstruct pile of leaves to get leaves ATM.
 
 ```markdown
 - [ ] Clay
-- [ ] Rocks
-- [ ] Logs
-- [ ] Sticks
-- [ ] Long Sticks
-- [ ] Grass
 ```
 
 
@@ -792,13 +787,13 @@ deconstruct pile of leaves to get leaves ATM.
 *Mud Terrain:*
 
 ```markdown
-- [ ] Mud Door-frame
-- [ ] Mud Door
-- [ ] Mud Floor
-- [ ] Mud Window-frame
-- [ ] Mud Window
-- [ ] Mud Wall
-- [ ] Mud Roof
+- [x] Mud Door-frame
+- [x] Mud Door
+- [x] Mud Floor
+- [x] Mud Window-frame
+- [x] Mud Window
+- [x] Mud Wall
+- [x] Mud Roof
 ```
 
 
@@ -806,13 +801,13 @@ deconstruct pile of leaves to get leaves ATM.
 *Stick Terrain:*
 
 ```markdown
-- [ ] Stick Door-frame
-- [ ] Stick Door
-- [ ] Stick Floor
-- [ ] Stick Window-frame
-- [ ] Stick Window
-- [ ] Stick Wall
-- [ ] Stick Roof
+- [x] Stick Door-frame
+- [x] Stick Door
+- [x] Stick Floor
+- [x] Stick Window-frame
+- [x] Stick Window
+- [x] Stick Wall
+- [x] Stick Roof
 ```
 
 
@@ -905,14 +900,14 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 *Mud Terrain:*
 
 ```markdown
-- [ ] Mud Door-frame
-- [ ] Mud Door
-- [ ] Mud Floor
-- [ ] Mud Window-frame
-- [ ] Mud Window
-- [ ] Mud Wall
-- [ ] Half-built Mud Wall
-- [ ] Mud Roof
+- [x] Mud Door-frame
+- [x] Mud Door
+- [x] Mud Floor
+- [x] Mud Window-frame
+- [x] Mud Window
+- [x] Mud Wall
+- [x] Half-built Mud Wall
+- [x] Mud Roof
 ```
 
 
@@ -920,13 +915,13 @@ https://primitivetechnology.wordpress.com/2018/04/20/round-hut/
 *Stick Terrain:*
 
 ```markdown
-- [ ] Stick Door-frame
-- [ ] Stick Door
-- [ ] Stick Floor
-- [ ] Stick Window-frame
-- [ ] Stick Window
-- [ ] Stick Wall
-- [ ] Stick Roof
+- [x] Stick Door-frame
+- [x] Stick Door
+- [x] Stick Floor
+- [x] Stick Window-frame
+- [x] Stick Window
+- [x] Stick Wall
+- [x] Stick Roof
 ```
 
 
