@@ -2,11 +2,11 @@
 
 Use the `home` key to get to the top.
 
-Version: `0.9.0-H-release`
+Version: `0.9.4-H-release`
 
-This standalone mod adds future-tech weapons and JSON-defined support equipment to the Cataclysm: Dark Days Ahead H release. It includes plasma, photon, laser, electrical, magnetic, coil, gauss, and rail weapons with custom ammunition and magazines, plus mod-owned components, tools, passive armour, melee equipment, recipes, and loot groups.
+This standalone mod adds future-tech weapons and JSON-defined support equipment to the Cataclysm: Dark Days Ahead H release. It includes plasma, photon, laser, electrical, magnetic, coil, gauss, and rail weapons with custom ammunition and magazines, plus mod-owned components, tools, passive armour, melee equipment, recipes, loot groups, terrain, and construction.
 
-The current release is data-only. It adds no custom C++ behaviour, no new main-game definitions, no furniture or terrain, no vehicles, and no UPS dependency.
+The current release is data-only. It adds no custom C++ behaviour, no new main-game definitions, no vehicles, and no UPS dependency.
 
 # Table of contents
 
@@ -57,7 +57,8 @@ The current release is data-only. It adds no custom C++ behaviour, no new main-g
 - [x] Add future-tech tools and melee weapons
 - [x] Add JSON-defined future-tech components and capacitor recipes
 - [x] Add mod-owned future-tech equipment and field-cache groups
-- [ ] Add JSON-defined furniture, terrain, and construction
+- [x] Add JSON-defined furniture
+- [x] Add JSON-defined terrain and construction
 - [ ] Add JSON-defined vehicle parts and layouts using supported fields
 - [ ] Add and test EOCs only where existing H-release conditions and effects support them
 - [ ] Check every new ID against the main-game JSON before adding it
@@ -78,9 +79,14 @@ The current release is data-only. It adds no custom C++ behaviour, no new main-g
 [Spawn groups](itemgroups)\
 [Tileset mappings](tileset/mod_tileset.json)\
 [Future-tech components](items/future_tech_components.json)\
+[Future-tech fiber optics](items/future_tech_fiber_optics.json)\
+[Future-tech furniture](furniture/future_tech_furniture.json)\
 [Future-tech equipment](items/future_tech_equipment.json)\
 [Future-tech recipes](recipes/future_tech_recipes.json)\
-[Future-tech item groups](itemgroups/future_tech_itemgroups.json)
+[Future-tech fiber-optic recipes](recipes/future_tech_fiber_optics.json)\
+[Future-tech item groups](itemgroups/future_tech_itemgroups.json)\
+[Future-tech terrain](terrain/future_tech_terrain.json)\
+[Future-tech construction](construction/future_tech_construction.json)
 
 *Implementation notes:*
 
@@ -97,9 +103,10 @@ The current release is data-only. It adds no custom C++ behaviour, no new main-g
 - [x] 70 future-tech guns
 - [x] 14 custom ammunition types
 - [x] 43 custom magazines, drums, packs, cassettes, and clips
-- [x] 8 mod-owned future-tech component items
+- [x] 9 mod-owned future-tech component items, including singular fiber optics and a separate fiber-optic bundle
 - [x] 2 future-tech tools, 3 melee weapons, and 4 passive armour items
-- [x] 66 recipes in total
+- [x] 77 recipes in total, including explicit craft and uncraft recipes for singular fiber optics and the fiber-optic bundle
+- [x] 4 passive future-tech furniture definitions, 5 terrain definitions, and 8 construction recipes
 - [x] Plasma, photon, laser, electrical, magnetic, coil, gauss, and rail technology
 - [x] Direct H-release item types: `GUN`, `AMMO`, and `MAGAZINE`
 - [x] No UPS dependency
@@ -113,7 +120,7 @@ The current release is data-only. It adds no custom C++ behaviour, no new main-g
 
 This expansion is limited to content that can be represented by the existing Cataclysm: Dark Days Ahead H-release JSON schemas. The plan uses item definitions, recipes, item groups, EOCs, tileset mappings, and other data files already supported by the game.
 
-Anything marked **planned** in this section is a data-content target and is not part of the current `0.9.0-H-release` content yet. The implemented component, equipment, recipe, and item-group files are listed in the Features and Sources sections.
+Anything marked **planned** in this section is a data-content target and is not part of the current `0.9.5-H-release` content yet. The implemented component, equipment, recipe, item-group, furniture, terrain, and construction files are listed in the Features and Sources sections.
 
 ## JSON-only scope
 
@@ -721,26 +728,30 @@ The mod contains 70 guns. The IDs below are the IDs used by the JSON files.
 
 **Head-Category -** [Furniture and Terrain](#furniture-and-terrain)
 
-The current release adds no furniture or terrain.
+The current release adds four passive JSON-defined future-tech furniture pieces and five JSON-defined laboratory terrain pieces. The furniture uses existing placement, container, and deconstruction fields only; it does not add a custom workstation action or interface.
 
 ```markdown
-- [ ] Future-tech storage cabinet
-- [ ] Ammunition locker
-- [ ] Electronics workbench as a static furniture definition
-- [ ] Laboratory containment wall or display furniture
-- [ ] Research terminal prop as static furniture only
+- [x] Secure future-tech equipment cabinet using the standard container fields
+- [x] Future-tech equipment rack
+- [x] Electronics research workbench as passive furniture
+- [x] Diagnostic station as passive furniture
 ```
 
 # Construction
 
 **Head-Category -** [Construction](#construction)
 
-The current release adds no construction pieces. Future construction can provide JSON-defined structures, storage, and supported furniture or terrain.
+The current release adds eight construction recipes: four for laboratory terrain and four for passive future-tech furniture. These use existing fabrication, electronics, tool-quality, component, and terrain/furniture placement fields.
 
 ```markdown
-- [ ] Buildable future-tech storage area
-- [ ] Buildable laboratory walls and doors
-- [ ] Buildable equipment racks and ammunition lockers
+- [x] Buildable laboratory floor
+- [x] Buildable laboratory wall
+- [x] Buildable laboratory door frame
+- [x] Buildable laboratory door
+- [x] Buildable future-tech equipment rack
+- [x] Buildable diagnostic station
+- [x] Buildable secure equipment cabinet
+- [x] Buildable research workbench
 ```
 
 # Vehicles
@@ -759,7 +770,7 @@ The current release adds no vehicles or vehicle parts.
 
 **Head-Category -** [Recipes](#recipes)
 
-The recipe files contain 66 recipes: 35 existing weapon recipes, 14 ammunition recipes, and 17 future-tech component and equipment recipes. The new recipes use existing fabrication and electronics skills, soldering iron or toolset qualities, and vanilla metal, wire, plastic, glass, amplifier, circuit, and pipe components.
+The recipe files contain 77 recipes: 35 existing weapon recipes, 14 ammunition recipes, 18 future-tech craft recipes, 2 explicit uncraft recipes, and 8 construction recipes. The `swa_fiber_optic` recipe crafts the singular material and its `uncraft` entry returns the vanilla glass, plastic, and copper components. The separate `swa_fiber_optic_bundle` recipe crafts four singular fibers and its `uncraft` entry returns those four fibers. The new recipes use existing fabrication and electronics skills, soldering iron or toolset qualities, and vanilla metal, wire, plastic, glass, amplifier, circuit, and pipe components.
 
 ## Weapon Recipes
 
@@ -886,14 +897,45 @@ The mod includes a 32x32 overlay tileset. It is intended for compatible 32x32 ti
 - [x] No UPS dependency
 - [x] Passive future-tech armour is defined through JSON
 - [x] Future-tech melee weapons are defined through JSON
+- [x] Four passive future-tech furniture definitions, five terrain definitions, and eight construction recipes are defined through JSON
 - [x] No active shields, camouflage, heat system, charging system, or custom item actions
-- [x] No furniture, terrain, construction, or vehicles in the current release
+- [x] No vehicles in the current release
 - [x] Tiles are an overlay and require a compatible 32x32 tileset
 ```
 
 # Changelog
 
 **Head-Category -** [Changelog](#changelog)
+
+## 0.9.5-H-release
+
+- Added four passive future-tech furniture definitions: a research workbench, equipment rack, diagnostic station, and secure equipment cabinet.
+- Added four construction recipes to build the new furniture using existing JSON construction fields.
+- Kept the furniture mod-owned, deconstructible, and free of custom workstation actions.
+
+## 0.9.4-H-release
+
+- Added a separate `swa_fiber_optic_bundle` item JSON instead of replacing it with the singular item.
+- Added separate `recipe` and `uncraft` JSON entries for the fiber-optic bundle.
+- Added an explicit `uncraft` entry for the singular `swa_fiber_optic` component.
+- Made the field multitool require the bundle while keeping the singular fiber optic available for smaller equipment.
+
+## 0.9.3-H-release
+
+- Added a separate `swa_fiber_optic_bundle` item JSON instead of replacing it with the singular item.
+- Added a bundle recipe using four singular fiber-optic components.
+
+## 0.9.2-H-release
+
+- Added the singular `swa_fiber_optic` component and its reversible craft recipe.
+- Updated the future-tech item-group references.
+
+## 0.9.1-H-release
+
+- Added five future-tech laboratory terrain definitions.
+- Added four construction recipes for the laboratory floor, wall, door frame, and door.
+- Kept the new structures mod-owned and JSON-only.
+- Kept furniture, vehicles, and custom furniture interactions out of this release.
 
 ## 0.9.0-H-release
 

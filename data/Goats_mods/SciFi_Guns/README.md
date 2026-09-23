@@ -1,14 +1,20 @@
-# Sci-Fi Guns Only for CDDA H release
+# Sci-Fi Guns and Future Tech for CDDA H release
 
-Version: 0.8.0-H-release
+Version: 0.9.5-H-release
 
-This standalone mod adds **70 sci-fi guns** for CDDA H release, using H-style `GUN`/`AMMO`/`MAGAZINE` item types and **no UPS dependency**.
+This standalone mod adds **70 sci-fi guns** plus JSON-defined future-tech components, tools, passive armour, melee equipment, furniture, recipes, loot groups, terrain, and construction for CDDA H release. It uses H-style `GUN`/`AMMO`/`MAGAZINE` item types and **no UPS dependency**.
+
+See [Future-Tech-readme.md](Future-Tech-readme.md) for the detailed JSON-only expansion plan and implementation tracker.
 
 ## Included
 - 70 total guns
 - Existing plasma, photon/laser, electrical, and magnetic families
 - 26 additional guns added in v0.8.0
 - Existing custom ammo and magazines
+- 9 future-tech component items, including singular fiber optics and a separate fiber-optic bundle
+- 2 future-tech tools, 3 melee weapons, and 4 passive armour items
+- 20 future-tech craft and uncraft recipes for singular fiber optics and fiber-optic bundles, and a mod-owned future-tech field cache
+- 4 passive future-tech furniture definitions, 5 terrain definitions, and 8 construction recipes
 - H-release compatible `pocket_data` magazine wells
 - 32x32 mod tileset JSON (`mod_tileset.json`)
 - 32x32 gun tilesheet (`scifi_guns_32.png`)
