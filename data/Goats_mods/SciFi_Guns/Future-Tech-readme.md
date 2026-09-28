@@ -2,11 +2,11 @@
 
 Use the `home` key to get to the top.
 
-Version: `0.9.4-H-release`
+Version: `0.9.6-H-release`
 
 This standalone mod adds future-tech weapons and JSON-defined support equipment to the Cataclysm: Dark Days Ahead H release. It includes plasma, photon, laser, electrical, magnetic, coil, gauss, and rail weapons with custom ammunition and magazines, plus mod-owned components, tools, passive armour, melee equipment, recipes, loot groups, terrain, and construction.
 
-The current release is data-only. It adds no custom C++ behaviour, no new main-game definitions, no vehicles, and no UPS dependency.
+The current release is data-only. It adds no custom C++ behaviour or main-game definitions, and has no UPS dependency. It includes mod-owned vehicle-part definitions and a mobile research quad layout without modifying main-game vehicle spawn tables.
 
 # Table of contents
 
@@ -59,7 +59,7 @@ The current release is data-only. It adds no custom C++ behaviour, no new main-g
 - [x] Add mod-owned future-tech equipment and field-cache groups
 - [x] Add JSON-defined furniture
 - [x] Add JSON-defined terrain and construction
-- [ ] Add JSON-defined vehicle parts and layouts using supported fields
+- [x] Add JSON-defined vehicle parts and a vehicle layout using supported fields
 - [ ] Add and test EOCs only where existing H-release conditions and effects support them
 - [ ] Check every new ID against the main-game JSON before adding it
 - [ ] Keep all future-tech definitions inside the mod's `swa_` namespace
@@ -86,7 +86,12 @@ The current release is data-only. It adds no custom C++ behaviour, no new main-g
 [Future-tech fiber-optic recipes](recipes/future_tech_fiber_optics.json)\
 [Future-tech item groups](itemgroups/future_tech_itemgroups.json)\
 [Future-tech terrain](terrain/future_tech_terrain.json)\
-[Future-tech construction](construction/future_tech_construction.json)
+[Future-tech construction](construction/future_tech_construction.json)\
+[Future-tech vehicle part items](items/future_tech_vehicle_parts.json)\
+[Future-tech vehicle-part definitions](vehicleparts/future_tech_vehicle_parts.json)\
+[Future-tech vehicle layout](vehicles/future_tech_vehicles.json)\
+[Future-tech vehicle group](vehicles/future_tech_vehicle_groups.json)\
+[Future-tech vehicle-part recipes](recipes/future_tech_vehicle_recipes.json)
 
 *Implementation notes:*
 
@@ -105,8 +110,9 @@ The current release is data-only. It adds no custom C++ behaviour, no new main-g
 - [x] 43 custom magazines, drums, packs, cassettes, and clips
 - [x] 9 mod-owned future-tech component items, including singular fiber optics and a separate fiber-optic bundle
 - [x] 2 future-tech tools, 3 melee weapons, and 4 passive armour items
-- [x] 77 recipes in total, including explicit craft and uncraft recipes for singular fiber optics and the fiber-optic bundle
+- [x] 81 recipe/construction definitions: 35 weapon recipes, 14 ammunition recipes, 20 future-tech craft recipes, 4 explicit uncraft recipes, and 8 construction recipes
 - [x] 4 passive future-tech furniture definitions, 5 terrain definitions, and 8 construction recipes
+- [x] 2 craftable vehicle parts (cargo rack and solar panel) and a mod-owned mobile research quad layout
 - [x] Plasma, photon, laser, electrical, magnetic, coil, gauss, and rail technology
 - [x] Direct H-release item types: `GUN`, `AMMO`, and `MAGAZINE`
 - [x] No UPS dependency
@@ -120,7 +126,7 @@ The current release is data-only. It adds no custom C++ behaviour, no new main-g
 
 This expansion is limited to content that can be represented by the existing Cataclysm: Dark Days Ahead H-release JSON schemas. The plan uses item definitions, recipes, item groups, EOCs, tileset mappings, and other data files already supported by the game.
 
-Anything marked **planned** in this section is a data-content target and is not part of the current `0.9.5-H-release` content yet. The implemented component, equipment, recipe, item-group, furniture, terrain, and construction files are listed in the Features and Sources sections.
+Anything marked **planned** in this section is a data-content target and is not part of the current `0.9.6-H-release` content yet. The implemented component, equipment, recipe, item-group, furniture, terrain, construction, and vehicle files are listed in the Features and Sources sections.
 
 ## JSON-only scope
 
@@ -133,7 +139,7 @@ The expansion can add or organize data in these areas:
 - [ ] EOCs using conditions and effects already accepted by the H release
 - [ ] Furniture and terrain definitions using existing furniture and terrain fields
 - [ ] Construction definitions that place supported furniture or terrain
-- [ ] Vehicle definitions and vehicle parts using existing vehicle JSON fields
+- [x] Initial vehicle definition and vehicle parts using existing vehicle JSON fields
 - [ ] Mod tileset mappings and new PNG sprite sheets
 - [ ] Localisation strings and item descriptions supported by the data format
 ```
@@ -408,17 +414,20 @@ Construction recipes will be gated by existing skills, tools, qualities, time, a
 
 ## Vehicles and vehicle parts
 
-Vehicle content is possible when it uses existing vehicle JSON definitions and part fields.
+The current release includes two craftable, mod-owned vehicle parts: a cargo rack using the existing trunk behavior, and a solar panel using the existing solar-panel behavior. A mod-owned mobile research quad layout installs both parts alongside standard vehicle components. The custom parts add no new vehicle behavior; cargo and solar charging behavior comes from the inherited main-game part definitions.
+
+The mod also defines a vehicle group for its prototype. It does not inject that group into main-game random-spawn tables, so the vehicle is not added to ordinary vanilla roadside spawns by this release. No files in the main game's `data/json` are changed.
 
 ```markdown
 - [ ] Battery rack vehicle part
-- [ ] Solar panel vehicle part using existing vehicle power fields
+- [x] Solar panel vehicle part using existing vehicle power fields
 - [ ] Capacitor storage vehicle part
 - [ ] Research equipment vehicle part
 - [ ] Vehicle-mounted laser using an existing vehicle weapon model
 - [ ] Vehicle-mounted coil or rail weapon using supported vehicle fields
 - [ ] Armoured research vehicle layout
 - [ ] Mobile storage and ammunition vehicle layout
+- [x] Initial mobile research quad layout with a mod-owned cargo rack
 ```
 
 The vehicle expansion will not include autonomous drones, remote control AI, new vehicle power behaviour, or new vehicle weapon mechanics. It will use existing vehicle engines, batteries, solar panels, cargo, armour, turrets, and weapon fields.
@@ -473,7 +482,7 @@ Every new visible item should receive data support for presentation.
 - [ ] Phase 3: Add clothing, armour, tools, melee items, and tested EOCs
 - [ ] Phase 4: Add item groups and check every referenced ID
 - [ ] Phase 5: Add furniture, terrain, and construction definitions
-- [ ] Phase 6: Add vehicle parts and vehicle layouts using existing fields
+- [x] Phase 6: Add an initial set of vehicle parts and a vehicle layout using existing fields
 - [ ] Phase 7: Add tileset mappings and localisation
 - [ ] Phase 8: Validate all JSON and remove unsupported or orphaned content
 ```
@@ -758,19 +767,20 @@ The current release adds eight construction recipes: four for laboratory terrain
 
 **Head-Category -** [Vehicles](#vehicles)
 
-The current release adds no vehicles or vehicle parts.
+The current release adds two installable vehicle parts and one vehicle layout. Both parts inherit standard main-game behavior; there are no custom mechanics, and the prototype is not linked to vanilla random-spawn groups.
 
 ```markdown
-- [ ] Add a scout vehicle layout using supported vehicle JSON
+- [x] Add a mobile research quad layout using supported vehicle JSON
 - [ ] Add magnetic or plasma vehicle weapons where supported
-- [ ] Add vehicle battery, solar, armour, cargo, and weapon parts using existing fields
+- [x] Add a solar-panel vehicle part and cargo rack using existing fields
+- [ ] Add vehicle battery, armour, and weapon parts using existing fields
 ```
 
 # Recipes
 
 **Head-Category -** [Recipes](#recipes)
 
-The recipe files contain 77 recipes: 35 existing weapon recipes, 14 ammunition recipes, 18 future-tech craft recipes, 2 explicit uncraft recipes, and 8 construction recipes. The `swa_fiber_optic` recipe crafts the singular material and its `uncraft` entry returns the vanilla glass, plastic, and copper components. The separate `swa_fiber_optic_bundle` recipe crafts four singular fibers and its `uncraft` entry returns those four fibers. The new recipes use existing fabrication and electronics skills, soldering iron or toolset qualities, and vanilla metal, wire, plastic, glass, amplifier, circuit, and pipe components.
+The mod contains 81 recipe/construction definitions: 35 existing weapon recipes, 14 ammunition recipes, 20 future-tech craft recipes, 4 explicit uncraft recipes, and 8 construction recipes. The `swa_fiber_optic` recipe crafts the singular material and its `uncraft` entry returns the vanilla glass, plastic, and copper components. The separate `swa_fiber_optic_bundle` recipe crafts four singular fibers and its `uncraft` entry returns those four fibers. The two vehicle-part recipes also each have an explicit uncraft definition. Recipes use existing fabrication, electronics, and mechanics skills, supported tool qualities, and vanilla components where appropriate.
 
 ## Weapon Recipes
 
@@ -899,13 +909,21 @@ The mod includes a 32x32 overlay tileset. It is intended for compatible 32x32 ti
 - [x] Future-tech melee weapons are defined through JSON
 - [x] Four passive future-tech furniture definitions, five terrain definitions, and eight construction recipes are defined through JSON
 - [x] No active shields, camouflage, heat system, charging system, or custom item actions
-- [x] No vehicles in the current release
+- [x] Two vehicle parts and a mobile research quad are defined in JSON; the vehicle group is not linked to main-game random-spawn tables
 - [x] Tiles are an overlay and require a compatible 32x32 tileset
 ```
 
 # Changelog
 
 **Head-Category -** [Changelog](#changelog)
+
+## 0.9.6-H-release
+
+- Added mod-owned cargo-rack and solar-panel vehicle parts that inherit existing game behavior.
+- Added craft and explicit uncraft recipes for both new vehicle-part items.
+- Added a mobile research quad layout and a separate mod-owned vehicle group.
+- Added vehicle-part items to the mod's future-tech field-cache distribution.
+- Kept the new vehicle content inside this mod; no main-game definitions or random-spawn tables were changed.
 
 ## 0.9.5-H-release
 
