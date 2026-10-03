@@ -10,7 +10,7 @@
     "broken_color": "blue",
     "looks_like": "tank",
     "durability": 150,
-    "description": "A storage space for holding solid fuels, this one designed for solid fuels of magical nature. If filled with the appropriate fuel for the vehicle's engine, the engine will automatically draw fuel from the tank when the engine is on.",
+    "description": "A storage space for holding solid fuels, this one designed for solid fuels of magical nature.  If filled with the appropriate fuel for the vehicle's engine, the engine will automatically draw fuel from the tank when the engine is on.",
     "damage_modifier": 80,
     "breaks_into": [
       { "item": "steel_lump", "count": [ 2, 2 ] },
@@ -26,20 +26,19 @@
   },
   {
     "id": "engine_mana",
+    "type": "vehicle_part",
     "copy-from": "steam_engine",
-    "variants": [ { "symbols": "M", "symbols_broken": "#" } ],
     "color": "blue",
     "broken_color": "blue",
-    "fuel_type": "crystallized_mana",
-    "fuel_options": [ "crystallized_mana" ],
-    "type": "vehicle_part",
-    "item": "mana_engine",
-    "extend": { "flags": [ "E_COLD_START" ] },
     "backfire_threshold": 0.7,
     "backfire_freq": 10,
     "noise_factor": 5,
-    "durability": 200,
+    "variants": [ { "symbols": "M", "symbols_broken": "#" } ],
+    "fuel_type": "crystallized_mana",
+    "fuel_options": [ "crystallized_mana" ],
     "damage_reduction": { "all": 75 },
+    "item": "mana_engine",
+    "durability": 200,
     "epower": 0,
     "power": 93250,
     "energy_consumption": 4662,
@@ -48,6 +47,7 @@
       { "item": "steel_chunk", "count": [ 30, 60 ] },
       { "item": "scrap", "count": [ 30, 60 ] },
       { "item": "water", "count": [ 50, 120 ] }
-    ]
+    ],
+    "extend": { "flags": [ "E_COLD_START" ] }
   }
 ]

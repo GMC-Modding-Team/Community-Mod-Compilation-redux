@@ -3,13 +3,13 @@
     "id": "cult_sacrifice",
     "type": "item_group",
     "subtype": "collection",
-    "entries": [ { "item": "essence_blood", "prob": 25 }, { "item": "bone_human", "prob": 100, "count": [ 3, 9 ] } ]
+    "items": [ { "item": "essence_blood", "prob": 25 }, { "item": "bone_human", "prob": 100, "count": [ 3, 9 ] } ]
   },
   {
     "id": "summoner_casualties",
     "type": "item_group",
     "subtype": "collection",
-    "entries": [
+    "items": [
       { "group": "clothing_outdoor_set", "damage": [ 1, 4 ] },
       { "group": "unaligned_arcanist_books", "prob": 50 },
       { "group": "magic_consumables", "prob": 25 },
@@ -21,7 +21,7 @@
     "id": "summoner_casualties_fresh",
     "type": "item_group",
     "subtype": "collection",
-    "entries": [
+    "items": [
       { "group": "clothing_outdoor_set", "damage": [ 1, 4 ] },
       { "group": "unaligned_arcanist_books_postapoc", "prob": 50 },
       { "group": "magic_consumables", "prob": 25 },
@@ -34,40 +34,42 @@
     "//": "Various adult corpses, no restriction on how they died.",
     "type": "item_group",
     "items": [
-      [ "corpse", 25 ],
-      [ "corpse_bloody", 15 ],
-      [ "corpse_generic_male", 10 ],
-      [ "corpse_generic_female", 10 ],
-      [ "corpse_painful", 10 ],
-      [ "corpse_oldwoman_jewelry", 5 ],
-      [ "corpse_scorched", 5 ],
-      [ "corpse_stabbed", 5 ],
-      [ "corpse_gunned", 5 ],
-      [ "corpse_halved_upper", 5 ],
-      [ "corpse_half_beheaded", 5 ]
-    ]
+      { "item": "corpse", "prob": 25 },
+      { "item": "corpse_bloody", "prob": 15 },
+      { "item": "corpse_generic_male", "prob": 10 },
+      { "item": "corpse_generic_female", "prob": 10 },
+      { "item": "corpse_painful", "prob": 10 },
+      { "item": "corpse_oldwoman_jewelry", "prob": 5 },
+      { "item": "corpse_scorched", "prob": 5 },
+      { "item": "corpse_stabbed", "prob": 5 },
+      { "item": "corpse_gunned", "prob": 5 },
+      { "item": "corpse_halved_upper", "prob": 5 },
+      { "item": "corpse_half_beheaded", "prob": 5 }
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "reading_lights",
     "type": "item_group",
     "items": [
-      [ "candle", 20 ],
-      [ "oil_lamp", 20 ],
-      [ "oil_lamp_clay", 20 ],
-      [ "flashlight", 15 ],
-      [ "wearable_light", 15 ],
-      [ "electric_lantern", 10 ],
-      [ "gasoline_lantern", 10 ],
-      [ "atomic_lamp", 1 ]
-    ]
+      { "item": "candle", "prob": 20 },
+      { "item": "oil_lamp", "prob": 20 },
+      { "item": "oil_lamp_clay", "prob": 20 },
+      { "item": "flashlight", "prob": 15 },
+      { "item": "wearable_light", "prob": 15 },
+      { "item": "electric_lantern", "prob": 10 },
+      { "item": "gasoline_lantern", "prob": 10 },
+      { "item": "atomic_lamp", "prob": 1 }
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "magic_crafting",
     "type": "item_group",
     "items": [
-      [ "holy_symbol", 5 ],
-      [ "pot", 5 ],
-      [ "bowl_clay", 15 ],
+      { "item": "holy_symbol", "prob": 5 },
+      { "item": "pot", "prob": 5 },
+      { "item": "bowl_clay", "prob": 15 },
       { "item": "candle", "prob": 10, "charges": [ 75, 100 ] },
       { "item": "matches", "prob": 15, "charges": [ 15, 20 ] },
       { "item": "copper", "prob": 5, "charges": [ 25, 100 ] },
@@ -80,223 +82,245 @@
       { "item": "thread", "prob": 5, "charges": [ 30, 90 ] },
       { "item": "bone", "prob": 5, "count": [ 1, 5 ] },
       { "item": "paper", "prob": 5, "charges": [ 20, 50 ] },
-      [ "chem_ethanol", 10 ],
+      { "item": "chem_ethanol", "prob": 10 },
       { "group": "arcana_hunt_random", "prob": 25 },
       { "item": "essence", "prob": 25, "count": [ 1, 3 ] },
       { "item": "essence_blood", "prob": 25, "count": [ 3, 9 ] },
       { "item": "essence_dull", "prob": 25, "count": [ 15, 45 ] }
-    ]
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "magic_items",
     "type": "item_group",
     "items": [
-      [ "thunder_sigil", 5 ],
-      [ "bloodscourge", 5 ],
-      [ "lichhook", 5 ],
-      [ "bloodaxe", 15 ],
-      [ "spear_pestilence", 10 ],
-      [ "sun_sword", 10 ],
-      [ "ethereal_crossbow", 5 ],
-      [ "gilded_aegis", 5 ],
-      [ "armor_wyrm", 10 ],
-      [ "robe_shadow", 5 ],
-      [ "somen_clairvoyance", 10 ],
-      [ "revenant_crown", 10 ],
-      [ "gauntlets_necro", 10 ],
-      [ "cyclopean_mirror", 5 ],
-      [ "shrike_misericorde", 1 ],
-      [ "thermic_essence_cutter", 1 ]
-    ]
+      { "item": "thunder_sigil", "prob": 5 },
+      { "item": "bloodscourge", "prob": 5 },
+      { "item": "lichhook", "prob": 5 },
+      { "item": "bloodaxe", "prob": 15 },
+      { "item": "spear_pestilence", "prob": 10 },
+      { "item": "sun_sword", "prob": 10 },
+      { "item": "ethereal_crossbow", "prob": 5 },
+      { "item": "gilded_aegis", "prob": 5 },
+      { "item": "armor_wyrm", "prob": 10 },
+      { "item": "robe_shadow", "prob": 5 },
+      { "item": "somen_clairvoyance", "prob": 10 },
+      { "item": "revenant_crown", "prob": 10 },
+      { "item": "gauntlets_necro", "prob": 10 },
+      { "item": "cyclopean_mirror", "prob": 5 },
+      { "item": "shrike_misericorde", "prob": 1 },
+      { "item": "thermic_essence_cutter", "prob": 1 }
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "magic_consumables",
     "type": "item_group",
     "items": [
-      [ "numbness_potion", 45 ],
-      [ "strength_potion", 40 ],
-      [ "speed_potion", 35 ],
-      [ "healing_potion", 30 ],
+      { "item": "numbness_potion", "prob": 45 },
+      { "item": "strength_potion", "prob": 40 },
+      { "item": "speed_potion", "prob": 35 },
+      { "item": "healing_potion", "prob": 30 },
       { "item": "red_black_vulnerary", "prob": 25, "count": 2 },
       { "item": "yellow_white_incense", "prob": 20, "count": 2 },
-      [ "scroll_sun", 25 ],
-      [ "scroll_moon", 25 ],
-      [ "scroll_artiface", 20 ],
-      [ "scroll_nature", 20 ],
-      [ "scroll_destruction", 15 ],
-      [ "scroll_subversion", 10 ],
-      [ "summon_kreck", 8 ],
-      [ "summon_blank", 8 ],
-      [ "summon_flaming_eye", 7 ],
-      [ "summon_hunting_horror", 7 ],
-      [ "summon_flying_polyp", 6 ],
-      [ "summon_mi_go", 6 ],
-      [ "summon_yugg", 5 ],
-      [ "summon_shoggoth", 5 ],
-      [ "totem_insight", 4 ],
-      [ "totem_plants", 4 ],
-      [ "totem_confusion", 4 ],
-      [ "totem_agile", 4 ],
-      [ "totem_lightning", 4 ],
-      [ "totem_strength", 4 ],
-      [ "totem_elecresist", 3 ],
-      [ "totem_clarity", 3 ],
-      [ "totem_heal", 3 ],
-      [ "totem_flamearmor", 3 ],
-      [ "totem_clairvoyance", 3 ],
-      [ "totem_invis", 3 ],
-      [ "totem_cleric", 2 ],
-      [ "totem_free_action", 2 ],
-      [ "totem_acidspray", 2 ],
-      [ "dragonblood_mutagen", 1 ]
-    ]
+      { "item": "scroll_sun", "prob": 25 },
+      { "item": "scroll_moon", "prob": 25 },
+      { "item": "scroll_artiface", "prob": 20 },
+      { "item": "scroll_nature", "prob": 20 },
+      { "item": "scroll_destruction", "prob": 15 },
+      { "item": "scroll_subversion", "prob": 10 },
+      { "item": "summon_kreck", "prob": 8 },
+      { "item": "summon_blank", "prob": 8 },
+      { "item": "summon_flaming_eye", "prob": 7 },
+      { "item": "summon_hunting_horror", "prob": 7 },
+      { "item": "summon_flying_polyp", "prob": 6 },
+      { "item": "summon_mi_go", "prob": 6 },
+      { "item": "summon_yugg", "prob": 5 },
+      { "item": "summon_shoggoth", "prob": 5 },
+      { "item": "totem_insight", "prob": 4 },
+      { "item": "totem_plants", "prob": 4 },
+      { "item": "totem_confusion", "prob": 4 },
+      { "item": "totem_agile", "prob": 4 },
+      { "item": "totem_lightning", "prob": 4 },
+      { "item": "totem_strength", "prob": 4 },
+      { "item": "totem_elecresist", "prob": 3 },
+      { "item": "totem_clarity", "prob": 3 },
+      { "item": "totem_heal", "prob": 3 },
+      { "item": "totem_flamearmor", "prob": 3 },
+      { "item": "totem_clairvoyance", "prob": 3 },
+      { "item": "totem_invis", "prob": 3 },
+      { "item": "totem_cleric", "prob": 2 },
+      { "item": "totem_free_action", "prob": 2 },
+      { "item": "totem_acidspray", "prob": 2 },
+      { "item": "dragonblood_mutagen", "prob": 1 }
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "arcana_totem_random",
     "type": "item_group",
     "items": [
-      [ "totem_insight", 4 ],
-      [ "totem_plants", 4 ],
-      [ "totem_confusion", 4 ],
-      [ "totem_agile", 4 ],
-      [ "totem_lightning", 4 ],
-      [ "totem_strength", 4 ],
-      [ "totem_elecresist", 3 ],
-      [ "totem_clarity", 3 ],
-      [ "totem_heal", 3 ],
-      [ "totem_flamearmor", 3 ],
-      [ "totem_clairvoyance", 3 ],
-      [ "totem_invis", 3 ],
-      [ "totem_cleric", 2 ],
-      [ "totem_free_action", 2 ],
-      [ "totem_acidspray", 2 ]
-    ]
+      { "item": "totem_insight", "prob": 4 },
+      { "item": "totem_plants", "prob": 4 },
+      { "item": "totem_confusion", "prob": 4 },
+      { "item": "totem_agile", "prob": 4 },
+      { "item": "totem_lightning", "prob": 4 },
+      { "item": "totem_strength", "prob": 4 },
+      { "item": "totem_elecresist", "prob": 3 },
+      { "item": "totem_clarity", "prob": 3 },
+      { "item": "totem_heal", "prob": 3 },
+      { "item": "totem_flamearmor", "prob": 3 },
+      { "item": "totem_clairvoyance", "prob": 3 },
+      { "item": "totem_invis", "prob": 3 },
+      { "item": "totem_cleric", "prob": 2 },
+      { "item": "totem_free_action", "prob": 2 },
+      { "item": "totem_acidspray", "prob": 2 }
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "magic_tools",
     "type": "item_group",
     "items": [
-      [ "offering_chalice", 25 ],
-      [ "blood_athame", 20 ],
-      [ "hexenhammer", 10 ],
-      [ "silver_glyph", 5 ],
-      [ "scroll_blank", 5 ],
-      [ "mana_gem", 2 ],
-      [ "mana_gem_blood", 2 ],
-      [ "mana_gem_dull", 1 ]
-    ]
+      { "item": "offering_chalice", "prob": 25 },
+      { "item": "blood_athame", "prob": 20 },
+      { "item": "hexenhammer", "prob": 10 },
+      { "item": "silver_glyph", "prob": 5 },
+      { "item": "scroll_blank", "prob": 5 },
+      { "item": "mana_gem", "prob": 2 },
+      { "item": "mana_gem_blood", "prob": 2 },
+      { "item": "mana_gem_dull", "prob": 1 }
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "magic_books",
     "type": "item_group",
     "items": [
-      [ "book_magicfordummies", 15 ],
-      [ "book_potioncraft", 15 ],
-      [ "book_scrollcraft", 15 ],
-      [ "book_summoning", 10 ],
-      [ "book_hexenhammer", 15 ],
-      [ "book_bloodmagic", 15 ],
-      [ "book_sacrifice", 10 ],
+      { "item": "book_magicfordummies", "prob": 15 },
+      { "item": "book_potioncraft", "prob": 15 },
+      { "item": "book_scrollcraft", "prob": 15 },
+      { "item": "book_summoning", "prob": 10 },
+      { "item": "book_hexenhammer", "prob": 15 },
+      { "item": "book_bloodmagic", "prob": 15 },
+      { "item": "book_sacrifice", "prob": 10 },
       { "group": "magic_books_rare", "prob": 5 }
-    ]
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "magic_books_rare",
     "type": "item_group",
-    "items": [ [ "manual_cleansingflame", 60 ], [ "manual_shrike", 40 ] ]
+    "items": [ { "item": "manual_cleansingflame", "prob": 60 }, { "item": "manual_shrike", "prob": 40 } ],
+    "subtype": "distribution"
   },
   {
     "id": "magic_books_postapoc",
     "type": "item_group",
     "items": [
-      [ "book_magicfordummies", 15 ],
-      [ "book_potioncraft", 15 ],
-      [ "book_scrollcraft", 10 ],
-      [ "book_summoning", 5 ],
-      [ "book_hexenhammer", 15 ],
-      [ "book_bloodmagic", 15 ],
-      [ "book_sacrifice", 15 ],
-      { "group": "magic_books_rare_postapoc", "prob": 10 }
-    ]
+      { "item": "book_magicfordummies", "prob": 15 },
+      { "item": "book_potioncraft", "prob": 15 },
+      { "item": "book_scrollcraft", "prob": 10 },
+      { "item": "book_summoning", "prob": 5 },
+      { "item": "book_hexenhammer", "prob": 15 },
+      { "item": "book_bloodmagic", "prob": 15 },
+      { "item": "book_sacrifice", "prob": 15 },
+      { "group": "magic_books_rare_postapoc", "prob": 10 },
+      { "group": "magic_recipe_basic", "prob": 2 },
+      { "group": "magic_recipe_advanced", "prob": 1 }
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "magic_books_rare_postapoc",
     "type": "item_group",
-    "items": [ [ "book_syncretism", 50 ], [ "manual_cleansingflame", 20 ], [ "manual_shrike", 20 ], [ "recipe_lab_arcana", 10 ] ]
+    "items": [
+      { "item": "book_syncretism", "prob": 50 },
+      { "item": "manual_cleansingflame", "prob": 20 },
+      { "item": "manual_shrike", "prob": 20 },
+      { "item": "recipe_lab_arcana", "prob": 10 }
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "unaligned_arcanist_books",
     "type": "item_group",
     "items": [
-      [ "novel_drama", 5 ],
-      [ "novel_experimental", 5 ],
-      [ "philosophy_book", 15 ],
-      [ "poetry_book", 10 ],
-      [ "book_potioncraft", 25 ],
-      [ "book_scrollcraft", 20 ],
-      [ "book_summoning", 10 ],
-      [ "book_magicfordummies", 10 ]
-    ]
+      { "item": "novel_drama", "prob": 5 },
+      { "item": "novel_experimental", "prob": 5 },
+      { "item": "philosophy_book", "prob": 15 },
+      { "item": "poetry_book", "prob": 10 },
+      { "item": "book_potioncraft", "prob": 25 },
+      { "item": "book_scrollcraft", "prob": 20 },
+      { "item": "book_summoning", "prob": 10 },
+      { "item": "book_magicfordummies", "prob": 10 }
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "unaligned_arcanist_books_postapoc",
     "type": "item_group",
     "items": [
-      [ "novel_drama", 5 ],
-      [ "novel_experimental", 5 ],
-      [ "philosophy_book", 15 ],
-      [ "poetry_book", 10 ],
-      [ "book_potioncraft", 25 ],
-      [ "book_scrollcraft", 15 ],
-      [ "book_summoning", 10 ],
-      [ "book_magicfordummies", 5 ],
-      [ "book_syncretism", 10 ]
-    ]
+      { "item": "novel_drama", "prob": 5 },
+      { "item": "novel_experimental", "prob": 5 },
+      { "item": "philosophy_book", "prob": 15 },
+      { "item": "poetry_book", "prob": 10 },
+      { "item": "book_potioncraft", "prob": 25 },
+      { "item": "book_scrollcraft", "prob": 15 },
+      { "item": "book_summoning", "prob": 10 },
+      { "item": "book_magicfordummies", "prob": 5 },
+      { "item": "book_syncretism", "prob": 10 },
+      { "group": "magic_recipe_basic", "prob": 2 },
+      { "group": "magic_recipe_advanced", "prob": 1 }
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "unaligned_arcanist_spells",
     "type": "item_group",
     "items": [
-      [ "scroll_spell_confusion", 1 ],
-      [ "scroll_spell_plants", 1 ],
-      [ "scroll_spell_might", 1 ],
-      [ "scroll_spell_clarity", 1 ],
-      [ "scroll_spell_heal", 1 ],
-      [ "scroll_spell_flame_armor", 1 ],
-      [ "scroll_spell_invis", 1 ],
-      [ "scroll_spell_free_action", 1 ],
-      [ "scroll_spell_acidspray", 1 ]
-    ]
+      { "item": "scroll_spell_confusion", "prob": 1 },
+      { "item": "scroll_spell_plants", "prob": 1 },
+      { "item": "scroll_spell_might", "prob": 1 },
+      { "item": "scroll_spell_clarity", "prob": 1 },
+      { "item": "scroll_spell_heal", "prob": 1 },
+      { "item": "scroll_spell_flame_armor", "prob": 1 },
+      { "item": "scroll_spell_invis", "prob": 1 },
+      { "item": "scroll_spell_free_action", "prob": 1 },
+      { "item": "scroll_spell_acidspray", "prob": 1 }
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "arcana_hunt_random",
     "type": "item_group",
     "items": [
-      [ "iron_thorn", 5 ],
-      [ "inflorescent_root", 5 ],
-      [ "graboid_fang", 5 ],
-      [ "triffid_queen_flower", 5 ],
-      [ "dermatik_sting", 10 ],
-      [ "vortex_shard", 5 ],
-      [ "blob_gem", 15 ],
-      [ "monster_tear", 10 ],
-      [ "shadow_gem", 5 ],
-      [ "bone_twisted", 10 ],
-      [ "gracken_knuckles", 5 ],
-      [ "wyrmskin_piece", 5 ],
-      [ "monster_fang", 15 ],
-      [ "iridescent_plate", 15 ],
-      [ "engraved_stone", 10 ]
-    ]
+      { "item": "iron_thorn", "prob": 5 },
+      { "item": "inflorescent_root", "prob": 5 },
+      { "item": "graboid_fang", "prob": 5 },
+      { "item": "triffid_queen_flower", "prob": 5 },
+      { "item": "dermatik_sting", "prob": 10 },
+      { "item": "vortex_shard", "prob": 5 },
+      { "item": "blob_gem", "prob": 15 },
+      { "item": "monster_tear", "prob": 10 },
+      { "item": "shadow_gem", "prob": 5 },
+      { "item": "bone_twisted", "prob": 10 },
+      { "item": "gracken_knuckles", "prob": 5 },
+      { "item": "wyrmskin_piece", "prob": 5 },
+      { "item": "monster_fang", "prob": 15 },
+      { "item": "iridescent_plate", "prob": 15 },
+      { "item": "engraved_stone", "prob": 10 }
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "lab_magitech_general",
     "//": "Mishmash of tools, books, and supplies that might be used for anomalous research, including some finished products.",
     "type": "item_group",
     "items": [
-      [ "recipe_lab_arcana", 5 ],
-      [ "recipe_lab_elec", 3 ],
-      [ "recipe_mil_augs", 2 ],
+      { "item": "recipe_lab_arcana", "prob": 5 },
+      { "item": "recipe_lab_elec", "prob": 3 },
+      { "item": "recipe_mil_augs", "prob": 2 },
       { "group": "tools_science", "prob": 15 },
       { "group": "tools_gunsmith", "prob": 5 },
       { "group": "magic_crafting", "prob": 10 },
@@ -309,75 +333,80 @@
       { "group": "supplies_mechanics", "prob": 10 },
       { "group": "arcana_hunt_random", "prob": 10 },
       { "group": "magic_tools", "prob": 5 }
-    ]
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "lab_misc_anomalous_items",
     "//": "A smattering of non-magitech tools and materials of anomalous origin.",
     "type": "item_group",
     "items": [
-      { "item": "meat_frond", "prob": 10, "count": 2, "container-item": "jar_glass_sealed" },
-      { "item": "leech_flower", "prob": 5, "count": 2, "container-item": "jar_glass_sealed" },
-      { "item": "meat_bark", "prob": 5, "count": 2, "container-item": "jar_glass_sealed" },
-      { "item": "veggy_tainted", "prob": 15, "count": 2, "container-item": "jar_glass_sealed" },
-      { "item": "veggy", "prob": 15, "count": 2, "container-item": "jar_glass_sealed" },
-      [ "stick_fiber", 4 ],
-      [ "fighter_sting", 3 ],
-      [ "biollante_bud", 3 ],
-      [ "resin_chunk", 15 ],
-      [ "alien_pod_resin", 5 ],
-      [ "exodii_chassis", 3 ],
-      [ "exodii_drone_chassis", 3 ],
-      [ "cyborg_matrix", 2 ],
-      [ "exodii_computer", 2 ],
-      [ "exodii_module", 2 ],
-      [ "exodii_sensor", 2 ],
-      [ "exodii_motor", 2 ],
-      [ "exodii_scanner_dish", 2 ],
-      [ "exodii_portalizer", 2 ],
-      [ "spiral_stone", 9 ],
-      [ "petrified_eye", 5 ],
-      [ "vortex_stone", 4 ],
-      [ "tindalos_whistle", 1 ],
+      { "item": "meat_frond", "prob": 10, "count": 2 },
+      { "item": "leech_flower", "prob": 5, "count": 2 },
+      { "item": "meat_bark", "prob": 5, "count": 2 },
+      { "item": "veggy_tainted", "prob": 15, "count": 2 },
+      { "item": "veggy", "prob": 15, "count": 2 },
+      { "item": "stick_fiber", "prob": 4 },
+      { "item": "fighter_sting", "prob": 3 },
+      { "item": "biollante_bud", "prob": 3 },
+      { "item": "resin_chunk", "prob": 15 },
+      { "item": "alien_pod_resin", "prob": 5 },
+      { "item": "exodii_chassis", "prob": 3 },
+      { "item": "exodii_drone_chassis", "prob": 3 },
+      { "item": "cyborg_matrix", "prob": 2 },
+      { "item": "exodii_computer", "prob": 2 },
+      { "item": "exodii_module", "prob": 2 },
+      { "item": "exodii_sensor", "prob": 2 },
+      { "item": "exodii_motor", "prob": 2 },
+      { "item": "exodii_scanner_dish", "prob": 2 },
+      { "item": "exodii_portalizer", "prob": 2 },
+      { "item": "spiral_stone", "prob": 9 },
+      { "item": "petrified_eye", "prob": 5 },
+      { "item": "vortex_stone", "prob": 4 },
+      { "item": "tindalos_whistle", "prob": 1 },
       { "group": "arcana_hunt_random", "prob": 20 }
-    ]
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "lab_magitech_weaponry",
     "//": "Weapons and gunmods that rely on magitech.",
     "type": "item_group",
     "items": [
-      [ "electrothermal_arc_cannon", 50 ],
-      [ "bio_electrothermal_arc_projector", 25 ],
-      [ "arcane_accelerator_railgun", 10 ],
-      [ "arcane_accelerator_plasma", 10 ],
-      [ "arcane_accelerator_nuke", 5 ]
-    ]
+      { "item": "electrothermal_arc_cannon", "prob": 50 },
+      { "item": "bio_electrothermal_arc_projector", "prob": 25 },
+      { "item": "arcane_accelerator_railgun", "prob": 10 },
+      { "item": "arcane_accelerator_plasma", "prob": 10 },
+      { "item": "arcane_accelerator_nuke", "prob": 5 }
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "lab_magitech_bionics",
     "//": "Arcana-only magitech CBMs.",
     "type": "item_group",
     "items": [
-      [ "bio_electrothermal_arc_projector", 20 ],
-      [ "bio_rift_focus_projector", 10 ],
-      [ "bio_essence_surge_cell", 30 ],
-      [ "bio_temporal_stimulation", 20 ],
-      [ "bio_life_sign_suppression", 10 ],
-      [ "bio_kinetic_amplifier", 20 ]
-    ]
+      { "item": "bio_electrothermal_arc_projector", "prob": 20 },
+      { "item": "bio_rift_focus_projector", "prob": 10 },
+      { "item": "bio_essence_surge_cell", "prob": 30 },
+      { "item": "bio_temporal_stimulation", "prob": 20 },
+      { "item": "bio_life_sign_suppression", "prob": 10 },
+      { "item": "bio_kinetic_amplifier", "prob": 20 }
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "lab_magitech_other",
     "//": "Misc tools and vehiclepart items involving magitech.",
     "type": "item_group",
     "items": [
-      [ "distortion_amp_motor_item", 20 ],
-      [ "essence_surge_generator_item", 35 ],
-      [ "coalescent_converter", 5 ],
-      [ "thermic_essence_cutter", 35 ],
-      [ "spatial_displacer", 5 ]
-    ]
+      { "item": "distortion_amp_motor_item", "prob": 20 },
+      { "item": "essence_surge_generator_item", "prob": 35 },
+      { "item": "coalescent_converter", "prob": 5 },
+      { "item": "thermic_essence_cutter", "prob": 35 },
+      { "item": "spatial_displacer", "prob": 5 }
+    ],
+    "subtype": "distribution"
   },
   {
     "type": "item_group",
@@ -396,18 +425,19 @@
     "id": "vault_magic_item_stash",
     "type": "item_group",
     "items": [
-      [ "arcanemap", 10 ],
-      [ "hexenhammer", 5 ],
-      [ "offering_chalice", 5 ],
-      [ "blood_athame", 5 ],
-      [ "mana_gem", 2 ],
-      [ "mana_gem_blood", 2 ],
-      [ "mana_gem_dull", 1 ],
-      [ "totem_elecresist", 1 ],
-      [ "totem_clairvoyance", 1 ],
-      [ "totem_insight", 1 ],
-      [ "totem_lightning", 1 ]
-    ]
+      { "item": "arcanemap", "prob": 10 },
+      { "item": "hexenhammer", "prob": 5 },
+      { "item": "offering_chalice", "prob": 5 },
+      { "item": "blood_athame", "prob": 5 },
+      { "item": "mana_gem", "prob": 2 },
+      { "item": "mana_gem_blood", "prob": 2 },
+      { "item": "mana_gem_dull", "prob": 1 },
+      { "item": "totem_elecresist", "prob": 1 },
+      { "item": "totem_clairvoyance", "prob": 1 },
+      { "item": "totem_insight", "prob": 1 },
+      { "item": "totem_lightning", "prob": 1 }
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "arcana_mansion_art",
@@ -430,18 +460,19 @@
     "type": "item_group",
     "id": "mine_storage",
     "items": [
-      [ "shovel", 10 ],
-      [ "pickaxe", 2 ],
-      [ "bucket", 20 ],
-      [ "rock", 40 ],
-      [ "rock_large", 10 ],
+      { "item": "shovel", "prob": 10 },
+      { "item": "pickaxe", "prob": 2 },
+      { "item": "bucket", "prob": 20 },
+      { "item": "rock", "prob": 40 },
+      { "item": "rock_large", "prob": 10 },
       { "group": "tools_toolbox", "prob": 5 },
-      [ "coal_lump", 20 ],
-      [ "material_shrd_limestone", 40 ],
-      [ "material_niter", 5 ],
-      [ "chem_rdx", 5 ],
-      [ "chem_hmtd", 10 ]
-    ]
+      { "item": "material_shrd_limestone", "prob": 40 },
+      { "item": "material_niter", "prob": 5 },
+      { "item": "chem_rdx", "prob": 5 },
+      { "item": "chem_hmtd", "prob": 10 },
+      [ "coal_lump", 20 ]
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "sewing_room",
@@ -449,20 +480,20 @@
     "subtype": "distribution",
     "items": [
       { "group": "suits", "prob": 50, "damage": [ 0, 2 ] },
-      [ "scissors", 50 ],
-      [ "thread", 50 ],
+      { "item": "scissors", "prob": 50 },
+      { "item": "thread", "prob": 50 },
       { "group": "pants", "prob": 40, "damage": [ 0, 2 ] },
       { "group": "shirts", "prob": 40, "damage": [ 0, 2 ] },
-      [ "knitting_needles", 40 ],
-      [ "string_36", 40 ],
-      [ "yarn", 40 ],
+      { "item": "knitting_needles", "prob": 40 },
+      { "item": "string_36", "prob": 40 },
+      { "item": "yarn", "prob": 40 },
       { "group": "bed", "prob": 30, "damage": [ 0, 2 ] },
       { "item": "sewing_kit", "prob": 30, "charges": [ 0, 25 ] },
-      [ "cotton_patchwork", 30 ],
-      [ "lycra_patch", 15 ],
-      [ "nylon", 10 ],
+      { "item": "cotton_patchwork", "prob": 30 },
+      { "item": "lycra_patch", "prob": 15 },
+      { "item": "nylon", "prob": 10 },
       { "item": "tailors_kit", "prob": 20, "charges": [ 0, 100 ] },
-      [ "kevlar_shears", 5 ]
+      { "item": "kevlar_shears", "prob": 5 }
     ]
   }
 ]

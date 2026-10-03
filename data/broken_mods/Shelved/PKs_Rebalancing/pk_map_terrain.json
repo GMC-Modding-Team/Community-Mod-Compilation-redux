@@ -29,139 +29,10 @@
     "bash": { "sound": "thump", "ter_set": "t_null", "str_min": 40, "str_max": 100, "str_min_supported": 100, "bash_below": true }
   },
   {
-    "id": "t_sewage",
-    "type": "terrain",
-    "name": "sewage",
-    "description": "Smells awful, you could swim through it.",
-    "symbol": "~",
-    "color": "light_green",
-    "move_cost": 6,
-    "flags": [ "TRANSPARENT", "SWIMMABLE", "LIQUID", "FISHABLE", "REDUCE_SCENT" ],
-    "examine_action": "water_source"
-  },
-  {
-    "id": "t_guardrail_bg_dp",
-    "type": "terrain",
-    "copy-from": "t_guardrail_bg_dp",
-    "name": "guard rail",
-    "symbol": "#",
-    "color": "light_gray",
-    "move_cost": 3,
-    "flags": [ "TRANSPARENT", "NOITEM", "MOUNTABLE", "SHORT", "THINOBSTACLE", "ROAD" ],
-    "bash": {
-      "str_min": 8,
-      "str_max": 150,
-      "sound": "crunch!",
-      "sound_fail": "clang!",
-      "ter_set": "t_pavement_bg_dp",
-      "items": [ { "item": "scrap", "count": [ 3, 6 ] }, { "item": "pipe_solid", "count": [ 0, 2 ] } ]
-    }
-  },
-  {
-    "id": "t_bars",
-    "type": "terrain",
-    "copy-from": "t_bars",
-    "name": "metal bars",
-    "examine_action": "bars",
-    "symbol": "\"",
-    "color": "light_gray",
-    "move_cost": 0,
-    "flags": [ "TRANSPARENT", "NOITEM", "PERMEABLE", "CONNECT_TO_WALL" ],
-    "bash": {
-      "str_min": 60,
-      "str_max": 250,
-      "sound": "metal screeching!",
-      "sound_fail": "clang!",
-      "ter_set": "t_floor",
-      "items": [
-        { "item": "pipe_solid", "prob": 50 },
-        { "item": "steel_chunk", "count": [ 0, 2 ] },
-        { "item": "scrap", "count": [ 2, 5 ] }
-      ]
-    }
-  },
-  {
-    "id": "t_door_bar_c",
-    "type": "terrain",
-    "copy-from": "t_door_bar_c",
-    "name": "closed bar door",
-    "//": "Unlocked, only created at map gen",
-    "symbol": "+",
-    "color": "cyan",
-    "move_cost": 0,
-    "flags": [ "TRANSPARENT", "NOITEM", "PERMEABLE", "CONNECT_TO_WALL" ],
-    "open": "t_door_bar_o",
-    "close": "t_door_bar_locked",
-    "bash": {
-      "str_min": 30,
-      "str_max": 210,
-      "str_min_blocked": 40,
-      "str_max_blocked": 240,
-      "sound": "metal screeching!",
-      "sound_fail": "clang!",
-      "ter_set": "t_floor",
-      "items": [
-        { "item": "pipe_solid", "prob": 50 },
-        { "item": "steel_chunk", "count": [ 0, 2 ] },
-        { "item": "scrap", "count": [ 2, 5 ] }
-      ]
-    }
-  },
-  {
-    "id": "t_door_bar_o",
-    "type": "terrain",
-    "copy-from": "t_door_bar_o",
-    "name": "open bar door",
-    "symbol": "'",
-    "color": "cyan",
-    "move_cost": 2,
-    "flags": [ "TRANSPARENT", "FLAT", "CONNECT_TO_WALL", "ROAD" ],
-    "close": "t_door_bar_c",
-    "bash": {
-      "str_min": 20,
-      "str_max": 210,
-      "str_min_blocked": 30,
-      "str_max_blocked": 240,
-      "sound": "metal screeching!",
-      "sound_fail": "clang!",
-      "ter_set": "t_floor",
-      "items": [
-        { "item": "pipe_solid", "prob": 50 },
-        { "item": "steel_chunk", "count": [ 0, 2 ] },
-        { "item": "scrap", "count": [ 2, 5 ] }
-      ]
-    }
-  },
-  {
-    "id": "t_door_bar_locked",
-    "type": "terrain",
-    "copy-from": "t_door_bar_locked",
-    "name": "closed bar door",
-    "//": "Locked",
-    "symbol": "+",
-    "color": "cyan",
-    "move_cost": 0,
-    "flags": [ "TRANSPARENT", "NOITEM", "PERMEABLE", "CONNECT_TO_WALL" ],
-    "bash": {
-      "str_min": 30,
-      "str_max": 210,
-      "str_min_blocked": 40,
-      "str_max_blocked": 240,
-      "sound": "metal screeching!",
-      "sound_fail": "clang!",
-      "ter_set": "t_floor",
-      "items": [
-        { "item": "pipe_solid", "prob": 50 },
-        { "item": "steel_chunk", "count": [ 0, 2 ] },
-        { "item": "scrap", "count": [ 2, 5 ] }
-      ]
-    }
-  },
-  {
     "id": "t_iron_fence",
     "type": "terrain",
     "name": "iron wrought fence",
-    "description": " ",
+    "description": "",
     "symbol": "LINE_OXOX",
     "color": "dark_gray",
     "move_cost": 0,
@@ -191,7 +62,7 @@
     "id": "t_iron_gate_c",
     "type": "terrain",
     "name": "closed iron gate",
-    "description": " ",
+    "description": "",
     "symbol": "=",
     "color": "dark_gray",
     "move_cost": 0,
@@ -213,7 +84,7 @@
     "id": "t_iron_gate_o",
     "type": "terrain",
     "name": "open iron gate",
-    "description": " ",
+    "description": "",
     "symbol": ".",
     "color": "dark_gray",
     "move_cost": 2,
@@ -233,7 +104,7 @@
     "id": "t_iron_gate_l",
     "type": "terrain",
     "name": "locked iron gate",
-    "description": " ",
+    "description": "",
     "symbol": "=",
     "color": "dark_gray",
     "move_cost": 0,
@@ -258,7 +129,7 @@
     "id": "t_iron_fence_posts",
     "type": "terrain",
     "name": "mangled iron fence",
-    "description": " ",
+    "description": "",
     "symbol": "#",
     "color": "light_gray",
     "move_cost": 3,
@@ -273,31 +144,10 @@
     }
   },
   {
-    "id": "t_paper",
-    "type": "terrain",
-    "copy-from": "t_paper",
-    "name": "paper wall",
-    "description": " ",
-    "symbol": "#",
-    "color": "white",
-    "move_cost": 0,
-    "flags": [ "FLAMMABLE_ASH", "WALL" ],
-    "bash": {
-      "str_min": 3,
-      "str_max": 10,
-      "sound": "rrrrip!",
-      "sound_fail": "slap!",
-      "sound_vol": 8,
-      "sound_fail_vol": 12,
-      "ter_set": "t_null",
-      "items": [ { "item": "wasp_glue", "prob": 20 }, { "item": "wasp_glue", "prob": 20 }, { "item": "wasp_glue", "prob": 20 } ]
-    }
-  },
-  {
     "id": "t_paper_floor",
     "type": "terrain",
     "name": "paper floor",
-    "description": " ",
+    "description": "",
     "symbol": ".",
     "color": "white",
     "move_cost": 0,

@@ -2,35 +2,7 @@
   {
     "type": "talk_topic",
     "id": "TALK_CF_GM",
-    "dynamic_line": {
-      "u_has_any_trait": [ "PROF_CLEANSINGFLAME", "PROF_CLEANSINGFLAME2" ],
-      "yes": { "u_male": "Greetings, Brother.  This is a sacred place.", "no": "Greetings, Sister.  This is a sacred place." },
-      "no": {
-        "u_has_any_trait": [ "PROF_SANGUINE", "THRESH_DRAGONBLOOD" ],
-        "yes": {
-          "u_has_effect": "cf_mission_1",
-          "yes": "A pleasant surprise to see you working with us.  What do you require?",
-          "no": "You are not welcome here sanguinist.  State your intentions."
-        },
-        "no": {
-          "u_has_any_trait": [ "PROF_CHALICE", "PROF_CHALICE2", "THRESH_VEIL" ],
-          "yes": {
-            "u_has_effect": "cf_mission_1",
-            "yes": "Welcome, Keeper.  What do you require?",
-            "no": "Servant of the otherworldly, you are welcome here, so long as you cause no trouble."
-          },
-          "no": {
-            "u_has_trait": "PROF_ARCANIST2",
-            "yes": {
-              "u_has_effect": "cf_mission_1",
-              "yes": "Welcome back.  What do you need?",
-              "no": "I can sense the touch of the otherworldly about you.  For what purpose are you here?"
-            },
-            "no": "Welcome to our sanctum."
-          }
-        }
-      }
-    },
+    "dynamic_line": "Greetings, Sister.  This is a sacred place.  A pleasant surprise to see you working with us.  What do you require?  You are not welcome here sanguinist.  State your intentions.  Welcome, Keeper.  What do you require?  Servant of the otherworldly, you are welcome here, so long as you cause no trouble.  Welcome back.  What do you need?  I can sense the touch of the otherworldly about you.  For what purpose are you here?  Welcome to our sanctum.",
     "responses": [
       {
         "text": "[MISSION] Sofia asked that I recruit traders or other assistance at the center.  Any advice for that?",
@@ -132,21 +104,13 @@
   {
     "type": "talk_topic",
     "id": "TALK_CF_GM_ADVICE_2",
-    "dynamic_line": {
-      "u_has_any_trait": [ "PROF_CHALICE", "PROF_CHALICE2", "THRESH_VEIL" ],
-      "yes": "I tracked their movements for some time intermittently, along with keeping tabs on other leads.  No sign of contact with any remainder of the Keepers, but they have been involved in anomalous activity within the past month prior to the beginning of all this.  I will trust you to retrieve any intel as you see fit given your connection to their order, but do exercise caution.",
-      "no": "I tracked their movements for some time intermittently, along with keeping tabs on other leads.  No sign of contact with any remainder of the Keepers, but they have been involved in anomalous activity within the past month prior to the beginning of all this.  Keep your guard up, and deal with them as needed if they seem unlikely to cooperate.  We can't afford to let this intel slip out of our grasp."
-    },
+    "dynamic_line": "I tracked their movements for some time intermittently, along with keeping tabs on other leads.  No sign of contact with any remainder of the Keepers, but they have been involved in anomalous activity within the past month prior to the beginning of all this.  I will trust you to retrieve any intel as you see fit given your connection to their order, but do exercise caution.  I tracked their movements for some time intermittently, along with keeping tabs on other leads.  No sign of contact with any remainder of the Keepers, but they have been involved in anomalous activity within the past month prior to the beginning of all this.  Keep your guard up, and deal with them as needed if they seem unlikely to cooperate.  We can't afford to let this intel slip out of our grasp.",
     "responses": [ { "text": "…", "topic": "TALK_CF_GM" } ]
   },
   {
     "type": "talk_topic",
     "id": "TALK_CF_GM_ADVICE_3",
-    "dynamic_line": {
-      "u_has_any_trait": [ "PROF_SANGUINE" ],
-      "yes": "You should know how dangerous the Shrikes are, sanguinist.  I doubt you'll be able to just walk in and charm them into giving us what we need, but you're welcome to try.  Personally I'd suggest you err on the side of caution.",
-      "no": "You can't be serious.  What, is she asking you to just walk in and make friends with them?  They're sanguinists, worse they're the ones trained to fight us.  They'll be expecting you, I'm certain.  If you insist on trying to handle this peacefully, you had better be ready for things to turn into an ambush if things go sour."
-    },
+    "dynamic_line": "You should know how dangerous the Shrikes are, sanguinist.  I doubt you'll be able to just walk in and charm them into giving us what we need, but you're welcome to try.  Personally I'd suggest you err on the side of caution.  You can't be serious.  What, is she asking you to just walk in and make friends with them?  They're sanguinists, worse they're the ones trained to fight us.  They'll be expecting you, I'm certain.  If you insist on trying to handle this peacefully, you had better be ready for things to turn into an ambush if things go sour.",
     "responses": [ { "text": "…", "topic": "TALK_CF_GM" } ]
   },
   {
@@ -177,11 +141,7 @@
     "type": "talk_topic",
     "id": "TALK_CF_GM_MISSION_4_OPINION",
     "//": "Unlike Sofia, Johnathan does not trust the Old Guard if you've picked that particular resolution for Sofia's fourth mission.",
-    "dynamic_line": {
-      "compare_string": [ "yes", { "u_val": "old_guard_presence" } ],
-      "yes": "They're hard-working, but they know more than they let on.  At least, whoever sent them.  Be careful what you say around them.  They are here for a reason, and I'm concerned that it might endanger our purpose.",
-      "no": "I have my concerns, but they seem to be trustworthy.  Not well-versed in the arcane, but if need be we can teach them our ways.  Other than that, they seem to mostly just help with day-to-day tasks."
-    },
+    "dynamic_line": "They're hard-working, but they know more than they let on.  At least, whoever sent them.  Be careful what you say around them.  They are here for a reason, and I'm concerned that it might endanger our purpose.  I have my concerns, but they seem to be trustworthy.  Not well-versed in the arcane, but if need be we can teach them our ways.  Other than that, they seem to mostly just help with day-to-day tasks.",
     "responses": [
       { "text": "I see…", "effect": { "npc_add_var": "johnathan_opinion_given", "value": "yes" }, "topic": "TALK_CF_GM" }
     ]
@@ -224,25 +184,13 @@
   {
     "id": "TALK_CF_GM_PRELUDE_4_MID_ADVICE",
     "type": "talk_topic",
-    "dynamic_line": {
-      "u_has_mission": "MISSION_CF_GM_4_PRELUDE",
-      "yes": "Whatever killed most of the survivors is still in the area, and we know they're more dangerous at night.  Try not approach during the day.  Look for anything that seems out of place and bring it here.  If I can't figure anything out of it, I'll recommend you to Sofia.",
-      "no": {
-        "compare_string": [ "yes", { "u_val": "johnathan_prelude_penultimate" } ],
-        "no": "Visit the center first and foremost, but any contact that has extensive involvement with traders and explorers might know something.  Get at least five confirmed locations and we should have a better understanding of where the epicenter might be.",
-        "yes": "Bring what you found to Sofia, she should be able to help.  I'll look into consulting with the others as well, until you come back with anything."
-      }
-    },
+    "dynamic_line": "Whatever killed most of the survivors is still in the area, and we know they're more dangerous at night.  Try not approach during the day.  Look for anything that seems out of place and bring it here.  If I can't figure anything out of it, I'll recommend you to Sofia.  Visit the center first and foremost, but any contact that has extensive involvement with traders and explorers might know something.  Get at least five confirmed locations and we should have a better understanding of where the epicenter might be. Bring what you found to Sofia, she should be able to help.  I'll look into consulting with the others as well, until you come back with anything.",
     "responses": [ { "text": "…", "topic": "TALK_CF_GM" } ]
   },
   {
     "id": "TALK_CF_GM_PRELUDE_4",
     "type": "talk_topic",
-    "dynamic_line": {
-      "compare_string": [ "yes", { "u_val": "johnathan_prelude_started" } ],
-      "no": "There is a new problem I've been made aware of recently, but I'm afraid it's more complicated than normal.  We've been tracking reports of attacks on scavengers and anomalous activity over a wide area, without any leads on the source.  I can tell you what I know and see if we can find anything out.",
-      "yes": "Afraid I haven't acquired any new intel.  Still, I'll answer any questions and hopefully that will help narrow things down.  What do you have for me?"
-    },
+    "dynamic_line": "There is a new problem I've been made aware of recently, but I'm afraid it's more complicated than normal.  We've been tracking reports of attacks on scavengers and anomalous activity over a wide area, without any leads on the source.  I can tell you what I know and see if we can find anything out.  Afraid I haven't acquired any new intel.  Still, I'll answer any questions and hopefully that will help narrow things down.  What do you have for me?",
     "speaker_effect": [ { "effect": [ { "u_add_var": "johnathan_prelude_started", "value": "yes" } ] } ],
     "responses": [
       { "text": "What sort of attacks happened?", "topic": "TALK_CF_GM_PRELUDE_4_ATTACKS" },
@@ -363,13 +311,13 @@
   {
     "id": "TALK_CF_GM_PRELUDE_4_ATTACKS_2_1_RITUAL",
     "type": "talk_topic",
-    "dynamic_line": "We'll trace the area here, with a shadow gem from one of the conventional interlopers, the resonance from your blade, and one of my compatriots providing a mask… just stay right there.",
+    "dynamic_line": "We'll trace the area here, with a shadow gem from one of the conventional interlopers, the resonance from your blade, and one of my compatriots providing a mask…  just stay right there.",
     "responses": [ { "text": "Alright.", "topic": "TALK_CF_GM_PRELUDE_4_ATTACKS_2_1_RITUAL_2" } ]
   },
   {
     "id": "TALK_CF_GM_PRELUDE_4_ATTACKS_2_1_RITUAL_2",
     "type": "talk_topic",
-    "dynamic_line": "It's like a sort of divination, using an anomalous item with a connection to the monsters behind these attacks, the gem in this case.  And with your… connection to that entity, if this is similar to what affected the Keepers' holy site, your blade should react to this ritual…",
+    "dynamic_line": "It's like a sort of divination, using an anomalous item with a connection to the monsters behind these attacks, the gem in this case.  And with your…  connection to that entity, if this is similar to what affected the Keepers' holy site, your blade should react to this ritual…",
     "responses": [ { "text": "Is it doing anything?", "topic": "TALK_CF_GM_PRELUDE_4_ATTACKS_2_1_RITUAL_3" } ]
   },
   {
@@ -416,11 +364,7 @@
   {
     "id": "TALK_CF_GM_PRELUDE_4_PROGRESSION",
     "type": "talk_topic",
-    "dynamic_line": {
-      "compare_string": [ "yes", { "u_val": "johnathan_opinion_given" } ],
-      "no": "We need more information on how many attacks have actually happened, and where.  I would suggest you talk to people at the refugee center, any other location that frequently receives visits from scavengers.",
-      "yes": "We need more information on how many attacks have actually happened, and where.  I would suggest you talk to people at the refugee center, any other location that frequently receives visits from scavengers.  I'd also suggest talking to the merchants set up in the new meeting hall."
-    },
+    "dynamic_line": "We need more information on how many attacks have actually happened, and where.  I would suggest you talk to people at the refugee center, any other location that frequently receives visits from scavengers.  We need more information on how many attacks have actually happened, and where.  I would suggest you talk to people at the refugee center, any other location that frequently receives visits from scavengers.  I'd also suggest talking to the merchants set up in the new meeting hall.",
     "responses": [
       {
         "text": "I'll see what I can do.",
@@ -463,11 +407,7 @@
     "id": "TALK_CF_GM_ARCANISTS",
     "type": "talk_topic",
     "//": "It can be presumed that Johnathan can sense the difference between a member of the Sanguine Order and a non-Order Dragonblood, so only refers to them as sanguinists in the generic sense.",
-    "dynamic_line": {
-      "u_has_trait": "PROF_SANGUINE",
-      "yes": "A few scattered signs of your order, despite our conflict almost wiping us both out.  The Keepers of the Oath seem to be just about extinct too, largely thanks to your fellows.  That just leaves various cults and handfuls of independent practitioners, as far as I'm aware.  I can only pray that they don't make things worse, with no one left to guide them.",
-      "no": "The Sanguine Order, as far as I've been able to discern, has been almost wiped out.  Thank the gods for that.  I've heard barely anything of the Keepers, possibly for the best given we weren't often on speaking terms with each other.  Handful of cults here and there no doubt, but I'm not aware of any others to get tangled up in the bickering and squabbling of the old days.  Likely individuals out there surely, still dabbling in potentially dangerous magic with no one to guide them."
-    },
+    "dynamic_line": "A few scattered signs of your order, despite our conflict almost wiping us both out.  The Keepers of the Oath seem to be just about extinct too, largely thanks to your fellows.  That just leaves various cults and handfuls of independent practitioners, as far as I'm aware.  I can only pray that they don't make things worse, with no one left to guide them.  The Sanguine Order, as far as I've been able to discern, has been almost wiped out.  Thank the gods for that.  I've heard barely anything of the Keepers, possibly for the best given we weren't often on speaking terms with each other.  Handful of cults here and there no doubt, but I'm not aware of any others to get tangled up in the bickering and squabbling of the old days.  Likely individuals out there surely, still dabbling in potentially dangerous magic with no one to guide them.",
     "responses": [ { "text": "I see.", "topic": "TALK_CF_GM" } ]
   },
   {

@@ -12,7 +12,7 @@
     "speed": 90,
     "material": [ "flesh" ],
     "symbol": "Z",
-    "color": "red_cyan",
+    "color": "red",
     "aggression": 0,
     "morale": 100,
     "melee_skill": 4,
@@ -65,7 +65,7 @@
     "speed": 100,
     "material": [ "flesh" ],
     "symbol": "B",
-    "color": "red_cyan",
+    "color": "red",
     "aggression": 5,
     "morale": 100,
     "melee_skill": 6,
@@ -89,12 +89,12 @@
     "fear_triggers": [ "FIRE" ],
     "death_drops": "wild_bio_weapom_item",
     "death_function": { "message": "The %s's body leaks acid.", "effect": { "id": "death_acid", "hit_self": true } },
-    "flags": [ "SEES", "HEARS", "SMELLS", "WARM", "HUMAN", "ELECTRIC", "BASHES", "PUSH_VEH", "PATH_AVOID_DANGER" ]
+    "flags": [ "SEES", "HEARS", "SMELLS", "WARM", "HUMAN", "ELECTRIC", "BASHES", "PUSH_VEH", "PATH_AVOID_DANGER_1" ]
   },
   {
     "id": "hulk_weapon",
     "type": "MONSTER",
-    "name": { "str": "Bio-Weapon Apophis" },
+    "name": { "str": "Bio-Weapon Apophis", "str_pl": "Bio-Weapon Apophises" },
     "description": "The ultimate bionic mutant.  Only God knows why it exists.  With incredible power, armor and bionics on its side, victory won't come easy.",
     "default_faction": "fbio_weapon",
     "species": [ "BIO-WEAPON" ],
@@ -105,7 +105,7 @@
     "speed": 80,
     "material": [ "flesh" ],
     "symbol": "A",
-    "color": "red_cyan",
+    "color": "red",
     "aggression": 100,
     "morale": 100,
     "melee_skill": 10,
@@ -129,7 +129,7 @@
       [ "SMASH", 20 ],
       { "id": "bio_op_takedown", "cooldown": 10 },
       {
-        "type": "GUN",
+        "type": "gun",
         "cooldown": 5,
         "move_cost": 100,
         "gun_type": "bio_laser_minigun_monster",
@@ -162,7 +162,7 @@
       "ELECTRIC",
       "GRABS",
       "BASHES",
-      "PATH_AVOID_DANGER",
+      "PATH_AVOID_DANGER_1",
       "PRIORITIZE_TARGETS"
     ]
   },
@@ -170,7 +170,7 @@
     "id": "mon_fungus_failed_weapon",
     "type": "MONSTER",
     "name": { "str": "fungal augmented abomination" },
-    "description": "This… thing is a failed experiment of science, whose biology has been overtaken by the fungus.  Has various enhancements, both mutagenic and bionic, that it uses to serve its new overlord(s).",
+    "description": "This…  thing is a failed experiment of science, whose biology has been overtaken by the fungus.  Has various enhancements, both mutagenic and bionic, that it uses to serve its new overlord(s).",
     "default_faction": "fungus",
     "species": [ "FUNGUS" ],
     "volume": "62500 ml",
@@ -179,7 +179,7 @@
     "speed": 80,
     "material": [ "veggy" ],
     "symbol": "F",
-    "color": "red_cyan",
+    "color": "red",
     "aggression": 0,
     "morale": 100,
     "melee_skill": 2,
@@ -230,7 +230,7 @@
     "speed": 80,
     "material": [ "flesh" ],
     "symbol": "Z",
-    "color": "red_cyan",
+    "color": "red",
     "aggression": 0,
     "morale": 100,
     "melee_skill": 3,
@@ -270,7 +270,7 @@
     "speed": 80,
     "material": [ "flesh" ],
     "symbol": "Z",
-    "color": "red_cyan",
+    "color": "red",
     "aggression": 0,
     "morale": 100,
     "melee_skill": 3,
@@ -304,17 +304,16 @@
     "name": { "str": "zombie augmented prowler" },
     "description": "An advanced, well-equipped member of the military that still succumbed to the cataclysm.  This one moves with purpose and clarity, knife in hand as though it still remembers how to use it.",
     "speed": 100,
-    "dodge": 4,
     "melee_skill": 5,
     "melee_dice_sides": 6,
     "melee_damage": [ { "damage_type": "cut", "amount": 10 } ],
-    "path_settings": { "max_dist": 20 },
+    "dodge": 4,
     "vision_night": 20,
     "special_attacks": [ { "id": "grab", "cooldown": 10 }, { "id": "bio_op_takedown", "cooldown": 30 }, [ "LUNGE", 20 ] ],
     "death_drops": "mon_zombie_bio_knife_death_drops",
     "zombify_into": "mon_zombie_bio_reanimated",
-    "flags": [ "HARDTOSHOOT", "SEES", "HEARS", "SMELLS", "POISON", "NO_BREATHE", "FILTHY", "PATH_AVOID_DANGER" ],
-    "delete": { "upgrades": { "half_life": 28, "into": "mon_zombie_bio_knife" } }
+    "flags": [ "HARDTOSHOOT", "SEES", "HEARS", "SMELLS", "POISON", "NO_BREATHE", "FILTHY", "PATH_AVOID_DANGER_1" ],
+    "path_settings": { "max_dist": 20 }
   },
   {
     "id": "mon_zombie_bio_infantry_rifle",
@@ -331,7 +330,7 @@
     "speed": 100,
     "material": [ "flesh" ],
     "symbol": "Z",
-    "color": "red_cyan",
+    "color": "red",
     "aggression": 0,
     "morale": 100,
     "melee_skill": 5,
@@ -352,11 +351,10 @@
     "dissect": "dissect_CBM_SOLDAT_ZOMBIE",
     "special_attacks": [
       {
-        "type": "GUN",
+        "type": "gun",
         "cooldown": 5,
         "move_cost": 200,
         "gun_type": "arc_laser_rifle_monster",
-        "ammo_type": "battery",
         "fake_str": 4,
         "fake_dex": 5,
         "fake_per": 3,
@@ -380,7 +378,7 @@
     "placate_triggers": [ "PLAYER_WEAK" ],
     "death_drops": "wild_bio_infantry_rifle",
     "zombify_into": "mon_zombie_bio_reanimated",
-    "flags": [ "SEES", "HEARS", "SMELLS", "POISON", "NO_BREATHE", "FILTHY", "PATH_AVOID_DANGER" ]
+    "flags": [ "SEES", "HEARS", "SMELLS", "POISON", "NO_BREATHE", "FILTHY", "PATH_AVOID_DANGER_1" ]
   },
   {
     "id": "mon_zombie_bio_infantry_shotgun",
@@ -397,7 +395,7 @@
     "speed": 100,
     "material": [ "flesh" ],
     "symbol": "Z",
-    "color": "red_cyan",
+    "color": "red",
     "aggression": 0,
     "morale": 100,
     "melee_skill": 5,
@@ -418,11 +416,10 @@
     "dissect": "dissect_CBM_SOLDAT_ZOMBIE",
     "special_attacks": [
       {
-        "type": "GUN",
+        "type": "gun",
         "cooldown": 5,
         "move_cost": 200,
         "gun_type": "xarm_laser_shotgun_monster",
-        "ammo_type": "battery",
         "fake_str": 4,
         "fake_dex": 5,
         "fake_per": 3,
@@ -446,7 +443,7 @@
     "placate_triggers": [ "PLAYER_WEAK" ],
     "death_drops": "wild_bio_infantry_shotgun",
     "zombify_into": "mon_zombie_bio_reanimated",
-    "flags": [ "SEES", "HEARS", "SMELLS", "POISON", "NO_BREATHE", "FILTHY", "PATH_AVOID_DANGER" ]
+    "flags": [ "SEES", "HEARS", "SMELLS", "POISON", "NO_BREATHE", "FILTHY", "PATH_AVOID_DANGER_1" ]
   },
   {
     "id": "mon_zombie_bio_knight_lmg",
@@ -463,7 +460,7 @@
     "speed": 80,
     "material": [ "flesh" ],
     "symbol": "Z",
-    "color": "red_cyan",
+    "color": "red",
     "aggression": 0,
     "morale": 100,
     "melee_skill": 7,
@@ -483,11 +480,10 @@
     "dissect": "dissect_CBM_SOLDAT_KNIGHT_ZOMBIE",
     "special_attacks": [
       {
-        "type": "GUN",
+        "type": "gun",
         "cooldown": 5,
         "move_cost": 200,
         "gun_type": "krx_laser_lmg_monster",
-        "ammo_type": "battery",
         "fake_str": 4,
         "fake_dex": 3,
         "fake_per": 3,
@@ -527,7 +523,7 @@
     "speed": 80,
     "material": [ "flesh" ],
     "symbol": "Z",
-    "color": "red_cyan",
+    "color": "red",
     "aggression": 0,
     "morale": 100,
     "melee_skill": 7,
@@ -547,11 +543,10 @@
     "dissect": "dissect_CBM_SOLDAT_KNIGHT_ZOMBIE",
     "special_attacks": [
       {
-        "type": "GUN",
+        "type": "gun",
         "cooldown": 5,
         "move_cost": 200,
         "gun_type": "mk_ionic_cannon_monster",
-        "ammo_type": "battery",
         "fake_str": 4,
         "fake_dex": 3,
         "fake_per": 3,
@@ -592,7 +587,7 @@
     "speed": 100,
     "material": [ "flesh" ],
     "symbol": "Z",
-    "color": "red_cyan",
+    "color": "red",
     "aggression": 0,
     "morale": 100,
     "melee_skill": 5,
@@ -613,11 +608,10 @@
     "dissect": "dissect_CBM_SOLDAT_SNIPER_ZOMBIE",
     "special_attacks": [
       {
-        "type": "GUN",
+        "type": "gun",
         "cooldown": 5,
         "move_cost": 200,
         "gun_type": "laser_sniper_monster",
-        "ammo_type": "battery",
         "fake_str": 4,
         "fake_dex": 5,
         "fake_per": 4,
@@ -642,7 +636,7 @@
     "placate_triggers": [ "PLAYER_WEAK" ],
     "death_drops": "wild_bio_scout_sniper",
     "zombify_into": "mon_zombie_bio_reanimated",
-    "flags": [ "SEES", "HEARS", "SMELLS", "POISON", "NO_BREATHE", "FILTHY", "PATH_AVOID_DANGER" ]
+    "flags": [ "SEES", "HEARS", "SMELLS", "POISON", "NO_BREATHE", "FILTHY", "PATH_AVOID_DANGER_1" ]
   },
   {
     "id": "mon_zombie_bio_tool_pistol",
@@ -659,7 +653,7 @@
     "speed": 100,
     "material": [ "flesh" ],
     "symbol": "Z",
-    "color": "red_cyan",
+    "color": "red",
     "aggression": 0,
     "morale": 100,
     "melee_skill": 3,
@@ -670,7 +664,7 @@
     "armor": { "bash": 5, "cut": 10, "stab": 10, "bullet": 15, "acid": 5, "heat": 10 },
     "vision_day": 40,
     "vision_night": 15,
-    "path_settings": { "max_dist": 30, "avoid_traps": true, "avoid_dangerous_fields": true },
+    "path_settings": { "max_dist": 30, "avoid_traps": true },
     "luminance": 2,
     "regenerates": 3,
     "regeneration_modifiers": [ [ "onfire", -2 ], [ "corroding", -2 ] ],
@@ -680,11 +674,10 @@
     "dissect": "dissect_CBM_SOLDAT_TOOL_ZOMBIE",
     "special_attacks": [
       {
-        "type": "GUN",
+        "type": "gun",
         "cooldown": 5,
         "move_cost": 200,
         "gun_type": "neo_laser_pistol_monster",
-        "ammo_type": "battery",
         "fake_str": 3,
         "fake_dex": 4,
         "fake_per": 5,
@@ -700,14 +693,14 @@
         "no_ammo_sound": "beep-beep-beep!"
       },
       { "id": "grab", "cooldown": 10 },
-      [ "scratch", 20 ]
+      { "id": "scratch", "cooldown": 20 }
     ],
     "special_when_hit": [ "ZAPBACK", 60 ],
     "anger_triggers": [ "FRIEND_DIED", "FRIEND_ATTACKED", "HURT", "STALK", "PLAYER_CLOSE" ],
     "placate_triggers": [ "PLAYER_WEAK" ],
     "death_drops": "wild_bio_tool_pistol",
     "zombify_into": "mon_zombie_bio_reanimated",
-    "flags": [ "SEES", "HEARS", "SMELLS", "POISON", "NO_BREATHE", "FILTHY", "PATH_AVOID_DANGER" ]
+    "flags": [ "SEES", "HEARS", "SMELLS", "POISON", "NO_BREATHE", "FILTHY", "PATH_AVOID_DANGER_1" ]
   },
   {
     "id": "mon_zombie_bio_tool_smg",
@@ -724,7 +717,7 @@
     "speed": 100,
     "material": [ "flesh" ],
     "symbol": "Z",
-    "color": "red_cyan",
+    "color": "red",
     "aggression": 0,
     "morale": 100,
     "melee_skill": 3,
@@ -735,7 +728,7 @@
     "armor": { "bash": 5, "cut": 10, "stab": 10, "bullet": 15, "acid": 5, "heat": 10 },
     "vision_day": 40,
     "vision_night": 15,
-    "path_settings": { "max_dist": 30, "avoid_traps": true, "avoid_dangerous_fields": true },
+    "path_settings": { "max_dist": 30, "avoid_traps": true },
     "luminance": 2,
     "regenerates": 3,
     "regeneration_modifiers": [ [ "onfire", -2 ], [ "corroding", -2 ] ],
@@ -745,11 +738,10 @@
     "dissect": "dissect_CBM_SOLDAT_TOOL_ZOMBIE",
     "special_attacks": [
       {
-        "type": "GUN",
+        "type": "gun",
         "cooldown": 5,
         "move_cost": 200,
         "gun_type": "akro_laser_smg_monster",
-        "ammo_type": "battery",
         "fake_str": 3,
         "fake_dex": 4,
         "fake_per": 5,
@@ -765,14 +757,14 @@
         "no_ammo_sound": "beep-beep-beep!"
       },
       { "id": "grab", "cooldown": 10 },
-      [ "scratch", 20 ]
+      { "id": "scratch", "cooldown": 20 }
     ],
     "special_when_hit": [ "ZAPBACK", 60 ],
     "anger_triggers": [ "FRIEND_DIED", "FRIEND_ATTACKED", "HURT", "STALK", "PLAYER_CLOSE" ],
     "placate_triggers": [ "PLAYER_WEAK" ],
     "death_drops": "wild_bio_tool_smg",
     "zombify_into": "mon_zombie_bio_reanimated",
-    "flags": [ "SEES", "HEARS", "SMELLS", "POISON", "NO_BREATHE", "FILTHY", "PATH_AVOID_DANGER" ]
+    "flags": [ "SEES", "HEARS", "SMELLS", "POISON", "NO_BREATHE", "FILTHY", "PATH_AVOID_DANGER_1" ]
   },
   {
     "id": "mon_zombie_bio_reanimated",
@@ -788,7 +780,7 @@
     "speed": 110,
     "material": [ "flesh" ],
     "symbol": "Z",
-    "color": "red_cyan",
+    "color": "red",
     "//": "It has long since been aggro'd at this point.",
     "aggression": 100,
     "morale": 100,
@@ -811,7 +803,7 @@
       { "type": "leap", "cooldown": 10, "max_range": 5 },
       { "id": "grab", "cooldown": 5 },
       { "id": "bio_op_takedown", "cooldown": 20 },
-      [ "scratch", 15 ],
+      { "id": "scratch", "cooldown": 15 },
       { "type": "bite", "cooldown": 5 }
     ],
     "special_when_hit": [ "ZAPBACK", 60 ],
@@ -826,7 +818,7 @@
       "FILTHY",
       "STUMBLES",
       "BASHES",
-      "PATH_AVOID_DANGER"
+      "PATH_AVOID_DANGER_1"
     ]
   }
 ]

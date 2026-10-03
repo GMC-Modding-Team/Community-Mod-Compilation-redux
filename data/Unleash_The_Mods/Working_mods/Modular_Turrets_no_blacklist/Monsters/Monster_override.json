@@ -1,30 +1,6 @@
 [
   {
-    "id": "mon_turret",
-    "type": "MONSTER",
-    "name": { "str": "9mm turret" },
-    "copy-from": "mon_turret_9mm"
-  },
-  {
-    "id": "mon_turret_rifle",
-    "type": "MONSTER",
-    "name": { "str": "5.56mm turret" },
-    "copy-from": "mon_milturret_556"
-  },
-  {
-    "id": "mon_turret_bmg",
-    "type": "MONSTER",
-    "name": { "str": "50cal turret" },
-    "copy-from": "mon_milturret_50bmg"
-  },
-  {
-    "id": "mon_laserturret",
-    "type": "MONSTER",
-    "name": { "str": "laser turret" },
-    "copy-from": "mon_advturret_laser"
-  },
-  {
-    "id": "mon_hazmatbot",
+    "id": "mon_modular_hazmatbot",
     "type": "MONSTER",
     "name": { "str": "utility robot" },
     "description": "One of the many models of utility robot formerly in use by government agencies, private corporations, and civilians alike.",
@@ -65,11 +41,10 @@
     "armor": { "bash": 8, "cut": 10, "acid": 6, "heat": 3 },
     "death_drops": { "groups": [ [ "broken_robots", 4 ] ] },
     "death_function": { "corpse_type": "BROKEN" },
-    "special_attacks": [ { "id": "flash" } ],
     "flags": [ "SEES", "FLIES", "ELECTRONIC", "NO_BREATHE", "NOHEAD", "PRIORITIZE_TARGETS" ]
   },
   {
-    "id": "mon_skitterbot",
+    "id": "mon_modular_skitterbot",
     "type": "MONSTER",
     "name": { "str": "skitterbot" },
     "looks_like": "mon_skitterbot",
@@ -84,7 +59,6 @@
     "color": "light_blue",
     "aggression": 100,
     "morale": 100,
-    "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "armor": { "bash": 12, "cut": 12, "acid": 4, "heat": 4 },
     "vision_day": 50,
     "path_settings": { "max_dist": 5 },
@@ -98,7 +72,7 @@
     "type": "MONSTER",
     "looks_like": "mon_secubot",
     "name": { "str": "defense robot" },
-    "description": "An automated defense robot still active due to its internal power source. This one is armed with an electric prod and an integrated 9mm firearm.",
+    "description": "An automated defense robot still active due to its internal power source.  This one is armed with an electric prod and an integrated 9mm firearm.",
     "default_faction": "cop_bot",
     "species": [ "ROBOT" ],
     "diff": 10,
@@ -122,63 +96,6 @@
     "flags": [ "SEES", "HEARS", "BASHES", "ELECTRONIC", "NO_BREATHE", "PRIORITIZE_TARGETS", "PATH_AVOID_DANGER_1" ]
   },
   {
-    "id": "mon_defbot_9mm",
-    "type": "MONSTER",
-    "copy-from": "mon_defbot_base",
-    "name": { "str": "security robot" },
-    "description": "An automated defense robot still active due to its internal power source. This one is equipped with an integrated 9mm firearm.",
-    "melee_damage": [ { "damage_type": "electric", "amount": 6 } ],
-    "special_attacks": [
-      {
-        "type": "gun",
-        "move_cost": 150,
-        "cooldown": 2,
-        "gun_type": "robogun_9mm",
-        "fake_skills": [ [ "gun", 2 ], [ "smg", 2 ] ],
-        "fake_dex": 9,
-        "no_ammo_sound": "click click!",
-        "ranges": [ [ 0, 2, "BURST" ], [ 3, 6, "AUTO" ], [ 7, 12, "DEFAULT" ] ]
-      }
-    ]
-  },
-  {
-    "id": "mon_defbot_riotcontrol",
-    "type": "MONSTER",
-    "copy-from": "mon_defbot_base",
-    "name": { "str": "riotcontrol robot" },
-    "description": "An automated defense robot still active due to its internal power source. This one is equipped with an electric prod, tear gas sprayer, and integrated 40mm beanbag launcher.",
-    "emit_fields": [ "emit_tear_gas_pulse" ],
-    "melee_damage": [ { "damage_type": "electric", "amount": 6 } ],
-    "special_attacks": [
-      {
-        "type": "gun",
-        "move_cost": 150,
-        "cooldown": 2,
-        "gun_type": "robogun_beanbag",
-        "fake_skills": [ [ "gun", 2 ], [ "launcher", 2 ] ],
-        "fake_dex": 9,
-        "ranges": [ [ 0, 8, "DEFAULT" ] ]
-      }
-    ]
-  },
-  {
-    "id": "mon_copbot",
-    "type": "MONSTER",
-    "copy-from": "mon_defbot_riotcontrol"
-  },
-  {
-    "id": "mon_riotbot",
-    "type": "MONSTER",
-    "looks_like": "mon_secubot",
-    "copy-from": "mon_defbot_riotcontrol"
-  },
-  {
-    "id": "mon_secubot",
-    "type": "MONSTER",
-    "copy-from": "mon_defbot_9mm",
-    "description": "An automated defense robot still active due to its internal power source. This one is equipped with an integrated 9mm firearm."
-  },
-  {
     "id": "mon_chickenbot",
     "type": "MONSTER",
     "name": { "str": "chicken walker" },
@@ -198,7 +115,6 @@
     "melee_skill": 3,
     "melee_dice": 3,
     "melee_dice_sides": 3,
-    "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "armor": { "bash": 18, "cut": 14 },
     "vision_day": 50,
     "vision_night": 35,
@@ -230,7 +146,6 @@
     "melee_skill": 5,
     "melee_dice": 5,
     "melee_dice_sides": 5,
-    "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "armor": { "bash": 90, "cut": 90, "bullet": 72 },
     "vision_day": 50,
     "revert_to_itype": "bot_tankbot",

@@ -1,12 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [DinoMod](#dinomod)
-- [Takeaway Features](#takeaway-features)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # DinoMod
 A content addition mod for Cataclysm: DDA, adds dinosaurs to fight, befriend or just to add something fun and new. Intended to work with all other vanilla-DDA based mods, but probably not total conversions.
 

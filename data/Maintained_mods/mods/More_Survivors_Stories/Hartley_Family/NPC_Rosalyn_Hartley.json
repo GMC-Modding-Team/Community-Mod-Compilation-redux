@@ -26,14 +26,7 @@
   {
     "id": "TALK_Rosalyn_Hartley_1",
     "type": "talk_topic",
-    "dynamic_line": {
-      "u_has_var": "Barrett_Hartley_dead",
-      "type": "flag",
-      "context": "death",
-      "value": "yes",
-      "yes": "Daddy…",
-      "no": { "u_has_mission": "MISSION_Barrett_Hartley_1", "yes": "I'm scared. Where is my dad?", "no": "I'm scared…" }
-    },
+    "dynamic_line": "Daddy…  I'm scared.  Where is my dad?  I'm scared…",
     "speaker_effect": { "sentinel": "met", "effect": "assign_mission" },
     "responses": [
       {
@@ -54,7 +47,7 @@
         ]
       },
       {
-        "text": "These people will take care of you. Be nice to them.",
+        "text": "These people will take care of you.  Be nice to them.",
         "topic": "TALK_Rosalyn_Hartley_safe_alone",
         "condition": { "u_has_var": "Rosalyn_Hartley_alone", "type": "flag", "context": "alone", "value": "no" },
         "switch": true
@@ -80,7 +73,7 @@
         "failure": { "topic": "TALK_Rosalyn_Hartley_follow_no" }
       },
       {
-        "text": "Don't worry. I'll lead you somewhere safe. To evac center.",
+        "text": "Don't worry.  I'll lead you somewhere safe.  To evac center.",
         "topic": "TALK_DONE",
         "effect": [
           { "u_lose_var": "Barrett_Hartley_dead", "type": "flag", "context": "death" },
@@ -102,7 +95,7 @@
     "dynamic_line": "*cries more",
     "responses": [
       {
-        "text": "OK, OK, I'll lead you somewhere safe. To evac center.",
+        "text": "OK, OK, I'll lead you somewhere safe.  To evac center.",
         "topic": "TALK_DONE",
         "effect": [
           { "u_lose_var": "Barrett_Hartley_dead", "type": "flag", "context": "death" },
@@ -139,18 +132,7 @@
   {
     "id": "TALK_Rosalyn_Hartley_evac_lobby",
     "type": "talk_topic",
-    "dynamic_line": {
-      "u_has_var": "Barrett_Hartley_dead",
-      "type": "flag",
-      "context": "death",
-      "value": "yes",
-      "yes": "Where is my daddy?",
-      "no": {
-        "u_has_mission": "MISSION_Barrett_Hartley_4",
-        "yes": "Where are you taking my father?",
-        "no": "I don't like it here…"
-      }
-    },
+    "dynamic_line": "Where is my daddy?  Where are you taking my father?  I don't like it here…",
     "speaker_effect": {
       "sentinel": "safe",
       "condition": { "u_has_var": "u_helped_Barrett_Hartley", "type": "flag", "context": "end", "value": "yes" },

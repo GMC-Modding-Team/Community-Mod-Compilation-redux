@@ -4,7 +4,7 @@
     "type": "MONSTER",
     "name": { "str": "archvile" },
     "species": [ "ABERRATION" ],
-    "default_faction": "upper_doom",
+    "default_faction": "nether",
     "symbol": "A",
     "color": "dark_gray",
     "harvest": "zombie",
@@ -65,7 +65,7 @@
     "type": "MONSTER",
     "name": { "str": "scarred imp" },
     "species": [ "ABERRATION" ],
-    "default_faction": "doom",
+    "default_faction": "nether",
     "symbol": "i",
     "color": "brown",
     "harvest": "zombie_leather",
@@ -85,8 +85,8 @@
     "hp": 85,
     "special_attacks": [
       [ "LUNGE", 40 ],
-      [ "wound_minor", 30 ],
-      [ "hammer", 20 ],
+      { "id": "wound_minor", "cooldown": 30 },
+      { "id": "hammer", "cooldown": 20 },
       { "type": "leap", "cooldown": 25, "max_range": 4 },
       {
         "type": "bite",
@@ -114,14 +114,14 @@
     ],
     "description": "This humanoid resembles a burnt cenobite.  It attacks with fire and claw, and is the grunt of the demonic armies.",
     "flags": [ "SEES", "HEARS", "WARM", "BASHES", "POISON", "CLIMBS", "PUSH_MON", "GROUP_MORALE", "REVIVES", "REVIVES_HEALTHY" ],
-    "armor": { "bash": 2, "cut": 2, "acid": 1, "fire": 5 }
+    "armor": { "bash": 2, "cut": 2, "acid": 1, "heat": 5 }
   },
   {
     "id": "mon_pinky_revive",
     "type": "MONSTER",
     "name": { "str": "scarred demon" },
     "species": [ "ABERRATION" ],
-    "default_faction": "doom",
+    "default_faction": "nether",
     "symbol": "D",
     "color": "red",
     "harvest": "exempt",
@@ -139,9 +139,9 @@
     "vision_night": 9,
     "hp": 140,
     "special_attacks": [
-      [ "hammer", 30 ],
-      [ "wound_minor", 30 ],
-      [ "GRAB_DRAG", 10 ],
+      { "id": "hammer", "cooldown": 30 },
+      { "id": "wound_minor", "cooldown": 30 },
+      { "id": "grab", "cooldown": 10 },
       {
         "type": "bite",
         "cooldown": 5,
@@ -167,16 +167,16 @@
       "REVIVES",
       "REVIVES_HEALTHY"
     ],
-    "armor": { "bash": 8, "cut": 4, "stab": 10, "acid": 1, "fire": 8 }
+    "armor": { "bash": 8, "cut": 4, "stab": 10, "acid": 1, "heat": 8 }
   },
   {
     "id": "mon_hell_knight_revive",
     "type": "MONSTER",
     "name": { "str": "battered hell knight" },
     "species": [ "ABERRATION" ],
-    "default_faction": "upper_doom",
+    "default_faction": "nether",
     "symbol": "K",
-    "color": "red_yellow",
+    "color": "red",
     "harvest": "zombie_leather",
     "material": [ "flesh" ],
     "diff": 20,
@@ -194,7 +194,7 @@
     "hp": 160,
     "special_attacks": [
       [ "SMASH", 60 ],
-      [ "GRAB", 40 ],
+      { "id": "grab", "cooldown": 40 },
       {
         "id": "hammer",
         "cooldown": 30,
@@ -236,16 +236,16 @@
       "REVIVES",
       "REVIVES_HEALTHY"
     ],
-    "armor": { "bash": 6, "cut": 10, "acid": 3, "fire": 10 }
+    "armor": { "bash": 6, "cut": 10, "acid": 3, "heat": 10 }
   },
   {
     "id": "mon_cacodemon_revive",
     "type": "MONSTER",
     "name": { "str": "abhorrent cacodemon" },
     "species": [ "ABERRATION" ],
-    "default_faction": "doom",
+    "default_faction": "nether",
     "symbol": "C",
-    "color": "i_red",
+    "color": "red",
     "harvest": "arachnid_tainted",
     "material": [ "flesh" ],
     "diff": 20,
@@ -266,7 +266,6 @@
         "type": "bite",
         "cooldown": 20,
         "accuracy": 5,
-        "no_infection_chance": 9,
         "damage_max_instance": [ { "damage_type": "stab", "amount": 38, "armor_multiplier": 0.5 } ]
       },
       {
@@ -290,7 +289,7 @@
     ],
     "description": "A dark red sphere with wicked teeth.  Its single eye lights up as it expels plasma from its mouth.",
     "flags": [ "SEES", "HEARS", "FLIES", "POISON", "ARTHROPOD_BLOOD", "BASHES", "PUSH_MON", "REVIVES", "REVIVES_HEALTHY" ],
-    "armor": { "bash": 8, "cut": 16, "stab": 10, "acid": 6, "fire": 6 }
+    "armor": { "bash": 8, "cut": 16, "stab": 10, "acid": 6, "heat": 6 }
   },
   {
     "id": "mon_doom_churl_revive",
@@ -298,7 +297,7 @@
     "name": { "str": "enslaved churle" },
     "description": "A tortured slave; a living survivor, beaten, starved, wearing tattered rags and wielding a crude weapon.  They look hungry enough to eat anything.",
     "species": [ "MAMMAL" ],
-    "default_faction": "doom",
+    "default_faction": "nether",
     "symbol": "@",
     "color": "red",
     "harvest": "human",
@@ -315,7 +314,7 @@
     "dodge": 5,
     "death_drops": { "subtype": "collection", "groups": [ [ "spearmelee_pk", 95 ] ] },
     "special_attacks": [
-      [ "wound_minor", 30 ],
+      { "id": "wound_minor", "cooldown": 30 },
       {
         "id": "scratch",
         "damage_max_instance": [
@@ -338,7 +337,6 @@
       "REVIVES_HEALTHY"
     ],
     "anger_triggers": [ "PLAYER_WEAK", "HURT", "PLAYER_CLOSE" ],
-    "placate_triggers": [ "FRIEND_DIED", "MEAT" ],
     "armor": { "bash": 5, "cut": 5 }
   }
 ]

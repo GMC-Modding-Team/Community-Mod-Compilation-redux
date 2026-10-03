@@ -1,13 +1,13 @@
 [
   {
     "id": "stomach",
-    "copy-from": "flesh",
     "type": "COMESTIBLE",
+    "copy-from": "flesh",
     "name": { "str": "digestive tract" },
     "description": "The digestive tract of a woodland creature.  It is surprisingly durable.",
     "weight": "200 g",
     "volume": "250 ml",
-    "price": "2 USD",
+    "price": 2,
     "spoils_in": "36 hours",
     "calories": 40,
     "quench": 1,
@@ -16,39 +16,37 @@
   },
   {
     "id": "stomach_large",
-    "copy-from": "stomach",
     "type": "COMESTIBLE",
+    "copy-from": "stomach",
     "name": { "str": "large digestive tract" },
-    "description": "The digestive tract of a large woodland creature.  It is surprisingly durable.",
-    "proportional": { "weight": 2.0, "volume": 2.0, "price": 1.5, "calories": 2.0 }
+    "description": "The digestive tract of a large woodland creature.  It is surprisingly durable."
   },
   {
     "id": "stomach_processed",
     "type": "COMESTIBLE",
     "copy-from": "stomach",
     "name": { "str": "cleaned stomach" },
-    "spoils_in": "3 days 22 hours",
     "description": "The cleaned stomach of a woodland creature.",
-    "proportional": { "weight": 0.5, "price": 1.5, "calories": 1.0 }
+    "spoils_in": "3 days 22 hours"
   },
   {
     "id": "large_stomach_processed",
     "type": "COMESTIBLE",
     "copy-from": "stomach_large",
     "name": { "str": "cleaned large stomach" },
-    "spoils_in": "3 days 22 hours",
     "description": "The cleaned stomach of a large woodland creature.",
-    "proportional": { "weight": 0.5, "price": 1.5, "calories": 1.0 }
+    "spoils_in": "3 days 22 hours",
+    "comestible_type": "FOOD"
   },
   {
     "id": "intestines_processed",
     "type": "COMESTIBLE",
     "comestible_type": "FOOD",
-    "name": { "str": "cleaned intestines" },
+    "name": { "str": "cleaned intestines", "str_pl": "cleaned intestineses" },
     "description": "The cleaned intestines of a woodland creature.",
     "weight": "100 g",
     "volume": "250 ml",
-    "price": "2 USD",
+    "price": 2,
     "spoils_in": "3 days 22 hours",
     "calories": 0,
     "quench": 0,
@@ -62,9 +60,8 @@
     "id": "large_intestines_processed",
     "type": "COMESTIBLE",
     "copy-from": "intestines_processed",
-    "name": { "str": "large cleaned intestines" },
-    "description": "The cleaned intestines of a large woodland creature.",
-    "proportional": { "weight": 2.0, "volume": 2.0, "price": 1.5, "calories": 2.0 }
+    "name": { "str": "large cleaned intestines", "str_pl": "large cleaned intestineses" },
+    "description": "The cleaned intestines of a large woodland creature."
   },
   {
     "id": "rennet",
@@ -74,7 +71,7 @@
     "description": "Salted and dried stomach rennet processed for storage, this should last a very long time",
     "weight": "15 g",
     "volume": "250 ml",
-    "price": "4 USD",
+    "price": 4,
     "spoils_in": "720 days",
     "quench": -5,
     "calories": 5,
@@ -114,7 +111,7 @@
     "autolearn": true,
     "qualities": [ { "id": "CUT", "level": 1 }, { "id": "CONTAIN", "level": 1 }, { "id": "BOIL", "level": 1 } ],
     "tools": [ [ [ "water_boiling_heat", 3, "LIST" ] ] ],
-    "byproducts": [ [ "stomach_processed", 1 ] ],
+    "byproducts": [  ],
     "components": [ [ [ "stomach", 1 ] ], [ [ "water", 4 ] ] ]
   },
   {
@@ -130,7 +127,7 @@
     "autolearn": true,
     "qualities": [ { "id": "CUT", "level": 1 }, { "id": "CONTAIN", "level": 1 }, { "id": "BOIL", "level": 1 } ],
     "tools": [ [ [ "water_boiling_heat", 3, "LIST" ] ] ],
-    "byproducts": [ [ "large_stomach_processed", 1 ] ],
+    "byproducts": [  ],
     "components": [ [ [ "stomach_large", 1 ] ], [ [ "water", 6 ] ] ]
   },
   {
@@ -243,21 +240,6 @@
     "qualities": [ { "id": "BOIL", "level": 1 } ],
     "tools": [ [ [ "surface_heat", 7, "LIST" ] ] ],
     "components": [ [ [ "large_stomach_processed", 1 ] ], [ [ "water", 1 ], [ "water_clean", 1 ] ] ]
-  },
-  {
-    "type": "recipe",
-    "activity_level": "LIGHT_EXERCISE",
-    "id_suffix": "WL_recipes",
-    "result": "small_stomach_boiled",
-    "category": "CC_FOOD",
-    "subcategory": "CSC_FOOD_MEAT",
-    "skill_used": "cooking",
-    "time": "100 s",
-    "autolearn": true,
-    "batch_time_factors": [ 67, 5 ],
-    "qualities": [ { "id": "BOIL", "level": 1 } ],
-    "tools": [ [ [ "surface_heat", 5, "LIST" ] ] ],
-    "components": [ [ [ "stomach_processed", 1 ] ], [ [ "water", 1 ], [ "water_clean", 1 ] ] ]
   },
   {
     "type": "recipe",

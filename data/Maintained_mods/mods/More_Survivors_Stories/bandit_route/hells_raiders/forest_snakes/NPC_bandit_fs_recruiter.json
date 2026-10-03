@@ -12,14 +12,7 @@
   {
     "id": [ "TALK_bandit_fs_recruiter" ],
     "type": "talk_topic",
-    "dynamic_line": {
-      "u_has_var": "bandit_camp_unlocked",
-      "type": "flag",
-      "context": "missions_fs",
-      "value": "yes",
-      "yes": "Hello there.",
-      "no": "I'm busy.  Talk to me later."
-    },
+    "dynamic_line": "Hello there.  I'm busy.  Talk to me later.",
     "responses": [
       {
         "text": "Hi.",
@@ -91,60 +84,18 @@
   {
     "id": "TALK_bandit_fs_recruiter_gangs",
     "type": "talk_topic",
-    "dynamic_line": {
-      "and": [
-        "We are not some kind of integral structure with our own hierarchy.  We're just a bunch of different gangs who decided to hang a common flag on ourselves to look more formidable than we really are.  Showdown between gangs is a rare occurrence, but sometimes it happens: either for habar, looting spots, or other bullshit reasons.",
-        {
-          "days_since_cataclysm": 120,
-          "yes": "  I'll tell you a little secret, there will soon be a gathering of gang leaders, and I got the impression that everything will change dramatically there."
-        }
-      ]
-    }
+    "dynamic_line": "We are not some kind of integral structure with our own hierarchy.  We're just a bunch of different gangs who decided to hang a common flag on ourselves to look more formidable than we really are.  Showdown between gangs is a rare occurrence, but sometimes it happens: either for habar, looting spots, or other bullshit reasons.  I'll tell you a little secret, there will soon be a gathering of gang leaders, and I got the impression that everything will change dramatically there."
   },
   {
     "id": "TALK_bandit_fs_recruiter_bad",
     "type": "talk_topic",
-    "dynamic_line": {
-      "and": [
-        "You lost ",
-        {
-          "u_compare_var": "lend_bandits_fs",
-          "type": "flag",
-          "context": "death",
-          "op": "==",
-          "value": 2,
-          "yes": "two",
-          "no": "three"
-        },
-        " of my men and still came for the reward?  Get out of here, <swear> <name_b>, before I kick your ass!"
-      ]
-    },
+    "dynamic_line": "You lost two three of my men and still came for the reward?  Get out of here, <swear> <name_b>, before I kick your ass!",
     "speaker_effect": { "effect": { "u_lose_var": "lend_bandits_fs", "type": "flag", "context": "death" } }
   },
   {
     "id": "TALK_bandit_fs_recruiter_reward",
     "type": "talk_topic",
-    "dynamic_line": {
-      "and": [
-        {
-          "u_compare_var": "bandit_recruiter_reward",
-          "type": "count",
-          "context": "reward",
-          "op": ">",
-          "value": 1,
-          "yes": "Good job out there.",
-          "no": [
-            "This one is not bad.",
-            "This one is not very good.",
-            "This one is really bad.  Do not bring more like that",
-            "This one is what we need.  Bring more like that.",
-            "This one will do.",
-            "This one we use like cannon fodder."
-          ]
-        },
-        "  Choose."
-      ]
-    },
+    "dynamic_line": "Good job out there.  This one is not bad.  This one is not very good.  This one is really bad.  Do not bring more like that This one is what we need.  Bring more like that.  This one will do. This one we use like cannon fodder.  Choose.",
     "speaker_effect": { "effect": { "u_adjust_var": "bandit_recruiter_reward", "type": "count", "context": "reward", "adjustment": -1 } },
     "responses": [
       {
@@ -204,7 +155,7 @@
     "followup": "MISSION_bandit_fs_recruiter_2",
     "dialogue": {
       "describe": "-",
-      "offer": "So listen here, rookie… oh, it's you.  I confused you with one of my soldiers.  We are planning to strengthen the defense of our camp, and this task fell on my shoulders.  I need 150 rolls of barbed wire.  We, of course, do not have such a quantity, but if you can find me some of it, I will make it worth your while.",
+      "offer": "So listen here, rookie…  oh, it's you.  I confused you with one of my soldiers.  We are planning to strengthen the defense of our camp, and this task fell on my shoulders.  I need 150 rolls of barbed wire.  We, of course, do not have such a quantity, but if you can find me some of it, I will make it worth your while.",
       "accepted": "Nice.  There is no rush, but I will be glad if you will not delay this.",
       "rejected": "Fine, I'll ask someone else.",
       "advice": "Look at a hardware store or similar location.",
@@ -270,8 +221,8 @@
     "origins": [ "ORIGIN_SECONDARY" ],
     "dialogue": {
       "describe": "-",
-      "offer": "Rookie, why are you not on… oh, it's you again.  I mistook you for someone else, sorry.  We're still doing this <swear> construction, and these <swear> <name_b>'s don't want to work!  I'm busy with another important job right now, so I can't kick all these <name_b>'s asses.  Help me put together a construction team, and I will make it worth your while.",
-      "accepted": "Fine. The camp is full of lazy asses.  Just ask around and someone may agree to work.",
+      "offer": "Rookie, why are you not on…  oh, it's you again.  I mistook you for someone else, sorry.  We're still doing this <swear> construction, and these <swear> <name_b>'s don't want to work!  I'm busy with another important job right now, so I can't kick all these <name_b>'s asses.  Help me put together a construction team, and I will make it worth your while.",
+      "accepted": "Fine.  The camp is full of lazy asses.  Just ask around and someone may agree to work.",
       "rejected": "Fine, I'll ask someone else.",
       "advice": "Kicking ass without my order is not allowed!",
       "inquire": "How's it going?",

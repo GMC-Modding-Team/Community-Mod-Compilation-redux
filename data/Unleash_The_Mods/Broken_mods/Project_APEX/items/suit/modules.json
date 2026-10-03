@@ -7,45 +7,49 @@
     "symbol": "[",
     "color": "light_gray",
     "volume": "1 ml",
-    "weight": "0 g",
+    "weight": "0 mg",
     "armor": [ { "coverage": 0, "covers": [ "torso" ] } ],
     "price": "10 kUSD",
     "flags": [ "TRADER_AVOID", "ONLY_ONE", "SEMITANGIBLE", "ALLOWS_NATURAL_ATTACKS", "ZERO_WEIGHT" ]
   },
   {
-    "name": { "str": "APEX suit module (system)" },
+    "name": { "str_sp": "APEX suit module (system)" },
     "abstract": "apex_module_system",
     "type": "ARMOR",
-    "copy-from": "apex_module",
-    "covers": [ "torso" ]
+    "armor": [ { "covers": [ "torso" ] } ],
+    "copy-from": "apex_module"
   },
   {
-    "name": { "str": "APEX suit module (cortex)" },
+    "name": { "str_sp": "APEX suit module (cortex)" },
     "abstract": "apex_module_cortex",
     "type": "ARMOR",
-    "copy-from": "apex_module",
-    "covers": [ "head" ]
+    "armor": [ { "covers": [ "head" ] } ],
+    "copy-from": "apex_module"
   },
   {
-    "name": { "str": "APEX suit module (mobility)" },
+    "name": { "str_sp": "APEX suit module (mobility)" },
     "abstract": "apex_module_mobility",
     "type": "ARMOR",
-    "copy-from": "apex_module",
-    "covers": [ "head" ]
+    "armor": [ { "covers": [ "head" ] } ],
+    "copy-from": "apex_module"
   },
   {
     "id": "apex_module_strength",
-    "copy-from": "apex_module_system",
-    "name": { "str": "APEX suit module (strength enhancement)" },
     "type": "ARMOR",
+    "name": { "str_sp": "APEX suit module (strength enhancement)" },
+    "weight": "0 mg",
+    "volume": "1 ml",
     "weight_capacity_bonus": "30 kg",
-    "relic_data": { "passive_effects": [ { "has": "WORN", "condition": "ALWAYS", "values": [ { "value": "STRENGTH", "add": 3 } ] } ] }
+    "relic_data": { "passive_effects": [ { "has": "WORN", "condition": "ALWAYS", "values": [ { "value": "STRENGTH", "add": 3 } ] } ] },
+    "flags": [ "ZERO_WEIGHT" ],
+    "copy-from": "apex_module_system"
   },
   {
     "id": "apex_module_stealth",
-    "copy-from": "apex_module_system",
-    "name": { "str": "APEX suit module (stealth suite)" },
     "type": "ARMOR",
+    "name": { "str_sp": "APEX suit module (stealth suite)" },
+    "weight": "0 mg",
+    "volume": "1 ml",
     "relic_data": {
       "passive_effects": [
         {
@@ -55,13 +59,16 @@
           "mutations": [ "DEBUG_SILENT", "DEBUG_CLOAK" ]
         }
       ]
-    }
+    },
+    "flags": [ "ZERO_WEIGHT" ],
+    "copy-from": "apex_module_system"
   },
   {
     "id": "apex_module_wallhack",
-    "copy-from": "apex_module_system",
-    "name": { "str": "APEX suit module (ultrawide band scanner)" },
     "type": "ARMOR",
+    "name": { "str_sp": "APEX suit module (ultrawide band scanner)" },
+    "weight": "0 mg",
+    "volume": "1 ml",
     "relic_data": {
       "passive_effects": [
         {
@@ -71,22 +78,30 @@
           "mutations": [ "DEBUG_CLAIRVOYANCE" ]
         }
       ]
-    }
+    },
+    "flags": [ "ZERO_WEIGHT" ],
+    "copy-from": "apex_module_system"
   },
   {
     "id": "apex_module_exocortex",
-    "copy-from": "apex_module_cortex",
     "type": "ARMOR",
-    "name": { "str": "APEX suit module (exocortex)" },
-    "relic_data": { "passive_effects": [ { "has": "WORN", "condition": "ALWAYS", "values": [ { "value": "INTELLIGENCE", "add": 3 } ] } ] }
+    "name": { "str_sp": "APEX suit module (exocortex)" },
+    "weight": "0 mg",
+    "volume": "1 ml",
+    "relic_data": { "passive_effects": [ { "has": "WORN", "condition": "ALWAYS", "values": [ { "value": "INTELLIGENCE", "add": 3 } ] } ] },
+    "flags": [ "ZERO_WEIGHT" ],
+    "copy-from": "apex_module_cortex"
   },
   {
     "id": "apex_module_mobil",
-    "copy-from": "apex_module_mobility",
     "type": "ARMOR",
-    "name": { "str": "APEX suit module (mobility suite)" },
+    "name": { "str_sp": "APEX suit module (mobility suite)" },
+    "weight": "0 mg",
+    "volume": "1 ml",
     "relic_data": {
       "passive_effects": [ { "has": "WORN", "condition": "ALWAYS", "values": [ { "value": "SPEED", "multiply": 0.25 } ] } ]
-    }
+    },
+    "flags": [ "ZERO_WEIGHT" ],
+    "copy-from": "apex_module_mobility"
   }
 ]

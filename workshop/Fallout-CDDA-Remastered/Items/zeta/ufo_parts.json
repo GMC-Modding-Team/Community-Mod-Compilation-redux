@@ -1,33 +1,79 @@
 [
   {
     "id": "mounted_alien_rifle",
-    "copy-from": "turret",
     "type": "vehicle_part",
+    "copy-from": "turret",
+    "requirements": {
+      "install": {
+        "skills": [
+          [
+            "mechanics",
+            4
+          ],
+          [
+            "rifle",
+            2
+          ]
+        ],
+        "time": "100 s"
+      },
+      "removal": {
+        "skills": [
+          [
+            "mechanics",
+            2
+          ]
+        ]
+      }
+    },
     "name": "mounted Alien Disintergrator",
     "item": "zetan_rifle",
     "color": "light_gray",
     "broken_color": "dark_gray",
-    "difficulty": 4,
-    "breaks_into": [ { "item": "zetan_rifle", "prob": 100 } ],
-    "requirements": {
-      "install": { "skills": [ [ "mechanics", 4 ], [ "rifle", 2 ] ], "time": 10000 },
-      "removal": { "skills": [ [ "mechanics", 2 ] ] }
-    }
+    "breaks_into": [
+      {
+        "item": "zetan_rifle",
+        "prob": 100
+      }
+    ]
   },
   {
     "id": "mounted_alien_cannon",
-    "copy-from": "turret",
     "type": "vehicle_part",
+    "copy-from": "turret",
+    "requirements": {
+      "install": {
+        "skills": [
+          [
+            "mechanics",
+            4
+          ],
+          [
+            "launcher",
+            2
+          ]
+        ],
+        "time": "100 s"
+      },
+      "removal": {
+        "skills": [
+          [
+            "mechanics",
+            2
+          ]
+        ]
+      }
+    },
     "name": "mounted Alien Drone Cannon",
     "item": "zetan_cannon",
     "color": "light_gray",
     "broken_color": "dark_gray",
-    "difficulty": 4,
-    "breaks_into": [ { "item": "zetan_cannon", "prob": 100 } ],
-    "requirements": {
-      "install": { "skills": [ [ "mechanics", 4 ], [ "launcher", 2 ] ], "time": 10000 },
-      "removal": { "skills": [ [ "mechanics", 2 ] ] }
-    }
+    "breaks_into": [
+      {
+        "item": "zetan_cannon",
+        "prob": 100
+      }
+    ]
   },
   {
     "id": "wheel_ufo_thruster",
@@ -36,22 +82,81 @@
     "item": "thruster_zetan",
     "location": "under",
     "looks_like": "wheel",
-    "symbol": "O",
-    "broken_symbol": "x",
+    "variants": [
+      {
+        "symbols": "O",
+        "symbols_broken": "x"
+      }
+    ],
     "color": "dark_gray",
     "durability": 800,
-    "description": "A weird alien thruster which allows amphibious transportation. Sadly it doesn't allow flight. It seems too broken.",
+    "description": "A weird alien thruster which allows amphibious transportation.  Sadly it doesn't allow flight.  It seems too broken.",
     "damage_modifier": 50,
-    "breaks_into": [ { "item": "scrap_zetan", "count": [ 2, 3 ] } ],
+    "breaks_into": [
+      {
+        "item": "scrap_zetan",
+        "count": [
+          2,
+          3
+        ]
+      }
+    ],
     "rolling_resistance": 0.005,
-    "wheel_type": "standard",
     "contact_area": 0,
     "requirements": {
-      "install": { "skills": [ [ "mechanics", 8 ] ], "time": "15 m", "using": [ [ "vehicle_bolt", 1 ] ] },
-      "removal": { "skills": [ [ "mechanics", 0 ] ], "time": "15 m", "using": [ [ "vehicle_bolt", 1 ] ] },
-      "repair": { "skills": [ [ "mechanics", 4 ] ], "time": "15 m", "using": [ [ "adhesive", 1 ], [ "plastics", 1 ] ] }
+      "install": {
+        "skills": [
+          [
+            "mechanics",
+            8
+          ]
+        ],
+        "time": "15 m",
+        "using": [
+          [
+            "vehicle_bolt_install",
+            1
+          ]
+        ]
+      },
+      "removal": {
+        "skills": [
+          [
+            "mechanics",
+            0
+          ]
+        ],
+        "time": "15 m"
+      },
+      "repair": {
+        "skills": [
+          [
+            "mechanics",
+            4
+          ]
+        ],
+        "time": "15 m",
+        "using": [
+          [
+            "adhesive",
+            1
+          ],
+          [
+            "plastics",
+            1
+          ]
+        ]
+      }
     },
-    "flags": [ "WHEEL", "NEEDS_JACKING", "FLOATS", "STEERABLE" ],
-    "damage_reduction": { "bash": 25 }
+    "flags": [
+      "WHEEL",
+      "NEEDS_JACKING",
+      "FLOATS",
+      "STEERABLE",
+      "STABLE"
+    ],
+    "damage_reduction": {
+      "bash": 25
+    }
   }
 ]

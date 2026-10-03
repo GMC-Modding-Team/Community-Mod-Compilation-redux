@@ -4,14 +4,13 @@
     "type": "vehicle_part",
     "copy-from": "trunk",
     "name": { "str": "cargo trough" },
+    "looks_like": "trunk",
     "color": "light_gray",
     "broken_color": "light_gray",
-    "looks_like": "trunk",
-    "location": "center",
     "durability": 200,
-    "description": "This is little more than a sheetmetal basin welded to the bottom of the vehicle, extending below it.  Though it holds a lot of stuff, its shoddiness makes it fragile.",
-    "size": 1200,
-    "breaks_into": [ { "item": "steel_lump", "count": [ 4, 6 ] }, { "item": "scrap", "count": [ 4, 6 ] } ]
+    "location": "center",
+    "breaks_into": [ { "item": "steel_lump", "count": [ 4, 6 ] }, { "item": "scrap", "count": [ 4, 6 ] } ],
+    "description": "This is little more than a sheetmetal basin welded to the bottom of the vehicle, extending below it.  Though it holds a lot of stuff, its shoddiness makes it fragile."
   },
   {
     "id": "afs_hauling_space",
@@ -19,13 +18,13 @@
     "copy-from": "cargo_space",
     "name": { "str": "hauling space" },
     "looks_like": "cargo_space",
+    "durability": 400,
+    "size": 6000,
     "item": "afs_hauling_space",
     "location": "center",
-    "durability": 400,
-    "description": "A huge, empty space used in truck trailers to transport vast quantities of stuff.",
-    "size": 6000,
+    "flags": [ "AISLE", "BOARDABLE", "CARGO", "ROOF" ],
     "breaks_into": [ { "item": "steel_lump", "count": [ 12, 18 ] }, { "item": "scrap", "count": [ 12, 18 ] } ],
-    "flags": [ "AISLE", "BOARDABLE", "CARGO", "ROOF" ]
+    "description": "A huge, empty space used in truck trailers to transport vast quantities of stuff."
   },
   {
     "id": "afs_crude_plating",
@@ -44,32 +43,31 @@
   },
   {
     "id": "laser_cannon",
-    "copy-from": "turret",
     "type": "vehicle_part",
+    "copy-from": "turret",
+    "requirements": {
+      "install": { "skills": [ [ "mechanics", 4 ], [ "electronics", 3 ] ], "time": "100 s" },
+      "removal": { "skills": [ [ "mechanics", 3 ] ], "time": "50 s" }
+    },
+    "flags": [ "TURRET" ],
     "name": { "str": "mounted laser cannon" },
     "item": "laser_cannon",
     "color": "magenta",
     "broken_color": "magenta",
     "looks_like": "laser_rifle",
-    "breaks_into": [ { "item": "laser_cannon", "prob": 50 } ],
-    "requirements": {
-      "install": { "skills": [ [ "mechanics", 4 ], [ "electronics", 3 ] ], "time": "100 s" },
-      "removal": { "skills": [ [ "mechanics", 3 ] ], "time": "50 s" }
-    },
-    "flags": [ "TURRET" ]
+    "breaks_into": [ { "item": "laser_cannon", "prob": 50 } ]
   },
   {
     "id": "afs_fridge",
     "type": "vehicle_part",
     "copy-from": "minifridge",
     "name": { "str": "refrigerator" },
+    "looks_like": "minifridge",
     "color": "white",
     "broken_color": "white",
-    "looks_like": "minifridge",
     "durability": 400,
     "description": "A medium-sized household refrigerator, converted to utilize vehicle power.  When turned on, food inside will be cooled, extending the time it has before spoiling.",
     "epower": -100,
-    "size": 1200,
     "item": "afs_fridge",
     "variants": [ { "symbols": "{", "symbols_broken": "{" } ]
   },
@@ -82,11 +80,10 @@
     "broken_color": "light_blue",
     "looks_like": "minifridge",
     "durability": 400,
-    "description": "A household fridge, converted to run at a much lower temperature and on vehicle power.  When turned on, food inside will be frozen, completely stopping it from spoiling.",
     "epower": -120,
-    "size": 1200,
     "item": "afs_freezer",
-    "variants": [ { "symbols": "{", "symbols_broken": "{" } ]
+    "variants": [ { "symbols": "{", "symbols_broken": "{" } ],
+    "description": "A household fridge, converted to run at a much lower temperature and on vehicle power.  When turned on, food inside will be frozen, completely stopping it from spoiling."
   },
   {
     "id": "afs_metal_rig",
@@ -118,7 +115,7 @@
     "name": { "str": "cooking rig" },
     "color": "blue",
     "broken_color": "blue",
-    "looks_like": "kitchen_unit",
+    "looks_like": "veh_tools_kitchen",
     "damage_modifier": 10,
     "durability": 125,
     "description": "An all-in-one kitchen unit and chemistry lab.  'e'xamine it to use its hotplate to heat up food or drinks.",
@@ -143,7 +140,7 @@
     "name": { "str": "KitchenMaster cooking buddy" },
     "color": "yellow",
     "broken_color": "yellow",
-    "looks_like": "kitchen_unit",
+    "looks_like": "veh_tools_kitchen",
     "damage_modifier": 10,
     "durability": 200,
     "description": "An all-in-one kitchen unit, chemistry lab, and food preparation area.  'e'xamine it to use its hotplate to heat up food or drinks.",
@@ -213,7 +210,6 @@
     "name": { "str": "large storage battery" },
     "item": "large_storage_battery",
     "location": "fuel_source",
-    "fuel_type": "battery",
     "color": "yellow",
     "broken_color": "red",
     "durability": 600,
@@ -229,21 +225,22 @@
   },
   {
     "id": "afs_roof_external_tank",
-    "categories": [ "movement" ],
-    "copy-from": "external_tank_small",
     "type": "vehicle_part",
+    "copy-from": "external_tank_small",
     "name": { "str": "roof-mounted external tank (200L)" },
     "item": "55gal_drum",
-    "location": "center"
+    "location": "on_roof",
+    "categories": [ "movement" ],
+    "extend": { "flags": [ "ON_ROOF" ] }
   },
   {
     "id": "afs_mounted_external_tank",
     "type": "vehicle_part",
-    "categories": [ "movement" ],
     "copy-from": "external_tank_small",
     "name": { "str": "mounted external tank (200L)" },
     "item": "55gal_drum",
-    "location": "center"
+    "location": "center",
+    "categories": [ "movement" ]
   },
   {
     "id": "afs_lightweight_frame",
@@ -268,8 +265,8 @@
     "id": "afs_lightweight_frame_cross",
     "type": "vehicle_part",
     "copy-from": "afs_lightweight_frame",
-    "extend": { "flags": [ "INITIAL_PART" ] },
-    "variants": [ { "symbols": "c", "symbols_broken": "c" } ]
+    "variants": [ { "symbols": "c", "symbols_broken": "c" } ],
+    "extend": { "flags": [ "INITIAL_PART" ] }
   },
   {
     "id": "afs_lightweight_frame_horizontal",

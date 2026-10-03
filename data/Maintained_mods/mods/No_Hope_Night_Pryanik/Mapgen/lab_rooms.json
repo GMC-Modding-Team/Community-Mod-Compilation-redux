@@ -95,7 +95,8 @@
       ],
       "palettes": [ "lab_palette", "lab_loot_research" ],
       "place_traps": [ { "trap": "tr_dissector", "x": [ 1, 5 ], "y": [ 2, 5 ] } ],
-      "place_monster": [ { "monster": "mon_broken_cyborg", "x": [ 0, 6 ], "y": [ 0, 6 ], "chance": 33 } ]
+      "place_monster": [ { "monster": "mon_broken_cyborg", "x": [ 0, 6 ], "y": [ 0, 6 ], "chance": 33 } ],
+      "terrain": { ".": "t_region_groundcover", "c": "t_region_groundcover" }
     }
   },
   {
@@ -130,7 +131,7 @@
         "......."
       ],
       "palettes": [ "lab_palette", "lab_palette_map_computer" ],
-      "terrain": { "c": [ "t_thconc_floor" ] },
+      "terrain": { "c": [ "t_thconc_floor" ], ".": "t_region_groundcover", "6": "t_region_groundcover" },
       "place_monsters": [ { "monster": "GROUP_LAB_SECURITY", "x": [ 0, 6 ], "y": [ 0, 6 ], "repeat": [ 1, 6 ], "chance": 3 } ]
     }
   },
@@ -139,7 +140,7 @@
     "method": "json",
     "nested_mapgen_id": "lab_room_9x9",
     "object": {
-      "mapgensize": [ 7, 7 ],
+      "mapgensize": [ 9, 9 ],
       "rotation": [ 0, 3 ],
       "rows": [
         ".........",
@@ -153,7 +154,7 @@
         "........."
       ],
       "palettes": [ "lab_palette", "lab_palette_map_computer" ],
-      "terrain": { "c": [ "t_thconc_floor" ] },
+      "terrain": { "c": [ "t_thconc_floor" ], ".": "t_region_groundcover", "6": "t_region_groundcover" },
       "place_monsters": [ { "monster": "GROUP_LAB_SECURITY", "x": [ 0, 6 ], "y": [ 0, 6 ], "repeat": [ 1, 6 ], "chance": 3 } ]
     }
   },
@@ -191,7 +192,8 @@
         "cc"
       ],
       "palettes": [ "lab_palette" ],
-      "mapping": { "c": { "items": [ { "item": "teleport", "chance": 20 } ] } }
+      "mapping": { "c": { "items": [ { "item": "teleport", "chance": 20 } ] } },
+      "terrain": { "c": "t_region_groundcover" }
     }
   },
   {
@@ -217,7 +219,8 @@
           "items": [ { "item": "office", "chance": 30 }, { "item": "textbooks", "chance": 3 }, { "item": "science", "chance": 3 } ]
         },
         "h": { "item": [ { "item": "coat_lab", "chance": 10 } ] }
-      }
+      },
+      "terrain": { "c": "t_region_groundcover", ".": "t_region_groundcover", "h": "t_region_groundcover", "x": "t_region_groundcover" }
     }
   },
   {
@@ -245,7 +248,8 @@
           "items": [ { "item": "office", "chance": 30 }, { "item": "textbooks", "chance": 3 }, { "item": "science", "chance": 3 } ]
         },
         "h": { "item": [ { "item": "coat_lab", "chance": 10 } ] }
-      }
+      },
+      "terrain": { "c": "t_region_groundcover", ".": "t_region_groundcover", "h": "t_region_groundcover", "x": "t_region_groundcover" }
     }
   },
   {
@@ -267,7 +271,8 @@
         "........."
       ],
       "palettes": [ "lab_palette" ],
-      "furniture": { "C": [ "f_centrifuge" ] }
+      "furniture": { "C": [ "f_centrifuge" ] },
+      "terrain": { ".": "t_region_groundcover" }
     }
   },
   {
@@ -289,7 +294,7 @@
         "........."
       ],
       "palettes": [ "lab_palette" ],
-      "terrain": { "C": [ "t_vat" ] },
+      "terrain": { "C": [ "t_vat" ], ".": "t_region_groundcover" },
       "mapping": { "C": { "items": [ { "item": "cloning_vat", "chance": 50 } ] } }
     }
   },
@@ -312,7 +317,7 @@
         "........."
       ],
       "palettes": [ "lab_palette" ],
-      "terrain": { "C": [ "t_vat" ] },
+      "terrain": { "C": [ "t_vat" ], ".": "t_region_groundcover", "c": "t_region_groundcover" },
       "mapping": {
         "C": { "items": [ { "item": "cloning_vat", "chance": 50 } ] },
         "c": { "items": [ { "item": "mut_lab", "chance": 20 } ] }
@@ -339,7 +344,7 @@
         "cccc.cccc"
       ],
       "palettes": [ "lab_palette" ],
-      "terrain": { "C": [ "t_vat" ] },
+      "terrain": { "C": [ "t_vat" ], "c": "t_region_groundcover", ".": "t_region_groundcover" },
       "mapping": {
         "C": { "items": [ { "item": "cloning_vat", "chance": 50 } ] },
         "c": { "items": [ { "item": "mut_lab", "chance": 15 } ] }
@@ -411,7 +416,13 @@
         "ggGgg"
       ],
       "palettes": [ "lab_palette" ],
-      "terrain": { ",": "t_floor_blue" },
+      "terrain": {
+        ",": "t_floor_blue",
+        "g": "t_region_groundcover",
+        "T": "t_region_groundcover",
+        "S": "t_region_groundcover",
+        "G": "t_region_groundcover"
+      },
       "place_monster": [
         {
           "monster": [ "mon_zombie_brute", "mon_zombie_screecher", "mon_zombie_hollow", "mon_zombie_master", "mon_zombie_necro" ],
@@ -437,7 +448,7 @@
         "ggggg"
       ],
       "palettes": [ "lab_palette" ],
-      "terrain": { ",": "t_floor_blue" },
+      "terrain": { ",": "t_floor_blue", "g": "t_region_groundcover", "G": "t_region_groundcover" },
       "place_monster": [
         {
           "monster": [ "mon_zombie_pig", "mon_zombear", "mon_zoose", "mon_zolf", "mon_zombie_dog" ],
@@ -465,7 +476,8 @@
         "c.c.c.c",
         "c.c.c.c"
       ],
-      "palettes": [ "lab_palette", "lab_loot_research" ]
+      "palettes": [ "lab_palette", "lab_loot_research" ],
+      "terrain": { "c": "t_region_groundcover", ".": "t_region_groundcover" }
     }
   },
   {
@@ -485,7 +497,8 @@
         ".c.c.c.",
         "......."
       ],
-      "palettes": [ "lab_palette", "lab_loot_research" ]
+      "palettes": [ "lab_palette", "lab_loot_research" ],
+      "terrain": { ".": "t_region_groundcover", "c": "t_region_groundcover" }
     }
   },
   {
@@ -506,7 +519,7 @@
         "......."
       ],
       "palettes": [ "lab_palette" ],
-      "terrain": { "~": [ "t_water_sh" ] },
+      "terrain": { "~": [ "t_water_sh" ], ".": "t_region_groundcover", "c": "t_region_groundcover" },
       "mapping": { "c": { "items": [ { "item": "chem_lab", "chance": 10 } ] }, "~": { "items": [ { "item": "hydro", "chance": 20 } ] } }
     }
   },
@@ -530,7 +543,7 @@
         "........."
       ],
       "palettes": [ "lab_palette" ],
-      "terrain": { "~": [ "t_water_sh" ] },
+      "terrain": { "~": [ "t_water_sh" ], ".": "t_region_groundcover", "c": "t_region_groundcover" },
       "mapping": { "c": { "items": [ { "item": "chem_lab", "chance": 10 } ] }, "~": { "items": [ { "item": "hydro", "chance": 20 } ] } }
     }
   },
@@ -551,7 +564,14 @@
         ".c..xd.",
         "......."
       ],
-      "palettes": [ "lab_palette", "lab_loot_research" ]
+      "palettes": [ "lab_palette", "lab_loot_research" ],
+      "terrain": {
+        ".": "t_region_groundcover",
+        "c": "t_region_groundcover",
+        "d": "t_region_groundcover",
+        "h": "t_region_groundcover",
+        "x": "t_region_groundcover"
+      }
     }
   },
   {
@@ -573,7 +593,8 @@
         "c.c...c.c",
         "c.c...c.c"
       ],
-      "palettes": [ "lab_palette", "lab_loot_research" ]
+      "palettes": [ "lab_palette", "lab_loot_research" ],
+      "terrain": { "c": "t_region_groundcover", ".": "t_region_groundcover", "x": "t_region_groundcover" }
     }
   },
   {
@@ -594,7 +615,8 @@
         "x......"
       ],
       "palettes": [ "lab_palette" ],
-      "mapping": { "t": { "items": [ { "item": "office", "chance": 15 } ] } }
+      "mapping": { "t": { "items": [ { "item": "office", "chance": 15 } ] } },
+      "terrain": { ".": "t_region_groundcover", "h": "t_region_groundcover", "t": "t_region_groundcover", "x": "t_region_groundcover" }
     }
   },
   {
@@ -620,7 +642,8 @@
       "mapping": {
         "t": { "items": [ { "item": "office", "chance": 10 } ] },
         "c": { "item": [ { "item": "television", "chance": 10 } ] }
-      }
+      },
+      "terrain": { ".": "t_region_groundcover", "h": "t_region_groundcover", "t": "t_region_groundcover", "c": "t_region_groundcover" }
     }
   },
   {
@@ -643,7 +666,8 @@
         "........."
       ],
       "palettes": [ "lab_palette" ],
-      "mapping": { "t": { "items": [ { "item": "office", "chance": 10 } ] } }
+      "mapping": { "t": { "items": [ { "item": "office", "chance": 10 } ] } },
+      "terrain": { "x": "t_region_groundcover", ".": "t_region_groundcover", "h": "t_region_groundcover", "t": "t_region_groundcover" }
     }
   },
   {
@@ -664,7 +688,14 @@
         ".x....."
       ],
       "palettes": [ "lab_palette", "lab_loot_home_office" ],
-      "mapping": { "c": { "items": [ { "item": "museum_security", "chance": 66 } ] } }
+      "mapping": { "c": { "items": [ { "item": "museum_security", "chance": 66 } ] } },
+      "terrain": {
+        ".": "t_region_groundcover",
+        "d": "t_region_groundcover",
+        "c": "t_region_groundcover",
+        "h": "t_region_groundcover",
+        "x": "t_region_groundcover"
+      }
     }
   },
   {
@@ -696,7 +727,8 @@
       "rows": [ "X" ],
       "palettes": [ "lab_palette", "lab_loot_research" ],
       "//": "Places a crate, 25% chance of being pre-opened.",
-      "furniture": { "X": [ "f_crate_c", "f_crate_c", "f_crate_c", "f_crate_o" ] }
+      "furniture": { "X": [ "f_crate_c", "f_crate_c", "f_crate_c", "f_crate_o" ] },
+      "terrain": {  }
     }
   },
   {
@@ -766,6 +798,15 @@
       "mapping": {
         "l": { "items": [ { "item": "cleaning", "chance": 60, "repeat": 2 } ] },
         "S": { "items": [ { "item": "drugs_heal_simple", "chance": 10 }, { "item": "harddrugs", "chance": 5 } ] }
+      },
+      "terrain": {
+        ".": "t_region_groundcover",
+        "T": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "S": "t_region_groundcover",
+        "W": "t_region_groundcover",
+        "-": "t_region_groundcover"
       }
     }
   },
@@ -787,7 +828,7 @@
         "......."
       ],
       "palettes": [ "lab_palette" ],
-      "terrain": { ",": "t_floor_green" },
+      "terrain": { ",": "t_floor_green", ".": "t_region_groundcover", "x": "t_region_groundcover" },
       "mapping": { ",": { "item": [ { "item": "glasses_safety", "chance": 4 } ] } }
     }
   },
@@ -808,7 +849,8 @@
         "bb...bb",
         "s.....s"
       ],
-      "palettes": [ "lab_palette", "lab_loot_home_office" ]
+      "palettes": [ "lab_palette", "lab_loot_home_office" ],
+      "terrain": { "s": "t_region_groundcover", ".": "t_region_groundcover", "b": "t_region_groundcover" }
     }
   },
   {
@@ -831,7 +873,17 @@
         "b..|.|.bb"
       ],
       "palettes": [ "lab_palette", "lab_loot_home_office" ],
-      "furniture": { "B": "f_bathtub" }
+      "furniture": { "B": "f_bathtub" },
+      "terrain": {
+        "b": "t_region_groundcover",
+        "T": "t_region_groundcover",
+        ".": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "W": "t_region_groundcover",
+        "s": "t_region_groundcover",
+        "S": "t_region_groundcover",
+        "-": "t_region_groundcover"
+      }
     }
   },
   {
@@ -852,7 +904,16 @@
         ",,=.ccx"
       ],
       "palettes": [ "lab_palette", "lab_loot_home_office" ],
-      "terrain": { "=": "t_chainfence_h", "^": [ "t_chaingate_c", "t_chaingate_c", "t_chaingate_c", "t_chaingate_o" ] },
+      "terrain": {
+        "=": "t_chainfence_h",
+        "^": [ "t_chaingate_c", "t_chaingate_c", "t_chaingate_c", "t_chaingate_o" ],
+        ".": "t_region_groundcover",
+        ",": "t_region_groundcover",
+        "h": "t_region_groundcover",
+        "l": "t_region_groundcover",
+        "x": "t_region_groundcover",
+        "c": "t_region_groundcover"
+      },
       "mapping": { "l": { "items": [ { "item": "vet_softdrug", "chance": 80, "repeat": 2 } ] } },
       "place_monster": [
         { "monster": "mon_zombie_dog", "x": [ 0, 1 ], "y": [ 0, 1 ], "chance": 50, "pack_size": [ 1, 2 ], "one_or_none": true },
@@ -894,7 +955,8 @@
         ".]]].]]].",
         "........."
       ],
-      "palettes": [ "lab_palette", "lab_loot_home_office" ]
+      "palettes": [ "lab_palette", "lab_loot_home_office" ],
+      "terrain": { "x": "t_region_groundcover", ".": "t_region_groundcover", "h": "t_region_groundcover", "]": "t_region_groundcover" }
     }
   },
   {
@@ -917,7 +979,13 @@
         "........."
       ],
       "palettes": [ "lab_palette" ],
-      "terrain": { "W": "t_water_dp" }
+      "terrain": {
+        "W": "t_water_dp",
+        ".": "t_region_groundcover",
+        "g": "t_region_groundcover",
+        "h": "t_region_groundcover",
+        "x": "t_region_groundcover"
+      }
     }
   },
   {
@@ -940,7 +1008,19 @@
         ".x....|.S"
       ],
       "palettes": [ "lab_palette" ],
-      "terrain": { "E": "t_elevator", "e": "t_elevator_control_off" }
+      "terrain": {
+        "E": "t_elevator",
+        "e": "t_elevator_control_off",
+        ".": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "M": "t_region_groundcover",
+        "-": "t_region_groundcover",
+        "T": "t_region_groundcover",
+        "h": "t_region_groundcover",
+        "W": "t_region_groundcover",
+        "x": "t_region_groundcover",
+        "S": "t_region_groundcover"
+      }
     }
   },
   {
@@ -963,7 +1043,8 @@
         "r.xx.xx.r"
       ],
       "palettes": [ "lab_palette" ],
-      "items": { "r": { "item": "electronics", "chance": 10 } }
+      "items": { "r": { "item": "electronics", "chance": 10 } },
+      "terrain": { "r": "t_region_groundcover", "x": "t_region_groundcover", ".": "t_region_groundcover" }
     }
   },
   {
@@ -986,7 +1067,7 @@
         "```......"
       ],
       "palettes": [ "lab_palette" ],
-      "terrain": { "%": "t_thconc_floor" },
+      "terrain": { "%": "t_thconc_floor", ".": "t_region_groundcover", "l": "t_region_groundcover", "|": "t_region_groundcover" },
       "furniture": {
         "%": [ "f_treadmill", "f_treadmill_mechanical" ],
         "5": [ "f_ergometer", "f_ergometer_mechanical", "f_exercise" ],
@@ -1027,6 +1108,19 @@
         "C": { "items": [ { "item": "kitchen", "chance": 80 } ] },
         "c": { "items": [ { "item": "kitchen", "chance": 50 } ] },
         "O": { "items": [ { "item": "oven", "chance": 70 } ] }
+      },
+      "terrain": {
+        "1": "t_region_groundcover",
+        "2": "t_region_groundcover",
+        ".": "t_region_groundcover",
+        "h": "t_region_groundcover",
+        "t": "t_region_groundcover",
+        "+": "t_region_groundcover",
+        "-": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "c": "t_region_groundcover",
+        "f": "t_region_groundcover",
+        "S": "t_region_groundcover"
       }
     }
   },

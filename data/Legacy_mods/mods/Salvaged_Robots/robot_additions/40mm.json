@@ -6,7 +6,7 @@
     "description": "A 40mm grenade with an EMP charge.  It will release an electromagnetic pulse capable of damaging robots and some equipment.",
     "weight": "230 g",
     "volume": "250 ml",
-    "price": "400 USD",
+    "price": 400,
     "material": [ "steel", "powder" ],
     "symbol": "=",
     "color": "yellow",
@@ -16,10 +16,11 @@
     "casing": "40x46mm_m118_casing",
     "range": 40,
     "damage": { "damage_type": "stab", "amount": 5 },
-    "dispersion": 30,
     "recoil": 225,
     "drop": "40mmEMP_act",
-    "effects": [ "COOKOFF", "NEVER_MISFIRES", "NO_EMBED" ]
+    "effects": [ "COOKOFF", "NEVER_MISFIRES", "NO_EMBED" ],
+    "loudness": 0,
+    "//legacy_dispersion": 30
   },
   {
     "id": "40mmEMP_act",
@@ -29,7 +30,7 @@
     "description": "This EMP grenade is active, and will shortly detonate, creating a large EMP field that damages robots and drains bionic energy.  You may not want to be holding it much longer.",
     "weight": "400 g",
     "volume": "250 ml",
-    "price": "0 cent",
+    "price": 0,
     "to_hit": -1,
     "melee_damage": { "bash": 5 },
     "material": [ "steel", "plastic" ],
@@ -38,13 +39,7 @@
     "initial_charges": 0,
     "max_charges": 0,
     "turns_per_charge": 1,
-    "use_action": {
-      "type": "explosion",
-      "draw_explosion_radius": 8,
-      "draw_explosion_color": "light_blue",
-      "emp_blast_radius": 8,
-      "sound_volume": 0
-    },
+    "use_action": { "type": "explosion", "draw_explosion_radius": 8, "draw_explosion_color": "light_blue", "emp_blast_radius": 8 },
     "flags": [ "TRADER_AVOID" ]
   }
 ]
