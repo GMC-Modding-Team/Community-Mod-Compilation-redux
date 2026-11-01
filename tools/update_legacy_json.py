@@ -34,8 +34,8 @@ Transformations applied
   14. "mod-type": "SUPPLEMENTAL"-> "category": "SUPPLEMENTAL"
   15. "author": "x"             -> "authors": [ "x" ]
   16. "note":                   -> "//"
-  17. direct "price": N          -> whole-cent H price
-  18. direct "price_postapoc": N -> whole-cent H price
+  17. direct "price": N          -> cent, USD, or kUSD (largest exact unit)
+  18. direct "price_postapoc": N -> cent, USD, or kUSD (largest exact unit)
   19. "min_melee": N            -> skill_requirements entry  (merged with min_unarmed)
   20. "min_unarmed": N          -> skill_requirements entry  (merged with min_melee)
   21. "bashing": N, "cutting": M-> "melee_damage": { "bash": N, "cut": M }
@@ -69,6 +69,7 @@ import json
 import math
 import subprocess
 import sys
+from decimal import Decimal
 from typing import Any, Iterable
 
 from pathlib import Path
@@ -1647,14 +1648,43 @@ def _restore_activity_noise_volume(content, originals):
         content = content.replace(f'\x00ANV{idx}\x00', original)
     return content
 
+def _price_string(value):
+    """Render cents as money, using USD or kUSD for exact whole units."""
+    if isinstance(value, bool):
+        return value
+    if isinstance(value, str):
+        match = re.fullmatch(
+            r'\s*([+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?)\s*(cent|USD)?\s*',
+            value,
+            re.IGNORECASE,
+        )
+        if not match:
+            # Preserve authored kUSD and mixed-unit strings with their units.
+            return value
+        if (match.group(2) or '').lower() == 'usd':
+            dollars = Decimal(match.group(1))
+            if dollars != 0 and dollars % 1000 == 0:
+                return f"{int(dollars / 1000)} kUSD"
+            return value
+        value = match.group(1)
+    elif not isinstance(value, (int, float)):
+        return value
+    # Retain the existing truncation of legacy fractional cents.
+    cents = int(Decimal(str(value)))
+    if cents != 0 and cents % 100000 == 0:
+        return f"{cents // 100000} kUSD"
+    if cents != 0 and cents % 100 == 0:
+        return f"{cents // 100} USD"
+    return f"{cents} cent"
+
+
 def fix_price(content):
     """
-    Normalize direct item prices to whole-cent numeric values.
+    Normalize direct item prices to cent, USD, or whole-thousand kUSD strings.
 
-    H accepts structured pricing multipliers (``price_rules`` and
-    ``proportional``) as floating point values, but direct item prices are
-    whole cents.  Keep those nested structures masked while converting only
-    direct numeric fields and legacy ``"N cent"`` strings.  Mixed-unit
+    Structured pricing multipliers (``price_rules`` and ``proportional``)
+    remain numeric.  Keep those nested structures masked while converting only
+    direct numeric fields and ``"N cent"`` or ``"N USD"`` strings.  Mixed-unit
     authored strings such as ``"1 USD 50 cent"`` are left alone.
     """
     content, prop_originals = _mask_proportional(content)
@@ -1664,15 +1694,15 @@ def fix_price(content):
     pattern = re.compile(
         r'(?P<prefix>"(?:price|price_postapoc)"\s*:\s*)'
         r'(?:'
-        r'(?P<number>[+-]?(?:\d+(?:\.\d*)?|\.\d+))'
-        r'|"(?P<cent>[+-]?(?:\d+(?:\.\d*)?|\.\d+))\s+cent"'
-        r')',
+        r'(?P<number>[+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?)'
+        r'|"(?P<money>[+-]?(?:\d+(?:\.\d*)?|\.\d+)\s+(?:cent|USD))"'
+        r')(?=\s*[,}])',
         re.IGNORECASE,
     )
 
     def normalize(match):
-        value = match.group("number") or match.group("cent")
-        return f'{match.group("prefix")}{int(float(value))}'
+        value = match.group("number") or match.group("money")
+        return f'{match.group("prefix")}{json.dumps(_price_string(value))}'
 
     content = pattern.sub(normalize, content)
     content = _restore_price_rules_prices(content, price_rules_originals)
@@ -6116,30 +6146,13 @@ def transform_object(
             counts["obsolete_item_flags"] += 1
 
     if obj.get("type") in ITEM_TYPES:
-        # H expects monetary fields as numbers.  Older mods commonly used
-        # human-readable strings such as "250 USD"; retain the amount while
-        # dropping only the presentation suffix.
+        # Use the same money strings as the legacy pass, preserving USD units.
         for price_key in ("price", "price_postapoc"):
             price = obj.get(price_key)
-            if isinstance(price, str):
-                match = re.fullmatch(
-                    r"\s*([0-9]+(?:\.[0-9]+)?)\s*(?:USD|\$|cent)?\s*",
-                    price,
-                    re.I,
-                )
-                if match:
-                    numeric = float(match.group(1))
-                    # Direct item prices are whole cents in H.  Truncate
-                    # legacy fractional cents (for example 86.25 -> 86),
-                    # while leaving decimal multipliers in structured
-                    # price_rules/proportional objects untouched by the
-                    # masking performed before this pass.
-                    obj[price_key] = int(numeric)
-                    counts["numeric_prices"] += 1
-            elif isinstance(price, (int, float)) and not isinstance(price, bool):
-                if isinstance(price, float) and not price.is_integer():
-                    obj[price_key] = int(price)
-                    counts["numeric_prices"] += 1
+            normalized = _price_string(price)
+            if normalized != price:
+                obj[price_key] = normalized
+                counts["money_price_strings"] += 1
         if obj.get("description") == "":
             name_value = obj.get("name", {})
             display_name = name_value.get("str", name_value.get("str_sp", obj.get("id", "item"))) if isinstance(name_value, dict) else name_value
