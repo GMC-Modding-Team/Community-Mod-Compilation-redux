@@ -6,7 +6,6 @@
     "weight": 100,
     "method": "json",
     "object": {
-      "fill_ter": "t_grass",
       "rows": [
         "########################",
         "####################v###",
@@ -18,13 +17,13 @@
         "########v###############",
         "########################",
         "#################v######",
-        "#v######################",
+        "########################",
         "########################",
         "##########v#############",
         "########################",
         "########################",
         "################v#######",
-        "###v####################",
+        "########################",
         "########################",
         "########################",
         "YYYYYYYYYYYYYYYYYYYYYYYY",
@@ -35,8 +34,15 @@
       ],
       "rotation": 2,
       "palettes": [ "tri_tower", "ground_level", "bandit_tower_stuff" ],
-      "terrain": { "Y": "t_pit_spiked" },
-      "vehicles": { "v": { "vehicle": "city_vehicles", "chance": 60, "status": 1 } }
+      "terrain": {
+        "Y": "t_pit_spiked",
+        "#": "t_region_groundcover",
+        "v": "t_region_groundcover",
+        "=": "t_region_groundcover",
+        "*": "t_region_groundcover"
+      },
+      "vehicles": { "v": { "vehicle": "dirtlot", "chance": 60, "status": 1 } },
+      "fill_ter": "t_region_groundcover"
     }
   }
 ]

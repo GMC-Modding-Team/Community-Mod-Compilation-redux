@@ -31,7 +31,7 @@
       { "skill": "mechanics", "bonus": { "one_in": 2 } },
       { "skill": "electronics", "bonus": { "rng": [ 0, 2 ] } },
       { "skill": "speech", "bonus": { "rng": [ 1, 3 ] } },
-      { "skill": "barter", "bonus": { "rng": [ 3, 5 ] } }
+      { "skill": "speech", "bonus": { "rng": [ 3, 5 ] } }
     ]
   },
   {
@@ -49,15 +49,15 @@
     "type": "item_group",
     "id": "NC_BOSMERCH_weapon",
     "subtype": "distribution",
-    "entries": [ { "item": "light_plus_battery_cell", "ammo-item": "battery", "charges": 150, "container-item": "wattz_1000" } ]
+    "items": [ { "item": "light_plus_battery_cell", "charges": 150 } ]
   },
   {
     "type": "item_group",
     "id": "NC_BOSMERCH_worn",
     "subtype": "collection",
-    "entries": [
+    "items": [
       { "item": "boxer_briefs" },
-      { "item": "glasses_reading", "chance": 45 },
+      { "item": "glasses_reading", "prob": 45 },
       { "item": "fo_scribe_coat" },
       { "item": "socks" },
       { "item": "boots" },
@@ -69,7 +69,7 @@
     "type": "item_group",
     "id": "NC_BOSOUTPOST_SHOP",
     "subtype": "collection",
-    "entries": [
+    "items": [
       { "group": "fallout_energy_gungroups", "count": [ 4, 9 ] },
       { "group": "supplies_electronics", "count": [ 4, 9 ] },
       { "group": "supplies_reagents_lab", "count": [ 4, 9 ] },
@@ -79,11 +79,7 @@
   {
     "id": "TALK_BOSOUTPOST_Town",
     "type": "talk_topic",
-    "dynamic_line": {
-      "u_female": true,
-      "yes": "What are you buying, what are you selling?",
-      "no": "What are you buying, what are you selling?"
-    },
+    "dynamic_line": "What are you buying, what are you selling?  What are you buying, what are you selling?",
     "responses": [
       { "text": "What is it like being the quartermaster around here?", "topic": "TALK_BOSOUTPOST_infotown" },
       {
@@ -97,11 +93,7 @@
   {
     "id": "TALK_BOSOUTPOST_infotown",
     "type": "talk_topic",
-    "dynamic_line": {
-      "u_female": true,
-      "yes": "It's a pretty boring job, most of the time. Our elder for this chapter is rather skittish about sending forces out into the wastes, so it's not like inventory ever changes hands much for excursions, nor do we ever gain much through scavenging either. Perhaps a woman like you could change that.",
-      "no": "It's a pretty boring job, most of the time. Our elder for this chapter is rather skittish about sending forces out into the wastes, so it's not like inventory ever changes hands much for excursions, nor do we ever gain much through scavenging either. Perhaps a woman like you could change that."
-    },
+    "dynamic_line": "It's a pretty boring job, most of the time.  Our elder for this chapter is rather skittish about sending forces out into the wastes, so it's not like inventory ever changes hands much for excursions, nor do we ever gain much through scavenging either.  Perhaps a woman like you could change that.  It's a pretty boring job, most of the time.  Our elder for this chapter is rather skittish about sending forces out into the wastes, so it's not like inventory ever changes hands much for excursions, nor do we ever gain much through scavenging either.  Perhaps a woman like you could change that.",
     "responses": [ { "text": "Got it.", "topic": "TALK_BOSOUTPOST_Town" } ]
   }
 ]

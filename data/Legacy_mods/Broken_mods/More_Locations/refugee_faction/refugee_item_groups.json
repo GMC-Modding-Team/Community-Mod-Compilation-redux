@@ -4,19 +4,19 @@
     "type": "item_group",
     "subtype": "collection",
     "items": [
-      {
-        "distribution": [
-          { "collection": [ { "group": "refugee_pants" }, { "group": "refugee_shirt" } ], "prob": 100 },
-          { "group": "refugee_suit", "prob": 20 }
-        ]
-      },
       { "group": "refugee_gloves", "prob": 70 },
       { "group": "refugee_coat", "prob": 70 },
       { "group": "refugee_shoes" },
       { "group": "refugee_masks", "prob": 30 },
       { "group": "refugee_eyes", "prob": 20 },
       { "group": "refugee_hat", "prob": 60 },
-      { "group": "refugee_extra" }
+      { "group": "refugee_extra" },
+      {
+        "distribution": [
+          { "collection": [ { "group": "refugee_pants" }, { "group": "refugee_shirt" } ], "prob": 100 },
+          { "group": "refugee_suit", "prob": 20 }
+        ]
+      }
     ]
   },
   {
@@ -44,12 +44,14 @@
       { "item": "polo_shirt", "prob": 100 },
       { "item": "undershirt", "prob": 100 },
       { "item": "sweatshirt", "prob": 100 }
-    ]
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "refugee_suit",
     "type": "item_group",
-    "items": [ { "item": "suit", "prob": 500 }, { "item": "jumpsuit", "prob": 100 }, { "item": "clown_suit", "prob": 1 } ]
+    "items": [ { "item": "suit", "prob": 500 }, { "item": "jumpsuit", "prob": 100 }, { "item": "clown_suit", "prob": 1 } ],
+    "subtype": "distribution"
   },
   {
     "id": "refugee_gloves",
@@ -59,7 +61,8 @@
       { "item": "gloves_winter", "prob": 50 },
       { "item": "gloves_leather", "prob": 100 },
       { "item": "gloves_light", "prob": 50 }
-    ]
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "refugee_coat",
@@ -76,7 +79,8 @@
       { "item": "greatcoat", "prob": 5 },
       { "item": "peacoat", "prob": 10 },
       { "item": "coat_lab", "prob": 10 }
-    ]
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "refugee_shoes",
@@ -101,12 +105,14 @@
   {
     "id": "refugee_masks",
     "type": "item_group",
-    "items": [ { "item": "scarf_loose", "prob": 50 } ]
+    "items": [ { "item": "scarf_loose", "prob": 50 } ],
+    "subtype": "distribution"
   },
   {
     "id": "refugee_eyes",
     "type": "item_group",
-    "items": [ { "item": "glasses_eye", "prob": 50 }, { "item": "sunglasses", "prob": 20 } ]
+    "items": [ { "item": "glasses_eye", "prob": 50 }, { "item": "sunglasses", "prob": 20 } ],
+    "subtype": "distribution"
   },
   {
     "id": "refugee_hat",
@@ -120,7 +126,8 @@
       { "item": "hat_boonie", "prob": 10 },
       { "item": "cowboy_hat", "prob": 10 },
       { "item": "porkpie", "prob": 5 }
-    ]
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "refugee_extra",
@@ -164,56 +171,64 @@
     "items": [
       { "item": "cash_card", "prob": 100, "charges-min": 0, "charges-max": 50000 },
       { "item": "flashlight", "prob": 10 },
-      {
-        "distribution": [ { "item": "pockknife", "prob": 200 }, { "item": "multitool", "prob": 10 }, { "item": "knife_swissarmy", "prob": 20 } ],
-        "prob": 30
-      },
       { "group": "mil_food", "prob": 20 },
       { "group": "snacks", "prob": 80 },
       { "group": "livingroom", "prob": 100 },
       { "group": "everyday_gear", "prob": 100 },
-      { "item": "money_bundle", "prob": 5, "count": [ 2, 10 ] },
-      { "item": "emer_blanket", "prob": 35 }
+      { "item": "emer_blanket", "prob": 35 },
+      {
+        "distribution": [ { "item": "pockknife", "prob": 200 }, { "item": "multitool", "prob": 10 }, { "item": "knife_swissarmy", "prob": 20 } ],
+        "prob": 30
+      },
+      { "item": "money_bundle_one", "prob": 5, "count": [ 2, 10 ] }
     ]
   },
   {
     "id": "refugee_pistol",
     "type": "item_group",
-    "items": [ [ "glock_19", 100 ], [ "ruger_lcr_38", 100 ] ]
+    "items": [ { "item": "glock_19", "prob": 100 }, { "item": "ruger_lcr_38", "prob": 100 } ],
+    "subtype": "distribution"
   },
   {
     "id": "refugee_rifle",
     "type": "item_group",
-    "items": [ [ "marlin_9a", 100 ] ]
+    "items": [ { "item": "marlin_9a", "prob": 100 } ],
+    "subtype": "distribution"
   },
   {
     "id": "refugee_shotgun",
     "type": "item_group",
-    "items": [ [ "shotgun_s", 200 ], [ "shotgun_d", 100 ] ]
+    "items": [ { "item": "shotgun_s", "prob": 200 }, { "item": "shotgun_d", "prob": 100 } ],
+    "subtype": "distribution"
   },
   {
     "id": "refugee_smg",
     "type": "item_group",
-    "items": [ [ "glock_19", 200 ] ]
+    "items": [ { "item": "glock_19", "prob": 200 } ],
+    "subtype": "distribution"
   },
   {
     "id": "refugee_archery",
     "type": "item_group",
-    "items": [ [ "crossbow", 200 ] ]
+    "items": [ { "item": "crossbow", "prob": 200 } ],
+    "subtype": "distribution"
   },
   {
     "id": "refugee_bashing",
     "type": "item_group",
-    "items": [ [ "bat", 100 ], [ "2x4", 200 ], [ "bat_metal", 50 ] ]
+    "items": [ { "item": "bat", "prob": 100 }, { "item": "2x4", "prob": 200 }, { "item": "bat_metal", "prob": 50 } ],
+    "subtype": "distribution"
   },
   {
     "id": "refugee_cutting",
     "type": "item_group",
-    "items": [ [ "machete", 200 ], [ "hatchet", 500 ], [ "fire_ax", 10 ] ]
+    "items": [ { "item": "machete", "prob": 200 }, { "item": "hatchet", "prob": 500 }, { "item": "fire_ax", "prob": 10 } ],
+    "subtype": "distribution"
   },
   {
     "id": "refugee_stabbing",
     "type": "item_group",
-    "items": [ [ "switchblade", 100 ] ]
+    "items": [ { "item": "switchblade", "prob": 100 } ],
+    "subtype": "distribution"
   }
 ]

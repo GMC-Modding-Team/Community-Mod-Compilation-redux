@@ -2,7 +2,7 @@
   {
     "abstract": "mon_fish_mutant",
     "type": "MONSTER",
-    "name": { "str": "fish", "str_pl": "fish" },
+    "name": { "str_sp": "fish" },
     "description": "A mutant fish.  The favorite prey of mutant cats and survivors.",
     "default_faction": "fish",
     "categories": [ "WILDLIFE" ],
@@ -29,51 +29,50 @@
   {
     "id": "mon_fish_sick_puke",
     "type": "MONSTER",
-    "copy-from": "mon_fish_mutant",
-    "name": { "str": "puke fish", "str_pl": "puke fish" },
+    "name": { "str_sp": "puke fish" },
     "description": "A disgustingly mutating fish about the size of a large carp.  It exudes a gooey brown gel and smells like rotting milk.",
-    "color": "green"
+    "color": "green",
+    "copy-from": "mon_fish_mutant"
   },
   {
     "id": "mon_fish_sick_finger",
     "type": "MONSTER",
-    "copy-from": "mon_fish_mutant",
-    "name": { "str": "finger fish", "str_pl": "finger fish" },
+    "name": { "str_sp": "finger fish" },
     "description": "A freakishly mutating fish about the size of a large carp.  A cluster of finger-like limbs have burst from its head.",
-    "color": "brown"
+    "color": "brown",
+    "copy-from": "mon_fish_mutant"
   },
   {
     "id": "mon_fish_sick_tumor",
     "type": "MONSTER",
-    "copy-from": "mon_fish_mutant",
-    "name": { "str": "tumor fish", "str_pl": "tumor fish" },
-    "description": "An odious mutating fish about the size of a large carp. It's so covered in bleeding tumors and fleshy nodules that it can barely swim.",
+    "name": { "str_sp": "tumor fish" },
+    "description": "An odious mutating fish about the size of a large carp.  It's so covered in bleeding tumors and fleshy nodules that it can barely swim.",
     "speed": 100,
-    "color": "brown"
+    "color": "brown",
+    "copy-from": "mon_fish_mutant"
   },
   {
     "id": "mon_fish_mutant_angel",
     "type": "MONSTER",
-    "copy-from": "mon_fish_mutant",
-    "name": { "str": "angelic fish", "str_pl": "angelic fish" },
+    "name": { "str_sp": "angelic fish" },
     "description": "A mutant fish about the size of a large carp.  Its internal organs glow with a pulsing light which readily shines through its translucent skin.",
     "luminance": 10,
-    "color": "white"
+    "color": "white",
+    "copy-from": "mon_fish_mutant"
   },
   {
     "id": "mon_fish_mutant_bloat",
     "type": "MONSTER",
-    "copy-from": "mon_fish_mutant",
-    "name": { "str": "bloatball fish", "str_pl": "bloatball fish" },
+    "name": { "str_sp": "bloatball fish" },
     "description": "A mutant fish the size and shape of a basketball.  When threatened the fish will inflate itself to massive size.  If attacked the fish and its attacker will be caught in a violent explosion.",
     "hp": 1,
     "death_function": { "effect": { "id": "death_fireball", "hit_self": true } },
-    "color": "white"
+    "color": "white",
+    "copy-from": "mon_fish_mutant"
   },
   {
     "id": "mon_fish_mutant_ghoul",
     "type": "MONSTER",
-    "copy-from": "mon_fish_mutant",
     "name": { "str": "ghoul in the water", "str_pl": "ghouls in the water" },
     "description": "A large mutant fish the size of a tigershark.  It resembles a catfish but instead of barbels it possess a pair of long spindly arms terminating in disturbingly human hands.  The ghoul grabs prey on the water's edge and pulls it into the deep.",
     "hp": 200,
@@ -87,15 +86,15 @@
     "symbol": "G",
     "attack_effs": [ { "id": "grabbed", "chance": 30 } ],
     "special_attacks": [
-      { "id": "ranged_pull", "range": 5, "cooldown": 10 },
+      { "id": "ranged_pull", "cooldown": 10 },
       { "id": "grab_drag", "cooldown": 15, "grab_data": { "drag_deviation": 1, "drag_movecost_mod": 0.2 } }
     ],
-    "extend": { "flags": [ "PUSH_MON", "REVIVES" ] }
+    "extend": { "flags": [ "PUSH_MON", "REVIVES" ] },
+    "copy-from": "mon_fish_mutant"
   },
   {
     "id": "mon_fish_mutant_terror",
     "type": "MONSTER",
-    "copy-from": "mon_fish_mutant",
     "name": { "str": "jawed terror" },
     "description": "A large mutant fish the size of a tigershark.  It has a massive set of jaws lined with razor-sharp teeth.",
     "symbol": "J",
@@ -114,20 +113,20 @@
     "attack_effs": [ { "id": "bleed", "chance": 10, "duration": 5 } ],
     "dodge": 2,
     "speed": 110,
-    "color": "red"
+    "color": "red",
+    "copy-from": "mon_fish_mutant"
   },
   {
     "id": "mon_fish_mutant_accordian",
     "type": "MONSTER",
-    "copy-from": "mon_fish_mutant",
-    "name": { "str": "accordian fish", "str_pl": "accordian fish" },
+    "name": { "str_sp": "accordian fish" },
     "description": "A mutant fish the size of a carp.  It moves by strangely extending and contracting its body, giving it its odd name.",
-    "color": "white"
+    "color": "white",
+    "copy-from": "mon_fish_mutant"
   },
   {
     "id": "mon_fish_mutant_whisper",
     "type": "MONSTER",
-    "copy-from": "mon_fish_mutant",
     "name": { "str": "whisperwill" },
     "description": "A large mutant fish the size of a tiger shark.  Its body is long and sleek like that of an eel.  The whisperwill can perfectly mimic any human whose flesh it has consumed, and will call out for help with the voices of the dead.",
     "volume": "62500 ml",
@@ -135,23 +134,23 @@
     "hp": 100,
     "special_attacks": [ [ "PARROT", 200 ] ],
     "color": "white",
-    "extend": { "flags": [ "NIGHT_INVISIBILITY" ] }
+    "extend": { "flags": [ "NIGHT_INVISIBILITY" ] },
+    "copy-from": "mon_fish_mutant"
   },
   {
     "id": "mon_fish_mutant_butter",
     "type": "MONSTER",
-    "copy-from": "mon_fish_mutant",
-    "name": { "str": "butter fish", "str_pl": "butter fish" },
+    "name": { "str_sp": "butter fish" },
     "description": "A mutant fish the size of a carp.  It controls its bouyancy by producing and releasing a thick oil which might be harvestable.",
     "color": "yellow",
     "starting_ammo": { "cooking_oil": 10 },
-    "extend": { "flags": [ "MILKABLE", "DOGFOOD" ] }
+    "extend": { "flags": [ "MILKABLE", "DOGFOOD" ] },
+    "copy-from": "mon_fish_mutant"
   },
   {
     "id": "mon_fish_mutant_spit",
     "type": "MONSTER",
-    "copy-from": "mon_fish_mutant",
-    "name": { "str": "spitter fish", "str_pl": "spitter fish" },
+    "name": { "str_sp": "spitter fish" },
     "description": "A mutant fish the size of a carp.  It hunts by squirting jets of water at passing birds and knocking them into the water.",
     "color": "light_blue",
     "special_attacks": [
@@ -165,6 +164,7 @@
         "require_targeting_player": false,
         "ranges": [ [ 0, 10, "DEFAULT" ] ]
       }
-    ]
+    ],
+    "copy-from": "mon_fish_mutant"
   }
 ]

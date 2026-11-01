@@ -36,7 +36,7 @@
     "type": "item_group",
     "id": "NC_FREVAULT_ATL_worn",
     "subtype": "collection",
-    "entries": [
+    "items": [
       { "item": "jumpsuit_vault" },
       { "item": "socks" },
       { "item": "boots_rubber" },
@@ -52,11 +52,11 @@
     "type": "item_group",
     "id": "NC_FREVAULT_ATL_carry",
     "subtype": "collection",
-    "entries": [
-      { "group": "mon_vault_equipment_armory", "repeat": [ 1, 3 ], "prob": 65 },
-      { "group": "drugs_heal_simple", "repeat": [ 1, 2 ], "prob": 75 },
+    "items": [
+      { "group": "mon_vault_equipment_armory", "prob": 65 },
+      { "group": "drugs_heal_simple", "prob": 75 },
       { "group": "ammo_any_batteries_full", "prob": 15 },
-      { "group": "fallout_misc_itemgroup_food", "repeat": [ 1, 2 ], "prob": 40 },
+      { "group": "fallout_misc_itemgroup_food", "prob": 40 },
       { "group": "fallout_10mm_maggroup", "prob": 40 }
     ]
   },
@@ -64,13 +64,13 @@
     "type": "item_group",
     "id": "NC_FREVAULT_ATL_weapon",
     "subtype": "collection",
-    "entries": [ { "group": "mon_vault_vault_dweller_melee_athlete", "prob": 70 } ]
+    "items": [ { "group": "mon_vault_vault_dweller_melee_athlete", "prob": 70 } ]
   },
   {
     "type": "item_group",
     "id": "mon_vault_vault_dweller_melee_athlete",
     "subtype": "distribution",
-    "entries": [
+    "items": [
       { "item": "vault_knife", "prob": 20 },
       { "item": "super_sledge", "prob": 1 },
       { "item": "fo_powfist", "prob": 1 },
@@ -81,25 +81,7 @@
   {
     "id": "TALK_amg_fre_vault_sports_start",
     "type": "talk_topic",
-    "dynamic_line": {
-      "u_female": true,
-      "yes": [
-        "What are you doing around here, what do you want from me?",
-        "Just another day in the vault, huh?",
-        "I heard some scratching behind my room's wall, hope it's not radroaches.",
-        "Hello, how's it going?",
-        "Do you need anything?",
-        "Is there a problem, miss?"
-      ],
-      "no": [
-        "What are you doing around here, what do you want from me?",
-        "Just another day in the vault, huh?",
-        "I heard some scratching behind my room's wall, hope it's not radroaches.",
-        "Hello, how's it going?",
-        "Do you need anything?",
-        "Is there a problem?"
-      ]
-    },
+    "dynamic_line": "What are you doing around here, what do you want from me?  Just another day in the vault, huh?  I heard some scratching behind my room's wall, hope it's not radroaches.  Hello, how's it going?  Do you need anything?  Is there a problem, miss?  What are you doing around here, what do you want from me?  Just another day in the vault, huh?  I heard some scratching behind my room's wall, hope it's not radroaches.  Hello, how's it going?  Do you need anything?  Is there a problem?",
     "responses": [
       {
         "text": "So you're a vault athlete, what, do you like playing football or something?",
@@ -112,13 +94,13 @@
   {
     "id": "TALK_amg_fre_vault_sports_go",
     "type": "talk_topic",
-    "dynamic_line": "Yeah, vaultball's pretty fun. I one of the best players on the team, I just wish people would respect me as being more than that, I kind of want to see the outside world, you know? There's a world beyond the fifty yard line or the third base, and I want to see it.",
+    "dynamic_line": "Yeah, vaultball's pretty fun.  I one of the best players on the team, I just wish people would respect me as being more than that, I kind of want to see the outside world, you know?  There's a world beyond the fifty yard line or the third base, and I want to see it.",
     "responses": [ { "text": "Thanks for the info.", "topic": "TALK_DONE" } ]
   },
   {
     "id": "TALK_amg_fre_vault_sports_recruit",
     "type": "talk_topic",
-    "dynamic_line": { "u_female": true, "yes": "I am ready to join you on your journey!", "no": "I am ready to join you on your journey!" },
+    "dynamic_line": "I am ready to join you on your journey!  I am ready to join you on your journey!",
     "responses": [ { "text": "Want to travel with me?", "topic": "TALK_SUGGEST_FOLLOW", "condition": { "not": "npc_following" } } ]
   }
 ]

@@ -5,7 +5,7 @@
     "id": "NEC_OTOKONOKO",
     "name": "Trap",
     "points": 0,
-    "description": "Your body is a young girl, but you also have male features. Although it is rare, it will not be useful any longer.",
+    "description": "Your body is a young girl, but you also have male features.  Although it is rare, it will not be useful any longer.",
     "starting_trait": true,
     "valid": false
   },
@@ -15,7 +15,7 @@
     "id": "THRESH_NECROMANTIC",
     "name": "Undead",
     "points": 1,
-    "description": "The collapsed body is broken and patchy. Even if it breaks, you can simply reattach the parts.",
+    "description": "The collapsed body is broken and patchy.  Even if it breaks, you can simply reattach the parts.",
     "valid": false,
     "purifiable": false,
     "threshold": true
@@ -43,7 +43,7 @@
     "description": "Your body is coated with a fine slime.  Protects from long term effects of acid, though not short term ones.  Greatly increases wet benefits.",
     "leads_to": [ "SLIME_HANDS" ],
     "changes_to": [ "VISCOUS" ],
-    "category": [ "FISH", "SLIME", "TROGLOBITE", "CEPHALOPOD", "NECROMANTIC" ],
+    "category": [ "FISH", "SLIME", "TROGLOBITE", "CEPHALOPOD", "BATRACHIAN", "GASTROPOD", "NECROMANTIC" ],
     "wet_protection": [
       { "part": "head", "neutral": 3, "good": 4 },
       { "part": "leg_l", "neutral": 7, "good": 14 },
@@ -61,7 +61,7 @@
     "//": "Route to undead mutation Routine addition wing-like protrusion → collapse finer etc.",
     "type": "mutation",
     "id": "WINGS_STUB",
-    "category": [ "NECROMANTIC" ],
+    "category": [ "BEAST", "BIRD", "INSECT", "NECROMANTIC" ],
     "name": "Wing Stubs",
     "points": 0,
     "visibility": 2,
@@ -72,7 +72,7 @@
   {
     "type": "mutation",
     "id": "HEADBUMPS",
-    "category": [ "NECROMANTIC" ],
+    "category": [ "CATTLE", "CHIMERA", "INSECT", "NECROMANTIC" ],
     "name": "Head Bumps",
     "points": 0,
     "visibility": 3,
@@ -90,7 +90,7 @@
     "types": [ "CLAWS" ],
     "changes_to": [ "CLAWS", "TALONS", "NEC_HORNS" ],
     "cancels": [ "ARM_TENTACLES", "ARM_TENTACLES_4", "ARM_TENTACLES_8" ],
-    "category": [ "RAPTOR", "BEAST", "RAT", "URSINE", "NECROMANTIC" ]
+    "category": [ "RAPTOR", "BEAST", "RAT", "URSINE", "BIRD", "CHIMERA", "FELINE", "LIZARD", "LUPINE", "RABBIT", "NECROMANTIC" ]
   },
   {
     "//": "Below we write what mutates with undead mutation",
@@ -128,7 +128,7 @@
     "prereqs": [ "NAILS" ],
     "changes_to": [ "CLAWS_RETRACT", "CLAWS_RAT" ],
     "cancels": [ "ARM_TENTACLES", "ARM_TENTACLES_4", "ARM_TENTACLES_8" ],
-    "category": [ "BEAST", "RAT", "URSINE", "NECROMANTIC" ]
+    "category": [ "BEAST", "RAT", "URSINE", "FELINE", "NECROMANTIC" ]
   },
   {
     "type": "mutation",
@@ -157,7 +157,21 @@
     "description": "You have a major digestive disorder.  Though it causes you to vomit frequently, you have found that you can trigger your vomit reflex on demand, too.",
     "prereqs": [ "NAUSEA" ],
     "changes_to": [ "EATPOISON" ],
-    "category": [ "SLIME", "RAT", "MEDICAL", "ELFA", "NECROMANTIC", "TROGLOBITE", "RAPTOR", "CHIMERA", "MOUSE" ],
+    "category": [
+      "SLIME",
+      "RAT",
+      "MEDICAL",
+      "ELFA",
+      "NECROMANTIC",
+      "TROGLOBITE",
+      "RAPTOR",
+      "CHIMERA",
+      "MOUSE",
+      "ALPHA",
+      "BATRACHIAN",
+      "CRUSTACEAN",
+      "GASTROPOD"
+    ],
     "active": true
   },
   {
@@ -171,7 +185,7 @@
     "//": "Yes, you eventually got over the massive digestive upset.  Mutations aren't easy on a system!",
     "prereqs2": [ "SAPROVORE", "TOLERANCE" ],
     "threshreq": [ "THRESH_TROGLOBITE", "THRESH_CHIMERA", "THRESH_RAPTOR", "THRESH_RAT", "THRESH_MOUSE", "THRESH_NECROMANTIC" ],
-    "category": [ "TROGLOBITE", "RAPTOR", "RAT", "CHIMERA", "NECROMANTIC", "MOUSE" ],
+    "category": [ "TROGLOBITE", "RAPTOR", "RAT", "CHIMERA", "NECROMANTIC", "MOUSE", "BATRACHIAN", "CRUSTACEAN", "GASTROPOD" ],
     "valid": false
   },
   {
@@ -182,7 +196,7 @@
     "description": "Eating rotting, long-dead flesh is good for the struggle, and safe--if still completely unappealing--for you.",
     "prereqs": [ "EATPOISON" ],
     "threshreq": [ "THRESH_CHIMERA", "THRESH_RAT", "THRESH_MOUSE", "THRESH_NECROMANTIC" ],
-    "category": [ "RAT", "CHIMERA", "MOUSE", "NECROMANTIC" ],
+    "category": [ "RAT", "CHIMERA", "MOUSE", "NECROMANTIC", "CRUSTACEAN" ],
     "valid": false
   },
   {
@@ -194,7 +208,7 @@
     "cancels": [ "SUNLIGHT_DEPENDENT" ],
     "prereqs": [ "TROGLO" ],
     "changes_to": [ "TROGLO3" ],
-    "category": [ "RAT", "NECROMANTIC" ]
+    "category": [ "RAT", "TROGLOBITE", "NECROMANTIC" ]
   },
   {
     "type": "mutation",
@@ -218,7 +232,7 @@
     "types": [ "TAIL" ],
     "prereqs": [ "TAIL_STUB" ],
     "changes_to": [ "TAIL_CLUB" ],
-    "category": [ "LIZARD", "NECROMANTIC" ],
+    "category": [ "LIZARD", "CHIMERA", "NECROMANTIC" ],
     "restricts_gear": [ "leg_l", "leg_r" ],
     "allow_soft_gear": true,
     "attacks": {
@@ -238,7 +252,7 @@
     "starting_trait": true,
     "cancels": [ "ANIMALEMPATH" ],
     "changes_to": [ "ANIMALDISCORD2" ],
-    "category": [ "LUPINE", "BEAST", "RAPTOR", "INSECT", "NECROMANTIC" ]
+    "category": [ "LUPINE", "BEAST", "RAPTOR", "INSECT", "MOUSE", "RABBIT", "NECROMANTIC" ]
   },
   {
     "type": "mutation",
@@ -250,7 +264,7 @@
     "description": "You smell awful.  Monsters that track scent will find you very easily, and humans will react poorly.",
     "prereqs": [ "SMELLY" ],
     "leads_to": [ "PHEROMONE_INSECT", "PHEROMONE_MAMMAL" ],
-    "category": [ "FISH", "BEAST", "SLIME", "CHIMERA", "URSINE", "NECROMANTIC" ]
+    "category": [ "FISH", "BEAST", "SLIME", "CHIMERA", "URSINE", "BATRACHIAN", "CATTLE", "CRUSTACEAN", "INSECT", "NECROMANTIC" ]
   },
   {
     "type": "mutation",
@@ -270,7 +284,7 @@
     "description": "You have a hard time falling asleep, even under the best circumstances!",
     "starting_trait": true,
     "valid": false,
-    "category": [ "MEDICAL", "NECROMANTIC" ],
+    "category": [ "MEDICAL", "ALPHA", "NECROMANTIC" ],
     "cancels": [ "EASYSLEEPER" ]
   },
   {
@@ -282,7 +296,7 @@
     "starting_trait": true,
     "valid": false,
     "cancels": [ "MORE_PAIN", "MORE_PAIN2", "MORE_PAIN3" ],
-    "category": [ "MEDICAL", "NECROMANTIC" ]
+    "category": [ "MEDICAL", "TROGLOBITE", "NECROMANTIC" ]
   },
   {
     "type": "mutation",
@@ -334,7 +348,7 @@
     "points": 1,
     "visibility": 2,
     "ugliness": 7,
-    "description": "A new eye came out of your body. The field of view broadens, but the appearance is disgusting. Perception + 2",
+    "description": "A new eye came out of your body.  The field of view broadens, but the appearance is disgusting.  Perception + 2",
     "category": [ "NECROMANTIC" ],
     "valid": false,
     "passive_mods": { "per_mod": 2 }
@@ -346,7 +360,7 @@
     "points": 3,
     "visibility": 8,
     "ugliness": 5,
-    "description": "You no longer have just two arms. There are additional arms on your shoulder. It is hard to master, but you may expand your range of tactics. Dex + 2",
+    "description": "You no longer have just two arms.  There are additional arms on your shoulder.  It is hard to master, but you may expand your range of tactics.  Dex + 2",
     "category": [ "NECROMANTIC" ],
     "valid": false,
     "passive_mods": { "dex_mod": 2 }
@@ -359,7 +373,7 @@
     "points": 3,
     "visibility": 4,
     "ugliness": 5,
-    "description": "You now have more than two legs. Another pair of legs are growing from your waist. You will not be able to equip usual leg protection, but you can move fast.",
+    "description": "You now have more than two legs.  Another pair of legs are growing from your waist.  You will not be able to equip usual leg protection, but you can move fast.",
     "category": [ "NECROMANTIC" ],
     "restricts_gear": [ "leg_l", "leg_r" ],
     "passive_mods": { "dex_mod": 2 },
@@ -372,7 +386,7 @@
     "points": 0,
     "visibility": 3,
     "ugliness": 2,
-    "description": "There is a big hole in your body. However, there is no hindrance to battle, and the person who saw it is a little surprised.",
+    "description": "There is a big hole in your body.  However, there is no hindrance to battle, and the person who saw it is a little surprised.",
     "category": [ "NECROMANTIC" ],
     "valid": false
   },
@@ -384,7 +398,7 @@
     "visibility": 5,
     "ugliness": 3,
     "mixed_effect": true,
-    "description": "Large protuberances are growing from your body. It will be enough to pierce and hook at close range.",
+    "description": "Large protuberances are growing from your body.  It will be enough to pierce and hook at close range.",
     "prereqs": [ "HEADBUMPS", "NAILS" ],
     "category": [ "NECROMANTIC" ],
     "attacks": {
@@ -402,7 +416,7 @@
     "visibility": 1,
     "ugliness": 1,
     "changes_to": [ "NEC_TONGUE2" ],
-    "description": "Your tongue has become long and tubular. Not particularly effective.",
+    "description": "Your tongue has become long and tubular.  Not particularly effective.",
     "category": [ "NECROMANTIC" ]
   },
   {
@@ -414,7 +428,7 @@
     "ugliness": 4,
     "prereqs": [ "NEC_TONGUE" ],
     "cancels": [ "BEAK", "BEAK_HUM", "BEAK_PECK", "PROBOSCIS", "MANDIBLES", "MUZZLE_LONG", "MUZZLE", "MINOTAUR" ],
-    "description": "Your tongue is dripping with drool. You can not equip anything on your mouth, but they will be surprised when you attack them with your tongue.",
+    "description": "Your tongue is dripping with drool.  You can not equip anything on your mouth, but they will be surprised when you attack them with your tongue.",
     "category": [ "NECROMANTIC" ],
     "restricts_gear": [ "mouth" ],
     "attacks": {
@@ -434,7 +448,7 @@
     "visibility": 4,
     "ugliness": 4,
     "changes_to": [ "NEC_RUPTURE" ],
-    "description": "Your body starts breaking apart. You become more encumbered and frail.",
+    "description": "Your body starts breaking apart.  You become more encumbered and frail.",
     "category": [ "NECROMANTIC" ],
     "encumbrance_always": [
       [ "torso", 3 ],
@@ -460,7 +474,7 @@
     "visibility": 12,
     "ugliness": 6,
     "threshreq": [ "THRESH_NECROMANTIC" ],
-    "description": "A membrane of deadly flesh, the wing of the fallen angel. Although you can not fly, a wing protects your body from attacks.",
+    "description": "A membrane of deadly flesh, the wing of the fallen angel.  Although you can not fly, a wing protects your body from attacks.",
     "prereqs": [ "WINGS_STUB" ],
     "cancels": [ "WINGS_BIRD", "WINGS_INSECT", "WINGS_BUTTERFLY" ],
     "category": [ "NECROMANTIC" ],
@@ -481,7 +495,7 @@
     "ugliness": 10,
     "threshreq": [ "THRESH_NECROMANTIC" ],
     "category": [ "NECROMANTIC" ],
-    "description": "There is another head on your shoulders. And here you thought you were doing well with just one. You can not see the other side of the face directly, but you can understand what you see over there. Intelligence + 5, Perception + 3",
+    "description": "There is another head on your shoulders.  And here you thought you were doing well with just one.  You can not see the other side of the face directly, but you can understand what you see over there.  Intelligence + 5, Perception + 3",
     "encumbrance_always": [ [ "head", 5 ] ],
     "passive_mods": { "int_mod": 5, "per_mod": 3 }
   },
@@ -493,7 +507,7 @@
     "visibility": 6,
     "ugliness": 8,
     "threshreq": [ "THRESH_NECROMANTIC" ],
-    "description": "Your body is coming apart at its seams. You become even more encumbered and frail.",
+    "description": "Your body is coming apart at its seams.  You become even more encumbered and frail.",
     "changes_to": [ "NEC_PATCH" ],
     "prereqs": [ "NEC_FAILED" ],
     "category": [ "NECROMANTIC" ],
@@ -519,7 +533,7 @@
     "points": 7,
     "visibility": 8,
     "ugliness": 5,
-    "description": "You can conveniently change your body. Although it will be slightly weaker against attacks, the overall encumbrance is relaxed considerably.",
+    "description": "You can conveniently change your body.  Although it will be slightly weaker against attacks, the overall encumbrance is relaxed considerably.",
     "category": [ "NECROMANTIC" ],
     "threshreq": [ "THRESH_NECROMANTIC" ],
     "prereqs": [ "NEC_RUPTURE" ],
