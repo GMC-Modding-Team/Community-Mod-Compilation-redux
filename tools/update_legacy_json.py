@@ -5397,6 +5397,42 @@ def repair_extended_freeform_inheritance(
     return True
 
 
+def repair_shards_robot_bases(
+    obj: dict[str, Any], path: Path, counts: collections.Counter[str]
+) -> None:
+    """Inline unavailable legacy corpse-base fields without replacing robot stats."""
+    if (
+        path.parent.name.casefold() != "disable_bots"
+        or path.parent.parent.name.casefold() != "shardsotherstuff"
+        or obj.get("type") != "TOOL"
+    ):
+        return
+    expected_bases = {
+        "bot_chickenbot": "broken_tripod",
+        "bot_tankbot": "broken_tankbot",
+        "bot_tripod": "broken_tripod",
+        "bot_turret_searchlight": "broken_tripod",
+    }
+    parent = expected_bases.get(obj.get("id"))
+    if parent is None or obj.get("copy-from") != parent:
+        return
+    # Original broken_tripod/broken_tankbot fields, retained in the compilation's
+    # Advanced_Gear_Technologies/Monsters/Broken_bots_tools.json.  All other
+    # inherited fields are already overridden by these inactive robot entries.
+    tank = parent == "broken_tankbot"
+    defaults = {
+        "category": "other",
+        "price": "10 cent",
+        "material": ["steel", "plastic"],
+        "melee_damage": {"bash": 20 if tank else 10, "cut": 15 if tank else 5},
+        "to_hit": -3 if tank else -2,
+    }
+    for key, value in defaults.items():
+        obj.setdefault(key, value)
+    del obj["copy-from"]
+    counts["shards_robot_bases"] += 1
+
+
 def transform_object(
     obj: dict[str, Any],
     counts: collections.Counter[str],
@@ -7304,6 +7340,7 @@ def general_pass(
                     remove_core_snippet_duplicates(entry, h_core_snippet_ids, totals)
                     manual_bionic_override = repair_manual_bionic_inheritance(entry, path, totals)
                     freeform_override = repair_extended_freeform_inheritance(entry, path, totals)
+                    repair_shards_robot_bases(entry, path, totals)
                     if collapse_core_override(entry):
                         continue
                     if isinstance(entry.get("copy-from"), str) and not (manual_bionic_override or freeform_override):
