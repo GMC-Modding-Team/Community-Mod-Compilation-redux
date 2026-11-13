@@ -2,7 +2,8 @@
   {
     "id": "gs_rocks",
     "type": "item_group",
-    "items": [ [ "rock", 50 ], [ "sharp_rock", 50 ] ]
+    "items": [ { "item": "rock", "prob": 50 }, { "item": "sharp_rock", "prob": 50 } ],
+    "subtype": "distribution"
   },
   {
     "type": "mapgen",
@@ -37,7 +38,8 @@
         "........,..........,...."
       ],
       "terrain": { "X": "t_open_air", ".": "t_grass", "f": "t_grass", ",": "t_dirt", "T": "t_tree", "Y": "t_tree_young" },
-      "furniture": { "f": "f_bluebell" }
+      "furniture": { "f": "f_bluebell" },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -73,7 +75,8 @@
         "++++++++++++++++++++++++"
       ],
       "terrain": { ".": "t_dirt", ",": "t_dirt", "+": "t_rock", "W": "t_water_dp", "w": "t_water_sh", "B": "t_dirt", "b": "t_dirt" },
-      "items": { ",": { "item": "gs_rocks", "chance": 80 } }
+      "items": { ",": { "item": "gs_rocks", "chance": 80 } },
+      "fill_ter": "t_region_groundcover"
     }
   }
 ]

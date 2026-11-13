@@ -31,17 +31,16 @@
   },
   {
     "id": "mon_snake_sick_molting",
-    "copy-from": "mon_snake_mutant",
     "type": "MONSTER",
     "name": { "str": "molting snake" },
     "description": "A mutating snake shedding its dried epidermis.  Although vulnerable and weak, this snake still has a venomous bite.",
     "color": "light_green",
     "upgrades": { "half_life": 30, "into_group": "GROUP_SNAKE_MUTANT" },
-    "extend": { "flags": [ "VENOM" ] }
+    "extend": { "flags": [ "VENOM" ] },
+    "copy-from": "mon_snake_mutant"
   },
   {
     "id": "mon_snake_mutant_jaculus",
-    "copy-from": "mon_snake_mutant",
     "type": "MONSTER",
     "name": { "str": "jaculus", "str_pl": "jaculi" },
     "description": "A mutated snake grown to the size of a python.  It can launch itself at its prey by uncoiling its body like a giant spring.",
@@ -60,11 +59,11 @@
     "vision_night": 5,
     "anger_triggers": [ "PLAYER_WEAK" ],
     "fear_triggers": [ "FIRE" ],
-    "special_attacks": [ [ "LUNGE", 8 ], { "type": "leap", "cooldown": 10, "max_range": 4 } ]
+    "special_attacks": [ [ "LUNGE", 8 ], { "type": "leap", "cooldown": 10, "max_range": 4 } ],
+    "copy-from": "mon_snake_mutant"
   },
   {
     "id": "mon_snake_mutant_bone",
-    "copy-from": "mon_snake_mutant",
     "type": "MONSTER",
     "name": { "str": "bone snake" },
     "description": "A mutated snake grown to the size of python.  Bone plates cover its body and it bites with a hard beak as well as venomous fangs.",
@@ -84,11 +83,11 @@
     "morale": 50,
     "anger_triggers": [ "PLAYER_CLOSE" ],
     "fear_triggers": [ "FIRE", "SOUND", "HURT" ],
-    "attack_effs": [ { "id": "poison", "chance": 25, "duration": 100 } ]
+    "attack_effs": [ { "id": "poison", "chance": 25, "duration": 100 } ],
+    "copy-from": "mon_snake_mutant"
   },
   {
     "id": "mon_snake_mutant_frostbite",
-    "copy-from": "mon_snake_mutant",
     "type": "MONSTER",
     "name": { "str": "frostbite snake" },
     "description": "A mutated snake armed with a powerful poison.  Its bite causes flesh to wither and die, similar to a case of frostbite.",
@@ -102,6 +101,7 @@
     "color": "cyan",
     "aggression": 50,
     "morale": 10,
-    "attack_effs": [ { "id": "frostbite", "chance": 50, "duration": 100 } ]
+    "attack_effs": [ { "id": "frostbite", "chance": 50, "duration": 100 } ],
+    "copy-from": "mon_snake_mutant"
   }
 ]

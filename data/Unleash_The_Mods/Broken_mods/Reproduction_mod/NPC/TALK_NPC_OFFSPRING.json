@@ -2,19 +2,7 @@
   {
     "id": "TALK_NPC_YOUR_KID",
     "type": "talk_topic",
-    "dynamic_line": {
-      "and": [
-        { "u_male": true, "yes": "Hi dad.", "no": "Hi mom." },
-        {
-          "npc_has_var": "kid_intro_talked",
-          "type": "dialogue",
-          "context": "greet_kid",
-          "value": "yes",
-          "no": "",
-          "yes": " How've ya been?."
-        }
-      ]
-    },
+    "dynamic_line": "Hi dad.  Hi mom.  How've ya been?.",
     "responses": [
       {
         "effect": [
@@ -22,12 +10,12 @@
           { "npc_add_effect": "offspring_first_talk", "duration": "PERMANENT" }
         ],
         "condition": { "not": { "npc_has_effect": "offspring_first_talk" } },
-        "text": "Hey... you seem to be bothered by something. What is it?",
+        "text": "Hey…  you seem to be bothered by something.  What is it?",
         "topic": "TALK_NPC_OFFSPRING_BOTHERED"
       },
       {
         "condition": { "npc_has_effect": "offspring_first_talk" },
-        "text": "Fine. And you?",
+        "text": "Fine.  And you?",
         "topic": "TALK_NPC_OFFSPRING_GREET"
       }
     ]
@@ -41,7 +29,7 @@
   {
     "id": "TALK_NPC_OFFSPRING_WHY_LEAVE",
     "type": "talk_topic",
-    "dynamic_line": "I don't know... I've seen animals leave their parents once they're adults and thought you might want the same. It's fine if you want me to leave. I have the skills to take care of myself if I need to.",
+    "dynamic_line": "I don't know…  I've seen animals leave their parents once they're adults and thought you might want the same.  It's fine if you want me to leave.  I have the skills to take care of myself if I need to.",
     "responses": [
       {
         "text": "I was thinking it'd make more sense for family to stick together in these times.",
@@ -49,16 +37,16 @@
         "effect": "follow",
         "opinion": { "trust": 1, "value": 1 }
       },
-      { "text": "Yes. Perhaps it is time you left the nest. Stay safe out there.", "topic": "TALK_DONE" }
+      { "text": "Yes.  Perhaps it is time you left the nest.  Stay safe out there.", "topic": "TALK_DONE" }
     ]
   },
   {
     "id": "TALK_NPC_OFFSPRING_GREET",
     "type": "talk_topic",
-    "dynamic_line": "I've just been sorta doing my own thing... I don't really have a direction or goal apart from staying alive.",
+    "dynamic_line": "I've just been sorta doing my own thing…  I don't really have a direction or goal apart from staying alive.",
     "responses": [
       { "text": "Would you like to stick with me for a time?", "topic": "TALK_NPC_OFFSPRING_ASK_FOLLOW" },
-      { "text": "Right. Well, it was good to see you again. Let's meet again sometime.", "topic": "TALK_DONE" }
+      { "text": "Right.  Well, it was good to see you again.  Let's meet again sometime.", "topic": "TALK_DONE" }
     ]
   },
   {
@@ -67,7 +55,7 @@
     "dynamic_line": "You want me to be with you for a while?",
     "responses": [
       { "text": "I'd like that.", "topic": "TALK_AGREE_FOLLOW", "effect": "follow", "opinion": { "trust": 1, "value": 1 } },
-      { "text": "Wait. On second-thought, maybe not right now.", "topic": "TALK_NPC_OFFSPRING_ASK_FOLLOW_CANCEL" }
+      { "text": "Wait.  On second-thought, maybe not right now.", "topic": "TALK_NPC_OFFSPRING_ASK_FOLLOW_CANCEL" }
     ]
   },
   {

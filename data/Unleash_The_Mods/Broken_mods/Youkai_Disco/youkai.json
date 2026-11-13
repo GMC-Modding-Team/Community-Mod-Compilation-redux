@@ -18,11 +18,9 @@
     "melee_dice": 2,
     "melee_dice_sides": 6,
     "dodge": 3,
-    "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "vision_day": 25,
     "harvest": "exempt",
     "death_drops": "mon_tengu_death_drops",
-    "death_function": [ "DISAPPEAR" ],
     "fear_triggers": [ "FIRE" ],
     "anger_triggers": [ "PLAYER_WEAK", "FRIEND_ATTACKED", "FRIEND_DIED" ],
     "special_attacks": [
@@ -57,7 +55,6 @@
     "anger_triggers": [ "PLAYER_CLOSE", "FRIEND_ATTACKED", "FRIEND_DIED" ],
     "harvest": "exempt",
     "death_drops": "mon_tengu_monk_death_drops",
-    "death_function": [ "DISAPPEAR" ],
     "special_attacks": [
       [ "PARROT", 0 ],
       { "type": "leap", "cooldown": 6, "max_range": 7 },
@@ -69,7 +66,7 @@
     "id": "mon_nekomata",
     "type": "MONSTER",
     "name": { "str": "cat" },
-    "description": "A small domesticated predator gone feral in the absence of human stewardship.  Harried by the elements and the rigors of survival, it waggles its two tails...  Wait, nevermind, that's probably not your ordinary cat.",
+    "description": "A small domesticated predator gone feral in the absence of human stewardship.  Harried by the elements and the rigors of survival, it waggles its two tails…  Wait, nevermind, that's probably not your ordinary cat.",
     "species": [ "YOUKAI", "CHAOS_SIDE" ],
     "default_faction": "nekomata",
     "diff": 6,
@@ -91,7 +88,6 @@
     "death_drops": "mon_nekomata_death_drops",
     "fear_triggers": [ "FIRE" ],
     "anger_triggers": [ "PLAYER_CLOSE", "FRIEND_ATTACKED", "FRIEND_DIED" ],
-    "death_function": [ "DISAPPEAR" ],
     "special_attacks": [ { "type": "leap", "cooldown": 6, "max_range": 10 }, [ "PARROT", 0 ] ],
     "flags": [ "SEES", "HEARS", "SMELLS", "NO_BREATHE", "CLIMBS", "HARDTOSHOOT" ]
   },
@@ -107,7 +103,7 @@
     "speed": 110,
     "material": [ "flesh" ],
     "symbol": "k",
-    "color": "cyan_green",
+    "color": "cyan",
     "aggression": 15,
     "morale": 20,
     "melee_skill": 2,
@@ -119,13 +115,12 @@
     "vision_night": 40,
     "fear_triggers": [ "FIRE" ],
     "anger_triggers": [ "STALK", "PLAYER_CLOSE", "FRIEND_ATTACKED", "FRIEND_DIED" ],
-    "death_function": [ "DISAPPEAR" ],
     "harvest": "exempt",
     "death_drops": "mon_kappa_death_drops",
     "special_attacks": [
       [ "PARROT", 0 ],
       { "id": "scratch", "damage_max_instance": [ { "damage_type": "cut", "amount": 20, "armor_multiplier": 0.8 } ] },
-      [ "GRAB_DRAG", 10 ]
+      { "id": "grab", "cooldown": 10 }
     ],
     "flags": [ "SEES", "HEARS", "SMELLS", "BASHES", "POISON", "NO_BREATHE", "SWIMS", "PUSH_MON" ],
     "armor": { "bash": 9, "cut": 3 }
@@ -142,7 +137,7 @@
     "speed": 107,
     "material": [ "flesh" ],
     "symbol": "k",
-    "color": "white_cyan",
+    "color": "white",
     "aggression": 15,
     "morale": 20,
     "melee_skill": 3,
@@ -154,13 +149,12 @@
     "vision_night": 40,
     "fear_triggers": [ "FIRE" ],
     "anger_triggers": [ "STALK", "PLAYER_CLOSE", "FRIEND_ATTACKED", "FRIEND_DIED" ],
-    "death_function": [ "DISAPPEAR" ],
     "harvest": "exempt",
     "death_drops": "mon_kappa_engineer_death_drops",
     "special_attacks": [
       [ "PARROT", 0 ],
       { "id": "scratch", "damage_max_instance": [ { "damage_type": "cut", "amount": 20, "armor_multiplier": 0.8 } ] },
-      [ "GRAB_DRAG", 10 ]
+      { "id": "grab", "cooldown": 10 }
     ],
     "flags": [ "SEES", "HEARS", "SMELLS", "BASHES", "POISON", "NO_BREATHE", "SWIMS", "PUSH_MON" ],
     "armor": { "bash": 9, "cut": 4 }
@@ -214,17 +208,15 @@
     "melee_dice": 3,
     "melee_dice_sides": 12,
     "dodge": 1,
-    "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "vision_day": 40,
     "harvest": "exempt",
     "death_drops": "mon_oni_bandit_death_drops",
-    "death_function": [ "DISAPPEAR" ],
     "fear_triggers": [ "FIRE" ],
     "anger_triggers": [ "PLAYER_WEAK", "FRIEND_ATTACKED", "FRIEND_DIED" ],
     "special_attacks": [
       [ "PARROT", 0 ],
       { "type": "leap", "cooldown": 15, "max_range": 3 },
-      [ "impale", 12 ],
+      { "id": "impale", "cooldown": 12 },
       { "id": "scratch", "damage_max_instance": [ { "damage_type": "cut", "amount": 10, "armor_multiplier": 0.8 } ] }
     ],
     "flags": [ "SEES", "HEARS", "SMELLS", "NO_BREATHE", "BASHES", "CLIMBS", "FLIES", "PUSH_MON" ],
@@ -234,7 +226,7 @@
     "id": "mon_kamaitachi",
     "type": "MONSTER",
     "name": { "str": "kamaitachi" },
-    "description": "A small weasel-like creature, with four sickles instead of its four paws. It flies on an unending gust of hot wind filled with dust and seems to be able to control its direction.",
+    "description": "A small weasel-like creature, with four sickles instead of its four paws.  It flies on an unending gust of hot wind filled with dust and seems to be able to control its direction.",
     "species": [ "YOUKAI", "CHAOS_SIDE" ],
     "default_faction": "mutant",
     "diff": 10,
@@ -256,22 +248,20 @@
     "harvest": "exempt",
     "death_drops": "mon_kamaitachi_death_drops",
     "fear_triggers": [ "FIRE" ],
-    "death_function": [ "DISAPPEAR" ],
-    "special_attacks": [ { "type": "leap", "cooldown": 3, "max_range": 3 }, [ "dust_directing", 4 ], [ "PARROT", 0 ] ],
+    "special_attacks": [ { "type": "leap", "cooldown": 3, "max_range": 3 }, { "id": "dust_directing", "cooldown": 4 }, [ "PARROT", 0 ] ],
     "flags": [ "SEES", "HEARS", "SMELLS", "NO_BREATHE", "HARDTOSHOOT", "FLIES" ]
   },
   {
     "id": "mon_okka",
     "type": "MONSTER",
     "name": { "str": "okka" },
-    "description": "A small bulbous creature with red, frog-like skin. It runs around on its two tiny clawed feets, hiding from people's sight.",
+    "description": "A small bulbous creature with red, frog-like skin.  It runs around on its two tiny clawed feets, hiding from people's sight.",
     "species": [ "YOUKAI", "CHAOS_SIDE" ],
     "default_faction": "okka",
     "diff": 10,
     "hp": 10,
     "speed": 120,
     "material": [ "flesh" ],
-    "looks_like": "mon_frog_giant",
     "symbol": "o",
     "color": "red",
     "aggression": 2,
@@ -284,14 +274,13 @@
     "harvest": "exempt",
     "death_drops": "mon_okka_death_drops",
     "fear_triggers": [ "FIRE" ],
-    "death_function": [ "DISAPPEAR" ],
     "flags": [ "SEES", "HEARS", "SMELLS", "NO_BREATHE", "HARDTOSHOOT" ]
   },
   {
     "id": "mon_kanazuchibo",
     "type": "MONSTER",
     "name": { "str": "kanazuchibo" },
-    "description": "A  tiny humanoid with grey, wrinkly skin and long, uncombed silver hair. It carries around absurdly large wooden hammer, given its size.",
+    "description": "A  tiny humanoid with grey, wrinkly skin and long, uncombed silver hair.  It carries around absurdly large wooden hammer, given its size.",
     "species": [ "YOUKAI", "CHAOS_SIDE" ],
     "default_faction": "youkai",
     "diff": 12,
@@ -311,7 +300,6 @@
     "anger_triggers": [ "PLAYER_CLOSE", "FRIEND_ATTACKED", "FRIEND_DIED" ],
     "harvest": "exempt",
     "death_drops": "mon_kanazuchibo_death_drops",
-    "death_function": [ "DISAPPEAR" ],
     "special_attacks": [ [ "PARROT", 0 ], { "type": "leap", "cooldown": 6, "max_range": 10 } ],
     "flags": [ "SEES", "HEARS", "SMELLS", "NO_BREATHE", "HARDTOSHOOT", "CLIMBS", "PUSH_MON" ]
   }

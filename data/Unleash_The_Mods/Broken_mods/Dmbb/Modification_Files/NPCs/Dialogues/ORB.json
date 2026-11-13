@@ -2,29 +2,7 @@
   {
     "id": "TALK_DMBB_ORB",
     "type": "talk_topic",
-    "dynamic_line": {
-      "u_has_var": "dmbb_orb",
-      "type": "general",
-      "context": "intro",
-      "value": "yes",
-      "no": "*is hovering. It looks lifeless.",
-      "yes": {
-        "u_has_var": "dmbb_orb",
-        "type": "general",
-        "context": "in_combat",
-        "value": "yes",
-        "no": "*is shimmering brightly.",
-        "yes": {
-          "npc_has_effect": "dmbb_enemycheck",
-          "no": "*hovers calmly.",
-          "yes": {
-            "u_has_effect": "dmbb_timelimit",
-            "no": "*is sensing monsters. Slay the remaining monsters to complete the wave.",
-            "yes": "*is trembling violently!"
-          }
-        }
-      }
-    },
+    "dynamic_line": "*is hovering.  It looks lifeless.  *is shimmering brightly.  *hovers calmly.  *is sensing monsters.  Slay the remaining monsters to complete the wave.  *is trembling violently!",
     "responses": [
       {
         "text": "*Examine the orb*",
@@ -128,7 +106,7 @@
   {
     "id": "TALK_DMBB_ORB_intro",
     "type": "talk_topic",
-    "dynamic_line": "*shimmers as you take a look at it, then it gets brighter, and brighter. You suddenly felt stronger as the orb hovers lively mid-air.\n\nA portal opens up, dropping some items into the floor.",
+    "dynamic_line": "*shimmers as you take a look at it, then it gets brighter, and brighter.  You suddenly felt stronger as the orb hovers lively mid-air.\n\nA portal opens up, dropping some items into the floor.",
     "responses": [
       {
         "text": "*Take the items*",
@@ -149,7 +127,7 @@
   {
     "id": "TALK_DMBB_ORB_intro_starter",
     "type": "talk_topic",
-    "dynamic_line": "*hovers in a slow pace.\n\n*Someone's voice*: \"Do you need someone else to help you in your objective? The orb has the power to call one.\"",
+    "dynamic_line": "*hovers in a slow pace.\n\n*Someone's voice*: \"Do you need someone else to help you in your objective?  The orb has the power to call one.\"",
     "responses": [
       { "text": "[ACCEPT]", "topic": "TALK_DMBB_ORB_intro_starter_yes" },
       { "text": "[REFUSE]", "topic": "TALK_DMBB_ORB_intro_starter_no" }
@@ -158,66 +136,13 @@
   {
     "id": "TALK_DMBB_ORB_intro_starter_no",
     "type": "talk_topic",
-    "dynamic_line": "*pulsates a darker hue in response.\n\n*Someone's voice*: \"It seems like you want a challenge. Well then...\"",
+    "dynamic_line": "*pulsates a darker hue in response.\n\n*Someone's voice*: \"It seems like you want a challenge.  Well then…  \"",
     "responses": [ { "text": "*Leave*", "topic": "TALK_DONE" } ]
   },
   {
     "id": "TALK_DMBB_ORB_intro_starter_yes",
     "type": "talk_topic",
-    "dynamic_line": {
-      "and": [
-        "*can send a class from this list:",
-        {
-          "u_has_var": "dmbb_orb",
-          "type": "knight",
-          "context": "called",
-          "value": "yes",
-          "no": "\n\n* Knight\nA strong swordsman clad in heavy armor."
-        },
-        {
-          "u_has_var": "dmbb_orb",
-          "type": "berserker",
-          "context": "called",
-          "value": "yes",
-          "no": "\n\n* Berserker\nAn unarmed brawler skilled in striking heavy blows."
-        },
-        {
-          "u_has_var": "dmbb_orb",
-          "type": "ranger",
-          "context": "called",
-          "value": "yes",
-          "no": "\n\n* Ranger\nA nimble archer that excels in ranged attacks."
-        },
-        {
-          "u_has_var": "dmbb_orb",
-          "type": "bard",
-          "context": "called",
-          "value": "yes",
-          "no": "\n\n* Bard\nA musician who supports allies by playing."
-        },
-        {
-          "u_has_var": "dmbb_orb",
-          "type": "mage",
-          "context": "called",
-          "value": "yes",
-          "no": "\n\n* Mage\nA wise conjurer who casts a variety of combat spells."
-        },
-        {
-          "u_has_var": "dmbb_orb",
-          "type": "cleric",
-          "context": "called",
-          "value": "yes",
-          "no": "\n\n* Cleric\nA divine sage who casts support spells."
-        },
-        {
-          "u_has_var": "dmbb_orb",
-          "type": "priest",
-          "context": "called",
-          "value": "yes",
-          "no": "\n\n* Priest\nA holy saint focused on casting healing spells."
-        }
-      ]
-    },
+    "dynamic_line": "*can send a class from this list: * Knight\nA strong swordsman clad in heavy armor.  * Berserker\nAn unarmed brawler skilled in striking heavy blows.  * Ranger\nA nimble archer that excels in ranged attacks.  * Bard\nA musician who supports allies by playing.  * Mage\nA wise conjurer who casts a variety of combat spells.  * Cleric\nA divine sage who casts support spells.  * Priest\nA holy saint focused on casting healing spells.",
     "responses": [
       {
         "text": "[RECRUIT] Knight",
@@ -280,7 +205,7 @@
   {
     "id": "TALK_DMBB_ORB_intro_starter_done",
     "type": "talk_topic",
-    "dynamic_line": "*pauses as it shimmers brightly. Eventually, a shard blessed with summoning spell were handed over to you.\n\nThe orb's light dims a bit after the process.",
+    "dynamic_line": "*pauses as it shimmers brightly.  Eventually, a shard blessed with summoning spell were handed over to you.\n\nThe orb's light dims a bit after the process.",
     "responses": [ { "text": "*Leave*", "topic": "TALK_DONE" } ]
   }
 ]

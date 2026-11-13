@@ -3,15 +3,14 @@
     "id": "style_spearfighting",
     "type": "martial_art",
     "name": { "str": "Spearfighting" },
-    "description": "The art of pointy sticks. Based on Piercing Weapons skill, most effective against groups of enemies.",
+    "description": "The art of pointy sticks.  Based on Piercing Weapons skill, most effective against groups of enemies.",
     "initiate": [ "You prepare to skewer your enemies.", "%s gets ready to make shish kebabs." ],
     "autolearn": [ [ "stabbing", 1 ] ],
-    "allow_melee": true,
     "static_buffs": [
       {
         "id": "buff_spearwielding_static",
         "name": "Spear Wielding",
-        "description": "You keep your enemies at bay with the point of your spear. Gives block and dodge bonuses.\n\n +2 Dodge attempts, Blocked damage reduced by 50%% of strength",
+        "description": "You keep your enemies at bay with the point of your spear.  Gives block and dodge bonuses.\n\n +2 Dodge attempts, Blocked damage reduced by 50%% of strength",
         "melee_allowed": true,
         "bonus_dodges": 2,
         "mult_bonuses": [ { "stat": "dodge", "scaling-stat": "dex", "scale": 3 } ],
@@ -157,7 +156,7 @@
     ],
     "onkill_buffs": [
       {
-        "id": "buff_onthemark_onkill",
+        "id": "buff_onthemark_onkill_lancer",
         "name": "On the mark",
         "description": "Every kill makes you more badass.",
         "unarmed_allowed": true,
@@ -173,7 +172,7 @@
     ],
     "onmiss_buffs": [
       {
-        "id": "buff_dairyfarmer_onmiss",
+        "id": "buff_dairyfarmer_onmiss_lancer",
         "name": "You Fight Like A Dairy Farmer",
         "description": "You fight like a dairy farmer!",
         "unarmed_allowed": true,
@@ -219,7 +218,7 @@
     "type": "technique",
     "name": "You Fight Like A Cow",
     "melee_allowed": true,
-    "required_buffs_all": [ "buff_dairyfarmer_onmiss" ],
+    "required_buffs_all": [ "buff_dairyfarmer_onmiss_lancer" ],
     "mult_bonuses": [ { "stat": "hit", "scale": 1.2 } ],
     "messages": [ "How appropriate, you fight like a cow!", "%s fights like a cow." ],
     "description": "Miss recovery"
@@ -228,7 +227,7 @@
     "id": "abspear_annihilated",
     "type": "technique",
     "name": "Every Enemy Ive Met Ive Annihilated",
-    "required_buffs_all": [ "buff_dairyfarmer_onmiss" ],
+    "required_buffs_all": [ "buff_dairyfarmer_onmiss_lancer" ],
     "skill_requirements": [ { "name": "stabbing", "level": 10 } ],
     "mult_bonuses": [ { "stat": "damage", "type": "stab", "scale": 99 }, { "stat": "hit", "scale": 99 } ],
     "messages": [ "With your breath, they probably suffocated!", "%s has bad breath" ],

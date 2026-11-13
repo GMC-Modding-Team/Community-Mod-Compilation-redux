@@ -1,0 +1,36 @@
+[
+  {
+    "id": "SECRO_TENDRIL_TENT_THRESHOLD_tent",
+    "type": "SPELL",
+    "name": { "str": "Tendril Split" },
+    "description": "Spell casted by a mutation or trait, either passive or active.  If you're seeing this, then read this one instead:\n'Your tendril splits a smaller variation, which can assist you in fights.'",
+    "flags": [ "SILENT", "RANDOM_DURATION", "NO_PROJECTILE" ],
+    "message": "Your tendril splits!",
+    "valid_targets": [ "ground" ],
+    "min_damage": 1,
+    "max_damage": 1,
+    "min_aoe": 2,
+    "max_aoe": 2,
+    "effect": "summon",
+    "shape": "blast",
+    "effect_str": "mon_zombie_tentawraith_tent",
+    "min_duration": 1500,
+    "max_duration": 3250
+  },
+  {
+    "id": "SECRO_TENDRIL_TENT_THRESHOLD_tent_target",
+    "type": "SPELL",
+    "name": { "str": "a spell" },
+    "description": "Target spell casted by a mutation or trait, either passive or active.  If you're seeing this, then read this one instead:\n'Caster locks its line of sight onto the target, then casts the Spell(s).'",
+    "extra_effects": [ { "id": "SECRO_TENDRIL_TENT_THRESHOLD_tent", "hit_self": true } ],
+    "flags": [ "SILENT", "NO_PROJECTILE" ],
+    "valid_targets": [ "ally", "hostile" ],
+    "effect": "attack",
+    "shape": "blast",
+    "effect_str": "secro_magic_target",
+    "min_range": 1,
+    "max_range": 1,
+    "min_duration": 1,
+    "max_duration": 1
+  }
+]

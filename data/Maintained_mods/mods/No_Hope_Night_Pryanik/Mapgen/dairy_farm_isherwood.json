@@ -183,7 +183,6 @@
         { "id": "isherwood_family", "x": [ 0, 23 ], "y": [ 0, 23 ] },
         { "id": "isherwood_family", "x": [ 24, 47 ], "y": [ 0, 23 ] }
       ],
-      "fill_ter": "t_shingle_flat_roof",
       "rows": [
         "                                                ",
         "                                                ",
@@ -211,8 +210,18 @@
         "                                                "
       ],
       "palettes": [ "roof_palette" ],
-      "terrain": { ".": "t_shingle_flat_roof" },
-      "furniture": { "N": "f_TV_antenna", "R": "f_chimney" }
+      "terrain": {
+        ".": "t_shingle_flat_roof",
+        "&": "t_region_groundcover",
+        "|": "t_region_groundcover",
+        "2": "t_region_groundcover",
+        "3": "t_region_groundcover",
+        "5": "t_region_groundcover",
+        "=": "t_region_groundcover",
+        "-": "t_region_groundcover"
+      },
+      "furniture": { "N": "f_TV_antenna", "R": "f_chimney" },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -303,7 +312,6 @@
     "method": "json",
     "om_terrain": "rural_outbuilding_roof",
     "object": {
-      "fill_ter": "t_tar_flat_roof",
       "rows": [
         "                        ",
         "                        ",
@@ -331,7 +339,8 @@
         "                        "
       ],
       "palettes": [ "roof_palette" ],
-      "terrain": { ".": "t_tar_flat_roof" }
+      "terrain": { ".": "t_tar_flat_roof" },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -341,7 +350,7 @@
     "//": "Updates outbuilding to include kilns.",
     "object": {
       "faction_owner": [ { "id": "isherwood_family", "x": [ 0, 19 ], "y": [ 0, 19 ] } ],
-      "mapgensize": [ 14, 14 ],
+      "mapgensize": [ 24, 15 ],
       "rows": [
         "........................",
         "........................",
@@ -487,7 +496,6 @@
     "method": "json",
     "om_terrain": "smokehouse_roof",
     "object": {
-      "fill_ter": "t_tar_flat_roof",
       "rows": [
         "                        ",
         "                        ",
@@ -515,7 +523,8 @@
         "                        "
       ],
       "palettes": [ "roof_palette" ],
-      "terrain": { ".": "t_tar_flat_roof" }
+      "terrain": { ".": "t_tar_flat_roof" },
+      "fill_ter": "t_region_groundcover"
     }
   }
 ]

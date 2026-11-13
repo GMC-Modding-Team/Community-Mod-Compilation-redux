@@ -35,7 +35,7 @@
     "id": "NC_mad_scientist_worn",
     "type": "item_group",
     "subtype": "collection",
-    "entries": [
+    "items": [
       { "item": "briefs" },
       { "item": "coat_lab" },
       { "item": "dress_shirt" },
@@ -160,15 +160,7 @@
   {
     "id": "TALK_mad_scientist_serum_making",
     "type": "talk_topic",
-    "dynamic_line": {
-      "npc_compare_time_since_var": "making_serum",
-      "type": "flag",
-      "context": "experiment",
-      "op": ">",
-      "time": "1 day",
-      "yes": "Good, the serum is ready.  Shall we try it?",
-      "no": "I need more time, <name_g>.  Come back later."
-    },
+    "dynamic_line": "Good, the serum is ready.  Shall we try it?  I need more time, <name_g>.  Come back later.",
     "responses": [
       {
         "text": "Let's do it!",
@@ -181,7 +173,7 @@
   {
     "id": "TALK_mad_scientist_experiment",
     "type": "talk_topic",
-    "dynamic_line": "Let's start…\"  he took a syringe from his pocket.  \"Relax, it wouldn't hurt.",
+    "dynamic_line": "Let's start…  \"  he took a syringe from his pocket.  \"Relax, it wouldn't hurt.",
     "responses": [ { "text": "I hope so…", "topic": "TALK_mad_scientist_experiment1" } ]
   },
   {
@@ -205,7 +197,7 @@
   {
     "id": "TALK_mad_scientist_experiment3",
     "type": "talk_topic",
-    "dynamic_line": "You look norm… bloody hell!  <name_g>, what happened to you!",
+    "dynamic_line": "You look norm…  bloody hell!  <name_g>, what happened to you!",
     "speaker_effect": {
       "sentinel": "hadnt_trait",
       "condition": { "not": { "u_has_trait": "CHAOTIC_BAD" } },
@@ -216,8 +208,8 @@
   {
     "id": "TALK_mad_scientist_experiment4",
     "type": "talk_topic",
-    "dynamic_line": "*gave you his pocket mirror.  \"I'm sorry, <name_g>, I just remembered what I forgot to add.  It's all my fault…\"\n\nYou looked in the mirror and screamed in shock.",
-    "responses": [ { "text": "Doc, what did you do to me?  I've become an abomination! ", "topic": "TALK_mad_scientist_experiment5" } ]
+    "dynamic_line": "*gave you his pocket mirror.  \"I'm sorry, <name_g>, I just remembered what I forgot to add.  It's all my fault…  \"\n\nYou looked in the mirror and screamed in shock.",
+    "responses": [ { "text": "Doc, what did you do to me?  I've become an abomination!", "topic": "TALK_mad_scientist_experiment5" } ]
   },
   {
     "id": "TALK_mad_scientist_experiment5",
@@ -262,15 +254,7 @@
   {
     "id": "TALK_mad_scientist_brew",
     "type": "talk_topic",
-    "dynamic_line": {
-      "npc_compare_time_since_var": "mad_scientist_need_time",
-      "type": "flag",
-      "context": "wait",
-      "op": ">",
-      "time": "12 hours",
-      "yes": "It's done!  Let's test it?",
-      "no": "I need more time."
-    },
+    "dynamic_line": "It's done!  Let's test it?  I need more time.",
     "responses": [
       {
         "text": "Just inject it already!",
@@ -383,7 +367,7 @@
     "dialogue": {
       "describe": "-",
       "offer": "Thanks to the samples you brought me, I am one step closer to solving the mystery of <the_cataclysm>.  Do you want to help me get some more samples?",
-      "accepted": "Good. This time, I want to study how the virus affected cute animals like ants.  Perhaps you saw what happened to them.  These poor hard workers have mutated into terrible creatures: the size of a car, blade-paws, chitinous armor, and some also know how to spit fire!  A terrible sight.  Bring me 20 ant eggs.",
+      "accepted": "Good.  This time, I want to study how the virus affected cute animals like ants.  Perhaps you saw what happened to them.  These poor hard workers have mutated into terrible creatures: the size of a car, blade-paws, chitinous armor, and some also know how to spit fire!  A terrible sight.  Bring me 20 ant eggs.",
       "rejected": "Bah.",
       "advice": "As far as I know, they have always liked to hide underground.  Surely these versions of them also hide their queen somewhere below.",
       "inquire": "How’s your search going?",
@@ -438,7 +422,7 @@
       "rejected": "Bah",
       "advice": "They still build their hives in warm places, but since they are now the size of a cow, the hives take up a lot more space and you shouldn't have a hard time finding them.",
       "inquire": "How’s your search going?",
-      "success": "Wonderful. Immediately I begin to study.  By the way, thanks to the samples that you brought me, I was able to make some progress in my own research.  I won't go into details, but based on my findings, I can make an experimental serum that can enhance human potential.  Tell me if you want to experience it for yourself.",
+      "success": "Wonderful.  Immediately I begin to study.  By the way, thanks to the samples that you brought me, I was able to make some progress in my own research.  I won't go into details, but based on my findings, I can make an experimental serum that can enhance human potential.  Tell me if you want to experience it for yourself.",
       "success_lie": "-",
       "failure": "-"
     }

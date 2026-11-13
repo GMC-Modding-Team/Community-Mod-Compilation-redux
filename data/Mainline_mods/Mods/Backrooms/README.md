@@ -1,20 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Backrooms CDDA](#backrooms-cdda)
-  - [Warning: You MUST choose the scenario "Backrooms" when creating a character!](#warning-you-must-choose-the-scenario-backrooms-when-creating-a-character)
-- [Questions](#questions)
-    - [What's the current state of the mod?](#whats-the-current-state-of-the-mod)
-    - [Is this a gimmick mod?](#is-this-a-gimmick-mod)
-    - [Will this work with other mods?](#will-this-work-with-other-mods)
-    - [I found something weird!](#i-found-something-weird)
-      - [No, I mean weirder than that...](#no-i-mean-weirder-than-that)
-    - [What are the Red Rooms for?](#what-are-the-red-rooms-for)
-    - [How do I survive?](#how-do-i-survive)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # Backrooms CDDA
 A Backrooms-themed mod for Cataclysm: Dark Days Ahead.
 
