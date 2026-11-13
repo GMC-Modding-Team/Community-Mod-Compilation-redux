@@ -5361,6 +5361,24 @@ def clean_blacklist_references(
         clean_blacklist_references(child, valid_item_ids, valid_monster_ids, counts)
 
 
+def repair_manual_bionic_inheritance(
+    obj: dict[str, Any], path: Path, counts: collections.Counter[str]
+) -> bool:
+    """Keep manual-install overrides linked to their matching core bionics."""
+    if (
+        path.parent.name.casefold() != "manualbionicinstall"
+        or obj.get("type") != "bionic"
+        or obj.get("id") not in {"bio_emp", "bio_eye_optic"}
+        or obj.get("installation_requirement") != "manual_install"
+    ):
+        return False
+    ident = obj["id"]
+    if obj.get("copy-from") != ident:
+        obj["copy-from"] = ident
+        counts["manual_bionic_inheritance"] += 1
+    return True
+
+
 def transform_object(
     obj: dict[str, Any],
     counts: collections.Counter[str],
@@ -7266,9 +7284,10 @@ def general_pass(
                         totals,
                     )
                     remove_core_snippet_duplicates(entry, h_core_snippet_ids, totals)
+                    manual_bionic_override = repair_manual_bionic_inheritance(entry, path, totals)
                     if collapse_core_override(entry):
                         continue
-                    if isinstance(entry.get("copy-from"), str):
+                    if isinstance(entry.get("copy-from"), str) and not manual_bionic_override:
                         expand_copy_from(entry)
                     transform_object(entry, totals, active_obsolete_monster_ids)
                     migrate_rotating_overmaps(
