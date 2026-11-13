@@ -5379,6 +5379,24 @@ def repair_manual_bionic_inheritance(
     return True
 
 
+def repair_extended_freeform_inheritance(
+    obj: dict[str, Any], path: Path, counts: collections.Counter[str]
+) -> bool:
+    """Preserve core mutation effects and categories in chargen overrides."""
+    if (
+        path.parent.name.casefold() != "extended_freeform"
+        or obj.get("type") != "mutation"
+        or obj.get("id") not in {"GIZZARD", "VOMITOUS", "ROT1", "SLIMESPAWNER", "SHOUT1"}
+        or obj.get("starting_trait") is not True
+        or obj.get("copy-from") not in {None, obj.get("id")}
+    ):
+        return False
+    if obj.get("copy-from") != obj["id"]:
+        obj["copy-from"] = obj["id"]
+        counts["extended_freeform_inheritance"] += 1
+    return True
+
+
 def transform_object(
     obj: dict[str, Any],
     counts: collections.Counter[str],
@@ -7285,9 +7303,10 @@ def general_pass(
                     )
                     remove_core_snippet_duplicates(entry, h_core_snippet_ids, totals)
                     manual_bionic_override = repair_manual_bionic_inheritance(entry, path, totals)
+                    freeform_override = repair_extended_freeform_inheritance(entry, path, totals)
                     if collapse_core_override(entry):
                         continue
-                    if isinstance(entry.get("copy-from"), str) and not manual_bionic_override:
+                    if isinstance(entry.get("copy-from"), str) and not (manual_bionic_override or freeform_override):
                         expand_copy_from(entry)
                     transform_object(entry, totals, active_obsolete_monster_ids)
                     migrate_rotating_overmaps(
