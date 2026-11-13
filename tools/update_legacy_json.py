@@ -5361,196 +5361,6 @@ def clean_blacklist_references(
         clean_blacklist_references(child, valid_item_ids, valid_monster_ids, counts)
 
 
-def repair_manual_bionic_inheritance(
-    obj: dict[str, Any], path: Path, counts: collections.Counter[str]
-) -> bool:
-    """Keep manual-install overrides linked to their matching core bionics."""
-    if (
-        path.parent.name.casefold() != "manualbionicinstall"
-        or obj.get("type") != "bionic"
-        or obj.get("id") not in {"bio_emp", "bio_eye_optic"}
-        or obj.get("installation_requirement") != "manual_install"
-    ):
-        return False
-    ident = obj["id"]
-    if obj.get("copy-from") != ident:
-        obj["copy-from"] = ident
-        counts["manual_bionic_inheritance"] += 1
-    return True
-
-
-def repair_extended_freeform_inheritance(
-    obj: dict[str, Any], path: Path, counts: collections.Counter[str]
-) -> bool:
-    """Preserve core mutation effects and categories in chargen overrides."""
-    if (
-        path.parent.name.casefold() != "extended_freeform"
-        or obj.get("type") != "mutation"
-        or obj.get("id") not in {"GIZZARD", "VOMITOUS", "ROT1", "SLIMESPAWNER", "SHOUT1"}
-        or obj.get("starting_trait") is not True
-        or obj.get("copy-from") not in {None, obj.get("id")}
-    ):
-        return False
-    if obj.get("copy-from") != obj["id"]:
-        obj["copy-from"] = obj["id"]
-        counts["extended_freeform_inheritance"] += 1
-    return True
-
-
-def repair_shards_robot_bases(
-    obj: dict[str, Any], path: Path, counts: collections.Counter[str]
-) -> None:
-    """Inline unavailable legacy corpse-base fields without replacing robot stats."""
-    if (
-        path.parent.name.casefold() != "disable_bots"
-        or path.parent.parent.name.casefold() != "shardsotherstuff"
-        or obj.get("type") != "TOOL"
-    ):
-        return
-    expected_bases = {
-        "bot_chickenbot": "broken_tripod",
-        "bot_tankbot": "broken_tankbot",
-        "bot_tripod": "broken_tripod",
-        "bot_turret_searchlight": "broken_tripod",
-    }
-    parent = expected_bases.get(obj.get("id"))
-    if parent is None or obj.get("copy-from") != parent:
-        return
-    # Original broken_tripod/broken_tankbot fields, retained in the compilation's
-    # Advanced_Gear_Technologies/Monsters/Broken_bots_tools.json.  All other
-    # inherited fields are already overridden by these inactive robot entries.
-    tank = parent == "broken_tankbot"
-    defaults = {
-        "category": "other",
-        "price": "10 cent",
-        "material": ["steel", "plastic"],
-        "melee_damage": {"bash": 20 if tank else 10, "cut": 15 if tank else 5},
-        "to_hit": -3 if tank else -2,
-    }
-    for key, value in defaults.items():
-        obj.setdefault(key, value)
-    del obj["copy-from"]
-    counts["shards_robot_bases"] += 1
-
-
-def restore_national_guard_content(data: Any, path: Path, counts: collections.Counter[str]) -> None:
-    """Restore the legacy leaflet and torso loot used by National Guard Camp."""
-    if (
-        path.parent.name.casefold() != "national_guard_camp"
-        or path.name.casefold() != "item_groups.json"
-        or not isinstance(data, list)
-    ):
-        return
-    # Original leaflet prose and G-release torso loot, with H's army_top
-    # migration applied.  Snippet IDs are local to avoid duplicate registrations
-    # when No Hope also supplies the original necropolis snippets.
-    definitions = json.loads(r'''
-[
-  {
-    "type": "GENERIC",
-    "id": "necropolis_leaflet",
-    "category": "books",
-    "symbol": ",",
-    "color": "white",
-    "name": {
-      "str": "vault leaflet"
-    },
-    "snippet_category": "ngc_necropolis_intro",
-    "description": "A folded glossy handout that appears to be an introduction to living in a massive underground complex.",
-    "looks_like": "flyer",
-    "price": 0,
-    "price_postapoc": 0,
-    "material": [
-      "paper"
-    ],
-    "weight": "1 g",
-    "volume": "1 ml"
-  },
-  {
-    "type": "snippet",
-    "category": "ngc_necropolis_intro",
-    "text": [
-      {
-        "id": "ngc_necropolis_intro_1",
-        "text": "WELCOME HOME!  Your decision to join our family will lead you to become part of the next generation of job creators.  With us you will already have a foot in the door when it is time to rebuild the nation!"
-      },
-      {
-        "id": "ngc_necropolis_intro_2",
-        "text": "NEED A NEW JOB?  Now that you have secured a comfortable home, try looking into one of the many promising career opportunities that have positions open.  Openings such as GEOLOGICAL ENGINEERING ASSISTANT or FACILITY TECHNICIAN offer limitless growth potential!  Please contact your employment adviser if you have any questions."
-      },
-      {
-        "id": "ngc_necropolis_intro_3",
-        "text": "GOOD WITH YOUR HANDS?  Engineering always needs another hand keeping our home in good working order!  As an incentive, everyone working on level 3 will receive additional hazardous pay and time off.  Please go to the engineering office on level 3 if you are interested."
-      },
-      {
-        "id": "ngc_necropolis_intro_4",
-        "text": "WANT TO CONTINUE YOUR EDUCATION?  Our educational facilities are top notch and offer courses for individuals at all age groups.  Many new careers are opening up to those who are willing to learn a new craft.  Our library and research labs will keep even the hungriest minds fed!"
-      }
-    ]
-  },
-  {
-    "type": "item_group",
-    "id": "mil_armor_torso",
-    "subtype": "distribution",
-    "items": [
-      [
-        "kevlar",
-        10
-      ],
-      {
-        "group": "military_ballistic_vest",
-        "prob": 30
-      },
-      [
-        "winter_jacket_army",
-        30
-      ],
-      [
-        "vest",
-        15
-      ],
-      [
-        "tacvest",
-        10
-      ],
-      [
-        "molle_pack",
-        8
-      ],
-      [
-        "under_armor",
-        20
-      ],
-      [
-        "power_armor_basic",
-        5
-      ],
-      {
-        "item": "tank_top",
-        "variant": "tank_top_camo",
-        "prob": 30
-      },
-      [
-        "elbow_pads",
-        20
-      ]
-    ]
-  }
-]
-''')
-    for definition in definitions:
-        key = "category" if definition["type"] == "snippet" else "id"
-        if any(
-            isinstance(entry, dict)
-            and entry.get("type") == definition["type"]
-            and entry.get(key) == definition[key]
-            for entry in data
-        ):
-            continue
-        data.append(definition)
-        counts["national_guard_restored_definitions"] += 1
-
-
 def transform_object(
     obj: dict[str, Any],
     counts: collections.Counter[str],
@@ -7439,7 +7249,6 @@ def general_pass(
             data = [data]
             totals["modinfo_wrapped"] += 1
         normalize_optional_mod_item_groups(data, path, totals)
-        restore_national_guard_content(data, path, totals)
         clean_fantasy_blacklist_refs(data, path, set(h_index), totals)
         if isinstance(data, list):
             original_length = len(data)
@@ -7457,12 +7266,9 @@ def general_pass(
                         totals,
                     )
                     remove_core_snippet_duplicates(entry, h_core_snippet_ids, totals)
-                    manual_bionic_override = repair_manual_bionic_inheritance(entry, path, totals)
-                    freeform_override = repair_extended_freeform_inheritance(entry, path, totals)
-                    repair_shards_robot_bases(entry, path, totals)
                     if collapse_core_override(entry):
                         continue
-                    if isinstance(entry.get("copy-from"), str) and not (manual_bionic_override or freeform_override):
+                    if isinstance(entry.get("copy-from"), str):
                         expand_copy_from(entry)
                     transform_object(entry, totals, active_obsolete_monster_ids)
                     migrate_rotating_overmaps(
