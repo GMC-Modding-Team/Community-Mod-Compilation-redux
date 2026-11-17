@@ -224,7 +224,7 @@ class optional
 
             if( full && other.full ) {
                 swap( get(), other.get() );
-            } else if( other.full() ) {
+            } else if( other.full ) {
                 construct( std::move( other.get() ) );
                 other.destruct();
             } else if( full ) {
