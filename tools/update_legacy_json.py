@@ -24,26 +24,25 @@ Transformations applied
   4.  "damage": N, "pierce": M  -> "damage": { ..., "armor_penetration": M }
   5.  "barrel_length": N        -> "barrel_volume": "N*250 ml"
   6.  "blueprint": "x"          -> "blueprint": [ "x" ]
-  7.  "om_terrain": "x"        -> "om_terrain": [ "x" ]
-  8.  "copy_from"               -> "copy-from"
-  9.  "looks-like"              -> "looks_like"
-  10. "material": "x"           -> "material": [ "x" ]
-  11. "type": "CONTAINER"       -> "type": "GENERIC"
-  12. "volume": N               -> "volume": "N*250 ml"  (0 -> "1 ml")
-  13. "weight": N               -> "weight": "N g"
-  14. "effect": "target_attack" -> "effect": "attack"
-  15. "mod-type": "SUPPLEMENTAL"-> "category": "SUPPLEMENTAL"
-  16. "author": "x"             -> "authors": [ "x" ]
-  17. "note":                   -> "//"
-  18. direct "price": N          -> cent, USD, or kUSD (largest exact unit)
-  19. direct "price_postapoc": N -> cent, USD, or kUSD (largest exact unit)
-  20. "min_melee": N            -> skill_requirements entry  (merged with min_unarmed)
-  21. "min_unarmed": N          -> skill_requirements entry  (merged with min_melee)
-  22. "bashing": N, "cutting": M-> "melee_damage": { "bash": N, "cut": M }
-  23. "bash_resist": N, etc.    -> "resist": { "bash": N, ... }
-  24. martial-art "req_buffs"  -> "required_buffs_all" (merged, not removed)
-  25. technique target states -> target-effect conditions (existing conditions retained)
-  26. gas-mask activation/tick actions, explicit magazine charge cleanup,
+  7.  "copy_from"               -> "copy-from"
+  8.  "looks-like"              -> "looks_like"
+  9.  "material": "x"           -> "material": [ "x" ]
+  10. "type": "CONTAINER"       -> "type": "GENERIC"
+  11. "volume": N               -> "volume": "N*250 ml"  (0 -> "1 ml")
+  12. "weight": N               -> "weight": "N g"
+  13. "effect": "target_attack" -> "effect": "attack"
+  14. "mod-type": "SUPPLEMENTAL"-> "category": "SUPPLEMENTAL"
+  15. "author": "x"             -> "authors": [ "x" ]
+  16. "note":                   -> "//"
+  17. direct "price": N          -> cent, USD, or kUSD (largest exact unit)
+  18. direct "price_postapoc": N -> cent, USD, or kUSD (largest exact unit)
+  19. "min_melee": N            -> skill_requirements entry  (merged with min_unarmed)
+  20. "min_unarmed": N          -> skill_requirements entry  (merged with min_melee)
+  21. "bashing": N, "cutting": M-> "melee_damage": { "bash": N, "cut": M }
+  22. "bash_resist": N, etc.    -> "resist": { "bash": N, ... }
+  23. martial-art "req_buffs"  -> "required_buffs_all" (merged, not removed)
+  24. technique target states -> target-effect conditions (existing conditions retained)
+  25. gas-mask activation/tick actions, explicit magazine charge cleanup,
       monster damage maps, and legacy vehicle crafting flags -> H schemas
 
 H-release mode
@@ -174,12 +173,6 @@ def fix_blueprint(content):
     "blueprint": "x"  ->  "blueprint": [ "x" ]
     """
     return _sub(r'"blueprint"\s*:\s*"([^"]*)"', r'"blueprint": [ "\1" ]', content)
-
-
-def fix_om_terrain(content):
-    """Normalize a scalar overmap terrain selector to H's array form."""
-    pattern = re.compile(r'("om_terrain"\s*:\s*)"((?:\\.|[^"\\])*)"')
-    return pattern.sub(lambda match: f'{match.group(1)}[ "{match.group(2)}" ]', content)
 
 
 def fix_looks_like(content):
@@ -3030,7 +3023,6 @@ TRANSFORMS = [
     fix_damage,
     fix_barrel_length,
     fix_blueprint,
-    fix_om_terrain,
     fix_looks_like,
     fix_material,
     fix_container_type,
@@ -3249,13 +3241,6 @@ def migrate_item_monster_vehicle_fields(obj, counts):
                         counts["vehicle_pseudo_tools"] += 1
             obj["pseudo_tools"] = pseudo
             obj["flags"] = list(dict.fromkeys(f for f in flags if f not in tools_by_flag))
-
-
-def normalize_om_terrain(obj, counts):
-    """Keep the structured H representation for scalar overmap selectors."""
-    if isinstance(obj, dict) and isinstance(obj.get("om_terrain"), str):
-        obj["om_terrain"] = [obj["om_terrain"]]
-        counts["om_terrain_arrays"] += 1
 
 
 def fix_martial_art_requirements(content):
@@ -5541,7 +5526,6 @@ def transform_object(
     counts: collections.Counter[str],
     obsolete_monster_ids: set[str] = OBSOLETE_MONSTER_IDS,
 ) -> None:
-    normalize_om_terrain(obj, counts)
     migrate_item_monster_vehicle_fields(obj, counts)
     normalize_h_quantity_strings(obj, counts)
     obj_type = obj.get("type")
