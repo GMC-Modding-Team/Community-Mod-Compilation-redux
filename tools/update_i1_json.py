@@ -486,6 +486,67 @@ def collect_files(paths: list[str]) -> list[Path]:
     return sorted(files)
 
 
+def mod_source_root(path: Path) -> Path:
+    """Return the nearest directory containing modinfo.json for *path*."""
+    for parent in (path.parent, *path.parents):
+        if (parent / "modinfo.json").is_file():
+            return parent
+    return path.parent
+
+
+def dedupe_recipe_records(records: list[dict[str, Any]]) -> list[str]:
+    """Remove duplicate recipe results from the same mod source.
+
+    CDDA requires one definition for a recipe result within a source.  Mods
+    sometimes split recipes across files and accidentally repeat an entry.
+    Keep the definition from a ``full_set`` file when present (that is the
+    canonical layout used by Permian World), otherwise keep the deterministic
+    lexicographically last path.  Only list entries are removed; JSON files
+    and standalone objects are never deleted.
+    """
+    grouped: dict[tuple[Path, str], list[tuple[dict[str, Any], dict[str, Any], int]]] = {}
+    for record in records:
+        data = record["migrated"]
+        entries = data if isinstance(data, list) else [data]
+        for index, obj in enumerate(entries):
+            if not isinstance(obj, dict) or obj.get("type") != "recipe":
+                continue
+            result = obj.get("result")
+            if isinstance(result, str) and result:
+                key = (mod_source_root(record["path"]), result)
+                grouped.setdefault(key, []).append((record, obj, index))
+
+    messages: list[str] = []
+    for (source, result), candidates in grouped.items():
+        if len(candidates) < 2:
+            continue
+
+        def preference(candidate: tuple[dict[str, Any], dict[str, Any], int]) -> tuple[int, str, int]:
+            record, _obj, index = candidate
+            path = record["path"]
+            text = str(path).lower()
+            return (1 if "full_set" in text else 0, text, -index)
+
+        winner = max(candidates, key=preference)
+        winner_record, _winner_obj, _winner_index = winner
+        for loser_record, loser_obj, _loser_index in candidates:
+            if loser_record is winner_record and loser_obj is winner[1]:
+                continue
+            loser_data = loser_record["migrated"]
+            if not isinstance(loser_data, list):
+                # A standalone recipe object cannot be removed without
+                # deleting its file; leave it intact and flag it for review.
+                loser_record["warnings"].append(
+                    f"duplicate recipe result {result!r} also defined by {winner_record['path']}"
+                )
+                continue
+            loser_data[:] = [entry for entry in loser_data if entry is not loser_obj]
+            messages.append(
+                f"{source}: kept {result!r} from {winner_record['path']} and removed the duplicate from {loser_record['path']}"
+            )
+    return messages
+
+
 def write_atomic(path: Path, text: str, original: bytes, backup: bool, formatter: Path | None) -> None:
     """Format and validate a temporary file before replacing the original."""
     fd, temp_name = tempfile.mkstemp(prefix=f".{path.stem}.i1-", suffix=".json", dir=path.parent)
@@ -534,22 +595,46 @@ def main(argv: list[str] | None = None) -> int:
         print(f"[ERROR] {exc}", file=sys.stderr)
         return 1
     changed = errors = reviews = 0
+    records: list[dict[str, Any]] = []
     for path in files:
         try:
             original = path.read_bytes()
             before = original.decode("utf-8-sig")
             data = load_json(before)
             migrated, warnings = migrate(data)
-            reviews += len(warnings)
-            for warning in warnings:
-                print(f"[REVIEW] {path}: {warning}")
-            # Dictionary equality ignores field order; include ordering-only changes.
-            if json.dumps(migrated, ensure_ascii=False) == json.dumps(data, ensure_ascii=False):
-                continue
-            after = json.dumps(migrated, ensure_ascii=False, indent=2, allow_nan=False) + "\n"
-            if args.diff:
-                print("".join(difflib.unified_diff(before.splitlines(True), after.splitlines(True),
-                                                  fromfile=str(path), tofile=str(path) + " (I-1)")), end="")
+            records.append({
+                "path": path,
+                "original": original,
+                "before": before,
+                "data": data,
+                "migrated": migrated,
+                "warnings": warnings,
+            })
+        except (OSError, ValueError, subprocess.SubprocessError) as exc:
+            errors += 1
+            print(f"[ERROR] {path}: {exc}", file=sys.stderr)
+
+    for message in dedupe_recipe_records(records):
+        print(f"[DEDUPED] {message}")
+
+    for record in records:
+        path = record["path"]
+        original = record["original"]
+        before = record["before"]
+        data = record["data"]
+        migrated = record["migrated"]
+        warnings = record["warnings"]
+        reviews += len(warnings)
+        for warning in warnings:
+            print(f"[REVIEW] {path}: {warning}")
+        # Dictionary equality ignores field order; include ordering-only changes.
+        if json.dumps(migrated, ensure_ascii=False) == json.dumps(data, ensure_ascii=False):
+            continue
+        after = json.dumps(migrated, ensure_ascii=False, indent=2, allow_nan=False) + "\n"
+        if args.diff:
+            print("".join(difflib.unified_diff(before.splitlines(True), after.splitlines(True),
+                                              fromfile=str(path), tofile=str(path) + " (I-1)")), end="")
+        try:
             if not args.dry_run:
                 write_atomic(path, after, original, args.backup, formatter)
             changed += 1
