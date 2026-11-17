@@ -19,7 +19,7 @@ Supported conversions:
   copy_from/looks-like/ident and MOD_INFO author spellings.
 * Mapgen scalar om_terrain selectors -> one-item arrays and removal of the
   obsolete mapgen method: json member.
-* Legacy reproduction baby_egg -> nested baby_type.baby_egg.
+* Legacy reproduction baby_egg/baby_monster -> nested baby_type fields.
 
 Only top-level definitions and explicitly supported inheritance/slot objects
 are migrated. Arbitrary nested actions, mapgen weights and pricing rules are
@@ -309,20 +309,32 @@ def place_subtypes_after_type(obj: dict) -> None:
 
 
 def migrate_reproduction(obj: dict) -> None:
-    """Move legacy reproduction baby_egg into I-1's baby_type object."""
+    """Move legacy reproduction baby fields into I-1's baby_type object."""
     reproduction = obj.get("reproduction")
-    if not isinstance(reproduction, dict) or "baby_egg" not in reproduction:
+    if not isinstance(reproduction, dict):
         return
 
-    egg = reproduction["baby_egg"]
+    legacy_keys = [key for key in ("baby_egg", "baby_monster") if key in reproduction]
+    if not legacy_keys:
+        return
+    if len(legacy_keys) > 1:
+        raise MigrationError("reproduction cannot specify both baby_egg and baby_monster")
+
+    legacy_key = legacy_keys[0]
+    legacy_value = reproduction[legacy_key]
     existing = reproduction.get("baby_type")
     if existing is None:
-        baby_type = {"baby_egg": egg}
+        baby_type = {legacy_key: legacy_value}
     elif isinstance(existing, dict):
         baby_type = copy.deepcopy(existing)
-        if "baby_egg" in baby_type and baby_type["baby_egg"] != egg:
-            raise MigrationError("reproduction.baby_type.baby_egg conflicts with baby_egg")
-        baby_type["baby_egg"] = egg
+        if legacy_key in baby_type and baby_type[legacy_key] != legacy_value:
+            raise MigrationError(f"reproduction.baby_type.{legacy_key} conflicts with {legacy_key}")
+        other_type_keys = {
+            "baby_egg", "baby_egg_group", "baby_monster", "baby_monster_group",
+        } - {legacy_key}
+        if any(key in baby_type for key in other_type_keys):
+            raise MigrationError("reproduction.baby_type specifies multiple baby types")
+        baby_type[legacy_key] = legacy_value
     else:
         raise MigrationError("reproduction.baby_type must be an object")
 
@@ -331,7 +343,7 @@ def migrate_reproduction(obj: dict) -> None:
     migrated = {}
     inserted = False
     for key, value in reproduction.items():
-        if key == "baby_egg":
+        if key in legacy_keys:
             if not inserted:
                 migrated["baby_type"] = baby_type
                 inserted = True
