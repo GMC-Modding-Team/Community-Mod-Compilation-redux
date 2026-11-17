@@ -1,67 +1,454 @@
 [
   {
-    "abstract": "minifreezer",
     "type": "recipe",
-    "//": "Inheritance-only H recipe: item blacklisting removes craftable parents before deferred appliance recipes resolve.",
     "activity_level": "MODERATE_EXERCISE",
-    "category": "CC_OTHER",
-    "subcategory": "CSC_OTHER_VEHICLE",
+    "category": "CC_APPLIANCE",
+    "subcategory": "CSC_APPLIANCE_UTILITY",
     "skill_used": "mechanics",
-    "skills_required": [ "fabrication", 5 ],
+    "skills_required": [
+      "fabrication",
+      4
+    ],
     "difficulty": 5,
     "time": "5 h",
     "reversible": true,
     "autolearn": false,
-    "book_learn": [ [ "textbook_mechanics", 5 ], [ "manual_mechanics", 5 ], [ "textbook_fabrication", 5 ] ],
-    "using": [ [ "welding_standard", 400 ] ],
+    "book_learn": [
+      [
+        "textbook_mechanics",
+        5
+      ],
+      [
+        "manual_mechanics",
+        5
+      ],
+      [
+        "textbook_fabrication",
+        5
+      ]
+    ],
+    "//": "H compatibility override: materialized recipe avoids deferred copy-from resolution after Fantasy filtering.",
+    "using": [
+      [
+        "welding_standard",
+        400
+      ]
+    ],
     "proficiencies": [
-      { "proficiency": "prof_plasticworking", "required": false, "time_multiplier": 1.1, "learning_time_multiplier": 0.1 },
-      { "proficiency": "prof_appliance_repair" }
+      {
+        "proficiency": "prof_plasticworking",
+        "required": false,
+        "time_multiplier": 1.1,
+        "learning_time_multiplier": 0.1
+      },
+      {
+        "proficiency": "prof_appliance_repair",
+        "required": false,
+        "skill_penalty": 0
+      }
     ],
     "qualities": [
-      { "id": "HAMMER", "level": 2 },
-      { "id": "SAW_M", "level": 1 },
-      { "id": "DRILL", "level": 1 },
-      { "id": "SCREW", "level": 1 },
-      { "id": "WRENCH", "level": 1 }
+      {
+        "id": "HAMMER",
+        "level": 2
+      },
+      {
+        "id": "SAW_M",
+        "level": 1
+      },
+      {
+        "id": "DRILL",
+        "level": 1
+      },
+      {
+        "id": "SCREW",
+        "level": 1
+      },
+      {
+        "id": "WRENCH",
+        "level": 1
+      }
     ],
     "components": [
-      [ [ "sheet_metal", 10 ] ],
-      [ [ "condensor_coil", 1 ] ],
-      [ [ "evaporator_coil", 1 ] ],
-      [ [ "thermostat", 1 ] ],
-      [ [ "motor_micro", 1 ] ],
-      [ [ "refrigerant_tank", 1 ] ],
-      [ [ "plastic_chunk", 10 ] ]
-    ]
+      [
+        [
+          "sheet_metal",
+          20
+        ]
+      ],
+      [
+        [
+          "condensor_coil",
+          1
+        ]
+      ],
+      [
+        [
+          "evaporator_coil",
+          1
+        ]
+      ],
+      [
+        [
+          "cable",
+          3
+        ]
+      ],
+      [
+        [
+          "hose",
+          1
+        ]
+      ],
+      [
+        [
+          "pipe_fittings",
+          6
+        ]
+      ],
+      [
+        [
+          "thermostat",
+          1
+        ]
+      ],
+      [
+        [
+          "motor_tiny",
+          1
+        ]
+      ],
+      [
+        [
+          "refrigerant_tank",
+          1
+        ]
+      ],
+      [
+        [
+          "plastic_chunk",
+          16
+        ]
+      ]
+    ],
+    "result": "fridge"
   },
   {
-    "abstract": "minifridge",
     "type": "recipe",
-    "//": "Inheritance-only H recipe: item blacklisting removes craftable parents before deferred appliance recipes resolve.",
     "activity_level": "MODERATE_EXERCISE",
-    "copy-from": "minifreezer",
-    "skills_required": [ "fabrication", 4 ],
+    "category": "CC_APPLIANCE",
+    "subcategory": "CSC_APPLIANCE_UTILITY",
+    "skill_used": "mechanics",
+    "skills_required": [
+      "fabrication",
+      4
+    ],
+    "difficulty": 5,
+    "time": "5 h",
+    "reversible": true,
+    "autolearn": false,
+    "book_learn": [
+      [
+        "textbook_mechanics",
+        5
+      ],
+      [
+        "manual_mechanics",
+        5
+      ],
+      [
+        "textbook_fabrication",
+        5
+      ]
+    ],
+    "//": "H compatibility override: materialized recipe avoids deferred copy-from resolution after Fantasy filtering.",
+    "using": [
+      [
+        "welding_standard",
+        400
+      ]
+    ],
     "proficiencies": [
-      { "proficiency": "prof_plasticworking", "required": false, "time_multiplier": 1.1, "learning_time_multiplier": 0.1 },
-      { "proficiency": "prof_appliance_repair" }
+      {
+        "proficiency": "prof_plasticworking",
+        "required": false,
+        "time_multiplier": 1.1,
+        "learning_time_multiplier": 0.1
+      },
+      {
+        "proficiency": "prof_appliance_repair",
+        "required": false,
+        "skill_penalty": 0
+      }
     ],
     "qualities": [
-      { "id": "HAMMER", "level": 2 },
-      { "id": "SAW_M", "level": 1 },
-      { "id": "DRILL", "level": 1 },
-      { "id": "SCREW", "level": 1 },
-      { "id": "WRENCH", "level": 1 }
+      {
+        "id": "HAMMER",
+        "level": 2
+      },
+      {
+        "id": "SAW_M",
+        "level": 1
+      },
+      {
+        "id": "DRILL",
+        "level": 1
+      },
+      {
+        "id": "SCREW",
+        "level": 1
+      },
+      {
+        "id": "WRENCH",
+        "level": 1
+      }
     ],
     "components": [
-      [ [ "sheet_metal", 10 ] ],
-      [ [ "condensor_coil", 1 ] ],
-      [ [ "evaporator_coil", 1 ] ],
-      [ [ "thermostat", 1 ] ],
-      [ [ "motor_micro", 1 ] ],
-      [ [ "refrigerant_tank", 1 ] ],
-      [ [ "plastic_chunk", 8 ] ]
-    ]
+      [
+        [
+          "sheet_metal",
+          15
+        ]
+      ],
+      [
+        [
+          "glass_sheet",
+          1
+        ]
+      ],
+      [
+        [
+          "condensor_coil",
+          1
+        ]
+      ],
+      [
+        [
+          "evaporator_coil",
+          1
+        ]
+      ],
+      [
+        [
+          "cable",
+          3
+        ]
+      ],
+      [
+        [
+          "hose",
+          1
+        ]
+      ],
+      [
+        [
+          "pipe_fittings",
+          6
+        ]
+      ],
+      [
+        [
+          "thermostat",
+          1
+        ]
+      ],
+      [
+        [
+          "motor_tiny",
+          1
+        ]
+      ],
+      [
+        [
+          "refrigerant_tank",
+          1
+        ]
+      ],
+      [
+        [
+          "plastic_chunk",
+          16
+        ]
+      ]
+    ],
+    "result": "glass_fridge"
+  },
+  {
+    "type": "recipe",
+    "activity_level": "MODERATE_EXERCISE",
+    "category": "CC_APPLIANCE",
+    "subcategory": "CSC_APPLIANCE_UTILITY",
+    "skill_used": "mechanics",
+    "skills_required": [
+      "fabrication",
+      4
+    ],
+    "difficulty": 5,
+    "time": "5 h",
+    "reversible": true,
+    "autolearn": false,
+    "book_learn": [
+      [
+        "textbook_mechanics",
+        5
+      ],
+      [
+        "manual_mechanics",
+        5
+      ],
+      [
+        "textbook_fabrication",
+        5
+      ]
+    ],
+    "//": "H compatibility override: materialized recipe avoids deferred copy-from resolution after Fantasy filtering.",
+    "using": [
+      [
+        "welding_standard",
+        400
+      ]
+    ],
+    "proficiencies": [
+      {
+        "proficiency": "prof_plasticworking",
+        "required": false,
+        "time_multiplier": 1.1,
+        "learning_time_multiplier": 0.1
+      },
+      {
+        "proficiency": "prof_appliance_repair",
+        "required": false,
+        "skill_penalty": 0
+      }
+    ],
+    "qualities": [
+      {
+        "id": "HAMMER",
+        "level": 2
+      },
+      {
+        "id": "SAW_M",
+        "level": 1
+      },
+      {
+        "id": "DRILL",
+        "level": 1
+      },
+      {
+        "id": "SCREW",
+        "level": 1
+      },
+      {
+        "id": "WRENCH",
+        "level": 1
+      }
+    ],
+    "components": [
+      [
+        [
+          "sheet_metal",
+          20
+        ]
+      ],
+      [
+        [
+          "condensor_coil",
+          1
+        ]
+      ],
+      [
+        [
+          "evaporator_coil",
+          1
+        ]
+      ],
+      [
+        [
+          "cable",
+          3
+        ]
+      ],
+      [
+        [
+          "hose",
+          1
+        ]
+      ],
+      [
+        [
+          "pipe_fittings",
+          6
+        ]
+      ],
+      [
+        [
+          "thermostat",
+          1
+        ]
+      ],
+      [
+        [
+          "motor_tiny",
+          1
+        ]
+      ],
+      [
+        [
+          "refrigerant_tank",
+          1
+        ]
+      ],
+      [
+        [
+          "plastic_chunk",
+          20
+        ]
+      ]
+    ],
+    "result": "freezer"
+  },
+  {
+    "type": "recipe",
+    "activity_level": "LIGHT_EXERCISE",
+    "category": "CC_FOOD",
+    "subcategory": "CSC_FOOD_MEAT",
+    "skill_used": "cooking",
+    "time": "15 m",
+    "autolearn": true,
+    "batch_time_factors": [
+      67,
+      5
+    ],
+    "qualities": [
+      {
+        "id": "COOK",
+        "level": 1
+      }
+    ],
+    "tools": [
+      [
+        [
+          "surface_heat",
+          20,
+          "LIST"
+        ]
+      ]
+    ],
+    "//": "H compatibility override: materialized recipe avoids deferred copy-from resolution after Fantasy filtering.",
+    "proficiencies": [
+      {
+        "proficiency": "prof_food_prep"
+      }
+    ],
+    "components": [
+      [
+        [
+          "meat_mutant_tainted",
+          1
+        ]
+      ]
+    ],
+    "result": "meat_mutant_tainted_cooked"
   },
   {
     "//": "Yes, a part of these are nicked from dark skies above. No need to reinvent the wheel.",
