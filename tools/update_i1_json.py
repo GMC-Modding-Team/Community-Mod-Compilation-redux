@@ -20,6 +20,7 @@ Supported conversions:
 * Mapgen scalar om_terrain selectors -> one-item arrays and removal of the
   obsolete mapgen method: json member.
 * Legacy reproduction baby_egg/baby_monster -> nested baby_type fields.
+* Numeric overmap see_cost values -> I-1's named see-cost enum values.
 
 Only top-level definitions and explicitly supported inheritance/slot objects
 are migrated. Arbitrary nested actions, mapgen weights and pricing rules are
@@ -85,6 +86,15 @@ SLOT_RENAMES = {
 MODIFIERS = ("relative", "proportional", "extend", "delete")
 NUMBER = r"[+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?"
 MONEY = re.compile(rf"\s*({NUMBER})\s*(cent|cents|USD|dollar|dollars|kUSD)?\s*", re.I)
+SEE_COST_MIGRATION = {
+    0: "none",
+    1: "low",
+    2: "medium",
+    4: "spaced_high",
+    5: "high",
+    10: "full_high",
+    999: "opaque",
+}
 UNSUPPORTED_ITEM_FIELDS = {
     "container_data", "magazines", "magazine_well", "rand_charges", "nutrition",
     "rot_spawn_chance", "tool_data", "comestible_data", "battery_data",
@@ -357,11 +367,28 @@ def migrate_reproduction(obj: dict) -> None:
     reproduction.update(migrated)
 
 
+def migrate_overmap_terrain(obj: dict) -> None:
+    """Convert legacy numeric see_cost values to I-1 enum names."""
+    if obj.get("type") != "overmap_terrain" or "see_cost" not in obj:
+        return
+    value = obj["see_cost"]
+    if not is_number(value):
+        return
+    if isinstance(value, float) and not value.is_integer():
+        raise MigrationError(f"unsupported numeric see_cost: {value}")
+    numeric = int(value)
+    try:
+        obj["see_cost"] = SEE_COST_MIGRATION[numeric]
+    except KeyError as exc:
+        raise MigrationError(f"unsupported numeric see_cost: {value}") from exc
+
+
 def migrate_definition(obj: dict, warnings: list[str]) -> None:
     rename(obj, "ident", "id")
     rename(obj, "copy_from", "copy-from")
     rename(obj, "looks-like", "looks_like")
     migrate_reproduction(obj)
+    migrate_overmap_terrain(obj)
     kind = obj.get("type")
     if not isinstance(kind, str):
         raise MigrationError("definition has no string type")
