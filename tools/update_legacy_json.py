@@ -40,6 +40,8 @@ Transformations applied
   20. "min_unarmed": N          -> skill_requirements entry  (merged with min_melee)
   21. "bashing": N, "cutting": M-> "melee_damage": { "bash": N, "cut": M }
   22. "bash_resist": N, etc.    -> "resist": { "bash": N, ... }
+  23. martial-art "req_buffs"  -> "required_buffs_all" (merged, not removed)
+  24. technique target states -> target-effect conditions (existing conditions retained)
 
 H-release mode
 --------------
@@ -3111,6 +3113,77 @@ def _split_top_level_objects(text):
                 start = None
 
 
+def migrate_martial_art_requirements(obj, counts, inline_buff=False):
+    """Preserve legacy buff and target prerequisites using the H schema."""
+    if not isinstance(obj, dict):
+        return
+    obj_type = obj.get("type")
+    if obj_type in {"technique", "ma_buff"} or inline_buff:
+        if "req_buffs" in obj:
+            legacy = obj["req_buffs"]
+            current = obj.get("required_buffs_all", [])
+            legacy = [legacy] if isinstance(legacy, str) else legacy
+            current = [current] if isinstance(current, str) else current
+            if (isinstance(legacy, list) and isinstance(current, list)
+                    and all(isinstance(buff, str) and buff for buff in legacy + current)):
+                obj["required_buffs_all"] = list(dict.fromkeys(current + legacy))
+                del obj["req_buffs"]
+                counts["martial_art_buff_requirements"] += 1
+            else:
+                counts["martial_art_requirements_unconverted"] += 1
+    if obj_type == "technique":
+        conditions = []
+        for effect in ("downed", "stunned"):
+            key = effect + "_target"
+            if key not in obj:
+                continue
+            # False was an unrestricted target, not a ban on that effect.
+            if not isinstance(obj[key], bool):
+                counts["martial_art_requirements_unconverted"] += 1
+                continue
+            if obj.pop(key):
+                conditions.append({"npc_has_effect": effect})
+            counts["technique_target_requirements"] += 1
+        if conditions:
+            if "condition" in obj:
+                conditions.insert(0, obj["condition"])
+            obj["condition"] = conditions[0] if len(conditions) == 1 else {"and": conditions}
+    if obj_type == "martial_art":
+        # Inline buff objects have no explicit ma_buff type.
+        for key in ("static_buffs", "onmove_buffs", "onpause_buffs", "onattack_buffs",
+                    "onhit_buffs", "onblock_buffs", "onmiss_buffs", "oncrit_buffs",
+                    "ondodge_buffs", "ongethit_buffs", "onkill_buffs"):
+            buffs = obj.get(key, [])
+            if isinstance(buffs, list):
+                for buff in buffs:
+                    migrate_martial_art_requirements(buff, counts, inline_buff=True)
+
+
+def fix_martial_art_requirements(content):
+    """Run the same type-aware migration in ordinary and H-release modes."""
+    for start, end in reversed(list(_split_top_level_objects(content))):
+        chunk = content[start:end]
+        if not any('"' + key + '"' in chunk
+                   for key in ("req_buffs", "stunned_target", "downed_target")):
+            continue
+        try:
+            obj = json.loads(chunk)
+        except json.JSONDecodeError:
+            # Leave nonstandard/commented JSON intact for the H JSON reader.
+            continue
+        before = copy.deepcopy(obj)
+        migrate_martial_art_requirements(obj, collections.Counter())
+        if obj != before:
+            line_start = content.rfind("\n", 0, start) + 1
+            indent = content[line_start:start]
+            if indent.strip():
+                indent = ""
+            replacement = json.dumps(obj, ensure_ascii=False, indent=2)
+            replacement = replacement.replace("\n", "\n" + indent)
+            content = content[:start] + replacement + content[end:]
+    return content
+
+
 def update_json_content(content):
     """
     Apply all transformations to a string of JSON content.
@@ -3242,6 +3315,7 @@ def update_json_content(content):
     content = _restore_gun_data_ammo(content, gun_data_ammo_originals)
     content = _restore_fg_weights(content, fg_weight_originals)
     content = _restore_proportional(content, prop_originals)
+    content = fix_martial_art_requirements(content)
     return content
 
 
@@ -6723,13 +6797,7 @@ def transform_object(
         del obj["healing_resting"]
         counts["mutation_obsolete_fields"] += 1
 
-    if obj.get("type") == "technique":
-        # These target-state selectors were removed from the H technique
-        # schema.  Keep the technique itself and its supported effects.
-        for obsolete in ("stunned_target", "downed_target", "req_buffs"):
-            if obsolete in obj:
-                del obj[obsolete]
-                counts["technique_obsolete_fields"] += 1
+    migrate_martial_art_requirements(obj, counts)
 
     if obj.get("type") == "terrain":
         bash = obj.get("bash")

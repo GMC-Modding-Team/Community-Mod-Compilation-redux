@@ -72,7 +72,7 @@
       { "stat": "damage", "type": "cut", "scale": 0 },
       { "stat": "damage", "type": "stab", "scale": 0 }
     ],
-    "req_buffs": "mss_buff_sledge_onblock"
+    "required_buffs_all": [ "mss_buff_sledge_onblock" ]
   },
   {
     "id": "mss_tec_sledge_shoveonmiss",
@@ -90,7 +90,7 @@
       { "stat": "damage", "type": "cut", "scale": 0 },
       { "stat": "damage", "type": "stab", "scale": 0 }
     ],
-    "req_buffs": "mss_buff_sledge_onmiss"
+    "required_buffs_all": [ "mss_buff_sledge_onmiss" ]
   },
   {
     "id": "mss_tec_sledge_deathblow",
@@ -109,7 +109,7 @@
     "knockback_dist": 5,
     "knockback_spread": 1,
     "mult_bonuses": [ { "stat": "damage", "type": "bash", "scale": 1.8 } ],
-    "req_buffs": "mss_buff_sledge_onmiss"
+    "required_buffs_all": [ "mss_buff_sledge_onmiss" ]
   },
   {
     "id": "mss_tec_sledge_deathblowstun",
@@ -128,7 +128,7 @@
     "knockback_dist": 5,
     "knockback_spread": 1,
     "mult_bonuses": [ { "stat": "movecost", "scale": 1.3 }, { "stat": "damage", "type": "bash", "scale": 1.8 } ],
-    "stunned_target": true
+    "condition": { "npc_has_effect": "stunned" }
   },
   {
     "id": "mss_tec_sledge_break",
@@ -173,7 +173,7 @@
     "weighting": 4,
     "crit_ok": false,
     "stun_dur": 2,
-    "req_buffs": "mss_buff_flail_ondodge"
+    "required_buffs_all": [ "mss_buff_flail_ondodge" ]
   },
   {
     "id": "mss_tec_flail_heavyblow",
@@ -185,7 +185,7 @@
     "weighting": 8,
     "crit_tec": true,
     "stun_dur": 4,
-    "req_buffs": "mss_buff_flail_ondodge"
+    "required_buffs_all": [ "mss_buff_flail_ondodge" ]
   },
   {
     "id": "mss_tec_flail_swingaround",
@@ -199,7 +199,7 @@
     "weighting": 2,
     "stun_dur": 3,
     "mult_bonuses": [ { "stat": "damage", "type": "bash", "scale": 0.6 } ],
-    "stunned_target": true
+    "condition": { "npc_has_effect": "stunned" }
   },
   {
     "id": "mss_tec_flail_swingandfling",
@@ -216,7 +216,7 @@
     "knockback_dist": 2,
     "knockback_spread": 1,
     "mult_bonuses": [ { "stat": "damage", "type": "bash", "scale": 0.6 } ],
-    "stunned_target": true
+    "condition": { "npc_has_effect": "stunned" }
   },
   {
     "id": "mss_tec_flail_kickover",
@@ -231,7 +231,7 @@
     "knockback_dist": 1,
     "knockback_follow": true,
     "mult_bonuses": [ { "stat": "damage", "type": "bash", "scale": 2.5 }, { "stat": "movecost", "scale": 1 } ],
-    "downed_target": true
+    "condition": { "npc_has_effect": "downed" }
   },
   {
     "id": "mss_tec_flail_wrappedtrip",
@@ -244,7 +244,7 @@
     "weighting": 2,
     "down_dur": 5,
     "mult_bonuses": [ { "stat": "damage", "type": "bash", "scale": 0.6 } ],
-    "stunned_target": true
+    "condition": { "npc_has_effect": "stunned" }
   },
   {
     "id": "mss_tec_flail_feint",
@@ -304,7 +304,7 @@
       { "stat": "damage", "type": "cut", "scale": 0.8 },
       { "stat": "damage", "type": "stab", "scale": 0.4 }
     ],
-    "req_buffs": "mss_buff_glove_onpause"
+    "required_buffs_all": [ "mss_buff_glove_onpause" ]
   },
   {
     "id": "mss_tec_glove_bodyshotknock",
@@ -320,7 +320,7 @@
     "crit_ok": false,
     "knockback_dist": 1,
     "knockback_follow": true,
-    "req_buffs": "mss_buff_glove_onblock"
+    "required_buffs_all": [ "mss_buff_glove_onblock" ]
   },
   {
     "id": "mss_tec_glove_superiorbodyshotknock",
@@ -342,7 +342,7 @@
       { "stat": "damage", "type": "cut", "scale": 1.1 },
       { "stat": "damage", "type": "stab", "scale": 1.1 }
     ],
-    "req_buffs": "mss_buff_glove_onblock"
+    "required_buffs_all": [ "mss_buff_glove_onblock" ]
   },
   {
     "id": "mss_tec_glove_bodyshot",
@@ -387,7 +387,7 @@
     "crit_tec": true,
     "stun_dur": 1,
     "down_dur": 2,
-    "stunned_target": true
+    "condition": { "npc_has_effect": "stunned" }
   },
   {
     "id": "mss_tec_glove_smackdown",
@@ -402,7 +402,7 @@
     "unarmed_allowed": true,
     "crit_ok": false,
     "stun_dur": 1,
-    "downed_target": true
+    "condition": { "npc_has_effect": "downed" }
   },
   {
     "id": "mss_tec_glove_superiorsmackdown",
@@ -423,8 +423,7 @@
       { "stat": "damage", "type": "cut", "scale": 1.8 },
       { "stat": "damage", "type": "stab", "scale": 1.8 }
     ],
-    "downed_target": true,
-    "stunned_target": true
+    "condition": { "and": [ { "npc_has_effect": "downed" }, { "npc_has_effect": "stunned" } ] }
   },
   {
     "id": "mss_tec_glove_wallbash",
