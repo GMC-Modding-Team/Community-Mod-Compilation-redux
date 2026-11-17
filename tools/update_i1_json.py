@@ -17,6 +17,8 @@ Supported conversions:
   volume, gun damage, melee damage and minimum-skill fields.
 * Material/monster resistance maps; monstergroup name -> id;
   copy_from/looks-like/ident and MOD_INFO author spellings.
+* Mapgen scalar om_terrain selectors -> one-item arrays and removal of the
+  obsolete mapgen method: json member.
 
 Only top-level definitions and explicitly supported inheritance/slot objects
 are migrated. Arbitrary nested actions, mapgen weights and pricing rules are
@@ -312,6 +314,13 @@ def migrate_definition(obj: dict, warnings: list[str]) -> None:
     kind = obj.get("type")
     if not isinstance(kind, str):
         raise MigrationError("definition has no string type")
+    if kind == "mapgen":
+        # I-1 identifies mapgens by their definition type; the legacy
+        # method selector is obsolete and rejected as an unknown member.
+        if obj.get("method") == "json":
+            del obj["method"]
+        if isinstance(obj.get("om_terrain"), str):
+            obj["om_terrain"] = [obj["om_terrain"]]
     if kind in LEGACY_TYPES or kind == "ITEM":
         migrate_item(obj, warnings)
     elif kind == "BATTERY":
