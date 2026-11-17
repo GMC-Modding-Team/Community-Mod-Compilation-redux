@@ -39,6 +39,7 @@
 
 **Merged pull requests:**
 
+- Update optional.h [\#285](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/285) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[H\] update primitive survival [\#284](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/284) ([TheGoatGod](https://github.com/TheGoatGod))
 - Add CDDA JSON Editor v2.3 [\#283](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/283) ([TheGoatGod](https://github.com/TheGoatGod))
 - Add CDDA JSON Editor and Formatter v2.0 [\#282](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/282) ([TheGoatGod](https://github.com/TheGoatGod))
