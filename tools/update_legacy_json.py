@@ -3164,6 +3164,25 @@ def migrate_martial_art_requirements(obj, counts, inline_buff=False):
 def migrate_item_monster_vehicle_fields(obj, counts):
     """Repair structural H schemas without inserting mod-specific content."""
     obj_type = obj.get("type")
+    if obj_type == "GUN" and "copy-from" not in obj and "magazines" not in obj:
+        # H does not synthesize integral gun pockets from clip_size alone.
+        # Leave inherited/detachable magazines and unfamiliar pocket data intact.
+        capacity = obj.get("clip_size")
+        ammo = obj.get("ammo")
+        ammo_types = [ammo] if isinstance(ammo, str) else ammo
+        pockets = obj.get("pocket_data", [])
+        if (isinstance(capacity, int) and not isinstance(capacity, bool) and capacity > 0
+                and isinstance(ammo_types, list) and ammo_types
+                and all(isinstance(a, str) and a and a != "null" for a in ammo_types)
+                and isinstance(pockets, list) and all(isinstance(p, dict) for p in pockets)
+                and not has_magazine_pocket(pockets)
+                and not any("pocket_data" in obj.get(k, {}) for k in ("extend", "delete")
+                            if isinstance(obj.get(k), dict))):
+            obj["pocket_data"] = pockets + [{
+                "pocket_type": "MAGAZINE", "rigid": True,
+                "ammo_restriction": {a: capacity for a in ammo_types},
+            }]
+            counts["gun_integral_magazine_pockets"] += 1
     if obj_type in TOOL_TYPES:
         if has_magazine_pocket(obj.get("pocket_data")):
             for key in ("max_charges", "initial_charges"):
@@ -3231,7 +3250,7 @@ def fix_martial_art_requirements(content):
         if not any('"' + key + '"' in chunk
                    for key in ("req_buffs", "stunned_target", "downed_target", "GASMASK",
                                "max_charges", "initial_charges", "melee_damage", "melee_bash",
-                               "melee_cut", "WELDRIG", "FORGE", "CRAFTRIG")):
+                               "melee_cut", "WELDRIG", "FORGE", "CRAFTRIG", "clip_size")):
             continue
         try:
             obj = json.loads(chunk)
