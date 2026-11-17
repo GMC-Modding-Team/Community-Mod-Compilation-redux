@@ -19,6 +19,7 @@ Supported conversions:
   copy_from/looks-like/ident and MOD_INFO author spellings.
 * Mapgen scalar om_terrain selectors -> one-item arrays and removal of the
   obsolete mapgen method: json member.
+* Legacy reproduction baby_egg -> nested baby_type.baby_egg.
 
 Only top-level definitions and explicitly supported inheritance/slot objects
 are migrated. Arbitrary nested actions, mapgen weights and pricing rules are
@@ -307,10 +308,48 @@ def place_subtypes_after_type(obj: dict) -> None:
             obj["subtypes"] = next(value for name, value in fields if name == "subtypes")
 
 
+def migrate_reproduction(obj: dict) -> None:
+    """Move legacy reproduction baby_egg into I-1's baby_type object."""
+    reproduction = obj.get("reproduction")
+    if not isinstance(reproduction, dict) or "baby_egg" not in reproduction:
+        return
+
+    egg = reproduction["baby_egg"]
+    existing = reproduction.get("baby_type")
+    if existing is None:
+        baby_type = {"baby_egg": egg}
+    elif isinstance(existing, dict):
+        baby_type = copy.deepcopy(existing)
+        if "baby_egg" in baby_type and baby_type["baby_egg"] != egg:
+            raise MigrationError("reproduction.baby_type.baby_egg conflicts with baby_egg")
+        baby_type["baby_egg"] = egg
+    else:
+        raise MigrationError("reproduction.baby_type must be an object")
+
+    # Rebuild the small object so baby_type occupies the old baby_egg position
+    # and all unrelated reproduction fields retain their authored order/values.
+    migrated = {}
+    inserted = False
+    for key, value in reproduction.items():
+        if key == "baby_egg":
+            if not inserted:
+                migrated["baby_type"] = baby_type
+                inserted = True
+        elif key == "baby_type":
+            if not inserted:
+                migrated["baby_type"] = baby_type
+                inserted = True
+        else:
+            migrated[key] = value
+    reproduction.clear()
+    reproduction.update(migrated)
+
+
 def migrate_definition(obj: dict, warnings: list[str]) -> None:
     rename(obj, "ident", "id")
     rename(obj, "copy_from", "copy-from")
     rename(obj, "looks-like", "looks_like")
+    migrate_reproduction(obj)
     kind = obj.get("type")
     if not isinstance(kind, str):
         raise MigrationError("definition has no string type")
