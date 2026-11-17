@@ -6861,6 +6861,11 @@ def transform_object(
         counts["mutation_obsolete_fields"] += 1
 
     migrate_martial_art_requirements(obj, counts)
+    # An empty upgrade object enables invalid evolution in H. Explicit false
+    # also clears inherited evolution for terminal monster variants.
+    if obj.get("type") == "MONSTER" and obj.get("upgrades") == {}:
+        obj["upgrades"] = False
+        counts["empty_monster_upgrades_disabled"] += 1
 
     if obj.get("type") == "terrain":
         bash = obj.get("bash")
@@ -8071,6 +8076,9 @@ def dedupe_cross_file_definitions(
 
 INLINE_FACTORY_KEYS = {
     "static_buffs",
+    "onpause_buffs",
+    "ongethit_buffs",
+    "onkill_buffs",
     "onmove_buffs",
     "onattack_buffs",
     "onhit_buffs",
@@ -8084,7 +8092,11 @@ INLINE_FACTORY_KEYS = {
 def dedupe_inline_factory_entries(
     files: list[Path], dry_run: bool, formatter: Path | None
 ) -> collections.Counter[str]:
-    """Dedupe globally registered inline martial-art buff objects per pack."""
+    """Share identical inline buffs by ID without removing style effects.
+
+    H accepts string buff references. Differing definitions are left intact
+    and reported for manual review rather than choosing a lossy winner.
+    """
     totals: collections.Counter[str] = collections.Counter()
     file_data: dict[Path, Any] = {}
     for path in files:
@@ -8112,19 +8124,12 @@ def dedupe_inline_factory_entries(
                             continue
                         previous_list, previous_entry = previous
                         if canonical(entry) == canonical(previous_entry):
+                            kept.append(ident)
                             totals["duplicate_inline_factory_entries"] += 1
                             continue
-                        if definition_quality(entry) > definition_quality(previous_entry):
-                            try:
-                                previous_list.remove(previous_entry)
-                            except ValueError:
-                                pass
-                            registry[identity] = (kept, entry)
-                            kept.append(entry)
-                        else:
-                            totals["duplicate_inline_factory_entries"] += 1
-                            continue
-                        totals["duplicate_inline_factory_entries"] += 1
+                        kept.append(entry)
+                        totals["conflicting_inline_factory_entries"] += 1
+                        print(f"[REVIEW] conflicting inline martial-art buff {ident!r} in {pack}; left unchanged")
                     value[key] = kept
                     for entry in kept:
                         visit(entry, pack)
