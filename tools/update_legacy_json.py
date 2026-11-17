@@ -42,6 +42,8 @@ Transformations applied
   22. "bash_resist": N, etc.    -> "resist": { "bash": N, ... }
   23. martial-art "req_buffs"  -> "required_buffs_all" (merged, not removed)
   24. technique target states -> target-effect conditions (existing conditions retained)
+  25. gas-mask activation/tick actions, explicit magazine charge cleanup,
+      monster damage maps, and legacy vehicle crafting flags -> H schemas
 
 H-release mode
 --------------
@@ -3159,12 +3161,77 @@ def migrate_martial_art_requirements(obj, counts, inline_buff=False):
                     migrate_martial_art_requirements(buff, counts, inline_buff=True)
 
 
+def migrate_item_monster_vehicle_fields(obj, counts):
+    """Repair structural H schemas without inserting mod-specific content."""
+    obj_type = obj.get("type")
+    if obj_type in TOOL_TYPES:
+        if has_magazine_pocket(obj.get("pocket_data")):
+            for key in ("max_charges", "initial_charges"):
+                if key in obj:
+                    del obj[key]
+                    counts["redundant_" + key] += 1
+        action = obj.get("use_action")
+        actions = action if isinstance(action, list) else [action]
+        if "GASMASK" in actions:
+            tick = obj.get("tick_action", [])
+            ticks = list(tick) if isinstance(tick, list) else [tick]
+            if "GASMASK" not in ticks:
+                ticks.append("GASMASK")
+            obj["tick_action"] = ticks
+            obj["use_action"] = ["GASMASK_ACTIVATE" if a == "GASMASK" else a for a in actions]
+            counts["gasmask_activation_tick_split"] += 1
+    if obj_type == "MONSTER":
+        melee = obj.get("melee_damage")
+        if (isinstance(melee, dict) and "damage_type" not in melee and melee
+                and all(isinstance(v, (int, float)) and not isinstance(v, bool) for v in melee.values())):
+            melee = [{"damage_type": k, "amount": v} for k, v in melee.items()]
+            obj["melee_damage"] = melee
+            counts["monster_melee_damage_maps"] += 1
+        # Preserve zero damage, armor penetration, multipliers, and existing units.
+        units = melee if isinstance(melee, list) else ([melee] if isinstance(melee, dict) and "damage_type" in melee else [])
+        for legacy, damage_type in (("melee_bash", "bash"), ("melee_cut", "cut")):
+            amount = obj.get(legacy)
+            if isinstance(amount, (int, float)) and not isinstance(amount, bool):
+                if melee is not None and not units:
+                    continue  # Leave an unfamiliar damage object for manual repair.
+                if not any(isinstance(u, dict) and u.get("damage_type") == damage_type for u in units):
+                    units.append({"damage_type": damage_type, "amount": amount})
+                obj["melee_damage"] = units
+                del obj[legacy]
+                counts["monster_melee_damage"] += 1
+    if obj_type == "vehicle_part":
+        tools_by_flag = {
+            "WELDRIG": ("welder", "soldering_iron"),
+            "FORGE": ("forge",),
+            "CRAFTRIG": ("vac_sealer", "dehydrator", "water_purifier", "food_processor", "press", "puller"),
+        }
+        flags = obj.get("flags", [])
+        pseudo = obj.get("pseudo_tools", [])
+        if isinstance(flags, list) and isinstance(pseudo, list) and any(f in tools_by_flag for f in flags):
+            # Do not replace an unknown inherited pseudo-tool list.
+            if "copy-from" in obj and "pseudo_tools" not in obj:
+                counts["inherited_vehicle_tools_need_review"] += 1
+                return
+            pseudo = copy.deepcopy(pseudo)
+            existing = {t.get("id") for t in pseudo if isinstance(t, dict)}
+            for flag in flags:
+                for tool in tools_by_flag.get(flag, ()):
+                    if tool not in existing:
+                        pseudo.append({"id": tool})
+                        existing.add(tool)
+                        counts["vehicle_pseudo_tools"] += 1
+            obj["pseudo_tools"] = pseudo
+            obj["flags"] = list(dict.fromkeys(f for f in flags if f not in tools_by_flag))
+
+
 def fix_martial_art_requirements(content):
-    """Run the same type-aware migration in ordinary and H-release modes."""
+    """Run type-aware structural migrations in ordinary and H-release modes."""
     for start, end in reversed(list(_split_top_level_objects(content))):
         chunk = content[start:end]
         if not any('"' + key + '"' in chunk
-                   for key in ("req_buffs", "stunned_target", "downed_target")):
+                   for key in ("req_buffs", "stunned_target", "downed_target", "GASMASK",
+                               "max_charges", "initial_charges", "melee_damage", "melee_bash",
+                               "melee_cut", "WELDRIG", "FORGE", "CRAFTRIG")):
             continue
         try:
             obj = json.loads(chunk)
@@ -3173,6 +3240,7 @@ def fix_martial_art_requirements(content):
             continue
         before = copy.deepcopy(obj)
         migrate_martial_art_requirements(obj, collections.Counter())
+        migrate_item_monster_vehicle_fields(obj, collections.Counter())
         if obj != before:
             line_start = content.rfind("\n", 0, start) + 1
             indent = content[line_start:start]
@@ -3628,7 +3696,6 @@ OBSOLETE_IUSE_ACTIONS = {
     "DEVAC",
     "EXTRA_BATTERY",
     "FIRSTAID",
-    "GASMASK",
     "HALLU",
     "JACQUESHAMMER",
     "MUTAGEN",
@@ -5440,6 +5507,7 @@ def transform_object(
     counts: collections.Counter[str],
     obsolete_monster_ids: set[str] = OBSOLETE_MONSTER_IDS,
 ) -> None:
+    migrate_item_monster_vehicle_fields(obj, counts)
     normalize_h_quantity_strings(obj, counts)
     obj_type = obj.get("type")
 
@@ -6343,30 +6411,6 @@ def transform_object(
             if kept_monster_flags != monster_flags:
                 obj["flags"] = kept_monster_flags
                 counts["obsolete_monster_flags"] += len(monster_flags) - len(kept_monster_flags)
-        melee = obj.get("melee_damage")
-        if isinstance(melee, list):
-            melee_values = {
-                unit.get("damage_type"): unit.get("amount", 0)
-                for unit in melee
-                if isinstance(unit, dict) and isinstance(unit.get("damage_type"), str)
-            }
-        elif isinstance(melee, dict):
-            melee_values = dict(melee)
-        else:
-            melee_values = {}
-        for legacy, damage_type in (("melee_bash", "bash"), ("melee_cut", "cut")):
-            value = obj.pop(legacy, None)
-            if isinstance(value, (int, float)) and damage_type not in melee_values:
-                melee_values[damage_type] = value
-                counts["monster_melee_damage"] += 1
-        if melee_values:
-            obj["melee_damage"] = [
-                {"damage_type": damage_type, "amount": amount}
-                for damage_type, amount in melee_values.items()
-                if isinstance(amount, (int, float)) and amount > 0
-            ]
-            if not obj["melee_damage"]:
-                del obj["melee_damage"]
         if obj.get("harvest") in {"CBM_BASIC", "CBM_CIV", "CBM_OP", "CBM_SCI", "CBM_SUBS"}:
             obj["harvest"] = "human"
             counts["monster_harvest_migrations"] += 1
