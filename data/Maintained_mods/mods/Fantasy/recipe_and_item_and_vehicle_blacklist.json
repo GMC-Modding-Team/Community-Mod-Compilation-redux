@@ -1,5 +1,69 @@
 [
   {
+    "abstract": "minifreezer",
+    "type": "recipe",
+    "//": "Inheritance-only H recipe: item blacklisting removes craftable parents before deferred appliance recipes resolve.",
+    "activity_level": "MODERATE_EXERCISE",
+    "category": "CC_OTHER",
+    "subcategory": "CSC_OTHER_VEHICLE",
+    "skill_used": "mechanics",
+    "skills_required": [ "fabrication", 5 ],
+    "difficulty": 5,
+    "time": "5 h",
+    "reversible": true,
+    "autolearn": false,
+    "book_learn": [ [ "textbook_mechanics", 5 ], [ "manual_mechanics", 5 ], [ "textbook_fabrication", 5 ] ],
+    "using": [ [ "welding_standard", 400 ] ],
+    "proficiencies": [
+      { "proficiency": "prof_plasticworking", "required": false, "time_multiplier": 1.1, "learning_time_multiplier": 0.1 },
+      { "proficiency": "prof_appliance_repair" }
+    ],
+    "qualities": [
+      { "id": "HAMMER", "level": 2 },
+      { "id": "SAW_M", "level": 1 },
+      { "id": "DRILL", "level": 1 },
+      { "id": "SCREW", "level": 1 },
+      { "id": "WRENCH", "level": 1 }
+    ],
+    "components": [
+      [ [ "sheet_metal", 10 ] ],
+      [ [ "condensor_coil", 1 ] ],
+      [ [ "evaporator_coil", 1 ] ],
+      [ [ "thermostat", 1 ] ],
+      [ [ "motor_micro", 1 ] ],
+      [ [ "refrigerant_tank", 1 ] ],
+      [ [ "plastic_chunk", 10 ] ]
+    ]
+  },
+  {
+    "abstract": "minifridge",
+    "type": "recipe",
+    "//": "Inheritance-only H recipe: item blacklisting removes craftable parents before deferred appliance recipes resolve.",
+    "activity_level": "MODERATE_EXERCISE",
+    "copy-from": "minifreezer",
+    "skills_required": [ "fabrication", 4 ],
+    "proficiencies": [
+      { "proficiency": "prof_plasticworking", "required": false, "time_multiplier": 1.1, "learning_time_multiplier": 0.1 },
+      { "proficiency": "prof_appliance_repair" }
+    ],
+    "qualities": [
+      { "id": "HAMMER", "level": 2 },
+      { "id": "SAW_M", "level": 1 },
+      { "id": "DRILL", "level": 1 },
+      { "id": "SCREW", "level": 1 },
+      { "id": "WRENCH", "level": 1 }
+    ],
+    "components": [
+      [ [ "sheet_metal", 10 ] ],
+      [ [ "condensor_coil", 1 ] ],
+      [ [ "evaporator_coil", 1 ] ],
+      [ [ "thermostat", 1 ] ],
+      [ [ "motor_micro", 1 ] ],
+      [ [ "refrigerant_tank", 1 ] ],
+      [ [ "plastic_chunk", 8 ] ]
+    ]
+  },
+  {
     "//": "Yes, a part of these are nicked from dark skies above. No need to reinvent the wheel.",
     "type": "ITEM_BLACKLIST",
     "whitelist": false,
