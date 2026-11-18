@@ -16,6 +16,10 @@
 - \[H\] Locked and Loaded has multiple items defined multiple times, with different stats [\#174](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/174)
 - \[H\] Installer - off repo [\#89](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/89)
 
+**Merged pull requests:**
+
+- 0.3.1 add goats mods to the installer [\#286](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/286) ([TheGoatGod](https://github.com/TheGoatGod))
+
 ## [v0.3.0-herbert](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/tree/v0.3.0-herbert) (2026-11-18)
 
 [Full Changelog](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/compare/v0.2.1-beta-G-experimental...v0.3.0-herbert)
