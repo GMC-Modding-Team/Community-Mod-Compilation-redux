@@ -14,6 +14,7 @@
 - \[Experimental\] Main-lined content in mods removal [\#107](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/107)
 - \[Experimental\] Folder tags and mod category changes [\#91](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/91)
 - \[Documentation\] Mod cataloging ids [\#50](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/50)
+- Update data and workshop mods for CDDA 0.H [\#281](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/281) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Tools\] update legacy json [\#264](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/264) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Workflow\] delete toc and python workflows [\#259](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/259) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[H\] updates unleash the mods [\#255](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/255) ([TheGoatGod](https://github.com/TheGoatGod))
