@@ -1,8 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/tree/HEAD)
+## [v0.3.1-herbert](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/tree/v0.3.1-herbert) (2026-11-18)
 
-[Full Changelog](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/compare/v0.3.0-herbert...HEAD)
+[Full Changelog](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/compare/v0.3.0-herbert...v0.3.1-herbert)
 
 **Fixed bugs:**
 
