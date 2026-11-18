@@ -1,10 +1,17 @@
 [
   {
+    "abstract": "software_os",
+    "type": "GENERIC",
+    "copy-from": "software",
+    "name": { "str": "an operating system", "str_pl": "operating systems" },
+    "container": "usb_drive",
+    "description": "it's a bug if you see this",
+    "flags": [ "IRREMOVABLE", "NO_DROP" ]
+  },
+  {
     "id": "pd_sd_card",
     "type": "GENERIC",
-    "category": "container",
     "copy-from": "memory_card_unread",
-    "//": "local copy of the native SD card sans all the random data flags",
     "name": { "str": "SD-Memory card" },
     "flags": [ "IRREMOVABLE", "NO_DROP", "TARDIS" ],
     "pocket_data": [
@@ -15,21 +22,15 @@
         "max_item_volume": "2 ml",
         "max_contains_weight": "100 g"
       }
-    ]
-  },
-  {
-    "type": "GENERIC",
-    "abstract": "software_os",
-    "copy-from": "software",
-    "name": { "str": "an operating system", "str_pl": "operating systems" },
-    "description": "it's a bug if you see this",
-    "flags": [ "IRREMOVABLE", "NO_DROP" ]
+    ],
+    "category": "container",
+    "//": "local copy of the native SD card sans all the random data flags"
   },
   {
     "id": "software_os_ubuntu",
     "type": "GENERIC",
     "copy-from": "software_os",
-    "name": { "str": "Ubuntu", "str_pl": "Ubuntu" },
+    "name": { "str_sp": "Ubuntu" },
     "description": "Popular Linux distributive, known to be merciful towards new users."
   },
   {

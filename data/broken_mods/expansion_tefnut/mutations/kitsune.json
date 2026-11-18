@@ -26,7 +26,7 @@
     "ugliness": -2,
     "description": "You are a sight to behold.  People who care about such things will react more kindly to you.",
     "starting_trait": true,
-    "category": [ "ALPHA", "FELINE", "LUPINE", "KITSUNE" ],
+    "category": [ "ALPHA", "ELFA" ],
     "cancels": [ "UGLY", "DEFORMED", "DEFORMED2", "DEFORMED3" ],
     "changes_to": [ "BEAUTIFUL" ]
   },
@@ -37,9 +37,9 @@
     "points": 2,
     "visibility": 4,
     "ugliness": -8,
-    "category": [ "KITSUNE" ],
+    "category": [ "ALPHA" ],
     "threshreq": [ "THRESH_KITSUNE" ],
-    "description": "You perfectly balance out sex appeal and cuteness. People will generally react to you better.",
+    "description": "You perfectly balance out sex appeal and cuteness.  People will generally react to you better.",
     "cancels": [ "UGLY", "DEFORMED", "DEFORMED2", "DEFORMED3" ],
     "prereqs": [ "PRETTY" ]
   },
@@ -50,7 +50,7 @@
     "points": 3,
     "description": "You're just generally quick!  You get a 10% bonus to action points.",
     "starting_trait": true,
-    "category": [ "FISH", "BIRD", "INSECT", "TROGLOBITE", "CHIMERA", "RAPTOR", "MOUSE", "KITSUNE" ]
+    "category": [ "FISH", "BIRD", "INSECT", "TROGLOBITE", "CHIMERA", "RAPTOR", "MOUSE", "RABBIT" ]
   },
   {
     "id": "FLEET",
@@ -60,7 +60,7 @@
     "description": "You can move more quickly than most, resulting in a 15% speed bonus on sure footing.",
     "starting_trait": true,
     "changes_to": [ "FLEET2" ],
-    "category": [ "SPIDER", "MOUSE", "KITSUNE" ],
+    "category": [ "SPIDER", "MOUSE", "RABBIT", "BIRD" ],
     "types": [ "RUNNING" ]
   },
   {
@@ -70,7 +70,7 @@
     "points": 1,
     "description": "You make less noise while walking.  You're also less likely to set off traps.",
     "starting_trait": true,
-    "category": [ "BIRD", "ELFA", "FELINE", "KITSUNE" ],
+    "category": [ "BIRD", "ELFA", "FELINE" ],
     "cancels": [ "CLUMSY" ]
   },
   {
@@ -83,7 +83,7 @@
     "valid": false,
     "social_modifiers": { "intimidate": -2 },
     "cancels": [ "TOUGH", "TOUGH2", "TOUGH3" ],
-    "category": [ "MOUSE", "ELFA", "KITSUNE" ],
+    "category": [ "MOUSE", "ELFA", "RABBIT" ],
     "changes_to": [ "FLIMSY2" ]
   },
   {
@@ -93,10 +93,23 @@
     "points": -1,
     "description": "Your scent is particularly strong.  It's not offensive to humans, but animals that track your scent will do so more easily.",
     "starting_trait": true,
-    "changes_to": [ "SMELLY2", "SMELLY_FOXMUSK" ],
+    "changes_to": [ "SMELLY2" ],
     "types": [ "SCENT" ],
     "scent_intensity": 800,
-    "category": [ "FELINE", "LUPINE", "MOUSE", "KITSUNE" ]
+    "category": [
+      "FELINE",
+      "LUPINE",
+      "MOUSE",
+      "BEAST",
+      "SLIME",
+      "CHIMERA",
+      "URSINE",
+      "BATRACHIAN",
+      "FISH",
+      "INSECT",
+      "CATTLE",
+      "CRUSTACEAN"
+    ]
   },
   {
     "id": "SMELLY_FOXMUSK",
@@ -119,7 +132,20 @@
     "starting_trait": true,
     "changes_to": [ "NIGHTVISION2" ],
     "cancels": [ "ELFA_NV", "ELFA_FNV", "FEL_NV", "URSINE_EYE" ],
-    "category": [ "BIRD", "CATTLE", "INSECT", "KITSUNE", "FISH", "BEAST", "RAT", "CHIMERA", "LUPINE", "MOUSE", "TROGLOBITE", "SPIDER" ],
+    "category": [
+      "BIRD",
+      "CATTLE",
+      "INSECT",
+      "BATRACHIAN",
+      "FISH",
+      "BEAST",
+      "RAT",
+      "CHIMERA",
+      "LUPINE",
+      "MOUSE",
+      "SPIDER",
+      "TROGLOBITE"
+    ],
     "active": true,
     "starts_active": true
   },
@@ -132,7 +158,7 @@
     "prereqs": [ "NIGHTVISION" ],
     "changes_to": [ "NIGHTVISION3" ],
     "cancels": [ "ELFA_NV", "ELFA_FNV", "FEL_NV", "URSINE_EYE" ],
-    "category": [ "FISH", "BEAST", "INSECT", "RAT", "CHIMERA", "LUPINE", "MOUSE", "KITSUNE", "TROGLOBITE", "SPIDER" ],
+    "category": [ "FISH", "BEAST", "INSECT", "RAT", "CHIMERA", "LUPINE", "MOUSE", "TROGLOBITE", "SPIDER" ],
     "active": true,
     "starts_active": true
   },
@@ -145,7 +171,7 @@
     "prereqs": [ "NIGHTVISION2" ],
     "leads_to": [ "INFRARED" ],
     "cancels": [ "ELFA_NV", "ELFA_FNV", "FEL_NV", "URSINE_EYE" ],
-    "category": [ "FISH", "TROGLOBITE", "SPIDER", "KITSUNE" ],
+    "category": [ "FISH", "TROGLOBITE", "SPIDER", "INSECT" ],
     "active": true,
     "starts_active": true
   },
@@ -157,9 +183,8 @@
     "description": "You have problems with eating vegetables.  It's possible for you to eat them, but you will suffer morale penalties and obtain less nutrition from them.",
     "starting_trait": true,
     "valid": false,
-    "vitamins_absorb_multi": [ [ "veggy", [ [ "vitA", 0 ], [ "vitB", 0 ], [ "vitC", 0 ], [ "calcium", 0 ], [ "iron", 0 ] ] ] ],
-    "cancels": [ "VEGETARIAN" ],
-    "category": [ "KITSUNE" ]
+    "vitamins_absorb_multi": [ [ "veggy", [ [ "vitC", 0 ], [ "calcium", 0 ], [ "iron", 0 ] ] ] ],
+    "cancels": [ "VEGETARIAN" ]
   },
   {
     "id": "SPIRITUAL",
@@ -169,8 +194,7 @@
     "description": "You've always felt that there is more to the world than we can see.  Whether driven by religious beliefs or philosophical interest, you find great inspiration in studying holy texts and experiencing mystical things.",
     "starting_trait": true,
     "social_modifiers": { "persuade": 5 },
-    "valid": false,
-    "category": [ "KITSUNE" ]
+    "valid": false
   },
   {
     "id": "PYROMANIA",
@@ -178,8 +202,7 @@
     "name": { "str": "Pyromaniac" },
     "starting_trait": true,
     "points": -2,
-    "description": "You have an unhealthy obsession with fire, and you get anxious if you don't light them every now and then or stand near them often.  However, you gain a mood bonus from doing so.",
-    "category": [ "KITSUNE" ]
+    "description": "You have an unhealthy obsession with fire, and you get anxious if you don't light them every now and then or stand near them often.  However, you gain a mood bonus from doing so."
   },
   {
     "id": "GOODCARDIO",
@@ -191,7 +214,7 @@
     "valid": false,
     "cancels": [ "BADCARDIO" ],
     "changes_to": [ "GOODCARDIO2" ],
-    "category": [ "FISH", "LUPINE", "MOUSE", "INSECT", "KITSUNE" ]
+    "category": [ "FISH", "LUPINE", "MOUSE", "INSECT", "RABBIT" ]
   },
   {
     "id": "GOODCARDIO2",
@@ -202,8 +225,8 @@
     "valid": false,
     "prereqs": [ "GOODCARDIO" ],
     "cancels": [ "BADCARDIO" ],
-    "threshreq": [ "THRESH_MOUSE", "THRESH_KITSUNE" ],
-    "category": [ "MOUSE", "KITSUNE" ]
+    "threshreq": [ "THRESH_MOUSE", "THRESH_RABBIT" ],
+    "category": [ "MOUSE", "RABBIT" ]
   },
   {
     "id": "PER_UP",
@@ -212,8 +235,7 @@
     "points": 1,
     "description": "Your senses are a little keener.  Perception + 1",
     "changes_to": [ "PER_UP_2" ],
-    "leads_to": [ "BIRD_EYE" ],
-    "category": [ "KITSUNE", "ALPHA", "CHIMERA" ]
+    "category": [ "ALPHA", "CHIMERA", "BATRACHIAN", "ELFA", "RAPTOR", "BIRD", "SLIME", "SPIDER" ]
   },
   {
     "id": "PER_UP_2",
@@ -223,7 +245,7 @@
     "description": "Your senses are keener.  Perception + 2",
     "prereqs": [ "PER_UP" ],
     "changes_to": [ "PER_UP_3", "PER_ALPHA" ],
-    "category": [ "ALPHA", "CHIMERA", "KITSUNE" ]
+    "category": [ "ALPHA", "CHIMERA", "BATRACHIAN", "ELFA", "RAPTOR", "BIRD", "SPIDER" ]
   },
   {
     "id": "INT_UP",
@@ -231,8 +253,8 @@
     "name": { "str": "Smart" },
     "points": 1,
     "description": "You are a little smarter.  Intelligence + 1",
-    "changes_to": [ "INT_UP_2", "INT_ALPHA", "INT_SLIME" ],
-    "category": [ "SLIME", "ALPHA", "KITSUNE" ]
+    "changes_to": [ "INT_UP_2", "INT_SLIME" ],
+    "category": [ "SLIME", "ALPHA", "ELFA", "CEPHALOPOD" ]
   },
   {
     "id": "KITSUNE_SMARTS",
@@ -241,9 +263,9 @@
     "points": 8,
     "description": "You can out-fox anyone on the block!  Intelligence + 8",
     "prereqs": [ "INT_UP" ],
-    "changes_to": [ "INT_UP_3" ],
+    "changes_to": [  ],
     "threshreq": [ "THRESH_KITSUNE" ],
-    "category": [ "KITSUNE" ]
+    "category": [ "ALPHA" ]
   },
   {
     "id": "DEX_UP",
@@ -251,8 +273,22 @@
     "name": { "str": "Dextrous" },
     "points": 1,
     "description": "You are a little nimbler.  Dexterity + 1",
-    "changes_to": [ "DEX_UP_2", "DEX_ALPHA" ],
-    "category": [ "INSECT", "SLIME", "ALPHA", "KITSUNE", "LIZARD", "SPIDER", "CHIMERA", "RAPTOR", "MOUSE" ]
+    "changes_to": [ "DEX_UP_2" ],
+    "category": [
+      "INSECT",
+      "ALPHA",
+      "LIZARD",
+      "SPIDER",
+      "CHIMERA",
+      "RAPTOR",
+      "MOUSE",
+      "RABBIT",
+      "BIRD",
+      "ELFA",
+      "FELINE",
+      "CEPHALOPOD",
+      "FISH"
+    ]
   },
   {
     "id": "DEX_UP_2",
@@ -261,15 +297,15 @@
     "points": 2,
     "description": "You are nimbler.  Dexterity + 2",
     "prereqs": [ "DEX_UP" ],
-    "changes_to": [ "DEX_UP_3" ],
-    "category": [ "LIZARD", "SPIDER", "CHIMERA", "RAPTOR", "MOUSE", "KITSUNE" ]
+    "changes_to": [ "DEX_UP_3", "DEX_ALPHA" ],
+    "category": [ "LIZARD", "SPIDER", "CHIMERA", "RAPTOR", "MOUSE", "RABBIT", "BIRD", "ELFA", "FELINE", "CEPHALOPOD", "FISH", "ALPHA" ]
   },
   {
     "id": "KITSUNE_WEAK",
     "type": "mutation",
     "name": { "str": "Minor atrophy" },
     "points": 1,
-    "description": "Your muscles are a little weaker from lack of use. But who needs strength, right?  Strength - 2",
+    "description": "Your muscles are a little weaker from lack of use.  But who needs strength, right?  Strength - 2",
     "threshreq": [ "THRESH_KITSUNE" ],
     "category": [ "KITSUNE" ]
   },
@@ -282,8 +318,7 @@
     "description": "You have a long, fluffy-furred tail.  It greatly improves your balance, making your ability to dodge much higher.  Prevents wearing non-fabric pants.",
     "types": [ "TAIL" ],
     "prereqs": [ "TAIL_LONG" ],
-    "changes_to": [ "TAIL_TWIN" ],
-    "category": [ "BEAST", "LUPINE", "KITSUNE" ],
+    "category": [ "LUPINE" ],
     "restricts_gear": [ "LEG_L", "LEG_R" ],
     "allow_soft_gear": true,
     "social_modifiers": { "lie": -20, "persuade": 10 }
@@ -294,11 +329,11 @@
     "name": { "str": "Twin Tails" },
     "points": 1,
     "visibility": 7,
-    "description": "Your fluffy tail has split into two! You can dodge even better, and you feel something special about the world around you.",
+    "description": "Your fluffy tail has split into two!  You can dodge even better, and you feel something special about the world around you.",
     "types": [ "TAIL" ],
     "prereqs": [ "TAIL_FLUFFY" ],
     "changes_to": [ "TAIL_TRI" ],
-    "category": [ "KITSUNE" ],
+    "category": [ "LUPINE" ],
     "restricts_gear": [ "LEG_L", "LEG_R" ],
     "allow_soft_gear": true,
     "social_modifiers": { "persuade": 10 }
@@ -313,7 +348,7 @@
     "types": [ "TAIL" ],
     "prereqs": [ "TAIL_TWIN" ],
     "changes_to": [ "TAIL_QUAD" ],
-    "category": [ "KITSUNE" ],
+    "category": [ "LUPINE" ],
     "restricts_gear": [ "LEG_L", "LEG_R" ],
     "allow_soft_gear": true,
     "social_modifiers": { "persuade": 10 }
@@ -324,11 +359,11 @@
     "name": { "str": "Four Tails" },
     "points": 1,
     "visibility": 7,
-    "description": "Your tails have split once more into four! Youre approaching enlightenment, you know it!",
+    "description": "Your tails have split once more into four!  Youre approaching enlightenment, you know it!",
     "types": [ "TAIL" ],
     "prereqs": [ "TAIL_TRI" ],
     "changes_to": [ "TAIL_PENT" ],
-    "category": [ "KITSUNE" ],
+    "category": [ "LUPINE" ],
     "restricts_gear": [ "LEG_L", "LEG_R" ],
     "threshreq": [ "THRESH_KITSUNE" ],
     "allow_soft_gear": true,
@@ -340,11 +375,11 @@
     "name": { "str": "Five Tails" },
     "points": 1,
     "visibility": 7,
-    "description": "Your tails have split once more into five! Your old dodge modifier is gone, but your magic is further powering up",
+    "description": "Your tails have split once more into five!  Your old dodge modifier is gone, but your magic is further powering up",
     "types": [ "TAIL" ],
     "prereqs": [ "TAIL_QUAD" ],
     "changes_to": [ "TAIL_SEX" ],
-    "category": [ "KITSUNE" ],
+    "category": [ "LUPINE" ],
     "restricts_gear": [ "LEG_L", "LEG_R" ],
     "threshreq": [ "THRESH_KITSUNE" ],
     "allow_soft_gear": true,
@@ -356,10 +391,10 @@
     "name": { "str": "Six Tails" },
     "points": 1,
     "visibility": 7,
-    "description": "You have six silky, fluffy tails on your behind. Their ability as a focus for magic has further increased. Getting any further tails is bound to be a challenge, though.",
+    "description": "You have six silky, fluffy tails on your behind.  Their ability as a focus for magic has further increased.  Getting any further tails is bound to be a challenge, though.",
     "types": [ "TAIL" ],
     "prereqs": [ "TAIL_PENT" ],
-    "category": [ "KITSUNE" ],
+    "category": [ "LUPINE" ],
     "restricts_gear": [ "LEG_L", "LEG_R" ],
     "threshreq": [ "THRESH_KITSUNE" ],
     "allow_soft_gear": true,
@@ -378,10 +413,10 @@
     "restricts_gear": [ "HAND_L", "HAND_R" ],
     "craft_skill_bonus": [ [ "electronics", -2 ], [ "tailor", -2 ], [ "mechanics", -2 ] ],
     "types": [ "HANDS" ],
-    "prereqs": [ "CLAWS", "CLAWS_RETRACT", "CLAWS_RAT" ],
+    "prereqs": [ "NAILS", "CLAWS", "CLAWS_RETRACT", "CLAWS_RAT" ],
     "cancels": [ "TALONS" ],
     "changes_to": [ "PAWS_LARGE" ],
-    "category": [ "LUPINE", "RAT", "FELINE", "KITSUNE" ]
+    "category": [ "LUPINE", "RAT", "FELINE", "BEAST", "URSINE" ]
   },
   {
     "id": "SNOUT",
@@ -390,9 +425,35 @@
     "points": -1,
     "visibility": 4,
     "ugliness": 3,
-    "description": "Your face and jaw have begun… changing.  Masks and such fit OK, but you're noticeably mutated.",
-    "changes_to": [ "BEAK", "BEAK_HUM", "BEAK_PECK", "PROBOSCIS", "MINOTAUR", "MUZZLE", "MUZZLE_BEAR", "MUZZLE_LONG", "MUZZLE_RAT" ],
-    "category": [ "FELINE", "KITSUNE" ]
+    "description": "Your face and jaw have begun…  changing.  Masks and such fit OK, but you're noticeably mutated.",
+    "changes_to": [
+      "BEAK",
+      "BEAK_HUM",
+      "BEAK_PECK",
+      "PROBOSCIS",
+      "MINOTAUR",
+      "MUZZLE_RAPTOR",
+      "MUZZLE",
+      "MUZZLE_BEAR",
+      "MUZZLE_LONG",
+      "MUZZLE_RAT",
+      "RABBIT_NOSE"
+    ],
+    "category": [
+      "BIRD",
+      "CEPHALOPOD",
+      "FELINE",
+      "RAPTOR",
+      "INSECT",
+      "CATTLE",
+      "BEAST",
+      "LUPINE",
+      "URSINE",
+      "LIZARD",
+      "RAT",
+      "RABBIT",
+      "MOUSE"
+    ]
   },
   {
     "id": "VULPINE_EARS",
@@ -401,9 +462,9 @@
     "points": 1,
     "visibility": 4,
     "ugliness": -2,
-    "description": "You have adorable little fox ears atop your head. You can hear better, and people will react to your looks more favorably. Maybe you'll even get headpats!",
+    "description": "You have adorable little fox ears atop your head.  You can hear better, and people will react to your looks more favorably.  Maybe you'll even get headpats!",
     "types": [ "EARS" ],
-    "category": [ "KITSUNE" ]
+    "category": [ "ALPHA" ]
   },
   {
     "id": "PRED2",
@@ -413,7 +474,7 @@
     "description": "Your brain has a lot more in common with a predatory animal than a human, making it easier to control misplaced reactions to the death of your prey.  Additionally, combat skills, which you use to hunt, are easier to learn and maintain.",
     "social_modifiers": { "intimidate": 3 },
     "purifiable": false,
-    "prereqs": [ "CARNIVORE", "THRESH_URSINE" ],
+    "prereqs": [ "CARNIVORE", "CARNIVORE_FAKE" ],
     "prereqs2": [ "PRED1" ],
     "changes_to": [ "PRED3" ],
     "threshreq": [
@@ -424,11 +485,10 @@
       "THRESH_FELINE",
       "THRESH_URSINE",
       "THRESH_LIZARD",
-      "THRESH_SPIDER",
-      "THRESH_KITSUNE"
+      "THRESH_SPIDER"
     ],
     "cancels": [ "PACIFIST" ],
-    "category": [ "BEAST", "RAPTOR", "CHIMERA", "LUPINE", "FELINE", "URSINE", "LIZARD", "SPIDER", "KITSUNE" ],
+    "category": [ "BEAST", "RAPTOR", "CHIMERA", "LUPINE", "FELINE", "URSINE", "LIZARD", "SPIDER" ],
     "flags": [ "PRED2" ]
   },
   {
@@ -440,22 +500,22 @@
     "valid": false,
     "types": [ "SLEEP" ],
     "prereqs": [ "WAKEFUL" ],
-    "changes_to": [ "WAKEFUL3", "FOXSLEEP" ],
-    "threshreq": [ "THRESH_ALPHA", "THRESH_ELFA", "THRESH_KITSUNE" ],
-    "category": [ "ALPHA", "ELFA", "THRESH_KITSUNE", "KITSUNE" ]
+    "changes_to": [ "WAKEFUL3" ],
+    "threshreq": [ "THRESH_ALPHA", "THRESH_ELFA", "THRESH_BATRACHIAN" ],
+    "category": [ "ALPHA", "ELFA", "BATRACHIAN" ]
   },
   {
     "id": "FOXSLEEP",
     "type": "mutation",
     "name": { "str": "Kitsune energy" },
     "points": 5,
-    "description": "You require very little sleep. After all, if you sleep, you might miss something funny!",
+    "description": "You require very little sleep.  After all, if you sleep, you might miss something funny!",
     "valid": false,
     "purifiable": false,
     "types": [ "SLEEP" ],
     "prereqs": [ "WAKEFUL2" ],
     "threshreq": [ "THRESH_KITSUNE" ],
-    "category": [ "KITSUNE" ]
+    "category": [ "ALPHA" ]
   },
   {
     "id": "FUR",
@@ -467,9 +527,9 @@
     "bodytemp_modifiers": [ 750, 1500 ],
     "description": "Thick black fur has grown to cover your entire body, providing a marginal protection against attacks, and considerable protection from cold.",
     "types": [ "SKIN" ],
-    "changes_to": [ "URSINE_FUR", "FUR_FOX" ],
+    "changes_to": [ "URSINE_FUR", "URSINE_FUR_SUMMER" ],
     "prereqs": [ "LIGHTFUR" ],
-    "category": [ "BEAST", "CATTLE", "RAT", "KITSUNE" ],
+    "category": [ "CATTLE", "RAT", "URSINE" ],
     "armor": [ { "parts": "ALL", "bash": 1 } ]
   },
   {
@@ -479,10 +539,10 @@
     "points": 2,
     "visibility": 10,
     "bodytemp_modifiers": [ 1000, 1750 ],
-    "description": "You're covered in incredibly soft red fur. You're warmer, and mildly protected from attacks, even when nude.",
+    "description": "You're covered in incredibly soft red fur.  You're warmer, and mildly protected from attacks, even when nude.",
     "types": [ "SKIN" ],
     "prereqs": [ "FUR" ],
-    "category": [ "KITSUNE" ],
+    "category": [ "CATTLE" ],
     "armor": [ { "parts": "ALL", "bash": 1 } ]
   }
 ]

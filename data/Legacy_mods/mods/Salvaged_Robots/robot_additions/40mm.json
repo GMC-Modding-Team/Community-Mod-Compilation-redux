@@ -6,7 +6,7 @@
     "description": "A 40mm grenade with an EMP charge.  It will release an electromagnetic pulse capable of damaging robots and some equipment.",
     "weight": "230 g",
     "volume": "250 ml",
-    "price": "400 USD",
+    "price": "4 USD",
     "material": [ "steel", "powder" ],
     "symbol": "=",
     "color": "yellow",
@@ -16,10 +16,11 @@
     "casing": "40x46mm_m118_casing",
     "range": 40,
     "damage": { "damage_type": "stab", "amount": 5 },
-    "dispersion": 30,
     "recoil": 225,
     "drop": "40mmEMP_act",
-    "effects": [ "COOKOFF", "NEVER_MISFIRES", "NO_EMBED" ]
+    "effects": [ "COOKOFF", "NEVER_MISFIRES", "NO_EMBED" ],
+    "loudness": 0,
+    "//legacy_dispersion": 30
   },
   {
     "id": "40mmEMP_act",
@@ -38,13 +39,7 @@
     "initial_charges": 0,
     "max_charges": 0,
     "turns_per_charge": 1,
-    "use_action": {
-      "type": "explosion",
-      "draw_explosion_radius": 8,
-      "draw_explosion_color": "light_blue",
-      "emp_blast_radius": 8,
-      "sound_volume": 0
-    },
+    "use_action": { "type": "explosion", "draw_explosion_radius": 8, "draw_explosion_color": "light_blue", "emp_blast_radius": 8 },
     "flags": [ "TRADER_AVOID" ]
   }
 ]

@@ -4,7 +4,7 @@
     "id": "mon_ayenel",
     "type": "MONSTER",
     "name": { "str": "ayenel" },
-    "description": "A walking flesh sentinel, with huge, sharp blade hanging from its predominant eye. Its extra appendages hang without a certain function.",
+    "description": "A walking flesh sentinel, with huge, sharp blade hanging from its predominant eye.  Its extra appendages hang without a certain function.",
     "default_faction": "ayenel",
     "species": [ "ABERRATION", "SECROSPEC" ],
     "diff": 10,
@@ -20,15 +20,14 @@
     "melee_skill": 8,
     "melee_dice": 4,
     "melee_dice_sides": 8,
-    "melee_damage": [ { "damage_type": "cut", "amount": 4 } ],
+    "melee_damage": [ { "damage_type": "cut", "amount": 11 } ],
     "attack_cost": 200,
     "dodge": 2,
     "harvest": "zombie",
-    "melee_damage": [ { "damage_type": "cut", "amount": 11 } ],
     "armor": { "bash": 8, "cut": 14, "acid": 1 },
     "special_attacks": [
-      [ "ayenel_swing", 18 ],
-      [ "ayenel_bitedown", 26 ],
+      { "id": "ayenel_swing", "cooldown": 18 },
+      { "id": "ayenel_bitedown", "cooldown": 26 },
       {
         "type": "spell",
         "spell_data": { "id": "mon_ayenel_locko_v" },
@@ -36,6 +35,6 @@
         "monster_message": "<color_yellow>%1$s glares at %3$s with pure malice!</color>"
       }
     ],
-    "flags": [ "SEES", "STUMBLES", "WARM", "BASHES", "POISON", "ATTACKMON", "NO_BREATHE", "BONES", "FAT", "PUSH_MON" ]
+    "flags": [ "SEES", "STUMBLES", "WARM", "BASHES", "POISON", "ATTACKMON", "NO_BREATHE", "PUSH_MON" ]
   }
 ]

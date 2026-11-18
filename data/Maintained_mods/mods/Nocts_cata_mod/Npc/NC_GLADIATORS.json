@@ -4,16 +4,16 @@
     "type": "item_group",
     "//": "Equipment for the Blue Team.",
     "subtype": "collection",
-    "entries": [
-      { "distribution": [ { "item": "boxer_shorts", "prob": 50 }, { "item": "loincloth", "prob": 50 } ] },
-      { "distribution": [ { "item": "socks", "prob": 50 }, { "item": "footrags", "prob": 50 } ] },
-      { "distribution": [ { "item": "tank_top", "prob": 50 }, { "item": "chestwrap", "prob": 50 } ] },
+    "items": [
       { "group": "NC_GLADIATOR_LIGHT_torso", "prob": 50, "damage": [ 0, 2 ] },
       { "group": "NC_GLADIATOR_LIGHT_arms", "damage": [ 0, 2 ] },
       { "group": "NC_GLADIATOR_LIGHT_hands", "prob": 75, "damage": [ 0, 2 ] },
       { "group": "clothing_outdoor_pants" },
       { "group": "NC_GLADIATOR_LIGHT_legs", "prob": 50, "damage": [ 0, 2 ] },
-      { "group": "NC_GLADIATOR_LIGHT_feet", "prob": 50, "damage": [ 0, 2 ] }
+      { "group": "NC_GLADIATOR_LIGHT_feet", "prob": 50, "damage": [ 0, 2 ] },
+      { "distribution": [ { "item": "boxer_shorts", "prob": 50 }, { "item": "loincloth", "prob": 50 } ] },
+      { "distribution": [ { "item": "socks", "prob": 50 }, { "item": "footrags", "prob": 50 } ] },
+      { "distribution": [ { "item": "tank_top", "prob": 50 }, { "item": "chestwrap", "prob": 50 } ] }
     ]
   },
   {
@@ -21,7 +21,7 @@
     "type": "item_group",
     "//": "Equipment for the Red Team.",
     "subtype": "collection",
-    "entries": [
+    "items": [
       { "item": "loincloth" },
       { "item": "footrags" },
       { "item": "chestwrap" },
@@ -37,87 +37,134 @@
     "id": "NC_GLADIATOR_LIGHT_torso",
     "type": "item_group",
     "//": "As with historical gladiators, torso is often left vulnerable.",
-    "items": [ [ "tshirt", 35 ], [ "tunic_rag", 30 ], [ "trenchcoat", 25 ], [ "vest_leather", 10 ] ]
+    "items": [
+      { "item": "tshirt", "prob": 35 },
+      { "item": "tunic_rag", "prob": 30 },
+      { "item": "trenchcoat", "prob": 25 },
+      { "item": "vest_leather", "prob": 10 }
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "NC_GLADIATOR_LIGHT_arms",
     "type": "item_group",
-    "items": [ [ "armguard_hard", 30 ], [ "2byarm_guard", 15 ], [ "armguard_paper", 15 ], [ "armguard_larmor", 10 ] ]
+    "items": [
+      { "item": "armguard_hard", "prob": 30 },
+      { "item": "2byarm_guard", "prob": 15 },
+      { "item": "armguard_paper", "prob": 15 },
+      { "item": "armguard_larmor", "prob": 10 }
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "NC_GLADIATOR_LIGHT_hands",
     "type": "item_group",
     "//": "Get an item 75% of the time.",
-    "items": [ [ "gloves_work", 20 ], [ "gloves_wraps", 15 ], [ "gauntlets_larmor", 10 ] ]
+    "items": [
+      { "item": "gloves_work", "prob": 20 },
+      { "item": "gloves_wraps", "prob": 15 },
+      { "item": "gauntlets_larmor", "prob": 10 }
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "NC_GLADIATOR_LIGHT_legs",
     "type": "item_group",
     "//": "Blue Team only gets an item half the time.",
-    "items": [ [ "legguard_hard", 20 ], [ "2byshin_guard", 10 ], [ "legguard_paper", 10 ] ]
+    "items": [
+      { "item": "legguard_hard", "prob": 20 },
+      { "item": "2byshin_guard", "prob": 10 },
+      { "item": "legguard_paper", "prob": 10 }
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "NC_GLADIATOR_LIGHT_feet",
     "type": "item_group",
     "//": "Blue Team only gets an item half the time.",
-    "items": [ [ "sneakers", 40 ], [ "boots", 30 ], [ "boots_larmor", 10 ], [ "motorbike_boots", 5 ] ]
+    "items": [
+      { "item": "sneakers", "prob": 40 },
+      { "item": "boots", "prob": 30 },
+      { "item": "boots_larmor", "prob": 10 },
+      { "item": "motorbike_boots", "prob": 5 }
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "NC_GLADIATOR_HEAVY_head",
     "type": "item_group",
     "//": "Helms for Red Team.",
     "items": [
-      [ "helmet_chitin", 15 ],
-      [ "helmet_acidchitin", 10 ],
-      [ "pot_helmet", 25 ],
-      [ "helmet_football", 15 ],
-      [ "helmet_motor", 15 ],
-      [ "firehelmet", 10 ],
-      [ "helmet_scrap", 10 ],
-      [ "depowered_helmet", 1 ]
-    ]
+      { "item": "helmet_chitin", "prob": 15 },
+      { "item": "helmet_acidchitin", "prob": 10 },
+      { "item": "pot_helmet", "prob": 25 },
+      { "item": "helmet_football", "prob": 15 },
+      { "item": "helmet_motor", "prob": 15 },
+      { "item": "firehelmet", "prob": 10 },
+      { "item": "helmet_scrap", "prob": 10 },
+      { "item": "depowered_helmet", "prob": 1 }
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "NC_GLADIATOR_HEAVY_torso",
     "type": "item_group",
     "//": "As with historical gladiators, torso is often left vulnerable.  25% odds of actual armor for heavies.",
     "items": [
-      [ "trenchcoat", 10 ],
-      [ "tunic_rag", 25 ],
-      [ "vest_leather", 10 ],
-      [ "bookplate", 5 ],
-      [ "vest_leather_mod", 5 ],
-      [ "football_armor", 5 ],
-      [ "motorbike_armor", 5 ],
-      [ "cuirass_scrap", 5 ]
-    ]
+      { "item": "trenchcoat", "prob": 10 },
+      { "item": "tunic_rag", "prob": 25 },
+      { "item": "vest_leather", "prob": 10 },
+      { "item": "bookplate", "prob": 5 },
+      { "item": "vest_leather_mod", "prob": 5 },
+      { "item": "football_armor", "prob": 5 },
+      { "item": "motorbike_armor", "prob": 5 },
+      { "item": "cuirass_scrap", "prob": 5 }
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "NC_GLADIATOR_HEAVY_arms",
     "type": "item_group",
     "items": [
-      [ "armguard_hard", 20 ],
-      [ "2byarm_guard", 15 ],
-      [ "armguard_acidchitin", 10 ],
-      [ "armguard_chitin", 20 ],
-      [ "armguard_scrap", 10 ]
-    ]
+      { "item": "armguard_hard", "prob": 20 },
+      { "item": "2byarm_guard", "prob": 15 },
+      { "item": "armguard_acidchitin", "prob": 10 },
+      { "item": "armguard_chitin", "prob": 20 },
+      { "item": "armguard_scrap", "prob": 10 }
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "NC_GLADIATOR_HEAVY_hands",
     "type": "item_group",
     "//": "Get an item 75% of the time.",
-    "items": [ [ "gauntlets_acidchitin", 10 ], [ "gauntlets_chitin", 20 ], [ "gloves_fingerless_mod", 15 ] ]
+    "items": [
+      { "item": "gauntlets_acidchitin", "prob": 10 },
+      { "item": "gauntlets_chitin", "prob": 20 },
+      { "item": "gloves_fingerless_mod", "prob": 15 }
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "NC_GLADIATOR_HEAVY_legs",
     "type": "item_group",
-    "items": [ [ "legguard_hard", 10 ], [ "2byshin_guard", 10 ], [ "armguard_scrap", 10 ] ]
+    "items": [
+      { "item": "legguard_hard", "prob": 10 },
+      { "item": "2byshin_guard", "prob": 10 },
+      { "item": "armguard_scrap", "prob": 10 }
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "NC_GLADIATOR_HEAVY_feet",
     "type": "item_group",
-    "items": [ [ "boots_acidchitin", 10 ], [ "boots_chitin", 30 ], [ "boots_steel", 30 ], [ "motorbike_boots", 25 ] ]
+    "items": [
+      { "item": "boots_acidchitin", "prob": 10 },
+      { "item": "boots_chitin", "prob": 30 },
+      { "item": "boots_steel", "prob": 30 },
+      { "item": "motorbike_boots", "prob": 25 }
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "NC_GLADIATOR_LIGHT_weapon",
@@ -141,7 +188,8 @@
       { "item": "knuckle_nail", "prob": 10, "damage": [ 0, 2 ] },
       { "item": "knuckle_steel", "prob": 10, "damage": [ 0, 2 ] },
       { "item": "knuckle_katar", "prob": 5, "damage": [ 0, 2 ] }
-    ]
+    ],
+    "subtype": "distribution"
   },
   {
     "id": "NC_GLADIATOR_HEAVY_weapon",
@@ -159,6 +207,7 @@
       { "item": "knuckle_nail", "prob": 10, "damage": [ 0, 2 ] },
       { "item": "knuckle_steel", "prob": 10, "damage": [ 0, 2 ] },
       { "item": "knuckle_katar", "prob": 5, "damage": [ 0, 2 ] }
-    ]
+    ],
+    "subtype": "distribution"
   }
 ]

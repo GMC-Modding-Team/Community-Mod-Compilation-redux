@@ -2,23 +2,7 @@
   {
     "id": "TALK_SECRO_RESEARCHER_main",
     "type": "talk_topic",
-    "dynamic_line": {
-      "u_has_effect": "secro_scientist_mission1_progress",
-      "no": "You are not authorized to this area.",
-      "yes": {
-        "u_has_effect": "secro_researcher_mission1_help",
-        "no": "What is it?",
-        "yes": {
-          "u_has_effect": "secro_scientist_partake_mission1",
-          "no": "You better get going.",
-          "yes": {
-            "u_has_effect": "secro_researcher_mission1_help_done",
-            "no": "Great job, survivor. I never expect an outsider help us with our dilemma, yet here you are.",
-            "yes": "What do you want?"
-          }
-        }
-      }
-    },
+    "dynamic_line": "You are not authorized to this area.  What is it?  You better get going.  Great job, survivor.  I never expect an outsider help us with our dilemma, yet here you are.  What do you want?",
     "responses": [
       {
         "text": "We need to go.",
@@ -100,7 +84,7 @@
         }
       },
       {
-        "truefalsetext": { "condition": { "u_has_effect": "secro_scientist_mission1_progress" }, "true": "Nothing.", "false": "Bye then..." },
+        "truefalsetext": { "condition": { "u_has_effect": "secro_scientist_mission1_progress" }, "true": "Nothing.", "false": "Bye then…" },
         "topic": "TALK_DONE",
         "condition": { "not": { "u_has_effect": "secro_researcher_mission1_help" } }
       },
@@ -124,7 +108,7 @@
   {
     "id": "TALK_SECRO_RESEARCHER_mission1_progress",
     "type": "talk_topic",
-    "dynamic_line": "I know. Just lead us all to that chamber.",
+    "dynamic_line": "I know.  Just lead us all to that chamber.",
     "responses": [
       {
         "text": "Okay.",
@@ -136,11 +120,7 @@
   {
     "id": "TALK_SECRO_RESEARCHER_guard_mission1_gonnastart",
     "type": "talk_topic",
-    "dynamic_line": {
-      "u_has_effect": "secro_guard_mission1_gonnastart",
-      "no": "Since you've proven yourself worthy for our future plans, I'll be glad if you help me with this rather odd request.",
-      "yes": "Yes, since you've proven yourself worthy for our plans, I'll be glad if you help me with this rather odd request."
-    },
+    "dynamic_line": "Since you've proven yourself worthy for our future plans, I'll be glad if you help me with this rather odd request.  Yes, since you've proven yourself worthy for our plans, I'll be glad if you help me with this rather odd request.",
     "responses": [
       {
         "text": "Tell me.",
@@ -152,25 +132,25 @@
   {
     "id": "TALK_SECRO_RESEARCHER_guard_mission1_start",
     "type": "talk_topic",
-    "dynamic_line": "But first, let me tell you a subtle understanding on our facility. There are a total of 3 specimen variants: the failed, BOW and enigma, each in their respective rooms.",
+    "dynamic_line": "But first, let me tell you a subtle understanding on our facility.  There are a total of 3 specimen variants: the failed, BOW and enigma, each in their respective rooms.",
     "responses": [
-      { "text": "Failed? BOW? Enigma? What are those?", "topic": "TALK_SECRO_RESEARCHER_guard_mission1_start_info" },
+      { "text": "Failed?  BOW?  Enigma?  What are those?", "topic": "TALK_SECRO_RESEARCHER_guard_mission1_start_info" },
       { "text": "Just describe what needs to be done.", "topic": "TALK_SECRO_RESEARCHER_guard_mission1_start_now" }
     ]
   },
   {
     "id": "TALK_SECRO_RESEARCHER_guard_mission1_start_info",
     "type": "talk_topic",
-    "dynamic_line": "Failed specimens are the results of unsuccessful mutations, otherwise they are called BOWs. Enigmas, on the other hand, were formed using potent mutagens.",
+    "dynamic_line": "Failed specimens are the results of unsuccessful mutations, otherwise they are called BOWs.  Enigmas, on the other hand, were formed using potent mutagens.",
     "responses": [ { "text": "So what should I do?", "topic": "TALK_SECRO_RESEARCHER_guard_mission1_start_now" } ]
   },
   {
     "id": "TALK_SECRO_RESEARCHER_guard_mission1_start_now",
     "type": "talk_topic",
-    "dynamic_line": "Clear out the enigma chamber. That room were locked down due to extremely anomalous threats, and you'll need authorization from someone to open it up. If you're ready, talk to the guard about this.",
+    "dynamic_line": "Clear out the enigma chamber.  That room were locked down due to extremely anomalous threats, and you'll need authorization from someone to open it up. If you're ready, talk to the guard about this.",
     "responses": [
       {
-        "text": "Okay. I will go now",
+        "text": "Okay.  I will go now",
         "topic": "TALK_DONE",
         "effect": { "duration": "PERMANENT", "u_add_effect": "secro_guard_mission1_startnow" }
       }
@@ -179,19 +159,19 @@
   {
     "id": "TALK_SECRO_RESEARCHER_guard_mission1_done",
     "type": "talk_topic",
-    "dynamic_line": "Excellent. Have you found anything of interest?",
+    "dynamic_line": "Excellent.  Have you found anything of interest?",
     "responses": [ { "text": "Nope.", "topic": "TALK_SECRO_RESEARCHER_enigma_none" } ]
   },
   {
     "id": "TALK_SECRO_RESEARCHER_enigma_none",
     "type": "talk_topic",
     "dynamic_line": "If you notice anything strange, just ask me and I'll tell everything I know about that.",
-    "responses": [ { "text": "Okay.", "topic": "TALK_SECRO_RESEARCHER_main" }, { "text": "Okay. Bye.", "topic": "TALK_DONE" } ]
+    "responses": [ { "text": "Okay.", "topic": "TALK_SECRO_RESEARCHER_main" }, { "text": "Okay.  Bye.", "topic": "TALK_DONE" } ]
   },
   {
     "id": "TALK_SECRO_RESEARCHER_mission1",
     "type": "talk_topic",
-    "dynamic_line": "Well, I'm curious about a mysterious, wandering specimen. Its the result of our recent experiment using a highly unstable mutagen who, I believe, takes form of a human.",
+    "dynamic_line": "Well, I'm curious about a mysterious, wandering specimen.  Its the result of our recent experiment using a highly unstable mutagen who, I believe, takes form of a human.",
     "responses": [ { "text": "What do you from it?", "topic": "TALK_SECRO_RESEARCHER_mission1_info" } ]
   },
   {
@@ -206,7 +186,7 @@
     "dynamic_line": "That's not necessary, as while you were dealing with the enigma chamber, I've sent a scout drone to search for that specimen using a tracker device, and it may take a while for its report.",
     "responses": [
       {
-        "text": "Okay... I'll wait for it.",
+        "text": "Okay…  I'll wait for it.",
         "topic": "TALK_SECRO_RESEARCHER_main",
         "effect": { "duration": "PERMANENT", "u_add_effect": "secro_researcher_mission1_gonnastart" }
       }
@@ -215,8 +195,8 @@
   {
     "id": "TALK_SECRO_RESEARCHER_mission1_notyet",
     "type": "talk_topic",
-    "dynamic_line": "The drone's still on the search...",
-    "responses": [ { "text": "Okay...", "topic": "TALK_SECRO_RESEARCHER_main" } ]
+    "dynamic_line": "The drone's still on the search…",
+    "responses": [ { "text": "Okay…", "topic": "TALK_SECRO_RESEARCHER_main" } ]
   },
   {
     "id": "TALK_SECRO_RESEARCHER_mission1_start",

@@ -18,11 +18,7 @@
     "//": "'condition': { 'u_has_items': { 'item': 'corpse_generic_human', 'count': 1 },",
     "id": [ "TALK_bandit_gs_cook" ],
     "type": "talk_topic",
-    "dynamic_line": {
-      "u_male": true,
-      "yes": "Hi <sweetie>.",
-      "no": "What do you want?!  You missed lunch, bitch, so you wont get your meal.  And don't even try to give me excuses."
-    },
+    "dynamic_line": "Hi <sweetie>. What do you want?!  You missed lunch, bitch, so you wont get your meal.  And don't even try to give me excuses.",
     "responses": [
       {
         "text": "Hello.",
@@ -42,11 +38,7 @@
       "TALK_bandit_gs_cook_questions_cook_done",
       "TALK_bandit_gs_cook_questions_cook4_takesome"
     ],
-    "dynamic_line": [
-      "What can I get you, <sweetie>?",
-      "Are you hungry, <sweetie>?  I can cook something for you.",
-      "What do you want to eat today, <sweetie>?"
-    ],
+    "dynamic_line": "What can I get you, <sweetie>? Are you hungry, <sweetie>?  I can cook something for you.  What do you want to eat today, <sweetie>?",
     "responses": [
       {
         "text": "About that job…",
@@ -134,17 +126,7 @@
     "//": "TODO write something not that lame dude",
     "id": "TALK_bandit_gs_cook_questions_cook3",
     "type": "talk_topic",
-    "dynamic_line": {
-      "and": [
-        "Then close your eyes and open your eyes.\"  at first, doubts overcame you, but the interest was so strong that you decided to obey.  You felt the touch of a small spoon on your lips and took the contents into your mouth.   ",
-        {
-          "u_has_trait": "CANNIBAL",
-          "yes": "Familiar taste notes filled all the cavities of your mouth, and you wouldn't confuse this smell with anything in the world.  Paradise honey, heavenly nectar.  Here it is - true pleasure.",
-          "no": "The taste turned out to be strange, sometimes even unpleasant.  The smell was not much better.  Tough, like the meat of an old animal that has been in the freezer for a long time."
-        },
-        "  \"How was it, <sweetie>?"
-      ]
-    },
+    "dynamic_line": "Then close your eyes and open your eyes.\"  at first, doubts overcame you, but the interest was so strong that you decided to obey.  You felt the touch of a small spoon on your lips and took the contents into your mouth.  Familiar taste notes filled all the cavities of your mouth, and you wouldn't confuse this smell with anything in the world.  Paradise honey, heavenly nectar.  Here it is - true pleasure.  The taste turned out to be strange, sometimes even unpleasant.  The smell was not much better.  Tough, like the meat of an old animal that has been in the freezer for a long time.  \"How was it, <sweetie>?",
     "responses": [
       {
         "text": "Delicious, truly delicious.  I didn't hope to find someone with unique tastes like mine in this new world.",
@@ -153,19 +135,19 @@
         "switch": true
       },
       {
-        "text": "It tastes… nice.  Can I have some more?",
+        "text": "It tastes…  nice.  Can I have some more?",
         "topic": "TALK_bandit_gs_cook_questions_cook4_more",
         "switch": true,
         "default": true
       },
       {
-        "text": "It tastes… weird.  What is it?",
+        "text": "It tastes…  weird.  What is it?",
         "topic": "TALK_bandit_gs_cook_questions_cook4_wit",
         "switch": true,
         "default": true
       },
       {
-        "text": "It tastes… bad, really bad.",
+        "text": "It tastes…  bad, really bad.",
         "topic": "TALK_bandit_gs_cook_questions_cook4_bad",
         "switch": true,
         "default": true
@@ -197,7 +179,7 @@
   {
     "id": "TALK_bandit_gs_cook_questions_cook4_wit",
     "type": "talk_topic",
-    "dynamic_line": "Well, we call it 'Two-legged-pig', but you may know it as human, he-he.  We mostly use meat of a better half of human kind, unfortunately.  That bossy bitch doesn't want me to cut those nasty hoes for food.  She talk something about… blah-blah-blah.  To hell with her bullshit.  Oh, does it taste good, <sweetie>?  I put my love and care in your meal.  Don't break my heart by saying rude things about my cooking…",
+    "dynamic_line": "Well, we call it 'Two-legged-pig', but you may know it as human, he-he.  We mostly use meat of a better half of human kind, unfortunately.  That bossy bitch doesn't want me to cut those nasty hoes for food.  She talk something about…  blah-blah-blah.  To hell with her bullshit.  Oh, does it taste good, <sweetie>?  I put my love and care in your meal.  Don't break my heart by saying rude things about my cooking…",
     "responses": [
       {
         "text": "It was good, I really liked it.",
@@ -211,7 +193,7 @@
         "failure": { "topic": "TALK_bandit_gs_cook_questions_cook4_bad" }
       },
       {
-        "text": "It was WHAT? *puke*",
+        "text": "It was WHAT?  *puke*",
         "topic": "TALK_bandit_gs_cook_questions_cook4_puke",
         "effect": { "npc_add_var": "know_taste", "type": "flag", "context": "open_missions", "value": "no" }
       }
@@ -223,7 +205,7 @@
     "dynamic_line": "I'm glad you share our tastes, <sweetie>.  Do you want some more?",
     "responses": [
       {
-        "text": "Sure, I could eat a whole two-legged pig, if you now what I mean. *wink*",
+        "text": "Sure, I could eat a whole two-legged pig, if you now what I mean.  *wink*",
         "topic": "TALK_bandit_gs_cook_questions_cook_done",
         "effect": [ { "npc_add_var": "want_more", "type": "flag", "context": "temp_var", "value": "yes" } ]
       },
@@ -251,18 +233,7 @@
   {
     "id": "TALK_bandit_gs_cook_questions_cook_done",
     "type": "talk_topic",
-    "dynamic_line": {
-      "and": [
-        {
-          "npc_has_var": "want_more",
-          "type": "flag",
-          "context": "temp_var",
-          "value": "yes",
-          "yes": "My, my, what a man.  Here you go, <sweetie>."
-        },
-        "  Oh, by the way, <sweetie>.  Would you want to help poor lady dealing with a little problem?  Our meat supplies are running low, and we always need more.  If you could spare some of your time to help me, I'm sure I can find a way to properly reward you, <sweetie>."
-      ]
-    },
+    "dynamic_line": "My, my, what a man.  Here you go, <sweetie>. Oh, by the way, <sweetie>.  Would you want to help poor lady dealing with a little problem?  Our meat supplies are running low, and we always need more.  If you could spare some of your time to help me, I'm sure I can find a way to properly reward you, <sweetie>.",
     "speaker_effect": {
       "effect": [
         { "npc_lose_var": "want_more", "type": "flag", "context": "temp_var" },

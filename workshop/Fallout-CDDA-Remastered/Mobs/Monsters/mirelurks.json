@@ -2,8 +2,8 @@
   {
     "id": "mon_fish_horseshoe",
     "type": "MONSTER",
-    "name": "horseshoe crab",
-    "description": "They existed long before we did. And by the looks of it, they could outlast us, too.",
+    "name": { "str": "horseshoe crab" },
+    "description": "They existed long before we did.  And by the looks of it, they could outlast us, too.",
     "default_faction": "fish",
     "categories": [ "WILDLIFE" ],
     "species": [ "FISH" ],
@@ -18,20 +18,19 @@
     "morale": 5,
     "melee_dice": 1,
     "melee_dice_sides": 4,
-    "melee_cut": 1,
     "luminance": 0,
     "harvest": "shellfish",
     "reproduction": { "baby_egg": "egg_fish", "baby_count": 2, "baby_timer": 21 },
     "baby_flags": [ "SUMMER" ],
     "fear_triggers": [ "PLAYER_CLOSE", "SOUND" ],
-    "death_function": [ "NORMAL" ],
-    "flags": [ "FISHABLE", "SEES", "SMELLS", "WARM", "SWIMS", "AQUATIC" ]
+    "flags": [ "FISHABLE", "SEES", "SMELLS", "WARM", "SWIMS", "AQUATIC" ],
+    "melee_damage": [ { "damage_type": "cut", "amount": 1 } ]
   },
   {
     "id": "mon_mirelurk_baby",
     "type": "MONSTER",
-    "name": "baby mirelurk",
-    "description": "This horseshoe crab is heavily mutated. Its a bit larger than normal.",
+    "name": { "str": "baby mirelurk" },
+    "description": "This horseshoe crab is heavily mutated.  Its a bit larger than normal.",
     "default_faction": "razorclaw",
     "categories": [ "MUTANT" ],
     "species": [ "FISH" ],
@@ -46,18 +45,17 @@
     "morale": 5,
     "melee_dice": 1,
     "melee_dice_sides": 4,
-    "melee_cut": 1,
     "luminance": 0,
     "harvest": "mirelurk",
     "upgrades": { "age_grow": 3, "into": "mon_mirelurk_softshell" },
     "fear_triggers": [ "PLAYER_CLOSE", "SOUND" ],
-    "death_function": [ "NORMAL" ],
-    "flags": [ "FISHABLE", "SEES", "SMELLS", "WARM", "SWIMS", "AQUATIC", "CATFOOD" ]
+    "flags": [ "FISHABLE", "SEES", "SMELLS", "WARM", "SWIMS", "AQUATIC" ],
+    "melee_damage": [ { "damage_type": "cut", "amount": 1 } ]
   },
   {
     "id": "mon_mirelurk_softshell",
     "type": "MONSTER",
-    "name": "softshell mirelurk",
+    "name": { "str": "softshell mirelurk" },
     "description": "A man-sized crustacean clad in soft, underdeveloped chitin.  Often spotted in the water, of course.",
     "default_faction": "razorclaw",
     "species": [ "MUTANT" ],
@@ -73,7 +71,6 @@
     "melee_skill": 6,
     "melee_dice": 4,
     "melee_dice_sides": 6,
-    "melee_cut": 7,
     "dodge": 2,
     "vision_day": 30,
     "vision_night": 15,
@@ -82,15 +79,15 @@
     "upgrades": { "age_grow": 5, "into": "mon_mirelurk" },
     "anger_triggers": [ "PLAYER_CLOSE", "FRIEND_DIED", "FRIEND_ATTACKED", "HURT" ],
     "fear_triggers": [ "FIRE" ],
-    "death_function": [ "NORMAL" ],
-    "flags": [ "SMELLS", "HEARS", "SEES", "SWIMS", "GRABS", "ARTHROPOD_BLOOD", "PATH_AVOID_DANGER_2", "CATFOOD" ],
-    "armor": { "bash": 5, "cut": 9 }
+    "flags": [ "SMELLS", "HEARS", "SEES", "SWIMS", "GRABS", "ARTHROPOD_BLOOD", "PATH_AVOID_DANGER_2" ],
+    "armor": { "bash": 5, "cut": 9 },
+    "melee_damage": [ { "damage_type": "cut", "amount": 7 } ]
   },
   {
     "id": "mon_mirelurk",
     "type": "MONSTER",
-    "name": "mirelurk",
-    "description": "A man-sized crustacean clad in an iron-like chitin, found within swamps and rivers. Their meat is popular with the fishers of the endtimes. Rumor has it some survivors have even tried to set up farms for them.",
+    "name": { "str": "mirelurk" },
+    "description": "A man-sized crustacean clad in an iron-like chitin, found within swamps and rivers.  Their meat is popular with the fishers of the endtimes.  Rumor has it some survivors have even tried to set up farms for them.",
     "default_faction": "razorclaw",
     "species": [ "MUTANT" ],
     "volume": "62500 ml",
@@ -105,7 +102,6 @@
     "melee_skill": 6,
     "melee_dice": 4,
     "melee_dice_sides": 6,
-    "melee_cut": 7,
     "dodge": 2,
     "vision_day": 30,
     "vision_night": 15,
@@ -114,15 +110,15 @@
     "upgrades": { "age_grow": 15, "into": "mon_mirelurk_queen" },
     "anger_triggers": [ "PLAYER_CLOSE", "FRIEND_DIED", "FRIEND_ATTACKED", "HURT" ],
     "fear_triggers": [ "FIRE" ],
-    "death_function": [ "NORMAL" ],
     "flags": [ "SMELLS", "HEARS", "SEES", "SWIMS", "GRABS", "ARTHROPOD_BLOOD", "PATH_AVOID_DANGER_2" ],
-    "armor": { "bash": 10, "cut": 18 }
+    "armor": { "bash": 10, "cut": 18 },
+    "melee_damage": [ { "damage_type": "cut", "amount": 7 } ]
   },
   {
     "id": "mon_mirelurk_queen",
     "type": "MONSTER",
-    "name": "Mirelurk Queen",
-    "description": "The largest variety of Mirelurk. Due to this, they are also the rarest. Their meat is prized by many, and their eggs similarly so. Their power is unmatched.",
+    "name": { "str": "Mirelurk Queen" },
+    "description": "The largest variety of Mirelurk.  Due to this, they are also the rarest.  Their meat is prized by many, and their eggs similarly so. Their power is unmatched.",
     "default_faction": "razorclaw",
     "species": [ "MUTANT" ],
     "diff": 2,
@@ -138,7 +134,6 @@
     "melee_skill": 6,
     "melee_dice": 4,
     "melee_dice_sides": 10,
-    "melee_cut": 15,
     "dodge": 2,
     "vision_day": 30,
     "vision_night": 20,
@@ -148,8 +143,8 @@
     "path_settings": { "max_dist": 50 },
     "anger_triggers": [ "PLAYER_CLOSE", "HURT" ],
     "fear_triggers": [ "FIRE" ],
-    "death_function": [ "NORMAL" ],
     "flags": [ "SMELLS", "HEARS", "SEES", "SWIMS", "GRABS", "ARTHROPOD_BLOOD", "PATH_AVOID_DANGER_2", "QUEEN" ],
-    "armor": { "bash": 30, "cut": 40 }
+    "armor": { "bash": 30, "cut": 40 },
+    "melee_damage": [ { "damage_type": "cut", "amount": 15 } ]
   }
 ]

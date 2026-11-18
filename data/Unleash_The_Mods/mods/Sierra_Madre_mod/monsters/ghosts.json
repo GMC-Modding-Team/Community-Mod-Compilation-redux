@@ -45,19 +45,22 @@
     "count": 10,
     "stack_size": 1,
     "ammo_type": "gas_bomb_ammo",
-    "dispersion": 1500,
     "range": 10,
     "explode_in_fire": true,
     "explosion": { "power": 400 },
-    "effects": [ "NEVER_MISFIRES", "ACT_ON_RANGED_HIT", "CUSTOM_EXPLOSION" ]
+    "effects": [ "NEVER_MISFIRES", "ACT_ON_RANGED_HIT", "CUSTOM_EXPLOSION" ],
+    "loudness": 0,
+    "//legacy_dispersion": 1500
   },
   {
     "id": "spear_throw",
     "type": "GUN",
-    "copy-from": "fake_item",
     "name": { "str": "Ghost throwing knifespear" },
     "description": "Fake gun that throws Ghost knifespears.",
-    "flags": [ "NEVER_JAMS" ],
+    "symbol": "/",
+    "weight": "1 g",
+    "volume": "1 ml",
+    "flags": [ "NEVER_JAMS", "ZERO_WEIGHT" ],
     "ammo_effects": [ "NEVER_MISFIRES", "NO_DAMAGE_SCALING" ],
     "skill": "rifle",
     "durability": 10,
@@ -66,15 +69,18 @@
     "ammo": [ "spear_ammo" ],
     "loudness": 0,
     "ranged_damage": [ { "damage_type": "stab", "amount": 30 } ],
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "spear_ammo": 7 } } ]
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "spear_ammo": 7 } } ],
+    "copy-from": "fake_item"
   },
   {
     "id": "seeker_bomb",
     "type": "GUN",
-    "copy-from": "fake_item",
     "name": { "str": "fake launcher" },
     "description": "fake item so that seekers can throw their bombs",
-    "flags": [ "NEVER_JAMS" ],
+    "symbol": "/",
+    "weight": "1 g",
+    "volume": "1 ml",
+    "flags": [ "NEVER_JAMS", "ZERO_WEIGHT" ],
     "ammo_effects": [ "NEVER_MISFIRES", "NO_DAMAGE_SCALING" ],
     "skill": "launcher",
     "durability": 10,
@@ -83,7 +89,8 @@
     "ammo": [ "gas_bomb_ammo" ],
     "loudness": 0,
     "ranged_damage": { "damage_type": "bullet", "amount": 1, "armor_penetration": 0 },
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "gas_bomb_ammo": 1 } } ]
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "gas_bomb_ammo": 1 } } ],
+    "copy-from": "fake_item"
   },
   {
     "type": "monster_attack",
@@ -116,7 +123,7 @@
     "looks_like": "mon_zombie_soldier_blackops_1",
     "type": "MONSTER",
     "name": { "str": "Ghost harvester" },
-    "description": "A smaller and weaker type of Ghost People, though still very deadly due to high agility. Fights using knife spears, both in melee and throwing them from a distance.",
+    "description": "A smaller and weaker type of Ghost People, though still very deadly due to high agility.  Fights using knife spears, both in melee and throwing them from a distance.",
     "default_faction": "ghosts",
     "bodytype": "human",
     "categories": [ "CLASSIC" ],
@@ -146,7 +153,7 @@
     "special_attacks": [
       [ "PARROT", 30 ],
       { "type": "leap", "cooldown": 4, "max_range": 4, "allow_no_target": true },
-      [ "impale", 10 ],
+      { "id": "impale", "cooldown": 10 },
       {
         "type": "gun",
         "cooldown": 5,
@@ -183,7 +190,7 @@
     "looks_like": "mon_zombie_bio_op2",
     "type": "MONSTER",
     "name": { "str": "Ghost trapper" },
-    "description": "This Ghost has a large, bulky body yet still maintains a great degree of agility. Armed with a small bear trap strapped to its arm, will try to claw at you using it.",
+    "description": "This Ghost has a large, bulky body yet still maintains a great degree of agility.  Armed with a small bear trap strapped to its arm, will try to claw at you using it.",
     "default_faction": "ghosts",
     "bodytype": "human",
     "categories": [ "CLASSIC" ],
@@ -211,7 +218,7 @@
     "special_attacks": [
       [ "PARROT", 30 ],
       { "type": "leap", "cooldown": 4, "max_range": 4, "allow_no_target": true, "max_consider_range": 12 },
-      [ "bearfisting", 20 ]
+      { "id": "bearfisting", "cooldown": 20 }
     ],
     "death_drops": "trapper_items",
     "flags": [
@@ -236,7 +243,7 @@
     "looks_like": "mon_zombie_flamer",
     "type": "MONSTER",
     "name": { "str": "Ghost seeker" },
-    "description": "Taller than harvesters, weaker and skinnier than trappers, those Ghosts will often throw an improvised gas bomb before engaging with their knife spears, making them a potentially deadly enemies. If you survive the blast though, they'll be easier to deal with than trappers for sure.",
+    "description": "Taller than harvesters, weaker and skinnier than trappers, those Ghosts will often throw an improvised gas bomb before engaging with their knife spears, making them a potentially deadly enemies.  If you survive the blast though, they'll be easier to deal with than trappers for sure.",
     "default_faction": "ghosts",
     "bodytype": "human",
     "categories": [ "CLASSIC" ],
@@ -266,7 +273,7 @@
     "special_attacks": [
       [ "PARROT", 30 ],
       { "type": "leap", "cooldown": 4, "max_range": 4, "allow_no_target": true },
-      [ "impale", 10 ],
+      { "id": "impale", "cooldown": 10 },
       {
         "type": "gun",
         "cooldown": 5,

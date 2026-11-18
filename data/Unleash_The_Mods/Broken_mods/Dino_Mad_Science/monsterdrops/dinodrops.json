@@ -4,8 +4,14 @@
     "subtype": "collection",
     "//": "items people could have carried in their bags prior to Dino-ification",
     "id": "dino_items_bags",
-    "entries": [
+    "items": [
       { "group": "wallets", "damage": [ 1, 4 ], "prob": 15 },
+      { "item": "eink_tablet_pc", "prob": 10, "charges-min": 0, "charges-max": 50 },
+      { "item": "vibrator", "prob": 1, "charges-min": 0, "charges-max": 50 },
+      { "item": "teleumbrella", "prob": 2 },
+      { "group": "vending_food_items", "prob": 8 },
+      { "group": "vending_drink", "prob": 8, "count-min": 1, "count-max": 2 },
+      { "item": "thermos", "prob": 2 },
       {
         "distribution": [ { "item": "plastic_shopping_bag", "prob": 33 }, { "item": "fanny", "prob": 33 }, { "group": "bags", "prob": 33 } ],
         "prob": 80
@@ -18,12 +24,6 @@
         ],
         "prob": 40
       },
-      { "item": "eink_tablet_pc", "prob": 10, "charges-min": 0, "charges-max": 50 },
-      { "item": "vibrator", "prob": 1, "charges-min": 0, "charges-max": 50 },
-      { "item": "teleumbrella", "prob": 2 },
-      { "group": "vending_food_items", "prob": 8 },
-      { "group": "vending_drink", "prob": 8, "count-min": 1, "count-max": 2 },
-      { "item": "thermos", "prob": 2 },
       {
         "distribution": [ { "item": "roadmap" }, { "item": "trailmap" }, { "item": "touristmap" }, { "item": "restaurantmap" } ],
         "prob": 5
@@ -57,10 +57,12 @@
     "type": "item_group",
     "subtype": "collection",
     "id": "dino_hulk_drops",
-    "entries": [
+    "items": [
       { "item": "rag", "damage": [ 1, 4 ], "count": [ 1, 4 ] },
       { "item": "leather_belt", "damage": [ 1, 4 ], "prob": 30 },
       { "item": "xlsports_bra", "damage": [ 1, 4 ], "prob": 20 },
+      { "group": "default_zombie_items", "prob": 30 },
+      { "group": "wallets", "damage": [ 1, 4 ], "prob": 70 },
       {
         "distribution": [
           { "item": "xl_technician_shirt_dino", "damage": [ 1, 3 ] },
@@ -77,9 +79,7 @@
           { "item": "sheet_neoprene", "prob": 20, "damage": [ 1, 2 ] }
         ],
         "prob": 10
-      },
-      { "group": "default_zombie_items", "prob": 30 },
-      { "group": "wallets", "damage": [ 1, 4 ], "prob": 70 }
+      }
     ]
   },
   {
@@ -87,7 +87,7 @@
     "subtype": "collection",
     "//": "contains cloth (60% chance), a cash card (15% chance), and a random item (40% chance)",
     "id": "default_dino_drops",
-    "entries": [
+    "items": [
       { "group": "default_zombie_clothes", "prob": 60, "damage": [ 1, 4 ] },
       { "group": "default_zombie_items", "prob": 40 },
       { "group": "wallets", "damage": [ 1, 4 ], "prob": 15 }
@@ -97,7 +97,7 @@
     "type": "item_group",
     "subtype": "collection",
     "id": "laser_cbm_dino_drops",
-    "entries": [
+    "items": [
       { "item": "rag", "damage": [ 2, 4 ], "count": [ 1, 3 ] },
       { "item": "pants", "damage": [ 1, 4 ] },
       { "item": "vest", "damage": [ 1, 4 ] },
@@ -174,7 +174,7 @@
     "type": "item_group",
     "subtype": "collection",
     "id": "cbm_dino_drops",
-    "entries": [
+    "items": [
       { "item": "rag", "damage": [ 2, 4 ], "count": [ 1, 3 ], "prob": 60 },
       { "item": "pants", "damage": [ 3, 4 ], "prob": 60 },
       { "item": "vest", "damage": [ 1, 4 ], "prob": 70 },
@@ -183,6 +183,7 @@
       { "item": "screwdriver_set", "prob": 30 },
       { "group": "drugs_heal_simple", "prob": 40 },
       { "item": "adrenaline_injector", "prob": 20 },
+      { "item": "light_battery_cell", "prob": 50, "charges": [ 0, 100 ] },
       {
         "distribution": [ { "item": "sports_bra", "damage": [ 3, 4 ] }, { "item": "boy_shorts", "damage": [ 3, 4 ] } ],
         "prob": 40
@@ -195,7 +196,6 @@
         ],
         "prob": 7
       },
-      { "item": "light_battery_cell", "prob": 50, "charges": [ 0, 100 ] },
       {
         "distribution": [
           { "item": "lighter", "prob": 100, "charges": [ 0, 100 ] },
@@ -254,7 +254,7 @@
     "subtype": "collection",
     "magazine": 80,
     "ammo": 15,
-    "entries": [
+    "items": [
       { "group": "cop_gear", "prob": 40, "damage": [ 2, 4 ] },
       { "group": "cop_gloves", "prob": 20, "damage": [ 2, 4 ] },
       { "group": "cop_helmet", "prob": 15, "damage": [ 2, 4 ] },
@@ -265,18 +265,18 @@
       { "group": "underwear", "damage": [ 1, 4 ], "prob": 30 },
       { "group": "clothing_glasses", "prob": 5 },
       { "group": "clothing_watch", "prob": 5 },
+      { "item": "cash_card", "charges-min": 15, "charges-max": 40500, "prob": 30 },
       {
         "collection": [ { "item": "badge_deputy", "prob": 100 }, { "item": "badge_detective", "prob": 20 } ],
         "prob": 10
-      },
-      { "item": "cash_card", "charges-min": 15, "charges-max": 40500, "prob": 30 }
+      }
     ]
   },
   {
     "type": "item_group",
     "subtype": "collection",
     "id": "dino_prisoner_drops",
-    "entries": [
+    "items": [
       { "item": "striped_shirt", "damage": [ 1, 4 ], "prob": 10 },
       { "item": "striped_pants", "damage": [ 1, 4 ], "prob": 20 },
       { "item": "bandana", "damage": [ 1, 4 ], "prob": 10 },
@@ -291,7 +291,7 @@
     "type": "item_group",
     "subtype": "collection",
     "id": "dino_fireman_drops",
-    "entries": [
+    "items": [
       { "group": "fireman_torso", "damage": [ 1, 4 ], "prob": 70 },
       { "group": "fireman_pants", "damage": [ 1, 4 ], "prob": 70 },
       { "group": "fireman_gloves", "damage": [ 1, 4 ], "prob": 70 },
@@ -299,23 +299,23 @@
       { "group": "fireman_mask", "damage": [ 1, 4 ], "prob": 70 },
       { "group": "fireman_head", "damage": [ 1, 4 ], "prob": 70 },
       { "group": "hazmat_eyes", "damage": [ 1, 4 ], "prob": 33 },
-      { "distribution": [ { "group": "fireman_gear", "prob": 1 } ] },
-      { "group": "wallets", "damage": [ 1, 4 ] }
+      { "group": "wallets", "damage": [ 1, 4 ] },
+      { "distribution": [ { "group": "fireman_gear", "prob": 1 } ] }
     ]
   },
   {
     "id": "dino_technician_drops",
     "type": "item_group",
     "subtype": "collection",
-    "entries": [
+    "items": [
       { "group": "clothing_work_set", "damage": [ 3, 4 ] },
       { "group": "underwear", "damage": [ 2, 4 ] },
+      { "group": "supplies_electronics", "prob": 30 },
+      { "item": "id_industrial", "prob": 10 },
       {
         "distribution": [ { "group": "tools_carpentry", "prob": 20 }, { "group": "tools_common", "prob": 50 } ],
         "prob": 30
-      },
-      { "group": "supplies_electronics", "prob": 30 },
-      { "item": "id_industrial", "prob": 10 }
+      }
     ]
   }
 ]

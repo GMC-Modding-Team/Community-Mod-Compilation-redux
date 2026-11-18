@@ -3,13 +3,15 @@
     "id": "minerals_swamp",
     "type": "item_group",
     "//": "Technically limonite develops as bog iron, not hematite.",
-    "items": [ [ "chunk_hematite", 10 ] ]
+    "items": [ { "item": "chunk_hematite", "prob": 10 } ],
+    "subtype": "distribution"
   },
   {
     "id": "rubble_fake",
     "type": "item_group",
     "//": "Unable to both randomly placed rubble and ensure rocks spawn underneath.",
-    "items": [ { "item": "rock", "prob": 100, "count-min": 1, "count-max": 3 } ]
+    "items": [ { "item": "rock", "prob": 100, "count-min": 1, "count-max": 3 } ],
+    "subtype": "distribution"
   },
   {
     "type": "mapgen",
@@ -111,7 +113,8 @@
         "#": [ "f_boulder_small", "f_boulder_medium", "f_boulder_large" ],
         "?": [ "f_boulder_small", "f_boulder_medium", "f_rubble_rock" ]
       },
-      "mapping": { "?": { "items": { "item": "rubble_fake", "chance": 33 } } }
+      "mapping": { "?": { "items": { "item": "rubble_fake", "chance": 33 } } },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -210,7 +213,8 @@
         "%": "t_dirt"
       },
       "furniture": { "%": [ "f_null", "f_rubble_rock" ] },
-      "mapping": { "%": { "items": { "item": "rubble_fake", "chance": 50 } } }
+      "mapping": { "%": { "items": { "item": "rubble_fake", "chance": 50 } } },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -310,7 +314,8 @@
         "?": "t_dirt"
       },
       "furniture": { "?": [ "f_boulder_small", "f_boulder_medium", "f_rubble_rock" ] },
-      "mapping": { "?": { "items": { "item": "rubble_fake", "chance": 33 } } }
+      "mapping": { "?": { "items": { "item": "rubble_fake", "chance": 33 } } },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -413,7 +418,8 @@
         "#": [ "f_boulder_small", "f_boulder_medium", "f_boulder_large" ],
         "?": [ "f_boulder_small", "f_boulder_medium", "f_rubble_rock" ]
       },
-      "mapping": { "?": { "items": { "item": "rubble_fake", "chance": 33 } } }
+      "mapping": { "?": { "items": { "item": "rubble_fake", "chance": 33 } } },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -512,7 +518,8 @@
         "%": "t_dirt"
       },
       "furniture": { "%": [ "f_null", "f_rubble_rock" ] },
-      "mapping": { "%": { "items": { "item": "rubble_fake", "chance": 50 } } }
+      "mapping": { "%": { "items": { "item": "rubble_fake", "chance": 50 } } },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -612,7 +619,8 @@
         "?": "t_dirt"
       },
       "furniture": { "?": [ "f_boulder_small", "f_boulder_medium", "f_rubble_rock" ] },
-      "mapping": { "?": { "items": { "item": "rubble_fake", "chance": 33 } } }
+      "mapping": { "?": { "items": { "item": "rubble_fake", "chance": 33 } } },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -718,7 +726,8 @@
         "#": [ "f_boulder_small", "f_boulder_medium", "f_boulder_large" ],
         "?": [ "f_boulder_small", "f_boulder_medium", "f_rubble_rock" ]
       },
-      "mapping": { "?": { "items": { "item": "rubble_fake", "chance": 33 } } }
+      "mapping": { "?": { "items": { "item": "rubble_fake", "chance": 33 } } },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -814,7 +823,8 @@
         "%": "t_dirt"
       },
       "furniture": { "%": [ "f_null", "f_rubble_rock" ] },
-      "mapping": { "%": { "items": { "item": "rubble_fake", "chance": 50 } } }
+      "mapping": { "%": { "items": { "item": "rubble_fake", "chance": 50 } } },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -947,7 +957,8 @@
         ],
         "%": [ "f_null", "f_rubble_rock" ]
       },
-      "mapping": { ".": { "items": { "item": "rubble_fake", "chance": 3 } }, "%": { "items": { "item": "rubble_fake", "chance": 50 } } }
+      "mapping": { ".": { "items": { "item": "rubble_fake", "chance": 3 } }, "%": { "items": { "item": "rubble_fake", "chance": 50 } } },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -1083,7 +1094,8 @@
       "mapping": {
         ".": { "items": [ { "item": "rubble_fake", "chance": 3 }, { "item": "minerals_swamp", "chance": 1 } ] },
         "%": { "items": [ { "item": "rubble_fake", "chance": 50 }, { "item": "minerals_swamp", "chance": 20 } ] }
-      }
+      },
+      "fill_ter": "t_region_groundcover"
     }
   },
   {
@@ -1122,7 +1134,8 @@
       "terrain": {
         " ": [ [ "t_region_groundcover", 15 ], [ "t_region_groundcover_barren", 10 ], [ "t_swater_sh", 5 ], "t_sand_black" ],
         ".": [ [ "t_region_groundcover_barren", 4 ], "t_sand_black" ]
-      }
+      },
+      "fill_ter": "t_region_groundcover"
     }
   }
 ]
