@@ -12,6 +12,7 @@
 **Closed issues:**
 
 - \[H\] Locked and Loaded has multiple items defined multiple times, with different stats [\#174](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/174)
+- \[H\] Installer - off repo [\#89](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/89)
 
 ## [v0.3.0-herbert](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/tree/v0.3.0-herbert) (2026-11-18)
 
