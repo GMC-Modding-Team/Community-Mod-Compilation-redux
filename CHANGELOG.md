@@ -1,5 +1,18 @@
 # Changelog
 
+## [Unreleased](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/tree/HEAD)
+
+[Full Changelog](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/compare/v0.3.0-herbert...HEAD)
+
+**Fixed bugs:**
+
+- \[H\] Both into and into-groups Cant fix [\#121](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/121)
+- \[H\] regional map for wasteland mod [\#93](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/93)
+
+**Closed issues:**
+
+- \[H\] Locked and Loaded has multiple items defined multiple times, with different stats [\#174](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/174)
+
 ## [v0.3.0-herbert](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/tree/v0.3.0-herbert) (2026-11-18)
 
 [Full Changelog](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/compare/v0.2.1-beta-G-experimental...v0.3.0-herbert)
