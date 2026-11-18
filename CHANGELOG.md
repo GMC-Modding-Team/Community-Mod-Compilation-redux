@@ -12,6 +12,7 @@
 **Closed issues:**
 
 - \[H\] add fonts to off repo installer [\#275](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/275)
+- Martial Arts techniques not triggering due to lack of Attack Vectors [\#177](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/177)
 - \[H\] Locked and Loaded has multiple items defined multiple times, with different stats [\#174](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/174)
 - \[H\] Installer - off repo [\#89](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/89)
 
