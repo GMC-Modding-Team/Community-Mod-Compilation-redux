@@ -61,8 +61,8 @@
         "text": "Look, first time I saw you, I noticed you stance, how you react on danger…",
         "condition": {
           "and": [
-            { "u_has_skill": { "skill": "dodge", "level": 3 } },
-            { "u_has_skill": { "skill": "unarmed", "level": 3 } },
+            { "math": [ "u_skill('dodge')", ">=", "3" ] },
+            { "math": [ "u_skill('unarmed')", ">=", "3" ] },
             { "not": { "npc_has_effect": "confronted_hobo_victoria" } },
             { "not": { "u_has_mission": "MISSION_hobo_victoria_6" } }
           ]
@@ -87,7 +87,7 @@
     "type": "talk_topic",
     "//": "TODO add content",
     "id": "TALK_hobo_victoria_teach",
-    "dynamic_line": "FINE, fine… You got me.  I need you to do me a little favor.  I need few <very> rare stones that can only be found deeply underground.  Find me 8 spiral stones and you'll get your training ",
+    "dynamic_line": "FINE, fine…  You got me.  I need you to do me a little favor.  I need few <very> rare stones that can only be found deeply underground.  Find me 8 spiral stones and you'll get your training",
     "responses": [ { "text": "SWEET!", "topic": "TALK_DONE", "effect": { "add_mission": "MISSION_hobo_victoria_6" } } ]
   },
   {

@@ -2,12 +2,7 @@
   {
     "id": "SECRO_FLESH_HIVEMIND_service",
     "type": "talk_topic",
-    "dynamic_line": {
-      "and": [
-        "*sends an immediate streak of velvety pulsation towards the meatfarm.",
-        "\nThe hivemind can also fix your injuries using flesh."
-      ]
-    },
+    "dynamic_line": "*sends an immediate streak of velvety pulsation towards the meatfarm.  The hivemind can also fix your injuries using flesh.",
     "responses": [
       {
         "text": "About the meatfarm…",
@@ -21,24 +16,20 @@
   {
     "id": "SECRO_FLESH_HIVEMIND_healme",
     "type": "talk_topic",
-    "dynamic_line": {
-      "npc_has_effect": "currently_busy",
-      "yes": "*reveals a revolting response, showing its tendrils that are currently in service.",
-      "no": "*responds with a subtle shake, as it reveals a gaping orifice."
-    },
+    "dynamic_line": "*reveals a revolting response, showing its tendrils that are currently in service.  *responds with a subtle shake, as it reveals a gaping orifice.",
     "responses": [
       {
         "text": "[35 flesh, 30m] *feed the orifice with the flesh*",
         "topic": "SECRO_FLESH_HIVEMIND_healing",
-        "condition": { "and": [ { "npc_service": true }, { "u_has_items": { "item": "secro_flesh", "count": 35 } } ] },
+        "condition": { "and": [ { "npc_service": 0 }, { "u_has_items": { "item": "secro_flesh", "count": 35 } } ] },
         "effect": [ { "u_sell_item": "secro_flesh", "count": 35 }, { "npc_consume_item": "secro_flesh", "count": 35 } ]
       },
       {
         "text": "[35 flesh, 30m] *feed the orifice with the flesh*",
         "topic": "SECRO_FLESH_HIVEMIND_healing_no",
-        "condition": { "and": [ { "npc_service": true }, { "not": { "u_has_items": { "item": "secro_flesh", "count": 35 } } } ] }
+        "condition": { "and": [ { "npc_service": 0 }, { "not": { "u_has_items": { "item": "secro_flesh", "count": 35 } } } ] }
       },
-      { "text": "Nevermind...", "topic": "TALK_DONE" }
+      { "text": "Nevermind…", "topic": "TALK_DONE" }
     ]
   },
   {
@@ -50,17 +41,13 @@
   {
     "id": "SECRO_FLESH_HIVEMIND_healing",
     "type": "talk_topic",
-    "dynamic_line": "*forms a heap of flesh, which encapsulated you. It felt gross, but you know it'll fix you up.",
+    "dynamic_line": "*forms a heap of flesh, which encapsulated you.  It felt gross, but you know it'll fix you up.",
     "responses": [ { "text": "…", "topic": "TALK_DONE", "effect": "give_aid" } ]
   },
   {
     "id": "SECRO_FLESH_HIVEMIND_service_meatfarm",
     "type": "talk_topic",
-    "dynamic_line": {
-      "npc_has_effect": "secro_flesh_growing_meatfarm",
-      "yes": "*is currently growing some meat.",
-      "no": "*is awaiting your orders."
-    },
+    "dynamic_line": "*is currently growing some meat.  *is awaiting your orders.",
     "responses": [
       {
         "text": "Start \"planting\" meat.",
@@ -124,7 +111,7 @@
   {
     "id": "SECRO_FLESH_HIVEMIND_service_meatfarm_grow",
     "type": "talk_topic",
-    "dynamic_line": "*opens an gaping orifice. You can feed the hivemind with flesh, which are then converted into edible meat.",
+    "dynamic_line": "*opens an gaping orifice.  You can feed the hivemind with flesh, which are then converted into edible meat.",
     "responses": [
       {
         "text": "[25 flesh, 4h] *feed the hivemind with flesh*",
@@ -165,7 +152,7 @@
   {
     "id": "SECRO_FLESH_HIVEMIND_service_meatfarm_growing",
     "type": "talk_topic",
-    "dynamic_line": "*consumes the provided flesh, then the connected sector starts to throb...",
+    "dynamic_line": "*consumes the provided flesh, then the connected sector starts to throb…",
     "responses": [ { "text": "…", "topic": "SECRO_FLESH_HIVEMIND_service" } ]
   }
 ]

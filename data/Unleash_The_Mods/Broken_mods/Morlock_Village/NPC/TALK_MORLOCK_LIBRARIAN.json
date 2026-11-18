@@ -6,7 +6,7 @@
     "responses": [
       { "text": "So what's your deal?  You're like a book guy or something?", "topic": "TALK_MORLOCK_LIBRARIAN_INTRO" },
       {
-        "text": "I'm desperate for a specific book. Can you help me?",
+        "text": "I'm desperate for a specific book.  Can you help me?",
         "topic": "TALK_MORLOCK_LIBRARIAN_REQUEST",
         "condition": {
           "and": [
@@ -63,7 +63,7 @@
         ]
       },
       {
-        "text": "[$10k] I need info on crafting katanas. Lots of 'em.",
+        "text": "[$10k] I need info on crafting katanas.  Lots of 'em.",
         "topic": "TALK_MORLOCK_LIBRARIAN_DEAL",
         "condition": { "u_has_cash": 1000000 },
         "effect": [
@@ -98,7 +98,7 @@
       {
         "text": "[$10k+CANNIBAL] For no particular reason, I would like a human cookbook.",
         "topic": "TALK_MORLOCK_LIBRARIAN_DEAL",
-        "condition": { "and": [ { "u_has_cash": 1000000 }, { "u_has_trait_flag": "CANNIBAL" } ] },
+        "condition": { "and": [ { "u_has_cash": 1000000 }, { "u_has_trait": "CANNIBAL" } ] },
         "effect": [
           { "u_spend_cash": 1000000 },
           { "npc_add_effect": "bookhunter_searching", "duration": 43200 },
@@ -139,17 +139,13 @@
   {
     "id": "TALK_MORLOCK_LIBRARIAN_DEAL",
     "type": "talk_topic",
-    "dynamic_line": {
-      "npc_has_effect": "bookhunter_playboy",
-      "yes": "Ugh.  Fine.  Come back in three days for your 'articles'.",
-      "no": "We have a deal then.  Return in three days and I will have your book."
-    },
+    "dynamic_line": "Ugh.  Fine.  Come back in three days for your 'articles'. We have a deal then.  Return in three days and I will have your book.",
     "responses": [ { "text": "I'll be here!", "topic": "TALK_DONE" } ]
   },
   {
     "id": "TALK_MORLOCK_LIBRARIAN_IMPATIENT",
     "type": "talk_topic",
-    "dynamic_line": "We haven't found it yet.  Come back in a few days. (ooc note: Currently NPCs must be in your reality bubble for their effect timer to count down.)",
+    "dynamic_line": "We haven't found it yet.  Come back in a few days.  (ooc note: Currently NPCs must be in your reality bubble for their effect timer to count down.)",
     "responses": [ { "text": "I need that book!", "topic": "TALK_DONE" } ]
   },
   {

@@ -1,8 +1,28 @@
 # Changelog
 
-## [Unreleased](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/tree/HEAD)
+## [v0.3.1-herbert](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/tree/v0.3.1-herbert) (2026-11-18)
 
-[Full Changelog](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/compare/v0.2.1-beta-G-experimental...HEAD)
+[Full Changelog](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/compare/v0.3.0-herbert...v0.3.1-herbert)
+
+**Fixed bugs:**
+
+- \[H\] Both into and into-groups Cant fix [\#121](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/121)
+- \[H\] regional map for wasteland mod [\#93](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/93)
+
+**Closed issues:**
+
+- \[H\] add fonts to off repo installer [\#275](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/275)
+- Martial Arts techniques not triggering due to lack of Attack Vectors [\#177](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/177)
+- \[H\] Locked and Loaded has multiple items defined multiple times, with different stats [\#174](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/174)
+- \[H\] Installer - off repo [\#89](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/89)
+
+**Merged pull requests:**
+
+- 0.3.1 add goats mods to the installer [\#286](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/286) ([TheGoatGod](https://github.com/TheGoatGod))
+
+## [v0.3.0-herbert](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/tree/v0.3.0-herbert) (2026-11-18)
+
+[Full Changelog](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/compare/v0.2.1-beta-G-experimental...v0.3.0-herbert)
 
 **Fixed bugs:**
 
@@ -14,6 +34,7 @@
 - \[Experimental\] Main-lined content in mods removal [\#107](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/107)
 - \[Experimental\] Folder tags and mod category changes [\#91](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/91)
 - \[Documentation\] Mod cataloging ids [\#50](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/issues/50)
+- Update data and workshop mods for CDDA 0.H [\#281](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/281) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Tools\] update legacy json [\#264](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/264) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[Workflow\] delete toc and python workflows [\#259](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/259) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[H\] updates unleash the mods [\#255](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/255) ([TheGoatGod](https://github.com/TheGoatGod))
@@ -39,6 +60,7 @@
 
 **Merged pull requests:**
 
+- Update optional.h [\#285](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/285) ([TheGoatGod](https://github.com/TheGoatGod))
 - \[H\] update primitive survival [\#284](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/284) ([TheGoatGod](https://github.com/TheGoatGod))
 - Add CDDA JSON Editor v2.3 [\#283](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/283) ([TheGoatGod](https://github.com/TheGoatGod))
 - Add CDDA JSON Editor and Formatter v2.0 [\#282](https://github.com/GMC-Modding-Team/Community-Mod-Compilation-redux/pull/282) ([TheGoatGod](https://github.com/TheGoatGod))

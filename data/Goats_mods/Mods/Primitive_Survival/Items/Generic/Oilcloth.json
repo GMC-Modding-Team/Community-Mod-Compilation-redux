@@ -1,0 +1,25 @@
+[
+  {
+    "id": "drying_oilcloth_frame",
+    "type": "GENERIC",
+    "copy-from": "canvas",
+    "name": { "str": "drying oilcloth" },
+    "material": [ "oilcloth", "wood" ],
+    "use_action": {
+      "target": "oilcloth_canvas_dry",
+      "msg": "The paint has dried fully.",
+      "moves": 50,
+      "type": "delayed_transform",
+      "transform_age": 180000,
+      "not_ready_msg": "The paint isn't quite dry just yet."
+    }
+  },
+  {
+    "id": "oilcloth_canvas_dry",
+    "type": "GENERIC",
+    "copy-from": "canvas",
+    "name": { "str": "dried oilcloth" },
+    "material": [ "oilcloth" ],
+    "use_action": "DISASSEMBLE"
+  }
+]

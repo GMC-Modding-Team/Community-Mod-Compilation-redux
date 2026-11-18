@@ -25,64 +25,34 @@
     ]
   },
   {
-    "abstract": "bot_autoarmor_base",
-    "type": "recipe",
-    "category": "CC_ELECTRONIC",
-    "subcategory": "CSC_ELECTRONIC_OTHER",
-    "skill_used": "electronics",
-    "skills_required": [ [ "computer", 3 ] ],
-    "difficulty": 3,
-    "time": "25 s",
-    "reversible": true,
-    "autolearn": true,
-    "tools": [ [ [ "electrohack", 20 ] ] ],
-    "qualities": [ { "id": "SCREW", "level": 1 } ]
-  },
-  {
     "result": "bot_autoarmor_light",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "from_parts",
-    "copy-from": "bot_autoarmor_base",
-    "components": [ [ [ "power_armor_light", 1 ] ], [ [ "power_armor_frame", 1 ] ], [ [ "robopart_ai_core", 1 ] ] ]
+    "components": [ [ [ "power_armor_light", 1 ] ], [ [ "power_armor_frame", 1 ] ], [ [ "robopart_ai_core", 1 ] ] ],
+    "copy-from": "bot_autoarmor_base"
   },
   {
     "result": "bot_autoarmor_basic",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "from_parts",
-    "copy-from": "bot_autoarmor_base",
-    "components": [ [ [ "power_armor_basic", 1 ] ], [ [ "power_armor_frame", 1 ] ], [ [ "robopart_ai_core", 1 ] ] ]
+    "components": [ [ [ "power_armor_basic", 1 ] ], [ [ "power_armor_frame", 1 ] ], [ [ "robopart_ai_core", 1 ] ] ],
+    "copy-from": "bot_autoarmor_base"
   },
   {
     "result": "bot_autoarmor_heavy",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "from_parts",
-    "copy-from": "bot_autoarmor_base",
-    "components": [ [ [ "power_armor_heavy", 1 ] ], [ [ "power_armor_frame", 1 ] ], [ [ "robopart_ai_core", 1 ] ] ]
-  },
-  {
-    "abstract": "bot_autoarmor_repair",
-    "type": "recipe",
-    "category": "CC_ELECTRONIC",
-    "subcategory": "CSC_ELECTRONIC_OTHER",
-    "skill_used": "electronics",
-    "skills_required": [ [ "mechanics", 5 ], [ "computer", 4 ] ],
-    "difficulty": 6,
-    "time": "250 s",
-    "reversible": false,
-    "autolearn": true,
-    "tools": [ [ [ "electrohack", 20 ] ] ],
-    "using": [ [ "soldering_standard", 20 ], [ "welding_standard", 5 ] ],
-    "qualities": [ { "id": "SCREW", "level": 1 }, { "id": "WRENCH", "level": 1 } ]
+    "components": [ [ [ "power_armor_heavy", 1 ] ], [ [ "power_armor_frame", 1 ] ], [ [ "robopart_ai_core", 1 ] ] ],
+    "copy-from": "bot_autoarmor_base"
   },
   {
     "result": "bot_autoarmor_light",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "repair",
-    "copy-from": "bot_autoarmor_base",
     "components": [
       [ [ "broken_autoarmor_light", 1 ] ],
       [ [ "e_scrap", 4 ] ],
@@ -91,14 +61,14 @@
       [ [ "cable", 10 ] ],
       [ [ "alloy_plate", 1 ] ],
       [ [ "scrap", 5 ] ]
-    ]
+    ],
+    "copy-from": "bot_autoarmor_base"
   },
   {
     "result": "bot_autoarmor_basic",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "repair",
-    "copy-from": "bot_autoarmor_repair",
     "components": [
       [ [ "broken_autoarmor_basic", 1 ] ],
       [ [ "e_scrap", 4 ] ],
@@ -107,14 +77,14 @@
       [ [ "cable", 10 ] ],
       [ [ "alloy_plate", 1 ] ],
       [ [ "scrap", 5 ] ]
-    ]
+    ],
+    "copy-from": "bot_autoarmor_repair"
   },
   {
     "result": "bot_autoarmor_heavy",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "repair",
-    "copy-from": "bot_autoarmor_repair",
     "components": [
       [ [ "broken_autoarmor_heavy", 1 ] ],
       [ [ "e_scrap", 4 ] ],
@@ -123,13 +93,13 @@
       [ [ "cable", 10 ] ],
       [ [ "alloy_plate", 2 ] ],
       [ [ "scrap", 5 ] ]
-    ]
+    ],
+    "copy-from": "bot_autoarmor_repair"
   },
   {
     "result": "bot_light_hack",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
-    "copy-from": "bot_hack_base",
     "book_learn": [ [ "recipe_lab_elec", 3 ], [ "mag_robotics", 3 ], [ "textbook_robots", 3 ] ],
     "components": [
       [ [ "bot_manhack", 1 ], [ "broken_manhack", 1 ], [ "broken_light_hack", 1 ] ],
@@ -137,13 +107,13 @@
       [ [ "processor", 1 ] ],
       [ [ "power_supply", 1 ] ],
       [ [ "e_scrap", 1 ] ]
-    ]
+    ],
+    "copy-from": "bot_hack_base"
   },
   {
     "result": "bot_distract_hack",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
-    "copy-from": "bot_hack_base",
     "book_learn": [ [ "recipe_lab_elec", 3 ], [ "mag_robotics", 3 ], [ "textbook_robots", 3 ] ],
     "components": [
       [ [ "bot_manhack", 1 ], [ "broken_manhack", 1 ] ],
@@ -153,13 +123,13 @@
       [ [ "processor", 1 ] ],
       [ [ "power_supply", 1 ] ],
       [ [ "e_scrap", 1 ] ]
-    ]
+    ],
+    "copy-from": "bot_hack_base"
   },
   {
     "result": "bot_arson_hack",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
-    "copy-from": "bot_hack_base",
     "book_learn": [ [ "recipe_lab_elec", 3 ], [ "mag_robotics", 3 ], [ "textbook_robots", 3 ] ],
     "components": [
       [ [ "bot_manhack", 1 ], [ "broken_manhack", 1 ] ],
@@ -169,13 +139,13 @@
       [ [ "processor", 1 ] ],
       [ [ "power_supply", 1 ] ],
       [ [ "e_scrap", 1 ] ]
-    ]
+    ],
+    "copy-from": "bot_hack_base"
   },
   {
     "result": "bot_spore_hack",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
-    "copy-from": "bot_hack_base",
     "components": [
       [ [ "bot_manhack", 1 ], [ "broken_spore_hack", 1 ], [ "broken_manhack", 1 ] ],
       [ [ "veggy_tainted", 5 ] ],
@@ -183,64 +153,22 @@
       [ [ "processor", 1 ] ],
       [ [ "power_supply", 1 ] ],
       [ [ "e_scrap", 1 ] ]
-    ]
-  },
-  {
-    "result": "bot_turret_water",
-    "type": "recipe",
-    "activity_level": "LIGHT_EXERCISE",
-    "copy-from": "bot_turret_base",
-    "skills_required": [ [ "mechanics", 2 ], [ "computer", 3 ] ],
-    "difficulty": 5,
-    "time": "250 s",
-    "reversible": true,
-    "book_learn": [ [ "recipe_lab_elec", 5 ], [ "textbook_robots", 6 ] ],
-    "using": [ [ "soldering_standard", 20 ], [ "welding_standard", 5 ] ],
-    "qualities": [ { "id": "SCREW", "level": 1 } ],
-    "components": [
-      [ [ "bot_turret_disarmed", 1 ] ],
-      [ [ "watercannon", 1 ] ],
-      [ [ "hose", 3 ] ],
-      [ [ "metal_tank_little", 4 ] ],
-      [ [ "motor_micro", 2 ] ]
-    ]
-  },
-  {
-    "abstract": "bot_eyebot_base",
-    "type": "recipe",
-    "category": "CC_ELECTRONIC",
-    "subcategory": "CSC_ELECTRONIC_OTHER",
-    "skill_used": "electronics",
-    "skills_required": [ [ "mechanics", 4 ], [ "computer", 5 ] ],
-    "difficulty": 6,
-    "time": "250 s",
-    "reversible": false,
-    "book_learn": [ [ "recipe_lab_elec", 6 ], [ "textbook_robots", 7 ] ],
-    "tools": [ [ [ "electrohack", 20 ] ] ],
-    "using": [ [ "soldering_standard", 20 ] ],
-    "qualities": [ { "id": "SCREW", "level": 1 }, { "id": "WRENCH", "level": 1 } ]
+    ],
+    "copy-from": "bot_hack_base"
   },
   {
     "result": "bot_eyebot_heater",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "from_parts",
-    "copy-from": "bot_eyebot_base",
-    "components": [
-      [ [ "broken_eyebot_disarmed", 1 ] ],
-      [ [ "robopart_microreactor", 1 ] ],
-      [ [ "element", 12 ] ],
-      [ [ "wire", 4 ] ],
-      [ [ "cable", 4 ] ],
-      [ [ "scrap", 4 ] ]
-    ]
+    "components": [ [ [ "element", 12 ] ], [ [ "wire", 4 ] ], [ [ "cable", 4 ] ], [ [ "scrap", 4 ] ] ],
+    "copy-from": "bot_eyebot_base"
   },
   {
     "result": "bot_eyebot_heater",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "repair",
-    "copy-from": "bot_eyebot_base",
     "components": [
       [ [ "broken_eyebot_heater", 1 ] ],
       [ [ "element", 2 ] ],
@@ -251,29 +179,22 @@
       [ [ "power_supply", 1 ] ],
       [ [ "e_scrap", 1 ] ],
       [ [ "scrap", 2 ] ]
-    ]
+    ],
+    "copy-from": "bot_eyebot_base"
   },
   {
     "result": "bot_eyebot_furnace",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "from_parts",
-    "copy-from": "bot_eyebot_base",
-    "components": [
-      [ [ "broken_eyebot_disarmed", 1 ] ],
-      [ [ "robopart_microreactor", 2 ] ],
-      [ [ "element", 12 ] ],
-      [ [ "wire", 4 ] ],
-      [ [ "cable", 4 ] ],
-      [ [ "scrap", 4 ] ]
-    ]
+    "components": [ [ [ "element", 12 ] ], [ [ "wire", 4 ] ], [ [ "cable", 4 ] ], [ [ "scrap", 4 ] ] ],
+    "copy-from": "bot_eyebot_base"
   },
   {
     "result": "bot_eyebot_furnace",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "repair",
-    "copy-from": "bot_eyebot_base",
     "components": [
       [ [ "broken_eyebot_furnace", 1 ] ],
       [ [ "element", 4 ] ],
@@ -284,29 +205,22 @@
       [ [ "power_supply", 1 ] ],
       [ [ "e_scrap", 1 ] ],
       [ [ "scrap", 2 ] ]
-    ]
+    ],
+    "copy-from": "bot_eyebot_base"
   },
   {
     "result": "bot_eyebot_burn",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "from_parts",
-    "copy-from": "bot_eyebot_base",
-    "components": [
-      [ [ "broken_eyebot_disarmed", 1 ] ],
-      [ [ "robopart_microreactor", 1 ] ],
-      [ [ "robopart_laser", 1 ] ],
-      [ [ "lens", 3 ] ],
-      [ [ "cable", 4 ] ],
-      [ [ "scrap", 4 ] ]
-    ]
+    "components": [ [ [ "lens", 3 ] ], [ [ "cable", 4 ] ], [ [ "scrap", 4 ] ] ],
+    "copy-from": "bot_eyebot_base"
   },
   {
     "result": "bot_eyebot_burn",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "repair",
-    "copy-from": "bot_eyebot_base",
     "components": [
       [ [ "broken_eyebot_burn", 1 ] ],
       [ [ "lens", 4 ] ],
@@ -317,34 +231,18 @@
       [ [ "power_supply", 1 ] ],
       [ [ "e_scrap", 1 ] ],
       [ [ "scrap", 2 ] ]
-    ]
-  },
-  {
-    "abstract": "bot_utilibot_base",
-    "type": "recipe",
-    "category": "CC_ELECTRONIC",
-    "subcategory": "CSC_ELECTRONIC_OTHER",
-    "skill_used": "electronics",
-    "skills_required": [ [ "mechanics", 4 ], [ "computer", 5 ] ],
-    "difficulty": 6,
-    "time": "250 s",
-    "reversible": false,
-    "book_learn": [ [ "recipe_lab_elec", 6 ], [ "textbook_robots", 7 ] ],
-    "tools": [ [ [ "electrohack", 20 ] ] ],
-    "using": [ [ "soldering_standard", 20 ], [ "welding_standard", 5 ] ],
-    "qualities": [ { "id": "SCREW", "level": 1 }, { "id": "WRENCH", "level": 1 } ]
+    ],
+    "copy-from": "bot_eyebot_base"
   },
   {
     "result": "bot_utilibot_blob",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "from_parts",
-    "copy-from": "bot_utilibot_base",
     "skills_required": [ [ "mechanics", 4 ], [ "cooking", 7 ], [ "computer", 6 ] ],
     "book_learn": [ [ "textbook_robots", 9 ] ],
     "components": [
       [ [ "broken_utilibot", 1 ] ],
-      [ [ "robopart_microreactor", 1 ] ],
       [ [ "metal_tank_little", 4 ] ],
       [ [ "hose", 4 ] ],
       [ [ "element", 12 ] ],
@@ -355,14 +253,14 @@
       [ [ "power_supply", 2 ] ],
       [ [ "e_scrap", 3 ] ],
       [ [ "scrap", 2 ] ]
-    ]
+    ],
+    "copy-from": "bot_utilibot_base"
   },
   {
     "result": "bot_utilibot_blob",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "repair",
-    "copy-from": "bot_utilibot_base",
     "components": [
       [ [ "broken_utilibot_blob", 1 ] ],
       [ [ "slime_scrap", 10 ] ],
@@ -373,20 +271,19 @@
       [ [ "power_supply", 1 ] ],
       [ [ "e_scrap", 1 ] ],
       [ [ "scrap", 2 ] ]
-    ]
+    ],
+    "copy-from": "bot_utilibot_base"
   },
   {
     "result": "bot_utilibot_slimespring",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "from_parts",
-    "copy-from": "bot_utilibot_base",
     "difficulty": 7,
     "skills_required": [ [ "mechanics", 4 ], [ "cooking", 8 ], [ "computer", 6 ] ],
     "book_learn": [ [ "textbook_robots", 9 ] ],
     "components": [
       [ [ "broken_utilibot", 1 ] ],
-      [ [ "robopart_microreactor", 1 ] ],
       [ [ "metal_tank_little", 4 ] ],
       [ [ "hose", 4 ] ],
       [ [ "element", 12 ] ],
@@ -397,14 +294,14 @@
       [ [ "power_supply", 2 ] ],
       [ [ "e_scrap", 3 ] ],
       [ [ "scrap", 2 ] ]
-    ]
+    ],
+    "copy-from": "bot_utilibot_base"
   },
   {
     "result": "bot_utilibot_slimespring",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "repair",
-    "copy-from": "bot_utilibot_base",
     "skills_required": [ [ "mechanics", 4 ], [ "computer", 6 ] ],
     "book_learn": [ [ "textbook_robots", 9 ] ],
     "difficulty": 9,
@@ -418,17 +315,16 @@
       [ [ "power_supply", 1 ] ],
       [ [ "e_scrap", 1 ] ],
       [ [ "scrap", 2 ] ]
-    ]
+    ],
+    "copy-from": "bot_utilibot_base"
   },
   {
     "result": "bot_utilibot_digester",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "from_parts",
-    "copy-from": "bot_utilibot_base",
     "components": [
       [ [ "broken_utilibot", 1 ] ],
-      [ [ "robopart_microreactor", 1 ] ],
       [ [ "metal_tank_little", 4 ] ],
       [ [ "hose", 4 ] ],
       [ [ "element", 4 ] ],
@@ -439,14 +335,14 @@
       [ [ "power_supply", 2 ] ],
       [ [ "e_scrap", 3 ] ],
       [ [ "scrap", 2 ] ]
-    ]
+    ],
+    "copy-from": "bot_utilibot_base"
   },
   {
     "result": "bot_utilibot_digester",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "repair",
-    "copy-from": "bot_utilibot_base",
     "components": [
       [ [ "broken_utilibot_digester", 1 ] ],
       [ [ "chem_nitric_acid", 10 ] ],
@@ -457,17 +353,16 @@
       [ [ "power_supply", 1 ] ],
       [ [ "e_scrap", 1 ] ],
       [ [ "scrap", 2 ] ]
-    ]
+    ],
+    "copy-from": "bot_utilibot_base"
   },
   {
     "result": "bot_utilibot_beehive",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "from_parts",
-    "copy-from": "bot_utilibot_base",
     "components": [
       [ [ "broken_utilibot", 1 ] ],
-      [ [ "robopart_microreactor", 1 ] ],
       [ [ "metal_tank_little", 4 ] ],
       [ [ "stick", 8 ] ],
       [ [ "crossbow", 1 ] ],
@@ -478,14 +373,14 @@
       [ [ "power_supply", 2 ] ],
       [ [ "e_scrap", 3 ] ],
       [ [ "scrap", 2 ] ]
-    ]
+    ],
+    "copy-from": "bot_utilibot_base"
   },
   {
     "result": "bot_utilibot_beehive",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "repair",
-    "copy-from": "bot_utilibot_base",
     "components": [
       [ [ "broken_utilibot_beehive", 1 ] ],
       [ [ "stick", 4 ] ],
@@ -496,29 +391,14 @@
       [ [ "power_supply", 1 ] ],
       [ [ "e_scrap", 1 ] ],
       [ [ "scrap", 2 ] ]
-    ]
-  },
-  {
-    "abstract": "bot_medibot_base",
-    "type": "recipe",
-    "category": "CC_ELECTRONIC",
-    "subcategory": "CSC_ELECTRONIC_OTHER",
-    "skill_used": "electronics",
-    "skills_required": [ [ "firstaid", 4 ], [ "computer", 5 ] ],
-    "difficulty": 6,
-    "time": "250 s",
-    "reversible": false,
-    "book_learn": [ [ "recipe_lab_elec", 6 ], [ "textbook_robots", 7 ] ],
-    "tools": [ [ [ "electrohack", 20 ] ] ],
-    "using": [ [ "soldering_standard", 20 ], [ "welding_standard", 5 ] ],
-    "qualities": [ { "id": "SCREW", "level": 1 }, { "id": "WRENCH", "level": 1 } ]
+    ],
+    "copy-from": "bot_utilibot_base"
   },
   {
     "result": "bot_medibot_assassin",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "from_parts",
-    "copy-from": "bot_medibot_base",
     "components": [
       [ [ "broken_medibot_disarmed", 1 ] ],
       [ [ "robopart_pharma", 1 ] ],
@@ -530,14 +410,14 @@
       [ [ "power_supply", 2 ] ],
       [ [ "e_scrap", 3 ] ],
       [ [ "scrap", 2 ] ]
-    ]
+    ],
+    "copy-from": "bot_medibot_base"
   },
   {
     "result": "bot_medibot_assassin",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "repair",
-    "copy-from": "bot_medibot_base",
     "components": [
       [ [ "broken_medibot_assassin", 1 ] ],
       [ [ "RAM", 1 ] ],
@@ -547,17 +427,16 @@
       [ [ "power_supply", 1 ] ],
       [ [ "e_scrap", 1 ] ],
       [ [ "scrap", 2 ] ]
-    ]
+    ],
+    "copy-from": "bot_medibot_base"
   },
   {
     "result": "bot_medibot_elixir",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "from_parts",
-    "copy-from": "bot_medibot_base",
     "components": [
       [ [ "broken_medibot_disarmed", 1 ] ],
-      [ [ "robopart_microreactor", 1 ] ],
       [ [ "robopart_pharma", 1 ] ],
       [ [ "metal_tank_little", 4 ] ],
       [ [ "hose", 4 ] ],
@@ -569,14 +448,14 @@
       [ [ "power_supply", 2 ] ],
       [ [ "e_scrap", 3 ] ],
       [ [ "scrap", 2 ] ]
-    ]
+    ],
+    "copy-from": "bot_medibot_base"
   },
   {
     "result": "bot_medibot_elixir",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "repair",
-    "copy-from": "bot_medibot_base",
     "components": [
       [ [ "broken_medibot_elixir", 1 ] ],
       [ [ "RAM", 1 ] ],
@@ -586,14 +465,14 @@
       [ [ "power_supply", 1 ] ],
       [ [ "e_scrap", 1 ] ],
       [ [ "scrap", 2 ] ]
-    ]
+    ],
+    "copy-from": "bot_medibot_base"
   },
   {
     "result": "bot_medibot_party",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "from_parts",
-    "copy-from": "bot_medibot_base",
     "components": [
       [ [ "broken_medibot_disarmed", 1 ] ],
       [ [ "robopart_pharma", 1 ] ],
@@ -605,14 +484,14 @@
       [ [ "power_supply", 2 ] ],
       [ [ "e_scrap", 3 ] ],
       [ [ "scrap", 2 ] ]
-    ]
+    ],
+    "copy-from": "bot_medibot_base"
   },
   {
     "result": "bot_medibot_party",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "repair",
-    "copy-from": "bot_medibot_base",
     "components": [
       [ [ "broken_medibot_party", 1 ] ],
       [ [ "RAM", 1 ] ],
@@ -622,46 +501,29 @@
       [ [ "power_supply", 1 ] ],
       [ [ "e_scrap", 1 ] ],
       [ [ "scrap", 2 ] ]
-    ]
-  },
-  {
-    "abstract": "bot_skitterbot_base",
-    "type": "recipe",
-    "category": "CC_ELECTRONIC",
-    "subcategory": "CSC_ELECTRONIC_OTHER",
-    "skill_used": "electronics",
-    "skills_required": [ [ "mechanics", 4 ], [ "computer", 5 ] ],
-    "difficulty": 6,
-    "time": "250 s",
-    "reversible": false,
-    "book_learn": [ [ "mag_robotics", 3 ], [ "recipe_lab_elec", 6 ], [ "textbook_robots", 7 ] ],
-    "tools": [ [ [ "electrohack", 20 ] ] ],
-    "using": [ [ "soldering_standard", 20 ] ],
-    "qualities": [ { "id": "SCREW", "level": 1 }, { "id": "WRENCH", "level": 1 } ]
+    ],
+    "copy-from": "bot_medibot_base"
   },
   {
     "result": "bot_skitterbot_rat",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "from_parts",
-    "copy-from": "bot_skitterbot_base",
     "components": [
-      [ [ "broken_skitterbot_disarmed", 1 ] ],
-      [ [ "robopart_tazer", 1 ] ],
       [ [ "RAM", 1 ] ],
       [ [ "processor", 1 ] ],
       [ [ "cable", 1 ] ],
       [ [ "power_supply", 1 ] ],
       [ [ "e_scrap", 3 ] ],
       [ [ "scrap", 2 ] ]
-    ]
+    ],
+    "copy-from": "bot_skitterbot_base"
   },
   {
     "result": "bot_skitterbot_rat",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "repair",
-    "copy-from": "bot_skitterbot_base",
     "components": [
       [ [ "broken_skitterbot_rat", 1 ] ],
       [ [ "RAM", 1 ] ],
@@ -671,16 +533,15 @@
       [ [ "power_supply", 1 ] ],
       [ [ "e_scrap", 1 ] ],
       [ [ "scrap", 2 ] ]
-    ]
+    ],
+    "copy-from": "bot_skitterbot_base"
   },
   {
     "result": "bot_skitterbot_grab",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "from_parts",
-    "copy-from": "bot_skitterbot_base",
     "components": [
-      [ [ "broken_skitterbot_disarmed", 1 ] ],
       [ [ "clockworks", 5 ] ],
       [ [ "motor_micro", 2 ] ],
       [ [ "RAM", 1 ] ],
@@ -689,14 +550,14 @@
       [ [ "power_supply", 1 ] ],
       [ [ "e_scrap", 3 ] ],
       [ [ "scrap", 2 ] ]
-    ]
+    ],
+    "copy-from": "bot_skitterbot_base"
   },
   {
     "result": "bot_skitterbot_grab",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "repair",
-    "copy-from": "bot_skitterbot_base",
     "components": [
       [ [ "broken_skitterbot_grab", 1 ] ],
       [ [ "RAM", 1 ] ],
@@ -706,17 +567,15 @@
       [ [ "power_supply", 1 ] ],
       [ [ "e_scrap", 1 ] ],
       [ [ "scrap", 2 ] ]
-    ]
+    ],
+    "copy-from": "bot_skitterbot_base"
   },
   {
     "result": "bot_skitterbot_hunter",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "from_parts",
-    "copy-from": "bot_skitterbot_base",
     "components": [
-      [ [ "broken_skitterbot_disarmed", 1 ] ],
-      [ [ "robopart_8x40mm", 1 ] ],
       [ [ "lens", 2 ] ],
       [ [ "RAM", 1 ] ],
       [ [ "processor", 1 ] ],
@@ -724,14 +583,14 @@
       [ [ "power_supply", 1 ] ],
       [ [ "e_scrap", 3 ] ],
       [ [ "scrap", 2 ] ]
-    ]
+    ],
+    "copy-from": "bot_skitterbot_base"
   },
   {
     "result": "bot_skitterbot_hunter",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "repair",
-    "copy-from": "bot_skitterbot_base",
     "components": [
       [ [ "broken_skitterbot_hunter", 1 ] ],
       [ [ "RAM", 1 ] ],
@@ -741,29 +600,14 @@
       [ [ "power_supply", 1 ] ],
       [ [ "e_scrap", 1 ] ],
       [ [ "scrap", 2 ] ]
-    ]
-  },
-  {
-    "abstract": "bot_cyborg_base",
-    "type": "recipe",
-    "category": "CC_ELECTRONIC",
-    "subcategory": "CSC_ELECTRONIC_OTHER",
-    "skill_used": "electronics",
-    "skills_required": [ [ "firstaid", 6 ], [ "computer", 5 ] ],
-    "difficulty": 8,
-    "time": "2500 s",
-    "reversible": false,
-    "book_learn": [ [ "recipe_lab_elec", 6 ], [ "textbook_robots", 7 ] ],
-    "tools": [ [ [ "electrohack", 20 ] ] ],
-    "using": [ [ "soldering_standard", 20 ], [ "welding_standard", 5 ] ],
-    "qualities": [ { "id": "SCREW", "level": 1 }, { "id": "CUT_FINE", "level": 3 }, { "id": "WRENCH", "level": 1 } ]
+    ],
+    "copy-from": "bot_skitterbot_base"
   },
   {
     "result": "bot_cyborg_necro",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "from_parts",
-    "copy-from": "bot_cyborg_base",
     "components": [
       [ [ "broken_broken_cyborg", 1 ] ],
       [ [ "necro_head", 1 ] ],
@@ -774,14 +618,14 @@
       [ [ "e_scrap", 4 ] ],
       [ [ "plastic_chunk", 4 ] ],
       [ [ "scrap", 4 ] ]
-    ]
+    ],
+    "copy-from": "bot_cyborg_base"
   },
   {
     "result": "bot_cyborg_necro",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "repair",
-    "copy-from": "bot_cyborg_base",
     "components": [
       [ [ "broken_cyborg_necro", 1 ] ],
       [ [ "plut_cell", 4 ] ],
@@ -791,32 +635,16 @@
       [ [ "power_supply", 1 ] ],
       [ [ "e_scrap", 1 ] ],
       [ [ "scrap", 2 ] ]
-    ]
-  },
-  {
-    "abstract": "bot_defbot_base",
-    "type": "recipe",
-    "category": "CC_ELECTRONIC",
-    "subcategory": "CSC_ELECTRONIC_OTHER",
-    "skill_used": "electronics",
-    "skills_required": [ [ "mechanics", 4 ], [ "computer", 5 ] ],
-    "difficulty": 6,
-    "time": "250 s",
-    "reversible": false,
-    "book_learn": [ [ "recipe_lab_elec", 6 ], [ "textbook_robots", 7 ] ],
-    "tools": [ [ [ "electrohack", 20 ] ] ],
-    "using": [ [ "soldering_standard", 20 ], [ "welding_standard", 5 ] ],
-    "qualities": [ { "id": "SCREW", "level": 1 }, { "id": "WRENCH", "level": 1 } ]
+    ],
+    "copy-from": "bot_cyborg_base"
   },
   {
     "result": "bot_defbot_cowboy",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "from_parts",
-    "copy-from": "bot_defbot_base",
     "components": [
       [ [ "broken_defbot_disarmed", 1 ] ],
-      [ [ "robopart_shot", 1 ] ],
       [ [ "circsaw_off", 1 ] ],
       [ [ "cowboy_hat", 1 ] ],
       [ [ "RAM", 2 ] ],
@@ -825,14 +653,14 @@
       [ [ "power_supply", 3 ] ],
       [ [ "e_scrap", 3 ] ],
       [ [ "scrap", 2 ] ]
-    ]
+    ],
+    "copy-from": "bot_defbot_base"
   },
   {
     "result": "bot_defbot_cowboy",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "repair",
-    "copy-from": "bot_defbot_base",
     "components": [
       [ [ "broken_defbot_cowboy", 1 ] ],
       [ [ "plut_cell", 4 ] ],
@@ -842,17 +670,16 @@
       [ [ "power_supply", 1 ] ],
       [ [ "e_scrap", 2 ] ],
       [ [ "scrap", 4 ] ]
-    ]
+    ],
+    "copy-from": "bot_defbot_base"
   },
   {
     "result": "bot_defbot_samurai",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "from_parts",
-    "copy-from": "bot_defbot_base",
     "components": [
       [ [ "broken_defbot_disarmed", 1 ] ],
-      [ [ "robopart_microreactor", 1 ] ],
       [ [ "blade", 2 ] ],
       [ [ "wire_barbed", 5 ] ],
       [ [ "small_storage_battery", 2 ] ],
@@ -862,14 +689,14 @@
       [ [ "power_supply", 3 ] ],
       [ [ "e_scrap", 3 ] ],
       [ [ "scrap", 2 ] ]
-    ]
+    ],
+    "copy-from": "bot_defbot_base"
   },
   {
     "result": "bot_defbot_samurai",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "repair",
-    "copy-from": "bot_defbot_base",
     "components": [
       [ [ "broken_defbot_samurai", 1 ] ],
       [ [ "wire_barbed", 3 ] ],
@@ -881,14 +708,14 @@
       [ [ "power_supply", 1 ] ],
       [ [ "e_scrap", 2 ] ],
       [ [ "scrap", 6 ] ]
-    ]
+    ],
+    "copy-from": "bot_defbot_base"
   },
   {
     "result": "bot_defbot_paladin",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "from_parts",
-    "copy-from": "bot_defbot_base",
     "components": [
       [ [ "broken_defbot_disarmed", 1 ] ],
       [ [ "flamethrower", 1 ] ],
@@ -901,14 +728,14 @@
       [ [ "power_supply", 3 ] ],
       [ [ "e_scrap", 3 ] ],
       [ [ "scrap", 2 ] ]
-    ]
+    ],
+    "copy-from": "bot_defbot_base"
   },
   {
     "result": "bot_defbot_paladin",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "repair",
-    "copy-from": "bot_defbot_base",
     "components": [
       [ [ "broken_defbot_paladin", 1 ] ],
       [ [ "plut_cell", 4 ] ],
@@ -918,46 +745,30 @@
       [ [ "power_supply", 1 ] ],
       [ [ "e_scrap", 2 ] ],
       [ [ "scrap", 4 ] ]
-    ]
-  },
-  {
-    "abstract": "bot_milbot_base",
-    "type": "recipe",
-    "category": "CC_ELECTRONIC",
-    "subcategory": "CSC_ELECTRONIC_OTHER",
-    "skill_used": "electronics",
-    "skills_required": [ [ "mechanics", 4 ], [ "computer", 5 ] ],
-    "difficulty": 6,
-    "time": "250 s",
-    "reversible": false,
-    "book_learn": [ [ "recipe_lab_elec", 6 ], [ "textbook_robots", 7 ] ],
-    "tools": [ [ [ "electrohack", 20 ] ] ],
-    "using": [ [ "soldering_standard", 20 ], [ "welding_standard", 5 ] ],
-    "qualities": [ { "id": "SCREW", "level": 1 }, { "id": "WRENCH", "level": 1 } ]
+    ],
+    "copy-from": "bot_defbot_base"
   },
   {
     "result": "bot_milbot_gaurdian",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "from_parts",
-    "copy-from": "bot_milbot_base",
     "components": [
       [ [ "broken_milbot_disarmed", 1 ] ],
-      [ [ "robopart_9mm", 2 ] ],
       [ [ "RAM", 2 ] ],
       [ [ "processor", 2 ] ],
       [ [ "cable", 1 ] ],
       [ [ "power_supply", 3 ] ],
       [ [ "e_scrap", 3 ] ],
       [ [ "scrap", 2 ] ]
-    ]
+    ],
+    "copy-from": "bot_milbot_base"
   },
   {
     "result": "bot_milbot_gaurdian",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "repair",
-    "copy-from": "bot_milbot_base",
     "components": [
       [ [ "broken_milbot_gaurdian", 1 ] ],
       [ [ "plut_cell", 4 ] ],
@@ -967,18 +778,17 @@
       [ [ "power_supply", 1 ] ],
       [ [ "e_scrap", 2 ] ],
       [ [ "scrap", 4 ] ]
-    ]
+    ],
+    "copy-from": "bot_milbot_base"
   },
   {
     "result": "bot_milbot_deluxe",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "from_parts",
-    "copy-from": "bot_milbot_base",
     "skills_required": [ [ "fabrication", 6 ], [ "mechanics", 4 ], [ "computer", 5 ] ],
     "components": [
       [ [ "broken_milbot_disarmed", 1 ] ],
-      [ [ "robopart_9mm", 2 ] ],
       [ [ "gold_small", 200 ] ],
       [ [ "silver_small", 100 ] ],
       [ [ "RAM", 2 ] ],
@@ -987,14 +797,14 @@
       [ [ "power_supply", 3 ] ],
       [ [ "e_scrap", 3 ] ],
       [ [ "scrap", 2 ] ]
-    ]
+    ],
+    "copy-from": "bot_milbot_base"
   },
   {
     "result": "bot_milbot_deluxe",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "repair",
-    "copy-from": "bot_milbot_base",
     "components": [
       [ [ "broken_milbot_deluxe", 1 ] ],
       [ [ "plut_cell", 4 ] ],
@@ -1005,31 +815,30 @@
       [ [ "power_supply", 1 ] ],
       [ [ "e_scrap", 2 ] ],
       [ [ "scrap", 4 ] ]
-    ]
+    ],
+    "copy-from": "bot_milbot_base"
   },
   {
     "result": "bot_milbot_protector",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "from_parts",
-    "copy-from": "bot_milbot_base",
     "components": [
       [ [ "broken_milbot_disarmed", 1 ] ],
-      [ [ "robopart_556", 1 ] ],
       [ [ "RAM", 2 ] ],
       [ [ "processor", 2 ] ],
       [ [ "cable", 1 ] ],
       [ [ "power_supply", 3 ] ],
       [ [ "e_scrap", 3 ] ],
       [ [ "scrap", 2 ] ]
-    ]
+    ],
+    "copy-from": "bot_milbot_base"
   },
   {
     "result": "bot_milbot_protector",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "repair",
-    "copy-from": "bot_milbot_base",
     "components": [
       [ [ "broken_milbot_protector", 1 ] ],
       [ [ "plut_cell", 4 ] ],
@@ -1039,31 +848,30 @@
       [ [ "power_supply", 1 ] ],
       [ [ "e_scrap", 2 ] ],
       [ [ "scrap", 4 ] ]
-    ]
+    ],
+    "copy-from": "bot_milbot_base"
   },
   {
     "result": "bot_milbot_defender",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "from_parts",
-    "copy-from": "bot_milbot_base",
     "components": [
       [ [ "broken_milbot_disarmed", 1 ] ],
-      [ [ "robopart_50bmg", 1 ] ],
       [ [ "RAM", 2 ] ],
       [ [ "processor", 2 ] ],
       [ [ "cable", 1 ] ],
       [ [ "power_supply", 3 ] ],
       [ [ "e_scrap", 3 ] ],
       [ [ "scrap", 2 ] ]
-    ]
+    ],
+    "copy-from": "bot_milbot_base"
   },
   {
     "result": "bot_milbot_defender",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "repair",
-    "copy-from": "bot_milbot_base",
     "components": [
       [ [ "broken_milbot_gaurdian", 1 ] ],
       [ [ "plut_cell", 4 ] ],
@@ -1073,33 +881,16 @@
       [ [ "power_supply", 1 ] ],
       [ [ "e_scrap", 2 ] ],
       [ [ "scrap", 4 ] ]
-    ]
-  },
-  {
-    "abstract": "bot_advbot_base",
-    "type": "recipe",
-    "category": "CC_ELECTRONIC",
-    "subcategory": "CSC_ELECTRONIC_OTHER",
-    "skill_used": "electronics",
-    "skills_required": [ [ "mechanics", 4 ], [ "computer", 5 ] ],
-    "difficulty": 6,
-    "time": "250 s",
-    "reversible": false,
-    "book_learn": [ [ "recipe_lab_elec", 6 ], [ "textbook_robots", 7 ] ],
-    "tools": [ [ [ "electrohack", 50 ] ] ],
-    "using": [ [ "soldering_standard", 20 ], [ "welding_standard", 5 ] ],
-    "qualities": [ { "id": "SCREW", "level": 1 }, { "id": "WRENCH", "level": 1 } ]
+    ],
+    "copy-from": "bot_milbot_base"
   },
   {
     "result": "bot_advbot_glitter",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "from_parts",
-    "copy-from": "bot_advbot_base",
     "components": [
       [ [ "broken_advbot_disarmed", 1 ] ],
-      [ [ "robopart_laser", 2 ] ],
-      [ [ "robopart_microreactor", 2 ] ],
       [ [ "small_storage_battery", 4 ] ],
       [ [ "lens", 4 ] ],
       [ [ "lightstrip_inactive", 8 ] ],
@@ -1109,14 +900,14 @@
       [ [ "power_supply", 3 ] ],
       [ [ "e_scrap", 3 ] ],
       [ [ "scrap", 2 ] ]
-    ]
+    ],
+    "copy-from": "bot_advbot_base"
   },
   {
     "result": "bot_advbot_glitter",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "repair",
-    "copy-from": "bot_advbot_base",
     "components": [
       [ [ "broken_advbot_glitter", 1 ] ],
       [ [ "plut_cell", 4 ] ],
@@ -1127,18 +918,16 @@
       [ [ "power_supply", 1 ] ],
       [ [ "e_scrap", 2 ] ],
       [ [ "scrap", 4 ] ]
-    ]
+    ],
+    "copy-from": "bot_advbot_base"
   },
   {
     "result": "bot_advbot_bitter",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "from_parts",
-    "copy-from": "bot_advbot_base",
     "components": [
       [ [ "broken_advbot_disarmed", 1 ] ],
-      [ [ "robopart_acid", 1 ] ],
-      [ [ "robopart_microreactor", 1 ] ],
       [ [ "metal_tank_little", 2 ] ],
       [ [ "hose", 4 ] ],
       [ [ "RAM", 2 ] ],
@@ -1147,14 +936,14 @@
       [ [ "power_supply", 3 ] ],
       [ [ "e_scrap", 3 ] ],
       [ [ "scrap", 2 ] ]
-    ]
+    ],
+    "copy-from": "bot_advbot_base"
   },
   {
     "result": "bot_advbot_bitter",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "repair",
-    "copy-from": "bot_advbot_base",
     "components": [
       [ [ "broken_advbot_bitter", 1 ] ],
       [ [ "plut_cell", 4 ] ],
@@ -1165,31 +954,15 @@
       [ [ "power_supply", 1 ] ],
       [ [ "e_scrap", 2 ] ],
       [ [ "scrap", 4 ] ]
-    ]
-  },
-  {
-    "abstract": "bot_chickenbot_base",
-    "type": "recipe",
-    "category": "CC_ELECTRONIC",
-    "subcategory": "CSC_ELECTRONIC_OTHER",
-    "skill_used": "electronics",
-    "skills_required": [ [ "mechanics", 4 ], [ "computer", 5 ] ],
-    "difficulty": 6,
-    "time": "250 s",
-    "reversible": false,
-    "book_learn": [ [ "recipe_lab_elec", 6 ], [ "textbook_robots", 7 ] ],
-    "tools": [ [ [ "electrohack", 50 ] ] ],
-    "using": [ [ "soldering_standard", 20 ], [ "welding_standard", 10 ] ],
-    "qualities": [ { "id": "SCREW", "level": 1 }, { "id": "WRENCH", "level": 1 } ]
+    ],
+    "copy-from": "bot_advbot_base"
   },
   {
     "result": "bot_chickenbot_horror",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "from_parts",
-    "copy-from": "bot_chickenbot_base",
     "components": [
-      [ [ "broken_chickenbot_disarmed", 1 ] ],
       [ [ "etched_skull", 6 ] ],
       [ [ "elec_chainsaw_off", 2 ] ],
       [ [ "spiked_plate", 2 ] ],
@@ -1200,14 +973,14 @@
       [ [ "power_supply", 3 ] ],
       [ [ "e_scrap", 3 ] ],
       [ [ "scrap", 2 ] ]
-    ]
+    ],
+    "copy-from": "bot_chickenbot_base"
   },
   {
     "result": "bot_chickenbot_horror",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "repair",
-    "copy-from": "bot_chickenbot_base",
     "components": [
       [ [ "broken_chickenbot_horror", 1 ] ],
       [ [ "etched_skull", 1 ] ],
@@ -1219,16 +992,15 @@
       [ [ "power_supply", 1 ] ],
       [ [ "e_scrap", 2 ] ],
       [ [ "scrap", 4 ] ]
-    ]
+    ],
+    "copy-from": "bot_chickenbot_base"
   },
   {
     "result": "bot_chickenbot_terror",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "from_parts",
-    "copy-from": "bot_chickenbot_base",
     "components": [
-      [ [ "broken_chickenbot_disarmed", 1 ] ],
       [ [ "etched_skull", 6 ] ],
       [ [ "motor_small", 2 ] ],
       [ [ "spiked_plate", 1 ] ],
@@ -1240,14 +1012,14 @@
       [ [ "power_supply", 3 ] ],
       [ [ "e_scrap", 3 ] ],
       [ [ "scrap", 2 ] ]
-    ]
+    ],
+    "copy-from": "bot_chickenbot_base"
   },
   {
     "result": "bot_chickenbot_terror",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "repair",
-    "copy-from": "bot_chickenbot_base",
     "components": [
       [ [ "broken_chickenbot_terror", 1 ] ],
       [ [ "etched_skull", 1 ] ],
@@ -1259,16 +1031,15 @@
       [ [ "power_supply", 1 ] ],
       [ [ "e_scrap", 2 ] ],
       [ [ "scrap", 4 ] ]
-    ]
+    ],
+    "copy-from": "bot_chickenbot_base"
   },
   {
     "result": "bot_chickenbot_nightmare",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "from_parts",
-    "copy-from": "bot_chickenbot_base",
     "components": [
-      [ [ "broken_chickenbot_disarmed", 1 ] ],
       [ [ "etched_skull", 6 ] ],
       [ [ "motor_small", 2 ] ],
       [ [ "grapnel", 4 ] ],
@@ -1281,14 +1052,14 @@
       [ [ "power_supply", 3 ] ],
       [ [ "e_scrap", 3 ] ],
       [ [ "scrap", 2 ] ]
-    ]
+    ],
+    "copy-from": "bot_chickenbot_base"
   },
   {
     "result": "bot_chickenbot_nightmare",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "repair",
-    "copy-from": "bot_chickenbot_base",
     "components": [
       [ [ "broken_chickenbot_nightmare", 1 ] ],
       [ [ "etched_skull", 1 ] ],
@@ -1300,31 +1071,15 @@
       [ [ "power_supply", 1 ] ],
       [ [ "e_scrap", 2 ] ],
       [ [ "scrap", 4 ] ]
-    ]
-  },
-  {
-    "abstract": "bot_tankbot_base",
-    "type": "recipe",
-    "category": "CC_ELECTRONIC",
-    "subcategory": "CSC_ELECTRONIC_OTHER",
-    "skill_used": "electronics",
-    "skills_required": [ [ "mechanics", 4 ], [ "computer", 5 ] ],
-    "difficulty": 6,
-    "time": "250 s",
-    "reversible": false,
-    "book_learn": [ [ "recipe_lab_elec", 6 ], [ "textbook_robots", 7 ] ],
-    "tools": [ [ [ "electrohack", 50 ] ] ],
-    "using": [ [ "soldering_standard", 20 ], [ "welding_standard", 10 ] ],
-    "qualities": [ { "id": "SCREW", "level": 1 }, { "id": "WRENCH", "level": 1 } ]
+    ],
+    "copy-from": "bot_chickenbot_base"
   },
   {
     "result": "bot_tankbot_king",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "from_parts",
-    "copy-from": "bot_tankbot_base",
     "components": [
-      [ [ "broken_tankbot_disarmed", 1 ] ],
       [ [ "motor", 2 ] ],
       [ [ "steel_plate", 6 ] ],
       [ [ "RAM", 2 ] ],
@@ -1333,14 +1088,14 @@
       [ [ "power_supply", 3 ] ],
       [ [ "e_scrap", 3 ] ],
       [ [ "scrap", 2 ] ]
-    ]
+    ],
+    "copy-from": "bot_tankbot_base"
   },
   {
     "result": "bot_tankbot_king",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "repair",
-    "copy-from": "bot_tankbot_base",
     "components": [
       [ [ "broken_tankbot_king", 1 ] ],
       [ [ "steel_plate", 2 ] ],
@@ -1351,17 +1106,15 @@
       [ [ "power_supply", 1 ] ],
       [ [ "e_scrap", 2 ] ],
       [ [ "scrap", 4 ] ]
-    ]
+    ],
+    "copy-from": "bot_tankbot_base"
   },
   {
     "result": "bot_tankbot_sultan",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "from_parts",
-    "copy-from": "bot_tankbot_base",
     "components": [
-      [ [ "broken_tankbot_disarmed", 1 ] ],
-      [ [ "robopart_microreactor", 1 ] ],
       [ [ "motor", 2 ] ],
       [ [ "steel_plate", 6 ] ],
       [ [ "RAM", 2 ] ],
@@ -1370,14 +1123,14 @@
       [ [ "power_supply", 3 ] ],
       [ [ "e_scrap", 3 ] ],
       [ [ "scrap", 2 ] ]
-    ]
+    ],
+    "copy-from": "bot_tankbot_base"
   },
   {
     "result": "bot_tankbot_sultan",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "repair",
-    "copy-from": "bot_tankbot_base",
     "components": [
       [ [ "broken_tankbot_sultan", 1 ] ],
       [ [ "steel_plate", 2 ] ],
@@ -1388,6 +1141,7 @@
       [ [ "power_supply", 1 ] ],
       [ [ "e_scrap", 2 ] ],
       [ [ "scrap", 4 ] ]
-    ]
+    ],
+    "copy-from": "bot_tankbot_base"
   }
 ]

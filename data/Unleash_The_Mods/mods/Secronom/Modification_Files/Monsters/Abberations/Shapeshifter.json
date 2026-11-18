@@ -4,7 +4,7 @@
     "id": "mon_shifter",
     "type": "MONSTER",
     "name": { "str": "shapeshifter" },
-    "description": "An inhumane creature, shrouded in disorienting atmosphere. Its appearance is a complete mystery, neither its true nature.",
+    "description": "An inhumane creature, shrouded in disorienting atmosphere.  Its appearance is a complete mystery, neither its true nature.",
     "default_faction": "shifter",
     "species": [ "ABERRATION", "SECROSPEC" ],
     "volume": "62500 ml",
@@ -32,7 +32,6 @@
         "monster_message": "<color_red>The air surrounding %1$s intensifies!</color>"
       }
     ],
-    "death_function": [ "DISAPPEAR" ],
     "flags": [ "SEES", "HEARS", "SMELLS", "BASHES", "POISON", "ATTACKMON", "NO_BREATHE", "STUN_IMMUNE", "PUSH_MON" ]
   },
   {
@@ -41,7 +40,7 @@
     "id": "mon_shifter_illu",
     "type": "MONSTER",
     "name": { "str": "shapeshifter" },
-    "description": "An inhumane creature, shrouded in disorienting atmosphere. Its appearance is a complete mystery, neither its true nature.",
+    "description": "An inhumane creature, shrouded in disorienting atmosphere.  Its appearance is a complete mystery, neither its true nature.",
     "default_faction": "shifter",
     "species": [ "ABERRATION", "SECROSPEC" ],
     "diff": 30,
@@ -70,28 +69,27 @@
         "monster_message": "<color_yellow>%1$s shifts erratically!</color>"
       }
     ],
-    "death_function": [ "DISAPPEAR" ],
     "flags": [ "SEES", "HEARS", "SMELLS", "BASHES", "POISON", "NO_BREATHE" ]
   },
   {
-    "//": "We copy some of the vanilla zeds.",
     "id": "mon_shifter_zombie",
     "type": "MONSTER",
-    "name": { "str": "zombie" },
-    "description": "A human body, swaying as it moves, an unstoppable rage visible in its oily black eyes. Within a closer look, its visage blurs occasionally.",
     "copy-from": "mon_zombie",
+    "name": { "str": "zombie" },
+    "description": "A human body, swaying as it moves, an unstoppable rage visible in its oily black eyes.  Within a closer look, its visage blurs occasionally.",
+    "death_drops": { "subtype": "collection", "groups": [ "default_zombie_death_drops", "mon_shifter_fakeform_death_drop" ] },
+    "//": "We copy some of the vanilla zeds.",
     "looks_like": "mon_zombie",
-    "death_function": { "corpse_type": "NO_CORPSE", "message": "The %s melts away." },
-    "death_drops": { "subtype": "collection", "groups": [ "default_zombie_death_drops", "mon_shifter_fakeform_death_drop" ] }
+    "death_function": { "corpse_type": "NO_CORPSE", "message": "The %s melts away." }
   },
   {
     "id": "mon_shifter_zombie_rot",
     "type": "MONSTER",
-    "name": { "str": "decayed zombie" },
-    "description": "A once-dead human corpse. Its discolored swollen flesh is riddled with festering wounds and open sores. Within a closer look, its visage blurs occasionally.",
     "copy-from": "mon_zombie_rot",
+    "name": { "str": "decayed zombie" },
+    "description": "A once-dead human corpse.  Its discolored swollen flesh is riddled with festering wounds and open sores.  Within a closer look, its visage blurs occasionally.",
+    "death_drops": { "subtype": "collection", "groups": [ "default_zombie_death_drops", "mon_shifter_fakeform_death_drop" ] },
     "looks_like": "mon_zombie_rot",
-    "death_function": { "corpse_type": "NO_CORPSE", "message": "The %s melts away." },
-    "death_drops": { "subtype": "collection", "groups": [ "default_zombie_death_drops", "mon_shifter_fakeform_death_drop" ] }
+    "death_function": { "corpse_type": "NO_CORPSE", "message": "The %s melts away." }
   }
 ]

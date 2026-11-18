@@ -4,7 +4,7 @@
     "subtype": "collection",
     "id": "secrodrag_drops",
     "//": "drops implanted weapons, as well as some ammunition too.",
-    "entries": [
+    "items": [
       { "item": "laser_rifle_secro", "prob": 70 },
       { "item": "m240", "prob": 50 },
       { "item": "308", "prob": 100, "count": [ 2, 4 ] }
@@ -14,7 +14,7 @@
     "id": "mon_secrodragon_sleep",
     "type": "MONSTER",
     "name": { "str": "secronom dragon" },
-    "description": "An inactive cyber dragon, caged in an indestructible tube filled with greenish liquid. Its chainlocked mouth growls, whilst constant beeping noise underneath it is barely heard.",
+    "description": "An inactive cyber dragon, caged in an indestructible tube filled with greenish liquid.  Its chainlocked mouth growls, whilst constant beeping noise underneath it is barely heard.",
     "default_faction": "bot",
     "species": [ "SECRODRAG" ],
     "harvest": "secrodragon_harvest",
@@ -30,7 +30,6 @@
     "melee_skill": 0,
     "melee_dice": 0,
     "melee_dice_sides": 0,
-    "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "armor": { "cut": 999, "bash": 999, "stab": 999, "acid": 999, "heat": 999 },
     "vision_day": 0,
     "starting_ammo": { "308": 400 },
@@ -38,7 +37,7 @@
     "death_drops": { "groups": [ [ "robots", 100 ], [ "secrodrag_drops", 80 ] ] },
     "upgrades": { "half_life": 22, "into": "mon_secrodragon_woke" },
     "//": "Might wake up in approximately 1 year.",
-    "flags": [ "IMMOBILE", "WARM", "POISON", "NO_BREATHE", "BONES", "ELECTRIC", "FIREPROOF" ]
+    "flags": [ "IMMOBILE", "WARM", "POISON", "NO_BREATHE", "ELECTRIC", "FIREPROOF" ]
   },
   {
     "id": "mon_secrodragon_woke",
@@ -55,7 +54,7 @@
     "material": [ "steel", "flesh" ],
     "emit_fields": [ "emit_down_immunity" ],
     "symbol": "☬",
-    "color": "white_red",
+    "color": "white",
     "aggression": 100,
     "morale": 100,
     "melee_skill": 10,
@@ -68,32 +67,19 @@
     "path_settings": { "max_dist": 20 },
     "special_attacks": [
       [ "SMASH", 42 ],
-      [ "secrodragon_SSLRatk", 2 ],
-      [ "secrodragon_M240atk", 5 ],
-      [ "secrodragon_SSGLatk", 15 ],
-      [ "secrodragon_pershieldatk", 10 ],
+      { "id": "secrodragon_SSLRatk", "cooldown": 2 },
+      { "id": "secrodragon_M240atk", "cooldown": 5 },
+      { "id": "secrodragon_SSGLatk", "cooldown": 15 },
+      { "id": "secrodragon_pershieldatk", "cooldown": 10 },
       {
         "type": "spell",
         "spell_data": { "id": "mon_secrodragon_target_random" },
         "cooldown": 25,
-        "monster_message": "<color_yellow>%1$s growls...</color>"
+        "monster_message": "<color_yellow>%1$s growls…  </color>"
       }
     ],
     "death_drops": { "groups": [ [ "robots", 100 ], [ "secrodrag_drops", 80 ] ] },
-    "flags": [
-      "SEES",
-      "HEARS",
-      "SMELLS",
-      "STUN_IMMUNE",
-      "FLIES",
-      "WARM",
-      "DESTROYS",
-      "POISON",
-      "NO_BREATHE",
-      "BONES",
-      "FAT",
-      "ELECTRIC"
-    ],
+    "flags": [ "SEES", "HEARS", "SMELLS", "STUN_IMMUNE", "FLIES", "WARM", "DESTROYS", "POISON", "NO_BREATHE", "ELECTRIC" ],
     "//": "IT IS NOT YOUR FAMILY-FRIENDLY ROBOT. HACKING UNAVAILABLE."
   }
 ]

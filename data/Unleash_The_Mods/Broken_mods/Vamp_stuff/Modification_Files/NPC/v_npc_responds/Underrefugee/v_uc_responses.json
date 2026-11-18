@@ -21,16 +21,32 @@
         "effect": [ "mission_success", { "u_consume_item": "bloodsac" } ],
         "text": "Here's your blood sac.",
         "topic": "TALK_MISSION_SUCCESS"
+      },
+      {
+        "text": "Here's your blood.",
+        "topic": "TALK_MISSION_SUCCESS",
+        "effect": [ "mission_success", { "u_consume_item": "blood", "count": 15 } ],
+        "condition": { "and": [ { "u_has_items": { "item": "blood", "count": 15 } }, { "u_has_mission": "VAMP_LONELY_quest1" } ] }
+      },
+      {
+        "text": "Here's your bloodrune stone.",
+        "topic": "TALK_MISSION_SUCCESS",
+        "effect": [ "mission_success", { "u_consume_item": "bloodrune" } ],
+        "condition": { "and": [ { "u_has_item": "bloodrune" }, { "u_has_mission": "VAMP_LONELY_quest3" } ] }
+      },
+      {
+        "text": "Here's your corrupted bloodrune stones.",
+        "topic": "TALK_MISSION_SUCCESS",
+        "effect": [ "mission_success", { "u_consume_item": "corruptbloodrune", "count": 2 } ],
+        "condition": {
+          "and": [ { "u_has_items": { "item": "corruptbloodrune", "count": 2 } }, { "u_has_mission": "VAMP_UNDERTRADER_quest" } ]
+        }
       }
     ],
     "type": "talk_topic"
   },
   {
-    "dynamic_line": {
-      "no": "Mortal descendant... What do I expect from you?",
-      "u_is_wearing": "blood_necklace",
-      "yes": "You got something to say, descendant?."
-    },
+    "dynamic_line": "Mortal descendant…  What do I expect from you?  You got something to say, descendant?.",
     "id": "TALK_VAMP_UNDERCOMMANDO",
     "responses": [
       { "text": "I want to talk with you.", "topic": "TALK_VAMP_UNDERCOMMANDO_maintalk" },
@@ -41,16 +57,16 @@
       },
       {
         "condition": { "and": [ { "not": { "u_has_trait": "commandovampmark" } }, { "npc_has_trait": "commandotestdone" } ] },
-        "text": "I've done the final test... So, what now?",
+        "text": "I've done the final test…  So, what now?",
         "topic": "TALK_VAMP_UNDERCOMMANDO_testsdone"
       },
-      { "condition": "has_assigned_mission", "text": "About your command...", "topic": "TALK_MISSION_INQUIRE" },
+      { "condition": "has_assigned_mission", "text": "About your command…", "topic": "TALK_MISSION_INQUIRE" },
       { "text": "I should go now.", "topic": "TALK_DONE" }
     ],
     "type": "talk_topic"
   },
   {
-    "dynamic_line": { "no": "Topic?", "u_is_wearing": "blood_necklace", "yes": "So descendant... What should we talk about?" },
+    "dynamic_line": "Topic?  So descendant…  What should we talk about?",
     "id": "TALK_VAMP_UNDERCOMMANDO_maintalk",
     "responses": [
       {
@@ -59,7 +75,7 @@
         "condition": { "not": { "npc_has_trait": "commandotalkedhim" } }
       },
       {
-        "text": "Wait... Vampire with a gun?",
+        "text": "Wait…  Vampire with a gun?",
         "topic": "TALK_VAMP_UNDERCOMMANDO_gun",
         "condition": { "not": { "npc_has_trait": "commandotalkedgun" } }
       },
@@ -94,7 +110,7 @@
             { "npc_has_trait": "commandotalkedgunshop" }
           ]
         },
-        "text": "I guess I've asked everything...",
+        "text": "I guess I've asked everything…",
         "topic": "TALK_DONE"
       }
     ],
@@ -105,16 +121,16 @@
     "id": "TALK_VAMP_UNDERCOMMANDO_introduce",
     "responses": [
       { "text": "So, are you the owner of this refugee?", "topic": "TALK_VAMP_UNDERCOMMANDO_owner" },
-      { "text": "Sorry about it...", "topic": "TALK_VAMP_UNDERCOMMANDO_maintalk" }
+      { "text": "Sorry about it…", "topic": "TALK_VAMP_UNDERCOMMANDO_maintalk" }
     ],
     "type": "talk_topic"
   },
   {
-    "dynamic_line": "You thought we can't use this things? You are wrong, descendant!",
+    "dynamic_line": "You thought we can't use this things?  You are wrong, descendant!",
     "id": "TALK_VAMP_UNDERCOMMANDO_gun",
     "responses": [
       {
-        "text": "Umm... Okay.",
+        "text": "Umm…  Okay.",
         "topic": "TALK_VAMP_UNDERCOMMANDO_maintalk",
         "effect": { "npc_add_trait": "commandotalkedgun" }
       }
@@ -122,7 +138,7 @@
     "type": "talk_topic"
   },
   {
-    "dynamic_line": "I have no idea. Its been decades since I traveled into this cove.",
+    "dynamic_line": "I have no idea.  Its been decades since I traveled into this cove.",
     "id": "TALK_VAMP_UNDERCOMMANDO_world",
     "responses": [
       {
@@ -134,7 +150,7 @@
     "type": "talk_topic"
   },
   {
-    "dynamic_line": "Nope. To trade a gun like this, you better find a gunshop.",
+    "dynamic_line": "Nope.  To trade a gun like this, you better find a gunshop.",
     "id": "TALK_VAMP_UNDERCOMMANDO_tradegun",
     "responses": [ { "text": "A gunshop?", "topic": "TALK_VAMP_UNDERCOMMANDO_gunshop" } ],
     "type": "talk_topic"
@@ -153,11 +169,11 @@
     "type": "talk_topic"
   },
   {
-    "dynamic_line": "She's at the wasteland outskirts, a place where vampires freely communicate with you all. Sounds wonderful, right?",
+    "dynamic_line": "She's at the wasteland outskirts, a place where vampires freely communicate with you all.  Sounds wonderful, right?",
     "id": "TALK_VAMP_UNDERCOMMANDO_gunshop",
     "responses": [
       {
-        "text": "Wonderful? I don't even know where it is!",
+        "text": "Wonderful?  I don't even know where it is!",
         "topic": "TALK_VAMP_UNDERCOMMANDO_maintalk",
         "effect": { "npc_add_trait": "commandotalkedgunshop" }
       }
@@ -165,18 +181,18 @@
     "type": "talk_topic"
   },
   {
-    "dynamic_line": "HIM is our master, our lord, the almighty one. HE brought us into existence, and we owe our life serving HIS will.",
+    "dynamic_line": "HIM is our master, our lord, the almighty one.  HE brought us into existence, and we owe our life serving HIS will.",
     "id": "TALK_VAMP_UNDERCOMMANDO_him",
-    "responses": [ { "text": "I'd wish to meet HIM...", "topic": "TALK_VAMP_UNDERCOMMANDO_maintalk" } ],
+    "responses": [ { "text": "I'd wish to meet HIM…", "topic": "TALK_VAMP_UNDERCOMMANDO_maintalk" } ],
     "type": "talk_topic"
   },
   {
-    "dynamic_line": "\"What now\" you say? The tests I have given you has to proven yourself worthy to push forward the boundary between this cave and the outskirt. Now, take this ring and tell the seeker about the outskirts, she'll talk about and guide you to its coordinates. The gunshop has something to give when you arrive, so make sure you wear the ring before speaking to her.",
+    "dynamic_line": "\"What now\" you say?  The tests I have given you has to proven yourself worthy to push forward the boundary between this cave and the outskirt.  Now, take this ring and tell the seeker about the outskirts, she'll talk about and guide you to its coordinates.  The gunshop has something to give when you arrive, so make sure you wear the ring before speaking to her.",
     "id": "TALK_VAMP_UNDERCOMMANDO_testsdone",
     "responses": [
       {
         "effect": [ { "u_buy_item": "blood_cring", "cost": 1000 }, { "u_add_trait": "commandovampmark" } ],
-        "text": "Yes. I'll do as you say and thank you for this ring.",
+        "text": "Yes.  I'll do as you say and thank you for this ring.",
         "topic": "TALK_DONE"
       }
     ],
