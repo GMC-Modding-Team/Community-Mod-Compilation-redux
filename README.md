@@ -28,8 +28,12 @@ Welcome to TheGoatGod's Mod Compilation. Currently contains 351 mods, not includ
 
 # Road map
 
-- [ ] fix unleash the mods
-- [ ] fix maintained mods
-- [ ] move not maintained mods out of maintained folder
-- [ ] update readme
-- [ ] fix legacy mods
+## 0.3.0
+- [x] Fix Unleash the mods
+- [x] Fix Maintained mods
+- [x] Fix Legacy mods
+- [x] Fix Goats mods
+- [x] Fix No mods
+- [x] Fix Rebalance mods
+
+##  0.3.1 - 0.3.5
